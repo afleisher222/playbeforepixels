@@ -1,0 +1,48 @@
+{
+ "slug": "lead-magnet",
+ "file_slug": "five-5-minute-plays",
+ "title": "Five 5-Minute Plays",
+ "subtitle": "A free printable for ages 0–5: five little plays with things you already have, each with an age ladder, a talk line and a safety line",
+ "version": "Version 1.0 · September 2026",
+ "record_type": "free lead magnet (not a listing: never sold, never on Etsy; so it has no listing.json and is not run through check_listings.py, which fails any $0 digital item by design)",
+ "price_usd": 0,
+ "pages": 8,
+ "ages": "0–5 (every play has a ladder: 0–1, 1–2, 2–3 and 3–5)",
+ "activities": "5 plays, 0 things to buy, 0 minutes of prep, about 5 minutes each; a 1-minute version of each",
+ "files": {
+  "color_letter": "five-5-minute-plays.pdf",
+  "color_a4": "five-5-minute-plays-A4.pdf",
+  "lowink_letter": "five-5-minute-plays-low-ink.pdf",
+  "lowink_a4": "five-5-minute-plays-low-ink-A4.pdf",
+  "source": "source.html (color, US Letter); build/build.js holds every word; bash build/make.sh rebuilds and checks",
+  "previews": "preview/p01–p08.png, preview/low-ink/",
+  "cover": "cover.png (1236 × 1600)",
+  "mockup": "mockup.png (1600 × 1200)",
+  "signup_image": "preview/listing-images/signup-hero.png (2000 × 2000)"
+ },
+ "delivery": "Only by the email platform, as the link in the welcome email (marketing/email/welcome/01-welcome.md), sent after the double opt-in confirmation. Hosted on the email platform or the site, never on a marketplace.",
+ "signup_rules": [
+  "Adults only: a required, unticked box 'I am the parent or guardian and 18 or older' (business/GROWTH-ENGINE.md §2c; CAMPAIGN-BIBLE COPPA note)",
+  "Fields: email (required); child's birth month and year (optional, two dropdowns); nothing else. Never a child's name, photo or full birthday",
+  "Double opt-in: nothing is sent until the confirm link is clicked (copy in marketing/email/signup-and-double-opt-in.md)",
+  "Privacy policy linked beside the button; CAN-SPAM footer with the business mailing address; one-click unsubscribe",
+  "Sign-ups tagged by source (src=bonus-<slug>, src=pin, src=site). Sign-ups from research-hub pages (src=hub) get no product email (BRAND search-targeting rules; founder decision D10)",
+  "No ad pixels on the sign-up page; email open tracking off where the platform allows it [UNVERIFIED which platforms allow it]"
+ ],
+ "bonus_urls_served": "Every product's playbeforepixels.com/bonus/<slug> page offers this printable (the QR codes in the store editions point there).",
+ "alt_text": "Cover of the free printable “Five 5-Minute Plays”: a navy title with a tomato-red 5 on a pale green panel, a smiling grown-up and child with a pot and spoon, and five play icons.",
+ "ai_disclosure": {
+  "as_of": "2026-09-28",
+  "ai_helped_with": "Claude (an AI model made by Anthropic) wrote the draft text, drew the illustrations in code from the brand's shared library and built the PDF files.",
+  "humans_did": "The founder directs the product line and set the rules every draft follows; no person has rewritten the text yet.",
+  "site": "Sign-up page line: 'Illustrations and text are made with AI assistance.'",
+  "social_ai_label": "Apply each platform's AI label to posts that use these images."
+ },
+ "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.",
+ "compliance_notes": "No health or outcome claims (the build fails on milestone, delay, 'falling behind' and 'should'); nothing named; every play has a safety line (blanket play for awake time only and never in a baby's sleep space; cups too big to fit through a toilet-paper tube; cool empty pots away from the stove; closed, locked windows and no climbing; socks with nothing sewn on). No diagnosis or condition wording anywhere. 'Talk, sing and read in the language you know best'; a sign, point or device tap counts. The last page states the privacy promise the sign-up form must keep. No Type 3 fonts; no placeholder text; owner and version line on every page.",
+ "human_todo": [
+  "Rewrite the plays in your own words in build/build.js and commit each draft",
+  "Choose the email platform and switch on double opt-in (marketing/email/README.md)",
+  "Put the PDF link into email 1 of the welcome series before the sequence is APPROVED"
+ ]
+}

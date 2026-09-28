@@ -21,7 +21,12 @@ function coverSrc(p) {
   const c = p.cover || { src: 'cover.png' };
   return c.pdf ? { pdf: `products/${p.dir}/${c.pdf}`, page: c.page || 1 } : `products/${p.dir}/${c.src}`;
 }
+function workbook(p, o = {}) {
+  const days = Array.from({ length: 30 }, (_, i) => `<i${i < 6 ? ' class="done"' : ''}></i>`).join('');
+  return `<div class="obj m-workbook"${o.label ? ` role="img" aria-label="${esc(o.label)}"` : ' aria-hidden="true"'}><small>Written program · by email</small><b>30 Days of Back-and-Forth</b><span class="wb-line">One short lesson and one easy play a day</span><span class="days">${days}</span></div>`;
+}
 function mock(ctx, p, o = {}) {
+  if (p.mock === 'workbook-css') return workbook(p, o);
   const img = ctx.img.pic({ src: coverSrc(p), widths: o.widths || [360, 720], sizes: o.sizes || '(max-width: 760px) 40vw, 18vw', alt: o.alt || '', eager: o.eager });
   const kind = p.mock || 'sheet';
   if (kind === 'book') return `<div class="obj m-book"><div class="edge"></div><div class="face">${img}</div></div>`;
@@ -30,7 +35,7 @@ function mock(ctx, p, o = {}) {
   return `<div class="obj m-sheet"><div class="under"></div><div class="face">${img}</div></div>`;
 }
 function stack(ctx, parts, o = {}) {
-  const faces = parts.slice(0, 4).map((x, i) => `<div class="face f${i + 1}">${ctx.img.pic({ src: coverSrc(x.p), widths: [300, 600], sizes: '(max-width: 760px) 30vw, 12vw', alt: '' })}</div>`).join('');
+  const faces = parts.slice(0, 4).map((x, i) => x.p.mock === 'workbook-css' ? `<div class="face f${i + 1} face--wb">${workbook(x.p)}</div>` : `<div class="face f${i + 1}">${ctx.img.pic({ src: coverSrc(x.p), widths: [300, 600], sizes: '(max-width: 760px) 30vw, 12vw', alt: '' })}</div>`).join('');
   return `<div class="obj m-stack n${Math.min(parts.length, 4)}"${o.label ? ` role="img" aria-label="${esc(o.label)}"` : ''}>${faces}</div>`;
 }
 
@@ -128,4 +133,4 @@ function storeName(ctx, key) {
 
 function tbd(label) { return `<span class="tbd">${esc(label)}</span>`; }
 
-module.exports = { I, mock, stack, card, miniRuler, signup, faq, crumbs, buy, storeName, ageDots, priceText, coverSrc, bandOf, tbd, MONTHS };
+module.exports = { I, workbook, mock, stack, card, miniRuler, signup, faq, crumbs, buy, storeName, ageDots, priceText, coverSrc, bandOf, tbd, MONTHS };

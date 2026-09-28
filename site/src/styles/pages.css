@@ -103,8 +103,13 @@ main { display: block; }
 .p-card .surface .obj.m-guide { width: 54%; }
 .m-work { width: 54%; transform: rotate(2deg); }
 .m-stack .face img { width: 100%; }
-.m-stack.n4 .face:nth-child(4) { left: 30%; top: 22%; transform: rotate(-3deg); z-index: 4; width: 52%; }
-.m-stack.n4 .face:nth-child(1) { left: 0; top: 6%; }
+.m-stack { width: 84%; height: 70%; }
+.m-stack .face { width: 50%; }
+.m-stack .face:nth-child(1) { left: 0; top: 10%; transform: rotate(-8deg); z-index: 1; }
+.m-stack .face:nth-child(2) { left: 18%; top: 2%; transform: rotate(-2deg); z-index: 2; }
+.m-stack .face:nth-child(3) { left: 34%; top: 8%; right: auto; transform: rotate(5deg); z-index: 3; }
+.m-stack .face:nth-child(4) { left: 50%; top: 14%; transform: rotate(10deg); z-index: 4; }
+.m-stack.n3 .face:nth-child(3) { left: 46%; }
 .more-static { margin-top: 36px; }
 .more-static > summary { list-style: none; margin: 0 auto; width: max-content; }
 .more-static > summary::-webkit-details-marker { display: none; }
@@ -435,3 +440,50 @@ main { display: block; }
   .btn:hover { transform: none; }
   .drawer, .search-sheet { transition: none !important; }
 }
+.sh-links { display: flex; flex-wrap: wrap; gap: 12px 28px; }
+.select-inline select { appearance: none; height: 40px; border: 1.5px solid var(--rule); border-radius: 999px; padding: 0 36px 0 14px; font-weight: 700; font-size: 14px; background: #fff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1 1l5 5 5-5' fill='none' stroke='%231D2940' stroke-width='2'/></svg>") no-repeat right 14px center; color: var(--ink); }
+.select-inline span { font-size: 14px; font-weight: 800; }
+@media (max-width: 760px) {
+  .brand img { height: 24px; }
+  .masthead { gap: 6px; }
+  .tools { gap: 2px; }
+  .tool-btn { padding: 0 10px; min-width: 44px; justify-content: center; }
+}
+@media (max-width: 440px) {
+  .menu-btn span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .brand img { height: 23px; }
+}
+/* target sizes: every stand-alone link or control is at least 24px tall (WCAG 2.2 2.5.8) */
+.utility nav a, .crumbs a, .crumbs [aria-current], .f-cols a, .f-base nav a, .mega-list a, .hub-footer nav a, .col-links a, .sh-links a, .also a, .info-toc a, .link { min-height: 24px; display: inline-flex; align-items: center; }
+.brand { display: inline-flex; align-items: center; min-height: 44px; }
+.p-card .p-title a { display: inline; }
+.tab--off { opacity: 1; background: repeating-linear-gradient(135deg, var(--wash) 0 6px, #fff 6px 12px); }
+.tab--off b { color: var(--ink-3); }
+.tab--off span { color: var(--ink-3); }
+.ruler .num0, .ruler .end { font-size: 19px; top: 22px; }
+.help-search input:focus-visible { outline: 3px solid var(--sky-ink); outline-offset: 4px; border-radius: 3px; }
+.help-search:focus-within { outline: 0; }
+@media (pointer: coarse) { .chip { min-height: 44px; } .type-chips { padding-block: 2px; } }
+.price-table tbody th a { display: inline-flex; align-items: center; min-height: 24px; }
+@media (pointer: coarse) {
+  .f-cols a, .f-base nav a, .crumbs a, .crumbs [aria-current], .mnav-foot a, .hub-footer nav a, .info-toc a { min-height: 44px; }
+  .f-cols ul { gap: 0; }
+}
+.signup--light label { color: var(--ink); }
+.f-top--nosign { grid-template-columns: 1fr; }
+.shelf { list-style: none; }
+.made-grid .h2, .how-grid .h2 { margin-bottom: 20px; }
+.m-workbook { position: relative; container-type: inline-size; }
+.m-workbook small { font-size: 5.2cqi; letter-spacing: .12em; }
+.m-workbook b { font-size: 13cqi; line-height: .95; }
+.m-workbook .wb-line { font: 700 5.6cqi/1.35 var(--f-body); color: var(--ink-2); }
+.m-workbook .days { gap: 3.5cqi; }
+.stage .m-workbook { width: 52%; }
+.face--wb { background: transparent !important; box-shadow: none !important; }
+.face--wb .m-workbook { width: 100%; transform: none; }
+.pdp-gallery:not(:has(.thumbs)) .stage { grid-column: 1 / -1; }
+.age-tab--off, .m-age--off { opacity: 1; }
+.age-tab--off .t { filter: saturate(.35); color: var(--ink) !important; }
+.age-tab--off .n, .age-tab--off .c { color: var(--ink-3); }
+.m-age--off { background: repeating-linear-gradient(135deg, var(--wash) 0 6px, #fff 6px 12px); border-top-color: var(--rule); }
+.m-age--off b, .m-age--off small { color: var(--ink-3); }

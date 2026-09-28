@@ -10,6 +10,7 @@ function galleryItems(ctx, p) {
   const base = `products/${p.dir}/`;
   return p.gallery.map((g, i) => {
     const alt = g.altFrom ? p.listing[g.altFrom] : g.alt;
+    if (g.css) return { kind: 'css', alt };
     if (g.spread) return { kind: 'spread', alt, srcs: g.spread.map(s => base + s) };
     if (g.pdf) return { kind: 'page', alt, src: { pdf: base + g.pdf, page: g.page } };
     const kind = /mockup|picker/.test(g.src) ? 'photo' : (/cover/.test(g.src) ? 'cover' : 'page');
@@ -22,7 +23,8 @@ function gallery(ctx, p) {
   const big = (src, alt, eager) => ctx.img.pic({ src, widths: [640, 1100, 1600], sizes: '(max-width: 1060px) 100vw, 56vw', alt, eager, priority: eager });
   const slides = items.map((it, i) => {
     let inner;
-    if (it.kind === 'photo') inner = big(it.src, it.alt, i === 0);
+    if (it.kind === 'css') inner = require('../partials/bits').workbook(p, { label: it.alt });
+    else if (it.kind === 'photo') inner = big(it.src, it.alt, i === 0);
     else if (it.kind === 'spread') inner = `<div class="spread">${it.srcs.map((s, k) => ctx.img.pic({ src: s, widths: [480, 800], sizes: '(max-width: 1060px) 46vw, 26vw', alt: k === 0 ? it.alt : '', eager: i === 0 })).join('')}</div>`;
     else inner = `<div class="flat-page ${it.kind === 'cover' ? 'is-cover' : ''}">${ctx.img.pic({ src: it.src, widths: [480, 900, 1300], sizes: '(max-width: 1060px) 80vw, 40vw', alt: it.alt, eager: i === 0 })}</div>`;
     return `<figure class="slide surface g-${it.kind === 'photo' ? 'wash' : p.ground} slide--${it.kind}" id="slide-${i}" data-slide="${i}"${i ? ' hidden' : ''}>${inner}</figure>`;
@@ -189,7 +191,7 @@ ${details}
 ${next}`;
 
   const imgSrc = p.gallery[0] && p.gallery[0].src ? `products/${p.dir}/${p.gallery[0].src}` : require('../partials/bits').coverSrc(p);
-  const og = ctx.img.og(imgSrc);
+  const og = p.mock === 'workbook-css' ? ctx.assets.ogDefault : ctx.img.og(imgSrc);
   const allFaq = [...p.faq.map(q => ({ q: typo(q.q), a: typo(q.a) })), ...siteFaq(ctx, p).map(q => ({ q: q.q, a: q.aHtml.replace(/<[^>]+>/g, '') }))];
   return ctx.page({
     key: 'product', path: p.url, nav: p.types.includes('books') ? 'books' : p.types.includes('printables') ? 'printables' : 'shop',

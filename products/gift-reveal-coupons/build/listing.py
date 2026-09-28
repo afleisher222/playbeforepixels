@@ -10,6 +10,9 @@ import listing_common as LC  # noqa: E402
 PRICE = 5.00
 NOBUY = 12
 n, m = LC.nets(PRICE)
+# Gumroad Discover would net about $2.81 at $5, under the $3.00 floor: this product is kept out of Discover.
+n["site_gumroad_discover_sale"] = None
+m["site_gumroad_discover_sale"] = None
 SLUG = "gift-reveal-coupons"
 
 d = {
@@ -17,8 +20,7 @@ d = {
     "title": "16 Play Coupons and Gift-Reveal Cards, Ages 1–5",
     "subtitle": "Printable coupons a grown-up gives a child, each a small play to do together, with fold and reveal cards",
     "version": "Version 1.0 · September 2026",
-    "etsy_title": "16 Printable Play Coupons for Kids 1-5, Gift Reveal Card, Coupon Book for Toddlers, Screen-Free Gift Idea, Letter and A4 PDF",
-    "amazon_title": None,
+    "etsy_title": "16 Printable Play Coupons for Kids 1-5, Gift Reveal Card, Booklet for Toddlers, Screen-Free Present Idea, Letter and A4 PDF",
     "format": ("Digital download: 5 plain PDFs, no zip. English text. START HERE (1 page) + Color and Low-ink editions, each in "
                "US Letter and A4 (11 pages per file). 11 pages = cover + grown-up guide + fold card + 2 reveal cards + 2 coupon "
                "pages (16 coupons) + blank coupons and coupon-book cover + 2 coupon-key pages + good to know + more from Play "
@@ -27,7 +29,7 @@ d = {
              "straight-line grid, each about 3.75 × 2.2 in. Fold card about 7.5 × 4.7 in folded; reveal cards about 7.5 × 4.6 in. "
              "Print at 100% (actual size)."),
     "pages": 11,
-    "ages": "1–5 (every coupon shows a starting age in months: 6 from 12 months, 3 from 18, 5 from 24–30, 1 from 36; 1 more from 30 months)",
+    "ages": "1–5 (every coupon shows a starting age in months: 5 from 12 months, 3 from 18, 4 from 24, 3 from 30, 1 from 36)",
     "activities": f"16 play coupons plus 7 blank coupons. {NOBUY} of the 16 need nothing to buy.",
     "prep_time": "About 10 minutes to print, cut on straight lines and staple. No-cut option: give the whole coupon page folded like a letter.",
     "price_usd": PRICE,
@@ -41,7 +43,7 @@ d = {
     "price_floor_basis": LC.FLOOR_BASIS,
     "net_per_unit_by_channel": n,
     "margin_pct_by_channel": m,
-    "net_notes": LC.NET_NOTES,
+    "net_notes": LC.NET_NOTES + " Gumroad Discover is switched off for this product: at $5 a Discover sale would net about $2.81, under the $3.00 floor. At the $4 in the brief, every channel would net under the floor: Etsy about $2.97, an Offsite Ads sale about $2.37, own checkout about $2.48.",
     "short_description": "16 printable play coupons for ages 1–5, each a small play to do together, plus a fold card, reveal cards and blank coupons. PDF.",
     "long_description": (
         "16 printable play coupons for ages 1–5, plus a fold card and two reveal cards. It is a PDF in US Letter and A4, "
@@ -52,7 +54,7 @@ d = {
         "adds an easier way, a harder way, a 2-minute version and a safety line for each one.\n\n"
         "Make it a surprise with the fold card or a reveal card. Add the coupon-book cover and 7 blank coupons for your "
         "family's own favorite plays. Type the For and From lines in a free PDF reader, or write them by hand.\n\n"
-        "Coupons never expire. They are never traded for screen time or treats, and they are never a reward for good behavior.\n\n"
+        "Coupons never expire. They are never traded for screen time or sweets, and they are never a reward for good behavior.\n\n"
         "Every play follows our published safety rules. Digital file in English; nothing is shipped. Personal license for "
         "one household, plus the child you give the coupons to."),
     "bullets": [
@@ -125,7 +127,7 @@ d = {
         "allergies, no raw dough); balls and blocks too big to fit through a toilet-paper tube for under-3s; bubbles blown by a "
         "grown-up for under-3s; picnic food soft, small and seated with the choking-food list; dress-up has no scarves, ties, "
         "belts or cords; box car has staples and loose tape removed; the guide no longer suggests a ribbon. Customer-voice rule "
-        "13: coupons are never traded for screen time or treats and never a reward for behavior (stated in the guide and "
+        "13: coupons are never traded for screen time or sweets and never a reward for behavior (stated in the guide and "
         "listing; the build fails if coupon text names a screen). 12 of 16 need nothing to buy (75%). Straight-line cuts, 8 "
         "pieces per page, 'Grown-up keeps the pieces'. Secular: no holiday or faith wording (build check). Etsy files checked for "
         "no URL. No Type 3 fonts; no placeholder text; owner and version line on every page."),

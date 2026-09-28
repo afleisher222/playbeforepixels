@@ -170,19 +170,20 @@ function searchSheet() {
 </div>`;
 }
 
-function footer(ctx) {
+function footer(ctx, pg = {}) {
+  const sign = !['free', 'bonus'].includes(pg.key);
   const S = ctx.cfg.site;
   const follow = Object.entries(ctx.cfg.social).filter(([k]) => ctx.links[k]).map(([k, n]) => `<li><a href="${esc(ctx.links[k])}" rel="noopener me">${esc(n)}</a></li>`).join('');
   const stores = Object.entries(ctx.cfg.stores).filter(([k]) => ctx.links[k]).map(([k, n]) => `<li><a href="${esc(ctx.links[k])}" rel="noopener">${esc(n)}</a></li>`).join('');
   const col = (h, items) => `<div><h2>${h}</h2><ul>${items.map(([u, t]) => `<li><a href="${u}">${t}</a></li>`).join('')}</ul></div>`;
   return `<footer class="footer on-ink">
   <div class="wrap">
-    <div class="f-top">
-      <div class="f-sign">
+    <div class="f-top${sign ? '' : ' f-top--nosign'}">
+      ${sign ? `<div class="f-sign">
         <h2>Three plays for your child’s age, once a month.</h2>
         <p>One printable page, matched to your child’s age. Just an email; add a birth month if you like. No names, ever.</p>
         ${require('./bits').signup(ctx, { id: 'fsu', tone: 'ink', source: 'footer', button: 'Send me the plays' })}
-      </div>
+      </div>` : ''}
       <nav class="f-cols" aria-label="Footer">
         ${col('Shop by age', [...ctx.cfg.bands.filter(b => ctx.countBand(b.key)).map(b => [`/shop/ages/${b.key}/`, `Ages ${b.label}`]), ['/shop/', 'Everything']])}
         ${col('Shop by type', [...ctx.cfg.types.map(t => [t.path, esc(t.label)]), ['/free/', 'Free printable']])}
@@ -207,7 +208,7 @@ ${header(ctx, pg)}
 <main id="main" tabindex="-1">
 ${body}
 </main>
-${footer(ctx)}
+${footer(ctx, pg)}
 ${mobileNav(ctx)}
 ${searchSheet()}
 ${analytics(ctx, pg)}

@@ -137,7 +137,7 @@ for (const v of out.values()) for (const m of v.html.matchAll(/\/assets\/img\/([
 
 // ---------- search index ----------
 const helpItems = pages.helpData(ctx).flatMap(s => s.qs.map(q => ({ g: 'a', t: q.q, k: q.a + ' ' + s.h, u: `/help/#${s.id}`, m: `Help · ${s.h}` })));
-const thumb = p => { const tok = img.url(bits.coverSrc(p), 160); return swap(tok); };
+const thumb = p => { if (p.mock === 'workbook-css') return ''; const tok = img.url(bits.coverSrc(p), 160); return swap(tok); };
 const searchIndex = {
   items: [
     ...D.products.map(p => ({ g: 'p', t: p.name, k: [p.line, p.short, p.types.join(' '), 'ages ' + p.ageText, p.formats.map(f => f.label).join(' ')].join(' '), u: p.url, m: `Ages ${p.ageText} · ${p.formats.filter(f => !f.planned).map(f => f.label).join(', ')}`, p: (p.priced.length > 1 ? 'from ' : '') + require('./src/lib/util').money(p.minPrice), i: thumb(p) })),

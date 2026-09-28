@@ -102,7 +102,7 @@ function guide(ctx) {
     <div class="note li-white">${icon('star', ctx, 54)}<p><b>Most children love 2–3 of these</b> and ask for them again and again. Say yes as often as you can, and let the rest wait. <b>Talk, sing and read in the language you know best.</b> A sign, a point or a device tap counts as communicating.</p></div>
     <div class="g2" style="margin-top:14px">
       <div class="box li-white"><h4>Why coupons?</h4><p>Young children learn in back-and-forth moments with the people who love them. A coupon puts one of those moments on the calendar. It adds play; it never takes anything away.</p></div>
-      <div class="box li-white"><h4>A few house rules</h4><p>Coupons never expire and are never taken back. They are never traded for screen time or treats, and they are never a reward for good behavior. They are just for fun.</p></div>
+      <div class="box li-white"><h4>A few house rules</h4><p>Coupons never expire and are never taken back. They are never traded for screen time or sweets, and they are never a reward for good behavior. They are just for fun.</p></div>
     </div>
   </div>`;
 }

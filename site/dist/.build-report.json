@@ -1,5 +1,5 @@
 {
- "built": "2026-09-28T12:46:01.819Z",
+ "built": "2026-09-28T13:06:27.381Z",
  "preview": false,
  "pages": [
   "/",
@@ -9,9 +9,12 @@
   "/accessibility/",
   "/bonus/board-up-go-more/",
   "/bonus/bored-play-cards/",
+  "/bonus/bundle-gift-1-5/",
+  "/bonus/bundle-library-0-5/",
   "/bonus/course-screen-reset/",
   "/bonus/family-talk-along-cards/",
   "/bonus/first-phone-plan/",
+  "/bonus/gift-reveal-coupons/",
   "/bonus/guide-100-plays/",
   "/bonus/merch-core/",
   "/bonus/picture-laps-not-apps/",
@@ -40,6 +43,7 @@
   "/shop/books/",
   "/shop/bored-play-cards/",
   "/shop/bundles/",
+  "/shop/gift-reveal-coupons/",
   "/shop/guide-100-plays/",
   "/shop/picture-laps-not-apps/",
   "/shop/picture-tablet-slept/",
@@ -49,13 +53,22 @@
   "/shop/toddler-busy-book/",
   "/shop/visual-routine-cards-starter/",
   "/shop/visual-routine-cards/",
+  "/shop/winter-countdown/",
   "/terms/",
   "/thank-you/"
  ],
- "indexable": 31,
+ "indexable": 33,
  "redirects": 17,
  "printedChecked": 32,
  "hidden": [
+  {
+   "slug": "bundle-gift-1-5",
+   "why": "Shown as a set on /shop/bundles/ (config bundles: instant-gift-bundle)."
+  },
+  {
+   "slug": "bundle-library-0-5",
+   "why": "Shown as a set on /shop/bundles/ (config bundles: birth-to-5-library)."
+  },
   {
    "slug": "first-phone-plan",
    "why": "Ages 9–12 only: waits for counsel's G1 answer (business/GROWTH-ENGINE.md §7 item 5)."
@@ -75,13 +88,7 @@
   {
    "slug": "picture-more-talk-less-tap",
    "why": "listing status: held-pending-counsel"
-  },
-  {
-   "slug": "winter-countdown",
-   "why": "not described in site/config.json yet (add it to show it)"
   }
  ],
- "warnings": [
-  "winter-countdown: new listing has no site/config.json entry, so it is not shown"
- ]
+ "warnings": []
 }

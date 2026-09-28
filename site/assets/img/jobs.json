@@ -680,206 +680,6 @@
   "key": "704b28a521"
  },
  {
-  "out": "course-screen-reset-cover-0109770890-1300.webp",
-  "src": "products/course-screen-reset/cover.png",
-  "page": 0,
-  "w": 1300,
-  "kind": "webp",
-  "key": "0109770890"
- },
- {
-  "out": "course-screen-reset-cover-0109770890-160.webp",
-  "src": "products/course-screen-reset/cover.png",
-  "page": 0,
-  "w": 160,
-  "kind": "webp",
-  "key": "0109770890"
- },
- {
-  "out": "course-screen-reset-cover-0109770890-300.webp",
-  "src": "products/course-screen-reset/cover.png",
-  "page": 0,
-  "w": 300,
-  "kind": "webp",
-  "key": "0109770890"
- },
- {
-  "out": "course-screen-reset-cover-0109770890-360.webp",
-  "src": "products/course-screen-reset/cover.png",
-  "page": 0,
-  "w": 360,
-  "kind": "webp",
-  "key": "0109770890"
- },
- {
-  "out": "course-screen-reset-cover-0109770890-480.webp",
-  "src": "products/course-screen-reset/cover.png",
-  "page": 0,
-  "w": 480,
-  "kind": "webp",
-  "key": "0109770890"
- },
- {
-  "out": "course-screen-reset-cover-0109770890-600.webp",
-  "src": "products/course-screen-reset/cover.png",
-  "page": 0,
-  "w": 600,
-  "kind": "webp",
-  "key": "0109770890"
- },
- {
-  "out": "course-screen-reset-cover-0109770890-720.webp",
-  "src": "products/course-screen-reset/cover.png",
-  "page": 0,
-  "w": 720,
-  "kind": "webp",
-  "key": "0109770890"
- },
- {
-  "out": "course-screen-reset-cover-0109770890-900.webp",
-  "src": "products/course-screen-reset/cover.png",
-  "page": 0,
-  "w": 900,
-  "kind": "webp",
-  "key": "0109770890"
- },
- {
-  "out": "course-screen-reset-mockup-0ddf0e0973-1100.webp",
-  "src": "products/course-screen-reset/mockup.png",
-  "page": 0,
-  "w": 1100,
-  "kind": "webp",
-  "key": "0ddf0e0973"
- },
- {
-  "out": "course-screen-reset-mockup-0ddf0e0973-160.webp",
-  "src": "products/course-screen-reset/mockup.png",
-  "page": 0,
-  "w": 160,
-  "kind": "webp",
-  "key": "0ddf0e0973"
- },
- {
-  "out": "course-screen-reset-mockup-0ddf0e0973-1600.webp",
-  "src": "products/course-screen-reset/mockup.png",
-  "page": 0,
-  "w": 1600,
-  "kind": "webp",
-  "key": "0ddf0e0973"
- },
- {
-  "out": "course-screen-reset-mockup-0ddf0e0973-640.webp",
-  "src": "products/course-screen-reset/mockup.png",
-  "page": 0,
-  "w": 640,
-  "kind": "webp",
-  "key": "0ddf0e0973"
- },
- {
-  "out": "course-screen-reset-mockup-0ddf0e0973-og.jpg",
-  "src": "products/course-screen-reset/mockup.png",
-  "page": 0,
-  "w": 1200,
-  "kind": "og",
-  "key": "0ddf0e0973"
- },
- {
-  "out": "course-screen-reset-p03-20ba006187-1300.webp",
-  "src": "products/course-screen-reset/preview/p03.png",
-  "page": 0,
-  "w": 1300,
-  "kind": "webp",
-  "key": "20ba006187"
- },
- {
-  "out": "course-screen-reset-p03-20ba006187-160.webp",
-  "src": "products/course-screen-reset/preview/p03.png",
-  "page": 0,
-  "w": 160,
-  "kind": "webp",
-  "key": "20ba006187"
- },
- {
-  "out": "course-screen-reset-p03-20ba006187-480.webp",
-  "src": "products/course-screen-reset/preview/p03.png",
-  "page": 0,
-  "w": 480,
-  "kind": "webp",
-  "key": "20ba006187"
- },
- {
-  "out": "course-screen-reset-p03-20ba006187-900.webp",
-  "src": "products/course-screen-reset/preview/p03.png",
-  "page": 0,
-  "w": 900,
-  "kind": "webp",
-  "key": "20ba006187"
- },
- {
-  "out": "course-screen-reset-p07-a3578bed36-1300.webp",
-  "src": "products/course-screen-reset/preview/p07.png",
-  "page": 0,
-  "w": 1300,
-  "kind": "webp",
-  "key": "a3578bed36"
- },
- {
-  "out": "course-screen-reset-p07-a3578bed36-160.webp",
-  "src": "products/course-screen-reset/preview/p07.png",
-  "page": 0,
-  "w": 160,
-  "kind": "webp",
-  "key": "a3578bed36"
- },
- {
-  "out": "course-screen-reset-p07-a3578bed36-480.webp",
-  "src": "products/course-screen-reset/preview/p07.png",
-  "page": 0,
-  "w": 480,
-  "kind": "webp",
-  "key": "a3578bed36"
- },
- {
-  "out": "course-screen-reset-p07-a3578bed36-900.webp",
-  "src": "products/course-screen-reset/preview/p07.png",
-  "page": 0,
-  "w": 900,
-  "kind": "webp",
-  "key": "a3578bed36"
- },
- {
-  "out": "course-screen-reset-p12-460c7e86d6-1300.webp",
-  "src": "products/course-screen-reset/preview/p12.png",
-  "page": 0,
-  "w": 1300,
-  "kind": "webp",
-  "key": "460c7e86d6"
- },
- {
-  "out": "course-screen-reset-p12-460c7e86d6-160.webp",
-  "src": "products/course-screen-reset/preview/p12.png",
-  "page": 0,
-  "w": 160,
-  "kind": "webp",
-  "key": "460c7e86d6"
- },
- {
-  "out": "course-screen-reset-p12-460c7e86d6-480.webp",
-  "src": "products/course-screen-reset/preview/p12.png",
-  "page": 0,
-  "w": 480,
-  "kind": "webp",
-  "key": "460c7e86d6"
- },
- {
-  "out": "course-screen-reset-p12-460c7e86d6-900.webp",
-  "src": "products/course-screen-reset/preview/p12.png",
-  "page": 0,
-  "w": 900,
-  "kind": "webp",
-  "key": "460c7e86d6"
- },
- {
   "out": "course-screen-reset-starter-p01-357cb74013-360.webp",
   "src": "products/course-screen-reset/funnel/starter/preview/p01.png",
   "page": 0,
@@ -966,6 +766,158 @@
   "w": 800,
   "kind": "webp",
   "key": "9fc5966b20"
+ },
+ {
+  "out": "gift-reveal-coupons-cover-2a89681717-1300.webp",
+  "src": "products/gift-reveal-coupons/cover.png",
+  "page": 0,
+  "w": 1300,
+  "kind": "webp",
+  "key": "2a89681717"
+ },
+ {
+  "out": "gift-reveal-coupons-cover-2a89681717-160.webp",
+  "src": "products/gift-reveal-coupons/cover.png",
+  "page": 0,
+  "w": 160,
+  "kind": "webp",
+  "key": "2a89681717"
+ },
+ {
+  "out": "gift-reveal-coupons-cover-2a89681717-360.webp",
+  "src": "products/gift-reveal-coupons/cover.png",
+  "page": 0,
+  "w": 360,
+  "kind": "webp",
+  "key": "2a89681717"
+ },
+ {
+  "out": "gift-reveal-coupons-cover-2a89681717-480.webp",
+  "src": "products/gift-reveal-coupons/cover.png",
+  "page": 0,
+  "w": 480,
+  "kind": "webp",
+  "key": "2a89681717"
+ },
+ {
+  "out": "gift-reveal-coupons-cover-2a89681717-720.webp",
+  "src": "products/gift-reveal-coupons/cover.png",
+  "page": 0,
+  "w": 720,
+  "kind": "webp",
+  "key": "2a89681717"
+ },
+ {
+  "out": "gift-reveal-coupons-cover-2a89681717-900.webp",
+  "src": "products/gift-reveal-coupons/cover.png",
+  "page": 0,
+  "w": 900,
+  "kind": "webp",
+  "key": "2a89681717"
+ },
+ {
+  "out": "gift-reveal-coupons-mockup-688466d71d-1100.webp",
+  "src": "products/gift-reveal-coupons/mockup.png",
+  "page": 0,
+  "w": 1100,
+  "kind": "webp",
+  "key": "688466d71d"
+ },
+ {
+  "out": "gift-reveal-coupons-mockup-688466d71d-160.webp",
+  "src": "products/gift-reveal-coupons/mockup.png",
+  "page": 0,
+  "w": 160,
+  "kind": "webp",
+  "key": "688466d71d"
+ },
+ {
+  "out": "gift-reveal-coupons-mockup-688466d71d-1600.webp",
+  "src": "products/gift-reveal-coupons/mockup.png",
+  "page": 0,
+  "w": 1600,
+  "kind": "webp",
+  "key": "688466d71d"
+ },
+ {
+  "out": "gift-reveal-coupons-mockup-688466d71d-640.webp",
+  "src": "products/gift-reveal-coupons/mockup.png",
+  "page": 0,
+  "w": 640,
+  "kind": "webp",
+  "key": "688466d71d"
+ },
+ {
+  "out": "gift-reveal-coupons-mockup-688466d71d-og.jpg",
+  "src": "products/gift-reveal-coupons/mockup.png",
+  "page": 0,
+  "w": 1200,
+  "kind": "og",
+  "key": "688466d71d"
+ },
+ {
+  "out": "gift-reveal-coupons-p02-445a9f82bd-1300.webp",
+  "src": "products/gift-reveal-coupons/preview/p02.png",
+  "page": 0,
+  "w": 1300,
+  "kind": "webp",
+  "key": "445a9f82bd"
+ },
+ {
+  "out": "gift-reveal-coupons-p02-445a9f82bd-160.webp",
+  "src": "products/gift-reveal-coupons/preview/p02.png",
+  "page": 0,
+  "w": 160,
+  "kind": "webp",
+  "key": "445a9f82bd"
+ },
+ {
+  "out": "gift-reveal-coupons-p02-445a9f82bd-480.webp",
+  "src": "products/gift-reveal-coupons/preview/p02.png",
+  "page": 0,
+  "w": 480,
+  "kind": "webp",
+  "key": "445a9f82bd"
+ },
+ {
+  "out": "gift-reveal-coupons-p02-445a9f82bd-900.webp",
+  "src": "products/gift-reveal-coupons/preview/p02.png",
+  "page": 0,
+  "w": 900,
+  "kind": "webp",
+  "key": "445a9f82bd"
+ },
+ {
+  "out": "gift-reveal-coupons-p03-fce193a312-1300.webp",
+  "src": "products/gift-reveal-coupons/preview/p03.png",
+  "page": 0,
+  "w": 1300,
+  "kind": "webp",
+  "key": "fce193a312"
+ },
+ {
+  "out": "gift-reveal-coupons-p03-fce193a312-160.webp",
+  "src": "products/gift-reveal-coupons/preview/p03.png",
+  "page": 0,
+  "w": 160,
+  "kind": "webp",
+  "key": "fce193a312"
+ },
+ {
+  "out": "gift-reveal-coupons-p03-fce193a312-480.webp",
+  "src": "products/gift-reveal-coupons/preview/p03.png",
+  "page": 0,
+  "w": 480,
+  "kind": "webp",
+  "key": "fce193a312"
+ },
+ {
+  "out": "gift-reveal-coupons-p03-fce193a312-900.webp",
+  "src": "products/gift-reveal-coupons/preview/p03.png",
+  "page": 0,
+  "w": 900,
+  "kind": "webp",
+  "key": "fce193a312"
  },
  {
   "out": "guide-100-plays-cover-47c7c1b593-1300.webp",
@@ -2790,5 +2742,157 @@
   "w": 900,
   "kind": "webp",
   "key": "a4b6dbe2b4-p8"
+ },
+ {
+  "out": "winter-countdown-cover-3382b17927-1300.webp",
+  "src": "products/winter-countdown/cover.png",
+  "page": 0,
+  "w": 1300,
+  "kind": "webp",
+  "key": "3382b17927"
+ },
+ {
+  "out": "winter-countdown-cover-3382b17927-160.webp",
+  "src": "products/winter-countdown/cover.png",
+  "page": 0,
+  "w": 160,
+  "kind": "webp",
+  "key": "3382b17927"
+ },
+ {
+  "out": "winter-countdown-cover-3382b17927-360.webp",
+  "src": "products/winter-countdown/cover.png",
+  "page": 0,
+  "w": 360,
+  "kind": "webp",
+  "key": "3382b17927"
+ },
+ {
+  "out": "winter-countdown-cover-3382b17927-480.webp",
+  "src": "products/winter-countdown/cover.png",
+  "page": 0,
+  "w": 480,
+  "kind": "webp",
+  "key": "3382b17927"
+ },
+ {
+  "out": "winter-countdown-cover-3382b17927-720.webp",
+  "src": "products/winter-countdown/cover.png",
+  "page": 0,
+  "w": 720,
+  "kind": "webp",
+  "key": "3382b17927"
+ },
+ {
+  "out": "winter-countdown-cover-3382b17927-900.webp",
+  "src": "products/winter-countdown/cover.png",
+  "page": 0,
+  "w": 900,
+  "kind": "webp",
+  "key": "3382b17927"
+ },
+ {
+  "out": "winter-countdown-mockup-611c084858-1100.webp",
+  "src": "products/winter-countdown/mockup.png",
+  "page": 0,
+  "w": 1100,
+  "kind": "webp",
+  "key": "611c084858"
+ },
+ {
+  "out": "winter-countdown-mockup-611c084858-160.webp",
+  "src": "products/winter-countdown/mockup.png",
+  "page": 0,
+  "w": 160,
+  "kind": "webp",
+  "key": "611c084858"
+ },
+ {
+  "out": "winter-countdown-mockup-611c084858-1600.webp",
+  "src": "products/winter-countdown/mockup.png",
+  "page": 0,
+  "w": 1600,
+  "kind": "webp",
+  "key": "611c084858"
+ },
+ {
+  "out": "winter-countdown-mockup-611c084858-640.webp",
+  "src": "products/winter-countdown/mockup.png",
+  "page": 0,
+  "w": 640,
+  "kind": "webp",
+  "key": "611c084858"
+ },
+ {
+  "out": "winter-countdown-mockup-611c084858-og.jpg",
+  "src": "products/winter-countdown/mockup.png",
+  "page": 0,
+  "w": 1200,
+  "kind": "og",
+  "key": "611c084858"
+ },
+ {
+  "out": "winter-countdown-p02-0e7eef77a0-1300.webp",
+  "src": "products/winter-countdown/preview/p02.png",
+  "page": 0,
+  "w": 1300,
+  "kind": "webp",
+  "key": "0e7eef77a0"
+ },
+ {
+  "out": "winter-countdown-p02-0e7eef77a0-160.webp",
+  "src": "products/winter-countdown/preview/p02.png",
+  "page": 0,
+  "w": 160,
+  "kind": "webp",
+  "key": "0e7eef77a0"
+ },
+ {
+  "out": "winter-countdown-p02-0e7eef77a0-480.webp",
+  "src": "products/winter-countdown/preview/p02.png",
+  "page": 0,
+  "w": 480,
+  "kind": "webp",
+  "key": "0e7eef77a0"
+ },
+ {
+  "out": "winter-countdown-p02-0e7eef77a0-900.webp",
+  "src": "products/winter-countdown/preview/p02.png",
+  "page": 0,
+  "w": 900,
+  "kind": "webp",
+  "key": "0e7eef77a0"
+ },
+ {
+  "out": "winter-countdown-p03-dce81b223b-1300.webp",
+  "src": "products/winter-countdown/preview/p03.png",
+  "page": 0,
+  "w": 1300,
+  "kind": "webp",
+  "key": "dce81b223b"
+ },
+ {
+  "out": "winter-countdown-p03-dce81b223b-160.webp",
+  "src": "products/winter-countdown/preview/p03.png",
+  "page": 0,
+  "w": 160,
+  "kind": "webp",
+  "key": "dce81b223b"
+ },
+ {
+  "out": "winter-countdown-p03-dce81b223b-480.webp",
+  "src": "products/winter-countdown/preview/p03.png",
+  "page": 0,
+  "w": 480,
+  "kind": "webp",
+  "key": "dce81b223b"
+ },
+ {
+  "out": "winter-countdown-p03-dce81b223b-900.webp",
+  "src": "products/winter-countdown/preview/p03.png",
+  "page": 0,
+  "w": 900,
+  "kind": "webp",
+  "key": "dce81b223b"
  }
 ]

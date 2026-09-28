@@ -163,8 +163,9 @@ function load(opts = {}) {
     const bands = config.bands.filter(band => parts.some(x => x.p.bands.includes(band.key))).map(x => x.key);
     const lo = Math.min(...parts.map(x => x.p.range ? x.p.range[0] : 99));
     const hi = Math.max(...parts.map(x => x.p.range ? x.p.range[1] : 0));
+    const freeParts = (b.free || []).map(([slug, fmt]) => { const p = bySlug[slug]; const fm = p && p.formats.find(x => x.id === fmt); return p && fm ? { p, f: fm } : null; }).filter(Boolean);
     bundles.push({
-      ...b, parts, separately, bands, ageText: `${lo}–${hi}`,
+      ...b, parts, freeParts, separately, bands, ageText: `${lo}–${hi}`,
       buyUrl: k ? links[k] : '', available: !!k,
       // "bought separately" is shown only while every part really sells at that price (COMPLIANCE-GATE 18)
       showSeparately: parts.every(x => x.f.buyUrl) && !!k,

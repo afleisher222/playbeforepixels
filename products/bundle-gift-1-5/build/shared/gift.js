@@ -56,7 +56,7 @@ function revealCards(ctx, o) {
       <div class="rv-in">
         <div class="rv-head"><p class="kicker d-plum">${esc(o.kicker || 'Surprise!')}</p><h3>${esc(o.title || 'Inside is…')}</h3></div>
         <div class="rv-body">
-          ${o.items ? `<ul class="rv-list">${o.items.map(([a, t]) => `<li>${icon(a, ctx, 34)}<span>${esc(t)}</span></li>`).join('')}</ul>`
+          ${o.items ? `<ul class="rv-list${o.items.length > 5 ? ' two' : ''}">${o.items.map(([a, t]) => `<li>${icon(a, ctx, o.items.length > 5 ? 28 : 34)}<span>${esc(t)}</span></li>`).join('')}</ul>`
             : `<div class="rv-blank">${[1, 2, 3, 4].map(i => `<div class="field" ${field(`${o.prefix}${k}_item${i}`, { size: 13 })}></div>`).join('')}</div>`}
           <div class="rv-side">${icon(style, ctx, 96)}</div>
         </div>
@@ -104,6 +104,8 @@ function css(ctx) {
 .rv-body{flex:1;display:flex;gap:18px;align-items:center;min-height:0}
 .rv-list{list-style:none;margin:0;padding:0;flex:1;display:flex;flex-direction:column;gap:6px}
 .rv-list li{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:800}
+.rv-list.two{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}
+.rv-list.two li{font-size:12.5px;line-height:1.25}
 .rv-blank{flex:1;display:flex;flex-direction:column;gap:12px}
 .rv-blank .field{height:28px;background:transparent}
 .rv-side{flex:none}

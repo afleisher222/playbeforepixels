@@ -104,6 +104,7 @@ def main(jobs_path):
             "subject": j.get("subject", ""), "keywords": j.get("keywords", ""),
             "creator": "Play Before Pixels", "producer": "Play Before Pixels",
         })
+        os.makedirs(os.path.dirname(j["out"]), exist_ok=True)
         tmp = j["out"] + ".tmp"
         doc.save(tmp, garbage=3, deflate=True)
         doc.close()

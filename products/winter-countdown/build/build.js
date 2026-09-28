@@ -171,7 +171,7 @@ function guide2(ctx) {
     <h3 class="sub">If today isn’t the day</h3>
     <div class="ways">
       <div class="way li-white" style="--c:${C.sun}"><h4>Not interested?</h4><p>Try the 2-minute version, or let your child pick a different day. Watching you play counts too.</p></div>
-      <div class="way li-white" style="--c:${C.grass}"><h4>Busy week?</h4><p>Play two short days at the weekend. There’s nothing to catch up on and no streak to keep.</p></div>
+      <div class="way li-white" style="--c:${C.grass}"><h4>Busy week?</h4><p>Play two short days at the weekend. There’s no streak to keep and nothing to make up.</p></div>
       <div class="way li-white" style="--c:${C.tomato}"><h4>Two children?</h4><p>Give each a job: one holds, one pours; one hides, one seeks. Take turns being the leader.</p></div>
     </div>
   </div>`;

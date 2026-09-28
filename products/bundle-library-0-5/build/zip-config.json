@@ -1,0 +1,193 @@
+{
+ "slug": "bundle-library-0-5",
+ "title": "Birth-to-5 Printable Library",
+ "version": "Version 1.0 · September 2026",
+ "price_usd": 45,
+ "own": {
+  "title": "Library Pages",
+  "folder": "Library-Pages",
+  "zip_name": "Library-Pages",
+  "store_start": "products/bundle-library-0-5/START-HERE.pdf",
+  "etsy_start": "products/bundle-library-0-5/etsy-upload/1-START-HERE.pdf",
+  "store": {
+   "color_letter": "products/bundle-library-0-5/bundle-library-0-5.pdf",
+   "color_a4": "products/bundle-library-0-5/bundle-library-0-5-A4.pdf",
+   "lowink_letter": "products/bundle-library-0-5/bundle-library-0-5-low-ink.pdf",
+   "lowink_a4": "products/bundle-library-0-5/bundle-library-0-5-low-ink-A4.pdf"
+  },
+  "etsy": {
+   "color_letter": "products/bundle-library-0-5/etsy-upload/gift-pages/Gift-Pages-Color-US-Letter.pdf",
+   "color_a4": "products/bundle-library-0-5/etsy-upload/gift-pages/Gift-Pages-Color-A4.pdf",
+   "lowink_letter": "products/bundle-library-0-5/etsy-upload/gift-pages/Gift-Pages-Low-Ink-US-Letter.pdf",
+   "lowink_a4": "products/bundle-library-0-5/etsy-upload/gift-pages/Gift-Pages-Low-Ink-A4.pdf"
+  }
+ },
+ "parts": [
+  {
+   "slug": "toddler-busy-book",
+   "listing_slug_dir": "toddler-busy-book",
+   "title": "Toddler Busy Book",
+   "folder": "Toddler-Busy-Book",
+   "zip_name": "Toddler-Busy-Book",
+   "wanted_edition": "full (ages 1-5)",
+   "edition_now": "full (ages 1-5)",
+   "store": {
+    "start": "products/toddler-busy-book/toddler-busy-book-START-HERE.pdf",
+    "color_letter": "products/toddler-busy-book/toddler-busy-book.pdf",
+    "color_a4": "products/toddler-busy-book/toddler-busy-book-A4.pdf",
+    "lowink_letter": "products/toddler-busy-book/toddler-busy-book-low-ink-Letter.pdf",
+    "lowink_a4": "products/toddler-busy-book/toddler-busy-book-low-ink-A4.pdf"
+   },
+   "etsy": {
+    "start": "products/toddler-busy-book/etsy-upload/1-START-HERE.pdf",
+    "color_letter": "products/toddler-busy-book/etsy-upload/2-Toddler-Busy-Book-Color-US-Letter.pdf",
+    "color_a4": "products/toddler-busy-book/etsy-upload/3-Toddler-Busy-Book-Color-A4.pdf",
+    "lowink_letter": "products/toddler-busy-book/etsy-upload/4-Toddler-Busy-Book-Low-ink-US-Letter.pdf",
+    "lowink_a4": "products/toddler-busy-book/etsy-upload/5-Toddler-Busy-Book-Low-ink-A4.pdf"
+   }
+  },
+  {
+   "slug": "play-first-family-kit",
+   "listing_slug_dir": "play-first-family-kit",
+   "title": "Play-First Family Kit",
+   "folder": "Play-First-Family-Kit",
+   "zip_name": "Play-First-Family-Kit",
+   "wanted_edition": "ages 2-5 pages (G0 edition, GROWTH-ENGINE §8)",
+   "edition_now": "full kit, ages 2-12 (contains the ages 2-5 pages); swap in the 2-5 edition when it is built",
+   "store": {
+    "start": "products/play-first-family-kit/START-HERE.pdf",
+    "color_letter": "products/play-first-family-kit/play-first-family-kit.pdf",
+    "color_a4": "products/play-first-family-kit/play-first-family-kit-a4.pdf",
+    "lowink_letter": "products/play-first-family-kit/play-first-family-kit-low-ink.pdf",
+    "lowink_a4": "products/play-first-family-kit/play-first-family-kit-low-ink-a4.pdf"
+   },
+   "etsy": {
+    "start": "products/play-first-family-kit/etsy-upload/1-START-HERE.pdf",
+    "color_letter": "products/play-first-family-kit/etsy-upload/2-Color-US-Letter.pdf",
+    "color_a4": "products/play-first-family-kit/etsy-upload/3-Color-A4.pdf",
+    "lowink_letter": "products/play-first-family-kit/etsy-upload/4-Low-Ink-US-Letter.pdf",
+    "lowink_a4": "products/play-first-family-kit/etsy-upload/5-Low-Ink-A4.pdf"
+   }
+  },
+  {
+   "slug": "bored-play-cards",
+   "listing_slug_dir": "bored-play-cards",
+   "title": "I'm Bored Play Cards",
+   "folder": "Bored-Play-Cards",
+   "zip_name": "Bored-Play-Cards",
+   "wanted_edition": "ages 1-3 and 3-5 bands (G0 edition, GROWTH-ENGINE §8)",
+   "edition_now": "full deck, ages 1-12 (contains the 1-3 and 3-5 bands); swap in the 1-5 edition when it is built",
+   "store": {
+    "start": "products/bored-play-cards/START-HERE.pdf",
+    "color_letter": "products/bored-play-cards/bored-play-cards.pdf",
+    "color_a4": "products/bored-play-cards/bored-play-cards-A4.pdf",
+    "lowink_letter": "products/bored-play-cards/bored-play-cards-low-ink.pdf",
+    "lowink_a4": "products/bored-play-cards/bored-play-cards-low-ink-A4.pdf"
+   },
+   "etsy": {
+    "start": "products/bored-play-cards/etsy-upload/1-START-HERE.pdf",
+    "color_letter": "products/bored-play-cards/etsy-upload/2-Color-US-Letter.pdf",
+    "color_a4": "products/bored-play-cards/etsy-upload/3-Color-A4.pdf",
+    "lowink_letter": "products/bored-play-cards/etsy-upload/4-Low-Ink-US-Letter.pdf",
+    "lowink_a4": "products/bored-play-cards/etsy-upload/5-Low-Ink-A4.pdf"
+   }
+  },
+  {
+   "slug": "play-talk-cards",
+   "listing_slug_dir": "play-talk-cards",
+   "title": "Play and Talk Cards",
+   "folder": "Play-and-Talk-Cards",
+   "zip_name": "Play-and-Talk-Cards",
+   "wanted_edition": "full (52 cards, ages 0-5)",
+   "edition_now": "full (52 cards, ages 0-5)",
+   "store": {
+    "start": "products/play-talk-cards/START-HERE.pdf",
+    "color_letter": "products/play-talk-cards/play-talk-cards.pdf",
+    "color_a4": "products/play-talk-cards/play-talk-cards-A4.pdf",
+    "lowink_letter": "products/play-talk-cards/play-talk-cards-low-ink.pdf",
+    "lowink_a4": "products/play-talk-cards/play-talk-cards-low-ink-A4.pdf"
+   },
+   "etsy": {
+    "start": "products/play-talk-cards/etsy-upload/1-START-HERE.pdf",
+    "color_letter": "products/play-talk-cards/etsy-upload/2-Color-US-Letter.pdf",
+    "color_a4": "products/play-talk-cards/etsy-upload/3-Color-A4.pdf",
+    "lowink_letter": "products/play-talk-cards/etsy-upload/4-Low-Ink-US-Letter.pdf",
+    "lowink_a4": "products/play-talk-cards/etsy-upload/5-Low-Ink-A4.pdf"
+   }
+  },
+  {
+   "slug": "visual-routine-cards",
+   "listing_slug_dir": "visual-routine-cards",
+   "title": "Visual Routine Cards",
+   "folder": "Visual-Routine-Cards",
+   "zip_name": "Visual-Routine-Cards",
+   "wanted_edition": "0-5 edition (G0 edition, GROWTH-ENGINE §8; founder decision D1)",
+   "edition_now": "complete set, ages 0-12 (contains the 0-5 cards); swap in the 0-5 edition when it is built",
+   "store": {
+    "start": "products/visual-routine-cards/START-HERE.pdf",
+    "color_letter": "products/visual-routine-cards/visual-routine-cards.pdf",
+    "color_a4": "products/visual-routine-cards/visual-routine-cards-a4.pdf",
+    "lowink_letter": "products/visual-routine-cards/visual-routine-cards-low-ink.pdf",
+    "lowink_a4": "products/visual-routine-cards/visual-routine-cards-low-ink-a4.pdf"
+   },
+   "etsy": {
+    "start": "products/visual-routine-cards/etsy-upload/complete/1-START-HERE.pdf",
+    "color_letter": "products/visual-routine-cards/etsy-upload/complete/2-Color-US-Letter.pdf",
+    "color_a4": "products/visual-routine-cards/etsy-upload/complete/3-Color-A4.pdf",
+    "lowink_letter": "products/visual-routine-cards/etsy-upload/complete/4-Low-Ink-US-Letter.pdf",
+    "lowink_a4": "products/visual-routine-cards/etsy-upload/complete/5-Low-Ink-A4.pdf"
+   }
+  },
+  {
+   "slug": "guide-100-plays",
+   "listing_slug_dir": "guide-100-plays",
+   "price_field": "price_pdf_usd",
+   "title": "100 Screen-Free Plays",
+   "folder": "100-Screen-Free-Plays",
+   "zip_name": "100-Screen-Free-Plays",
+   "wanted_edition": "printable PDF edition (not the paperback)",
+   "edition_now": "printable PDF edition",
+   "store": {
+    "start": "products/guide-100-plays/START-HERE.pdf",
+    "color_letter": "products/guide-100-plays/guide-100-plays-letter.pdf",
+    "color_a4": "products/guide-100-plays/guide-100-plays-a4.pdf",
+    "lowink_letter": "products/guide-100-plays/guide-100-plays-low-ink-letter.pdf",
+    "lowink_a4": "products/guide-100-plays/guide-100-plays-low-ink-a4.pdf"
+   },
+   "etsy": {
+    "start": "products/guide-100-plays/etsy-upload/1-START-HERE.pdf",
+    "color_letter": "products/guide-100-plays/etsy-upload/2-Color-US-Letter.pdf",
+    "color_a4": "products/guide-100-plays/etsy-upload/3-Color-A4.pdf",
+    "lowink_letter": "products/guide-100-plays/etsy-upload/4-Low-Ink-US-Letter.pdf",
+    "lowink_a4": "products/guide-100-plays/etsy-upload/5-Low-Ink-A4.pdf"
+   }
+  },
+  {
+   "slug": "gift-reveal-coupons",
+   "listing_slug_dir": "gift-reveal-coupons",
+   "title": "Play Coupons",
+   "folder": "Play-Coupons",
+   "zip_name": "Play-Coupons",
+   "counts_in_separately": false,
+   "wanted_edition": "full (free add-on)",
+   "edition_now": "full (free add-on)",
+   "store": {
+    "start": "products/gift-reveal-coupons/START-HERE.pdf",
+    "color_letter": "products/gift-reveal-coupons/gift-reveal-coupons.pdf",
+    "color_a4": "products/gift-reveal-coupons/gift-reveal-coupons-A4.pdf",
+    "lowink_letter": "products/gift-reveal-coupons/gift-reveal-coupons-low-ink.pdf",
+    "lowink_a4": "products/gift-reveal-coupons/gift-reveal-coupons-low-ink-A4.pdf"
+   },
+   "etsy": {
+    "color_letter": "products/gift-reveal-coupons/etsy-upload/2-Color-US-Letter.pdf",
+    "color_a4": "products/gift-reveal-coupons/etsy-upload/3-Color-A4.pdf",
+    "lowink_letter": "products/gift-reveal-coupons/etsy-upload/4-Low-Ink-US-Letter.pdf",
+    "lowink_a4": "products/gift-reveal-coupons/etsy-upload/5-Low-Ink-A4.pdf"
+   }
+  }
+ ],
+ "not_counted": [
+  "Play Coupons and gift-reveal cards: a free add-on, never counted in the 'separately' sum."
+ ],
+ "etsy_fix": "The Library is too large for Etsy's 5 files of 20 MB even as ZIPs, and the G0 age editions will not close the gap. Sell it on the own checkout only (no 5-file limit there, UNVERIFIED), and on Etsy offer the $29 Gift Bundle instead. Revisit only if the parts' PDFs are made much smaller."
+}

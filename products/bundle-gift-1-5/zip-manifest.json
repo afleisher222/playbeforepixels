@@ -1,0 +1,505 @@
+{
+ "bundle": "bundle-gift-1-5",
+ "title": "Ages 1-5 Instant Gift Bundle",
+ "version": "Version 1.0 · September 2026",
+ "generated": "by products/bundle-gift-1-5/build/shared/manifest.py",
+ "how_the_packet_step_uses_this": "Build each ZIP from 'members' (src -> zip_path) at upload time; never store copies in the repo. Store: upload slot 1 as a plain PDF and slots 2+ as ZIPs. Etsy: upload the 5 slots in order, only when every Etsy slot says fits_etsy_20mb true.",
+ "price_usd": 29,
+ "separately": {
+  "sum_usd": 36.49,
+  "saving_pct": 20.5,
+  "parts_counted": [
+   "Toddler Busy Book: $11.99 (toddler-busy-book)",
+   "Play-First Family Kit: $11.00 (play-first-family-kit)",
+   "I'm Bored Play Cards: $6.50 (bored-play-cards)",
+   "Play and Talk Cards: $7.00 (play-talk-cards)"
+  ],
+  "not_counted": [
+   "Play Coupons and gift-reveal cards: a free add-on inside the bundle, never counted in the 'separately' sum (its own $5.00 price is not added)."
+  ],
+  "display_rule": "Show only as '$29, or $36.49 bought separately' and only on a channel where every counted part is live at that price right now (16 CFR 233.1, UNVERIFIED reading; business/GROWTH-ENGINE.md §5b). Never a crossed-out, 'was' or compare-at price. Until every part is live on that channel, list the contents with no savings figure. Re-run this script whenever a part's price changes."
+ },
+ "parts": [
+  {
+   "slug": "toddler-busy-book",
+   "title": "Toddler Busy Book",
+   "wanted_edition": "full (ages 1-5)",
+   "edition_now": "full (ages 1-5)",
+   "listing_price_usd": 11.99
+  },
+  {
+   "slug": "play-first-family-kit",
+   "title": "Play-First Family Kit",
+   "wanted_edition": "ages 2-5 pages (G0 edition, GROWTH-ENGINE §8)",
+   "edition_now": "full kit, ages 2-12 (contains the ages 2-5 pages); swap in the 2-5 edition when it is built",
+   "listing_price_usd": 11.0
+  },
+  {
+   "slug": "bored-play-cards",
+   "title": "I'm Bored Play Cards",
+   "wanted_edition": "ages 1-3 and 3-5 bands (G0 edition, GROWTH-ENGINE §8)",
+   "edition_now": "full deck, ages 1-12 (contains the 1-3 and 3-5 bands); swap in the 1-5 edition when it is built",
+   "listing_price_usd": 6.5
+  },
+  {
+   "slug": "play-talk-cards",
+   "title": "Play and Talk Cards",
+   "wanted_edition": "full (52 cards, ages 0-5)",
+   "edition_now": "full (52 cards, ages 0-5)",
+   "listing_price_usd": 7
+  },
+  {
+   "slug": "gift-reveal-coupons",
+   "title": "Play Coupons",
+   "wanted_edition": "full (free add-on)",
+   "edition_now": "full (free add-on)",
+   "listing_price_usd": 5.0
+  }
+ ],
+ "store_download": [
+  {
+   "slot": 1,
+   "file": "products/bundle-gift-1-5/START-HERE.pdf",
+   "kind": "pdf",
+   "mb": 0.06
+  },
+  {
+   "slot": 2,
+   "zip": "Gift-Pages.zip",
+   "members": [
+    {
+     "src": "products/bundle-gift-1-5/bundle-gift-1-5.pdf",
+     "zip_path": "Gift-Pages/bundle-gift-1-5.pdf",
+     "mb": 0.39
+    },
+    {
+     "src": "products/bundle-gift-1-5/bundle-gift-1-5-A4.pdf",
+     "zip_path": "Gift-Pages/bundle-gift-1-5-A4.pdf",
+     "mb": 0.36
+    },
+    {
+     "src": "products/bundle-gift-1-5/bundle-gift-1-5-low-ink.pdf",
+     "zip_path": "Gift-Pages/bundle-gift-1-5-low-ink.pdf",
+     "mb": 0.54
+    },
+    {
+     "src": "products/bundle-gift-1-5/bundle-gift-1-5-low-ink-A4.pdf",
+     "zip_path": "Gift-Pages/bundle-gift-1-5-low-ink-A4.pdf",
+     "mb": 0.51
+    }
+   ],
+   "mb_estimate": 1.8
+  },
+  {
+   "slot": 3,
+   "zip": "Toddler-Busy-Book.zip",
+   "members": [
+    {
+     "src": "products/toddler-busy-book/toddler-busy-book-START-HERE.pdf",
+     "zip_path": "Toddler-Busy-Book/toddler-busy-book-START-HERE.pdf",
+     "mb": 0.63
+    },
+    {
+     "src": "products/toddler-busy-book/toddler-busy-book.pdf",
+     "zip_path": "Toddler-Busy-Book/toddler-busy-book.pdf",
+     "mb": 6.14
+    },
+    {
+     "src": "products/toddler-busy-book/toddler-busy-book-A4.pdf",
+     "zip_path": "Toddler-Busy-Book/toddler-busy-book-A4.pdf",
+     "mb": 6.13
+    },
+    {
+     "src": "products/toddler-busy-book/toddler-busy-book-low-ink-Letter.pdf",
+     "zip_path": "Toddler-Busy-Book/toddler-busy-book-low-ink-Letter.pdf",
+     "mb": 8.3
+    },
+    {
+     "src": "products/toddler-busy-book/toddler-busy-book-low-ink-A4.pdf",
+     "zip_path": "Toddler-Busy-Book/toddler-busy-book-low-ink-A4.pdf",
+     "mb": 8.28
+    }
+   ],
+   "mb_estimate": 29.48
+  },
+  {
+   "slot": 4,
+   "zip": "Play-First-Family-Kit.zip",
+   "members": [
+    {
+     "src": "products/play-first-family-kit/START-HERE.pdf",
+     "zip_path": "Play-First-Family-Kit/START-HERE.pdf",
+     "mb": 0.06
+    },
+    {
+     "src": "products/play-first-family-kit/play-first-family-kit.pdf",
+     "zip_path": "Play-First-Family-Kit/play-first-family-kit.pdf",
+     "mb": 5.13
+    },
+    {
+     "src": "products/play-first-family-kit/play-first-family-kit-a4.pdf",
+     "zip_path": "Play-First-Family-Kit/play-first-family-kit-a4.pdf",
+     "mb": 5.18
+    },
+    {
+     "src": "products/play-first-family-kit/play-first-family-kit-low-ink.pdf",
+     "zip_path": "Play-First-Family-Kit/play-first-family-kit-low-ink.pdf",
+     "mb": 3.99
+    },
+    {
+     "src": "products/play-first-family-kit/play-first-family-kit-low-ink-a4.pdf",
+     "zip_path": "Play-First-Family-Kit/play-first-family-kit-low-ink-a4.pdf",
+     "mb": 4.02
+    }
+   ],
+   "mb_estimate": 18.38
+  },
+  {
+   "slot": 5,
+   "zip": "Bored-Play-Cards.zip",
+   "members": [
+    {
+     "src": "products/bored-play-cards/START-HERE.pdf",
+     "zip_path": "Bored-Play-Cards/START-HERE.pdf",
+     "mb": 0.21
+    },
+    {
+     "src": "products/bored-play-cards/bored-play-cards.pdf",
+     "zip_path": "Bored-Play-Cards/bored-play-cards.pdf",
+     "mb": 8.46
+    },
+    {
+     "src": "products/bored-play-cards/bored-play-cards-A4.pdf",
+     "zip_path": "Bored-Play-Cards/bored-play-cards-A4.pdf",
+     "mb": 8.49
+    },
+    {
+     "src": "products/bored-play-cards/bored-play-cards-low-ink.pdf",
+     "zip_path": "Bored-Play-Cards/bored-play-cards-low-ink.pdf",
+     "mb": 8.77
+    },
+    {
+     "src": "products/bored-play-cards/bored-play-cards-low-ink-A4.pdf",
+     "zip_path": "Bored-Play-Cards/bored-play-cards-low-ink-A4.pdf",
+     "mb": 8.78
+    }
+   ],
+   "mb_estimate": 34.71
+  },
+  {
+   "slot": 6,
+   "zip": "Play-and-Talk-Cards.zip",
+   "members": [
+    {
+     "src": "products/play-talk-cards/START-HERE.pdf",
+     "zip_path": "Play-and-Talk-Cards/START-HERE.pdf",
+     "mb": 0.04
+    },
+    {
+     "src": "products/play-talk-cards/play-talk-cards.pdf",
+     "zip_path": "Play-and-Talk-Cards/play-talk-cards.pdf",
+     "mb": 1.4
+    },
+    {
+     "src": "products/play-talk-cards/play-talk-cards-A4.pdf",
+     "zip_path": "Play-and-Talk-Cards/play-talk-cards-A4.pdf",
+     "mb": 1.41
+    },
+    {
+     "src": "products/play-talk-cards/play-talk-cards-low-ink.pdf",
+     "zip_path": "Play-and-Talk-Cards/play-talk-cards-low-ink.pdf",
+     "mb": 1.47
+    },
+    {
+     "src": "products/play-talk-cards/play-talk-cards-low-ink-A4.pdf",
+     "zip_path": "Play-and-Talk-Cards/play-talk-cards-low-ink-A4.pdf",
+     "mb": 1.47
+    }
+   ],
+   "mb_estimate": 5.79
+  },
+  {
+   "slot": 7,
+   "zip": "Play-Coupons.zip",
+   "members": [
+    {
+     "src": "products/gift-reveal-coupons/START-HERE.pdf",
+     "zip_path": "Play-Coupons/START-HERE.pdf",
+     "mb": 0.06
+    },
+    {
+     "src": "products/gift-reveal-coupons/gift-reveal-coupons.pdf",
+     "zip_path": "Play-Coupons/gift-reveal-coupons.pdf",
+     "mb": 0.83
+    },
+    {
+     "src": "products/gift-reveal-coupons/gift-reveal-coupons-A4.pdf",
+     "zip_path": "Play-Coupons/gift-reveal-coupons-A4.pdf",
+     "mb": 0.8
+    },
+    {
+     "src": "products/gift-reveal-coupons/gift-reveal-coupons-low-ink.pdf",
+     "zip_path": "Play-Coupons/gift-reveal-coupons-low-ink.pdf",
+     "mb": 1.07
+    },
+    {
+     "src": "products/gift-reveal-coupons/gift-reveal-coupons-low-ink-A4.pdf",
+     "zip_path": "Play-Coupons/gift-reveal-coupons-low-ink-A4.pdf",
+     "mb": 1.04
+    }
+   ],
+   "mb_estimate": 3.8
+  }
+ ],
+ "etsy_download": [
+  {
+   "slot": 1,
+   "file": "products/bundle-gift-1-5/etsy-upload/1-START-HERE.pdf",
+   "upload_as": "1-START-HERE.pdf",
+   "kind": "pdf",
+   "mb": 0.06
+  },
+  {
+   "slot": 2,
+   "zip": "2-Color-US-Letter.zip",
+   "label": "Color, US Letter",
+   "members": [
+    {
+     "src": "products/bundle-gift-1-5/etsy-upload/gift-pages/Gift-Pages-Color-US-Letter.pdf",
+     "zip_path": "Gift Pages - Color, US Letter.pdf",
+     "mb": 0.38
+    },
+    {
+     "src": "products/toddler-busy-book/etsy-upload/2-Toddler-Busy-Book-Color-US-Letter.pdf",
+     "zip_path": "Toddler Busy Book - Color, US Letter.pdf",
+     "mb": 6.11
+    },
+    {
+     "src": "products/toddler-busy-book/etsy-upload/1-START-HERE.pdf",
+     "zip_path": "Toddler Busy Book - START HERE.pdf",
+     "mb": 0.62
+    },
+    {
+     "src": "products/play-first-family-kit/etsy-upload/2-Color-US-Letter.pdf",
+     "zip_path": "Play-First Family Kit - Color, US Letter.pdf",
+     "mb": 5.12
+    },
+    {
+     "src": "products/play-first-family-kit/etsy-upload/1-START-HERE.pdf",
+     "zip_path": "Play-First Family Kit - START HERE.pdf",
+     "mb": 0.12
+    },
+    {
+     "src": "products/bored-play-cards/etsy-upload/2-Color-US-Letter.pdf",
+     "zip_path": "I'm Bored Play Cards - Color, US Letter.pdf",
+     "mb": 8.44
+    },
+    {
+     "src": "products/bored-play-cards/etsy-upload/1-START-HERE.pdf",
+     "zip_path": "I'm Bored Play Cards - START HERE.pdf",
+     "mb": 0.19
+    },
+    {
+     "src": "products/play-talk-cards/etsy-upload/2-Color-US-Letter.pdf",
+     "zip_path": "Play and Talk Cards - Color, US Letter.pdf",
+     "mb": 1.4
+    },
+    {
+     "src": "products/play-talk-cards/etsy-upload/1-START-HERE.pdf",
+     "zip_path": "Play and Talk Cards - START HERE.pdf",
+     "mb": 0.03
+    },
+    {
+     "src": "products/gift-reveal-coupons/etsy-upload/2-Color-US-Letter.pdf",
+     "zip_path": "Play Coupons - Color, US Letter.pdf",
+     "mb": 0.83
+    }
+   ],
+   "mb_members": 23.24,
+   "mb_zipped": 18.74,
+   "fits_etsy_20mb": true
+  },
+  {
+   "slot": 3,
+   "zip": "3-Color-A4.zip",
+   "label": "Color, A4",
+   "members": [
+    {
+     "src": "products/bundle-gift-1-5/etsy-upload/gift-pages/Gift-Pages-Color-A4.pdf",
+     "zip_path": "Gift Pages - Color, A4.pdf",
+     "mb": 0.35
+    },
+    {
+     "src": "products/toddler-busy-book/etsy-upload/3-Toddler-Busy-Book-Color-A4.pdf",
+     "zip_path": "Toddler Busy Book - Color, A4.pdf",
+     "mb": 6.1
+    },
+    {
+     "src": "products/toddler-busy-book/etsy-upload/1-START-HERE.pdf",
+     "zip_path": "Toddler Busy Book - START HERE.pdf",
+     "mb": 0.62
+    },
+    {
+     "src": "products/play-first-family-kit/etsy-upload/3-Color-A4.pdf",
+     "zip_path": "Play-First Family Kit - Color, A4.pdf",
+     "mb": 5.17
+    },
+    {
+     "src": "products/play-first-family-kit/etsy-upload/1-START-HERE.pdf",
+     "zip_path": "Play-First Family Kit - START HERE.pdf",
+     "mb": 0.12
+    },
+    {
+     "src": "products/bored-play-cards/etsy-upload/3-Color-A4.pdf",
+     "zip_path": "I'm Bored Play Cards - Color, A4.pdf",
+     "mb": 8.47
+    },
+    {
+     "src": "products/bored-play-cards/etsy-upload/1-START-HERE.pdf",
+     "zip_path": "I'm Bored Play Cards - START HERE.pdf",
+     "mb": 0.19
+    },
+    {
+     "src": "products/play-talk-cards/etsy-upload/3-Color-A4.pdf",
+     "zip_path": "Play and Talk Cards - Color, A4.pdf",
+     "mb": 1.4
+    },
+    {
+     "src": "products/play-talk-cards/etsy-upload/1-START-HERE.pdf",
+     "zip_path": "Play and Talk Cards - START HERE.pdf",
+     "mb": 0.03
+    },
+    {
+     "src": "products/gift-reveal-coupons/etsy-upload/3-Color-A4.pdf",
+     "zip_path": "Play Coupons - Color, A4.pdf",
+     "mb": 0.8
+    }
+   ],
+   "mb_members": 23.25,
+   "mb_zipped": 18.7,
+   "fits_etsy_20mb": true
+  },
+  {
+   "slot": 4,
+   "zip": "4-Low-Ink-US-Letter.zip",
+   "label": "Low-ink, US Letter",
+   "members": [
+    {
+     "src": "products/bundle-gift-1-5/etsy-upload/gift-pages/Gift-Pages-Low-Ink-US-Letter.pdf",
+     "zip_path": "Gift Pages - Low-ink, US Letter.pdf",
+     "mb": 0.53
+    },
+    {
+     "src": "products/toddler-busy-book/etsy-upload/4-Toddler-Busy-Book-Low-ink-US-Letter.pdf",
+     "zip_path": "Toddler Busy Book - Low-ink, US Letter.pdf",
+     "mb": 8.27
+    },
+    {
+     "src": "products/toddler-busy-book/etsy-upload/1-START-HERE.pdf",
+     "zip_path": "Toddler Busy Book - START HERE.pdf",
+     "mb": 0.62
+    },
+    {
+     "src": "products/play-first-family-kit/etsy-upload/4-Low-Ink-US-Letter.pdf",
+     "zip_path": "Play-First Family Kit - Low-ink, US Letter.pdf",
+     "mb": 4.0
+    },
+    {
+     "src": "products/play-first-family-kit/etsy-upload/1-START-HERE.pdf",
+     "zip_path": "Play-First Family Kit - START HERE.pdf",
+     "mb": 0.12
+    },
+    {
+     "src": "products/bored-play-cards/etsy-upload/4-Low-Ink-US-Letter.pdf",
+     "zip_path": "I'm Bored Play Cards - Low-ink, US Letter.pdf",
+     "mb": 8.75
+    },
+    {
+     "src": "products/bored-play-cards/etsy-upload/1-START-HERE.pdf",
+     "zip_path": "I'm Bored Play Cards - START HERE.pdf",
+     "mb": 0.19
+    },
+    {
+     "src": "products/play-talk-cards/etsy-upload/4-Low-Ink-US-Letter.pdf",
+     "zip_path": "Play and Talk Cards - Low-ink, US Letter.pdf",
+     "mb": 1.47
+    },
+    {
+     "src": "products/play-talk-cards/etsy-upload/1-START-HERE.pdf",
+     "zip_path": "Play and Talk Cards - START HERE.pdf",
+     "mb": 0.03
+    },
+    {
+     "src": "products/gift-reveal-coupons/etsy-upload/4-Low-Ink-US-Letter.pdf",
+     "zip_path": "Play Coupons - Low-ink, US Letter.pdf",
+     "mb": 1.06
+    }
+   ],
+   "mb_members": 25.04,
+   "mb_zipped": 22.26,
+   "fits_etsy_20mb": false
+  },
+  {
+   "slot": 5,
+   "zip": "5-Low-Ink-A4.zip",
+   "label": "Low-ink, A4",
+   "members": [
+    {
+     "src": "products/bundle-gift-1-5/etsy-upload/gift-pages/Gift-Pages-Low-Ink-A4.pdf",
+     "zip_path": "Gift Pages - Low-ink, A4.pdf",
+     "mb": 0.51
+    },
+    {
+     "src": "products/toddler-busy-book/etsy-upload/5-Toddler-Busy-Book-Low-ink-A4.pdf",
+     "zip_path": "Toddler Busy Book - Low-ink, A4.pdf",
+     "mb": 8.25
+    },
+    {
+     "src": "products/toddler-busy-book/etsy-upload/1-START-HERE.pdf",
+     "zip_path": "Toddler Busy Book - START HERE.pdf",
+     "mb": 0.62
+    },
+    {
+     "src": "products/play-first-family-kit/etsy-upload/5-Low-Ink-A4.pdf",
+     "zip_path": "Play-First Family Kit - Low-ink, A4.pdf",
+     "mb": 4.03
+    },
+    {
+     "src": "products/play-first-family-kit/etsy-upload/1-START-HERE.pdf",
+     "zip_path": "Play-First Family Kit - START HERE.pdf",
+     "mb": 0.12
+    },
+    {
+     "src": "products/bored-play-cards/etsy-upload/5-Low-Ink-A4.pdf",
+     "zip_path": "I'm Bored Play Cards - Low-ink, A4.pdf",
+     "mb": 8.76
+    },
+    {
+     "src": "products/bored-play-cards/etsy-upload/1-START-HERE.pdf",
+     "zip_path": "I'm Bored Play Cards - START HERE.pdf",
+     "mb": 0.19
+    },
+    {
+     "src": "products/play-talk-cards/etsy-upload/5-Low-Ink-A4.pdf",
+     "zip_path": "Play and Talk Cards - Low-ink, A4.pdf",
+     "mb": 1.47
+    },
+    {
+     "src": "products/play-talk-cards/etsy-upload/1-START-HERE.pdf",
+     "zip_path": "Play and Talk Cards - START HERE.pdf",
+     "mb": 0.03
+    },
+    {
+     "src": "products/gift-reveal-coupons/etsy-upload/5-Low-Ink-A4.pdf",
+     "zip_path": "Play Coupons - Low-ink, A4.pdf",
+     "mb": 1.03
+    }
+   ],
+   "mb_members": 25.01,
+   "mb_zipped": 22.19,
+   "fits_etsy_20mb": false
+  }
+ ],
+ "etsy_status": "BLOCKED on Etsy: 4-Low-Ink-US-Letter.zip zips to 22.26 MB (limit 20 MB); 5-Low-Ink-A4.zip zips to 22.19 MB (limit 20 MB). Fix, in order: (1) build the G0 age editions of the Family Kit (2-5 pages) and the bored cards (1-3 + 3-5 bands) and point this config at them; the Color Letter ZIP then drops to about 12-15 MB (estimate, A). (2) If still over, the upload-packet step moves each part's START HERE into slot 1 as one merged PDF. Until then, sell this bundle on the own checkout only; the Etsy listing waits.",
+ "missing_or_wrong": []
+}

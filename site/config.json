@@ -719,7 +719,7 @@
       ],
       "url": "/30-days/",
       "ground": "sky-t",
-      "mock": "workbook",
+      "mock": "workbook-css",
       "formats": [
         {
           "id": "program",
@@ -734,24 +734,8 @@
       ],
       "gallery": [
         {
-          "src": "mockup.png",
-          "alt": "The 30 Days of Back-and-Forth workbook beside a phone showing a lesson email."
-        },
-        {
-          "src": "cover.png",
-          "altFrom": "alt_text"
-        },
-        {
-          "src": "preview/p03.png",
-          "alt": "Your month at a glance: four weeks, one short lesson and one play each day."
-        },
-        {
-          "src": "preview/p12.png",
-          "alt": "Day 1: start with one ordinary day, with a play, plain words for a tricky moment and a tracker."
-        },
-        {
-          "src": "preview/p07.png",
-          "alt": "Our screen spot: same time, same place, same ending, every day."
+          "css": "workbook",
+          "alt": "The 30 Days of Back-and-Forth workbook: thirty day circles, the first few filled in."
         }
       ],
       "g0": {
@@ -773,7 +757,8 @@
           "A starting age, easier and harder versions and a 2-minute version on every play",
           "A written program at your own pace: no videos, calls or coaching"
         ]
-      }
+      },
+      "imagesNote": "The built workbook, cover and mockup describe the ages 1–12 edition, so the site shows a typographic workbook until the 0–5 edition's pictures exist."
     },
     "first-phone-plan": {
       "show": false,
@@ -782,6 +767,92 @@
     "merch-core-logo-tee": {
       "show": false,
       "why": "The tee's print files and mockups still carry the retired 'Return' P mark; the product lane must rebuild them with the Maker's Seal before it can be shown (brand/BRAND.md 'Logo')."
+    },
+    "winter-countdown": {
+      "name": "24 Days of Play: Winter Countdown",
+      "line": "One small winter play a day, for ages 2–5",
+      "types": [
+        "printables"
+      ],
+      "ground": "sky-t",
+      "mock": "sheet",
+      "formats": [
+        {
+          "id": "pdf",
+          "label": "Printable PDF",
+          "detail": "24 plays · color and low-ink · US Letter and A4",
+          "price": 6.5,
+          "buy": [
+            "buy_winter_countdown"
+          ],
+          "ship": "Instant download. Nothing ships."
+        }
+      ],
+      "gallery": [
+        {
+          "src": "mockup.png",
+          "alt": "The printed Winter Countdown: a cover with a grown-up, a child and a snowman, a page of play cards and a countdown board."
+        },
+        {
+          "src": "cover.png",
+          "altFrom": "alt_text"
+        },
+        {
+          "src": "preview/p02.png",
+          "alt": "How the countdown works: print, pick a way to use it and a start day, and a peek at the first week of plays."
+        },
+        {
+          "src": "preview/p03.png",
+          "alt": "Talk while you play: three talk moves, how to read a play card, and what to do if today isn’t the day."
+        }
+      ]
+    },
+    "gift-reveal-coupons": {
+      "name": "Play Coupons and Gift-Reveal Cards",
+      "line": "16 small plays to give as a gift, for ages 1–5",
+      "types": [
+        "printables"
+      ],
+      "ground": "tomato-t",
+      "mock": "sheet",
+      "formats": [
+        {
+          "id": "pdf",
+          "label": "Printable PDF",
+          "detail": "16 coupons, a fold card and reveal cards · color and low-ink · US Letter and A4",
+          "price": 5,
+          "buy": [
+            "buy_gift_reveal_coupons"
+          ],
+          "ship": "Instant download. Nothing ships."
+        }
+      ],
+      "gallery": [
+        {
+          "src": "mockup.png",
+          "alt": "The printed Play Coupons: a pink cover, a sheet of coupons and a fold card."
+        },
+        {
+          "src": "cover.png",
+          "altFrom": "alt_text"
+        },
+        {
+          "src": "preview/p02.png",
+          "alt": "How to give a gift of play: pick, wrap and reveal, with talk tips and a few house rules."
+        },
+        {
+          "src": "preview/p03.png",
+          "alt": "The fold card: “A gift of play. Time together, one coupon at a time,” with lines for who it is for and from."
+        }
+      ]
+    },
+    "bundle-gift-1-5": {
+      "show": false,
+      "why": "Shown as a set on /shop/bundles/ (config bundles: instant-gift-bundle)."
+    },
+    "bundle-library-0-5": {
+      "show": false,
+      "why": "Shown as a set on /shop/bundles/ (config bundles: birth-to-5-library)."
     }
   },
   "bundles": [
@@ -813,7 +884,14 @@
       "buy": [
         "buy_instant_gift_bundle"
       ],
-      "source": "ops/QUEUE.md LAUNCH FIRST; business/GROWTH-ENGINE.md §5a"
+      "source": "ops/QUEUE.md LAUNCH FIRST; business/GROWTH-ENGINE.md §5a",
+      "free": [
+        [
+          "gift-reveal-coupons",
+          "pdf"
+        ]
+      ],
+      "listing": "bundle-gift-1-5"
     },
     {
       "id": "birth-to-5-library",
@@ -851,7 +929,14 @@
       "buy": [
         "buy_birth_to_5_library"
       ],
-      "source": "ops/QUEUE.md Week 2 (parts $55.98). The six parts are inferred: the six launch printables sum to exactly $55.98."
+      "source": "ops/QUEUE.md Week 2 (parts $55.98). The six parts are inferred: the six launch printables sum to exactly $55.98.",
+      "free": [
+        [
+          "gift-reveal-coupons",
+          "pdf"
+        ]
+      ],
+      "listing": "bundle-library-0-5"
     },
     {
       "id": "bundle-30-days",
@@ -909,7 +994,7 @@
       "bored-play-cards",
       "play-talk-cards",
       "play-first-family-kit",
-      "visual-routine-cards-starter"
+      "winter-countdown"
     ]
   },
   "free": {
