@@ -16,7 +16,7 @@
     "not-yet-known": "Result not yet confirmed",
     "neutral-background": "Background (not a test of the screens-autism question)"
   },
-  "note": "All entries are secondary-only as of this date. Nothing may be published until each source is read (abstract at minimum).",
+  "note": "All entries are secondary-only as of this date. Nothing may be published until each source is read (abstract at minimum). Clinical-research editor pass on 2026-09-28: sources still could not be opened (all publisher, PubMed, PMC, DOI and search endpoints blocked); edits in that pass corrected framing, internal consistency and stance, not numbers from the originals.",
   "rows": [
     {
       "slug": "montes-2016",
@@ -77,7 +77,7 @@
       "topic": "genetics-and-methods",
       "topic_label": "Genetics and methods",
       "country": "USA",
-      "one_line": "Shared genetic risk explained much of the screen-time link with attention problems in 9-to-11-year-olds.",
+      "one_line": "Shared genetic risk explained part of the screen-time link with attention and internalizing problems in 9-to-11-year-olds (proportions to be checked).",
       "citation_status": "VERIFY",
       "what_we_read": "secondary-only",
       "url": "/research/studies/zhang-2023-shared-genetic-risk/"
@@ -397,7 +397,7 @@
       "topic": "screens-and-autism",
       "topic_label": "Screens and autism measures",
       "country": "Georgia",
-      "one_line": "High-risk screens were about 3 times as common with first exposure before 6 months; daily duration explained about 2% of score variation.",
+      "one_line": "High-risk screens were nearly 3 times as common with first exposure before 6 months; daily duration explained about 2% of score variation.",
       "citation_status": "VERIFY",
       "what_we_read": "secondary-only",
       "url": "/research/studies/georgia-2025-bmc-pediatrics/"
@@ -653,7 +653,7 @@
       "topic": "screens-and-autism",
       "topic_label": "Screens and autism measures",
       "country": "Japan",
-      "one_line": "In boys but not girls, longer screen time at age 1 was associated with autism by age 3; the pattern was not a clean dose-response.",
+      "one_line": "In boys but not girls, longer screen time at age 1 was associated with autism by age 3; the odds rose up to about 2 hours a day, and the two highest groups had similar, overlapping estimates.",
       "citation_status": "allowed-list",
       "what_we_read": "secondary-only",
       "url": "/research/studies/kushima-2022/"
@@ -685,7 +685,7 @@
       "topic": "screens-and-autism",
       "topic_label": "Screens and autism measures",
       "country": "USA",
-      "one_line": "Two autistic children's developmental paths changed as screen time was cut and replaced with social time, then raised, then cut again.",
+      "one_line": "The authors report that two autistic children's developmental paths changed as screen time was cut and replaced with social time, then raised, then cut again. No controls.",
       "citation_status": "VERIFY",
       "what_we_read": "secondary-only",
       "url": "/research/studies/heffler-2022-case-report/"
@@ -801,22 +801,6 @@
       "citation_status": "VERIFY",
       "what_we_read": "secondary-only",
       "url": "/research/studies/al-moussawi-2024-lebanon/"
-    },
-    {
-      "slug": "heffler-2024-sensory",
-      "title": "Heffler et al. (2024): early TV and video exposure and sensory processing",
-      "short_title": "Heffler 2024: early TV and sensory processing",
-      "year": "2024",
-      "type": "Cohort (US National Children's Study)",
-      "stance": "supports-association",
-      "stance_label": "Reports or argues for a link",
-      "topic": "related-outcome",
-      "topic_label": "Related outcome (not autism)",
-      "country": "USA",
-      "one_line": "Early TV/video exposure was associated with atypical sensory-processing scores at about 33 months; not an autism study.",
-      "citation_status": "VERIFY",
-      "what_we_read": "secondary-only",
-      "url": "/research/studies/heffler-2024-sensory/"
     },
     {
       "slug": "yuan-jadd-systematic-review",
@@ -1133,7 +1117,7 @@
       "topic": "development-and-language",
       "topic_label": "Development and language (not autism)",
       "country": "Australia",
-      "one_line": "At 36 months, more screen time was associated with 1,139 fewer adult words, 843 fewer child vocalizations and 194 fewer conversational turns a day.",
+      "one_line": "At 36 months, screen time was associated with less talk at home; scaled to the average daily screen time, about 1,139 fewer adult words, 843 fewer child vocalizations and 194 fewer conversational turns a day.",
       "citation_status": "allowed-list",
       "what_we_read": "secondary-only",
       "url": "/research/studies/brushe-2024/"
@@ -1153,6 +1137,22 @@
       "citation_status": "VERIFY",
       "what_we_read": "secondary-only",
       "url": "/research/studies/mallawaarachchi-2024-contexts/"
+    },
+    {
+      "slug": "heffler-2024-sensory",
+      "title": "Heffler et al. (2024): early TV and video exposure and sensory processing",
+      "short_title": "Heffler 2024: early TV and sensory processing",
+      "year": "2024",
+      "type": "Cohort (US National Children's Study)",
+      "stance": "neutral-background",
+      "stance_label": "Background (not a test of the screens-autism question)",
+      "topic": "related-outcome",
+      "topic_label": "Related outcome (not autism)",
+      "country": "USA",
+      "one_line": "Early TV/video exposure was associated with atypical sensory-processing scores at about 33 months; not an autism study.",
+      "citation_status": "VERIFY",
+      "what_we_read": "secondary-only",
+      "url": "/research/studies/heffler-2024-sensory/"
     },
     {
       "slug": "pliska-2025-parents",

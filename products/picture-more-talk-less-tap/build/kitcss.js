@@ -10,7 +10,8 @@ body { -webkit-print-color-adjust: exact; print-color-adjust: exact; font-family
 .page:last-child { break-after: auto; page-break-after: auto }
 .body { flex: 1; min-height: 0; display: flex; flex-direction: column }
 .foot { height: 22px; flex: none; margin-top: 8px; border-top: 1.5px solid ${C.wash}; padding-top: 5px; display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 8.5px; color: rgba(29,41,64,.72) }
-.foot .fl { display: flex; align-items: center; gap: 8px; font-weight: 700 } .foot .fmid { text-align: center; flex: 1 } .foot .fr { font-weight: 800; font-size: 10px; min-width: 16px; text-align: right }
+.foot .fl { display: flex; align-items: center; gap: 8px; font-weight: 700 } .foot .fmid { text-align: center; flex: 1 }
+.foot .fr { display: flex; align-items: center; gap: 8px; min-width: 16px; text-align: right } .foot .fr em { font-style: normal; font-weight: 600; font-size: 8px; white-space: nowrap } .foot .fr b { font-weight: 800; font-size: 10px }
 .logo { display: block; width: auto }
 p { margin: 0 0 .5em } ul, ol { margin: 0; padding-left: 1.2em }
 .h { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 34px; line-height: 1.04; letter-spacing: -.6px; margin: 0 0 10px }
@@ -37,7 +38,7 @@ h4 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 15px; marg
 .covtitle { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 104px; line-height: .95; letter-spacing: -1.5px; margin: 34px 0 6px; color: ${C.ink} }
 .covsub { font-size: 22px; font-weight: 800; margin: 0 0 16px }
 .covwords { display: flex; gap: 10px; margin: 0 }
-.covwords span { display: inline-flex; align-items: center; gap: 4px; padding: 6px 18px 6px 10px; border-radius: 14px; font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 25px }
+.covwords span { display: inline-flex; align-items: center; gap: 4px; padding: 5px 15px 5px 8px; border-radius: 14px; font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 22px }
 .covart { flex: 1; min-height: 0; margin: 12px 0 4px }
 .covmeta { display: flex; gap: 10px; margin-bottom: 12px }
 .covinside { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px }
@@ -93,7 +94,7 @@ h4 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 15px; marg
 .grid { display: grid; justify-content: center; align-content: start }
 .grid.blocks { grid-template-columns: repeat(2, 3.4in); grid-auto-rows: 2.25in }
 .grid.prompts { grid-template-columns: repeat(3, 2.25in); grid-auto-rows: 3in }
-.grid.names { grid-template-columns: repeat(3, 2.25in); grid-auto-rows: .95in }
+.grid.names { grid-template-columns: repeat(2, 3in); grid-auto-rows: .85in }
 .cell { outline: 1.2px dashed #9AA6BA; outline-offset: -.6px; padding: .085in; position: relative }
 .bcard { height: 100%; border-radius: 18px; display: flex; align-items: center; gap: 10px; padding: 0 18px 0 14px }
 .bglyph { flex: none; width: 104px; display: flex; justify-content: center }
@@ -176,7 +177,7 @@ h4 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 15px; marg
 .cert { flex: 1; border: 10px solid ${C.sun}; border-radius: 24px; padding: 10px; display: flex }
 .certin { flex: 1; border: 3px dashed ${C.tomato}; border-radius: 14px; padding: 26px 30px 16px; text-align: center; display: flex; flex-direction: column }
 .ckick { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; color: ${C.tomato}; margin: 0 0 12px }
-.ctitle { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 46px; line-height: 1.02; letter-spacing: -1px; margin: 0 0 22px }
+.ctitle { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 46px; line-height: 1.02; letter-spacing: -1px; margin: 0 0 22px; text-wrap: balance }
 .cbig { display: flex; align-items: baseline; justify-content: center; gap: 14px; font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 34px; margin-bottom: 20px }
 .cline { font-size: 17px; font-weight: 700; margin: 0 0 12px }
 .cmsg { font-family: "Fredoka", sans-serif; font-weight: 500; font-size: 18px; line-height: 1.35; max-width: 470px; margin: 8px auto 0 }
@@ -195,7 +196,7 @@ h4 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 15px; marg
 .lic th:first-child { background: transparent } .lic th:nth-child(2) { border-radius: 12px 0 0 0 } .lic th:last-child { border-radius: 0 12px 0 0; background: ${C.tGrass} }
 .lic th span { font-family: "Bricolage Grotesque", sans-serif; font-size: 20px; color: ${C.tomato} }
 .lic td { padding: 8px 10px; border-bottom: 1px solid #DCE3EE; vertical-align: top } .lic td:first-child { font-weight: 800; width: 22% }
-.isbn { border: 2px dashed ${C.ink}; border-radius: 8px; padding: 10px 12px; margin-top: 10px; font-size: 11px; display: flex; flex-direction: column; gap: 2px; width: 2.6in } .isbn span { opacity: .7 }
+.isbn { border: 2px dashed ${C.ink}; border-radius: 8px; padding: 10px 12px; margin-top: 10px; font-size: 11px; display: flex; flex-direction: column; justify-content: center; gap: 4px; width: 2in; height: 1.2in; background: #fff } .isbn span { opacity: .7 }
 
 /* more */
 .moretop { display: flex; justify-content: center; margin: 10px 0 24px }
@@ -215,5 +216,22 @@ h4 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 15px; marg
 .buybox { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0 4px } .buybox div { background: ${C.tSun}; border-radius: 12px; padding: 12px 14px; font-size: 12.5px; line-height: 1.45 }
 .lic { font-size: 13px } .small { font-size: 12px }
 .moreart { margin-top: auto; height: 2.5in }
+/* review fixes: rules 4-8, 14 */
+.keep { font-weight: 800; opacity: 1 }
+.nocut { font-size: 12.5px; line-height: 1.45; background: ${C.wash}; border-radius: 10px; padding: 8px 12px; margin: -4px 0 12px }
+.whybox { margin-top: auto; display: grid; grid-template-columns: 1.45fr 1fr; gap: 14px; margin-bottom: 12px }
+.whybox > div { background: ${C.tSky}; border-radius: 16px; padding: 14px 18px; font-size: 13px; line-height: 1.5 } .whybox p { margin: 0 0 6px }
+.whybox .lines { font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 17px; line-height: 1.4 }
+.whybox + .needbox { margin-top: 0 }
+.nocutbox { margin-top: 18px; background: ${C.tSun}; border-radius: 14px; padding: 14px 18px; font-size: 13.5px; line-height: 1.45 } .nocutbox p { margin: 0 }
+.vquick { font-size: 12.5px; line-height: 1.4; margin: -4px 0 10px; padding-left: 10px; border-left: 3px solid ${C.sun} }
+.vars { gap: 12px } .var { padding: 14px 20px 14px } .var ol { margin-bottom: 8px } .var li { margin-bottom: 3px }
+/* ink-saver edition */
+.ink .pbanner { background: #fff; color: ${C.tomato}; border: 5px solid ${C.tomato} } .ink .pbanner span { color: ${C.ink} }
+.ink .wobin { background: #fff; border: 3px solid ${C.tomato} }
+.ink .track th { background: #fff; color: ${C.ink}; border-bottom: 3px solid ${C.ink} }
+.ink .cert { border-width: 4px }
+.ink .snum { background: #fff; color: ${C.tomato}; border: 3px solid ${C.tomato} }
+.ink .pill { box-shadow: inset 0 0 0 2px ${C.ink} }
 `;
 };

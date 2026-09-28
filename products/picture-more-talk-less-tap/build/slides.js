@@ -4,7 +4,7 @@ const fs = require('fs'); const path = require('path');
 const A = require('../story-bonus/build/art.js');
 const { C, R, Ci, E, P, L, U, G, SYMBOLS, kidAt, tower } = A;
 const W = require('./words.js');
-const { NAME, BLOCK, glyph, topicIcon, LOGO, qrSvg } = require('./kitlib.js');
+const { NAME, VERSION, BLOCK, glyph, topicIcon, LOGO, qrSvg } = require('./kitlib.js');
 const svg = (vb, inner, style = '') => `<svg viewBox="${vb}" style="${style}" xmlns="http://www.w3.org/2000/svg">${inner}</svg>`;
 const slides = [];
 const slide = (html, bg = '#fff', dark = false) => slides.push({ html, bg, dark });
@@ -19,7 +19,7 @@ slide(`<h2>How we build our ${NAME}</h2><div class="legend">${['q', 'j', 'i', 'l
 slide(`<h2>Our ${NAME} rules</h2><div class="rules">
   <div><span style="background:${C.sun}">${svg('-60 -60 120 120', `<path d="${A.starPath(48, 25)}" fill="#fff" stroke="#fff" stroke-width="10" stroke-linejoin="round"/>`, 'width:70px;height:70px')}</span>One voice at a time.<small>Whoever holds the star talks.</small></div>
   <div><span style="background:${C.sky}">${svg('0 0 100 100', `<text x="50" y="68" font-family="Fredoka, sans-serif" font-weight="700" font-size="44" fill="#fff" text-anchor="middle">pass</text>`, 'width:80px;height:80px')}</span>“Pass” is OK.<small>You can listen and try next time.</small></div>
-  <div><span style="background:${C.plum}">${glyph('l', 80)}</span>Every way of talking counts.<small>Words, signs, pointing and pictures.</small></div>
+  <div><span style="background:${C.plum}">${glyph('l', 80)}</span>Every way of talking counts.<small>Words, signs, pointing, pictures and devices.</small></div>
   <div><span style="background:${C.grass}">${svg('0 0 100 100', tower(50, 94, ['q', 'j', 'i'], 0.42), 'width:80px;height:80px')}</span>We build one tower together.<small>Every block helps our class.</small></div></div>`);
 // 4-7 the four moves
 const moveSlide = (t, lines, head) => slide(`<div class="move"><div class="mleft" style="background:${BLOCK[t].col};color:${BLOCK[t].ink}">${glyph(t, 230)}<b>${BLOCK[t].label}</b></div>
@@ -27,7 +27,7 @@ const moveSlide = (t, lines, head) => slide(`<div class="move"><div class="mleft
 moveSlide('q', W.list('ask', 9).slice(0, 3), 'Ask a friend a question');
 moveSlide('j', W.list('comment', 9).slice(0, 3), 'Say something back');
 moveSlide('i', W.list('addone', 9).slice(0, 3), 'Add one more idea');
-moveSlide('l', W.list('listen', 4).slice(0, 3), 'Show you are listening');
+moveSlide('l', W.list('listen', 4).slice(0, 3), 'Listen to a friend');
 // 8-16 topics
 for (const l of W.list('topics', 9)) {
   const [lab, ic] = l.split('|').map(s => s.trim());
@@ -100,7 +100,7 @@ h2 { font-size: 56px; margin-bottom: 26px }
 `;
 const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${NAME} slides (16:9) · Play Before Pixels</title>
 <link rel="stylesheet" href="%BR%fonts/fonts.css"><style>${CSS}</style></head><body>${SYMBOLS()}
-${slides.map((s, i) => `<section class="page" style="background:${s.bg}"><div class="sbody">${s.html}</div><div class="sfoot"><span>${LOGO('lockup-horizontal.svg', 16)}playbeforepixels.com</span><span>© 2026 AlphaPlay LLC · ${NAME} Classroom Game Kit · Licensed for one classroom or one site. Please don’t share or post.</span><span>${i + 1}</span></div></section>`).join('\n')}
+${slides.map((s, i) => `<section class="page" style="background:${s.bg}"><div class="sbody">${s.html}</div><div class="sfoot"><span>${LOGO('lockup-horizontal.svg', 16)}playbeforepixels.com</span><span>© 2026 AlphaPlay LLC · ${NAME} Classroom Game Kit · Licensed for one classroom or one site. Please don’t share or post.</span><span>${VERSION} · ${i + 1}</span></div></section>`).join('\n')}
 </body></html>`;
 fs.writeFileSync(path.resolve(__dirname, '../source-slides.html'), html.split('%BR%').join('../../brand/'));
 fs.writeFileSync(path.join(__dirname, 'slides-count.json'), JSON.stringify({ n: slides.length }));

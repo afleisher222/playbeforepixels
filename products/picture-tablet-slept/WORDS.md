@@ -150,8 +150,8 @@ books about rockets,
 and one about a dog in boots.
 
 ## s10 right
-“Shhh,” whispered Ms. Rosa the librarian.
-“Books like it quiet.”
+“Welcome!” said Ms. Rosa the librarian.
+“Sleepy stories live here.”
 “Just like the tablet!” whispered Ada.
 She picked a book about a growly bear.
 

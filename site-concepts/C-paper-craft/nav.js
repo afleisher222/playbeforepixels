@@ -484,6 +484,15 @@
     Object.keys(map).forEach(function (id) { var s = document.getElementById(id); if (s) io.observe(s); });
   })();
 
+  /* ---------- Share: copy link ---------- */
+  $$('[data-copy-link]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var done = $('[data-copy-done]'); var url = 'https://playbeforepixels.com/research';
+      var ok = function () { if (done) { done.hidden = false; setTimeout(function () { done.hidden = true; }, 2500); } };
+      try { navigator.clipboard.writeText(url).then(ok, ok); } catch (e) { ok(); }
+    });
+  });
+
   /* ---------- Info / help page ---------- */
   if (page === 'info') (function () {
     function openFromHash() {

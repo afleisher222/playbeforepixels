@@ -1,0 +1,1 @@
+{ "name": "play-first-family-kit-build", "private": true, "dependencies": { "qrcode": "^1.5.4" } }

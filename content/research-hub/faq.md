@@ -38,15 +38,15 @@ No. It is not in the World Health Organization's ICD or in the DSM, which are th
 
 No study has shown that they do. Some studies find that more early screen time **goes with** somewhat higher autism-screening scores, or with more autism diagnoses in some groups (for example, in boys but not girls in a large Japanese study: [Kushima 2022](/research/studies/kushima-2022/)). But:
 
-- the largest review found that the link shrank and was no longer statistically significant after correcting for publication bias ([Ophir 2023](/research/studies/ophir-2023-meta-analysis/) [VERIFY]);
+- the largest review we have found reported an overall positive link, but it shrank and was no longer statistically significant after correcting for publication bias ([Ophir 2023](/research/studies/ophir-2023-meta-analysis/) [VERIFY]);
 - children with a higher genetic likelihood of autism already watch more as toddlers, which suggests screen use may be an early sign rather than a cause ([Takahashi N 2023](/research/studies/takahashi-n-2023-genetics/) [VERIFY]);
-- studies designed to get closer to cause found no clear causal signal ([Lin 2025](/research/studies/lin-2025-lsac/) [VERIFY]; [Cai 2025](/research/studies/cai-2025-mendelian-randomization/) [VERIFY]).
+- studies designed to get closer to cause found no clear causal signal, though each has important limits ([Lin 2025](/research/studies/lin-2025-lsac/) [VERIFY]; [Cai 2025](/research/studies/cai-2025-mendelian-randomization/) [VERIFY]).
 
 Researchers have not ruled out that screens play some part for some children. They also have not shown that they do.
 
 ### 4. My child watched a lot of TV as a baby and is now autistic. Did I do this?
 
-No. Autism is not a parent's fault. Researchers and autism organizations have warned that the "virtual autism" idea risks reviving the old, false belief that autism comes from parenting ([autismus Deutschland](/research/studies/autismus-deutschland-statement/) [VERIFY]; [Krijnen 2026](/research/studies/krijnen-2026-autism/) [VERIFY]). Many autistic children are drawn to screens early, and parents of a child who is harder to settle often lean on them more. That is a normal response, not a cause. Your child is the same child you love, and what matters now is understanding how they experience the world and what helps them thrive.
+No. Autism is not a parent's fault. Researchers and autism organizations have warned that the "virtual autism" idea risks reviving the old, false belief that autism comes from parenting ([autismus Deutschland](/research/studies/autismus-deutschland-statement/) [VERIFY]; [Krijnen 2026](/research/studies/krijnen-2026-autism/) [VERIFY]). Some studies suggest that children later identified as autistic may be drawn to screens early, and parents of a child who is harder to settle often lean on them more. That is a normal response. No study has shown that screens cause autism. Your child is the same child you love, and what matters now is understanding how they experience the world and what helps them thrive.
 
 ### 5. Where does the idea come from?
 
@@ -68,13 +68,13 @@ It means the arrow may point the other way. Instead of screens leading to autism
 
 ### 9. What about the stories of children who "got better" when screens were taken away?
 
-Those reports are real experiences, and we understand why they stand out to families. But they can't tell us *why* a child changed. In every published report we found, less screen time came with more adult attention and often professional support, there was no comparison group, and young children change quickly as they grow ([Heffler 2022](/research/studies/heffler-2022-case-report/) [VERIFY]; [Pakistan 2023](/research/studies/apims-2023-pakistan/) [VERIFY]). No randomized trial has tested this ([Ozyazici 2026](/research/studies/ozyazici-2026/) [VERIFY]).
+Those reports are real experiences, and we understand why they stand out to families. But they can't tell us *why* a child changed. In every published report we found, less screen time came with more adult attention and often professional support, there was no comparison group, and young children change quickly as they grow ([Heffler 2022](/research/studies/heffler-2022-case-report/) [VERIFY]; [Pakistan 2023](/research/studies/apims-2023-pakistan/) [VERIFY]). We have not found a randomized trial that tests this ([Ozyazici 2026](/research/studies/ozyazici-2026/) [VERIFY]).
 
 It also helps to know what these reports measured: scores on autism checklists or assessments. A lower score is not the same as a child being happier or better off, and support for an autistic child is about their communication, comfort and well-being, not about making them seem less autistic.
 
 ### 10. What does the research say about screens and talking?
 
-Separate from the autism question, studies find that more early screen time goes with less back-and-forth talk at home and with weaker language on screening questionnaires. In home recordings, more screen time at 36 months went with 1,139 fewer adult words, 843 fewer child vocalizations and 194 fewer conversational turns a day ([Brushe 2024](/research/studies/brushe-2024/)). More screen time at age 1 went with higher odds of communication and problem-solving delays at 2 and 4 ([Takahashi I 2023](/research/studies/takahashi-i-2023/)). These are associations, and they are not autism studies.
+Separate from the autism question, studies find that more early screen time goes with less back-and-forth talk at home and with weaker language on screening questionnaires. In home recordings, screen time at 36 months went with less talk: scaled to the average amount of daily screen time in the study, 1,139 fewer adult words, 843 fewer child vocalizations and 194 fewer conversational turns a day ([Brushe 2024](/research/studies/brushe-2024/)). More screen time at age 1 went with higher odds of communication and problem-solving delays at 2 and 4 ([Takahashi I 2023](/research/studies/takahashi-i-2023/)). These are associations, and they are not autism studies.
 
 ## If you're worried
 
@@ -106,7 +106,7 @@ Start with your family doctor, pediatrician, or child and family health nurse (i
 
 ### 17. How much screen time is OK for a baby or toddler?
 
-The World Health Organization recommends no screen time for babies under 1 and no more than 1 hour a day for 2-to-4-year-olds, with plenty of active play ([WHO 2019](/research/studies/who-2019-under-5-guidelines/)). The American Academy of Pediatrics gave detailed advice for under-5s in 2016 ([AAP 2016](/research/studies/aap-2016-media-and-young-minds/)) and published a new policy statement in January 2026 that reportedly replaces its earlier media guidance ([AAP 2026](/research/studies/aap-2026-digital-ecosystems/) [VERIFY]). These limits are precautionary. They are not a line past which harm is proven.
+The World Health Organization recommends no screen time for babies under 1 and no more than 1 hour a day for 2-to-4-year-olds, with plenty of active play ([WHO 2019](/research/studies/who-2019-under-5-guidelines/)). For 1-year-olds, it is recalled as not recommending sedentary screen time at all [VERIFY against the guideline]. The American Academy of Pediatrics gave detailed advice for under-5s in 2016 ([AAP 2016](/research/studies/aap-2016-media-and-young-minds/)) and published a new policy statement in January 2026 that reportedly replaces its earlier media guidance ([AAP 2026](/research/studies/aap-2026-digital-ecosystems/) [VERIFY]). These limits are precautionary. They are not a line past which harm is proven.
 
 ### 18. Do video calls with grandparents count?
 

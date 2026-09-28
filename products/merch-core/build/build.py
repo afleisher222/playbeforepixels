@@ -85,13 +85,13 @@ def job(rel_svg, w, h):
 
 # ---- 1. Logo tee: horizontal lockup (the default lockup), 10 in of ink across the chest
 TEE_W, TEE_H = 4500, 5400          # 15 x 18 in at 300 dpi
-TEE_LOGO_VB_W = 3170               # viewBox width in px -> ink about 2997 px = 10.0 in
+TEE_LOGO_VB_W = 3330               # viewBox width in px -> ink about 3149 px = 10.5 in
 TEE_TOP = 300                      # 1 in from the top of the print area (ink starts ~1.3 in)
 for tone, f in (('light', 'lockup-horizontal.svg'), ('dark', 'lockup-horizontal-reverse.svg')):
     g, h = place(f, (TEE_W - TEE_LOGO_VB_W) / 2, TEE_TOP, TEE_LOGO_VB_W)
     rel = f'print/tee-logo_{tone}.svg'
     write(rel, svg_doc(TEE_W, TEE_H, g, 'Play Before Pixels logo tee, front print, ' + tone + ' garments',
-                       'Adult unisex tee. 4500 x 5400 px = 15 x 18 in at 300 dpi; ink about 10 in wide, '
+                       'Adult unisex tee. 4500 x 5400 px = 15 x 18 in at 300 dpi; ink about 10.5 in wide, '
                        'centred, 1.3 in below the top of the print area.'))
     job(rel, TEE_W, TEE_H)
 

@@ -86,3 +86,5 @@ Follow up by (date): __________  If I haven't heard by then, I will: ___________
 **Outside the US:** ask your doctor, nurse or health visitor about free local early support.
 
 More plain-language research explanations: playbeforepixels.com/research/
+
+© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.

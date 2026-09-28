@@ -57,7 +57,7 @@ single({
     kidAt('leo', 'cheer', 150, 760, 1.12, 'laugh') +
     kidAt('priya', 'sithand', 330, 790, 1.05, 'talk') +
     kidAt('zara', 'point', 470, 770, 1.0, 'talk', false) +
-    kidAt('sam', 'sit', 745, 792, 0.92, 'smile', true) +
+    kidAt('sam', 'sit', 722, 772, 0.86, 'smile', true) +
     // mini speech bubbles with the block icons
     G('translate(196 370)', P('M0 0 h96 a20 20 0 0 1 20 20 v48 a20 20 0 0 1 -20 20 h-54 l-22 22 l2 -22 h-22 a20 20 0 0 1 -20 -20 v-48 a20 20 0 0 1 20 -20Z', C.paper) + A.TX(48, 66, '?', 58, C.sky)) +
     G('translate(360 460)', P('M0 0 h96 a20 20 0 0 1 20 20 v48 a20 20 0 0 1 -20 20 h-22 l2 22 l-22 -22 h-54 a20 20 0 0 1 -20 -20 v-48 a20 20 0 0 1 20 -20Z', C.paper) + A.TX(48, 62, 'ha!', 40, C.ink)),
@@ -107,9 +107,9 @@ single({
 <p><b>More Talk, Less Tap</b><br>Bonus read-aloud edition, included with the Talk Tower Classroom Game Kit</p>
 <p>Text and illustrations © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. All rights reserved.</p>
 <p>This PDF is licensed with the kit: one classroom (single-classroom license) or one school site (site license). You may print it and project it for the children you teach. Please do not share, post or upload the file. Reading it aloud to your class or family is always welcome. Full terms: playbeforepixels.com/license</p>
-<p>This is a work of fiction. Room 5, Ms. Poppy and the children are imaginary and are not based on any real school, teacher or child. The games and notes at the back are general ideas for grown-ups to enjoy with children; they are not a program, assessment or professional advice. Please supervise children during all activities and use large blocks that are too big to swallow.</p>
+<p>This is a work of fiction. Room 5, Ms. Poppy and the children are imaginary and are not based on any real school, teacher or child. The games and notes at the back are general ideas for grown-ups to enjoy with children; they are not a program, assessment or professional advice. Adults supervise all activities. With children under 3 nearby, use only blocks and objects too big to fit through a toilet-paper tube (about 1.25 in / 3.2 cm).</p>
 <p>Published by AlphaPlay LLC, doing business as Play Before Pixels · playbeforepixels.com<br>Free bonus printable: playbeforepixels.com/bonus/picture-more-talk-less-tap</p>
-<p>First edition 2026</p>`, 'legal'),
+<p>First edition 2026 · Version 1.0 · September 2026</p>`, 'legal'),
     T(60, 660, 330, 'ISBN / barcode<br><span>Not needed for this bonus PDF. Add one only if a print edition is ever published.</span>', 'isbnbox', 'height:auto'),
     T(420, 660, 336, WORDS.one('story-dedication') ? `<div class="dedic">${WORDS.one('story-dedication')}</div>` : founderBox('FOUNDER: your dedication', 'Your own words, in WORDS.md section “story-dedication”.'), ''),
   ],
@@ -382,7 +382,7 @@ single({
 <li><b>Follow their lead.</b> Talk about what the child already cares about.</li>
 <li><b>Count listening too.</b> A follow-up question such as “What happened next?” shows real listening.</li>
 </ul>
-<p>And when the tower falls? That is part of it. Build it again, one turn at a time.</p>`, 'note'),
+<p>Every way of talking counts, from words and signs to pointing and a tap on a talking device, in whatever language your family knows best. And when the tower falls? That is part of it. Build it again, one turn at a time.</p>`, 'note'),
   ],
 });
 

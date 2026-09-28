@@ -13,6 +13,8 @@ sources:
 
 **Status on 2026-09-28:** every source in the hub is **secondary-only**. PubMed, PMC, Crossref, doi.org, publisher sites, CDC, ed.gov, NHS and the AAP were blocked by the network proxy, and the session web-search budget (200/200) was spent. No page may be published until its sources are read (abstract at minimum).
 
+**Clinical-research editor pass, later on 2026-09-28:** still no primary source could be opened. WebFetch was refused for pubmed.ncbi.nlm.nih.gov, pmc.ncbi.nlm.nih.gov, europepmc.org, doi.org, jamanetwork.com, sciencedirect.com, link.springer.com, frontiersin.org, mdpi.com, cureus.com, who.int, autismus.de, sciencemediacentre.org, en.wikipedia.org, scholar.google.com, api.semanticscholar.org, bing.com and duckduckgo.com; curl to the NCBI E-utilities, Crossref, OpenAlex and Europe PMC APIs was refused; web.archive.org could not be fetched; and WebSearch returned no results (budget 200/200 spent). That pass therefore changed framing, internal consistency, stance and causal wording only. It did not confirm any number, and it did not clear any [VERIFY] mark. Its new open questions are listed under "Questions added by the editor pass" below.
+
 **How to clear an item:** open the PubMed record or DOI; read the abstract (full text where available); correct the study page (numbers, authors, DOI/PMID, design, stance); change `what_we_read` in its front matter and the "What we read" section to `abstract` or `full-text`; remove [VERIFY] marks only for claims you confirmed; log the source in ops/RESEARCH-LOG.md; then update that source's row in `_data/library.json` and `library.md` (stance, one-line finding, citation status). If a claim cannot be confirmed, delete it rather than keep it.
 
 ## Priority 1: allowed-citation list (still unread in this review)
@@ -200,6 +202,20 @@ sources:
 - [ ] autismus Deutschland: date and wording of the position statement.
 - [ ] Alper 2020: read the letter before attributing any argument; confirm which PMID is the letter and which the reply.
 - [ ] 2024 genetic-risk letter (doi:10.1001/jamapediatrics.2023.6106): authorship and content.
+
+## Questions added by the editor pass (2026-09-28)
+
+- [ ] Brushe 2024: confirm that the paper reports per-minute estimates (reviewer recall: about 6.6 adult words, 4.9 child vocalizations and 1.1 conversational turns fewer per minute of screen time at 36 months) and that 1,139 / 843 / 194 are those estimates multiplied by the sample's average daily screen time (recalled as about 172 minutes). If the derivation differs, rewrite the Brushe wording in index.md, faq.md, library.md, library.json and the study page.
+- [ ] Takahashi I 2023: reference group (under 1 hour a day, not zero?); whether fine-motor and personal-social associations were reported at age 2 but not 4, and none for gross motor.
+- [ ] Kushima 2022: group sizes, especially the no-screen reference group among boys; number of children with autism by age 3.
+- [ ] Heffler 2020: which M-CHAT version was used and at what age; confirm 1,099 boys (51.1%); confirm the 4.2% and 8.9% figures and their intervals.
+- [ ] Zhang 2023: the share of each association explained by genetic confounding. Hub wording was softened from "much of" to "part of" until confirmed.
+- [ ] Harlé 2019: the age range and the four-hour threshold attributed to the paper.
+- [ ] Zamfir 2018: where Zamfir said the term is not a medical diagnosis, and whether he runs a private practice built around the concept. Do not describe a conflict of interest until confirmed.
+- [ ] WHO 2019: confirm that sedentary screen time is not recommended for 1-year-olds (now stated with [VERIFY] in index.md and faq.md Q17).
+- [ ] Sadeghi 2021 and the 2019 companion paper: was there a randomized or waiting-list control group? index.md and library.md now call it "the closest" to a trial; correct that if a genuine randomized trial of screen reduction exists.
+- [ ] Montes 2016 and Yamamoto 2023 are now cited in index.md as balancing evidence; confirm the Montes totals (3.21 vs. 3.46 h/day, not significant) and the Yamamoto bidirectional finding and its corrected Key Points.
+- [ ] Heffler 2024 (sensory processing) was moved from "Reports or argues for a link" to "Background" because it did not measure autism. Confirm against the abstract.
 
 ## Non-study facts on the hub that need an official source
 

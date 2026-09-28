@@ -56,6 +56,7 @@ const SYMBOLS = `
   ${Ci(-58, 12, 12, C.s1)}${Ci(58, 12, 12, C.s1)}${Ci(0, 6, 60, C.s1)}
   ${P('M-62 10 C-68 -84 66 -86 62 4 C44 -20 10 -14 -14 -38 C-24 -18 -44 -8 -62 10Z', C.h3)}
   ${Ci(-26, -52, 7, C.plum)}
+  <circle cx="-21" cy="14" r="17" fill="none" stroke="${C.ink}" stroke-width="4.5"/><circle cx="21" cy="14" r="17" fill="none" stroke="${C.ink}" stroke-width="4.5"/>${line('M-5 12 Q0 8 5 12', C.ink, 4.5)}${line('M-38 12 L-58 6', C.ink, 4.5)}${line('M38 12 L58 6', C.ink, 4.5)}
 </symbol>
 
 <symbol id="tablet-body" overflow="visible">
@@ -158,7 +159,7 @@ function person(o) {
       const ang = side === -1 ? legs[0] : -legs[1];
       let leg = R(-B.legW / 2, 0, B.legW, len, o.pants, B.legW / 2);
       if (o.boots) leg += R(-B.legW / 2 - 3, len - 52, B.legW + 6, 52, o.shoes, 8);
-      leg += R(-B.shoeW / 2 + side * 7, len - 10, B.shoeW, B.shoeH, o.shoes, B.shoeH / 2);
+      leg += R(-B.shoeW / 2 + side * (o.wrongFeet ? -13 : 7), len - 10, B.shoeW, B.shoeH, o.shoes, B.shoeH / 2);
       g += G(`translate(${side * B.legX} ${B.legTop}) rotate(${ang})`, leg);
     });
   }
@@ -287,7 +288,7 @@ spreads.s1 = () => {
   s += E(380, 728, 300, 50, C.tomato);
   s += plant(690, 610, C.tomato);
   s += dog(140, 724, 0.82, 'dog-happy');
-  s += ada({ x: 410, y: 736, s: 1.08, outfit: 'pj', face: 'face-laugh', legs: [28, -10], armL: { a: 135, b: 25 }, armR: { a: 60, b: -40 } });
+  s += ada({ x: 410, y: 736, s: 1.08, outfit: 'pj', face: 'face-laugh', legs: [28, -10], wrongFeet: true, armL: { a: 135, b: 25 }, armR: { a: 60, b: -40 } });
   s += cabinet(1060, 480, 440, 220, C.sky);
   s += lamp(1122, 480);
   s += tabletOnPillow(1300, 480, 1.05, -5);
@@ -433,7 +434,7 @@ spreads.s10 = () => {
   s += E(560, 760, 220, 40, C.tomato);
   s += ada({ x: 600, y: 750, s: 1.1, face: 'face-laugh', armL: { to: [-16, -140], bend: 1, hold: `<use href="#book" fill="${C.plum}" transform="translate(-30 -72) scale(0.9)"/>` + G('translate(12 -26)', Ci(0, 0, 20, C.s2) + Ci(-15, -16, 8, C.s2) + Ci(15, -16, 8, C.s2) + Ci(-7, -3, 3, C.ink) + Ci(7, -3, 3, C.ink)) }, armR: { to: [18, -130], bend: -1 } });
   s += bookshelf(1490, 236, 200, 470, 3);
-  s += rosa({ x: 1210, y: 872, s: 0.95, face: 'face-smile', armR: { shh: true }, armL: { a: 20, b: 50 } });
+  s += rosa({ x: 1210, y: 872, s: 0.95, face: 'face-laugh', armR: { a: 150, b: 22 }, armL: { a: 20, b: 50 } });
   s += R(940, 560, 490, 26, C.paper, 8) + R(960, 586, 450, 200, C.tomato, 10) + R(990, 620, 390, 12, C.paper, 6, 'fill-opacity=".35"');
   s += bookU(1318, 480, C.sky, 0.72, 0) + R(1300, 540, 110, 22, C.grass, 5) + R(1308, 518, 96, 22, C.sun, 5);
   s += plant(1010, 560, C.sun);
@@ -464,7 +465,9 @@ spreads.s12 = () => {
   s += windowFrame(70, 220, 250, 270, C.sky, U('moon', 190, 350, 0.9) + stars([[260, 280, .35], [120, 440, .3], [270, 440, .3]], C.sun));
   s += cabinet(380, 500, 360, 200, C.sky);
   s += tabletOnPillow(560, 500, 1.0, -4);
-  s += zzz(670, 330, 0.8, C.sun);
+  // dream bubble: the tablet dreams of the sock planet (a detail for young listeners to spot)
+  s += Ci(716, 318, 8, C.paper) + Ci(730, 290, 12, C.paper) + Ci(736, 232, 40, C.paper);
+  s += G('translate(722 206) rotate(-12) scale(0.62)', P('M0 0 H26 V40 Q26 52 40 52 H56 Q66 52 66 64 Q66 76 54 76 H22 Q0 76 0 54Z', C.sun) + R(0, 0, 26, 10, C.tomato, 3));
   // bed
   s += R(1500, 400, 150, 380, C.sky, 30) + R(870, 540, 40, 230, C.sky, 18);
   s += R(890, 600, 630, 110, C.paper, 16);
@@ -578,7 +581,7 @@ pages.push(page(2, PAGE_BG(C.wash) + G('translate(650 740) scale(0.66)', U('dog-
 <p>No part of this book may be reproduced, stored or transmitted in any form or by any means without written permission from the publisher, except for brief quotations in a review.</p>
 <p>First edition, 2026. Paperback and hardcover. ${VERSION}</p>
 <p>The illustrations are flat digital art. The text is set in Fredoka, with Bricolage Grotesque and Nunito Sans.</p>
-<p><b>A note for grown-ups:</b> puddle play, cooking and box-building are best enjoyed with a grown-up close by. The tablet in this story is a made-up character and is not based on any real product.</p>
+<p><b>A note for grown-ups:</b> puddle play, cooking and box-building are best enjoyed with a grown-up close by. Grown-ups handle the stove, and everyone washes hands after cracking eggs. The tablet in this story is a made-up character and is not based on any real product.</p>
 <p><b>Free Play Day planner</b> for grown-ups to print:<br><span class="nw">${BONUS}</span></p>
 <p>Published by AlphaPlay LLC, doing business as Play Before Pixels · playbeforepixels.com</p>` }],
   both(ISBN_BOX, off => `<div class="logo" style="left:${60 + off}px;top:${712 + 12}px;width:210px">${LOGO('lockup-horizontal.svg', 210)}</div>`)));
@@ -606,25 +609,25 @@ const qs = [
   ['What could a big box turn into at our house?', C.sky],
   ['Let’s say the sleepy part together: “Shhh…” Now you be Biscuit!', C.grass],
   ['If we cooked together, what would you like to make?', C.plum],
-  ['Let’s plan our own Play Day. Pick three things to do!', C.tomato],
+  ['Blast off slowly: crouch for “Ten, nine…”, then stretch up tall on “ONE!”', C.tomato],
 ];
 pages.push(page(29, PAGE_BG(C.tGrass) + R(-12, -12, 840, 196, C.grass) + G('translate(690 150) scale(0.42) rotate(8)', U('tablet-sleeping')) +
   block(76, 734, C.tomato, 'c', 0.66, -8) + G('translate(206 780) scale(0.5) rotate(-6)', U('boot')) + G('translate(318 782) scale(0.1) rotate(18)', U('rocket')) + G('translate(440 766) scale(0.62)', U('pancake')) + bookU(540, 728, C.plum, 0.46, 6) + dog(700, 780, 0.3, 'dog-happy'),
   [{ x: 48, y: 44, w: 600, cls: 'talk-h', html: `Talk about it` },
    { x: 48, y: 118, w: 560, cls: 'talk-sub', html: `For grown-ups: after reading, try a few of these. Pause, wait, and let your child answer. There are no wrong answers.` }],
   off => `<ol class="qs" style="left:${48 + off}px;top:${214 + 12}px">${qs.map(([q, c], i) => `<li><span class="num" style="background:${c}">${i + 1}</span><span>${q}</span></li>`).join('')}</ol>
-<div class="tip" style="left:${48 + off}px;top:${588 + 12}px"><b>Read it again, and…</b> say what you see (“Biscuit is jumping!”), repeat and add one word (“Splash!” → “Big splash!”), and follow your child’s lead. Let them shout the “Shhh…” and the “WOOF!”<br><b>Talk, sing and read in the language you know best. Every language counts.</b></div>`));
+<div class="tip" style="left:${48 + off}px;top:${556 + 12}px"><b>Read it again, and…</b> pause before “do?” and let your child fill it in. Say what you see (“Biscuit is jumping!”), repeat and add one word (“Splash!” → “Big splash!”), and follow your child’s lead. Shout, whisper, sign or point along to the “Shhh…” and the “WOOF!” A sign, a point or a tap on a talker (a device a child uses to talk) counts too, and a talker never takes a day off.<br><b>Talk, sing and read in the language you know best. Every language counts.</b></div>`));
 // p30 (L) plan your own play day + bonus QR
 const qrSvg = (px, col = C.ink) => `<svg viewBox="-2 -2 ${QR.n + 4} ${QR.n + 4}" width="${px}" height="${px}" shape-rendering="crispEdges"><rect x="-2" y="-2" width="${QR.n + 4}" height="${QR.n + 4}" fill="#fff"/><path d="${QR.d}" fill="${col}"/></svg>`;
 const planRow = (y, label, icon, col) => G('', R(48, y, 720, 118, C.paper, 22) + R(48, y, 150, 118, col, 22) + R(150, y, 48, 118, col) + icon);
 pages.push(page(30, PAGE_BG(C.tSky) + R(-12, -12, 840, 180, C.sky) +
   planRow(200, 'Morning', U('sun', 123, 259, 0.42), C.tSun) +
-  planRow(334, 'Afternoon', G('translate(123 440) scale(0.15)', U('rocket')), C.tTomato) +
+  planRow(334, 'Afternoon', G('translate(123 400) scale(0.9)', U('pancake')), C.tTomato) +
   planRow(468, 'Bedtime', U('moon', 118, 527, 0.62), C.tPlum) +
   R(48, 612, 720, 168, C.paper, 22) + dog(724, 176, 0.36, 'dog-happy'),
   [{ x: 48, y: 40, w: 640, cls: 'talk-h', html: `Plan your own Play Day` },
    { x: 48, y: 108, w: 620, cls: 'talk-sub', html: `Point to one thing for each part of the day. Then do it together!` },
-   ...[['Morning', 'Block tower · Puddle walk · Box rocket', 212], ['Afternoon', 'Bake together · Library trip · Dance party', 346], ['Bedtime story', 'Growly bear voices · Your favorite book', 480]]
+   ...[['Morning', 'Block tower · Puddle walk · Box rocket', 212], ['Afternoon', 'Bake together · Library trip · Dance party', 346], ['Bedtime story', 'Growly bear voices · Your favorite book · Make one up', 480]]
      .map(([h, o, y]) => ({ x: 230, y, w: 520, cls: 'plan', html: `${h}<span class="opts">${o}</span>` }))],
   off => `<div class="qr" style="left:${70 + off}px;top:${630 + 12}px">${qrSvg(132)}</div>
 <div class="bonus" style="left:${226 + off}px;top:${630 + 12}px"><b>Free for grown-ups:</b> a printable Play Day planner to fill in, plus coloring pages. Scan the code or visit<br><span class="url">${BONUS}</span><br><span class="pair">Want more ideas? This story pairs with <i>100 Screen-Free Plays</i>.</span></div>`));
@@ -765,7 +768,7 @@ body { -webkit-print-color-adjust: exact; print-color-adjust: exact }
 .t.blurb .blurb-h { font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 600; font-size: 38px; line-height: 1.16; color: #F5B820; margin-bottom: 22px }
 .t.backmeta { font-family: "Nunito Sans", sans-serif; font-weight: 800; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; color: #FFFFFF }
 .qs { position: absolute; width: 720px; margin: 0; padding: 0; list-style: none; font-family: "Nunito Sans", sans-serif; font-size: 19px; line-height: 1.35; color: #1D2940; font-weight: 600 }
-.qs li { display: flex; align-items: center; gap: 16px; background: #FFFFFF; border-radius: 18px; padding: 8px 18px 8px 12px; margin-bottom: 7px; min-height: 52px }
+.qs li { display: flex; align-items: center; gap: 16px; background: #FFFFFF; border-radius: 18px; padding: 6px 18px 6px 12px; margin-bottom: 6px; min-height: 46px }
 .qs .num { flex: 0 0 38px; height: 38px; border-radius: 50%; color: #FFFFFF; font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 700; font-size: 21px; display: flex; align-items: center; justify-content: center }
 .tip { position: absolute; width: 720px; font-family: "Nunito Sans", sans-serif; font-size: 16px; line-height: 1.45; color: #1D2940; background: #FEF4D8; border-radius: 18px; padding: 14px 20px }
 .qr { position: absolute; width: 132px; height: 132px }

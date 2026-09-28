@@ -90,7 +90,7 @@ Plain-language meanings of words you'll meet on our research pages. Where it hel
 
 **Observational study.** Researchers measure what people already do, without assigning anything. Most research on screens and autism is observational.
 
-**Randomized controlled trial (RCT).** Participants are assigned by chance to one approach or another, which balances other factors between groups. The strongest way to test cause. None has tested screen reduction and autism-like signs in young children ([Ozyazici 2026](/research/studies/ozyazici-2026/) [VERIFY]).
+**Randomized controlled trial (RCT).** Participants are assigned by chance to one approach or another, which balances other factors between groups. The strongest way to test cause. We have not found one that tests screen reduction and autism-like signs in young children ([Ozyazici 2026](/research/studies/ozyazici-2026/) [VERIFY]).
 
 **Blinding.** When the people measuring the outcome don't know which group a child is in. Without it, expectations can colour the results.
 
@@ -128,13 +128,13 @@ Plain-language meanings of words you'll meet on our research pages. Where it hel
 
 **Ecological fallacy.** Assuming that a pattern across places (counties, countries) applies to individuals ([Waldman 2008](/research/studies/waldman-2008/) [VERIFY]).
 
-**Dose-response.** When more of an exposure goes with steadily more of an outcome. A dose-response pattern makes a link more convincing, but it still doesn't prove cause. In one large study the pattern did not rise steadily ([Kushima 2022](/research/studies/kushima-2022/)).
+**Dose-response.** When more of an exposure goes with steadily more of an outcome. A dose-response pattern makes a link more convincing, but it still doesn't prove cause. In one large study the odds rose across the lower screen-time groups and then levelled off, with similar, overlapping estimates in the two highest groups ([Kushima 2022](/research/studies/kushima-2022/)).
 
 **Odds ratio (OR).** A way of comparing how likely an outcome is in two groups. An OR of 1 means no difference; above 1 means more likely; below 1, less likely. Some studies report the **log odds ratio**, where 0 means no difference.
 
 **Confidence interval (CI).** The range of values the true result plausibly falls in. A wide interval means the estimate is uncertain. An interval from 1.55 to 660.8 means the study had too little data to say much ([Rangaraj 2026](/research/studies/rangaraj-2026/) [VERIFY]).
 
-**Statistically significant.** A result unlikely to be due to chance alone, by a conventional threshold. It says nothing about how big or important an effect is, and a non-significant result is not proof of no effect.
+**Statistically significant.** A result that would be unlikely if there were truly no effect, judged by a conventional threshold (usually P < .05). It says nothing about how big or important an effect is, and a non-significant result is not proof of no effect.
 
 **Publication bias.** Studies with striking or positive results are more likely to be published, which can make a link look stronger than it is.
 

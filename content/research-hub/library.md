@@ -19,7 +19,7 @@ sources:
 
 This is every source our hub draws on, in one place. We group it by **what each source found or argued**, and we put the critical and null work **first**, so it is never buried under the studies that report a link. On the website you can sort and filter by any column: stance, year, type or topic.
 
-**75 sources.** Null, or points to other explanations: 6 · Critical of the term or the claims: 10 · Mixed or conditional findings: 9 · Reports or argues for a link: 33 · Result not yet confirmed: 4 · Background (not a test of the screens-autism question): 13
+**75 sources.** Null, or points to other explanations: 6 · Critical of the term or the claims: 10 · Mixed or conditional findings: 9 · Reports or argues for a link: 32 · Result not yet confirmed: 4 · Background (not a test of the screens-autism question): 14
 
 ## How to read this table
 
@@ -36,7 +36,7 @@ This is every source our hub draws on, in one place. We group it by **what each 
 | [Montes 2016: screen time in US school-age autistic children](/research/studies/montes-2016/) | 2016 | Cross-sectional | Screens and autism measures | In a US national survey, autistic and non-autistic children aged 6 to 17 had similar total screen time. | [VERIFY] |
 | [Ophir 2023: meta-analysis of screen time and autism](/research/studies/ophir-2023-meta-analysis/) | 2023 | Systematic review and meta-analysis | Reviews and meta-analyses | 46 studies: a positive pooled link that became much smaller and non-significant after correction for publication bias. | [VERIFY] |
 | [Takahashi N 2023: autism genetics and toddler screen time](/research/studies/takahashi-n-2023-genetics/) | 2023 | Cohort with polygenic risk scores | Genetics and methods | Children with higher genetic likelihood of autism spent more time on screens from toddlerhood, pointing to reverse causation or shared causes. | [VERIFY] |
-| [Zhang 2023: shared genetics, screen time and outcomes](/research/studies/zhang-2023-shared-genetic-risk/) | 2023 | Cohort with genetic-confounding sensitivity analysis | Genetics and methods | Shared genetic risk explained much of the screen-time link with attention problems in 9-to-11-year-olds. | [VERIFY] |
+| [Zhang 2023: shared genetics, screen time and outcomes](/research/studies/zhang-2023-shared-genetic-risk/) | 2023 | Cohort with genetic-confounding sensitivity analysis | Genetics and methods | Shared genetic risk explained part of the screen-time link with attention and internalizing problems in 9-to-11-year-olds (proportions to be checked). | [VERIFY] |
 | [Cai 2025: Mendelian randomization finds no causal ASD signal](/research/studies/cai-2025-mendelian-randomization/) | 2025 | Two-sample Mendelian randomization | Genetics and methods | No evidence that genetically predicted leisure screen time affects autism; the genetic proxies reflect adult habits, not infant exposure. | [VERIFY] |
 | [Australia 2026: early screens and emotional trajectories](/research/studies/lsac-2026-trajectories/) | 2026 | Cohort | Screens and autism measures | More early screen time went with a small rise in emotional-problem scores in all groups, with no extra effect in autistic or ADHD children. | [VERIFY] |
 
@@ -66,10 +66,10 @@ This is every source our hub draws on, in one place. We group it by **what each 
 | [Melchior 2022: screens at 2 and autism screening (France)](/research/studies/melchior-2022-elfe/) | 2022 | Cohort | Screens and autism measures | Screen use at 2 had a very small link to medium autism-screening scores but a lower chance of high-risk scores: no simple pattern. | [VERIFY] |
 | [Sarfraz 2023: mixed evidence on early screens and autism](/research/studies/sarfraz-2023-systematic-review/) | 2023 | Systematic review | Reviews and meta-analyses | Found mixed evidence and concluded there were not enough data to confirm any link between early screen time and autism. | [VERIFY] |
 | [Lin et al. 2025: screens at 2 and autism at 12 (Australia)](/research/studies/lin-2025-lsac/) | 2025 | Research letter; cohort with conventional and instrumental-variable analyses | Screens and autism measures | Heavy screen time at 2 was linked to autism by 12 in a standard analysis, but not in an instrumental-variable analysis. | [VERIFY] |
-| [Georgia 2025: timing of first screens and M-CHAT-R scores](/research/studies/georgia-2025-bmc-pediatrics/) | 2025 | Cross-sectional in practice | Screens and autism measures | High-risk screens were about 3 times as common with first exposure before 6 months; daily duration explained about 2% of score variation. | [VERIFY] |
+| [Georgia 2025: timing of first screens and M-CHAT-R scores](/research/studies/georgia-2025-bmc-pediatrics/) | 2025 | Cross-sectional in practice | Screens and autism measures | High-risk screens were nearly 3 times as common with first exposure before 6 months; daily duration explained about 2% of score variation. | [VERIFY] |
 | [Ozyazici 2026: examining the 'virtual autism' concept](/research/studies/ozyazici-2026/) | 2026 | Narrative review | The term and its history | Says the concept is not a diagnosis and names key gaps (no long-term studies, no randomized trials), but its advice uses causal-sounding language. | [VERIFY] |
 
-## Reports or argues for a link (33)
+## Reports or argues for a link (32)
 
 | Source | Year | Type | Topic | One-line finding | Citation status |
 |---|---|---|---|---|---|
@@ -87,9 +87,9 @@ This is every source our hub draws on, in one place. We group it by **what each 
 | [Chen et al. 2020: interaction, sleep and outdoor play](/research/studies/chen-2020-mediation/) | 2020 | Cross-sectional survey with mediation analysis | Screens and autism measures | Tested whether less caregiver interaction and sleep statistically account for part of the screen link; outdoor activity did not. | [VERIFY] |
 | [Chen et al. 2021: screen time and autistic-like behaviors](/research/studies/chen-2021-longhua/) | 2021 | Cross-sectional survey with recalled exposure | Screens and autism measures | Earlier first exposure, longer daily time and more years of screens each went with autistic-like behaviors on a parent checklist. | [VERIFY] |
 | [Sadeghi 2021: parent-child interaction and screen reduction](/research/studies/sadeghi-2021-parent-child-interaction/) | 2021 | Small intervention study | Screens and autism measures | Reported lower autism-trait scores and EEG changes after a parent-child program plus screen reduction; the two cannot be separated. | [VERIFY] |
-| [Kushima 2022: screen time at 1 and autism at 3 (Japan)](/research/studies/kushima-2022/) | 2022 | Cohort | Screens and autism measures | In boys but not girls, longer screen time at age 1 was associated with autism by age 3; the pattern was not a clean dose-response. | Allowed |
+| [Kushima 2022: screen time at 1 and autism at 3 (Japan)](/research/studies/kushima-2022/) | 2022 | Cohort | Screens and autism measures | In boys but not girls, longer screen time at age 1 was associated with autism by age 3; the odds rose up to about 2 hours a day, and the two highest groups had similar, overlapping estimates. | Allowed |
 | [Pouretemad 2022: the proposed 'PDNAS' label](/research/studies/pouretemad-2022-pdnas/) | 2022 | Cross-sectional three-group comparison | The term and its history | Compared 15 heavily screen-exposed children with sub-threshold autistic traits to 15 autistic and 15 non-autistic children. | [VERIFY] |
-| [Heffler 2022: case report of two young children](/research/studies/heffler-2022-case-report/) | 2022 | Case report | Screens and autism measures | Two autistic children's developmental paths changed as screen time was cut and replaced with social time, then raised, then cut again. | [VERIFY] |
+| [Heffler 2022: case report of two young children](/research/studies/heffler-2022-case-report/) | 2022 | Case report | Screens and autism measures | The authors report that two autistic children's developmental paths changed as screen time was cut and replaced with social time, then raised, then cut again. No controls. | [VERIFY] |
 | [Moktan 2022: pandemic screen time and autism-like signs](/research/studies/moktan-2022-nepal/) | 2022 | Clinical report / narrative review | Screens and autism measures | Describes more children presenting with autism-like signs alongside more screen time during lockdowns; no controls. | [VERIFY] |
 | [Spitzer 2023: 'Real or virtual autism?' (German review)](/research/studies/spitzer-2023/) | 2023 | Narrative review and editorial | The term and its history | Reviews Harlé's case compilation and the rise in recorded autism prevalence, including broader diagnostic concepts and awareness. Its conclusion on causation is unconfirmed. | [VERIFY] |
 | [Sadeghi 2023: screen time and autism "severity" scores in toddlers](/research/studies/sadeghi-2023-severity/) | 2023 | Cross-sectional | Screens and autism measures | Among autistic toddlers, more screen time appeared to go with higher "severity" scores (the study's term for how many autistic traits were rated). | [VERIFY] |
@@ -97,7 +97,6 @@ This is every source our hub draws on, in one place. We group it by **what each 
 | [Garg et al. 2024: a review treating the term as established](/research/studies/garg-2024/) | 2024 | Narrative review | The term and its history | Describes the term as signs from heavy device use that are 'often reversible' and recommends limits; does not weigh reverse causation. | [VERIFY] |
 | [Hill et al. 2024: toddler screen time and later outcomes](/research/studies/hill-2024/) | 2024 | Prospective cohort | Screens and autism measures | Toddlers later identified with autism or ADHD concerns had more screen time at 18 months; direction cannot be told. | [VERIFY] |
 | [Al Moussawi 2024: early screens and CARS scores (Lebanon)](/research/studies/al-moussawi-2024-lebanon/) | 2024 | Cross-sectional survey | Screens and autism measures | Among 73 children, those first exposed at 0 to 6 months had the highest average behavior and autism-rating scores. | [VERIFY] |
-| [Heffler 2024: early TV and sensory processing](/research/studies/heffler-2024-sensory/) | 2024 | Cohort | Related outcome (not autism) | Early TV/video exposure was associated with atypical sensory-processing scores at about 33 months; not an autism study. | [VERIFY] |
 | [Yuan et al.: systematic review of screen time and autism](/research/studies/yuan-jadd-systematic-review/) | 2024 (online) | Systematic review | Reviews and meta-analyses | Reports an association between preschool screen exposure and autism, larger with longer exposure; publication-bias handling unknown. | [VERIFY] |
 | [A 2025 preprint on 'decoding virtual autism'](/research/studies/authorea-2025-preprint/) | 2025 | Preprint | The term and its history | A preprint describing 'so-called virtual autism'; not peer reviewed and not usable as evidence. | [VERIFY] |
 | [Tunisia 2025: early screen patterns in autistic toddlers](/research/studies/tunisia-2025-screen-patterns/) | 2025 | Case-control | Screens and autism measures | Autistic toddlers started TV earlier and watched far more, mostly alone and often repetitive content; the viewing style itself may reflect autism. | [VERIFY] |
@@ -116,7 +115,7 @@ This is every source our hub draws on, in one place. We group it by **what each 
 | ['Are screens stealing childhood?' (2025 case-control)](/research/studies/ejcm-2025-case-control/) | 2025 | Case-control | Screens and autism measures | 240 children aged 1 to 4 (120 with autism-like signs, 120 without); results not seen. | [VERIFY] |
 | [Screen use and language from 5 to 7 (title only)](/research/studies/screen-use-language-5-to-7/) | [VERIFY] | Probably a cohort study [VERIFY] | Development and language (not autism) | Title only; findings unknown. | [VERIFY] |
 
-## Background (not a test of the screens-autism question) (13)
+## Background (not a test of the screens-autism question) (14)
 
 | Source | Year | Type | Topic | One-line finding | Citation status |
 |---|---|---|---|---|---|
@@ -127,8 +126,9 @@ This is every source our hub draws on, in one place. We group it by **what each 
 | [Mohamed et al. 2023: a school digital-detox program](/research/studies/mohamed-2023-digital-detox/) | 2023 | Pre/post study without a control group | Background | Among 105 Egyptian middle-schoolers, self-reported screen 'addiction' levels were lower after a detox program; no control group. | [VERIFY] |
 | [Takahashi I 2023: screen time at 1 and later delays](/research/studies/takahashi-i-2023/) | 2023 | Cohort | Development and language (not autism) | More screen time at 1 went with higher odds of communication and problem-solving delays at 2 and 4, in a dose-response pattern. | Allowed |
 | [Yamamoto 2023: TV/DVD time and development, both directions](/research/studies/yamamoto-2023-jecs/) | 2023 | Cohort | Development and language (not autism) | More TV/DVD at 1 and 2 went with lower scores a year later; lower scores went with more later viewing where mothers had psychological distress. | [VERIFY] |
-| [Brushe 2024: screen time and parent-child talk](/research/studies/brushe-2024/) | 2024 | Cohort | Development and language (not autism) | At 36 months, more screen time was associated with 1,139 fewer adult words, 843 fewer child vocalizations and 194 fewer conversational turns a day. | Allowed |
+| [Brushe 2024: screen time and parent-child talk](/research/studies/brushe-2024/) | 2024 | Cohort | Development and language (not autism) | At 36 months, screen time was associated with less talk at home; scaled to the average daily screen time, about 1,139 fewer adult words, 843 fewer child vocalizations and 194 fewer conversational turns a day. | Allowed |
 | [Mallawaarachchi 2024: how under-5s use screens](/research/studies/mallawaarachchi-2024-contexts/) | 2024 | Systematic review and meta-analysis | Development and language (not autism) | Background TV, more program viewing and caregiver screen use went with poorer outcomes; co-use went with better thinking skills. | [VERIFY] |
+| [Heffler 2024: early TV and sensory processing](/research/studies/heffler-2024-sensory/) | 2024 | Cohort | Related outcome (not autism) | Early TV/video exposure was associated with atypical sensory-processing scores at about 33 months; not an autism study. | [VERIFY] |
 | [Pliska et al. 2025: parents' views on media and autism](/research/studies/pliska-2025-parents/) | 2025 | Cross-sectional online survey | Background | Parents of autistic children worried more about media effects yet saw more daily media time as acceptable. | [VERIFY] |
 | [Vanderloo 2025: screen time in children with disabilities](/research/studies/vanderloo-2025-disabilities/) | 2025 | Meta-analysis | Background | Autistic children and youth had the highest reported screen time (0.5 to 7.27 h/day across studies); says nothing about cause. | [VERIFY] |
 | [AAP 2026: 'Digital Ecosystems' policy statement](/research/studies/aap-2026-digital-ecosystems/) | 2026 | Professional policy statement | Guidelines | Frames children's media as 'digital ecosystems' and reportedly replaces earlier AAP media guidance; early-childhood specifics unconfirmed. | [VERIFY] |
@@ -141,7 +141,7 @@ These came up in our searches but we have not yet confirmed enough to write a pa
 - A 2026 Peruvian systematic review of 31 studies (Spanish; a repository posting of unknown peer-review status).
 - A second Saudi study from Arar city (Cureus 2024; PMID 38947650): exists, but its methods and results were not seen.
 - A 2024 review in the International Journal of Community Medicine and Public Health.
-- Language and talk studies to check: Christakis 2009, Zimmerman 2007 and 2009, Tomopoulos 2010, van den Heuvel 2019, Sugiyama 2023, Taylor, Monaghan and Westermann 2018 (recalled as finding no association with vocabulary), and others listed in our verification queue.
+- Language and talk studies to check: Christakis 2009, Zimmerman 2007 and 2009, Tomopoulos 2010, van den Heuvel 2019, Sugiyama 2023, Taylor, Monaghan and Westermann 2018 (recalled as finding no association with vocabulary [VERIFY]), and others listed in our verification queue.
 - Null and balancing work to check first: Schmidt 2009 (Project Viva), Przybylski and Weinstein 2019, Stiglic and Viner 2019, Kostyrka-Allchorne 2017, and the “video deficit” experiments.
 - Clinical and policy documents: the 2024 French presidential commission report on children and screens, the French High Council for Public Health opinion, and Harlé’s French-language papers.
 - Egyptian, Iraqi, Chinese and Korean papers, and the Qatari and Japanese case descriptions in Harlé’s compilation.
@@ -149,7 +149,7 @@ These came up in our searches but we have not yet confirmed enough to write a pa
 
 ## What we still need
 
-- **No randomized trials** test whether reducing screen time changes autism-like signs in young children, and no long-term studies follow the course of screen-associated signs over time (a gap Ozyazici 2026 also names [VERIFY]).
+- **We have found no randomized trial** testing whether reducing screen time changes autism-like signs in young children, and no long-term study following the course of screen-associated signs over time (a gap Ozyazici 2026 also names [VERIFY]). The closest we have found is a small Iranian study that combined a parent-child interaction programme with screen reduction ([Sadeghi 2021](/research/studies/sadeghi-2021-parent-child-interaction/) [VERIFY]); its design and comparison group are not yet confirmed, and it changed two things at once.
 - Whether any randomized trial in children under 5 has reduced screen time with language as the main outcome is still an open question for us. We have not confirmed that none exists, so we do not claim it.
 
 ## Corrections and updates

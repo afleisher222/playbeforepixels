@@ -8,8 +8,8 @@ publish: false
 noindex_until_verified: true
 page_type: "study-summary"
 study_type: "Cohort (US National Children's Study)"
-stance: "supports-association"
-stance_label: "Reports or argues for a link"
+stance: "neutral-background"
+stance_label: "Background (not a test of the screens-autism question)"
 topic: "related-outcome"
 year: "2024"
 country: "USA"
@@ -32,7 +32,7 @@ sources:
 | **Type** | Cohort (US National Children's Study) |
 | **Where** | USA |
 | **Year** | 2024 |
-| **Where it sits in our library** | Reports or argues for a link |
+| **Where it sits in our library** | Background (not a test of the screens-autism question) |
 | **Topic** | Related outcome (not autism) |
 | **How much weight to give it** | Low to moderate for sensory scores. It did not measure autism. |
 
@@ -69,6 +69,10 @@ Link: [https://doi.org/10.1001/jamapediatrics.2023.5923](https://doi.org/10.1001
 ## What we read
 
 **Secondary only.** Search summaries of the PMC and JAMA pages. We will update this section to “abstract” or “full text” once we have read the original, and note any change we make.
+
+**Editor’s notes**
+
+- Moved from "Reports or argues for a link" to "Background" on 2026-09-28, because it measured sensory processing, not autism, and so does not test the screens-autism question.
 
 ## Related pages
 
