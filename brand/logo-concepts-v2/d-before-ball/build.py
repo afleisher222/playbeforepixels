@@ -11,6 +11,10 @@ Run from this folder:
 
 Everything is generated from the numbers in TUNABLES below plus the font outlines. No <text>, no system
 fonts, no raster images inside any SVG.
+
+Needs: python3 with fontTools and uharfbuzz (shapely is optional: it only adds the line-to-line gap report);
+node with Playwright and the Chromium at /opt/pw-browsers/chromium for the PNGs (render.js).
+Reads the brand's own font files in ../../fonts/ and never touches brand/logo/.
 """
 import math, os, re, sys, json, subprocess
 
@@ -24,27 +28,37 @@ EDIT_LOG = [
     # ('YYYY-MM-DD', 'Founder: made the ball a touch bigger (BALL size 1.06 -> 1.08).'),
 ]
 
-WEIGHT = 800            # Bricolage Grotesque weight, 200-800 (800 = the brand's display weight)
+WEIGHT = 760            # Bricolage Grotesque weight, 200-800. 760: bold and friendly, but a shade lighter than
+                        # the ball, so the ball reads as a solid object sitting in the word, not as a heavy letter
 OPTICAL_SIZE = 96       # Bricolage optical size, 12-96 (96 = display cut, the most character)
-TRACKING = -6           # extra space between every pair of letters (negative = tighter)
+TRACKING = -4           # extra space between every pair of letters (negative = tighter)
+TRACKING_SMALL = 14     # the small cut (header under 64 px, spines, labels, embroidery) opens the letters up
 WORD_SPACE = 190        # one-line version: width of the space between words (the font's own is 205)
 LEADING = 960           # stacked version: baseline to baseline
 
 BALL = dict(
     size=1.06,          # ball diameter as a multiple of the font's o (the o is 556 units tall)
     drop=10,            # how far the ball sits below the o's centre line (it rests its weight on the baseline)
-    space_f=10,         # clear space between f and ball, in units MORE than the font leaves between f and o
+    space_f=16,         # clear space between f and ball, in units MORE than the font leaves between f and o
     space_r=-6,         # clear space between ball and r, in units more than the font leaves between o and r
 )
 
 # The ball's one seam: a curved band cut out of the ball (it shows the background through it).
-# angle: direction from the ball's centre towards the centre of the seam's circle (degrees, 0 = right, 90 = down)
-# reach: how far away that centre is (in ball radii).  curve: the seam circle's radius (in ball radii; smaller =
-# more curved).  width: thickness of the seam (in ball radii). reach == curve means the seam passes through the
-# middle of the ball.
-SEAM = dict(angle=204, reach=1.30, curve=1.30, width=0.125)        # logo and symbol (display sizes)
-SEAM_SMALL = dict(angle=204, reach=1.30, curve=1.30, width=0.17)   # stacked logo under ~0.75 in / embroidery
-SEAM_FAVICON = dict(angle=204, reach=1.30, curve=1.30, width=0.20) # favicon (16-48 px)
+# angle: direction from the ball's centre towards the centre of the seam's circle (degrees, 0 = right, 90 = down,
+# 180 = left). reach: how far away that centre is (in ball radii). curve: the seam circle's radius (in ball radii;
+# smaller = more curved). width: thickness of the seam (in ball radii). reach - curve = how far the seam passes
+# from the middle of the ball. Never add a second seam: one curve says "ball"; several start to say basketball.
+SEAM = dict(angle=210, reach=1.20, curve=1.15, width=0.125)         # logo and symbol (display sizes)
+SEAM_SMALL = dict(angle=210, reach=1.20, curve=1.15, width=0.17)    # small cut and embroidery
+SEAM_FAVICON = dict(angle=210, reach=1.20, curve=1.15, width=0.21)  # favicon (16-48 px), painted paper-white
+
+PIXEL_DOT = dict(
+    on=True,            # the dot of the i in "pixels" is redrawn as a true square: one pixel. Round ball in
+                        # "before", square dot in "pixels" - the name's own order, told twice. False = font's dot.
+    size=1.06,          # side of the square as a multiple of the i's stem width (a bit wider than the stem, so it
+                        # reads as a dot and never as a broken stem)
+    lift=16,            # units up (+) or down (-) from where the font puts its dot
+)
 
 FAVICON_BALL = 0.97     # favicon: ball diameter as a share of the square (16 px tab -> 15.5 px ball)
 SYMBOL_BALL = 0.80      # symbol.svg: ball diameter as a share of the square
@@ -208,31 +222,36 @@ def circle_gap(A, cx, cy, R):
 
 
 class Setter:
-    def __init__(self, font):
-        self.F = font
+    def __init__(self, font, tracking=None):
+        self.F = font; self.track = TRACKING if tracking is None else tracking
         ob = font.bounds('o'); self.o_lsb = ob[0]; self.o_rsb = font.gs['o'].width - ob[2]
         self.o_lo, self.o_hi = ob[1], ob[3]
-        # the font's own clearances around its o, measured on the outlines at the current tracking
-        (n1, a1), (n2, a2) = font.shape('fo'); (n3, a3), (n4, _) = font.shape('or')
-        self.gap_fo = outline_gap(font.polyline('f', 0, 0), font.polyline('o', a1 + TRACKING, 0))
-        self.gap_or = outline_gap(font.polyline('o', 0, 0), font.polyline('r', a3 + TRACKING, 0))
+        # the font's own clearances around its o, measured on the outlines at this tracking
+        (_, a1), _ = font.shape('fo'); (_, a3), _ = font.shape('or')
+        self.gap_fo = outline_gap(font.polyline('f', 0, 0), font.polyline('o', a1 + self.track, 0))
+        self.gap_or = outline_gap(font.polyline('o', 0, 0), font.polyline('r', a3 + self.track, 0))
+        # the i: stem and dot boxes (for the square pixel dot)
+        self.stem = font.bounds('dotlessi')
+        dots = [c for c in font.polyline('i', 0, 0) if min(-p[1] for p in c) > self.stem[3]]
+        ys = [-p[1] for c in dots for p in c]; self.dot_lo, self.dot_hi = min(ys), max(ys)
 
     def set(self, text, x0=0.0, base=0.0, s=1.0, word_space=None):
-        """set one line. -> dict(glyphs=[(name, x)], ball=(cx, cy, R) or None, width) in SVG units (y down).
+        """set one line. -> dict(glyphs=[(name, x)], ball=(cx, cy, R) or None, squares, width) in SVG units (y down).
         The first o of the line is replaced by the ball, spaced optically: its clear distance to the letter
         before and after it is solved from the outlines, not from side bearings."""
-        glyphs, ball, x = [], None, 0.0
+        T = self.track
+        glyphs, squares, ball, x = [], [], None, 0.0
         shaped = self.F.shape(text)
         for i, (name, adv) in enumerate(shaped):
             if name == 'space':
-                x += (word_space if word_space is not None else adv) + TRACKING
+                x += (word_space if word_space is not None else adv) + T
                 continue
             if name == 'o' and ball is None:
                 D = BALL['size'] * (self.o_hi - self.o_lo); R = D / 2
                 cy = -((self.o_hi + self.o_lo) / 2 - BALL['drop'])          # y down, baseline 0
                 prev = glyphs[-1] if glyphs else None
-                target = self.gap_fo + BALL['space_f']
                 if prev:   # slide the ball until its clear distance to the previous letter hits the target
+                    target = self.gap_fo + BALL['space_f']
                     outl = self.F.polyline(prev[0], (prev[1] - x0) / s, 0)
                     lo, hi = x - 400, x + 1200
                     for _ in range(40):
@@ -254,14 +273,24 @@ class Setter:
                         else: hi = mid
                     x = hi
                 else:
-                    x = cx + R + self.o_rsb + TRACKING
+                    x = cx + R + self.o_rsb + T
+                continue
+            if name == 'i' and PIXEL_DOT['on']:
+                glyphs.append(('dotlessi', x0 + s * x))
+                sx0, _, sx1, _ = self.stem
+                side = PIXEL_DOT['size'] * (sx1 - sx0)
+                mid_x = x + (sx0 + sx1) / 2
+                bottom = self.dot_lo + PIXEL_DOT['lift']
+                squares.append((x0 + s * (mid_x - side / 2), base - s * (bottom + side), s * side))
+                x += adv + T
                 continue
             glyphs.append((name, x0 + s * x))
-            x += adv + TRACKING
-        return dict(glyphs=glyphs, ball=ball, width=s * (x - TRACKING), base=base, s=s)
+            x += adv + T
+        return dict(glyphs=glyphs, ball=ball, squares=squares, width=s * (x - T), base=base, s=s)
 
     def ink(self, line):
-        return ''.join(self.F.d(n, x, line['base'], line['s']) for n, x in line['glyphs'])
+        d = ''.join(self.F.d(n, x, line['base'], line['s']) for n, x in line['glyphs'])
+        return d + ''.join(f"M{f(x)} {f(y)}H{f(x + a)}V{f(y + a)}H{f(x)}Z" for x, y, a in line['squares'])
 
     def ink_bounds(self, lines):
         xs, ys = [], []
@@ -270,6 +299,8 @@ class Setter:
                 b = self.F.bounds(n)
                 if b is None: continue
                 xs += [x + ln['s'] * b[0], x + ln['s'] * b[2]]; ys += [ln['base'] - ln['s'] * b[3], ln['base'] - ln['s'] * b[1]]
+            for x, y, a in ln['squares']:
+                xs += [x, x + a]; ys += [y, y + a]
             if ln['ball']:
                 cx, cy, R = ln['ball']; xs += [cx - R, cx + R]; ys += [cy - R, cy + R]
         return min(xs), min(ys), max(xs), max(ys)
@@ -336,11 +367,12 @@ def paint(S, lines, letters, ball, seam, seam_fill=None):
 def build(render=True):
     os.makedirs(SRC, exist_ok=True); os.makedirs(TESTS, exist_ok=True)
     F = Font(instance(BRIC_WOFF2, {'wght': WEIGHT, 'opsz': OPTICAL_SIZE}, f'bricolage-{WEIGHT}-{OPTICAL_SIZE}.ttf'))
-    S = Setter(F)
+    S = Setter(F); Ss = Setter(F, TRACKING_SMALL)
     files = {}
 
     # stacked: play / before / pixels, ranged left (the chosen primary logo)
     stacked = [S.set(t, 0, i * LEADING) for i, t in enumerate(('play', 'before', 'pixels'))]
+    stacked_small = [Ss.set(t, 0, i * LEADING) for i, t in enumerate(('play', 'before', 'pixels'))]
     # one line: play before pixels (secondary: long thin spaces)
     oneline = [S.set('play before pixels', 0, 0, word_space=WORD_SPACE)]
     D = 2 * stacked[1]['ball'][2]            # clear-space unit = one ball diameter
@@ -349,11 +381,11 @@ def build(render=True):
         x0, y0, x1, y1 = S.ink_bounds(lines)
         return (x0 - pad, y0 - pad, x1 - x0 + 2 * pad, y1 - y0 + 2 * pad)
 
-    for base, lines, seam in (('primary-logo', stacked, SEAM), ('primary-logo-small', stacked, SEAM_SMALL),
-                              ('primary-logo-oneline', oneline, SEAM)):
+    for base, st, lines, seam in (('primary-logo', S, stacked, SEAM), ('primary-logo-small', Ss, stacked_small, SEAM_SMALL),
+                                  ('primary-logo-oneline', S, oneline, SEAM)):
         vb = framed(lines, CLEAR * D)
         for suf, (letters, ballc, seamc, ground) in SCHEMES.items():
-            files[f'{base}{suf}.svg'] = svg_doc(vb, paint(S, lines, letters, ballc, seam, seamc), ground=ground)
+            files[f'{base}{suf}.svg'] = svg_doc(vb, paint(st, lines, letters, ballc, seam, seamc), ground=ground)
 
     # symbol: the seamed ball alone
     def square_ball(side, share, seam, colour=TOMATO, ground=None, seam_fill=None, rx=0, title='Play Before Pixels'):
@@ -379,8 +411,16 @@ def build(render=True):
     print(f'wrote {len(files)} SVGs.  stacked ink box {round(x1 - x0)} x {round(y1 - y0)} units;'
           f' ball diameter {round(D)}; line widths {[round(l["width"]) for l in stacked]}')
     print('smallest gaps (units):', rep)
+    print('last edit:', ' - '.join(EDIT_LOG[-1]))
 
-    write_tests(S, stacked, oneline, files)
+    tight = lambda st, lines, letters, ballc, seam: svg_doc(framed(lines, 0), paint(st, lines, letters, ballc, seam))
+    mock = {
+        'small': tight(Ss, stacked_small, INK, TOMATO, SEAM_SMALL),
+        'small-white': tight(Ss, stacked_small, WHITE, TOMATO, SEAM_SMALL),
+        'small-reverse-nobg': tight(Ss, stacked_small, PAPER, TOMATO, SEAM_SMALL),
+        'ball-white': square_ball(100, 1.0, SEAM_SMALL, colour=WHITE),
+    }
+    write_tests(S, stacked, oneline, files, mock)
     if render:
         subprocess.run(['node', os.path.join(HERE, 'render.js')], check=True, cwd=HERE)
 
@@ -396,7 +436,7 @@ def page(body, w, h, bg=PAPER, css=''):
             f'background:{bg};overflow:hidden}}{css}</style></head><body>{body}</body></html>\n')
 
 
-def write_tests(S, stacked, oneline, files):
+def write_tests(S, stacked, oneline, files, mock):
     jobs = []
     rel = lambda n: os.path.join('..', n)
 
@@ -407,30 +447,52 @@ def write_tests(S, stacked, oneline, files):
 
     # 2. full primary logo, 1600 wide, on white
     vb = re.search(r'viewBox="([^"]+)"', files['primary-logo.svg']).group(1).split()
-    ar = float(vb[3]) / float(vb[2]); H = round(1600 * ar)
+    H = round(1600 * float(vb[3]) / float(vb[2]))
     open(os.path.join(TESTS, 'test-logo.html'), 'w').write(page(
         f'<img src="{rel("primary-logo.svg")}" style="display:block;width:1600px;height:{H}px">', 1600, H))
     jobs.append(dict(src='tests/test-logo.html', out='test-logo.png', w=1600, h=H))
 
-    # 3. favicon rasterised at true 16 and 32 px (transparent), then enlarged nearest-neighbour on tab colours
+    # 3. favicon rasterised by Chromium at true 16 and 32 px (transparent PNG, exactly what a tab paints),
+    #    then enlarged nearest-neighbour: 16 -> 128 (8x), 32 -> 192 (6x), on a light tab and a dark tab (#202124)
     open(os.path.join(TESTS, 'fav.html'), 'w').write(
         '<!doctype html><html><head><style>html,body{margin:0;background:transparent}img{display:block;width:100vw;height:100vh}</style>'
         f'</head><body><img src="{rel("favicon.svg")}"></body></html>\n')
     jobs.append(dict(src='tests/fav.html', out='tests/favicon-16.png', w=16, h=16, transparent=True))
     jobs.append(dict(src='tests/fav.html', out='tests/favicon-32.png', w=32, h=32, transparent=True))
-    px = 'image-rendering:pixelated;image-rendering:crisp-edges;position:absolute'
-    def tab(x0, bg):
-        # a panel in the tab colour; the true-size icons sit in a tab-like strip, the enlargements below
+    px = 'image-rendering:pixelated;position:absolute;display:block'
+
+    def half(x0, bg):
         return (f'<div style="position:absolute;left:{x0}px;top:0;width:320px;height:360px;background:{bg}"></div>'
-                f'<img src="favicon-16.png" style="{px};left:{x0 + 26}px;top:26px;width:16px;height:16px">'
-                f'<img src="favicon-32.png" style="{px};left:{x0 + 58}px;top:18px;width:32px;height:32px">'
-                f'<img src="favicon-16.png" style="{px};left:{x0 + 26}px;top:{360 - 26 - 192 + 64}px;width:128px;height:128px">'
-                f'<img src="favicon-32.png" style="{px};left:{x0 + 320 - 26 - 128 - 38}px;top:{360 - 26 - 192}px;width:192px;height:192px">')
-    open(os.path.join(TESTS, 'test-small.html'), 'w').write(page(tab(0, PAPER) + tab(320, DARK_TAB), 640, 360))
+                f'<img src="favicon-16.png" style="{px};left:{x0 + 28}px;top:14px;width:128px;height:128px">'
+                f'<img src="favicon-16.png" style="{px};left:{x0 + 196}px;top:70px;width:16px;height:16px">'
+                f'<img src="favicon-32.png" style="{px};left:{x0 + 236}px;top:62px;width:32px;height:32px">'
+                f'<img src="favicon-32.png" style="{px};left:{x0 + 64}px;top:154px;width:192px;height:192px">')
+    open(os.path.join(TESTS, 'test-small.html'), 'w').write(page(half(0, PAPER) + half(320, DARK_TAB), 640, 360))
     jobs.append(dict(src='tests/test-small.html', out='test-small.png', w=640, h=360))
 
+    # 3b. the favicon options I rejected, rasterised the same way (evidence for notes.md; labels allowed here)
+    opts = {'chosen': rel('favicon.svg')}
+    open(os.path.join(TESTS, 'opt-block.svg'), 'w').write(mock['small'].replace('<svg ', '<svg preserveAspectRatio="xMidYMid meet" ', 1))
+    open(os.path.join(TESTS, 'opt-plain.svg'), 'w').write(
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="{TOMATO}" d="{disc(16, 16, 15.5)}"/></svg>\n')
+    opts['block'] = 'opt-block.svg'; opts['plain'] = 'opt-plain.svg'
+    for k, src in opts.items():
+        open(os.path.join(TESTS, f'opt-{k}.html'), 'w').write(
+            '<!doctype html><html><head><style>html,body{margin:0;background:transparent}img{display:block;width:100vw;height:100vh;object-fit:contain}</style>'
+            f'</head><body><img src="{src}"></body></html>\n')
+        jobs.append(dict(src=f'tests/opt-{k}.html', out=f'tests/opt-{k}-16.png', w=16, h=16, transparent=True))
+    cap = {'chosen': 'Chosen: the seamed ball', 'block': 'Rejected: the stacked name, shrunk', 'plain': 'Rejected: a plain ball'}
+    cells = ''.join(
+        f'<div style="display:flex;flex-direction:column;gap:10px;align-items:center"><div style="display:flex">'
+        f'<div style="background:{PAPER};padding:14px"><img src="opt-{k}-16.png" style="{px.replace("position:absolute;", "")};width:128px;height:128px"></div>'
+        f'<div style="background:{DARK_TAB};padding:14px"><img src="opt-{k}-16.png" style="{px.replace("position:absolute;", "")};width:128px;height:128px"></div></div>'
+        f'<div style="font:700 14px Nunito Sans;color:{INK}">{cap[k]} · 16 px</div></div>' for k in opts)
+    open(os.path.join(TESTS, 'favicon-options.html'), 'w').write(page(
+        f'<div style="display:flex;gap:28px;padding:24px">{cells}</div>', 980, 240, bg=WASH))
+    jobs.append(dict(src='tests/favicon-options.html', out='tests/favicon-options.png', w=980, h=240))
+
     # 4. presentation board
-    open(os.path.join(TESTS, 'preview-sheet.html'), 'w').write(preview_sheet(files))
+    open(os.path.join(TESTS, 'preview-sheet.html'), 'w').write(preview_sheet(files, mock))
     jobs.append(dict(src='tests/preview-sheet.html', out='preview-sheet.png', w=1600, h=1000))
 
     with open(os.path.join(SRC, 'jobs.json'), 'w') as fh: json.dump(jobs, fh, indent=1)
@@ -442,12 +504,10 @@ def inline(svg_text, css=''):
     return s.replace('<svg ', f'<svg style="{css}" ', 1)
 
 
-def preview_sheet(files):
+def preview_sheet(files, mock):
     L = lambda t: f'<div class="lab">{t}</div>'
-    logo, rev, blk = files['primary-logo.svg'], files['primary-logo-reverse.svg'], files['primary-logo-black.svg']
-    small = files['primary-logo-small.svg']; line = files['primary-logo-oneline.svg']
     avatar = files['symbol-avatar.svg']
-    css = f'''
+    css = f"""
     *{{box-sizing:border-box}}
     body{{font-family:'Nunito Sans';color:{INK};background:{WASH}}}
     .grid{{position:absolute;inset:28px;display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:20px}}
@@ -455,50 +515,53 @@ def preview_sheet(files):
     .lab{{position:absolute;left:20px;bottom:16px;font-size:14px;font-weight:700;letter-spacing:.02em;opacity:.72}}
     .ink .lab{{color:{PAPER};opacity:.8}}
     .center{{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}}
-    '''
-    # book spines, true scale at 96 px per inch shown at 2x (0.5 in logo = 96 px on this board)
-    spines = []
-    colours = [(SKY, PAPER), (SUN, INK), (TOMATO, PAPER), (SKY_T, INK), (PAPER, INK)]
-    x = 34
-    for i, (bg, fg) in enumerate(colours):
-        w = [150, 128, 176, 138, 158][i]
-        # one-colour logo on each spine, in the spine's ink colour: 0.5 in tall (= 96 px here, board at 2x)
-        art = files['primary-logo-small-white.svg'] if fg == PAPER else files['primary-logo-small.svg']
-        if bg == TOMATO: art = files['primary-logo-small-white.svg']
-        if bg == SUN: art = files['primary-logo-small.svg']
+    """
+    # book spines: board shown at 2x of 96 px/in, so a 0.5 in logo is 96 px tall here (ink height, no padding)
+    IN = 192
+    spines, x = [], 0
+    specs = [(0.80, SKY, "white"), (0.30, TOMATO, "ball"), (0.80, SUN_T, "full")]
+    tot = sum(w for w, _, _ in specs) * IN + 12 * (len(specs) - 1)
+    x = (463 - tot) / 2
+    for w_in, bg, kind in specs:
+        w = w_in * IN
+        if kind == 'ball':
+            art = inline(mock['ball-white'], f'width:{0.2 * IN}px;height:{0.2 * IN}px')
+        else:
+            art = inline(mock['small-white' if kind == 'white' else 'small'], f'height:{0.5 * IN}px;width:auto')
+        bar = PAPER if kind in ('white', 'ball') else INK
         spines.append(
-            f'<div style="position:absolute;left:{x}px;top:18px;width:{w}px;height:392px;background:{bg};border-radius:6px 6px 3px 3px;'
-            f'box-shadow:inset -1px 0 0 rgba(0,0,0,.06)">'
-            f'<div style="position:absolute;left:50%;top:40px;width:10px;height:200px;margin-left:-5px;border-radius:5px;background:{fg};opacity:.18"></div>'
-            f'<div style="position:absolute;left:0;right:0;bottom:22px;display:flex;justify-content:center">{inline(art, "height:96px;width:auto")}</div></div>')
-        x += w + 8
-    tote = f'''
-      <svg viewBox="0 0 400 420" style="position:absolute;left:50%;top:18px;margin-left:-170px;width:340px;height:357px">
-        <path d="M120 150 C120 40 280 40 280 150" fill="none" stroke="{SUN}" stroke-width="16" stroke-linecap="round"/>
-        <path d="M60 140 H340 L352 410 H48 Z" fill="{SUN_T}"/>
-        <path d="M60 140 H340 L341 162 H59 Z" fill="{SUN}" opacity=".35"/>
+            f'<div style="position:absolute;left:{x:.0f}px;top:0;width:{w:.0f}px;height:404px;background:{bg};'
+            f'box-shadow:inset 0 0 0 1px rgba(29,41,64,.08)">'
+            f'<div style="position:absolute;left:50%;top:44px;width:12px;height:190px;margin-left:-6px;border-radius:6px;background:{bar};opacity:.28"></div>'
+            f'<div style="position:absolute;left:0;right:0;bottom:26px;display:flex;justify-content:center">{art}</div></div>')
+        x += w + 12
+    tote = f"""
+      <svg viewBox="0 0 400 440" style="position:absolute;left:50%;top:6px;margin-left:-180px;width:360px;height:396px">
+        <path d="M128 132 V78 C128 20 272 20 272 78 V132" fill="none" stroke="{INK}" stroke-width="18"/>
+        <rect x="58" y="120" width="284" height="306" rx="6" fill="{INK}"/>
+        <rect x="58" y="120" width="284" height="20" fill="#FFFFFF" opacity=".06"/>
       </svg>
-      <div style="position:absolute;left:50%;top:230px;margin-left:-86px;width:172px">{inline(files['primary-logo-small.svg'], 'width:172px;height:auto')}</div>'''
-    header = f'''
-      <div style="position:absolute;left:0;right:0;top:0;height:92px;background:{PAPER};border-bottom:1px solid #E6EAF1;display:flex;align-items:center;padding:0 26px;gap:26px">
-        {inline(files['primary-logo.svg'], 'height:62px;width:auto;margin-left:-8px')}
+      <div style="position:absolute;left:50%;top:190px;margin-left:-72px">{inline(mock['small-reverse-nobg'], 'width:144px;height:auto')}</div>"""
+    header = f"""
+      <div style="position:absolute;left:0;right:0;top:0;height:92px;background:{PAPER};border-bottom:1px solid #E6EAF1;display:flex;align-items:center;padding:0 28px">
+        {inline(mock['small'], 'height:56px;width:auto')}
         <div style="margin-left:auto;display:flex;gap:18px;font-size:13px;font-weight:700;opacity:.8"><span>Shop</span><span>Ages 0–5</span><span>Ages 5–12</span><span>Classrooms</span></div>
-      </div>'''
-    body = f'''<div class="grid">
-      <div class="cell" style="grid-row:span 1">{header}
-        <div class="center" style="top:92px">{inline(logo, 'width:300px;height:auto')}</div>{L('Primary logo on white · and in a 62 px site header')}</div>
-      <div class="cell ink" style="background:{INK}"><div class="center">{inline(rev, 'width:250px;height:auto')}</div>{L('Reversed on ink')}</div>
-      <div class="cell"><div class="center">{inline(blk, 'width:250px;height:auto')}</div>{L('One colour (black)')}</div>
-      <div class="cell" style="background:{PAPER}">
-        <div style="position:absolute;left:40px;top:44px;width:300px;height:300px;border-radius:50%;overflow:hidden">{inline(avatar, 'width:300px;height:300px')}</div>
-        <div style="position:absolute;left:372px;top:112px;display:flex;flex-direction:column;gap:16px;align-items:flex-start">
-          <div style="width:110px;height:110px;border-radius:50%;overflow:hidden">{inline(avatar, 'width:110px;height:110px')}</div>
-          <div style="display:flex;gap:10px;align-items:center"><div style="width:40px;height:40px;border-radius:50%;overflow:hidden">{inline(avatar, 'width:40px;height:40px')}</div>
-          <div style="width:24px;height:24px;border-radius:50%;overflow:hidden">{inline(avatar, 'width:24px;height:24px')}</div></div>
-        </div>{L('Symbol as a round social avatar (300, 110, 40, 24 px)')}</div>
-      <div class="cell" style="background:{WASH}">{"".join(spines)}{L('Book spines · logo 0.5 in tall (board shown at 2×)')}</div>
-      <div class="cell" style="background:{SKY_T}">{tote}{L('Tote · embroidered, small cut')}</div>
-    </div>'''
+      </div>"""
+    body = f"""<div class="grid">
+      <div class="cell">{header}
+        <div class="center" style="top:92px;padding-bottom:30px">{inline(files['primary-logo.svg'], 'width:310px;height:auto')}</div>{L('Primary logo on white · small cut in a 92 px site header')}</div>
+      <div class="cell ink" style="background:{INK}"><div class="center">{inline(files['primary-logo-reverse.svg'], 'width:260px;height:auto')}</div>{L('Reversed on ink')}</div>
+      <div class="cell"><div class="center">{inline(files['primary-logo-black.svg'], 'width:260px;height:auto')}</div>{L('One colour (black)')}</div>
+      <div class="cell">
+        <div style="position:absolute;left:44px;top:44px;width:300px;height:300px;border-radius:50%;overflow:hidden">{inline(avatar, 'width:300px;height:300px;display:block')}</div>
+        <div style="position:absolute;left:386px;top:96px;display:flex;flex-direction:column;gap:18px;align-items:flex-start">
+          <div style="width:112px;height:112px;border-radius:50%;overflow:hidden">{inline(avatar, 'width:112px;height:112px;display:block')}</div>
+          <div style="display:flex;gap:12px;align-items:center"><div style="width:40px;height:40px;border-radius:50%;overflow:hidden">{inline(avatar, 'width:40px;height:40px;display:block')}</div>
+          <div style="width:24px;height:24px;border-radius:50%;overflow:hidden">{inline(avatar, 'width:24px;height:24px;display:block')}</div></div>
+        </div>{L('Symbol as a round social avatar · 300, 112, 40, 24 px')}</div>
+      <div class="cell" style="background:{WASH}"><div style="position:absolute;left:0;right:0;top:0;height:404px">{''.join(spines)}</div>{L('Spines · logo 0.5 in tall; thin spines take the ball · shown 2×')}</div>
+      <div class="cell" style="background:{SKY_T}">{tote}{L('Tote · embroidered, small cut, reversed')}</div>
+    </div>"""
     return page(body, 1600, 1000, bg=WASH, css=css)
 
 

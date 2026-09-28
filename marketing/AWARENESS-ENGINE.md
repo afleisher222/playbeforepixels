@@ -66,7 +66,7 @@ The journey ends at the pediatrician, not at the shop. There is no exit-intent p
 
 | URL (source) | What it answers | Title (≤60) | Meta description (≤155) | Schema | Reviewed |
 |---|---|---|---|---|---|
-| `/research/` (**to build**) | "research library"; navigation | Research Library: Screens, Play and Early Talk (SEO-PLAN row 37) | SEO-PLAN row 37 | CollectionPage, BreadcrumbList | Every 6 months |
+| `/research/` (**to build**) | "research library"; navigation | Research Notes: Screens, Play and Early Talk (SEO-PLAN row 37) | SEO-PLAN row 37 | CollectionPage, BreadcrumbList | Every 6 months |
 | `/research/virtual-autism/` (`index.md`) | The term: "what is", "is it real", "is it a diagnosis" | What Is "Virtual Autism"? What the Research Says (48) | Existing (146) | Article + WebPage `lastReviewed`, BreadcrumbList | January and July, plus whenever the evidence changes (§4) |
 | `/research/virtual-autism/faq/` (`faq.md`) | Question searches: "do screens cause autism", "did I cause this", "how much screen time" | Do Screens Cause Autism? Careful Answers for Parents (52) | No study has shown that screens cause autism. Plain answers about "virtual autism", screen time, blame, and how to ask for a free evaluation. (141) | FAQPage, with the visible Q&A copied word for word; BreadcrumbList | January and July |
 | `/research/glossary/` (`glossary.md`) | Related labels (EPEE, ESS, "digital autism", PDNAS) and research words | Research Words About Screens and Autism, Explained (50) | Plain meanings of the words on our research pages: "virtual autism", EPEE, association vs. cause, screening vs. diagnosis, early intervention. (142) | DefinedTermSet, with one DefinedTerm per entry and an `#anchor` for each | January and July |
@@ -191,7 +191,7 @@ Each such change needs a draft, a "What changed" note and the full review (a new
 ## 6. A passive facts page for press and researchers (`/research/facts/`), with no pitching
 
 1. **Who publishes this:** Play Before Pixels, a trade name of AlphaPlay LLC. We sell play materials; this conflict of interest is stated here. We are not clinicians. We use AI assistance and a person checks everything. The hub carries no sponsorship, ads or affiliate links.
-2. **A definition you may quote:** the full safe sentence. Attribution: "Play Before Pixels Research Library, 'What is virtual autism?', last reviewed {date}, {URL}."
+2. **A definition you may quote:** the full safe sentence. Attribution: "Play Before Pixels Research Notes, 'What is virtual autism?', last reviewed {date}, {URL}."
 3. **Ten key facts,** one sentence each, with an evidence label and a link to the study page. **Verified sources only.**
 4. **The evidence table to download,** as CSV and JSON built from `_data/library.json`. Columns: study, year, design, stance, one-line finding, citation, DOI, what we read, last reviewed. The licence is a founder decision (§12). Marked up with Dataset schema so Google Dataset Search can find it.
 5. **How we choose and weigh studies** (link to the editorial policy), and the corrections log.
@@ -326,8 +326,8 @@ Each such change needs a draft, a "What changed" note and the full review (a new
 
 1. **Printable links** in `content/research-hub/index.md` and `faq.md`, and in `seo/articles/08` and `09`, should point to `/research/play-printable/`. Build that page and the `channel=hub` PDF edition.
 2. **`seo/articles/08`** duplicates the pillar. Retire it. SEO-PLAN row 40 (title "A Careful Look at the Term") should follow the hub's title.
-3. **The hub has three names:** "The Virtual Autism Project" (CAMPAIGN-BIBLE §4 and the Study Snapshots label), "Research Library" (SEO-PLAN) and "Research Notes" (SOCIAL-HANDLES). DECISION-MEMO says rename. Use one name (§12).
-4. **`check_listings.py` `AUTISM_RX`** misses Turkish "otizm" and terms in other scripts (autyzm, аутизм, التوحد, 自闭症, 자폐). Add them before any non-English listing goes live.
+3. **The hub has three names:** "The Virtual Autism Project" (CAMPAIGN-BIBLE §4 and the Study Snapshots label), "Research Library" (SEO-PLAN) and "Research Notes" (SOCIAL-HANDLES). DECISION-MEMO says rename. Use one name (§12). **Resolved September 28, 2026:** the founder chose "Play Before Pixels Research Notes" (`legal/ENTITY.md`); marketing/, seo/, business/, legal/ and index.html were aligned by the autism content audit (`ops/TESTS/autism-content-audit.md`). site-concepts/ is still open (fix-later list there). The sub-page `/research/library/` keeps its descriptive title.
+4. **`check_listings.py` `AUTISM_RX`** misses Turkish "otizm" and terms in other scripts (autyzm, аутизм, التوحد, 自闭症, 자폐). Add them before any non-English listing goes live. **Done September 28, 2026** in `check_listings.py` and `check_hub_firewall.py` (autism content audit).
 5. **CAMPAIGN-BIBLE §4, topic 10,** links to "state early intervention program[s]". Change this to national directories only: a state directory can route readers to the excluded county program.
 6. **Ad pixels.** `legal/PRIVACY-POLICY.md` promises "no retargeting pixels", while MARKETING-PLAYBOOK plans Meta and Pinterest ads for later. If pixels are ever added, they are kept off hub pages (HF-13) and the policy is updated first.
 7. **Review month.** SEO-PLAN §8's March review of A8 moves to January and July (§4).
@@ -337,7 +337,7 @@ Each such change needs a draft, a "What changed" note and the full review (a new
 
 ## 12. Founder decisions
 
-1. **The hub's name.** Recommended: "Play Before Pixels Research Library". Drop "The Virtual Autism Project" everywhere.
+1. **The hub's name.** **Decided:** "Play Before Pixels Research Notes" at `/research/` (`legal/ENTITY.md`, founder's choice). Drop "The Virtual Autism Project" everywhere.
 2. **A budget for paid reviewers:** a research checker for source checks, an autistic sensitivity reader, and a clinician for "What parents can do". Estimates are in BRAND-RESPECT-PLAN §3–4. Without these reviewers, no hub page can be published.
 3. **Analytics tool.** Choose between:
    - a cookieless tool that reports time on page and downloads (for example Plausible, from about $9 a month, UNVERIFIED);

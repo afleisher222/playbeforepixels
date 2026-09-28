@@ -108,7 +108,7 @@ const pg = (cls, inner, style = '') => `<section class="page ${cls}"${style ? ` 
 const site = (withUrl, without = '') => STORE() ? withUrl : without; // URL text only in the store edition
 const edName = () => `${LOW ? 'Low-ink' : 'Color'} edition · ${SZ.name}`;
 
-// Field hooks: only the color edition carries fillable fields (fillable.js reads data-field / data-ml / data-fs).
+// Field hooks: only the color edition carries fillable fields (finish.js reads data-field / data-ml / data-fs).
 const F = (name, ml = false, fs = 0) => LOW ? '' : ` data-field="${name}"${ml ? ' data-ml="1"' : ''}${fs ? ` data-fs="${fs}"` : ''}`;
 const lines = n => Array.from({ length: n }, () => '<span class="ln"></span>').join('');
 
@@ -898,8 +898,8 @@ function companionPages() {
     const l = s => Math.ceil(s.length / 33);
     return 8 + 11 * Math.max(l(m[6]), l(m[7]), l(m[8]), Math.ceil(it.cd.t.length / 22) + 1);
   };
-  const budget = 800; // same pagination in Letter and A4, so page numbers match across files
-  const pages = []; let cur = [], h = 0;
+  const budget = 850; // same pagination in Letter and A4, so page numbers match across files
+  const pages = []; let cur = [], h = 0; // budget tuned so Letter (the shorter page) never overflows; check.js confirms
   for (const it of items) {
     const e = est(it);
     if (h + e > budget || (it.band && h + e + 40 > budget)) { pages.push(cur); cur = []; h = 0; }
@@ -919,7 +919,7 @@ const indexCss = `<style>
 .index .phd{margin-bottom:8px}
 .cxl{font-size:9.6px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:3px;flex-wrap:wrap;color:var(--mut)}
 .cxl .i{width:12px;height:12px;color:${C.ink}}
-.cxr{display:grid;grid-template-columns:12px 15px 1.45in 1fr 1fr 1fr;gap:7px;align-items:start;padding:3px 0 4px;border-bottom:1px solid #E6EBF3;font-size:8.8px;line-height:1.24;font-weight:600}
+.cxr{display:grid;grid-template-columns:12px 15px 1.45in 1fr 1fr 1fr;gap:7px;align-items:start;padding:2px 0 3px;border-bottom:1px solid #E6EBF3;font-size:8.8px;line-height:1.24;font-weight:600}
 .cxth{font-weight:800;font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);border-bottom:1.5px solid ${C.ink};padding-bottom:3px}
 .cxr .bx{width:10px;height:10px;border:1.3px solid ${C.ink};border-radius:3px;margin-top:1px;display:block}
 .nn{font-size:8px;font-weight:800;color:var(--mut);margin-top:1px}
@@ -1087,7 +1087,7 @@ const shCss = `<style>
 .sqr .qr{width:1.05in;height:1.05in;display:block}
 .sqr span{font-size:8px;font-weight:800;line-height:1.3;word-break:break-all}
 .sfull{margin-top:auto}
-.sinside .sig{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 18px}
+.sinside .sig{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:repeat(7,auto);grid-auto-flow:column;gap:0 18px}
 .sinside{margin-bottom:12px}.sinside .pgr{display:flex;justify-content:space-between;gap:6px;font-size:9.4px;font-weight:700;padding:1.5px 0;border-bottom:1px solid #E1E7F1}
 .sinside .pgr b{white-space:nowrap}
 </style>`;

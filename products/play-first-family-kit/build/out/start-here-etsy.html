@@ -128,8 +128,8 @@ h1,h2,h3,p{margin:0}
 .hj .art .disc{fill:#fff}
 .hj .nm{font-family:"Fredoka",sans-serif;font-weight:600;font-size:12.5pt;line-height:1.05;text-align:center;margin:.02in 0 .06in}
 .hj .fl{flex:0 0 .3in;width:100%;border-bottom:1.3px dashed var(--cut);margin-bottom:.05in}
-.dots{display:flex;gap:.05in}
-.dots span{width:.23in;height:.23in;border-radius:50%;background:#fff;border:1.4px solid var(--ink);font-size:5.8pt;font-weight:800;display:flex;align-items:center;justify-content:center;color:var(--mute)}
+.dots{display:flex;gap:.035in}
+.dots span{width:.265in;height:.265in;flex:0 0 auto;border-radius:50%;background:#fff;border:1.4px solid var(--ink);font-size:5.6pt;font-weight:800;display:flex;align-items:center;justify-content:center;color:var(--mute)}
 /* ---------- chore table ---------- */
 .ch{flex:1;display:flex;flex-direction:column;min-height:0}
 .chr{display:grid;grid-template-columns:.62in 1fr 1.05in repeat(7,.44in);align-items:center}
@@ -175,6 +175,26 @@ h1,h2,h3,p{margin:0}
 .tr .art{flex:1;min-height:0;width:100%}
 .tr .nm{font-weight:800;font-size:7.8pt;line-height:1.12;text-align:center;min-height:.24in;display:flex;align-items:center}
 .tr .fl{flex:0 0 .42in;width:100%;border-bottom:1.2px dashed var(--cut)}
+/* ---------- 30-play guide ---------- */
+.pg30{flex:1;display:flex;flex-direction:column;min-height:0}
+.pgr{display:grid;grid-template-columns:1.9in .98in repeat(3,1fr) .84in;column-gap:.08in;padding:.05in .06in}
+.pgr.h{font-weight:800;font-size:6.4pt;letter-spacing:.07em;text-transform:uppercase;color:var(--mute);align-items:end;padding-bottom:.04in;border-bottom:1.4px solid var(--ink)}
+.pgr.r{flex:1 1 auto;border-bottom:1px solid var(--line);align-items:center;font-size:7.7pt;line-height:1.28}
+.pgr.r:nth-child(odd){background:var(--wash)}
+.pgr .pt{display:flex;align-items:center;gap:.06in}
+.pgr .pt .kid{font-size:10.5pt;line-height:1.05}
+.pgr .dn{flex:0 0 auto;font-family:"Fredoka",sans-serif;font-weight:600;font-size:8pt;width:.22in;height:.22in;border-radius:50%;background:#fff;border:1.8px solid var(--tn);color:var(--ink);display:flex;align-items:center;justify-content:center}
+.pgr .from{font-weight:800;font-size:7.4pt;margin:.03in 0 .02in .28in}
+.pgr .meta{display:flex;flex-wrap:wrap;gap:.01in .06in;font-size:6.8pt;font-weight:700;color:var(--mute);margin-left:.28in}
+.pgr .meta span,.pgr .nd{display:inline-flex;align-items:center;gap:.025in}
+.pgr svg{width:.09in;height:.09in;flex:0 0 auto;color:var(--ink)}
+.pgr .cl{display:flex;flex-direction:column;gap:.03in}
+.pgr .nd{align-items:flex-start;font-weight:700}
+.pgr .nd svg{margin-top:.02in}
+.pgr .sf{font-size:7pt;line-height:1.25}
+.pgr .say{font-weight:700}
+.low .pgr.r:nth-child(odd){background:#fff}
+.low .pgr .dn{border-color:var(--ink)}
 /* ---------- certificate ---------- */
 .cert{flex:1;border-radius:.3in;border:.14in solid var(--sun);padding:.35in;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;position:relative;background:#fff}
 .cert .h1{font-size:40pt}

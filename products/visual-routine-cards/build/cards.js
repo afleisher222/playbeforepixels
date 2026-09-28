@@ -72,7 +72,7 @@ const LIST = {
     ['fExcited', 'Excited'], ['fCalm', 'Calm', 1], ['fSilly', 'Silly'], ['fProud', 'Proud'], ['fFrustrated', 'Frustrated'],
     ['fSurprised', 'Surprised'], ['fShy', 'Shy'], ['fLoved', 'Loved'], ['fBored', 'Bored'], ['fHungry', 'Hungry'],
     ['bigBreath', 'Big breath', 1], ['askHug', 'Ask for a hug', 1], ['calmCorner', 'Cozy corner'], ['squeezePillow', 'Squeeze a pillow'],
-    ['askHelp', 'Ask for help'], ['talkAbout', 'Talk about it'], ['countFive', 'Count to five'], ['stretch', 'Big stretch'], ['drawIt', 'Draw it out'],
+    ['askHelp', 'Ask for help'], ['talkAbout', 'Talk about it'], ['countFive', 'Count to five'], ['stretch', 'Big stretch'], ['drawIt', 'Draw it out'], ['quietEars', 'Quiet ears'],
   ],
   about: [
     ['shopping', 'Grocery store'], ['checkUp', 'Check-up'], ['dentist', 'Dentist'], ['haircut', 'Haircut'], ['friendsHouse', "Friend's house"],
@@ -80,7 +80,8 @@ const LIST = {
   ],
   words: [
     ['wFirst', 'First', 1], ['wThen', 'Then', 1], ['wNow', 'Now'], ['wNext', 'Next'], ['wLater', 'Later'], ['wWait', 'Wait', 1],
-    ['wAllDone', 'All done', 1], ['wToday', 'Today'], ['wChange', 'Change of plan'], ['wHelp', 'Help, please'], ['wYes', 'Yes'], ['wNo', 'No'],
+    ['wAllDone', 'All done', 1], ['wToday', 'Today'], ['wChange', 'Change of plan'], ['wHelp', 'Help'], ['wYes', 'Yes'], ['wNo', 'No'],
+    ['wMore', 'More'], ['wStop', 'Stop'], ['wMyTurn', 'My turn'], ['wBreak', 'Break'],
   ],
   screens: [
     ['playFirst', 'Play first', 1], ['screensLater', 'Screens later', 1], ['screensOff', 'Screens rest'], ['whatNext', 'What we do next'], ['fiveMore', '5 more minutes'],
@@ -100,7 +101,7 @@ const LIST = {
   'bk-evening': [
     ['helpDinner', 'Help make dinner'], ['familyDinnerBig', 'Family dinner'], ['clearTable', 'Clear the table'], ['dishes', 'Wash dishes'],
     ['shower', 'Shower'], ['pjBig', 'Pajamas on'], ['layOut', "Lay out tomorrow's clothes"], ['packTomorrow', 'Pack for tomorrow'],
-    ['talkDay', 'Talk about my day'], ['journal', 'Journal'], ['readInBed', 'Read in bed'], ['devicesSleep', 'Devices sleep outside'],
+    ['talkDay', 'Talk about my day'], ['journal', 'Journal'], ['readInBed', 'Read in bed'], ['devicesSleep', 'Devices sleep outside my room'],
     ['lightsOutBig', 'Lights out'],
   ],
   'bk-jobs': [

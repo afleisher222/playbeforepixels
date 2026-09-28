@@ -6,7 +6,7 @@
   "low": false,
   "size": "letter",
   "fields": true,
-  "pages": 60
+  "pages": 59
  },
  {
   "html": "build/gen/store-color-a4.html",
@@ -15,7 +15,7 @@
   "low": false,
   "size": "a4",
   "fields": true,
-  "pages": 60
+  "pages": 59
  },
  {
   "html": "build/gen/store-low-letter.html",
@@ -24,7 +24,7 @@
   "low": true,
   "size": "letter",
   "fields": false,
-  "pages": 60
+  "pages": 59
  },
  {
   "html": "build/gen/store-low-a4.html",
@@ -33,7 +33,7 @@
   "low": true,
   "size": "a4",
   "fields": false,
-  "pages": 60
+  "pages": 59
  },
  {
   "html": "build/gen/store-start-here.html",
@@ -52,7 +52,7 @@
   "low": false,
   "size": "letter",
   "fields": true,
-  "pages": 60
+  "pages": 59
  },
  {
   "html": "build/gen/etsy-color-a4.html",
@@ -61,7 +61,7 @@
   "low": false,
   "size": "a4",
   "fields": true,
-  "pages": 60
+  "pages": 59
  },
  {
   "html": "build/gen/etsy-low-letter.html",
@@ -70,7 +70,7 @@
   "low": true,
   "size": "letter",
   "fields": false,
-  "pages": 60
+  "pages": 59
  },
  {
   "html": "build/gen/etsy-low-a4.html",
@@ -79,7 +79,7 @@
   "low": true,
   "size": "a4",
   "fields": false,
-  "pages": 60
+  "pages": 59
  },
  {
   "html": "build/gen/etsy-start-here.html",

@@ -212,7 +212,7 @@ g. Is there anything else a careful reader would want to know about your indepen
 - General freelance marketplaces (for example Upwork), searching for pediatric medical reviewers or pediatric SLP content reviewers.
 - Directories such as ASHA ProFind and the Society for Developmental and Behavioral Pediatrics member directory. Use them **to verify credentials**, not for cold contact: a direct message from a directory counts as contact, and the APPROVED line covers posting on marketplaces only.
 - Verify credentials before hiring: ASHA certification verification and the state license lookup for an SLP; American Board of Pediatrics certification verification and the state medical board (or DocInfo) for a pediatrician.
-- National marketplaces are preferred to local job boards (see the screening rules in section 8).
+- National marketplaces are preferred to local job boards (see the screening rules in section 5).
 
 **Brief B: posting text**
 
@@ -366,10 +366,12 @@ First task (short): approve a one-page rider to our contractor agreement for two
 2. **Template section 6.2 conflicts with "no endorsement".** The freelancer template lets the Company use a contractor's name, likeness and bio "to credit and promote the work". For reviewers, rider R3 must replace it.
 3. **Template section 10** names a county court as the venue; see rider R12.
 4. **Allowlist gaps:** eight hosts needed for H7 and for credential checks are missing (list in section 1). Until they are added, the facts that depend on them stay `[VERIFY]`.
-5. **The free-printable link** on IDX and FAQ points to `/free/five-5-minute-plays/`; `ops/TESTS/check_hub_firewall.py` (rule HF-02) allows only the product-free twin `/research/play-printable/`. Fix this before freezing the review version, so reviewers see the final link.
+5. **Firewall findings on the six pages (September 28 run of `ops/TESTS/check_hub_firewall.py`).** FAIL HF-02: the free-printable link on IDX and FAQ points to `/free/five-5-minute-plays/`, but the hub may link only to the product-free twin `/research/play-printable/`. WARN HF-06: IDX has 206 words before its first section (the 30-second answer should fit in 150), and GLO lacks the closing "Worried?" line. Fix all three before freezing the review version, so reviewers see the final text.
 6. **"No money from device makers, app makers, EdTech companies or research authors"** (`editorial-policy.md`) is marked `[VERIFY: confirm with the owner]`. Only the founder can confirm it.
 7. **AAP 2026** may replace AAP 2016, which is on the BRAND.md rule 5 allowed list. If H1 confirms it, updating rule 5 is a founder decision.
 8. **Timing:** the SEO calendar's November 2026 slot for the "virtual autism" page comes before the gates can realistically be passed. Move the slot, not the gates.
+9. **A second "virtual autism" page could have skipped every gate.** `seo/articles/08-what-is-virtual-autism.md` uses the same URL as the hub pillar page (`/research/virtual-autism/`) and said `publish_gate: none`, and the site build publishes any article whose gate is `none`. On September 28 its gate was changed to `research-hub-review`, so it stays unbuilt until the four gates pass. Only one of the two pages may ever publish; the reviewed hub page is the default, and the SEO calendar should point to it. The firewall also flags the article for the word "cure" and the `/free/` link.
+10. **`seo/articles/09-screen-time-and-toddler-talk.md`** (`/research/screen-time-and-toddler-talk/`) is a research page that gives practical advice, and its gate is still `none`. `editorial-policy.md` says every research page gets these reviews. Adding it to Roles B and C would take about 1,000–1,500 more words (UNVERIFIED), inside the caps. That is a founder decision; the firewall already fails it on two links.
 
 ---
 
@@ -390,6 +392,18 @@ Use one row per comment. Put the block ID from the left margin in the first colu
 | 6 |  |  |  |  |  |
 | 7 |  |  |  |  |  |
 | 8 |  |  |  |  |  |
+| 9 |  |  |  |  |  |
+| 10 |  |  |  |  |  |
+| 11 |  |  |  |  |  |
+| 12 |  |  |  |  |  |
+| 13 |  |  |  |  |  |
+| 14 |  |  |  |  |  |
+| 15 |  |  |  |  |  |
+| 16 |  |  |  |  |  |
+| 17 |  |  |  |  |  |
+| 18 |  |  |  |  |  |
+| 19 |  |  |  |  |  |
+| 20 |  |  |  |  |  |
 
 ### Sign-off form A: autistic sensitivity read
 

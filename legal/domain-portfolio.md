@@ -123,7 +123,7 @@ Tip: if a rename is still a real possibility, spend about $10.50 to hold the bes
 ## Education-hub domains ("The Virtual Autism Project"): assessment
 
 - **Signal:** `virtualautismproject.com`, `.org`, `thevirtualautismproject.com` and `.org` are all NXDOMAIN, so they are probably available. `virtualautism.com` and `virtualautism.org` are already registered by others, and the .org has a live Wix site.
-- **Recommendation: do not buy these, and do not use "autism" in any domain or hub name.** Rename the hub to something non-medical, such as "Play Before Pixels Research Library", and host it at `playbeforepixels.com/research`. Reasons:
+- **Recommendation: do not buy these, and do not use "autism" in any domain or hub name.** Rename the hub to something non-medical and host it at `playbeforepixels.com/research`. **Decided September 28, 2026: "Play Before Pixels Research Notes"** (`legal/ENTITY.md`). Reasons:
   1. **Health-claim risk.** A domain naming a developmental condition, owned by a company that sells screen-reduction products, implies that screens cause autism or that the products prevent or improve it. The brand's rules forbid any health or medical claim. Keeping "autism" out of every domain and product page is the only safe approach. "Virtual autism" is not a recognized diagnosis. That is a general knowledge point (UNVERIFIED here), and it is exactly why a clinical-sounding URL is risky for a non-clinician.
   2. **Credential risk.** The founder is not a speech-language pathologist or clinician. A "project" domain about a condition invites readers to assume clinical authority.
   3. **Confusion with an existing site.** `virtualautism.org` already hosts a live site.
@@ -161,7 +161,7 @@ DNS check from the session (A-record lookup only; a name with no website can sti
 - **No website found (possibly available):** virtualautismproject, virtualautismawareness, virtualautismadvocacy, virtualautismresearch, virtualautismhelp, virtualautismfacts, virtualautismguide, thevirtualautismproject, aboutvirtualautism, understandingvirtualautism, virtualautisminfo — in .com/.org/.net/.co/.info.
 
 **Recommendation (founder decides):**
-- Only if the research hub keeps the name "The Virtual Autism Project": buy virtualautismproject.com, virtualautismproject.org, thevirtualautismproject.com and virtualautismresearch.com (≈ $40–50/yr at cost), each 301-redirecting to playbeforepixels.com/research.
-- Do **not** register the film's name in other endings (virtualautism.net/.co/.info): it can look like trading on another organization's name (bad-faith/UDRP risk) and would damage a hoped-for partnership.
+- ~~Only if the research hub keeps the name "The Virtual Autism Project": buy virtualautismproject.com, virtualautismproject.org, thevirtualautismproject.com and virtualautismresearch.com (≈ $40–50/yr at cost), each 301-redirecting to playbeforepixels.com/research.~~ **Moot (September 28, 2026):** the hub is "Play Before Pixels Research Notes", so buy no "virtual autism" domain of any kind (same decision as `legal/DECISION-MEMO.json` and `marketing/SOCIAL-HANDLES.md`).
+- Do **not** register the film's name in other endings (virtualautism.net/.co/.info): it can look like trading on another organization's name (bad-faith/UDRP risk). There is no partnership: virtualautism.org is DO NOT CONTACT (`marketing/virtual-autism-outreach.md`, row 49).
 - Do not attempt to buy every variant (~70 names, $700–1,000+/yr): domains create no rights in the phrase.
 - Counsel review of the hub's name is still recommended (legal/DECISION-MEMO.json, needs_a_lawyer).

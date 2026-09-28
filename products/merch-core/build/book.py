@@ -232,12 +232,14 @@ pg('''<p class="kick">Before anything ships</p><h2>Checks and launch list</h2>
 <p class="small" style="margin:0">Your own contribution is the part you can protect: your color choices (page 4), your slogan layout and slot-3 line (page 8) and your dated edits to the logo's build numbers. Commit each change to git so it is provable.</p></div>''', 11)
 
 # 12 more from
-covers = ''.join(f'''<div><img src="../{s}/cover.png" style="width:100%;height:2.2in;object-fit:contain;background:var(--wash);border-radius:8pt;padding:6pt"><p class="cap"><b>{t}</b><br>{d}</p></div>''' for s, t, d in [
+covers = ''.join(f'''<div><img src="../{s}/cover.png" style="width:100%;height:1.75in;object-fit:contain;background:var(--wash);border-radius:8pt;padding:6pt"><p class="cap"><b>{t}</b><br>{d}</p></div>''' for s, t, d in [
+    ('guide-100-plays', '100 Screen-Free Plays', 'Activity book, ages 0–5'),
     ('picture-tablet-slept', 'The Day the Tablet Slept', 'Funny bedtime read-aloud, ages 3–7'),
     ('bored-play-cards', '150 “I’m bored!” Play Cards', 'Printable, ages 1–12'),
-    ('guide-100-plays', '100 Screen-Free Plays', 'Activity book, ages 0–5')])
+    ('first-phone-plan', 'First Phone Agreement Kit', 'Printable, ages 9–12')])
 pg(f'''<p class="kick">More from Play Before Pixels</p><h2>Next for the people who wear it</h2>
-<div class="grid3">{covers}</div>
+<p class="small" style="margin:0 0 8pt">Sorted by the child's age, from babies to the first phone.</p>
+<div class="grid3" style="grid-template-columns:repeat(4,1fr)">{covers}</div>
 <div class="box sun" style="margin-top:16pt;display:flex;gap:16pt;align-items:center">{qr_svg(96)}
 <div><p class="disp" style="font-size:15pt;margin:0 0 4pt">Free play ideas for your family</p>
 <p class="small" style="margin:0">playbeforepixels.com/bonus/merch-core · email only, with your child's birth month and year if you like. No names.</p></div></div>

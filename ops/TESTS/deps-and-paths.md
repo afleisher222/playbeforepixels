@@ -1,6 +1,6 @@
 # Dependencies and paths audit: September 28, 2026
 
-**Verdict: before this audit, a routine could not finish building 8 of the 12 products.**
+**Verdict: before this audit, a routine could not finish building 8 of the 13 products.**
 
 - **What broke:** the builds need two Node packages, `pdf-lib` and `qrcode`. The cloud image doesn't include them, and `node_modules/` is git-ignored, so a fresh clone has neither. Nothing installed them.
 - **Fixed in `ops/cloud/setup-script.sh`,** with one product line left for the lead: `products/visual-routine-cards/build/build.js` line 665.
@@ -51,13 +51,14 @@ None of these ship with the cloud image. The image's `dist-packages` held nothin
 | fontTools `fonttools==4.66.0` | `brand/logo/src/build.py`; `brand/logo-concepts-v2/{a-wordmark,b-play-object,c-badge}/build.py`; `brand/logo-concepts/concept-1/build/build.py`, `concept-2/src/outline.py`, `concept-3/src/outline.py`, `concept-4/build/build.py`, `concept-5/src/{build,sketch5,sketch6}.py`; `products/merch-core/build/textpath.py` | requirements + setup |
 | uharfbuzz `0.56.2` | same files except `concept-5/src/sketch5.py` and `sketch6.py` | requirements + setup |
 | brotli `1.2.0` | not imported by name: fontTools needs it to read the brand `.woff2` files | requirements + setup |
-| pymupdf `1.28.2` | `products/{first-phone-plan,play-first-family-kit,visual-routine-cards}/build/finish.py`, `products/picture-tablet-slept/fix-pdf-size.py`, `ops/TESTS/unchanged_renders.py` | requirements + setup |
-| numpy `2.4.6`, pillow `12.3.0` | `ops/TESTS/unchanged_renders.py` | requirements + setup |
-| openpyxl `3.1.5` | `business/build_financial_model.py` | requirements + setup |
+| pymupdf `1.28.2` | `products/{first-phone-plan,play-first-family-kit,visual-routine-cards}/build/finish.py`, `products/picture-tablet-slept/fix-pdf-size.py`, `ops/TESTS/unchanged_renders.py`. Also `products/bored-play-cards/build/verify.py` as `import fitz`, the old alias: it still works in 1.28.2 but prints a deprecation warning (§5) | requirements + setup |
+| numpy `2.4.6` | `ops/TESTS/unchanged_renders.py`, `business/stress_test.py` | requirements + setup |
+| pillow `12.3.0` | `ops/TESTS/unchanged_renders.py` | requirements + setup |
+| openpyxl `3.1.5` | `business/build_financial_model.py`, `business/stress_test.py` | requirements + setup |
 | shapely `2.1.2` | `brand/logo-concepts/concept-3/src/mark.py`, `concept-4/build/build.py` | **added now** |
 | skia-pathops `0.9.2` (`import pathops`) | `brand/logo-concepts/concept-5/src/build.py` | **added now** |
 
-Every other Python file uses only the standard library or its own sibling modules (`build`, `geom`, `mark`, `outline`, `pages`, `textpath`). That covers `check_listings.py`, merch-core's `book.py`/`build.py`/`pages.py`/`set_dpi.py`, and the `python3 -` heredoc in `board-up-go-more/build/render-all.sh`. Python puts the script's own folder on `sys.path`, so those sibling imports work from any working directory.
+Every other Python file uses only the standard library or its own sibling modules (`build`, `geom`, `mark`, `outline`, `pages`, `textpath`). That covers `check_listings.py`, `check_hub_firewall.py`, merch-core's `book.py`/`build.py`/`pages.py`/`set_dpi.py`, and the `python3 -` heredoc in `board-up-go-more/build/render-all.sh`. Python puts the script's own folder on `sys.path`, so those sibling imports work from any working directory.
 
 **Installed in this session but used by no committed script:** `pypdf` 6.19.0, Python `qrcode` 8.2 and `opencv-python-headless` 5.0.0.93. Agents installed them ad hoc; they're not pinned and not needed. A reviewer agent that reaches for `cv2` or `pypdf` in a routine will find them missing, so point QA habits at `pymupdf`, `PIL` and `numpy`.
 
@@ -73,9 +74,9 @@ diff <(grep -oE '^[A-Za-z0-9_.-]+==[^ ]+' requirements.txt | sort) <(grep -oP '^
 
 | Package | Required by | Before | Now |
 |---|---|---|---|
-| `playwright` (by absolute path `/opt/node22/lib/node_modules/playwright`) | 36 files: `brand/render.js`, `brand/logo/src/raster.js`, `ops/TESTS/check_fonts.js` (with a fallback chain), 3 logo-concepts-v2 files, 22 product scripts and 9 site-concept tools | Cloud image (not in the documented tool list) | Image, and the setup script restores the path if the image drops it |
-| Chromium at `/opt/pw-browsers/chromium` | 37 files. 11 of them have no `.catch(() => chromium.launch())` fallback (§5) | Image | Image + setup-script safety net |
-| `pdf-lib@1.17.1` | `bored-play-cards/build/fillable.js`, `course-screen-reset/build/{fields,fixsize}.js`, `guide-100-plays/build/{fields,fixsize}.js`, `play-talk-cards/build/render-all.js`, `toddler-busy-book/build/fillable.js` | **Nothing** (git-ignored `node_modules`) | setup script (`/opt/pbp-node` + `~/.node_modules`) |
+| `playwright` (by absolute path `/opt/node22/lib/node_modules/playwright`) | 37 files: 6 in `brand/` (`render.js`, `logo/src/raster.js`, 4 logo-concepts-v2 files), 22 product scripts, 9 site-concept tools. `ops/TESTS/check_fonts.js` tries that path first, then `playwright`, then `npm root -g` | Cloud image (not in the documented tool list) | Image, and the setup script restores the path if the image drops it |
+| Chromium at `/opt/pw-browsers/chromium` | 38 files. 12 of them have no `.catch(() => chromium.launch())` fallback (§5) | Image | Image + setup-script safety net |
+| `pdf-lib@1.17.1` | `bored-play-cards/build/finish.js` (`fillable.js` in `a46bcba`), `course-screen-reset/build/{fields,fixsize}.js`, `guide-100-plays/build/{fields,fixsize}.js`, `play-talk-cards/build/render-all.js`, `toddler-busy-book/build/fillable.js` | **Nothing** (git-ignored `node_modules`) | setup script (`/opt/pbp-node` + `~/.node_modules`) |
 | `qrcode@1.5.4` | `bored-play-cards/build/build.js` (new in `a46bcba`), `first-phone-plan/build/build.js`, `play-first-family-kit/build/build.js`, `play-talk-cards/build/build.js`, `toddler-busy-book/build/core.js`, `visual-routine-cards/build/build.js` (via `./node_modules/qrcode`, see §5). In `course-screen-reset/build/parts.js` and `guide-100-plays/build/parts.js` it is optional: they fall back to the committed `qr.json` | **Nothing** | setup script, except visual-routine-cards, which needs the one-line fix |
 
 Everything else these scripts require is a Node built-in, a sibling file (`./art.js`, `../story-bonus/build/art.js`, …) or committed JSON (`./manifest.json`, `./out/manifest.json`, `./pagemap-*.json`, `./stats.json`).
@@ -87,7 +88,7 @@ The setup script and the lockfiles resolve the same 34 versions. `course-screen-
 ### System tools the shell scripts call
 
 - `node`, `python3`: covered above.
-- `zip`: `bored-play-cards/build/make-all.sh` and `toddler-busy-book/build/make-all.sh`. It is on today's image, and the setup script installs it if missing.
+- `zip`: `toddler-busy-book/build/make-all.sh`. `bored-play-cards` stopped zipping in the working tree. It is on today's image, and the setup script installs it if missing.
 - Everything else is coreutils, sed or awk (`mktemp`, `sed`, `find`, `awk`, `seq`, `cp`, `ls`).
 - No script calls ImageMagick, Ghostscript, qpdf or poppler.
 
@@ -125,7 +126,7 @@ The setup script and the lockfiles resolve the same 34 versions. `course-screen-
 | `products/play-talk-cards/source.html` | "♡" ×52 (DejaVu Sans) | Inline SVG heart (the art already has a symbol set) |
 | `products/picture-more-talk-less-tap/source.html` | "✂" ×10, plus 1–4 glyphs in each "Cut on the dashed lines…" note | Inline SVG scissors. Re-run the check for the exact characters in the notes |
 | `products/visual-routine-cards/source.html` | "≈ 1.25 in" | "about 1.25 in" |
-| `products/merch-core/source.html` | every `<code>` (DejaVu Sans Mono, about 540 glyphs), plus one "→" | `code{font-family:"Nunito Sans",sans-serif}` in its CSS, if this spec book ships to anyone |
+| `products/merch-core/source.html` | every `<code>` (DejaVu Sans Mono, about 500 glyphs), plus one "→" | `code{font-family:"Nunito Sans",sans-serif}` in its CSS, if this spec book ships to anyone |
 
 Clean: `bored-play-cards`, `first-phone-plan`, `guide-100-plays`, `merch-core/hang-tag.html`, `picture-laps-not-apps`, `play-first-family-kit`.
 
@@ -148,8 +149,9 @@ The cloud clone happens to sit at `/home/user/playbeforepixels`. So the `/home/u
 | `business/build_financial_model.py:18` | default `OUT = "/home/user/playbeforepixels/business/PlayBeforePixels_Financial_Model.xlsx"` | `os.path.join(os.path.dirname(os.path.abspath(__file__)), "PlayBeforePixels_Financial_Model.xlsx")` |
 | `brand/logo-concepts/concept-2/src/outline.py:10`, `concept-3/src/outline.py:9` | `FONT = '/home/user/playbeforepixels/brand/fonts/bricolage-a24454f0.woff2'` | `os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', 'fonts', 'bricolage-a24454f0.woff2')` (archive; low priority) |
 | `site-concepts/B-toy-shop-bold/qa/nav-test.js:3` | `ROOT = '/home/user/playbeforepixels/site-concepts/B-toy-shop-bold/'` | `path.resolve(__dirname, '..') + '/'` |
-| `brand/logo-concepts-v2/{a-wordmark,b-play-object}/render.js:6` | tries `/home/user/playbeforepixels/node_modules/playwright` first | Drop the first try; keep `/opt/node22/…` |
-| 11 scripts launch Chromium with **no fallback**:<br>`products/first-phone-plan/build/{check,fields}.js`<br>`products/play-first-family-kit/build/{check,export-png,fields}.js`<br>`products/visual-routine-cards/build/{check,export-png,fields,snap}.js`<br>`site-concepts/B-toy-shop-bold/qa/nav-test.js`<br>`brand/logo-concepts-v2/c-badge/tests/raster.js` | `chromium.launch({ executablePath: '/opt/pw-browsers/chromium' })` | Add `.catch(() => chromium.launch())`, as the other 26 have. Low priority now that the setup script keeps the path valid |
+| `products/bored-play-cards/build/verify.py:59` | `tmp = '/tmp/_bored_formtest.pdf'`: one fixed file, so two runs at once (a routine and a worktree session) overwrite each other's form test | `tmp = tempfile.NamedTemporaryFile(suffix='.pdf', delete=False).name`. Also change `import fitz` to `import pymupdf as fitz` (the `fitz` name is deprecated) |
+| `brand/logo-concepts-v2/{a-wordmark,b-play-object,d-before-ball}/render.js:6` | tries `/home/user/playbeforepixels/node_modules/playwright` first | Drop the first try; keep `/opt/node22/…` |
+| 12 scripts launch Chromium with **no fallback**:<br>`products/first-phone-plan/build/{check,fields}.js`<br>`products/play-first-family-kit/build/{check,export-png,fields}.js`<br>`products/visual-routine-cards/build/{check,export-png,fields,snap}.js`<br>`site-concepts/B-toy-shop-bold/qa/nav-test.js`<br>`brand/logo-concepts-v2/c-badge/tests/raster.js`<br>`brand/logo-concepts-v2/d-before-ball/render.js` | `chromium.launch({ executablePath: '/opt/pw-browsers/chromium' })` | Add `.catch(() => chromium.launch())`, as the other 26 have. Low priority now that the setup script keeps the path valid |
 
 **Committed generated files that contain absolute paths.** Each is rebuilt from `__file__`/`__dirname` on every build, so no code change is needed:
 - `brand/logo/src/jobs.json` and `products/merch-core/build/raster-jobs.json`: always run `build.py` before `raster.js`, as both build scripts do. Feeding the committed JSON straight to `raster.js` from a worktree would write into the main checkout.

@@ -9,14 +9,14 @@ target_keyword: "virtual autism"   # demand UNVERIFIED (hypothesis). RESEARCH HU
 secondary_keywords: ["what is virtual autism", "screen time and autism research"]
 audience: Parents and caregivers of children aged 0–5; educators
 related_product: NONE. Per BRAND.md ("Autism searches"), this page links to no product. It links only to the free play printable, framed as play and family time.
-free_printable: /free/five-5-minute-plays/
+free_printable: /research/play-printable/   # product-free hub edition (AWARENESS-ENGINE HF-02); was /free/five-5-minute-plays/
 citations: ["Harlé 2019", "Heffler 2020", "Kushima 2022", "Takahashi 2023", "Madigan 2019", "Brushe 2024", "WHO 2019", "AAP 2016"]
 verify_before_publish:
   - "Confirm each full paper or report title in Sources against the journal or publisher page. Author, journal, year, volume and pages come from the verified list in brand/BRAND.md rule 5; the titles were written from memory. Add verified DOI links at the same time."
   - "US early intervention (IDEA Part C): every state runs a program for children under 3; evaluation is at no cost to families; parents can contact it directly without a doctor's referral; services may be free or low-cost depending on the state. Confirm on the CDC 'Learn the Signs. Act Early.' page or the US Department of Education IDEA site, and link the page you checked."
   - "Children 3 and older: families can ask their local public school district for a free evaluation (IDEA Part B / Child Find). Confirm on the same official source and link it."
   - "Do not link or name any specific state or county program."
-publish_gate: none (counsel has not restricted research-hub pages; recheck BRAND.md rule 3 before publishing)
+publish_gate: research-hub-review (blocked until the four gates in content/research-hub/review/REVIEW-PACK.md pass: primary sources read, paid autistic sensitivity read, clinician review, claims and legal review. This article and content/research-hub/index.md share the URL /research/virtual-autism/, so only one of them may ever publish; the reviewed hub page is the default)
 status: draft
 last_reviewed: 2026-09-28
 ---
@@ -57,7 +57,7 @@ This part matters as much as the findings.
 
 - **It does not mean screens cause autism.** Observational studies can't show cause. Other things, such as family circumstances, a child's early temperament, or how much time adults have to play, may explain part or all of the links.
 - **It does not mean your child's screen time caused their development to go one way or another.** Studies describe averages across thousands of children, not any one child.
-- **It does not mean reducing screens is a treatment.** No one should delay an evaluation, or skip recommended support, in the hope that cutting screens alone will be enough. Be cautious of anyone online who promises "recovery" or a cure.
+- **It does not mean reducing screens is a treatment.** No one should delay an evaluation, or skip recommended support, in the hope that cutting screens alone will be enough. Be cautious of anyone online who promises "recovery" from cutting screens.
 - **It does not mean guilt.** Many families rely on screens to get through hard days. Knowledge is for making choices going forward, not for looking back with blame.
 
 ## What the major guidelines say about screens for little ones
@@ -79,7 +79,7 @@ Please talk to your child's doctor if anything about your child's development wo
 
 ## Something good for every family
 
-Whatever the research eventually shows, time spent talking, playing and reading together is time well spent for any family. If you'd like some easy ideas for that kind of time, our free **Five 5-Minute Plays** printable has five quick games for babies to preschoolers, with a talk tip on each. It's play and family time, not a treatment or therapy for anything. [Download it free](/free/five-5-minute-plays/).
+Whatever the research eventually shows, time spent talking, playing and reading together is time well spent for any family. If you'd like some easy ideas for that kind of time, our free **Five 5-Minute Plays** printable has five quick games for babies to preschoolers, with a talk tip on each. It's simply play for family time. [Download it free](/research/play-printable/).
 
 You can also read our plain-language [study summaries](/research/studies/) to see each study's details for yourself.
 

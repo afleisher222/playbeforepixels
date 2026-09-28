@@ -13,6 +13,15 @@ const COLORWAYS = [
 
 const DEFS = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${B.SYMBOLS.join('')}${NEW_SYMBOLS.join('')}</defs></svg>`;
 
+// Low-ink look outside the Low-ink file (print-guide sample, listing image 8): a second copy of every symbol with ids
+// prefixed "lo-", styled as line art by LOWPREV_CSS, so the Simple sample shows exactly what the Low-ink file prints.
+const DEFS_LO = DEFS.replace('<svg ', '<svg class="lodefs" ').replace(/id="/g, 'id="lo-').replace(/href="#/g, 'href="#lo-');
+const lowPreview = html => `<div class="lowprev">${html.replace(/href="#/g, 'href="#lo-')}</div>`;
+const LOWPREV_CSS = `.lodefs symbol *:not(g):not([fill="${C.ink}"]):not([fill="none"]),
+.lowprev .card .art *:not(g):not(use):not([fill="${C.ink}"]):not([fill="none"]):not(.disc){fill:#FFFFFF!important;stroke:${C.ink}!important;stroke-width:1.3px!important;vector-effect:non-scaling-stroke;opacity:1!important}
+.lodefs symbol [fill="none"][stroke], .lowprev .card .art [fill="none"][stroke]{stroke:${C.ink}!important}
+.lowprev .card .art text{stroke-width:.9px!important}`;
+
 function labelSize(label) {
   const n = label.length;
   if (n <= 10) return 18;
@@ -44,7 +53,7 @@ symbol{overflow:visible}
 /* ---- card ---- */
 .card{width:2.2in;height:2.2in;border-radius:.17in;position:relative;overflow:hidden;background:#fff;flex:0 0 auto;break-inside:avoid}
 .card .art{position:absolute;left:.07in;right:.07in;top:.07in;height:1.56in;width:calc(100% - .14in);display:block}
-.card .lab{position:absolute;left:0;right:0;bottom:0;height:.52in;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 .1in .02in;font-family:"Fredoka","Nunito Sans",sans-serif;font-weight:600;line-height:1.02;letter-spacing:.005em}
+.card .lab{position:absolute;left:0;right:0;bottom:0;height:.52in;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 .1in .02in;font-family:"Fredoka","Nunito Sans",sans-serif;font-weight:600;line-height:1.02;letter-spacing:.005em;text-wrap:balance}
 .card .lab.blank::after{content:"";position:absolute;left:.26in;right:.26in;bottom:.15in;border-bottom:1.5px solid currentColor;opacity:.35}
 .card .disc{fill:var(--t)}
 .cw-rainbow{border:.075in solid var(--c);background:var(--c)}
@@ -62,4 +71,4 @@ symbol{overflow:visible}
 .cw-simple .lab{color:${C.ink}}
 `;
 
-module.exports = { card, CSS, DEFS, COLORWAYS, labelSize, esc };
+module.exports = { card, CSS, DEFS, DEFS_LO, lowPreview, LOWPREV_CSS, COLORWAYS, labelSize, esc };

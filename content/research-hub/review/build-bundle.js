@@ -153,7 +153,7 @@ function render(blocks, page, shift = 0) {
         if (inScope(page.sensitivity)) tags += '<span class="tag ts">Sensitivity focus</span>';
       }
       const lv = Math.min(Math.max(b.lvl + shift, 2), 4);
-      out.push(`<h${lv}${cls() ? ' class="in-c"' : ''}>${inline(b.text)}${tags ? ' ' + tags : ''}</h${lv}>`);
+      out.push(`<h${lv}>${inline(b.text)}${tags ? ' ' + tags : ''}</h${lv}>`);
     } else if (b.t === 'hr') {
       out.push('<hr>');
     } else if (b.t === 'p') {
@@ -208,7 +208,7 @@ const stageNote = STAGE === 'review'
 
 const reviewerCell = (p, role) => {
   if (role === 'S') return p.sensitivity.length ? 'Full read; focus: ' + p.sensitivity.map(s => s === '@intro' ? 'opening boxes' : s).join('; ') : 'Full read';
-  if (role === 'C') return p.clinician.includes('*') ? 'Whole page' : p.clinician.length ? p.clinician.map(s => s === '@intro' ? 'opening boxes' : s).join('; ') : '—';
+  if (role === 'C') return p.clinician.includes('*') ? 'Whole page' : p.clinician.length ? p.clinician.map(s => s === '@intro' ? 'Opening boxes' : s).join('; ') : '—';
   return 'Whole page';
 };
 
@@ -226,7 +226,7 @@ h1, h2, .display { font-family: "Bricolage Grotesque", "Nunito Sans", sans-serif
 strong { font-weight: 800; }
 
 /* cover */
-.cover { height: 9.5in; display: flex; flex-direction: column; break-after: page; }
+.cover { min-height: 9.3in; display: flex; flex-direction: column; break-after: page; }
 .kicker { display: inline-block; align-self: flex-start; background: var(--ink); color: #fff; font-weight: 800; font-size: 8pt; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 10px; border-radius: 3px; }
 .cover .brand { margin-top: 0.35in; font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 11pt; color: var(--muted); }
 .cover h1 { font-size: 34pt; line-height: 1.02; margin: 6px 0 10px; }
@@ -247,7 +247,8 @@ tr { break-inside: avoid; }
 /* how-to page */
 .howto { break-after: page; }
 .howto h2 { font-size: 17pt; margin: 0 0 8px; }
-.howto h3 { font-size: 11pt; margin: 14px 0 4px; font-weight: 800; }
+.howto h3 { font-size: 11pt; margin: 14px 0 4px; font-weight: 800; break-after: avoid; }
+.howto ul { break-before: avoid; }
 .howto p, .howto li { margin: 0 0 6px; }
 .legend { display: grid; grid-template-columns: 1.3in 1fr; gap: 6px 12px; align-items: start; margin: 8px 0 10px; font-size: 9.2pt; }
 
@@ -301,11 +302,13 @@ hr { border: 0; border-top: 1px solid #C9D3E3; margin: 12px 0; }
 .appendix > .inner h4 { font-size: 10pt; font-weight: 800; margin: 10px 0 4px; break-after: avoid; }
 .appendix p { margin: 0 0 6px; }
 .appendix ul, .appendix ol { margin: 0 0 8px; padding-left: 1.15em; }
-.appendix ul.chklist { list-style: none; padding-left: 0; }
+.appendix ul.chklist { list-style: none; padding-left: 1.4em; }
 .appendix li { margin: 0 0 4px; break-inside: avoid; }
 .appendix .form { break-before: page; }
 .appendix .form:first-of-type { break-before: auto; }
-.appendix td { height: 0.32in; }
+.appendix td { height: 0.36in; }
+.appendix table th:nth-child(1){width:4%} .appendix table th:nth-child(2){width:11%} .appendix table th:nth-child(3){width:11%} .appendix table th:nth-child(4){width:27%} .appendix table th:nth-child(5){width:29%} .appendix table th:nth-child(6){width:18%}
+.appendix td { border-bottom: 1px solid #B8C3D6; }
 `;
 
 const rows = pages.map(p => `<tr><td><b>${p.code}</b></td><td>${esc(p.title || p.fm.title || p.file)}<br><span style="color:#4B5569">${esc(p.url)}</span></td><td style="text-align:right">${p.counts.all.toLocaleString('en-US')}</td><td>${esc(reviewerCell(p, 'S'))}</td><td>${esc(reviewerCell(p, 'C'))}${p.counts.clinician ? ` <span style="color:#4B5569">(${p.counts.clinician.toLocaleString('en-US')} words)</span>` : ''}</td><td>${reviewerCell(p, 'L')}</td></tr>`).join('');
@@ -339,21 +342,22 @@ const html = `<!doctype html>
     <div><b>Words / blocks</b><span>${totals.all.toLocaleString('en-US')} / ${pages.reduce((a, p) => a + p.blocks, 0)}</span></div>
   </div>
   <div class="note">${stageNote}${STAGE !== 'review' ? ` Items still marked [VERIFY] in this build: <strong>${verifyLeft}</strong>.` : ''}</div>
-  <table>
-    <thead><tr><th>Code</th><th>Page and planned web address</th><th style="text-align:right">Words</th><th>A. Autistic sensitivity read</th><th>B. Clinician review</th><th>C. Claims and legal</th></tr></thead>
-    <tbody>${rows}
-    <tr><td></td><td><b>Total</b></td><td style="text-align:right"><b>${totals.all.toLocaleString('en-US')}</b></td><td><b>${totals.all.toLocaleString('en-US')}</b> words (${totals.sensitivity.toLocaleString('en-US')} in focus sections)</td><td><b>${totals.clinician.toLocaleString('en-US')}</b> words in scope</td><td><b>${totals.all.toLocaleString('en-US')}</b> words</td></tr></tbody>
-  </table>
   <div class="conf"><strong>Confidential.</strong> These pages are unpublished drafts owned by AlphaPlay LLC (doing business as Play Before Pixels). Please do not share them, quote them, or upload them to any AI tool or public service, and do not contact any person or organization named in them. Your contract sets out the full terms.</div>
   <div class="foot">&copy; 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. &nbsp;·&nbsp; Source files: content/research-hub/*.md &nbsp;·&nbsp; Built by content/research-hub/review/build-bundle.js</div>
 </section>
 
 <section class="howto">
-  <h2>How to use this bundle</h2>
+  <h2>Pages and who reviews what</h2>
+  <table>
+    <thead><tr><th>Code</th><th>Page and planned web address</th><th style="text-align:right">Words</th><th>A. Autistic sensitivity read</th><th>B. Clinician review</th><th>C. Claims and legal</th></tr></thead>
+    <tbody>${rows}
+    <tr><td></td><td><b>Total</b></td><td style="text-align:right"><b>${totals.all.toLocaleString('en-US')}</b></td><td><b>${totals.all.toLocaleString('en-US')}</b> words (${totals.sensitivity.toLocaleString('en-US')} in focus sections)</td><td><b>${totals.clinician.toLocaleString('en-US')}</b> words in scope</td><td><b>${totals.all.toLocaleString('en-US')}</b> words</td></tr></tbody>
+  </table>
+  <h2 style="margin-top:14px">How to use this bundle</h2>
   <p>Each page starts on a new sheet. Read the pages your brief covers, write your comments in the comment table at the back (or the same columns in any spreadsheet), then complete your sign-off form. All communication is in writing.</p>
   <div class="legend">
     <div><span class="bid" style="position:static">IDX-014</span></div><div><strong>Block ID.</strong> Every paragraph, list item and box has an ID in the left margin: page code plus number. Use it in your comments so each one points to one exact place.</div>
-    <div><span class="tag tc" style="margin:0">Clinician scope</span></div><div><strong>Clinician scope.</strong> Sections in the clinician's scope carry this tag, and each of their blocks has a blue bar in the margin. Pages marked &ldquo;whole page&rdquo; in the table on the cover are entirely in scope.</div>
+    <div><span class="tag tc" style="margin:0">Clinician scope</span></div><div><strong>Clinician scope.</strong> Sections in the clinician's scope carry this tag, and each of their blocks has a blue bar in the margin. Pages marked &ldquo;whole page&rdquo; in the table above are entirely in scope.</div>
     <div><span class="tag ts" style="margin:0">Sensitivity focus</span></div><div><strong>Sensitivity focus.</strong> The sensitivity reader reads every page; these sections are where respect and framing matter most.</div>
     <div><span class="vf">[VERIFY]</span></div><div><strong>Not yet checked.</strong> The editors have not yet read this source or official page themselves. On the review version, every remaining claim has been checked or removed.</div>
     <div><span class="ph">[5]</span></div><div><strong>Placeholder.</strong> A number or promise the business still has to confirm. Tell us if the wording around it is a problem.</div>

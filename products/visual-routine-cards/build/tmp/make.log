@@ -1,50 +1,112 @@
-{"cards":228,"young":170,"big":58,"letter":{"full":137,"starter":16,"editable":68}}
-1396 fields
-1396 fields
-saved ../visual-routine-cards.pdf 137 pages
-saved ../visual-routine-cards-a4.pdf 137 pages
-saved ../visual-routine-cards-starter-letter.pdf 16 pages
-saved ../visual-routine-cards-starter-a4.pdf 16 pages
-1396 fields added
-saved ../visual-routine-cards-editable-letter.pdf 68 pages
-1396 fields added
-saved ../visual-routine-cards-editable-a4.pdf 68 pages
--rw-r--r-- 1 root root 12260308 Sep 28 01:08 ../visual-routine-cards-a4.pdf
--rw-r--r-- 1 root root  6075216 Sep 28 01:08 ../visual-routine-cards-editable-a4.pdf
--rw-r--r-- 1 root root  6068742 Sep 28 01:08 ../visual-routine-cards-editable-letter.pdf
--rw-r--r-- 1 root root  1977542 Sep 28 01:08 ../visual-routine-cards-starter-a4.pdf
--rw-r--r-- 1 root root  1979437 Sep 28 01:08 ../visual-routine-cards-starter-letter.pdf
--rw-r--r-- 1 root root 12270852 Sep 28 01:08 ../visual-routine-cards.pdf
-137 pages
-16 pages
-listing images 10 starter 3
-10 pages
-3 pages
-1 pages
-exported to /home/user/playbeforepixels/products/visual-routine-cards/build/tmp/canva
-..:
-total 41616
-drwxr-xr-x  5 root root     4096 Sep 28 01:08 .
-drwxr-xr-x 10 root root     4096 Sep 28 00:35 ..
-drwxr-xr-x  3 root root     4096 Sep 28 01:08 build
--rw-r--r--  1 root root   210304 Sep 28 01:09 cover.png
-drwxr-xr-x  2 root root     4096 Sep 28 01:11 downloads
--rw-r--r--  1 root root     6040 Sep 28 01:08 listing-starter.json
--rw-r--r--  1 root root     8950 Sep 28 01:08 listing.json
--rw-r--r--  1 root root   424628 Sep 28 01:09 mockup.png
-drwxr-xr-x  5 root root     4096 Sep 28 01:09 preview
--rw-r--r--  1 root root  1287583 Sep 28 01:08 source.html
--rw-r--r--  1 root root 12260308 Sep 28 01:08 visual-routine-cards-a4.pdf
--rw-r--r--  1 root root  6075216 Sep 28 01:08 visual-routine-cards-editable-a4.pdf
--rw-r--r--  1 root root  6068742 Sep 28 01:08 visual-routine-cards-editable-letter.pdf
--rw-r--r--  1 root root  1977542 Sep 28 01:08 visual-routine-cards-starter-a4.pdf
--rw-r--r--  1 root root  1979437 Sep 28 01:08 visual-routine-cards-starter-letter.pdf
--rw-r--r--  1 root root 12270852 Sep 28 01:08 visual-routine-cards.pdf
+full-store-color-letter: 160  full-store-color-a4: 160  full-store-low-letter: 74  full-store-low-a4: 74  full-etsy-color-letter: 160  full-etsy-color-a4: 160  full-etsy-low-letter: 74  full-etsy-low-a4: 74  starter-store-color-letter: 24  starter-store-color-a4: 24  starter-store-low-letter: 24  starter-store-low-a4: 24  starter-etsy-color-letter: 24  starter-etsy-color-a4: 24  starter-etsy-low-letter: 24  starter-etsy-low-a4: 24
+full-etsy-color-a4.html ok cut pieces 1059, smallest 1.620 in
+full-etsy-color-letter.html ok cut pieces 1059, smallest 1.620 in
+full-etsy-low-a4.html ok cut pieces 531, smallest 1.620 in
+full-etsy-low-letter.html ok cut pieces 531, smallest 1.620 in
+full-store-color-a4.html ok cut pieces 1059, smallest 1.620 in
+full-store-color-letter.html ok cut pieces 1059, smallest 1.620 in
+full-store-low-a4.html ok cut pieces 531, smallest 1.620 in
+full-store-low-letter.html ok cut pieces 531, smallest 1.620 in
+start-full-etsy.html ok 
+start-full-store.html ok 
+start-starter-etsy.html ok 
+start-starter-store.html ok 
+starter-etsy-color-a4.html ok cut pieces 153, smallest 2.200 in
+starter-etsy-color-letter.html ok cut pieces 153, smallest 2.200 in
+starter-etsy-low-a4.html ok cut pieces 153, smallest 2.200 in
+starter-etsy-low-letter.html ok cut pieces 153, smallest 2.200 in
+starter-store-color-a4.html ok cut pieces 153, smallest 2.200 in
+starter-store-color-letter.html ok cut pieces 153, smallest 2.200 in
+starter-store-low-a4.html ok cut pieces 153, smallest 2.200 in
+starter-store-low-letter.html ok cut pieces 153, smallest 2.200 in
+556 fields
+556 fields
+556 fields added
+556 fields added
+saved ../visual-routine-cards-low-ink-a4.pdf 74 pages
+saved ../visual-routine-cards-low-ink.pdf 74 pages
+1170 fields
+1170 fields
+1170 fields added
+1170 fields added
+saved ../visual-routine-cards-a4.pdf 160 pages
+saved ../visual-routine-cards.pdf 160 pages
+0 fields
+0 fields added
+saved ../START-HERE.pdf 1 pages
+556 fields
+556 fields added
+saved ../etsy-upload/complete/4-Low-Ink-US-Letter.pdf 74 pages
+1170 fields
+1170 fields
+1170 fields added
+1170 fields added
+saved ../etsy-upload/complete/3-Color-A4.pdf 160 pages
+saved ../etsy-upload/complete/2-Color-US-Letter.pdf 160 pages
+0 fields
+0 fields added
+saved ../etsy-upload/complete/1-START-HERE.pdf 1 pages
+86 fields
+86 fields added
+86 fields
+saved ../visual-routine-cards-starter-letter.pdf 24 pages
+86 fields added
+saved ../visual-routine-cards-starter-a4.pdf 24 pages
+556 fields
+556 fields added
+saved ../etsy-upload/complete/5-Low-Ink-A4.pdf 74 pages
+0 fields
+0 fields added
+saved ../START-HERE-starter.pdf 1 pages
+86 fields
+86 fields added
+86 fields
+saved ../visual-routine-cards-starter-low-ink-a4.pdf 24 pages
+86 fields
+86 fields added
+saved ../etsy-upload/starter/2-Color-US-Letter.pdf 24 pages
+86 fields added
+saved ../visual-routine-cards-starter-low-ink-letter.pdf 24 pages
+0 fields
+0 fields added
+saved ../etsy-upload/starter/1-START-HERE.pdf 1 pages
+86 fields
+86 fields
+86 fields
+86 fields added
+86 fields added
+86 fields added
+saved ../etsy-upload/starter/3-Color-A4.pdf 24 pages
+saved ../etsy-upload/starter/4-Low-Ink-US-Letter.pdf 24 pages
+saved ../etsy-upload/starter/5-Low-Ink-A4.pdf 24 pages
+-rw-r--r-- 1 root root   211572 Sep 28 03:03 ../START-HERE-starter.pdf
+-rw-r--r-- 1 root root   215352 Sep 28 03:02 ../START-HERE.pdf
+-rw-r--r-- 1 root root 14740546 Sep 28 03:02 ../visual-routine-cards-a4.pdf
+-rw-r--r-- 1 root root 10172662 Sep 28 03:02 ../visual-routine-cards-low-ink-a4.pdf
+-rw-r--r-- 1 root root 10161570 Sep 28 03:02 ../visual-routine-cards-low-ink.pdf
+-rw-r--r-- 1 root root  2511647 Sep 28 03:02 ../visual-routine-cards-starter-a4.pdf
+-rw-r--r-- 1 root root  2518677 Sep 28 03:02 ../visual-routine-cards-starter-letter.pdf
+-rw-r--r-- 1 root root  3218342 Sep 28 03:03 ../visual-routine-cards-starter-low-ink-a4.pdf
+-rw-r--r-- 1 root root  3215589 Sep 28 03:03 ../visual-routine-cards-starter-low-ink-letter.pdf
+-rw-r--r-- 1 root root 14758781 Sep 28 03:02 ../visual-routine-cards.pdf
 
-../downloads:
-total 27632
-drwxr-xr-x 2 root root     4096 Sep 28 01:11 .
-drwxr-xr-x 5 root root     4096 Sep 28 01:08 ..
--rw-r--r-- 1 root root 10235573 Sep 28 01:11 visual-routine-cards-canva-cards.zip
--rw-r--r-- 1 root root  8802074 Sep 28 01:11 visual-routine-cards-canva-charts.zip
--rw-r--r-- 1 root root  9244680 Sep 28 01:11 visual-routine-cards-editable-pdfs.zip
+../etsy-upload/complete/:
+total 48804
+drwxr-xr-x 2 root root     4096 Sep 28 03:02 .
+drwxr-xr-x 4 root root     4096 Sep 28 02:03 ..
+-rw-r--r-- 1 root root   198796 Sep 28 03:02 1-START-HERE.pdf
+-rw-r--r-- 1 root root 14726952 Sep 28 03:02 2-Color-US-Letter.pdf
+-rw-r--r-- 1 root root 14708875 Sep 28 03:02 3-Color-A4.pdf
+-rw-r--r-- 1 root root 10154502 Sep 28 03:02 4-Low-Ink-US-Letter.pdf
+-rw-r--r-- 1 root root 10165643 Sep 28 03:02 5-Low-Ink-A4.pdf
+
+../etsy-upload/starter/:
+total 11400
+drwxr-xr-x 2 root root    4096 Sep 28 03:03 .
+drwxr-xr-x 4 root root    4096 Sep 28 02:03 ..
+-rw-r--r-- 1 root root  196570 Sep 28 03:03 1-START-HERE.pdf
+-rw-r--r-- 1 root root 2512291 Sep 28 03:03 2-Color-US-Letter.pdf
+-rw-r--r-- 1 root root 2505367 Sep 28 03:03 3-Color-A4.pdf
+-rw-r--r-- 1 root root 3219922 Sep 28 03:03 4-Low-Ink-US-Letter.pdf
+-rw-r--r-- 1 root root 3222648 Sep 28 03:03 5-Low-Ink-A4.pdf
+160 pages

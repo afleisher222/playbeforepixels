@@ -49,7 +49,7 @@ const EASY = [
   'Leave the box still and pretend to steer: "beep beep!"',
   'Make a small hill of two cushions.',
   'Skip the water: "wash" the doll with a dry cloth and name each part.',
-  'Use just one big cup and one bowl.',
+  'Use just one big cup and one bowl. If your child doesn’t like the feel of the oats, a spoon is fine.',
   'Roll the ball down a slope you hold with your hands.',
   'Hand over one item at a time and name it.',
   'Fold a bigger tab on each strip so it’s easy to pinch.',

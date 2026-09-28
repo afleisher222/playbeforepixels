@@ -288,7 +288,7 @@ AlphaPlay LLC, d/b/a Play Before Pixels
 >
 > In the meantime, our free play ideas are here if they're helpful: {link}. They're about connection and fun, not a treatment. You're doing a good thing by looking into this.
 
-*(The early-intervention sentences carry the same `verify_before_publish` check as `seo/articles/08-what-is-virtual-autism.md`: confirm them on the official CDC or US Department of Education page before approving this macro. Never suggest a cause, a diagnosis or that any product will help a condition. Never use the words "therapy", "treat" or "improve" about a child. If the message describes an emergency or a safety risk, route it to the founder immediately.)*
+*(The early-intervention sentences carry the same `verify_before_publish` check as `seo/articles/08-what-is-virtual-autism.md`: confirm them on the official CDC or US Department of Education page before approving this macro. Never suggest a cause, a diagnosis or that any product will help a condition. Never use the words "therapy", "treat" or "improve" about a child. **`{link}` in this macro is always the product-free hub edition of the printable, `/research/play-printable/`: never a `/free/` page, a shop page, a product or a discount** (BRAND.md "Autism searches"; autism content audit, September 28, 2026). If the product-free page does not exist yet, leave the play-ideas sentence out. If the message describes an emergency or a safety risk, route it to the founder immediately.)*
 
 ### 32. "Is this autism?" or questions about "virtual autism"
 > Hi {first_name},

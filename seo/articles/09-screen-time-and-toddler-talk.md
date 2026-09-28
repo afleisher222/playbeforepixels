@@ -8,8 +8,8 @@ meta_description: "What large studies found about screen time and back-and-forth
 target_keyword: "screen time and language development"   # demand UNVERIFIED (hypothesis)
 secondary_keywords: ["does screen time affect toddler talking", "background tv toddlers talk", "screen time conversational turns"]
 audience: Parents and caregivers of children aged 0–3; early-childhood educators
-related_product: NONE (research hub page). Links only to the free play printable and to /learn/reading-with-babies-and-toddlers/.
-free_printable: /free/five-5-minute-plays/
+related_product: NONE (research hub page). Links only to the free play printable's product-free hub edition (/research/play-printable/). The /learn/ link was removed September 28, 2026 (hub firewall HF-02).
+free_printable: /research/play-printable/
 citations: ["Brushe 2024", "Takahashi 2023", "Madigan 2019", "WHO 2019", "AAP 2016"]
 verify_before_publish:
   - "Confirm each full paper or report title in Sources against the journal or publisher page. Author, journal, year, volume and pages come from the verified list in brand/BRAND.md rule 5; the titles were written from memory. Add verified DOI links at the same time."
@@ -66,7 +66,7 @@ You don't need a program or special toys. Try these in the moments you already h
 - [ ] **Repeat and add one word:** they say "car," you say "blue car!"
 - [ ] **Offer choices:** "Banana or apple?"
 - [ ] **Narrate routines:** diaper changes, bath time and cooking are full of talk chances.
-- [ ] **Read together daily,** even for two minutes. See our [talk-along reading tips](/learn/reading-with-babies-and-toddlers/).
+- [ ] **Read together daily,** even for two minutes.
 - [ ] **When you do use screens, co-view:** sit together and chat about what's happening.
 
 **A quick daily "talk audit":**
@@ -88,7 +88,7 @@ In the United States, every state has a free early intervention program for chil
 
 ## A little play, a lot of talk
 
-Our free **Five 5-Minute Plays** printable has five quick games for babies to preschoolers, each with a simple talk tip. It's family play time, nothing more complicated than that. [Download it free](/free/five-5-minute-plays/).
+Our free **Five 5-Minute Plays** printable has five quick games for babies to preschoolers, each with a simple talk tip. It's family play time, nothing more complicated than that. [Download it free](/research/play-printable/).
 
 ---
 

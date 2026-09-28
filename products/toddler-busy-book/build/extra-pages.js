@@ -157,8 +157,8 @@ const howToRead = {
     const pts = [[20, 30, 'Age band and starting age', 'A color and a word label, so you never rely on color alone.'], [560, 30, 'Cut or no-cut', 'No-cut pages are ready today. Cut pages point to their piece sheet.'], [20, 100, 'Title and how to play', 'One or two sentences. That’s all the instructions you need.'], [340, 400, 'The play area', 'Big, calm pictures for your child to point at, pat and place pieces on.'], [20, 740, 'Talk while you play', 'One line to say out loud, and the talk move it uses.'], [20, 810, 'Easier, harder, tired version', 'Three ways to play the same page, including a 2-minute one.'], [20, 880, 'Prep, mess, needs, safety', 'Honest prep time, what you need and the safety note for this page.']];
     return pageWrap('', `${textHead('How to read a page', 'Every page works the same way')}
       <div style="position:absolute;left:${mx}px;top:92px;width:${696 * s}px;height:${960 * s}px;border-radius:14px;box-shadow:0 0 0 1.5px #D5DCE8;overflow:hidden"><div style="transform:scale(${s});transform-origin:0 0">${mini}</div></div>
-      ${pts.map(([x, y], i) => `<span class="callout" style="left:${x > 300 && y < 60 ? gx : 2}px;top:${92 + y * s - 8}px">${i + 1}</span>`).join('')}
-      <ul class="legend" style="position:absolute;left:${gx + 36}px;right:0;top:100px">${pts.map(([, , h, t], i) => `<li><span class="num">${i + 1}</span><span><b>${h}.</b> ${t}</span></li>`).join('')}</ul>
+      ${pts.map(([x, y], i) => `<span class="callout" style="left:${x > 300 && y < 60 ? mx + 696 * s - 40 : 2}px;top:${x > 300 && y < 60 ? 63 : 92 + y * s - 8}px">${i + 1}</span>`).join('')}
+      <ul class="legend" style="position:absolute;left:${gx + 14}px;right:0;top:100px">${pts.map(([, , h, t], i) => `<li><span class="num">${i + 1}</span><span><b>${h}.</b> ${t}</span></li>`).join('')}</ul>
       <div class="card t-sun" style="position:absolute;left:0;right:0;bottom:40px"><p><b>Piece sheets</b> come right after their activity page. Each piece shows the page it belongs to in its corner (for example “p.${ctx.actPage[a.id]}”), so strays always find their way home.</p></div>`, ctx, pn);
   },
 };

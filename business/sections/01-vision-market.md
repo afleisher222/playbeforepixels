@@ -241,7 +241,7 @@ To be plain about it: most of what we sell could be copied within months. The de
 
 ## 1.9 The research hub: education, not sales
 
-**What it is.** A free library of plain-language summaries of peer-reviewed studies and official guidelines on young children, screens, talk and reading. It lives at **playbeforepixels.com/research/** under a non-medical name ("Research Library" in `seo/SEO-PLAN.md`). The earlier working name, "The Virtual Autism Project", is retired: `legal/DECISION-MEMO.json` requires the rename because of health-claim risk, and virtualautism.org is already in use by someone else. `marketing/CAMPAIGN-BIBLE.md` §4 still uses the old name and should be updated.
+**What it is.** A free library of plain-language summaries of peer-reviewed studies and official guidelines on young children, screens, talk and reading. It lives at **playbeforepixels.com/research/** under a non-medical name, **"Play Before Pixels Research Notes"** (founder's choice, `legal/ENTITY.md`). The earlier working name, "The Virtual Autism Project", is retired: `legal/DECISION-MEMO.json` requires the rename because of health-claim risk, and virtualautism.org is already in use by someone else. `marketing/CAMPAIGN-BIBLE.md` §4 still uses the old name and should be updated.
 
 **Its job:**
 
@@ -267,6 +267,6 @@ To be plain about it: most of what we sell could be copied within months. The de
 1. **Counsel hold.** Send `legal/FOR-EMPLOYMENT-COUNSEL.md` and get answers. Ask counsel to confirm that parent-bought 5–12 products are outside the hold (§1.4 B). Every school, group and trademark step in this plan depends on the answers.
 2. **ALPHAPLAY.** Get the Spelling Games printable genuinely on sale by mid-January 2027. Book the trademark attorney for the March 8, 2027 filing.
 3. **PLAY BEFORE PIXELS clearance.** Run the knockout search, get the attorney's opinion, then file classes 16 and 41.
-4. **Hub name.** Approve "Research Library" (or another non-medical name) and update `marketing/CAMPAIGN-BIBLE.md` §4.
+4. **Hub name.** Decided September 28, 2026: "Play Before Pixels Research Notes" (`legal/ENTITY.md`). `marketing/CAMPAIGN-BIBLE.md` §4 was updated; `site-concepts/` still needs the rename (`ops/TESTS/autism-content-audit.md`).
 5. **Planning case.** Adopt one rule for the whole plan: **budget cash on the Low case (the model's Conservative)** and **measure progress against Expected** (15 units per product a month). Base is the Strong outlier and is not planned for. Revisit both after 90 days of real sales data.
 6. **Outside figures.** Before any external version of this plan, verify every [VERIFY] figure in §1.5 and §1.6, especially the population figures and the spending-pool sizes.

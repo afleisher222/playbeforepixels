@@ -118,7 +118,7 @@ function startPage(P, S, n, total) {
     <div class="whyband">
       <div><b>Why play and talk?</b> Little ones learn to talk by talking with you: a look, a sound, your answer, their turn. Play is full of those moments.</div>
       <div><b>Try:</b> “Your turn!” · “Tell me more.” · “What next?” <b>Talk, sing and read in the language you know best.</b> A sign, a point or a device tap counts.</div>
-      <div><b>Most children love 2–3 of these</b> and want them again and again. Repeat the favorites. Tired day? Use the 2-minute versions.</div>
+      <div><b>Most children love 2–3 of these.</b> Repeat the favorites and skip any your child doesn’t enjoy. Tired day? Use the 2-minute versions.</div>
     </div>
   </div>
   ${foot(P, n, total)}
@@ -132,7 +132,7 @@ function startPage(P, S, n, total) {
     ['Keep it light.', 'Anyone can say “pass.” It’s a conversation, not a quiz.'],
   ];
   const younger = 'Read the card aloud, give an example answer, and welcome short answers. Drawing an answer counts too.';
-  const older = 'Let them read the card and choose who answers first. Ask the question back later in the week.';
+  const older = 'Let them read the card and pick who goes first. Skip any that feel too young; bath cards suit tooth-brushing too.';
   return `<section class="page content">
   <div class="pin">
     <p class="kick dark">Grown-up guide</p>
@@ -211,7 +211,7 @@ function printPage(P, S, n, total) {
       ['Kid picks', 'Let your child choose the card, or ask it.', C.sky],
       ['Family favorites', 'Keep the best ones and ask them again next year.', C.plum],
     ]).map(([a, b, c]) => `<div class="way" style="--c:${c}"><b>${a}</b><p>${b}</p></div>`).join('')}</div>
-    <div class="license"><b>License: PERSONAL.</b> You may print and copy this for your own family only. No resale, redistribution, sharing, posting, uploading to shared or public drives or websites, or use to train AI. ${store() ? 'Full terms: ' + LICENSE_URL : 'Full terms are in the shop’s listing and policies.'}<br>${K.COPY} All rights reserved. ${K.VERSION}.</div>
+    <div class="license"><b>License: PERSONAL.</b> You may print and copy this for your own family only (grandparents and sitters who care for your child count as family). No resale, redistribution, sharing, posting, uploading to shared or public drives or websites, or use to train AI. ${store() ? 'Teaching a class, or running a center or library program? That needs a classroom or site license. Full terms: ' + LICENSE_URL : 'Classroom, center and library use needs a classroom or site license. Full terms are in the shop’s listing and policies.'}<br>${K.COPY} All rights reserved. ${K.VERSION}.</div>
   </div>
   ${foot(P, n, total)}
 </section>`;
@@ -245,13 +245,13 @@ function noCutA(P, S, b, half, n, total) {
   const from = half === 0 ? 0 : 7, list = PLAYS[b.key].slice(from, half === 0 ? 7 : 13);
   const rows = list.map((pl, j) => { const i = from + j; return `<div class="nc-row">
     <div class="nc-a"><em>${K.pad2(bi * 13 + i + 1)}</em><b>${esc(pl.t)}</b><span class="nc-m">${[moLabel(pl.mo), `Prep ${pl.prep} min`, MESS[pl.mess], `~${pl.min} min`].map(t => `<u>${t}</u>`).join(' · ')}${pl.buy ? '' : ' · <i>nothing to buy</i>'}</span><span class="nc-n"><i>Needs</i> ${esc(pl.n)}</span></div>
-    <div class="nc-b">${esc(pl.p)} <span class="nc-k">Talk: ${esc(pl.k)}</span></div>
+    <div class="nc-b">${esc(pl.p)} <span class="nc-k">Talk: ${esc(pl.k)}</span>${pl.s ? `<span class="nc-s">${K.shield(C.grass, 11)}<span><b>Safety:</b> ${esc(pl.s)}</span></span>` : ''}</div>
     <div class="nc-c"><p><i>2-minute version</i> ${esc(pl.tired)}</p><p><i>Easier</i> ${esc(pl.easy)}</p><p><i>Harder</i> ${esc(pl.hard)}</p></div>
   </div>`; }).join('');
   return `<section class="page content nocut" style="--c:${col};--t:${tint}">
   <div class="pin">
     <div class="nc-head"><div><p class="kick dark">No-cut play pages · ${bi * 2 + half + 1} of 8</p><h2 class="ptitle sm">${shapeSvg(b.shape, col, 30)} ${b.ages} ${b.unit === 'yr' ? 'year' : 'years'}: cards ${K.pad2(bi * 13 + from + 1)}–${K.pad2(bi * 13 + from + list.length)}</h2></div>
-    <p class="nc-safe">${K.shield(C.grass, 14)}<span><b>With a grown-up, every time.</b> ${esc(b.safe)} Card-specific safety notes are on each card.</span></p></div>
+    <p class="nc-safe">${K.shield(C.grass, 14)}<span><b>With a grown-up, every time.</b> ${esc(b.safe)} Card-specific safety notes are on each card and in the rows below.</span></p></div>
     <div class="nc-cols"><span>Play</span><span>How to play</span><span>Tired day · easier · harder</span></div>
     <div class="nc-list">${rows}</div>
     <p class="small">Start ages are a guide, never a deadline: every child grows at their own pace. Questions about your child’s development? Your child’s doctor is a good place to start.</p>
@@ -285,7 +285,7 @@ function trackerPage(P, S, n, total) {
     <h2 class="ptitle">Our Play &amp; Talk Year</h2>
     <p class="lede">One card a week is plenty. Check it off when you’ve played it, and color in the heart if your child asks for it again.</p>
     <div class="tracker">${cols}</div>
-    <div class="trk-foot"><span>Our favorite play so far:</span><i class="ln"></i><span>Our child’s newest word or phrase:</span><i class="ln"></i></div>
+    <div class="trk-foot"><span>Our favorite play so far:</span><i class="ln"></i><span>A new word, sign or sound we noticed:</span><i class="ln"></i></div>
     <div class="sharemark"><img src="${K.LOGO.lockup}" alt="Play Before Pixels"><span>${store() ? 'playbeforepixels.com' : 'Play Before Pixels'}</span></div>
   </div>
   ${foot(P, n, total)}
@@ -321,7 +321,7 @@ function nextPage(P, S, n, total, qrSvg) {
     ['100 Screen-Free Plays', 'Ages 0–5 · the activity book, sorted by age, with a talk line on every play', C.grass, 'bookopen'],
   ] : [
     ['“I’m Bored” Play Cards', 'Ages 1–12 · 150 age-banded screen-free plays, each with a talk prompt', C.tomato, 'storybox'],
-    ['Visual Routine Cards', 'Ages 0–12 · picture cards for mornings, bedtime and the day in between', C.grass, 'list'],
+    ['First Phone Agreement Kit', 'Ages 9–12 · a readiness checklist and a family agreement, for whenever the time is right', C.grass, 'list'],
     ['52 Play & Talk Cards', 'Ages 0–5 · for the little ones: one play and one talk tip per card', C.sun, 'ball'],
   ];
   return `<section class="page content">
@@ -377,7 +377,7 @@ function startHerePage(P, S, qrSvg) {
     <h3 class="h3">Print it right</h3>
     <ul class="tips">${[['Print at “Actual size” (100%).', 'Cards come out at poker size, 2.5 × 3.5 in (63.5 × 88.9 mm). If the edges get cut off, choose “Fit”; the cards print a little smaller.'], ...qs, ['Type-in cards', 'Open the file in free Adobe Acrobat Reader to type on the blank cards (title, needs, play and talk tip). Everything else is print-only.'], ['Downloading on a phone?', store() ? 'Open the download link from your order email in a web browser, save each PDF to Files, then open it in Adobe Acrobat Reader.' : 'Open your Etsy Purchases page in a web browser (not the app), save each PDF to Files, then open it in Adobe Acrobat Reader. Your files stay on your Purchases page to download again any time.']].map(([a, b], i) => `<li>${check([C.tomato, C.sun, C.sky, C.grass, C.plum, C.tomato][i])}<span><b>${a}</b> ${b}</span></li>`).join('')}</ul>
     ${store() ? `<div class="bonus sh" style="--c:${P.color};--t:${P.tint}"><div class="qr">${qrSvg}</div><div><h3>Free bonus and re-downloads</h3><p>Scan for your free companion printables: <b>${P.bonus}</b>. Lost a file? Your link stays in your order email; help is at <b>playbeforepixels.com/help</b>.</p></div></div>` : ''}
-    <div class="license"><b>License: PERSONAL.</b> Print and copy for your own family only. No resale, sharing, posting or uploading. ${store() ? 'Full terms: ' + LICENSE_URL : 'Full terms are in the shop’s listing and policies.'}<br>${K.COPY} All rights reserved. ${K.VERSION}.</div>
+    <div class="license"><b>License: PERSONAL.</b> Print and copy for your own family only. No resale, sharing, posting or uploading. ${store() ? 'Teaching a class, or running a center or library program? That needs a classroom or site license. Full terms: ' + LICENSE_URL : 'Classroom, center and library use needs a classroom or site license. Full terms are in the shop’s listing and policies.'}<br>${K.COPY} All rights reserved. ${K.VERSION}.</div>
   </div>
   <div class="pfoot"><span>${esc(P.short)} · START HERE · ${K.VERSION}${store() ? ' · <b>playbeforepixels.com</b>' : ''}</span><span>${K.COPY}</span></div>
 </section>`;
@@ -496,6 +496,7 @@ ${K.CARD_CSS}
 .whyband{margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .whyband>div{background:${C.tSun};border-radius:14px;padding:10px 13px;font-size:10.8px;line-height:1.4}
 .whyband.b{margin-top:10px}
+.ink .whyband{margin-top:10px}
 .whyband.b>div{background:${C.tSky}}
 .moves.m3 .mv{padding:10px 12px 11px}
 .whyband b{font-weight:800}
@@ -515,6 +516,9 @@ ${K.CARD_CSS}
 .nc-n{display:block;font-size:9.6px;font-weight:700;margin-top:3px}
 .nc-n i,.nc-c i{font-style:normal;font-weight:800;font-size:7.4px;letter-spacing:.1em;text-transform:uppercase;opacity:.65;margin-right:3px}
 .nc-k{display:block;font-weight:800;margin-top:3px}
+.nc-s{display:flex;gap:5px;align-items:flex-start;margin-top:4px;font-size:10px;line-height:1.32;color:${C.ink}}
+.nc-s svg{flex:none;margin-top:1px}
+.nc-s b{font-weight:800}
 .nc-c p{margin:0 0 2px}
 .ncq{margin-bottom:12px;border-radius:14px;background:var(--t);border-left:7px solid var(--c);padding:9px 14px 8px}
 .ncq-h{display:flex;align-items:center;gap:8px;margin-bottom:4px}

@@ -618,8 +618,14 @@ NAMED_RULES = [
 # "the Amazon/other-store versions" in FAQs). They are reported as INFO only.
 ALLOWED_NAMES = rx(r"\b(Etsy|Amazon|KDP|IngramSpark|Lulu|Bookshop\.org|Adobe|Acrobat( Reader)?|Canva|Shopify|Printful|Printify|Gelato|Teachers Pay Teachers|TpT|Faire)\b", 0)
 
-AUTISM_RX = rx(r"\b(autis\w*|autismo|autisme|autismus|ASD|on the spectrum|neurodivergen\w*|neurodiverse|ADHD|special[- ]needs|SPED|IEP|"
-               r"sensory processing|SPD|non-?verbal|stimming|AAC|ABA|PECS|social stor(y|ies))\b")
+# Autism words in other languages and scripts (added by the autism content audit, September 28, 2026;
+# AWARENESS-ENGINE open item 4). Non-Latin scripts sit outside \b because CJK text has no word breaks.
+# UNVERIFIED translations (from memory): have each translator confirm the local word for their language.
+AUTISM_NON_LATIN = (r"аутиз\w*|аутист\w*|αυτισμ\w*|αυτιστ\w*|אוטיזם|אוטיסט\w*|التوحد|اوتیسم|"
+                    r"自闭症|孤独症|自閉症|자폐|ऑटिज़्म|ऑटिज्म|ऑटिस्टिक")
+AUTISM_RX = rx(r"\b(autis\w*|autismo|autisme|autismus|otizm\w*|otistik\w*|autyzm\w*|autyst\w*|"
+               r"ASD|on the spectrum|neurodivergen\w*|neurodiverse|ADHD|special[- ]needs|SPED|IEP|"
+               r"sensory processing|SPD|non-?verbal|stimming|AAC|ABA|PECS|social stor(y|ies))\b|" + AUTISM_NON_LATIN)
 AUTISM_ADJACENT_RX = rx(r"\b(visual schedules?|first[- –]then (board|chart|cards?)|calm[- ]down corner|meltdowns?|sensory|speech therapy|"
                         r"OT activities|social skills|behavior chart|token board|special ed\w*)\b")
 

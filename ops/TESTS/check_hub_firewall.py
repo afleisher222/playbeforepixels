@@ -73,12 +73,15 @@ NEGATION_RX = re.compile(r"\b(no|not|never|nothing|n't|NOT|cannot|without|whethe
                          r"claim\w*|assum\w*|hypothes\w*|title|quote\w*|argu\w*|propos\w*|belie\w*|idea)\b|\?", re.I)
 EXCLUSION_RX = re.compile(r"Montgomery County|\bMCPS\b|\bMCEA\b|\bMSEA\b|\bNEA\b|Infants and Toddlers Program|"
                           r"mcpsmd|montgomerycountymd")
-FOUNDER_RX = re.compile(r"\bmy (daughter|son)\b|\bI typed\b|\blate one night\b|\bour home got\b|"
+FOUNDER_RX = re.compile(r"\bmy (daughter|son)\b|\bvideos my child lov\w*|\bI typed\b|\blate one night\b|\bour home got\b|"
                         r"\bfounded by a parent\b", re.I)
-FRAMING_BAD_RX = re.compile(r"autis|otizm|help(s|ing)? (with|your child)|support for|therap|treat|improv|prevent|"
+# Autism words in other languages and scripts (autism content audit, September 28, 2026; UNVERIFIED translations).
+AUTISM_NON_LATIN = (r"аутиз\w*|аутист\w*|αυτισμ\w*|αυτιστ\w*|אוטיזם|אוטיסט\w*|التوحد|اوتیسم|"
+                    r"自闭症|孤独症|自閉症|자폐|ऑटिज़्म|ऑटिज्म|ऑटिस्टिक")
+FRAMING_BAD_RX = re.compile(r"autis|otizm|otistik|autyzm|autyst|" + AUTISM_NON_LATIN + r"|help(s|ing)? (with|your child)|support for|therap|treat|improv|prevent|"
                             r"delay|symptom|catch up", re.I)
-AUTISM_WORD_RX = re.compile(r"autis\w*|otizm|autismo|autisme|autismus|virtual autism", re.I)
-AUTISM_HASHTAG_RX = re.compile(r"#\w*(autis|otizm|autism)\w*", re.I)
+AUTISM_WORD_RX = re.compile(r"autis\w*|otizm|otistik|autyzm\w*|autyst\w*|autismo|autisme|autismus|virtual autism|" + AUTISM_NON_LATIN, re.I)
+AUTISM_HASHTAG_RX = re.compile(r"#\w*(autis|otizm|otistik|autism|autyzm|autyst|" + AUTISM_NON_LATIN + r")\w*", re.I)
 
 LINK_RX = re.compile(r"\]\(\s*([^)\s]+)")
 URL_RX = re.compile(r"https?://[^\s)\]>\"']+")

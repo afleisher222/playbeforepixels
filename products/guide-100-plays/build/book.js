@@ -128,6 +128,7 @@ h2 { font-size: 15pt; margin-bottom: .05in }
 .list { list-style: none }
 .list li { display: flex; gap: .12in; padding: .085in 0; border-bottom: 1px solid var(--line); font-size: 10pt; align-items: flex-start }
 .list li:last-child { border-bottom: 0 }
+.howgrid li { padding: .06in 0 }
 .num { flex: none; width: .3in; height: .3in; border-radius: 99px; display: inline-flex; align-items: center; justify-content: center; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 10pt }
 .chipn { display: inline-flex; align-items: center; justify-content: center; min-width: .3in; height: .24in; padding: 0 .05in; border-radius: 99px; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 8.6pt; margin: 0 .03in .05in 0 }
 .boxnote { border: 1.5px solid var(--ink); border-radius: .14in; padding: .14in .18in; font-size: 9.2pt }
@@ -135,6 +136,9 @@ h2 { font-size: 15pt; margin-bottom: .05in }
 ${v.bw ? `
 /* black-and-white interior: labels in ink so small type keeps 4.5:1 contrast */
 .eh b, .play .grow b { color: var(--ink) !important }
+.field { border-bottom-color: #7A7A7A !important }
+.field.multi { background: repeating-linear-gradient(to bottom, transparent 0, transparent calc(.3in - 1.2px), #7A7A7A calc(.3in - 1.2px), #7A7A7A .3in) !important }
+.dayname { color: var(--ink) !important }
 ` : ''}
 ${v.low ? `
 /* ---- low-ink edition: white grounds, no full-bleed tints, line art to color (CUSTOMER-VOICE rule 1) ---- */
@@ -173,6 +177,7 @@ function titlePage() {
     <p style="font-size:12pt;margin-top:.26in;max-width:4.8in">Easy, low-prep play and talk ideas for babies, toddlers and preschoolers, sorted by age</p>
     <div style="display:flex;gap:.12in;margin-top:.3in">${BANDS.map(b => `<span class="display" style="background:${BC[b.key].c};color:${BC[b.key].fg};font-size:13pt;padding:.07in .18in;border-radius:99px">${b.label}</span>`).join('')}</div>
     <p style="font-size:10.4pt;margin-top:.26in;font-weight:700">${PREPLINE}</p>
+    ${V.bw ? `<div style="margin-top:.3in;display:grid;grid-template-columns:auto 2.4in;gap:.14in .12in;align-items:end;font-size:10.4pt;font-weight:700;text-align:left"><span>A gift for</span><span style="border-bottom:1.2px solid ${C.ink};height:.26in"></span><span>With love from</span><span style="border-bottom:1.2px solid ${C.ink};height:.26in"></span></div>` : ''}
     <div class="spacer" style="flex:0 0 .7in"></div>
     <img src="../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels" style="height:.62in">
     ${V.etsy ? '' : '<p style="font-size:9.4pt;margin-top:.1in;font-weight:700">playbeforepixels.com</p>'}
@@ -188,10 +193,8 @@ function copyrightPage() {
     <p>All rights reserved. No part of this book may be reproduced or shared without written permission, except short quotations in reviews. Buyers of the PDF edition may print pages for use in their own household.</p>
     <p style="margin-top:.12in">Published by AlphaPlay LLC, doing business as Play Before Pixels${V.etsy ? '. Questions? Send us a message through Etsy.' : ' · playbeforepixels.com · Contact: through the form at playbeforepixels.com'}</p>
     ${V.bw ? `<div style="display:flex;gap:.16in;align-items:center;margin-top:.14in;border:1.5px solid ${C.ink};border-radius:.12in;padding:.1in .14in"><div style="flex:none">${qrSvg(72)}</div><p><b>This paperback has a black-and-white interior.</b> Get the play pages in full color, free: scan the code or visit ${BONUS}. We only ask for an email and your child’s birth month and year.</p></div>` : ''}
-    <div style="display:flex;gap:.24in;align-items:flex-end;margin-top:.16in">
-      <div style="width:2in;height:1.2in;border:1.5px dashed ${C.ink};display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:8pt;letter-spacing:.08em">ISBN / barcode<br>(founder to add)</div>
-      <div><p><b>ISBN (paperback):</b> ____________________</p><p><b>ISBN (PDF):</b> not required</p><p><b>Printed book only:</b> the founder adds the ISBN here before upload.</p></div>
-    </div>
+    ${V.bw ? `<div style="display:inline-flex;align-self:flex-start;gap:.1in;align-items:center;margin-top:.16in;border:1.5px dashed ${C.ink};padding:.08in .14in;font-weight:800">ISBN: <span style="font-weight:600">[founder adds the ISBN before upload]</span></div>` : ''}
+    <p style="margin-top:.12in"><b>Teachers, child-care centers and groups:</b> this copy is for one household. ${V.etsy ? 'For a classroom or site license, send us a message through Etsy.' : 'Classroom and site licenses are available through the quote form at playbeforepixels.com.'}</p>
     <p style="margin-top:.16in"><b>Please read.</b> This book offers play ideas and general parent education. It is not medical, developmental or professional advice, and it does not diagnose, treat or prevent any condition. Every play is meant to be done with a grown-up right there. Ages are a guide: you know your child best, so skip or change any play that does not feel right. Always follow the safety notes and the "Safety first" page.</p>
     <p style="margin-top:.1in">No brands, apps, devices, products, schools or programs are named, reviewed or endorsed in this book. Any object shown is generic.</p>
     <p style="margin-top:.1in">Research sources are listed on the "Sources" page.</p>
@@ -236,7 +239,7 @@ function howPage() {
     <p class="lede" style="margin-bottom:.14in">The 100 plays are sorted into four age bands. Start with your child’s band, then look one band either side: children don’t read the labels, and a favorite play can last for years.</p>
     <div style="display:flex;gap:.12in;margin-bottom:.16in">${BANDS.map(b => `<div class="card" style="flex:1;background:${BC[b.key].t};padding:.12in .14in"><div class="display" style="font-size:20pt">${b.label}</div><div style="font-size:8.6pt;font-weight:700">${b.long}<br>Plays ${b.from}–${b.to}</div></div>`).join('')}</div>
     <h2>Every play has the same parts</h2>
-    <ul class="list howgrid" style="margin-bottom:.14in;display:grid;grid-template-columns:1fr 1fr;column-gap:.3in">
+    <ul class="list howgrid" style="margin-bottom:.12in;display:grid;grid-template-columns:1fr 1fr;column-gap:.3in">
       ${item(`<span class="num" style="background:${C.tGrass}">21</span>`, 'Number and starting age', '"From 12 mo" is the youngest age the play suits. "Best for" gives the usual range. You know your child best.')}
       ${item(ico('clock', '', '.3in'), 'Prep time', 'No prep, about 2 minutes, or about 10 minutes of setting up.')}
       ${item(`<span style="width:.3in;display:inline-flex">${drops(1)}</span>`, 'Mess level', 'No drops: no mess. One drop: a little mess. Two drops: messy (lay down a towel).')}
@@ -249,11 +252,12 @@ function howPage() {
       ${item(`<span class="num" style="background:${C.tPlum}">2</span>`, 'Too tired today?', 'Turn to <b>Tired-grown-up plays</b>: 2 minutes, no setup, played from the couch or the floor.')}
     </ul>
     <div class="boxnote" style="display:flex;gap:.16in;align-items:center"><div class="display" style="font-size:26pt;color:${C.tomato}">3</div><div><b>Three plays a day is a great day.</b> One in the morning, one outside and one to wind down. Most children love 2 or 3 of these plays and ask for them again and again; that’s normal. If interest fades, stop, and try another day.</div></div>
+    <div class="boxnote" style="margin-top:.09in;border:0;background:${C.wash}"><b>Every child is different.</b> If a texture, sound or touch bothers your child, change the play or skip it: a spoon instead of hands, watching first or sitting beside you all count. Big brothers and sisters can lead plays too, with a grown-up right there.</div>
   </div>` });
   function drops(l) { return X.drops(l); }
 }
 function movesPage() {
-  const ex = { wait: '“Ready, set… (wait) …go!”', see: '“You’re stirring. Stir, stir, stir.”', add: 'Child: “Ball.” You: “Red ball!”', choice: '“Bubbles or blocks?”', lead: '“Oh, Teddy goes in the box! In he goes.”', sing: '“Wave bye-bye… bye-bye, bath!”' };
+  const ex = { wait: '“Ready, set… (wait) …go!”', see: '“You’re stirring. Stir, stir, stir.”', add: 'Child: “Ball.” You: “Big ball!”', choice: '“Bubbles or blocks?”', lead: '“Oh, Teddy goes in the box! In he goes.”', sing: '“Wave bye-bye… bye-bye, bath!”' };
   const cols = [C.sky, C.grass, C.sun, C.tomato, C.plum, C.sky];
   return pg({ kind: 'text', title: 'Talk while you play: six easy moves', html: `
   <div class="live">
@@ -267,6 +271,7 @@ function movesPage() {
     </div>
     <p class="small" style="margin-top:.14in">Any answer counts: a look, a smile, a point, a sound, a sign, a tap on a talking device or a word. If your child doesn’t answer, that’s fine too. Say the word yourself, smile and keep playing.</p>
     <p style="margin-top:.08in;font-weight:800;font-size:10pt">Talk, sing and read in the language you know best. Every language counts.</p>
+    <p style="font-size:9.4pt">Say the talk lines in your own words and your own language, and swap any song for one your family knows.</p>
   </div>` });
 }
 function safetyPage() {
@@ -283,7 +288,7 @@ function safetyPage() {
       ${rule('No balloons for children under 8.', 'Uninflated or popped balloons are a choking risk.')}
       ${rule('No cords or strings long enough to wrap around a neck.', 'That includes blind and curtain cords, ribbons, costume ties and charger cables.')}
       ${rule('Water: stay within arm’s reach.', 'Even shallow water, even for a moment. Tip out tubs, buckets and bowls as soon as play ends.')}
-      ${rule('Food: soft, small and sitting down.', 'No whole grapes, nuts, popcorn, raw apple or hard candy for toddlers. Cut food into small, soft pieces.')}
+      ${rule('Food: soft, small and sitting down.', 'No whole grapes, nuts, popcorn, raw apple or hard candy for toddlers. Cut food into small, soft pieces, and check for allergies before a new food.')}
       ${rule('Button batteries and small magnets stay locked away.', 'Swallowing one is an emergency. Keep battery covers screwed shut.')}
       ${rule('Outdoors: traffic, sun and water first.', 'Stay where you can see each other. No berries, mushrooms or small stones in hands or mouths.')}
       ${rule('Sleep safely.', 'Tummy time only while your baby is awake and watched. Babies sleep on their backs, in a clear crib.')}
@@ -389,7 +394,7 @@ function glancePage(b) {
   const col = BC[b.key];
   const lean = { b0: 'wait', b1: 'add', b2: 'choice', b3: 'lead' }[b.key];
   const list = P.filter(p => p.band === b.key);
-  return pg({ kind: 'text', band: b.key, html: `
+  return pg({ kind: 'text', band: b.key, html: (num) => `
   <div class="live">
     <div class="eyebrow">Ages ${b.label} · ${b.long}</div><h1>This stage at a glance</h1>
     <div class="grid2" style="margin-bottom:.16in;gap:.14in .28in">
@@ -399,6 +404,7 @@ function glancePage(b) {
       <div class="card" style="flex:1.2;background:${col.t};padding:.14in .18in"><div class="eyebrow" style="color:var(--ink)">Talk move to lean on</div><h2>${MOVES[lean].name}</h2><p>${MOVES[lean].tip}</p></div>
       <div class="card" style="flex:1;border:1.5px solid var(--line)"><div class="eyebrow">Play basket</div><p>${b.kit.map(esc).join(' · ')}</p></div>
     </div>
+    ${b.key === 'b0' ? `<div class="boxnote" style="margin-bottom:.14in;border:0;background:${col.t}"><b>Just home with a newborn?</b> Start with the plays marked "From birth": ${list.filter(p => p.from === 0).map(p => `${esc(p.t)} (${p.n})`).join(', ')}, plus Chest chat and This little piggy in <b>Tired-grown-up plays</b> (page ${num('Tired-grown-up plays')}). A few minutes of face-to-face chat is plenty.</div>` : ''}
     <h2>In this chapter</h2>
     <div style="columns:2;column-gap:.3in;font-size:9.6pt;margin-top:.06in">
       ${list.map(p => `<div style="display:flex;gap:.08in;align-items:center;padding:.02in 0;break-inside:avoid;border-bottom:1px solid var(--line)"><span class="chipn" style="background:${col.t};margin:0;height:.22in">${p.n}</span><span style="flex:1">${esc(p.t)}</span><span class="small">${esc(p.age)}</span></div>`).join('')}
@@ -459,11 +465,11 @@ function sampleDay() {
     ['5:30', 'Dinner and bath', 'Always within arm’s reach in the bath.', [8, 60]],
     ['6:45', 'Wind-down', 'Same order, same songs, every night.', [59, 16]],
   ];
-  return pg({ kind: 'text', title: 'A sample screen-free day', html: `
+  return pg({ kind: 'text', title: 'A sample screen-free day', html: (num) => `
   <div class="live">
     <div class="eyebrow">For a toddler, about 18 months to 3 years</div><h1>A sample screen-free day</h1>
-    <p class="lede" style="margin-bottom:.12in">This is a sample, not a schedule. Real days wobble. Pick one or two ideas and keep what works.</p>
-    <div style="flex:1;display:flex;flex-direction:column;justify-content:space-between;border-left:3px solid ${C.tomato};margin-left:.5in;padding-left:.2in">
+    <p class="lede" style="margin-bottom:.12in">This is a sample, not a schedule. Real days wobble. Pick one or two ideas and keep what works. If a show is part of your day, give it one fixed spot (page ${num('When screens are on anyway')}).</p>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:space-between;border-left:3px solid ${C.tomato};margin-left:.64in;padding-left:.2in">
       ${rows.map(([t, a, d, ns]) => `<div style="position:relative;display:flex;gap:.16in;align-items:baseline">
         <span style="position:absolute;left:-.82in;width:.5in;text-align:right" class="display">${t}</span>
         <span style="position:absolute;left:-.285in;top:.06in;width:.15in;height:.15in;border-radius:99px;background:${ns.length ? C.tomato : W};border:3px solid ${C.tomato}"></span>
@@ -474,7 +480,8 @@ function sampleDay() {
   </div>` });
 }
 function swapDay() {
-  const col = (b, rows) => `<div class="card" style="background:${BC[b].t}"><div class="display" style="font-size:16pt;margin-bottom:.04in">${rows.h}</div><ul class="list">${rows.r.map(([t, ns]) => `<li style="display:block;padding:.06in 0;font-size:9.4pt"><b style="font-size:10pt">${t}:</b> ${ns.map(n => `${esc(P[n - 1].t)} ${chipN(n)}`).join(' ')}</li>`).join('')}</ul></div>`;
+  const ref = n => `<span style="white-space:nowrap">${esc(P[n - 1].t)} <span class="chipn" style="background:#FFFFFF">${n}</span></span>`;
+  const col = (b, rows) => `<div class="card" style="background:${BC[b].t}"><div class="display" style="font-size:16pt;margin-bottom:.04in">${rows.h}</div><ul class="list">${rows.r.map(([t, ns]) => `<li style="display:block;padding:.06in 0;font-size:9.4pt"><b style="font-size:10pt">${t}:</b> ${ns.map(ref).join(' ')}</li>`).join('')}</ul></div>`;
   return pg({ kind: 'text', title: 'Swap it for your age and your energy', html: `
   <div class="live">
     <div class="eyebrow">Make the day fit</div><h1>Swap it for your age and your energy</h1>
@@ -483,7 +490,7 @@ function swapDay() {
       ${col('b3', { h: 'A preschool day (3–5)', r: [['Morning', [100, 76]], ['Outside', [74, 80]], ['Afternoon project', [71, 72]], ['Bedtime', [95, 77]]] })}
     </div>
     <div class="card" style="background:${C.tPlum};margin-bottom:.16in"><h2>Low-energy grown-up? These plays let you sit or lie down.</h2>
-      <p style="margin-top:.04in">${[1, 19, 27, 65, 66, 75, 84, 95].map(n => `${esc(P[n - 1].t)} ${chipN(n)}`).join(' ')}</p></div>
+      <p style="margin-top:.04in">${[1, 19, 27, 65, 66, 75, 84, 95].map(ref).join(' ')}</p></div>
     <div class="card" style="border:1.5px solid var(--line)"><h2>Tricky moments, ready plays</h2>
       <ul class="list">
         <li><b style="width:1.7in;flex:none">Waiting for dinner</b><span>${[43, 48, 58].map(n => `${esc(P[n - 1].t)} ${chipN(n)}`).join(' ')}</span></li>
@@ -538,7 +545,7 @@ function plannerPage(colorKey = 'tomato', start = 'Monday', extra = false) {
       <span>Day</span><span>Play #</span><span>Play and talk line</span><span>Best moment</span></div>
     <div style="flex:1;display:flex;flex-direction:column;gap:.08in">
       ${days.map((d, i) => `<div style="flex:1;display:grid;grid-template-columns:1.15in .7in 1fr 1.7in;align-items:stretch;background:${i % 2 ? W : t};border-radius:.12in;padding:.04in .1in;border:${i % 2 ? `1.5px solid ${t}` : '0'}">
-        <span class="display" style="font-size:13pt;align-self:center;color:${colorKey === 'sun' ? C.ink : c}">${d}</span>
+        <span class="display dayname" style="font-size:13pt;align-self:center;color:${colorKey === 'sun' ? C.ink : c}">${d}</span>
         <span style="display:flex;align-items:flex-end;padding-bottom:.06in;padding-right:.1in">${fld(`${id}-${i}-n`)}</span><span style="display:flex;align-items:flex-end;padding-bottom:.06in;padding-right:.14in">${fld(`${id}-${i}-play`)}</span><span style="display:flex">${fld(`${id}-${i}-best`)}</span></div>`).join('')}
     </div>
     <p class="small" style="margin-top:.1in">Tip: plan three plays a day at most. Leave room for boredom, naps and the unexpected.${extra ? ' Type into the lines in free Adobe Acrobat Reader, or print and write.' : V.extras ? ' More planners, with Monday and Sunday starts, are at the back of this file.' : ' A Sunday-start version comes with your free bonus.'}</p>
@@ -590,7 +597,7 @@ function bonusPage() {
     <div class="eyebrow">A gift for you</div><h1>Your free bonus</h1>
     <div style="display:flex;gap:.3in;align-items:center;background:${C.tTomato};border-radius:.18in;padding:.24in">
       <div class="qrbox" style="background:#FFFFFF;border-radius:.12in;padding:.08in;flex:none">${qrSvg(150)}</div>
-      <div><p style="font-size:11pt;margin-bottom:.08in">Scan the code or visit</p><p class="display" style="font-size:15pt;margin-bottom:.12in;word-break:break-all">${BONUS}</p>
+      <div><p style="font-size:11pt;margin-bottom:.08in">Scan the code or visit</p><p class="display" style="font-size:15pt;margin-bottom:.12in">${BONUS.replace('/bonus/', '/bonus/<wbr><span style="white-space:nowrap">')}</span></p>
       <ul style="font-size:9.8pt;padding-left:.18in"><li>${V.bw ? 'The play pages in full color, to print or keep on your phone' : 'A phone-friendly copy of the play pages'}</li><li>The Sunday-start play week planner</li><li>Printable "play of the day" cards</li><li>Three new plays each month for your child’s age</li></ul>
       <p class="small" style="margin-top:.08in">We only ask for your email and your child’s birth month and year, never a name. Unsubscribe anytime.</p></div>
     </div>

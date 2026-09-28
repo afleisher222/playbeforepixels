@@ -7,6 +7,7 @@ Play Before Pixels, a trade name of AlphaPlay LLC. Internal working file, not fo
 > - **None of these places has been checked live.** In the research passes on Sept 27–28, 2026, web search was at its session limit and the network proxy blocked every site on this list. The URLs, stances, audience sizes, "accepts" values and contact routes all come from background knowledge. Before anyone contacts a place, a person has to open its site and read the current submission, advertising or community-rules page. If that page says no, the answer is no.
 > - **This plan never uses "virtual autism" as a hook.** The term stays in research-hub material only (BRAND.md rule 3). Every pitch below is about talk, touch, play and paper for any family. No pitch names a show, a creator, a platform or an app (BRAND.md rule 2).
 > - **Nothing goes out until the checklist at the end is done.** That includes counsel review of the founder story and fixes to the current site.
+> - **Every single message needs its own APPROVED line in `ops/APPROVALS.md` before it is sent** (founder's no-direct-contact rule, BRAND.md). The weekly routine never sends outreach on its own.
 
 ---
 
@@ -32,7 +33,7 @@ Play Before Pixels, a trade name of AlphaPlay LLC. Internal working file, not fo
 
 | # | Place | Kind | Stance | Accepts | Contact route | Fit | Decision and reason |
 |---|---|---|---|---|---|---|---|
-| 4 | ScreenStrong (Melanie Hempe, RN): ScreenStrong Families podcast and blog | Podcast | Supportive (mostly tweens and teens) | Podcast guests and partnerships (unverified) | Contact form on screenstrong.org (unverified) | 4 | **OUTREACH: audio podcast pitch (Draft 1).** Pitch the early years, talk and play only. They sell their own programs and may see us as a competitor, so expect a no and accept it. |
+| 4 | ScreenStrong (Melanie Hempe, RN): ScreenStrong Families podcast and blog | Podcast | Supportive (mostly tweens and teens) | Podcast guests and partnerships (unverified) | Contact form on screenstrong.org (unverified) | 4 | **RETIRED (September 28, 2026): LISTEN ONLY.** A podcast appearance is direct contact, which BRAND.md forbids ("No direct contact, ever"). Do not send Draft 1. |
 | 5 | Screen-Free Parenting (Dr. Meghan Owenz) | Blog | Supportive | Partnerships (a guess, unverified) | Contact form on screenfreeparenting.com (unverified) | 4 | **OUTREACH: resource-listing request plus a free printable (Draft 2).** First check whether the site lists outside resources. Any paid placement needs an FTC disclosure. |
 | 6 | After Babel (Jonathan Haidt and Zach Rausch, Substack) | Newsletter | Supportive (adolescents, smartphones, social media) | Occasional guest posts, chosen by the editors (unverified) | Substack reply or email (unverified) | 3 | **OUTREACH: guest-article pitch (Draft 3).** The editors will probably want a named author, and our byline is anonymous, so this may end at the first reply. Keep the article about home life, not schools (see rule 11). |
 | 7 | ParentData (Emily Oster) | Newsletter | Neutral and evidence-focused; probably skeptical of causal screen-autism claims | Ads or sponsorship (unverified) | Sponsorship inquiry through parentdata.org (unverified) | 2 | **ADVERTISE, later.** Paid, labeled placement only, and only once the products and the free research summary are live. The ad copy mentions no autism and makes no health claim. No draft here because fit is below 3. |
@@ -96,20 +97,20 @@ Reason for every row in this section: linking the brand to clinicians or coverag
 
 | # | Place | Kind | Stance | Accepts | Contact route | Fit | Decision and reason |
 |---|---|---|---|---|---|---|---|
-| 44 | Dr. Marius Teodor Zamfir (Romania; usually credited with coining the term, 2018) | Clinic | Supportive (originator) | Unknown | Unverified | 1 | **DO NOT CONTACT.** A clinician who diagnoses the term. His paper is not on the approved-citation list. |
-| 45 | Romanian TV and news segments featuring Dr. Zamfir (URL is a Digi24 homepage placeholder) | News | Supportive; reportedly includes recovery claims | Nothing | None | 1 | **DO NOT CONTACT.** Recovery framing conflicts with BRAND.md rule 1. |
-| 46 | Dr. Anne-Lise Ducanda's 2017 video on screens and babies, France | Single video | Supportive | Nothing | None | 1 | **DO NOT CONTACT.** French researchers and autism groups criticized it publicly. |
+| 44 | Dr. Marius Teodor Zamfir (Romania; usually credited with coining the term, 2018) | Clinic | Supportive (originator) | Unknown | Unverified | 1 | **DO NOT CONTACT.** Topic proximity. His paper is not on the approved-citation list. |
+| 45 | Romanian TV and news segments featuring Dr. Zamfir (URL is a Digi24 homepage placeholder) | News | Supportive (unverified) | Nothing | None | 1 | **DO NOT CONTACT.** Topic proximity; BRAND.md rule 1. |
+| 46 | Dr. Anne-Lise Ducanda's 2017 video on screens and babies, France | Single video | Supportive | Nothing | None | 1 | **DO NOT CONTACT.** Topic proximity. |
 | 47 | CoSE, Collectif Surexposition Écrans (France) | Nonprofit | Supportive | Unknown; no sign it works with companies | Contact form (unverified) | 2 | **DO NOT CONTACT.** A pitch from a US company that sells products could read as a treatment or prevention claim. |
-| 48 | Dr. Victoria Dunckley: drdunckley.com and the Psychology Today blog "Mental Wealth" | Blog | Supportive (has written on autism and screen time) | Nothing on Psychology Today; personal site unknown | Unverified | 1 | **DO NOT CONTACT.** Clinical framing that links autism to screens. |
+| 48 | Dr. Victoria Dunckley: drdunckley.com and the Psychology Today blog "Mental Wealth" | Blog | Supportive (has written on autism and screen time) | Nothing on Psychology Today; personal site unknown | Unverified | 1 | **DO NOT CONTACT.** Topic proximity (writes on screens and autism). |
 | 49 | virtualautism.org | Website | Unknown. Our index.html calls it the site of the documentary *A Stone Unturned*; legal/domain-portfolio.md says a third party runs it on Wix | Unknown | None | 1 | **DO NOT CONTACT.** Also remove our link to it (see the checklist). |
 | 50 | Neurosaber (Brazil), "autismo virtual" articles | Website | Neutral (unverified) | Unknown | Unverified | 1 | **DO NOT CONTACT.** |
 | 51 | Portal Drauzio Varella (Brazil) | Medical news | Neutral (unverified) | Nothing | None | 1 | **DO NOT CONTACT.** |
 | 52 | Infobae (Argentina) | News | Neutral (unverified) | Nothing | None | 1 | **DO NOT CONTACT.** |
 | 53 | BBC News Brasil (a specific article is not confirmed) | News | Neutral (unverified) | Nothing | None | 1 | **DO NOT CONTACT.** |
-| 54 | New York Post / Fox News Digital coverage | News | Supportive, sensational | Nothing | None | 1 | **DO NOT CONTACT.** Sensational coverage of a term that is not a diagnosis. |
+| 54 | New York Post / Fox News Digital coverage | News | Supportive | Nothing | None | 1 | **DO NOT CONTACT.** News coverage of a term that is not a diagnosis. |
 | 55 | Turkish coverage of "sanal otizm" (a search placeholder, not a source) | News | Supportive (unverified) | Nothing | None | 1 | **DO NOT CONTACT.** |
 
-**Summary:** 3 OUTREACH, 1 ADVERTISE (later), 20 LISTEN ONLY, 31 DO NOT CONTACT.
+**Summary:** 2 OUTREACH (written requests only), 1 ADVERTISE (later), 21 LISTEN ONLY, 31 DO NOT CONTACT. Row 4 moved from OUTREACH to LISTEN ONLY on September 28, 2026 (podcasts are direct contact).
 
 ---
 
@@ -126,9 +127,11 @@ Reason for every row in this section: linking the brand to clinicians or coverag
 
 ### Bio block (attach only when a bio is requested, and only after counsel clears `content/founder-story.md`)
 
-Use the SHORT version as written:
+**Default (September 28, 2026): use the cut version below, not the SHORT version.** BRAND.md rule 3 keeps "virtual autism" inside research-hub material, and a bio is outside the hub. The SHORT version is kept here only for counsel's review, and it is not to be sent unless counsel and the founder both approve in writing (`content/founder-story.md`, SITE-SAFE CUT).
 
-> I'm a mom and an educator. Late one night, I typed a question I hadn't said out loud: Were the videos my daughter loved affecting her development? Could they be making her autistic?
+SHORT version (counsel review only):
+
+> I'm a mom and an educator. Late one night, I typed a question I hadn't said out loud: Were the videos my child loved affecting their development? Could they be making my child autistic?
 >
 > The search led me to "virtual autism," a term some clinicians use. It is not a medical diagnosis, and it doesn't mean screens cause autism. It also led me to research I'd never heard of. I read the studies. Then our home got louder, messier and closer.
 >
@@ -136,13 +139,15 @@ Use the SHORT version as written:
 >
 > — Founded by a parent and educator
 
-**Question for counsel.** BRAND.md rule 3 limits "virtual autism" to research-hub material, and a guest bio or podcast intro is outside the hub. If counsel prefers, use this cut of the SHORT version instead. It adds nothing; it only removes lines:
+**Cut version (the default).** BRAND.md rule 3 limits "virtual autism" to research-hub material, and a guest bio is outside the hub. It adds nothing; it only removes lines:
 
-> I'm a mom and an educator. Late one night, I typed a question I hadn't said out loud about the videos my daughter loved. It led me to research I'd never heard of. I read the studies. Then our home got louder, messier and closer. I built Play Before Pixels so you don't have to piece this together alone.
+> I'm a mom and an educator. Late one night, I typed a question I hadn't said out loud about the videos my child loved. It led me to research I'd never heard of. I read the studies. Then our home got louder, messier and closer. I built Play Before Pixels so you don't have to piece this together alone.
 >
 > — Founded by a parent and educator
 
-### Draft 1: ScreenStrong (audio podcast pitch)
+### Draft 1: ScreenStrong (audio podcast pitch) — RETIRED, DO NOT SEND
+
+> Retired September 28, 2026 by the autism content audit: BRAND.md bans podcast appearances and every other form of direct contact. The text stays below only as a record.
 
 **Subject:** Podcast guest idea: the years before the first phone (audio only)
 
@@ -225,10 +230,10 @@ AlphaPlay LLC, [BUSINESS MAILING ADDRESS] · Reply 'no thanks' and we won't writ
 3. **Always disclose the business connection.** Say "I run Play Before Pixels, a small business that sells books and printables" in the first few lines. Never pose as an ordinary parent, never ask friends to post for us, and never use extra accounts.
 4. **Never argue with critics.** Respond once, kindly, with sources, or don't respond at all (see section 4).
 5. **Never use "virtual autism" as a hook,** and never pitch or target any autism organization, autism community or autism-parent space (sections E and F).
-6. **Never name a show, creator, platform, app, device brand, school, district or company.** Say "the videos my daughter loved" or "a children's video channel" if the story comes up at all.
+6. **Never name a show, creator, platform, app, device brand, school, district or company.** Say "the videos my child loved" or "a children's video channel" if the story comes up at all.
 7. **No health claims, ever.** Nothing we make treats, prevents, reverses or improves autism, delay or any condition. Don't say or suggest that our materials improve speech, development or behavior. Describe research as associations. Cite only BRAND.md rule 5 sources.
 8. **No fear-selling or guilt-selling.** Don't use "before it's too late," don't count screen minutes against anyone, and don't suggest a parent caused anything.
-9. **Protect the family.** Never share the child's name, age, milestones, school or anything about her health. Never share the founder's name, face, employer or any legal matter.
+9. **Protect the family.** Never share the child's name, sex, age, milestones, school or anything about their health. Never share the founder's name, face, employer or any legal matter.
 10. **Respect every "no."** A "no thanks," an unsubscribe or no reply after one follow-up ends contact. Log it, and honor it within 10 business days (CAN-SPAM). Every commercial email carries the AlphaPlay LLC postal address and the opt-out line.
 11. **Check the exclusion list in CLAUDE.md before every contact,** and keep all outreach away from topics that touch the founder's work as an educator. Anything that does goes to `legal/FOR-EMPLOYMENT-COUNSEL.md` first.
 12. **Parents in distress are not leads.** If someone asks whether their child is autistic or whether a show harmed their child, don't sell. If a reply is appropriate at all, point them to their child's doctor and, for children under 3, their state's free early intervention program.
@@ -265,9 +270,9 @@ AlphaPlay LLC, [BUSINESS MAILING ADDRESS] · Reply 'no thanks' and we won't writ
 ## Before anything goes out (checklist)
 
 - [ ] **Counsel has cleared** `content/founder-story.md`, including whether the bio block may use "virtual autism" outside the research hub.
-- [ ] **Remove the implied recovery claim in index.html, line 272:** "Some of these clinicians report that the behaviors ease when screens are removed and replaced with face-to-face play." Outreach sends people to this site, so this sentence has to go first.
-- [ ] **Rename the hub in index.html, line 270** ("The Virtual Autism Project") to a name without "autism," as `legal/domain-portfolio.md` recommends (for example, "Play Before Pixels Research Library").
-- [ ] **Remove or re-check the link to virtualautism.org in index.html, lines 350–353.** The domain file says a third party runs it; the page calls it the film's official site. Either way, it ties the brand to an autism-named domain.
+- [x] **(Done September 28, 2026, autism content audit.) Remove the implied recovery claim in index.html, line 272:** "Some of these clinicians report that the behaviors ease when screens are removed and replaced with face-to-face play." Outreach sends people to this site, so this sentence has to go first.
+- [x] **(Done September 28, 2026; the whole "virtual autism" section left the shop page.) Rename the hub in index.html, line 270** ("The Virtual Autism Project") to the chosen name, "Play Before Pixels Research Notes" (`legal/ENTITY.md`). The same rename is still open in `site-concepts/` (see `ops/TESTS/autism-content-audit.md`).
+- [x] **(Done September 28, 2026: the film block, the link and the footer mention were removed.) Remove or re-check the link to virtualautism.org in index.html, lines 350–353.** The domain file says a third party runs it; the page calls it the film's official site. Either way, it ties the brand to an autism-named domain.
 - [ ] **Fix index.html, lines 331–333,** which offer to "book a speaker" and "Speaker events... in person or online." BRAND.md forbids live services by the founder, so change this to host-it-yourself kits.
 - [ ] **Build the free research summary and the free printable,** check them against BRAND.md, and publish them at stable links.
 - [ ] **Set up a real sending inbox and one log** for sends, replies and opt-outs.

@@ -32,6 +32,33 @@
   "h": 360
  },
  {
+  "src": "tests/opt-chosen.html",
+  "out": "tests/opt-chosen-16.png",
+  "w": 16,
+  "h": 16,
+  "transparent": true
+ },
+ {
+  "src": "tests/opt-block.html",
+  "out": "tests/opt-block-16.png",
+  "w": 16,
+  "h": 16,
+  "transparent": true
+ },
+ {
+  "src": "tests/opt-plain.html",
+  "out": "tests/opt-plain-16.png",
+  "w": 16,
+  "h": 16,
+  "transparent": true
+ },
+ {
+  "src": "tests/favicon-options.html",
+  "out": "tests/favicon-options.png",
+  "w": 980,
+  "h": 240
+ },
+ {
   "src": "tests/preview-sheet.html",
   "out": "preview-sheet.png",
   "w": 1600,

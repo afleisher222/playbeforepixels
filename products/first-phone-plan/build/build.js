@@ -372,7 +372,7 @@ function guide2(ctx, P) {
       '<b>Never a prize, never a punishment.</b> Phone time doesn’t grow or shrink with chores, grades or behavior. That keeps the phone from becoming the thing everyone argues about.',
       '<b>Screens have a spot in the day.</b> The same time and about the same length each day. You write it on the fridge-door plan.',
       '<b>Zones and times are for everyone.</b> Grown-ups park their phones at the table too. Kids notice.',
-      '<b>Check in, don’t check up.</b> A 5-minute talk once a month (page ${P.checkin}) keeps the agreement alive.',
+      `<b>Check in, don’t check up.</b> A 5-minute talk once a month (page ${P.checkin}) keeps the agreement alive.`,
     ])}</div>
   <div><div class="h2" style="margin-bottom:.08in">When something goes wrong</div><div class="ww">${T.WHEN_WRONG.map(([a, b], i) => `${i ? `<div class="ar">${ARROW}</div>` : ''}<div class="s"><div class="kid"><b>${i + 1}</b>${a}</div><div class="body">${b}</div></div>`).join('')}</div></div>
   <div class="agecards">${[
@@ -410,7 +410,7 @@ function tips(ctx, P) {
   <div class="card" style="--cbg:var(--tT)"><div class="h2">Safety notes for the afternoon ideas</div>${li([
       'Every afternoon idea follows our published safety rules and carries its own safety line.',
       'A grown-up always knows where a child is going, with whom, and when they’ll be back. Helmets on for bikes and scooters.',
-      'Grown-ups handle knives, the stove, craft knives and tools. Keep small pieces like cards and puzzle pieces away from children under 3.',
+      'Kitchen knives and the stove only with a grown-up right there; grown-ups handle craft knives and tools. Keep small pieces like cards and puzzle pieces away from children under 3.',
     ])}</div>
   <div class="card" style="--cbg:#fff;border:1.5px solid var(--line)"><div class="h2">Only printing a few pages?</div><p class="body">Most families start with these seven: the agreement (pages ${P.agree}–${P.agree + 1}), the fridge-door plan (page ${P.planB}), the tracker (page ${P.tracker}) and the 30 ideas (pages ${P.ideas}–${P.ideas3}). Everything else is there when you want it.</p></div>
   <div class="card"><p class="body"><b>Good to know:</b> this kit is parent education and family planning. It isn’t medical or professional advice. For questions about your child’s health or development, talk with your child’s doctor.</p></div>`;
@@ -448,12 +448,12 @@ function agree1(ctx) {
 }
 function agree2(ctx) {
   return hd({ eyebrow: 'Section C · Our First Phone Agreement · 2 of 2', title: 'Grown-up promises, and how we fix things', age: 'all', prepT: 'No prep', extra: tag('Fillable') })
-    + `<div class="card" style="--cbg:var(--t)"><div class="h2">My grown-ups promise</div><div class="gp">${T.GROWN_PROMISES.map(r => `<label>${cb('grown_promise')}<span>${r}</span></label>`).join('')}</div>
+    + `<div class="card" style="--cbg:var(--t)"><div class="h2">What my grown-ups promise</div><div class="gp">${T.GROWN_PROMISES.map(r => `<label>${cb('grown_promise')}<span>${r}</span></label>`).join('')}</div>
     <div class="who" style="text-transform:none;letter-spacing:0;font-size:9.5pt;margin-top:.04in">Our own grown-up promise: ${line('grown_own', { size: 10 })}</div></div>
   <div><div class="h2" style="margin-bottom:.07in">When something goes wrong, we</div><div class="ww">${T.WHEN_WRONG.map(([a, b], i) => `${i ? `<div class="ar">${ARROW}</div>` : ''}<div class="s"><div class="kid"><b>${i + 1}</b>${a}</div><div class="body">${b}</div></div>`).join('')}</div></div>
-  <div class="card"><div class="h2">Our phone basics</div><div class="two" style="gap:.05in .25in">${[['Phone sleeps at', 'spot'], ['Phone’s bedtime', 'bedtime'], ['Our screen spot (same every day)', 'screen'], ['Phone-free zones and times', 'zones']].map(([q, n]) => `<div class="who" style="text-transform:none;letter-spacing:0;font-size:9pt">${q}: ${line(n, { size: 9 })}</div>`).join('')}</div><p class="small">Details go on the phone-free zones, times and fridge-door plan pages.</p></div>
+  <div class="card"><div class="h2">Our phone basics</div><div class="two" style="gap:.05in .25in">${[['My phone is for', 'phone_for'], ['Our yes-list (apps, games, groups)', 'yes_list'], ['Phone sleeps at', 'spot'], ['Phone’s bedtime', 'bedtime'], ['Our screen spot (same every day)', 'screen'], ['Phone-free zones and times', 'zones']].map(([q, n]) => `<div class="who" style="text-transform:none;letter-spacing:0;font-size:9pt">${q}: ${line(n, { size: 9 })}</div>`).join('')}</div><p class="small">Add to the yes-list together at each check-in. Details go on the zones, times and fridge-door plan pages.</p></div>
   <div class="card" style="--cbg:var(--t2)"><div class="h2">We’ll read this again on</div><div class="dates">${[['After 1 month', 'rev1'], ['After 3 months', 'rev3'], ['My next birthday', 'revb']].map(([a, n]) => `<div><span class="small">${a}</span>${line(n, { size: 10 })}</div>`).join('')}</div></div>
-  <div class="card" style="--cbg:var(--tG)"><div class="h2">Next steps we’ll try together</div><p class="small" style="color:var(--ink)">New independence steps to try as you grow, like walking to a friend’s house or planning a Saturday on your own. Steps, not prizes.</p>${[1, 2].map(() => `<div class="who" style="text-transform:none;letter-spacing:0">${line('next_step', { size: 10 })}</div>`).join('')}</div>
+  <div class="card" style="--cbg:var(--tG)"><div class="h2">Next steps we’ll try together</div><p class="small" style="color:var(--ink)">New independence steps to try as you grow, like walking to a friend’s house or planning a Saturday on your own. Steps, not prizes.</p><div class="who" style="text-transform:none;letter-spacing:0">${line('next_step', { size: 10 })}</div></div>
   <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:.08in"><div class="h2">Signed with a smile</div><div class="sig">${['Me', 'Grown-up', 'Grown-up'].map(s => `<div><span class="fl" ${fld('sign', { size: 14 })}></span><span>${s}</span></div>`).join('')}</div></div>`;
 }
 function agreeBlank(ctx) {
@@ -461,7 +461,7 @@ function agreeBlank(ctx) {
   return hd({ eyebrow: 'Section C · Make-it-yours agreement (fillable)', title: 'Our agreement, in our words', lede: 'Prefer to write it from scratch? Use your own promises here, or add to the pre-written ones.', age: 'k', prepT: 'No prep', extra: tag('Fillable') })
     + `<div class="who"><span>Between</span>${line('kid', { size: 11 })}<span>and</span>${line('grownups', { size: 11 })}<span>Date</span><span style="flex:0 0 1.2in;display:flex">${line('date', { size: 11 })}</span></div>
   <div class="card" style="--cbg:var(--t)"><div class="h2">I promise</div>${rows(8, 'kid_line')}</div>
-  <div class="card" style="--cbg:var(--t2)"><div class="h2">My grown-ups promise</div>${rows(5, 'grown_line')}</div>
+  <div class="card" style="--cbg:var(--t2)"><div class="h2">What my grown-ups promise</div>${rows(5, 'grown_line')}</div>
   <div class="card"><p class="body"><b>Our big idea:</b> the phone is never a prize and never a punishment. When something goes wrong, we pause, talk it through, and re-read this page together.</p></div>
   <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:.08in"><div class="h2">Signed with a smile</div><div class="sig">${['Me', 'Grown-up', 'Grown-up'].map(s => `<div><span class="fl" ${fld('sign', { size: 14 })}></span><span>${s}</span></div>`).join('')}</div></div>`;
 }
@@ -531,8 +531,8 @@ function challenge(ctx) {
   return hd({ eyebrow: 'Section F · The 30-day challenge', title: '30 Phone-Free Afternoons', lede: 'A month of afternoons that belong to your big kid: build, ride, cook, invent, explore. No phone yet? Do it anyway; it’s great practice for planning your own time.', age: 'k', prepT: 'No prep' })
     + `<div style="height:2.75in">${X.sceneAfternoon()}</div>
   <div class="rules">${rules.map(([a, t, s]) => `<div>${art(a)}<div><div class="kid">${t}</div><div class="body">${s}</div></div></div>`).join('')}</div>
-  <div class="badges">${[[10, 'Explorer'], [20, 'Adventurer'], [30, 'Champion']].map(([n, t]) => `<div><span class="bdg">${n}<small>days</small></span><div><div class="kid" style="font-size:11pt">Afternoon ${t}</div><div class="small">Day ${n}: celebrate with a together treat, like a game or a walk.</div></div></div>`).join('')}</div>
-  <div class="card" style="--cbg:var(--tS)"><div class="h2">Safe afternoons, every time</div>${li(['A grown-up is home, or knows the plan: where, with whom, and back by when.', 'Helmets on for wheels. Grown-ups handle knives, the stove and craft knives.', 'Little brothers and sisters join in? Keep small pieces, marbles and game bits away from under-3s, and skip nuts, popcorn and whole grapes for toddlers.'])}</div>`;
+  <div class="badges">${[[10, 'Explorer', 'you pick the family game tonight.'], [20, 'Adventurer', 'plan a walk or ride somewhere new.'], [30, 'Champion', 'certificate, plus a together treat you choose.']].map(([n, t, c]) => `<div><span class="bdg">${n}<small>days</small></span><div><div class="kid" style="font-size:10pt;white-space:nowrap">Afternoon ${t}</div><div class="small">Day ${n}: ${c}</div></div></div>`).join('')}</div>
+  <div class="card" style="--cbg:var(--tS)"><div class="h2">Safe afternoons, every time</div>${li(['A grown-up is home, or knows the plan: where, with whom, and back by when.', 'Helmets on for wheels. Knives and the stove only with a grown-up right there; grown-ups handle craft knives.', 'Little brothers and sisters join in? Keep small pieces, marbles and game bits away from under-3s, and skip nuts, popcorn and whole grapes for toddlers.'])}</div>`;
 }
 function tracker(ctx, blank) {
   const tiles = Array.from({ length: 30 }, (_, i) => {
@@ -573,8 +573,10 @@ function certificate(ctx) {
   return `<div class="cert"><span class="eyebrow" style="color:var(--ink)">Certificate of adventure</span>
   <div><div class="h1">30 Phone-Free<br>Afternoons</div><div class="kid" style="font-size:18pt;margin-top:.08in;color:var(--m)">Afternoon Champion</div></div>
   <div class="scene">${X.sceneAfternoon({ bg: ctx.low ? '#fff' : 'var(--t)' }).replace(`fill="var(--t)"`, 'style="fill:var(--t)"')}</div>
+  <p class="body" style="font-size:11.5pt;max-width:5.6in">For 30 afternoons of building, riding, cooking, inventing and exploring, and for planning your own time.</p>
   <div style="width:100%;display:flex;flex-direction:column;align-items:center;gap:.08in"><span class="nmf" ${fld('name', { size: 22, align: 1 })}></span><span class="small">Name</span></div>
   <div class="two" style="width:100%"><div class="who" style="text-transform:none;letter-spacing:0;font-size:9.5pt">Favorite afternoon: ${line('fav', { size: 10 })}</div><div class="who" style="text-transform:none;letter-spacing:0;font-size:9.5pt">Date: ${line('date', { size: 10 })}</div></div>
+  <div class="who" style="width:100%;text-transform:none;letter-spacing:0;font-size:9.5pt">Signed by a proud grown-up: ${line('grown_sign', { size: 10 })}</div>
   ${lock}</div>`;
 }
 function more(ctx, qr) {
@@ -596,9 +598,9 @@ function more(ctx, qr) {
   return hd({ eyebrow: 'More from Play Before Pixels', title: 'Next for your family', lede: ctx.store ? 'Same calm design, the same “play first” idea. Find them all at playbeforepixels.com.' : 'Same calm design, the same “play first” idea. Find them all in our shop, Play Before Pixels.', age: 'all' })
     + tiles + tail;
 }
-function colorsIntro(ctx) {
+function colorsIntro(ctx, P) {
   return hd({ eyebrow: 'Section G · Colorways', title: 'Pick your colors', lede: 'The main pages again in Sky and Plum, so each child can choose their own. The Tomato versions are earlier in this file.', age: 'all' })
-    + `<div class="three" style="flex:1">${COLORWAYS.map(c => `<div class="card cw-${c.id}" style="--cbg:var(--t);align-items:center;text-align:center;justify-content:center"><div style="width:1.4in;height:1.4in;border-radius:50%;background:var(--m)"></div><div class="kid" style="font-size:18pt">${c.name}</div><p class="body">Agreement (2 pages), fridge-door plan, tracker and certificate</p></div>`).join('')}</div>
+    + `<div class="three" style="flex:1">${COLORWAYS.map(c => `<div class="card cw-${c.id}" style="--cbg:var(--t);align-items:center;text-align:center;justify-content:center"><div style="width:1.4in;height:1.4in;border-radius:50%;background:var(--m)"></div><div class="kid" style="font-size:18pt">${c.name}</div><p class="body">Agreement (2 pages), fridge-door plan, tracker and certificate</p><div class="eyebrow" style="margin-top:.06in">${c.id === 'tomato' ? `Pages ${P.agree}–${P.agree + 1}, ${P.planB}, ${P.tracker}, ${P.cert}` : `Pages ${P['agree_' + c.id]}–${P['cert_' + c.id]}`}</div></div>`).join('')}</div>
   <div class="card" style="--cbg:var(--tS)"><p class="body">All three colorways hold the same fillable fields. Fill in the one you’ll print.</p></div>`;
 }
 
@@ -633,7 +635,7 @@ function buildDoc(ctx, qr) {
   add('checkin', c => checkin(c), 'Monthly check-in');
   add('cert', c => certificate(c), 'Certificate');
   if (!ctx.low) {
-    add('colors', c => colorsIntro(c), 'Colorways: Sky and Plum');
+    add('colors', (c, P) => colorsIntro(c, P), 'Colorways: Sky and Plum');
     ['sky', 'plum'].forEach(cw => {
       add('agree_' + cw, c => agree1(c), null, cw);
       add('agree2_' + cw, c => agree2(c), null, cw);
@@ -675,7 +677,7 @@ function startHere(ctx, qr, P) {
   <div class="card" style="--cbg:var(--tT)"><div class="h2">Where to begin</div>${li([`<b>No phone yet?</b> Start with “Are we ready?” (page ${P.ready}) and the 10 practice missions.`, `<b>Phone on the way?</b> Start with Our First Phone Agreement (page ${P.agree}).`, `<b>Just want more afternoons without phones?</b> Jump to the 30-day challenge (page ${P.challenge}).`])}</div>
   <div class="card" style="--cbg:var(--tP)"><div class="h2">Downloading: use a browser, not the app</div><p class="body">${ctx.store ? 'Open your download link from the order email in a web browser. On a phone, save each PDF to your files first, then open it in a PDF reader.' : 'Open your Purchases page in a web browser (not the shop’s app) and download each file. On a phone, save each PDF to your files first, then open it in a PDF reader. Your files stay on your Purchases page to download again anytime.'}</p></div>
   ${ctx.store ? `<div class="card" style="flex-direction:row;align-items:center;gap:.2in"><div style="width:1.2in;flex:0 0 auto">${qr.replace('<svg', '<svg style="width:100%;height:auto;display:block"')}</div><div><div class="h2">Free bonus and re-downloads</div><p class="body">Scan for your free summer and holiday edition: <b>${T.BONUS}</b>. Lost a file? Your link stays in your order email; help is at <b>playbeforepixels.com/help</b>.</p></div></div>` : ''}
-  ${ctx.store ? '' : `<div class="card" style="--cbg:var(--wash)"><div class="h2">Questions?</div><p class="body">Quick answers are on page ${P.faq} of each file: what age it suits, what you can edit, whether it works without a phone yet, for tablets and consoles, and in a second home. Safety notes for the afternoon ideas are on page ${P.tips}.</p></div>`}
+  ${ctx.store ? '' : `<div class="card" style="--cbg:var(--wash)"><div class="h2">Questions?</div><p class="body">Quick answers are on page ${P.faq} of each file: what age it suits, what you can edit, whether it works without a phone yet or for tablets and consoles, and what to do if your child tells you something worrying. Safety notes for the afternoon ideas are on page ${P.tips}.</p></div>`}
   <p class="small">License: personal and family use in your own family’s homes. Please don’t share or resell. Parent education, not medical or professional advice. Every afternoon idea follows our published safety rules.</p>
   ${footer(ctx, 1)}</section>`;
 }

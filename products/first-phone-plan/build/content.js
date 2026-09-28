@@ -50,15 +50,15 @@ const READY = [
 // ---------- 10 practice missions before the first phone ----------
 const MISSIONS = [
   ['alarm', 'Alarm-clock week', 'Wake up with an alarm clock for 7 days. No grown-up wake-up calls.'],
-  ['numbersCard', 'Numbers by heart', 'Learn two grown-ups’ phone numbers. Say them at dinner, no peeking.'],
+  ['numbersCard', 'Numbers by heart', 'Learn two grown-ups’ phone numbers. Say them at dinner, and keep a copy on a card in your bag.'],
   ['planner', 'Paper planner', 'Keep a paper planner for 2 weeks: homework, practice, plans.'],
   ['mapCompass', 'Lead the way', 'Walk a route you know with a grown-up. You lead; they follow.'],
   ['friendsFirst', 'Make a plan', 'Plan a meetup with a friend: when, where, and how you get home. A grown-up says OK.'],
   ['askHelp', 'Ask in person', 'Order at a counter or ask a librarian a question yourself, with your grown-up close by.'],
   ['writeLetter', 'Snail mail', 'Write a letter to a relative, address it and mail it.'],
   ['lookAfter', 'Look after it', 'Borrow something special for a week and give it back in great shape.'],
-  ['alarm', 'Timer stop', 'Stop a game when the timer rings, 5 days in a row.'],
-  ['alwaysCall', 'Call and chat', 'Call a relative on a family phone and chat for 5 minutes.'],
+  ['alarm', 'Timer stop', 'Stop a game when the timer rings, on 5 different days.'],
+  ['alwaysCall', 'Call and chat', 'Call a relative on a family phone and chat for a few minutes.'],
 ];
 
 // ---------- the agreement: kid promises (choose what fits) ----------
@@ -89,7 +89,7 @@ const KID_PROMISES = [
     'I can call home any time, from anywhere.',
   ] },
   { t: 'Eyes up, life first', art: 'eyesUp', rows: [
-    'I look up when I’m walking, crossing streets or talking to someone.',
+    'I put my phone away when I’m walking, crossing streets or talking with someone.',
     'Friends in the room come first.',
     'I keep making time for play, outside time and the things I love.',
   ] },
@@ -151,7 +151,7 @@ const AFTERNOONS = [
   ['build', 'Cardboard build', 'Turn boxes into a marble run, a robot or a city.', 'Stack 10 things into the tallest tower you can.', '', 'Grown-up handles craft knives. Marbles away from under-3s.', 'Add a moving part: a door, a lever or a ramp.', 2, 'Some'],
   ['paperPlane', 'Paper plane contest', 'Fold 3 designs. Which flies farthest?', 'Fold one plane and throw it once.', '', 'Aim away from faces.', 'Add a hoop target and score points.', 0, 'Low'],
   ['walkDog', 'Neighborhood walk', 'Walk a loop you know and spot 10 new things.', 'Walk to the corner and back.', '', 'A grown-up knows your route and return time.', 'Draw a map of your loop when you get home.', 0, 'None'],
-  ['helpDinner', 'Cook a snack', 'Make a snack for the family from what’s in the kitchen.', 'Wash fruit and set out a snack plate.', '', 'Grown-up handles knives and the stove. Toddlers: no nuts, popcorn or whole grapes.', 'Follow a written recipe from start to finish.', 2, 'Some'],
+  ['helpDinner', 'Cook a snack', 'Make a snack for the family from what’s in the kitchen.', 'Wash fruit and set out a snack plate.', '', 'Knives and the stove only with a grown-up right there. Toddlers: no nuts, popcorn or whole grapes.', 'Follow a written recipe from start to finish.', 2, 'Some'],
   ['cardTricks', 'Card magic show', 'Learn one card trick and perform it at dinner.', 'Build a card house of 4 cards.', 'A deck of cards', HOME, 'Learn a second trick for a two-act show.', 0, 'None'],
   ['bike', 'Bike or scooter loop', 'Ride a safe loop and time yourself.', 'Pump up the tires and check the brakes.', 'A bike or scooter', 'Helmet on. A grown-up says where.', 'Plan a longer loop and ride it with a grown-up.', 2, 'None'],
   ['writeLetter', 'Snail mail', 'Write a letter or postcard to someone far away.', 'Write 3 lines on a sticky note for someone at home.', 'A stamp', 'A grown-up checks the address before it’s mailed.', 'Start a pen-pal swap: one letter a week.', 0, 'None'],
@@ -167,7 +167,7 @@ const AFTERNOONS = [
   ['dance', 'Dance-off', 'Make up a routine and teach it to the family.', 'One song, everyone dances.', '', 'Clear the floor first.', 'Add a second song and a costume change.', 0, 'None'],
   ['journal', 'Write a story', 'Write a story with a twist ending.', 'Write the first line of a story.', '', HOME, 'Illustrate it and read it aloud at dinner.', 0, 'None'],
   ['mapCompass', 'Map your street', 'Draw a map of your street or a treasure map.', 'Draw your room from above.', '', 'Treasure hunts stay at home or in the yard.', 'Hide a treasure; let someone follow your map.', 0, 'Low'],
-  ['picnic', 'Picnic', 'Pack a picnic and eat outside or on the floor.', 'Eat your snack on a blanket.', '', 'Grown-up handles knives. Toddlers: no nuts, popcorn or whole grapes.', 'Plan the menu, pack it and clean up yourself.', 2, 'Some'],
+  ['picnic', 'Picnic', 'Pack a picnic and eat outside or on the floor.', 'Eat your snack on a blanket.', '', 'Knives only with a grown-up right there. Toddlers: no nuts, popcorn or whole grapes.', 'Plan the menu, pack it and clean up yourself.', 2, 'Some'],
   ['birds', 'Bird count', 'Count birds for 20 minutes. Which kind wins?', 'Count birds for 2 minutes.', '', 'A grown-up knows where you are.', 'Make a tally chart and compare two days.', 0, 'None'],
   ['artProject', 'Art studio', 'Paint, collage or sculpt something to give away.', 'Draw with your other hand.', '', 'Beads and small bits away from under-3s.', 'Make a set of 3 and hang a family gallery.', 2, 'Some'],
   ['helpSibling', 'Teach someone', 'Teach a sibling, cousin or grown-up something you’re good at.', 'Show one quick trick.', '', HOME, 'Make a 5-step how-to poster.', 0, 'None'],
@@ -195,10 +195,10 @@ const FAQ = [
   ['Our child doesn’t have a phone yet. Is it still useful?', 'Yes. Start with the readiness checklist, the 10 practice missions and the 30-day challenge. The agreement will be ready when you are.'],
   ['Is this a contract with punishments?', 'No. It’s a warm agreement you write together. The phone is never used as a prize or a punishment. When something goes wrong, you pause, talk and adjust.'],
   ['What can I edit?', 'Every blank line and tick box is fillable: names, dates, times, promises, zones, plan answers and the tracker. Printed wording, colors and pictures can’t be changed.'],
-  ['Does it work with any phone?', 'Yes. Nothing here depends on a type of phone, an app or a company.'],
+  ['Does it work with any phone, tablet or console?', 'Yes. Nothing here depends on a type of device, an app or a company. The zones, times and fridge-door plan work for any screen in the house.'],
   ['How long does it take?', 'About 30 minutes to fill in the agreement and plan together, then 5 minutes a month to check in.'],
   ['What if a promise keeps getting broken?', 'Talk about what makes it hard, then change the setup, not the child: move the charging spot, try a practice mission, or rewrite the line together. The agreement is meant to change as they grow.'],
-  ['Does it work for tablets and game consoles too?', 'Yes. The zones, times and fridge-door plan work for any screen in the house.'],
+  ['What if my child tells me something worrying?', 'Thank them for telling and stay calm. Don’t reply or delete anything yet; save a copy so you can look at it together, then talk it through. If someone may be at risk right now, call your local emergency number.'],
   ['Can a second home use it?', 'Yes. Print a second fridge-door plan for the other home. The license covers your own family’s homes.'],
   ['Is this medical or professional advice?', 'No. It’s parent education and family planning. For questions about your child’s health or development, talk with your child’s doctor.'],
 ];

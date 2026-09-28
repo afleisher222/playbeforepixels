@@ -33,6 +33,7 @@ const BANNED = /\b(therapy|therapist|autism|autistic|adhd|speech delay|late talk
       if (keep && grid && grid.getBoundingClientRect().bottom - 10 > keep.getBoundingClientRect().top - 4) out.push({ page: n, gridOverlapsKeep: true });
     });
     const pieces = [...document.querySelectorAll('svg.pieces')].map(s => Math.min(+s.dataset.cellW, +s.dataset.cellH) / 96);
+    if (document.body.classList.contains('etsy')) { if (/playbeforepixels\.com|https?:/i.test(document.body.innerText)) out.push({ etsyEditionShowsUrl: true }); if ([...document.querySelectorAll('svg.qr')].some(q => q.getClientRects().length)) out.push({ etsyEditionShowsQr: true }); }
     return { out, pages: document.querySelectorAll('.page').length, minPieceIn: Math.min(...pieces), sheets: pieces.length, text: document.body.innerText };
   });
   const bad = res.text.match(new RegExp(BANNED.source, 'gi'));

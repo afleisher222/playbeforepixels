@@ -1,6 +1,6 @@
 {
  "kit-store-color-letter": {
-  "pages": 50,
+  "pages": 53,
   "toc": [
    [
     "Cover",
@@ -79,16 +79,20 @@
     47
    ],
    [
-    "30-day tracker (fillable)",
+    "The 30 plays: ages, easier, harder, 2-minute versions",
     48
    ],
    [
+    "30-day tracker (fillable)",
+    51
+   ],
+   [
     "Certificate",
-    49
+    52
    ],
    [
     "More from Play Before Pixels + free bonus",
-    50
+    53
    ]
   ],
   "P": {
@@ -139,13 +143,16 @@
    "plan2": 45,
    "plan3": 46,
    "tracker": 47,
-   "trackerB": 48,
-   "cert": 49,
-   "more": 50
+   "plays1": 48,
+   "plays2": 49,
+   "plays3": 50,
+   "trackerB": 51,
+   "cert": 52,
+   "more": 53
   }
  },
  "kit-store-color-a4": {
-  "pages": 50,
+  "pages": 53,
   "toc": [
    [
     "Cover",
@@ -224,16 +231,20 @@
     47
    ],
    [
-    "30-day tracker (fillable)",
+    "The 30 plays: ages, easier, harder, 2-minute versions",
     48
    ],
    [
+    "30-day tracker (fillable)",
+    51
+   ],
+   [
     "Certificate",
-    49
+    52
    ],
    [
     "More from Play Before Pixels + free bonus",
-    50
+    53
    ]
   ],
   "P": {
@@ -284,13 +295,16 @@
    "plan2": 45,
    "plan3": 46,
    "tracker": 47,
-   "trackerB": 48,
-   "cert": 49,
-   "more": 50
+   "plays1": 48,
+   "plays2": 49,
+   "plays3": 50,
+   "trackerB": 51,
+   "cert": 52,
+   "more": 53
   }
  },
  "kit-store-low-letter": {
-  "pages": 32,
+  "pages": 35,
   "toc": [
    [
     "Cover",
@@ -369,16 +383,20 @@
     29
    ],
    [
-    "30-day tracker (fillable)",
+    "The 30 plays: ages, easier, harder, 2-minute versions",
     30
    ],
    [
+    "30-day tracker (fillable)",
+    33
+   ],
+   [
     "Certificate",
-    31
+    34
    ],
    [
     "More from Play Before Pixels + free bonus",
-    32
+    35
    ]
   ],
   "P": {
@@ -411,13 +429,16 @@
    "plan2": 27,
    "plan3": 28,
    "tracker": 29,
-   "trackerB": 30,
-   "cert": 31,
-   "more": 32
+   "plays1": 30,
+   "plays2": 31,
+   "plays3": 32,
+   "trackerB": 33,
+   "cert": 34,
+   "more": 35
   }
  },
  "kit-store-low-a4": {
-  "pages": 32,
+  "pages": 35,
   "toc": [
    [
     "Cover",
@@ -496,16 +517,20 @@
     29
    ],
    [
-    "30-day tracker (fillable)",
+    "The 30 plays: ages, easier, harder, 2-minute versions",
     30
    ],
    [
+    "30-day tracker (fillable)",
+    33
+   ],
+   [
     "Certificate",
-    31
+    34
    ],
    [
     "More from Play Before Pixels + free bonus",
-    32
+    35
    ]
   ],
   "P": {
@@ -538,13 +563,16 @@
    "plan2": 27,
    "plan3": 28,
    "tracker": 29,
-   "trackerB": 30,
-   "cert": 31,
-   "more": 32
+   "plays1": 30,
+   "plays2": 31,
+   "plays3": 32,
+   "trackerB": 33,
+   "cert": 34,
+   "more": 35
   }
  },
  "kit-etsy-color-letter": {
-  "pages": 50,
+  "pages": 53,
   "toc": [
    [
     "Cover",
@@ -623,16 +651,20 @@
     47
    ],
    [
-    "30-day tracker (fillable)",
+    "The 30 plays: ages, easier, harder, 2-minute versions",
     48
    ],
    [
+    "30-day tracker (fillable)",
+    51
+   ],
+   [
     "Certificate",
-    49
+    52
    ],
    [
     "More from Play Before Pixels",
-    50
+    53
    ]
   ],
   "P": {
@@ -683,13 +715,16 @@
    "plan2": 45,
    "plan3": 46,
    "tracker": 47,
-   "trackerB": 48,
-   "cert": 49,
-   "more": 50
+   "plays1": 48,
+   "plays2": 49,
+   "plays3": 50,
+   "trackerB": 51,
+   "cert": 52,
+   "more": 53
   }
  },
  "kit-etsy-color-a4": {
-  "pages": 50,
+  "pages": 53,
   "toc": [
    [
     "Cover",
@@ -768,16 +803,20 @@
     47
    ],
    [
-    "30-day tracker (fillable)",
+    "The 30 plays: ages, easier, harder, 2-minute versions",
     48
    ],
    [
+    "30-day tracker (fillable)",
+    51
+   ],
+   [
     "Certificate",
-    49
+    52
    ],
    [
     "More from Play Before Pixels",
-    50
+    53
    ]
   ],
   "P": {
@@ -828,13 +867,16 @@
    "plan2": 45,
    "plan3": 46,
    "tracker": 47,
-   "trackerB": 48,
-   "cert": 49,
-   "more": 50
+   "plays1": 48,
+   "plays2": 49,
+   "plays3": 50,
+   "trackerB": 51,
+   "cert": 52,
+   "more": 53
   }
  },
  "kit-etsy-low-letter": {
-  "pages": 32,
+  "pages": 35,
   "toc": [
    [
     "Cover",
@@ -913,16 +955,20 @@
     29
    ],
    [
-    "30-day tracker (fillable)",
+    "The 30 plays: ages, easier, harder, 2-minute versions",
     30
    ],
    [
+    "30-day tracker (fillable)",
+    33
+   ],
+   [
     "Certificate",
-    31
+    34
    ],
    [
     "More from Play Before Pixels",
-    32
+    35
    ]
   ],
   "P": {
@@ -955,13 +1001,16 @@
    "plan2": 27,
    "plan3": 28,
    "tracker": 29,
-   "trackerB": 30,
-   "cert": 31,
-   "more": 32
+   "plays1": 30,
+   "plays2": 31,
+   "plays3": 32,
+   "trackerB": 33,
+   "cert": 34,
+   "more": 35
   }
  },
  "kit-etsy-low-a4": {
-  "pages": 32,
+  "pages": 35,
   "toc": [
    [
     "Cover",
@@ -1040,16 +1089,20 @@
     29
    ],
    [
-    "30-day tracker (fillable)",
+    "The 30 plays: ages, easier, harder, 2-minute versions",
     30
    ],
    [
+    "30-day tracker (fillable)",
+    33
+   ],
+   [
     "Certificate",
-    31
+    34
    ],
    [
     "More from Play Before Pixels",
-    32
+    35
    ]
   ],
   "P": {
@@ -1082,9 +1135,12 @@
    "plan2": 27,
    "plan3": 28,
    "tracker": 29,
-   "trackerB": 30,
-   "cert": 31,
-   "more": 32
+   "plays1": 30,
+   "plays2": 31,
+   "plays3": 32,
+   "trackerB": 33,
+   "cert": 34,
+   "more": 35
   }
  }
 }

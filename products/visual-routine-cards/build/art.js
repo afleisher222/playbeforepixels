@@ -285,6 +285,7 @@ A.talkAbout = () => bust('C', 34, 52, .7, 'smile') + bust('G2', 86, 46, .76, 'sm
 A.countFive = () => handUp(52, 58, 1.35, SK[3], 0) + Tx(92, 58, 0, T, '5', 40);
 A.stretch = () => stand('H', 60, 88, .64, { face: 'joy', aL: 165, aR: -165, lL: 14, lR: -14 }) + sparkle(22, 30, .6) + sparkle(98, 30, .6);
 A.drawIt = () => Gp('rotate(-4 60 52)', R(26, 16, 62, 70, 4, W) + St('M36 70C44 40 52 76 60 46S76 64 80 36', P, 4) + Ci(66, 30, 7, S)) + Gp('translate(96,58) rotate(30)', R(-6, -24, 12, 40, 5, T) + Pa('M-6 16H6L0 26Z', T));
+A.quietEars = () => head('D', 60, 56, 1.3, 'calm') + St('M26 50C26 8 94 8 94 50', K, 7) + R(18, 40, 16, 30, 8, K) + R(86, 40, 16, 30, 8, K) + R(22, 46, 8, 18, 4, tK) + R(90, 46, 8, 18, 4, tK);
 
 // OUT & ABOUT
 A.shopping = () => St('M16 26H28L38 70H88L96 38H32', I, 5) + Ci(44, 82, 7, I) + Ci(82, 82, 7, I) + U('banana', 'translate(56,34) scale(.36) rotate(-10)') + R(62, 32, 14, 22, 3, T) + R(78, 28, 12, 26, 3, G) + R(44, 38, 14, 16, 3, K);
@@ -312,6 +313,12 @@ A.wChange = () => R(26, 20, 68, 64, 12, W) + star(60, 50, 2.2, P) + Tx(88, 34, 0
 A.wHelp = () => handUp(52, 64, 1.12, SK[4], -10) + heart(92, 28, .2);
 A.wYes = () => Pa('M28 22H92Q100 22 100 30V66Q100 74 92 74H56L40 88V74H28Q20 74 20 66V30Q20 22 28 22Z', G) + St('M44 48L55 59 76 37', W, 8); // speech bubble, so it never looks like All done
 A.wNo = () => Pa('M28 22H92Q100 22 100 30V66Q100 74 92 74H56L40 88V74H28Q20 74 20 66V30Q20 22 28 22Z', T) + St('M47 35L73 61M73 35L47 61', W, 8);
+
+// core words added after the customer panel (SLP, OT, self-advocate): More, Stop, My turn, Break
+A.wMore = () => Ci(60, 52, 34, K) + R(53, 30, 14, 44, 7, W) + R(38, 45, 44, 14, 7, W) + sparkle(98, 22, .55, S) + sparkle(22, 82, .45, S);
+A.wStop = () => `<polygon points="93.3,65.8 73.8,85.3 46.2,85.3 26.7,65.8 26.7,38.2 46.2,18.7 73.8,18.7 93.3,38.2" fill="${T}" stroke="${T}" stroke-width="6" stroke-linejoin="round"/>` + handUp(60, 60, .95, W, 0);
+A.wMyTurn = () => stand('D', 50, 90, .64, { face: 'laugh', aR: -150, aL: 20 }) + U('ball', 'translate(86,18) scale(.28)') + sparkle(100, 48, .5, S) + sparkle(22, 30, .45, S);
+A.wBreak = () => R(28, 22, 64, 50, 14, P) + bust('B', 60, 46, .74, 'calm') + R(24, 60, 72, 28, 8, P) + R(14, 46, 20, 40, 9, '#7549B0') + R(86, 46, 20, 40, 9, '#7549B0') + R(26, 86, 7, 7, 3, I) + R(87, 86, 7, 7, 3, I) + sparkle(104, 20, .5, S) + sparkle(16, 22, .4, S);
 
 // PLAY FIRST / SCREENS LATER
 A.playFirst = () => Ci(24, 22, 13, T) + bigNum(24, 30, '1', W, 20) + U('block-1', 'translate(50,74) scale(.44)') + U('block-3', 'translate(76,74) scale(.44)') + U('block-2', 'translate(63,50) scale(.44)') + U('ball', 'translate(96,70) scale(.24)') + star(96, 26, .6, S);
@@ -372,7 +379,7 @@ A.makeBedBig = () => U('bed', 'translate(58,66) scale(.95)', `--bd:${K}`) + Pa('
 A.setTableBig = () => [[34, T], [86, K]].map(([x, f]) => U('plate', `translate(${x},58) scale(.62)`, `--pl:${f === T ? tT : tK}`) + U('fork', `translate(${x - 28},60) scale(.5)`) + U('spoon', `translate(${x + 28},60) scale(.5)`, `--sp:${f}`)).join('') + U('cup', 'translate(60,24) scale(.36)', `--c1:${G};--c2:${S}`);
 A.putAwayDishes = () => R(18, 14, 84, 76, 6, '#C08457') + R(24, 20, 72, 30, 3, W) + R(24, 56, 72, 28, 3, W) + [36, 50, 64].map(x => El(x, 36, 4, 12, T)).join('') + [80, 88].map(x => Pa(`M${x - 5} 30H${x + 5}L${x + 3} 48H${x - 3}Z`, K)).join('') + [34, 44].map(x => Pa(`M${x - 5} 66H${x + 5}L${x + 3} 82H${x - 3}Z`, G)).join('') + Gp('translate(76,72)', El(0, 0, 16, 6, S)) + hand(100, 64, .9, SK[1], -30);
 A.sortRecycling = () => [[36, G, '#27875A'], [84, K, '#2E6EB5']].map(([x, f, d]) => Pa(`M${x - 22} 44H${x + 22}L${x + 18} 88H${x - 18}Z`, f) + R(x - 25, 38, 50, 8, 4, d)).join('') + Gp('translate(36,24) rotate(-14)', R(-6, -14, 12, 26, 4, tK) + R(-3, -18, 6, 6, 2, tK)) + Gp('translate(84,26) rotate(10)', R(-11, -9, 22, 18, 2, SAND)) + Gp('translate(36,66)', St('M-8-4L-3-10H3L8-4M8 3L5 9H-5M-8 3L-11-1', W, 3)) + Gp('translate(84,66)', St('M-8-4L-3-10H3L8-4M8 3L5 9H-5M-8 3L-11-1', W, 3));
-A.screensLaterBig = () => Ci(22, 20, 12, K) + bigNum(22, 27, '2', W, 18) + tablet(52, 56, .56, -6) + U('check', 'translate(92,28) scale(.3)') + Gp('translate(94,72)', U('clock', 'scale(.42)', `--ck1:${P}`));
+A.screensLaterBig = () => Ci(22, 20, 12, K) + bigNum(22, 27, '2', W, 18) + tablet(52, 56, .56, -6) + Gp('translate(94,70)', U('clock', 'scale(.46)', `--ck1:${P}`)); // no check mark: screens are never earned by finishing a list
 A.washer = () => R(28, 12, 64, 78, 8, W) + R(28, 12, 64, 16, 8, GREY) + Ci(40, 20, 3, K) + Ci(50, 20, 3, T) + Ci(60, 58, 23, GREY) + Ci(60, 58, 17, K) + Pa('M44 62C50 56 56 66 62 60S72 56 76 60V64C72 72 66 76 60 76C52 76 46 70 44 62Z', tK) + Ci(52, 54, 3, W, 'opacity=".7"');
 A.houseplant = () => Gp('translate(52,50)', Pa('M-16 14H16L12 40H-12Z', T) + R(-19, 10, 38, 8, 4, '#D24A28') + [[-18, -10, -40], [0, -24, 0], [18, -10, 40], [-10, -2, -20], [10, -2, 20]].map(([x, y, r]) => Gp(`translate(${x},${y}) rotate(${r})`, Pa('M0-16C9-8 9 8 0 16C-9 8-9-8 0-16Z', G))).join('')) + Gp('translate(92,56)', R(-10, -10, 20, 30, 6, K) + R(-6, -22, 10, 14, 3, I) + R(2, -22, 10, 5, 2, I)) + drop(80, 28, .3) + drop(72, 20, .26);
 A.breakfastBig = () => U('plate', 'translate(48,60) scale(.95)', `--pl:${tS}`) + Gp('translate(46,56) rotate(-8)', R(-18, -16, 36, 32, 9, '#E3B04B') + R(-13, -11, 26, 22, 6, SAND) + R(-8, -6, 12, 10, 3, S)) + Pa('M82 30H104L100 86H86Z', GREY) + Pa('M83.5 40H102.5L100 86H86Z', W);

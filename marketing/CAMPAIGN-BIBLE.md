@@ -2,7 +2,7 @@
 
 Status: draft for founder approval, September 28, 2026. Owner: AlphaPlay LLC, doing business as Play Before Pixels.
 
-This file turns the 40 scored campaign ideas into one plan: how we make screen-free feel cool, the top 20 campaigns, a 12-month calendar, the Virtual Autism Education Series, the new products these campaigns need, and what we cut.
+This file turns the 40 scored campaign ideas into one plan: how we make screen-free feel cool, the top 20 campaigns, a 12-month calendar, the Research Notes Education Series (the hub's plain-words explainers, including the "virtual autism" term pieces), the new products these campaigns need, and what we cut.
 
 **Binding sources, in this order:** `brand/BRAND.md` (hard rules win every conflict), `marketing/BLIND-SPOTS.md` (counsel hold and launch waves), `marketing/DEMAND-CHECK.md` (prices and what sells), `marketing/virtual-autism-outreach.md` (who we never contact about the term). Where an idea's original price or product conflicts with DEMAND-CHECK, this bible uses the DEMAND-CHECK figure and says so.
 
@@ -286,7 +286,7 @@ These short codes are referenced in section 2 and section 5 so each entry doesn'
 ### 17. Study Snapshots and One Study, One Minute — 17.5
 
 - **One-liner:** Ten one-page illustrated study cards on the research hub, each paired with a calm, captions-only 60-second animated episode.
-- **How it works:** One card and one episode per allowed citation, always with the same four boxes: Looked At; Found (association wording only); What It CAN'T Tell Us (cause, individual children, anything about your own child; "Autism is not a parent's fault"); Today You Could (one play idea, only on talk, play and reading studies). The Heffler, Kushima and Harlé pieces are labelled "From The Virtual Autism Project", use the safe sentence in section 4, carry no product, price or mascot, and end on the pediatrician and early-intervention line. **Changes in this bible (judges' notes):** the Brushe card uses [CITE] "estimated" wording; the "research-literacy badge" collecting frame applies to the seven talk, play and reading cards only, never the three autism-term cards.
+- **How it works:** One card and one episode per allowed citation, always with the same four boxes: Looked At; Found (association wording only); What It CAN'T Tell Us (cause, individual children, anything about your own child; "Autism is not a parent's fault"); Today You Could (one play idea, only on talk, play and reading studies). The Heffler, Kushima and Harlé pieces are labelled "From Play Before Pixels Research Notes", use the safe sentence in section 4, carry no product, price or mascot, and end on the pediatrician and early-intervention line. **Changes in this bible (judges' notes):** the Brushe card uses [CITE] "estimated" wording; the "research-literacy badge" collecting frame applies to the seven talk, play and reading cards only, never the three autism-term cards.
 - **Audience:** parents who saw a scary headline, grandparents, educators, group leaders.
 - **Education angle:** honest in both directions; the calm voice on a scary topic.
 - **Product tie-in and price:** free on the hub. Talk and play episodes end on a separate final card for 100 Plays Before Pixels; Delgado and UNESCO point to the PreK–5 classroom pack. Group Pack license ($29) covers only the seven talk, play and reading cards [G2]; the three autism-term cards are free for any group to print.
@@ -331,7 +331,7 @@ These short codes are referenced in section 2 and section 5 so each entry doesn'
 
 ## 3. Twelve-month calendar (October 2026 to September 2027)
 
-Each month has one lead campaign so the website stays calm (one job per section, one primary button). Launch waves follow BLIND-SPOTS: Wave 1 (October–December) website, email list, printables and instant holiday gifts; Wave 2 (January) the 30-Day Screen Reset; Wave 3 (February–June) the board-book pre-sale. Gates are defined in the standing rules. When a [G1] or [G2] gate is still closed, run the named [G0] fallback instead. No autism-term content is timed to any awareness or acceptance observance; the Virtual Autism Education Series runs at the same steady weekly pace all year and is never pushed.
+Each month has one lead campaign so the website stays calm (one job per section, one primary button). Launch waves follow BLIND-SPOTS: Wave 1 (October–December) website, email list, printables and instant holiday gifts; Wave 2 (January) the 30-Day Screen Reset; Wave 3 (February–June) the board-book pre-sale. Gates are defined in the standing rules. When a [G1] or [G2] gate is still closed, run the named [G0] fallback instead. No autism-term content is timed to any awareness or acceptance observance; the Research Notes Education Series runs at the same steady weekly pace all year and is never pushed.
 
 **Always on:** Study Snapshots (one episode a week, weekly approval); Back-and-Forth Tally and Five Studies, Five Mornings as evergreen lead magnets; Talk-First Welcome Bundle for baby-shower and registry gifting (showers happen year-round); Operation Cake for birthdays [G1]; Solid, Shaky, or Not Shown on the hub.
 
@@ -358,9 +358,9 @@ Each month has one lead campaign so the website stays calm (one job per section,
 
 ---
 
-## 4. The Virtual Autism Education Series
+## 4. The Research Notes Education Series (the "virtual autism" term pieces)
 
-The series lives only on the free research hub, "The Virtual Autism Project". Its job is to give worried parents calm, accurate information, to remove blame and to send them to their pediatrician and free early intervention. It is not a sales channel.
+The series lives only on the free research hub, "Play Before Pixels Research Notes" at `/research/` (formerly "The Virtual Autism Project"; that name is retired everywhere, `brand/ORIGINALITY.md`). Its job is to give worried parents calm, accurate information, to remove blame and to send them to their pediatrician and free early intervention. It is not a sales channel.
 
 ### The safe framing sentence (reuse word for word)
 
@@ -417,7 +417,7 @@ The series lives only on the free research hub, "The Virtual Autism Project". It
 | 7 | What the guidelines advise | WHO 2019; AAP 2016 | "The WHO guideline advises…"; AAP "Media and Young Minds". Guidelines, not studies. |
 | 8 | Link or cause? Reading a headline | All of the above as examples | Ice-cream sales and sunburns both rise in summer; neither causes the other. |
 | 9 | Is it my fault? | No study says so | Nothing in this research says parents cause autism or delay. Autism is not a parent's fault. |
-| 10 | What to do if you're worried | Resource links, not research: state early intervention program (under 3), local public school district (3+), CDC milestone materials [VERIFY all names and links at publish] | Talk with your pediatrician; you can ask for an evaluation; asking early is a caring step. The Wondering Page. |
+| 10 | What to do if you're worried | Resource links, not research, from national directories only (never a state or county program page; AWARENESS-ENGINE open item 5): the CDC milestone materials and the national early intervention directory for under-3s; for 3+, "ask your local public school district" as plain words with no link [VERIFY all names and links at publish] | Talk with your pediatrician; you can ask for an evaluation; asking early is a caring step. The Wondering Page. |
 | 11 | Respectful words and AAC | Brand stance, not research [reviewer sign-off] | Identity-first where preferred; AAC is communication, not screen time; no puzzle pieces. |
 
 UNESCO GEM 2023 and Delgado 2018 are not autism sources and never appear in this series. They belong to the Talk & Reading materials.
@@ -542,6 +542,7 @@ Each spec below is ready to hand to a product builder. Every product also follow
 ### P19. Solid, Shaky, or Not Shown game and decks
 - **Slug:** `hub-solid-shaky`. **Gate:** G0.
 - **Format:** accessible web game (static, no data collected); two printable decks at poker size with bleed (Autism-Term deck free; Talk & Reading deck $5).
+- **Firewall (autism content audit, September 28, 2026):** the Autism-Term deck and its game mode live only under `/research/`, as a free download with no `listing.json`, no storefront or marketplace listing, no price, no cart and no "next product" end screen. The paid Talk & Reading deck lives on a separate shop page. Neither links to the other, and the two are never bundled, zipped or sold together. The words "autism" and "virtual autism" never appear in the paid deck's title, file names, listing, tags or emails (BRAND.md "Autism searches").
 
 ### P20. La Charla Cuenta starter set
 - **Slug:** `es-la-charla-cuenta`. **Gate:** G0 parent pieces; G2 host kit.

@@ -265,19 +265,20 @@ lst['slogan-02'] = ('Colors', f'''<div style="position:absolute;inset:0;backgrou
 {tiles}
 <p class="small pad" style="top:1832px;margin:0">Light colors print in ink. Navy prints in white. The tomato-red ball is the period on every color.</p>''')
 
-talk3 = ''.join(f'''<div class="lay" style="left:{130+i*590}px;top:1230px;width:560px;height:500px;background:#2A3752;border-radius:36px;padding:56px 50px;color:#fff">
+talk3 = ''.join(f'''<div class="lay" style="left:{130+i*590}px;top:1170px;width:560px;height:540px;background:#2A3752;border-radius:36px;padding:56px 50px;color:#fff">
 <span class="ball" style="width:44px;height:44px"></span>
 <div class="disp" style="font-size:72px;margin-top:30px;line-height:1.02">{h}</div>
 <div style="font-size:44px;line-height:1.35;margin-top:18px;color:#C9D2E0">{t}</div></div>''' for i, (h, t) in enumerate([
     ('Say what you see', '“Big bubbles! One popped.”'),
-    ('Pause and wait', 'Count to five in your head. Let them take a turn.'),
-    ('Add one word', '“Truck.” “Big truck!”')]))
+    ('Pause and wait', 'Count to five. A look, a sign or a point is a turn too.'),
+    ('Follow their lead', '“Tell me about your game.” Then listen.')]))
 lst['slogan-03'] = ('The idea', f'''<div style="position:absolute;inset:0;background:var(--ink)"></div>
 <div class="pad" style="top:120px;color:#fff"><div class="kick" style="color:var(--sun)">The idea behind the line</div>
 <h2 class="disp" style="margin-top:28px;font-size:132px">One more turn.</h2></div>
 <div class="lay" style="left:130px;top:520px;width:1740px">
 <p class="sub" style="color:#fff;font-size:58px">A small reminder we wrote for ourselves: add one more <span style="white-space:nowrap">back-and-forth</span> to the day. A question in the car. A song at the sink. A story at bedtime.</p>
-<p class="sub" style="color:#C9D2E0;margin-top:40px;font-size:50px">It’s not a rule and it’s not a judgment. Every family’s day looks different. Three easy ways to start:</p></div>
+<p class="sub" style="color:#C9D2E0;margin-top:36px;font-size:48px">It’s not a rule and it’s not a judgment. Every family’s day looks different.</p>
+<p class="sub" style="color:#C9D2E0;margin-top:24px;font-size:44px">Talk, sing and read in the language you know best. A tap on a talking device is talk too. Three easy ways to start, for any age:</p></div>
 {talk3}
 <img class="brand" src="{LOGO(B, '-reverse')}">''')
 

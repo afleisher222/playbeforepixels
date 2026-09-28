@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const bld = require('./build.js');
-const { card, COLORWAYS } = require('./card.js');
+const { card, COLORWAYS, DEFS_LO, lowPreview } = require('./card.js');
 const { CARDS, CATS } = require('./cards.js');
 const { A } = require('./art.js');
 const { C } = require('./base.js');
@@ -65,12 +65,14 @@ const mockup = `${head('Mockup')}${require('./card.js').DEFS}
 // Order follows marketing/CUSTOMER-VOICE.md: image 2 = contents grid (rule 36), image 3 = a grown-up guide page (rule 27),
 // last image = "How to download: use a browser, not the Etsy app" (rule 5).
 const NY = bld.N_YOUNG, NB = bld.N_BIG;
+const FEEL = CARDS.filter(c => c.cat === 'feelings' && /^f[A-Z]/.test(c.art)); // feeling faces; the rest are calm-down choices
+const NFEEL = FEEL.length, NCALM = CARDS.filter(c => c.cat === 'feelings').length - NFEEL;
 const pageImg = (html, w, land = false) => { const pw = land ? 1056 : 816, ph = land ? 816 : 1056; const s = w / pw; return `<div class="paper" style="width:${w}px;height:${Math.round(ph * s)}px;overflow:hidden;border-radius:6px"><div style="transform:scale(${s});transform-origin:top left">${html}</div></div>`; };
 const L = [];
 // 1 hero
 L.push(`<div class="li" style="background:${C.tSun}">
   <div style="position:absolute;left:60px;top:50px;right:60px;display:flex;justify-content:space-between;align-items:center">${wm}<span class="pill dark">Ages 0–5 and 5–12</span></div>
-  <h1 style="position:absolute;left:60px;top:130px;font-size:104px"><span style="color:${C.tomato}">200+</span> Visual<br>Routine Cards</h1>
+  <h1 style="position:absolute;left:60px;top:130px;font-size:104px"><span style="color:${C.tomato}">${N}</span> Visual<br>Routine Cards</h1>
   <p style="position:absolute;left:62px;top:356px;font-size:30px;font-weight:800;width:460px;line-height:1.2">Helps little ones see what comes next.</p>
   <div style="position:absolute;left:60px;top:450px;display:flex;gap:10px;flex-wrap:wrap;max-width:500px">${[`${N} cards`, '6 chart layouts', '4 colorways', 'Fillable PDF', 'Letter + A4'].map(s => `<span class="pill">${s}</span>`).join('')}</div>
   ${scaled(`<div class="paper" style="border-radius:4px">${filledChart(bld.chartRoutine('rainbow', 'morning'), morningIds)}</div>`, 575, 360, .45, 4)}
@@ -104,7 +106,7 @@ L.push(`<div class="li" style="background:${C.tSky}">
   <div style="position:absolute;left:60px;top:285px;display:grid;grid-template-columns:repeat(4,208px);gap:22px 16px">${young.map(id => `<div style="width:208px;height:208px"><div style="transform:scale(.945);transform-origin:top left">${cd(id)}</div></div>`).join('')}</div>
 </div>`);
 // 5 ages 5-12
-const big = ['bk-morning-wake-up-on-time', 'bk-morning-pack-my-lunch', 'bk-after-homework', 'bk-after-read-20-minutes', 'bk-after-practice-music', 'bk-evening-journal', 'bk-jobs-walk-the-dog', 'bk-evening-devices-sleep-outside', 'bk-jobs-take-out-trash'];
+const big = ['bk-morning-wake-up-on-time', 'bk-morning-pack-my-lunch', 'bk-after-homework', 'bk-after-read-20-minutes', 'bk-after-practice-music', 'bk-evening-journal', 'bk-jobs-walk-the-dog', 'bk-evening-devices-sleep-outside-my-room', 'bk-jobs-take-out-trash'];
 L.push(`<div class="li" style="background:${C.tGrass}">
   <div style="position:absolute;left:60px;top:52px"><div class="k">Ages 5–12</div><h1 style="font-size:62px;margin-top:8px">${NB} big-kid cards +<br>weekly checklists</h1></div>
   <div style="position:absolute;left:60px;top:300px;display:grid;grid-template-columns:repeat(3,165px);gap:14px">${big.map(id => `<div style="width:165px;height:165px"><div style="transform:scale(.75);transform-origin:top left">${cd(id)}</div></div>`).join('')}</div>
@@ -131,14 +133,14 @@ L.push(`<div class="li" style="background:#fff">
   ${scaled(cd('screens-5-more-minutes'), 690, 520, .95, -4, 'shadow')}
   <div style="position:absolute;left:60px;right:60px;top:740px;background:${C.tPlum};border-radius:26px;padding:22px 26px;display:flex;gap:14px;align-items:center">
     ${['feelings-happy', 'feelings-sad', 'feelings-mad', 'feelings-tired', 'feelings-big-breath'].map(id => `<div style="width:118px;height:118px;flex:0 0 auto"><div style="transform:scale(.536);transform-origin:top left">${cd(id)}</div></div>`).join('')}
-    <div style="font-size:19px;font-weight:700;line-height:1.35"><b style="font-family:'Bricolage Grotesque';font-size:24px;display:block">+ feelings check-in</b>16 feelings and 9 calm-down choices</div>
+    <div style="font-size:19px;font-weight:700;line-height:1.35"><b style="font-family:'Bricolage Grotesque';font-size:24px;display:block">+ feelings check-in</b>${NFEEL} feelings and ${NCALM} calm-down choices</div>
   </div>
 </div>`);
 // 8 colorways
 const cwIds = ['morning-brush-teeth', 'play-blocks', 'bedtime-sleep', 'feelings-happy'];
 L.push(`<div class="li" style="background:${C.wash}">
   <div style="position:absolute;left:60px;top:52px"><div class="k">4 colorways · 2 files</div><h1 style="font-size:62px;margin-top:8px">Pick the look you love</h1></div>
-  <div style="position:absolute;left:60px;right:60px;top:210px;display:flex;flex-direction:column;gap:16px">${COLORWAYS.map(cw => `<div style="display:flex;align-items:center;gap:18px;background:#fff;border-radius:22px;padding:12px 18px"><div style="width:150px"><div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:28px">${cw.name}</div><div style="font-size:15px;font-weight:700;opacity:.75">${cw.id === 'simple' ? 'Low-ink file' : 'Color file'}</div></div>${cwIds.map(id => `<div style="width:162px;height:162px"><div style="transform:scale(.736);transform-origin:top left">${cd(id, cw.id)}</div></div>`).join('')}</div>`).join('')}</div>
+  <div style="position:absolute;left:60px;right:60px;top:210px;display:flex;flex-direction:column;gap:16px">${COLORWAYS.map(cw => `<div style="display:flex;align-items:center;gap:18px;background:#fff;border-radius:22px;padding:12px 18px"><div style="width:150px"><div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:28px">${cw.name}</div><div style="font-size:15px;font-weight:700;opacity:.75">${cw.id === 'simple' ? 'Low-ink file' : 'Color file'}</div></div>${cwIds.map(id => `<div style="width:162px;height:162px"><div style="transform:scale(.736);transform-origin:top left">${cw.id === 'simple' ? lowPreview(cd(id, 'simple')) : cd(id, cw.id)}</div></div>`).join('')}</div>`).join('')}</div>
 </div>`);
 // 9 make it yours
 L.push(`<div class="li" style="background:${C.tTomato}">
@@ -189,7 +191,7 @@ LS.push(`<div class="li" style="background:${C.wash}">
 </div>`);
 LS.push(`<div class="li" style="background:${C.tPlum}">
   <div style="position:absolute;left:60px;top:52px;width:410px"><div class="k">See what comes next</div><h1 style="font-size:58px;margin-top:8px">Move each card to “all done”</h1><p style="font-size:21px;margin-top:16px;font-weight:700;line-height:1.4">Your child sees the plan, points to it and moves it. You get an easy question: “What's next on your chart?”</p>
-  <div style="margin-top:26px;background:#fff;border-radius:20px;padding:18px 20px;font-size:18px;line-height:1.4"><b style="display:block;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#C8431F;margin-bottom:4px">Talk tip on every chart</b>Pause and wait. Point to the next card and let them tell you what comes next.</div></div>
+  <div style="margin-top:26px;background:#fff;border-radius:20px;padding:18px 20px;font-size:18px;line-height:1.4"><b style="display:block;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#C8431F;margin-bottom:4px">Talk tips on the charts</b>Pause and wait. Point to the next card and let them tell you what comes next.</div></div>
   <div style="position:absolute;left:60px;top:520px;width:390px;height:330px;border-radius:26px;background:${C.tGrass};border:3px dashed ${C.grass}">
     <div style="position:absolute;left:0;right:0;top:18px;text-align:center;font-family:Fredoka,sans-serif;font-weight:600;font-size:34px;color:${C.ink}">All done!</div>
     ${scaled(cd('bath-bath-time'), 22, 100, .76, -6, 'shadow')}${scaled(cd('bedtime-pajamas'), 202, 104, .76, 6, 'shadow')}
@@ -201,6 +203,6 @@ LS.push(dl(true));
 const defs = require('./card.js').DEFS;
 fs.writeFileSync(path.join(__dirname, 'cover.html'), coverHtml.replace('FONTHREF', FONT));
 fs.writeFileSync(path.join(__dirname, 'mockup.html'), mockup);
-fs.writeFileSync(path.join(__dirname, 'listing.html'), `${head('Listing images')}${defs}${L.join('\n')}</body></html>`);
+fs.writeFileSync(path.join(__dirname, 'listing.html'), `${head('Listing images')}${defs}${DEFS_LO}${L.join('\n')}</body></html>`);
 fs.writeFileSync(path.join(__dirname, 'listing-starter.html'), `${head('Starter listing images')}${defs}${LS.join('\n')}</body></html>`);
 console.log('listing images', L.length, 'starter', LS.length);

@@ -1,6 +1,6 @@
 # Social handles and shop names: what to claim, and what not to
 
-_Written September 28, 2026. Arielle asked: "did you reserve all the handles on social media platforms related to virtual autism?"_
+_Written September 28, 2026. The founder asked: "did you reserve all the handles on social media platforms related to virtual autism?"_
 
 ## Short answer
 
@@ -18,7 +18,7 @@ This is the same decision already recorded for the domains (`legal/domain-portfo
 
 **How the brand still becomes the place people find when they search "virtual autism":** use the Research Notes hub at `playbeforepixels.com/research`. Its pages are sourced, balanced and have no product cards, and search engines rank them on the phrase itself (see the autism-search rule in `brand/BRAND.md`). Social posts about the research come from the brand account and link to the hub, never to a product.
 
-If Arielle still wants a separate, non-commercial education account, counsel should review it first (`legal/DECISION-MEMO.json`). It must never sell or link to anything for sale.
+If the founder still wants a separate, non-commercial education account, counsel should review it first (`legal/DECISION-MEMO.json`). It must never sell or link to anything for sale.
 
 ## The handles to claim (same name everywhere)
 
