@@ -1,5 +1,8 @@
 # The Play Before Pixels studio — how the scheduled routines run the business
 
+> **Schedule (September 28, 2026):** daily check 6:38 a.m. ET; daily studio 9:47 a.m. ET (one product per day; Monday and first-of-month extras); monthly research on the 1st. See ops/MONITORING.md.
+
+
 Every scheduled run follows this file. It is the operating procedure; CLAUDE.md and brand/BRAND.md are the rules.
 
 ## 0. Start

@@ -73,7 +73,7 @@ function card(cd, key, num, opts = {}) {
 function blankCard(key, opts = {}) {
   const th = TH[key];
   const band = BANDS.find(b => b.key === key);
-  const ageTxt = band ? band.label : key === 'summer' ? 'Summer · Ages ____' : key === 'rainy' ? 'Rainy day · Ages ____' : 'Ages ____';
+  const ageTxt = band ? band.label : 'Ages ____';
   const f = opts.fields ? (n) => ` data-field="${n}"` : () => '';
   const lines = n => Array.from({ length: n }, () => '<span class="ln"></span>').join('');
   const seasonIc = !band ? `<span class="ss">${icon(key === 'summer' ? 'sun' : 'rain', 'ssi')}</span>` : '';
@@ -878,9 +878,19 @@ const edCss = `<style>
 function canvaDoc() {
   const items = [];
   for (const k of ['b13', 'b35', 'b58', 'b812', 'summer', 'rainy']) {
-    items.push({ name: `blank-card-${k}`, w: 2.5, h: 3.5, html: blankCard(k) });
+    items.push({ name: `blank-card-${k}`, w: 2.5, h: 3.5, html: blankCard(k, { fields: true }) });
+    items.push({ name: `lined-card-${k}`, w: 2.5, h: 3.5, html: blankCard(k) });
     items.push({ name: `card-back-${k}`, w: 2.5, h: 3.5, html: cardBack(k) });
   }
+  [[C.tomato, 'tomato'], [C.sun, 'sun'], [C.sky, 'sky'], [C.grass, 'grass']].forEach(([m, n]) => {
+    items.push({ name: `round-label-blank-${n}`, w: 3.4, h: 3.4, html: `<div class="rl" style="--m:${m};outline:0"><div class="rli" style="${m === C.sun ? 'border-color:rgba(29,41,64,.25)' : ''}"></div></div>` });
+  });
+  [[C.ink, C.wash, 'ink'], [C.plum, C.tPlum, 'plum']].forEach(([m, t, n]) => {
+    items.push({ name: `wrap-label-blank-${n}`, w: 7.5, h: 2.0, html: `<div class="wlab" style="--m:${m};--t:${t};outline:0;height:2in"></div>` });
+  });
+  [[C.sun, C.tSun, C.ink, 'sun'], [C.grass, C.tGrass, '#fff', 'grass'], [C.sky, C.tSky, '#fff', 'sky'], [C.plum, C.tPlum, '#fff', 'plum'], [C.tomato, C.tTomato, '#fff', 'tomato'], [C.ink, C.wash, '#fff', 'ink']].forEach(([m, t, on, n], i) => {
+    items.push({ name: `divider-blank-${n}`, w: 2.4, h: 3.95, html: divider({ m, t, on, tab: '', ic: 'pen', h: '', p: '' }, 1).replace(/<div class="dbody">[\s\S]*?<\/div>\s*<\/div>$/, '</div>') });
+  });
   const pages = items.map(it => `<section class="page asset" data-name="${it.name}" style="width:${it.w}in;height:${it.h}in">${it.html}</section>`);
   fs.writeFileSync(path.join(__dirname, 'canva-manifest.json'), JSON.stringify(items.map(i => i.name)));
   return pages;

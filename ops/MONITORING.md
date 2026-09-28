@@ -13,4 +13,4 @@
 Store checkout, payments, digital delivery, print-on-demand printing and shipping, marketplace sales, bank rules (tax reserve), accounting feeds.
 
 ## What Claude runs on schedule
-Daily check (health, approvals, scheduled posts, one improvement) · Weekly studio (research, new product, marketing, international step, monthly close, scorecard) · Monthly research (market, innovation, copycat watch).
+Daily check 6:38 a.m. ET (health, approvals, scheduled posts, platform news, one improvement) · **Daily studio 9:47 a.m. ET** (founder's choice, Sept 28, 2026: one new or improved product per day, one article or translation, social queue; Mondays add the scorecard, international step and deadline check; first run of the month adds the monthly close and copycat watch) · Monthly research on the 1st (market, innovation lane, living business plan; quarterly strategy review).

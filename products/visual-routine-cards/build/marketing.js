@@ -52,12 +52,10 @@ const mockup = `${head('Mockup')}${require('./card.js').DEFS}
 <div class="mk">
   <div style="position:absolute;left:0;right:0;bottom:0;height:170px;background:#E7ECF4"></div>
   ${scaled(`<div class="paper">${chartM}</div>`, 52, 36, .5, -2.5)}
-  ${scaled(`<div class="paper">${filledChart(bld.chartFirstThen('rainbow'), ['screens-play-first', 'screens-screens-later'])}</div>`, 395, 250, .36, 4)}
-  ${scaled(cd('feelings-happy'), 520, 70, .62, 8, 'shadow')}
-  ${scaled(cd('play-blocks'), 640, 40, .62, -6, 'shadow')}
-  ${scaled(cd('outside-park'), 610, 150, .62, 5, 'shadow')}
-  ${scaled(cd('bedtime-sleep'), 470, 470, .6, -9, 'shadow')}
-  ${scaled(cd('bk-after-homework'), 640, 440, .6, 7, 'shadow')}
+  ${scaled(`<div class="paper">${filledChart(bld.chartStrip('rainbow'), ['bath-bath-time', 'bedtime-pajamas', 'bedtime-brush-teeth', 'reading-bedtime-story', 'meals-dinner', 'play-play-time'])}</div>`, 478, 175, .375, 3)}
+  ${scaled(cd('feelings-happy'), 520, 34, .52, -7, 'shadow')}
+  ${scaled(cd('screens-play-first'), 640, 28, .52, 6, 'shadow')}
+  ${scaled(cd('bk-after-homework'), 700, 470, .48, 9, 'shadow')}
 </div></body></html>`;
 
 // ---------------- listing images ----------------
@@ -66,9 +64,9 @@ const L = [];
 L.push(`<div class="li" style="background:${C.tSun}">
   <div style="position:absolute;left:60px;top:56px;right:60px;display:flex;justify-content:space-between;align-items:center">${wm}<span class="pill dark">Ages 0–5 and 5–12</span></div>
   <h1 style="position:absolute;left:60px;top:130px;font-size:104px"><span style="color:${C.tomato}">200+</span> Visual<br>Routine Cards</h1>
-  <p style="position:absolute;left:62px;top:356px;font-size:28px;font-weight:800;max-width:600px;line-height:1.25">Helps little ones see what comes next.</p>
-  <div style="position:absolute;left:60px;top:430px;display:flex;gap:10px;flex-wrap:wrap;max-width:520px">${[`${N} cards`, '6 chart layouts', '4 colorways', 'Editable', 'Letter + A4'].map(s => `<span class="pill">${s}</span>`).join('')}</div>
-  ${scaled(`<div class="paper" style="border-radius:4px">${filledChart(bld.chartRoutine('rainbow', 'morning'), morningIds)}</div>`, 560, 330, .47, 4)}
+  <p style="position:absolute;left:62px;top:356px;font-size:30px;font-weight:800;width:460px;line-height:1.2">Helps little ones see what comes next.</p>
+  <div style="position:absolute;left:60px;top:450px;display:flex;gap:10px;flex-wrap:wrap;max-width:500px">${[`${N} cards`, '6 chart layouts', '4 colorways', 'Editable', 'Letter + A4'].map(s => `<span class="pill">${s}</span>`).join('')}</div>
+  ${scaled(`<div class="paper" style="border-radius:4px">${filledChart(bld.chartRoutine('rainbow', 'morning'), morningIds)}</div>`, 575, 360, .45, 4)}
   ${scaled(cd('screens-play-first'), 70, 610, 1.15, -6, 'shadow')}
   ${scaled(cd('screens-screens-later'), 330, 640, 1.15, 5, 'shadow')}
 </div>`);
@@ -87,10 +85,10 @@ L.push(`<div class="li" style="background:#fff">
   <div style="position:absolute;left:60px;right:60px;top:800px;display:flex;justify-content:space-between">${['morning-brush-teeth', 'meals-lunch', 'play-puzzle', 'outside-slide', 'reading-read-together', 'feelings-calm'].map(id => `<div style="width:132px;height:132px"><div style="transform:scale(.6);transform-origin:top left">${cd(id)}</div></div>`).join('')}</div>
 </div>`);
 // 3 ages 0-5 sample grid
-const young = ['morning-wake-up', 'morning-get-dressed', 'meals-snack', 'play-blocks', 'play-pretend-cooking', 'outside-puddle-jumping', 'reading-library', 'bath-bath-time', 'bedtime-lullaby', 'helping-feed-the-pet', 'feelings-worried', 'about-grocery-store', 'words-first', 'words-then', 'outside-bug-spotting', 'play-play-dough'];
+const young = ['morning-wake-up', 'morning-get-dressed', 'meals-snack', 'play-blocks', 'play-pretend-cooking', 'outside-puddle-jumping', 'reading-library', 'bath-bath-time', 'bedtime-lullaby', 'helping-feed-the-pet', 'feelings-worried', 'about-grocery-store'];
 L.push(`<div class="li" style="background:${C.tSky}">
   <div style="position:absolute;left:60px;top:52px"><div class="k">Ages 0–5</div><h1 style="font-size:62px;margin-top:8px">170 cards for little ones</h1><p style="font-size:21px;margin-top:10px;font-weight:700">Big, clear pictures a toddler recognizes at a glance. A diverse cast of kids and grown-ups.</p></div>
-  <div style="position:absolute;left:60px;top:268px;display:grid;grid-template-columns:repeat(4,208px);gap:16px">${young.map(id => `<div style="width:208px;height:208px"><div style="transform:scale(.945);transform-origin:top left">${cd(id)}</div></div>`).join('')}</div>
+  <div style="position:absolute;left:60px;top:285px;display:grid;grid-template-columns:repeat(4,208px);gap:22px 16px">${young.map(id => `<div style="width:208px;height:208px"><div style="transform:scale(.945);transform-origin:top left">${cd(id)}</div></div>`).join('')}</div>
 </div>`);
 // 4 ages 5-12
 const big = ['bk-morning-wake-up-on-time', 'bk-morning-pack-my-lunch', 'bk-after-homework', 'bk-after-read-20-minutes', 'bk-after-practice-music', 'bk-evening-journal', 'bk-jobs-walk-the-dog', 'bk-evening-devices-sleep-outside', 'bk-jobs-take-out-trash'];
@@ -107,13 +105,22 @@ const charts = [
 ];
 L.push(`<div class="li" style="background:${C.wash}">
   <div style="position:absolute;left:60px;top:52px"><div class="k">6 chart layouts</div><h1 style="font-size:62px;margin-top:8px">A chart for every stage</h1></div>
-  <div style="position:absolute;left:60px;top:220px;display:grid;grid-template-columns:repeat(3,280px);gap:24px 30px">${charts.map(([h, t]) => `<div><div style="width:280px;height:362px;overflow:hidden;border-radius:6px" class="paper"><div style="transform:scale(${280 / 816});transform-origin:top left">${h}</div></div><div style="font-family:Fredoka,sans-serif;font-weight:600;font-size:22px;margin-top:10px;text-align:center">${t}</div></div>`).join('')}</div>
+  <div style="position:absolute;left:60px;right:60px;top:200px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px 30px;justify-items:center">${charts.map(([h, t], i) => {
+    const land = i === 1 || i === 2; const w = 240, hgt = 310;
+    const box = land
+      ? `<div style="width:${hgt}px;height:${w}px;overflow:hidden;border-radius:6px;margin:${(hgt - w) / 2}px 0" class="paper"><div style="width:${w}px;height:${hgt}px;transform:translate(0,${w}px) rotate(-90deg);transform-origin:top left"><div style="transform:scale(${w / 816});transform-origin:top left">${h}</div></div></div>`
+      : `<div style="width:${w}px;height:${hgt}px;overflow:hidden;border-radius:6px" class="paper"><div style="transform:scale(${w / 816});transform-origin:top left">${h}</div></div>`;
+    return `<div style="display:flex;flex-direction:column;align-items:center">${box}<div style="font-family:Fredoka,sans-serif;font-weight:600;font-size:22px;margin-top:10px;text-align:center">${t}</div></div>`; }).join('')}</div>
 </div>`);
 // 6 in use: bedtime chart filled
 L.push(`<div class="li" style="background:${C.tPlum}">
-  <div style="position:absolute;left:60px;top:52px;max-width:420px"><div class="k">See what comes next</div><h1 style="font-size:58px;margin-top:8px">Move each card to “all done”</h1><p style="font-size:21px;margin-top:16px;font-weight:700;line-height:1.4">Your child sees the plan, points to it and moves it. You get a calmer script: “What's next on your chart?”</p>
+  <div style="position:absolute;left:60px;top:52px;width:410px"><div class="k">See what comes next</div><h1 style="font-size:58px;margin-top:8px">Move each card to “all done”</h1><p style="font-size:21px;margin-top:16px;font-weight:700;line-height:1.4">Your child sees the plan, points to it and moves it. You get a calmer script: “What's next on your chart?”</p>
   <div style="margin-top:26px;background:#fff;border-radius:20px;padding:18px 20px;font-size:18px;line-height:1.4"><b style="display:block;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:${C.tomato};margin-bottom:4px">Talk tip on every chart</b>Pause and wait. Point to the next card and let them tell you what comes next.</div></div>
-  ${scaled(`<div class="paper">${filledChart(bld.chartRoutine('rainbow', 'bedtime'), bedIds)}</div>`, 500, 90, .56, 2)}
+  ${scaled(`<div class="paper">${filledChart(bld.chartRoutine('rainbow', 'bedtime'), bedIds)}</div>`, 500, 80, .6, 2)}
+  <div style="position:absolute;left:60px;top:600px;width:390px;height:330px;border-radius:26px;background:${C.tGrass};border:3px dashed ${C.grass}">
+    <div style="position:absolute;left:0;right:0;top:18px;text-align:center;font-family:Fredoka,sans-serif;font-weight:600;font-size:34px;color:${C.ink}">All done!</div>
+    ${scaled(cd('bath-bath-time'), 40, 90, .9, -8, 'shadow')}${scaled(cd('bedtime-pajamas'), 170, 100, .9, 7, 'shadow')}
+  </div>
 </div>`);
 // 7 play first / screens later + feelings
 L.push(`<div class="li" style="background:#fff">
@@ -134,10 +141,10 @@ L.push(`<div class="li" style="background:${C.wash}">
 // 9 make it yours
 L.push(`<div class="li" style="background:${C.tTomato}">
   <div style="position:absolute;left:60px;top:52px"><div class="k">Make it yours</div><h1 style="font-size:62px;margin-top:8px">Your words, your routine</h1><p style="font-size:21px;margin-top:12px;font-weight:700;max-width:860px;line-height:1.4">Type into the editable PDF in free Adobe Acrobat Reader, write on blank cards, or edit the PNGs in Canva. Home languages and family words welcome.</p></div>
-  <div style="position:absolute;left:60px;top:340px;display:flex;gap:22px">
+  <div style="position:absolute;left:60px;top:300px;display:flex;gap:22px">
     ${[['morning-wake-up', 'Rise and shine'], ['morning-potty', 'Toilet'], ['play-blocks', 'Bloques']].map(([id, w]) => `<div style="width:260px;height:260px"><div style="transform:scale(1.18);transform-origin:top left">${card(byId(id), 'rainbow').replace(/<div class="lab"[^>]*>[^<]*<\/div>/, `<div class="lab" style="font-family:Helvetica,Arial,sans-serif;font-weight:700;font-size:17px">${w}</div>`)}</div></div>`).join('')}
   </div>
-  <div style="position:absolute;left:60px;right:60px;top:660px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+  <div style="position:absolute;left:60px;right:60px;top:640px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
     ${[['Editable PDF', 'Type labels, chart titles and checklist jobs, then print.'], ['Blank cards', 'Draw it, write it or glue a family photo.'], ['Canva-ready PNGs', `All ${N} cards, art on transparent backgrounds, frames and chart backgrounds.`]].map(([h, p]) => `<div style="background:#fff;border-radius:22px;padding:20px 22px"><b style="font-family:'Bricolage Grotesque';font-size:25px;display:block">${h}</b><span style="font-size:17px;line-height:1.4;display:block;margin-top:6px">${p}</span></div>`).join('')}
   </div>
 </div>`);
@@ -145,10 +152,10 @@ L.push(`<div class="li" style="background:${C.tTomato}">
 L.push(`<div class="li" style="background:#fff">
   <div style="position:absolute;left:60px;top:52px"><div class="k">How to use · sizes and formats</div><h1 style="font-size:58px;margin-top:8px">Print, protect, stick, go</h1></div>
   <div style="position:absolute;left:60px;right:60px;top:200px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px">${[['1', 'Print', 'Cardstock, 100% / Actual size', C.sky, C.tSky], ['2', 'Laminate', '3–5 mil pouches, then cut', C.sun, C.tSun], ['3', 'Velcro', 'Hook dots on charts, loop dots on cards', C.grass, C.tGrass], ['4', 'All done!', 'Your child moves each card', C.tomato, C.tTomato]].map(([n, h, p, c, t]) => `<div class="stat" style="--c:${c};--t:${t};padding:20px"><b style="font-size:54px">${n}</b><span style="font-size:24px">${h}</span><p style="font-size:15.5px">${p}</p></div>`).join('')}</div>
-  <div style="position:absolute;left:60px;right:60px;top:500px;display:grid;grid-template-columns:1.1fr 1fr;gap:20px">
+  <div style="position:absolute;left:60px;right:60px;top:430px;display:grid;grid-template-columns:1.1fr 1fr;gap:20px">
     <div style="background:${C.wash};border-radius:24px;padding:24px 26px"><b style="font-family:'Bricolage Grotesque';font-size:28px">Files you download</b>
       <ul style="font-size:18px;line-height:1.55;margin:10px 0 0;padding-left:22px"><li>Complete PDF, US Letter (137 pages)</li><li>Complete PDF, A4 (137 pages)</li><li>Editable PDFs, Letter + A4 (zip)</li><li>Canva-ready card PNGs (zip)</li><li>Canva-ready chart PNGs (zip)</li></ul></div>
-    <div style="background:${C.tSun};border-radius:24px;padding:24px 26px;display:flex;flex-direction:column;align-items:center;text-align:center"><div style="width:190px;height:190px;border:3px dashed ${C.ink};border-radius:22px;display:flex;align-items:center;justify-content:center;font-family:Fredoka,sans-serif;font-weight:600;font-size:34px;line-height:1.05">2.2 in<br><span style="font-size:22px">5.6 cm</span></div><p style="font-size:17px;font-weight:700;margin-top:14px;line-height:1.35">Every card, on both paper sizes. Bigger than a toilet-paper tube opening, for little hands.</p></div>
+    <div style="background:${C.tSun};border-radius:24px;padding:24px 26px;display:flex;flex-direction:column;align-items:center;text-align:center"><div style="width:190px;height:190px;border:3px dashed ${C.ink};border-radius:22px;display:flex;align-items:center;justify-content:center;font-family:Fredoka,sans-serif;font-weight:600;font-size:34px;line-height:1.05"><div style="text-align:center">2.2 in<br><span style="font-size:22px">5.6 cm</span></div></div><p style="font-size:17px;font-weight:700;margin-top:14px;line-height:1.35">Every card, on both paper sizes. Bigger than a toilet-paper tube opening, for little hands.</p></div>
   </div>
   <p style="position:absolute;left:60px;right:60px;top:900px;font-size:15px;opacity:.75;line-height:1.4">Digital download. No physical item ships. For personal, single-family use. Always use with adult supervision.</p>
 </div>`);

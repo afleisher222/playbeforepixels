@@ -43,6 +43,7 @@ kbd { font: 700 11px/1 var(--f-text); border: 1px solid var(--rule-2); border-bo
 :focus { outline: none; }
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; box-shadow: 0 0 0 5px var(--sun); border-radius: 3px; }
 .foot :focus-visible, .on-ink :focus-visible { outline-color: #fff; }
+[tabindex="-1"]:focus-visible { outline: none; box-shadow: none; }
 
 .skip {
   position: fixed; left: 12px; top: -80px; z-index: 200; background: var(--ink); color: #fff;
@@ -293,7 +294,8 @@ button.sc-seg[aria-pressed="true"] .sc-label::after { content: " ✓"; font-size
 .scale--display .sc-seg:not(.is-on) .sc-label, .scale--display .sc-seg:not(.is-on) .sc-name { color: #AAB3C4; }
 .scale--display .sc-seg.is-on .sc-bar { background: var(--ink-a); }
 .scale--compact .sc-bar { height: 22px; }
-.scale--compact .sc-label { font-size: 20px; }
+.scale--compact .sc-label { font-size: 20px; white-space: nowrap; }
+.scale--compact .sc-seg { min-width: 46px; }
 .scale--compact .sc-name { display: none; }
 .scale--compact .sc-top { padding-bottom: 6px; }
 .scale-axis { display: flex; justify-content: space-between; margin-top: 8px; font-size: 11.5px; font-weight: 700; color: var(--ink-3); font-variant-numeric: tabular-nums; padding-right: 1px; }

@@ -81,8 +81,9 @@ function imagesA() {
   // safety
   out.push(['07-safety', `<div class="sq" style="background:${C.tTomato}">
     <div class="h"><p class="k" style="color:${C.tomato}">Safety built in</p><h1>Simple safety basics<br>on every card</h1></div>
-    <ul class="list abs" style="left:64px;top:300px;width:520px">${['A grown-up plays along and stays within reach, every time.', 'Under 3: every object is bigger than a toilet-paper tube opening.', 'Water play: a grown-up within arm’s reach the whole time.', 'No balloons, no long cords or strings, no choking-risk foods.', 'Check boxes and toys for staples, tape and loose parts.'].map(t => `<li style="display:flex;gap:14px;align-items:flex-start;margin-bottom:22px;font-size:21px;line-height:1.38;font-weight:700">${K.shield(C.grass, 30)}<span>${t}</span></li>`).join('')}</ul>
-    ${at(cA(17), 628, 330, 1.2, 5)}</div>`]);
+    <ul class="list abs" style="left:64px;top:320px;width:530px">${['A grown-up plays along and stays within reach, every time.', 'Under 3: every object is bigger than a toilet-paper tube opening.', 'Water play: a grown-up within arm’s reach the whole time.', 'No balloons, no long cords or strings, no choking-risk foods.', 'Check boxes and toys for staples, tape and loose parts.'].map(t => `<li style="display:flex;gap:14px;align-items:flex-start;margin-bottom:30px;font-size:22px;line-height:1.38;font-weight:700">${K.shield(C.grass, 30)}<span>${t}</span></li>`).join('')}</ul>
+    ${at(cA(17), 640, 330, 1.2, 5)}
+    <div class="band" style="background:${C.tomato};justify-content:center"><span>Ideas for everyday play, not medical advice. A grown-up is always right there.</span></div></div>`]);
   out.push(nextImage('A'));
   return out;
 }
@@ -138,8 +139,8 @@ function includedImage(key, pages, bg, bullets) {
   const dir = key === 'A' ? path.join(ROOT, 'preview') : path.join(ROOT, 'talk-along/preview');
   return ['06-whats-included', `<div class="sq" style="background:${bg}">
     <div class="h"><p class="k" style="color:${C.tomato}">Instant download</p><h1>What’s inside</h1></div>
-    <div class="abs" style="left:64px;right:64px;top:210px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px 30px">${pages.map(([n, t]) => `<div><img src="${rel(path.join(dir, `p${String(n).padStart(2, '0')}.png`))}" style="width:100%;display:block;border-radius:4px;box-shadow:0 10px 24px rgba(29,41,64,.14)"><p style="margin:10px 0 0;font-size:18px;font-weight:800;text-align:center">${t}</p></div>`).join('')}</div>
-    <ul class="list abs" style="left:64px;right:64px;bottom:40px;display:flex;justify-content:space-between;gap:14px">${bullets.map(b => `<li style="flex:1;background:#fff;border-radius:16px;padding:12px 14px;font-size:16.5px;font-weight:800;line-height:1.3;text-align:center">${b}</li>`).join('')}</ul></div>`];
+    <div class="abs" style="left:96px;width:808px;top:196px;display:grid;grid-template-columns:repeat(3,224px);gap:20px 68px">${pages.map(([n, t]) => `<div><img src="${rel(path.join(dir, `p${String(n).padStart(2, '0')}.png`))}" style="width:100%;display:block;border-radius:4px;box-shadow:0 10px 24px rgba(29,41,64,.14)"><p style="margin:8px 0 0;font-size:17px;font-weight:800;text-align:center;white-space:nowrap">${t}</p></div>`).join('')}</div>
+    <ul class="list abs" style="left:64px;right:64px;bottom:34px;display:flex;justify-content:space-between;gap:14px">${bullets.map(b => `<li style="flex:1;background:#fff;border-radius:16px;padding:12px 14px;font-size:15.5px;font-weight:800;line-height:1.3;text-align:center;display:flex;align-items:center;justify-content:center">${b}</li>`).join('')}</ul></div>`];
 }
 function nextImage(key) {
   const A = K.DECK_A, B = K.DECK_B;

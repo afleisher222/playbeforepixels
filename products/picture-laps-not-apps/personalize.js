@@ -6,7 +6,7 @@
 // Character picker: 4 looks for the story's child. Only the child changes; the family cast stays the same.
 const LOOKS = {
   1: { skin: '#8D5A3B', hair: '#2B1D16', hs: 'puffs', label: 'Look 1', desc: 'Brown skin, black hair in two puffs' },
-  2: { skin: '#F4CFAE', hair: '#E3B04B', hs: 'short', label: 'Look 2', desc: 'Light skin, short blond hair' },
+  2: { skin: '#F4CFAE', hair: '#E3B04B', hs: 'crop', label: 'Look 2', desc: 'Light skin, short blond hair' },
   3: { skin: '#C08457', hair: '#5A3825', hs: 'bob', label: 'Look 3', desc: 'Tan skin, brown bob' },
   4: { skin: '#5C3A26', hair: '#2B1D16', hs: 'bun', label: 'Look 4', desc: 'Deep brown skin, black hair in a bun' },
 };

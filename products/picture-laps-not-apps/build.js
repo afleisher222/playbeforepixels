@@ -59,6 +59,8 @@ function hair(style, cx, cy, r, col) {
   let back = '', front = '';
   switch (style) {
     case 'short': front = cap(0.62, 1.05, -0.05, 0.3); break;
+    case 'crop': // short, side-swept fringe with a little flick on top (picker look 2)
+      front = cap(0.3, 1.06, 0.02, -0.55) + `<path d="M${f(cx + r * 0.1)} ${f(cy - r * 0.98)} q${f(r * 0.06)} ${f(-r * 0.4)} ${f(r * 0.42)} ${f(-r * 0.3)}" stroke="${col}" stroke-width="${f(r * 0.16)}" fill="none" stroke-linecap="round"/>`; break;
     case 'puffs':
       back = `<circle cx="${f(cx - r * 0.92)}" cy="${f(cy - r * 0.72)}" r="${f(r * 0.44)}" fill="${col}"/><circle cx="${f(cx + r * 0.92)}" cy="${f(cy - r * 0.72)}" r="${f(r * 0.44)}" fill="${col}"/>`;
       front = cap(0.95, 1.05, -0.12, 0); break;
@@ -826,7 +828,7 @@ for (const fmt of ['hardcover', 'softcover']) fs.writeFileSync(path.join(DIR, `c
 fs.writeFileSync(path.join(DIR, 'cover.html'), doc('Laps Not Apps cover', `<div class="trim">${COVER}</div>`, `html,body{width:816px;height:816px;overflow:hidden} .trim{width:816px;height:816px;overflow:hidden;position:relative} .trim .page{position:absolute;left:-12px;top:-12px}`));
 
 // Character picker (store image + the reference for the "Look" option)
-const pick = Object.entries(PZ.LOOKS).map(([n, L]) => `<div class="card"><svg viewBox="-20 -10 160 210" class="kid"><use href="#look-${n}" width="120" height="200"/></svg><div class="lk">${L.label}</div><div class="ld">${L.desc}</div></div>`).join('');
+const pick = Object.entries(PZ.LOOKS).map(([n, L]) => `<div class="card"><svg viewBox="-12 -16 144 212" class="kid"><use href="#look-${n}" width="120" height="200"/></svg><div class="lk">${L.label}</div><div class="ld">${L.desc}</div></div>`).join('');
 fs.writeFileSync(path.join(DIR, 'picker.html'), `<!doctype html><html><head><meta charset="utf-8"><title>Laps Not Apps character picker</title>
 <link rel="stylesheet" href="../../brand/fonts/fonts.css"><style>
 *{margin:0;padding:0;box-sizing:border-box} html,body{width:1600px;height:1200px;overflow:hidden;background:${C.wash};font-family:'Nunito Sans',sans-serif;color:${C.ink}}
@@ -836,7 +838,7 @@ h1{position:absolute;left:80px;right:80px;top:170px;font-family:'Bricolage Grote
 .grid{position:absolute;left:80px;right:80px;top:350px;display:grid;grid-template-columns:repeat(4,1fr);gap:36px}
 .card{background:#fff;border-radius:36px;padding:34px 24px 34px;text-align:center}
 .card:nth-child(1){background:${C.sT}} .card:nth-child(2){background:${C.kT}} .card:nth-child(3){background:${C.gT}} .card:nth-child(4){background:${C.pT}}
-.kid{display:block;width:230px;height:302px;margin:0 auto}
+.kid{display:block;width:280px;height:412px;margin:0 auto}
 .lk{margin-top:18px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:44px}
 .ld{margin-top:6px;font-size:22px;font-weight:700;line-height:1.3;opacity:.85;min-height:58px}
 .steps{position:absolute;left:80px;right:80px;bottom:70px;display:flex;gap:28px}
@@ -845,7 +847,7 @@ h1{position:absolute;left:80px;right:80px;top:170px;font-family:'Bricolage Grote
 </style></head><body>${DEFS}<div class="logo">${LOGO('lockup-horizontal.svg')}</div>
 <h1>Choose your child’s look</h1><div class="sub">Laps Not Apps · the story’s child changes; the family in the story stays the same.</div>
 <div class="grid">${pick}</div>
-<div class="steps"><div class="step"><i>1</i>Pick a look</div><div class="step"><i>2</i>Type the child’s name</div><div class="step"><i>3</i>Add who it’s from</div><div class="step"><i>4</i>We print and ship it</div></div>
+<div class="steps"><div class="step"><i>1</i>Pick a look</div><div class="step"><i>2</i>Type the name</div><div class="step"><i>3</i>Add who it’s from</div><div class="step"><i>4</i>We print and ship it</div></div>
 </body></html>`);
 
 // Mockup (website/store hero)
