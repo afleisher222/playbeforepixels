@@ -52,6 +52,14 @@ Run every new or changed public item through ops/COMPLIANCE-GATE.md. Anything th
 - **Weekly scorecard (top of every report, when data is connected):** revenue and profit by product and by channel; best and worst seller; email subscribers gained and sign-up rate; conversion rate and average order value; refunds and complaints; ad spend vs. return (if any); cash in the business account vs. the 3-month reserve target. Then one line each: **keep doing**, **stop doing**, **try next** — and cut or fix any product or channel that has earned less than its upkeep for 8 weeks.
 - The final message of the run is a short plain-language report for the founder: what's new, what sold (if sales data is connected), what needs her (approvals, uploads), and nothing else.
 
+
+## Founder updates = money (founder's instruction, September 28, 2026 — overrides other report wording)
+Arielle only wants to hear how much money the business is making. Every report she receives follows this format and nothing else:
+- **Daily:** "Yesterday: $X in sales · This month so far: $Y · Profit this month (est.): $Z." Then either "Nothing needs you." or one line per item in ops/APPROVALS.md.
+- **Weekly:** earnings this week and month to date, profit after fees and costs, top 3 earning products and channels, and the tax reserve set aside. Then "Nothing needs you." or the approval lines. All other detail (what was built, fixed, researched) goes only in ops/RUNLOG.md — not in her report.
+- **Monthly:** month's revenue, profit, comparison with last month, year to date, and the one change that would most increase next month's earnings.
+- Figures come from connected sales data (store, merchant of record, marketplace keys). For platforms that report late (KDP ~60 days, IngramSpark ~90 days), show "estimated" and correct when statements arrive. Before any sales data is connected, say so in one line.
+
 ## Never
 - No direct contact: never offer or schedule a call, meeting, interview, podcast or live event for the founder; never publish a phone number. Written channels only.
 - Never contact, list, target or mention Montgomery County Public Schools or its staff; MCEA, MSEA or NEA; Montgomery County DHHS or its Infants and Toddlers Program.
