@@ -778,9 +778,9 @@ symbol{overflow:visible}
 .bb{display:flex;align-items:center;gap:18px;background:#fff;border-radius:16px;padding:9px}
 .bb .mini{width:104px;height:104px;flex:0 0 104px}
 .bb .mini .mt{font-size:19px;left:9px;top:9px}
-.bb>div>b{display:block;font-family:"Fredoka",sans-serif;font-weight:600;font-size:20px;line-height:1.1}
-.bb>div>span{display:block;font-size:13px;margin-top:2px}
-.bb>div>small{display:block;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:${C.tomato};margin-top:5px}
+.bb>div:last-child>b{display:block;font-family:"Fredoka",sans-serif;font-weight:600;font-size:20px;line-height:1.1}
+.bb>div:last-child>span{display:block;font-size:13px;margin-top:2px}
+.bb>div:last-child>small{display:block;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:${C.tomato};margin-top:5px}
 .end-pg .endtx{position:absolute;left:48px;right:48px;top:350px;text-align:center;color:#fff}
 .endtx h2{margin:0;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:52px;letter-spacing:-.03em}
 .endtx p{margin:6px 0 0;font-family:"Caveat",cursive;font-weight:700;font-size:26px;color:${C.sun}}
