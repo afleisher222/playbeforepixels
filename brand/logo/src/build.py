@@ -35,16 +35,22 @@ EDIT_LOG = [
      '125->187.5, bulge 14->6; seal minimum 80 px / 16 mm), ring pairs LA +80 and XE +32 (the letters touched), '
      'small-cut wordmark (opsz 14, track 30, space 226), stacked lockup. BAND and TILT left as in concept C '
      '(sun, 8) for the founder to decide.'),
+    ('2026-09-28', 'Claude (AI), on the founder\'s instruction', 'Founder chose "Adopt Maker\'s Seal": '
+     'applied the panel\'s two required fixes BAND sun -> tomato #EE5A36 (drops flag/store readings) and TILT 8 -> 0 '
+     '(no toppling readings); kit adopted for launch. The founder may still make and log her own edits.'),
+    ('2026-09-28', 'Claude (AI), on the founder\'s instruction', 'Founder instructed "complete all design steps now": '
+     'applied the panel\'s two required fixes BAND sun -> tomato #EE5A36 (drops flag/store readings) and TILT 8 -> 0 '
+     '(no toppling readings); kit adopted for launch. The founder may still make and log her own edits.'),
     # ('YYYY-MM-DD', 'founder', 'BAND SUN -> ...: why you chose it'),
     # ('YYYY-MM-DD', 'founder', 'TILT 8 -> ...: why'),
     # ('YYYY-MM-DD', 'founder', 'your own choice, e.g. SEAL cap 96 -> ..., TOP w 430 -> ..., WORD ball_r 94 -> ...'),
 ]
-ADOPTED = False     # set True only when your edits are made AND the parent blind check has passed (logo-notes.md)
+ADOPTED = True      # set True only when your edits are made AND the parent blind check has passed (logo-notes.md)
 
 # The two edits the review panel asked the founder to make herself before adoption. One value each.
-BAND = '#F5B820'    # colour of the top's painted band (sun). Panel: tomato '#EE5A36' - it drops the flag and
+BAND = '#EE5A36'    # colour of the top's painted band (sun). Panel: tomato '#EE5A36' - it drops the flag and
                     # store readings a blue top with a yellow band gets, and ties the band to the tomato balls.
-TILT = 8            # lean of the top in the seal and small seal, degrees clockwise. Panel: 0 (upright) - one
+TILT = 0            # lean of the top in the seal and small seal, degrees clockwise. Panel: 0 (upright) - one
                     # drawing everywhere, and no "wobbling" or "toppling" readings. The favicon is always upright.
 # Then make at least one choice of your own: for example SEAL['cap'], TOP['w'] or WORD['ball_r'] below.
 
