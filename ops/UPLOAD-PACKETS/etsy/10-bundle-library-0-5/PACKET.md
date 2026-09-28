@@ -4,7 +4,7 @@
 **Record:** `products/bundle-library-0-5/listing.json` · **Price:** $45.00 (one everyday price; no 'was', compare-at or sale price; same price on Gumroad) · **SKU:** `bundle-library-0-5`
 
 ## Why this listing is blocked on Etsy
-BLOCKED on Etsy: 2-Color-US-Letter.zip zips to 25.32 MB (limit 20 MB); 3-Color-A4.zip zips to 25.17 MB (limit 20 MB); 4-Low-Ink-US-Letter.zip zips to 26.94 MB (limit 20 MB); 5-Low-Ink-A4.zip zips to 26.81 MB (limit 20 MB). The Library is too large for Etsy's 5 files of 20 MB even as ZIPs, and the G0 age editions will not close the gap. Sell it on the own checkout only (no 5-file limit there, UNVERIFIED), and on Etsy offer the $29 Gift Bundle instead. Revisit only if the parts' PDFs are made much smaller.
+BLOCKED on Etsy: 2-Color-US-Letter.zip zips to 25.16 MB (limit 20 MB); 3-Color-A4.zip zips to 25.0 MB (limit 20 MB); 4-Low-Ink-US-Letter.zip zips to 26.77 MB (limit 20 MB); 5-Low-Ink-A4.zip zips to 26.64 MB (limit 20 MB). The Library is too large for Etsy's 5 files of 20 MB even as ZIPs, and the G0 age editions will not close the gap. Sell it on the own checkout only (no 5-file limit there, UNVERIFIED), and on Etsy offer the $29 Gift Bundle instead. Revisit only if the parts' PDFs are made much smaller.
 
 Recommendation: keep the Library on Gumroad only (it is part of the Gumroad packets) and leave this Etsy slot empty in week 2, so week 2 is 4 Etsy listings. Revisit only if the parts' PDFs are made much smaller (a product-workflow task).
 
@@ -72,10 +72,10 @@ Do NOT show a 'separately' figure until every counted part is live on Etsy at it
 | Slot | Upload as | Size | Source |
 |---|---|---|---|
 | 1 | `1-START-HERE.pdf` | 0.06 MB | `products/bundle-library-0-5/etsy-upload/1-START-HERE.pdf` |
-| 2 | `2-Color-US-Letter.zip` | 25.32 MB **OVER 20 MB** | `built by stage.py from zip-manifest.json slot 2` |
-| 3 | `3-Color-A4.zip` | 25.17 MB **OVER 20 MB** | `built by stage.py from zip-manifest.json slot 3` |
-| 4 | `4-Low-Ink-US-Letter.zip` | 26.94 MB **OVER 20 MB** | `built by stage.py from zip-manifest.json slot 4` |
-| 5 | `5-Low-Ink-A4.zip` | 26.81 MB **OVER 20 MB** | `built by stage.py from zip-manifest.json slot 5` |
+| 2 | `2-Color-US-Letter.zip` | 25.16 MB **OVER 20 MB** | `built by stage.py from zip-manifest.json slot 2` |
+| 3 | `3-Color-A4.zip` | 25.0 MB **OVER 20 MB** | `built by stage.py from zip-manifest.json slot 3` |
+| 4 | `4-Low-Ink-US-Letter.zip` | 26.77 MB **OVER 20 MB** | `built by stage.py from zip-manifest.json slot 4` |
+| 5 | `5-Low-Ink-A4.zip` | 26.64 MB **OVER 20 MB** | `built by stage.py from zip-manifest.json slot 5` |
 
 The ZIPs are never stored in the repo. Build them at upload time: `python3 ops/UPLOAD-PACKETS/stage.py etsy 10` (writes a staging folder outside git and re-checks sizes and URLs).
 

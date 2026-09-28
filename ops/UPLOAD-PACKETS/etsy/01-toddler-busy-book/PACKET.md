@@ -68,7 +68,7 @@ Paste the whole of `description.txt` (in this folder). It carries no web address
 ## Digital files to upload (in this order)
 | Slot | Upload as | Size | Source |
 |---|---|---|---|
-| 1 | `1-START-HERE.pdf` | 0.25 MB | `products/toddler-busy-book/etsy-upload/1-START-HERE.pdf` |
+| 1 | `1-START-HERE.pdf` | 0.04 MB | `products/toddler-busy-book/etsy-upload/1-START-HERE.pdf` |
 | 2 | `2-Toddler-Busy-Book-Color-US-Letter.pdf` | 4.89 MB | `products/toddler-busy-book/etsy-upload/2-Toddler-Busy-Book-Color-US-Letter.pdf` |
 | 3 | `3-Toddler-Busy-Book-Color-A4.pdf` | 4.88 MB | `products/toddler-busy-book/etsy-upload/3-Toddler-Busy-Book-Color-A4.pdf` |
 | 4 | `4-Toddler-Busy-Book-Low-ink-US-Letter.pdf` | 7.06 MB | `products/toddler-busy-book/etsy-upload/4-Toddler-Busy-Book-Low-ink-US-Letter.pdf` |

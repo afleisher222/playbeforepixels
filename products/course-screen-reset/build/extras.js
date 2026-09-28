@@ -107,11 +107,11 @@ write('cover.html', base(768, 960, coverCss) + coverInner());
     <h3>Your 2-minute setup</h3>
     <ul><li>Open the workbook that matches your paper (US Letter or A4). Print pages 6–10: the planning pages and the tracker.</li><li>Fill a play basket with 5–8 things you already have (workbook page 8).</li><li>Choose a phone parking spot for your own phone.</li></ul>
     <h3>Printing</h3>
-    <ul><li>Print at “Actual size” or 100%. Ordinary printer paper is fine; card stock is nice for the tracker and certificate.</li><li>To save ink, print the Low-ink edition. Your child can color the line drawings.</li><li>Any copy shop can print it. Laminate the tracker and use a dry-erase marker to reuse it.</li><li>On a phone or tablet, open the PDF in the free Adobe Acrobat Reader app to type into it.</li></ul>
+    <ul><li>Print at “Actual size” or 100%. Ordinary printer paper is fine; card stock is nice for the tracker and certificate.</li><li>To save ink, print the Low-ink edition. Your child can color the line drawings.</li><li>Any copy shop may print it for your household. Laminate the tracker and use a dry-erase marker to reuse it.</li><li>On a phone or tablet, open the PDF in the free Adobe Acrobat Reader app to type into it.</li></ul>
     <h3>What you can type into</h3>
     <p>In free Acrobat Reader: the planning pages, the blank tracker, the daily notes, the check-ins, your family plan, the certificate and the blank play pages. Lessons, plays and the pre-filled tracker are fixed text. Save a copy to keep your notes.</p>
     <div class="box"><b>Emails:</b> one lesson a day for 30 days. Missed one? Nothing breaks: every lesson is also in the workbook. <b>Guarantee:</b> not right for your family? ${K.REFUND.terms[0].toUpperCase() + K.REFUND.terms.slice(1)}. ${K.REFUND.after}.</div>
-    <div class="foot"><span>${COPY} For the purchasing household; please share the link, not the file. Print shops may print copies for this household.</span><span>${SITE} · ${K.VERSION}</span></div>
+    <div class="foot"><span>${COPY} For the purchasing household; please share the link, not the file.</span><span>${SITE} · ${K.VERSION}</span></div>
   </section>`);
 }
 

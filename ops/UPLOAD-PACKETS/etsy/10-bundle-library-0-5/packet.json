@@ -4,7 +4,7 @@
  "slug": "bundle-library-0-5",
  "record": "products/bundle-library-0-5/listing.json",
  "status": "BLOCKED",
- "etsy_status": "BLOCKED on Etsy: 2-Color-US-Letter.zip zips to 25.32 MB (limit 20 MB); 3-Color-A4.zip zips to 25.17 MB (limit 20 MB); 4-Low-Ink-US-Letter.zip zips to 26.94 MB (limit 20 MB); 5-Low-Ink-A4.zip zips to 26.81 MB (limit 20 MB). The Library is too large for Etsy's 5 files of 20 MB even as ZIPs, and the G0 age editions will not close the gap. Sell it on the own checkout only (no 5-file limit there, UNVERIFIED), and on Etsy offer the $29 Gift Bundle instead. Revisit only if the parts' PDFs are made much smaller.",
+ "etsy_status": "BLOCKED on Etsy: 2-Color-US-Letter.zip zips to 25.16 MB (limit 20 MB); 3-Color-A4.zip zips to 25.0 MB (limit 20 MB); 4-Low-Ink-US-Letter.zip zips to 26.77 MB (limit 20 MB); 5-Low-Ink-A4.zip zips to 26.64 MB (limit 20 MB). The Library is too large for Etsy's 5 files of 20 MB even as ZIPs, and the G0 age editions will not close the gap. Sell it on the own checkout only (no 5-file limit there, UNVERIFIED), and on Etsy offer the $29 Gift Bundle instead. Revisit only if the parts' PDFs are made much smaller.",
  "title": "Birth to 5 Printable Library, Baby and Toddler Activity Bundle, Play and Routine Cards, Busy Book, Screen-Free Ideas, Letter and A4",
  "tags": [
   "baby activities",
@@ -64,7 +64,7 @@
   {
    "name": "2-Color-US-Letter.zip",
    "src": "built by stage.py from zip-manifest.json slot 2",
-   "mb": 25.32,
+   "mb": 25.16,
    "kind": "zip",
    "fits": false,
    "members": [
@@ -87,7 +87,7 @@
   {
    "name": "3-Color-A4.zip",
    "src": "built by stage.py from zip-manifest.json slot 3",
-   "mb": 25.17,
+   "mb": 25.0,
    "kind": "zip",
    "fits": false,
    "members": [
@@ -110,7 +110,7 @@
   {
    "name": "4-Low-Ink-US-Letter.zip",
    "src": "built by stage.py from zip-manifest.json slot 4",
-   "mb": 26.94,
+   "mb": 26.77,
    "kind": "zip",
    "fits": false,
    "members": [
@@ -133,7 +133,7 @@
   {
    "name": "5-Low-Ink-A4.zip",
    "src": "built by stage.py from zip-manifest.json slot 5",
-   "mb": 26.81,
+   "mb": 26.64,
    "kind": "zip",
    "fits": false,
    "members": [
