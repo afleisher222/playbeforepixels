@@ -73,31 +73,31 @@
   {
    "name": "1-START-HERE.pdf",
    "src": "products/play-talk-cards/etsy-upload/1-START-HERE.pdf",
-   "mb": 0.03,
+   "mb": 0.04,
    "kind": "pdf"
   },
   {
    "name": "2-Color-US-Letter.pdf",
    "src": "products/play-talk-cards/etsy-upload/2-Color-US-Letter.pdf",
-   "mb": 1.39,
+   "mb": 1.49,
    "kind": "pdf"
   },
   {
    "name": "3-Color-A4.pdf",
    "src": "products/play-talk-cards/etsy-upload/3-Color-A4.pdf",
-   "mb": 1.39,
+   "mb": 1.5,
    "kind": "pdf"
   },
   {
    "name": "4-Low-Ink-US-Letter.pdf",
    "src": "products/play-talk-cards/etsy-upload/4-Low-Ink-US-Letter.pdf",
-   "mb": 1.45,
+   "mb": 1.56,
    "kind": "pdf"
   },
   {
    "name": "5-Low-Ink-A4.pdf",
    "src": "products/play-talk-cards/etsy-upload/5-Low-Ink-A4.pdf",
-   "mb": 1.46,
+   "mb": 1.57,
    "kind": "pdf"
   }
  ],

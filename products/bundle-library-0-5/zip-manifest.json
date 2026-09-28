@@ -113,30 +113,30 @@
     {
      "src": "products/toddler-busy-book/toddler-busy-book-START-HERE.pdf",
      "zip_path": "Toddler-Busy-Book/toddler-busy-book-START-HERE.pdf",
-     "mb": 0.2
+     "mb": 0.25
     },
     {
      "src": "products/toddler-busy-book/toddler-busy-book.pdf",
      "zip_path": "Toddler-Busy-Book/toddler-busy-book.pdf",
-     "mb": 4.75
+     "mb": 4.92
     },
     {
      "src": "products/toddler-busy-book/toddler-busy-book-A4.pdf",
      "zip_path": "Toddler-Busy-Book/toddler-busy-book-A4.pdf",
-     "mb": 4.74
+     "mb": 4.91
     },
     {
      "src": "products/toddler-busy-book/toddler-busy-book-low-ink-Letter.pdf",
      "zip_path": "Toddler-Busy-Book/toddler-busy-book-low-ink-Letter.pdf",
-     "mb": 6.91
+     "mb": 7.09
     },
     {
      "src": "products/toddler-busy-book/toddler-busy-book-low-ink-A4.pdf",
      "zip_path": "Toddler-Busy-Book/toddler-busy-book-low-ink-A4.pdf",
-     "mb": 6.89
+     "mb": 7.06
     }
    ],
-   "mb_estimate": 23.49
+   "mb_estimate": 24.23
   },
   {
    "slot": 4,
@@ -214,25 +214,25 @@
     {
      "src": "products/play-talk-cards/play-talk-cards.pdf",
      "zip_path": "Play-and-Talk-Cards/play-talk-cards.pdf",
-     "mb": 1.39
+     "mb": 1.5
     },
     {
      "src": "products/play-talk-cards/play-talk-cards-A4.pdf",
      "zip_path": "Play-and-Talk-Cards/play-talk-cards-A4.pdf",
-     "mb": 1.39
+     "mb": 1.51
     },
     {
      "src": "products/play-talk-cards/play-talk-cards-low-ink.pdf",
      "zip_path": "Play-and-Talk-Cards/play-talk-cards-low-ink.pdf",
-     "mb": 1.46
+     "mb": 1.57
     },
     {
      "src": "products/play-talk-cards/play-talk-cards-low-ink-A4.pdf",
      "zip_path": "Play-and-Talk-Cards/play-talk-cards-low-ink-A4.pdf",
-     "mb": 1.46
+     "mb": 1.57
     }
    ],
-   "mb_estimate": 5.74
+   "mb_estimate": 6.19
   },
   {
    "slot": 7,
@@ -273,30 +273,30 @@
     {
      "src": "products/guide-100-plays/START-HERE.pdf",
      "zip_path": "100-Screen-Free-Plays/START-HERE.pdf",
-     "mb": 0.05
+     "mb": 0.06
     },
     {
      "src": "products/guide-100-plays/guide-100-plays-letter.pdf",
      "zip_path": "100-Screen-Free-Plays/guide-100-plays-letter.pdf",
-     "mb": 2.41
+     "mb": 2.56
     },
     {
      "src": "products/guide-100-plays/guide-100-plays-a4.pdf",
      "zip_path": "100-Screen-Free-Plays/guide-100-plays-a4.pdf",
-     "mb": 2.37
+     "mb": 2.51
     },
     {
      "src": "products/guide-100-plays/guide-100-plays-low-ink-letter.pdf",
      "zip_path": "100-Screen-Free-Plays/guide-100-plays-low-ink-letter.pdf",
-     "mb": 3.78
+     "mb": 3.93
     },
     {
      "src": "products/guide-100-plays/guide-100-plays-low-ink-a4.pdf",
      "zip_path": "100-Screen-Free-Plays/guide-100-plays-low-ink-a4.pdf",
-     "mb": 3.74
+     "mb": 3.89
     }
    ],
-   "mb_estimate": 12.35
+   "mb_estimate": 12.95
   },
   {
    "slot": 9,
@@ -352,12 +352,12 @@
     {
      "src": "products/toddler-busy-book/etsy-upload/2-Toddler-Busy-Book-Color-US-Letter.pdf",
      "zip_path": "Toddler Busy Book - Color, US Letter.pdf",
-     "mb": 4.73
+     "mb": 4.89
     },
     {
      "src": "products/toddler-busy-book/etsy-upload/1-START-HERE.pdf",
      "zip_path": "Toddler Busy Book - START HERE.pdf",
-     "mb": 0.2
+     "mb": 0.25
     },
     {
      "src": "products/play-first-family-kit/etsy-upload-ages-2-5/2-Color-US-Letter.pdf",
@@ -382,12 +382,12 @@
     {
      "src": "products/play-talk-cards/etsy-upload/2-Color-US-Letter.pdf",
      "zip_path": "Play and Talk Cards - Color, US Letter.pdf",
-     "mb": 1.39
+     "mb": 1.49
     },
     {
      "src": "products/play-talk-cards/etsy-upload/1-START-HERE.pdf",
      "zip_path": "Play and Talk Cards - START HERE.pdf",
-     "mb": 0.03
+     "mb": 0.04
     },
     {
      "src": "products/visual-routine-cards/etsy-upload/ages-0-5/2-Color-US-Letter.pdf",
@@ -402,7 +402,7 @@
     {
      "src": "products/guide-100-plays/etsy-upload/2-Color-US-Letter.pdf",
      "zip_path": "100 Screen-Free Plays - Color, US Letter.pdf",
-     "mb": 2.39
+     "mb": 2.54
     },
     {
      "src": "products/guide-100-plays/etsy-upload/1-START-HERE.pdf",
@@ -415,8 +415,8 @@
      "mb": 0.83
     }
    ],
-   "mb_members": 28.15,
-   "mb_zipped": 24.95,
+   "mb_members": 28.62,
+   "mb_zipped": 25.32,
    "fits_etsy_20mb": false
   },
   {
@@ -432,12 +432,12 @@
     {
      "src": "products/toddler-busy-book/etsy-upload/3-Toddler-Busy-Book-Color-A4.pdf",
      "zip_path": "Toddler Busy Book - Color, A4.pdf",
-     "mb": 4.72
+     "mb": 4.88
     },
     {
      "src": "products/toddler-busy-book/etsy-upload/1-START-HERE.pdf",
      "zip_path": "Toddler Busy Book - START HERE.pdf",
-     "mb": 0.2
+     "mb": 0.25
     },
     {
      "src": "products/play-first-family-kit/etsy-upload-ages-2-5/3-Color-A4.pdf",
@@ -462,12 +462,12 @@
     {
      "src": "products/play-talk-cards/etsy-upload/3-Color-A4.pdf",
      "zip_path": "Play and Talk Cards - Color, A4.pdf",
-     "mb": 1.39
+     "mb": 1.5
     },
     {
      "src": "products/play-talk-cards/etsy-upload/1-START-HERE.pdf",
      "zip_path": "Play and Talk Cards - START HERE.pdf",
-     "mb": 0.03
+     "mb": 0.04
     },
     {
      "src": "products/visual-routine-cards/etsy-upload/ages-0-5/3-Color-A4.pdf",
@@ -482,7 +482,7 @@
     {
      "src": "products/guide-100-plays/etsy-upload/3-Color-A4.pdf",
      "zip_path": "100 Screen-Free Plays - Color, A4.pdf",
-     "mb": 2.35
+     "mb": 2.5
     },
     {
      "src": "products/guide-100-plays/etsy-upload/1-START-HERE.pdf",
@@ -495,8 +495,8 @@
      "mb": 0.8
     }
    ],
-   "mb_members": 28.04,
-   "mb_zipped": 24.79,
+   "mb_members": 28.52,
+   "mb_zipped": 25.17,
    "fits_etsy_20mb": false
   },
   {
@@ -512,12 +512,12 @@
     {
      "src": "products/toddler-busy-book/etsy-upload/4-Toddler-Busy-Book-Low-ink-US-Letter.pdf",
      "zip_path": "Toddler Busy Book - Low-ink, US Letter.pdf",
-     "mb": 6.89
+     "mb": 7.06
     },
     {
      "src": "products/toddler-busy-book/etsy-upload/1-START-HERE.pdf",
      "zip_path": "Toddler Busy Book - START HERE.pdf",
-     "mb": 0.2
+     "mb": 0.25
     },
     {
      "src": "products/play-first-family-kit/etsy-upload-ages-2-5/4-Low-Ink-US-Letter.pdf",
@@ -542,12 +542,12 @@
     {
      "src": "products/play-talk-cards/etsy-upload/4-Low-Ink-US-Letter.pdf",
      "zip_path": "Play and Talk Cards - Low-ink, US Letter.pdf",
-     "mb": 1.45
+     "mb": 1.56
     },
     {
      "src": "products/play-talk-cards/etsy-upload/1-START-HERE.pdf",
      "zip_path": "Play and Talk Cards - START HERE.pdf",
-     "mb": 0.03
+     "mb": 0.04
     },
     {
      "src": "products/visual-routine-cards/etsy-upload/ages-0-5/4-Low-Ink-US-Letter.pdf",
@@ -562,7 +562,7 @@
     {
      "src": "products/guide-100-plays/etsy-upload/4-Low-Ink-US-Letter.pdf",
      "zip_path": "100 Screen-Free Plays - Low-ink, US Letter.pdf",
-     "mb": 3.76
+     "mb": 3.92
     },
     {
      "src": "products/guide-100-plays/etsy-upload/1-START-HERE.pdf",
@@ -575,8 +575,8 @@
      "mb": 1.06
     }
    ],
-   "mb_members": 28.41,
-   "mb_zipped": 26.55,
+   "mb_members": 28.91,
+   "mb_zipped": 26.94,
    "fits_etsy_20mb": false
   },
   {
@@ -592,12 +592,12 @@
     {
      "src": "products/toddler-busy-book/etsy-upload/5-Toddler-Busy-Book-Low-ink-A4.pdf",
      "zip_path": "Toddler Busy Book - Low-ink, A4.pdf",
-     "mb": 6.87
+     "mb": 7.04
     },
     {
      "src": "products/toddler-busy-book/etsy-upload/1-START-HERE.pdf",
      "zip_path": "Toddler Busy Book - START HERE.pdf",
-     "mb": 0.2
+     "mb": 0.25
     },
     {
      "src": "products/play-first-family-kit/etsy-upload-ages-2-5/5-Low-Ink-A4.pdf",
@@ -622,12 +622,12 @@
     {
      "src": "products/play-talk-cards/etsy-upload/5-Low-Ink-A4.pdf",
      "zip_path": "Play and Talk Cards - Low-ink, A4.pdf",
-     "mb": 1.46
+     "mb": 1.57
     },
     {
      "src": "products/play-talk-cards/etsy-upload/1-START-HERE.pdf",
      "zip_path": "Play and Talk Cards - START HERE.pdf",
-     "mb": 0.03
+     "mb": 0.04
     },
     {
      "src": "products/visual-routine-cards/etsy-upload/ages-0-5/5-Low-Ink-A4.pdf",
@@ -642,7 +642,7 @@
     {
      "src": "products/guide-100-plays/etsy-upload/5-Low-Ink-A4.pdf",
      "zip_path": "100 Screen-Free Plays - Low-ink, A4.pdf",
-     "mb": 3.72
+     "mb": 3.88
     },
     {
      "src": "products/guide-100-plays/etsy-upload/1-START-HERE.pdf",
@@ -655,11 +655,11 @@
      "mb": 1.03
     }
    ],
-   "mb_members": 28.34,
-   "mb_zipped": 26.42,
+   "mb_members": 28.84,
+   "mb_zipped": 26.81,
    "fits_etsy_20mb": false
   }
  ],
- "etsy_status": "BLOCKED on Etsy: 2-Color-US-Letter.zip zips to 24.95 MB (limit 20 MB); 3-Color-A4.zip zips to 24.79 MB (limit 20 MB); 4-Low-Ink-US-Letter.zip zips to 26.55 MB (limit 20 MB); 5-Low-Ink-A4.zip zips to 26.42 MB (limit 20 MB). The Library is too large for Etsy's 5 files of 20 MB even as ZIPs, and the G0 age editions will not close the gap. Sell it on the own checkout only (no 5-file limit there, UNVERIFIED), and on Etsy offer the $29 Gift Bundle instead. Revisit only if the parts' PDFs are made much smaller.",
+ "etsy_status": "BLOCKED on Etsy: 2-Color-US-Letter.zip zips to 25.32 MB (limit 20 MB); 3-Color-A4.zip zips to 25.17 MB (limit 20 MB); 4-Low-Ink-US-Letter.zip zips to 26.94 MB (limit 20 MB); 5-Low-Ink-A4.zip zips to 26.81 MB (limit 20 MB). The Library is too large for Etsy's 5 files of 20 MB even as ZIPs, and the G0 age editions will not close the gap. Sell it on the own checkout only (no 5-file limit there, UNVERIFIED), and on Etsy offer the $29 Gift Bundle instead. Revisit only if the parts' PDFs are made much smaller.",
  "missing_or_wrong": []
 }

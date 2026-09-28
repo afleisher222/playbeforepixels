@@ -83,31 +83,31 @@
   {
    "name": "1-START-HERE.pdf",
    "src": "products/toddler-busy-book/etsy-upload/1-START-HERE.pdf",
-   "mb": 0.2,
+   "mb": 0.25,
    "kind": "pdf"
   },
   {
    "name": "2-Toddler-Busy-Book-Color-US-Letter.pdf",
    "src": "products/toddler-busy-book/etsy-upload/2-Toddler-Busy-Book-Color-US-Letter.pdf",
-   "mb": 4.73,
+   "mb": 4.89,
    "kind": "pdf"
   },
   {
    "name": "3-Toddler-Busy-Book-Color-A4.pdf",
    "src": "products/toddler-busy-book/etsy-upload/3-Toddler-Busy-Book-Color-A4.pdf",
-   "mb": 4.72,
+   "mb": 4.88,
    "kind": "pdf"
   },
   {
    "name": "4-Toddler-Busy-Book-Low-ink-US-Letter.pdf",
    "src": "products/toddler-busy-book/etsy-upload/4-Toddler-Busy-Book-Low-ink-US-Letter.pdf",
-   "mb": 6.89,
+   "mb": 7.06,
    "kind": "pdf"
   },
   {
    "name": "5-Toddler-Busy-Book-Low-ink-A4.pdf",
    "src": "products/toddler-busy-book/etsy-upload/5-Toddler-Busy-Book-Low-ink-A4.pdf",
-   "mb": 6.87,
+   "mb": 7.04,
    "kind": "pdf"
   }
  ],

@@ -43,10 +43,10 @@ How this was made: the text, illustrations and page layout were created with AI 
 |---|---|---|---|
 | 1 | `START-HERE.pdf` | 0.06 MB | `products/bundle-gift-1-5/START-HERE.pdf` |
 | 2 | `Gift-Pages.zip` | 1.8 MB | `built by stage.py from zip-manifest.json (store_download slot 2)` |
-| 3 | `Toddler-Busy-Book.zip` | 23.49 MB | `built by stage.py from zip-manifest.json (store_download slot 3)` |
+| 3 | `Toddler-Busy-Book.zip` | 24.23 MB | `built by stage.py from zip-manifest.json (store_download slot 3)` |
 | 4 | `Play-First-Family-Kit.zip` | 13.64 MB | `built by stage.py from zip-manifest.json (store_download slot 4)` |
 | 5 | `Bored-Play-Cards.zip` | 15.66 MB | `built by stage.py from zip-manifest.json (store_download slot 5)` |
-| 6 | `Play-and-Talk-Cards.zip` | 5.74 MB | `built by stage.py from zip-manifest.json (store_download slot 6)` |
+| 6 | `Play-and-Talk-Cards.zip` | 6.19 MB | `built by stage.py from zip-manifest.json (store_download slot 6)` |
 | 7 | `Play-Coupons.zip` | 3.8 MB | `built by stage.py from zip-manifest.json (store_download slot 7)` |
 
 Stage them with `python3 ops/UPLOAD-PACKETS/stage.py gumroad 09`.

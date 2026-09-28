@@ -38,11 +38,11 @@ How this was made: the text, illustrations and page layout were created with AI 
 ## Files (Content tab), in this order
 | # | File | Size | Source |
 |---|---|---|---|
-| 1 | `toddler-busy-book-START-HERE.pdf` | 0.2 MB | `products/toddler-busy-book/toddler-busy-book-START-HERE.pdf` |
-| 2 | `toddler-busy-book.pdf` | 4.75 MB | `products/toddler-busy-book/toddler-busy-book.pdf` |
-| 3 | `toddler-busy-book-A4.pdf` | 4.74 MB | `products/toddler-busy-book/toddler-busy-book-A4.pdf` |
-| 4 | `toddler-busy-book-low-ink-Letter.pdf` | 6.91 MB | `products/toddler-busy-book/toddler-busy-book-low-ink-Letter.pdf` |
-| 5 | `toddler-busy-book-low-ink-A4.pdf` | 6.89 MB | `products/toddler-busy-book/toddler-busy-book-low-ink-A4.pdf` |
+| 1 | `toddler-busy-book-START-HERE.pdf` | 0.25 MB | `products/toddler-busy-book/toddler-busy-book-START-HERE.pdf` |
+| 2 | `toddler-busy-book.pdf` | 4.92 MB | `products/toddler-busy-book/toddler-busy-book.pdf` |
+| 3 | `toddler-busy-book-A4.pdf` | 4.91 MB | `products/toddler-busy-book/toddler-busy-book-A4.pdf` |
+| 4 | `toddler-busy-book-low-ink-Letter.pdf` | 7.09 MB | `products/toddler-busy-book/toddler-busy-book-low-ink-Letter.pdf` |
+| 5 | `toddler-busy-book-low-ink-A4.pdf` | 7.06 MB | `products/toddler-busy-book/toddler-busy-book-low-ink-A4.pdf` |
 | 6 | `toddler-busy-book-PNG-templates.zip` | 0.45 MB | `products/toddler-busy-book/toddler-busy-book-PNG-templates.zip` |
 
 Stage them with `python3 ops/UPLOAD-PACKETS/stage.py gumroad 01`.

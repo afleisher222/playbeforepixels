@@ -39,10 +39,10 @@ How this was made: the text, illustrations and page layout were created with AI 
 | # | File | Size | Source |
 |---|---|---|---|
 | 1 | `START-HERE.pdf` | 0.04 MB | `products/play-talk-cards/START-HERE.pdf` |
-| 2 | `play-talk-cards.pdf` | 1.39 MB | `products/play-talk-cards/play-talk-cards.pdf` |
-| 3 | `play-talk-cards-A4.pdf` | 1.39 MB | `products/play-talk-cards/play-talk-cards-A4.pdf` |
-| 4 | `play-talk-cards-low-ink.pdf` | 1.46 MB | `products/play-talk-cards/play-talk-cards-low-ink.pdf` |
-| 5 | `play-talk-cards-low-ink-A4.pdf` | 1.46 MB | `products/play-talk-cards/play-talk-cards-low-ink-A4.pdf` |
+| 2 | `play-talk-cards.pdf` | 1.5 MB | `products/play-talk-cards/play-talk-cards.pdf` |
+| 3 | `play-talk-cards-A4.pdf` | 1.51 MB | `products/play-talk-cards/play-talk-cards-A4.pdf` |
+| 4 | `play-talk-cards-low-ink.pdf` | 1.57 MB | `products/play-talk-cards/play-talk-cards-low-ink.pdf` |
+| 5 | `play-talk-cards-low-ink-A4.pdf` | 1.57 MB | `products/play-talk-cards/play-talk-cards-low-ink-A4.pdf` |
 
 Stage them with `python3 ops/UPLOAD-PACKETS/stage.py gumroad 06`.
 

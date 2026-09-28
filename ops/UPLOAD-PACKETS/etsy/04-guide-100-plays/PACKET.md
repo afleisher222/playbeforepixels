@@ -68,10 +68,10 @@ Paste the whole of `description.txt` (in this folder). It carries no web address
 | Slot | Upload as | Size | Source |
 |---|---|---|---|
 | 1 | `1-START-HERE.pdf` | 0.05 MB | `products/guide-100-plays/etsy-upload/1-START-HERE.pdf` |
-| 2 | `2-Color-US-Letter.pdf` | 2.39 MB | `products/guide-100-plays/etsy-upload/2-Color-US-Letter.pdf` |
-| 3 | `3-Color-A4.pdf` | 2.35 MB | `products/guide-100-plays/etsy-upload/3-Color-A4.pdf` |
-| 4 | `4-Low-Ink-US-Letter.pdf` | 3.76 MB | `products/guide-100-plays/etsy-upload/4-Low-Ink-US-Letter.pdf` |
-| 5 | `5-Low-Ink-A4.pdf` | 3.72 MB | `products/guide-100-plays/etsy-upload/5-Low-Ink-A4.pdf` |
+| 2 | `2-Color-US-Letter.pdf` | 2.54 MB | `products/guide-100-plays/etsy-upload/2-Color-US-Letter.pdf` |
+| 3 | `3-Color-A4.pdf` | 2.5 MB | `products/guide-100-plays/etsy-upload/3-Color-A4.pdf` |
+| 4 | `4-Low-Ink-US-Letter.pdf` | 3.92 MB | `products/guide-100-plays/etsy-upload/4-Low-Ink-US-Letter.pdf` |
+| 5 | `5-Low-Ink-A4.pdf` | 3.88 MB | `products/guide-100-plays/etsy-upload/5-Low-Ink-A4.pdf` |
 
 Stage everything for this listing (files + images, renamed in order) with `python3 ops/UPLOAD-PACKETS/stage.py etsy 04`.
 

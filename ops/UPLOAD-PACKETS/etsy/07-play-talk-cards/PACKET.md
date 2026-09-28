@@ -66,11 +66,11 @@ Paste the whole of `description.txt` (in this folder). It carries no web address
 ## Digital files to upload (in this order)
 | Slot | Upload as | Size | Source |
 |---|---|---|---|
-| 1 | `1-START-HERE.pdf` | 0.03 MB | `products/play-talk-cards/etsy-upload/1-START-HERE.pdf` |
-| 2 | `2-Color-US-Letter.pdf` | 1.39 MB | `products/play-talk-cards/etsy-upload/2-Color-US-Letter.pdf` |
-| 3 | `3-Color-A4.pdf` | 1.39 MB | `products/play-talk-cards/etsy-upload/3-Color-A4.pdf` |
-| 4 | `4-Low-Ink-US-Letter.pdf` | 1.45 MB | `products/play-talk-cards/etsy-upload/4-Low-Ink-US-Letter.pdf` |
-| 5 | `5-Low-Ink-A4.pdf` | 1.46 MB | `products/play-talk-cards/etsy-upload/5-Low-Ink-A4.pdf` |
+| 1 | `1-START-HERE.pdf` | 0.04 MB | `products/play-talk-cards/etsy-upload/1-START-HERE.pdf` |
+| 2 | `2-Color-US-Letter.pdf` | 1.49 MB | `products/play-talk-cards/etsy-upload/2-Color-US-Letter.pdf` |
+| 3 | `3-Color-A4.pdf` | 1.5 MB | `products/play-talk-cards/etsy-upload/3-Color-A4.pdf` |
+| 4 | `4-Low-Ink-US-Letter.pdf` | 1.56 MB | `products/play-talk-cards/etsy-upload/4-Low-Ink-US-Letter.pdf` |
+| 5 | `5-Low-Ink-A4.pdf` | 1.57 MB | `products/play-talk-cards/etsy-upload/5-Low-Ink-A4.pdf` |
 
 Stage everything for this listing (files + images, renamed in order) with `python3 ops/UPLOAD-PACKETS/stage.py etsy 07`.
 

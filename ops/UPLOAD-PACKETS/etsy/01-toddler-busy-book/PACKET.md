@@ -68,11 +68,11 @@ Paste the whole of `description.txt` (in this folder). It carries no web address
 ## Digital files to upload (in this order)
 | Slot | Upload as | Size | Source |
 |---|---|---|---|
-| 1 | `1-START-HERE.pdf` | 0.2 MB | `products/toddler-busy-book/etsy-upload/1-START-HERE.pdf` |
-| 2 | `2-Toddler-Busy-Book-Color-US-Letter.pdf` | 4.73 MB | `products/toddler-busy-book/etsy-upload/2-Toddler-Busy-Book-Color-US-Letter.pdf` |
-| 3 | `3-Toddler-Busy-Book-Color-A4.pdf` | 4.72 MB | `products/toddler-busy-book/etsy-upload/3-Toddler-Busy-Book-Color-A4.pdf` |
-| 4 | `4-Toddler-Busy-Book-Low-ink-US-Letter.pdf` | 6.89 MB | `products/toddler-busy-book/etsy-upload/4-Toddler-Busy-Book-Low-ink-US-Letter.pdf` |
-| 5 | `5-Toddler-Busy-Book-Low-ink-A4.pdf` | 6.87 MB | `products/toddler-busy-book/etsy-upload/5-Toddler-Busy-Book-Low-ink-A4.pdf` |
+| 1 | `1-START-HERE.pdf` | 0.25 MB | `products/toddler-busy-book/etsy-upload/1-START-HERE.pdf` |
+| 2 | `2-Toddler-Busy-Book-Color-US-Letter.pdf` | 4.89 MB | `products/toddler-busy-book/etsy-upload/2-Toddler-Busy-Book-Color-US-Letter.pdf` |
+| 3 | `3-Toddler-Busy-Book-Color-A4.pdf` | 4.88 MB | `products/toddler-busy-book/etsy-upload/3-Toddler-Busy-Book-Color-A4.pdf` |
+| 4 | `4-Toddler-Busy-Book-Low-ink-US-Letter.pdf` | 7.06 MB | `products/toddler-busy-book/etsy-upload/4-Toddler-Busy-Book-Low-ink-US-Letter.pdf` |
+| 5 | `5-Toddler-Busy-Book-Low-ink-A4.pdf` | 7.04 MB | `products/toddler-busy-book/etsy-upload/5-Toddler-Busy-Book-Low-ink-A4.pdf` |
 
 Stage everything for this listing (files + images, renamed in order) with `python3 ops/UPLOAD-PACKETS/stage.py etsy 01`.
 
