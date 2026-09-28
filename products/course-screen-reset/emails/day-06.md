@@ -14,9 +14,9 @@ If screens end in tears at your house, you are not alone. Stopping something fun
 
 Here is a three-part ending you can use every day.
 
-First, a warning. Two minutes before the end, sit next to your child and say, “Two more minutes, then the tablet goes to sleep.” Touching their shoulder or looking at the screen with them helps the warning land.
+First, a warning. Two minutes before the end, sit next to your child and say, “Two more minutes, then the tablet goes to sleep.” Touching their shoulder or looking at the screen with them helps the warning land. Some children do better with a warning they can see, like a sand timer or two fingers held up.
 
-Second, a clear ending. Use something outside of you: the end of an episode, a kitchen timer, a song. Then the timer is the bad guy, not you. Some families “tuck the tablet in” to a drawer or basket and say goodnight to it.
+Second, a clear ending. Use something outside of you: the end of an episode or a game round, a kitchen timer, a song. Then the timer is the bad guy, not you. Some families “tuck the tablet in” to a drawer or basket and say goodnight to it.
 
 Third, a landing. Have the next thing ready and say it out loud: “Now we go outside and find the moon.” Children move more easily toward something than away from something.
 

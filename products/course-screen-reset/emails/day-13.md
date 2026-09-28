@@ -18,7 +18,7 @@ Name the feeling in a few words: “You’re so mad. You wanted another show.”
 
 Keep your words few. Long explanations are hard to hear when someone is upset. Say the plan once: “The tablet is asleep. It will be here tomorrow after nap.”
 
-When the storm settles, reconnect: a hug, a drink of water, the landing activity you planned. There’s no need for a talk about it later, unless your big kid wants one.
+Some children need quiet and a little space first; stay nearby. When the storm settles, reconnect: a hug if they want one, a drink of water, the landing activity you planned. There’s no need for a talk about it later, unless your big kid wants one.
 
 If big feelings about screens feel constant or overwhelming, or you’re worried about your child, talk with your pediatrician. You don’t have to handle it alone.
 

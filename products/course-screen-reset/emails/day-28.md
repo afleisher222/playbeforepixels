@@ -30,7 +30,7 @@ Quiet plays help on sick days too: stories, drawing in bed, a basket of books, w
 
 Set up a tray your child can use on the couch or in bed: paper, crayons, a book, one small toy. Sit nearby and talk about what they draw or find.
 
-**Talk while you play (Say what you see):** “You drew a big circle. Is that the sun? A cozy sun.”
+**Talk while you play (Say what you see):** “You drew a big circle. A big round sun. A cozy sun!”
 
 - **Make it easier:** One book and one teddy on the tray.
 - **Make it harder:** Big kids write a “sick day newspaper” with the family’s news.

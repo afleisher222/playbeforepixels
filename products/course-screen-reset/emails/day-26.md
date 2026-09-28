@@ -35,7 +35,7 @@ Turn the table into a restaurant. Give each child a role: chef, waiter, customer
 - **Make it easier:** Toddlers are customers who choose between two foods.
 - **Make it harder:** Big kids write a menu with prices and add up the bill.
 - **Tired-grown-up version (2 minutes):** Be the customer who is “very, very hungry” and just order things.
-- **Safety:** Pretend cooking only; the stove stays off. Real snacks are toddler-safe foods.
+- **Safety:** Pretend cooking only; the stove stays off. Real snacks are toddler-safe foods; check for food allergies first.
 
 ## Plain words for: When siblings fight over whose turn it is
 

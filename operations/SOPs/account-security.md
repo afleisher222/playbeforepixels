@@ -8,7 +8,7 @@
 1. **Use a password manager for every login.** For example 1Password or Bitwarden `[VERIFY pricing]`. Every password is unique and generated. Nothing is reused from personal accounts.
 2. **Turn on two-step verification everywhere.** Use passkeys or an authenticator app, not SMS, wherever the platform offers it. For the three crown jewels (the business email, the domain registrar/Cloudflare, and the bank), add a hardware security key if supported, and register **two** keys: one on the key ring, one in the safe place.
 3. **Business accounts use business email.** Log in to platforms with a role address on our domain (for example `admin@[BUSINESS DOMAIN]`), never a personal Gmail.
-   - `afleisher222@gmail.com` is currently the USPTO correspondence email. Keep it secure and change it only through USPTO's own form.
+   - The USPTO correspondence email is currently the founder's personal address. Keep it secure and change it to a business address only through USPTO's own form.
    - Keep the domain-email account's recovery options owner-controlled (the founder's phone and the backup codes).
 4. **Give people roles, not shared passwords.** The accountant gets the Accountant user in QBO and a staff account in Shopify with reports only. Contractors get the smallest role, removed when their work ends. Nobody ever gets the founder's login.
 5. **Automation keys are narrow and revocable.** API tokens live only in the cloud environment's secrets (`ops/SECRETS.md`), with the least scope that works. They are never committed and never pasted into chat. Rotate them yearly, and immediately if exposed.

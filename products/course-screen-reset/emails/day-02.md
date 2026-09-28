@@ -37,7 +37,7 @@ Sit down at the table together, no phones nearby. Say what’s happening in shor
 - **Make it easier:** Use single words: “Pour.” “More?” “Yum.”
 - **Make it harder:** Big kids narrate you, like a cooking show host. Then swap.
 - **Tired-grown-up version (2 minutes):** Name three foods on the plate and let your child name one.
-- **Safety:** Seat children upright while eating. Cut food small for under-4s; no whole grapes, nuts, popcorn or hard candy.
+- **Safety:** Check for food allergies first. Seat children upright while eating. Cut food small for under-4s; no whole grapes, nuts, popcorn or hard candy.
 
 ## Plain words for: When someone asks why things are changing
 

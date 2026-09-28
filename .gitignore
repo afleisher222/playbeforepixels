@@ -8,3 +8,7 @@ node_modules/
 tmp/
 .qa/
 **/qa-scratch/
+
+# Python bytecode
+__pycache__/
+*.pyc

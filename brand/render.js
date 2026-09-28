@@ -2,7 +2,7 @@
 //   node render.js pdf  <input.html> <output.pdf> [widthIn] [heightIn]   (default 8.5x11in; page size may also come from CSS @page)
 //   node render.js png  <input.html> <output.png> [widthPx] [heightPx] [scale]  (screenshot of the viewport; fullPage if heightPx=0)
 //   node render.js pages <input.html> <outdir> <selector> [scale]         (one PNG per element matching selector, e.g. ".page")
-const { chromium } = require('/opt/node22/lib/node_modules/playwright');
+const { chromium } = (() => { for (const m of ['/opt/node22/lib/node_modules/playwright', 'playwright', require('path').join(require('child_process').execSync('npm root -g').toString().trim(), 'playwright')]) { try { return require(m); } catch (e) {} } throw new Error('Playwright not found: run bash ops/cloud/bootstrap.sh'); })();
 const path = require('path'); const fs = require('fs');
 (async () => {
   const [mode, input, output, a, b, c] = process.argv.slice(2);

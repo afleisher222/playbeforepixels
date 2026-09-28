@@ -12,7 +12,7 @@ send: "day 4, 7:00 local time"
 
 Children often reach for a screen because it’s the easiest “yes” in the room. Today we make play just as easy.
 
-Find a basket, box or bag. Fill it with five to eight things you already have. Mix the kinds of play: something to build with (blocks, cups, boxes), something to pretend with (a teddy, pots, a hat), something to make with (paper, crayons), something to move with (a soft ball, a cushion to jump on), and something to look at together (two or three books).
+Find a basket, box or bag. Fill it with five to eight things you already have. Mix the kinds of play: something to build with (blocks, cups, boxes), something to pretend with (a teddy, pots, a hat), something to make with (paper, crayons), something to move with (a soft ball, a cushion to climb over), and something to look at together (two or three books).
 
 Put the basket where your child can reach it, near where you usually are. Children like to play near their grown-ups.
 

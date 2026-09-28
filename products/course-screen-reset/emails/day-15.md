@@ -20,7 +20,7 @@ So: say something, then stop. Count to five slowly in your head. Look at your ch
 
 Whatever comes, answer it as if it were the best thing anyone has said all day. That’s a turn. That’s conversation.
 
-The pause works in songs too: “Twinkle, twinkle, little…” then wait. Or in games: “Ready, set…” and wait for your child to say or sign “Go!”
+The pause works in songs too, in any language: “Twinkle, twinkle, little…” then wait. Or in games: “Ready, set…” and wait for your child to say or sign “Go!”
 
 It feels strange at first. Keep going. It may turn out to be the move that surprises you most.
 

@@ -33,7 +33,7 @@ Lie down on the floor and pretend to be a sleeping lion. Your child tiptoes clos
 - **Make it easier:** Pretend to snore and let your toddler wake you with a pat.
 - **Make it harder:** Big kids play “statues”: you open your eyes and anyone moving has to freeze.
 - **Tired-grown-up version (2 minutes):** Just lie there and snore. That’s the whole play.
-- **Safety:** Play on a soft rug away from furniture edges. Gentle tickles only, and stop when your child says stop.
+- **Safety:** Play on a soft rug away from furniture edges. Keep the roar soft, tickle only if your child enjoys it, and stop the moment your child says or shows stop.
 
 ## Plain words for: When you’re too tired to play (words for your child)
 

@@ -71,6 +71,7 @@ function doc(V) {
         <p class="cv-sub">${esc(K.SUB)}</p>
         <p class="tp-tag">30 short lessons, 30 easy plays and plain words for tricky moments, for families with children aged 1 to 12</p>
         <div class="tp-scene">${sceneSvg(sceneCover, '', '20 150 560 360')}</div>
+        <div class="tp-gift"><div><span>A gift for</span><i></i></div><div><span>With love from</span><i></i></div></div>
         <div class="cv-logo"><img src="${LOGO}" alt="Play Before Pixels"></div>
       </div>`, { nofoot: true });
     page(copyrightBody(true), { nofoot: true, cls: 'copyp' });
@@ -221,7 +222,7 @@ function doc(V) {
     <div class="ending"><div class="en"><span class="enn">1</span><b>A warning</b>“Two more minutes, then the tablet goes to sleep.”</div><div class="en"><span class="enn">2</span><b>A clear ending</b>The episode ends or the timer rings. “Night-night, tablet.”</div><div class="en"><span class="enn">3</span><b>A landing</b>“Now we go outside and find the moon.”</div></div>
     <div class="spotsay"><b>Tell your child:</b> “Here’s our new plan. Shows are after nap, on the couch. Two shows, then outside. Every day.”</div>`, { run: 'Planning' });
 
-  const basket = [['Something to build with', 'blocks, cups, boxes, tubes', 'blocks'], ['Something to pretend with', 'a teddy, pots, a hat, a toy phone', 'hat'], ['Something to make with', 'paper, crayons, tape', 'crayon'], ['Something to move with', 'a soft ball, a scarf, cushions', 'ball'], ['Something to look at together', '2–3 books or family photos', 'book'], ['Something that makes a sound', 'a pot and spoon, a shaker bottle glued shut', 'note']];
+  const basket = [['Something to build with', 'blocks, cups, boxes, tubes', 'blocks'], ['Something to pretend with', 'a teddy, pots, a hat, a toy phone', 'hat'], ['Something to make with', 'paper, crayons, tape', 'crayon'], ['Something to move with', 'a soft ball, a cushion to climb over', 'ball'], ['Something to look at together', '2–3 books or family photos', 'book'], ['Something that makes a sound', 'a pot and spoon, a shaker bottle glued shut', 'note']];
   page(`${H('Day 4 · planning page', 'Our play basket', C.sky, C.ink)}
     <p class="lead s">Five to eight things you already have, within your child’s reach, near where you usually are. Keep the rest out of sight and swap a few things each week.</p>
     <div class="basket">${basket.map(([t, e, a], i) => `<div class="bk">${artDisc(a, C.tSky, .78)}<div><b>${t}</b><span class="eg">e.g. ${e}</span>${F('bk-' + i, 'multi', 2)}</div></div>`).join('')}</div>
@@ -345,7 +346,7 @@ function doc(V) {
   const per = Math.ceil(allScripts.length / 3);
   [0, 1, 2].map(i => allScripts.slice(i * per, (i + 1) * per)).forEach((list, i) => {
     page(`${H('Scripts bank' + (i ? ' (continued)' : ''), i ? 'More plain words' : 'Plain words for tricky moments', C.grass)}
-      ${i ? '' : '<p class="lead s">Every script from the 30 days, plus extras, in one place. Cut out the ones you need and stick them where the tricky moment happens.</p>'}
+      ${i ? '' : `<p class="lead s">Every script from the 30 days, plus extras, in one place. ${V.book ? 'Copy the ones you need onto a card or sticky note' : 'Cut out the ones you need'} and keep them where the tricky moment happens.</p>`}
       <div class="sbank">${list.map(s => `<div class="sb"><b>${esc(s.moment)}${s.day ? ` <span>Day ${s.day}</span>` : ''}</b>${s.lines.map(l => `<p>${esc(l)}</p>`).join('')}</div>`).join('')}</div>`, { run: 'Scripts bank' });
   });
 
@@ -474,6 +475,7 @@ b{font-weight:800}
 .wm{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:18pt}
 .tp-tag{font-size:11.5pt;max-width:5in;margin-top:.1in}
 .tp-scene{width:5.2in;height:3.35in;margin-top:.2in}
+.tp-gift{width:4.2in;margin-top:.22in;text-align:left;font-size:10.5pt}.tp-gift div{display:flex;align-items:flex-end;gap:.1in;margin-top:.14in}.tp-gift span{font-weight:700;white-space:nowrap}.tp-gift i{flex:1;border-bottom:1px solid #6E6E6E;height:.22in}
 .endp{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2in;font-family:"Caveat",cursive;font-size:22pt;font-weight:700}
 .endp .cv-logo{margin:0}
 /* copyright */

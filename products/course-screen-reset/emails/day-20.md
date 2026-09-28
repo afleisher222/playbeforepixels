@@ -26,7 +26,7 @@ Use gestures when you talk, too: point, wave, nod, show “big” with your arms
 
 *From 12 months · 2-min prep · No mess · Short play · You need: a basket, 4–5 objects that stand for songs (a toy duck, a spoon, a star cut from paper)*
 
-Put a few objects in a basket, each one standing for a song: a duck for a duck song, a star for a star song. Your child pulls one out and you sing that song together, with actions.
+Put a few objects in a basket, each one standing for a song: a duck for a duck song, a star for a star song, in whatever language your family sings. Your child pulls one out and you sing that song together, with actions.
 
 **Talk while you play (Sing and gesture):** “A star! Twinkle, twinkle, little… (wait) …star!”
 

@@ -25,7 +25,7 @@ This is about 20–25 hours in total, or 5–6 hours a week.
 - **Time:** About 1 hour, plus the lawyer's time.
 
 **2. Write a one-page plan with three waves, a "not now" list and a Friday scorecard.**
-- **Why:** About 15 products and 12+ stores at once is too much for one person with a full-time job and a lawsuit. Busy Toddler and Big Little Feelings both grew by doing one thing well first.
+- **Why:** About 15 products and 12+ stores at once is too much to launch at once for a one-person, hands-off business. Busy Toddler and Big Little Feelings both grew by doing one thing well first.
 - **First step:** Write one page with these parts.
   - **Wave 1 (Oct–Dec):** website, email list, printables including the Screen Reset Pack, the 100-play guide paperback, and instant holiday gifts. Sell only on your Shopify site, Amazon/KDP and Etsy.
   - **Wave 2 (Jan):** public New Year launch of the 30-Day Screen Reset. The ALPHAPLAY product goes on sale by mid-January.
@@ -47,7 +47,7 @@ This is about 20–25 hours in total, or 5–6 hours a week.
 - **Time:** About 1 hour to hand off.
 
 **4. Put the business in its own locked-down accounts.**
-- **Why:** Your personal email holds case material that no helper or automation should ever reach. A hacked account posting during a lawsuit would be serious.
+- **Why:** Personal accounts hold private material that no helper or automation should ever reach, and a hacked personal account must never be able to post for the business.
 - **First step:** Block out one 2–3 hour session. In it:
   - Set up business email on the brand domain and a password manager with emergency access.
   - Move every business account over. Never use school email or devices.

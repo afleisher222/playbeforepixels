@@ -32,7 +32,7 @@ You don’t need to be perfect. Children learn more from how we come back to the
 
 Put your phone in its parking spot. Lie on the floor or grass side by side and look up at the ceiling, the sky or the clouds. Say what you see. Take turns finding shapes.
 
-**Talk while you play (Say what you see):** “I see a cloud like a… dog! What do you see?”
+**Talk while you play (Say what you see):** “I see a cloud like a… dog! A big fluffy dog. (wait)”
 
 - **Make it easier:** Lie together and point at the light, the fan, the window.
 - **Make it harder:** Big kids find constellations or invent them and give them names.

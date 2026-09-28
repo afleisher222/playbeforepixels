@@ -3,7 +3,9 @@
 # --final refuses to finish while any FOUNDER WRITES THIS placeholder is still in the emails or workbook.
 set -e
 B="$(cd "$(dirname "$0")" && pwd)"; D="$(dirname "$B")"; R="$D/../../brand/render.js"
-cd "$B" && node workbook.js && node emails.js
+cd "$B"
+node workbook.js
+node emails.js
 cd "$D"
 mkdir -p downloads paperback build/dbg preview/listing-images
 # ---- workbook PDFs (type-in fields added by fields.js)
@@ -24,7 +26,9 @@ rm -rf paperback/preview && node "$R" pages paperback/source-kdp.html paperback/
 sed "s#{{logo_url}}#$D/../../brand/logo/png/lockup-horizontal-2400.png#" emails/day-06.html > build/dbg/email6.html
 node "$R" png build/dbg/email6.html build/dbg/email-shot.png 420 0 2
 # ---- extras
-cd "$B" && node extras.js && cd "$D"
+cd "$B"
+node extras.js
+cd "$D"
 node "$R" png build/cover.html cover.png 768 960 1.6667
 node "$R" pdf build/cover-wrap.html paperback/course-screen-reset-kdp-cover.pdf && node build/fixsize.js paperback/course-screen-reset-kdp-cover.pdf $(node -e "const j=require('./build/cover-wrap.json');console.log(j.wrap_in.join(' '))")
 WW=$(node -e "const j=require('./build/cover-wrap.json');console.log(Math.round(j.wrap_in[0]*96)+' '+Math.round(j.wrap_in[1]*96))"); node "$R" png build/cover-wrap.html paperback/cover-wrap-preview.png $WW 1

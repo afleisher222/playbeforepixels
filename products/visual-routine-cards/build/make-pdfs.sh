@@ -13,7 +13,7 @@ one() { # variant out title [toc]
   if [ -n "$4" ]; then python3 finish.py "tmp/$1.raw.pdf" "$2" --fields "tmp/$1.fields.json" --toc "tmp/$1.toc.json" --title "$3"
   else python3 finish.py "tmp/$1.raw.pdf" "$2" --fields "tmp/$1.fields.json" --title "$3"; fi
 }
-T="200+ Visual Routine Cards"; TS="60 Visual Routine Cards Starter Set"
+T="$(node -p "require('./manifest.json').cards") Visual Routine Cards"; TS="$(node -p "require('./manifest.json').starter") Visual Routine Cards Starter Set"
 JOBS=(
 "full-store-color-letter|$P/visual-routine-cards.pdf|$T (Color, US Letter)|toc"
 "full-store-color-a4|$P/visual-routine-cards-a4.pdf|$T (Color, A4)|toc"

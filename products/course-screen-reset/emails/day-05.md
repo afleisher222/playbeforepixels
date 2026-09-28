@@ -33,7 +33,7 @@ Over a snack, share three small things from your own day: one funny, one surpris
 - **Make it easier:** For toddlers, show three things instead: “Look, a leaf I found for you.”
 - **Make it harder:** Big kids play “two true things and one pretend”; you guess which is pretend.
 - **Tired-grown-up version (2 minutes):** Lie on the floor together and say one thing each.
-- **Safety:** Seat children upright for snacks and choose toddler-safe foods.
+- **Safety:** Check for food allergies first. Seat children upright for snacks and choose toddler-safe foods.
 
 ## Plain words for: Right after pickup
 
