@@ -506,7 +506,7 @@ const howTo = (belongs) => ({
     <div class="cues3">${['say', 'sign', 'act'].map((t, i) => `<div class="c3" style="--acc:${[C.tomato, C.grass, C.plum][i]}">${ICON[t]}<b>${CUE_LABEL[t]}</b><span>${MS.cue_types[t]}</span></div>`).join('')}</div>
     <ol class="steps">
       <li style="--c:${C.tomato}"><b>Go slow.</b> One word per page. Say it, point to the picture, then pause.</li>
-      <li style="--c:${C.sun};--n:${C.ink}"><b>Wait for a turn.</b> Count to five in your head. A look, a point or a sound is your child’s turn.</li>
+      <li style="--c:${C.sun};--n:${C.ink}"><b>Wait for a turn.</b> Count to five in your head. A look, a point, a sign, a sound or a tap on a talking device is your child’s turn.</li>
       <li style="--c:${C.sky}"><b>Copy each other.</b> Try the say it, sign it or act it idea. Then copy whatever your child does back.</li>
       <li style="--c:${C.grass}"><b>Pick any tip, skip any tip.</b> It’s their book: skip ahead, go back, or stay on one page.</li>
     </ol>
@@ -517,7 +517,7 @@ const howTo = (belongs) => ({
       <circle cx="356" cy="48" r="44" fill="${C.tGrass}"/><g style="--bc:${C.grass}" transform="translate(356,48) scale(.9)">${use('book-closed')}</g>
       <circle cx="458" cy="48" r="44" fill="${C.tPlum}"/><g transform="translate(458,54) scale(.7)">${use('cup')}</g>
     </svg>
-    <p class="note">Every child talks on their own timeline. If you have questions about your child’s speech or development, your child’s doctor is a good place to start. Talk, sing and read in the language you know best.</p>
+    <p class="note">Every child talks on their own timeline. If you have questions about your child’s speech or development, your child’s doctor is a good place to start. Talk, sing and read in the language you know best. Every language counts.</p>
     ${belongs ? '<p class="belongs"><span>This book belongs to</span><i></i></p>' : ''}
   </div>`
 });
@@ -529,7 +529,7 @@ const routinesPage = (withLegal) => ({
     <h2 class="ptitle">Keep the words going</h2>
     <p class="lede">Use these words again and again, in the same moments each day.</p>
     <div class="routines">${MS.routines.map(([t, ws, c]) => `<div class="rt" style="--c:${C[c]};--t:${C['t' + c[0].toUpperCase() + c.slice(1)]}"><span class="rtl">${t}</span><span class="chips">${ws.map(w => `<em>${w}</em>`).join('')}</span></div>`).join('')}</div>
-    <p class="note">No screen needed. Just you, your voice, and a little time to wait.</p>
+    <p class="note">No screen needed. Just the two of you, and a little time to wait.</p>
     ${withLegal ? `<div class="legal">
       <p><b>Up! Go! More!</b> · ${MS.series}, Book ${MS.series_number} · Board book edition · ${authorLine()}</p>
       <p>${COPYRIGHT} All rights reserved. First edition · ${VERSION}.</p>
@@ -558,7 +558,7 @@ const back = (rel) => ({
   <div class="back-in">
     <h2 class="btitle">Up! Go! More!</h2>
     <p class="blurb">${WORDNUM[N][0].toUpperCase() + WORDNUM[N].slice(1)} first words, one per page, from <b>hi</b> to <b>night-night</b>. Every page has one big picture, one thing to <b>say, sign or act out</b> together, and a <b>grown-up tip</b> that turns reading into a back-and-forth chat.</p>
-    <p class="blurb2">Made for laps, not screens.</p>
+    <p class="blurb2">Made for laps and back-and-forth.</p>
   </div>
   ${seriesStrip()}
   <div class="bband">
@@ -587,7 +587,7 @@ const copyrightPage = () => ({
     <p>${authorLine()}</p>
     <p>${COPYRIGHT}<br>All rights reserved. No part of this book may be copied or shared in any form without written permission, except short quotes in reviews.</p>
     <p>This book is for reading together. It shares everyday play and talk ideas for families. It is not medical or developmental advice; for questions about your child, talk with your child’s doctor.</p>
-    <p>Read together, and keep this paper book away from mouths.</p>
+    <p>Paper pages: read together and keep away from mouths.</p>
     <p>ISBN ${slot('paperback ISBN')}<br>First edition · ${VERSION}</p>
     <p>playbeforepixels.com</p>
   </div>`
@@ -614,7 +614,7 @@ const keepsakePage = () => ({
   cls: 'inner keep-pg', html: `
   <div class="in">
     <h2 class="ptitle">Our word list</h2>
-    <p class="lede">Just for fun. Tick a word the first time you hear it (or see it signed) and jot the date. Every child has their own timeline, so there is no right time for any box.</p>
+    <p class="lede">Just for fun. Tick a word the first time your child says, signs or taps it, in any language, and jot the date. Every child has their own timeline, so there is no right time for any box.</p>
     <div class="klist">${WORDS.map(p => `<div class="kw"><i></i><b>${p.w}</b><span></span></div>`).join('')}</div>
   </div>`
 });
@@ -622,7 +622,7 @@ const ownWordsPage = () => ({
   cls: 'inner own-pg', html: `
   <div class="in">
     <h2 class="ptitle">Add your own words</h2>
-    <p class="lede">Your child’s first words may be different from the ones in this book. Grown-ups, add the words that matter in your home: names, pets, a favorite food.</p>
+    <p class="lede">Your child’s first words may be different from the ones in this book. Grown-ups, add the words that matter in your home: names, pets, a favorite food, words in your home language.</p>
     <div class="frames">${[C.tomato, C.sun, C.sky, C.grass].map(c => `<div class="fr" style="--c:${c}"><span class="fi">Grown-up: add a photo or sketch</span><span class="fl">Word:</span></div>`).join('')}</div>
   </div>`
 });

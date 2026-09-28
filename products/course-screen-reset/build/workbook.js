@@ -222,8 +222,8 @@ function doc(V) {
   const basket = [['Something to build with', 'blocks, cups, boxes, tubes', 'blocks'], ['Something to pretend with', 'a teddy, pots, a hat, a toy phone', 'hat'], ['Something to make with', 'paper, crayons, tape', 'crayon'], ['Something to move with', 'a soft ball, a scarf, cushions', 'ball'], ['Something to look at together', '2–3 books or family photos', 'book'], ['Something that makes a sound', 'a pot and spoon, a shaker bottle glued shut', 'note']];
   page(`${H('Day 4 · planning page', 'Our play basket', C.sky, C.ink)}
     <p class="lead s">Five to eight things you already have, within your child’s reach, near where you usually are. Keep the rest out of sight and swap a few things each week.</p>
-    <div class="basket">${basket.map(([t, e, a], i) => `<div class="bk">${artDisc(a, C.tSky, .78)}<div><b>${t}</b><span class="eg">e.g. ${e}</span>${F('bk-' + i)}</div></div>`).join('')}</div>
-    <div class="swap"><b>Swap list</b> (things to rotate in next week)${F('bk-swap', 'cell', 2)}</div>
+    <div class="basket">${basket.map(([t, e, a], i) => `<div class="bk">${artDisc(a, C.tSky, .78)}<div><b>${t}</b><span class="eg">e.g. ${e}</span>${F('bk-' + i, 'multi', 2)}</div></div>`).join('')}</div>
+    <div class="swap"><b>Swap list</b> (things to rotate in next week)${F('bk-swap', 'multi', 4)}</div>
     <p class="small safeline">${ico('shield')} For children under 3, everything in the basket must be too big to fit through a toilet-paper tube. No cords, strings or balloons.</p>`, { run: 'Planning' });
 
   // Trackers (pre-filled and blank)
@@ -256,6 +256,7 @@ function doc(V) {
         <div class="band"><h4>${ico('bolt')} School-age kids</h4><p>${esc(cap(w.bigk))}</p></div>
         <div class="band"><h4>${ico('people')} Siblings and twins</h4><p>${esc(cap(w.siblings))}</p></div>
       </div>
+      ${w.n === 5 ? `<div class="wk5"><h4>${ico('check')} Your one-page plan will have five parts</h4><ol><li>Your screen spot: when, where, what and how it ends</li><li>Your two or three favorite plays, plus one new one</li><li>Your words for tricky moments</li><li>Your phone parking spot and one phone-free window</li><li>Your tough-day plan</li></ol><p class="small">Then print the certificate, let your child decorate it and put it on the fridge.</p></div>` : ''}
       <div class="wkscripts"><h4>${ico('quote')} Plain words you’ll use this week</h4>
         ${days.map(d => `<div class="wks"><b>${esc(d.script.moment)}</b><span>${esc(d.script.lines[0])}</span></div>`).join('')}</div>
     </div>`, { run: w.n < 5 ? 'Week ' + w.n : 'Days 29–30' });
@@ -299,7 +300,7 @@ function doc(V) {
       <div class="spotsay"><b>Example:</b> “You’re sick today, so it’s a cozy movie day on the couch together. Tomorrow we go back to our usual plan.”</div>`, { run: 'Planning' });
   }
   function planPage() {
-    const rows = [['Our screen spot (when, where, what, how it ends)', 'fp-spot', 2], ['Our favorite plays (and one new one to try)', 'fp-plays', 3], ['Our words for tricky moments', 'fp-words', 3], ['Our phone parking spot and phone-free window', 'fp-phone', 2], ['Our tough-day plan', 'fp-tough', 2]];
+    const rows = [['Our screen spot (when, where, what, how it ends)', 'fp-spot', 3], ['Our favorite plays (and one new one to try)', 'fp-plays', 4], ['Our words for tricky moments', 'fp-words', 4], ['Our phone parking spot and phone-free window', 'fp-phone', 2], ['Our tough-day plan', 'fp-tough', 3]];
     page(`${H('Day 30', 'Our family’s plan', C.plum)}
       <p class="lead s">Short enough for the fridge. Look at it again in a month and change what you need to.</p>
       <div class="fplan">${rows.map(([q, k, l]) => `<div class="fpr"><b>${q}</b>${F(k, 'multi', l)}</div>`).join('')}</div>
@@ -533,7 +534,7 @@ b{font-weight:800}
 .never{display:flex;gap:.1in;align-items:flex-start;background:${C.tGrass};border-radius:12px;padding:.12in .14in;margin-bottom:.12in}
 .never .ico{width:22px;height:22px;color:${C.grass}}
 .spotsay{background:${C.tSun};border-radius:12px;padding:.12in .14in;margin-top:auto}
-.basket{display:grid;grid-template-columns:1fr 1fr;gap:.14in .24in}
+.basket{display:grid;grid-template-columns:1fr 1fr;gap:.24in .24in}
 .bk{display:flex;gap:.12in;align-items:flex-start}
 .bk>div:last-child{flex:1}
 .bk b{display:block}
@@ -541,7 +542,9 @@ b{font-weight:800}
 .swap{margin-top:.2in}
 .safeline{margin-top:auto}
 /* tracker */
-.tracker{display:grid;grid-template-columns:repeat(5,1fr);gap:.08in;flex:1}
+.tracker{display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(6,minmax(0,1fr));gap:.07in;flex:1;min-height:0}
+.tc{overflow:hidden}
+${V.book ? ".tcn{font-size:12pt!important}.tck{font-size:6.6pt!important}.field.tcf{min-height:.24in!important}.tracker+.nog{margin-top:.04in}" : ""}
 .tc{border:1.3px solid #C9D2E1;border-top-width:5px;border-radius:8px;padding:.05in .07in;display:flex;flex-direction:column}
 .tcn{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:15pt;line-height:1}
 .tcp{font-weight:700;font-size:8.5pt;line-height:1.2;flex:1;margin:.03in 0}
@@ -626,6 +629,9 @@ b{font-weight:800}
 .tubei{flex:none;color:${C.ink}}
 .tube h3{margin-top:0}
 .tube p{margin:0}
+.wk5{border:2px solid ${C.plum};border-radius:12px;padding:.14in .18in;margin-bottom:.14in;font-size:10.5pt}
+.wk5 ol{padding-left:.22in;margin:.06in 0}
+.wk5 li{margin-bottom:.04in}
 /* check-ins */
 .ci{display:grid;grid-template-columns:1fr 1fr;gap:.24in .24in;align-content:start;margin-bottom:.2in}
 .ciq{border-top:4px solid;padding-top:.08in}

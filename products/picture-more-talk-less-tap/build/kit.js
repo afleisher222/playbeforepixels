@@ -112,7 +112,7 @@ page('before', 'Before you start', () => `
     <li><b>Laminate</b> the blocks and prompt cards if you will play all year, then round the corners.</li>
     <li><b>Save ink:</b> print the script, trackers and family pages in grayscale. Only the blocks and cards need color.</li>
     <li><b>Print shop:</b> ask for “single-sided, full color, cardstock, no scaling”. Cut on the dashed lines.</li>
-    <li><b>Store</b> each card set in its own envelope or zip bag, labelled with its color.</li>
+    <li><b>Store</b> each card set in its own envelope or zip bag, labeled with its color.</li>
   </ul></section>
   <section class="tip"><h3 class="h3" style="color:${C.grass}">Ages and groups</h3><ul>
     <li><b>Ages 3–4:</b> start with two blocks only, ASK and LISTEN. Rounds of 3–5 minutes. You read the cards aloud.</li>
@@ -168,7 +168,7 @@ page('before', 'Before you start', () => `
     ['The tower is small today', '“Every block counts. We will build more tomorrow.”'],
   ];
   page('script', 'Teacher script', () => `
-<div class="scripthead"><h2 class="h">Teacher script: your first round</h2><p class="meta">About 10 minutes · whole group · <b>say</b> the words in bold quotes; <span class="do">do</span> the grey notes</p></div>
+<div class="scripthead"><h2 class="h">Teacher script: your first round</h2><p class="meta">About 10 minutes · whole group · <b>say</b> the words in bold quotes; <span class="do">do</span> the gray notes</p></div>
 <div class="script">${steps.map(([n, t, m, d, s]) => `<div class="srow"><div class="snum">${n}</div><div class="stxt"><h4>${t} <small>${m}</small></h4><p class="do">${d}</p><p class="say">${s}</p></div></div>`).join('')}</div>
 <div class="ifbox"><h4>If this happens…</h4><div class="ifs">${ifs.map(([a, b]) => `<div><b>${a}</b><p>${b}</p></div>`).join('')}</div></div>
 <p class="tinynote">Next time, try a variation from pages ${pageNo('var1')}–${pageNo('var2')}. The bonus story <i>More Talk, Less Tap</i> is a fun way to start on day one.</p>`);

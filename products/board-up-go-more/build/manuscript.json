@@ -37,10 +37,10 @@
     { "w": "eat", "fs": 150, "acc": "tomato", "cue": ["sign", "Fingertips to your lips"], "tip": ["Talk about now.", "Name what is happening at the table as it happens: “Eat. You eat. Yum!”"], "founder_rewritten": false },
     { "w": "cup", "fs": 150, "acc": "sky", "cue": ["say", "Sip, sip… ahh!"], "tip": ["Keep it short.", "Two or three words at a time: “Cup. Your cup. Sip!” Short phrases are easy to copy."], "founder_rewritten": false },
     { "w": "more", "fs": 136, "acc": "grass", "cue": ["sign", "Tap your fingertips together"], "tip": ["Pause the fun.", "Stop the bubbles, ask “more?” and wait. A sign, a look or a sound means go again."], "founder_rewritten": false },
-    { "w": "all done", "fs": 106, "acc": "sun", "cue": ["sign", "Shake open hands side to side"], "tip": ["Offer a choice.", "“More, or all done?” Hold up a hand for each. A point is a real answer."], "founder_rewritten": false },
+    { "w": "all done", "fs": 106, "acc": "sun", "cue": ["sign", "Open hands up, twist back and forth"], "tip": ["Offer a choice.", "“More, or all done?” Hold up a hand for each. A point is a real answer."], "founder_rewritten": false },
     { "w": "bye-bye", "fs": 112, "acc": "plum", "cue": ["act", "Blow a kiss: mwah!"], "tip": ["Make it a routine.", "Same wave, same words, every time. Words that repeat are the easiest to pick up."], "founder_rewritten": false },
     { "w": "book", "fs": 136, "acc": "sun", "cue": ["sign", "Press palms together, then open"], "tip": ["Let them turn.", "Let your child turn the pages and choose where to stop. Name whatever they point at."], "founder_rewritten": false },
-    { "w": "hug", "fs": 150, "acc": "tomato", "cue": ["act", "Hug yourself tight"], "tip": ["Sing it.", "Put “hug” in any tune you know (“hug, hug, hug!”) and squeeze on the last one."], "founder_rewritten": false },
+    { "w": "hug", "fs": 150, "acc": "tomato", "cue": ["act", "Hug yourself tight"], "tip": ["Sing it.", "Put “hug” in any tune you know and squeeze on the last one. Not a hugger? A high five works too."], "founder_rewritten": false },
     { "w": "night-night", "fs": 84, "acc": "sky", "dark": true, "cue": ["say", "Whisper: shhh… zzz"], "tip": ["Wind down.", "Say “night-night” to everything: the duck, the moon, even the tablet. A calm goodnight game."], "founder_rewritten": false }
   ],
   "routines": [

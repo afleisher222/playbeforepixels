@@ -126,7 +126,7 @@ function header(active) {
   </nav>
 </div></div>
 <header class="site-header" id="top">
-  <div class="wrap masthead">
+  <div class="mast-row"><div class="wrap masthead">
     <a class="brand" href="index.html"><img src="assets/lockup-horizontal.svg" alt="Play Before Pixels, home" width="141" height="38"></a>
     <nav class="primary-nav" aria-label="Main">
       <ul>
@@ -139,7 +139,7 @@ function header(active) {
       <button class="tool-btn" type="button" data-open-cart aria-haspopup="dialog" aria-controls="cart">${I.bag}<span class="cart-label">Cart</span><span class="cart-count" data-cart-count aria-hidden="true">0</span><span class="visually-hidden" data-cart-sr>, 0 items</span></button>
       <button class="tool-btn menu-btn" type="button" data-open-menu aria-haspopup="dialog" aria-controls="mnav" aria-expanded="false">${I.menu}<span>Menu</span></button>
     </div>
-  </div>
+  </div></div>
   <div class="nav-scrim" data-nav-scrim></div>
 </header>`;
 }

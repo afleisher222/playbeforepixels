@@ -184,7 +184,7 @@ const ok = (c, m) => { if (c) { passes++; } else { fails++; console.log('  FAIL'
   const mp = await m.newPage(); mp.on('pageerror', e => errors.push('mobile: ' + e.message));
   for (const f of PAGES) {
     await mp.goto(url(f));
-    ok(await mp.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${f}: no horizontal scroll (390)`);
+    ok(await mp.evaluate(() => innerWidth === 390 && document.documentElement.scrollWidth <= 390), `${f}: no horizontal scroll / viewport widening (390)`);
   }
   await mp.goto(url('index.html'));
   await mp.tap('[data-open-menu]'); await mp.waitForTimeout(350);
@@ -221,6 +221,8 @@ const ok = (c, m) => { if (c) { passes++; } else { fails++; console.log('  FAIL'
   ok(await mp.locator('#mnav').evaluate(e => !e.classList.contains('is-open')) && mp.url().endsWith('#age=5-8'), 'same-page menu link closes menu and filters');
   ok(await mp.evaluate(() => !document.body.classList.contains('is-locked')), 'scroll unlocked after menu');
 
+  await mp.goto(url('product.html')); await mp.tap('[data-product-add]'); await mp.waitForTimeout(450);
+  ok(await mp.evaluate(() => { const r = document.getElementById('cart').getBoundingClientRect(); const f = document.querySelector('[data-cart-foot]').getBoundingClientRect(); return r.left >= 0 && r.right <= 390 && f.bottom <= innerHeight + 1; }), 'mobile cart drawer fits screen incl. checkout');
   ok(errors.length === 0, 'no console errors: ' + errors.join(' | '));
   console.log(`\n${passes} passed, ${fails} failed`);
   await b.close(); process.exit(fails ? 1 : 0);

@@ -53,6 +53,8 @@ h1,h2,h3,p{margin:0}
 .cw-plum{--m:var(--plum);--t:var(--tP);--m2:var(--tomato);--t2:var(--tT)}
 .art .disc{fill:var(--t,var(--wash))}
 .art{display:block}
+.art.ghost{opacity:.22}
+.low .art.ghost{opacity:.35}
 /* footer */
 .ft{position:absolute;left:.5in;right:.5in;bottom:.19in;height:.2in;display:flex;align-items:center;justify-content:space-between;gap:.15in;font-size:6.2pt;color:var(--mute);white-space:nowrap}
 .ft .fb{display:flex;align-items:center;gap:.08in;font-weight:800;color:var(--ink)}
@@ -62,7 +64,7 @@ h1,h2,h3,p{margin:0}
 .h1{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:27pt;line-height:1;letter-spacing:-.015em}
 .h2{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:14pt;line-height:1.1;letter-spacing:-.005em}
 .lede{font-size:10.5pt;line-height:1.4;color:var(--ink)}
-.body{font-size:9.6pt;line-height:1.45}
+.body{font-size:10pt;line-height:1.45}
 .small{font-size:8pt;line-height:1.4;color:var(--mute)}
 .hand{font-family:"Caveat",cursive;font-weight:700}
 .kid{font-family:"Fredoka","Nunito Sans",sans-serif;font-weight:600}
@@ -126,7 +128,7 @@ h1,h2,h3,p{margin:0}
 .tk .nm{font-family:"Fredoka",sans-serif;font-weight:600;font-size:13.5pt;text-align:center;line-height:1.05}
 .tk .tag{font-size:5.8pt;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:.03in}
 .tk .fl{width:100%;flex:0 0 .32in;border-bottom:1.3px dashed var(--cut)}
-.sc{display:grid;grid-template-columns:repeat(2,3.5in);grid-auto-rows:2.95in;border-top:1.6px dashed var(--cut);border-left:1.6px dashed var(--cut);align-self:center}
+.sc{display:grid;grid-template-columns:repeat(2,3.5in);grid-auto-rows:2.6in;border-top:1.6px dashed var(--cut);border-left:1.6px dashed var(--cut);align-self:center}
 .sc>div{border-right:1.6px dashed var(--cut);border-bottom:1.6px dashed var(--cut);padding:.14in}
 .sc .in{height:100%;border-radius:.2in;background:var(--tt);display:flex;flex-direction:column;align-items:center;padding:.08in .16in .14in;text-align:center}
 .sc .in .art{width:100%;flex:1;min-height:0}
@@ -136,14 +138,23 @@ h1,h2,h3,p{margin:0}
 .sc .fl{width:100%;flex:0 0 .32in;margin-top:.02in}
 /* ---------- board ---------- */
 .board{flex:1;display:flex;flex-direction:column;gap:.1in}
-.bstep{flex:1;display:grid;grid-template-columns:.62in 1fr 2.5in;align-items:center;gap:.18in;border-radius:.2in;padding:.14in .2in;background:var(--bt)}
+.bstep{flex:1;display:grid;grid-template-columns:.62in 1fr 2.35in;align-items:center;gap:.18in;border-radius:.2in;padding:.1in .16in;background:var(--bt)}
 .bstep .num{width:.62in;height:.62in;border-radius:50%;background:var(--bn);color:#fff;font-family:"Fredoka",sans-serif;font-weight:600;font-size:24pt;display:flex;align-items:center;justify-content:center}
 .bstep .w{font-family:"Fredoka",sans-serif;font-weight:600;font-size:26pt;line-height:1}
-.bstep .x{font-size:9pt;line-height:1.35;margin-top:.06in}
-.slot{width:2.5in;height:2.5in;border-radius:.2in;background:#fff;border:2px dashed var(--bn);display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;font-size:8pt;font-weight:700;color:var(--mute);padding:.15in}
-.slot .art{width:100%;flex:1}
-.slot .fl{width:100%;flex:0 0 .3in}
-.arrow{height:.18in;display:flex;justify-content:center}
+.bstep .x{font-size:10pt;line-height:1.35;margin-top:.06in}
+.slot{width:2.35in;height:2.35in;border-radius:.2in;background:#fff;border:2px dashed var(--bn);display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;font-size:8pt;font-weight:700;color:var(--mute);padding:.15in}
+.slot .art{width:100%;flex:1;min-height:0}
+.slot>.fl{width:100%;flex:0 0 .3in}
+.arrow{height:.14in;display:flex;justify-content:center}
+.rhythm{display:grid;grid-template-columns:1fr .3in 1fr .3in 1fr;align-items:center}
+.rhythm>.rs{border-radius:.16in;padding:.08in .1in .12in;text-align:center;display:flex;flex-direction:column;align-items:center}
+.rhythm .art{width:1.3in;height:1.08in}
+.rhythm .art .disc{fill:#fff}
+.rhythm .kid{font-size:12.5pt;line-height:1.1}
+.rhythm .ar{display:flex;justify-content:center}
+.sizecheck{display:grid;grid-template-columns:2.1in 1fr;gap:.25in;align-items:center}
+.sizecheck .sq{width:2.1in;height:2.1in;border:2px dashed var(--ink);border-radius:.06in;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.1in;position:relative}
+.sizecheck .cir{width:1.25in;height:1.25in;border-radius:50%;border:2px solid var(--tomato);display:flex;align-items:center;justify-content:center;text-align:center;font-size:7pt;font-weight:800;line-height:1.2;padding:.1in}
 /* ---------- helping jobs ---------- */
 .hj{flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr);gap:.12in;min-height:0}
 .hj>div{border-radius:.16in;background:var(--tt);display:flex;flex-direction:column;align-items:center;padding:.06in .1in .1in;min-height:0}
@@ -210,7 +221,7 @@ h1,h2,h3,p{margin:0}
 .talk>div{border-radius:.14in;padding:.14in;background:var(--tt);display:flex;flex-direction:column;gap:.05in}
 .ball{display:inline-block;width:.1in;height:.1in;border-radius:50%;background:var(--tomato);margin-right:.07in;vertical-align:.01in;flex:0 0 auto}
 ul.b{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.06in}
-ul.b li{display:flex;gap:0;align-items:baseline;font-size:9.4pt;line-height:1.4}
+ul.b li{display:flex;gap:0;align-items:baseline;font-size:9.8pt;line-height:1.42}
 ul.b li .ball{transform:translateY(-.01in)}
 .placeholder{border:2px dashed var(--plum);border-radius:.14in;padding:.14in .18in;background:#fff}
 .placeholder b{color:var(--plum);font-size:7.4pt;letter-spacing:.1em;text-transform:uppercase}
@@ -282,19 +293,19 @@ function checklist(ctx, kind, cw, start) {
 
 // ---------------------------------------------------------------- tokens + cards + board
 const TINTS = ['var(--tT)', 'var(--tK)', 'var(--tG)', 'var(--tS)', 'var(--tP)'];
-function cutNote(sheet, goesWith) {
-  return `<div class="cutnote"><span class="safe">Grown-up keeps the pieces. Every piece is big-piece size (2.2 in / 5.6 cm or larger), so print at 100% and never shrink. Ages 3+ may add velcro dots; check dots before each play and remove any that lift.</span><span style="text-align:right;white-space:nowrap">${sheet}<br><span class="small">${goesWith}</span></span></div>`;
+function cutNote(lead) {
+  return `<div class="cutnote"><span class="safe">${lead ? lead + ' ' : ''}<b>Grown-up keeps the pieces.</b> Every piece is big-piece size, ${TOK} or larger, bigger than the toilet-paper-tube test for under-3s. Print at 100%; never shrink. Ages 3+ may add velcro dots; check dots before each play and remove any that lift.</span></div>`;
 }
 function tokens(ctx, blank, pgBoard) {
   const items = blank ? Array.from({ length: 12 }, () => null) : T.TOKENS;
   const cells = items.map((t, i) => `<div class="tk" data-cut><div class="in" style="--tt:${TINTS[i % 5]}">${t ? art(t[0]) + `<div class="nm">${t[1]}</div><div class="tag">Together token</div>` : drawSpot() + `<span class="fl" ${fld('token', { size: 12, align: 1 })}></span><div class="tag">Together token</div>`}</div></div>`).join('');
-  return hd({ eyebrow: `Section E · Whole family${blank ? ' · fillable' : ''}`, title: blank ? 'Make-your-own together tokens' : 'Together tokens', lede: blank ? 'Type or write your family’s own ideas, then draw a picture.' : 'Tokens earn play and time together, never screen minutes. When jobs are done, your child picks one.', age: 'all', prepT: 'Prep 10 min · cut' })
-    + cutNote(blank ? 'Cut sheet B' : 'Cut sheet A', `Goes with the Play-First Board, page ${pgBoard}`) + `<div class="tg">${cells}</div>`;
+  return hd({ eyebrow: `Section E · Whole family · Cut sheet ${blank ? 'B' : 'A'} · goes with the board, page ${pgBoard}${blank ? ' · fillable' : ''}`, title: blank ? 'Make-your-own together tokens' : 'Together tokens', age: 'all', prepT: 'Prep 10 min · cut' })
+    + cutNote(blank ? '<b>Type or write your own ideas for time together, then draw a picture.</b>' : '<b>Tokens earn play and time together, never screen minutes. Jobs done? Your child picks one.</b>') + `<div class="tg">${cells}</div>`;
 }
 function spotCards(ctx) {
   const cells = T.SPOT_CARDS.map((c, i) => `<div data-cut><div class="in" style="--tt:${['var(--tT)', 'var(--tG)', 'var(--tK)', 'var(--tS)', 'var(--tP)', 'var(--tG)'][i]}">${art(c.art)}<div class="nm">${c.t}</div><div class="s">${c.s}</div>${c.field ? `<span class="fl" ${fld(c.field, { size: 12, align: 1 })}></span>` : ''}</div></div>`).join('');
-  return hd({ eyebrow: 'Section E · Whole family', title: 'Screen-spot cards', lede: 'Show what comes next, so screen time starts and ends gently. Give the 5-minute card, then “Screens go to sleep”, then “What we do next”.', age: 'all', prepT: 'Prep 5 min · cut' })
-    + cutNote('Cut sheet C', 'Six cards, 3.5 × 2.95 in each') + `<div class="sc">${cells}</div>`;
+  return hd({ eyebrow: 'Section E · Whole family · Cut sheet C · six cards, 3.5 × 2.6 in', title: 'Screen-spot cards', lede: 'Show what comes next, so screen time starts and ends gently: 5 more minutes, then screens go to sleep, then what we do next.', age: 'all', prepT: 'Prep 5 min · cut' })
+    + cutNote() + `<div class="sc">${cells}</div>`;
 }
 function board(ctx, pgTokens) {
   const arrow = `<div class="arrow"><svg viewBox="0 0 40 18" width=".45in" height=".18in"><path d="M8 2L20 14 32 2" stroke="var(--ink)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`;
@@ -303,9 +314,9 @@ function board(ctx, pgTokens) {
     + `<div class="board">
     ${step(1, 'First: jobs', 'Draw or write today’s job, or point to it on your checklist.', `<div class="slot" style="--bn:var(--tomato)">${drawSpot()}<span class="fl" ${fld('board_job', { size: 12, align: 1 })}></span></div>`, 'var(--tT)', 'var(--tomato)')}
     ${arrow}
-    ${step(2, 'Then: together time', `Lay a together token here (page ${pgTokens}). Under 3? Lay it on top, no velcro dots.`, `<div class="slot" style="--bn:var(--grass)">Put a together token here<br><span style="font-weight:600">2.2 in / 5.6 cm</span></div>`, 'var(--tG)', 'var(--grass)')}
+    ${step(2, 'Then: together time', `Lay a together token here (page ${pgTokens}). Under 3? Just lay it on top, with no velcro dots.`, `<div class="slot" style="--bn:var(--grass)">${art('boardGame', 'ghost', false)}Put a together token here</div>`, 'var(--tG)', 'var(--grass)')}
     ${arrow}
-    ${step(3, 'Later: screens', 'Screens come last, at the same spot every day.', `<div class="slot" style="--bn:var(--sky);border-style:solid">${art('screensLater')}<div style="display:flex;width:100%;align-items:flex-end;gap:.05in;color:var(--ink)">after <span class="fl" ${fld('board_after', { size: 11 })}></span></div></div>`, 'var(--tK)', 'var(--sky)')}
+    ${step(3, 'Later: screens', 'Screens come last, at the same spot every day.', `<div class="slot" style="--bn:var(--sky);border-style:solid">${art('screenSpot')}<div style="display:flex;width:100%;align-items:flex-end;gap:.05in;color:var(--ink);font-size:10pt">after <span class="fl" ${fld('board_after', { size: 11 })}></span></div></div>`, 'var(--tK)', 'var(--sky)')}
   </div>`;
 }
 
@@ -341,10 +352,10 @@ function poster(ctx, blank) {
 
 // ---------------------------------------------------------------- family plan (3 pages)
 function plan1() {
-  const col = (t, i) => `<div class="card" style="--cbg:${['var(--tS)', 'var(--tG)', 'var(--tP)'][i]}"><div class="h2">${t}</div><div class="q">First, our jobs:</div><div class="lines" style="height:.6in" ${fld('rh_jobs', { size: 10, multi: 1 })}></div><div class="q">Then, we play:</div><div class="lines" style="height:.6in" ${fld('rh_play', { size: 10, multi: 1 })}></div></div>`;
+  const col = (t, i) => `<div class="card" style="--cbg:${['var(--tS)', 'var(--tG)', 'var(--tP)'][i]}"><div class="h2">${t}</div><div class="q">First, our jobs:</div><div class="lines" style="height:.9in" ${fld('rh_jobs', { size: 10, multi: 1 })}></div><div class="q">Then, we play:</div><div class="lines" style="height:.9in" ${fld('rh_play', { size: 10, multi: 1 })}></div></div>`;
   return hd({ eyebrow: 'Section E · Whole family · page 1 of 3 · fillable', title: 'Our Family Play &amp; Screen Plan', lede: 'Fill this in together, on a calm day. There are no right answers, just what fits your family right now.', age: 'all', prepT: 'Prep 0 min' })
     + `<div class="card"><div class="qrow">This is the plan for the <span class="fl" ${fld('family', { size: 13 })}></span> family.</div><div class="qrow">Made on <span class="fl" ${fld('made_on', { size: 12 })}></span> by <span class="fl" style="flex:2" ${fld('made_by', { size: 12 })}></span></div></div>
-  <div class="card" style="--cbg:var(--tT)"><div class="h2">Our favorite ways to play together</div><div class="lines" style="height:1.2in" ${fld('fav', { size: 11, multi: 1 })}></div></div>
+  <div class="card" style="--cbg:var(--tT);flex:1"><div class="h2">Our favorite ways to play together</div><div class="lines" style="flex:1;min-height:1.2in" ${fld('fav', { size: 11, multi: 1 })}></div></div>
   <div><div class="h2" style="margin-bottom:.08in">Our play-first rhythm</div><div class="three">${['Morning', 'After school or nap', 'Evening'].map(col).join('')}</div></div>
   <div class="card" style="--cbg:var(--tK)"><div class="h2">Our screen spot</div><div class="qrow">Screens have a spot in our day: after <span class="fl" ${fld('spot_after', { size: 12 })}></span> for about <span class="fl" style="flex:.45" ${fld('spot_len', { size: 12 })}></span></div><p class="small" style="color:var(--ink)">It stays the same each day. It doesn’t grow or shrink with jobs or behavior, so it never becomes the prize.</p></div>`;
 }
@@ -353,7 +364,7 @@ function plan2() {
   return hd({ eyebrow: 'Section E · Whole family · page 2 of 3 · fillable', title: 'Where and when screens rest', lede: 'Pick a few screen-free times and places. Fewer rules, kept kindly, work better than many.', age: 'all' })
     + `<div class="card"><div class="h2">Screens rest…</div><div class="cbl">${cbs.map(c => `<label><span class="cb" ${fld('rest', { check: 1 })}></span>${c}</label>`).join('')}<label><span class="cb" ${fld('rest', { check: 1 })}></span>Other: <span class="fl" ${fld('rest_other', { size: 10 })}></span></label></div></div>
   <div class="card" style="--cbg:var(--tP)"><div class="qrow">At night, our screens sleep in <span class="fl" ${fld('sleep_where', { size: 12 })}></span></div><p class="small" style="color:var(--ink)">A charging spot outside bedrooms makes bedtime easier for everyone, grown-ups included.</p></div>
-  <div class="card" style="--cbg:var(--tG)"><div class="h2">Watching and playing together</div><p class="body">When you can, choose together, watch together, and talk about it after: “Who was your favorite? What would you do?”</p><div class="q">Shows, games or videos we enjoy together:</div><div class="lines" style="height:.9in" ${fld('together_media', { size: 11, multi: 1 })}></div></div>
+  <div class="card" style="--cbg:var(--tG);flex:1"><div class="h2">Watching and playing together</div><p class="body">When you can, choose together, watch together, and talk about it after: “Who was your favorite? What would you do?”</p><div class="q">Shows, games or videos we enjoy together:</div><div class="lines" style="flex:1;min-height:.9in" ${fld('together_media', { size: 11, multi: 1 })}></div></div>
   <div class="card" style="--cbg:var(--tS)"><div class="h2">What the guidelines say</div>
     <ul class="b"><li><span class="ball"></span><span><b>Ages 1–4:</b> at least 180 minutes a day of active play, in any mix. No screen time under age 1; no more than 1 hour a day at ages 2–4 (WHO, 2019).</span></li>
     <li><span class="ball"></span><span><b>Ages 2–5:</b> about 1 hour a day of high-quality programs, watched together when you can (AAP, 2016).</span></li>
@@ -362,9 +373,9 @@ function plan2() {
 }
 function plan3() {
   return hd({ eyebrow: 'Section E · Whole family · page 3 of 3 · fillable', title: 'When plans change, and our promises', lede: 'Sick days, travel and long waits happen. Some days need more screens, and that’s okay. Tomorrow, we go back to our rhythm.', age: 'all' })
-    + `<div class="card" style="--cbg:var(--tK)"><div class="q">On busy, sick or travel days, our plan is:</div><div class="lines" style="height:.9in" ${fld('busy', { size: 11, multi: 1 })}></div></div>
-  <div class="steps"><div class="card" style="--cbg:var(--tT)"><div class="h2">Grown-up promises</div><p class="small" style="color:var(--ink)">For example: “I’ll give a 5-minute heads-up.” “I’ll put my screen away at meals too.”</p><div class="lines" style="height:1.2in" ${fld('promise_g', { size: 11, multi: 1 })}></div></div>
-  <div class="card" style="--cbg:var(--tG)"><div class="h2">Kid promises</div><p class="small" style="color:var(--ink)">For example: “When the card says ‘Screens go to sleep’, I’ll find a stopping place.”</p><div class="lines" style="height:1.2in" ${fld('promise_k', { size: 11, multi: 1 })}></div></div></div>
+    + `<div class="card" style="--cbg:var(--tK);flex:1"><div class="q">On busy, sick or travel days, our plan is:</div><div class="lines" style="flex:1;min-height:.9in" ${fld('busy', { size: 11, multi: 1 })}></div></div>
+  <div class="steps" style="flex:1.3"><div class="card" style="--cbg:var(--tT)"><div class="h2">Grown-up promises</div><p class="small" style="color:var(--ink)">For example: “I’ll give a 5-minute heads-up.” “I’ll put my screen away at meals too.”</p><div class="lines" style="flex:1;min-height:1.2in" ${fld('promise_g', { size: 11, multi: 1 })}></div></div>
+  <div class="card" style="--cbg:var(--tG)"><div class="h2">Kid promises</div><p class="small" style="color:var(--ink)">For example: “When the card says ‘Screens go to sleep’, I’ll find a stopping place.”</p><div class="lines" style="flex:1;min-height:1.2in" ${fld('promise_k', { size: 11, multi: 1 })}></div></div></div>
   <div class="card" style="--cbg:var(--tS)"><div class="qrow">We’ll look at this plan again on <span class="fl" ${fld('review_on', { size: 12 })}></span></div><p class="small" style="color:var(--ink)">Children grow fast. A plan that fit at 4 will need a new look at 6, and again at 9.</p></div>
   <div><div class="h2" style="margin-bottom:.08in">Everyone signs (or draws themselves)</div><div class="sig">${Array.from({ length: 6 }, () => `<div ${fld('sign', { size: 14 })}><span>Sign or draw here</span></div>`).join('')}</div></div>`;
 }
@@ -378,7 +389,7 @@ function tracker(ctx, blank) {
     + `<div class="tipbar"><div class="t1"><b class="k">Talk tip · Follow their lead</b>Let your child pick the order. Their plan, their pride.</div><div class="t2"><b class="k">Safety</b>A grown-up stays close for every play. Bubbles, water and cooking: within arm’s reach.</div></div>`;
 }
 function certificate(ctx) {
-  const scene = `<svg class="art" viewBox="0 0 420 170" style="width:4.6in;height:1.9in">${B.adult({ ...B.ADULTS.G1, x: 110, y: 160 - 81 * .95, s: .95, aL: 150, aR: -150, face: 'laugh' })}${stand('A', 200, 160, 1.15, { face: 'laugh', aL: 150, aR: -150 })}${stand('E', 280, 160, .95, { face: 'joy', aL: 140, aR: -140 })}${B.adult({ ...B.ADULTS.G3, x: 350, y: 160 - 81 * .95, s: .95, aL: 20, aR: -150, face: 'smile' })}${star(40, 40, 1.2, C.sun)}${star(390, 30, 1, C.sky)}${heart(245, 24, .35)}</svg>`;
+  const scene = `<svg class="art" viewBox="0 -110 420 280" style="width:4.6in;height:3.07in">${B.adult({ ...B.ADULTS.G1, x: 110, y: 160 - 81 * .95, s: .95, aL: 150, aR: -150, face: 'laugh' })}${stand('A', 200, 160, 1.15, { face: 'laugh', aL: 150, aR: -150 })}${stand('E', 280, 160, .95, { face: 'joy', aL: 140, aR: -140 })}${B.adult({ ...B.ADULTS.G3, x: 350, y: 160 - 81 * .95, s: .95, aL: 20, aR: -150, face: 'smile' })}${star(40, 40, 1.2, C.sun)}${star(390, 30, 1, C.sky)}${heart(245, 24, .35)}</svg>`;
   return `<div class="cert"><div style="display:flex;flex-direction:column;align-items:center;gap:.1in">${ctx.low ? LOGO.lockK.replace('<svg', '<svg style="height:.5in;width:auto"') : LOGO.lock.replace('<svg', '<svg style="height:.5in;width:auto"')}<span class="eyebrow">Certificate</span></div>
   <div style="display:flex;flex-direction:column;align-items:center;gap:.14in;width:100%"><h1 class="h1">Play-First Family</h1><p class="lede" style="font-size:13pt">This is to celebrate</p><span class="nmf" ${fld('cert_name', { size: 22, align: 1 })}></span><p class="lede" style="font-size:13pt">for <b>30 days of playing first</b>, together.</p></div>
   ${scene}
@@ -393,7 +404,7 @@ function cover(ctx) {
     <rect x="0" y="0" width="620" height="330" rx="26" fill="${ctx.low ? '#fff' : C.tSun}"/>
     <rect x="30" y="${floor}" width="560" height="10" rx="5" fill="${C.grass}"/>
     <g>${R(468, 150, 120, 12, 6, '#C08457')}${R(476, 162, 8, 40, 4, '#C08457')}${R(572, 162, 8, 40, 4, '#C08457')}${tablet(528, 112, .62)}${B.use('moon', 'translate(588,60) scale(.34)')}</g>
-    ${B.adult({ ...B.ADULTS.G5, x: 150, y: floor - 51 * 1.35, s: 1.35, legs: 'kneel', aL: 40, aR: -70, face: 'laugh' })}
+    ${B.adult({ ...B.ADULTS.G5, x: 150, y: floor - 14 * 1.35, s: 1.35, legs: 'cross', aL: 30, aR: -75, face: 'laugh' })}
     ${stand('A', 285, floor, 1.55, { face: 'laugh', aL: 150, aR: -160 })}
     ${stand('D', 390, floor, 1.25, { face: 'joy', flip: true, aL: 60, aR: -20 })}
     ${U('block-1', `translate(230,${floor - 22}) scale(.62)`)}${U('block-3', `translate(262,${floor - 22}) scale(.62)`)}${U('block-2', `translate(246,${floor - 54}) scale(.62)`)}
@@ -421,14 +432,15 @@ function inside(ctx, P) {
     ['dance', 'Play-First Family certificate', 'A finished-it page to celebrate', P.cert],
   ];
   return hd({ eyebrow: 'What’s inside', title: '10 tools, one calm rhythm', lede: 'Organized by age, so you only print what fits your family. Start with the grown-up guide on the next page.', age: 'grown', prepT: 'About 20 min to prep, then reusable' })
-    + `<div class="toc">${tiles.map(([a, t, s, p]) => `<div>${art(a)}<div><div class="nm">${t}</div><div class="small" style="color:var(--ink)">${s}</div><div class="pg">Page ${p}</div></div></div>`).join('')}</div>
+    + `<div class="toc" style="flex:1;grid-auto-rows:1fr">${tiles.map(([a, t, s, p]) => `<div>${art(a)}<div><div class="nm">${t}</div><div class="small" style="color:var(--ink)">${s}</div><div class="pg">Page ${p}</div></div></div>`).join('')}</div>
   <div class="steps" style="grid-template-columns:repeat(4,1fr)">${[['Section A', 'Grown-up guide, printing and safety', 'pages 3–5'], ['Sections B–C', 'Checklists and ages 2–5 tools', `pages ${P.cl25}–${P.helpEnd}`], ['Section D', 'Ages 5–12 jobs chart', `pages ${P.chores}–${P.choresEnd}`], ['Section E', 'Whole-family tools', `pages ${P.tokens}–${P.cert}`]].map(([a, b, c]) => `<div class="step" style="grid-template-columns:1fr"><div><div class="eyebrow">${a}</div><div style="font-weight:800;font-size:9pt;line-height:1.25;margin:.03in 0">${b}</div><div class="small">${c}</div></div></div>`).join('')}</div>
   <div class="card" style="--cbg:var(--tS)"><div class="body"><b>Fillable pages:</b> pages marked “fillable” have type-in boxes that work in free Adobe Acrobat Reader on a computer or phone. You can type names, dates, jobs, rules, token ideas and plan answers. Colors and pictures can’t be changed. Every fillable page also prints blank for writing by hand.</div></div>
   <p class="small">License: personal and family use in your own home. Please don’t share or resell the files. Thank you for supporting a small, independent studio.</p>`;
 }
 function guide1(ctx) {
   return hd({ eyebrow: 'Section A · Grown-up guide · 1 of 2', title: 'Start here, grown-ups', lede: 'This kit gives your day a simple shape: <b>jobs first, then play and time together, then screens at their usual spot.</b> Nothing to take away, only more play to add.', age: 'grown', prepT: 'Setup 2 min' })
-    + `<div><div class="h2" style="margin-bottom:.08in">Set up in 2 minutes</div><div class="steps">${[
+    + `<div class="rhythm">${[['tidyToys', '1 · Jobs first', 'var(--tT)'], ['familyGame', '2 · Then play and time together', 'var(--tG)'], ['screenSpot', '3 · Then screens, at their spot', 'var(--tK)']].map(([a, t, c], i) => `${i ? '<div class="ar"><svg viewBox="0 0 20 30" width=".2in" height=".3in"><path d="M4 3L16 15 4 27" stroke="var(--ink)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>' : ''}<div class="rs" style="background:${c}">${art(a)}<div class="kid">${t}</div></div>`).join('')}</div>
+  <div><div class="h2" style="margin-bottom:.08in">Set up in 2 minutes</div><div class="steps">${[
       ['Pick one checklist per child.', 'Pictures for ages 2–5, words for ages 5–12, or the fillable blank. Choose a colorway they like.'],
       ['Write in your screen spot.', 'For example, “after dinner”. Keep it the same every day, and the same length.'],
       ['Cut the together tokens.', 'Keep them in an envelope. A grown-up keeps the pieces.'],
@@ -454,11 +466,12 @@ function guide2(ctx) {
     <li><span class="ball"></span><span>The spot <b>never grows or shrinks</b> with jobs or behavior. That keeps screens from becoming the prize, so jobs and play can simply be part of the day.</span></li>
     <li><span class="ball"></span><span><b>Tokens earn play and time together</b> (a story, a game, a walk), never screen minutes.</span></li>
     <li><span class="ball"></span><span>End gently with the screen-spot cards: <b>5 more minutes</b>, then <b>Screens go to sleep</b>, then <b>What we do next</b>.</span></li></ul></div>
+  <div class="rhythm">${[['alarm', '5 more minutes', 'var(--tS)'], ['devicesSleep', 'Screens go to sleep', 'var(--tP)'], ['kickBall', 'What we do next', 'var(--tG)']].map(([a, t, c], i) => `${i ? '<div class="ar"><svg viewBox="0 0 20 30" width=".2in" height=".3in"><path d="M4 3L16 15 4 27" stroke="var(--ink)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>' : ''}<div class="rs" style="background:${c}">${art(a)}<div class="kid">${t}</div></div>`).join('')}</div>
   <div class="card"><div class="h2">If interest fades</div><p class="body">Move the chart somewhere new, swap in a fresh token, or take a week off; the kit will still be here. Tired day? Skip the chart and just say the rhythm out loud: “Jobs, play, then screens.” That counts.</p></div>
   <div class="placeholder"><b>Founder’s note · placeholder</b><p class="body" style="color:var(--mute)">To be written by the founder in her own words (60–90 words) before release: why this kit exists and one real, everyday tip. This box is replaced, not printed as-is.</p></div>`;
 }
 function tips(ctx) {
-  return hd({ eyebrow: 'Section A · Printing, laminating, velcro and safety', title: 'Print it, make it last', lede: 'About 20 minutes to print and cut, then reusable for months. The checklists need no cutting, so you can start today.', age: 'grown', prepT: 'Prep 20 min total' })
+  return hd({ eyebrow: 'Section A · Printing, laminating, velcro and safety', title: 'Print it, make it last', lede: 'About 20 minutes to print and cut, then reusable. The checklists need no cutting: start today.', age: 'grown', prepT: 'Prep 20 min total' })
     + `<div class="steps">
   <div class="card" style="--cbg:var(--tK)"><div class="h2">Printing</div><ul class="b">
     <li><span class="ball"></span><span>Print at <b>100% / Actual size</b>. Don’t use “fit to page” for tokens and cards.</span></li>
@@ -480,39 +493,30 @@ function tips(ctx) {
     <li><span class="ball"></span><span>1 dry-erase marker · 1 envelope for tokens</span></li>
     <li><span class="ball"></span><span>Optional, ages 3+: 12 pairs of velcro dots</span></li></ul></div></div>
   <div class="card" style="--cbg:var(--tT)"><div class="h2">Safety notes</div><ul class="b">
-    <li><span class="ball"></span><span><b>Grown-up keeps the pieces.</b> Every cut piece is 2.2 in (5.6 cm) or larger, bigger than the toilet-paper-tube test for under-3s. Print at 100% so they stay that size, and store them out of reach.</span></li>
+    <li><span class="ball"></span><span><b>Grown-up keeps the pieces.</b> Every cut piece is ${TOK} or larger, bigger than the toilet-paper-tube test for under-3s. Print at 100% so they stay that size, and store them out of reach.</span></li>
     <li><span class="ball"></span><span>A grown-up stays close for every play. Water, bubbles and cooking: always within arm’s reach. Grown-ups handle knives, heat and glass.</span></li>
-    <li><span class="ball"></span><span>Every play follows our published safety rules.</span></li></ul></div>`;
+    <li><span class="ball"></span><span>Every play follows our published safety rules.</span></li></ul></div>
+  <div class="card" style="--cbg:#fff;border:1.5px solid var(--line)"><div class="sizecheck"><div class="sq"><span class="kid" style="font-size:11pt;text-align:center">Actual size<br>${TOK}</span><div class="cir">Small-parts size<br>about 1.25 in</div></div><div><div class="h2">Check your print</div><p class="body">After printing the tokens, measure this square. It should be <b>${TOK}</b> on each side. If it’s smaller, your printer shrank the page: print again at 100% / Actual size.</p><p class="body" style="margin-top:.06in">The red circle shows the small-parts size for under-3s. Every piece in this kit is much bigger.</p></div></div></div>`;
 }
-function more(ctx) {
+function more(ctx, qr) {
   const items = [
-    ['brushTeeth', '200+ Visual Routine Cards', 'Ages 0–12', 'Picture cards for mornings, meals, bath and bedtime, with a first–then board.'],
-    ['bubbles', '150 “I’m Bored” Play Cards', 'Ages 1–12', 'Pick-a-card play ideas with a talk prompt on every card.'],
-    ['readTogether', '100 Screen-Free Plays', 'Ages 0–5', 'A play book sorted by age, with a talk-while-you-play line on every page.'],
-    ['talkPictures', '52 Play & Talk Cards', 'Ages 0–5', 'One play and one talk tip per card, for the littlest ones.'],
+    ['wakeUp', '200+ Visual Routine Cards', 'Ages 0–12', 'Picture cards for mornings, meals, bath and bedtime.'],
+    ['fort', '150 “I’m Bored” Play Cards', 'Ages 1–12', 'Pick-a-card play ideas, each with a talk prompt.'],
+    ['readTogether', '100 Screen-Free Plays', 'Ages 0–5', 'Plays sorted by age, with a talk line on every page.'],
+    ['puppets', '52 Play & Talk Cards', 'Ages 0–5', 'One play and one talk tip per card.'],
   ];
-  return hd({ eyebrow: 'More from Play Before Pixels', title: 'Next for your family', lede: 'Same calm design, same big pictures, same “talk while you play” idea.', age: 'all' })
-    + `<div class="toc" style="grid-template-columns:1fr 1fr;gap:.14in">${items.map(([a, t, g, s]) => `<div style="grid-template-columns:1.1in 1fr;padding:.18in">${art(a).replace('class="art ', 'style="width:1.1in;height:.92in" class="art ')}<div><div class="nm" style="font-size:11.5pt">${t}</div><div class="eyebrow" style="margin:.03in 0">${g}</div><div class="small" style="color:var(--ink)">${s}</div></div></div>`).join('')}</div>
-  <div class="card" style="--cbg:var(--tS)"><p class="body">${ctx.store ? 'Find them all at <b>playbeforepixels.com</b>. Bundles are priced below the sum of their parts.' : 'Find them all in our shop, Play Before Pixels.'}</p></div>
-  <div style="flex:1"></div>
-  <div class="card" style="--cbg:var(--wash);flex-direction:row;align-items:center;gap:.2in">${art('familyGame', '', false).replace('class="art ', 'style="width:1.3in;height:1.1in;flex:0 0 auto" class="art ')}<div><div class="h2">Thank you for playing first.</div><p class="body">Tried the kit? We’d love to hear which tool your family used most. Honest reviews help other parents decide.</p></div></div>`;
+  const tiles = `<div class="toc" style="grid-template-columns:1fr 1fr;gap:.12in">${items.map(([a, t, g, s]) => `<div style="grid-template-columns:1in 1fr;padding:.14in">${art(a).replace('class="art ', 'style="width:1in;height:.84in" class="art ')}<div><div class="nm" style="font-size:11pt">${t}</div><div class="eyebrow" style="margin:.03in 0">${g}</div><div class="small" style="color:var(--ink)">${s}</div></div></div>`).join('')}</div>`;
+  const tail = ctx.store
+    ? `<div class="card" style="--cbg:var(--tS);flex:1;flex-direction:row;gap:.3in;align-items:center;padding:.3in"><div style="width:2.3in;flex:0 0 auto;background:#fff;border-radius:.16in;padding:.16in">${qr.replace('<svg', '<svg style="width:100%;height:auto;display:block"')}</div>
+      <div style="display:flex;flex-direction:column;gap:.1in"><span class="eyebrow">Your free bonus</span><div class="h2" style="font-size:17pt">Scan for free companion printables</div>
+      <ul class="b"><li><span class="ball"></span><span>A summer and holiday Play First, Then Screens checklist</span></li><li><span class="ball"></span><span>12 extra together tokens for rainy days</span></li><li><span class="ball"></span><span>One short play idea a month, matched to your child’s age</span></li></ul>
+      <div style="font-weight:800;font-size:10.5pt">${T.BONUS}</div>
+      <p class="small">We ask for an email and, if you like, your child’s birth month and year so ideas fit their age. Never names. Unsubscribe anytime. Need your files again? Your link stays in your order email; help is at playbeforepixels.com/help.</p></div></div>`
+    : `<div class="card" style="--cbg:var(--tS);flex:1;flex-direction:row;gap:.3in;align-items:center;padding:.3in">${art('familyGame', '', false).replace('class="art ', 'style="width:2.4in;height:2in;flex:0 0 auto" class="art ')}
+      <div style="display:flex;flex-direction:column;gap:.1in"><div class="h2" style="font-size:17pt">Thank you for playing first</div><p class="body">Your files stay on your Etsy Purchases page, ready to download again anytime. Open them in a web browser, not the app.</p><p class="body">Tried the kit? Honest reviews help other parents decide.</p></div></div>`;
+  return hd({ eyebrow: 'More from Play Before Pixels', title: 'Next for your family', lede: ctx.store ? 'Same calm design and the same “talk while you play” idea. Find them all at playbeforepixels.com.' : 'Same calm design and the same “talk while you play” idea. Find them all in our shop, Play Before Pixels.', age: 'all' })
+    + tiles + tail;
 }
-function bonus(ctx, qr) {
-  return hd({ eyebrow: 'Your free bonus', title: 'One more thing, free', lede: 'Scan the code or type the link to get your free companion printables and a new play idea each month.', age: 'all' })
-    + `<div style="display:grid;grid-template-columns:2.6in 1fr;gap:.3in;align-items:center;margin-top:.2in">
-    <div style="background:#fff;border:2px solid var(--ink);border-radius:.2in;padding:.2in">${qr.replace('<svg', '<svg style="width:100%;height:auto;display:block"')}</div>
-    <div style="display:flex;flex-direction:column;gap:.12in"><div class="h2" style="font-size:16pt">${T.BONUS}</div>
-    <ul class="b"><li><span class="ball"></span><span>A summer and holiday edition of the Play First, Then Screens checklist</span></li><li><span class="ball"></span><span>12 extra together tokens for rainy days</span></li><li><span class="ball"></span><span>One short play idea a month, matched to your child’s age</span></li></ul>
-    <p class="small">We ask for an email address and, if you like, your child’s birth month and year, so ideas fit their age. Never names. Unsubscribe anytime.</p></div></div>
-  <div style="flex:1"></div>
-  <div class="card" style="--cbg:var(--tS)"><p class="body"><b>Need your files again?</b> Your download link stays in your order email. Help and answers: <b>playbeforepixels.com/help</b></p></div>`;
-}
-function thanks(ctx) {
-  return hd({ eyebrow: 'Thank you', title: 'Thank you for playing first', lede: 'You can download these files again anytime from your Etsy Purchases page. Open them in a web browser, not the app, for the best results.', age: 'all' })
-    + `<div style="flex:1;display:flex;align-items:center;justify-content:center">${art('familyGame', '', false).replace('class="art ', 'style="width:4in;height:3.3in" class="art ')}</div>
-  <div class="card" style="--cbg:var(--tS)"><p class="body"><b>License:</b> personal and family use in your own home. Please don’t share or resell the files. Tried the kit? Honest reviews help other parents decide.</p></div>`;
-}
-
 // ---------------------------------------------------------------- assemble
 function buildDoc(ctx, qr) {
   const P = {}; const pages = [];
@@ -547,9 +551,7 @@ function buildDoc(ctx, qr) {
   add('tracker', 'E', c => tracker(c, false), '30 Days of Play First');
   add('trackerB', 'E', c => tracker(c, true), '30-day tracker (fillable)');
   add('cert', 'E', c => certificate(c), 'Certificate');
-  add('more', '', c => more(c), 'More from Play Before Pixels');
-  if (ctx.store) add('bonus', '', c => bonus(c, qr), 'Free bonus');
-  else add('thanks', '', c => thanks(c), 'Thank you');
+  add('more', '', c => more(c, qr), ctx.store ? 'More from Play Before Pixels + free bonus' : 'More from Play Before Pixels');
   pages.forEach((p, i) => { P[p.key] = i + 1; });
   const toc = [];
   const html = pages.map((p, i) => {

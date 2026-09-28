@@ -64,7 +64,7 @@ def pg(body, n, bg='#fff'):
 pg(f'''<p class="kick" style="margin-top:.1in">Production book · adult merch</p>
 <div class="disp" style="font-size:52pt;line-height:.98">Core merch</div>
 <p class="lead" style="margin-top:12pt;max-width:5.6in">One logo tee in four colors, a tote that only comes in gift bundles, and the inside-neck label and hang tag that carry the brand name on every order.</p>
-<div style="margin-top:14pt;display:flex;gap:6pt;flex-wrap:wrap"><span class="pill ok">Adult sizes only</span><span class="pill ok">Print on demand</span><span class="pill ok">No inventory</span><span class="pill wait">Slogan tees wait for clearance</span></div>
+<div style="margin-top:14pt;display:flex;gap:6pt;flex-wrap:wrap"><span class="pill ok">Adult sizes only</span><span class="pill ok">Print on demand</span><span class="pill ok">No inventory</span><span class="pill stop">Slogan tees wait for clearance</span></div>
 <img src="mockup.png" style="width:100%;border-radius:12pt;margin-top:20pt;display:block">
 <div style="position:absolute;left:.6in;right:.6in;bottom:1.05in;display:flex;justify-content:space-between;align-items:flex-end">
 <img src="../../brand/logo/lockup-horizontal.svg" style="width:2.3in">
@@ -91,9 +91,9 @@ pg('''<p class="kick">The line at a glance</p><h2>Three design slots. One is rea
 # 3 logo tee print files
 pg('''<p class="kick">Design 1 · logo tee</p><h2>Front print files</h2>
 <div class="grid2">
-<div><div class="panel checker" style="height:3.9in;border:1px solid var(--line)"><img src="print/tee-logo_light.png" style="height:3.7in"></div>
-<p class="cap"><b>tee-logo_light</b> · ink P, tomato ball · for White, Natural and Mustard</p></div>
-<div><div class="panel" style="height:3.9in;background:#243150"><img src="print/tee-logo_dark.png" style="height:3.7in"></div>
+<div><div class="panel checker" style="height:3.9in;border:1px solid var(--line)"><img src="print/tee-logo_light.png" style="height:3.7in;outline:1.5px dashed #9AA6BA"></div>
+<p class="cap"><b>tee-logo_light</b> · ink P, tomato ball · for White, Natural and Mustard. Dashed line = the 15 × 18 in canvas.</p></div>
+<div><div class="panel" style="height:3.9in;background:#243150"><img src="print/tee-logo_dark.png" style="height:3.7in;outline:1.5px dashed #6B7A99"></div>
 <p class="cap"><b>tee-logo_dark</b> · paper P, tomato ball (the kit's reverse) · for Navy</p></div></div>
 <table style="margin-top:12pt">
 <tr><th style="width:30%">Spec</th><th>Value</th></tr>
@@ -126,7 +126,9 @@ pg('''<p class="kick">Bundle add-on</p><h2>Logo tote</h2>
 <tr><td>Canvas</td><td>3600 × 3600 px, transparent PNG at 300 dpi (12 × 12 in), plus vector .svg.</td></tr>
 <tr><td>Artwork</td><td>Stacked lockup, the kit's lockup for tote bags. Ink about 9 in wide, centered and raised 0.4 in so it clears the bottom seam.</td></tr>
 <tr><td>Where it appears</td><td>Holiday gift bundle (tee + tote + a digital play kit) and any later gift bundle. Teacher bundles stay on hold with all school-facing work.</td></tr>
-<tr><td>Check</td><td>Tote print areas differ by blank: confirm the partner's area and shrink the canvas if it is smaller than 12 × 12 in [VERIFY].</td></tr></table>''', 5)
+<tr><td>Check</td><td>Tote print areas differ by blank: confirm the partner's area and shrink the canvas if it is smaller than 12 × 12 in [VERIFY].</td></tr></table>
+<div class="box sun" style="margin-top:14pt"><p class="kick" style="color:#8A6300">Bundle math, the honest way</p>
+<p class="small" style="margin:0">Example: logo tee ($27) + logo tote (+$22) + a digital play kit, sold as one own-site checkout. Price the bundle 10–25% under the sum of its parts and say so in plain words (“$X, or $Y bought separately”). Never show the separate total as a crossed-out price. The print partner ships the tee and tote; the play kit arrives by email.</p></div>''', 5)
 
 # 6 neck label
 lab = ''.join(f'<div style="text-align:center"><img src="labels/neck-label_{s}_light.png" style="width:100%;border:1px solid var(--line);border-radius:6pt"><p class="cap">{s}</p></div>' for s in ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL'])
@@ -147,7 +149,11 @@ pg('''<p class="kick">Optional</p><h2>Hang tag and pack-in card</h2>
 <div><img src="preview/hang-tag/p01.png" style="width:100%;border-radius:6pt;box-shadow:0 0 0 1px var(--line)"><p class="cap"><b>Front</b> · on sun: ink P, tomato ball</p></div>
 <div><img src="preview/hang-tag/p02.png" style="width:100%;border-radius:6pt;box-shadow:0 0 0 1px var(--line)"><p class="cap"><b>Back, site edition</b> · QR and short link to the free bonus</p></div>
 <div><img src="preview/hang-tag/p03.png" style="width:100%;border-radius:6pt;box-shadow:0 0 0 1px var(--line)"><p class="cap"><b>Back, marketplace edition</b> · no URL or QR (Etsy)</p></div></div>
-<div class="box sky" style="margin-top:12pt"><p class="small" style="margin:0">The dashed circle marks where a hole would be punched; it is a guide for the printer, not art. Print file: <code>hang-tag.pdf</code> (page 1 front, page 2 site back, page 3 marketplace back).</p></div>''', 7)
+<div class="box sky" style="margin-top:12pt"><p class="small" style="margin:0">The dashed circle marks where a hole would be punched; it is a guide for the printer, not art. Print file: <code>hang-tag.pdf</code> (page 1 front, page 2 site back, page 3 marketplace back).</p></div>
+<table style="margin-top:14pt"><tr><th style="width:34%">Where the order comes from</th><th>Which back</th><th>Why</th></tr>
+<tr><td>playbeforepixels.com</td><td>Site edition (QR + short link)</td><td>Every product leads to the free bonus and the next product.</td></tr>
+<tr><td>Etsy</td><td>Marketplace edition</td><td>Etsy editions carry no URL or QR (customer-voice rule 2); Etsy does not allow sending buyers off-platform.</td></tr>
+<tr><td>Amazon Merch on Demand</td><td>None</td><td>Amazon prints its own packaging; no inserts.</td></tr></table>''', 7)
 
 # 8 slogan slots
 pg('''<p class="kick">Slots 2 and 3</p><h2>Slogan tees are on hold</h2>
@@ -178,7 +184,12 @@ pg('''<p class="kick">Set up once, then it runs</p><h2>Putting it on sale</h2>
 <li><b>Own site:</b> the same listing, plus the tote bundle and the “Next for you” links (see listing.json).</li>
 <li><b>Amazon Merch on Demand:</b> apply; upload the same 4500 × 5400 files with brand “Play Before Pixels”. Approval and design-slot limits apply [VERIFY current terms].</li>
 <li><b>Money and tax:</b> give the partner your resale certificate, set the shipping profile, and write the returns line (the partner replaces misprints and damage; you decide on size exchanges).</li></ol>
-<div class="box grass" style="margin-top:10pt"><p class="small" style="margin:0"><b>Runs without you:</b> orders go straight to the partner; tracking and delivery emails are automatic; the FAQ in listing.json answers sizing, care, timing and returns.</p></div>''', 9)
+<div class="box grass" style="margin-top:10pt"><p class="small" style="margin:0"><b>Runs without you:</b> orders go straight to the partner; tracking and delivery emails are automatic; the FAQ in listing.json answers sizing, care, timing and returns.</p></div>
+<h3>What buyers ask (already answered in listing.json)</h3>
+<div class="grid2"><div class="box"><p class="small" style="margin:0"><b>Do you make kids' sizes?</b><br>No. Adult unisex XS–3XL only.</p></div>
+<div class="box"><p class="small" style="margin:0"><b>How long does it take?</b><br>Each tee is printed when you order, then shipped with tracking.</p></div>
+<div class="box"><p class="small" style="margin:0"><b>How does it fit?</b><br>Unisex fit; measure a tee you love and match the chart.</p></div>
+<div class="box"><p class="small" style="margin:0"><b>Can I buy the tote?</b><br>It comes only inside gift bundles on our site.</p></div></div>''', 9)
 
 # 10 pricing
 pg('''<p class="kick">Honest pricing</p><h2>Prices and money</h2>
@@ -215,7 +226,10 @@ pg('''<p class="kick">Before anything ships</p><h2>Checks and launch list</h2>
 <li>Logo checks before public use: reverse-image search, USPTO design-code search, attorney knockout (logo guidelines, page 9)</li>
 <li>Insurance in place before the first sale (protection plan)</li>
 <li>Keep dated order records and label photos as trademark evidence</li></ul></div></div>
-<div class="box sun" style="margin-top:12pt"><p class="small" style="margin:0"><b>Printer templates change.</b> Check every file against the chosen partner's current template and placement tool before upload.</p></div>''', 11)
+<div class="box sun" style="margin-top:12pt"><p class="small" style="margin:0"><b>Printer templates change.</b> Check every file against the chosen partner's current template and placement tool before upload.</p></div>
+<div class="founder" style="margin-top:12pt"><p class="kick">Honest authorship</p>
+<p class="small" style="margin:0 0 5pt">The logo art was drawn with AI-assisted tools. Answer every platform's AI question truthfully (Etsy asks), and never register AI-made art as your own work.</p>
+<p class="small" style="margin:0">Your own contribution is the part you can protect: your color choices (page 4), your slogans (page 8) and your dated edits to the logo's build numbers. Commit each change to git so it is provable.</p></div>''', 11)
 
 # 12 more from
 covers = ''.join(f'''<div><img src="../{s}/cover.png" style="width:100%;height:2.2in;object-fit:contain;background:var(--wash);border-radius:8pt;padding:6pt"><p class="cap"><b>{t}</b><br>{d}</p></div>''' for s, t, d in [

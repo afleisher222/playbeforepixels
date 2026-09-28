@@ -62,7 +62,8 @@
     stack.push(d); setInert(false); setInert(true, d);
     if (id === 'mnav') $$('[data-open-menu]').forEach(function (b) { b.setAttribute('aria-expanded', 'true'); });
     if (d.onOpen) d.onOpen();
-    setTimeout(function () { var f = $('[data-autofocus]', d) || focusables(d)[0]; if (f) f.focus(); }, 40);
+    var f0 = $('[data-autofocus]', d) || focusables(d)[0]; if (f0) f0.focus();
+    setTimeout(function () { if (!d.contains(document.activeElement)) { var f = $('[data-autofocus]', d) || focusables(d)[0]; if (f) f.focus(); } }, 40);
   }
   function closeDialog(d, restore) {
     if (!d || !d.classList.contains('is-open')) return;
@@ -238,7 +239,7 @@
       location.href = t ? t.getAttribute('href') : 'shop.html';
     });
     sOut.addEventListener('click', function (e) { if (e.target.closest('a')) closeDialog($('#search'), false); });
-    $('#search').onOpen = function () { renderSearch(); setTimeout(function () { sInput.select(); }, 60); };
+    $('#search').onOpen = function () { renderSearch(); sInput.select(); };
   }
 
   /* ---------------- Cart ---------------- */

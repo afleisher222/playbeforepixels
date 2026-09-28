@@ -1,6 +1,6 @@
 {
  "kit-store-color-letter": {
-  "pages": 51,
+  "pages": 50,
   "toc": [
    [
     "Cover",
@@ -87,12 +87,8 @@
     49
    ],
    [
-    "More from Play Before Pixels",
+    "More from Play Before Pixels + free bonus",
     50
-   ],
-   [
-    "Free bonus",
-    51
    ]
   ],
   "P": {
@@ -145,12 +141,11 @@
    "tracker": 47,
    "trackerB": 48,
    "cert": 49,
-   "more": 50,
-   "bonus": 51
+   "more": 50
   }
  },
  "kit-store-color-a4": {
-  "pages": 51,
+  "pages": 50,
   "toc": [
    [
     "Cover",
@@ -237,12 +232,8 @@
     49
    ],
    [
-    "More from Play Before Pixels",
+    "More from Play Before Pixels + free bonus",
     50
-   ],
-   [
-    "Free bonus",
-    51
    ]
   ],
   "P": {
@@ -295,12 +286,11 @@
    "tracker": 47,
    "trackerB": 48,
    "cert": 49,
-   "more": 50,
-   "bonus": 51
+   "more": 50
   }
  },
  "kit-store-low-letter": {
-  "pages": 33,
+  "pages": 32,
   "toc": [
    [
     "Cover",
@@ -387,12 +377,8 @@
     31
    ],
    [
-    "More from Play Before Pixels",
+    "More from Play Before Pixels + free bonus",
     32
-   ],
-   [
-    "Free bonus",
-    33
    ]
   ],
   "P": {
@@ -427,12 +413,11 @@
    "tracker": 29,
    "trackerB": 30,
    "cert": 31,
-   "more": 32,
-   "bonus": 33
+   "more": 32
   }
  },
  "kit-store-low-a4": {
-  "pages": 33,
+  "pages": 32,
   "toc": [
    [
     "Cover",
@@ -519,12 +504,8 @@
     31
    ],
    [
-    "More from Play Before Pixels",
+    "More from Play Before Pixels + free bonus",
     32
-   ],
-   [
-    "Free bonus",
-    33
    ]
   ],
   "P": {
@@ -559,12 +540,11 @@
    "tracker": 29,
    "trackerB": 30,
    "cert": 31,
-   "more": 32,
-   "bonus": 33
+   "more": 32
   }
  },
  "kit-etsy-color-letter": {
-  "pages": 51,
+  "pages": 50,
   "toc": [
    [
     "Cover",
@@ -653,10 +633,6 @@
    [
     "More from Play Before Pixels",
     50
-   ],
-   [
-    "Thank you",
-    51
    ]
   ],
   "P": {
@@ -709,12 +685,11 @@
    "tracker": 47,
    "trackerB": 48,
    "cert": 49,
-   "more": 50,
-   "thanks": 51
+   "more": 50
   }
  },
  "kit-etsy-color-a4": {
-  "pages": 51,
+  "pages": 50,
   "toc": [
    [
     "Cover",
@@ -803,10 +778,6 @@
    [
     "More from Play Before Pixels",
     50
-   ],
-   [
-    "Thank you",
-    51
    ]
   ],
   "P": {
@@ -859,12 +830,11 @@
    "tracker": 47,
    "trackerB": 48,
    "cert": 49,
-   "more": 50,
-   "thanks": 51
+   "more": 50
   }
  },
  "kit-etsy-low-letter": {
-  "pages": 33,
+  "pages": 32,
   "toc": [
    [
     "Cover",
@@ -953,10 +923,6 @@
    [
     "More from Play Before Pixels",
     32
-   ],
-   [
-    "Thank you",
-    33
    ]
   ],
   "P": {
@@ -991,12 +957,11 @@
    "tracker": 29,
    "trackerB": 30,
    "cert": 31,
-   "more": 32,
-   "thanks": 33
+   "more": 32
   }
  },
  "kit-etsy-low-a4": {
-  "pages": 33,
+  "pages": 32,
   "toc": [
    [
     "Cover",
@@ -1085,10 +1050,6 @@
    [
     "More from Play Before Pixels",
     32
-   ],
-   [
-    "Thank you",
-    33
    ]
   ],
   "P": {
@@ -1123,8 +1084,7 @@
    "tracker": 29,
    "trackerB": 30,
    "cert": 31,
-   "more": 32,
-   "thanks": 33
+   "more": 32
   }
  }
 }
