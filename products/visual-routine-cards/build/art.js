@@ -330,7 +330,7 @@ A.lunchbox = () => R(22, 38, 76, 48, 8, K) + R(22, 38, 76, 16, 8, '#2E6EB5') + R
 A.waterBottle = () => Gp('translate(60,54)', R(-16, -26, 32, 64, 12, G) + R(-10, -38, 20, 14, 4, I) + R(-16, -6, 32, 16, 0, W, 'opacity=".35"') + St('M4-38C14-44 22-40 20-30', I, 3));
 A.weather = () => sun(46, 38, .36) + U('cloud', 'translate(72,60) scale(.95)') + drop(62, 84, .35) + drop(78, 88, .35) + drop(92, 82, .3);
 A.jacketShoes = () => Pa('M22 18H58L68 30 64 70H16L12 30Z', T) + R(38, 22, 3, 48, 1.5, '#C44325') + R(10, 30, 10, 36, 5, T) + R(60, 30, 10, 36, 5, T) + shoe(88, 78, .34, K, W);
-A.busStop = () => R(20, 12, 7, 78, 3.5, I) + R(8, 12, 32, 22, 6, T) + Tx(24, 28, 0, W, 'BUS', 11) + A.bus().replace('<rect', '<rect') .slice(0, 0) + Gp('translate(72,58) scale(.62)', R(-44, -26, 88, 50, 10, S) + [-34, -14, 6].map(x => R(x, -18, 16, 16, 3, W)).join('') + Ci(-26, 26, 9, I) + Ci(24, 26, 9, I)) + ground(GREY);
+A.busStop = () => R(20, 12, 7, 78, 3.5, I) + R(8, 12, 32, 22, 6, T) + Tx(24, 28, 0, W, 'BUS', 11) + Gp('translate(72,58) scale(.62)', R(-44, -26, 88, 50, 10, S) + [-34, -14, 6].map(x => R(x, -18, 16, 16, 3, W)).join('') + Ci(-26, 26, 9, I) + Ci(24, 26, 9, I)) + ground(GREY);
 A.school = () => R(20, 40, 80, 48, 4, T) + Pa('M14 42L60 14 106 42Z', I) + R(52, 60, 16, 28, 2, S) + [28, 80].map(x => R(x, 50, 12, 12, 2, W)).join('') + [28, 80].map(x => R(x, 68, 12, 12, 2, W)).join('') + Ci(60, 32, 7, W) + St('M60 28V32H63', I, 1.6);
 A.unpackBag = () => U('backpack', 'translate(44,58) scale(.95)', `--bp:${K};--bp2:${S}`) + Gp('translate(88,40) rotate(14)', R(-12, -16, 24, 32, 3, T) + R(-12, -16, 5, 32, 1, I, 'opacity=".2"')) + Gp('translate(92,76) rotate(-8)', R(-12, -8, 24, 16, 4, G));
 A.snackBig = () => U('plate', 'translate(56,60) scale(.95)', `--pl:${tS}`) + U('banana', 'translate(50,52) scale(.66)') + [[48, 70], [64, 72]].map(([x, y]) => El(x, y, 7, 5, '#F5D36B')).join('') + U('cup', 'translate(98,58) scale(.45)', `--c1:${K};--c2:${S}`);
@@ -361,10 +361,10 @@ A.walkDog = () => Gp('translate(76,70) scale(.5) scale(-1,1)', U('dog'), `--dg:#
 A.wipeCounter = () => R(12, 60, 96, 10, 3, GREY) + R(14, 70, 92, 20, 3, W) + Gp('translate(50,52) rotate(-8)', R(-16, -8, 32, 16, 5, G)) + hand(50, 42, 1, SK[4], 0) + Gp('translate(92,36)', R(-9, -8, 18, 32, 5, K) + R(-6, -20, 11, 14, 3, I)) + sparkle(24, 40, .5, K);
 A.helpSibling = () => stand('A', 38, 88, .62, { face: 'joy', aR: -60, aL: 10 }) + stand('E', 80, 88, .42, { face: 'laugh', flip: true, aR: -60, aL: 10 }) + heart(60, 22, .2);
 A.rake = () => Gp('translate(46,52) rotate(28)', R(-3, -44, 6, 70, 3, '#C08457') + R(-22, 24, 44, 6, 3, GREY) + [-18, -10, -2, 6, 14].map(x => R(x, 28, 3, 12, 1.5, GREY)).join('')) + [[78, 80, T], [92, 74, S], [100, 84, '#C08457'], [70, 70, S], [86, 62, T]].map(([x, y, f]) => Gp(`translate(${x},${y}) rotate(${x * 7})`, Pa('M0-8C6-4 6 4 0 8C-6 4-6-4 0-8Z', f))).join('') + ground('#8D5A3B');
-A.makeLunch = () => U('lunchbox-open', '') + R(18, 56, 84, 30, 6, K) + R(22, 60, 36, 22, 3, W) + R(62, 60, 36, 22, 3, W) + U('sandwich', 'translate(40,72) scale(.26)') + U('banana', 'translate(80,70) scale(.3)') + Pa('M18 56L30 30H90L102 56Z', '#2E6EB5');
+A.makeLunch = () => R(18, 56, 84, 30, 6, K) + R(22, 60, 36, 22, 3, W) + R(62, 60, 36, 22, 3, W) + U('sandwich', 'translate(40,72) scale(.26)') + U('banana', 'translate(80,70) scale(.3)') + Pa('M18 56L30 30H90L102 56Z', '#2E6EB5');
 A.chargeOut = () => A.devicesSleep();
 A.feedPetBig = () => Gp('translate(50,60) scale(.6)', U('cat'), `--ct:${P}`) + Gp('translate(90,80)', Pa('M-16-6H16L12 6H-12Z', K) + El(0, -6, 16, 4, '#C08457'));
-A.freePlay = () => U('ball', 'translate(30,70) scale(.3)') + A.build().replace(/^/, '').slice(0, 0) + Gp('translate(66,58)', R(-24, -18, 48, 36, 4, W) + Ci(-8, -4, 6, S) + Pa('M-20 14L-4 0 6 10 20-2V14Z', G)) + star(100, 24, .6, S) + note(96, 76, .6, P);
+A.freePlay = () => U('ball', 'translate(30,70) scale(.3)') + Gp('translate(66,58)', R(-24, -18, 48, 36, 4, W) + Ci(-8, -4, 6, S) + Pa('M-20 14L-4 0 6 10 20-2V14Z', G)) + star(100, 24, .6, S) + note(96, 76, .6, P);
 A.outsideTime = () => sun(94, 22, .22) + U('tree', 'translate(40,50) scale(.8)') + U('ball', 'translate(84,74) scale(.26)') + ground(G);
 
 module.exports = { A, NEW_SYMBOLS, CAST, R, Ci, Pa, St, Gp, U, Tx, star, moon, sun, tablet, heart, bigNum, stand, kid, adult, head, bust };
