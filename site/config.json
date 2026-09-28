@@ -1,0 +1,358 @@
+{
+  "_README": "Site settings for site/build.js. Product words, prices, ages and pictures come from products/*/listing.json; this file only says how the site shows them. Every price below must match listing.json (price_usd, price_pdf_usd, or a figure written in price_notes), or the build stops.",
+
+  "site": {
+    "url": "https://playbeforepixels.com",
+    "name": "Play Before Pixels",
+    "legalName": "AlphaPlay LLC",
+    "hubName": "Research Notes",
+    "language": "en",
+    "locale": "en_US",
+    "themeColor": "#1D2940",
+    "copyright": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.",
+    "colophon": "Founded by a parent and educator. Parent education, not medical advice. Set in Bricolage Grotesque, Nunito Sans, Fredoka and Caveat.",
+    "tagline": "Talk, touch and play come first."
+  },
+
+  "env": {
+    "_README": "Public values set in the Cloudflare Pages project (Settings > Environment variables). None of them is a secret. Empty = the feature shows its honest 'opens soon' state.",
+    "emailFormAction": "PBP_EMAIL_FORM_ACTION",
+    "contactFormAction": "PBP_CONTACT_FORM_ACTION",
+    "contactEmail": "PBP_CONTACT_EMAIL",
+    "analyticsToken": "PBP_CF_ANALYTICS_TOKEN"
+  },
+
+  "gates": {
+    "ages5to12": {
+      "open": false,
+      "why": "Material for ages 5–12 waits for employment counsel's written G1 answer (business/GROWTH-ENGINE.md §7 item 5). Launch sells 0–5 (G0) editions only."
+    },
+    "schools": {
+      "open": false,
+      "why": "School, classroom, child-care, library and PTA sales, and classroom or site licenses, are HELD until employment counsel clears them in writing (business/GROWTH-ENGINE.md §7; ops/QUEUE.md)."
+    }
+  },
+
+  "bands": [
+    { "key": "0-1", "label": "0–1", "name": "Babies", "unit": "year", "color": "sky", "lo": 0, "hi": 1 },
+    { "key": "1-3", "label": "1–3", "name": "Toddlers", "unit": "years", "color": "grass", "lo": 1, "hi": 3 },
+    { "key": "3-5", "label": "3–5", "name": "Preschoolers", "unit": "years", "color": "sun", "lo": 3, "hi": 5 },
+    { "key": "5-8", "label": "5–8", "name": "Early school", "unit": "years", "color": "tomato", "lo": 5, "hi": 8 },
+    { "key": "8-12", "label": "8–12", "name": "Big kids", "unit": "years", "color": "plum", "lo": 8, "hi": 12 }
+  ],
+
+  "types": [
+    { "key": "books", "label": "Books", "path": "/shop/books/", "lede": "Talk-along and read-aloud books, printed to order and shipped by the printer." },
+    { "key": "printables", "label": "Printables", "path": "/shop/printables/", "lede": "PDFs you print at home tonight: US Letter and A4, in color and low-ink." },
+    { "key": "bundles", "label": "Bundles", "path": "/shop/bundles/", "lede": "Sets that belong together, at one plain price." },
+    { "key": "course", "label": "Written course", "path": "/30-days/", "lede": "One short lesson and one easy play a day, by email." }
+  ],
+
+  "hideWhenStatus": "held|publish only after|bundle-add-on-only|not for sale",
+
+  "products": {
+    "board-up-go-more": {
+      "name": "Up! Go! More!",
+      "line": "22 first words to say, sign and act out",
+      "series": "Talk-Along Firsts · Book 1",
+      "types": ["books"],
+      "ground": "sky-t",
+      "mock": "book",
+      "formats": [
+        { "id": "paperback", "label": "Talk-along paperback", "detail": "8.5 × 8.5 in · 32 pages · printed to order", "price": 11.99, "buy": ["shop_book_up_go_more", "kdp_book_up_go_more", "bookshop_book_up_go_more"], "ship": "Printed to order and shipped by the printer, with tracking by email." },
+        { "id": "board", "label": "Board book", "detail": "6 × 6 in · 26 sturdy pages", "planned": "Planned for later. No date yet." }
+      ],
+      "also": ["kdp_book_up_go_more", "bookshop_book_up_go_more"],
+      "isbn": true,
+      "gallery": [
+        { "src": "mockup.png", "alt": "The talk-along paperback of Up! Go! More! standing beside the smaller board-book edition, which is planned for later." },
+        { "src": "cover.png", "altFrom": "alt_text" },
+        { "spread": ["preview/p04.png", "preview/p05.png"], "alt": "Two pages: “peekaboo”, with a child hiding their eyes, and “up”, with a child reaching up beside a big blue arrow. Each page has a move to copy and a grown-up tip." },
+        { "spread": ["preview/p08.png", "preview/p09.png"], "alt": "Two pages: “stop”, with a child and a toy car, and “ball”, with two children rolling a striped ball." },
+        { "src": "preview/p02.png", "alt": "How to read this book together: say it, sign it or act it, then wait for a turn." },
+        { "src": "preview/p25.png", "alt": "Keep the words going: the 22 words sorted by the moments of the day, from hello to bedtime." }
+      ],
+      "wordExplorer": "build/manuscript.json",
+      "wordPages": "preview/p{n}.png",
+      "wordPageOffset": 3
+    },
+    "picture-tablet-slept": {
+      "name": "The Day the Tablet Slept",
+      "line": "A funny bedtime read-aloud with a box rocket and a dog named Biscuit",
+      "series": "Play Before Pixels read-alouds",
+      "types": ["books"],
+      "ground": "sun-t",
+      "mock": "book",
+      "formats": [
+        { "id": "paperback", "label": "Paperback", "detail": "8.5 × 8.5 in · 32 full-color pages · printed to order", "price": 11.99, "buy": ["shop_book_tablet_slept", "kdp_book_tablet_slept", "bookshop_book_tablet_slept"], "ship": "Printed to order and shipped by the printer, with tracking by email." },
+        { "id": "hardcover", "label": "Hardcover", "detail": "8.5 × 8.5 in · case laminate", "planned": "May be added later." }
+      ],
+      "also": ["kdp_book_tablet_slept", "bookshop_book_tablet_slept"],
+      "isbn": true,
+      "gallery": [
+        { "src": "mockup.png", "alt": "The Day the Tablet Slept paperback on a soft blue surface, open to a spread of Ada and Biscuit in a box rocket." },
+        { "src": "cover.png", "altFrom": "alt_text" },
+        { "spread": ["preview/p16.png", "preview/p17.png"], "alt": "A night-sky spread: “Ten, nine, eight…” counted Ada, and a cardboard rocket blasts past the moon with Biscuit the dog as co-pilot." },
+        { "spread": ["preview/p06.png", "preview/p07.png"], "alt": "Papa whispers that the tablet is sleeping in its nightcap, and Ada wonders what they will do instead." },
+        { "src": "preview/p29.png", "alt": "Talk about it: six easy questions for grown-ups to ask after reading." },
+        { "src": "preview/p30.png", "alt": "Plan your own Play Day: morning, afternoon and bedtime-story ideas to point at and pick." }
+      ]
+    },
+    "picture-laps-not-apps": {
+      "name": "Laps Not Apps",
+      "line": "A personalized read-aloud with your child’s name in six rhymes",
+      "series": "Play Before Pixels read-alouds",
+      "types": ["books"],
+      "ground": "plum-t",
+      "mock": "book",
+      "formats": [
+        { "id": "softcover", "label": "Personalized softcover", "detail": "8.5 × 8.5 in · 32 pages · your child’s name inside", "price": 24.99, "buy": ["shop_book_laps_not_apps"], "ship": "Printed for you, one copy at a time, and shipped by our printing partner." },
+        { "id": "hardcover", "label": "Personalized hardcover", "detail": "8.5 × 8.5 in · 32 pages · casewrap · a gift message inside", "price": 34.99, "buy": ["shop_book_laps_not_apps"], "ship": "Printed for you, one copy at a time, and shipped by our printing partner." }
+      ],
+      "also": [],
+      "isbn": false,
+      "gallery": [
+        { "src": "mockup.png", "alt": "Laps Not Apps as a hardcover on a sunny surface, beside an open spread of a grandmother reading to a child on her lap." },
+        { "src": "cover.png", "altFrom": "alt_text" },
+        { "src": "picker.png", "alt": "The four looks you can choose for the child in the story, each with a different skin tone and hair." },
+        { "spread": ["preview/p06.png", "preview/p07.png"], "alt": "A spread with the sample name Maya: Dad in his armchair saves a seat, and Grandma rolls in with a book on her knee." },
+        { "spread": ["preview/p14.png", "preview/p15.png"], "alt": "A spread of lap games: quacking ducks in a row and clapping and booping along." },
+        { "src": "preview/p31.png", "alt": "Books before screens: a family reading pledge to fill in and sign together." }
+      ],
+      "note": "Sample copy shown with the name Maya."
+    },
+    "guide-100-plays": {
+      "name": "100 Screen-Free Plays",
+      "line": "Easy, low-prep plays for ages 0–5, sorted by age",
+      "types": ["books", "printables"],
+      "ground": "grass-t",
+      "mock": "guide",
+      "formats": [
+        { "id": "paperback", "label": "Paperback", "detail": "8 × 10 in · 86 pages · black-and-white inside · printed to order", "price": 16.99, "buy": ["shop_book_100_plays", "kdp_book_100_plays", "bookshop_book_100_plays"], "ship": "Printed to order and shipped by the printer, with tracking by email." },
+        { "id": "pdf", "label": "Printable PDF", "detail": "90 pages · color and low-ink · US Letter and A4", "price": 9.99, "buy": ["buy_guide_100_plays_pdf"], "ship": "Instant download. Nothing ships." }
+      ],
+      "also": ["kdp_book_100_plays", "bookshop_book_100_plays"],
+      "isbn": true,
+      "gallery": [
+        { "src": "mockup.png", "alt": "The 100 Screen-Free Plays paperback with printed play pages fanned beside it." },
+        { "src": "cover.png", "altFrom": "alt_text" },
+        { "src": "preview/p13.png", "alt": "The 0–1 chapter opener: faces, voices and first games." },
+        { "src": "preview/p15.png", "alt": "A page of two plays, each with a starting age, prep and mess icons, easy steps, a talk line and a safety note." },
+        { "src": "preview/p06.png", "alt": "Six easy talk moves: pause and wait, say what you see, repeat and add one, offer a choice, follow their lead, sing and gesture." },
+        { "src": "preview/p07.png", "alt": "Safety first: the rules every play follows." }
+      ]
+    },
+    "toddler-busy-book": {
+      "name": "Toddler Busy Book",
+      "line": "74 matching, sorting and pretend-play pages for ages 1–5",
+      "types": ["printables"],
+      "ground": "sun-t",
+      "mock": "sheet",
+      "formats": [
+        { "id": "pdf", "label": "Printable PDF", "detail": "132 pages · color and low-ink · US Letter and A4", "price": 11.99, "buy": ["buy_toddler_busy_book"], "ship": "Instant download. Nothing ships." }
+      ],
+      "gallery": [
+        { "src": "mockup.png", "alt": "A purple binder open to a busy-book page for the word “ball”, with loose matching pieces beside it." },
+        { "src": "cover.png", "altFrom": "alt_text" },
+        { "src": "preview/p103.png", "alt": "Our café: a pretend menu and serving page with food pieces to place." },
+        { "src": "preview/p106.png", "alt": "Drive around town: a road map page for a toy car, with houses and trees along the way." },
+        { "src": "preview/p112.png", "alt": "How do they feel? Faces to match to little scenes." },
+        { "src": "preview/p07.png", "alt": "Our play safety rules for busy-book pieces." }
+      ]
+    },
+    "visual-routine-cards": {
+      "name": "Visual Routine Cards",
+      "line": "235 picture cards and 6 charts for mornings, meals, play and bedtime",
+      "types": ["printables"],
+      "ground": "plum-t",
+      "mock": "sheet",
+      "formats": [
+        { "id": "pdf", "label": "Printable PDF", "detail": "160 pages · fillable · color and low-ink · US Letter and A4", "price": 9.5, "buy": ["buy_visual_routine_cards"], "ship": "Instant download. Nothing ships." }
+      ],
+      "gallery": [
+        { "src": "mockup.png", "alt": "A morning chart filled with picture cards on a table, with more cards and a pencil beside it." },
+        { "src": "cover.png", "altFrom": "alt_text" },
+        { "pdf": "visual-routine-cards.pdf", "page": 8, "alt": "A sheet of morning cards: wake up, open curtains, potty, wash face and more, each with a word label." },
+        { "pdf": "visual-routine-cards.pdf", "page": 21, "alt": "Plan words: first, then, wait, all done and today, as picture cards." },
+        { "pdf": "visual-routine-cards.pdf", "page": 2, "alt": "Pictures make the plan easy to see: what is inside the set." }
+      ]
+    },
+    "visual-routine-cards-starter": {
+      "name": "Visual Routine Cards: Starter Set",
+      "line": "60 picture cards and 3 charts for ages 0–5",
+      "types": ["printables"],
+      "ground": "sky-t",
+      "mock": "sheet",
+      "cover": { "pdf": "visual-routine-cards-starter-letter.pdf", "page": 1 },
+      "formats": [
+        { "id": "pdf", "label": "Printable PDF", "detail": "24 pages · fillable · color and low-ink · US Letter and A4", "price": 5, "buy": ["buy_visual_routine_cards_starter"], "ship": "Instant download. Nothing ships." }
+      ],
+      "gallery": [
+        { "pdf": "visual-routine-cards-starter-letter.pdf", "page": 1, "altFrom": "alt_text" },
+        { "pdf": "visual-routine-cards-starter-letter.pdf", "page": 6, "alt": "A sheet of starter cards: wake up, potty, brush teeth, get dressed, shoes on and more." },
+        { "pdf": "visual-routine-cards-starter-letter.pdf", "page": 20, "alt": "The first–then board: one card for now, one card for next." },
+        { "pdf": "visual-routine-cards-starter-letter.pdf", "page": 2, "alt": "Sixty cards for the moments that matter most: what is inside." }
+      ]
+    },
+    "bored-play-cards": {
+      "name": "“I’m Bored” Play Cards",
+      "line": "150 screen-free play ideas sorted by age and energy",
+      "types": ["printables"],
+      "ground": "sky-t",
+      "mock": "sheet",
+      "formats": [
+        { "id": "pdf", "label": "Printable PDF", "detail": "59 pages · 150 cards + 36 seasonal · color and low-ink · US Letter and A4", "price": 6.5, "buy": ["buy_bored_play_cards"], "ship": "Instant download. Nothing ships." }
+      ],
+      "gallery": [
+        { "src": "mockup.png", "alt": "A jar labelled “I’m bored!” beside fanned play cards in five age colors." },
+        { "src": "cover.png", "altFrom": "alt_text" },
+        { "src": "preview/p02.png", "alt": "Boredom is where play begins: how the cards work, in plain words." },
+        { "src": "preview/p14.png", "alt": "A sheet of nine play cards, each with a starting age, what you need, a talk line and a safety note." },
+        { "src": "preview/p05.png", "alt": "Read a card in five seconds: what each part of a card means." },
+        { "src": "preview/p34.png", "alt": "Card backs in sunny yellow with the “I’m bored!” jar." }
+      ]
+    },
+    "play-talk-cards": {
+      "name": "52 Play & Talk Cards",
+      "line": "One play and one talk tip on every card, for ages 0–5",
+      "types": ["printables"],
+      "ground": "grass-t",
+      "mock": "sheet",
+      "formats": [
+        { "id": "pdf", "label": "Printable PDF", "detail": "21 pages · 54 poker-size cards · color and low-ink · US Letter and A4", "price": 7, "buy": ["buy_play_talk_cards"], "ship": "Instant download. Nothing ships." }
+      ],
+      "gallery": [
+        { "src": "mockup.png", "alt": "Printed Play & Talk cards fanned on a yellow surface, with a cut sheet and a pencil." },
+        { "src": "cover.png", "altFrom": "alt_text" },
+        { "src": "preview/p12.png", "alt": "A card sheet: how to play and eight plays for babies, each with an icon, a talk line and a safety note." },
+        { "src": "preview/p02.png", "alt": "Start here: how to use the cards and the four talk moves on them." },
+        { "src": "preview/p20.png", "alt": "Our Play & Talk Year: a tracker to tick off favorite cards." }
+      ]
+    },
+    "play-first-family-kit": {
+      "name": "Play-First Family Kit",
+      "line": "Checklists, together tokens, helping jobs and a 30-day tracker",
+      "types": ["printables"],
+      "ground": "tomato-t",
+      "mock": "sheet",
+      "formats": [
+        { "id": "pdf", "label": "Printable PDF", "detail": "53 pages · fillable · color and low-ink · US Letter and A4", "price": 11, "buy": ["buy_play_first_family_kit"], "ship": "Instant download. Nothing ships." }
+      ],
+      "gallery": [
+        { "src": "mockup.png", "alt": "Printed Play-First Family Kit pages on a table: a checklist, tokens and a family plan." },
+        { "src": "cover.png", "altFrom": "alt_text" },
+        { "pdf": "play-first-family-kit.pdf", "page": 6, "alt": "Play First, Then Screens: a picture checklist for the day, with circles to color in." },
+        { "pdf": "play-first-family-kit.pdf", "page": 30, "alt": "The Play-First Board: first jobs, then together time, later screens." },
+        { "pdf": "play-first-family-kit.pdf", "page": 39, "alt": "Together tokens: picture tokens for things to do together." },
+        { "pdf": "play-first-family-kit.pdf", "page": 2, "alt": "Ten tools, one calm rhythm: what is inside the kit." }
+      ]
+    },
+    "course-screen-reset": {
+      "name": "30 Days of Back-and-Forth",
+      "line": "A written program: one short lesson and one easy play a day",
+      "types": ["course"],
+      "url": "/30-days/",
+      "ground": "sky-t",
+      "mock": "workbook",
+      "formats": [
+        { "id": "program", "label": "The written program", "detail": "30 lessons by email · 89-page workbook · US Letter and A4", "price": 27, "buy": ["course"], "ship": "Day 1 and the workbook arrive by email right after checkout." }
+      ],
+      "gallery": [
+        { "src": "mockup.png", "alt": "The 30 Days of Back-and-Forth workbook beside a phone showing a lesson email." },
+        { "src": "cover.png", "altFrom": "alt_text" },
+        { "src": "preview/p03.png", "alt": "Your month at a glance: four weeks, one short lesson and one play each day." },
+        { "src": "preview/p12.png", "alt": "Day 1: start with one ordinary day, with a play, plain words for a tricky moment and a tracker." },
+        { "src": "preview/p07.png", "alt": "Our screen spot: same time, same place, same ending, every day." }
+      ]
+    },
+    "first-phone-plan": { "show": false, "why": "Ages 9–12 only: waits for counsel's G1 answer (business/GROWTH-ENGINE.md §7 item 5)." },
+    "merch-core-logo-tee": { "show": false, "why": "The tee's print files and mockups still carry the retired 'Return' P mark; the product lane must rebuild them with the Maker's Seal before it can be shown (brand/BRAND.md 'Logo')." }
+  },
+
+  "bundles": [
+    {
+      "id": "instant-gift-bundle",
+      "name": "Ages 1–5 Instant Gift Bundle",
+      "line": "Four printables for a little one, delivered the moment you pay",
+      "price": 29,
+      "ground": "sun-t",
+      "parts": [["toddler-busy-book", "pdf"], ["play-first-family-kit", "pdf"], ["bored-play-cards", "pdf"], ["play-talk-cards", "pdf"]],
+      "expectSeparately": 36.49,
+      "buy": ["buy_instant_gift_bundle"],
+      "source": "ops/QUEUE.md LAUNCH FIRST; business/GROWTH-ENGINE.md §5a"
+    },
+    {
+      "id": "birth-to-5-library",
+      "name": "Birth-to-5 Printable Library",
+      "line": "Six printables for the first five years",
+      "price": 45,
+      "ground": "grass-t",
+      "parts": [["toddler-busy-book", "pdf"], ["visual-routine-cards", "pdf"], ["guide-100-plays", "pdf"], ["bored-play-cards", "pdf"], ["play-first-family-kit", "pdf"], ["play-talk-cards", "pdf"]],
+      "expectSeparately": 55.98,
+      "buy": ["buy_birth_to_5_library"],
+      "source": "ops/QUEUE.md Week 2 (parts $55.98). The six parts are inferred: the six launch printables sum to exactly $55.98."
+    },
+    {
+      "id": "bundle-30-days",
+      "name": "30 Days of Back-and-Forth Bundle",
+      "line": "The written program plus three printables to play along",
+      "price": 49,
+      "ground": "sky-t",
+      "parts": [["course-screen-reset", "program"], ["play-first-family-kit", "pdf"], ["guide-100-plays", "pdf"], ["bored-play-cards", "pdf"]],
+      "expectSeparately": 54.49,
+      "buy": ["buy_bundle_30_days", "course"],
+      "source": "products/course-screen-reset/listing.json bundle"
+    }
+  ],
+
+  "home": {
+    "heroPages": ["board-up-go-more", "preview/p04.png", "preview/p05.png", 1, 2],
+    "bandPages": ["picture-tablet-slept", "preview/p16.png", "preview/p17.png"],
+    "rulerShelf": { "0-1": "board-up-go-more", "1-3": "toddler-busy-book", "3-5": "picture-tablet-slept", "5-8": "bored-play-cards", "8-12": "play-first-family-kit" },
+    "mat": ["toddler-busy-book", "visual-routine-cards", "bored-play-cards", "play-talk-cards", "play-first-family-kit", "visual-routine-cards-starter"]
+  },
+
+  "free": {
+    "slug": "7-days-of-play-first",
+    "title": "7 Days of Play First",
+    "pdf": "course-screen-reset/funnel/starter/7 Days of Play First - US Letter.pdf",
+    "preview": "course-screen-reset/funnel/starter/preview/p01.png"
+  },
+
+  "bonusPages": [
+    "board-up-go-more", "bored-play-cards", "course-screen-reset", "family-talk-along-cards", "first-phone-plan",
+    "guide-100-plays", "merch-core", "picture-laps-not-apps", "picture-more-talk-less-tap", "picture-tablet-slept",
+    "play-first-family-kit", "play-talk-cards", "toddler-busy-book", "visual-routine-cards"
+  ],
+
+  "redirects": [
+    ["/license", "/licenses/"],
+    ["/license/", "/licenses/"],
+    ["/faq", "/help/"],
+    ["/faq/", "/help/"],
+    ["/30-days/start", "/free/"],
+    ["/30-days/start/", "/free/"],
+    ["/shop/course-screen-reset", "/30-days/"],
+    ["/shop/course-screen-reset/", "/30-days/"],
+    ["/shop/30-day-screen-reset", "/30-days/"],
+    ["/shop/30-day-screen-reset/", "/30-days/"],
+    ["/bonus/bore", "/bonus/bored-play-cards/"],
+    ["/refunds", "/shipping-returns/"],
+    ["/refunds/", "/shipping-returns/"],
+    ["/resend-download", "/help/#downloads"],
+    ["/resend-download/", "/help/#downloads"]
+  ],
+
+  "social": {
+    "instagram": "Instagram", "pinterest": "Pinterest", "facebook": "Facebook", "tiktok": "TikTok", "youtube": "YouTube",
+    "threads": "Threads", "x": "X", "linkedin": "LinkedIn", "substack": "Substack"
+  },
+  "stores": {
+    "etsy": "Etsy", "amazon_author": "Amazon", "bookshop": "Bookshop.org", "kobo": "Kobo", "apple_books": "Apple Books",
+    "google_play_books": "Google Play Books", "bn_press": "Barnes & Noble"
+  },
+  "storeLabels": {
+    "shop_book_": "our store", "kdp_book_": "Amazon", "bookshop_book_": "Bookshop.org", "course": "our course checkout",
+    "buy_": "our store", "gumroad": "our store", "payhip": "our store", "etsy": "Etsy"
+  }
+}
