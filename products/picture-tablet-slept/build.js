@@ -496,6 +496,7 @@ function endpaper(bg, col1, col2) {
   return s;
 }
 // ------------------------------------------------------------------ words: WORDS.md is the founder's file (human authorship)
+const VERSION = 'Version 1.0 · September 2026'; // bump on every change to a live file, and tell past buyers (brand kit, customer-voice rule 3)
 const QR = JSON.parse(fs.readFileSync(path.join(OUT, 'qr.json'), 'utf8'));
 const BONUS = 'playbeforepixels.com/bonus/picture-tablet-slept';
 const LOGO = (f, w) => fs.readFileSync(path.join(OUT, '../../brand/logo', f), 'utf8').replace(/<title>[\s\S]*?<\/title>/, '').replace(/ width="[\d.]+" height="[\d.]+"/, ` width="${w}"`);
@@ -510,7 +511,7 @@ const WORDS = readWords();
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 function md(text, o = {}) {
   const em = o.em || C.tomato;
-  const inline = t => esc(t).replace(/\[\[(.+?)\]\]/g, '<span class="nw">$1</span>').replace(/\*\*(.+?)\*\*/g, `<span class="em" style="color:${em}">$1</span>`);
+  const inline = t => esc(t).replace(/(\w)'/g, '$1’').replace(/'/g, '‘').replace(/\[\[(.+?)\]\]/g, '<span class="nw">$1</span>').replace(/\*\*(.+?)\*\*/g, `<span class="em" style="color:${em}">$1</span>`);
   const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
   let html = '', ref = [];
   const flush = () => { if (ref.length) { html += `<span class="ref${html ? '' : ' first'}" style="color:${o.ref || C.grass}">${ref.map(inline).join('<br>')}</span>`; ref = []; } };
@@ -575,7 +576,7 @@ pages.push(page(2, PAGE_BG(C.wash) + G('translate(650 740) scale(0.66)', U('dog-
   [{ x: 60, y: 64, w: 640, cls: 'small', html: `<p><b>The Day the Tablet Slept</b></p>
 <p>© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. All rights reserved.</p>
 <p>No part of this book may be reproduced, stored or transmitted in any form or by any means without written permission from the publisher, except for brief quotations in a review.</p>
-<p>First edition, 2026. Paperback and hardcover.</p>
+<p>First edition, 2026. Paperback and hardcover. ${VERSION}</p>
 <p>The illustrations are flat digital art. The text is set in Fredoka, with Bricolage Grotesque and Nunito Sans.</p>
 <p><b>A note for grown-ups:</b> puddle play, cooking and box-building are best enjoyed with a grown-up close by. The tablet in this story is a made-up character and is not based on any real product.</p>
 <p><b>Free Play Day planner</b> for grown-ups to print:<br><span class="nw">${BONUS}</span></p>
@@ -600,11 +601,11 @@ pages.push(page(28, PAGE_BG(C.tSun) + R(-12, 610, 840, 240, C.grass) + windowFra
   [{ ...box('morning', { x: 48, y: 44, w: 720 }) }, { x: 48, y: 700, w: 720, cls: 'end', align: 'right', html: `The End` }]));
 // p29 (R) talk about it
 const qs = [
-  ['Why do you think the tablet was so sleepy? When do <i>you</i> like to rest?', C.tomato],
-  ['Crash, splash, rocket, pancakes, library… which part would you pick?', C.sun],
+  ['If you had a whole day off, what would you do first?', C.tomato],
+  ['Crash, splash, rocket, pancakes, library… which part would you do again?', C.sun],
   ['What could a big box turn into at our house?', C.sky],
-  ['Say the sleepy part with me: “Shhh…” What does Biscuit say?', C.grass],
-  ['What should we cook together? What will your job be?', C.plum],
+  ['Let’s say the sleepy part together: “Shhh…” Now you be Biscuit!', C.grass],
+  ['If we cooked together, what would you like to make?', C.plum],
   ['Let’s plan our own Play Day. Pick three things to do!', C.tomato],
 ];
 pages.push(page(29, PAGE_BG(C.tGrass) + R(-12, -12, 840, 196, C.grass) + G('translate(690 150) scale(0.42) rotate(8)', U('tablet-sleeping')) +
@@ -612,20 +613,21 @@ pages.push(page(29, PAGE_BG(C.tGrass) + R(-12, -12, 840, 196, C.grass) + G('tran
   [{ x: 48, y: 44, w: 600, cls: 'talk-h', html: `Talk about it` },
    { x: 48, y: 118, w: 560, cls: 'talk-sub', html: `For grown-ups: after reading, try a few of these. Pause, wait, and let your child answer. There are no wrong answers.` }],
   off => `<ol class="qs" style="left:${48 + off}px;top:${214 + 12}px">${qs.map(([q, c], i) => `<li><span class="num" style="background:${c}">${i + 1}</span><span>${q}</span></li>`).join('')}</ol>
-<div class="tip" style="left:${48 + off}px;top:${620 + 12}px"><b>Read it again, and…</b> say what you see (“Biscuit is jumping!”), repeat and add one word (“Splash!” → “Big splash!”), and follow your child’s lead. Let them shout the “Shhh…” and the “WOOF!”</div>`));
+<div class="tip" style="left:${48 + off}px;top:${588 + 12}px"><b>Read it again, and…</b> say what you see (“Biscuit is jumping!”), repeat and add one word (“Splash!” → “Big splash!”), and follow your child’s lead. Let them shout the “Shhh…” and the “WOOF!”<br><b>Talk, sing and read in the language you know best. Every language counts.</b></div>`));
 // p30 (L) plan your own play day + bonus QR
 const qrSvg = (px, col = C.ink) => `<svg viewBox="-2 -2 ${QR.n + 4} ${QR.n + 4}" width="${px}" height="${px}" shape-rendering="crispEdges"><rect x="-2" y="-2" width="${QR.n + 4}" height="${QR.n + 4}" fill="#fff"/><path d="${QR.d}" fill="${col}"/></svg>`;
-const planRow = (y, label, icon, col) => G('', R(48, y, 720, 118, C.paper, 22) + R(48, y, 150, 118, col, 22) + R(150, y, 48, 118, col) + icon + R(250, y + 84, 470, 4, C.tSky, 2));
+const planRow = (y, label, icon, col) => G('', R(48, y, 720, 118, C.paper, 22) + R(48, y, 150, 118, col, 22) + R(150, y, 48, 118, col) + icon);
 pages.push(page(30, PAGE_BG(C.tSky) + R(-12, -12, 840, 180, C.sky) +
   planRow(200, 'Morning', U('sun', 123, 259, 0.42), C.tSun) +
   planRow(334, 'Afternoon', G('translate(123 440) scale(0.15)', U('rocket')), C.tTomato) +
   planRow(468, 'Bedtime', U('moon', 118, 527, 0.62), C.tPlum) +
   R(48, 612, 720, 168, C.paper, 22) + dog(724, 176, 0.36, 'dog-happy'),
   [{ x: 48, y: 40, w: 640, cls: 'talk-h', html: `Plan your own Play Day` },
-   { x: 48, y: 108, w: 620, cls: 'talk-sub', html: `Draw or write one thing for each part of the day. Then do it together!` },
-   { x: 230, y: 212, w: 500, cls: 'plan', html: `Morning` }, { x: 230, y: 346, w: 500, cls: 'plan', html: `Afternoon` }, { x: 230, y: 480, w: 500, cls: 'plan', html: `Bedtime story` }],
+   { x: 48, y: 108, w: 620, cls: 'talk-sub', html: `Point to one thing for each part of the day. Then do it together!` },
+   ...[['Morning', 'Block tower · Puddle walk · Box rocket', 212], ['Afternoon', 'Bake together · Library trip · Dance party', 346], ['Bedtime story', 'Growly bear voices · Your favorite book', 480]]
+     .map(([h, o, y]) => ({ x: 230, y, w: 520, cls: 'plan', html: `${h}<span class="opts">${o}</span>` }))],
   off => `<div class="qr" style="left:${70 + off}px;top:${630 + 12}px">${qrSvg(132)}</div>
-<div class="bonus" style="left:${226 + off}px;top:${630 + 12}px"><b>Free for grown-ups:</b> a printable Play Day planner and coloring pages. Scan the code or visit<br><span class="url">${BONUS}</span><br><span class="pair">Want more ideas? This story pairs with <i>100 Screen-Free Plays</i>.</span></div>`));
+<div class="bonus" style="left:${226 + off}px;top:${630 + 12}px"><b>Free for grown-ups:</b> a printable Play Day planner to fill in, plus coloring pages. Scan the code or visit<br><span class="url">${BONUS}</span><br><span class="pair">Want more ideas? This story pairs with <i>100 Screen-Free Plays</i>.</span></div>`));
 // p31 (R) a note from the author (founder writes it)
 const note = need('note');
 pages.push(page(31, PAGE_BG(C.tSun) + R(-12, 650, 840, 200, C.paper) + G('translate(640 600) scale(0.5)', U('dog-lie')),
@@ -745,6 +747,7 @@ body { -webkit-print-color-adjust: exact; print-color-adjust: exact }
 .t.talk-h.ink { color: #1D2940; font-size: 50px }
 .t.talk-sub { font-family: "Nunito Sans", sans-serif; font-weight: 600; font-size: 18px; line-height: 1.4; color: #FFFFFF }
 .t.plan { font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 600; font-size: 30px; color: #1D2940 }
+.t.plan .opts { display: block; margin-top: 12px; font-family: "Nunito Sans", sans-serif; font-weight: 700; font-size: 20px; color: #3D86D8 }
 .t.tag { font-family: "Nunito Sans", sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .5px; color: #1D2940 }
 .t.end { font-family: "Bricolage Grotesque", "Nunito Sans", sans-serif; font-weight: 800; font-size: 60px; color: #FFFFFF; letter-spacing: -1px }
 .t.blurb { font-family: "Nunito Sans", sans-serif; font-weight: 500; font-size: 21px; line-height: 1.45; color: #FFFFFF }
@@ -752,7 +755,7 @@ body { -webkit-print-color-adjust: exact; print-color-adjust: exact }
 .t.blurb .blurb-h { font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 600; font-size: 38px; line-height: 1.16; color: #F5B820; margin-bottom: 22px }
 .t.backmeta { font-family: "Nunito Sans", sans-serif; font-weight: 800; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; color: #FFFFFF }
 .qs { position: absolute; width: 720px; margin: 0; padding: 0; list-style: none; font-family: "Nunito Sans", sans-serif; font-size: 19px; line-height: 1.35; color: #1D2940; font-weight: 600 }
-.qs li { display: flex; align-items: center; gap: 16px; background: #FFFFFF; border-radius: 18px; padding: 10px 18px 10px 12px; margin-bottom: 9px; min-height: 56px }
+.qs li { display: flex; align-items: center; gap: 16px; background: #FFFFFF; border-radius: 18px; padding: 8px 18px 8px 12px; margin-bottom: 7px; min-height: 52px }
 .qs .num { flex: 0 0 38px; height: 38px; border-radius: 50%; color: #FFFFFF; font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 700; font-size: 21px; display: flex; align-items: center; justify-content: center }
 .tip { position: absolute; width: 720px; font-family: "Nunito Sans", sans-serif; font-size: 16px; line-height: 1.45; color: #1D2940; background: #FEF4D8; border-radius: 18px; padding: 14px 20px }
 .qr { position: absolute; width: 132px; height: 132px }

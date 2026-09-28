@@ -345,7 +345,7 @@ function agesPage() {
   ];
   return page(`<div class="in" style="gap:.16in">
     <div><span class="kicker">Use them by age</span><h1 class="g-title">Start small, grow the plan with your child</h1>
-    <p class="g-lede">Every child is different, so treat these as starting points. If a step feels like too much, drop back to fewer cards. If it feels too easy, hand over more of the plan.</p></div>
+    <p class="g-lede">Every child is different, so use these as starting points. If a step feels like too much, drop back to fewer cards. If it feels too easy, hand over more of the plan.</p></div>
     <div class="g-grid" style="grid-template-columns:1fr 1fr">${stages.map(([a, c, t, h, p]) => `<div class="tile" style="--t:${t};border-top:6px solid ${c};border-radius:16px"><span class="chip" style="background:#fff">${a}</span><h3 style="margin-top:7px">${h}</h3><p>${p}</p></div>`).join('')}</div>
     <div class="g-grid" style="grid-template-columns:repeat(3,1fr)">
       ${[['Change of plan', 'words-change-of-plan', 'Slip this card in when the day changes. It shows something new is coming, before it arrives.'], ['Wait', 'words-wait', 'For the in-between moments: the kettle, the line at the store, a sibling\'s turn.'], ['Feelings check-in', 'feelings-calm', 'Offer two or three feelings cards and let your child point. Then pick a calm-down card together.']].map(([h, id, p]) => `<div class="tile" style="display:flex;gap:10px;align-items:center;--t:${C.wash}"><div style="flex:0 0 auto;width:1.1in;height:1.1in"><div style="transform:scale(.5);transform-origin:top left">${card(CARDS.find(c => c.id === id), 'rainbow')}</div></div><div><h3>${h}</h3><p>${p}</p></div></div>`).join('')}

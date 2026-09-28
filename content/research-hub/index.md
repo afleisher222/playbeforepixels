@@ -213,7 +213,7 @@ These designs **cannot tell which came first**. In the Tunisian study, autistic 
 - **Japan, 84,030 children.** In **boys but not girls**, longer screen time at age 1 went with higher odds of an autism diagnosis by age 3. The odds did not rise steadily: they were highest at 2 to 4 hours, not at 4 hours or more ([Kushima 2022](/research/studies/kushima-2022/)).
 - **France, 12,950 two-year-olds.** Screen use went with very slightly higher odds of a *medium* screening score but *lower* odds of a *high-risk* score. There was no simple "more screens, more autism" pattern ([Melchior 2022](/research/studies/melchior-2022-elfe/) [VERIFY]).
 - **Australia, 5,107 children.** More than 14 hours a week at age 2 went with autism by 12 in a standard analysis, but not in a second analysis designed to get closer to cause ([Lin 2025](/research/studies/lin-2025-lsac/) [VERIFY]).
-- **United States, 82 toddlers with a family history of autism or ADHD.** Children later identified with autism or ADHD concerns had more screen time at 18 months. The study cannot tell whether that screen time was an early sign or a contributor ([Hill 2024](/research/studies/hill-2024/) [VERIFY]).
+- **United States, 82 toddlers, many with a family history of autism or ADHD.** Children later identified with autism or ADHD concerns had more screen time at 18 months. The study cannot tell whether that screen time was an early sign or a contributor ([Hill 2024](/research/studies/hill-2024/) [VERIFY]).
 
 ### Reviews that combine many studies
 
@@ -307,7 +307,7 @@ If you'd like some ideas to play with, our free printable, [Five 5-Minute Plays]
 The World Health Organization recommends no screen time for babies under 1 and no more than 1 hour a day for 2-to-4-year-olds, with plenty of active play ([WHO 2019](/research/studies/who-2019-under-5-guidelines/)). The American Academy of Pediatrics published detailed advice for under-5s in 2016 ([AAP 2016](/research/studies/aap-2016-media-and-young-minds/)) and a new policy statement in January 2026 that reportedly replaces its earlier media guidance ([AAP 2026](/research/studies/aap-2026-digital-ecosystems/) [VERIFY]). We will summarize the 2026 advice once we have read it. Research on *how* screens are used suggests that watching together and keeping background TV off may matter as well as total time ([Mallawaarachchi 2024](/research/studies/mallawaarachchi-2024-contexts/) [VERIFY]).
 
 **6. Go easy on yourself.**
-Almost every family uses screens. Using a screen so you can shower, cook or catch your breath does not make you a bad parent, and it does not cause autism. If your child is autistic, that is not your fault.
+Almost every family uses screens. Using a screen so you can shower, cook or catch your breath does not make you a bad parent. No study has shown that screens cause autism. If your child is autistic, that is not your fault.
 
 ## All the evidence in one place
 

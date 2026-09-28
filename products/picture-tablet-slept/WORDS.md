@@ -20,6 +20,11 @@ Simple markup (optional):
   [[a phrase]]  keeps a phrase on one line
   A new line in this file is a new line on the page.
 Lines inside these arrow brackets are notes and never print.
+
+Read-aloud rules (brand kit): keep each spread (left + right together) to
+40 words or fewer, keep the refrain word-for-word the same, and read the whole
+book aloud three times, once at a tired bedtime pace, before you rebuild.
+Straight apostrophes (') print as curly ones automatically.
 -->
 
 ## author
@@ -142,13 +147,13 @@ But it was still asleep.
 ## s10 left
 The library had books about dinosaurs,
 books about rockets,
-and one book about a dog in boots.
+and one about a dog in boots.
 
 ## s10 right
 “Shhh,” whispered Ms. Rosa the librarian.
 “Books like it quiet.”
 “Just like the tablet!” whispered Ada.
-She picked a book about a very growly bear.
+She picked a book about a growly bear.
 
 ## s11 left
 That night, Papa read the bear book.

@@ -1,52 +1,97 @@
 {
   "slug": "picture-more-talk-less-tap",
-  "title": "More Talk, Less Tap",
-  "subtitle": "A Talk Tower story for circle time",
-  "format": "Full-color picture book, library and classroom edition: hardcover (case-laminate or library binding, produced by the printer or a library bindery), with a paperback option. Interior print file: 32 PDF pages = front cover, 'This book lives in' endpaper, title page, copyright page (with labelled ISBN box), 'Meet Room 5' cast page, 22 story pages (11 full-bleed spreads), a note for educators and families, a 'Talk starters' page, a two-page 'Circle-time talk games' spread (3 games) and back cover (with labelled 2 x 1.2 in ISBN / barcode box).",
-  "trim": "8.5 x 8.5 in trim; 8.75 x 8.75 in with 0.125 in bleed on every edge; text and faces kept inside a 0.375 in safe zone and away from the gutter",
-  "pages": 32,
-  "ages": "3–7",
-  "price_usd": 19.99,
-  "price_notes": "Suggested retail $19.99 for the library and classroom hardcover and $11.99 for a paperback. Library-bound 32-page picture books commonly list higher than trade hardcovers [VERIFY against current comparable listings]. Before fixing prices, run each printer's cost calculator for 32 full-color pages at 8.5 x 8.5 in in each binding, check the channel's royalty or wholesale discount (libraries usually buy through a distributor at a discount), and make sure each sale clears at least $3 [VERIFY with each printer's calculator]. Test a classroom bundle (hardcover + printable Talk Tower block labels) at $24.99.",
-  "short_description": "Room 5 builds a Talk Tower: a block for every question, joke and idea said out loud. A sturdy circle-time read-aloud about turn-taking. Ages 3–7.",
-  "long_description": "Every time someone asks a question, tells a joke or shares an idea out loud, a block goes on the Talk Tower.\n\nAt first, circle time in Room 5 is very quiet. Everybody is waiting for somebody else to go first. Then Ms. Poppy tips out a bin of blocks, and the class starts talking: Priya asks why Bubbles the fish is orange, Leo tells a knock-knock joke, and Zara has an idea. The tower grows all week, until the day everybody talks at once and it comes crashing down. It is quiet Sam who has the idea that saves the day: take turns. With a Talking Star to pass around and a new purple block for good listening, Room 5 builds a tower taller than their teacher.\n\nMore Talk, Less Tap is a warm, funny read-aloud written for circle time, with a repeated 'CLACK!' that children love to shout. It celebrates conversation, turn-taking and listening without lectures or shame.\n\nThe back pages give teachers and families a short note with simple talk tips, a page of talk starters, and three circle-time talk games that need nothing more than blocks or a soft toy.\n\nThe library and classroom edition is made for many readings: a durable hardcover for shared shelves, story corners and library collections. For ages 3–7.",
+  "status": "held-pending-counsel",
+  "status_notes": "School-facing product: built now, NOT for sale until employment counsel answers (marketing/DEMAND-CHECK.md; legal/FOR-EMPLOYMENT-COUNSEL.md). The name 'Talk Tower' also needs trademark counsel's clearance before launch (marketing/CAMPAIGN-BIBLE.md, idea 19). Replaces the cut picture book 'More Talk, Less Tap', which now ships only as a bonus read-aloud PDF inside this kit.",
+  "title": "Talk Tower Classroom Game Kit",
+  "subtitle": "A turn-taking talk game for circle time: ask, comment, add one",
+  "format": "Printable PDF kit (instant digital download), no physical product. The buyer receives 4 PDFs: (1) the kit, US Letter, 25 pages; (2) the same kit, A4, 25 pages; (3) projectable slides, 16:9, 20 slides; (4) bonus read-aloud story 'More Talk, Less Tap', 32 pages, 8.75 in square. Kit pages: cover; inside this kit + quick start + first-week plan; before you start (printing, ages, inclusion, safety); one-page teacher script; wall poster; tower-block turn cards (4 pages, 8 each: ASK, COMMENT, ADD ONE, LISTEN); name blocks (27); whose-turn tracker mat; weekly turn tracker (22 rows); Talking Star cut-out and 'Tower wobble!' sign; prompt cards (ask 9, comment 9, add one 9, topics 9); circle-time variations (6 games, 2 pages); family take-home letter and family tower fridge sheet; class certificate; bonus story page; license terms and copyright; More from Play Before Pixels with bonus QR.",
+  "trim": "US Letter 8.5 x 11 in and A4 210 x 297 mm, 0.5 in margins, no bleed (home or print-shop printing). Cut sizes: tower blocks 3.4 x 2.25 in; prompt and topic cards 2.25 x 3 in; name blocks 2.25 x 0.95 in (all include a ~0.09 in white cutting margin). Slides 13.333 x 7.5 in (16:9). Bonus story 8.75 x 8.75 in pages (8.5 in trim + bleed).",
+  "pages": 25,
+  "pages_detail": {
+    "kit_letter": 25,
+    "kit_a4": 25,
+    "slides": 20,
+    "bonus_story": 32
+  },
+  "ages": "3–7 (preschool to grade 2)",
+  "price_usd": 6.99,
+  "price_site_license_usd": 12.99,
+  "license_tiers": [
+    {
+      "tier": "single-classroom",
+      "price_usd": 6.99,
+      "covers": "One teacher and the children they teach; unlimited copies for them; projection in class; password-protected class page only."
+    },
+    {
+      "tier": "site",
+      "price_usd": 12.99,
+      "covers": "All staff at one named school, center or library site; delivered by automated email with a license certificate naming the site."
+    }
+  ],
+  "price_notes": "Prices set by marketing/DEMAND-CHECK.md (section 2, #13): $6.99 single-classroom, $12.99 site license. At or above the $5 TPT floor (rule 10). On TPT a basic seller keeps about 55% minus $0.30 per sale, so $6.99 nets roughly $3.54 and $12.99 roughly $6.84 [VERIFY current TPT payout tiers and whether TPT's own multi-license tool replaces our site tier]. On our own site both tiers are 100% digital, so margin is the price minus payment and platform fees. $12.99 for a whole site is low compared with the per-teacher price; revisit after the first 60 days of sales (DEMAND-CHECK kill/reprice rule). Planned ladder: this kit feeds the Classroom Talk and Play growth bundle ($22–$26) and the Talk Tower Class Cup ($15 classroom / $99 school season).",
+  "short_description": "Circle-time talk game: every question, comment and idea adds a block to the class tower. Cards, script, trackers, slides and a bonus story. Ages 3–7.",
+  "long_description": "Talk Tower turns circle time into a game every child can join. Each time a child asks a question, says something back, adds one more idea or shows they listened, a colorful block goes on the class tower. Everyone builds one tower together, so there are no winners, no points and no blocks taken away.\n\nInside you'll find 32 tower-block turn cards in four colors, 36 prompt and topic cards, name blocks with a whose-turn mat, a weekly turn tracker, and a Talking Star with a 'Tower wobble!' sign for quick resets. A one-page, word-for-word teacher script gets your first round going in about ten minutes, and six circle-time variations keep it fresh all year, each with an easier and a stretch option.\n\nEvery way of talking counts: spoken words, signing, pointing, picture cards and communication devices all earn a block, and 'pass' is always OK.\n\nTwo family take-home pages bring the game to the dinner table, a class certificate celebrates your tallest tower, and a 20-slide deck lets you project the blocks and topics for the whole group. As a bonus you also get More Talk, Less Tap, a 32-page read-aloud story about a class that builds its own Talk Tower.\n\nUS Letter and A4 PDFs for ages 3–7, preschool to grade 2. Choose a single-classroom license or a site license for your whole school or center.",
   "bullets": [
-    "Library and classroom edition: a durable hardcover made for shared shelves, story corners and many, many readings",
-    "A read-aloud built for circle time, with short pages, big friendly type and a 'CLACK!' refrain children shout along with",
-    "Celebrates asking questions, telling jokes, sharing ideas, taking turns and really listening, with no lectures and no shame",
-    "Bold, full-bleed flat illustrations and an inclusive class of five children, their teacher Ms. Poppy and Bubbles the fish",
-    "Back pages for grown-ups: a note for educators and families, a page of talk starters and three easy circle-time talk games"
+    "A ready-to-play turn-taking game: ask, comment, add one and listen, with one class tower that everyone builds together",
+    "One-page, word-for-word teacher script plus six circle-time variations, each with an easier and a stretch option",
+    "32 tower blocks, 36 prompt and topic cards, name blocks, a whose-turn mat, a weekly tracker and a Talking Star",
+    "Every way of talking counts: words, signs, pointing, picture cards and devices all earn a block, and 'pass' is always OK",
+    "US Letter and A4 PDFs, a 20-slide projectable deck, family take-home pages and a bonus 32-page read-aloud story"
   ],
   "keywords": [
-    "circle time read aloud book",
-    "picture book about taking turns",
-    "preschool classroom library book",
-    "listening skills book for kids",
-    "kindergarten read aloud hardcover",
-    "conversation picture book ages 3-7",
-    "screen free play picture book"
+    "turn taking game preschool",
+    "circle time talk game",
+    "conversation cards kindergarten",
+    "listening and speaking activities",
+    "morning meeting game pre-k",
+    "oral language printable game",
+    "screen-free classroom game"
   ],
-  "seo_title": "More Talk, Less Tap: A Circle-Time Picture Book (Ages 3–7)",
-  "seo_description": "Room 5 builds a Talk Tower, one question, joke and idea at a time. A sturdy library and classroom read-aloud about turn-taking and listening.",
-  "alt_text": "Cover of the picture book More Talk, Less Tap: large white title letters on a bright tomato-red background above four smiling children, one cheering, one raising her hand, beside a stacked tower of blue, purple, green and yellow blocks marked with a question mark, an ear, a light bulb and a smiley face, with a yellow badge reading 'Circle-time talk games inside!'",
+  "seo_title": "Talk Tower: Circle-Time Turn-Taking Talk Game (Ages 3–7)",
+  "seo_description": "A printable circle-time game: every question, comment and idea adds a block to the class tower. Teacher script, cards, trackers, slides, bonus story.",
+  "alt_text": "Printed Talk Tower classroom game kit laid flat on a pale yellow table: the kit cover with the title Talk Tower, four smiling children beside a tall stack of blue, yellow, green and purple blocks topped with a star; the teacher script page behind it; the bonus story cover More Talk, Less Tap; cut-out ASK, COMMENT, ADD ONE and LISTEN cards; and a yellow paper Talking Star.",
+  "images": {
+    "cover": "cover.png (1236 x 1600, page 1 of the Letter kit)",
+    "mockup": "mockup.png (1600 x 1200 flat lay)",
+    "previews": "preview/ (Letter), preview-a4/, preview-slides/, story-bonus/preview/"
+  },
+  "files": {
+    "downloads/Talk-Tower-Classroom-Game-Kit-US-Letter.pdf": "what the buyer receives (copy of picture-more-talk-less-tap.pdf)",
+    "downloads/Talk-Tower-Classroom-Game-Kit-A4.pdf": "A4 edition (copy of picture-more-talk-less-tap-A4.pdf)",
+    "downloads/Talk-Tower-Slides-16x9.pdf": "projectable slides (copy of picture-more-talk-less-tap-slides.pdf)",
+    "downloads/Talk-Tower-Story-Read-Aloud.pdf": "bonus story (copy of story-bonus/more-talk-less-tap-read-aloud.pdf)",
+    "WORDS.md": "founder-editable card text and founder slots",
+    "build/build-all.js": "rebuilds everything: node build/build-all.js",
+    "story-bonus/": "the former picture book: source, build scripts, previews, cover; ARCHIVED-book-listing.json keeps the old hardcover listing"
+  },
   "channels": [
-    "IngramSpark hardcover (case laminate) with your own ISBN: reaches libraries, schools, bookstores and Bookshop.org through Ingram distribution",
-    "Library binding: supply the print-ready files to a printer or library bindery that offers library/reinforced binding, or let library suppliers rebind the trade hardcover [VERIFY options and minimums]",
-    "Amazon KDP paperback (print-on-demand); KDP hardcover only if its current minimum page count allows 32 pages [VERIFY]",
-    "Play Before Pixels website shop (print-on-demand integration; classroom bundle with printables)",
-    "Bulk and purchase-order sales to preschools, early-childhood programs, libraries, parent groups and PTAs, fulfilled by the print partner",
-    "Etsy listing fulfilled by a print-on-demand integration (no author stock)"
+    "HELD until employment counsel clears school-facing work; nothing below goes live before that",
+    "Play Before Pixels website shop: instant digital download with single-classroom and site-license tiers; site licenses delivered by automated email with a stamped PDF and license certificate; school purchase orders through the written quote form",
+    "Teachers Pay Teachers (TPT's own license framework and multiple-license pricing apply there) [VERIFY current seller terms]",
+    "Etsy digital download (single-classroom license only; site licenses sold on our own site)"
   ],
-  "compliance_notes": "No health or medical claims: the book is a story plus general parent-education ideas; it does not claim to treat, prevent, diagnose or improve any condition, and the copyright page says the games are not a program, assessment or professional advice. Not presented as written by a speech-language pathologist or any clinician. No research citations are used. No trademarked program names; the tips use plain words only (pause and wait, say what you see, repeat and add a little, follow their lead). No real schools, districts, companies, apps, devices or products are named or shown; 'Room 5', Ms. Poppy and the children are fictional, and the copyright page says so. No 'virtual autism' language. Child safety: the games call for large blocks or paper strips and a soft toy, the copyright page asks grown-ups to supervise and use blocks too big to swallow, the teacher (an adult) is the one who stands on the step stool, and the only food shown is a whole banana (not a choking-hazard food on the kit's list). Copyright line follows legal/ENTITY.md: '© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.' No street address is printed in the book. Print notes: the PDF is RGB and built to the brand kit's 8.75 x 8.75 in page with bleed on all four edges; printers differ (for example, some want no bleed on the gutter edge, and hardcover case covers need a separate wrap with spine and hinge allowances) [VERIFY], so the final file must be checked against the chosen printer's current template (KDP, IngramSpark, Lulu, etc.) before upload. Library binding is done by the printer or bindery, not by the business. Picture books for ages 3–7 are generally treated as ordinary books under US CPSIA [VERIFY with the printer and CPSC guidance].",
+  "amazon_route": "none-with-reason",
+  "amazon_route_reason": "A licensed classroom kit (cut-apart cards, projectable slides, per-classroom and per-site licenses) cannot be sold or licensed through a KDP paperback, and the product is school-facing and held. Revisit a KDP activity-book edition of the family take-home pages only after counsel clears it and the PDF sells.",
+  "next_products": [
+    "talk-tower-class-cup",
+    "back-and-forth-tally",
+    "play-talk-cards"
+  ],
+  "bonus_url": "https://playbeforepixels.com/bonus/picture-more-talk-less-tap",
+  "compliance_notes": "Rule 1: no health, medical or clinical claims; no 'therapy', 'speech therapy', 'SLP', 'clinically proven', diagnosis or disorder words anywhere; the kit says it is general classroom play ideas and not a program, assessment, screening tool or professional advice; the tracker says it is a play game, not a measurement or screening tool. No SLP or clinical authorship implied. Autism rule: no autism or diagnosis keywords, tags or copy in the kit, slides or listing. Rule 2: no school, district, company, app, device or EdTech product named or shown; no local angle; the story's Room 5, Ms. Poppy and children are fictional. Rule 5: no research citations used. Rule 6: talk tips use plain words only (pause and wait, say what you see, repeat and add one word, follow their lead); no trademarked program names. Rule 4 child safety: adult supervision stated on the safety page and family page; paper pieces are large; real blocks or objects near under-3s must be too big to fit through a toilet-paper tube (about 1.25 in / 3.2 cm); Mystery Bag objects follow the same rule; soft large ball rolled on the floor; no balloons under 8; pushpins, staples and small magnets kept out of reach. Inclusion: every mode of communication earns a block, pass is always OK, class totals only, blocks never taken away, no individual ranking. Rule 7 and logo rules: original names, characters and page designs; final logo kit from brand/logo/ (horizontal lockup, one-colour white on the story's tomato and sky covers); blocks appear only as game art and illustration, never as a logo, product mark or series mark, and the Talk Tower title is set in type. Privacy: the bonus asks for an email only (no child names); the kit asks families and teachers not to post children's names or faces. Legal: copyright line '© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.' on the license page, the story copyright page and in every page footer with the short license notice (per legal/protection/digital-product-license.md, Part A). The license page is drafted from the DRAFT license template and needs attorney review. PDF metadata carries the copyright and license URL. Printing: printables are Letter and A4 with 0.5 in margins and no bleed; test-print at 100% before sale. The bonus story is RGB with 0.125 in bleed; if a print edition ever returns, check it against the chosen printer's current template (KDP, IngramSpark, Lulu, etc.) before upload.",
   "human_todo": [
-    "Buy an ISBN for each edition (library hardcover, paperback) from the official ISBN agency, then add the hardcover ISBN to the copyright-page box and place the barcode in the labelled 2 x 1.2 in box on the back cover",
-    "Choose the hardcover printer and confirm it offers 32-page 8.5 x 8.5 in full-color hardcover; download its current interior template and re-export at its exact page size [VERIFY]",
-    "Arrange the library binding: this edition's durability comes from the printer or a library bindery, not from the file. Ask the printer or bindery for their reinforced/library binding option, spec sheet, minimums and prices, and do not call the book 'library bound' in listings until that binding is actually what customers receive",
-    "Have a one-piece hardcover case wrap made from the front and back cover art using the printer's cover calculator (spine width and hinge/turn-in allowances) [VERIFY]",
-    "Order and review a physical proof: color shift from RGB to CMYK (especially the tomato cover and the pale page tints), gutter, trim and text readability",
-    "Decide on an author or illustrator credit (currently the Play Before Pixels imprint only) and whether to add a dedication",
-    "Add any printer-required lines such as 'Printed in ___', and confirm CPSIA status with the printer [VERIFY]",
-    "Optionally apply for Library of Congress Cataloging-in-Publication or PCIP data before printing, which helps library sales [VERIFY eligibility]",
-    "Set final prices after checking print cost, wholesale discount and royalty in each channel, then list the book using cover.png and mockup.png"
+    "HOLD: do not list, post or promote this kit anywhere until employment counsel answers the school-facing question (legal/FOR-EMPLOYMENT-COUNSEL.md). Never market it to the excluded organizations listed in CLAUDE.md.",
+    "TRADEMARK: a similarly named social-skills game exists (see the trademark search log referenced in marketing/CAMPAIGN-BIBLE.md, idea 19). Get trademark counsel's clearance for 'Talk Tower' before sale. If a rename is advised, change NAME in build/kitlib.js (and the title strings in build/kit.js, build/slides.js, the story subtitle in story-bonus/build/build.js and this listing), then run node build/build-all.js.",
+    "AI-ASSISTANCE NOTE (be honest wherever a platform asks): the kit's text, card prompts, teacher script, illustrations and layout, and the bonus story's text and illustrations, were drafted with AI assistance (Claude by Anthropic) under the founder's direction, then reviewed and selected by her. If a KDP edition is ever made, answer KDP's AI-content question 'yes' for AI-generated text and images unless you have since rewritten or redrawn them yourself [VERIFY KDP's current definitions of AI-generated vs AI-assisted]. Check TPT's and Etsy's current AI disclosure rules before listing [VERIFY]. Never describe AI-generated material as human-authored in any copyright filing.",
+    "HUMAN AUTHORSHIP: rewrite the card prompts in WORDS.md in your own words, fill the three empty founder slots ('founder-note' prints on page 2; 'story-author' and 'story-dedication' print in the bonus story as dashed orange boxes until filled), and optionally edit the teacher script and variations text in build/kit.js. Then run node build/build-all.js, commit each version to git, and log the changes in legal/protection/creation-records-log.md.",
+    "LICENSE: have an attorney review the license page (kit page 24) against legal/protection/digital-product-license.md (still a DRAFT) and TPT's current license framework, and publish playbeforepixels.com/license before sale (the URL is printed in every footer and on the license page).",
+    "BONUS PAGE: build playbeforepixels.com/bonus/picture-more-talk-less-tap (the QR target) with the promised free printable (extra Talk Tower topic cards and 5-minute family talk games) and an email-only sign-up (no child names; birth month/year only). Scan the printed QR on paper to test it.",
+    "DELIVERY AUTOMATION: single-classroom = instant download of the 4 PDFs in downloads/; site license = automated email with buyer-stamped PDFs and a license certificate naming the site [VERIFY the store platform's stamping support]; school purchase orders through the written quote form, emailed invoice and automatic delivery on payment.",
+    "SPANISH: have a fluent human translator make Spanish versions of the two family take-home pages (DEMAND-CHECK: English and Spanish family letters). Do not machine-translate for sale.",
+    "PRINT TEST: print one Letter set and one A4 set at 100% on white cardstock at home and at a print shop; check the dashed cut lines, card sizes (blocks 3.4 x 2.25 in, cards 2.25 x 3 in), the yellow blocks on inkjet, and lamination. Fix anything, rebuild, re-check.",
+    "PREVIEWS: upload cover.png and mockup.png plus 3–4 preview pages; watermark previews and keep full pages out of public listings (license template, preparer notes).",
+    "CROSS-LINKS: confirm the three products on the 'More from Play Before Pixels' page (Talk Tower Class Cup, Back-and-Forth Tally, 52 Play & Talk Cards) are live or clearly 'coming soon' at launch, and keep their names in sync with any renames.",
+    "STALE REFERENCES ELSEWHERE (not changed by this build): commerce/links.js still has shop_book_more_talk_less_tap, kdp_book_more_talk_less_tap and bookshop_book_more_talk_less_tap entries for the cut library-bound book, and seo/SEO-PLAN.md row 15 (/shop/more-talk-less-tap/) still describes a picture book. Update them to the kit (with the employment-counsel publish gate) or remove them.",
+    "BOOK IP: the old hardcover listing is kept in story-bonus/ARCHIVED-book-listing.json. No ISBN is needed for the bonus PDF; buy one only if a print edition ever returns."
   ]
 }
