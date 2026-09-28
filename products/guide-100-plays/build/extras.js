@@ -84,7 +84,7 @@ function back() {
     <div class="bbands">${BANDS.map((b, i) => `<div style="background:${BC[b.key].c};color:${BC[b.key].fg}"><svg viewBox="-60 -60 120 120"><circle r="58" fill="${W}"/><use href="#a-${['rattle', 'basket', 'boot', 'rocket'][i]}" transform="scale(.8)"/></svg><span class="display">${b.label}</span><small>${b.to - b.from + 1} plays</small></div>`).join('')}</div>
     <div class="bfoot">
       <div><img src="${LOGO('lockup-horizontal')}" alt="Play Before Pixels"><p>playbeforepixels.com · Parent education, not medical advice.<br>Black-and-white interior · free full-color play pages at the bonus link inside.<br>${COPY}</p></div>
-      <div class="isbn">ISBN / barcode<br><span>KDP places the barcode here</span></div>
+      <div class="isbn" aria-hidden="true"></div>
     </div>
   </div>`;
 }
@@ -105,8 +105,9 @@ const backCss = `
 .bfoot { margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; gap: .3in }
 .bfoot img { height: .42in; display: block; margin-bottom: .1in }
 .bfoot p { font-size: 8pt; line-height: 1.45 }
-.isbn { width: 2in; height: 1.2in; background: ${W}; border: 1.5px dashed ${C.ink}; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-weight: 800; font-size: 9pt; letter-spacing: .06em; flex: none }
-.isbn span { font-weight: 600; font-size: 7pt; letter-spacing: 0; color: #5A6478 }`;
+/* Barcode area: a plain white 2 x 1.2 in block, no label or outline. KDP prints its own barcode at the lower right of
+   the back cover (position UNVERIFIED; check KDP's cover template before upload). */
+.isbn { width: 2in; height: 1.2in; background: ${W}; flex: none }`;
 
 function wrapHtml() {
   const Wd = BLEED * 2 + 16 + SPINE, Ht = 10 + BLEED * 2;

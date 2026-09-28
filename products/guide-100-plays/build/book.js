@@ -13,7 +13,9 @@ const { TIRED } = require('./plays.js');
 
 // bw: grayscale paperback interior · low: low-ink edition (white grounds, line art) · etsy: marketplace edition with no URL or QR code
 // (CUSTOMER-VOICE rules 1–4) · extras: the four bonus planner pages and type-in fields of the digital editions.
-const PB = { pw: 8.25, ph: 10.25, bt: .125, bb: .125, bo: .125, bi: .125, m: { t: .5, b: .55, o: .5, i: .7 } };
+// Paperback: the running footer (.folio) sits .40 in above the bottom trim so its ink clears KDP's 0.375 in outside
+// margin (UNVERIFIED; ops/TESTS/print-fixes.md), and the live area ends .64 in above trim so body text never meets it.
+const PB = { pw: 8.25, ph: 10.25, bt: .125, bb: .125, bo: .125, bi: .125, fb: .40, m: { t: .5, b: .64, o: .5, i: .7 } };
 const LT = { pw: 8.5, ph: 11, bt: 0, bb: 0, bo: 0, bi: 0, m: { t: .55, b: .6, o: .6, i: .6 } };
 const A4 = { pw: 8.27, ph: 11.69, bt: 0, bb: 0, bo: 0, bi: 0, m: { t: .6, b: .65, o: .55, i: .55 } };
 const VARIANTS = {
@@ -29,6 +31,9 @@ const VARIANTS = {
   'etsy-a4-low': Object.assign({ file: 'source-etsy-lowink-a4.html', bw: false, low: true, etsy: true, extras: true, label: 'Etsy edition, Low-ink, A4' }, A4),
 };
 let V = VARIANTS.letter; // the variant being assembled
+// Paperback ISBN, printed on the copyright page only once it exists. Leave '' for KDP's free ISBN: KDP prints its own
+// barcode on the cover, and the copyright-page ISBN line is optional (UNVERIFIED). See ../founder-notes.md.
+const ISBN_PAPERBACK = '';
 
 // ---------------------------------------------------------------- black-and-white conversion (KDP B/W interior)
 function toGray(html) {
@@ -45,7 +50,7 @@ function toGray(html) {
 function css(v) {
   return `
 @page { size: ${v.pw}in ${v.ph}in; margin: 0 }
-:root { --pw:${v.pw}in; --ph:${v.ph}in; --bt:${v.bt}in; --bb:${v.bb}in; --bo:${v.bo}in; --bi:${v.bi}in; --mt:${v.m.t}in; --mb:${v.m.b}in; --mo:${v.m.o}in; --mi:${v.m.i}in;
+:root { --fb:${v.fb || .24}in; --pw:${v.pw}in; --ph:${v.ph}in; --bt:${v.bt}in; --bb:${v.bb}in; --bo:${v.bo}in; --bi:${v.bi}in; --mt:${v.m.t}in; --mb:${v.m.b}in; --mo:${v.m.o}in; --mi:${v.m.i}in;
   --ink:${C.ink}; --wash:${C.wash}; --tomato:${C.tomato}; --sun:${C.sun}; --sky:${C.sky}; --grass:${C.grass}; --plum:${C.plum};
   --tTomato:${C.tTomato}; --tSun:${C.tSun}; --tSky:${C.tSky}; --tGrass:${C.tGrass}; --tPlum:${C.tPlum}; --line:#C9D1DE; --soft:#5A6478 }
 * { box-sizing: border-box; margin: 0; padding: 0 }
@@ -57,7 +62,7 @@ body { font-family: "Nunito Sans", "Helvetica Neue", Arial, sans-serif; color: v
 .live { position: absolute; top: calc(var(--bt) + var(--mt)); bottom: calc(var(--bb) + var(--mb)); display: flex; flex-direction: column }
 .recto .live { left: calc(var(--bi) + var(--mi)); right: calc(var(--bo) + var(--mo)) }
 .verso .live { left: calc(var(--bo) + var(--mo)); right: calc(var(--bi) + var(--mi)) }
-.folio { position: absolute; bottom: calc(var(--bb) + .24in); font-size: 8pt; color: var(--soft); display: flex; gap: .12in; align-items: center; letter-spacing: .02em }
+.folio { position: absolute; bottom: calc(var(--bb) + var(--fb)); font-size: 8pt; color: var(--soft); display: flex; gap: .12in; align-items: center; letter-spacing: .02em }
 .recto .folio { right: calc(var(--bo) + var(--mo)) }
 .verso .folio { left: calc(var(--bo) + var(--mo)); flex-direction: row-reverse }
 .folio b { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 10pt; color: var(--ink) }
@@ -193,7 +198,7 @@ function copyrightPage() {
     <p>All rights reserved. No part of this book may be reproduced or shared without written permission, except short quotations in reviews. Buyers of the PDF edition may print pages for use in their own household.</p>
     <p style="margin-top:.12in">Published by AlphaPlay LLC, doing business as Play Before Pixels${V.etsy ? '. Questions? Send us a message through Etsy.' : ' · playbeforepixels.com · Contact: through the form at playbeforepixels.com'}</p>
     ${V.bw ? `<div style="display:flex;gap:.16in;align-items:center;margin-top:.14in;border:1.5px solid ${C.ink};border-radius:.12in;padding:.1in .14in"><div style="flex:none">${qrSvg(72)}</div><p><b>This paperback has a black-and-white interior.</b> Get the play pages in full color, free: scan the code or visit ${BONUS}. We only ask for an email and your child’s birth month and year.</p></div>` : ''}
-    ${V.bw ? `<div style="display:inline-flex;align-self:flex-start;gap:.1in;align-items:center;margin-top:.16in;border:1.5px dashed ${C.ink};padding:.08in .14in;font-weight:800">ISBN: <span style="font-weight:600">[founder adds the ISBN before upload]</span></div>` : ''}
+    ${V.bw && ISBN_PAPERBACK ? `<p style="margin-top:.12in">ISBN ${esc(ISBN_PAPERBACK)}</p>` : ''}
     <p style="margin-top:.12in"><b>Teachers, child-care centers and groups:</b> this copy is for one household. ${V.etsy ? 'For a classroom or site license, send us a message through Etsy.' : 'Classroom and site licenses are available through the quote form at playbeforepixels.com.'}</p>
     <p style="margin-top:.16in"><b>Please read.</b> This book offers play ideas and general parent education. It is not medical, developmental or professional advice, and it does not diagnose, treat or prevent any condition. Every play is meant to be done with a grown-up right there. Ages are a guide: you know your child best, so skip or change any play that does not feel right. Always follow the safety notes and the "Safety first" page.</p>
     <p style="margin-top:.1in">No brands, apps, devices, products, schools or programs are named, reviewed or endorsed in this book. Any object shown is generic.</p>

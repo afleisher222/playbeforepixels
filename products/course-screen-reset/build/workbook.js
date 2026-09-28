@@ -8,6 +8,10 @@ const path = require('path');
 const P = require('./parts.js');
 const { C, W, K, esc, pad2, WC, weekOf, wc, qrSvg, ico, drops, ageLabel, artDisc, fld, sceneCover, WEEK_SCENES, sceneSvg, playCard, scriptBox, COPY, SITE, BONUS } = P;
 
+// Paperback ISBN, printed as plain text on the copyright page only once it exists (KDP free ISBN or an owned one;
+// the copyright-page line is optional on KDP, UNVERIFIED). Leave '' until then. See ../founder-notes.md.
+const ISBN_PAPERBACK = '';
+
 const VARIANTS = {
   'color-letter': { file: 'source.html', w: 8.5, h: 11, m: .55, low: false, gray: false, url: true, book: false, fill: true },
   'color-a4': { file: 'source-color-a4.html', w: 8.27, h: 11.69, m: .55, low: false, gray: false, url: true, book: false, fill: true },
@@ -45,7 +49,7 @@ function doc(V) {
       const b = V.bleed, g = V.gutter, m = V.m;
       pad = { t: b + m, b: b + .5, l: recto ? g : b + m, r: recto ? b + m : g };
     } else pad = { t: V.m, b: .5, l: V.m, r: V.m };
-    const footer = o.nofoot ? '' : `<footer class="foot" style="left:${pad.l}in;right:${pad.r}in;bottom:${(V.book ? V.bleed : 0) + .28}in">
+    const footer = o.nofoot ? '' : `<footer class="foot" style="left:${pad.l}in;right:${pad.r}in;bottom:${V.book ? V.bleed + .42 : .28}in">
       <span class="fl">${V.url ? `<img src="${MARK}" alt="" class="fmark">` : ''}<b>${esc(K.TITLE)}</b>${o.run ? ' · ' + esc(o.run) : ''}</span>
       <span class="fr">${V.url ? SITE + ' · ' : 'Play Before Pixels · '}${K.VERSION}<b class="pn">${n}</b></span></footer>`;
     pages.push(`<section class="page ${o.cls || ''}" style="${o.bg && !V.low ? `background:${o.bg};` : ''}">
@@ -145,8 +149,9 @@ function doc(V) {
     </div>`, { run: 'Start here' });
 
   // Note + map
-  const note = K.FOUNDER.welcomeNote ? `<p class="fnote">${esc(K.FOUNDER.welcomeNote)}</p>` : `<div class="founder-slot"><b>FOUNDER WRITES THIS</b>A short welcome in your own words (60–120 words): why you made this program. Add it to FOUNDER.welcomeNote in build/content.js and rebuild. This box does not print once you do.</div>`;
-  page(`${H('A note before you start', 'Your month at a glance')}
+  // Optional welcome in the founder's own words (template: ../founder-notes.md). Nothing prints until it is written.
+  const note = K.FOUNDER.welcomeNote ? `<p class="fnote">${esc(K.FOUNDER.welcomeNote)}</p>` : '';
+  page(`${H(note ? 'A note before you start' : 'Before you start', 'Your month at a glance')}
     ${note}
     <div class="map">${K.WEEKS.map(w => { const c = WC[w.color]; return `<div class="mapw" style="border-color:${c.c}">
       <div class="mapk" style="background:${c.c};color:${c.fg}">${w.n < 5 ? 'Week ' + w.n : 'Days 29–30'}</div>
@@ -177,6 +182,7 @@ function doc(V) {
     <div class="turns"><h3>What counts as a turn?</h3><div class="trow">${[['eye', 'A look'], ['hand', 'A point or a sign'], ['note', 'A sound or a song'], ['heart', 'A smile'], ['book', 'A word'], ['phone', 'A tap on a talking device']].map(([a, t]) => `<div class="tt">${artDisc(a, C.tSky, .8)}<span>${t}</span></div>`).join('')}</div><p class="small">Every one of these is communicating. Answer it as if it were the best thing anyone has said all day.</p></div>`, { run: 'Grown-up guide' });
 
   // Safety + icon key
+  const PEDI = '<p class="pedi">Every child talks, plays and grows on their own timeline. If you have questions about your child’s development, talk with your pediatrician.</p>';
   page(`${H('Before you play', 'Safety, ages and how to read a play')}
     <div class="cols2">
       <div>
@@ -185,7 +191,7 @@ function doc(V) {
         <p class="small">You know your child best. Skip or change any play that doesn’t suit your child, your home or your day.</p>
         <h3>Ages</h3>
         <p>Every play shows a starting age (“From 18 months”), a way to make it easier and a way to make it harder for big kids. Every week has boxes for toddlers and preschoolers, school-age kids, and siblings and twins.</p>
-        <p class="pedi">Every child talks, plays and grows on their own timeline. If you have questions about your child’s development, talk with your pediatrician.</p>
+        ${V.book ? '' : PEDI}
       </div>
       <div>
         <h3>How to read a play</h3>
@@ -196,6 +202,7 @@ function doc(V) {
         <div class="keyrow">${ico('bag', 'k')}<div><b>You need</b>Things most homes already have. Nothing to buy.</div></div>
         <div class="keyrow">${ico('talk', 'k')}<div><b>Talk while you play</b>One talk line to try, and the talk move it uses.</div></div>
         <div class="keyrow">${ico('bolt', 'k')}<div><b>Tired-grown-up version</b>Two minutes, no setup, for days when you’re running on empty.</div></div>
+        ${V.book ? PEDI : ''}
       </div>
     </div>
     <div class="tube"><svg viewBox="0 0 24 24" width="64" height="64" class="tubei"><use href="#u-tube"/></svg><div><h3>The tube test for under-3s</h3><p>Try to push the object through an empty toilet-paper tube. If it fits, it’s too small for a child under 3. Keep it out of the play basket and out of reach.</p></div></div>`, { run: 'Safety and ages' });
@@ -412,7 +419,7 @@ function doc(V) {
       <p>Published by AlphaPlay LLC, doing business as Play Before Pixels.<br>${SITE}</p>
       <p>This book is parent education about everyday play and talk. It is not medical advice and does not diagnose, treat or prevent any condition. For questions about your child’s health or development, talk with your pediatrician. Every play follows our published safety rules and is meant to be played with a grown-up close by.</p>
       <p>No product, app, device, school or program named or pictured in this book is real; the tablet is a generic, unbranded character.</p>
-      <div class="isbn">ISBN / barcode<br><span>Founder adds the ISBN here (Bowker)</span></div>
+      ${ISBN_PAPERBACK ? `<p>ISBN ${esc(ISBN_PAPERBACK)}</p>` : ''}
       <p class="small">Free bonus: ${BONUS}</p>
     </div>`;
   }
@@ -482,8 +489,6 @@ b{font-weight:800}
 .copyp .inner{justify-content:flex-end}
 .copy{font-size:9pt;line-height:1.5;margin-top:auto}
 .copy p{margin-bottom:.1in}
-.isbn{width:2in;height:1.2in;border:1.5px dashed ${C.ink};display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:800;margin:.12in 0;font-size:9pt}
-.isbn span{font-weight:400;font-size:7.5pt;color:#4A5570}
 .copymini{font-size:8pt;color:#4A5570;margin-top:auto;padding-top:.1in;border-top:1px solid #DCE3EE}
 .copymini b{color:${C.ink}}
 /* start */
@@ -573,6 +578,7 @@ ${V.book ? ".tcn{font-size:12pt!important}.tck{font-size:6.6pt!important}.field.
 .wkkeep{font-size:9.8pt!important;border-top:1.5px solid rgba(29,41,64,.15);padding-top:.06in}
 .wkk{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:10pt;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.05in}
 .wksc{width:2.9in;height:2.65in;flex:none}
+${V.book ? '.wksc{width:2.45in;height:2.22in}.wkhead{margin-bottom:.1in}.wkdays{margin-bottom:.1in}.bands{margin-bottom:.1in}' : ''}
 .wkdays{display:grid;grid-template-columns:1fr 1fr;gap:.06in .2in;margin-bottom:.14in}
 .wkd{display:flex;gap:.1in;align-items:center}
 .wkd b{display:block;font-size:10pt;line-height:1.2}
