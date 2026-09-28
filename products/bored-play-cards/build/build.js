@@ -132,7 +132,8 @@ function cardSheet(items, label) {
   const guides = [1, 2].map(i => `<i class="gl v" style="left:${x0 + i * 2.5}in;top:${y0}in;height:10.5in"></i>`).join('') +
     [1, 2].map(j => `<i class="gl h" style="top:${y0 + j * 3.5}in;left:${x0}in;width:7.5in"></i>`).join('') +
     `<i class="gl box" style="left:${x0}in;top:${y0}in;width:7.5in;height:10.5in"></i>`;
-  return pg('sheet', cells + guides + cropMarks(3, 3, 2.5, 3.5, x0, y0) + (label ? `<div class="sl" style="top:${y0 / 2}in">${label}</div>` : ''));
+  const side = (txt, left) => `<div class="sl" style="left:${left ? x0 / 2 : SZ.w - x0 / 2}in;top:${y0 + 5.25}in;transform:translate(-50%,-50%) rotate(${left ? -90 : 90}deg)">${txt}</div>`;
+  return pg('sheet', cells + guides + cropMarks(3, 3, 2.5, 3.5, x0, y0) + (label ? side(label, true) + side(COPY, false) : ''));
 }
 function chunk(a, n) { const r = []; for (let i = 0; i < a.length; i += n) r.push(a.slice(i, i + n)); return r; }
 
@@ -147,35 +148,32 @@ function contentPage(cls, eyebrow, title, body, opts = {}) {
 
 // ---------- illustrations ----------
 function jarSVG(opts = {}) {
-  // jar with cards; label colour = opts.lab
+  // open jar with play cards sticking out; label colour = opts.lab
   const lab = opts.lab || C.tomato;
-  const cardsIn = [[-62, -30, -14, C.sun], [-28, -44, -4, C.grass], [8, -40, 6, C.sky], [42, -30, 15, C.plum], [-8, -20, 1, C.tomato]]
-    .map(([x, y, r, c]) => `<g transform="translate(${x},${y}) rotate(${r})"><rect x="-22" y="-44" width="44" height="62" rx="6" fill="#fff"/><rect x="-18" y="-40" width="36" height="12" rx="3" fill="${c}"/><rect x="-18" y="-24" width="26" height="4" rx="2" fill="${C.ink}" opacity=".35"/><rect x="-18" y="-17" width="32" height="3" rx="1.5" fill="${C.ink}" opacity=".18"/></g>`).join('');
+  const cardsIn = [[-54, -58, -16, C.sun], [-20, -74, -5, C.grass], [18, -70, 7, C.sky], [52, -56, 17, C.plum]]
+    .map(([x, y, r, c]) => `<g transform="translate(${x},${y}) rotate(${r})"><rect x="-24" y="-40" width="48" height="78" rx="7" fill="#fff"/><rect x="-24" y="-40" width="48" height="15" rx="7" fill="${c}"/><rect x="-24" y="-31" width="48" height="6" fill="${c}"/><rect x="-18" y="-18" width="30" height="5" rx="2.5" fill="${C.ink}" opacity=".45"/><rect x="-18" y="-9" width="36" height="3.5" rx="1.75" fill="${C.ink}" opacity=".2"/><rect x="-18" y="-2" width="32" height="3.5" rx="1.75" fill="${C.ink}" opacity=".2"/></g>`).join('');
   return `<g>
-    <rect x="-96" y="-58" width="192" height="236" rx="46" fill="${C.tSky}"/>
+    <rect x="-98" y="-40" width="196" height="218" rx="44" fill="${C.tSky}"/>
     ${cardsIn}
-    <rect x="-96" y="-8" width="192" height="186" rx="46" fill="${C.tSky}" opacity=".78"/>
-    <rect x="-70" y="-84" width="140" height="34" rx="12" fill="${C.ink}"/>
-    <rect x="-78" y="-58" width="156" height="12" rx="6" fill="${C.ink}" opacity=".15"/>
-    <circle cx="0" cy="84" r="62" fill="${lab}"/>
-    <text x="0" y="78" text-anchor="middle" font-family="Bricolage Grotesque, Nunito Sans, sans-serif" font-weight="800" font-size="30" fill="#fff" letter-spacing="-.5">I’m</text>
-    <text x="0" y="108" text-anchor="middle" font-family="Bricolage Grotesque, Nunito Sans, sans-serif" font-weight="800" font-size="30" fill="#fff" letter-spacing="-.5">bored!</text>
-    <rect x="-80" y="20" width="14" height="90" rx="7" fill="#fff" opacity=".55"/>
+    <rect x="-98" y="-22" width="196" height="200" rx="44" fill="${C.tSky}" opacity=".86"/>
+    <rect x="-86" y="-50" width="172" height="20" rx="10" fill="${C.sky}" opacity=".35"/>
+    <circle cx="0" cy="80" r="62" fill="${lab}"/>
+    <text x="0" y="74" text-anchor="middle" font-family="Bricolage Grotesque, Nunito Sans, sans-serif" font-weight="800" font-size="30" fill="#fff" letter-spacing="-.5">I’m</text>
+    <text x="0" y="104" text-anchor="middle" font-family="Bricolage Grotesque, Nunito Sans, sans-serif" font-weight="800" font-size="30" fill="#fff" letter-spacing="-.5">bored!</text>
+    <rect x="-82" y="6" width="13" height="96" rx="6.5" fill="#fff" opacity=".6"/>
   </g>`;
 }
 function coverArt(w, h) {
-  // kid pulling a card out of a jar, grown-up kneeling
-  const floor = h - 40;
-  const k = Object.assign({}, KIDS.A, { x: w * 0.62, y: floor - 27 * 1.55, s: 1.55, aL: 14, face: 'laugh' });
-  const target = [w * 0.5, floor - 250];
-  k.aR = -150;
+  // child pulling a card from the jar, grown-up beside
+  const floor = h - 34;
+  const k = Object.assign({}, KIDS.A, { x: w * 0.6, y: floor - 27 * 1.5, s: 1.5, aL: 16, aR: -150, face: 'laugh' });
   const hand = kidHand(k, 'R');
-  const held = `<g transform="translate(${hand[0] + 4},${hand[1] - 40}) rotate(12)"><rect x="-26" y="-36" width="52" height="72" rx="7" fill="#fff"/><rect x="-21" y="-31" width="42" height="14" rx="4" fill="${C.grass}"/><rect x="-21" y="-12" width="30" height="5" rx="2.5" fill="${C.ink}" opacity=".4"/><rect x="-21" y="-3" width="38" height="3.5" rx="1.75" fill="${C.ink}" opacity=".2"/><rect x="-21" y="4" width="34" height="3.5" rx="1.75" fill="${C.ink}" opacity=".2"/><rect x="-21" y="15" width="42" height="12" rx="4" fill="${C.tGrass}"/></g>`;
-  const g = Object.assign({}, ADULTS.G5, { x: w * 0.86, y: floor - 51 * 1.2, s: 1.2, flip: true, legs: 'kneel', aL: 24, aR: -40, face: 'smile' });
+  const held = `<g transform="translate(${hand[0] + 2},${hand[1] - 34}) rotate(10)"><rect x="-25" y="-38" width="50" height="76" rx="7" fill="#fff"/><rect x="-25" y="-38" width="50" height="15" rx="7" fill="${C.grass}"/><rect x="-25" y="-29" width="50" height="6" fill="${C.grass}"/><rect x="-19" y="-16" width="30" height="5" rx="2.5" fill="${C.ink}" opacity=".45"/><rect x="-19" y="-7" width="38" height="3.5" rx="1.75" fill="${C.ink}" opacity=".2"/><rect x="-19" y="0" width="34" height="3.5" rx="1.75" fill="${C.ink}" opacity=".2"/><rect x="-19" y="12" width="38" height="14" rx="5" fill="${C.tGrass}"/></g>`;
+  const g = Object.assign({}, ADULTS.G3, { x: w * 0.83, y: floor - 81 * 1.12, s: 1.12, flip: true, aL: 18, aR: -58, face: 'laugh' });
   return `<svg viewBox="0 0 ${w} ${h}" width="100%" height="100%" aria-hidden="true">
-    <circle cx="${w * 0.48}" cy="${h * 0.52}" r="${h * 0.44}" fill="${C.sun}"/>
-    <rect x="0" y="${floor}" width="${w}" height="${h - floor}" fill="${C.tSun}"/>
-    <g transform="translate(${w * 0.28},${floor - 178}) scale(1.05)">${jarSVG({ lab: C.tomato })}</g>
+    <circle cx="${w * 0.52}" cy="${h * 0.5}" r="${h * 0.46}" fill="${C.sun}"/>
+    <rect x="${w * 0.08}" y="${floor - 3}" width="${w * 0.88}" height="10" rx="5" fill="${C.ink}" opacity=".08"/>
+    <g transform="translate(${w * 0.27},${floor - 178}) scale(1.0)">${jarSVG({ lab: C.tomato })}</g>
     ${adult(g)}${kid(k)}${held}
   </svg>`;
 }
@@ -203,21 +201,21 @@ h1,h2,h3,p{margin:0}
 .mt{width:13px;height:10px;display:block}
 .ti{display:flex;align-items:flex-start;justify-content:space-between;gap:6px;padding:7px 9px 3px 10px}
 .tt{flex:1;min-width:0}
-.cat{font-weight:800;font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;opacity:.62;margin-bottom:1px}
-.ti h3{font-family:"Fredoka","Nunito Sans",sans-serif;font-weight:600;font-size:17.5px;line-height:1.03;letter-spacing:-.005em}
+.cat{font-weight:800;font-size:7.8px;letter-spacing:.12em;text-transform:uppercase;opacity:.62;margin-bottom:1px}
+.ti h3{font-family:"Fredoka","Nunito Sans",sans-serif;font-weight:600;font-size:19.5px;line-height:1.02;letter-spacing:-.005em}
 .ci{flex:0 0 27px;width:27px;height:27px;border-radius:50%;background:var(--t);display:flex;align-items:center;justify-content:center;color:var(--m)}
 .card[style*="--m:${C.sun}"] .ci{color:#C98F00}
 .ci .i{width:16px;height:16px;display:block}
-.bd{padding:2px 10px 0;display:flex;flex-direction:column;gap:5px}
-.row b,.talk b{display:block;font-weight:800;font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;opacity:.62;margin-bottom:1px}
-.row p{font-size:10.6px;line-height:1.3;font-weight:600}
+.bd{padding:3px 10px 0;display:flex;flex-direction:column;gap:7px}
+.row b,.talk b{display:block;font-weight:800;font-size:7.8px;letter-spacing:.12em;text-transform:uppercase;opacity:.62;margin-bottom:1px}
+.row p{font-size:12px;line-height:1.3;font-weight:600}
 .talk{background:var(--t);border-radius:9px;padding:5px 8px 6px 6px;display:flex;gap:5px;align-items:flex-start;margin-top:1px}
 .talk .ti2{flex:0 0 15px;width:15px;height:15px;color:var(--m);margin-top:1px}
 .card[style*="--m:${C.sun}"] .talk .ti2{color:#C98F00}
-.talk p{font-size:10.6px;line-height:1.25;font-weight:800}
+.talk p{font-size:12px;line-height:1.25;font-weight:800}
 .ft{margin-top:auto;padding:4px 9px 6px 9px;display:flex;gap:4px;align-items:flex-start;border-top:1.5px solid var(--t)}
 .ft .si{flex:0 0 11px;width:11px;height:11px;color:var(--ink);opacity:.55;margin-top:.5px}
-.ft span{font-size:7.6px;line-height:1.28;font-weight:700;flex:1;opacity:.82}
+.ft span{font-size:8px;line-height:1.28;font-weight:700;flex:1;opacity:.82}
 .ft i{font-style:normal;font-size:7px;font-weight:800;letter-spacing:.06em;opacity:.45;white-space:nowrap;margin-top:1px}
 /* blank card */
 .blank .en3{gap:3px;padding:0 6px;font-size:7px;letter-spacing:.04em}
@@ -244,7 +242,7 @@ h1,h2,h3,p{margin:0}
 .gl.v{border-left-width:.6px}.gl.h{border-top-width:.6px}.gl.box{border-width:.6px}
 .cm{position:absolute;display:block;background:#8A94A8}
 .cm.v{width:.6px}.cm.h{height:.6px}
-.sl{position:absolute;left:0;right:0;transform:translateY(-50%);text-align:center;font-size:7px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8A94A8}
+.sl{position:absolute;white-space:nowrap;text-align:center;font-size:7px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8A94A8}
 /* content pages */
 .cp .cpin{position:absolute;left:.5in;right:.5in;top:.5in;bottom:.72in;display:flex;flex-direction:column}
 .phd{display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:2px solid var(--wash);margin-bottom:22px}
@@ -261,8 +259,8 @@ h1,h2,h3,p{margin:0}
 // ---------- pages ----------
 function coverPage() {
   const chips = ['150 cards + 36 seasonal', 'Ages 1–12, sorted by age', 'Calm · Medium · Wiggly', 'A talk prompt on every card'];
-  const fan = [['b13', CARDS.b13[3], 4], ['b35', CARDS.b35[2], 2], ['b58', CARDS.b58[1], 1], ['b812', CARDS.b812[0], 1]];
-  const fanHtml = fan.map(([k, cd, n], i) => `<div class="fan f${i}">${card(cd, k, n)}</div>`).join('');
+  const fan = [['b812', CARDS.b812[0], 1], ['b58', CARDS.b58[1], 2], ['summer', MINI.summer.cards[1], 2], ['b13', CARDS.b13[3], 4], ['b35', CARDS.b35[2], 3]];
+  const fanHtml = fan.map(([k, cd, n], i) => `<div class="fan" style="transform:rotate(${(i - 2) * 9}deg)">${card(cd, k, n)}</div>`).join('');
   return pg('cover', `
   <div class="cv-top"><span class="brand">Play Before Pixels</span><span class="cv-tag">Printable play cards · US Letter + A4</span></div>
   <h1 class="cv-h"><span>I’m</span><span>bored!</span></h1>
@@ -284,12 +282,9 @@ const coverCss = `<style>
 .cv-sub{position:absolute;left:.55in;top:3.02in;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:52px;letter-spacing:-.03em;color:${C.tomato}}
 .cv-p{position:absolute;left:.57in;top:3.9in;width:3.35in;font-size:14.5px;line-height:1.45;font-weight:600}
 .cv-art{position:absolute;right:.1in;top:1.05in;width:4.5in;height:3.78in}
-.cv-fan{position:absolute;left:0;right:0;top:5.25in;height:3.9in}
-.fan{position:absolute;top:0;transform-origin:50% 100%;filter:drop-shadow(0 6px 10px rgba(29,41,64,.12))}
-.f0{left:.55in;transform:rotate(-9deg) translateY(18px)}
-.f1{left:2.4in;transform:rotate(-3deg)}
-.f2{left:4.25in;transform:rotate(3deg)}
-.f3{left:6.05in;transform:rotate(9deg) translateY(18px)}
+.cv-fan{position:absolute;left:0;right:0;top:5.3in;height:3.9in}
+.fan{position:absolute;top:0;left:3in;width:2.5in;height:3.5in;transform-origin:50% 175%}
+.fan .card{padding:0}.fan .panel{box-shadow:0 8px 18px rgba(29,41,64,.13)}
 .cv-chips{position:absolute;left:.55in;right:.55in;bottom:1.02in;display:flex;flex-wrap:wrap;gap:8px}
 .cv-extra{position:absolute;left:.57in;right:.55in;bottom:.55in;font-size:12.5px;font-weight:600}
 </style>`;
@@ -684,13 +679,13 @@ function bandSheets(key, withBacks) {
   while (fronts.length % 9) fronts.push(blankCard(key));
   const groups = chunk(fronts, 9);
   const total = groups.length;
-  const lbl = i => `“I’m Bored” Play Cards · ${TH[key].name} · sheet ${i + 1} of ${total} · ${COPY}`;
+  const lbl = i => `“I’m Bored” Play Cards · ${TH[key].name} · sheet ${i + 1} of ${total}`;
   if (!withBacks) return groups.map((g, i) => cardSheet(g, lbl(i)));
   const backs = Array.from({ length: 9 }, () => cardBack(key));
-  return groups.flatMap((g, i) => [cardSheet(g, lbl(i)), cardSheet(backs, `Card backs · ${TH[key].name} · print on the reverse of sheet ${i + 1}`)]);
+  return groups.flatMap((g, i) => [cardSheet(g, lbl(i)), cardSheet(backs, `Backs · ${TH[key].name} · reverse of sheet ${i + 1}`)]);
 }
 function backsPages() {
-  return ['b13', 'b35', 'b58', 'b812', 'summer', 'rainy'].map(k => cardSheet(Array.from({ length: 9 }, () => cardBack(k)), `Card backs · ${TH[k].name} · optional · print on the reverse of that set’s sheets`));
+  return ['b13', 'b35', 'b58', 'b812', 'summer', 'rainy'].map(k => cardSheet(Array.from({ length: 9 }, () => cardBack(k)), `Card backs (optional) · ${TH[k].name}`));
 }
 const ALLCSS = [coverCss, welcomeCss, anatomyCss, agesCss, safetyCss, tipsCss, dividerCss, labelCss, menuCss, weekCss, indexCss, bonusCss].join('\n');
 function doc(fontHref, size, pages, extra = '') {
@@ -727,7 +722,7 @@ function editablePages() {
     <div><h4>Keep it safe</h4><p>Cards you write follow the same safety rules: see the safety page in the main file.</p></div>
   </div>
   <p class="edc">${COPY} For use in your own home.</p>`);
-  const sheets = ['b13', 'b35', 'b58', 'b812', 'summer', 'rainy'].map(k => cardSheet(Array.from({ length: 9 }, () => blankCard(k, { fields: true })), `Editable blank cards · ${TH[k].name} · ${COPY}`));
+  const sheets = ['b13', 'b35', 'b58', 'b812', 'summer', 'rainy'].map(k => cardSheet(Array.from({ length: 9 }, () => blankCard(k, { fields: true })), `Editable blank cards · ${TH[k].name}`));
   return [intro, ...sheets, menuPage(true), weekPage('mon', true), weekPage('sun', true)];
 }
 const edCss = `<style>

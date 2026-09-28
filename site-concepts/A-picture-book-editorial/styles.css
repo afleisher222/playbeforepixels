@@ -46,7 +46,7 @@ kbd { font: 700 11px/1 var(--f-text); border: 1px solid var(--rule-2); border-bo
 
 .skip {
   position: fixed; left: 12px; top: -80px; z-index: 200; background: var(--ink); color: #fff;
-  padding: 12px 18px; border-radius: 6px; font-weight: 800; text-decoration: none; transition: top .15s;
+  padding: 12px 18px; border-radius: 6px; font-weight: 800; text-decoration: none;
 }
 .skip:focus { top: 12px; }
 
@@ -146,7 +146,7 @@ kbd { font: 700 11px/1 var(--f-text); border: 1px solid var(--rule-2); border-bo
 /* mega-menu */
 .mm { position: absolute; left: 0; right: 0; top: 100%; background: #fff; border-bottom: 1px solid var(--rule); z-index: 1; animation: mmIn .22s var(--ease); max-height: calc(100vh - 120px); overflow: auto; }
 @keyframes mmIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
-.mm-scrim { position: fixed; inset: 0; background: rgba(29,41,64,.22); z-index: -1; }
+.mm-scrim { position: fixed; inset: 0; background: rgba(29,41,64,.22); z-index: 45; }
 .mm-in { display: grid; gap: 48px; padding-top: 36px; padding-bottom: 44px; }
 .mm-in--shop { grid-template-columns: 1.35fr 1fr 1.1fr 1fr; }
 .mm-in--books { grid-template-columns: 1fr 260px; }

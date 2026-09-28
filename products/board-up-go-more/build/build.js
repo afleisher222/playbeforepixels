@@ -166,7 +166,7 @@ scenes.hi = () => {
 
 scenes.up = () => {
   // big up-arrow behind the child
-  const arrow = `<path d="M226 196L322 302H274V600H178V302H130Z" fill="${C.sky}" stroke="${C.sky}" stroke-width="18" stroke-linejoin="round"/>`;
+  const arrow = `<path d="M226 196L322 302H274V720H178V302H130Z" fill="${C.sky}" stroke="${C.sky}" stroke-width="18" stroke-linejoin="round"/>`;
   const k = Object.assign({}, KIDS.E, { x: 226, y: F - 27 * 1.5 - 12, s: 1.5, aL: 142, aR: -142, face: 'laugh', lL: 8, lR: -8 });
   const g = Object.assign({}, ADULTS.G2, { x: 382, y: F - 81 * 1.04, s: 1.04, flip: true, aL: -24, face: 'laugh' });
   const kh = kidHand(k, 'R');
@@ -329,9 +329,12 @@ scenes['night-night'] = () => {
 // ---------- new scenes (revision 2: 22 words) ----------
 scenes.peekaboo = () => {
   const s = 1.55;
+  // a little cloth held up over the eyes (hands at its corners), smile peeking out below
+  const hx = 14 + 26 * 12 / Math.hypot(12, 28), hy = -38 - 26 * 28 / Math.hypot(12, 28);
+  const cloth = `<rect x="-31" y="-88" width="62" height="28" rx="9" fill="${C.tomato}"/><rect x="-31" y="-66" width="62" height="6" rx="3" fill="${C.sun}"/>`;
   const k = Object.assign({}, KIDS.E, { x: 214, y: F - 27 * s, s, face: 'laugh', armsFront: true,
-    front: `<circle class="sk" cx="-9.5" cy="-70" r="8.2"/><circle class="sk" cx="9.5" cy="-70" r="8.2"/>` });
-  k.aL = aim(4.5, -32); k.aR = aim(-4.5, -32);
+    front: cloth + `<circle class="sk" cx="${-hx}" cy="${hy}" r="7"/><circle class="sk" cx="${hx}" cy="${hy}" r="7"/>` });
+  k.aL = aim(12, -28); k.aR = aim(-12, -28);
   const g = Object.assign({}, ADULTS.G5, { x: 418, y: F - 51 * 1.12, s: 1.12, flip: true, legs: 'kneel', aL: 118, aR: -118, face: 'laugh' });
   const pops = [[330, 236, -20], [512, 250, 24], [300, 300, -60]].map(([x, y, r]) => `<rect x="${x}" y="${y}" width="8" height="20" rx="4" fill="${C.sky}" transform="rotate(${r} ${x + 4} ${y + 10})"/>`).join('');
   return bg(C.tSky) + circle(300, 318, 150, '#FFFFFF') + adult(g) + kid(k) + pops;
@@ -367,7 +370,7 @@ scenes.open = () => {
   const duck = use('duck', `translate(${bx + 6},${top - 22}) scale(1.25)`);
   const box = `<rect x="${bx - 80}" y="${top}" width="160" height="${F - top}" rx="12" fill="${C.tomato}"/>
     <rect x="${bx - 14}" y="${top}" width="28" height="${F - top}" fill="${C.sun}"/>`;
-  const lid = `<g transform="rotate(-32 ${bx + 86} ${top - 2})"><rect x="${bx - 86}" y="${top - 26}" width="172" height="28" rx="10" fill="${C.tomato}"/><rect x="${bx - 14}" y="${top - 26}" width="28" height="28" fill="${C.sun}"/></g>`;
+  const lid = `<g transform="rotate(104 ${bx + 86} ${top - 2})"><rect x="${bx - 86}" y="${top - 26}" width="172" height="28" rx="10" fill="${C.tomato}"/><rect x="${bx - 14}" y="${top - 26}" width="28" height="28" fill="${C.sun}"/></g>`;
   const k = Object.assign({}, KIDS.A, { x: 190, y: F - 27 * 1.5, s: 1.5, aL: 142, aR: -142, face: 'laugh', lL: 6, lR: -6 });
   const sparks = [[bx - 70, 250, .9], [bx + 76, 232, .7], [bx - 18, 214, .55]].map(([x, y, s]) => `<g transform="translate(${x},${y}) scale(${s})"><use href="#star"/></g>`).join('');
   const rug = `<ellipse cx="300" cy="${F}" rx="250" ry="24" fill="${C.plum}"/>`;
@@ -387,10 +390,10 @@ scenes.help = () => {
 scenes.clap = () => {
   const k = Object.assign({}, KIDS.A, { x: 206, y: F - 27 * 1.6, s: 1.6, face: 'laugh', aL: aim(11, 16), aR: aim(-11, 16) });
   const g = Object.assign({}, ADULTS.G4, { x: 420, y: F - 14 * 1.2, s: 1.2, flip: true, legs: 'cross', face: 'laugh', aL: aim(18, 40), aR: aim(-18, 40) });
-  const mk = (cx, cy, sp) => [-40, 0, 40].map(a => `<rect x="${cx - 3.5}" y="${cy - sp - 16}" width="7" height="16" rx="3.5" fill="${C.plum}" transform="rotate(${a} ${cx} ${cy})"/>`).join('');
-  const kh = [206, F - 27 * 1.6 - 17 * 1.6];
-  const gh = [420, F - 14 * 1.2 - 34 * 1.2];
-  return bg(C.tPlum) + circle(300, 318, 150, '#FFFFFF') + adult(g) + kid(k) + mk(kh[0], kh[1], 34) + mk(gh[0], gh[1], 40);
+  const mk = (cx, cy, sp) => [-125, -90, -55, 55, 90, 125].map(a => `<rect x="${cx - 3.5}" y="${cy - sp - 15}" width="7" height="15" rx="3.5" fill="${C.plum}" transform="rotate(${a} ${cx} ${cy})"/>`).join('');
+  const kh = [206, F - 27 * 1.6 - 14.6 * 1.6];
+  const gh = [420, F - 14 * 1.2 - 33.5 * 1.2];
+  return bg(C.tPlum) + circle(300, 318, 150, '#FFFFFF') + adult(g) + kid(k) + mk(kh[0], kh[1], 26) + mk(gh[0], gh[1], 30);
 };
 
 scenes.eat = () => {
@@ -410,7 +413,7 @@ scenes.eat = () => {
 scenes.cup = () => {
   const s = 1.7, x = 254, y = F - 27 * s;
   const k = Object.assign({}, KIDS.C, { x, y, s, face: 'joy' });
-  const cupC = [x + 20, y - 52 * s];
+  const cupC = [x + 34, y - 58 * s + 42];
   k.aL = aimKid(k, 'L', cupC[0] - 24, cupC[1] + 14); k.aR = aimKid(k, 'R', cupC[0] + 26, cupC[1] + 6);
   const cup = `<g style="--c1:${C.tomato};--c2:${C.sun}" transform="translate(${cupC[0]},${cupC[1]}) rotate(-38) scale(1.05)">${use('cup')}</g>`;
   const hl = kidHand(k, 'L'), hr = kidHand(k, 'R');
@@ -504,6 +507,13 @@ const howTo = (belongs) => ({
       <li style="--c:${C.sky}"><b>Copy each other.</b> Try the say it, sign it or act it idea. Then copy whatever your child does back.</li>
       <li style="--c:${C.grass}"><b>Pick any tip, skip any tip.</b> It’s their book: skip ahead, go back, or stay on one page.</li>
     </ol>
+    <svg class="strip" viewBox="0 0 504 96" aria-hidden="true">
+      <circle cx="46" cy="48" r="44" fill="${C.tTomato}"/><g transform="translate(46,50) scale(.62)">${use('ball')}</g>
+      <circle cx="148" cy="48" r="44" fill="${C.tSun}"/><g transform="translate(152,54) scale(.8)">${use('duck')}</g>
+      <circle cx="252" cy="48" r="44" fill="${C.tSky}"/><g style="--up:${C.sky};--st:${C.ink}" transform="translate(252,50) scale(.62)">${use('shoe')}</g>
+      <circle cx="356" cy="48" r="44" fill="${C.tGrass}"/><g style="--bc:${C.grass}" transform="translate(356,48) scale(.9)">${use('book-closed')}</g>
+      <circle cx="458" cy="48" r="44" fill="${C.tPlum}"/><g transform="translate(458,54) scale(.7)">${use('cup')}</g>
+    </svg>
     <p class="note">Every child talks on their own timeline. If you have questions about your child’s speech or development, your child’s doctor is a good place to start.</p>
     ${belongs ? '<p class="belongs"><span>This book belongs to</span><i></i></p>' : ''}
   </div>`
@@ -516,11 +526,12 @@ const routinesPage = (withLegal) => ({
     <h2 class="ptitle">Keep the words going</h2>
     <p class="lede">These words live all through your day. Use them again and again, in the same moments.</p>
     <div class="routines">${MS.routines.map(([t, ws, c]) => `<div class="rt" style="--c:${C[c]};--t:${C['t' + c[0].toUpperCase() + c.slice(1)]}"><span class="rtl">${t}</span><span class="chips">${ws.map(w => `<em>${w}</em>`).join('')}</span></div>`).join('')}</div>
+    <p class="note">No screen needed. Just you, your voice, and a little time to wait.</p>
     ${withLegal ? `<div class="legal">
       <p><b>Up! Go! More!</b> · ${MS.series}, Book ${MS.series_number} · Board book edition · ${authorLine()}</p>
       <p>${COPYRIGHT} All rights reserved. First edition.</p>
       <p>ISBN ${slot('board-book ISBN')} · Printed in ${slot('country')} · Batch ${slot('tracking no.')} · playbeforepixels.com</p>
-    </div>` : '<p class="note">No screen needed. Just you, your voice, and a little time to wait.</p>'}
+    </div>` : ''}
   </div>`
 });
 
@@ -696,6 +707,7 @@ symbol{overflow:visible}
 .steps li{position:relative;padding-left:40px;margin:0 0 10px;font-size:13.5px;line-height:1.36;counter-increment:s;min-height:28px}
 .steps li::before{content:counter(s);position:absolute;left:0;top:0;width:27px;height:27px;border-radius:50%;background:var(--c);color:#fff;font-family:"Fredoka",sans-serif;font-weight:600;font-size:15px;display:flex;align-items:center;justify-content:center}
 .steps b{font-weight:800}
+.strip{display:block;width:100%;height:auto;margin:auto 0 0}.strip+.note{margin-top:14px}
 .belongs{margin:12px 0 0;display:flex;align-items:flex-end;gap:10px;font-family:"Caveat",cursive;font-weight:700;font-size:21px}
 .belongs i{flex:1;border-bottom:2px solid ${C.ink};opacity:.35;height:1px;margin-bottom:6px}
 .routines{display:flex;flex-direction:column;gap:7px}
@@ -703,7 +715,7 @@ symbol{overflow:visible}
 .rtl{display:block;font-weight:800;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.72;margin-bottom:4px}
 .chips{display:flex;flex-wrap:wrap;gap:5px}
 .chips em{font-style:normal;font-family:"Fredoka",sans-serif;font-weight:600;font-size:15px;line-height:1;padding:4px 10px 5px;border-radius:99px;background:var(--t)}
-.legal{margin:auto 0 0;font-size:8.6px;line-height:1.45;opacity:.9}
+.routines-pg .note{margin-top:auto}.legal{margin:14px 0 0;padding-top:10px;border-top:1.5px solid rgba(29,41,64,.12);font-size:8.6px;line-height:1.45;opacity:.9}
 .legal p{margin:0 0 2px}
 /* back */
 .back-in{position:absolute;left:48px;top:48px;width:310px}

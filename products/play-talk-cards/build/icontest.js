@@ -1,0 +1,4 @@
+const {ICONS,ALL_SYMBOLS,C}=require('./art.js');const fs=require('fs');
+const cols=[C.sky,C.grass,C.sun,C.tomato,C.plum];
+const cells=Object.keys(ICONS).map((k,i)=>`<div style="text-align:center;font:12px sans-serif"><svg width="150" height="150" viewBox="-60 -60 120 120"><rect x="-60" y="-60" width="120" height="120" fill="${cols[i%5]}"/><circle r="48" fill="#fff"/><g transform="scale(.82)">${ICONS[k]()}</g></svg><br>${k}</div>`).join('');
+fs.writeFileSync('gen/icontest.html',`<html><head><style>.sk{fill:var(--sk)} .hr{fill:var(--hr)} .sh{fill:var(--sh)} .pa{fill:var(--pa)} .so{fill:var(--so)} .hw{fill:var(--hw)} .ck{fill:#EE5A36;opacity:.28} symbol{overflow:visible}</style></head><body style="margin:0"><svg width="0" height="0" style="position:absolute"><defs>${ALL_SYMBOLS.join('')}</defs></svg><div style="display:grid;grid-template-columns:repeat(8,160px);gap:6px;width:1300px">${cells}</div></body></html>`);

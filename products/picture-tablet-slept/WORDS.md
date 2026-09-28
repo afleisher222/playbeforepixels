@@ -32,8 +32,10 @@ Lines inside these arrow brackets are notes and never print.
 <!-- "A note from the author": 60–120 words in your own voice about why you wrote this story. Keep it about play, reading and family time. No health or medical claims. No details about your children, your job or your legal matters. -->
 
 ## s1 left
-On Saturday morning, Ada zoomed downstairs.
-Her slippers were on the wrong feet.
+On Saturday morning,
+Ada zoomed downstairs.
+Her slippers were on
+the wrong feet.
 She didn't care one bit.
 
 ## s1 right
@@ -43,7 +45,10 @@ And it was going…
 ==zzz-bip… zzz-bip…==
 
 ## s2 left
-“Shhh,” whispered Papa. “The tablet is sleeping. It worked hard all week. Today, it gets a day off.”
+“Shhh,” whispered Papa.
+“The tablet is sleeping.
+It worked hard all week.
+Today, it gets a day off.”
 
 ## s2 right
 “A nap?” said Ada. “In the MORNING?”
@@ -64,21 +69,27 @@ Ada said, “AGAIN!”
 So they built it again. And again. And AGAIN.
 
 ## s4 left
-Outside, the rain had left puddles everywhere. Big ones. Small ones. One with a duck in it!
+Outside, the rain had left puddles everywhere.
+Big ones. Small ones. One with a duck in it!
 Ada pulled on her yellow boots.
 
 ## s4 right
 **SPLISH** went the small one.
 **SPLASH** went the middle one.
 **SPLOOOSH** went the great big one, all over Papa's shoes!
-“Oops,” said Ada. “Oops,” said Papa… and he jumped in too.
+“Oops,” said Ada. “Oops,” said Papa…
+and he jumped in too.
 
 ## s5 left
-Back inside, Ada peeled off her wet boots and tiptoed to the shelf.
+Back inside, Ada peeled off
+her wet boots and tiptoed
+to the shelf.
 Tip… tip… tip…
 
 ## s5 right
-The tablet was still asleep. It snored a teeny-tiny snore: zzz-bip… zzz-bip…
+The tablet was still asleep.
+It snored a teeny-tiny snore:
+zzz-bip… zzz-bip…
 > Shhh… the tablet is sleeping.
 > So what shall we do?
 
@@ -88,7 +99,10 @@ In the hall sat a big, empty box.
 “That's a **ROCKET!**”
 
 ## s6 right
-She gave it round windows. She gave it red wings. She gave it a pointy purple top, just like the tablet's nightcap.
+She gave it round windows.
+She gave it red wings.
+She gave it a pointy purple top,
+just like the tablet's nightcap.
 Biscuit said, **WOOF!** (That means “Me too.”)
 
 ## s7 left
@@ -98,8 +112,10 @@ Biscuit held on tight.
 ==WHOOOOSH!==
 
 ## s7 right
-Past the moon. Past the stars. Past a planet made entirely of socks.
-Biscuit was the [[co-pilot]]. He was very good at barking at comets.
+Past the moon. Past the stars.
+Past a planet made entirely of socks.
+Biscuit was the [[co-pilot]].
+He was very good at barking at comets.
 
 ## s8 left
 All that flying made Ada hungry. Her tummy rumbled like a rocket.
@@ -107,12 +123,16 @@ All that flying made Ada hungry. Her tummy rumbled like a rocket.
 “**PANCAKES!**” said Ada.
 
 ## s8 right
-Ada cracked the egg (mostly into the bowl). She stirred and stirred. Papa flipped.
+Ada cracked the egg (mostly into the bowl).
+She stirred and stirred. Papa flipped.
 **Flip! Flop! Plop!**
 “That one looks like the moon,” said Ada.
 
 ## s9 left
-After lunch, Ada peeked at the shelf. The tablet had rolled over. Its nightcap had flopped. But it was still asleep.
+After lunch, Ada peeked at the shelf.
+The tablet had rolled over.
+Its nightcap had flopped.
+But it was still asleep.
 
 ## s9 right
 > Shhh… the tablet is sleeping.
@@ -120,30 +140,44 @@ After lunch, Ada peeked at the shelf. The tablet had rolled over. Its nightcap h
 “Let's go find some stories,” said Papa.
 
 ## s10 left
-The library had books about dinosaurs, books about rockets, books about the moon, and one book about a dog in boots.
+The library had books about dinosaurs,
+books about rockets, books about the moon,
+and one book about a dog in boots.
 
 ## s10 right
-“Shhh,” whispered Ms. Rosa the librarian. “Books like it quiet.”
-“Just like the tablet!” whispered Ada. She picked a book about a bear who could not sleep.
+“Shhh,” whispered Ms. Rosa the librarian.
+“Books like it quiet.”
+“Just like the tablet!” whispered Ada.
+She picked a book about a bear
+who could not sleep.
 
 ## s11 left
-That night, Papa read the bear book. Ada turned the pages. She did all the growly bear voices.
+That night, Papa read the bear book.
+Ada turned the pages.
+She did all the growly bear voices.
 [[**GRRR… YAWWWN.**]]
 
 ## s11 right
 “What was the best part of today?” asked Papa.
-Ada thought and thought. “The crash. The splash. The rocket. The pancakes. The library…”
+Ada thought and thought.
+“The crash. The splash. The rocket.
+The pancakes. The library…”
 She yawned a big bear yawn. “All of it.”
 
 ## s12 left
-Down the hall, in its cozy nightcap, the tablet slept on, dreaming a quiet, happy dream.
+Down the hall, in its cozy nightcap,
+the tablet slept on,
+dreaming a quiet, happy dream.
 
 ## s12 right
-And snug in her bed, with Biscuit at her feet, Ada slept too.
+And snug in her bed,
+with Biscuit at her feet,
+Ada slept too.
 > Shhh… everybody is sleeping.
 > What a day. What a PLAY day.
 
 ## morning
 In the morning, the tablet woke up and stretched.
-“Good morning!” said Ada. “Wait till I tell you about my day…”
+“Good morning!” said Ada.
+“Wait till I tell you about my day…”
 Biscuit said, **WOOF!**

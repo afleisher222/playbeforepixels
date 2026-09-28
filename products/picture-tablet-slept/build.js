@@ -617,8 +617,8 @@ const qrSvg = (px, col = C.ink) => `<svg viewBox="-2 -2 ${QR.n + 4} ${QR.n + 4}"
 const planRow = (y, label, icon, col) => G('', R(48, y, 720, 118, C.paper, 22) + R(48, y, 150, 118, col, 22) + R(150, y, 48, 118, col) + icon + R(250, y + 84, 470, 4, C.tSky, 2));
 pages.push(page(30, PAGE_BG(C.tSky) + R(-12, -12, 840, 180, C.sky) +
   planRow(200, 'Morning', U('sun', 123, 259, 0.42), C.tSun) +
-  planRow(334, 'Afternoon', G('translate(123 312) scale(0.17)', U('rocket')), C.tTomato) +
-  planRow(468, 'Bedtime', G('translate(99 232) scale(0.42)', '') + U('moon', 118, 527, 0.62), C.tPlum) +
+  planRow(334, 'Afternoon', G('translate(123 440) scale(0.15)', U('rocket')), C.tTomato) +
+  planRow(468, 'Bedtime', U('moon', 118, 527, 0.62), C.tPlum) +
   R(48, 612, 720, 168, C.paper, 22) + dog(724, 176, 0.36, 'dog-happy'),
   [{ x: 48, y: 40, w: 640, cls: 'talk-h', html: `Plan your own Play Day` },
    { x: 48, y: 108, w: 620, cls: 'talk-sub', html: `Draw or write one thing for each part of the day. Then do it together!` },
@@ -661,7 +661,10 @@ const FRONT_TEXT = [{ x: 44, y: 40, w: 728, cls: 'title', html: `The Day the<br>
 function backCover() {
   let s = R(-200, -200, 1216, 1216, C.sky) + R(-200, 700, 1216, 520, C.grass);
   s += stars([[740, 90, .4, C.sun], [470, 560, .3, C.paper], [700, 520, .3, C.sun]], C.sun);
-  s += dog(340, 700, 0.56, 'dog-happy') + G('translate(470 616) scale(0.13) rotate(10)', U('rocket'));
+  s += dog(400, 700, 0.6, 'dog-happy') + G('translate(640 520) scale(0.36) rotate(6)', U('tablet-sleeping')) + zzz(730, 520, 0.4, C.sun);
+  // what happens in the story, as a row of little icons
+  s += block(60, 452, C.tomato, 'c', 0.8, -8) + G('translate(160 516) scale(0.62) rotate(-6)', U('boot')) + G('translate(250 518) scale(0.12) rotate(14)', U('rocket')) +
+    G('translate(350 496) scale(0.7)', U('pancake')) + bookU(420, 448, C.sun, 0.56, 6) + G('translate(520 492) scale(0.6)', U('duck'));
   return s;
 }
 const BACK_TEXT = [{ x: 56, y: 60, w: 690, cls: 'blurb', html: `<p class="blurb-h">Shhh… the tablet is sleeping.<br>So what shall we do?</p>
@@ -723,7 +726,7 @@ body { -webkit-print-color-adjust: exact; print-color-adjust: exact }
 .t.w { color: #FFFFFF }
 .t .em { font-weight: 700 }
 .nw { white-space: nowrap }
-.t .zz { display: block; font-weight: 700; font-size: 40px; margin-top: 6px }
+.t .zz { display: block; font-weight: 700; font-size: 34px; margin-top: 6px }
 .t .ref { display: block; font-weight: 600; font-size: 34px; line-height: 1.18; margin-top: 16px }
 .t .ref.first { margin-top: 0; margin-bottom: 14px }
 .t .big { display: block; font-family: "Bricolage Grotesque", "Nunito Sans", sans-serif; font-weight: 800; font-size: 64px; line-height: 1; margin-top: 18px; letter-spacing: -1px }

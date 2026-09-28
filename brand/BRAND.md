@@ -112,3 +112,6 @@ AI-generated material is not copyrightable in the U.S. For every product, leave 
 - Never: stretch, rotate, recolour, add effects, retype the name, enlarge the ball or move it outside the letter, put a white P in a tomato circle, nest a small p in the P, swap the ball for a pixel/heart/icon, or place the mark in front of the one-line wordmark.
 - **Motifs that belong to others or read badly — never use in logos, product marks or series marks:** four-square grids, toy-block/brick marks, puzzle pieces, infinity symbols, rainbow arcs, crossed-out phones or screens, pixel hearts, tin-can phones (Tin Can), seesaws (Seesaw), pinwheels (Pinwheel), boomerangs (Boomerang), kites (stock), hand-shadow bunnies (Playboy's rabbit head), sock puppets ("sock puppet" = fake account), two-P or parent-and-child P monograms (Planned Parenthood), a coral circle beside a navy bar (Patreon), a chat bubble holding a pixel (Google Play/Pixel vocabulary).
 - Copy: keep clear of Osmo's "Play Beyond The Screen".
+
+## Amazon edition for every product (binding)
+Every listing.json includes `amazon_route` (kdp-paperback · kdp-activity-edition · merch-on-demand · fba-later · none-with-reason). Every printable that works on paper also gets a KDP paperback activity-book edition. See marketing/AMAZON-AND-RETAIL-ROADMAP.md.

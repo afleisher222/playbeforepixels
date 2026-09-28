@@ -171,7 +171,7 @@
       '<button type="button" class="tool tool-search" data-open-search aria-haspopup="dialog">' + I.search + '<span class="tool-t">Search</span><kbd>/</kbd></button>' +
       '<button type="button" class="tool tool-bag" data-open-bag aria-haspopup="dialog"><span class="tool-t">Bag</span>' + I.bag + '<span class="bag-count" aria-hidden="true">0</span><span class="sr bag-sr">, 0 items</span></button>' +
       '<button type="button" class="tool tool-menu" aria-expanded="false" aria-controls="mobile-menu" aria-haspopup="dialog">' + I.menu + '<span class="tool-t">Menu</span></button>' +
-      "</div></div></div>" + panels + '<div class="mm-scrim" hidden></div>';
+      "</div></div></div>" + panels;
   }
 
   function currencySelect(idp) {
@@ -369,7 +369,7 @@
   if (hdr) hdr.innerHTML = headerHTML();
   if (ftr) ftr.innerHTML = footerHTML();
   var layers = doc.createElement("div");
-  layers.innerHTML = mobileHTML() + searchHTML() + bagHTML();
+  layers.innerHTML = '<div class="mm-scrim" hidden></div>' + mobileHTML() + searchHTML() + bagHTML();
   while (layers.firstChild) body.appendChild(layers.firstChild);
   refreshMoney();
 
