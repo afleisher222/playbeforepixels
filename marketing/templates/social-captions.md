@@ -17,13 +17,13 @@ The **hashtag bank** is safe to rotate: #screenfreeplay #playideas #toddleractiv
 
 **1. "Say What You See" (0–5)**
 *Illustration: a grown-up and child on a walk; speech bubbles grow "truck → big truck → big red truck".*
-> Two-minute play for any walk or car ride: name one thing you see, then add one word. Truck. Big truck. Big RED truck. 🚚
+> Two-minute play for any walk or car ride: name one thing you see, then add one word. Truck. Big truck. Big RED truck.
 > More free plays for busy days → link in bio.
 
 **2. "The 5 p.m. basket" (0–5)**
 *Illustration: a small basket holding board books and chunky blocks, with a clock showing 5:00.*
 > The 5 p.m. basket: a few books and safe toys that only come out at dinner-prep time, so they always feel new. Swap the contents every Sunday.
-> Save this for tonight. ✨
+> Save this for tonight.
 
 **3. "Restaurant plays" (carousel, 0–5)**
 *Illustration: 5 slides; a napkin, sugar packets (for older kids only), a crayon and a menu become games.*
@@ -36,7 +36,7 @@ The **hashtag bank** is safe to rotate: #screenfreeplay #playideas #toddleractiv
 
 **5. "Sock basketball" (2–8)**
 *Illustration: rolled socks arcing into a laundry basket, with a big number counter.*
-> Rainy-day rescue: roll socks into balls, toss them into the laundry basket, count out loud. Move the basket back one step every round. 🧦🏀
+> Rainy-day rescue: roll socks into balls, toss them into the laundry basket, count out loud. Move the basket back one step every round.
 
 **6. "Family screen agreement" (5–12)**
 *Illustration: a fridge with a one-page family plan held on by magnets.*
@@ -45,11 +45,11 @@ The **hashtag bank** is safe to rotate: #screenfreeplay #playideas #toddleractiv
 
 **7. "Story in three" (4–10)**
 *Illustration: three speech bubbles numbered 1, 2, 3 around a dinner table.*
-> Dinner-table game: you say the first sentence of a story, they say the second, you all say the ending. Silliest ending wins. 🍝
+> Dinner-table game: you say the first sentence of a story, they say the second, you all say the ending. Silliest ending wins.
 
 **8. "Car ride plays" (carousel, 3–10)**
 *Illustration: a car window view; license plates and clouds become game prompts.*
-> Car ride with no screen? Try: alphabet signs, cloud shapes, "20 questions: animal edition", the humming game, and "what will we see next?" 🚗
+> Car ride with no screen? Try: alphabet signs, cloud shapes, "20 questions: animal edition", the humming game, and "what will we see next?"
 > All 10 car plays in the free printable.
 
 **9. "Quiet time" (2–5)**
@@ -58,7 +58,7 @@ The **hashtag bank** is safe to rotate: #screenfreeplay #playideas #toddleractiv
 
 **10. "Holiday gift idea" (seasonal; product post)**
 *Illustration: a flat-lay of the picture book and the 52-card deck with a ribbon, product only.*
-> A gift that gets played with: a talk-along picture book plus 52 two-minute play cards. No batteries, no charging. 🎁
+> A gift that gets played with: a talk-along picture book plus 52 two-minute play cards. No batteries, no charging.
 > Shop the pairing → link in bio. #giftideas #kidsbooks
 
 **11. "7-Day Screen-Free Challenge" (seasonal: New Year / early May)**

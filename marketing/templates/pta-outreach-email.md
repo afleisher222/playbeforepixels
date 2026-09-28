@@ -27,7 +27,11 @@ Thank you for all you do for your families,
 The Play Before Pixels team
 hello@[BUSINESS DOMAIN]
 
-[STANDARD FOOTER: see README.md]
+—
+This is a promotional message from Play Before Pixels, a trade name of AlphaPlay LLC.
+AlphaPlay LLC, [BUSINESS MAILING ADDRESS]
+Don't want these emails? Reply "unsubscribe" or click [UNSUBSCRIBE LINK], and we'll remove this address within 10 business days (usually the same week). We never sell or share addresses.
+Play Before Pixels offers educational materials, not medical, therapy or speech-language advice.
 
 ---
 
@@ -45,7 +49,11 @@ If a written quote or W-9 would help your treasurer, reply "quote" and I'll emai
 
 The Play Before Pixels team
 
-[STANDARD FOOTER]
+—
+This is a promotional message from Play Before Pixels, a trade name of AlphaPlay LLC.
+AlphaPlay LLC, [BUSINESS MAILING ADDRESS]
+Don't want these emails? Reply "unsubscribe" or click [UNSUBSCRIBE LINK], and we'll remove this address within 10 business days (usually the same week). We never sell or share addresses.
+Play Before Pixels offers educational materials, not medical, therapy or speech-language advice.
 
 ---
 
@@ -62,4 +70,8 @@ If Family Night ever fits your calendar, the kit is at [LINK: partner kit].
 Best wishes for the year,
 The Play Before Pixels team
 
-[STANDARD FOOTER]
+—
+This is a promotional message from Play Before Pixels, a trade name of AlphaPlay LLC.
+AlphaPlay LLC, [BUSINESS MAILING ADDRESS]
+Don't want these emails? Reply "unsubscribe" or click [UNSUBSCRIBE LINK], and we'll remove this address within 10 business days (usually the same week). We never sell or share addresses.
+Play Before Pixels offers educational materials, not medical, therapy or speech-language advice.

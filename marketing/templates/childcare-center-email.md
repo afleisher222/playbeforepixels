@@ -23,7 +23,11 @@ Warmly,
 The Play Before Pixels team
 hello@[BUSINESS DOMAIN]
 
-[STANDARD FOOTER: see README.md]
+—
+This is a promotional message from Play Before Pixels, a trade name of AlphaPlay LLC.
+AlphaPlay LLC, [BUSINESS MAILING ADDRESS]
+Don't want these emails? Reply "unsubscribe" or click [UNSUBSCRIBE LINK], and we'll remove this address within 10 business days (usually the same week). We never sell or share addresses.
+Play Before Pixels offers educational materials, not medical, therapy or speech-language advice.
 
 ---
 
@@ -43,7 +47,11 @@ We accept POs, invoice net-30, and send a W-9 on request. Reply "quote" and a wr
 
 The Play Before Pixels team
 
-[STANDARD FOOTER]
+—
+This is a promotional message from Play Before Pixels, a trade name of AlphaPlay LLC.
+AlphaPlay LLC, [BUSINESS MAILING ADDRESS]
+Don't want these emails? Reply "unsubscribe" or click [UNSUBSCRIBE LINK], and we'll remove this address within 10 business days (usually the same week). We never sell or share addresses.
+Play Before Pixels offers educational materials, not medical, therapy or speech-language advice.
 
 ---
 
@@ -58,4 +66,8 @@ This is my last note. Here's a 15-minute staff-meeting activity, "Talk-along tra
 With thanks for the work you do,
 The Play Before Pixels team
 
-[STANDARD FOOTER]
+—
+This is a promotional message from Play Before Pixels, a trade name of AlphaPlay LLC.
+AlphaPlay LLC, [BUSINESS MAILING ADDRESS]
+Don't want these emails? Reply "unsubscribe" or click [UNSUBSCRIBE LINK], and we'll remove this address within 10 business days (usually the same week). We never sell or share addresses.
+Play Before Pixels offers educational materials, not medical, therapy or speech-language advice.

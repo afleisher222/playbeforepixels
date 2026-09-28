@@ -34,7 +34,11 @@ Thank you for considering it,
 [Approved pen name or "The Play Before Pixels team"]
 press@[BUSINESS DOMAIN]
 
-[STANDARD FOOTER: see README.md]
+—
+This is a promotional message from Play Before Pixels, a trade name of AlphaPlay LLC.
+AlphaPlay LLC, [BUSINESS MAILING ADDRESS]
+Don't want these emails? Reply "unsubscribe" or click [UNSUBSCRIBE LINK], and we'll remove this address within 10 business days (usually the same week). We never sell or share addresses.
+Play Before Pixels offers educational materials, not medical, therapy or speech-language advice.
 
 ---
 
@@ -54,4 +58,8 @@ Thank you,
 The Play Before Pixels team
 press@[BUSINESS DOMAIN]
 
-[STANDARD FOOTER]
+—
+This is a promotional message from Play Before Pixels, a trade name of AlphaPlay LLC.
+AlphaPlay LLC, [BUSINESS MAILING ADDRESS]
+Don't want these emails? Reply "unsubscribe" or click [UNSUBSCRIBE LINK], and we'll remove this address within 10 business days (usually the same week). We never sell or share addresses.
+Play Before Pixels offers educational materials, not medical, therapy or speech-language advice.

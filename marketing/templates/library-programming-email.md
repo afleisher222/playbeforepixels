@@ -27,7 +27,11 @@ Thank you,
 The Play Before Pixels team
 hello@[BUSINESS DOMAIN]
 
-[STANDARD FOOTER: see README.md]
+—
+This is a promotional message from Play Before Pixels, a trade name of AlphaPlay LLC.
+AlphaPlay LLC, [BUSINESS MAILING ADDRESS]
+Don't want these emails? Reply "unsubscribe" or click [UNSUBSCRIBE LINK], and we'll remove this address within 10 business days (usually the same week). We never sell or share addresses.
+Play Before Pixels offers educational materials, not medical, therapy or speech-language advice.
 
 ---
 
@@ -45,7 +49,11 @@ Reply "quote" for a written quote your Friends group can approve. We accept POs 
 
 The Play Before Pixels team
 
-[STANDARD FOOTER]
+—
+This is a promotional message from Play Before Pixels, a trade name of AlphaPlay LLC.
+AlphaPlay LLC, [BUSINESS MAILING ADDRESS]
+Don't want these emails? Reply "unsubscribe" or click [UNSUBSCRIBE LINK], and we'll remove this address within 10 business days (usually the same week). We never sell or share addresses.
+Play Before Pixels offers educational materials, not medical, therapy or speech-language advice.
 
 ---
 
@@ -60,7 +68,11 @@ This is my last note. Here's a free, ready-to-paste column of 5 play ideas for f
 Warm regards,
 The Play Before Pixels team
 
-[STANDARD FOOTER]
+—
+This is a promotional message from Play Before Pixels, a trade name of AlphaPlay LLC.
+AlphaPlay LLC, [BUSINESS MAILING ADDRESS]
+Don't want these emails? Reply "unsubscribe" or click [UNSUBSCRIBE LINK], and we'll remove this address within 10 business days (usually the same week). We never sell or share addresses.
+Play Before Pixels offers educational materials, not medical, therapy or speech-language advice.
 
 ---
 
@@ -83,4 +95,8 @@ The title sheet is attached as a PDF. Reply "review copy" and the printer will s
 Thank you for your time,
 The Play Before Pixels team
 
-[STANDARD FOOTER]
+—
+This is a promotional message from Play Before Pixels, a trade name of AlphaPlay LLC.
+AlphaPlay LLC, [BUSINESS MAILING ADDRESS]
+Don't want these emails? Reply "unsubscribe" or click [UNSUBSCRIBE LINK], and we'll remove this address within 10 business days (usually the same week). We never sell or share addresses.
+Play Before Pixels offers educational materials, not medical, therapy or speech-language advice.
