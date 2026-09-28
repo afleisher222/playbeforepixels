@@ -661,6 +661,13 @@ const indexCss = `<style>
 .ixn p{font-size:12px;line-height:1.45;font-weight:600}
 </style>`;
 
+function byeArt() {
+  const F = 150;
+  const k1 = Object.assign({}, KIDS.C, { x: 150, y: F - 27 * 1.05, s: 1.05, aL: 20, aR: -150, face: 'laugh' });
+  const k2 = Object.assign({}, KIDS.E, { x: 370, y: F - 27 * 1.05, s: 1.05, aL: 150, aR: -150, face: 'joy' });
+  const g = Object.assign({}, ADULTS.G4, { x: 260, y: F - 81 * 0.78, s: 0.78, aL: 20, aR: -140, face: 'smile' });
+  return `<svg class="byesvg" viewBox="0 0 520 160" aria-hidden="true"><rect x="40" y="${F}" width="440" height="6" rx="3" fill="${C.ink}" opacity=".07"/>${adult(g)}${kid(k1)}${kid(k2)}<g transform="translate(455,${F - 64}) scale(.36)">${jarSVG({ lab: C.grass })}</g></svg>`;
+}
 function bonusPage() {
   const next = [
     ['Play-First Family Kit', 'A “play first, then screens” checklist, tokens, a helping-jobs page and a family play plan.', C.tTomato],
@@ -669,12 +676,13 @@ function bonusPage() {
   ];
   return contentPage('bonus', 'Your free bonus', 'One more thing:<br>a free bonus.', `
   <div class="bn">
-    <div class="bnq">${QR}<span class="bnu">${BONUS}</span></div>
+    <div class="bnq">${QR}<span class="bnu">playbeforepixels.com/bonus/<br>${SLUG}</span></div>
     <div class="bnt"><p class="lead">Scan the code or type the link for this pack’s free companion: a printable seasonal mini-set of play cards and a short “play at this age” email each month.</p>
     <p class="bnp">We only ask for your email and your child’s birth month and year, never names. Unsubscribe any time.</p></div>
   </div>
   <span class="kick" style="margin-top:22px">Next in the collection</span>
   <div class="nx">${next.map(([h, t, bg]) => `<div class="nxi" style="background:${bg}"><h4>${h}</h4><p>${t}</p></div>`).join('')}</div>
+  <div class="bye">${byeArt()}<span class="hand">Happy playing!</span></div>
   <div class="legal">
     <p><b>${COPY}</b> All rights reserved.</p>
     <p>This file is for use in your own home. You may print as many copies as your family needs. Please don’t share, resell or post the file or its pages. For group, classroom or other licenses, write to us through the contact form at playbeforepixels.com.</p>
@@ -693,6 +701,9 @@ const bonusCss = `<style>
 .nxi{border-radius:16px;padding:14px 15px}
 .nxi h4{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:16px;margin:0 0 4px}
 .nxi p{font-size:11.5px;line-height:1.42;font-weight:600}
+.bye{margin-top:18px;display:flex;align-items:center;justify-content:center;gap:10px}
+.byesvg{width:4.6in;height:1.42in}
+.bye .hand{font-size:40px;color:${C.tomato};transform:rotate(-4deg)}
 .legal{margin-top:auto;border-top:2px solid ${C.wash};padding-top:12px;display:flex;flex-direction:column;gap:6px}
 .legal p{font-size:9.5px;line-height:1.45;font-weight:600;opacity:.85}
 </style>`;

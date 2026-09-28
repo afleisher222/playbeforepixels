@@ -1083,3 +1083,5 @@ select.inp { appearance: none; background-image: linear-gradient(45deg, transpar
   .hero-mini { max-width: 92%; }
 }
 .card.c1 p, .card.c3 p { visibility: hidden; }
+.t-board .type-cap { flex-direction: column; align-items: flex-start; gap: 6px; }
+.t-board .type-m { text-align: left; }

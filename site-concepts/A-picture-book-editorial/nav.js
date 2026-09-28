@@ -135,7 +135,7 @@
          ["tablet-slept", "assets/tts-cover.png", "Picture book · 3–7", "The Day the Tablet Slept"],
          ["mtlt", "assets/photo-mtlt.png", "Picture book · 4–8 · Spring 2027", "More Talk, Less Tap"],
          ["hundred-plays", "assets/photo-100plays.png", "Guide for grown-ups · 0–5", "100 Plays Before Pixels"]].map(function (b) {
-          return '<a class="mm-book" href="product.html#' + b[0] + '"><span class="mm-book-img' + (b[1].indexOf("photo") > -1 ? " is-photo" : "") + '"><img src="' + b[1] + '" alt=""></span><span class="label">' + b[2] + '</span><span class="mm-book-t">' + b[3] + "</span></a>";
+          return '<a class="mm-book" href="product.html#' + b[0] + '"><span class="mm-book-img"><img src="' + b[1] + '" alt=""></span><span class="label">' + b[2] + '</span><span class="mm-book-t">' + b[3] + "</span></a>";
         }).join("") + "</div>" +
         '<div class="mm-col mm-col--aside"><p class="label">Browse</p><ul class="mm-list"><li><a href="shop.html#type=books">All books</a></li><li><a href="shop.html#type=board">Board books</a></li><li><a href="shop.html#type=picture">Picture books</a></li><li><a href="info.html#formats">Board, paperback, hardcover or library binding?</a></li></ul></div>'
     },

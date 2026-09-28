@@ -55,8 +55,8 @@ function coverArt(P, S) {
   return adult(g) + kid(k);
 }
 function fan(P, picks, scale) {
-  const rots = [-11, 0, 11], dx = [-150, 0, 150], dy = [26, 0, 26];
-  return picks.map((i, j) => `<div class="fan-card" style="transform:translate(${dx[j]}px,${dy[j]}px) rotate(${rots[j]}deg) scale(${scale})">${P.card(P.deck[i], 0)}</div>`).join('');
+  const rots = [-10, 0, 10], dx = [-122, 0, 122], dy = [22, 0, 22];
+  return picks.map((i, j) => `<div class="fan-card" style="transform:translate(${dx[j] * scale / .86}px,${dy[j] * scale / .86}px) rotate(${rots[j]}deg) scale(${scale})">${P.card(P.deck[i], 0)}</div>`).join('');
 }
 function coverPage(P, S, n, total) {
   const panelH = Math.round(S.H * 0.555);
@@ -75,8 +75,8 @@ function coverPage(P, S, n, total) {
     <p class="csub">${esc(P.sub)}</p>
   </div>
   <svg class="cv-people" viewBox="0 -300 300 300" width="300" height="300" style="top:${panelH - 300}px" aria-hidden="true">${coverArt(P, S)}</svg>
-  <div class="fan" style="top:${panelH - 175}px;left:${S.W - 250}px">${fan(P, picks, 1.02)}</div>
-  <div class="cv-low" style="top:${panelH + 150}px">
+  <div class="fan" style="top:${panelH - 30}px;left:${S.W - 272}px">${fan(P, picks, .86)}</div>
+  <div class="cv-low" style="top:${panelH + 172}px">
     <div class="tiles">${tiles}</div>
     <div class="inside"><h2>Inside this download</h2><ul>${inside.map(t => `<li>${check(P.key === 'A' ? C.grass : C.sky)}<span>${t}</span></li>`).join('')}</ul></div>
   </div>
@@ -367,19 +367,20 @@ ${K.CARD_CSS}
 .lockup{height:34px;width:auto;display:block}
 .lockup.sm{height:26px}
 /* cover */
+.cover{background:${C.wash}}
 .cover .panel{position:absolute;left:0;top:0;right:0;background:var(--panel)}
 .cv-head{position:absolute;left:56px;right:56px;top:58px}
 .cover .kick{color:${C.ink};font-size:13px}
 .cover h1{margin:6px 0 0;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:${S.W > 800 ? 74 : 72}px;line-height:.98;letter-spacing:-.035em;color:${C.ink}}
 .n52{display:inline-block;background:${C.tomato};color:#fff;border-radius:18px;padding:0 14px 4px;line-height:1.02;margin-right:4px}
-.csub{margin:16px 0 0;max-width:430px;font-size:18px;line-height:1.38;font-weight:700}
+.csub{margin:16px 0 0;max-width:400px;font-size:18px;line-height:1.38;font-weight:700}
 .cv-people{position:absolute;left:24px;overflow:visible}
 .fan{position:absolute;width:0;height:0}
-.fan-card{position:absolute;left:-120px;top:-168px;transform-origin:50% 100%}
+.fan-card{position:absolute;left:-120px;top:-168px;transform-origin:50% 50%}
 .fan-card .card{border-radius:0}
 .cv-low{position:absolute;left:56px;right:56px}
 .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
-.tile{background:var(--t);border-radius:14px;padding:10px 12px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;border-bottom:6px solid var(--c)}
+.tile{background:#fff;border-radius:14px;padding:10px 12px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;border-bottom:6px solid var(--c)}
 .tile b{font-family:"Fredoka",sans-serif;font-weight:600;font-size:22px;line-height:1}
 .tile b.mw{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:17px}
 .tile span{font-size:11px;font-weight:800}
