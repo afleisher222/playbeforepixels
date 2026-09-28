@@ -647,7 +647,7 @@ function frontCover() {
   let r = flames(318, 668, 0.62, 0);
   r += Ci(250, 764, 32, C.paper) + Ci(318, 774, 38, C.paper) + Ci(390, 764, 32, C.paper) + Ci(202, 776, 20, C.paper) + Ci(438, 778, 20, C.paper);
   r += P('M176 470 L118 392 L186 386 L222 470Z', C.s3) + P('M460 470 L518 392 L450 386 L414 470Z', C.s3) + R(176, 452, 284, 30, C.s3, 4);
-  r += dog(352, 526, 0.6, 'dog-happy');
+  r += dog(356, 508, 0.6, 'dog-happy');
   r += ada({ x: 282, y: 668, s: 0.98, face: 'face-laugh', noLegs: true, armL: { a: 150, b: -14 }, armR: { a: 158, b: -20 } });
   r += P('M180 560 L108 676 L180 660Z', C.tomato) + P('M456 560 L528 676 L456 660Z', C.tomato);
   r += R(168, 470, 300, 200, C.s2, 10) + R(168, 504, 300, 20, C.sun);

@@ -86,27 +86,27 @@ const LIST = {
     ['playFirst', 'Play first', 1], ['screensLater', 'Screens later', 1], ['screensOff', 'Screens rest'],
   ],
   'bk-morning': [
-    ['alarm', 'Wake up on time'], ['makeBed', 'Make my bed'], ['dressedBig', 'Get dressed'], ['washFaceBig', 'Wash my face'],
-    ['floss', 'Brush & floss'], ['hair', 'Do my hair'], ['breakfast', 'Eat breakfast'], ['lunchbox', 'Pack my lunch'],
+    ['alarm', 'Wake up on time'], ['makeBedBig', 'Make my bed'], ['dressedBig', 'Get dressed'], ['washFaceBig', 'Wash my face'],
+    ['floss', 'Brush & floss'], ['hair', 'Do my hair'], ['breakfastBig', 'Eat breakfast'], ['lunchbox', 'Pack my lunch'],
     ['waterBottle', 'Fill water bottle'], ['weather', 'Check the weather'], ['jacketShoes', 'Jacket & shoes'],
-    ['packTomorrow', 'Backpack ready'], ['busStop', 'Bus stop'], ['school', 'School'],
+    ['backpackDoor', 'Backpack by the door'], ['busStop', 'Bus stop'], ['school', 'School'],
   ],
   'bk-after': [
     ['unpackBag', 'Unpack my bag'], ['snackBig', 'Snack'], ['homework', 'Homework'], ['reading20', 'Read 20 minutes'],
     ['instrument', 'Practice music'], ['sports', 'Sports practice'], ['outsideTime', 'Outside time'], ['bike', 'Bike ride'],
     ['build', 'Build something'], ['artProject', 'Art project'], ['boardGame', 'Board game'], ['freePlay', 'Free play'],
-    ['jobsList', 'Check my list'], ['familyGame', 'Family game night'], ['playFirstBig', 'Jobs & play first'], ['screensLater', 'Screens later'],
+    ['jobsList', 'Check my list'], ['familyGame', 'Family game night'], ['playFirstBig', 'Jobs & play first'], ['screensLaterBig', 'Screens later'],
   ],
   'bk-evening': [
-    ['helpDinner', 'Help make dinner'], ['familyMeal', 'Family dinner'], ['clearTable', 'Clear the table'], ['dishes', 'Wash dishes'],
-    ['shower', 'Shower'], ['pajamas', 'Pajamas on'], ['layOut', "Lay out tomorrow's clothes"], ['packTomorrow', 'Pack for tomorrow'],
+    ['helpDinner', 'Help make dinner'], ['familyDinnerBig', 'Family dinner'], ['clearTable', 'Clear the table'], ['dishes', 'Wash dishes'],
+    ['shower', 'Shower'], ['pjBig', 'Pajamas on'], ['layOut', "Lay out tomorrow's clothes"], ['packTomorrow', 'Pack for tomorrow'],
     ['talkDay', 'Talk about my day'], ['journal', 'Journal'], ['readInBed', 'Read in bed'], ['devicesSleep', 'Devices sleep outside'],
-    ['lightsOff', 'Lights out'],
+    ['lightsOutBig', 'Lights out'],
   ],
   'bk-jobs': [
-    ['tidyRoom', 'Tidy my room'], ['laundry', 'Laundry'], ['foldClothes', 'Fold clothes'], ['trash', 'Take out trash'], ['recycling', 'Recycling'],
-    ['sweep', 'Sweep'], ['vacuum', 'Vacuum'], ['waterPlants', 'Water plants'], ['feedPetBig', 'Feed the pet'], ['walkDog', 'Walk the dog'],
-    ['wipeCounter', 'Wipe counters'], ['setTable', 'Set the table'], ['helpSibling', 'Help a sibling'], ['rake', 'Rake leaves'], ['makeLunch', 'Make lunch'],
+    ['tidyRoom', 'Tidy my room'], ['washer', 'Laundry'], ['foldClothes', 'Fold clothes'], ['trash', 'Take out trash'], ['sortRecycling', 'Sort recycling'],
+    ['putAwayDishes', 'Put dishes away'], ['vacuum', 'Vacuum'], ['houseplant', 'Water plants'], ['feedPetBig', 'Feed the pet'], ['walkDog', 'Walk the dog'],
+    ['wipeCounter', 'Wipe counters'], ['setTableBig', 'Set the table'], ['helpSibling', 'Help a sibling'], ['rake', 'Rake leaves'], ['makeLunch', 'Make lunch'],
   ],
 };
 
