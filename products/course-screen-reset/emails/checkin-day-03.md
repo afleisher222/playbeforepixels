@@ -15,7 +15,7 @@ If a day went sideways, just pick up with tomorrow’s lesson. Nothing breaks.
 **Answer in one click:** {{feedback_form_link}} (about 30 seconds). We read every answer, but we can’t reply personally.
 
 ---
-**Share with a friend:** give $5, get $5. {{referral_link}}
+**Share the free printable:** know a family who might like it? Our free 7 Days of Play First starter is at https://playbeforepixels.com/30-days/start
 
 The Play Before Pixels team
 

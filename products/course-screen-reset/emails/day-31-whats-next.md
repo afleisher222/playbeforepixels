@@ -11,10 +11,10 @@ This month isn’t a finish line. It’s a rhythm you now know how to find. Look
 1. **The free monthly play email.** Three new plays for your child’s age each month: https://playbeforepixels.com/bonus/course-screen-reset (birth month and year only, never a name).
 2. **100 Screen-Free Plays.** https://playbeforepixels.com/shop/guide-100-plays
 
-If the program helped your family, pass it on to a friend with your share link below. You’ll each get $5 off.
+If the program helped your family, you’re welcome to share the free starter with a friend. The link is below.
 
 ---
-**Share with a friend:** give $5, get $5. {{referral_link}}
+**Share the free printable:** know a family who might like it? Our free 7 Days of Play First starter is at https://playbeforepixels.com/30-days/start
 
 The Play Before Pixels team
 

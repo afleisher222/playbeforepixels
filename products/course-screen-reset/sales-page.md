@@ -2,7 +2,7 @@
 
 URL: playbeforepixels.com/30-days (not /reset: brand/ORIGINALITY.md A4 retired "The 30-Day Screen Reset" and the /reset path) · Designed version: `sales-page.html` (preview: `preview/sales-page.png`).
 Calm-site rules: one primary button per screen, secondary links are quiet text, no pop-ups, no timers, no badges.
-FOUNDER: rewrite any line in your own voice; keep the guarantee wording identical to `legal/SHIPPING-RETURNS-REFUNDS.md` §4 and the FAQ.
+FOUNDER: rewrite any line in your own voice; keep the guarantee wording identical to `legal/SHIPPING-RETURNS-REFUNDS.md` Part B §4 and the FAQ. The designed page and every email take the numbers from `REFUND` in `build/content.js`; change the policy first, then that one line. (14 or 30 days for the course is a founder decision pending in `ops/APPROVALS.md`.)
 
 ---
 
@@ -12,7 +12,7 @@ FOUNDER: rewrite any line in your own voice; keep the guarantee wording identica
 **Subhead:** More play and talk, with screens in a steady spot. One short lesson, one easy play and plain words for one tricky moment, every morning for 30 days.
 **Primary button:** Start the 30 days · $27
 **Quiet link:** See what’s inside
-**Small print:** 30-day money-back guarantee · no videos, calls or coaching · nothing to buy
+**Small print:** 14-day money-back guarantee (terms) · no videos, calls or coaching · nothing to buy
 
 ## 2. How it works — “Three minutes to read. One play to try.”
 - **Read.** A short lesson arrives each morning. Each one is under 300 words and ends with one small step.
@@ -45,8 +45,8 @@ We don’t ban anything. Screens get a steady spot in the day, the same time and
 
 Prefer paper? The whole program is also a black-and-white paperback on Amazon.
 
-## 6. Guarantee — “30 days, full refund, no questions”
-If the program isn’t right for your family, email us within 30 days of purchase for a full refund. You don’t need to have finished anything, and you don’t need to explain.
+## 6. Guarantee — “14 days, full refund”
+If the program isn’t right for your family, email us within 14 days of purchase for a full refund, as long as you’ve completed no more than 30% of the lessons. The full terms are in our refund policy (link: /refunds).
 
 ## 7. Founder note (optional)
 A short note in your own words in `FOUNDER.salesNote` (build/content.js), or set it to `'skip'` to leave the section out. Until then the designed page shows a dashed FOUNDER WRITES THIS box and `make.sh --final` refuses to finish. No names, photos or credentials needed.

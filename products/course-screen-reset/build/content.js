@@ -29,6 +29,15 @@ const TITLE = '30 Days of Back-and-Forth';
 const SUB = 'A play-first screen-time plan for families';
 const TAGLINE = '30 short lessons · 30 easy plays · plain words for tricky moments';
 
+// Refund terms. legal/SHIPPING-RETURNS-REFUNDS.md Part B §4 is the only source: change the policy first, then these
+// two numbers, then rebuild (make.sh). Every email, the sales page, START HERE, the starter, the listing images and the
+// workbook FAQ read them from here. Founder decision pending in ops/APPROVALS.md (keep 14 days, or 30 for the course).
+const REFUND = { days: 14, maxDone: '30%' };
+REFUND.short = `${REFUND.days}-day money-back guarantee`;
+REFUND.terms = `email us within ${REFUND.days} days of purchase for a full refund, as long as you’ve completed no more than ${REFUND.maxDone} of the lessons`;
+// Public, reward-free share link (no referral program exists: business/GROWTH-ENGINE.md §4 "Referral"). The free starter's sign-up page.
+const SHARE_URL = 'playbeforepixels.com/30-days/start';
+
 // Six plain-word talk moves (no program names).
 const MOVES = {
   wait: { name: 'Pause and wait', tip: 'Say a little, then stop. Count to five in your head. A look, a sound, a sign, a point or a word all count as an answer.' },
@@ -698,7 +707,7 @@ const FAQ = [
   ['Do we have to give up screens?', 'No. The program adds play and talk and gives screens a steady spot in the day. Screens are never used as a reward or a punishment.'],
   ['Will this change how my child talks or behaves?', 'It isn’t designed to treat or change anything about your child. It’s parent education about everyday play and talk. If you have questions about your child’s development, talk with your pediatrician.'],
   ['Do I need to buy anything?', 'No. Every play uses things most homes already have: socks, boxes, pots, books, paper.'],
-  ['What is the guarantee?', 'If the program isn’t right for your family, email us within 30 days of purchase for a full refund. No questions asked, and you don’t need to have finished anything.'],
+  ['What is the guarantee?', `If the program isn’t right for your family, ${REFUND.terms}. The full terms are in our refund policy.`],
   ['How is it delivered?', 'Right after checkout you get a welcome email with your workbook download. Then one lesson arrives each morning for 30 days. You can change the send time or pause from the link in any email.'],
   ['Can a teacher, child-care center or PTA use it?', 'This purchase is for one household. Schools, centers, libraries and parent groups can ask for a group or site license through the written quote form at playbeforepixels.com. We reply by email.'],
   ['Is there a Spanish edition?', 'Not yet. The program is in English. Say every talk line and script in your own words and your own language, and swap any song for one your family knows.'],
@@ -717,4 +726,4 @@ const SAFETY = [
   'Grown-ups handle knives, the stove, hot pans, chargers and anything sharp.',
 ];
 
-module.exports = { FOUNDER, VERSION, TITLE, SUB, TAGLINE, MOVES, PREP, MESS, TIME, WEEKS, DAYS, SCRIPT_BANK, FAQ, SAFETY };
+module.exports = { FOUNDER, VERSION, TITLE, SUB, TAGLINE, REFUND, SHARE_URL, MOVES, PREP, MESS, TIME, WEEKS, DAYS, SCRIPT_BANK, FAQ, SAFETY };

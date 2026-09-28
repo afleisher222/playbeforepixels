@@ -50,7 +50,7 @@ Today’s pages in your workbook: Day 28. {{workbook_download_link}}
 ---
 **Next for your family:** The Day the Tablet Slept. A funny bedtime read-aloud for ages 3–7 about a box rocket, the family dog and one very sleepy tablet. https://playbeforepixels.com/shop/picture-tablet-slept
 
-**Share with a friend:** give $5, get $5. {{referral_link}}
+**Share the free printable:** know a family who might like it? Our free 7 Days of Play First starter is at https://playbeforepixels.com/30-days/start
 
 The Play Before Pixels team
 

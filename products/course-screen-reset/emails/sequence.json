@@ -9,7 +9,6 @@
   ],
   "merge_tags": {
     "{{logo_url}}": "hosted PNG of brand/logo/png/lockup-horizontal-2400.png (upload once to the email platform)",
-    "{{referral_link}}": "give $5 / get $5 share link from the store platform",
     "{{unsubscribe_link}}": "platform unsubscribe",
     "{{pause_or_change_time_link}}": "subscriber preferences page",
     "{{workbook_download_link}}": "expiring download link for the workbook files",

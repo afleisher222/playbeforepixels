@@ -138,9 +138,9 @@ function doc(V) {
     ${V.book ? startBook : startWorkbook}
     <div class="howday">
       <div class="hd">${artDisc('book', C.tSky, .95)}<b>Read</b><span>one short lesson, about 3 minutes</span></div>
-      <div class="arrow">→</div>
+      <div class="arrow"><svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true"><path d="M3 12h16M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="hd">${artDisc('ball', C.tGrass, .95)}<b>Play</b><span>one easy play with things you have</span></div>
-      <div class="arrow">→</div>
+      <div class="arrow"><svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true"><path d="M3 12h16M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="hd">${artDisc('hand', C.tTomato, .95)}<b>Say</b><span>plain words for one tricky moment</span></div>
     </div>
     <div class="promise">

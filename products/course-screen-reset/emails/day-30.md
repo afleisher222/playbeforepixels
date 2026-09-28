@@ -60,7 +60,7 @@ Today’s pages in your workbook: Day 30. {{workbook_download_link}}
 ---
 **Next for your family:** 100 Screen-Free Plays. Keep going after Day 30: 100 more easy plays, sorted by age. https://playbeforepixels.com/shop/guide-100-plays
 
-**Share with a friend:** give $5, get $5. {{referral_link}}
+**Share the free printable:** know a family who might like it? Our free 7 Days of Play First starter is at https://playbeforepixels.com/30-days/start
 
 The Play Before Pixels team
 

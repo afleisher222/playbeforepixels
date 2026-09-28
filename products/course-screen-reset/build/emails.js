@@ -13,12 +13,17 @@ const C = { ink: '#1D2940', wash: '#F3F6FB', tomato: '#EE5A36', sun: '#F5B820', 
 const WCOL = { sky: [C.sky, C.tSky], grass: [C.grass, C.tGrass], sun: ['#B98500', C.tSun], tomato: [C.tomato, C.tTomato], plum: [C.plum, C.tPlum] };
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const SIGN = K.FOUNDER.signoff || 'The Play Before Pixels team';
+// "Share with a friend" slot (BRAND.md): a public, reward-free link to the free starter. No referral program exists, so no
+// email may promise a reward (business/GROWTH-ENGINE.md §4 "Referral"; COMPLIANCE-GATE 10 and 18).
+const SHARE = K.SHARE_URL;
+// Refund wording comes from content.js REFUND, which follows legal/SHIPPING-RETURNS-REFUNDS.md Part B §4.
+const R = K.REFUND;
 const weekOf = d => K.WEEKS.find(w => d >= w.from && d <= w.to);
 // Preheaders: cut at a word boundary (never mid-word) and keep them under about 90 characters.
 const pre90 = s => s.length <= 90 ? s : s.slice(0, 88).replace(/[\s,;:]+\S*$/, '') + '…';
 
 // Merge tags the email platform fills (see sequence.json). No child names are ever collected.
-const TAG = { ref: '{{referral_link}}', unsub: '{{unsubscribe_link}}', pause: '{{pause_or_change_time_link}}', wb: '{{workbook_download_link}}', fb: '{{feedback_form_link}}', buy: '{{program_checkout_link}}', bundle: '{{bundle_checkout_link}}', starter: '{{starter_download_link}}', addr: '[BUSINESS MAILING ADDRESS]' };
+const TAG = { unsub: '{{unsubscribe_link}}', pause: '{{pause_or_change_time_link}}', wb: '{{workbook_download_link}}', fb: '{{feedback_form_link}}', buy: '{{program_checkout_link}}', bundle: '{{bundle_checkout_link}}', starter: '{{starter_download_link}}', addr: '[BUSINESS MAILING ADDRESS]' };
 
 const NEXT = [ // next-product recommendation per week (BRAND.md: every email recommends a next product)
   { t: 'Play-First Family Kit', s: 'A screen-rhythm chart, a family play plan and helping-jobs pages to put this week on the fridge.', u: SITE + '/shop/play-first-family-kit' },
@@ -39,7 +44,7 @@ function frame({ preheader, title, body, next, footNote = '' }) {
 <tr><td style="padding:8px 32px 24px;font-size:16px;line-height:1.55">${body}
 <p style="margin:24px 0 0">${esc(SIGN)}</p></td></tr>
 ${next ? `<tr><td style="padding:0 32px 20px"><table role="presentation" width="100%" style="background:${C.tSun};border-radius:12px"><tr><td style="padding:16px 18px;font-size:14px;line-height:1.5"><b>Next for your family:</b> ${esc(next.t)}. ${esc(next.s)} <a href="https://${next.u}" style="color:${C.ink}">See it</a></td></tr></table></td></tr>` : ''}
-<tr><td style="padding:0 32px 20px;font-size:14px;line-height:1.5"><b>Share with a friend:</b> give $5, get $5. When a friend buys with your link, you each get $5 off. <a href="${TAG.ref}" style="color:${C.ink}">Your share link</a></td></tr>
+<tr><td style="padding:0 32px 20px;font-size:14px;line-height:1.5"><b>Share the free printable:</b> know a family who might like it? Our free 7 Days of Play First starter is at <a href="https://${SHARE}" style="color:${C.ink}">${SHARE}</a>.</td></tr>
 <tr><td style="padding:16px 32px 28px;border-top:1px solid #DCE3EE;font-size:12px;line-height:1.5;color:#5A6478">
 ${footNote}This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there.<br>
 We don’t send personal replies about individual children; answers to common questions are at <a href="https://${SITE}/help" style="color:#5A6478">${SITE}/help</a>.<br>
@@ -66,7 +71,7 @@ function playMd(p) {
   const mat = p.mat.length ? p.mat.join(', ') : 'Nothing but you';
   return `## Today’s play: ${p.t}\n\n*${ageLabel(p.from)} · ${K.PREP[p.prep]} · ${K.MESS[p.mess]} · ${K.TIME[p.time]} · You need: ${mat}*\n\n${p.how}\n\n**Talk while you play (${K.MOVES[p.move].name}):** ${p.talk}\n\n- **Make it easier:** ${p.easier}\n- **Make it harder:** ${p.harder}\n- **Tired-grown-up version (2 minutes):** ${p.tired}\n- **Safety:** ${p.safe}\n`;
 }
-const mdFoot = next => `\n---\n${next ? `**Next for your family:** ${next.t}. ${next.s} https://${next.u}\n\n` : ''}**Share with a friend:** give $5, get $5. ${TAG.ref}\n\n${SIGN}\n\n_This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at ${SITE}/help._\n\n[Pause or change the send time](${TAG.pause}) · [Unsubscribe](${TAG.unsub})\nPlay Before Pixels, a trade name of AlphaPlay LLC · ${TAG.addr} · © 2026 AlphaPlay LLC. ${K.VERSION}\n`;
+const mdFoot = next => `\n---\n${next ? `**Next for your family:** ${next.t}. ${next.s} https://${next.u}\n\n` : ''}**Share the free printable:** know a family who might like it? Our free 7 Days of Play First starter is at https://${SHARE}\n\n${SIGN}\n\n_This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at ${SITE}/help._\n\n[Pause or change the send time](${TAG.pause}) · [Unsubscribe](${TAG.unsub})\nPlay Before Pixels, a trade name of AlphaPlay LLC · ${TAG.addr} · © 2026 AlphaPlay LLC. ${K.VERSION}\n`;
 
 // ================================================================ PAID PROGRAM
 const program = [];
@@ -81,8 +86,8 @@ const founderSlot = (field, words) => K.FOUNDER[field] ? { html: P(K.FOUNDER[fie
     box(C.tSky, `<b>Your workbook is ready.</b> Download it here: <a href="${TAG.wb}" style="color:${C.ink}">your ${esc(K.TITLE)} workbook</a>. Start with “START HERE”. You’ll find Color and Low-ink editions in US Letter and A4, and you can type into the planning pages in free Adobe Acrobat Reader.`) +
     P('Before tomorrow, do just one thing: fill a basket with five to eight things your child can play with, all things you already have. Day 1 arrives tomorrow morning.') +
     P('If you miss a day, nothing breaks. Every lesson stays in your inbox and in the workbook. You can pause or change the send time from the link at the bottom of any email.') +
-    box(C.tGrass, '<b>Our guarantee:</b> if the program isn’t right for your family, reply to this email or use the refund form within 30 days of purchase for a full refund. No questions asked, and you don’t need to have finished anything.');
-  const md = `# Welcome to ${K.TITLE}\n\n${fs0.md}Here’s how the next 30 days work. Every morning you’ll get one short lesson (about three minutes to read), one easy play and a few plain words for a tricky moment. Nothing to watch, nothing to join, no perfect days required.\n\n**Your workbook is ready:** ${TAG.wb} Start with “START HERE”. Color and Low-ink editions in US Letter and A4; type into the planning pages in free Adobe Acrobat Reader.\n\nBefore tomorrow, do just one thing: fill a basket with five to eight things your child can play with, all things you already have. Day 1 arrives tomorrow morning.\n\nIf you miss a day, nothing breaks. Every lesson stays in your inbox and in the workbook.\n\n**Our guarantee:** if the program isn’t right for your family, reply to this email or use the refund form within 30 days of purchase for a full refund. No questions asked, and you don’t need to have finished anything.\n`;
+    box(C.tGrass, `<b>Our guarantee:</b> if the program isn’t right for your family, reply to this email within ${R.days} days of purchase for a full refund, as long as you’ve completed no more than ${R.maxDone} of the lessons. The full terms are in our <a href="https://${SITE}/refunds" style="color:${C.ink}">refund policy</a>.`);
+  const md = `# Welcome to ${K.TITLE}\n\n${fs0.md}Here’s how the next 30 days work. Every morning you’ll get one short lesson (about three minutes to read), one easy play and a few plain words for a tricky moment. Nothing to watch, nothing to join, no perfect days required.\n\n**Your workbook is ready:** ${TAG.wb} Start with “START HERE”. Color and Low-ink editions in US Letter and A4; type into the planning pages in free Adobe Acrobat Reader.\n\nBefore tomorrow, do just one thing: fill a basket with five to eight things your child can play with, all things you already have. Day 1 arrives tomorrow morning.\n\nIf you miss a day, nothing breaks. Every lesson stays in your inbox and in the workbook.\n\n**Our guarantee:** if the program isn’t right for your family, reply to this email within ${R.days} days of purchase for a full refund, as long as you’ve completed no more than ${R.maxDone} of the lessons. Full terms: https://${SITE}/refunds\n`;
   program.push({ id: 'day-00-welcome', send: 'immediately after purchase', subject: 'Welcome! Your workbook is inside', preheader: 'One small thing to do before Day 1 arrives tomorrow.', body, md, next: null });
 }
 
@@ -121,8 +126,8 @@ for (const [day, subject, pre, paras] of checkins) {
     P('If you’d like to keep going, here are two easy next steps.') +
     box(C.tSun, `<b>1. The free monthly play email.</b> Three new plays for your child’s age each month. <a href="https://${SITE}/bonus/course-screen-reset" style="color:${C.ink}">Sign up here</a> (we ask only for your child’s birth month and year, never a name).`) +
     box(C.tSky, `<b>2. 100 Screen-Free Plays.</b> 100 more easy plays for ages 0–5, sorted by age. <a href="https://${SITE}/shop/guide-100-plays" style="color:${C.ink}">See the guide</a>`) +
-    P('If the program helped your family, the kindest thing you can do is pass it on to a friend with your share link below. You’ll each get $5 off.');
-  const md = `# What’s next after your 30 days\n\nThis month isn’t a finish line. It’s a rhythm you now know how to find. Look at your family plan again in a month, and change what you need to as your child grows.\n\n1. **The free monthly play email.** Three new plays for your child’s age each month: https://${SITE}/bonus/course-screen-reset (birth month and year only, never a name).\n2. **100 Screen-Free Plays.** https://${SITE}/shop/guide-100-plays\n\nIf the program helped your family, pass it on to a friend with your share link below. You’ll each get $5 off.\n`;
+    P('If the program helped your family, you’re welcome to share the free starter with a friend. The link is below.');
+  const md = `# What’s next after your 30 days\n\nThis month isn’t a finish line. It’s a rhythm you now know how to find. Look at your family plan again in a month, and change what you need to as your child grows.\n\n1. **The free monthly play email.** Three new plays for your child’s age each month: https://${SITE}/bonus/course-screen-reset (birth month and year only, never a name).\n2. **100 Screen-Free Plays.** https://${SITE}/shop/guide-100-plays\n\nIf the program helped your family, you’re welcome to share the free starter with a friend. The link is below.\n`;
   program.push({ id: 'day-31-whats-next', send: 'day 31, 7:00 local time', subject: 'What’s next after your 30 days', preheader: 'Two easy ways to keep the rhythm going.', body, md, next: null });
 }
 
@@ -147,8 +152,8 @@ const funnel = [
   { id: 'f6-peek', send: 'day 6', subject: 'What a whole month of this looks like', pre: 'A peek inside 30 Days of Back-and-Forth.',
     paras: ['You’re nearly through your seven days. By now you may have noticed when the asking happens and which play your child wants again.', 'If you’d like to keep going, 30 Days of Back-and-Forth is the full program: 30 short daily lessons by email, 30 easy plays with versions for little ones and big kids, plain words for 30 tricky moments, and a designed workbook with trackers, a family plan and a certificate.', 'It covers what the starter doesn’t: mornings, the hour before dinner, big feelings when screens end, waiting rooms, car rides, grown-up phones, big kids who say “everyone else gets to”, siblings, grandparents and sick days.', 'It’s written, not filmed. No videos, no calls, no coaching. You do it at your own pace.'],
     play: 12, offer: true },
-  { id: 'f7-invite', send: 'day 7', subject: 'Keep going: 30 Days of Back-and-Forth', pre: '$27, with a 30-day money-back guarantee.',
-    paras: ['Your seven days are done. Thank you for spending them with us.', 'If you’d like the whole month, 30 Days of Back-and-Forth is $27. You get 30 daily lessons by email, 30 plays, 30 scripts for tricky moments and the full workbook (Color and Low-ink, Letter and A4, fillable in free Acrobat Reader).', 'Or choose the 30 Days of Back-and-Forth Bundle for $49: the program plus the Play-First Family Kit, the 100 Screen-Free Plays printable guide and the 150 “I’m Bored” Play Cards. Bought separately, those come to $54.49.', 'Either way, there’s a simple guarantee: if it isn’t right for your family, email us within 30 days of purchase for a full refund. No questions asked.', 'And if now isn’t the time, that’s fine. You’ll keep getting our free monthly play email, and the starter is yours to keep.'],
+  { id: 'f7-invite', send: 'day 7', subject: 'Keep going: 30 Days of Back-and-Forth', pre: `$27, with a ${R.short}.`,
+    paras: ['Your seven days are done. Thank you for spending them with us.', 'If you’d like the whole month, 30 Days of Back-and-Forth is $27. You get 30 daily lessons by email, 30 plays, 30 scripts for tricky moments and the full workbook (Color and Low-ink, Letter and A4, fillable in free Acrobat Reader).', 'Or choose the 30 Days of Back-and-Forth Bundle for $49: the program plus the Play-First Family Kit, the 100 Screen-Free Plays printable guide and the 150 “I’m Bored” Play Cards. Bought separately, those come to $54.49.', `Either way, there’s a guarantee: if it isn’t right for your family, ${R.terms}.`, 'And if now isn’t the time, that’s fine. You’ll keep getting our free monthly play email, and the starter is yours to keep.'],
     play: 7, offer: true, final: true },
 ];
 
@@ -165,8 +170,8 @@ const funnelOut = funnel.map((f, i) => {
   if (f.offer) {
     body += `<table role="presentation" style="margin:22px 0 6px"><tr><td style="background:${C.tomato};border-radius:999px"><a href="${TAG.buy}" style="display:inline-block;padding:13px 26px;color:#FFFFFF;font-weight:800;text-decoration:none">Start 30 Days of Back-and-Forth · $27</a></td></tr></table>` +
       (f.final ? `<p style="margin:8px 0 0;font-size:14px"><a href="${TAG.bundle}" style="color:${C.ink}">Or get the bundle · $49</a></p>` : '') +
-      `<p style="margin:8px 0 0;font-size:13px;color:#4A5570">30-day money-back guarantee. Written program; no videos, calls or coaching.</p>`;
-    md += `**[Start 30 Days of Back-and-Forth · $27](${TAG.buy})**${f.final ? ` · [Or get the bundle · $49](${TAG.bundle})` : ''}\n\n30-day money-back guarantee. Written program; no videos, calls or coaching.\n`;
+      `<p style="margin:8px 0 0;font-size:13px;color:#4A5570">${R.short} (<a href="https://${SITE}/refunds" style="color:#4A5570">terms</a>). Written program; no videos, calls or coaching.</p>`;
+    md += `**[Start 30 Days of Back-and-Forth · $27](${TAG.buy})**${f.final ? ` · [Or get the bundle · $49](${TAG.bundle})` : ''}\n\n${R.short} (terms: https://${SITE}/refunds). Written program; no videos, calls or coaching.\n`;
   }
   const next = f.offer ? null : NEXT[1];
   return { id: f.id, send: f.send, subject: f.subject, preheader: f.pre, body, md, next };
@@ -180,7 +185,7 @@ function write(dir, list, meta) {
     fs.writeFileSync(path.join(D, e.id + '.md'), `---\nsubject: "${e.subject.replace(/"/g, '\\"')}"\npreheader: "${e.preheader.replace(/"/g, '\\"')}"\nsend: "${e.send}"\n---\n\n${e.md}${mdFoot(e.next)}`);
   }
   fs.writeFileSync(path.join(D, 'sequence.json'), JSON.stringify(Object.assign(meta, {
-    merge_tags: { '{{logo_url}}': 'hosted PNG of brand/logo/png/lockup-horizontal-2400.png (upload once to the email platform)', '{{referral_link}}': 'give $5 / get $5 share link from the store platform', '{{unsubscribe_link}}': 'platform unsubscribe', '{{pause_or_change_time_link}}': 'subscriber preferences page', '{{workbook_download_link}}': 'expiring download link for the workbook files', '{{feedback_form_link}}': 'one-question form (which play did your child go back to?)', '{{program_checkout_link}}': 'checkout for the $27 program', '{{bundle_checkout_link}}': 'checkout for the $49 bundle', '{{starter_download_link}}': 'the free starter PDF', '[BUSINESS MAILING ADDRESS]': 'the USPS PO Box from legal/ENTITY.md (CAN-SPAM); founder enters it once in the platform footer' },
+    merge_tags: { '{{logo_url}}': 'hosted PNG of brand/logo/png/lockup-horizontal-2400.png (upload once to the email platform)', '{{unsubscribe_link}}': 'platform unsubscribe', '{{pause_or_change_time_link}}': 'subscriber preferences page', '{{workbook_download_link}}': 'expiring download link for the workbook files', '{{feedback_form_link}}': 'one-question form (which play did your child go back to?)', '{{program_checkout_link}}': 'checkout for the $27 program', '{{bundle_checkout_link}}': 'checkout for the $49 bundle', '{{starter_download_link}}': 'the free starter PDF', '[BUSINESS MAILING ADDRESS]': 'the USPS PO Box from legal/ENTITY.md (CAN-SPAM); founder enters it once in the platform footer' },
     emails: list.map(e => ({ file: e.id, send: e.send, subject: e.subject, preheader: e.preheader })) }), null, 2));
   console.log(dir, list.length, 'emails');
 }

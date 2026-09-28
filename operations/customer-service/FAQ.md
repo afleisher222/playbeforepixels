@@ -5,12 +5,14 @@
 - Run the page through `ops/COMPLIANCE-GATE.md`.
 - Hold the "Schools and organizations" section until employment counsel clears school-facing sales.
 - Add `FAQPage` JSON-LD once the page is published.
+- Never add a reply-time promise (no "within X business days", no "same day"). The approved line is "every message gets a reply" (`ops/TESTS/promise-fixes.md`; COMPLIANCE-GATE 21).
+- License links point to `/licenses` (the canonical path; `/license` redirects there, `ops/TESTS/printed-urls.md`).
 
 ---
 
 # Frequently asked questions
 
-Can't find your answer? Email **hello@[BUSINESS DOMAIN]**. We reply within 2 business days, always in writing, so you'll have the answer to keep.
+Most answers are on this page. Can't find yours? Email **hello@[BUSINESS DOMAIN]**. Every message gets a reply, always in writing, so you'll have the answer to keep.
 
 ## About us
 
@@ -27,7 +29,7 @@ We cite published, peer-reviewed studies and the guidance of major health and ed
 Our books, card decks and shirts are printed on demand by established printing partners and shipped straight to you. Printables are delivered instantly as PDFs. [State honestly how illustrations are made, per `ops/COMPLIANCE-GATE.md` line 8.]
 
 **Why can't I call you?**
-We're an email-first business, so every answer comes to you in writing and is easy to find later. Most questions are answered on this page. For everything else, email us and a real reply arrives within 2 business days.
+We're an email-first business, so every answer comes to you in writing and is easy to find later. Most questions are answered on this page. For everything else, email us. Every message gets a reply.
 
 ## Orders and downloads
 
@@ -71,8 +73,8 @@ Each one is printed just for you, so we can't accept returns for size or change 
 **Can I get a refund on a printable?**
 Digital files can't be returned once they're downloaded, so change-of-mind refunds aren't available. We'll always fix or refund a file that's corrupted, incomplete, not as described, or charged twice. [EU/UK wording from the refund policy.]
 
-**What's the guarantee on the 30-Day Screen Reset course?**
-If it isn't right for you, email us within [14] days of purchase, having completed no more than [30%] of the lessons, for a full refund.
+**What's the guarantee on 30 Days of Back-and-Forth?**
+If it isn't right for your family, email us within [14] days of purchase for a full refund, as long as you've completed no more than [30%] of the lessons.
 
 **I bought on Etsy, Amazon or Teachers Pay Teachers.**
 That marketplace's return policy applies, so please contact them first. We're happy to help if we can.
@@ -91,7 +93,7 @@ Please share the *link* to our shop instead of the file. Each family or teacher 
 - **Grade-Band / Site:** every teacher in the covered grades at one school or center.
 - **District:** the sites named on the license.
 
-Full terms: [LINK license].
+Full terms: [LINK /licenses].
 
 **Can I post the files on my class page?**
 With a Single-Classroom license or higher, you can post them on a password-protected class page for your own students only. Never on a public website or shared drive.

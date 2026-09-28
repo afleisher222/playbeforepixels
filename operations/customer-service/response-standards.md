@@ -13,30 +13,30 @@
 | Wholesale | wholesale@[BUSINESS DOMAIN] | Same |
 | Fundraisers | fundraising@[BUSINESS DOMAIN] | Same |
 | Privacy and deletion | privacy@[BUSINESS DOMAIN] | Same, with deletion logged |
-| Marketplace messages | Inside Etsy, TpT, Amazon and TikTok | Founder or routine, per platform access. Many marketplaces have no API for messages `[VERIFY each]` |
+| Marketplace messages | Inside Etsy, TpT, Amazon and TikTok | Founder or routine, per platform access. Many marketplaces have no API for messages `[VERIFY each]`. Etsy: `operations/SOPs/etsy-messages.md` |
 
 **We never offer:** phone, video, live chat, DMs from the brand, or in-person meetings. Social media comments and DMs get one approved auto-reply pointing to `hello@`.
 
-## 2. Response times
+## 2. Reply times: internal only, never promised
 
-| Type | First reply | Resolved within |
+**What customers are told (the only approved wording, in every language):** most answers are in the FAQ, and every message gets a reply. No page, policy, email, macro, listing, product file or auto-reply names a number of hours or days for a reply, and no holding reply names a date (`ops/COMPLIANCE-GATE.md` line 21; `ops/TESTS/promise-fixes.md`, September 28, 2026). Numbers that come from a policy, such as a refund window or a bank's processing time, are fine; see §3.
+
+**How replies really happen:**
+
+| Type | Who answers | When |
 |---|---|---|
-| Can't access a paid download or course | Same business day where possible; **2 business days at most** | Same reply |
-| Double charge or unrecognized charge | 1 business day | Refund issued in the same reply |
-| Damaged, lost or wrong item | 2 business days | Replacement or refund ordered in the same reply |
-| General question | 2 business days | Same reply |
-| School quote request | 2 business days (quote attached) | — |
-| PO received | 2 business days (acknowledgement and invoice) | Licenses delivered in the same reply |
-| W-9 or vendor form | 2 business days | Within 5 business days |
-| Accessible file request | 2 business days | Within 5 business days |
-| Privacy / deletion request | 2 business days | Within the time in the privacy policy (and any stricter legal deadline) |
-| Anything needing the founder | Holding reply within 2 business days ("we're looking into this and will reply by {date}") | Next weekly approval batch |
+| A question an approved macro answers (downloads, printing, charges, order status) | The routine sends the macro unchanged except for placeholders | On the routine's next run with inbox access. There is no mailbox API yet, so today nothing is read automatically |
+| Refunds and replacements inside the §4 limits | The routine | Same |
+| Anything that needs the founder | Drafted into `ops/APPROVALS.md` | The weekly inbound batch (`ops/ROUTINE.md` §5b), sent after her written approval |
+| Etsy messages | Drafted from the macros | Weekly, per `operations/SOPs/etsy-messages.md` |
+| Privacy and deletion requests | `ops/ROUTINE.md` §5b "Privacy requests" | Closed within 30 days or any shorter legal deadline (a legal duty, not a reply promise) |
+| Child-safety report, legal threat, family in crisis | §5 | Escalated at once |
 
 **Notes:**
-- Business days are Monday to Friday, US Eastern, excluding US federal holidays.
-- The FAQ and contact page promise **2 business days**. Never promise faster in writing.
-- **Marketplaces may score response time more strictly** (for example, Etsy shop-performance measures `[VERIFY current rule]`). Where a marketplace has a stricter standard, it applies there.
-- **The daily routine** checks every inbox and marketplace message center it has access to once each weekday. Without inbox API access, it prompts the founder with a one-line list of what's waiting.
+- Business days are Monday to Friday, US Eastern, excluding US federal holidays. They are used only for policy numbers (refund processing, print times), never for replies.
+- **Marketplaces score reply speed on their own terms** (for example Etsy's response expectations and Star Seller measure, UNVERIFIED). A weekly batch will not meet them. That risk and its mitigations are in `operations/SOPs/etsy-messages.md`. It never justifies a written promise here.
+- If a holding reply is ever sent, it says "We've got your message and we're looking into it" and names no date.
+- Every question that arrives more than twice becomes an FAQ answer or a product-page line (§8), so fewer messages need a reply at all.
 
 ## 3. Voice
 
@@ -49,7 +49,7 @@
 **Always:**
 - Say sorry once, sincerely, when something went wrong on our side. Then fix it.
 - Use short paragraphs, plain words and no jargon.
-- Give specific numbers ("within 10 business days") only when they match the policy.
+- Give specific numbers ("within 10 business days") only when they match the policy, and never for how fast we reply.
 - Sign off as **"The Play Before Pixels team"**. No invented staff names, no founder name.
 - Reply in the customer's language when a human-reviewed macro exists (Spanish first).
 

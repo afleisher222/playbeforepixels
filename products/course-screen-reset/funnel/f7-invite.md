@@ -1,6 +1,6 @@
 ---
 subject: "Keep going: 30 Days of Back-and-Forth"
-preheader: "$27, with a 30-day money-back guarantee."
+preheader: "$27, with a 14-day money-back guarantee."
 send: "day 7"
 ---
 
@@ -14,7 +14,7 @@ If you’d like the whole month, 30 Days of Back-and-Forth is $27. You get 30 da
 
 Or choose the 30 Days of Back-and-Forth Bundle for $49: the program plus the Play-First Family Kit, the 100 Screen-Free Plays printable guide and the 150 “I’m Bored” Play Cards. Bought separately, those come to $54.49.
 
-Either way, there’s a simple guarantee: if it isn’t right for your family, email us within 30 days of purchase for a full refund. No questions asked.
+Either way, there’s a guarantee: if it isn’t right for your family, email us within 14 days of purchase for a full refund, as long as you’ve completed no more than 30% of the lessons.
 
 And if now isn’t the time, that’s fine. You’ll keep getting our free monthly play email, and the starter is yours to keep.
 
@@ -39,10 +39,10 @@ Drape a blanket over a table or two chairs to make a hideout. Bring in a flashli
 
 **[Start 30 Days of Back-and-Forth · $27]({{program_checkout_link}})** · [Or get the bundle · $49]({{bundle_checkout_link}})
 
-30-day money-back guarantee. Written program; no videos, calls or coaching.
+14-day money-back guarantee (terms: https://playbeforepixels.com/refunds). Written program; no videos, calls or coaching.
 
 ---
-**Share with a friend:** give $5, get $5. {{referral_link}}
+**Share the free printable:** know a family who might like it? Our free 7 Days of Play First starter is at https://playbeforepixels.com/30-days/start
 
 The Play Before Pixels team
 

@@ -110,7 +110,7 @@ write('cover.html', base(768, 960, coverCss) + coverInner());
     <ul><li>Print at “Actual size” or 100%. Ordinary printer paper is fine; card stock is nice for the tracker and certificate.</li><li>To save ink, print the Low-ink edition. Your child can color the line drawings.</li><li>Any copy shop can print it. Laminate the tracker and use a dry-erase marker to reuse it.</li><li>On a phone or tablet, open the PDF in the free Adobe Acrobat Reader app to type into it.</li></ul>
     <h3>What you can type into</h3>
     <p>In free Acrobat Reader: the planning pages, the blank tracker, the daily notes, the check-ins, your family plan, the certificate and the blank play pages. Lessons, plays and the pre-filled tracker are fixed text. Save a copy to keep your notes.</p>
-    <div class="box"><b>Emails:</b> one lesson each morning for 30 days. Pause or change the time from the link in any email. Missed one? Nothing breaks: every lesson is also in the workbook. <b>Guarantee:</b> not right for your family? Email us within 30 days of purchase for a full refund.</div>
+    <div class="box"><b>Emails:</b> one lesson each morning for 30 days. Pause or change the time from the link in any email. Missed one? Nothing breaks: every lesson is also in the workbook. <b>Guarantee:</b> not right for your family? Email us within ${K.REFUND.days} days of purchase for a full refund, as long as you’ve completed no more than ${K.REFUND.maxDone} of the lessons.</div>
     <div class="foot"><span>${COPY} For the purchasing household; please share the link, not the file.</span><span>${SITE} · ${K.VERSION}</span></div>
   </section>`);
 }
@@ -159,7 +159,7 @@ for (const [key, w, h] of [['letter', 8.5, 11], ['a4', 8.27, 11.69]]) {
     <div class="moves5"><b class="bric" style="font-size:14pt">Five small talk moves to try this week</b>
       <ol>${['pause and wait', 'say what you see', 'repeat and add one', 'offer a choice', 'follow their lead'].map(k => { const m = Object.values(K.MOVES).find(x => x.name.toLowerCase() === k); return `<li><b>${esc(m.name)}.</b> ${esc(m.tip)}</li>`; }).join('')}</ol>
       <p style="font-size:9.5pt;color:#4A5570">Talk, sing and read in the language you know best. A sign, a point or a tap on a device counts as communicating.</p></div>
-    <div class="cta"><div><img src="${MARK}" style="height:.9in"></div><div><b class="bric" style="font-size:14pt">Want the whole month?</b><p>${esc(K.TITLE)}: 30 short lessons by email, 30 plays, plain words for 30 tricky moments and a full workbook. $27, with a 30-day money-back guarantee. Written program; no videos, calls or coaching.</p><p><b>${SITE}/30-days</b></p></div></div>
+    <div class="cta"><div><img src="${MARK}" style="height:.9in"></div><div><b class="bric" style="font-size:14pt">Want the whole month?</b><p>${esc(K.TITLE)}: 30 short lessons by email, 30 plays, plain words for 30 tricky moments and a full workbook. $27, with a ${K.REFUND.short}. Written program; no videos, calls or coaching.</p><p><b>${SITE}/30-days</b></p></div></div>
     <p class="copy3">${COPY} Free to print for use in your own home. Parent education, not medical advice.</p>
     ${foot(3)}
   </section>`);
@@ -204,7 +204,7 @@ L(1, 'hero', `<div class="k">Written program · email + workbook</div>
   <div class="pg sh" style="left:130px;top:780px;width:760px;height:950px;border-radius:6px 14px 14px 6px;overflow:hidden"><img src="../cover.png" style="height:100%"></div>
   <div class="pg sh" style="left:960px;top:760px;width:560px;height:725px;transform:rotate(4deg)"><img src="${PV(23)}"></div>
   <div class="sh" style="position:absolute;left:1480px;top:640px;width:390px;height:790px;border-radius:56px;background:${C.ink};padding:20px"><div style="width:100%;height:100%;border-radius:40px;overflow:hidden;background:#fff"><img src="dbg/email-shot.png" style="width:100%"></div></div>
-  <div style="position:absolute;right:130px;bottom:100px;font-size:40px;font-weight:800;background:#fff;border-radius:99px;padding:18px 36px">$27 · 30-day money-back guarantee</div>`);
+  <div style="position:absolute;right:130px;bottom:100px;font-size:40px;font-weight:800;background:#fff;border-radius:99px;padding:18px 36px">$27 · ${K.REFUND.short}</div>`);
 
 L(2, 'whats-inside', `<div class="k">What’s inside</div><h1>Everything for<br>the whole month</h1>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:40px">
@@ -245,7 +245,7 @@ L(8, 'guarantee-and-bundle', `<div class="k">Simple pricing</div><h1>$27, or $49
   <div style="background:#fff;border-radius:40px;padding:56px"><div class="bric" style="font-size:60px">The program</div><div class="bric" style="font-size:150px;color:${C.tomato};line-height:1.1">$27</div><div style="font-size:36px;line-height:1.45">30 lessons by email<br>Workbook: Color + Low-ink, Letter + A4<br>Type-in pages<br>Scripts bank and certificate</div></div>
   <div style="background:#fff;border-radius:40px;padding:56px;border:10px solid ${C.sun}"><div class="bric" style="font-size:60px">The bundle</div><div class="bric" style="font-size:150px;color:${C.tomato};line-height:1.1">$49</div><div style="font-size:36px;line-height:1.45">The program, plus:<br>Play-First Family Kit<br>100 Screen-Free Plays (printable)<br>150 “I’m Bored” Play Cards<br><span style="color:#3A4660">$54.49 if bought separately</span></div></div>
   </div>
-  <div style="margin-top:50px;background:${C.tGrass};border-radius:40px;padding:44px 56px;font-size:40px;line-height:1.4"><b class="bric" style="font-size:52px">30-day money-back guarantee.</b><br>Not right for your family? Email us within 30 days of purchase for a full refund. No questions asked.</div>${SC(4, 'right:110px;bottom:40px;width:470px;height:400px')}`, '#FFFFFF');
+  <div style="margin-top:50px;background:${C.tGrass};border-radius:40px;padding:44px 56px;font-size:40px;line-height:1.4"><b class="bric" style="font-size:52px">${K.REFUND.short[0].toUpperCase() + K.REFUND.short.slice(1)}.</b><br>Not right for your family? Email us within ${K.REFUND.days} days of purchase for a full refund, as long as you’ve completed no more than ${K.REFUND.maxDone} of the lessons.</div>${SC(4, 'right:110px;bottom:40px;width:470px;height:400px')}`, '#FFFFFF');
 
 // ---------------------------------------------------------------- sales page (designed HTML; copy mirrored in sales-page.md)
 {
@@ -272,7 +272,7 @@ L(8, 'guarantee-and-bundle', `<div class="k">Simple pricing</div><h1>$27, or $49
   <h1 style="font-size:60px;white-space:nowrap">30 Days of<br>Back-and-Forth</h1>
   <p class="lead">More play and talk, with screens in a steady spot. One short lesson, one easy play and plain words for one tricky moment, every morning for 30 days.</p>
   <p><a class="btn" href="{{program_checkout_link}}">Start the 30 days · $27</a><a class="quiet" href="#inside">See what’s inside</a></p>
-  <p style="font-size:15px;color:#3A4660">30-day money-back guarantee · no videos, calls or coaching · nothing to buy</p>
+  <p style="font-size:15px;color:#3A4660">${K.REFUND.short} (<a href="#guarantee" style="color:#3A4660">terms</a>) · no videos, calls or coaching · nothing to buy</p>
 </div><div><img src="../mockup.png" alt="30 Days of Back-and-Forth cover, two workbook pages and a phone showing a lesson email"></div></div></section>
 
 <section><div class="wrap">
@@ -309,12 +309,12 @@ L(8, 'guarantee-and-bundle', `<div class="k">Simple pricing</div><h1>$27, or $49
   <div class="k">Pricing</div><h2>Pick one</h2>
   <div class="two">
     <div class="price"><h3>The program</h3><div class="pp">$27</div><p>30 lessons by email, the full workbook, scripts bank and certificate.</p><a class="btn" href="{{program_checkout_link}}">Start the 30 days</a></div>
-    <div class="price b"><h3>The 30 Days of Back-and-Forth Bundle</h3><div class="pp">$49</div><p>The program plus the Play-First Family Kit, 100 Screen-Free Plays (printable) and 150 “I’m Bored” Play Cards. $54.49 if bought separately.</p><a class="quiet" style="margin:0" href="{{bundle_checkout_link}}">Choose the bundle →</a></div>
+    <div class="price b"><h3>The 30 Days of Back-and-Forth Bundle</h3><div class="pp">$49</div><p>The program plus the Play-First Family Kit, 100 Screen-Free Plays (printable) and 150 “I’m Bored” Play Cards. $54.49 if bought separately.</p><a class="quiet" style="margin:0" href="{{bundle_checkout_link}}">Choose the bundle <svg viewBox="0 0 24 24" width=".9em" height=".9em" style="vertical-align:-.1em" aria-hidden="true"><path d="M3 12h16M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
   </div>
   <p style="margin-top:18px;font-size:16px">Prefer paper? The whole program is also a black-and-white paperback on Amazon.</p>
 </div></section>
 
-<section class="guar"><div class="wrap"><div class="k">Our guarantee</div><h2>30 days, full refund, no questions</h2><p class="lead">If the program isn’t right for your family, email us within 30 days of purchase for a full refund. You don’t need to have finished anything, and you don’t need to explain.</p></div></section>
+<section class="guar" id="guarantee"><div class="wrap"><div class="k">Our guarantee</div><h2>${K.REFUND.days} days, full refund</h2><p class="lead">If the program isn’t right for your family, ${K.REFUND.terms}. The full terms are in our <a href="/refunds" style="color:${C.ink}">refund policy</a>.</p></div></section>
 
 <section><div class="wrap">
   ${K.FOUNDER.salesNote && K.FOUNDER.salesNote !== 'skip' ? `<div class="k">A note from us</div><p class="lead">${esc(K.FOUNDER.salesNote)}</p>` : ''}

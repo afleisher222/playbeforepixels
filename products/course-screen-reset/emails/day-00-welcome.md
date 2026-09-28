@@ -16,10 +16,10 @@ Before tomorrow, do just one thing: fill a basket with five to eight things your
 
 If you miss a day, nothing breaks. Every lesson stays in your inbox and in the workbook.
 
-**Our guarantee:** if the program isn’t right for your family, reply to this email or use the refund form within 30 days of purchase for a full refund. No questions asked, and you don’t need to have finished anything.
+**Our guarantee:** if the program isn’t right for your family, reply to this email within 14 days of purchase for a full refund, as long as you’ve completed no more than 30% of the lessons. Full terms: https://playbeforepixels.com/refunds
 
 ---
-**Share with a friend:** give $5, get $5. {{referral_link}}
+**Share the free printable:** know a family who might like it? Our free 7 Days of Play First starter is at https://playbeforepixels.com/30-days/start
 
 The Play Before Pixels team
 

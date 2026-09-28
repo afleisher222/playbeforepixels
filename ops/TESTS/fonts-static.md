@@ -14,7 +14,7 @@
    - *The Day the Tablet Slept*: 0 Type 3 in the interior and both covers. Before: 93 Type 3 in the interior and 17 in each cover.
    - Family names are unchanged, so no product CSS needs editing.
 2. **"Looks identical" holds only in part.** The variable fonts were never drawn at one fixed optical size.
-   - The builds never set `opsz`. Chromium's default `font-optical-sizing: auto` then sets **opsz = font size in CSS px** for each piece of text. Measured below; this was true of the renders the catalogue shipped with.
+   - The builds never set `opsz`. Chromium's default `font-optical-sizing: auto` then sets **opsz = font size in CSS px** for each piece of text. Measured below. It was also true of the committed renders: HEAD's `picture-tablet-slept.pdf` (01:23) has the variable-render heading extents, for example "More from Play Before Pixels" at 102.0–487.4 pt, against 102.0–457.5 pt with the static fonts.
    - A static file has one opsz, and CSS cannot choose a font file by text size. So text can only be identical where its size lands on the pin.
    - **Identical:**
      - Fredoka and Caveat at every size (no opsz axis);
@@ -31,7 +31,11 @@
    - 57% are Nunito below 12px (card meta text, footers, captions), which gets 0–12% narrower.
    - 6% are Bricolage below 96px.
    - In the 92-page course KDP interior (scratch render): the page count stays 92 (so the spine width holds), 10 pages reflow, and most of those are headings whose one-word second line now fits on the first line.
-6. **It is already live.** Other lanes rebuilt seven products between 05:09 and 05:15 using the new `fonts.css`, and those PDFs are already Type 3-free (list below). **Decision for the lead or founder:** accept the tighter small text, or pick option B or C below. Reverting is one command.
+6. **It is already live.** Other lanes re-rendered 86 PDFs in 9 product folders between 05:11 and 05:24 using the new `fonts.css`.
+   - In all 86, the brand fonts are Type 0.
+   - 74 files have no Type 3 at all.
+   - 12 still carry 4 Type 3 objects each, from two causes that are not fonts: stroked text, and a system fallback glyph set in bold. Both are traced, reproduced and have fixes below.
+   - **Decision for the lead or founder:** accept the tighter small text, or pick option B or C below. Reverting is one command.
 
 ---
 
@@ -52,14 +56,14 @@ No product, brand, content or site-concept page sets `font-optical-sizing` or `f
 
 | Bricolage 700/800 at | 12px | 16px | 20px | 24px | 32px | 40px | 48px | 64px | 96px+ |
 |---|---|---|---|---|---|---|---|---|---|
-| static opsz 96 is narrower by | 10.3–10.5% | 9.9% | 9.4% | 9.0% | 8.1% | 7.1% | 6.2% | 4.2% | 0 |
+| static opsz 96 is narrower by | 10.3–10.5% | 9.9–10.0% | 9.4–9.6% | 9.0–9.1% | 8.1–8.2% | 7.1–7.2% | 6.2–6.3% | 4.2% | 0 |
 
 | Nunito Sans (any weight) at | 6px | 7px | 8px | 9px | 10px | 11px | 12px+ |
 |---|---|---|---|---|---|---|---|
 | static opsz 12 is narrower by | 10.5–11.7% | 8.8–9.9% | 7.2–8.1% | 5.5–6.2% | 3.8–4.2% | 1.9–2.2% | 0 |
 
 - **Vertical metrics do not change with opsz.** MVAR varies only x-height, strikeout and underline. So line heights and box heights are unaffected; only widths and letterforms change.
-- **Never wider, checked glyph by glyph.** At the pins, every glyph is at most as wide as at any smaller opsz, except five rare marks in Bricolage (‹ › ¨ ˚ ¸) and one Catalan-only middle dot in Nunito.
+- **Never wider, checked glyph by glyph** (Latin files; Bricolage 700/800 at opsz 12/20/40/64, Nunito 400/800 at opsz 6/9/11). At the pins, every glyph is at most as wide as at the smaller opsz, with these exceptions: 4–6 rare marks in Bricolage (‹ › ¨ ¸, plus ˚ and * in 800) and the Catalan-only `periodcentered.loclCAT` in Nunito 400.
 - **Other pins are worse.** A mid pin such as Bricolage 32 would make every larger heading wider: +8.8% at 96px, which is a cover-overflow and safe-zone risk. A lower Nunito pin would widen all 12px+ body text.
 
 ---
@@ -209,17 +213,39 @@ The smallest print loses the most. The low optical sizes gave very small text wi
 
 ## Already picked up by other lanes
 
-These PDFs were re-rendered by other workflows between 05:09 and 05:15, after `fonts.css` switched, and now embed **only** Type 0 fonts. HEAD's copies still have Type 3. Each carries the optical-size change above.
+State at 05:30: modified PDFs in the working tree, all rendered after `fonts.css` switched. HEAD's copies are all Type 3. Every one of these files carries the optical-size change above.
 
-- board-up-go-more: board book, talk-along interior and cover
-- course-screen-reset: course PDF, Etsy colour letter, KDP interior and KDP cover
-- first-phone-plan: all downloads and Etsy files
-- guide-100-plays: KDP interior, cover wrap, letter, A4, low-ink and Etsy files
-- picture-laps-not-apps: interior, sample wraps and template-variables
-- picture-more-talk-less-tap: Talk Tower downloads
-- picture-tablet-slept: interior, both covers and PNGs. They match this lane's static rebuild page for page and PNG for PNG (34 PDF pages, 37 PNGs).
+| Product folder | PDFs re-rendered | Created | Type 3 left |
+|---|---|---|---|
+| board-up-go-more | 3 (board book, talk-along interior and cover) | 05:13–05:14 | none |
+| course-screen-reset | 4 (course, Etsy colour letter, KDP interior, KDP cover) | 05:14–05:15 | none |
+| first-phone-plan | 9 | 05:22–05:23 | none |
+| guide-100-plays | 13 | 05:23 | none |
+| picture-laps-not-apps | 5 | 05:12 | none |
+| picture-more-talk-less-tap | 13 | 05:13 | none |
+| picture-tablet-slept | 3 (interior and both covers, plus PNGs) | 05:11 | none. They match this lane's static rebuild page for page and PNG for PNG (34 PDF pages, 37 PNGs). |
+| play-first-family-kit | 10 | 05:23–05:24 | **4 files** (the low-ink editions): cause 1 below |
+| play-talk-cards | 26 | from 05:11 | **8 files** (the printable deck PDFs): cause 2 below |
 
 If the lead reverts `fonts.css`, those files go back to Type 3 on their next render. They do not change by themselves.
+
+### What still makes Type 3 with static fonts
+
+Each case was tested on a small page through `brand/render.js`.
+
+| Text | Result |
+|---|---|
+| Every brand face, weight and subset; synthetic italic (Bricolage); blurred `text-shadow`; hard `text-shadow` | Type 0 |
+| **Stroked text**: SVG `<text>` with a `stroke`, or CSS `-webkit-text-stroke` | **Type 3** |
+| **Synthetic bold**: a glyph no brand font has, drawn at weight ≥600, so Chromium emboldens the system fallback | **Type 3**. The same glyph at 400 is Type 0 (DejaVuSans). |
+
+1. **play-first-family-kit, low-ink editions** (`play-first-family-kit-low-ink.pdf`, `-low-ink-a4.pdf`, `etsy-upload/4-Low-Ink-US-Letter.pdf`, `5-Low-Ink-A4.pdf`).
+   - The table-of-contents "30" badge is SVG text in Fredoka 600.
+   - The low-ink rule `.low .art *{fill:#fff!important;stroke:var(--ink)!important;…}` also strokes that `<text>`, turning it into outlined text.
+   - **Fix (that product's lane):** exempt text from the rule, for example `.low .art text{fill:var(--ink)!important;stroke:none!important}`, or keep outlined digits as SVG paths.
+2. **play-talk-cards deck PDFs** (`play-talk-cards.pdf`, `-A4`, `-low-ink`, `-low-ink-A4` and the four `etsy-upload/` copies).
+   - `<i class="heart">♡</i>` is set in Nunito Sans 700. Nunito has no ♡, so it falls back to DejaVu Sans, which Chromium emboldens (52 glyphs on p20).
+   - **Fix:** draw the heart as inline SVG, as print-preflight Tier 2 already recommends for fallback glyphs, or set it at weight 400.
 
 ---
 
@@ -228,8 +254,8 @@ If the lead reverts `fonts.css`, those files go back to Type 3 on their next ren
 | | What | Type 3 | Looks like the old renders | Cost |
 |---|---|---|---|---|
 | **A. Keep as is (recommended)** | Static fonts pinned at opsz 12/96 (current state). | None | Where noted above: small text and sub-96px headings are narrower. | Re-QA products as they are rebuilt anyway, especially the 10 reflowed course pages and small-type cards. Nothing to change in code. |
-| B. Exact optical sizes for print | A `brand/render.js` pre-PDF step: read each element's computed family, weight, style and px size; make (and cache) a static instance at opsz = px; point the element at it. **Not built: `render.js` is outside this lane.** | None | Yes, within anti-aliasing | 276 distinct face+opsz instances across the catalogue (169 if Nunito is rounded to 0.25px and Bricolage to 1px), each × its subset files, generated on first use. Moderate complexity, and it only helps renders that go through `render.js`. The guide's `book.js` renders on its own. |
-| C. Revert | `cp brand/fonts/fonts-variable.css brand/fonts/fonts.css` | Back in every PDF | Yes | IngramSpark and offset files would again carry Type 3 (rejection risk, UNVERIFIED). Re-render anything built since 05:09 if the old look matters. |
+| B. Exact optical sizes for print | A `brand/render.js` pre-PDF step: read each element's computed family, weight, style and px size; make (and cache) a static instance at opsz = px; point the element at it. **Not built: `render.js` is outside this lane.** | None | Yes, within anti-aliasing | 276 distinct face+opsz instances across the catalogue (169 if Nunito is rounded to 0.25px and Bricolage to 1px), each × its subset files, generated on first use. Moderate complexity. It only helps renders that go through `render.js`; `play-first-family-kit/build/render-pdf.js` has its own `page.pdf()` and would need the same step. |
+| C. Revert | `cp brand/fonts/fonts-variable.css brand/fonts/fonts.css` | Back in every PDF | Yes | IngramSpark and offset files would again carry Type 3 (rejection risk, UNVERIFIED). Re-render anything built since 05:11 if the old look matters. |
 
 The website also uses `fonts.css`: the `site-concepts/` pages load it. With A, the site uses the static files: more font files per page and no optical sizing on screen. A site build that prefers the variable fonts for screen can link `brand/fonts/fonts-variable.css`; the variable fonts never go into a PDF.
 

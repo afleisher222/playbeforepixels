@@ -68,7 +68,7 @@ AlphaPlay LLC, d/b/a Play Before Pixels
 ### 5. The PDF needs to be accessible (screen reader, large print)
 > Hi {first_name},
 >
-> Thank you for asking. We want every family and classroom to be able to use our materials. We'll send you an accessible version of {product} (tagged for screen readers, with text descriptions of images) within [5] business days.
+> Thank you for asking. We want every family and classroom to be able to use our materials. We'll email you an accessible version of {product} (tagged for screen readers, with text descriptions of images) as soon as it's ready.
 >
 > If there's something specific that would help, such as larger print or a plain-text version, tell us and we'll do our best.
 
@@ -163,10 +163,10 @@ AlphaPlay LLC, d/b/a Play Before Pixels
 >
 > If you didn't place this order, tell us and we'll cancel and refund it right away.
 
-### 18. Course refund (30-Day Screen Reset)
+### 18. Course refund (30 Days of Back-and-Forth)
 > Hi {first_name},
 >
-> Thank you for trying the 30-Day Screen Reset. {Within [14] days and no more than [30%] complete:} We've refunded {amount} in full. You'll see it in 5–10 business days.
+> Thank you for trying 30 Days of Back-and-Forth. {Within [14] days and no more than [30%] complete:} We've refunded {amount} in full. You'll see it in 5–10 business days.
 > {Outside the window:} Our guarantee covers the first [14] days, so we can't refund this one. But your access stays open for [access period], and you can restart the 30 days whenever it suits your family.
 
 *(EU/UK buyers who did not give the immediate-access consent at checkout have a 14-day statutory right to cancel regardless of lesson progress (`legal/SHIPPING-RETURNS-REFUNDS.md`). Refund them within that window. When in doubt, send it to the founder.)*
@@ -215,7 +215,7 @@ AlphaPlay LLC, d/b/a Play Before Pixels
 ### 23. Vendor registration form
 > Hi {first_name},
 >
-> Thank you. We're glad to complete your vendor registration. We'll return it within [5] business days. If your district uses an online supplier portal, send us the invitation link and we'll register there.
+> Thank you. We're glad to complete your vendor registration, and we'll send it back to you by email. If your district uses an online supplier portal, send us the invitation link and we'll register there.
 >
 > We are an email-based business, so written communication is best for us. Every detail stays in one place.
 
@@ -257,7 +257,7 @@ AlphaPlay LLC, d/b/a Play Before Pixels
 >
 > Thank you for reaching out on behalf of {group}! Our Screen-Free Family Night + Fundraiser gives your group a host-it-yourself family-night kit and a storefront link, with no upfront cost and no inventory. The details are attached.
 >
-> To start, fill in the sign-up form here: {link}. We'll email your kit and link within [__] business days.
+> To start, fill in the sign-up form here: {link}. We'll email your kit and link once your sign-up is processed.
 
 *(Send only once the fundraiser program is cleared by counsel, and never to a group on the outreach-exclusion list in `CLAUDE.md`.)*
 
@@ -336,12 +336,12 @@ AlphaPlay LLC, d/b/a Play Before Pixels
 ### 37. Spanish-language message
 > Hola {first_name}:
 >
-> ¡Gracias por escribirnos! Recibimos tu mensaje y te responderemos en español en un plazo de 2 días hábiles. [Reviewed Spanish version of the matching macro]
+> ¡Gracias por escribirnos! Recibimos tu mensaje. La mayoría de las respuestas están en nuestra página de preguntas frecuentes, y respondemos a cada mensaje, en español. [Reviewed Spanish version of the matching macro]
 >
 > Con cariño,
 > El equipo de Play Before Pixels
 
-*(Only human-reviewed Spanish text is sent, per `ops/ROUTINE.md` §3b.)*
+*(Only human-reviewed Spanish text is sent, per `ops/ROUTINE.md` §3b. The first two sentences were rewritten on September 28, 2026 to drop the "2 días hábiles" promise; they need the same human review and back-translation as the rest (`ops/RESEARCH-BACKLOG.md`). Never add a reply time in any language.)*
 
 ### 38. Suspicious request (payment-detail change, gift cards, "urgent" invoice)
 **Don't reply with a macro.** Don't click links and don't change any payment details. Forward the message to `ops/APPROVALS.md` marked **SECURITY** and follow `SOPs/account-security.md` §6.

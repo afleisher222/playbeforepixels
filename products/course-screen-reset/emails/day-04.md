@@ -48,7 +48,7 @@ Today’s pages in your workbook: Day 4. {{workbook_download_link}}
 ---
 **Next for your family:** Play-First Family Kit. A screen-rhythm chart, a family play plan and helping-jobs pages to put this week on the fridge. https://playbeforepixels.com/shop/play-first-family-kit
 
-**Share with a friend:** give $5, get $5. {{referral_link}}
+**Share the free printable:** know a family who might like it? Our free 7 Days of Play First starter is at https://playbeforepixels.com/30-days/start
 
 The Play Before Pixels team
 
