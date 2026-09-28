@@ -120,11 +120,11 @@ YARN = [  # three loops of yarn hair, hand-cut
     [(115, 28), (120, 19), (128, 15), (134, 17)],
 ]
 
-def puppet(simple=False, speck=True):
+def puppet(simple=False, speck=False):
     """Return dict of shapely geometries in the 200 box: body, mouth, cuff, eye, holes, specks."""
     ring = catmull(BODY_KEYS, closed=True, n=12)
     if not simple:
-        ring = scissor(ring, seed=7, amp=1.0, step=8.5, keep=[HINGE])
+        ring = scissor(ring, seed=7, amp=1.35, step=8.5, keep=[HINGE])
     body = Polygon(ring).buffer(0)
     body = body.intersection(Polygon([(0, 0), (220, 0), (220, 183), (0, 184)]))   # one straight snip at the wrist
     # felt mouth insert: a separate cut piece filling the gap between the lips, tucked under them
@@ -158,7 +158,7 @@ def puppet(simple=False, speck=True):
     if not simple:
         yarn = unary_union([Polygon(scissor(list(p.exterior.coords)[:-1], seed=13 + i, amp=0.4, step=5)).buffer(0)
                             for i, p in enumerate(getattr(yarn, 'geoms', [yarn]))])
-    g = dict(body=body, mouth=mouth.difference(tongue.buffer(0.01)), tongue=tongue, cuff=cuff, eye=eye, holes=holes, specks=specks, yarn=yarn if USE_YARN else None)
+    g = dict(body=body, mouth=mouth.difference(tongue.buffer(0.01)) if not simple else mouth, tongue=tongue if not simple else None, cuff=cuff, eye=eye, holes=holes, specks=specks, yarn=yarn if USE_YARN else None)
     g = {k: (affinity.rotate(v, TILT, origin=(106, 108)) if v is not None else None) for k, v in g.items()}
     # fit into the 200 box (same transform for every size cut, taken from the reference geometry)
     s, dx, dy = FIT
@@ -173,17 +173,25 @@ def _fit():
     FIT = (s, 100 - s * (x0 + x1) / 2, 100 - s * (y0 + y1) / 2)
 _fit()
 
-def mark_group(ox=0, oy=0, s=1.0, mode='color', simple=False, speck=True, cols=None):
+def mark_group(ox=0, oy=0, s=1.0, mode='color', simple=False, speck=False, cols=None, sticker=False):
     """SVG <g> content for the puppet. mode: 'color' | 'mono' (single fill; knockouts are real holes)."""
     P = puppet(simple=simple, speck=speck); C = {**COL, **(cols or {})}
     if mode == 'color':
         body = P['body'].difference(P['specks']) if P['specks'] is not None else P['body']
-        eye = P['eye'].difference(P['holes'])
+        eye = P['eye'].difference(P['holes']) if not simple else P['eye']
+        back = ''
+        if sticker:   # die-cut paper sticker edge: for dark grounds, photos, and the literal sticker
+            allp = unary_union([g for k, g in P.items() if g is not None and k not in ('holes', 'specks')])
+            edge = allp.buffer(8.5 if not simple else 11, join_style=1).buffer(-2, join_style=1)
+            edge = Polygon(edge.exterior.coords)
+            if not simple:
+                edge = Polygon(scissor(list(edge.exterior.coords)[:-1], seed=23, amp=0.8, step=8)).buffer(0)
+            back = f'<path fill="{PAPER}" d="{poly_d(edge, ox, oy, s)}"/>'
         # eye sits on the body: body keeps a hole where the eye is, so each shape is clean on its own
-        return (f'<path fill="{C["body"]}" d="{poly_d(body.difference(P["eye"].buffer(0)), ox, oy, s)}"/>'
+        return (back + f'<path fill="{C["body"]}" d="{poly_d(body.difference(P["eye"].buffer(0)), ox, oy, s)}"/>'
                 f'<path fill="{C["mouth"]}" d="{poly_d(P["mouth"], ox, oy, s)}"/>'
                 f'<path fill="{C["cuff"]}" d="{poly_d(P["cuff"], ox, oy, s)}"/>'
-                f'<path fill="{C["tongue"]}" d="{poly_d(P["tongue"], ox, oy, s)}"/>'
+                + (f'<path fill="{C["tongue"]}" d="{poly_d(P["tongue"], ox, oy, s)}"/>' if P["tongue"] is not None else '')
                 + (f'<path fill="{C["yarn"]}" d="{poly_d(P["yarn"], ox, oy, s)}"/>' if P["yarn"] is not None else '')
                 + f'<path fill="{C["eye"]}" d="{poly_d(eye, ox, oy, s)}"/>')
     # one colour: everything one ink; the eye is cut free by a ring of paper so it still reads
@@ -248,6 +256,8 @@ def build():
     # mark alone (200 box + 12 margin)
     M = 12
     write('mark.svg', svg(224, 224, mark_group(M, M, 1.0), 'Play Before Pixels mark'))
+    write('mark-sticker.svg', svg(224, 224, mark_group(M, M, 1.0, sticker=True), 'Play Before Pixels mark, sticker cut (for dark grounds)'))
+    write('mark-small-sticker.svg', svg(224, 224, mark_group(M, M, 1.0, simple=True, sticker=True), 'Play Before Pixels mark, small sticker cut'))
     write('mark-small.svg', svg(224, 224, mark_group(M, M, 1.0, simple=True), 'Play Before Pixels mark, small-size cut'))
     write('mark-black.svg', svg(224, 224, f'<g fill="#000">{mark_group(M, M, 1.0, mode="mono")}</g>', 'Play Before Pixels mark, black'))
     write('mark-white.svg', svg(224, 224, f'<g fill="#FFF">{mark_group(M, M, 1.0, mode="mono")}</g>', 'Play Before Pixels mark, white'))
@@ -259,7 +269,7 @@ def build():
     base = 12 + 100 + CAP * s / 2 + 2                  # optical centre on mark
     wd, _ = words_d(T, M + 200 * sm + gap, base, s, key='h')
     lock_h = lambda wordfill, markmode='color', markfill=None: (
-        (f'<g fill="{markfill}">{mark_group(M, M, sm, mode=markmode)}</g>' if markmode == 'mono' else mark_group(M, M, sm))
+        (f'<g fill="{markfill}">{mark_group(M, M, sm, mode=markmode)}</g>' if markmode == 'mono' else mark_group(M, M, sm, sticker=(wordfill == PAPER)))
         + f'<path fill="{wordfill}" d="{wd}"/>')
     write('lockup-horizontal.svg', svg(W, H, lock_h(INK), T))
     write('lockup-horizontal-reverse.svg', svg(W, H, lock_h(PAPER), T + ' (on ink)'))
@@ -272,7 +282,7 @@ def build():
     b1 = M + 200 + 40 + CAP * s2; b2 = b1 + CAP * s2 * 1.28
     l1, _ = words_d('Play Before', (Ws - a1) / 2, b1, s2, key='s1'); l2, _ = words_d('Pixels', (Ws - a2) / 2, b2, s2, key='s2')
     Hs = b2 + 22 + M
-    stack = lambda wf: mark_group(mx, M, 1.0) + f'<path fill="{wf}" d="{l1}{l2}"/>'
+    stack = lambda wf: mark_group(mx, M, 1.0, sticker=(wf == PAPER)) + f'<path fill="{wf}" d="{l1}{l2}"/>'
     write('lockup-stacked.svg', svg(Ws, Hs, stack(INK), T))
     write('lockup-stacked-reverse.svg', svg(Ws, Hs, stack(PAPER), T + ' (on ink)'))
 

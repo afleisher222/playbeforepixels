@@ -84,7 +84,7 @@ const KID_POSES = ['stand', 'cheer', 'point', 'handup', 'carry', 'reach', 'sit',
 
 function teacherHead() {
   const t = TEACH;
-  return Ci(0, -18, 66, t.hair) + Ci(-38, -56, 30, t.hair) + Ci(38, -56, 30, t.hair) + Ci(0, 0, 48, t.skin) +
+  return E(0, -22, 74, 68, t.hair) + Ci(0, 0, 48, t.skin) +
     P('M-48 -2 C-50 -44 50 -44 48 -2 C36 -24 -36 -24 -48 -2Z', t.hair) + L('M-56 -36 Q0 -80 56 -36', C.tomato, 13) +
     Ci(-49, 26, 7, C.sun) + Ci(49, 26, 7, C.sun);
 }
@@ -108,7 +108,7 @@ function teacherBody(pose) {
   switch (pose) {
     case 'stand': s += dL + dR; break;
     case 'point': s += dL + A(40, 58, 104, 30); break;
-    case 'reach': s += dL + A(38, 56, 60, -84); break;
+    case 'reach': s += dL; break;
     case 'hold': s += A(-40, 58, -30, 128) + A(40, 58, 30, 128); break;
     case 'sit': s += A(-40, 58, -50, 128) + A(40, 58, 50, 128); break;
     case 'sithold': s += A(-40, 58, -18, 112) + A(40, 58, 18, 112); break;
@@ -216,7 +216,8 @@ function SYMBOLS() {
   for (const [name, k] of Object.entries(KIDS)) {
     for (const p of KID_POSES) s += `<symbol id="k-${name}-${p}" overflow="visible">${kidBody(k, p)}${kidHead(k)}</symbol>`;
   }
-  for (const p of T_POSES) s += `<symbol id="t-${p}" overflow="visible">${teacherBody(p)}${teacherHead()}</symbol>`;
+  const tOver = p => p === 'reach' ? L('M40 58 L96 -80', C.sun, 24) + Ci(98, -86, 13, TEACH.skin) : '';
+  for (const p of T_POSES) s += `<symbol id="t-${p}" overflow="visible">${teacherBody(p)}${teacherHead()}${tOver(p)}</symbol>`;
   for (const [f, v] of Object.entries(FACES)) s += `<symbol id="f-${f}" overflow="visible">${v}</symbol>`;
   for (const [b, v] of Object.entries(BLOCKS)) s += `<symbol id="blk-${b}" overflow="visible">${v}</symbol>`;
   s += `<symbol id="fish" overflow="visible">${fish()}</symbol>`;

@@ -21,6 +21,14 @@ Every scheduled run follows this file. It is the operating procedure; CLAUDE.md 
 - Draft that week's faceless social posts and pins from the campaign bible (marketing/CAMPAIGN-BIBLE.md) into content/queue/.
 - Virtual-autism education uses only the safe framing sentence in BRAND.md: a term some clinicians use; not a diagnosis; associations, not causation; talk to your pediatrician; free early intervention. Respectful toward autistic people. Outreach goes only to places marked OUTREACH in marketing/virtual-autism-outreach.md — never to mainstream autism organizations, never repeated messages, never where self-promotion is banned.
 
+
+## 3b. Worldwide expansion (every run, one step at a time)
+Follow legal/international-plan.md. Each run advances the next unchecked step in ops/INTERNATIONAL.md, and never launches in a region until its legal checklist there is complete:
+- **Currencies:** local-currency pricing through the store's multi-currency markets; digital products sold through a merchant of record that collects VAT/GST where the plan says so; marketplaces (Amazon, Etsy, POD partners) already price locally.
+- **Languages:** add the next language version of the site and top products (order: English → Spanish → French → Portuguese → German → Italian → Dutch → Japanese → others by demand). Machine-draft, then a second-pass review for natural phrasing and for the hard rules in that language; hreflang tags; localized keywords; local examples. Never publish an unreviewed machine translation.
+- **Amazon worldwide:** KDP print and ebook distribution to every Amazon marketplace KDP supports; Author Central pages in each marketplace that offers one; site "Buy on Amazon" buttons use a geo-routing link so each visitor lands on their own country's store; affiliate links use the Associates program's international routing where available.
+- **Legal per region (before selling there):** EU/UK product-safety responsible person for physical goods, VAT/GST registration or merchant-of-record coverage, GDPR/UK GDPR consent and privacy notice, consumer withdrawal-right wording for digital goods, local product-safety labelling (e.g., Canada textile labelling for apparel), and translated policies. Anything uncertain goes to ops/APPROVALS.md for the founder's attorney.
+
 ## 4. Compliance gate (before anything leaves the repository)
 Run every new or changed public item through ops/COMPLIANCE-GATE.md. Anything that fails, or anything the gate marks "needs founder", goes to ops/APPROVALS.md and is NOT published.
 
