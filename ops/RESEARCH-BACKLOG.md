@@ -1763,3 +1763,239 @@ Settled by: none. Marks: 13 lines in 8 files.
 - `ops/CLOUD-RUNBOOK.md`: 99
 - `ops/TESTS/network-hosts.md`: 85, 134
 - `products/guide-100-plays/listing.json`: 161
+
+---
+
+## Still to test
+
+_Added September 28, 2026 by the completeness critic. It read ops/TESTS/print-preflight.md, ops/TESTS/listing-qa.md, business/STRESS-TEST.md, ops/EXPERIMENTS.md, ops/PRE-MORTEM.md and this file, and skimmed ops/, marketing/, business/, legal/ and operations/. Each item below is a test or check that nothing in the repository runs yet, or that a plan asks for but nobody has done. Items are scored the same way as the ranked items above (I×R÷E). "Fits after" names the row of the Ranking table the item belongs after. The lead merges these rows into that table. Until then, a run takes an item here once every open item above its "Fits after" row is done or gated._
+
+_**When:** **Now** means a build session with no web access can do it; the container has Python with PyMuPDF, Pillow, numpy, OpenCV and fontTools, plus Playwright and Chromium. **Web** means the session's network must reach the named host. **Person** means it needs a human, or a device the container does not have. **Launch** means it needs real orders or traffic. "Measured today" figures come from read-only probes run on September 28, 2026 at about 05:00 UTC, while other workflows were still editing products/. Re-run a probe before acting on its number._
+
+_**Rules:** a test writes only its own result file. Anything it finds in products/, brand/, content/ or site-concepts/ goes to the owner workflow as a request (ops/ROUTINE.md §2). Result files never quote personal data: they give counts, paths and line numbers only._
+
+| Rank here | ID | Test in brief | I×R÷E | Score | When | Fits after |
+|---|---|---|---|---|---|---|
+| 1 | RB-62 | Scan the whole git history for exposure | 3×5÷1 | 15 | Now (part b needs the deny-list secret) | RB-09 |
+| 2 | RB-63 | Check printed promises against the policies | 4×3÷1 | 12 | Now | RB-22 |
+| 3 | RB-64 | Walk fake orders through the order-to-money path (tabletop) | 5×4÷2 | 10 | Now; repeat at Launch | RB-30 |
+| 4 | RB-65 | Check every printed URL and QR code against the site and the domain | 5×4÷2 | 10 | Now; live check at Launch | RB-64 |
+| 5 | RB-66 | Colour-blind and greyscale legibility, product by product | 3×3÷1 | 9 | Now | RB-34 |
+| 6 | RB-67 | Customer-support load and macro coverage | 4×4÷2 | 8 | Now; part (c) Web; calibrate at Launch | RB-32 |
+| 7 | RB-68 | Channel-loss and cost-shock scenarios in the stress test | 4×4÷2 | 8 | Now | RB-67 |
+| 8 | RB-69 | Activity-by-activity hazard audit, then a qualified human review | 4×5÷3 | 6.7 | Now (first pass); Person | RB-33 |
+| 9 | RB-70 | Disaster-recovery drill: repository, accounts, founder away | 4×5÷3 | 6.7 | Now (parts a and b); Person | RB-69 |
+| 10 | RB-71 | Home-printer test on Letter and A4 | 4×3÷2 | 6 | Now (simulated); Person (physical) | RB-27 |
+| 11 | RB-72 | Founder-time audit against the 60-minute weekly cap | 4×3÷2 | 6 | Now | RB-71 |
+| 12 | RB-73 | Delivery and device test of the files buyers receive | 4×3÷2 | 6 | Now (viewers); Person or Web (phones, Etsy app) | RB-72 |
+| 13 | RB-74 | Regression fixtures for the gate checkers | 4×3÷2 | 6 | Now | RB-73 |
+| 14 | RB-75 | Translation quality before any Spanish text ships | 3×4÷2 | 6 | Now (back-translation); Person (native review) | RB-74 |
+| 15 | RB-76 | PDF accessibility: tags, reading order, alt text, screen reader | 3×3÷2 | 4.5 | Now; Person (screen-reader pass) | RB-17 |
+| 16 | RB-77 | Site accessibility (WCAG 2.1 AA) of the winning site concept | 3×3÷2 | 4.5 | Now (partial); Web (axe-core) | RB-76 |
+| 17 | RB-78 | Print colour soft-proof and a proof-copy checklist | 3×3÷2 | 4.5 | Web (ICC profile); Person (proofs) | RB-77 |
+| 18 | RB-79 | Font and asset licence register | 2×2÷1 | 4 | Now | RB-78 (before RB-26) |
+| 19 | RB-80 | Real-parent use test (adults only, no child data) | 5×3÷4 | 3.8 | Web, then founder OK and budget | RB-26 |
+| 20 | RB-81 | Reading level and length by age band | 3×2÷2 | 3 | Now (genre norms: Web) | RB-42 |
+
+- [ ] **RB-62 · Scan the whole git history for exposure** · score 15 (3×5÷1) · gate: none for part (a); part (b) needs the deny-list secret from ops/PRE-MORTEM.md fix 2
+  - **Question:** The repository has been public, so what does its history hold, not only today's files? (a) Credentials: token and key patterns in every text diff. (b) Personal details: run the deny-list over every commit's text diffs, the text and metadata of every committed PDF, and the PNG text chunks. Commit author names and emails are covered by RB-06.
+  - **Why it matters:** The repository was still public at 04:19 UTC (ops/PRE-MORTEM.md risk 1). Making it private hides it from now on, but it does not undo what could already be read. Counsel decides on any history clean-up (risk 1, fix 4) and needs to know what the history actually holds. The exposure guard (fix 2) scans current files only.
+  - **Measured today:** part (a) only. `git log --all -G` over every .md, .json, .js, .py, .sh, .html, .txt, .toml and .yml diff in 157 commits, searching for GitHub, Anthropic, AWS, Slack, Shopify and Meta token shapes and private-key headers, found **no match**. Part (b) was not run: the deny-list is not in this session, and it must never be written into the repository.
+  - **When:** Now. Part (b) runs in a session where the deny-list secret is set.
+  - **File:** ops/TESTS/exposure-history-scan.md (counts, commit IDs and paths only, never the matched text); the lead adds a one-line pointer in legal/FOR-EMPLOYMENT-COUNSEL.md.
+
+- [ ] **RB-63 · Check printed promises against the policies** · score 12 (4×3÷1) · gate: none
+  - **Question:** Does every promise a buyer can read match the policy files and what ops/ROUTINE.md §5b actually does? Scan product files, listings, emails and the site for refunds and guarantees, reply times, licence scope, updates and delivery. Compare with legal/SHIPPING-RETURNS-REFUNDS.md, legal/TERMS-OF-USE.md and legal/protection/digital-product-license.md.
+  - **Why it matters:** Printed and sold files cannot be recalled. A promise the shop does not keep turns into Etsy cases, chargebacks and a consumer-law problem. PRE-MORTEM risk 41 found that the routine's automatic refund contradicts the policy, but nobody has scanned the product files themselves.
+  - **Measured today:** the course says "Email us within 30 days of purchase for a full refund. No questions asked." It appears in 18 files under products/course-screen-reset/ (the low-ink sources, listing.json, the day-0 welcome email and the funnel) and in 1 of its PDFs. Meanwhile, legal/SHIPPING-RETURNS-REFUNDS.md §3 drafts a "[14]-day guarantee … no more than [30%] of the lessons" and calls digital downloads generally non-refundable once accessed, and PRE-MORTEM risk 41 fix 5 proposes 14 days. Across product sources, build scripts, listings and emails, "guarantee" appears in 11 files and "refund" in 20.
+  - **When:** Now (a text scan). The lead picks one rule, and counsel reviews it.
+  - **File:** ops/TESTS/printed-promises.md; the scan becomes ops/TESTS/check_promises.py so the gate can run it on every build.
+
+- [ ] **RB-64 · Walk fake orders through the order-to-money path (tabletop)** · score 10 (5×4÷2) · gate: none
+  - **Question:** Walk eight fake events through the written process step by step, as the routines would: (1) an Etsy digital order from the US; (2) a Gumroad order from Germany; (3) a KDP royalty line; (4) "I can't open the file on my phone"; (5) a first refund request; (6) a chargeback notice; (7) a privacy deletion request; (8) a one-star review. For each event, record five things:
+    - which routine step handles it, and which file and credential that step needs;
+    - what lands in finance/PlayBeforePixels_Bookkeeping_2026.xlsx and in the monthly close;
+    - what the "Founder updates = money" report says;
+    - how long the buyer waits;
+    - where the path breaks.
+  - **Why it matters:** The routine dry run (ops/TESTS/routine-dry-run.md) tested building only. It found that no routine prompt runs the §5b weekly inbound batch (line 138). `operations/SOPs/refunds-and-disputes.md` and `operations/SOPs/reviews.md` do not exist (PRE-MORTEM risks 8 and 41). As things stand, the first real order would be the first time any of this runs, and the first ten reviews set conversion for months.
+  - **When:** Now, with fixture files (no web; nothing is sent). Repeat it with the first real order and with the monthly test buy in operations/SOPs/monthly.md:28.
+  - **File:** ops/TESTS/order-tabletop.md; fixtures in ops/TESTS/fixtures/orders/.
+
+- [ ] **RB-65 · Check every printed URL and QR code against the site and the domain** · score 10 (5×4÷2) · gate: none (the live check waits for the site)
+  - **Question:** List every web address printed in the products and decode every QR code. Check each against three things: (a) the routes the site will serve, or a permanent redirect; (b) the domain's registration (RB-43); (c) what the page behind it does. That page must be adult-directed, set no tracking before consent, and put no sign-up wall in front of a child-facing product.
+  - **Why it matters:** Every printed book and sold PDF keeps these addresses for good. If the domain is lost or a path returns 404, every copy sends buyers to a dead page or a squatter.
+  - **Measured today:**
+    - 26 distinct paths on playbeforepixels.com are printed across products/, among them `/help` (189 mentions), `/bonus/<slug>` for 14 products, `/shop/<slug>` for 4, `/30-days` and `/contact`.
+    - Both `/license` (48 mentions) and `/licenses` (24) are printed.
+    - OpenCV scanned the 47 pages that mention "bonus" or "scan" in the customer-facing and KDP files. Every QR code it decoded points to `https://playbeforepixels.com/bonus/<slug>` (the course, First Phone Plan, the guide and the More Talk kit).
+    - No `site/` directory exists yet, and the domain was unregistered on September 28 (RB-43).
+    - Whether a page reachable by QR code from a child-facing product counts as "directed to children" under COPPA is UNVERIFIED (RB-41, Q19).
+  - **When:** Now for the inventory, the QR decoding and the two licence paths. At Launch, an HTTP 200 check of every path on the live site, then weekly as a MONITORING signal.
+  - **File:** ops/TESTS/printed-urls.md and ops/TESTS/check_printed_urls.py. The lead passes the route list the site must serve to the site build.
+
+- [ ] **RB-66 · Colour-blind and greyscale legibility, product by product** · score 9 (3×3÷1) · gate: none
+  - **Question:** For every product's pages and preview images, simulate deuteranopia, protanopia and tritanopia (Machado 2009), and plain greyscale. Flag any meaning carried by colour alone (age-band chips, routine-card categories, card-back colours) and any text below 4.5:1 contrast.
+  - **Why it matters:** ops/COMPLIANCE-GATE.md line 20 and ops/ROUTINE.md:64 require this check in each panel.md, but **none of the 13 panel.md files records one**. G2-18 computed sky #3D86D8 against plum #8A5CC7 at about ΔE 5.5 under deuteranopia, against 37 with normal colour vision. marketing/BRAND-RESPECT-PLAN.md:158 puts tomato and grass at 1.07:1 lightness, and sun is 1.8:1 on white. About 1 in 12 men has a red-green colour-vision difference (UNVERIFIED), and many parents print in black and white.
+  - **When:** Now; Pillow and numpy are installed.
+  - **File:** ops/TESTS/colour-legibility.md; the owner workflow adds one line per product to products/<slug>/panel.md.
+
+- [ ] **RB-67 · Customer-support load and macro coverage** · score 8 (4×4÷2) · gate: none
+  - **Question:**
+    - (a) How many buyer messages will arrive, and how many founder minutes a week will they take? Estimate it at the stress test's P50, at break-even (65 orders a month) and at P90. Use a contact rate of 5–10% of digital orders and a time per message (both ASSUMPTIONS).
+    - (b) Run about 40 realistic buyer messages through operations/customer-service/FAQ.md and macros.md. Examples: the file won't open on a phone; wrong paper size; A4 abroad; a classroom licence; a refund; "is this for autism?"; a message in Spanish; a chargeback notice; a deletion request; a school purchase order; "where is my paperback?". Score each one: a macro answers it fully, it needs a person, or the macro is wrong or breaks a rule.
+    - (c) Can Claude read and answer Etsy messages at all?
+  - **Why it matters:**
+    - The routines answer weekly (§5b), but Etsy's Star Seller measure is 24 hours (UNVERIFIED; main list #14).
+    - FAQ lines 13 and 30 and macro 37 still promise "2 business days" (PRE-MORTEM risk 8), and Etsy messages have no automated path.
+    - If the answer to (c) is no, Etsy messages become a daily task for the founder, and the "self-running" plan does not count that time.
+  - **When:** (a) and (b): Now. (c): Web, at developers.etsy.com. The current belief, UNVERIFIED, is that Open API v3 has no endpoints for buyer conversations. Recalibrate (a) with the first 60 days of launch data.
+  - **File:** ops/TESTS/support-load.md; the message set goes in ops/TESTS/fixtures/messages.json.
+
+- [ ] **RB-68 · Channel-loss and cost-shock scenarios in the stress test** · score 8 (4×4÷2) · gate: none
+  - **Question:** Re-run `business/stress_test.py` with the risks it leaves out today (STRESS-TEST §7: "Account risk … not modelled"):
+    - Etsy holds funds for 60 days from month 3;
+    - the Etsy shop is lost for good in month 6;
+    - Gumroad charges 10% + $0.50 plus a card fee on every non-US order;
+    - insurance comes in at its mid-point;
+    - Offsite Ads become mandatory;
+    - KDP charges large-trim print prices.
+
+    For each scenario, report the median 12-month profit, the P50 deepest loss and the share of futures that go past the $12,000 cap.
+  - **Why it matters:** Etsy carries 47% of orders in the month-12 mix (STRESS-TEST §5), and the headline numbers assume no hold and no suspension. PRE-MORTEM rates Etsy holds and suspensions at 15 (risk 16) and unseen payout freezes at 12 (risk 17). These scenarios move the founder's cash cap.
+  - **When:** Now.
+  - **File:** a new section 10, "Channel-loss scenarios", in business/STRESS-TEST.md, and a `--scenario` option in business/stress_test.py. The lead or the stress-test owner makes both edits.
+
+- [ ] **RB-69 · Activity-by-activity hazard audit, then a qualified human review** · score 6.7 (4×5÷3) · gate: the qualified review needs one approval line
+  - **Question:** Check every activity in the launch products (100 Screen-Free Plays, Toddler Busy Book, "I'm Bored" Play Cards, Play-First Family Kit, Visual Routine Cards) against one hazard list:
+    - small parts and choking;
+    - cords and strangulation;
+    - suffocation (bags, balloons);
+    - water;
+    - heat and burns;
+    - sharp tools;
+    - magnets and button batteries;
+    - falls and tip-overs;
+    - food allergens;
+    - craft materials that are unsafe to eat;
+    - the age each activity is labelled for.
+
+    Then one qualified person, for example an early-childhood educator with health-and-safety training or a paediatric OT, reviews the flagged list.
+  - **Why it matters:** Parents follow these activities with babies and toddlers, and printed books cannot be recalled. RB-30 checks six printed facts, not the activities. So far the only safety review is the simulated customer panel (products/*/panel.md). The paid reviewer briefs in ops/APPROVALS.md cover the research hub, not the products. An insurer may also ask how activities are reviewed (RB-55).
+  - **Measured today:** hazard words appear widely in product sources and build scripts: "balloon" in 40 files, cord/string/ribbon/yarn in 70, oven/stove/hot glue/boiling in 26, dough in 19, scissors/knife in 27, button battery/coin cell/magnet in 22. Many of these are the safety warnings themselves; the audit sorts them out.
+  - **When:** The first pass (a play-by-play table) can be done Now. The qualified review needs a Person: one line in ops/APPROVALS.md with the brief and a budget.
+  - **File:** ops/TESTS/activity-safety-audit.md.
+
+- [ ] **RB-70 · Disaster-recovery drill: repository, accounts, founder away** · score 6.7 (4×5÷3) · gate: the write-only storage needs the founder
+  - **Question:**
+    - (a) Make the weekly `git bundle` (ops/ROUTINE.md §6, G2-04). Restore it into an empty directory, rebuild two products and compare them with the committed files. Record the size and the time taken.
+    - (b) Run a tabletop for each account in operations/SOPs/account-security.md: what happens if it is locked, suspended or lost, and what is the way back? The key cases:
+      - Etsy: where buyers re-download, and which products move to Gumroad;
+      - the domain email: it controls every password reset;
+      - GitHub: it holds the only full copy of the source files and is where the routines live;
+      - the registrar: it controls the domain and so every printed QR code.
+    - (c) The founder is unavailable for 21 days. Does maintenance mode work (business/sections/05-operations-risk-milestones.md risk 7), and who holds the emergency kit?
+  - **Why it matters:** ROUTINE.md calls for the backup, but no routine prompt runs it, and the write-only storage does not exist yet (ops/TESTS/routine-dry-run.md:138). The repository is the business (CLAUDE.md), and it is growing fast. A backup that has never been restored is not a backup.
+  - **Measured today:** the local `.git` is 2.5 GB (pack 2.14 GiB) after 157 commits. Every row of the account-security inventory still has "Backup codes stored?" unticked; most of the accounts do not exist yet.
+  - **When:** (a) Now, locally; there is about 23 GB of free disk. The write-only storage needs the founder. (b) Now. (c) Person.
+  - **File:** ops/TESTS/disaster-recovery.md.
+
+- [ ] **RB-71 · Home-printer test on Letter and A4** · score 6 (4×3÷2) · gate: none for the simulated part
+  - **Question:**
+    - **Simulated:** render each customer-facing file three ways: at actual size on its own paper; with "Fit to page" on the other paper size (Letter onto A4 prints at 97.3%, A4 onto Letter at 94.1%); and in greyscale. Check that nothing falls inside a 0.25 in edge band, that no text drops below 6 pt after scaling, that cut lines stay visible, and that colour-coded items stay distinguishable in grey.
+    - **Physical:** print the launch five once on an inkjet and once on a laser printer, on Letter (and on A4 if a printer takes it). Print the cards on cardstock, and print the low-ink editions too. Cut, fold and photograph the results.
+  - **Why it matters:** "It didn't print right" is the likeliest first complaint about a printable (PRE-MORTEM risk 8, signal O10). print-preflight measured the files only on screen. It found A4 store footers 0.013 in from the edge, © lines 0.094–0.22 in from the edge, type as small as 3.1 pt, and card backs coloured right up to the edge. Home printers cannot print within about 0.125–0.25 in of the edge (UNVERIFIED).
+  - **When:** Now for the simulated part. The physical part needs a Person: about an hour and a few dollars of paper and ink.
+  - **File:** ops/TESTS/home-print-test.md, with photos in ops/TESTS/home-print-photos/.
+
+- [ ] **RB-72 · Founder-time audit against the 60-minute weekly cap** · score 6 (4×3÷2) · gate: none
+  - **Question:** List every step that needs Arielle: LAUNCH-NOW Waves 0–3, each upload packet for a platform with no publishing API, identity and phone checks, proof copies, approvals, the monthly test buy, Etsy messages (RB-67 c) and key renewals (PRE-MORTEM risk 5). Then estimate her minutes a week in the launch month, in month 3 and at steady state.
+  - **Why it matters:** The plan promises "zero daily tasks and at most 60 minutes of approvals a week" (business/sections/05-operations-risk-milestones.md:47), and the weekly SOP aims for 10. Nobody has added up whether the plan fits inside that. If it does not, the likely failure is PRE-MORTEM risk 5: platforms slide back to upload packets that nobody uploads.
+  - **When:** Now.
+  - **File:** ops/TESTS/founder-time-audit.md.
+
+- [ ] **RB-73 · Delivery and device test of the files buyers receive** · score 6 (4×3÷2) · gate: none
+  - **Question:** Open every file a buyer receives in the viewers available here (Chromium's built-in PDF viewer through Playwright, and MuPDF), time the first page and compare the renders. Then repeat on real phones (iPhone Files and Books, and an Android phone's default viewer) and from the Etsy app's purchase page.
+  - **Why it matters:** Most buyers first open a download on a phone (UNVERIFIED). Every product PDF uses Type 3 fonts (print-preflight G1), which some viewers draw slowly or blurred (UNVERIFIED), and the largest Etsy file is 14.6 MB. If the Etsy app cannot download digital files (UNVERIFIED), the delivery message and the START-HERE page must say so.
+  - **When:** Now for the viewers. The phones need a Person or a device cloud (Web). The Etsy app question needs Web (help.etsy.com).
+  - **File:** ops/TESTS/delivery-device-test.md.
+
+- [ ] **RB-74 · Regression fixtures for the gate checkers** · score 6 (4×3÷2) · gate: none
+  - **Question:** Build known-good and known-bad fixture listings, one for each rule. Add a test showing that `check_listings.py` and `check_hub_firewall.py` still catch every bad fixture after each edit.
+  - **Why it matters:** These scripts decide what may be published (ops/ROUTINE.md §4). The listing-QA verifier found three problems (ops/TESTS/listing-qa.md §6):
+    - the gate-16 check skips `faq`;
+    - two binding files give the net field different names: PRICING.md uses `net_after_fees`, and gate 18 uses `net_per_unit_by_channel`;
+    - a plain re-run overwrites hand corrections.
+
+    A checker that quietly stops catching something is worse than no checker.
+  - **When:** Now.
+  - **File:** fixtures in ops/TESTS/fixtures/listings/, the test in ops/TESTS/test_checkers.py and results in ops/TESTS/checker-regression.md.
+
+- [ ] **RB-75 · Translation quality before any Spanish text ships** · score 6 (3×4÷2) · gate: native review needs a person; demand is gated by RB-15 and EXP-12
+  - **Question:** Back-translate every Spanish string now in the repository. That means the 5 Spanish lines in operations/customer-service/macros.md, including the "2 días hábiles" in macro 37. Then set the rule for the first Spanish product: a native speaker reviews every safety, legal and price line before anything is published, and the edition picks a region (US Latin American Spanish or Spain).
+  - **Why it matters:** Under ops/ROUTINE.md:77, Claude machine-drafts a translation and then reviews its own work; no human check is required. A wrong choking or water-safety line in translation is a safety problem, and a wrong refund line is a consumer-law one.
+  - **When:** Now for the back-translation and the inventory. The native reviewer needs a Person (rates are RB-60).
+  - **File:** ops/TESTS/translation-qa.md.
+
+- [ ] **RB-76 · PDF accessibility: tags, reading order, alt text, screen reader** · score 4.5 (3×3÷2) · gate: none
+  - **Question:** For every file a buyer receives: is it tagged, does it declare a language, is the reading order right on sample pages, do figures have alt text or a decoration mark, and does a screen reader read a sample page sensibly?
+  - **Why it matters:** legal/ACCESSIBILITY-STATEMENT.md promises tagged PDFs "where practical", schools buy against accessibility requirements, and marketing/BRAND-RESPECT-PLAN.md asks for tagged PDFs by default. The European Accessibility Act covers e-books sold to EU consumers from June 28, 2025 (legal/international-plan.md:392; its exemptions are UNVERIFIED).
+  - **Measured today:**
+    - 51 of the 138 product PDFs outside build/ have a structure tree and a /Lang entry, as do 30 of the 62 files in etsy-upload/ and downloads/.
+    - Every guide-100-plays file (13), toddler-busy-book file (11), play-talk-cards file (26) and course-screen-reset file (10) is untagged, as are all the picture-book files.
+    - bored-play-cards, first-phone-plan, play-first-family-kit and visual-routine-cards are fully tagged with the same toolchain, so the other products can be tagged too.
+  - **When:** Now for structure, language and reading order. The screen-reader pass (NVDA or VoiceOver) needs a Person.
+  - **File:** ops/TESTS/pdf-accessibility.md.
+
+- [ ] **RB-77 · Site accessibility (WCAG 2.1 AA) of the winning site concept** · score 4.5 (3×3÷2) · gate: none
+  - **Question:** Audit site-concepts/winner, and index.html while it is still live, against WCAG 2.1 AA: text contrast with the brand accents, keyboard order and visible focus, 200% zoom and 320 px reflow, reduced motion, form labels, and headings and landmarks.
+  - **Why it matters:** legal/LEGAL-LAUNCH-CHECKLIST.md row 22 warns that US courts often treat inaccessible retail sites as an ADA Title III risk. G2-18 measured tomato at 3.4:1, grass at 3.2:1, sky at 3.75:1 and sun at 1.8:1 on white, all below 4.5:1 for small text.
+  - **Measured today:** every `<img>` on the five winner pages has alt text, and each page declares a language. The current root index.html has no `lang` attribute.
+  - **When:** Now for contrast, headings, keyboard and zoom (Playwright and Chromium are installed). An automated rule pass needs Web, to install axe-core.
+  - **File:** ops/TESTS/site-accessibility.md.
+
+- [ ] **RB-78 · Print colour soft-proof and a proof-copy checklist** · score 4.5 (3×3÷2) · gate: none
+  - **Question:** How far do the brand's RGB colours shift when a printer converts them to CMYK? Soft-proof them with the printer's own profile. Then write the checklist for inspecting a proof copy: colour, trim, gutter, footer, barcode and paper.
+  - **Why it matters:** Every book file is RGB with no output intent (print-preflight G2), so the printer does the conversion. A shifted sky or plum can break the colour coding. The first proof copy is the first time anyone will see real ink (ops/LAUNCH-NOW.md Wave 2).
+  - **When:** Web, to download the printer's CMYK ICC profile; the container has none, and ghostscript is not installed. Inspecting the proofs needs a Person.
+  - **File:** ops/TESTS/print-colour-proof.md.
+
+- [ ] **RB-79 · Font and asset licence register** · score 4 (2×2÷1) · gate: none
+  - **Question:** Make one table of every font, code library and asset that ends up in a sold file or on the site, with its licence and what that licence requires.
+  - **Why it matters:** The four brand fonts are embedded in every sold PDF and will be served as web fonts. Their name tables all point to the SIL Open Font License (checked with fontTools today: Bricolage, Caveat, Fredoka, Nunito). That licence is believed to allow embedding and commercial use, but to require the licence text to travel with any redistributed font file (UNVERIFIED). brand/fonts/ holds no licence file. The QR-code library in products/*/build/node_modules is also part of the builds.
+  - **When:** Now.
+  - **File:** legal/protection/asset-licence-register.md.
+
+- [ ] **RB-80 · Real-parent use test (adults only, no child data)** · score 3.8 (5×3÷4) · gate: founder approval and budget
+  - **Question:** Can 5–8 real parents download one launch product, print it at home and use it within a week, and what confuses them? Participants are adults only: no child data, photos or names. Recruit them through a paid unmoderated test panel, so there is no direct contact (ops/EXPERIMENTS.md §6 rules). Also ask whether they read the art as AI-made, and whether that changes what they would pay.
+  - **Why it matters:** So far every product review has come from simulated personas. The stress test's conversion inputs (Etsy 2%, own site 1.5%) and PRE-MORTEM risk 10 (an "AI slop" backlash) both rest on how buyers will see the products, which nobody has tested. The first ten reviews set conversion for months.
+  - **When:** Web first: the panel platforms' terms and prices, and whether a faceless brand can run a test. Then one approval line for the founder, with a budget. Run it before the Wave 1 listings go live if possible, otherwise within the first 30 days.
+  - **File:** ops/TESTS/real-user-test.md; the lead adds the plan to ops/EXPERIMENTS.md as RES-3.
+
+- [ ] **RB-81 · Reading level and length by age band** · score 3 (3×2÷2) · gate: none
+  - **Question:** For text a child reads alone (the 5–12 card decks and the child pages of First Phone Plan) and for the read-aloud books, measure:
+    - the reading grade of each card or page, against the product's age band;
+    - the words per spread;
+    - the read-aloud length, against genre norms taken from a primary source.
+  - **Why it matters:** Listing QA graded only the listing descriptions. A card a 6-year-old cannot read turns a "5–12" deck into one a parent has to read aloud, and invites "too hard" reviews.
+  - **Measured today** (rough: Flesch-Kincaid on text extracted from the PDFs, which misreads layouts): parent-facing text sits at about grade 5–7 (guide ≈6.2, busy book ≈5.5, course ≈5.1), which is fine. *The Day the Tablet Slept* extracts to about 1,055 words, including front and back matter. Child-only text was not separated out.
+  - **When:** Now. The genre norms need Web.
+  - **File:** ops/TESTS/reading-level.md.
+
+### Needs a live check (every UNVERIFIED statement in "Still to test")
+
+1. Etsy's Open API v3 has no endpoints to read or send buyer conversations. [RB-67]
+2. Etsy's Star Seller measure asks for 95% of first messages answered within 24 hours (also main list #14). [RB-67]
+3. Some phone PDF viewers draw Type 3 fonts slowly or blurred. [RB-73]
+4. The Etsy mobile app may not let a buyer download a digital file, so a browser may be needed. [RB-73]
+5. Most buyers first open a digital download on a phone. [RB-73]
+6. Home printers cannot print within about 0.125–0.25 in of the paper edge (also print-preflight live check 12). [RB-71]
+7. About 1 in 12 men (about 8%) has a red-green colour-vision difference. [RB-66]
+8. A page reachable by QR code from a child-facing product may count as "directed to children" under COPPA. [RB-65]
+9. The European Accessibility Act covers e-books sold to EU consumers from June 28, 2025, with an exemption for microenterprises that provide services (repo figure, legal/international-plan.md:392). [RB-76]
+10. The SIL Open Font License allows embedding in sold PDFs and commercial use, and requires the licence text to travel with any redistributed font file, including web fonts. [RB-79]
+11. KDP and the other printers convert RGB files to CMYK themselves, and saturated RGB colours can shift. [RB-78]
+12. Unmoderated test panels can recruit parents with no direct contact, at a cost that fits a small budget. [RB-80]
+13. Genre norms for picture-book and board-book word counts. [RB-81]
+
+New hosts, to add only when the item comes up: registry.npmjs.org (axe-core, RB-77); the ICC profile source for RB-78 (the printer's own help page, or www.color.org); the test-panel platform chosen in RB-80. developers.etsy.com and help.etsy.com are already allowed (RB-67, RB-73).
