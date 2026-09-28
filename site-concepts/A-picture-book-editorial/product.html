@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Up! Go! More! — First-words board book, ages 0–3 — Play Before Pixels</title>
+<meta name="description" content="A first-words board book for ages 0–3: fourteen everyday words, one big picture per page, and a Grown-up corner tip on every page.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-section="books">
+<a class="skip" href="#main">Skip to content</a>
+<div id="pbp-header"><noscript><nav class="wrap" aria-label="Main"><a href="index.html">Home</a> · <a href="shop.html">Shop</a> · <a href="research.html">Research</a> · <a href="info.html#about">About</a></nav></noscript></div>
+
+<main id="main" tabindex="-1">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><ol id="crumbs"></ol></nav>
+    <article class="title-page" id="tp"></article>
+  </div>
+  <section class="inside sec" id="inside" aria-labelledby="inside-h" hidden></section>
+  <section class="spreads-sec" id="look" aria-labelledby="look-h" hidden></section>
+  <section class="sec" id="about-book" aria-labelledby="ab-h" style="padding-top:0"></section>
+  <section class="sec" style="background:var(--wash)" aria-labelledby="rel-h">
+    <div class="wrap">
+      <div class="running"><p class="label" id="rel-h">You might pair it with</p><a class="link-arrow" href="shop.html" id="rel-all">More for this age</a></div>
+      <div class="related" id="related"></div>
+    </div>
+  </section>
+  <noscript><div class="wrap"><p>This page needs JavaScript to show the book. <a href="shop.html">Browse the shop</a>.</p></div></noscript>
+</main>
+
+<div id="pbp-footer"></div>
+<script src="../../commerce/links.js"></script>
+<script src="catalog.js"></script>
+<script src="nav.js"></script>
+<script>
+(function () {
+  var esc = PBP.esc, I = PBP.icon;
+  var p, fmtIdx = 0, qty = 1;
+  var GROUP = { board: ["books", "Books"], picture: ["books", "Books"], guide: ["books", "Books"], printable: ["printable", "Printables"], cards: ["cards", "Card decks"], classroom: ["classroom", "Classroom"], kit: ["kit", "Group kits"], course: ["course", "Written course"], merch: ["merch", "Merch"], free: ["free", "Free briefs"] };
+  var SECTION = { board: "books", picture: "books", guide: "books", classroom: "teachers", kit: "teachers", free: "research" };
+
+  function gallery() {
+    var imgs = [{ src: p.photo, alt: p.title + ", product photo", page: false }];
+    if (p.thumb && p.thumb !== p.photo) imgs.push({ src: p.thumb, alt: "Front cover of " + p.title, page: true });
+    if (p.id === "up-go-more") ["03", "08", "16", "18"].forEach(function (n) { imgs.push({ src: "assets/ugm-p" + n + ".png", alt: n === "18" ? "Back cover" : "Page " + (+n) + " of " + p.title, page: true }); });
+    if (p.id === "tablet-slept") ["12", "19", "30"].forEach(function (n) { imgs.push({ src: "assets/tts-p" + n + ".png", alt: "Page " + (+n) + " of " + p.title, page: true }); });
+    return imgs;
+  }
+
+  function formatPanel() {
+    var f = p.formats[fmtIdx];
+    var h = '<div class="fmt-price"><span class="p">' + (f.status === "none" ? "—" : PBP.price(f.price)) + "</span>" +
+      '<span class="fmt-note' + (f.status === "ok" ? "" : " is-soon") + '">' + esc(f.note) + "</span></div>";
+    if (f.spec && f.spec.length) h += '<dl class="fmt-spec">' + f.spec.map(function (s) { return "<div><dt>" + esc(s[0]) + "</dt><dd>" + esc(s[1]) + "</dd></div>"; }).join("") + "</dl>";
+    if (f.status === "ok") {
+      if (f.sizes) h += '<div class="field"><label for="size">Size</label><select id="size">' + f.sizes.map(function (s) { return "<option>" + s + "</option>"; }).join("") + "</select></div>";
+      h += '<div class="buy"><div class="qty" role="group" aria-label="Quantity"><button type="button" data-pq="-1" aria-label="One fewer">−</button><output id="pq" aria-live="polite">' + qty + '</output><button type="button" data-pq="1" aria-label="One more">+</button></div>' +
+        '<button type="button" class="btn btn--ink" id="add">' + (f.price ? "Add to bag · " + PBP.price(f.price) : "Add free brief to bag") + "</button></div>";
+    } else if (f.status === "soon") {
+      h += '<form class="notify" id="notify"><label class="sr" for="ne">Email address</label><input id="ne" type="email" required placeholder="you@example.com" autocomplete="email"><button class="btn btn--line" type="submit">Email me when it’s out</button></form><p class="notify-msg" role="status"></p>';
+    }
+    return h;
+  }
+
+  function render() {
+    var parts = location.hash.replace(/^#/, "").split("/");
+    var next = PBP.byId(parts[0]) || PBP.byId("up-go-more");
+    if (next !== p) { p = next; qty = 1; fmtIdx = p.formats.findIndex(function (f) { return f.status === "ok"; }); if (fmtIdx < 0) fmtIdx = p.formats.findIndex(function (f) { return f.status !== "none"; }); }
+    var g = GROUP[p.type];
+    document.body.setAttribute("data-section", SECTION[p.type] || "shop");
+    document.title = p.title + " — " + p.kind + (p.ages.length ? ", ages " + p.ageText : "") + " — Play Before Pixels";
+    document.getElementById("crumbs").innerHTML = '<li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="shop.html#type=' + g[0] + '">' + g[1] + '</a></li><li><a href="product.html#' + p.id + '" aria-current="page">' + esc(p.title) + "</a></li>";
+
+    var imgs = gallery();
+    var tabs = p.formats.map(function (f, i) {
+      var sub = f.status === "none" ? "Not available" : f.status === "soon" ? PBP.price(f.price) + " · coming" : PBP.price(f.price);
+      return '<button type="button" role="tab" class="fmt-tab" id="ft-' + i + '" aria-controls="fmt-panel" aria-selected="' + (i === fmtIdx) + '" tabindex="' + (i === fmtIdx ? 0 : -1) + '" data-status="' + f.status + '"' + (f.status === "none" ? ' aria-disabled="true"' : "") + "><b>" + esc(f.label) + "</b><span>" + sub + "</span></button>";
+    }).join("");
+    var ageBlock = p.ages.length ? '<div class="tp-age"><p class="label">Age band · ' + esc(p.ageText) + "</p>" + PBP.ageScale("display", p.ages, { compact: true }) + "</div>" : '<div class="tp-age"><p class="label">' + esc(p.ageText) + "</p></div>";
+
+    document.getElementById("tp").innerHTML =
+      '<div class="gallery"><div class="g-main" id="g-main" style="--ground:' + p.ground + '"><img src="' + imgs[0].src + '" alt="' + esc(imgs[0].alt) + '"></div>' +
+      (imgs.length > 1 ? '<div class="g-thumbs" role="group" aria-label="Choose an image">' + imgs.map(function (im, i) { return '<button type="button" aria-pressed="' + (i === 0) + '" data-g="' + i + '"><img src="' + im.src + '" alt=""><span class="sr">' + esc(im.alt) + "</span></button>"; }).join("") + "</div>" : "") + "</div>" +
+      '<div class="tp"><p class="label">' + esc(p.kind) + (p.badge ? ' <span class="badge">' + esc(p.badge) + "</span>" : "") + "</p>" +
+      "<h1>" + esc(p.title) + '</h1><p class="deck">' + esc(p.sub) + "</p><p>" + esc(p.blurb) + "</p>" + ageBlock +
+      '<div class="formats"><p class="label" id="fmt-l">Format</p><div class="fmt-tabs" role="tablist" aria-labelledby="fmt-l">' + tabs + '</div><div class="fmt-panel" id="fmt-panel" role="tabpanel" aria-labelledby="ft-' + fmtIdx + '">' + formatPanel() + "</div></div>" +
+      '<dl class="assure"><div><dt>Shipping</dt><dd>Printed items are made to order and shipped worldwide with tracking; downloads arrive by email. <a class="inline-link" href="info.html#shipping">Times and costs</a></dd></div>' +
+      '<div><dt>Returns</dt><dd>30 days on books and card decks. Made-to-order merch is replaced free if it arrives damaged; faulty downloads are fixed or refunded. <a class="inline-link" href="info.html#returns">Full policy</a></dd></div>' +
+      '<div><dt>Checkout</dt><dd>Secure checkout; prices in ' + esc(PBP.currency) + ", taxes and duties shown before you pay.</dd></div></dl></div>";
+    tp._imgs = imgs;
+
+    /* what's inside: words */
+    var inside = document.getElementById("inside");
+    if (p.words) {
+      inside.hidden = false;
+      inside.innerHTML = '<div class="wrap"><div class="inside-head"><div><p class="label">What’s inside</p><h2 id="inside-h" class="d-l">Fourteen words, fourteen small moves.</h2></div><p>Each word gets a page of its own and a Grown-up corner underneath. Choose a word to read its tip and see the page.</p></div>' +
+        '<div class="wordgrid" role="group" aria-label="Words in the book">' + p.words.map(function (w, i) {
+          return '<button type="button" aria-pressed="' + (i === 0) + '" data-w="' + i + '"><span class="pg">Page ' + (+w[1]) + '</span><span class="w">' + esc(w[0]) + '</span><span class="tipname">' + esc(w[2].replace(/\.$/, "")) + "</span></button>";
+        }).join("") + '</div><div class="wordtip" id="wordtip" aria-live="polite"></div></div>';
+      showWord(0);
+    } else { inside.hidden = true; inside.innerHTML = ""; }
+
+    /* look inside: spreads */
+    var look = document.getElementById("look");
+    if (p.spreads) {
+      look.hidden = false;
+      look.innerHTML = '<div class="wrap"><div class="sec-head" style="grid-template-columns:1fr auto"><div><p class="label">Look inside</p><h2 id="look-h" class="d-l">Sample spreads</h2></div><div class="spreads-nav"><button type="button" data-sp="-1" aria-label="Previous spread">' + I.arrow + '</button><button type="button" data-sp="1" aria-label="Next spread">' + I.arrow + "</button></div></div></div>" +
+        '<div class="spreads" id="spreads" tabindex="0" aria-label="Sample spreads, scroll sideways">' + p.spreads.map(function (s) {
+          var a = +s[0].slice(-2), b = +s[1].slice(-2);
+          return '<figure><div class="spread"><img src="assets/' + s[0] + '.png" alt="' + esc(p.title) + ", page " + a + '"><img src="assets/' + s[1] + '.png" alt="' + esc(p.title) + ", page " + b + '"></div><figcaption class="caption"><span class="label">Pages ' + a + "–" + b + "</span></figcaption></figure>";
+        }).join("") + "</div>";
+      var sp = document.getElementById("spreads");
+      sp.addEventListener("scroll", navState, { passive: true }); navState();
+    } else { look.hidden = true; look.innerHTML = ""; }
+
+    /* about + colophon */
+    var specs = [];
+    p.formats.forEach(function (f) { if (f.status !== "none") specs.push([f.label, f.spec.map(function (s) { return s[1]; }).join(" · ")]); });
+    document.getElementById("about-book").innerHTML = '<div class="wrap"><div class="running"><p class="label">About this ' + esc(p.kind.toLowerCase()) + '</p><span class="folio">' + esc(p.title) + "</span></div>" +
+      '<div class="about-book"><div class="ab-text"><h2 id="ab-h" class="sr">About ' + esc(p.title) + "</h2>" + p.long.map(function (t) { return "<p>" + esc(t) + "</p>"; }).join("") + "</div>" +
+      '<div class="ab-details"><p class="label">Details</p><dl class="colophon-table">' +
+      p.details.map(function (d) { return "<div><dt>" + esc(d[0]) + "</dt><dd>" + (d[0] === "ISBN-13" ? '<span class="isbn-pending">' + esc(d[1]) + "</span>" : esc(d[1])) + "</dd></div>"; }).join("") +
+      specs.map(function (s) { return "<div><dt>" + esc(s[0]) + "</dt><dd>" + esc(s[1]) + "</dd></div>"; }).join("") +
+      "</dl></div></div></div>";
+
+    document.getElementById("related").innerHTML = p.related.map(function (id) { return PBP.tile(PBP.byId(id), { noSub: true }); }).join("");
+    document.getElementById("rel-all").setAttribute("href", p.ages.length ? "shop.html#age=" + p.ages[0] : "shop.html#type=" + g[0]);
+
+    if (parts[1]) { var t = document.getElementById(parts[1]); if (t && !t.hidden) setTimeout(function () { t.scrollIntoView(); }, 0); }
+    else window.scrollTo(0, 0);
+  }
+  var tp = document.getElementById("tp");
+
+  function showWord(i) {
+    var w = p.words[i];
+    document.querySelectorAll("[data-w]").forEach(function (b) { b.setAttribute("aria-pressed", String(+b.getAttribute("data-w") === i)); });
+    document.getElementById("wordtip").innerHTML = '<img src="assets/ugm-p' + w[1] + '.png" alt="Page ' + (+w[1]) + ": the word “" + esc(w[0]) + '”" width="220" height="220"><div><p class="label">Page ' + (+w[1]) + " · Grown-up corner</p><p><b>" + esc(w[2]) + "</b> " + esc(w[3]) + "</p></div>";
+  }
+  function navState() {
+    var sp = document.getElementById("spreads"); if (!sp) return;
+    var prev = document.querySelector('[data-sp="-1"]'), next = document.querySelector('[data-sp="1"]');
+    prev.disabled = sp.scrollLeft < 8; next.disabled = sp.scrollLeft + sp.clientWidth > sp.scrollWidth - 8;
+  }
+  function selectFmt(i, focus) {
+    if (p.formats[i].status === "none") return;
+    fmtIdx = i; qty = 1;
+    document.querySelectorAll(".fmt-tab").forEach(function (t, j) { t.setAttribute("aria-selected", String(j === i)); t.tabIndex = j === i ? 0 : -1; });
+    var panel = document.getElementById("fmt-panel"); panel.setAttribute("aria-labelledby", "ft-" + i); panel.innerHTML = formatPanel();
+    if (focus) document.getElementById("ft-" + i).focus();
+  }
+
+  document.addEventListener("click", function (e) {
+    var b;
+    if ((b = e.target.closest(".fmt-tab"))) { selectFmt(+b.id.slice(3)); return; }
+    if ((b = e.target.closest("[data-g]"))) {
+      var i = +b.getAttribute("data-g"), im = tp._imgs[i], m = document.getElementById("g-main");
+      m.classList.toggle("is-page", im.page); m.innerHTML = '<img src="' + im.src + '" alt="' + esc(im.alt) + '">';
+      document.querySelectorAll("[data-g]").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+      return;
+    }
+    if ((b = e.target.closest("[data-pq]"))) { qty = Math.max(1, Math.min(99, qty + +b.getAttribute("data-pq"))); document.getElementById("pq").textContent = qty; return; }
+    if (e.target.closest("#add")) { var f = p.formats[fmtIdx], s = document.getElementById("size"); PBP.add(p.id, f.id, qty, s ? s.value : ""); return; }
+    if ((b = e.target.closest("[data-w]"))) { showWord(+b.getAttribute("data-w")); return; }
+    if ((b = e.target.closest("[data-sp]"))) { var sp = document.getElementById("spreads"); var fig = sp.querySelector("figure"); sp.scrollBy({ left: +b.getAttribute("data-sp") * (fig.offsetWidth + 28), behavior: "smooth" }); return; }
+  });
+  document.addEventListener("keydown", function (e) {
+    var t = e.target.closest && e.target.closest(".fmt-tab"); if (!t) return;
+    if (["ArrowRight", "ArrowLeft", "Home", "End"].indexOf(e.key) < 0) return;
+    e.preventDefault();
+    var avail = p.formats.map(function (f, i) { return f.status === "none" ? -1 : i; }).filter(function (i) { return i > -1; });
+    var cur = avail.indexOf(fmtIdx), n;
+    if (e.key === "Home") n = avail[0]; else if (e.key === "End") n = avail[avail.length - 1];
+    else n = avail[(cur + (e.key === "ArrowRight" ? 1 : avail.length - 1)) % avail.length];
+    selectFmt(n, true);
+  });
+  document.addEventListener("submit", function (e) {
+    if (e.target.id === "notify") { e.preventDefault(); document.querySelector(".notify-msg").textContent = "Thanks. We’ll send one email when this format is ready, and nothing else."; }
+  });
+  PBP.onHash(render);
+})();
+</script>
+</body>
+</html>
