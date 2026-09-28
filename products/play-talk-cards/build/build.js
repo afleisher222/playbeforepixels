@@ -144,7 +144,7 @@ function startPage(P, S, n, total) {
       <div class="agesplit"><p><b>Ages 5–7.</b> ${younger}</p><p><b>Ages 8–12.</b> ${older}</p></div></div>
     </div>
     <h3 class="h3">6 talk-along habits</h3>
-    <div class="moves m3" style="margin-bottom:14px">${HABITS.map((h, i) => `<div class="mv">${K.speech([C.tomato, C.sun, C.sky, C.plum, C.grass, C.tomato][i], 22)}<b>${h.name}</b><p>${h.how}</p></div>`).join('')}</div>
+    <div class="moves m3">${HABITS.map((h, i) => `<div class="mv">${K.speech([C.tomato, C.sun, C.sky, C.plum, C.grass, C.tomato][i], 22)}<b>${h.name}</b><p>${h.how}</p></div>`).join('')}</div>
     <div class="whyband b">
       <div><b>Why a question card?</b> Kids often say more side by side than face to face. A card takes the pressure off: nobody is being quizzed, everyone gets a turn.</div>
       <div><b>Three talk lines:</b> “Tell me more.” · “What was that like?” · “I wonder…” <b>Talk in the language you know best.</b> Drawing, pointing or typing an answer counts too.</div>
@@ -494,7 +494,9 @@ ${K.CARD_CSS}
 .prepline{margin:0 0 12px;font-size:12.5px;line-height:1.4;background:#fff;border-radius:12px;padding:7px 12px}
 .whyband{margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .whyband>div{background:${C.tSun};border-radius:14px;padding:10px 13px;font-size:10.8px;line-height:1.4}
+.whyband.b{margin-top:10px}
 .whyband.b>div{background:${C.tSky}}
+.moves.m3 .mv{padding:10px 12px 11px}
 .whyband b{font-weight:800}
 .ptitle.sm{font-size:30px;display:flex;align-items:center;gap:10px;margin-bottom:6px}
 .lede.sm{font-size:13px;margin:0 0 12px}
