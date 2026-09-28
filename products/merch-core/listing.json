@@ -46,11 +46,11 @@
     "variant_prices_usd": {
       "XS-XL": 27,
       "2XL": 29,
-      "3XL": 31
+      "3XL": 33
     },
-    "price_notes": "Everyday price $27 (DEMAND-CHECK.md: adult tees $19.99-$29.99 est., our price $27). 2XL $29 and 3XL $31 because the partner charges more for larger blanks. BRAND.md Honest pricing overrides DEMAND-CHECK rule 2: no 'was' or crossed-out price, no permanent sale, no countdowns, no 'only X left' (print on demand never runs out). Only genuine, time-limited promotions that really end. Margin rule: fill in the partner's cost with inside label and shipping; if a tee keeps less than about $8 after Etsy fees (roughly 6.5% transaction + payment processing + $0.20 listing (UNVERIFIED rates)), raise the everyday price before launch. Kill rule: fewer than 5 sales in 60 days with the listing fixed -> reprice once, then bundle-only. Main bundle idea: Holiday gift bundle $59 with a tee (DEMAND-CHECK section 2, #8); it is not in the adopted plan, which lists only the $29 and $45 digital bundles (ops/QUEUE.md).",
+    "price_notes": "Everyday price $27 (DEMAND-CHECK.md: adult tees $19.99-$29.99 est., our price $27). 2XL $29 and 3XL $33 because the partner charges more for larger blanks. BRAND.md Honest pricing overrides DEMAND-CHECK rule 2: no 'was' or crossed-out price, no permanent sale, no countdowns, no 'only X left' (print on demand never runs out). Only genuine, time-limited promotions that really end. Margin rule: fill in the partner's cost with inside label and shipping; if a tee keeps less than about $8 after Etsy fees (roughly 6.5% transaction + payment processing + $0.20 listing (UNVERIFIED rates)), raise the everyday price before launch. Kill rule: fewer than 5 sales in 60 days with the listing fixed -> reprice once, then bundle-only. Main bundle idea: Holiday gift bundle $59 with a tee (DEMAND-CHECK section 2, #8); it is not in the adopted plan, which lists only the $29 and $45 digital bundles (ops/QUEUE.md). 3XL was set to $33 before any sale (September 28, 2026 margin audit, ops/TESTS/margin-audit.md): at $31 the Etsy net (about $8.65) was under the 3XL's own 30% floor ($9.30). No sale has happened at $31, so this is a first price, not a price change.",
     "price_floor": 8.1,
-    "price_floor_basis": "30% margin on a print-on-demand sale (commerce/PRICING.md §2): 0.30 × $27 = $8.10 (2XL $8.70, 3XL $9.30).",
+    "price_floor_basis": "30% margin on a print-on-demand sale (commerce/PRICING.md §2): 0.30 × $27 = $8.10 (2XL $8.70, 3XL $9.90).",
     "max_partner_cost_usd_by_channel": {
       "etsy": 14.53,
       "etsy_offsite_ad_sale": 10.48,
@@ -224,8 +224,8 @@
         "site": 11.32
       },
       "3XL": {
-        "etsy": 8.65,
-        "site": 11.16
+        "etsy": 10.36,
+        "site": 13.01
       }
     }
   },
@@ -276,11 +276,11 @@
     "variant_prices_usd": {
       "XS-XL": 27,
       "2XL": 29,
-      "3XL": 31
+      "3XL": 33
     },
-    "price_notes": "Everyday price $27, the same as the logo tee (DEMAND-CHECK.md: adult slogan tees $19.99-$29.99 est., our price $27); 2XL $29 and 3XL $31 because larger blanks cost the partner more. BRAND.md Honest pricing: no 'was' or crossed-out price, no permanent sale, no countdowns, no 'only X left'. Keep about $8+ per tee after Etsy fees (UNVERIFIED rates), or raise the everyday price before launch. Kill rule: fewer than 5 sales in 60 days with the listing fixed -> reprice once, then bundle-only (it can replace the logo tee in the $59 Holiday gift bundle).",
+    "price_notes": "Everyday price $27, the same as the logo tee (DEMAND-CHECK.md: adult slogan tees $19.99-$29.99 est., our price $27); 2XL $29 and 3XL $33 because larger blanks cost the partner more. BRAND.md Honest pricing: no 'was' or crossed-out price, no permanent sale, no countdowns, no 'only X left'. Keep about $8+ per tee after Etsy fees (UNVERIFIED rates), or raise the everyday price before launch. Kill rule: fewer than 5 sales in 60 days with the listing fixed -> reprice once, then bundle-only (it can replace the logo tee in the $59 Holiday gift bundle). 3XL was set to $33 before any sale (September 28, 2026 margin audit, ops/TESTS/margin-audit.md): at $31 the Etsy net (about $8.65) was under the 3XL's own 30% floor ($9.30). No sale has happened at $31, so this is a first price, not a price change.",
     "price_floor": 8.1,
-    "price_floor_basis": "30% margin on a print-on-demand sale (commerce/PRICING.md §2): 0.30 × $27 = $8.10 (2XL $8.70, 3XL $9.30).",
+    "price_floor_basis": "30% margin on a print-on-demand sale (commerce/PRICING.md §2): 0.30 × $27 = $8.10 (2XL $8.70, 3XL $9.90).",
     "max_partner_cost_usd_by_channel": {
       "etsy": 14.53,
       "etsy_offsite_ad_sale": 10.48,
@@ -443,8 +443,8 @@
         "site": 11.32
       },
       "3XL": {
-        "etsy": 8.65,
-        "site": 11.16
+        "etsy": 10.36,
+        "site": 13.01
       }
     }
   },

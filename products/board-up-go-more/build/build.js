@@ -231,7 +231,7 @@ scenes['uh-oh'] = () => {
   const k = Object.assign({}, KIDS.B, { x: 196, y: F - 27 * 1.7, s: 1.7, face: 'oh', armsFront: true });
   k.aL = aim(-2, -26); k.aR = aim(2, -26);
   const blocks = use('block-3', `translate(400,${F - 28})`) + use('block-1', `translate(460,${F - 28})`) +
-    use('block-2', `translate(376,322) rotate(-24)`) + use('block-4', `translate(452,262) rotate(18)`) + use('block-1', 'translate(492,372) rotate(38)');
+    use('block-2', `translate(376,322) rotate(-6)`) + use('block-4', `translate(452,262) rotate(18)`) + use('block-1', 'translate(492,372) rotate(38)');
   const pops = `<rect x="416" y="214" width="8" height="18" rx="4" fill="${C.plum}" transform="rotate(-30 420 223)"/><rect x="494" y="220" width="8" height="18" rx="4" fill="${C.plum}" transform="rotate(30 498 229)"/><rect x="336" y="270" width="8" height="18" rx="4" fill="${C.plum}" transform="rotate(-60 340 279)"/>`;
   return bg(C.tSun) + circle(300, 318, 150, C.sun) + kid(k) + blocks + pops;
 };
@@ -565,11 +565,12 @@ const back = (rel) => ({
     <h2 class="btitle">Up! Go! More!</h2>
     <p class="blurb">${WORDNUM[N][0].toUpperCase() + WORDNUM[N].slice(1)} first words, one per page, from <b>hi</b> to <b>night-night</b>. Every page has one big picture, one thing to <b>say, sign or act out</b> together, and a <b>grown-up tip</b> that turns reading into a back-and-forth chat.</p>
     <p class="blurb2">Made for laps and back-and-forth.</p>
+    <p class="bage"><b>Ages 0–3</b> Read together · ${N} words · a tip on every page</p>
   </div>
   ${seriesStrip()}
   <div class="bband">
     ${logo(rel, 'reverse', 26)}
-    <div class="bonus">${qrSvg(62)}<span><b>Free grown-up bonus</b>playbeforepixels.com/<br>bonus/board-up-go-more<small>Ages 0–3 · Read together</small></span></div>
+    <div class="bonus">${qrSvg(62)}<span><b>Free grown-up bonus</b>playbeforepixels.com/<br>bonus/board-up-go-more<small>Published by Play Before Pixels / AlphaPlay LLC</small></span></div>
   </div>
   <div class="isbn final" aria-hidden="true"></div>`
 });
@@ -583,11 +584,13 @@ const titlePage = (rel) => ({
     <p class="tsub">${N} first words to say, sign and act out</p>
     <svg class="tart" viewBox="0 0 200 150" aria-hidden="true"><circle cx="100" cy="80" r="66" fill="${C.tSun}"/>${kid(Object.assign({}, KIDS.A, { x: 100, y: 146 - 27 * .9, s: .9, aL: 128, aR: -128, face: 'laugh' }))}</svg>
     <p class="by">${authorLine()}</p>
+    <div class="gift"><span>A gift for</span><i></i><span>With love from</span><i></i></div>
     <div class="tlogo">${logo(rel, '', 30)}</div>
   </div>`
 });
 const copyrightPage = () => ({
   cls: 'inner copy-pg', html: `
+  <p class="dedi" data-founder="rewrite">For every little voice,<br>and the grown-ups who wait for it.</p>
   <div class="in bottom">
     <p><b>Up! Go! More!</b><br>${N} first words to say, sign and act out<br>${MS.series}, Book ${MS.series_number} · Talk-along paperback edition</p>
     <p>${authorLine()}</p>
@@ -679,8 +682,8 @@ symbol{overflow:visible}
 .chip{display:inline-flex;align-items:center;gap:6px;background:var(--acc);color:#fff;border-radius:99px;padding:3px 10px 3px 3px;font-weight:800;font-size:10px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
 .chip svg{width:20px;height:20px;display:block;color:rgba(255,255,255,.28)}
 .cue-tx{font-family:"Fredoka","Nunito Sans",sans-serif;font-weight:600;font-size:17px;line-height:1.1;color:var(--ink)}
-.tip{margin:7px 0 0;padding-top:7px;border-top:1.5px solid ${C.wash};font-size:12.5px;line-height:1.32;font-weight:600;color:var(--ink)}
-.tip .lab{font-weight:800;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin-right:3px}
+.tip{margin:7px 0 0;padding-top:7px;border-top:1.5px solid ${C.wash};font-size:13.4px;line-height:1.3;font-weight:600;color:var(--ink)}
+.tip .lab{font-weight:800;font-size:9.6px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin-right:3px}
 .tip strong{font-weight:800}
 .card.lt .chip{color:var(--ink)}.card.lt .chip svg{color:rgba(255,255,255,.55)}.card.lt .tip .lab{color:var(--ink)}
 /* cover */
@@ -732,6 +735,7 @@ symbol{overflow:visible}
 .btitle{margin:0 0 8px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:34px;letter-spacing:-.03em;line-height:1}
 .blurb{margin:0;font-size:12.5px;line-height:1.42}
 .blurb b{font-weight:800}
+.bage{margin:8px 0 0;display:flex;align-items:center;gap:8px;font-size:11px;font-weight:800;color:var(--ink)}.bage b{flex:none;white-space:nowrap;font-family:"Fredoka",sans-serif;font-weight:600;font-size:15px;background:${C.tomato};color:#fff;border-radius:99px;padding:2px 10px 3px}
 .blurb2{margin:6px 0 0;font-family:"Caveat",cursive;font-weight:700;font-size:21px;color:${C.tomato}}
 .series{position:absolute;left:48px;right:48px;top:262px}
 .slab{margin:0 0 7px;font-weight:800;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase}
@@ -754,13 +758,15 @@ symbol{overflow:visible}
 .isbn.final{border:0;border-radius:0}
 .isbn small{font-size:9px;opacity:.7;margin-top:4px;line-height:1.3}
 /* paperback extras */
-.title-pg .spill{position:static;margin:26px 0 22px}
+.title-pg .spill{position:static;margin:14px 0 18px}
 .ttl{margin:0;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:58px;letter-spacing:-.035em;line-height:1}
 .tsub{margin:8px 0 0;font-weight:700;font-size:16px}
-.tart{width:250px;height:auto;margin:18px 0 6px}
+.tart{width:200px;height:auto;margin:12px 0 4px}
+.gift{margin:14px auto 0;display:grid;grid-template-columns:auto 190px;gap:8px 10px;align-items:end;font-family:"Caveat",cursive;font-weight:700;font-size:19px;text-align:left}.gift i{border-bottom:1.3px solid ${C.ink};height:20px}
 .by{margin:4px 0 0;font-family:"Caveat",cursive;font-weight:700;font-size:22px}
 .by .slot{font-family:"Nunito Sans",sans-serif;font-size:12px}
 .tlogo{margin-top:auto}
+.dedi{position:absolute;left:0;right:0;top:150px;margin:0;text-align:center;font-family:"Caveat",cursive;font-weight:700;font-size:25px;line-height:1.25;color:${C.ink}}
 .copy-pg .in p{margin:0 0 9px;font-size:10.5px;line-height:1.5;max-width:380px}
 .notebody{position:relative;background:#fff;border-radius:16px;padding:18px 22px 14px}
 .notebody.draft{border:1.5px dashed ${C.tomato};padding-top:30px}

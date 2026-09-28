@@ -1,0 +1,214 @@
+{
+  "slug": "merch-mug",
+  "status": "ready-pending-accounts",
+  "wave": "merch wave: starts after printables sell (February 2027 or later, business/GROWTH-ENGINE.md; no print-partner account before then)",
+  "status_notes": "Ready-pending-accounts, starts after printables sell (merch wave). Waits for the print-partner account, its quote (replace the estimated nets), its lead-safety documents for the ceramic blank and a passed sample (QUALITY-STANDARD.md). marketing/DEMAND-CHECK.md rated mugs 'Weak / Cut, revisit only if a tee design proves itself': list it only after the logo tee has sold, and keep it off the launch plan until then.",
+  "title": "Talk, Touch and Play Come First Mug",
+  "subtitle": "White ceramic coffee mug for grown-ups, 11 oz or 15 oz, with our Maker's Seal",
+  "etsy_title": "Play Before Pixels Coffee Mug, Talk Touch and Play Come First, White Ceramic 11 oz or 15 oz, Parent Gift for Mom or Dad",
+  "format": "White ceramic mug, 11 oz or 15 oz, two-sided wrap printed by sublimation. Print on demand: the print partner prints and ships each order.",
+  "trim": "Wrap print files: 11 oz 2700 x 1050 px (9 x 3.5 in at 300 dpi); 15 oz 2700 x 1200 px (9 x 4 in at 300 dpi). Partner-typical sizes, UNVERIFIED: check the chosen partner's mug template before upload.",
+  "pages": 0,
+  "ages": "Adults (a grown-up's coffee or tea mug; not a child's cup)",
+  "language": "English. The slogan side is English; the seal side carries only the brand name.",
+  "sizes": [
+    "11 oz",
+    "15 oz"
+  ],
+  "colors": [
+    {
+      "name": "White",
+      "hex_preview": "#FFFFFF",
+      "print_file": "print/mug-11oz_wrap.png | print/mug-15oz_wrap.png"
+    }
+  ],
+  "price_notes": "Everyday prices $22 (11 oz) and $25 (15 oz): the top of the DEMAND-CHECK.md mug range ($15-$22 est.) for the 11 oz, and $3 more for the bigger blank, which costs the partner more. One everyday price per size. BRAND.md Honest pricing: no 'was' or crossed-out price, no permanent sale, no countdown, no 'only X left' (print on demand never runs out). Shipping: the buyer pays the partner's shipping rate at cost; a free-shipping price would need about $29.53 for the 11 oz to keep the floor. Kill rule: fewer than 5 sales in 60 days with the listing fixed -> reprice once (never below price_floor), then bundle-only or retire.",
+  "price_floor_basis": "30% margin on a print-on-demand sale (commerce/PRICING.md §2): 0.30 x $22 = $6.60 (11 oz) and 0.30 x $25 = $7.50 (15 oz). price_floor uses the higher figure, so every net in net_per_unit_by_channel is checked against $7.50.",
+  "net_notes": "ESTIMATES (UNVERIFIED), computed by build/pricing.py from build/pricing-input.json: no print-partner quote exists yet. Assumed partner cost: $7.95 for a printed 11 oz mug and $9.95 for 15 oz, plus $7.99 / $8.99 US shipping for the first mug, which the buyer pays at the partner's rate. Fees (same model as merch-core and ops/TESTS/check_listings.py): Etsy $0.20 listing + 6.5% transaction + 3% + $0.25 processing on item + shipping; Gumroad 10% + $0.50 plus 2.9% + $0.30 processing; own site (Shopify Payments) 2.9% + $0.30; a 5% refund and breakage allowance on every sale. Etsy Offsite Ads stay off: an ad-driven sale would net about $5.15 (11 oz) or $5.02 (15 oz), under the floor; if Offsite Ads ever become mandatory for the shop (UNVERIFIED threshold, about $10k a year), raise prices first. When the quote arrives, update pricing-input.json, run python3 build/pricing.py and check every channel stays at or above price_floor.",
+  "short_description": "A white ceramic coffee mug for grown-ups: our Maker's Seal on one side, 'Talk, touch and play come first' on the other. 11 or 15 oz.",
+  "long_description": "The Play Before Pixels mug is a white ceramic coffee mug for grown-ups, printed when you order. It comes in 11 oz and 15 oz.\n\nOne side says \"Talk, touch and play come first,\" with a tomato-red ball as the period. The other side carries our logo: a round maker's seal with a spinning top in the middle. One side always faces out, whichever hand you hold it in.\n\nIt is for the grown-up who sits on the floor, builds the tower and waits for the answer. It is a small reminder for the person holding it. It is not a rule for anyone else.\n\nThe design is printed by sublimation. The ink goes into the mug's coating, so it won't peel off like a decal. Our print partner rates the mug for the dishwasher and the microwave. The care line on this listing gives their exact words.\n\nEach mug is made to order by our print partner and shipped to you with tracking. Allow a few extra days before it ships. Nothing sits in a warehouse.\n\nThis is a mug for adults. It is not a child's cup.\n\nLooking for a gift? It goes well with our book 100 Screen-Free Plays, sold separately.",
+  "bullets": [
+    "Two sides: our Maker's Seal logo on one, 'Talk, touch and play come first' on the other",
+    "White ceramic mug for grown-ups in 11 oz ($22) or 15 oz ($25)",
+    "Printed by sublimation, so the design won't peel like a sticker",
+    "Dishwasher and microwave use as rated by our print partner (see the care line)",
+    "Printed when you order and shipped with tracking; a mug for adults, not a child's cup"
+  ],
+  "keywords": [
+    "play before pixels mug",
+    "parent gift coffee mug",
+    "new mom gift mug",
+    "gift for dad coffee mug",
+    "play based parenting gift",
+    "unplugged family mug",
+    "minimalist logo mug"
+  ],
+  "etsy_tags": [
+    "play before pixels",
+    "coffee mug",
+    "parent gift",
+    "new mom gift",
+    "gift for dad",
+    "mom mug",
+    "dad mug",
+    "unplugged family",
+    "play based parent",
+    "ceramic mug",
+    "logo mug",
+    "11 oz mug",
+    "15 oz mug"
+  ],
+  "seo_title": "Talk, Touch and Play Come First Mug | Play Before Pixels",
+  "seo_description": "A white ceramic mug for grown-ups in 11 or 15 oz: our Maker's Seal on one side, our line on the other. Printed when you order, shipped with tracking.",
+  "alt_text": "A white ceramic coffee mug on a pale blue background. On its side, in bold navy letters, it reads Talk, touch and play come first, with a tomato-red dot as the period and the words Play Before Pixels below. A second mug beside it shows the round navy Play Before Pixels seal with a sky-blue spinning top in the middle.",
+  "listing_images": [
+    "preview/listing-images/listing-01.png - hero: 15 oz mug, slogan side, 'Two sizes' and 'Printed when you order' (thumbnail)",
+    "preview/listing-images/listing-02.png - both sides of the 11 oz mug: the seal and the line",
+    "preview/listing-images/listing-03.png - 11 oz and 15 oz to the same scale, with prices",
+    "preview/listing-images/listing-04.png - details: printed to order, sublimation, the partner's care rating, for grown-ups. Check its care words against the partner's rating before upload.",
+    "cover.png - 1600 x 1600 store and website hero",
+    "mockup.png - 1600 x 1200 website image: 11 oz seal side and 15 oz slogan side",
+    "preview/mockups/<11oz|15oz>-<seal|slogan>.png - 1600 x 1200 per size and side, for variant photos"
+  ],
+  "files": {
+    "print": "print/mug-11oz_wrap.png + .svg (2700 x 1050) and print/mug-15oz_wrap.png + .svg (2700 x 1200), 300 dpi, white ground",
+    "production_sheet": "source.html -> merch-mug.pdf (4 pages, US Letter); previews preview/p01-p04.png",
+    "quality": "QUALITY-STANDARD.md (blank, print method, safety documents, sample gate)",
+    "panel": "panel.md (simulated customer panel and the sample-gate record)",
+    "build": "bash build/render.sh rebuilds everything: build.py (print SVGs; stops unless brand/ORIGINALITY.md keeps the slogan) -> brand/logo/src/raster.js (PNGs) -> stamp_dpi.py (300 dpi) -> pricing.py (nets into listing.json) -> pages.py (mockups, cover, listing images, production sheet) -> brand/render.js."
+  },
+  "channels": [
+    "playbeforepixels.com shop through the print partner's store integration (Gumroad at launch only if the partner can receive Gumroad orders automatically; otherwise the own-site shop waits for Shopify, because forwarding orders by hand would break the self-running rule)",
+    "Etsy, as a 'Designed by' print-on-demand item with the print partner listed as production partner; no URL or QR in images or text"
+  ],
+  "amazon_route": "none-with-reason: Amazon Merch on Demand's mug program and its terms are UNVERIFIED for this account, and FBA would need inventory (never allowed). Revisit after the logo tee is live on Merch on Demand.",
+  "next_products": [
+    "merch-core-logo-tee",
+    "merch-stickers",
+    "guide-100-plays"
+  ],
+  "bonus_url": "playbeforepixels.com/bonus/merch-mug",
+  "bonus_notes": "No pack-in card is planned for mugs (most partners cannot add inserts to mug boxes, UNVERIFIED). The own-site order email carries the bonus link: the free play printable and the email sign-up (email only; child's birth month and year optional; never a child's name). Etsy orders get no URL or QR.",
+  "shareable_piece": "The mug itself: the seal side is made to be photographed on a table beside a book or a toy, with the brand mark in view.",
+  "faq": [
+    {
+      "q": "Which sizes are there?",
+      "a": "11 oz ($22), a classic coffee mug, and 15 oz ($25), for a bigger cup. Both are white ceramic with the same two-sided design."
+    },
+    {
+      "q": "Can it go in the dishwasher and microwave?",
+      "a": "Our print partner rates this mug for both. The care line on this listing repeats their exact rating. [VERIFY: paste the partner's rating before listing.]"
+    },
+    {
+      "q": "Is it safe for hot drinks?",
+      "a": "Yes, it is a ceramic mug made for coffee and tea. We use only our print partner's own mug made for food and drink, and we keep its safety papers on file. [VERIFY: fill in once the partner's lead and cadmium report is on file.]"
+    },
+    {
+      "q": "Will the design fade?",
+      "a": "It is printed by sublimation, so the ink goes into the coating instead of sitting on top. We checked a sample in the dishwasher before we listed it."
+    },
+    {
+      "q": "Is it for kids?",
+      "a": "No. It is a mug for grown-ups, not a child's cup."
+    },
+    {
+      "q": "What does the line mean?",
+      "a": "It is a small reminder for the person holding the mug: talk, touch and play come first. Talk can be a word, a sign, a point or a tap on a talking device. It is not a comment on anyone else's family, child or screen time."
+    },
+    {
+      "q": "How long does it take?",
+      "a": "Each mug is printed when you order it, then shipped with tracking. Allow a few extra days before it ships."
+    },
+    {
+      "q": "What if it arrives broken?",
+      "a": "Send a photo through the contact form and our print partner replaces it."
+    },
+    {
+      "q": "Can I send it as a gift?",
+      "a": "Yes. Enter their address at checkout and it ships straight to them. A gift note and a slip without prices are added only if our print partner offers them at checkout."
+    }
+  ],
+  "safety": {
+    "status": "UNVERIFIED: no partner documents on file yet; nothing here is a legal opinion.",
+    "food_contact": "A food-contact item. Use only the print partner's own white ceramic mug blank that the partner states is lead-safe for food contact (UNVERIFIED). Before listing, get the partner's lead and cadmium leach test report for that blank (US FDA ceramicware limits; California Proposition 65) and keep it in this folder. Never claim 'lead-free', 'non-toxic' or 'food-safe' beyond what that report says. No metallic, glitter, color-changing or enamel-look blanks.",
+    "prop_65": "California Proposition 65 (UNVERIFIED): businesses with fewer than 10 employees are generally exempt from the warning duty, but the print partner, Etsy or a retailer may still require a warning on California shipments of ceramicware. Ask the partner whether it adds a warning; if one is needed, add it to the listing before any California sale.",
+    "care_rating": "Repeat the partner's own dishwasher- and microwave-safe rating word for word (UNVERIFIED until the partner is chosen). If the partner rates it hand-wash only, change the bullets, FAQ and listing image 4 before upload.",
+    "print_method": "Sublimation only (ink bonds into the polymer coating); no decals or UV prints that can peel.",
+    "children": "Adult item only. Never marketed as a child's cup or with children's imagery; kids' drinkware would be a children's product under CPSIA and stays held (legal/LEGAL-LAUNCH-CHECKLIST.md row 9)."
+  },
+  "compliance_notes": "No health, medical or outcome claims; no diagnosis or condition terms in the design, listing, tags, keywords or images (BRAND.md hard rules 1 and 3 and its condition-search section). Slogan: 'Talk, touch and play come first.' is brand/ORIGINALITY.md C1, KEEP-BUT-DON'T-TRADEMARK: set with the ball as its period, never as a three-verb icon lockup, never on children's items; build/build.py stops on any other line and on the copy-only C2 line. It still needs the pre-printing slogan search in ORIGINALITY.md section 4 (USPTO class 21 for mugs as well as class 25, plus Etsy, Amazon and Redbubble) before the first sale. The logo is the supplied Maker's Seal and wordmark, unaltered. Trademark: only TM, never the registered symbol. ALPHAPLAY is not on the mug. Food-contact, Prop 65 and CPSIA notes are in 'safety' (all UNVERIFIED). Adult item only; nothing marketed to children. No inventory: print on demand only (one QA sample per size is not inventory). Etsy: production partner listed, 'Designed by', AI tools disclosed, no URL or QR. Honest pricing per BRAND.md. No claims about the ceramic's safety, durability or 'lead-free' status beyond the partner's documents. Copyright line on the production sheet: '© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.' Version 1.0 · September 2026. Check every file against the chosen partner's current mug template before upload.",
+  "human_todo": [
+    "HUMAN AUTHORSHIP: choose your own slogan line breaks, which side faces out and whether to offer the 15 oz (the 'Founder edits' block in build/build.py), then run bash build/render.sh and commit.",
+    "Run the ORIGINALITY.md section 4 slogan search for 'Talk, touch and play come first.' including USPTO class 21 (mugs); add the mug to ORIGINALITY.md section 2 'Merch (adult only)' when it clears.",
+    "Pick the print partner (the same one as the tees) that offers white ceramic 11 oz and 15 oz sublimation mugs with Etsy and site integration.",
+    "Get and file the partner's lead and cadmium test report for the mug blank (FDA and Prop 65), and ask whether it adds a Prop 65 warning for California. Fill in the two [VERIFY] FAQ answers from it.",
+    "Paste the partner's exact dishwasher and microwave rating into the listing's care line and FAQ; if it is hand-wash, change bullet 4 and listing image 4 (build/pages.py).",
+    "Check the partner's mug template: print size in px, and which half faces out with the handle on the right. Change MUGS or SWAP_SIDES in build/build.py if needed and rebuild.",
+    "Replace the cost and shipping in build/pricing-input.json with the real quote and run python3 build/pricing.py; if any channel falls under price_floor, raise the everyday price before launch.",
+    "Order one 11 oz and one 15 oz sample and run the sample gate in QUALITY-STANDARD.md; record PASS or FAIL in panel.md. Take faceless photos to replace the mockups.",
+    "Etsy: list the partner as production partner, mark 'Designed by', disclose AI tools, upload listing images 1-4, keep Offsite Ads off.",
+    "Build the bonus page at playbeforepixels.com/bonus/merch-mug before the order email links to it.",
+    "List the mug only after the logo tee has sold (DEMAND-CHECK.md says revisit mugs only if a tee design proves itself)."
+  ],
+  "ai_disclosure": {
+    "as_of": "2026-09-28",
+    "ai_helped_with": "Claude (an AI model made by Anthropic), working in Claude Code, generated the design layout (the slogan type setting and the placement of the Maker's Seal), the print files, the mockups and this listing. The logo is the adopted Maker's Seal (September 28, 2026), placed unaltered from brand/logo/.",
+    "humans_did": "The founder, for AlphaPlay LLC, directs the product line and set the brand rules (brand/BRAND.md). As of 2026-09-28 no person has redrawn the design. Still to be done by a person before release: the knockout search, approving the design and checking a printed sample (human_todo).",
+    "etsy_attribution": "Designed by Play Before Pixels",
+    "etsy_ai_flag": true,
+    "etsy_who_made": "Another company or person (the print partner, named as the shop's production partner) [UNVERIFIED form wording]",
+    "etsy": "In Etsy's listing form, say the shop designed this item and that AI tools were used, wherever the form asks (UNVERIFIED form wording). Add etsy_description_line at the end of the Etsy description. List the print partner as a production partner in the shop settings.",
+    "etsy_description_line": "How this was made: the design was created with AI tools for Play Before Pixels, and our print partner prints each item to order.",
+    "site": "Product page line: 'How this was made: the design was created with AI tools for Play Before Pixels, and our print partner prints each item to order.' Add 'and edited by the founder' only after she has changed the design.",
+    "gumroad": "Same line as the site, at the end of the product description.",
+    "social_ai_label": "Turn on each platform's AI-generated-content label for posts that use these images or this text (label names UNVERIFIED).",
+    "notes": "Answers describe what really happened as of the date above. Never call any part hand-drawn, handmade or human-written."
+  },
+  "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.",
+  "price_usd": 22,
+  "variant_prices_usd": {
+    "11oz": 22,
+    "15oz": 25
+  },
+  "price_floor": 7.5,
+  "price_floor_by_variant": {
+    "11oz": 6.6,
+    "15oz": 7.5
+  },
+  "net_per_unit_by_channel": {
+    "etsy_11oz": 9.65,
+    "gumroad_11oz": 8.28,
+    "site_11oz": 11.78,
+    "etsy_15oz": 10.12,
+    "gumroad_15oz": 8.62,
+    "site_15oz": 12.51
+  },
+  "margin_pct_by_channel": {
+    "etsy_11oz": 44,
+    "gumroad_11oz": 38,
+    "site_11oz": 54,
+    "etsy_15oz": 40,
+    "gumroad_15oz": 34,
+    "site_15oz": 50
+  },
+  "max_partner_cost_usd_by_channel": {
+    "etsy_11oz": 11.0,
+    "gumroad_11oz": 9.63,
+    "site_11oz": 13.13,
+    "etsy_15oz": 12.57,
+    "gumroad_15oz": 11.07,
+    "site_15oz": 14.96
+  },
+  "pod_cost_estimate_usd": {
+    "11oz": {
+      "item": 7.95,
+      "shipping_first_item_us": 7.99,
+      "status": "UNVERIFIED typical partner cost; replace with the chosen partner quote"
+    },
+    "15oz": {
+      "item": 9.95,
+      "shipping_first_item_us": 8.99,
+      "status": "UNVERIFIED typical partner cost; replace with the chosen partner quote"
+    }
+  }
+}

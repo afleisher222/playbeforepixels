@@ -341,7 +341,7 @@ spreads.s4 = () => {
 spreads.s5 = () => {
   let s = SPREAD_BG(C.tSun) + R(-12, 600, 1656, 240, C.grass);
   [[30, 790, -12], [110, 760, 8], [190, 782, -12], [270, 752, 8]].forEach(([x, y, r]) => s += E(x, y, 14, 22, C.sky, `transform="rotate(${80 + r} ${x} ${y})"`));
-  s += caveat(70, 700, 'tip', 34, C.tomato, 'transform="rotate(-8 70 700)"') + caveat(200, 690, 'tip', 34, C.tomato, 'transform="rotate(6 200 690)"');
+  s += caveat(70, 700, 'tip', 38, C.paper, 'transform="rotate(-8 70 700)"') + caveat(200, 690, 'tip', 38, C.paper, 'transform="rotate(6 200 690)"');
   s += windowFrame(560, 110, 200, 240, C.sky, U('cloud', 600, 250, 0.6) + U('sun', 700, 150, 0.5));
   s += ada({ x: 470, y: 722, s: 1.12, outfit: 'socks', face: 'face-smile', rot: -4, legs: [10, -6], armL: { a: 70, b: 30 }, armR: { shh: true } });
   s += R(880, 668, 780, 200, C.sky, 24) + R(1247, 700, 6, 140, C.paper, 3, 'fill-opacity=".35"') + Ci(1226, 764, 10, C.sun) + Ci(1274, 764, 10, C.sun);
@@ -537,15 +537,15 @@ const LAYOUT = {
   s1: [{ x: 48, y: 52, w: 430 }, { x: 56, y: 52, w: 560, bigCls: 'zz', bigCol: C.sky }],
   s2: [{ x: 48, y: 52, w: 700 }, { x: 56, y: 52, w: 700, ref: C.grass }],
   s3: [{ x: 48, y: 52, w: 700 }, { x: 56, y: 52, w: 700 }],
-  s4: [{ x: 48, y: 52, w: 700 }, { x: 56, y: 48, w: 700, size: 27, em: C.sky }],
+  s4: [{ x: 48, y: 52, w: 700, tipAt: { x: 48, y: 690, w: 430 } }, { x: 56, y: 48, w: 700, size: 27, em: C.sky }],
   s5: [{ x: 48, y: 52, w: 460 }, { x: 56, y: 52, w: 700, ref: C.plum }],
-  s6: [{ x: 48, y: 52, w: 700 }, { x: 56, y: 52, w: 700 }],
+  s6: [{ x: 48, y: 52, w: 410, tipAt: { x: 452, y: 48, w: 316 } }, { x: 56, y: 52, w: 700 }],
   s7: [{ x: 48, y: 52, w: 470, cls: 'w', em: C.sun }, { x: 56, y: 52, w: 560, cls: 'w' }],
   s8: [{ x: 48, y: 52, w: 460 }, { x: 56, y: 52, w: 700 }],
-  s9: [{ x: 48, y: 52, w: 700 }, { x: 56, y: 44, w: 700, ref: C.plum }],
-  s10: [{ x: 48, y: 52, w: 700 }, { x: 56, y: 52, w: 590, size: 27 }],
+  s9: [{ x: 48, y: 52, w: 700, tipW: 530 }, { x: 56, y: 44, w: 700, ref: C.plum }],
+  s10: [{ x: 48, y: 52, w: 700, tipAt: { x: 494, y: 196, w: 290 } }, { x: 56, y: 52, w: 590, size: 27 }],
   s11: [{ x: 48, y: 52, w: 700, em: C.plum }, { x: 56, y: 52, w: 700, size: 27 }],
-  s12: [{ x: 48, y: 52, w: 700, cls: 'w' }, { x: 56, y: 52, w: 700, cls: 'w', ref: C.sun }],
+  s12: [{ x: 48, y: 52, w: 700, cls: 'w', tipRight: true }, { x: 56, y: 52, w: 700, cls: 'w', ref: C.sun }],
 };
 const box = (k, L) => ({ ...L, html: md(need(k), L) });
 
@@ -588,15 +588,23 @@ pages.push(page(2, PAGE_BG(C.wash) + G('translate(650 740) scale(0.66)', U('dog-
 <p>Published by AlphaPlay LLC, doing business as Play Before Pixels · playbeforepixels.com</p>` }],
   both(ISBN_BOX, off => `<div class="logo" style="left:${60 + off}px;top:${712 + 12}px;width:210px">${LOGO('lockup-horizontal.svg', 210)}</div>`)));
 // p3 (R) dedication (founder writes it)
-const ded = need('dedication');
+// Until the founder writes her own, p3 prints a short brand dedication (founder-notes.md section 2).
+const ded = need('dedication') || 'For every grown-up\nwho has ever said,\n“Okay. One more story.”';
 pages.push(page(3, PAGE_BG(C.tTomato) + rocketWithCrew(408, 730, 0.5, 0, false) + stars([[250, 590, .5, C.sun], [570, 550, .4, C.plum], [600, 670, .3, C.tomato]], C.sun),
   ded ? [{ x: 90, y: 130, w: 636, cls: 'ded center', html: md(ded) }] : [],
   () => ''));
 // p4-p27 story spreads
 Object.keys(LAYOUT).forEach((k, i) => {
   const art = spreads[k](); const [L, Rt] = LAYOUT[k]; const no = 4 + i * 2;
-  pages.push(page(no, art, [box(`${k} left`, L)], undefined, true));
-  pages.push(page(no + 1, art, [box(`${k} right`, Rt)], undefined, true));
+  // one grown-up tip per spread: under the left page's words, or placed by L.tipAt / L.tipRight where the art needs the room
+  const tip = WORDS[`${k} tip`];
+  const Lb = box(`${k} left`, L), Rb = box(`${k} right`, Rt), extraL = [];
+  const tipHtml = tip ? `<span class="gtip"${L.tipW ? ` style="max-width:${L.tipW}px"` : ''}><b>Grown-up tip</b>${md(tip)}</span>` : '';
+  if (tip && L.tipRight) Rb.html += tipHtml;
+  else if (tip && L.tipAt) extraL.push({ ...L.tipAt, html: tipHtml.replace('class="gtip"', 'class="gtip" style="margin-top:0"') });
+  else Lb.html += tipHtml;
+  pages.push(page(no, art, [Lb, ...extraL], undefined, true));
+  pages.push(page(no + 1, art, [Rb], undefined, true));
 });
 // p28 (L) morning
 pages.push(page(28, PAGE_BG(C.tSun) + R(-12, 610, 840, 240, C.grass) + windowFrame(60, 250, 190, 220, C.sky, U('sun', 155, 340, 0.55)) +
@@ -638,7 +646,7 @@ const note = need('note');
 pages.push(page(31, PAGE_BG(C.tSun) + R(-12, 650, 840, 200, C.paper) + G('translate(640 600) scale(0.5)', U('dog-lie')),
   note ? [{ x: 60, y: 60, w: 696, cls: 'talk-h ink', html: `A note from the author` }, { x: 60, y: 150, w: 660, cls: 'note', html: md(note) }]
     : [{ x: 60, y: 200, w: 696, cls: 'talk-h ink center', html: `This book belongs to` }],
-  both(note ? () => '' : off => `<div style="position:absolute;left:${138 + off}px;top:${360 + 12}px;width:540px;border-bottom:4px solid #1D2940"></div>`,
+  both(note ? () => '' : off => `<div style="position:absolute;left:${138 + off}px;top:${360 + 12}px;width:540px;border-bottom:4px solid #1D2940"></div><div class="t talk-sub" style="left:${138 + off}px;top:${420 + 12}px;width:540px;color:#1D2940;font-weight:800;font-size:22px">A gift from</div><div style="position:absolute;left:${138 + off}px;top:${520 + 12}px;width:540px;border-bottom:4px solid #1D2940"></div>`,
     off => `<div class="logo" style="left:${258 + off}px;top:${680 + 12}px;width:300px">${LOGO('lockup-horizontal.svg', 300)}</div><div class="t tag center" style="left:${60 + off}px;top:${764 + 12}px;width:696px">Books and printables for talking and playing together · playbeforepixels.com</div>`)));
 // p32 (L) endpaper
 // p32 (L) endpaper + "More from Play Before Pixels" (brand kit: last page shows the next products). Bottom third left clear for any printer mark.
@@ -683,7 +691,7 @@ function backCover() {
 const BACK_TEXT = [{ x: 56, y: 60, w: 690, cls: 'blurb', html: `<p class="blurb-h">Shhh… the tablet is sleeping.<br>So what shall we do?</p>
 <p>Build a tower (CRASH!). Splash every puddle. Blast off in a cardboard-box rocket with Tater the dog as co-pilot. Flip pancakes with Papa, then find the perfect bedtime book.</p>
 <p>A funny, cozy read-aloud with a refrain kids love to join in on, and one very sleepy tablet in a nightcap. With “Talk about it” questions and a Play Day planner for grown-ups.</p>` },
-  { x: 56, y: 640, w: 300, cls: 'backmeta', html: `Picture book · Ages 3–7` }];
+  { x: 56, y: 640, w: 470, cls: 'backmeta', html: `Picture book · Ages 3–7<br><span style="font-size:.78em;letter-spacing:1px">Play Before Pixels / AlphaPlay LLC</span>` }];
 const BACK_STRIP = `<div class="strip" style="left:56px;top:382px;width:690px"><b>Read it, then play it.</b> Pair it with <i>100 Screen-Free Plays</i> and get a free Play Day planner at <span class="nw">playbeforepixels.com</span></div>`;
 const BACK_EXTRA = BACK_STRIP + `<div class="logo" style="left:56px;top:722px;width:220px">${LOGO('lockup-horizontal-white.svg', 220)}</div>
 <div class="isbn back" style="left:588px;top:664px" aria-hidden="true"></div>`;
@@ -753,6 +761,9 @@ body { -webkit-print-color-adjust: exact; print-color-adjust: exact }
 .t.byline { font-family: "Nunito Sans", sans-serif; font-weight: 800; font-size: 19px; letter-spacing: 2.5px; text-transform: uppercase; color: #FFFFFF }
 .t.small { font-family: "Nunito Sans", sans-serif; font-weight: 400; font-size: 15px; line-height: 1.5 }
 .t.small p { margin: 0 0 9px }
+.t .gtip { display: block; margin-top: 18px; max-width: 470px; background: #FFFFFF; border-radius: 14px; padding: 10px 14px 11px; font-family: "Nunito Sans", sans-serif; font-weight: 600; font-size: 16.5px; line-height: 1.35; color: #1D2940 }
+.t .gtip b { display: block; font-weight: 800; font-size: 11.5px; letter-spacing: 1.6px; text-transform: uppercase; color: #EE5A36; margin-bottom: 2px }
+.t .gtip .ln { display: inline }
 .t.ded { font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 500; font-size: 34px; line-height: 1.3; color: #1D2940 }
 .t.note { font-family: "Nunito Sans", sans-serif; font-weight: 500; font-size: 21px; line-height: 1.5 }
 .t.talk-h { font-family: "Bricolage Grotesque", "Nunito Sans", sans-serif; font-weight: 800; font-size: 56px; line-height: 1; color: #FFFFFF; letter-spacing: -1px }

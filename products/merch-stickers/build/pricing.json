@@ -1,0 +1,32 @@
+{
+ "variants": {
+  "sheet": {
+   "price_usd": 15,
+   "partner_cost_usd": 6.0,
+   "partner_shipping_usd": 4.49,
+   "price_floor": 4.5,
+   "net": {
+    "etsy": 5.95,
+    "gumroad": 4.94,
+    "site": 7.38
+   },
+   "margin_pct": {
+    "etsy": 40,
+    "gumroad": 33,
+    "site": 49
+   },
+   "max_partner_cost_usd": {
+    "etsy": 7.45,
+    "gumroad": 6.44,
+    "site": 8.88
+   },
+   "etsy_offsite_ads_net": {
+    "optional_15pct": 3.02,
+    "mandatory_12pct": 3.61
+   },
+   "free_shipping_min_price_etsy": 19.71,
+   "meets_floor": true
+  }
+ },
+ "price_floor": 4.5
+}

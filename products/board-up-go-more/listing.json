@@ -172,5 +172,11 @@
     "interior": "paperback/up-go-more-talk-along-interior.pdf",
     "cover": "paperback/up-go-more-talk-along-cover.pdf",
     "expanded_distribution": "off"
+  },
+  "age_range": {
+    "min_years": 0,
+    "max_years": 3,
+    "grade": "Preschool",
+    "notes": "Paper paperback edition: read together, keep away from mouths. Board-book edition not yet available."
   }
 }

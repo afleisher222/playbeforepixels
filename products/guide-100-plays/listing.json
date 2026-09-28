@@ -252,5 +252,15 @@
     "expanded_distribution": "off",
     "categories": "parenting categories only",
     "fonts": "No Type 3 fonts (static font instances, brand/fonts/fonts.css)"
-  }
+  },
+  "age_range": {
+    "reader": "grown-ups (parenting nonfiction)",
+    "children_years": "0–5",
+    "amazon_category_note": "List under Parenting, not in the children's store, so no reading-age field applies [VERIFY in KDP]."
+  },
+  "bisac": [
+    "FAM025000 Family & Relationships / Activities [VERIFY]",
+    "FAM034000 Family & Relationships / Parenting / General [VERIFY]",
+    "FAM003000 Family & Relationships / Life Stages / Infants & Toddlers [VERIFY]"
+  ]
 }

@@ -195,5 +195,16 @@
   },
   "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.",
   "status": "ready-pending-accounts",
-  "status_notes": "Rebuilt 2026-09-28 with the adopted Maker's Seal logo. Not in the G0 launch list (ops/QUEUE.md); waits on the store accounts, a printer account and quote, and the founder's WORDS.md rewrite. Nothing is published (ops/PAUSE)."
+  "status_notes": "Rebuilt 2026-09-28 with the adopted Maker's Seal logo. Not in the G0 launch list (ops/QUEUE.md); waits on the store accounts, a printer account and quote, and the founder's WORDS.md rewrite. Nothing is published (ops/PAUSE).",
+  "age_range": {
+    "min_years": 0,
+    "max_years": 5,
+    "grade": "Preschool"
+  },
+  "bisac": [
+    "JUV013000 Juvenile Fiction / Family / General [VERIFY]",
+    "JUV013050 Juvenile Fiction / Family / Grandparents [VERIFY]",
+    "JUV070000 Juvenile Fiction / Stories in Verse [VERIFY]"
+  ],
+  "bisac_notes": "Personalized one-name copies carry no ISBN, so BISAC codes matter only for a future non-personalized classroom/library edition. No condition or diagnosis codes."
 }

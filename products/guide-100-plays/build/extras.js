@@ -94,19 +94,19 @@ function back() {
 }
 const backCss = `
 .back { position: absolute; width: 8.25in; height: 10.25in; background: ${C.tTomato}; padding: .75in .62in .62in .75in; display: flex; flex-direction: column }
-.bcat { display: flex; justify-content: space-between; align-items: center; margin-bottom: .2in; font-size: 9pt; font-weight: 800; letter-spacing: .12em; text-transform: uppercase }
+.bcat { display: flex; justify-content: space-between; align-items: center; margin-bottom: .16in; font-size: 9pt; font-weight: 800; letter-spacing: .12em; text-transform: uppercase }
 .bage { background: ${C.tomato}; color: ${W}; border-radius: 99px; padding: .04in .2in .07in; font-size: 18pt; letter-spacing: 0; text-transform: none }
 .bh { font-size: 34pt; line-height: 1.02 }
-.bp { font-size: 12.5pt; line-height: 1.5; margin-top: .24in }
-.bl { list-style: none; margin-top: .2in; font-size: 11pt; line-height: 1.45 }
+.bp { font-size: 12.5pt; line-height: 1.5; margin-top: .16in }
+.bl { list-style: none; margin-top: .12in; font-size: 11pt; line-height: 1.45 }
 .bl li { padding: .07in 0 .07in .26in; position: relative; border-bottom: 1px solid rgba(29,41,64,.15) }
 .bl li::before { content: ""; position: absolute; left: 0; top: .15in; width: .12in; height: .12in; border-radius: 99px; background: ${C.tomato} }
-.bmini { margin-top: .26in; background: ${W}; border-radius: .16in; padding: .18in .22in; font-size: 12pt }
+.bmini { margin-top: .18in; background: ${W}; border-radius: .16in; padding: .18in .22in; font-size: 12pt }
 .bmini .display { font-size: 13pt; margin-right: .06in }
 .bmini .tl { display: block; font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 16pt; margin-top: .06in }
-.bbands { display: grid; grid-template-columns: repeat(4, 1fr); gap: .16in; margin-top: .3in }
+.bbands { display: grid; grid-template-columns: repeat(4, 1fr); gap: .16in; margin-top: .2in }
 .bbands div { border-radius: .16in; padding: .14in .1in; text-align: center; display: flex; flex-direction: column; align-items: center; gap: .04in }
-.bbands svg { width: .85in; height: .85in }
+.bbands svg { width: .64in; height: .64in }
 .bbands .display { font-size: 20pt } .bbands small { font-size: 9pt; font-weight: 700 }
 .bfoot { margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; gap: .3in }
 .bfoot img { height: .42in; display: block; margin-bottom: .1in }

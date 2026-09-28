@@ -191,8 +191,8 @@ function titlePage() {
 function copyrightPage() {
   return pg({ kind: 'copyright', noFolio: true, html: `
   <div class="live" style="justify-content:flex-end;font-size:8.6pt;line-height:1.5">
-    <div data-founder="rewrite" style="margin:1.1in auto auto;text-align:center;max-width:4.2in">
-      <p class="hand" style="font-size:22pt;line-height:1.2;color:${C.tomato}">For every grown-up who gets down on the floor,<br>and every child who pulls them there.</p>
+    <div data-founder="rewrite" style="margin:1.1in auto auto;text-align:center;max-width:5.2in">
+      <p class="hand" style="font-size:21pt;line-height:1.25;color:${C.ink}">For every grown-up who gets down on the floor,<br>and every child who pulls them there.</p>
     </div>
     <p style="font-family:'Bricolage Grotesque';font-weight:800;font-size:12pt">100 Screen-Free Plays for Ages 0–5</p>
     <p>Easy, low-prep play and talk ideas for babies, toddlers and preschoolers, sorted by age</p>
@@ -259,8 +259,8 @@ function howPage() {
       ${item(`<span style="color:${C.grass}">${ico('shield', '', '.3in')}</span>`, 'Safety note', 'Read it every time. The full rules are on the "Safety first" page.')}
       ${item(`<span class="num" style="background:${C.tPlum}">2</span>`, 'Too tired today?', 'Turn to <b>Tired-grown-up plays</b>: 2 minutes, no setup, played from the couch or the floor.')}
     </ul>
-    <div class="boxnote" style="display:flex;gap:.16in;align-items:center"><div class="display" style="font-size:26pt;color:${C.tomato}">3</div><div><b>Three plays a day is a great day.</b> One in the morning, one outside and one to wind down. Most children love 2 or 3 of these plays and ask for them again and again; that’s normal. If interest fades, stop, and try another day.</div></div>
-    <div class="boxnote" style="margin-top:.09in;border:0;background:${C.wash}"><b>Every child is different.</b> If a texture, sound or touch bothers your child, change the play or skip it; watching first counts. Big brothers and sisters can lead, with a grown-up right there. <b>Every play works from a chair, bed or wheelchair:</b> bring it to a tray. A sound play can become a see-it or feel-it play: a light flick for “stop,” a hand on the pot for the beat.</div>
+    <div class="boxnote" style="display:flex;gap:.16in;align-items:center"><div class="display" style="font-size:26pt;color:${C.tomato}">3</div><div><b>Three plays a day is a great day:</b> one in the morning, one outside, one to wind down. Most children love 2 or 3 plays and ask for them again and again. If interest fades, stop and try another day.</div></div>
+    <div class="boxnote" style="margin-top:.09in;border:0;background:${C.wash}"><b>Every child is different.</b> If a texture, sound or touch bothers your child, change the play or skip it; watching first counts. Big brothers and sisters can lead, with a grown-up there. <b>Every play works from a chair, bed or wheelchair:</b> bring it to a tray. A sound play can become a see-it or feel-it play: a light flick for “stop,” a hand on the pot for the beat.</div>
   </div>` });
   function drops(l) { return X.drops(l); }
 }

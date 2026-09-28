@@ -49,6 +49,17 @@ Its eyes were shut tight.
 And it was going…
 ==zzz-bip… zzz-bip…==
 
+
+<!--
+GROWN-UP TIPS: one short tip per spread, printed in a small white band under the
+left-hand page's words (brand kit customer-voice rule 16: teaching lives in a separate
+grown-up band, never in the story). Rewrite them in your own words if you like; keep
+each to about 20 words. Delete a tip section to leave that spread without one.
+-->
+
+## s1 tip
+Point to Ada's slippers and wait. Let your child spot the silly part first.
+
 ## s2 left
 “Shhh,” whispered Papa.
 “The tablet is sleeping.
@@ -59,6 +70,10 @@ Today, it gets a day off.”
 “Even tablets get sleepy,” said Papa.
 > Shhh… the tablet is sleeping.
 > So what shall we do?
+
+
+## s2 tip
+Whisper the “Shhh…” line, then pause before “do?” and let your child finish it.
 
 ## s3 left
 Ada found the blocks.
@@ -72,6 +87,10 @@ Tater said, **WOOF!**
 Ada said, “AGAIN!”
 So they built it again. And again. And AGAIN.
 
+
+## s3 tip
+Count the blocks together, then wait before “CRASH!” Any sound counts as a turn.
+
 ## s4 left
 Outside: puddles!
 One with a duck in it!
@@ -83,6 +102,10 @@ On went the yellow boots.
 **SPLOOOSH!** went the big one…
 all over Papa.
 Papa laughed. And he jumped in too!
+
+
+## s4 tip
+Say what you see: “Big splash!” Then point, wait, and let your child name the next one.
 
 ## s5 left
 Back inside, Ada peeled off
@@ -97,6 +120,10 @@ zzz-bip… zzz-bip…
 > Shhh… the tablet is sleeping.
 > So what shall we do?
 
+
+## s5 tip
+Tiptoe two fingers across the page. Going slow and quiet is a game too.
+
 ## s6 left
 A big, empty box!
 “That's not a box,” said Ada.
@@ -108,6 +135,10 @@ She gave it wings.
 She gave it a purple top,
 just like the tablet's nightcap.
 **WOOF!** said Tater. (That means “Me too!”)
+
+
+## s6 tip
+Ask, “What could a box be?” and wait. A word, a sign or a point is a great answer.
 
 ## s7 left
 “Ten, nine, eight…” counted Ada.
@@ -121,6 +152,10 @@ Past a planet made entirely of socks.
 Tater was the [[co-pilot]].
 He was very good at barking at comets.
 
+
+## s7 tip
+Count down together, slowly: “Ten, nine…” Then blast off, arms up high.
+
 ## s8 left
 Back on Earth,
 Ada's tummy rumbled like a rocket.
@@ -133,6 +168,10 @@ She stirred and stirred. Papa flipped.
 **Flip! Flop! Plop!**
 “That one looks like the moon,” said Ada.
 
+
+## s8 tip
+Offer a choice: “Pancakes or eggs?” Hold up two hands and let your child pick one.
+
 ## s9 left
 After pancakes, Ada peeked at the shelf.
 The tablet had rolled over.
@@ -144,16 +183,24 @@ But it was still asleep.
 > So what shall we do?
 “Let's go find some stories,” said Papa.
 
+
+## s9 tip
+Point and whisper, “Still asleep!” Then wait for a nod or a sign.
+
 ## s10 left
 The library had books about dinosaurs,
 books about rockets,
-and one about a dog in boots.
+and one about a dog in a raincoat.
 
 ## s10 right
 “Welcome!” said Ms. Rosa the librarian.
 “Sleepy stories live here.”
 “Just like the tablet!” whispered Ada.
 She picked a book about a growly bear.
+
+
+## s10 tip
+Name two books you see, then leave a gap. Let your child add the next one.
 
 ## s11 left
 That night, Papa read the bear book.
@@ -167,6 +214,10 @@ The pancakes. The library…”
 Ada yawned a big bear yawn.
 “All of it.”
 
+
+## s11 tip
+Take turns with the growly voice: you growl, then your child. Soft growls count.
+
 ## s12 left
 Down the hall, in its cozy nightcap,
 the tablet slept on,
@@ -178,6 +229,10 @@ with Tater at her feet,
 Ada slept too.
 > Shhh… everybody is sleeping.
 > What a day. What a PLAY day.
+
+
+## s12 tip
+Whisper the last two lines together. Slow and soft is a good way to end the day.
 
 ## morning
 In the morning, the tablet woke up and stretched.

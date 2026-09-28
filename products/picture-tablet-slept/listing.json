@@ -194,5 +194,10 @@
     "interior": "picture-tablet-slept.pdf",
     "cover": "cover-kdp-paperback.pdf",
     "expanded_distribution": "off"
+  },
+  "age_range": {
+    "min_years": 3,
+    "max_years": 7,
+    "grade": "Preschool–2"
   }
 }

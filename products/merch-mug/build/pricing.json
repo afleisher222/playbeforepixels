@@ -1,0 +1,59 @@
+{
+ "variants": {
+  "11oz": {
+   "price_usd": 22,
+   "partner_cost_usd": 7.95,
+   "partner_shipping_usd": 7.99,
+   "price_floor": 6.6,
+   "net": {
+    "etsy": 9.65,
+    "gumroad": 8.28,
+    "site": 11.78
+   },
+   "margin_pct": {
+    "etsy": 44,
+    "gumroad": 38,
+    "site": 54
+   },
+   "max_partner_cost_usd": {
+    "etsy": 11.0,
+    "gumroad": 9.63,
+    "site": 13.13
+   },
+   "etsy_offsite_ads_net": {
+    "optional_15pct": 5.15,
+    "mandatory_12pct": 6.05
+   },
+   "free_shipping_min_price_etsy": 29.53,
+   "meets_floor": true
+  },
+  "15oz": {
+   "price_usd": 25,
+   "partner_cost_usd": 9.95,
+   "partner_shipping_usd": 8.99,
+   "price_floor": 7.5,
+   "net": {
+    "etsy": 10.12,
+    "gumroad": 8.62,
+    "site": 12.51
+   },
+   "margin_pct": {
+    "etsy": 40,
+    "gumroad": 34,
+    "site": 50
+   },
+   "max_partner_cost_usd": {
+    "etsy": 12.57,
+    "gumroad": 11.07,
+    "site": 14.96
+   },
+   "etsy_offsite_ads_net": {
+    "optional_15pct": 5.02,
+    "mandatory_12pct": 6.04
+   },
+   "free_shipping_min_price_etsy": 34.94,
+   "meets_floor": true
+  }
+ },
+ "price_floor": 7.5
+}

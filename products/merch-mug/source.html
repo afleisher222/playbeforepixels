@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Mug production sheet</title>
+<link rel="stylesheet" href="../../brand/fonts/fonts.css">
+<style>@page{size:8.5in 11in;margin:0}
+:root{--ink:#1D2940;--paper:#FFFFFF;--wash:#F3F6FB;--tomato:#EE5A36;--sun:#F5B820;--sky:#3D86D8;--grass:#2FA36B;--plum:#8A5CC7;
+--t-tomato:#FDE9E3;--t-sun:#FEF4D8;--t-sky:#E3EEFA;--t-grass:#DFF3E9;--t-plum:#EFE6FA;--muted:#4A5468;--line:#E3E7EF}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:"Nunito Sans",sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.disp{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;letter-spacing:-.02em}
+.kick{font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#C8431F}
+.shadow{filter:drop-shadow(0 26px 30px rgba(29,41,64,.16)) drop-shadow(0 4px 6px rgba(29,41,64,.10))}
+.chip{display:inline-flex;align-items:center;gap:.5em;background:#fff;border-radius:999px;font-weight:800}
+.ball{display:inline-block;border-radius:50%;background:var(--tomato);flex:none}
+.lay{position:absolute}
+.page{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;padding:.75in .8in}
+h1{font-size:44px;line-height:1.02;margin:6px 0 14px}h2{font-size:26px;margin:22px 0 8px}
+p,li,td,th{font-size:14.5px;line-height:1.5}.kick{font-size:12px}
+table{border-collapse:collapse;width:100%;margin-top:8px}th{text-align:left;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding:6px 8px}
+td{border-bottom:1px solid var(--line);padding:7px 8px;vertical-align:top}.muted{color:var(--muted)}
+.box{background:var(--t-sun);border-radius:14px;padding:16px 20px;margin-top:16px}
+.warn{background:var(--t-tomato)}
+.fill{border:2px dashed #C8431F;border-radius:10px;padding:12px 16px;margin-top:10px;color:#C8431F;font-weight:700}
+.foot{position:absolute;left:.8in;right:.8in;bottom:.45in;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:10px;font-size:11px;color:var(--muted)}
+.foot img{height:22px}
+code{font-size:12.5px;background:var(--wash);padding:1px 5px;border-radius:4px}</style></head><body><section class="page"><div class="kick">Merch wave · ready-pending-accounts</div>
+<h1 class="disp">“Talk, touch and play come first” mug</h1>
+<p>A white ceramic mug for grown-ups in 11 oz and 15 oz, printed by sublimation. One side carries the Maker’s Seal; the other carries our tagline with the tomato ball as its period (brand/ORIGINALITY.md C1, kept but never trademarked, never on children’s items, never as a three-verb icon lockup).</p>
+<div style="display:flex;gap:18px;margin:14px 0"><img src="preview/mockups/11oz-seal.png" style="width:48%;border-radius:12px"><img src="preview/mockups/15oz-slogan.png" style="width:48%;border-radius:12px"></div>
+<h2 class="disp">Print files (partner-typical sizes, UNVERIFIED)</h2>
+<table><tr><th>File</th><th>Size</th><th>Notes</th></tr>
+<tr><td><code>print/mug-11oz_wrap.png</code> + .svg</td><td>2700 × 1050 px<br>9 × 3.5 in, 300 dpi</td><td>Seal centred at x = 585, slogan at x = 2115 (90° from the handle)</td></tr>
+<tr><td><code>print/mug-15oz_wrap.png</code> + .svg</td><td>2700 × 1200 px<br>9 × 4 in, 300 dpi</td><td>Seal at x = 540, slogan at x = 2160</td></tr></table>
+<div class="fill">FILL IN on setup day: the chosen partner’s mug template size and which half faces out with the handle on the right. Change MUGS or SWAP_SIDES in build/build.py, then run bash build/render.sh.</div>
+<div class="foot"><img src="../../brand/logo/wordmark.svg" alt="Play Before Pixels"><span>playbeforepixels.com · Mug production sheet · Version 1.0 · September 2026 · 1</span></div></section><section class="page"><div class="kick">Safety and quality</div>
+<h1 class="disp">A food-contact item. The sample decides.</h1>
+<div class="box warn"><b>Food contact (UNVERIFIED until the partner’s documents are on file).</b><ul style="margin:6px 0 0 18px;padding:0">
+<li>Use only the partner’s own ceramic mug blank that the partner states is lead-safe for food contact. Ask for its lead and cadmium test report (US FDA ceramicware leach limits, and California Proposition 65) and keep it in <code>products/merch-mug/</code>.</li>
+<li>Proposition 65: a business with fewer than 10 employees is generally exempt from the warning duty, but the partner or a marketplace may still require a warning for California shipments. Confirm with the partner; never write “lead-free” or “non-toxic” unless their report supports it.</li>
+<li>Only the partner’s dishwasher- and microwave-safe rating is repeated in the listing, word for word. No metallic, glitter or color-changing mugs (usually hand-wash and no microwave).</li></ul></div>
+<div class="box"><b>Grown-ups only.</b> Sold as an adult coffee or tea mug. Never marketed as a child’s cup (children’s products need CPSIA testing, which stays held).</div>
+<h2 class="disp">Sample gate (full list in QUALITY-STANDARD.md)</h2>
+<ol style="padding-left:20px"><li>Order one 11 oz and one 15 oz.</li><li>Check print sharpness, the tomato and sky colors against the palette, and that the seal and line sit centred on each side.</li>
+<li>Run 20 dishwasher cycles and 10 short microwave runs (as the partner rates it) on one mug; the print must not fade, peel or craze.</li><li>Record PASS or FAIL in panel.md. No listing goes live before PASS.</li></ol>
+<div class="foot"><img src="../../brand/logo/wordmark.svg" alt="Play Before Pixels"><span>playbeforepixels.com · Mug production sheet · Version 1.0 · September 2026 · 2</span></div></section><section class="page"><div class="kick">Price and profit</div>
+<h1 class="disp">Everyday prices, every channel over the floor</h1>
+<p>Floor: at least 30% margin on a print-on-demand sale (commerce/PRICING.md §2). The buyer pays the partner’s shipping rate at cost. Costs are typical partner costs, UNVERIFIED; fees as modeled across the repo, UNVERIFIED. Figures come from <code>build/pricing.py</code>.</p>
+<table><tr><th>Size</th><th>Price</th><th>Partner cost + ship</th><th>Floor</th><th>Etsy</th><th>Gumroad</th><th>Own site</th></tr>
+<tr><td>11 oz</td><td>$22</td><td>$7.95 + $7.99</td><td>$6.60</td><td>$9.65 (44%)</td><td>$8.28 (38%)</td><td>$11.78 (54%)</td></tr>
+<tr><td>15 oz</td><td>$25</td><td>$9.95 + $8.99</td><td>$7.50</td><td>$10.12 (40%)</td><td>$8.62 (34%)</td><td>$12.51 (50%)</td></tr></table>
+<div class="box"><b>Keep Etsy Offsite Ads off.</b> An ad-driven sale would net about $5.15 (11 oz) and $5.02 (15 oz), under the floor. If the shop passes the level where the ads become mandatory, raise prices first.<br><br>
+<b>No free-shipping price.</b> Built-in shipping would need about $29.53 for the 11 oz to keep the floor, above what buyers expect.<br><br>
+<b>Highest partner cost that keeps the floor</b> (11 oz / 15 oz): Etsy $11.00 / $12.57 · Gumroad $9.63 / $11.07 · own site $13.13 / $14.96.</div>
+<p class="muted">Honest pricing: one everyday price per size. No “was” price, no permanent sale, no countdown, no “only X left” (print on demand never runs out).</p>
+<div class="foot"><img src="../../brand/logo/wordmark.svg" alt="Play Before Pixels"><span>playbeforepixels.com · Mug production sheet · Version 1.0 · September 2026 · 3</span></div></section><section class="page"><div class="kick">Your part</div>
+<h1 class="disp">Founder choices, then the next step</h1>
+<h2 class="disp">Human authorship (commit each change to git)</h2>
+<div class="fill">FILL IN: your own line breaks for the slogan, which side faces out, and whether the 15 oz is worth listing. Edit the “Founder edits” block in build/build.py and run bash build/render.sh.</div>
+<div class="fill">FILL IN: your own slogan ideas for a future mug. None may be printed until brand/ORIGINALITY.md keeps it.</div>
+<h2 class="disp">More from Play Before Pixels</h2>
+<table><tr><th>For</th><th>Product</th></tr>
+<tr><td>Ages 0–5</td><td>100 Screen-Free Plays (paperback and PDF)</td></tr>
+<tr><td>Ages 1–5</td><td>Ages 1–5 Instant Gift Bundle</td></tr>
+<tr><td>Grown-ups</td><td>Play Before Pixels logo tee · sticker sheet</td></tr></table>
+<p class="muted" style="margin-top:30px">© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. Version 1.0 · September 2026. Check every file against the chosen partner’s current mug template before upload.</p>
+<div class="foot"><img src="../../brand/logo/wordmark.svg" alt="Play Before Pixels"><span>playbeforepixels.com · Mug production sheet · Version 1.0 · September 2026 · 4</span></div></section></body></html>

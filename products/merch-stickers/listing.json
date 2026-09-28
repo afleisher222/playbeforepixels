@@ -1,0 +1,178 @@
+{
+  "slug": "merch-stickers",
+  "status": "ready-pending-accounts",
+  "wave": "merch wave: starts after printables sell (February 2027 or later, business/GROWTH-ENGINE.md; no print-partner account before then)",
+  "status_notes": "Ready-pending-accounts, starts after printables sell (merch wave). Waits for the print-partner account, its quote (replace the estimated nets) and a passed sample (QUALITY-STANDARD.md). marketing/DEMAND-CHECK.md rated stickers 'Weak / Bundle-only, adult laptop and water-bottle stickers only': lead with it as an add-on beside a tee or mug on the own site; the standalone Etsy listing is optional.",
+  "title": "Play Before Pixels Sticker Sheet",
+  "subtitle": "5 vinyl play stickers for grown-ups: our Maker's Seal, a ball, blocks, a book and our name",
+  "etsy_title": "Play Before Pixels Sticker Sheet, 5 Matte Vinyl Decals for Laptop and Water Bottle, Minimalist Parent Gift",
+  "format": "Kiss-cut vinyl sticker sheet (about 5.8 x 8.3 in) with 5 stickers, matte finish. Print on demand: the print partner prints and ships each order.",
+  "trim": "Sheet print file 1749 x 2481 px (5.83 x 8.27 in at 300 dpi) + cut-line SVG; die-cut singles at their own size, 300 dpi. Partner-typical size, UNVERIFIED: check the chosen partner's sticker-sheet template before upload.",
+  "pages": 0,
+  "ages": "Adults (for laptops, bottles and planners; not a toy, keep away from young children)",
+  "language": "English listing text. The stickers carry only the brand name and pictures.",
+  "price_notes": "Everyday price $15 for a sheet of 5 ($3 a sticker, the low end of DEMAND-CHECK.md's $3-$6 per-sticker range). DEMAND-CHECK rates stickers weak and bundle-only, so the main use is an add-on beside a tee or mug in the same own-site order. One everyday price. BRAND.md Honest pricing: no 'was' price, no permanent sale, no countdown, no 'only X left'. Shipping: the buyer pays the partner's rate at cost. Gumroad is the tightest channel: the floor holds only while the partner charges $6.44 or less; above that, raise the everyday price to $16 before launch or skip Gumroad. Kill rule: fewer than 5 sales in 60 days -> reprice once (never below price_floor), then add-on only.",
+  "price_floor_basis": "30% margin on a print-on-demand sale (commerce/PRICING.md §2): 0.30 x $15 = $4.50.",
+  "net_notes": "ESTIMATES (UNVERIFIED), computed by build/pricing.py from build/pricing-input.json: no print-partner quote exists yet. Assumed partner cost $6.00 for a printed kiss-cut sheet plus $4.49 US shipping, which the buyer pays at the partner's rate. Fees: Etsy $0.20 listing + 6.5% transaction + 3% + $0.25 processing on item + shipping; Gumroad 10% + $0.50 plus 2.9% + $0.30 processing; own site (Shopify Payments) 2.9% + $0.30; a 5% refund allowance. Etsy Offsite Ads stay off: an ad-driven sale would net about $3.02, under the floor. When the quote arrives, update pricing-input.json and re-run.",
+  "short_description": "5 matte vinyl stickers for grown-ups on one kiss-cut sheet: our Maker's Seal, a ball, blocks, a book and our name. Printed when you order.",
+  "long_description": "The Play Before Pixels sticker sheet is a set of 5 matte vinyl stickers for grown-ups, printed when you order. Each one peels off the sheet on its own.\n\nOn the sheet: our Maker's Seal, with a spinning top in the middle. A bright ball. A tower of three blocks. An open book with a sun on the page. And our name, with a tomato-red dot on the i. These are the simple things our brand is about: toys you can hold, and books you share.\n\nPut them on a laptop, a water bottle, a planner or a notebook. The vinyl is made to handle a splash and a wipe. We test our own sample in water before we list it.\n\nEach sheet is about 5.8 by 8.3 inches. The biggest sticker, the seal, is about 2.6 inches across.\n\nOur print partner prints each sheet when you order and ships it with tracking. Allow a few extra days before it ships.\n\nPlease note: these stickers are for grown-ups. They are not a toy. Keep them away from young children, because a peeled sticker is small enough to go in a mouth.\n\nLooking for a small gift? Add it to an order with our logo tee or mug.",
+  "bullets": [
+    "5 stickers on one kiss-cut sheet: our Maker's Seal, a ball, a block tower, an open book and our name",
+    "Matte vinyl made to handle a splash and a wipe, for laptops, bottles and planners",
+    "Sheet about 5.8 x 8.3 in; stickers from about 1.1 to 4.6 in",
+    "Printed when you order by our print partner, then shipped with tracking",
+    "For grown-ups. Not a toy: keep away from young children"
+  ],
+  "keywords": [
+    "play before pixels sticker",
+    "laptop sticker sheet",
+    "water bottle sticker",
+    "parent gift sticker",
+    "minimalist vinyl stickers",
+    "planner sticker sheet",
+    "unplugged family sticker"
+  ],
+  "etsy_tags": [
+    "play before pixels",
+    "sticker sheet",
+    "vinyl stickers",
+    "laptop sticker",
+    "bottle sticker",
+    "planner stickers",
+    "parent gift",
+    "matte stickers",
+    "minimalist sticker",
+    "book sticker",
+    "logo sticker",
+    "unplugged family",
+    "gift for mom"
+  ],
+  "seo_title": "Play Before Pixels Sticker Sheet | 5 Vinyl Stickers",
+  "seo_description": "5 matte vinyl stickers for grown-ups on one kiss-cut sheet: our seal, a ball, blocks, a book and our name. Printed when you order. Not a toy.",
+  "alt_text": "A pale blue sticker sheet with five white-bordered stickers: a round navy Play Before Pixels seal with a sky-blue spinning top, a red and yellow striped ball, a tower of red, blue and green blocks, an open purple book with a yellow sun on the page, and a white label reading Play Before Pixels. Small print at the bottom says Not a toy. Keep away from young children.",
+  "listing_images": [
+    "preview/listing-images/listing-01.png - hero: the sheet, 'Waterproof vinyl' and 'Printed when you order' (thumbnail). Keep 'Waterproof' only if the sample passes the soak test; otherwise rebuild with 'Vinyl'.",
+    "preview/listing-images/listing-02.png - what's on the sheet, each sticker with its size",
+    "preview/listing-images/listing-03.png - where they go: laptop, bottle, planner (grown-up items only; no children)",
+    "preview/listing-images/listing-04.png - details: vinyl, matte, kiss-cut, not a toy",
+    "cover.png - 1600 x 1600 store and website hero",
+    "mockup.png - 1600 x 1200 website image: the sheet beside a laptop lid and a notebook",
+    "preview/mockups/sheet-flat.png - 1600 x 1200 flat sheet"
+  ],
+  "files": {
+    "print_sheet": "print/sticker-sheet.png + .svg (1749 x 2481, 300 dpi) and print/sticker-sheet_cutlines.svg (CutContour paths)",
+    "print_die_cut": "print/die-cut/<seal|ball|blocks|book|lockup>.png + .svg (transparent, 300 dpi)",
+    "production_sheet": "source.html -> merch-stickers.pdf (4 pages, US Letter); previews preview/p01-p04.png",
+    "quality": "QUALITY-STANDARD.md (material, finish, safety, sample gate)",
+    "panel": "panel.md (simulated customer panel and the sample-gate record)",
+    "build": "bash build/render.sh rebuilds everything: build.py (sheet, cut lines, die-cut singles; checks the sheet margin and spacing) -> brand/logo/src/raster.js -> stamp_dpi.py -> pricing.py -> pages.py -> brand/render.js."
+  },
+  "channels": [
+    "playbeforepixels.com shop through the print partner's store integration (Gumroad at launch only if the partner can receive Gumroad orders automatically; otherwise the own-site shop waits for Shopify, because forwarding orders by hand would break the self-running rule)",
+    "Etsy, as a 'Designed by' print-on-demand item with the print partner listed as production partner; no URL or QR in images or text",
+    "Own-site add-on beside the logo tee or the mug in the same order (the main use, per DEMAND-CHECK.md 'bundle-only')"
+  ],
+  "amazon_route": "none-with-reason: Amazon Merch on Demand sticker availability is UNVERIFIED for this account, and FBA would need inventory (never allowed). Revisit after the logo tee is live on Merch on Demand.",
+  "next_products": [
+    "merch-core-logo-tee",
+    "merch-mug",
+    "guide-100-plays"
+  ],
+  "bonus_url": "playbeforepixels.com/bonus/merch-stickers",
+  "bonus_notes": "The sheet itself carries no URL or QR, so one file serves every channel. The own-site order email carries the bonus link (free play printable and email sign-up; email only; never a child's name). Etsy orders get no URL or QR.",
+  "shareable_piece": "The seal sticker on a laptop or bottle: made to be photographed, with the brand mark in view.",
+  "faq": [
+    {
+      "q": "What's on the sheet?",
+      "a": "Five stickers: our Maker's Seal (about 2.6 in), a ball, a tower of three blocks, an open book and our name. Each one peels off on its own."
+    },
+    {
+      "q": "Are they waterproof?",
+      "a": "They are vinyl, made to handle a splash and a wipe. We soak our own sample before we list them. Hand-wash anything they are stuck on; a dishwasher can lift them."
+    },
+    {
+      "q": "Matte or glossy?",
+      "a": "Matte: a soft look with no glare."
+    },
+    {
+      "q": "Are they for kids?",
+      "a": "No. These stickers are for grown-ups. They are not a toy. Keep them away from young children, because a peeled sticker is small enough to go in a mouth."
+    },
+    {
+      "q": "How long does it take?",
+      "a": "Each sheet is printed when you order it, then shipped with tracking. Allow a few extra days before it ships."
+    },
+    {
+      "q": "Can I add it to a tee or mug order?",
+      "a": "Yes. On our own shop it can be added to the same order, and the shipping then adds very little."
+    },
+    {
+      "q": "Can I send it as a gift?",
+      "a": "Yes. Enter their address at checkout and it ships straight to them, flat in a rigid mailer. A gift note is added only if our print partner offers one at checkout."
+    },
+    {
+      "q": "What if a sticker arrives damaged?",
+      "a": "Send a photo through the contact form and our print partner replaces the sheet."
+    }
+  ],
+  "safety": {
+    "status": "UNVERIFIED: no legal review; confirm with a product-safety attorney before launch.",
+    "small_parts": "Stickers peel into small, thin pieces that a young child could mouth: a choking and small-parts risk. The sheet margin, bullets, FAQ, long description and listing image 4 all say 'Not a toy. Keep away from young children.'",
+    "adult_marketing_only": "Sold to adults only, for laptops, bottles, planners and notebooks. Never marketed for young children: no child models or hands, no 'kids', 'toddler', 'party favor' or 'reward sticker' words, tags or ads, no classroom or nursery photos, no children's gift guides. Stickers with toy pictures could be read as a children's product under CPSIA (the CPSC weighs marketing, packaging and appeal; UNVERIFIED reading). If that risk is ever judged high, stop selling; children's products stay held until third-party testing and a Children's Product Certificate are funded.",
+    "material": "Waterproof vinyl with a matte finish; the word 'waterproof' is used only if the sample passes the soak test in QUALITY-STANDARD.md.",
+    "cpsia_hold": "Kids' sizes, kids' stickers and any toy stay held (CPSIA; legal/LEGAL-LAUNCH-CHECKLIST.md row 9)."
+  },
+  "compliance_notes": "No health, medical or outcome claims; no diagnosis or condition wording anywhere in the design, listing, tags, keywords or images (BRAND.md hard rules 1 and 3 and its condition-search section). No slogan on the sheet. The logo stickers use the supplied brand/logo files unaltered: mark-sticker.svg (the sticker version) and lockup-horizontal.svg; the spinning top appears only inside its seal, as the logo guidelines require. The blocks are an illustration stacked as a tower, never a four-square grid or a brand mark (BRAND.md motif list). Trademark: only TM, on the sheet margin. Small-parts and adult-marketing notes are in 'safety' (UNVERIFIED). Adult item only; nothing marketed to children; CPSIA hold on kids' items and toys stays. No inventory: print on demand only. Etsy: production partner listed, 'Designed by', AI tools disclosed; the sheet and images carry no URL or QR. Honest pricing per BRAND.md. 'Waterproof' only after the sample passes. Copyright line on the sheet margin and production sheet: '© 2026 AlphaPlay LLC' / full owner line. Version 1.0 · September 2026. Check every file against the chosen partner's current sticker template before upload.",
+  "human_todo": [
+    "HUMAN AUTHORSHIP: choose your own stickers, sizes, colors, layout and finish (build/build.py), rebuild with bash build/render.sh and commit. A sixth sticker you draw yourself would add to your authorship.",
+    "Pick the print partner (the same one as the tees) that offers a kiss-cut vinyl sticker sheet about A5 in matte, with Etsy and site integration. Check its template size and whether it needs our cut file (print/sticker-sheet_cutlines.svg).",
+    "Replace the cost and shipping in build/pricing-input.json with the real quote and run python3 build/pricing.py. If the Gumroad net falls under $4.50, raise the everyday price to $16 or skip Gumroad.",
+    "Order one sheet and run the sample gate in QUALITY-STANDARD.md (soak test, wash test, kiss-cut lift); record PASS or FAIL in panel.md. If the soak test fails, remove 'waterproof' from the listing and listing image 1.",
+    "Ask a product-safety attorney (with the CPSIA questions already in legal/LEGAL-LAUNCH-CHECKLIST.md) whether toy-picture stickers sold to adults are safe from being treated as a children's product.",
+    "Add the sticker sheet to brand/ORIGINALITY.md section 2 'Merch (adult only)' after the reverse-image search of mark-sticker.svg in section 4.",
+    "Etsy (optional; DEMAND-CHECK says bundle-only): list the partner as production partner, mark 'Designed by', disclose AI tools, keep Offsite Ads off, and use only adult 'where they go' photos.",
+    "Build the bonus page at playbeforepixels.com/bonus/merch-stickers before the order email links to it."
+  ],
+  "ai_disclosure": {
+    "as_of": "2026-09-28",
+    "ai_helped_with": "Claude (an AI model made by Anthropic), working in Claude Code, generated the sticker illustrations (ball, block tower, open book) and the sheet layout, the print files, the mockups and this listing. The logo is the adopted Maker's Seal (September 28, 2026), placed unaltered from brand/logo/.",
+    "humans_did": "The founder, for AlphaPlay LLC, directs the product line and set the brand rules (brand/BRAND.md). As of 2026-09-28 no person has redrawn the design. Still to be done by a person before release: the knockout search, approving the design and checking a printed sample (human_todo).",
+    "etsy_attribution": "Designed by Play Before Pixels",
+    "etsy_ai_flag": true,
+    "etsy_who_made": "Another company or person (the print partner, named as the shop's production partner) [UNVERIFIED form wording]",
+    "etsy": "In Etsy's listing form, say the shop designed this item and that AI tools were used, wherever the form asks (UNVERIFIED form wording). Add etsy_description_line at the end of the Etsy description. List the print partner as a production partner in the shop settings.",
+    "etsy_description_line": "How this was made: the design was created with AI tools for Play Before Pixels, and our print partner prints each item to order.",
+    "site": "Product page line: 'How this was made: the design was created with AI tools for Play Before Pixels, and our print partner prints each item to order.' Add 'and edited by the founder' only after she has changed the design.",
+    "gumroad": "Same line as the site, at the end of the product description.",
+    "social_ai_label": "Turn on each platform's AI-generated-content label for posts that use these images or this text (label names UNVERIFIED).",
+    "notes": "Answers describe what really happened as of the date above. Never call any part hand-drawn, handmade or human-written."
+  },
+  "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.",
+  "price_usd": 15,
+  "price_floor": 4.5,
+  "price_floor_by_variant": {
+    "sheet": 4.5
+  },
+  "net_per_unit_by_channel": {
+    "etsy": 5.95,
+    "gumroad": 4.94,
+    "site": 7.38
+  },
+  "margin_pct_by_channel": {
+    "etsy": 40,
+    "gumroad": 33,
+    "site": 49
+  },
+  "max_partner_cost_usd_by_channel": {
+    "etsy": 7.45,
+    "gumroad": 6.44,
+    "site": 8.88
+  },
+  "pod_cost_estimate_usd": {
+    "sheet": {
+      "item": 6.0,
+      "shipping_first_item_us": 4.49,
+      "status": "UNVERIFIED typical partner cost; replace with the chosen partner quote"
+    }
+  }
+}

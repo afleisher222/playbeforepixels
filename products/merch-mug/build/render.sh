@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Rebuild everything for products/merch-mug. Run from anywhere.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+R=../../brand/render.js
+python3 build/build.py
+node ../../brand/logo/src/raster.js build/raster-jobs.json
+
+python3 build/stamp_dpi.py
+python3 build/pricing.py
+python3 build/pages.py
+mkdir -p preview/mockups preview/listing-images
+for f in build/html/mock-*.html; do n=$(basename "$f" .html); node $R png "$f" "preview/mockups/${n#mock-}.png" 1600 1200 1; done
+node $R png mockup.html mockup.png 1600 1200 1
+node $R png cover.html cover.png 1600 1600 1
+for f in build/html/listing-*.html; do n=$(basename "$f" .html); node $R png "$f" "preview/listing-images/$n.png" 2000 2000 1; done
+node $R pdf source.html merch-mug.pdf
+node $R pages source.html preview .page 1.5
+echo done
