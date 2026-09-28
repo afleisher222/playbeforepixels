@@ -157,7 +157,7 @@ function blankCard(key) {
     <div class="talk">${icon('talk', 'ti2')}<div><b>Talk</b>${box('talk', 2, true, 8)}</div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3">${tick('grownup')}<span>With a grown-up</span>${tick('alone')}<span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3">${tick('grownup')}<span>With a grown-up</span>${tick('alone')}<span>Can do alone</span></div>
   <div class="ft">${icon('safe', 'si')}<span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div>`;
 }
@@ -310,8 +310,8 @@ h1,h2,h3,h4,p{margin:0}
 .wbox{background:${C.wash};border-radius:5px;margin-top:1px}
 .talk .wbox{background:rgba(255,255,255,.75)}
 .ed .wl.big{background:${C.wash};border-radius:5px;border-bottom:0;height:24px;margin-top:2px}
-.fl3{gap:3px;font-size:6.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
-.fl3 .tk{margin-left:0}.fl3 span{margin-right:4px}
+.fl3{gap:3px;font-size:6.4px;font-weight:800;letter-spacing:.02em;text-transform:uppercase}
+.fl3 .tk{margin-left:0}.fl3 span{margin-right:5px;white-space:nowrap}
 /* card back */
 .back .panel{background:var(--m);border-color:var(--m);align-items:center;justify-content:center}
 .bgdots{position:absolute;inset:0;width:100%;height:100%}
@@ -470,13 +470,17 @@ function guidePage(guide) {
   const body = `
   <div class="gd2">
     <div class="gbox" style="background:${C.tSky}"><span class="kick">Set up in 2 minutes</span><ol class="gol"><li>Print one sheet for your child’s age band (page guide on page ${guide.tips}).</li><li>Cut it, or skip cutting: point and pick from the card index.</li><li>Put the cards in a jar, a box or a pocket.</li><li>Next time you hear “I’m bored!”, offer two cards.</li></ol></div>
-    <div class="gbox" style="background:${C.tGrass}"><span class="kick">What your child is practising</span><ul class="gul">${practise.map(p => `<li>${p}</li>`).join('')}</ul><p class="gsm">That’s all it is: ordinary play. No scores, no levels, nothing to pass.</p></div>
+    <div class="gbox" style="background:${C.tGrass}"><span class="kick">What your child is practicing</span><ul class="gul">${practise.map(p => `<li>${p}</li>`).join('')}</ul><p class="gsm">That’s all it is: ordinary play. No scores, no levels, nothing to pass.</p></div>
   </div>
   <span class="kick" style="margin-top:14px">Three talk lines that work at every age</span>
   <div class="gt3">${talk.map(([h, t], i) => `<div class="gt"><span class="gtn" style="background:${[C.sun, C.grass, C.sky][i]};color:${i ? '#fff' : C.ink}">${i + 1}</span><h4>${h}</h4><p>${t}</p></div>`).join('')}</div>
   <div class="gd2" style="margin-top:14px">
     <div class="gbox" style="background:${C.tPlum}"><span class="kick">When interest fades</span><p>Stop while it’s still fun and put the card back for another day. Try the easier version in the card index, or let your child change the rules. Many children lose interest after a few minutes, and that’s fine.</p><p class="gbig">Most children love 2–3 of these; that’s normal. Playing a favorite again and again is the point.</p></div>
     <div class="gbox" style="background:${C.tSun}"><span class="kick">Every language counts</span><p class="gbig">Talk, sing and read in the language you know best. Every language counts.</p><p>A sign, a point or a device tap counts as communicating too. Answer it the same way you would answer words.</p></div>
+  </div>
+  <div class="gd2" style="margin-top:14px">
+    <div class="gbox" style="background:${C.tTomato}"><span class="kick">When you hear “I’m bored!”</span><p>Try: “I hear you. Want to pick one of two cards, or think for a minute first?” Boredom isn’t an emergency. A few quiet minutes often turn into your child’s own idea, and that counts as a win.</p></div>
+    <div class="gbox" style="background:${C.wash}"><span class="kick">Siblings of different ages</span><p>Pick a card from the younger child’s band and give the older one a job: reader, rule-keeper or helper. Small parts from older cards stay out of reach of children under 3.</p></div>
   </div>
   <div class="gd3">
     <div><h4>Tired grown-up?</h4><p>Every card has a 2-minute version in the card index (page ${guide.index}): no setup, played from the couch or the floor.</p></div>
@@ -506,9 +510,10 @@ function pantryPage(guide) {
     <div class="pside">
       <div class="pbox" style="background:${C.tTomato}"><span class="kick">Tired-grown-up plays</span><p class="psm">Played from the couch or the floor, with no setup. Every card’s 2-minute version is in the card index; here are eight to start.</p>
       ${picks.map(({ k, cd }) => `<div class="tg"><span class="tgb" style="background:${TH[k].m};color:${k === 'b13' ? C.ink : '#fff'}">${TH[k].name.replace('Ages ', '')}</span><div><b>${esc(cd.t)}</b><p>${esc(meta(cd)[8])}</p></div></div>`).join('')}</div>
+      <div class="part">${welcomeArt()}</div>
     </div>
   </div>
-  <div class="pnote"><div><h4>No time to cut?</h4><p>The card index pages are a no-cut menu: read a few titles aloud and let your child choose, or point to the picture of the kind of play.</p></div><div><h4>Siblings of different ages</h4><p>Pick a card from the younger child’s band and give the older one a job: reader, rule-keeper or helper. Small parts from older cards stay out of reach of children under 3.</p></div></div>`;
+  <div class="pnote"><div><h4>No time to cut?</h4><p>The card index pages are a no-cut menu: read a few titles aloud and let your child choose, or point to the picture of the kind of play.</p></div><div><h4>Swap freely</h4><p>No wooden spoon? Any big, sturdy kitchen tool works. Swap what the card asks for with what you have, and keep the card’s safety line.</p></div></div>`;
   return contentPage('pantry', 'Grown-up guide · 2 of 2', 'Pantry list &amp; tired-grown-up plays', body);
 }
 const guideCss = `<style>
@@ -536,6 +541,7 @@ const guideCss = `<style>
 .tg{display:flex;gap:8px;align-items:flex-start;padding:5px 0;border-bottom:1px solid rgba(29,41,64,.1)}
 .tgb{flex:0 0 38px;text-align:center;border-radius:10px;font-weight:800;font-size:9.5px;padding:2px 0}
 .tg b{font-size:12px;font-weight:800}.tg p{font-size:11px;line-height:1.35;font-weight:600}
+.part{height:1.75in;margin-top:10px}
 .pnote{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:18px;background:${C.tSun};border-radius:16px;padding:12px 16px}
 .pnote h4{font-size:14px;margin-bottom:2px}.pnote p{font-size:11.2px;line-height:1.42;font-weight:600}
 </style>`;

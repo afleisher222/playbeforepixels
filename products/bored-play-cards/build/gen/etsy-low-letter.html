@@ -64,8 +64,8 @@ h1,h2,h3,h4,p{margin:0}
 .wbox{background:#F3F6FB;border-radius:5px;margin-top:1px}
 .talk .wbox{background:rgba(255,255,255,.75)}
 .ed .wl.big{background:#F3F6FB;border-radius:5px;border-bottom:0;height:24px;margin-top:2px}
-.fl3{gap:3px;font-size:6.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
-.fl3 .tk{margin-left:0}.fl3 span{margin-right:4px}
+.fl3{gap:3px;font-size:6.4px;font-weight:800;letter-spacing:.02em;text-transform:uppercase}
+.fl3 .tk{margin-left:0}.fl3 span{margin-right:5px;white-space:nowrap}
 /* card back */
 .back .panel{background:var(--m);border-color:var(--m);align-items:center;justify-content:center}
 .bgdots{position:absolute;inset:0;width:100%;height:100%}
@@ -189,6 +189,7 @@ h1,h2,h3,h4,p{margin:0}
 .tg{display:flex;gap:8px;align-items:flex-start;padding:5px 0;border-bottom:1px solid rgba(29,41,64,.1)}
 .tgb{flex:0 0 38px;text-align:center;border-radius:10px;font-weight:800;font-size:9.5px;padding:2px 0}
 .tg b{font-size:12px;font-weight:800}.tg p{font-size:11px;line-height:1.35;font-weight:600}
+.part{height:1.75in;margin-top:10px}
 .pnote{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:18px;background:#FEF4D8;border-radius:16px;padding:12px 16px}
 .pnote h4{font-size:14px;margin-bottom:2px}.pnote p{font-size:11.2px;line-height:1.42;font-weight:600}
 </style>
@@ -597,13 +598,17 @@ body.low .back .panel{border-color:var(--m)}
   
   <div class="gd2">
     <div class="gbox" style="background:#E3EEFA"><span class="kick">Set up in 2 minutes</span><ol class="gol"><li>Print one sheet for your child’s age band (page guide on page 8).</li><li>Cut it, or skip cutting: point and pick from the card index.</li><li>Put the cards in a jar, a box or a pocket.</li><li>Next time you hear “I’m bored!”, offer two cards.</li></ol></div>
-    <div class="gbox" style="background:#DFF3E9"><span class="kick">What your child is practising</span><ul class="gul"><li>Taking turns and waiting</li><li>Trying an idea and changing it</li><li>Big moves: running, balancing, throwing</li><li>Listening and noticing</li><li>Putting plans and feelings into words</li><li>Finishing something they started</li></ul><p class="gsm">That’s all it is: ordinary play. No scores, no levels, nothing to pass.</p></div>
+    <div class="gbox" style="background:#DFF3E9"><span class="kick">What your child is practicing</span><ul class="gul"><li>Taking turns and waiting</li><li>Trying an idea and changing it</li><li>Big moves: running, balancing, throwing</li><li>Listening and noticing</li><li>Putting plans and feelings into words</li><li>Finishing something they started</li></ul><p class="gsm">That’s all it is: ordinary play. No scores, no levels, nothing to pass.</p></div>
   </div>
   <span class="kick" style="margin-top:14px">Three talk lines that work at every age</span>
   <div class="gt3"><div class="gt"><span class="gtn" style="background:#F5B820;color:#1D2940">1</span><h4>Pause and wait</h4><p>Count to five in your head before you jump in. The pause is their turn to talk, point or show you.</p></div><div class="gt"><span class="gtn" style="background:#2FA36B;color:#fff">2</span><h4>Say what you see</h4><p>“You stacked it so tall!” Describe what they are doing instead of asking question after question.</p></div><div class="gt"><span class="gtn" style="background:#3D86D8;color:#fff">3</span><h4>Repeat and add one word</h4><p>They say “truck.” You say “big truck!” Their words, plus one more.</p></div></div>
   <div class="gd2" style="margin-top:14px">
     <div class="gbox" style="background:#EFE6FA"><span class="kick">When interest fades</span><p>Stop while it’s still fun and put the card back for another day. Try the easier version in the card index, or let your child change the rules. Many children lose interest after a few minutes, and that’s fine.</p><p class="gbig">Most children love 2–3 of these; that’s normal. Playing a favorite again and again is the point.</p></div>
     <div class="gbox" style="background:#FEF4D8"><span class="kick">Every language counts</span><p class="gbig">Talk, sing and read in the language you know best. Every language counts.</p><p>A sign, a point or a device tap counts as communicating too. Answer it the same way you would answer words.</p></div>
+  </div>
+  <div class="gd2" style="margin-top:14px">
+    <div class="gbox" style="background:#FDE9E3"><span class="kick">When you hear “I’m bored!”</span><p>Try: “I hear you. Want to pick one of two cards, or think for a minute first?” Boredom isn’t an emergency. A few quiet minutes often turn into your child’s own idea, and that counts as a win.</p></div>
+    <div class="gbox" style="background:#F3F6FB"><span class="kick">Siblings of different ages</span><p>Pick a card from the younger child’s band and give the older one a job: reader, rule-keeper or helper. Small parts from older cards stay out of reach of children under 3.</p></div>
   </div>
   <div class="gd3">
     <div><h4>Tired grown-up?</h4><p>Every card has a 2-minute version in the card index (page 40): no setup, played from the couch or the floor.</p></div>
@@ -623,9 +628,10 @@ body.low .back .panel{border-color:var(--m)}
     <div class="pside">
       <div class="pbox" style="background:#FDE9E3"><span class="kick">Tired-grown-up plays</span><p class="psm">Played from the couch or the floor, with no setup. Every card’s 2-minute version is in the card index; here are eight to start.</p>
       <div class="tg"><span class="tgb" style="background:#F5B820;color:#1D2940">1–3</span><div><b>Peekaboo Towel</b><p>Towel over your face on the couch: “Where did I go?”</p></div></div><div class="tg"><span class="tgb" style="background:#F5B820;color:#1D2940">1–3</span><div><b>Knee Bounce Ride</b><p>One rhyme, one bounce, one cuddle.</p></div></div><div class="tg"><span class="tgb" style="background:#2FA36B;color:#fff">3–5</span><div><b>Animal Charades</b><p>They act, you guess from the couch.</p></div></div><div class="tg"><span class="tgb" style="background:#2FA36B;color:#fff">3–5</span><div><b>I Spy Colors</b><p>Play from the couch.</p></div></div><div class="tg"><span class="tgb" style="background:#3D86D8;color:#fff">5–8</span><div><b>Would You Rather?</b><p>Play from the couch or in the car.</p></div></div><div class="tg"><span class="tgb" style="background:#3D86D8;color:#fff">5–8</span><div><b>One-Word Story</b><p>Play from the couch or in the car.</p></div></div><div class="tg"><span class="tgb" style="background:#8A5CC7;color:#fff">8–12</span><div><b>Twenty Questions</b><p>Play from the couch or in the car.</p></div></div><div class="tg"><span class="tgb" style="background:#8A5CC7;color:#fff">8–12</span><div><b>Silly Debate</b><p>Debate one silly question in the car.</p></div></div></div>
+      <div class="part"><svg viewBox="0 0 400 190" width="100%" height="100%" aria-hidden="true"><circle cx="220" cy="118" r="70" fill="#FEF4D8"/><rect x="20" y="176" width="370" height="6" rx="3" fill="#1D2940" opacity=".08"/><g style="--sk:#3E271B;--hr:#2B1D16;--sh:#2FA36B;--pa:#1D2940;--so:#EE5A36;--hw:#F5B820" transform="translate(110,132.65) scale(0.85,0.85)"><g transform="translate(-12,-4) rotate(0)"><use href="#g-thigh" transform="" /><g transform="translate(0,40) rotate(90)"><use href="#g-shin-k" transform="" /></g></g><g transform="translate(12,-4) rotate(0)"><use href="#g-thigh" transform="" /><g transform="translate(0,40) rotate(90)"><use href="#g-shin-k" transform="" /></g></g><use href="#g-neck" transform="" /><use href="#g-body" transform="" /><use href="#g-arm" transform="translate(-22,-80) rotate(20)" /><use href="#g-arm" transform="translate(22,-80) rotate(-70)" /><g transform="translate(0,-126) scale(.92) rotate(0)"><use href="#t-head" transform="" /><use href="#face-laugh" transform="" /><use href="#h-short" transform="" /></g></g><g style="--sk:#F4CFAE;--hr:#E3B04B;--sh:#2FA36B;--pa:#8A5CC7;--so:#EE5A36;--hw:#F5B820" transform="translate(250,147.65) scale(1.05,1.05)"><use href="#t-leg" transform="translate(-8,-4) rotate(3)" /><use href="#t-leg" transform="translate(8,-4) rotate(-3)" /><use href="#t-body" transform="" /><use href="#t-arm" transform="translate(-14,-38) rotate(150)" /><use href="#t-arm" transform="translate(14,-38) rotate(-150)" /><g transform="translate(0,-69) rotate(0)"><use href="#t-head" transform="" /><use href="#face-laugh" transform="" /><use href="#h-tuft" transform="" /></g></g><use href="#block-1" transform="translate(330,156) scale(.72)"/><use href="#block-3" transform="translate(372,156) scale(.72)"/><use href="#block-2" transform="translate(351,115) scale(.72)"/></svg></div>
     </div>
   </div>
-  <div class="pnote"><div><h4>No time to cut?</h4><p>The card index pages are a no-cut menu: read a few titles aloud and let your child choose, or point to the picture of the kind of play.</p></div><div><h4>Siblings of different ages</h4><p>Pick a card from the younger child’s band and give the older one a job: reader, rule-keeper or helper. Small parts from older cards stay out of reach of children under 3.</p></div></div>
+  <div class="pnote"><div><h4>No time to cut?</h4><p>The card index pages are a no-cut menu: read a few titles aloud and let your child choose, or point to the picture of the kind of play.</p></div><div><h4>Swap freely</h4><p>No wooden spoon? Any big, sturdy kitchen tool works. Swap what the card asks for with what you have, and keep the card’s safety line.</p></div></div>
   </div><footer class="pf"><span class="pfl"><img class="lgf" src="../../../../brand/logo/wordmark.svg" alt="Play Before Pixels"><span>“I’m Bored” Play Cards · Version 1.0 · September 2026</span></span><span>© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. For use in your own home.</span></footer></section>
 <section class="page cp anatomy"><div class="cpin">
   <header class="phd"><img class="lgh" src="../../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="pe">How the cards work</span></header>
@@ -1167,7 +1173,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:0.5in;top:3.75in"><div class="card blank" style="--m:#F5B820;--t:#FEF4D8"><div class="panel">
   <div class="hd"><span class="age">Ages 1–3</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -1179,7 +1185,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:3in;top:3.75in"><div class="card blank" style="--m:#F5B820;--t:#FEF4D8"><div class="panel">
   <div class="hd"><span class="age">Ages 1–3</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -1191,7 +1197,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:5.5in;top:3.75in"><div class="card blank" style="--m:#F5B820;--t:#FEF4D8"><div class="panel">
   <div class="hd"><span class="age">Ages 1–3</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -1203,7 +1209,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:0.5in;top:7.25in"><div class="card blank" style="--m:#F5B820;--t:#FEF4D8"><div class="panel">
   <div class="hd"><span class="age">Ages 1–3</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -1215,7 +1221,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:3in;top:7.25in"><div class="card blank" style="--m:#F5B820;--t:#FEF4D8"><div class="panel">
   <div class="hd"><span class="age">Ages 1–3</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -1227,7 +1233,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:5.5in;top:7.25in"><div class="card blank" style="--m:#F5B820;--t:#FEF4D8"><div class="panel">
   <div class="hd"><span class="age">Ages 1–3</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -1239,7 +1245,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><i class="gl v" style="left:3in;top:0.25in;height:10.5in"></i><i class="gl v" style="left:5.5in;top:0.25in;height:10.5in"></i><i class="gl h" style="top:3.75in;left:0.5in;width:7.5in"></i><i class="gl h" style="top:7.25in;left:0.5in;width:7.5in"></i><i class="gl box" style="left:0.5in;top:0.25in;width:7.5in;height:10.5in"></i><i class="cm v" style="left:0.5in;top:0.06in;height:0.16in"></i><i class="cm v" style="left:0.5in;top:10.78in;height:0.16in"></i><i class="cm v" style="left:3in;top:0.06in;height:0.16in"></i><i class="cm v" style="left:3in;top:10.78in;height:0.16in"></i><i class="cm v" style="left:5.5in;top:0.06in;height:0.16in"></i><i class="cm v" style="left:5.5in;top:10.78in;height:0.16in"></i><i class="cm v" style="left:8in;top:0.06in;height:0.16in"></i><i class="cm v" style="left:8in;top:10.78in;height:0.16in"></i><i class="cm h" style="top:0.25in;left:0.30999999999999994in;width:0.16in"></i><i class="cm h" style="top:0.25in;left:8.03in;width:0.16in"></i><i class="cm h" style="top:3.75in;left:0.30999999999999994in;width:0.16in"></i><i class="cm h" style="top:3.75in;left:8.03in;width:0.16in"></i><i class="cm h" style="top:7.25in;left:0.30999999999999994in;width:0.16in"></i><i class="cm h" style="top:7.25in;left:8.03in;width:0.16in"></i><i class="cm h" style="top:10.75in;left:0.30999999999999994in;width:0.16in"></i><i class="cm h" style="top:10.75in;left:8.03in;width:0.16in"></i><div class="sl" style="left:0.25in;top:5.5in;transform:translate(-50%,-50%) rotate(-90deg)"><span class="sll"><img class="lgs" src="../../../../brand/logo/wordmark.svg" alt="Play Before Pixels"><span>Ages 1–3 · sheet 5 of 5 · Version 1.0 · September 2026</span></span></div><div class="sl" style="left:8.25in;top:5.5in;transform:translate(-50%,-50%) rotate(90deg)"><span class="sll"><svg class="sci" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-cut"/></svg><span>Grown-up keeps the pieces · every piece is 1.5 in or larger · © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.</span></span></div></section>
 <section class="page sheet"><div class="cell" style="left:0.5in;top:0.25in"><div class="card" style="--m:#2FA36B;--t:#DFF3E9"><div class="panel">
@@ -1712,7 +1718,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:0.5in;top:3.75in"><div class="card blank" style="--m:#2FA36B;--t:#DFF3E9"><div class="panel">
   <div class="hd"><span class="age">Ages 3–5</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -1724,7 +1730,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:3in;top:3.75in"><div class="card blank" style="--m:#2FA36B;--t:#DFF3E9"><div class="panel">
   <div class="hd"><span class="age">Ages 3–5</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -1736,7 +1742,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:5.5in;top:3.75in"><div class="card blank" style="--m:#2FA36B;--t:#DFF3E9"><div class="panel">
   <div class="hd"><span class="age">Ages 3–5</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -1748,7 +1754,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:0.5in;top:7.25in"><div class="card blank" style="--m:#2FA36B;--t:#DFF3E9"><div class="panel">
   <div class="hd"><span class="age">Ages 3–5</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -1760,7 +1766,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:3in;top:7.25in"><div class="card blank" style="--m:#2FA36B;--t:#DFF3E9"><div class="panel">
   <div class="hd"><span class="age">Ages 3–5</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -1772,7 +1778,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:5.5in;top:7.25in"><div class="card blank" style="--m:#2FA36B;--t:#DFF3E9"><div class="panel">
   <div class="hd"><span class="age">Ages 3–5</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -1784,7 +1790,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><i class="gl v" style="left:3in;top:0.25in;height:10.5in"></i><i class="gl v" style="left:5.5in;top:0.25in;height:10.5in"></i><i class="gl h" style="top:3.75in;left:0.5in;width:7.5in"></i><i class="gl h" style="top:7.25in;left:0.5in;width:7.5in"></i><i class="gl box" style="left:0.5in;top:0.25in;width:7.5in;height:10.5in"></i><i class="cm v" style="left:0.5in;top:0.06in;height:0.16in"></i><i class="cm v" style="left:0.5in;top:10.78in;height:0.16in"></i><i class="cm v" style="left:3in;top:0.06in;height:0.16in"></i><i class="cm v" style="left:3in;top:10.78in;height:0.16in"></i><i class="cm v" style="left:5.5in;top:0.06in;height:0.16in"></i><i class="cm v" style="left:5.5in;top:10.78in;height:0.16in"></i><i class="cm v" style="left:8in;top:0.06in;height:0.16in"></i><i class="cm v" style="left:8in;top:10.78in;height:0.16in"></i><i class="cm h" style="top:0.25in;left:0.30999999999999994in;width:0.16in"></i><i class="cm h" style="top:0.25in;left:8.03in;width:0.16in"></i><i class="cm h" style="top:3.75in;left:0.30999999999999994in;width:0.16in"></i><i class="cm h" style="top:3.75in;left:8.03in;width:0.16in"></i><i class="cm h" style="top:7.25in;left:0.30999999999999994in;width:0.16in"></i><i class="cm h" style="top:7.25in;left:8.03in;width:0.16in"></i><i class="cm h" style="top:10.75in;left:0.30999999999999994in;width:0.16in"></i><i class="cm h" style="top:10.75in;left:8.03in;width:0.16in"></i><div class="sl" style="left:0.25in;top:5.5in;transform:translate(-50%,-50%) rotate(-90deg)"><span class="sll"><img class="lgs" src="../../../../brand/logo/wordmark.svg" alt="Play Before Pixels"><span>Ages 3–5 · sheet 5 of 5 · Version 1.0 · September 2026</span></span></div><div class="sl" style="left:8.25in;top:5.5in;transform:translate(-50%,-50%) rotate(90deg)"><span class="sll"><svg class="sci" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-cut"/></svg><span>Grown-up keeps the pieces · every piece is 1.5 in or larger · © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.</span></span></div></section>
 <section class="page sheet"><div class="cell" style="left:0.5in;top:0.25in"><div class="card" style="--m:#3D86D8;--t:#E3EEFA"><div class="panel">
@@ -2245,7 +2251,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:5.5in;top:0.25in"><div class="card blank" style="--m:#3D86D8;--t:#E3EEFA"><div class="panel">
   <div class="hd"><span class="age">Ages 5–8</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -2257,7 +2263,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:0.5in;top:3.75in"><div class="card blank" style="--m:#3D86D8;--t:#E3EEFA"><div class="panel">
   <div class="hd"><span class="age">Ages 5–8</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -2269,7 +2275,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:3in;top:3.75in"><div class="card blank" style="--m:#3D86D8;--t:#E3EEFA"><div class="panel">
   <div class="hd"><span class="age">Ages 5–8</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -2281,7 +2287,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:5.5in;top:3.75in"><div class="card blank" style="--m:#3D86D8;--t:#E3EEFA"><div class="panel">
   <div class="hd"><span class="age">Ages 5–8</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -2293,7 +2299,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:0.5in;top:7.25in"><div class="card blank" style="--m:#3D86D8;--t:#E3EEFA"><div class="panel">
   <div class="hd"><span class="age">Ages 5–8</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -2305,7 +2311,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:3in;top:7.25in"><div class="card blank" style="--m:#3D86D8;--t:#E3EEFA"><div class="panel">
   <div class="hd"><span class="age">Ages 5–8</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -2317,7 +2323,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:5.5in;top:7.25in"><div class="card blank" style="--m:#3D86D8;--t:#E3EEFA"><div class="panel">
   <div class="hd"><span class="age">Ages 5–8</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -2329,7 +2335,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><i class="gl v" style="left:3in;top:0.25in;height:10.5in"></i><i class="gl v" style="left:5.5in;top:0.25in;height:10.5in"></i><i class="gl h" style="top:3.75in;left:0.5in;width:7.5in"></i><i class="gl h" style="top:7.25in;left:0.5in;width:7.5in"></i><i class="gl box" style="left:0.5in;top:0.25in;width:7.5in;height:10.5in"></i><i class="cm v" style="left:0.5in;top:0.06in;height:0.16in"></i><i class="cm v" style="left:0.5in;top:10.78in;height:0.16in"></i><i class="cm v" style="left:3in;top:0.06in;height:0.16in"></i><i class="cm v" style="left:3in;top:10.78in;height:0.16in"></i><i class="cm v" style="left:5.5in;top:0.06in;height:0.16in"></i><i class="cm v" style="left:5.5in;top:10.78in;height:0.16in"></i><i class="cm v" style="left:8in;top:0.06in;height:0.16in"></i><i class="cm v" style="left:8in;top:10.78in;height:0.16in"></i><i class="cm h" style="top:0.25in;left:0.30999999999999994in;width:0.16in"></i><i class="cm h" style="top:0.25in;left:8.03in;width:0.16in"></i><i class="cm h" style="top:3.75in;left:0.30999999999999994in;width:0.16in"></i><i class="cm h" style="top:3.75in;left:8.03in;width:0.16in"></i><i class="cm h" style="top:7.25in;left:0.30999999999999994in;width:0.16in"></i><i class="cm h" style="top:7.25in;left:8.03in;width:0.16in"></i><i class="cm h" style="top:10.75in;left:0.30999999999999994in;width:0.16in"></i><i class="cm h" style="top:10.75in;left:8.03in;width:0.16in"></i><div class="sl" style="left:0.25in;top:5.5in;transform:translate(-50%,-50%) rotate(-90deg)"><span class="sll"><img class="lgs" src="../../../../brand/logo/wordmark.svg" alt="Play Before Pixels"><span>Ages 5–8 · sheet 5 of 5 · Version 1.0 · September 2026</span></span></div><div class="sl" style="left:8.25in;top:5.5in;transform:translate(-50%,-50%) rotate(90deg)"><span class="sll"><svg class="sci" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-cut"/></svg><span>Grown-up keeps the pieces · every piece is 1.5 in or larger · © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.</span></span></div></section>
 <section class="page sheet"><div class="cell" style="left:0.5in;top:0.25in"><div class="card" style="--m:#8A5CC7;--t:#EFE6FA"><div class="panel">
@@ -2790,7 +2796,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:5.5in;top:0.25in"><div class="card blank" style="--m:#8A5CC7;--t:#EFE6FA"><div class="panel">
   <div class="hd"><span class="age">Ages 8–12</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -2802,7 +2808,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:0.5in;top:3.75in"><div class="card blank" style="--m:#8A5CC7;--t:#EFE6FA"><div class="panel">
   <div class="hd"><span class="age">Ages 8–12</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -2814,7 +2820,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:3in;top:3.75in"><div class="card blank" style="--m:#8A5CC7;--t:#EFE6FA"><div class="panel">
   <div class="hd"><span class="age">Ages 8–12</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -2826,7 +2832,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:5.5in;top:3.75in"><div class="card blank" style="--m:#8A5CC7;--t:#EFE6FA"><div class="panel">
   <div class="hd"><span class="age">Ages 8–12</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -2838,7 +2844,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:0.5in;top:7.25in"><div class="card blank" style="--m:#8A5CC7;--t:#EFE6FA"><div class="panel">
   <div class="hd"><span class="age">Ages 8–12</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -2850,7 +2856,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:3in;top:7.25in"><div class="card blank" style="--m:#8A5CC7;--t:#EFE6FA"><div class="panel">
   <div class="hd"><span class="age">Ages 8–12</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -2862,7 +2868,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:5.5in;top:7.25in"><div class="card blank" style="--m:#8A5CC7;--t:#EFE6FA"><div class="panel">
   <div class="hd"><span class="age">Ages 8–12</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -2874,7 +2880,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><i class="gl v" style="left:3in;top:0.25in;height:10.5in"></i><i class="gl v" style="left:5.5in;top:0.25in;height:10.5in"></i><i class="gl h" style="top:3.75in;left:0.5in;width:7.5in"></i><i class="gl h" style="top:7.25in;left:0.5in;width:7.5in"></i><i class="gl box" style="left:0.5in;top:0.25in;width:7.5in;height:10.5in"></i><i class="cm v" style="left:0.5in;top:0.06in;height:0.16in"></i><i class="cm v" style="left:0.5in;top:10.78in;height:0.16in"></i><i class="cm v" style="left:3in;top:0.06in;height:0.16in"></i><i class="cm v" style="left:3in;top:10.78in;height:0.16in"></i><i class="cm v" style="left:5.5in;top:0.06in;height:0.16in"></i><i class="cm v" style="left:5.5in;top:10.78in;height:0.16in"></i><i class="cm v" style="left:8in;top:0.06in;height:0.16in"></i><i class="cm v" style="left:8in;top:10.78in;height:0.16in"></i><i class="cm h" style="top:0.25in;left:0.30999999999999994in;width:0.16in"></i><i class="cm h" style="top:0.25in;left:8.03in;width:0.16in"></i><i class="cm h" style="top:3.75in;left:0.30999999999999994in;width:0.16in"></i><i class="cm h" style="top:3.75in;left:8.03in;width:0.16in"></i><i class="cm h" style="top:7.25in;left:0.30999999999999994in;width:0.16in"></i><i class="cm h" style="top:7.25in;left:8.03in;width:0.16in"></i><i class="cm h" style="top:10.75in;left:0.30999999999999994in;width:0.16in"></i><i class="cm h" style="top:10.75in;left:8.03in;width:0.16in"></i><div class="sl" style="left:0.25in;top:5.5in;transform:translate(-50%,-50%) rotate(-90deg)"><span class="sll"><img class="lgs" src="../../../../brand/logo/wordmark.svg" alt="Play Before Pixels"><span>Ages 8–12 · sheet 5 of 5 · Version 1.0 · September 2026</span></span></div><div class="sl" style="left:8.25in;top:5.5in;transform:translate(-50%,-50%) rotate(90deg)"><span class="sll"><svg class="sci" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-cut"/></svg><span>Grown-up keeps the pieces · every piece is 1.5 in or larger · © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.</span></span></div></section>
 <section class="page sheet"><div class="cell" style="left:0.5in;top:0.25in"><div class="card" style="--m:#EE5A36;--t:#FDE9E3"><div class="panel">
@@ -3323,7 +3329,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:3in;top:0.25in"><div class="card blank" style="--m:#EE5A36;--t:#FDE9E3"><div class="panel">
   <div class="hd"><span class="age"><svg class="ssi" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-sun"/></svg>Ages ______</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -3335,7 +3341,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:5.5in;top:0.25in"><div class="card blank" style="--m:#EE5A36;--t:#FDE9E3"><div class="panel">
   <div class="hd"><span class="age"><svg class="ssi" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-sun"/></svg>Ages ______</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -3347,7 +3353,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:0.5in;top:3.75in"><div class="card blank" style="--m:#EE5A36;--t:#FDE9E3"><div class="panel">
   <div class="hd"><span class="age"><svg class="ssi" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-sun"/></svg>Ages ______</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -3359,7 +3365,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:3in;top:3.75in"><div class="card blank" style="--m:#EE5A36;--t:#FDE9E3"><div class="panel">
   <div class="hd"><span class="age"><svg class="ssi" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-sun"/></svg>Ages ______</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -3371,7 +3377,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:5.5in;top:3.75in"><div class="card blank" style="--m:#1D2940;--t:#F3F6FB"><div class="panel">
   <div class="hd"><span class="age"><svg class="ssi" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-rain"/></svg>Ages ______</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -3383,7 +3389,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:0.5in;top:7.25in"><div class="card blank" style="--m:#1D2940;--t:#F3F6FB"><div class="panel">
   <div class="hd"><span class="age"><svg class="ssi" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-rain"/></svg>Ages ______</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -3395,7 +3401,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:3in;top:7.25in"><div class="card blank" style="--m:#1D2940;--t:#F3F6FB"><div class="panel">
   <div class="hd"><span class="age"><svg class="ssi" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-rain"/></svg>Ages ______</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -3407,7 +3413,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><div class="cell" style="left:5.5in;top:7.25in"><div class="card blank" style="--m:#1D2940;--t:#F3F6FB"><div class="panel">
   <div class="hd"><span class="age"><svg class="ssi" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-rain"/></svg>Ages ______</span><span class="en en3"><i class="tk"></i>Calm<i class="tk"></i>Med<i class="tk"></i>Wiggly</span></div>
@@ -3419,7 +3425,7 @@ body.low .back .panel{border-color:var(--m)}
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><div class="wlines"><span class="ln"></span><span class="ln"></span></div></div></div>
   </div>
   <div class="sp"></div>
-  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span><i>Your card</i></div>
+  <div class="fl fl3"><i class="tk"></i><span>With a grown-up</span><i class="tk"></i><span>Can do alone</span></div>
   <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Our safety rules apply to your cards too: see the safety page.</span></div>
 </div></div></div><i class="gl v" style="left:3in;top:0.25in;height:10.5in"></i><i class="gl v" style="left:5.5in;top:0.25in;height:10.5in"></i><i class="gl h" style="top:3.75in;left:0.5in;width:7.5in"></i><i class="gl h" style="top:7.25in;left:0.5in;width:7.5in"></i><i class="gl box" style="left:0.5in;top:0.25in;width:7.5in;height:10.5in"></i><i class="cm v" style="left:0.5in;top:0.06in;height:0.16in"></i><i class="cm v" style="left:0.5in;top:10.78in;height:0.16in"></i><i class="cm v" style="left:3in;top:0.06in;height:0.16in"></i><i class="cm v" style="left:3in;top:10.78in;height:0.16in"></i><i class="cm v" style="left:5.5in;top:0.06in;height:0.16in"></i><i class="cm v" style="left:5.5in;top:10.78in;height:0.16in"></i><i class="cm v" style="left:8in;top:0.06in;height:0.16in"></i><i class="cm v" style="left:8in;top:10.78in;height:0.16in"></i><i class="cm h" style="top:0.25in;left:0.30999999999999994in;width:0.16in"></i><i class="cm h" style="top:0.25in;left:8.03in;width:0.16in"></i><i class="cm h" style="top:3.75in;left:0.30999999999999994in;width:0.16in"></i><i class="cm h" style="top:3.75in;left:8.03in;width:0.16in"></i><i class="cm h" style="top:7.25in;left:0.30999999999999994in;width:0.16in"></i><i class="cm h" style="top:7.25in;left:8.03in;width:0.16in"></i><i class="cm h" style="top:10.75in;left:0.30999999999999994in;width:0.16in"></i><i class="cm h" style="top:10.75in;left:8.03in;width:0.16in"></i><div class="sl" style="left:0.25in;top:5.5in;transform:translate(-50%,-50%) rotate(-90deg)"><span class="sll"><img class="lgs" src="../../../../brand/logo/wordmark.svg" alt="Play Before Pixels"><span>Blank seasonal cards · your ideas · Version 1.0 · September 2026</span></span></div><div class="sl" style="left:8.25in;top:5.5in;transform:translate(-50%,-50%) rotate(90deg)"><span class="sll"><svg class="sci" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-cut"/></svg><span>Grown-up keeps the pieces · every piece is 1.5 in or larger · © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.</span></span></div></section>
 <section class="page sheet"><div class="cell" style="left:0.5in;top:0.25in"><div class="card back" style="--m:#F5B820;--t:#FEF4D8"><div class="panel">

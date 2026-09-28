@@ -32,9 +32,14 @@ Re-running with real data (after 60-90 days of sales)
     "BASE": {"launch": 3, "cvr_etsy": 0.017, "vpp_etsy": 210,
              "cvr_site": 0.011, "vpp_site": 140, "items_site": 1.4,
              "repeat12": 0.08, "refund": 0.015},
-    "MC":   {"traction_median": 0.55, "traction_sigma": 0.5,
+    "MC":   {"traction_median": 1.0, "traction_sigma": 0.4,
              "launch_probs": {"3": 1.0}}
   }
+
+  Once BASE holds observed rates, set MC traction_median to 1.0 (the centre
+  is then your own data, not the plan's Expected) and narrow traction_sigma
+  as the months of data grow. launch_probs keys are model months (1 = Oct
+  2026, 2 = Nov 2026, 3 = Dec 2026, ...).
 
   Where each number comes from once the shop is live:
     vpp_*      monthly visits per live listing (Etsy Stats "visits",
@@ -819,6 +824,28 @@ def main(argv=None):
     P(table(["Measure", "P10", "P50", "P90", "Mean"], rows))
     P("\nMedian (P50) 12-month gross sales by channel: " + "; ".join(
         f"{k} {usd(pct(r['rev_y1_' + k], 50))}" for k in ("Etsy", "Own site", "Gumroad (intl)", "KDP", "IngramSpark", "Course")) + ".\n")
+    # which uncertain inputs drive the spread (Spearman rank correlation with 12-month operating profit)
+    def ranks(x):
+        return np.argsort(np.argsort(x)).astype(float)
+    ry = ranks(r["op_y1"])
+    drivers = []
+    for lab_, key in (("Traffic (common traction factor)", "traffic_mult"), ("Fixed-cost position", "cost_pos"),
+                      ("First-sale month (later = worse)", "launch"), ("Etsy conversion", "cvr_etsy"),
+                      ("Own-site conversion", "cvr_site"), ("Amazon book-page conversion", "cvr_kdp"),
+                      ("Order value multiplier", "aov_mult"), ("Months to full visibility", "ramp"),
+                      ("New products per month", "prod_add"), ("Etsy traffic (channel-specific)", "noise_etsy"),
+                      ("Own-site traffic (channel-specific)", "noise_site"), ("Platform-fee multiplier", "fee_mult"),
+                      ("Growth in sales per product", "growth"), ("Catalog cap", "prod_cap"),
+                      ("Refund rate", "refund"), ("Repeat-purchase rate", "repeat12")):
+        x = np.asarray(D[key], dtype=float)
+        if np.ptp(x) == 0:
+            continue
+        drivers.append((lab_, float(np.corrcoef(ranks(x), ry)[0, 1])))
+    drivers.sort(key=lambda d: -abs(d[1]))
+    P("\nWhat drives the spread across the 10,000 futures (rank correlation with 12-month operating profit; "
+      "+1 or -1 = decides everything, 0 = no effect):\n")
+    P(table(["Rank", "Uncertain input", "Rank correlation"], [(i + 1, d[0], f"{d[1]:+.2f}") for i, d in enumerate(drivers)]))
+    out["mc_drivers"] = drivers
     be_orders = be_full_lean / be_cpo
     probs = [
         ("12-month operating profit above $0", (r["op_y1"] > 0).mean()),

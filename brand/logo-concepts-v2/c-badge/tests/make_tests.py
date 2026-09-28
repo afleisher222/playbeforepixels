@@ -65,12 +65,12 @@ lw, lh = vb('primary-logo.svg')
 TOTE_W, TOTE_IN = 300, 15.0                     # tote body 300 px = 15 in, so 20 px per inch
 SEAL_IN = 5.0                                   # seal embroidered 5 in across
 seal_px = SEAL_IN * TOTE_W / TOTE_IN
-tote = f'''<svg viewBox="0 0 300 400" width="300" height="400" style="position:absolute;left:0;top:0">
-  <path d="M78 96 V60 C78 18 124 8 124 8 M222 96 V60 C222 18 176 8 176 8" fill="none" stroke="#D9CCB0" stroke-width="15" stroke-linecap="round"/>
-  <path d="M124 8 C140 4 160 4 176 8" fill="none" stroke="#D9CCB0" stroke-width="15" stroke-linecap="round"/>
-  <rect x="0" y="90" width="300" height="310" rx="6" fill="#EEE5D1"/>
-  <rect x="0" y="90" width="300" height="14" fill="#E3D8BF"/>
-  <rect x="62" y="84" width="32" height="30" rx="3" fill="#D9CCB0"/><rect x="206" y="84" width="32" height="30" rx="3" fill="#D9CCB0"/></svg>'''
+tote = f'''<svg viewBox="0 -14 300 424" width="300" height="424" style="position:absolute;left:0;top:0">
+  <path d="M104 100 V52 Q104 4 160 4 Q216 4 216 52 V100" fill="none" stroke="#CBBD9B" stroke-width="15"/>
+  <path d="M84 100 V44 Q84 -6 150 -6 Q216 -6 216 44" fill="none" stroke="#DCCFB3" stroke-width="15" stroke-linecap="round"/>
+  <path d="M216 44 V100" stroke="#DCCFB3" stroke-width="15"/>
+  <rect x="0" y="96" width="300" height="314" rx="5" fill="#EEE5D1"/>
+  <rect x="0" y="96" width="300" height="16" rx="5" fill="#E4D9C0"/></svg>'''
 spine_titles = [('Up! Go! More!', SUN_T, 300), ('Whose Lap Today?', TOMATO_T, 286), ('The Day the Tablet Slept', SKY_T, 300)]
 spines = ''.join(f'''<div class="spine" style="background:{bg};width:{w}px"><span>{t}</span>
   <img src="../symbol.svg" style="width:96px;height:96px"></div>''' for t, bg, w in spine_titles)
@@ -84,7 +84,7 @@ body = f'''
      <div class="feed"><img src="../src/avatar-1080.svg" style="width:48px;height:48px;border-radius:50%"><div><b>Play Before Pixels</b><i>@playbeforepixels</i></div></div>
      <label>Social avatar (round crop)</label></section>
   <section class="e">{spines}<label>Book spines: seal 0.5 in tall, shown 2&times;</label></section>
-  <section class="f"><div class="tote">{tote}<img src="../symbol.svg" style="position:absolute;left:{150 - seal_px / 2:.0f}px;top:{215 - seal_px / 2:.0f}px;width:{seal_px:.0f}px;height:{seal_px:.0f}px"></div>
+  <section class="f"><div class="tote">{tote}<img src="../symbol.svg" style="position:absolute;left:{150 - seal_px / 2:.0f}px;top:{262 - seal_px / 2:.0f}px;width:{seal_px:.0f}px;height:{seal_px:.0f}px"></div>
      <div class="stitch"><img src="../symbol-small.svg" style="width:64px;height:64px"><span>Under 40 mm, embroider the small seal</span></div>
      <label>Tote: seal embroidered 5 in across</label></section>
 </div>'''
@@ -105,8 +105,8 @@ label{{position:absolute;left:22px;bottom:16px;font-size:13px;font-weight:700;le
   font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;box-shadow:inset 0 -5px 0 rgba(29,41,64,.07),inset 0 5px 0 rgba(255,255,255,.5)}}
 .e .spine:nth-child(2){{margin-left:10px}}
 .f{{left:848px;top:524px;width:704px;height:432px;background:{SKY_T};gap:56px}}
-.tote{{position:relative;width:300px;height:400px;margin-top:-10px}}
-.stitch{{display:flex;flex-direction:column;align-items:center;gap:10px;width:150px;text-align:center;font-size:13px;font-weight:700;opacity:.8}}'''
+.tote{{position:relative;width:300px;height:424px;margin-top:0}}
+.stitch{{display:flex;flex-direction:column;align-items:center;gap:10px;width:150px;text-align:center;font-size:13px;font-weight:700}} .stitch span{{opacity:.7}}'''
 p = page('preview-sheet.html', body, 1600, 1000, css)
 jobs.append(dict(html=p, png=os.path.join(D, 'preview-sheet.png'), w=1600, h=1000))
 
