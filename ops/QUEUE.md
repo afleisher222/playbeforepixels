@@ -17,6 +17,12 @@ _(Seeded after the demand check (marketing/DEMAND-CHECK.md) and campaign bible (
 3. Free "3 plays for your child's age" monthly email printable (lead magnet).
 
 ## Ideas under research
+- EVERY AGE GROUP (founder, Sept 28, 2026) — research demand monthly before building:
+  - Screen-free babysitter play kit (teen sitters and the parents who hire them)
+  - Grandparent's play kit (visits, sleepovers, long-distance play by mail)
+  - First-phone agreement and phone-free challenges for ages 9–12, bought by parents (fun and independence framing; no mental-health claims)
+  - Adult phone-free evenings planner and family unplugged weekend kit
+  - Education-student and new-teacher starter set (held with other school-facing items pending counsel)
 - Referral program (give $5 / get $5) and a birthday-month email with the next stage's products.
 - Monthly stage-based printable play kit subscription (digital, auto-delivered): each month a kit of plays, a talk-along mini-book and a parent 'why it matters' guide matched to the child's age in months — recurring revenue, no inventory. Needs subscription-law compliance (clear terms, easy online cancellation).
 - Professional license for therapists, clinics and early-intervention programs: share printables with the families they serve (per-practice annual license). Language must stay parent-education, never therapy; consider a licensed SLP/OT reviewer credit.

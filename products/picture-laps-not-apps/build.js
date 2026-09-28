@@ -191,7 +191,7 @@ function wheel(cx, cy) {
 sym('wheelchair', 240, 300, `<rect x="60" y="74" width="11" height="140" rx="5" fill="${C.ink}"/><rect x="169" y="74" width="11" height="140" rx="5" fill="${C.ink}"/><rect x="53" y="66" width="25" height="16" rx="8" fill="${C.tomato}"/><rect x="162" y="66" width="25" height="16" rx="8" fill="${C.tomato}"/><rect x="64" y="96" width="112" height="114" rx="14" fill="${C.ink}"/><rect x="48" y="208" width="144" height="24" rx="10" fill="${C.ink}"/>${wheel(38, 252)}${wheel(202, 252)}<rect x="64" y="226" width="9" height="72" fill="${C.ink}"/><rect x="167" y="226" width="9" height="72" fill="${C.ink}"/><rect x="66" y="292" width="108" height="10" rx="5" fill="${C.ink}"/><circle cx="69" cy="307" r="10" fill="${C.ink}"/><circle cx="171" cy="307" r="10" fill="${C.ink}"/>`);
 sym('rocker', 240, 300, `<rect x="42" y="36" width="156" height="206" rx="44" fill="${C.tomato}"/><rect x="30" y="204" width="180" height="30" rx="14" fill="${C.tT}"/><rect x="48" y="250" width="13" height="52" fill="${C.tomato}"/><rect x="179" y="250" width="13" height="52" fill="${C.tomato}"/><path d="M6 290 Q120 330 234 290" stroke="${C.tomato}" stroke-width="13" fill="none" stroke-linecap="round"/>`);
 sym('busseat', 240, 300, `<rect x="12" y="108" width="216" height="132" rx="30" fill="${C.sky}"/><rect x="6" y="204" width="228" height="30" rx="14" fill="${C.kT}"/><rect x="110" y="256" width="20" height="44" fill="${C.ink}"/><rect x="70" y="292" width="100" height="10" rx="5" fill="${C.ink}"/>`);
-sym('bench', 240, 300, `<rect x="-26" y="112" width="12" height="130" fill="${C.ink}"/><rect x="254" y="112" width="12" height="130" fill="${C.ink}"/><rect x="-50" y="120" width="340" height="28" rx="12" fill="${C.grass}"/><rect x="-50" y="160" width="340" height="28" rx="12" fill="${C.grass}"/><rect x="-56" y="212" width="352" height="28" rx="12" fill="${C.grass}"/><rect x="-36" y="238" width="14" height="62" rx="4" fill="${C.ink}"/><rect x="262" y="238" width="14" height="62" rx="4" fill="${C.ink}"/>`);
+sym('bench', 240, 300, `<rect x="-26" y="112" width="12" height="130" fill="${C.ink}"/><rect x="254" y="112" width="12" height="130" fill="${C.ink}"/><rect x="-50" y="120" width="340" height="28" rx="12" fill="${C.tomato}"/><rect x="-50" y="160" width="340" height="28" rx="12" fill="${C.tomato}"/><rect x="-56" y="212" width="352" height="28" rx="12" fill="${C.tomato}"/><rect x="-36" y="238" width="14" height="62" rx="4" fill="${C.ink}"/><rect x="262" y="238" width="14" height="62" rx="4" fill="${C.ink}"/>`);
 
 // animals & objects
 sym('cat', 140, 90, `<path d="M118 70 Q146 80 120 88 L66 88" stroke="${C.sun}" stroke-width="14" fill="none" stroke-linecap="round"/><ellipse cx="80" cy="60" rx="58" ry="28" fill="${C.sun}"/><path d="M78 34 q7 12 0 24 M98 35 q7 12 0 24 M118 42 q6 10 0 20" stroke="${C.tomato}" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M14 38 L12 10 L34 24Z" fill="${C.sun}"/><path d="M40 22 L60 10 L58 36Z" fill="${C.sun}"/><circle cx="36" cy="46" r="27" fill="${C.sun}"/><path d="M22 46 q5 5 10 0 M40 46 q5 5 10 0" stroke="${C.ink}" stroke-width="3.5" fill="none" stroke-linecap="round"/><path d="M33 54 L39 54 L36 58Z" fill="${C.tomato}"/><path d="M30 61 q3 3 6 0 q3 3 6 0" stroke="${C.ink}" stroke-width="2.5" fill="none" stroke-linecap="round"/>`);
@@ -284,7 +284,7 @@ SPREADS.push(() => {
     lap({ a: 'dad', kid: 'kid-sit-point', cx: 430, fy: 815, s: 1.5, seat: 'busseat' }) +
     rect(806, 250, 18, 625, C.sun, 9) +
     windowFrame(950, 340, 720, 420, C.kT, C.paper,
-      `<circle cx="1590" cy="420" r="46" fill="${C.sun}"/>` + col('cloud', 1000, 390, 0.8, C.paper) + rect(950, 610, 720, 140, C.gT) + rect(950, 600, 720, 24, C.wash) +
+      `<circle cx="1270" cy="430" r="46" fill="${C.sun}"/>` + col("cloud", 1010, 400, 0.8, C.paper) + rect(950, 610, 720, 140, C.gT) + rect(950, 600, 720, 24, C.wash) +
       U('tree', 1440, 290, 1.0) + U('dog', 1170, 470, 1.1) + text(1470, 470, '', 10, C.ink), false, 'w4b');
 });
 
@@ -335,7 +335,7 @@ SPREADS.push(() => rect(0, 0, 875, 875, C.pT) + rect(0, 755, 875, 120, C.plum) +
     const L = (x1, y1, x2, y2) => `<path d="M${x1} ${y1} Q${(x1 + x2) / 2} ${Math.min(y1, y2) - 30} ${x2} ${y2}" stroke="${C.ink}" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="${x2}" cy="${y2}" r="7" fill="${C.ink}"/>`;
     return text(1020, 470, 'one kid', 50, C.tomato, 'Caveat', 700) + L(1060, 486, 1238, 522) +
       text(990, 560, 'one cat', 50, C.tomato, 'Caveat', 700) + L(1030, 576, 1205, 598) +
-      text(1610, 560, 'one lap', 50, C.tomato, 'Caveat', 700) + L(1570, 574, 1395, 640) +
+      text(1610, 560, 'one lap', 50, C.tomato, 'Caveat', 700) + L(1570, 574, 1368, 656) +
       text(1612, 690, 'one chair', 46, C.tomato, 'Caveat', 700) + L(1590, 704, 1500, 736);
   })());
 
@@ -409,7 +409,7 @@ const VERSES = [
   [['At the park, on a blanket,', 'my friend Ada’s there,', 'on Mama Jo’s lap', 'with a flower in her hair.'],
    ['And Mama Bea’s lap', 'is a pony—trot, trot!', 'The baby goes “Whee!”', 'and she giggles a lot.'],
    'Offer a choice: “Slow pony or fast pony?” Then do exactly what they pick.'],
-  [['We find a green bench', 'where the ducks paddle past.', 'We count them—one, two, three.', 'The last one is fast!'],
+  [['We find a red bench', 'where the ducks paddle past.', 'We count them—one, two, three.', 'The last one is fast!'],
    ['Big laps and small laps', 'all out in the sun—', 'a park full of laps,', 'and a lap for each one!'],
    'Count out loud together—ducks, dogs, buses, buttons. Point to each one as you count.'],
   [['Back home, something’s sitting', 'right smack in my place:', 'our cat, on Grandma’s lap,', 'with a smug little face!'],
@@ -437,8 +437,8 @@ const wordmark = (c = C.ink, acc = C.tomato) => `<span class="wm" style="color:$
 
 // Cover art (single page)
 function coverArt() {
-  return rect(0, 0, 875, 875, C.sun) + `<circle cx="437" cy="640" r="330" fill="${C.sky}"/>` + rect(0, 790, 875, 85, C.tomato) +
-    col('heart', 150, 470, 1.3, C.tomato) + col('star', 690, 430, 1.1, C.paper) + col('star', 120, 640, 0.8, C.paper) +
+  return rect(0, 0, 875, 875, C.sun) + `<circle cx="437" cy="712" r="330" fill="${C.sky}"/>` + rect(0, 790, 875, 85, C.tomato) +
+    col('heart', 140, 520, 1.3, C.tomato) + col('star', 690, 480, 1.1, C.paper) + col('star', 120, 660, 0.8, C.paper) +
     lap({ a: 'gma', kid: 'kid-sit-hold', cx: 437, fy: 838, s: 1.42, seat: 'wheelchair', arms: 'book', front: U('book', 70, 166, 0.62) }) +
     U('cat', 640, 740, 1.0);
 }
@@ -544,8 +544,8 @@ pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.kT) + col(
 </div>`);
 
 // Back cover
-pages.push(`<div class="page back">${svgPage(rect(0, 0, 875, 875, C.sun) + `<circle cx="300" cy="640" r="200" fill="${C.sky}"/>` + rect(0, 770, 875, 105, C.tomato) +
-  lap({ a: 'dad', kid: 'kid-sit-content', cx: 300, fy: 790, s: 0.9, seat: 'armchair' }) +
+pages.push(`<div class="page back">${svgPage(rect(0, 0, 875, 875, C.sun) + `<circle cx="330" cy="610" r="200" fill="${C.sky}"/>` + rect(0, 770, 875, 105, C.tomato) +
+  lap({ a: 'dad', kid: 'kid-sit-content', cx: 330, fy: 772, s: 0.9, seat: 'armchair' }) +
   col('heart', 520, 450, 1.3, C.tomato) + col('star', 90, 470, 0.9, C.paper) + col('star', 560, 560, 0.7, C.paper))}
   <div class="bk">
     <h2>A lap is the best seat in town.</h2>
@@ -640,4 +640,26 @@ fs.writeFileSync(path.join(DIR, 'source.html'), html);
 const coverPage = pages[0];
 fs.writeFileSync(path.join(DIR, 'cover.html'), `<!doctype html><html><head><meta charset="utf-8"><title>Laps Not Apps cover</title>
 <link rel="stylesheet" href="../../brand/fonts/fonts.css"><style>${CSS} html,body{width:816px;height:816px;overflow:hidden} .trim{width:816px;height:816px;overflow:hidden;position:relative} .trim .page{position:absolute;left:-12px;top:-12px}</style></head><body>${DEFS}<div class="trim">${coverPage}</div></body></html>`);
+fs.writeFileSync(path.join(DIR, 'mockup.html'), `<!doctype html><html><head><meta charset="utf-8"><title>Laps Not Apps mockup</title>
+<link rel="stylesheet" href="../../brand/fonts/fonts.css"><style>
+*{margin:0;padding:0;box-sizing:border-box} html,body{width:1600px;height:1200px;overflow:hidden;background:${C.wash}}
+.floor{position:absolute;left:0;right:0;top:960px;bottom:0;background:${C.kT}}
+.blob{position:absolute;left:-120px;top:-160px;width:760px;height:760px;border-radius:50%;background:${C.sT}}
+.blob2{position:absolute;right:-140px;top:120px;width:420px;height:420px;border-radius:50%;background:${C.pT}}
+.book{position:absolute;left:170px;top:290px;width:700px;height:700px;perspective:2200px}
+.book .inner{position:absolute;inset:0;transform:rotateY(16deg);transform-origin:left center;transform-style:preserve-3d}
+.book img{position:absolute;inset:0;width:700px;height:700px;border-radius:4px 10px 10px 4px}
+.book .spine{position:absolute;left:-34px;top:0;width:34px;height:700px;background:${C.tomato};transform:rotateY(-90deg);transform-origin:right center}
+.book .hinge{position:absolute;left:16px;top:0;width:6px;height:700px;background:rgba(29,41,64,.12)}
+.shadow{position:absolute;left:190px;top:972px;width:700px;height:40px;border-radius:50%;background:rgba(29,41,64,.22);filter:blur(18px)}
+.spread{position:absolute;left:880px;top:660px;width:620px;height:310px;display:flex;transform:rotate(-4deg);box-shadow:0 26px 40px rgba(29,41,64,.22);border-radius:6px;overflow:hidden}
+.spread img{width:310px;height:310px;object-fit:cover}
+.tag{position:absolute;left:960px;top:380px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:54px;line-height:1;color:${C.ink};letter-spacing:-.01em}
+.tag small{display:block;margin-top:16px;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:24px;color:${C.ink}}
+.pill{display:inline-block;margin-top:18px;background:${C.tomato};color:#fff;font-family:'Nunito Sans',sans-serif;font-weight:800;font-size:20px;padding:8px 18px;border-radius:999px}
+</style></head><body><div class="blob"></div><div class="blob2"></div><div class="floor"></div><div class="shadow"></div>
+<div class="book"><div class="inner"><div class="spine"></div><img src="cover.png" alt=""><div class="hinge"></div></div></div>
+<div class="tag">Laps Not Apps<small>A cozy rhyming read-aloud · ages 2–6</small><span class="pill">Hardcover keepsake</span></div>
+<div class="spread"><img src="preview/p17.png" alt=""><img src="preview/p18.png" alt=""></div>
+</body></html>`);
 console.log(pages.length + ' pages');
