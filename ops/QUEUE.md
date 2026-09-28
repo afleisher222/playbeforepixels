@@ -1,6 +1,7 @@
 # Product and content queue (ranked; updated by every run)
 
 ## Next to build
+0. **Board-book printing decision (founder):** Amazon KDP does not print board books and print-on-demand board books are likely unavailable (commerce/storefront-setup-guide.md, unverified). Options: (a) publish "Up! Go! More!" first as a sturdy square paperback talk-along book through print-on-demand (no inventory), and (b) add a true board-book edition later through a pre-sale that funds a short offset print run held and shipped by a fulfillment warehouse — never the founder's home. Also: 32-page square picture-book hardcovers go through IngramSpark, not KDP.
 _(Seeded after the demand check (marketing/DEMAND-CHECK.md) and campaign bible (marketing/CAMPAIGN-BIBLE.md) finish; first candidates below.)_
 1. ALPHAPLAY Spelling Games printable (ages 5–8) — must be genuinely on sale by mid-January 2027 to support the ALPHAPLAY Statement of Use (deadline March 8, 2027).
 2. Holiday gift bundle and printable gift-reveal card — before October 31.
