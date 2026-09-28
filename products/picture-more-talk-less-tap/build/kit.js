@@ -241,7 +241,7 @@ for (const t of ['q', 'j', 'i', 'l']) {
   const star = (INK ? `<path d="${A.starPath(222, 114)}" fill="#fff" stroke="${C.sun}" stroke-width="14" stroke-linejoin="round"/>` : `<path d="${A.starPath(230, 118)}" fill="${C.sun}" stroke="${C.sun}" stroke-width="30" stroke-linejoin="round"/>`) +
     Ci(-40, -14, 14, C.ink) + Ci(40, -14, 14, C.ink) + Ci(-35, -19, 4.5, '#fff') + Ci(45, -19, 4.5, '#fff') + L('M-30 26 Q0 50 30 26', C.ink, 11) + Ci(-72, 20, 16, C.tomato, 'fill-opacity=".45"') + Ci(72, 20, 16, C.tomato, 'fill-opacity=".45"');
   page('star', 'Talking Star and wobble sign', `
-<div class="cardhead"><h2 class="h2">Talking Star <span class="muted">and</span> “Tower wobble!” sign</h2>${cutNote(INK ? 'Color the star, then glue it to cardstock. Whoever holds the star talks; everyone else listens.' : 'Glue the star to cardstock. Whoever holds the star talks; everyone else listens.')}</div>
+<div class="cardhead"><h2 class="h2">Talking Star <span class="muted">and</span> “Tower wobble!” sign</h2>${cutNote(INK ? 'Color the star, then glue it to cardstock.' : 'Glue the star to cardstock. Whoever holds it talks.')}</div>
 <div class="starpage">
   <div class="cell starcell">${svg('-270 -270 540 520', star, 'width:100%;height:100%')}<div class="starlab">Talking Star</div></div>
   <div class="cell wobble"><div class="wobin">${svg('0 0 220 170', G('rotate(-8 110 150)', towerArt(110, 160, ['q', 'j', 'i'], 0.8)) + A.motion(40, 40, 22, 200, C.tomato, 7) + A.motion(180, 40, 22, -20, C.tomato, 7), 'width:150px;height:116px')}
@@ -256,7 +256,7 @@ const promptPage = (id, t, label, lines, hint) => {
     <div class="pband" style="${INK ? `background:${b.tint};color:${C.ink}` : `background:${b.col};color:${b.ink}`}">${glyph(t, 40, INK)}<span>${label}</span></div>
     <div class="ptxt">${l}</div><div class="phint" style="color:${b.dark}">${hint}</div></div></div>`).join('');
   page(id, `Prompt cards: ${label}`, `
-<div class="cardhead"><h2 class="h2">Prompt cards: <span style="color:${b.dark}">${label}</span></h2>${cutNote('A grown-up reads the card aloud. The child can use it, change it or pick their own words.')}</div>
+<div class="cardhead"><h2 class="h2">Prompt cards: <span style="color:${b.dark}">${label}</span></h2>${cutNote('A grown-up reads it aloud. Children can change the words.')}</div>
 <div class="grid prompts">${cells}</div>`);
 };
 promptPage('pc-ask', 'q', 'ASK', W.list('ask', 9), 'Ask a friend');
@@ -268,7 +268,7 @@ promptPage('pc-add', 'i', 'ADD ONE', W.list('addone', 9), 'Add one more');
     <div class="pband" style="${INK ? `background:#fff;color:${C.ink};border-bottom:3px solid ${C.ink}` : `background:${C.ink};color:#fff`}">${svg('-60 -60 120 120', `<path d="${A.starPath(46, 24)}" fill="${C.sun}" stroke="${C.sun}" stroke-width="10" stroke-linejoin="round"/>`, 'width:34px;height:34px')}<span>TALK ABOUT</span></div>
     <div class="ticon">${svg('-60 -60 120 120', topicIcon(ic), 'width:118px;height:118px')}</div><div class="tlab">${lab}</div></div></div>`).join('');
   page('pc-topic', 'Prompt cards: topics', `
-<div class="cardhead"><h2 class="h2">Topic cards</h2>${cutNote('Draw one topic to start a round. Everyone asks, comments and adds one about it.')}</div>
+<div class="cardhead"><h2 class="h2">Topic cards</h2>${cutNote('Draw one topic to start a round.')}</div>
 <div class="grid prompts">${cells}</div>`);
 }
 

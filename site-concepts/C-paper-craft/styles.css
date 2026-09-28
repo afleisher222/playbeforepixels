@@ -419,7 +419,7 @@ ul, ol { margin: 0; padding: 0; }
 .mega-note p { font-size: 15px; color: var(--ink-2); }
 .mega-note--frame { background: #fff; border: 1.5px solid var(--ink); border-radius: 4px; position: relative; }
 
-.nav-scrim { position: fixed; inset: 0; z-index: 80; background: rgba(29, 41, 64, .18); opacity: 0; visibility: hidden; transition: opacity .2s; }
+.nav-scrim { position: fixed; inset: 0; z-index: -1; background: rgba(29, 41, 64, .18); opacity: 0; visibility: hidden; transition: opacity .2s; }
 .nav-scrim.is-open { opacity: 1; visibility: visible; }
 
 /* Breadcrumbs */
