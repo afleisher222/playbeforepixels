@@ -1,4 +1,4 @@
-"""Concept 4 'Sock Talk' (Direction D, hand-made stamp).
+"""Concept 4 'Hand-Cut Sock Puppet' (Direction D, hand-made stamp). (Working name only; 'Sock Talk' is an existing sock brand, do not use.)
 
 A cut-paper sock puppet: the toe of the sock is the talking mouth, a sewn button is the eye,
 the ribbed cuff is where a grown-up's hand goes in. Everything is hand-placed key points,
@@ -131,6 +131,7 @@ def puppet(simple=False, speck=False):
     mouth = Polygon(catmull(MOUTH_KEYS, closed=True, n=10)).buffer(0)
     if not simple:
         mouth = Polygon(scissor(list(mouth.exterior.coords)[:-1], seed=9, amp=0.5, step=6)).buffer(0)
+    mouth = mouth.intersection(body.convex_hull.buffer(-2.5))          # stays inside the lips, never pokes out like a beak
     mouth = mouth.difference(body.buffer(2.2 if not simple else 3.5))
     # keep only the biggest piece (the insert), drop slivers
     if hasattr(mouth, 'geoms'): mouth = max(mouth.geoms, key=lambda g: g.area)
