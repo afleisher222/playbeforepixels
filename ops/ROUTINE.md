@@ -46,6 +46,7 @@ Run every new or changed public item through ops/COMPLIANCE-GATE.md. Anything th
 ## 6. Commit and report
 - Commit in small logical commits and push.
 - Append to ops/RUNLOG.md: date, what was researched, built, improved, published, queued for approval, and any problems.
+- **Weekly scorecard (top of every report, when data is connected):** revenue and profit by product and by channel; best and worst seller; email subscribers gained and sign-up rate; conversion rate and average order value; refunds and complaints; ad spend vs. return (if any); cash in the business account vs. the 3-month reserve target. Then one line each: **keep doing**, **stop doing**, **try next** — and cut or fix any product or channel that has earned less than its upkeep for 8 weeks.
 - The final message of the run is a short plain-language report for the founder: what's new, what sold (if sales data is connected), what needs her (approvals, uploads), and nothing else.
 
 ## Never
