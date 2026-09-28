@@ -73,7 +73,7 @@ L.push(`<div class="L" style="background:${C.wash}">
 </div>`);
 // 4 first words
 L.push(`<div class="L" style="background:${C.tSun}">
-  <div style="position:absolute;left:56px;top:50px;right:56px"><div class="kick" style="color:${C.tomato}">First words</div><h1 style="font-size:60px;margin-top:8px">Art from our talk-along board book</h1><p style="font-size:22px;font-weight:700;margin-top:10px">One word, one big picture and a move to copy together.</p></div>
+  <div style="position:absolute;left:56px;top:50px;right:56px"><div class="kick" style="color:${C.tomato}">First words</div><h1 style="font-size:60px;margin-top:8px">First words, big pictures</h1><p style="font-size:22px;font-weight:700;margin-top:10px">One word, one big picture and a move to copy together.</p></div>
   ${page(A['w-ball'], 70, 290, 400, -4)}${page(A['w-go'], 530, 300, 400, 4)}
   <div class="tile" style="position:absolute;left:120px;right:120px;bottom:40px;display:flex;gap:16px;align-items:center;box-shadow:0 10px 30px rgba(29,41,64,.15)"><svg width="46" height="46" viewBox="0 0 24 24" style="color:${C.grass}"><use href="#u-talk"/></svg><div><div class="kick" style="font-size:14px;color:#5B6780">Talk while you play</div><div class="big" style="font-size:30px">“Ball! Big ball. Roll, ball!”</div></div></div>
 </div>`);

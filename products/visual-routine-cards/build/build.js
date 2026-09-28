@@ -540,8 +540,8 @@ function indexPage(list, cardStart) {
 function bonusPage() {
   const starter = X.tier === 'starter';
   const next = starter
-    ? [['Visual Routine Cards, Ages 0–5', `All ${N_YOUNG} cards for ages 0–5, 6 chart layouts, 4 colorways and Monday or Sunday starts.`, C.tomato], ['Play-First Family Kit', 'A play-first checklist, helping jobs, together tokens and a family play plan.', C.sky], ['"I\'m Bored" Play Cards', '150 age-banded play ideas with a talk prompt on every card.', C.grass]]
-    : [['Play-First Family Kit', 'A play-first checklist, helping jobs, together tokens and a family play plan.', C.sky], ['"I\'m Bored" Play Cards', '150 age-banded play ideas with a talk prompt on every card.', C.grass], ['Toddler Busy Book', 'Paper-and-play pages for ages 0–5, sorted by age band.', C.plum]];
+    ? [['Visual Routine Cards, Ages 0–5', `All ${N_YOUNG} cards for ages 0–5, 6 chart layouts, 4 colorways and Monday or Sunday starts.`, C.tomato], ['Play-First Family Kit', 'A play-first checklist, helping jobs, together tokens and a family play plan.', C.sky], ['"I\'m Bored" Play Cards', '76 play ideas for ages 1–5, with a talk prompt on every card.', C.grass]]
+    : [['Play-First Family Kit', 'A play-first checklist, helping jobs, together tokens and a family play plan.', C.sky], ['"I\'m Bored" Play Cards', '76 play ideas for ages 1–5, with a talk prompt on every card.', C.grass], ['Toddler Busy Book', '74 paper-and-play activities for ages 1–5, sorted by age band.', C.plum]];
   const top = X.store
     ? `<div><span class="kicker">Thank you</span><h1 class="g-title">Your free bonus is waiting</h1>
     <p class="g-lede">Scan the code for free seasonal routine cards (holidays, back to school, travel days)${X.tier === 'full' ? ', the Canva-ready PNG set' : ''} and short, practical play ideas for your child's age. We only ask for your email and, if you like, your child's birth month and year, never a name.</p></div>

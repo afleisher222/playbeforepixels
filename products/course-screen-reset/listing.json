@@ -45,9 +45,9 @@
     "price_display_rule": "Show only as ‘$49, or $54.49 bought separately’. Never a crossed-out, compare-at or ‘was’ price. Re-check the sum whenever a part’s price changes, and sell the bundle only while every part is live at its listed price.",
     "contents": [
       "30 Days of Back-and-Forth (program + workbook)",
-      "Play-First Family Kit (play-first-family-kit)",
+      "Play-First Family Kit, Ages 2–5 (play-first-family-kit-ages-2-5)",
       "100 Screen-Free Plays, printable PDF (guide-100-plays)",
-      "76 I’m Bored Play Cards (bored-play-cards)"
+      "76 I’m Bored Play Cards (bored-play-cards-ages-1-5)"
     ],
     "delivery": "One checkout on the merchant of record; the three printables are delivered instantly as downloads and the program starts its email sequence."
   },
@@ -73,7 +73,7 @@
   ],
   "seo_title": "30 Days of Back-and-Forth: Play-First Screen-Time Plan",
   "seo_description": "30 short lessons by email, 30 easy plays and plain words for tricky moments, plus a printable workbook. For ages 1–5. 14-day money-back guarantee.",
-  "alt_text": "Cover of 30 Days of Back-and-Forth: a big tomato-red 30 beside the words Days of, with Back-and-Forth below, on a warm yellow background. A smiling child in glasses and a kneeling grown-up stack colored blocks next to a play basket, while a small tablet sleeps under a purple blanket in its own basket. Pills read 30 short lessons, 30 easy plays, 30 plain-word scripts.",
+  "alt_text": "Cover of 30 Days of Back-and-Forth: a big tomato-red 30 beside the words Days of, with Back-and-Forth below, on a warm yellow background. A smiling child in glasses and a kneeling grown-up stack colored blocks next to a play basket, while a small tablet sleeps under a purple blanket in its own basket. Pills read 30 short lessons, 30 easy plays, 38 plain-word scripts.",
   "listing_images": [
     "preview/listing-images/01-hero.png — cover, a day page and the Day 6 email on a phone; $27 and guarantee",
     "preview/listing-images/02-whats-inside.png — 30 lessons, 30 plays, 38 scripts, 89-page breakdown",
@@ -86,7 +86,7 @@
   ],
   "next_products": [
     "bundle-30-days",
-    "play-first-family-kit",
+    "play-first-family-kit-ages-2-5",
     "guide-100-plays"
   ],
   "bonus_url": "playbeforepixels.com/bonus/course-screen-reset",

@@ -242,7 +242,7 @@ const copyright = {
       <div class="card"><h3>Your license</h3><p>Thank you for buying this book. It’s licensed for use in <b>your own home</b>: print as many copies as your family needs. Please don’t share, resell, post or upload the files.</p></div>
       <div class="card"><h3>Parent education</h3><p>This book is parent education and play ideas. It is not medical, developmental or professional advice and doesn’t diagnose, treat or prevent anything. Every play follows our published safety rules (page ${ctx.actPage['x-safety']}); a grown-up is always part of play.</p></div>
     </div>
-    <div class="card t-sky" style="margin-top:14px"><h3>Copyright</h3><p>${COPYRIGHT} All rights reserved. The characters and art belong to the Play Before Pixels family of products, including the Up! Go! More! talk-along board book.</p><p style="margin-top:6px"><b>${VERSION}.</b> If we improve this file, we’ll tell past buyers what changed; we never swap a file quietly.</p></div>
+    <div class="card t-sky" style="margin-top:14px"><h3>Copyright</h3><p>${COPYRIGHT} All rights reserved. The characters and art belong to the Play Before Pixels family of products.</p><p style="margin-top:6px"><b>${VERSION}.</b> If we improve this file, we’ll tell past buyers what changed; we never swap a file quietly.</p></div>
     <div class="card" style="margin-top:14px;display:flex;align-items:center;gap:18px"><img src="${ctx.rel}brand/logo/lockup-horizontal.svg" style="height:44px"><p>Play Before Pixels makes calm, paper-first play for families: talk, touch and play first; fewer screens, more back-and-forth.<span class="url"> playbeforepixels.com</span></p></div>`, ctx, pn),
 };
 
@@ -392,7 +392,7 @@ const faq = {
 };
 const moreFrom = {
   id: 'more', html: (ctx, pn) => pageWrap('', `${textHead('More from Play Before Pixels', 'Next for your child’s age', 'Made to go together: the same friendly characters, the same talk-while-you-play idea.')}
-    <div class="nextp" style="margin-top:18px">${[['board-up-go-more', 'Up! Go! More!', 'Our talk-along first-words book, ages 0–3. The first-words pages in this busy book come from it.'], ['guide-100-plays', '100 Screen-Free Plays', 'Plays for ages 0–5 with things you already have, sorted by age, each with a talk line.'], ['bored-play-cards', '150 “I’m Bored” Play Cards', 'Play ideas for ages 1–12, sorted by age and energy, with a talk prompt on every card.']].map(([slug, t, d]) => `<div class="np"><img src="${ctx.rel}products/${slug}/cover.png" alt=""><h3>${t}</h3><p>${d}</p></div>`).join('')}</div>
+    <div class="nextp" style="margin-top:18px">${[['play-first-family-kit', 'Play-First Family Kit, Ages 2–5', 'Picture checklists, helping jobs, together tokens and a family play plan.'], ['guide-100-plays', '100 Screen-Free Plays', 'Plays for ages 0–5 with things you already have, sorted by age, each with a talk line.'], ['bored-play-cards', '76 “I’m Bored” Play Cards', 'Play ideas for ages 1–5, sorted by age and energy, with a talk prompt on every card.']].map(([slug, t, d]) => `<div class="np"><img src="${ctx.rel}products/${slug}/cover.png" alt=""><h3>${t}</h3><p>${d}</p></div>`).join('')}</div>
     <div class="card t-sky" style="margin-top:16px"><p><b>Find them</b> <span class="site-only">at playbeforepixels.com, where every product page shows “Next for your child’s age.”</span><span class="etsy-only">in the Play Before Pixels shop.</span> Printables download instantly; books are printed to order.</p></div>`, ctx, pn),
 };
 const bonus = {

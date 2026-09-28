@@ -206,7 +206,7 @@ const LS = [];
 LS.push(`<div class="li" style="background:${C.tSky}">
   <div style="position:absolute;left:60px;top:50px;right:60px;display:flex;justify-content:space-between;align-items:center">${wm}<span class="pill dark">Ages 0–5</span></div>
   <h1 style="position:absolute;left:60px;top:130px;font-size:104px"><span style="color:${C.tomato}">60</span> Visual<br>Routine Cards</h1>
-  <p style="position:absolute;left:62px;top:356px;font-size:28px;font-weight:800;max-width:640px;line-height:1.25">Starter Set. Helps little ones see what comes next.</p>
+  <p style="position:absolute;left:62px;top:356px;font-size:28px;font-weight:800;max-width:520px;line-height:1.2">Starter Set. Helps little ones see what comes next.</p>
   <div style="position:absolute;left:60px;top:430px;display:flex;gap:10px;flex-wrap:wrap;max-width:560px">${['60 cards', '3 charts', 'Play first / screens later', 'Fillable PDF', 'Letter + A4'].map(s => `<span class="pill">${s}</span>`).join('')}</div>
   ${scaled(`<div class="paper">${filledChart(bld.chartStrip('rainbow'), ['morning-brush-teeth', 'morning-get-dressed', 'morning-shoes-on', 'screens-play-first'])}</div>`, 610, 330, .46, 3)}
   ${scaled(cd('bedtime-sleep'), 80, 620, 1.1, -6, 'shadow')}

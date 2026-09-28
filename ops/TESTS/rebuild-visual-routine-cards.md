@@ -26,3 +26,7 @@
 
 ## Founder decisions
 - D9 (KEEP or REPLACE) is still open. REPLACE is applied.
+
+## Verifier pass (2026-09-28)
+- Starter listing image 01: the subtitle ran under the chart image ("what co… next"). build/marketing.js now uses max-width 520px, so it wraps cleanly. Re-rendered and checked.
+- "Next for your family" last page (0–5, Starter and full editions): bored cards now read "76 play ideas for ages 1–5" (was 150), and the busy book reads "74 paper-and-play activities for ages 1–5" (was "ages 0–5"). Full rebuild ran with make-all.sh (exit 0). check_listings 0/0, check_fonts 0 problems, 0 Type 3 fonts, and no QR or URL in the Etsy files.

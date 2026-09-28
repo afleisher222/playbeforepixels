@@ -24,7 +24,7 @@ const coverInner = (pad = 0) => `<div class="cv" style="padding:${60 + pad}px ${
   <div class="bf">Back-and-Forth</div>
   <div class="sub">${esc(K.SUB)}</div>
   <div class="scene">${sceneSvg(sceneCover, '', '20 150 560 360')}</div>
-  <div class="strip"><span><b>30</b> short lessons</span><span><b>30</b> easy plays</span><span><b>30</b> plain-word scripts</span></div>
+  <div class="strip"><span><b>30</b> short lessons</span><span><b>30</b> easy plays</span><span><b>38</b> plain-word scripts</span></div>
   <div class="ages">For families with children aged 1 to 5</div>
   <div class="logo"><img src="${LOGO}" alt="Play Before Pixels"></div>
 </div>`;
