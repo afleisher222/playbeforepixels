@@ -514,7 +514,7 @@ function tipsPage() {
     ['Big helper', 'An older child reads a 1–3 card aloud and plays it with a younger one, with a grown-up close by.'],
     ['Season swap', 'Add the summer or rainy-day set when the weather turns.'],
   ];
-  const G = [['Start here, card guide, safety', '1–6'], ['Ages 1–3 cards', '7–11'], ['Ages 3–5 cards', '12–16'], ['Ages 5–8 cards', '17–21'], ['Ages 8–12 cards', '22–26'], ['Summer + rainy-day sets', '27–30'], ['Card backs (optional)', '31–36'], ['Box dividers', '37–39'], ['Jar labels', '40–41'], ['Play Menu + weekly planners', '42–44'], ['Card index & checklist', '45–47']];
+  const G = [['Start here, card guide, safety', '1–6'], ['Ages 1–3 cards', '7–11'], ['Ages 3–5 cards', '12–16'], ['Ages 5–8 cards', '17–21'], ['Ages 8–12 cards', '22–26'], ['Summer + rainy-day sets', '27–30'], ['Card backs (optional)', '31–36'], ['Box dividers', '37–39'], ['Jar labels', '40–41'], ['Play Menu + weekly planners', '42–44'], ['Play Jar Star certificate', '45'], ['Card index & checklist', '46–48'], ['Quick answers', '49']];
   const S = ['Cardstock, 65–110 lb / 176–300 gsm', 'A paper trimmer or scissors', 'Laminator and 3–5 mil pouches (optional)', 'Corner rounder (optional)', 'Hook-and-loop (velcro) dots (optional)', 'A big jar or a 3 × 5 in recipe box'];
   const body = `<div class="tp">${T.map(([h, t], i) => `<div class="tpi"><span class="tn">${i + 1}</span><div><h4>${h}</h4><p>${t}</p></div></div>`).join('')}</div>
   <div class="tpg"><div class="tpb"><span class="kick">Page guide · print only what you need</span>${G.map(([h, n]) => `<div class="pgr"><span>${h}</span><b>${n}</b></div>`).join('')}</div>
@@ -709,6 +709,61 @@ function byeArt() {
   const g = Object.assign({}, ADULTS.G4, { x: 260, y: F - 81 * 0.78, s: 0.78, aL: 20, aR: -140, face: 'smile' });
   return `<svg class="byesvg" viewBox="0 -50 520 210" aria-hidden="true"><rect x="40" y="${F}" width="440" height="6" rx="3" fill="${C.ink}" opacity=".07"/>${adult(g)}${kid(k1)}${kid(k2)}<g transform="translate(455,${F - 64}) scale(.36)">${jarSVG({ lab: C.grass })}</g></svg>`;
 }
+function certPage(fields) {
+  const f = n => fields ? ` data-field="${n}"` : '';
+  const k = Object.assign({}, KIDS.D, { x: 170, y: 250 - 27 * 1.5, s: 1.5, aL: 150, aR: -150, face: 'laugh' });
+  const k2 = Object.assign({}, KIDS.B, { x: 330, y: 250 - 27 * 1.35, s: 1.35, aL: 140, aR: -30, face: 'joy' });
+  const art = `<svg viewBox="0 0 520 260" width="100%" height="100%" aria-hidden="true"><circle cx="255" cy="150" r="108" fill="${C.tSun}"/>${[[60, 60], [470, 70], [90, 190], [450, 200], [255, 22]].map(([x, y]) => `<use href="#star" transform="translate(${x},${y}) scale(1.2)"/>`).join('')}${kid(k)}${kid(k2)}<g transform="translate(430,186) scale(.4)">${jarSVG({ lab: C.tomato })}</g></svg>`;
+  return pg('cert', `<div class="ctf">
+    <div class="ctl">${logo('lockup-horizontal', 'lgh')}<span class="pe">Fridge certificate · print, fill in, share</span></div>
+    <div class="cta">${art}</div>
+    <div class="ctk">Official</div>
+    <h2 class="cth">Play Jar Star</h2>
+    <p class="ctp">This certificate goes to</p>
+    <div class="ctn"${f('cert_name')}></div>
+    <p class="ctp">for playing <span class="ctm">${[10, 25, 50, 100].map(n => `<i${f('cert_' + n)}></i>${n}`).join(' ')}</span> cards from the “I’m bored!” jar.</p>
+    <div class="ctr"><div><span class="kick">Favorite card</span><div class="mline"${f('cert_fav')}></div></div><div><span class="kick">Date</span><div class="mline"${f('cert_date')}></div></div></div>
+    <div class="ctb"><span>Play before pixels</span>${logo('mark', 'lgm')}<span>playbeforepixels.com</span></div>
+  </div>`);
+}
+const certCss = `<style>
+.cert{background:#fff}
+.ctf{position:absolute;inset:.45in;border:10px solid ${C.sun};border-radius:28px;display:flex;flex-direction:column;align-items:center;text-align:center;padding:.3in .5in}
+.ctl{align-self:stretch;display:flex;justify-content:space-between;align-items:center}
+.cta{width:5.2in;height:2.6in;margin-top:10px}
+.ctk{font-weight:800;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:${C.tomato};margin-top:6px}
+.cth{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:66px;letter-spacing:-.035em;line-height:1}
+.ctp{font-size:17px;font-weight:700;margin-top:14px}
+.ctn{width:5in;height:.55in;border-bottom:2px solid ${C.ink};margin-top:6px}
+.ctm{display:inline-flex;gap:6px;align-items:center;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-size:19px;margin:0 4px}
+.ctm i{width:17px;height:17px;border:2px solid ${C.ink};border-radius:50%;display:inline-block;margin-left:6px}
+.ctr{display:grid;grid-template-columns:1.6fr 1fr;gap:26px;width:5.6in;margin-top:22px;text-align:left}
+.ctb{margin-top:auto;display:flex;gap:14px;align-items:center;font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+.lgm{height:.35in;display:block}
+</style>`;
+function faqPage() {
+  const Q = [
+    ['My child is between two age bands.', 'Use both. The bands overlap on purpose, and many cards work a year or two either side.'],
+    ['My child says no to every card.', 'Offer just two cards, or let them pull one without looking. A little boredom is fine too: it often turns into their own idea.'],
+    ['Do I have to play too?', 'For ages 1–3, yes: you are the best toy in the room. For older children, start together, then step back and be the audience.'],
+    ['Which pages should I print?', 'Only what you need. The page guide on the “Make them last” page lists every section.'],
+    ['Can I print it again?', 'Yes. Print as many copies as your own household needs, as often as you like.'],
+    ['Can I print at a print shop?', 'Yes, for your own family’s use. Choose cardstock and ask them to print at 100% (actual size).'],
+    ['Can I share it with my class, group or friends?', 'This file is licensed for one household. For groups or classrooms, ask about a license through the contact form at playbeforepixels.com.'],
+    ['Is there a screen version?', 'No, and that’s on purpose. The cards are paper so the play happens off-screen.'],
+    ['How do I type on the blank cards?', 'Open the editable file in free Adobe Acrobat Reader, click a box and type. Or use the Canva PNG set.'],
+    ['Where is my free bonus?', 'On the last page: scan the QR code or type the short link.'],
+  ];
+  return contentPage('faq', 'Quick answers', 'Questions,<br>answered.', `<div class="fq">${Q.map(([q, a]) => `<div class="fqi"><h4>${q}</h4><p>${a}</p></div>`).join('')}</div>
+  <div class="fqh"><b>Download or file trouble?</b> Answers to common download and printing questions are at playbeforepixels.com/help.</div>`);
+}
+const faqCss = `<style>
+.fq{display:grid;grid-template-columns:1fr 1fr;gap:14px 24px}
+.fqi{background:${C.wash};border-radius:14px;padding:11px 14px}
+.fqi h4{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:14.5px;margin:0 0 3px;line-height:1.2}
+.fqi p{font-size:11.8px;line-height:1.45;font-weight:600}
+.fqh{margin-top:auto;background:${C.tSky};border-radius:14px;padding:12px 16px;font-size:12px;font-weight:600}
+</style>`;
 function bonusPage() {
   const next = [
     ['Play-First Family Kit', 'A “play first, then screens” checklist, tokens, a helping-jobs page and a family play plan.', C.tTomato],
@@ -764,7 +819,7 @@ function bandSheets(key, withBacks) {
 function backsPages() {
   return ['b13', 'b35', 'b58', 'b812', 'summer', 'rainy'].map(k => cardSheet(Array.from({ length: 9 }, () => cardBack(k)), `Card backs (optional) · ${TH[k].name}`));
 }
-const ALLCSS = [coverCss, welcomeCss, anatomyCss, agesCss, safetyCss, tipsCss, dividerCss, labelCss, menuCss, weekCss, indexCss, bonusCss].join('\n');
+const ALLCSS = [certCss, faqCss, coverCss, welcomeCss, anatomyCss, agesCss, safetyCss, tipsCss, dividerCss, labelCss, menuCss, weekCss, indexCss, bonusCss].join('\n');
 function doc(fontHref, size, pages, extra = '') {
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -784,8 +839,8 @@ function mainPages(duplex) {
     ...bandSheets('b13', duplex), ...bandSheets('b35', duplex), ...bandSheets('b58', duplex), ...bandSheets('b812', duplex),
     ...bandSheets('summer', duplex), ...bandSheets('rainy', duplex),
     ...(duplex ? [] : backsPages()),
-    ...dividerPages(), ...labelPages(), menuPage(false), weekPage('mon', false), weekPage('sun', false),
-    ...indexPages(), bonusPage(),
+    ...dividerPages(), ...labelPages(), menuPage(false), weekPage('mon', false), weekPage('sun', false), certPage(false),
+    ...indexPages(), faqPage(), bonusPage(),
   ];
 }
 
@@ -796,14 +851,14 @@ function editablePages() {
   // one sheet of fillable blank cards per colour + fillable menu, planners and a name label
   const intro = contentPage('edintro', 'Editable file', 'Make your own cards', `<p class="lead">This file has fill-in boxes. Open it in free Adobe Acrobat Reader (or another PDF app that supports forms), click a box and type. Save, then print at 100% on cardstock.</p>
   <div class="edl">
-    <div><h4>What you can edit</h4><p>Blank cards in all six colors (title, what you need, try it, talk, energy), the Play Menu, and both weekly planners (Monday and Sunday start).</p></div>
+    <div><h4>What you can edit</h4><p>Blank cards in all six colors (title, what you need, try it, talk, energy), both weekly planners (Monday and Sunday start) and the Play Jar Star certificate.</p></div>
     <div><h4>Prefer Canva?</h4><p>Use the Canva PNG set in your download: upload a blank card, jar label or divider as a background image, then add your own text boxes. Keep the text inside the white panel.</p></div>
     <div><h4>Handwriting works too</h4><p>Every blank also prints as a lined card, so you can write ideas with your child instead of typing them.</p></div>
     <div><h4>Keep it safe</h4><p>Cards you write follow the same safety rules: see the safety page in the main file.</p></div>
   </div>
   <p class="edc">${COPY} For use in your own home.</p>`);
   const sheets = ['b13', 'b35', 'b58', 'b812', 'summer', 'rainy'].map(k => cardSheet(Array.from({ length: 9 }, () => blankCard(k, { fields: true })), `Editable blank cards · ${TH[k].name}`));
-  return [intro, ...sheets, menuPage(true), weekPage('mon', true), weekPage('sun', true)];
+  return [intro, ...sheets, menuPage(true), weekPage('mon', true), weekPage('sun', true), certPage(true)];
 }
 const edCss = `<style>
 .edl{display:grid;grid-template-columns:1fr 1fr;gap:18px 26px;margin-top:10px}

@@ -64,13 +64,15 @@ h1,h2,h3,p{margin:0}
 .bk1,.bk2{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;letter-spacing:-.03em;line-height:.9;color:var(--ink)}
 .bk1{font-size:30px}.bk2{font-size:36px}
 .bks{margin-top:12px;color:var(--on);font-weight:800;font-size:9px;letter-spacing:.14em;text-transform:uppercase}
-.bkb{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:var(--on);font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:11px;opacity:.85}
+.bkb{position:absolute;bottom:15px;left:0;right:0;display:flex;justify-content:center}
+.lgb{height:12px;display:block}
 /* sheet */
 .sheet .cell{position:absolute;width:2.5in;height:3.5in}
 .gl{position:absolute;display:block;border:0 dashed #D3DAE6}
 .gl.v{border-left-width:.6px}.gl.h{border-top-width:.6px}.gl.box{border-width:.6px}
 .cm{position:absolute;display:block;background:#8A94A8}
 .cm.v{width:.6px}.cm.h{height:.6px}
+.sll{display:flex;align-items:center;gap:6px}.lgs{height:7px;display:block}
 .sl{position:absolute;white-space:nowrap;text-align:center;font-size:7px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8A94A8}
 /* content pages */
 .cp .cpin{position:absolute;left:.5in;right:.5in;top:.5in;bottom:.72in;display:flex;flex-direction:column}
@@ -79,15 +81,40 @@ h1,h2,h3,p{margin:0}
 .pe{font-weight:800;font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.6}
 .ph{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:38px;line-height:1.02;letter-spacing:-.025em;margin-bottom:14px}
 .lead{font-size:15px;line-height:1.5;font-weight:600;max-width:6.4in}
-.pf{position:absolute;left:.5in;right:.5in;bottom:.4in;display:flex;justify-content:space-between;font-size:7.5px;font-weight:700;color:#7C879C;letter-spacing:.02em}
+.lgh{height:.24in;display:block}
+.lgf{height:9px;display:block}
+.pfl{display:flex;align-items:center;gap:8px}
+.pf{position:absolute;left:.5in;right:.5in;bottom:.4in;display:flex;justify-content:space-between;align-items:center;font-size:7.5px;font-weight:700;color:#7C879C;letter-spacing:.02em}
 .hand{font-family:"Caveat",cursive;font-weight:700}
 .kick{font-weight:800;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.62;display:block;margin-bottom:4px}
 .pill{display:inline-flex;align-items:center;gap:6px;border-radius:30px;padding:6px 13px;font-weight:800;font-size:12px}
 </style>
 <style>
+.cert{background:#fff}
+.ctf{position:absolute;inset:.45in;border:10px solid #F5B820;border-radius:28px;display:flex;flex-direction:column;align-items:center;text-align:center;padding:.3in .5in}
+.ctl{align-self:stretch;display:flex;justify-content:space-between;align-items:center}
+.cta{width:5.2in;height:2.6in;margin-top:10px}
+.ctk{font-weight:800;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#EE5A36;margin-top:6px}
+.cth{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:66px;letter-spacing:-.035em;line-height:1}
+.ctp{font-size:17px;font-weight:700;margin-top:14px}
+.ctn{width:5in;height:.55in;border-bottom:2px solid #1D2940;margin-top:6px}
+.ctm{display:inline-flex;gap:6px;align-items:center;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-size:19px;margin:0 4px}
+.ctm i{width:17px;height:17px;border:2px solid #1D2940;border-radius:50%;display:inline-block;margin-left:6px}
+.ctr{display:grid;grid-template-columns:1.6fr 1fr;gap:26px;width:5.6in;margin-top:22px;text-align:left}
+.ctb{margin-top:auto;display:flex;gap:14px;align-items:center;font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+.lgm{height:.35in;display:block}
+</style>
+<style>
+.fq{display:grid;grid-template-columns:1fr 1fr;gap:14px 24px}
+.fqi{background:#F3F6FB;border-radius:14px;padding:11px 14px}
+.fqi h4{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:14.5px;margin:0 0 3px;line-height:1.2}
+.fqi p{font-size:11.8px;line-height:1.45;font-weight:600}
+.fqh{margin-top:auto;background:#E3EEFA;border-radius:14px;padding:12px 16px;font-size:12px;font-weight:600}
+</style>
+<style>
 .cover{background:#F3F6FB}
 .cv-top{position:absolute;left:.55in;right:.55in;top:.5in;display:flex;justify-content:space-between;align-items:center}
-.cv-top .brand{font-size:17px}
+.lgc{height:.36in;display:block}
 .cv-tag{font-weight:800;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
 .cv-h{position:absolute;left:.5in;top:.95in;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:124px;line-height:.84;letter-spacing:-.045em}
 .cv-h span{display:block}
@@ -201,6 +228,7 @@ h1,h2,h3,p{margin:0}
 </style>
 <style>
 .divs .dhd{position:absolute;left:.5in;right:.5in;top:.45in;display:flex;justify-content:space-between;align-items:center}
+.dft{position:absolute;left:.5in;right:.5in;bottom:.4in;display:flex;gap:8px;align-items:center;font-size:7.5px;font-weight:700;color:#7C879C}
 .dcell{position:absolute;width:2.4in;height:3.95in}
 .dv{position:relative;width:2.4in;height:3.95in}
 .dsvg{position:absolute;left:-2px;top:-2px;width:calc(2.4in + 4px);height:calc(3.95in + 4px);overflow:visible}
@@ -218,7 +246,7 @@ h1,h2,h3,p{margin:0}
 .rl{width:3.4in;height:3.4in;border-radius:50%;outline:.8px dashed #B7C1D3;outline-offset:3px;background:var(--m);display:flex;align-items:center;justify-content:center}
 .rli{width:2.9in;height:2.9in;border-radius:50%;border:2.5px solid rgba(255,255,255,.55);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--on)}
 .rl[style*="--m:#F5B820"] .rli{border-color:rgba(29,41,64,.25)}
-.rlk{font-weight:800;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.85;margin-bottom:6px}
+.rlk{margin-bottom:9px}.lgr{height:13px;display:block}
 .rl1,.rl2{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;letter-spacing:-.04em;line-height:.86}
 .rl1{font-size:40px}.rl2{font-size:58px}
 .rl3{font-weight:800;font-size:12px;margin-top:9px}
@@ -530,37 +558,37 @@ h1,h2,h3,p{margin:0}
   <svg class="bgdots" viewBox="0 0 222 318" preserveAspectRatio="none" aria-hidden="true"><circle cx="30" cy="40" r="26" fill="#FFFFFF" opacity="0.38"/><circle cx="205" cy="70" r="16" fill="#FFFFFF" opacity="0.38"/><circle cx="60" cy="250" r="14" fill="#FFFFFF" opacity="0.38"/><circle cx="200" cy="270" r="30" fill="#FFFFFF" opacity="0.38"/><circle cx="40" cy="150" r="8" fill="#FFFFFF" opacity="0.38"/><circle cx="215" cy="170" r="10" fill="#FFFFFF" opacity="0.38"/><circle cx="120" cy="30" r="7" fill="#FFFFFF" opacity="0.38"/><circle cx="130" cy="300" r="9" fill="#FFFFFF" opacity="0.38"/></svg>
   <div class="bk"><div class="bkc"><span class="bk1">I’m</span><span class="bk2">bored!</span></div>
   <div class="bks">Play cards · Ages 1–3</div></div>
-  <div class="bkb">Play Before Pixels</div>
+  <div class="bkb"><img class="lgb" src="../../../brand/logo/wordmark.svg" alt="Play Before Pixels"></div>
 </div></div></section>
 <section class="page asset" style="width:2.5in;height:3.5in"><div class="card back" style="--m:#2FA36B;--t:#DFF3E9;--on:#FFFFFF"><div class="panel">
   <svg class="bgdots" viewBox="0 0 222 318" preserveAspectRatio="none" aria-hidden="true"><circle cx="30" cy="40" r="26" fill="#FFFFFF" opacity="0.2"/><circle cx="205" cy="70" r="16" fill="#FFFFFF" opacity="0.2"/><circle cx="60" cy="250" r="14" fill="#FFFFFF" opacity="0.2"/><circle cx="200" cy="270" r="30" fill="#FFFFFF" opacity="0.2"/><circle cx="40" cy="150" r="8" fill="#FFFFFF" opacity="0.2"/><circle cx="215" cy="170" r="10" fill="#FFFFFF" opacity="0.2"/><circle cx="120" cy="30" r="7" fill="#FFFFFF" opacity="0.2"/><circle cx="130" cy="300" r="9" fill="#FFFFFF" opacity="0.2"/></svg>
   <div class="bk"><div class="bkc"><span class="bk1">I’m</span><span class="bk2">bored!</span></div>
   <div class="bks">Play cards · Ages 3–5</div></div>
-  <div class="bkb">Play Before Pixels</div>
+  <div class="bkb"><img class="lgb" src="../../../brand/logo/wordmark-white.svg" alt="Play Before Pixels"></div>
 </div></div></section>
 <section class="page asset" style="width:2.5in;height:3.5in"><div class="card back" style="--m:#3D86D8;--t:#E3EEFA;--on:#FFFFFF"><div class="panel">
   <svg class="bgdots" viewBox="0 0 222 318" preserveAspectRatio="none" aria-hidden="true"><circle cx="30" cy="40" r="26" fill="#FFFFFF" opacity="0.2"/><circle cx="205" cy="70" r="16" fill="#FFFFFF" opacity="0.2"/><circle cx="60" cy="250" r="14" fill="#FFFFFF" opacity="0.2"/><circle cx="200" cy="270" r="30" fill="#FFFFFF" opacity="0.2"/><circle cx="40" cy="150" r="8" fill="#FFFFFF" opacity="0.2"/><circle cx="215" cy="170" r="10" fill="#FFFFFF" opacity="0.2"/><circle cx="120" cy="30" r="7" fill="#FFFFFF" opacity="0.2"/><circle cx="130" cy="300" r="9" fill="#FFFFFF" opacity="0.2"/></svg>
   <div class="bk"><div class="bkc"><span class="bk1">I’m</span><span class="bk2">bored!</span></div>
   <div class="bks">Play cards · Ages 5–8</div></div>
-  <div class="bkb">Play Before Pixels</div>
+  <div class="bkb"><img class="lgb" src="../../../brand/logo/wordmark-white.svg" alt="Play Before Pixels"></div>
 </div></div></section>
 <section class="page asset" style="width:2.5in;height:3.5in"><div class="card back" style="--m:#8A5CC7;--t:#EFE6FA;--on:#FFFFFF"><div class="panel">
   <svg class="bgdots" viewBox="0 0 222 318" preserveAspectRatio="none" aria-hidden="true"><circle cx="30" cy="40" r="26" fill="#FFFFFF" opacity="0.2"/><circle cx="205" cy="70" r="16" fill="#FFFFFF" opacity="0.2"/><circle cx="60" cy="250" r="14" fill="#FFFFFF" opacity="0.2"/><circle cx="200" cy="270" r="30" fill="#FFFFFF" opacity="0.2"/><circle cx="40" cy="150" r="8" fill="#FFFFFF" opacity="0.2"/><circle cx="215" cy="170" r="10" fill="#FFFFFF" opacity="0.2"/><circle cx="120" cy="30" r="7" fill="#FFFFFF" opacity="0.2"/><circle cx="130" cy="300" r="9" fill="#FFFFFF" opacity="0.2"/></svg>
   <div class="bk"><div class="bkc"><span class="bk1">I’m</span><span class="bk2">bored!</span></div>
   <div class="bks">Play cards · Ages 8–12</div></div>
-  <div class="bkb">Play Before Pixels</div>
+  <div class="bkb"><img class="lgb" src="../../../brand/logo/wordmark-white.svg" alt="Play Before Pixels"></div>
 </div></div></section>
 <section class="page asset" style="width:2.5in;height:3.5in"><div class="card back" style="--m:#EE5A36;--t:#FDE9E3;--on:#FFFFFF"><div class="panel">
   <svg class="bgdots" viewBox="0 0 222 318" preserveAspectRatio="none" aria-hidden="true"><g transform="translate(4,14) scale(2.1666666666666665)" style="color:#FFFFFF" opacity="0.2"><use href="#ic-sun" width="24" height="24"/></g><circle cx="205" cy="70" r="16" fill="#FFFFFF" opacity="0.2"/><g transform="translate(46,236) scale(1.1666666666666667)" style="color:#FFFFFF" opacity="0.2"><use href="#ic-sun" width="24" height="24"/></g><circle cx="200" cy="270" r="30" fill="#FFFFFF" opacity="0.2"/><g transform="translate(32,142) scale(0.6666666666666666)" style="color:#FFFFFF" opacity="0.2"><use href="#ic-sun" width="24" height="24"/></g><circle cx="215" cy="170" r="10" fill="#FFFFFF" opacity="0.2"/><g transform="translate(113,23) scale(0.5833333333333334)" style="color:#FFFFFF" opacity="0.2"><use href="#ic-sun" width="24" height="24"/></g><circle cx="130" cy="300" r="9" fill="#FFFFFF" opacity="0.2"/></svg>
   <div class="bk"><div class="bkc"><span class="bk1">I’m</span><span class="bk2">bored!</span></div>
   <div class="bks">Play cards · Summer set</div></div>
-  <div class="bkb">Play Before Pixels</div>
+  <div class="bkb"><img class="lgb" src="../../../brand/logo/wordmark-white.svg" alt="Play Before Pixels"></div>
 </div></div></section>
 <section class="page asset" style="width:2.5in;height:3.5in"><div class="card back" style="--m:#1D2940;--t:#F3F6FB;--on:#FFFFFF"><div class="panel">
   <svg class="bgdots" viewBox="0 0 222 318" preserveAspectRatio="none" aria-hidden="true"><g transform="translate(4,14) scale(2.1666666666666665)" style="color:#FFFFFF" opacity="0.2"><use href="#ic-rain" width="24" height="24"/></g><circle cx="205" cy="70" r="16" fill="#FFFFFF" opacity="0.2"/><g transform="translate(46,236) scale(1.1666666666666667)" style="color:#FFFFFF" opacity="0.2"><use href="#ic-rain" width="24" height="24"/></g><circle cx="200" cy="270" r="30" fill="#FFFFFF" opacity="0.2"/><g transform="translate(32,142) scale(0.6666666666666666)" style="color:#FFFFFF" opacity="0.2"><use href="#ic-rain" width="24" height="24"/></g><circle cx="215" cy="170" r="10" fill="#FFFFFF" opacity="0.2"/><g transform="translate(113,23) scale(0.5833333333333334)" style="color:#FFFFFF" opacity="0.2"><use href="#ic-rain" width="24" height="24"/></g><circle cx="130" cy="300" r="9" fill="#FFFFFF" opacity="0.2"/></svg>
   <div class="bk"><div class="bkc"><span class="bk1">I’m</span><span class="bk2">bored!</span></div>
   <div class="bks">Play cards · Rainy-day set</div></div>
-  <div class="bkb">Play Before Pixels</div>
+  <div class="bkb"><img class="lgb" src="../../../brand/logo/wordmark-reverse.svg" alt="Play Before Pixels"></div>
 </div></div></section>
 <section class="page asset" style="width:2.5in;height:3.5in"><div class="card blank" style="--m:#3D86D8;--t:#E3EEFA;--on:#FFFFFF"><div class="panel">
   <div class="hd"><span class="age">Ages 5–8</span><span class="en en3"><i></i>Calm<i></i>Med<i></i>Wiggly</span></div>

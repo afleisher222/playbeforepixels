@@ -19,7 +19,7 @@ body{background:transparent} .wrap{display:flex;flex-wrap:wrap;gap:8px;width:130
   const base = { id: 'b', cat, art: null, label: '' };
   const disc = `<svg class="art" viewBox="0 0 120 100"><circle class="disc" cx="60" cy="52" r="44"/></svg>`;
   const nm = `frame-${cw.id}${cn ? '-' + cn : ''}`;
-  return `<div class="exp-frame" data-name="${nm}">${card(base, cw.id, { blankLabel: true, blankArt: true }).replace(/<svg class="art"[\s\S]*?<\/svg>/, disc).replace('class="lab blank"', 'class="lab blank empty"')}</div>`;
+  return `<div class="exp-frame" data-name="${nm}">${card(base, cw.id, { blankArt: true }).replace(/<svg class="art"[\s\S]*?<\/svg>/, disc)}</div>`;
 })).join('')}</div>
 </body></html>`;
 (async () => {
@@ -43,7 +43,7 @@ body{background:transparent} .wrap{display:flex;flex-wrap:wrap;gap:8px;width:130
     await p3.goto('file://' + path.join(__dirname, `editable-${paper}.html`), { waitUntil: 'networkidle' }); await p3.evaluate(() => document.fonts.ready);
     const pages = await p3.$$('.page.chart');
     let i = 0;
-    for (const el of pages) { i++; const foot = await el.$eval('.foot span', s => s.textContent); const slug = foot.split('·').slice(0, 2).join('-').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); await el.screenshot({ path: path.join(d, `${String(i).padStart(2, '0')}-${slug}.png`) }); }
+    for (const el of pages) { i++; const foot = await el.$eval('.foot span', s => s.textContent); const cls = await el.getAttribute('class'); const cw = (cls.match(/cw-([a-z]+)-page/) || [, 'x'])[1]; const slug = cw + '-' + foot.split('·').slice(0, 2).join('-').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').replace(/-move-each-card.*$/, '').replace(/-turn-the-page-sideways$/, ''); await el.screenshot({ path: path.join(d, `${String(i).padStart(2, '0')}-${slug}.png`) }); }
     await p3.close();
   }
   await b.close();
