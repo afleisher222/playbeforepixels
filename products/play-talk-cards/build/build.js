@@ -50,8 +50,8 @@ function coverArt(P, S) {
     const k = Object.assign({}, KIDS.A, { x: 212, y: 0 - 27 * 1.45, s: 1.45, aL: 150, aR: -150, face: 'laugh' });
     return adult(g) + kid(k) + use('ball', 'translate(46,-32) scale(.32)');
   }
-  const g = Object.assign({}, ADULTS.G3, { x: 104, y: 0 - 81 * 1.08, s: 1.08, aL: 12, aR: -34, face: 'laugh' });
-  const k = Object.assign({}, KIDS.D, { x: 206, y: 0 - 27 * 1.6, s: 1.6, aL: 14, aR: -140, face: 'laugh' });
+  const g = Object.assign({}, ADULTS.G1, { x: 104, y: 0 - 81 * 1.08, s: 1.08, aL: 12, aR: -34, face: 'laugh' });
+  const k = Object.assign({}, KIDS.E, { x: 206, y: 0 - 27 * 1.6, s: 1.6, aL: 14, aR: -140, face: 'laugh' });
   return adult(g) + kid(k);
 }
 function fan(P, picks, scale) {
