@@ -154,7 +154,7 @@ You're right to ask. Play Before Pixels is a trade name of AlphaPlay LLC, and we
 
 ### 27. I found a mistake. How do I tell you?
 
-Please use our contact form. You'll get an instant automatic reply, and a person reviews everything else within [5] business days. If we change a page because of a correction, we note the change and the date on that page. See [corrections](/research/editorial-policy/#corrections).
+Please use our contact form. Every message gets a reply. If we change a page because of a correction, we note the change and the date on that page. See [corrections](/research/editorial-policy/#corrections).
 
 ---
 

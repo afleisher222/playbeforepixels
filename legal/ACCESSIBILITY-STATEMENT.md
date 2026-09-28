@@ -23,7 +23,7 @@ We last reviewed the site on [DATE] using [automated checks (e.g., axe or WAVE) 
 Some parts of our shopping experience are provided by third parties (payment, marketplaces, course hosting). We choose providers that support accessibility and will help you complete a purchase another way if a third-party page does not work for you.
 
 ## Need help or found a barrier?
-Please tell us. Email [accessibility@DOMAIN] or write to AlphaPlay LLC, [BUSINESS MAILING ADDRESS]. Tell us the page and the problem. We will reply within [2] business days and, if needed, provide the information or product in another format or help you place an order directly.
+Please tell us. Email [accessibility@DOMAIN] or write to AlphaPlay LLC, [BUSINESS MAILING ADDRESS]. Tell us the page and the problem. Every message gets a reply, and if needed we will provide the information or product in another format or help you place an order directly.
 
 ## Ongoing commitment
 We review new pages and products for accessibility before publishing and re-test the site at least [twice a year].

@@ -32,8 +32,27 @@
     }
   ],
   "price_notes": "Prices set by marketing/DEMAND-CHECK.md (section 2, #13): $6.99 single-classroom, $12.99 site license. At or above the $5 TPT floor (rule 10). On TPT a basic seller keeps about 55% minus $0.30 per sale, so $6.99 nets roughly $3.54 and $12.99 roughly $6.84 [VERIFY current TPT payout tiers and whether TPT's own multi-license tool replaces our site tier]. On our own site both tiers are 100% digital, so margin is the price minus payment and platform fees. $12.99 for a whole site is low compared with the per-teacher price; revisit after the first 60 days of sales (DEMAND-CHECK kill/reprice rule). Planned ladder: this kit feeds the Classroom Talk and Play growth bundle ($22–$26) and the Talk Tower Class Cup ($15 classroom / $99 school season). Honest cost per activity: $6.99 / 7 games = about $1.00 per game (single classroom); $12.99 / 7 = about $1.86 per game for a whole site. No 'was' prices or countdowns (honest-pricing rule).",
-  "short_description": "7 circle-time talk games: every question, comment and idea adds a block to the class tower. Script, cards, trackers, slides, bonus story. Ages 3–7.",
-  "long_description": "Seven circle-time talk games, built around one class tower. In Talk Tower, each time a child asks a question, says something back, adds one more idea or shows they listened, a colorful block goes on the tower. Everyone builds one tower together, so there are no winners, no points and no blocks taken away.\n\nA one-page, word-for-word teacher script walks you through your first round, and six more variations follow, each with a starting age, a 2-minute no-setup version, and a make-it-easier and make-it-harder option. Prep is about 20 minutes, once, to print and cut; on a busy day, project the slides and play with no cutting at all.\n\nInside: 32 tower-block turn cards, 36 prompt and topic cards, name blocks, a whose-turn mat, a weekly turn tracker, a Talking Star and a 'Tower wobble!' reset sign, two family take-home pages and a class certificate.\n\nEvery way of talking counts: spoken words in any language, signing, pointing, picture cards and communication devices all earn a block, and 'pass' is always OK. Every play follows our published safety rules.\n\nYou get US Letter and A4 PDFs in full color and ink-saver, a 20-slide deck to project, a START HERE page, and a bonus 32-page read-aloud story, More Talk, Less Tap. Ages 3–7, preschool to grade 2. Choose a single-classroom license or a site license for your whole school or center.",
+  "price_floor": 3.0,
+  "price_floor_basis": "$3.00 net per digital sale (commerce/PRICING.md §2; COMPLIANCE-GATE 18). Every channel's net must stay at or above it, and no repricing or promotion may go below it.",
+  "net_per_unit_by_channel": {
+    "site_single_gumroad": 4.94,
+    "site_single_gumroad_discover_sale": 4.04,
+    "site_license_gumroad": 9.86,
+    "etsy_single": 5.53,
+    "etsy_single_offsite_ad_sale": 4.48,
+    "tpt_single": 3.2
+  },
+  "margin_pct_by_channel": {
+    "site_single_gumroad": 71,
+    "site_single_gumroad_discover_sale": 58,
+    "site_license_gumroad": 76,
+    "etsy_single": 79,
+    "etsy_single_offsite_ad_sale": 64,
+    "tpt_single": 46
+  },
+  "net_notes": "Estimated net per unit in USD, after fees and a 5% refund allowance (GAPS-ROUND-2 G2-11), rounded to the cent. Every fee is UNVERIFIED: no live check was possible on 2026-09-28 (web search unavailable). Fee model: commerce/PRICING.md §2, which points to commerce/storefront-setup-guide.md; where sources disagree, the more cautious figure is used (business/STRESS-TEST.md 'Needs a live check'). Etsy digital: $0.20 listing + 6.5% transaction + 3% + $0.25 payment processing; an Offsite Ads sale adds 15% (12% once the shop passes $10,000 in 12 months). Own checkout at launch (ops/QUEUE.md): Gumroad as merchant of record, 10% + $0.50, plus 2.9% + $0.30 card processing counted to be safe (the storefront guide says processing is included); a sale that comes through Gumroad Discover costs about 30% instead of 10% + $0.50. Shopify (deferred until about 25 own-site orders a month) would net more: 2.9% + $0.30. Before listing, check each fee on the platform's own fee page or calculator and replace these numbers. TpT basic seller: 55% payout minus $0.30 per resource (UNVERIFIED; the Basic tier's fee is disputed in commerce/storefront-setup-guide.md). At $6.99 the TpT net is only about $0.20 over the floor: a TpT price under $6.60 would break it. Every channel here is HELD until employment counsel clears school-facing sales.",
+  "short_description": "7 printable circle-time talk games for ages 3–7: every question, comment and idea adds a block to the class tower. Script, cards, trackers, slides, story.",
+  "long_description": "Talk Tower is a printable circle-time game kit for ages 3–7 (preschool to grade 2), with PDFs and slides. It has seven talk games built around one class tower. Each time a child asks a question, says something back, adds one more idea or shows they listened, a colorful block goes on the tower. Everyone builds one tower together. There are no winners, no points and no blocks taken away.\n\nA one-page teacher script walks you through your first round, word for word. Six more versions follow. Each has a starting age, a 2-minute no-setup version, and ways to make it easier or harder. Prep is about 20 minutes, once, to print and cut. On a busy day, project the slides and play with no cutting at all.\n\nInside: 32 tower-block turn cards, 36 prompt and topic cards, name blocks, a whose-turn mat, a weekly turn tracker, a Talking Star and a 'Tower wobble!' reset sign, two family take-home pages and a class certificate.\n\nSpoken words in any language, signing, pointing, picture cards and communication devices all earn a block, and 'pass' is always OK. Every play follows our published safety rules.\n\nYou get US Letter and A4 PDFs in full color and ink-saver. There is a 20-slide deck to project and a START HERE page. A bonus 32-page story, More Talk, Less Tap, is ready to read aloud. Choose a single-classroom license or a site license for your whole school or center.",
   "bullets": [
     "7 circle-time talk games: the main Talk Tower round plus 6 variations, each with a 2-minute no-setup version and easier and harder options",
     "One-page, word-for-word teacher script; about 20 minutes of prep, once, or play today with the slides and no cutting",
@@ -49,6 +68,21 @@
     "morning meeting game pre-k",
     "oral language printable game",
     "screen-free classroom game"
+  ],
+  "etsy_tags": [
+    "circle time game",
+    "turn taking game",
+    "preschool talk game",
+    "morning meeting",
+    "pre-k printable",
+    "kindergarten game",
+    "conversation cards",
+    "listening game",
+    "oral language",
+    "classroom game pdf",
+    "speaking activities",
+    "prek circle time",
+    "screen free class"
   ],
   "seo_title": "Talk Tower: Circle-Time Turn-Taking Talk Game (Ages 3–7)",
   "seo_description": "A printable circle-time game: every question, comment and idea adds a block to the class tower. Teacher script, cards, trackers, slides, bonus story.",
@@ -146,7 +180,7 @@
     },
     {
       "q": "Does it work for children who sign, point or use a talking device?",
-      "a": "Yes. Words in any language, signing, pointing, picture cards and a tap on a talking device all earn a block, and 'pass' is always OK. The kit treats a talking device as a child's voice, not screen time."
+      "a": "Yes. Words in any language, signing, pointing, picture cards and a tap on a talking device all earn a block, and 'pass' is always OK. The kit counts a talking device as a child's voice, not screen time."
     },
     {
       "q": "Is there a Spanish version?",
@@ -164,5 +198,20 @@
       "q": "Is it on Amazon or other stores?",
       "a": "No Amazon edition: a licensed classroom kit can't be sold as a paperback. A Teachers Pay Teachers and Etsy edition may follow."
     }
-  ]
+  ],
+  "ai_disclosure": {
+    "as_of": "2026-09-28",
+    "ai_helped_with": "Claude (an AI model made by Anthropic), working in Claude Code, wrote the draft text (games, teacher script, prompt cards, family pages, the bonus story and this listing), made the illustrations as flat vector art in code from the brand's own symbol library, and built the PDFs and slides with scripts.",
+    "humans_did": "The founder, for AlphaPlay LLC, directs the product line and set the brand, safety and honesty rules (brand/BRAND.md) that every draft follows, and she gives the final go-ahead before anything is listed. As of 2026-09-28 no person has rewritten the text or redrawn the art, and the customer panel in panel.md was simulated, not real people. Still to be done by a person before release: rewrite the text in her own words, proof the cover and page 1, and check a printed copy (human_todo).",
+    "etsy_attribution": "Designed by Play Before Pixels",
+    "etsy_ai_flag": true,
+    "etsy_who_made": "I did (the shop made it, using AI tools) [UNVERIFIED form wording]",
+    "etsy": "In Etsy's listing form, say the shop designed this item and that AI tools were used, wherever the form asks. As best known (UNVERIFIED): Etsy's Creativity Standards sort items as Made by, Designed by, Handpicked by or Sourced by; an item made with AI tools belongs under Designed by, and Etsy asks sellers to say in the description that AI was used. Add etsy_description_line at the end of the Etsy description.",
+    "etsy_description_line": "How this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.",
+    "tpt": "Say in the TpT description that the text, illustrations and layout were created with AI tools, and answer any AI question on TpT's upload form truthfully (TpT's current AI rules are UNVERIFIED). TpT stays HELD until employment counsel clears school-facing sales.",
+    "site": "Product page line: 'How this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.' Add 'and edited by the founder' only after she has rewritten the text or art.",
+    "social_ai_label": "Turn on each platform's AI-generated-content label for posts that use these images or this text (label names UNVERIFIED).",
+    "notes": "Answers describe what really happened as of the date above. Platform categories and form wording are from memory (UNVERIFIED): check each form on upload day. Never call any part hand-drawn, handmade or human-written."
+  },
+  "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC."
 }

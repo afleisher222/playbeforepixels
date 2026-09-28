@@ -56,8 +56,8 @@ Please check your address. If a package is returned because of an incorrect addr
 - For customers in the EU, UK and other places with a statutory cancellation right: at checkout we ask you to agree to immediate delivery and acknowledge that you lose your right to cancel once the download starts. If you did not give that consent, you may cancel within 14 days.
 - [ATTORNEY: the same 14-day statutory right applies to the online course and to physical stock items for EU/UK consumers. The "30% completed" condition in section 4 cannot cut down the statutory right unless the buyer gave the immediate-access consent and acknowledgment. From June 19, 2026 (Directive (EU) 2023/2673, new Art. 11a), sites selling directly to EU consumers must also offer an online "withdraw from contract" function. Confirm both, or sell to EU/UK buyers through a merchant of record or marketplace that handles them. UNVERIFIED.]
 
-### 4. Online course — "The 30-Day Screen Reset"
-- **[14]-day guarantee:** If you are not satisfied, email us within [14] days of purchase for a full refund, as long as you have completed no more than [30%] of the lessons. [Choose terms and keep them consistent with the sales page.]
+### 4. Online course — "30 Days of Back-and-Forth"
+- **[14]-day guarantee:** If you are not satisfied, email us within [14] days of purchase for a full refund, as long as you have completed no more than [30%] of the lessons. [This section is the single source for the course refund terms. Since September 28, 2026 every customer-facing mention (sales page, emails, START HERE, free starter, listing, workbook FAQ, help-center FAQ, macros) uses exactly these terms; the build reads them from `REFUND` in `products/course-screen-reset/build/content.js`. Founder decision PENDING in `ops/APPROVALS.md`: keep 14 days, or change this policy to 30 days for the course. If the terms change, change them here first, then `REFUND`, then rebuild.]
 - After that, course fees are non-refundable, but you keep access for the stated access period.
 - If the course is sold on a payment plan, refunds are prorated to payments made and remaining installments are cancelled.
 - **Memberships or subscriptions (if offered):** the price, billing interval and renewal date are shown before you pay; you may cancel online at any time through [account page / link in every receipt], and cancellation stops future charges. We send a reminder before any annual renewal. [ATTORNEY: confirm federal (ROSCA) and state automatic-renewal requirements, including California's, for any recurring product.]
@@ -69,6 +69,6 @@ See our Coaching & Workshop Terms for cancellation, rescheduling and refund rule
 Bulk orders, quotes, purchase orders, and group/advocacy kits follow the terms in the quote or invoice. Custom-printed or personalized bulk items are non-returnable except for defects.
 
 ### 7. How to request a return or refund
-Email [hello@DOMAIN] with your order number, the item, and the reason. We reply within [2] business days.
+Email [hello@DOMAIN] with your order number, the item, and the reason. Most answers are already in the FAQ in our help center at [DOMAIN]/help, and every message gets a reply.
 
 AlphaPlay LLC, d/b/a Play Before Pixels — [BUSINESS MAILING ADDRESS]

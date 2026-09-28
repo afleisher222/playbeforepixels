@@ -12,13 +12,24 @@
   "activities": "186 plays: 150 play cards (38 for ages 1–3, 38 for 3–5, 37 for 5–8, 37 for 8–12) + 18 summer + 18 rainy-day cards. 168 of the 186 need nothing to buy.",
   "prep_time": "About 30 min to print and cut every card with a paper trimmer, then reusable. No-cut option: pick from the card index. Each card also shows its own prep: none, 2 min or 10 min.",
   "price_usd": 6.5,
+  "price_notes": "Everyday price $6.50, the same on Etsy and on our own checkout (Gumroad at launch), per ops/QUEUE.md LAUNCH FIRST (business/GROWTH-ENGINE.md §8a); the DEMAND-CHECK price for 150 cards (competitors $3–$7; $5–$9 with extras). Value line: 150 plays, about 4¢ each (186 with the seasonal sets, about 3.5¢ each). Honest pricing (BRAND.md, overrides DEMAND-CHECK rule 2): no 'was', compare-at or anchor price and no permanent sale; only real, time-limited promotions that truly end, with dates recorded here. Never below $5 (DEMAND-CHECK rule 3). net_per_unit_by_channel is estimated from the fee model in net_notes (UNVERIFIED fees) and must stay at or above price_floor $3.00 (COMPLIANCE-GATE #18). Bundles: the 1–3 and 3–5 bands are a part of the $29 Ages 1–5 Instant Gift Bundle, and the cards are a part of the $45 Birth-to-5 Printable Library (ops/QUEUE.md), each 10–25% under the live sum of its parts. Kill rule: under 5 sales after 60 days with the listing fixed, reprice once, then fold into a bundle. POD deck only after the printable sells.",
   "price_floor": 3.0,
+  "price_floor_basis": "$3.00 net per digital sale (commerce/PRICING.md §2; COMPLIANCE-GATE 18). Every channel's net must stay at or above it, and no repricing or promotion may go below it.",
   "net_per_unit_by_channel": {
     "etsy": 5.11,
     "etsy_offsite_ad_sale": 4.13,
-    "site": 5.69
+    "site_gumroad": 4.54,
+    "site_gumroad_discover_sale": 3.74,
+    "kdp_activity_edition_later": null
   },
-  "price_notes": "Everyday price $6.50, the DEMAND-CHECK price for 150 cards (competitors $3–$7; $5–$9 with extras). Value line: 150 plays, about 4¢ each (186 with the seasonal sets, about 3.5¢ each). Honest pricing (BRAND.md, overrides DEMAND-CHECK rule 2): no 'was', compare-at or anchor price and no permanent sale; only real, time-limited promotions that truly end, with dates recorded here. Never below $5 (DEMAND-CHECK rule 3). net_per_unit_by_channel are estimates from ops/TESTS/check_listings.py with UNVERIFIED fees (Etsy listing + transaction + payment fees; offsite-ads sale; merchant of record on our site) and must stay at or above price_floor $3.00 (COMPLIANCE-GATE #18). Ladder: this single, then seasonal add-ons, then bundles at 10–25% off the sum of parts. Kill rule: under 5 sales after 60 days with the listing fixed, reprice once, then fold into a bundle. POD deck only after the printable sells.",
+  "margin_pct_by_channel": {
+    "etsy": 79,
+    "etsy_offsite_ad_sale": 64,
+    "site_gumroad": 70,
+    "site_gumroad_discover_sale": 58,
+    "kdp_activity_edition_later": null
+  },
+  "net_notes": "Estimated net per unit in USD, after fees and a 5% refund allowance (GAPS-ROUND-2 G2-11), rounded to the cent. Every fee is UNVERIFIED: no live check was possible on 2026-09-28 (web search unavailable). Fee model: commerce/PRICING.md §2, which points to commerce/storefront-setup-guide.md; where sources disagree, the more cautious figure is used (business/STRESS-TEST.md 'Needs a live check'). Etsy digital: $0.20 listing + 6.5% transaction + 3% + $0.25 payment processing; an Offsite Ads sale adds 15% (12% once the shop passes $10,000 in 12 months). Own checkout at launch (ops/QUEUE.md): Gumroad as merchant of record, 10% + $0.50, plus 2.9% + $0.30 card processing counted to be safe (the storefront guide says processing is included); a sale that comes through Gumroad Discover costs about 30% instead of 10% + $0.50. Shopify (deferred until about 25 own-site orders a month) would net more: 2.9% + $0.30. Before listing, check each fee on the platform's own fee page or calculator and replace these numbers. kdp_activity_edition_later: planned, not built; fill in from KDP's calculator before it is published.",
   "short_description": "150 printable play cards for ages 1–12, sorted by age and energy. Each has what you need, a talk line and a safety line. PDF in Letter and A4.",
   "long_description": "150 printable play cards for ages 1–12, plus 36 summer and rainy-day cards. It is a PDF download in US Letter and A4.\n\nWhen your child says “I’m bored,” pull a card and play. Most cards use things you already have: pots, socks, boxes and paper. 168 of the 186 cards need nothing to buy.\n\nEach card has an age band and a starting age. It shows the energy level: calm, medium or wiggly. It lists what you need, prep time, mess and a rough play time. It gives short steps, one thing to say while you play, and a safety line. Cards for kids under 5 say “With a grown-up.”\n\nA two-page grown-up guide shows how to start in two minutes. It has three talk tips and a pantry list. The card index gives an easier way, a harder way and a 2-minute tired-grown-up way for every card.\n\nYou also get 39 blank cards, card backs, 24 box dividers, 12 jar labels, a Play Menu, weekly planners and a fridge certificate.\n\nYou get five PDFs: START HERE, color and low-ink, each in Letter and A4. In the color files you can type in the blank cards, labels, dividers, planners and certificate. You can type text and tick circles. You can’t change fonts, colors or pictures.\n\nEvery play follows our published safety rules. Digital file in English; nothing is shipped. Personal license for one household; classroom and site licenses are separate.",
   "bullets": [
@@ -161,14 +172,20 @@
   ],
   "amazon_route": "kdp-activity-edition: re-flow the 186 plays as a KDP paperback activity book ('150 I'm Bored Play Ideas for Kids 1–12'), about 8.5 × 11 in, 4 cards per page by age band, plus the grown-up guide, safety, planner and certificate pages. If the interior is black and white, say so in the subtitle and first bullet (rule 37). Check KDP print cost and page limits first [VERIFY]. Not built yet; listed in human_todo.",
   "ai_disclosure": {
+    "as_of": "2026-09-28",
+    "ai_helped_with": "Claude (an AI model made by Anthropic), working in Claude Code, wrote the draft text (activities, talk lines, guide pages, safety notes and this listing), made the illustrations as flat vector art in code from the brand's own symbol library, and built the page layouts and PDF files with scripts.",
+    "humans_did": "The founder, for AlphaPlay LLC, directs the product line and set the brand, safety and honesty rules (brand/BRAND.md) that every draft follows, and she gives the final go-ahead before anything is listed. As of 2026-09-28 no person has rewritten the text or redrawn the art, and the customer panel in panel.md was simulated, not real people. Still to be done by a person before release: rewrite the text in her own words, proof the cover and page 1, and check a printed copy (human_todo).",
     "etsy_attribution": "Designed by Play Before Pixels",
     "etsy_ai_flag": true,
-    "etsy": "Answer Etsy's creation questions truthfully: layout, illustrations and draft text were made with AI assistance (Claude Code) from the brand's own symbol library. Set the AI flag if Etsy's form asks [VERIFY current wording]. Add 'edited by the founder' only after she has rewritten the cards.",
-    "kdp_ai_text": "AI-generated (edited by the founder only once she has rewritten it)",
-    "kdp_ai_images": "AI-generated",
-    "kdp_ai_translation": "none",
-    "site": "Product page line: 'Illustrations and text are made with AI assistance.'",
-    "social_ai_label": "Apply each platform's AI label to posts that use these images."
+    "etsy_who_made": "I did (the shop made it, using AI tools) [UNVERIFIED form wording]",
+    "etsy": "In Etsy's listing form, say the shop designed this item and that AI tools were used, wherever the form asks. As best known (UNVERIFIED): Etsy's Creativity Standards sort items as Made by, Designed by, Handpicked by or Sourced by; an item made with AI tools belongs under Designed by, and Etsy asks sellers to say in the description that AI was used. Add etsy_description_line at the end of the Etsy description.",
+    "etsy_description_line": "How this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.",
+    "kdp_ai_text": "AI-generated (Claude). Answer yes. As best known (UNVERIFIED), KDP counts text an AI tool wrote as AI-generated even after heavy editing; only passages the founder writes herself are her own.",
+    "kdp_ai_images": "AI-generated (Claude; vector art made in code). Answer yes.",
+    "kdp_ai_translation": "None: English only, no machine translation.",
+    "site": "Product page line: 'How this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.' Add 'and edited by the founder' only after she has rewritten the text or art.",
+    "social_ai_label": "Turn on each platform's AI-generated-content label for posts that use these images or this text (label names UNVERIFIED).",
+    "notes": "Answers describe what really happened as of the date above. Platform categories and form wording are from memory (UNVERIFIED): check each form on upload day. Never call any part hand-drawn, handmade or human-written."
   },
   "next_products": [
     "play-talk-cards",

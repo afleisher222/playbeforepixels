@@ -19,6 +19,24 @@
   "ages": "Families with children aged 1–12 (every play shows a starting age from 6 months to 4 years, with easier and harder versions)",
   "price_usd": 27,
   "price_notes": "Program $27 everyday price (DEMAND-CHECK course row: $27 written program, $49 bundle). Comparable founder-led video courses sell for $71–$99, but we compete on a written, faceless, go-at-your-own-pace format and never compare ourselves to named brands. Bundle $49 = program + Play-First Family Kit ($11) + 100 Screen-Free Plays printable ($9.99) + 150 I’m Bored Play Cards ($6.50) = $54.49 separately, about 10% off (DEMAND-CHECK section 4 rule 4: 10–25% off the sum of parts). The spec said ‘$49 bundle with the Family Kit’, but program + Family Kit alone totals $38, so $49 for those two would cost MORE than buying separately; the two printables were added to keep the bundle honest. Alternative if the founder prefers a two-item bundle: $34. Paperback $14.99: KDP 60% royalty = $8.99 minus about $2.84 print for a 92-page 8 x 10 B/W book (large-trim flat fee) ≈ $6.15 a copy [VERIFY in KDP’s pricing calculator]. Honest value line: $27 for 30 lessons, 30 plays and 38 scripts is about 90¢ a day. No ‘was’ prices, no countdowns; a founding-beta price is allowed only if clearly labelled and it genuinely ends (BRAND.md honest pricing). Guarantee: follows legal/SHIPPING-RETURNS-REFUNDS.md Part B §4, full refund within 14 days of purchase if no more than 30% of the lessons are completed (founder decision on 14 vs 30 days pending in ops/APPROVALS.md).",
+  "price_floor": 3.0,
+  "price_floor_basis": "$3.00 net per digital sale (commerce/PRICING.md §2; COMPLIANCE-GATE 18); the KDP paperback must also keep a 30% margin, $4.50 on $14.99 (price_floor_by_channel).",
+  "price_floor_by_channel": {
+    "kdp_paperback": 4.5
+  },
+  "net_per_unit_by_channel": {
+    "site_gumroad": 21.37,
+    "site_gumroad_discover_sale": 16.47,
+    "bundle_site_gumroad": 39.43,
+    "kdp_paperback": 5.85
+  },
+  "margin_pct_by_channel": {
+    "site_gumroad": 79,
+    "site_gumroad_discover_sale": 61,
+    "bundle_site_gumroad": 80,
+    "kdp_paperback": 39
+  },
+  "net_notes": "Estimated net per unit in USD, after fees and a 5% refund allowance (GAPS-ROUND-2 G2-11), rounded to the cent. Every fee is UNVERIFIED: no live check was possible on 2026-09-28 (web search unavailable). Fee model: commerce/PRICING.md §2, which points to commerce/storefront-setup-guide.md; where sources disagree, the more cautious figure is used (business/STRESS-TEST.md 'Needs a live check'). Etsy digital: $0.20 listing + 6.5% transaction + 3% + $0.25 payment processing; an Offsite Ads sale adds 15% (12% once the shop passes $10,000 in 12 months). Own checkout at launch (ops/QUEUE.md): Gumroad as merchant of record, 10% + $0.50, plus 2.9% + $0.30 card processing counted to be safe (the storefront guide says processing is included); a sale that comes through Gumroad Discover costs about 30% instead of 10% + $0.50. Shopify (deferred until about 25 own-site orders a month) would net more: 2.9% + $0.30. Before listing, check each fee on the platform's own fee page or calculator and replace these numbers. KDP paperback: 60% royalty at a list price of $9.99 or more (50% below), minus the print cost, less 5% for returns (a return reverses the royalty); Expanded Distribution (40%) stays off. Print costs are from price_notes and are UNVERIFIED: confirm in KDP's pricing calculator. Print cost about $2.84 (92-page black-and-white 8 × 10 in). The earlier figures assumed a merchant of record at 5% + $0.50; the plan's merchant of record is Gumroad (commerce/storefront-setup-guide.md §13). The money-back guarantee (14 days, with a founder decision on 30 days pending in ops/APPROVALS.md) may push refunds above 5%: re-check after the first month of sales.",
   "bundle": {
     "name": "30 Days of Back-and-Forth Bundle",
     "slug": "bundle-30-days",
@@ -100,18 +118,16 @@
   "name_history": "Was “The 30-Day Screen Reset”. Renamed under brand/ORIGINALITY.md A4 (“Reset” is a retired name: it sits close to an existing four-week “Reset” plan and implies reversing harm, BRAND.md hard rule 1). Folder and slug stay course-screen-reset until task #9 renames slugs repo-wide.",
   "prep_time": "22 of the 30 plays need no prep; the other 8 take about 2 minutes. Setup before Day 1 takes about 2 minutes (fill a play basket). Shown on the workbook cover (page 1), START HERE and the sales page.",
   "editable": "In free Adobe Acrobat Reader (141 type-in fields): the planning pages, the blank tracker, the daily notes, the weekly check-ins, the family plan, the certificate and the blank play pages. The lessons, plays and pre-filled tracker are fixed text.",
-  "price_floor": 3,
-  "net_per_unit_by_channel": {
-    "site_mor": 23.8,
-    "bundle_site_mor": 43.6,
-    "kdp_paperback": 6.15,
-    "note": "Estimates, UNVERIFIED: merchant of record at about 5% + $0.50 plus a 5% refund allowance; KDP from price_notes. Re-check with the chosen merchant of record and KDP’s calculator before launch."
-  },
   "ai_disclosure": {
-    "site": "Product page line: ‘Illustrations and text are made with AI assistance.’ Add ‘edited by the founder’ only after she has rewritten the text.",
-    "kdp_ai_text": "AI-generated (change to AI-assisted only for parts the founder has rewritten herself)",
-    "kdp_ai_images": "AI-generated",
-    "kdp_ai_translation": "none",
-    "social_ai_label": "Apply each platform’s AI label to posts that use these images."
-  }
+    "as_of": "2026-09-28",
+    "ai_helped_with": "Claude (an AI model made by Anthropic), working in Claude Code, wrote the draft lessons, emails, scripts, workbook pages and this listing, made the illustrations as flat vector art in code from the brand's own symbol library, and built the workbook PDFs with scripts.",
+    "humans_did": "The founder, for AlphaPlay LLC, directs the product line and set the brand, safety and honesty rules (brand/BRAND.md) that every draft follows, and she gives the final go-ahead before anything is listed. As of 2026-09-28 no person has rewritten the text or redrawn the art, and the customer panel in panel.md was simulated, not real people. Still to be done by a person before release: rewrite the text in her own words, proof the cover and page 1, and check a printed copy (human_todo).",
+    "kdp_ai_text": "AI-generated (Claude). Answer yes. As best known (UNVERIFIED), KDP counts text an AI tool wrote as AI-generated even after heavy editing; only passages the founder writes herself are her own.",
+    "kdp_ai_images": "AI-generated (Claude; vector art made in code). Answer yes.",
+    "kdp_ai_translation": "None: English only, no machine translation.",
+    "site": "Product page line: 'How this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.' Add 'and edited by the founder' only after she has rewritten the text or art.",
+    "social_ai_label": "Turn on each platform's AI-generated-content label for posts that use these images or this text (label names UNVERIFIED).",
+    "notes": "Answers describe what really happened as of the date above. Platform categories and form wording are from memory (UNVERIFIED): check each form on upload day. Never call any part hand-drawn, handmade or human-written."
+  },
+  "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC."
 }

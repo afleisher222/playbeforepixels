@@ -39,7 +39,7 @@ Drape a blanket over a table or two chairs to make a hideout. Bring in a flashli
 
 **[Start 30 Days of Back-and-Forth · $27]({{program_checkout_link}})** · [Or get the bundle · $49]({{bundle_checkout_link}})
 
-14-day money-back guarantee (terms: https://playbeforepixels.com/refunds). Written program; no videos, calls or coaching.
+14-day money-back guarantee (terms: https://playbeforepixels.com/shipping-returns/). Written program; no videos, calls or coaching.
 
 ---
 **Share the free printable:** know a family who might like it? Our free 7 Days of Play First starter is at https://playbeforepixels.com/30-days/start

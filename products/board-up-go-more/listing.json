@@ -9,8 +9,19 @@
   "ages": "0–3 (paperback: paper pages, read together with a grown-up)",
   "price_usd": 11.99,
   "price_notes": "Paperback $11.99 at launch (KDP and IngramSpark). At 60% KDP royalty minus an estimated $3.24 print cost (premium color, 32 pages, $1.00 + $0.07/page), about $3.95 per copy [VERIFY in the KDP pricing calculator; KDP standard color needs 72+ pages, so a 32-page color book prints as premium color]. Board book $12.99 (DEMAND-CHECK section 4, rule 9) and a Talk-Along Firsts 3-pack at $29.99 marked 'save', only when books 2 and 3 exist and the landed unit cost from the offset quote is at or below 35–40% of retail [VERIFY quotes]. Wholesale is typically 50% of retail and applies to the board book only, once it is stocked at a 3PL.",
-  "short_description": "22 first words, one per page, each with a sound, sign or move to copy and a grown-up tip. A talk-along book for ages 0–3.",
-  "long_description": "Up! Go! More! is a bright, uncluttered first-words book for babies and toddlers, built for laps and back-and-forth. Each of its 22 pages shows one everyday word a little one really uses, from hi and peekaboo to eat, help, more, all done and night-night. The word is set in huge rounded letters above one big, friendly picture.\n\nEvery page also gives you two small things to do together. A Say it, Sign it or Act it cue offers one sound, simple hand sign or move to copy, like tapping fingertips for more or hiding your eyes for peekaboo. A short grown-up tip turns reading into a back-and-forth chat: pause and wait, add one word, offer a choice, copy each other, or follow your child's lead. A look, a point, a sign or a tap on a talking device all count as a turn. There is no script and nothing to get right. Pick any tip and skip any tip.\n\nThe front pages explain how to read together in four plain steps. The back pages show where the words live in your day, from mealtime to bedtime, and include a keepsake word list, pages to add your family's own words, and a free printable bonus for grown-ups. The paperback has paper pages: read it together, and keep it away from mouths.\n\nUp! Go! More! is Book 1 of the Talk-Along Firsts series. Next come sounds and animals, then routines and feelings.",
+  "price_floor": 3.6,
+  "price_floor_basis": "30% margin on a print-on-demand sale of the $11.99 paperback (commerce/PRICING.md §2): 0.30 × $11.99 = $3.60.",
+  "net_per_unit_by_channel": {
+    "kdp_paperback": 3.76,
+    "ingramspark_paperback": null
+  },
+  "margin_pct_by_channel": {
+    "kdp_paperback": 31,
+    "ingramspark_paperback": null
+  },
+  "net_notes": "KDP paperback: 60% royalty at a list price of $9.99 or more (50% below), minus the print cost, less 5% for returns (a return reverses the royalty); Expanded Distribution (40%) stays off. Print costs are from price_notes and are UNVERIFIED: confirm in KDP's pricing calculator. Print cost about $3.24 (premium color, 32 pages). ingramspark_paperback: null until IngramSpark's print cost and wholesale discount are set. Holds (ops/QUEUE.md): Up! Go! More! on KDP waits for the CPSIA 0–3 question, and IngramSpark waits for employment counsel (library and bookstore reach). The website only links to the retailer listings, so it has no net of its own; the board book (Wave 3) needs an offset quote first. Keep KDP Expanded Distribution off: at 40% it would net about $1.48, under the floor.",
+  "short_description": "22 first words, one per page, each with a sound, sign or move to copy and a grown-up tip. A talk-along paperback book for ages 0–3.",
+  "long_description": "Up! Go! More! is a talk-along first-words book for ages 0–3, a paperback printed on demand. It is bright, uncluttered and made for laps and back-and-forth. Each of its 22 word pages shows one everyday word a little one really uses, from hi and peekaboo to eat, help, more, all done and night-night. The word is set in huge rounded letters above one big, friendly picture.\n\nEvery page also gives you two small things to do together. A Say it, Sign it or Act it cue offers one sound, simple hand sign or move to copy, like tapping fingertips for more or hiding your eyes for peekaboo. A short grown-up tip turns reading into a back-and-forth chat: pause and wait, add one word, offer a choice, copy each other, or follow your child's lead. A look, a point, a sign or a tap on a talking device all count as a turn. There is no script and nothing to get right. Pick any tip and skip any tip.\n\nThe front pages explain how to read together in four plain steps. The back pages show where the words live in your day, from mealtime to bedtime, and include a keepsake word list, pages to add your family's own words, and a free printable bonus for grown-ups. The paperback has paper pages: read it together, and keep it away from mouths.\n\nUp! Go! More! is Book 1 of the Talk-Along Firsts series. Next come sounds and animals, then routines and feelings.",
   "bullets": [
     "22 real first words, one per page: hi, peekaboo, up, down, go, stop, ball, in, open, wow, uh-oh, help, clap, shoe, eat, cup, more, all done, bye-bye, book, hug, night-night",
     "A Say it, Sign it or Act it cue on every page: one sound, simple hand sign or move for you and your little one to copy together",
@@ -138,5 +149,18 @@
       "q": "Returns?",
       "a": "Printing mistakes or damage are replaced by the store you bought from. See playbeforepixels.com for the full refund policy."
     }
-  ]
+  ],
+  "ai_disclosure": {
+    "as_of": "2026-09-28",
+    "ai_helped_with": "Claude (an AI model made by Anthropic), working in Claude Code, wrote the draft story text and grown-up tips, made the illustrations as flat vector art in code from the brand's own symbol library, and laid out the interior, the cover files and this listing with scripts.",
+    "humans_did": "The founder, for AlphaPlay LLC, directs the product line and set the brand, safety and honesty rules (brand/BRAND.md) that every draft follows, and she gives the final go-ahead before anything is listed. As of 2026-09-28 no person has rewritten the text or redrawn the art, and the customer panel in panel.md was simulated, not real people. Still to be done by a person before release: rewrite the text in her own words, proof the cover and page 1, and check a printed copy (human_todo).",
+    "kdp_ai_text": "AI-generated (Claude). Answer yes. As best known (UNVERIFIED), KDP counts text an AI tool wrote as AI-generated even after heavy editing; only passages the founder writes herself are her own.",
+    "kdp_ai_images": "AI-generated (Claude; vector art made in code). Answer yes.",
+    "kdp_ai_translation": "None: English only, no machine translation.",
+    "ingramspark": "Disclose AI-generated text and images wherever IngramSpark's title setup asks (whether it asks is UNVERIFIED), in the same words as the KDP answers. Never register the AI-generated parts as human-authored (legal/protection/PROTECTION-PLAN.md).",
+    "site": "Product page line: 'How this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.' Add 'and edited by the founder' only after she has rewritten the text or art.",
+    "social_ai_label": "Turn on each platform's AI-generated-content label for posts that use these images or this text (label names UNVERIFIED).",
+    "notes": "Answers describe what really happened as of the date above. Platform categories and form wording are from memory (UNVERIFIED): check each form on upload day. Never call any part hand-drawn, handmade or human-written."
+  },
+  "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC."
 }

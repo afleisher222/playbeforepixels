@@ -2,17 +2,39 @@
 const fs = require('fs'), path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const SAFE_LINE = 'Every play follows our published safety rules';
+// ---------- Price floor and net per channel (ops/TESTS/listing-fixes.md, 2026-09-28) ----------
+// One fee model for every listing; every fee is UNVERIFIED (see FEE_NOTE). Same rounding as the hand-kept listings.
+const c2 = x => Math.floor(x * 100 + 0.5 + 1e-6) / 100;
+const REFUND = 0.05; // GAPS-ROUND-2 G2-11 refund allowance (3–5%; the cautious end)
+const NET = {
+  etsy: p => c2(p - 0.20 - 0.065 * p - (0.03 * p + 0.25) - REFUND * p),
+  etsy_offsite_ad_sale: p => c2(p - 0.20 - 0.065 * p - (0.03 * p + 0.25) - REFUND * p - 0.15 * p),
+  site_gumroad: p => c2(p - (0.10 * p + 0.50) - (0.029 * p + 0.30) - REFUND * p),
+  site_gumroad_discover_sale: p => c2(p - 0.30 * p - (0.029 * p + 0.30) - REFUND * p),
+};
+const FEE_NOTE = "Estimated net per unit in USD, after fees and a 5% refund allowance (GAPS-ROUND-2 G2-11), rounded to the cent. Every fee is UNVERIFIED: no live check was possible on 2026-09-28 (web search unavailable). Fee model: commerce/PRICING.md §2, which points to commerce/storefront-setup-guide.md; where sources disagree, the more cautious figure is used (business/STRESS-TEST.md 'Needs a live check'). Etsy digital: $0.20 listing + 6.5% transaction + 3% + $0.25 payment processing; an Offsite Ads sale adds 15% (12% once the shop passes $10,000 in 12 months). Own checkout at launch (ops/QUEUE.md): Gumroad as merchant of record, 10% + $0.50, plus 2.9% + $0.30 card processing counted to be safe (the storefront guide says processing is included); a sale that comes through Gumroad Discover costs about 30% instead of 10% + $0.50. Shopify (deferred until about 25 own-site orders a month) would net more: 2.9% + $0.30. Before listing, check each fee on the platform's own fee page or calculator and replace these numbers.";
+const FLOOR_BASIS = "$3.00 net per digital sale (commerce/PRICING.md §2; COMPLIANCE-GATE 18). Every channel's net must stay at or above it, and no repricing or promotion may go below it.";
+const KDP_LATER_NOTE = " kdp_activity_edition_later: planned, not built; fill in from KDP's calculator before it is published.";
+const HONEST = "One price, shown plainly: no list, 'was', compare-at or crossed-out price and no standing sale (BRAND.md 'Honest pricing'; 16 CFR 233.1). A promotion is allowed only if it is real and time-limited, with its start and end dates recorded in price_history before it runs.";
+const KILL = "Kill rule (ops/QUEUE.md): fewer than 5 sales in 60 days after the EXP-03 search-copy decision → reprice once (never below price_floor, no 'was' price) → add to a bundle as a part and deactivate the listing.";
+const SAME_PRICE = "the same on Etsy and on our own checkout (Gumroad at launch), per ops/QUEUE.md LAUNCH FIRST (business/GROWTH-ENGINE.md §8a)";
+const OWNER = "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.";
+const pricing = (p, { kdpLater = false, discover = true, note = '' } = {}) => {
+  const nets = {};
+  for (const [k, f] of Object.entries(NET)) if (discover || k !== 'site_gumroad_discover_sale') nets[k] = f(p);
+  if (kdpLater) nets.kdp_activity_edition_later = null;
+  const margins = {};
+  for (const [k, v] of Object.entries(nets)) margins[k] = v === null ? null : Math.round(100 * v / p);
+  return { price_floor: 3.0, price_floor_basis: FLOOR_BASIS, net_per_unit_by_channel: nets, margin_pct_by_channel: margins,
+    net_notes: FEE_NOTE + (kdpLater ? KDP_LATER_NOTE : '') + note };
+};
+const underFloor = L => Object.entries(L.net_per_unit_by_channel).filter(([, v]) => v !== null && v < L.price_floor).map(([k]) => k);
 const common = {
   channels: [
     'Etsy (digital download, delivered instantly by Etsy): upload the 5 files in etsy-upload/ (no URL or QR code inside, per Etsy link rules and BRAND customer-voice rule 2)',
     'Play Before Pixels website shop (instant download by automated email/link): the store edition PDFs + START-HERE.pdf (with the bonus QR code and website)',
     'Later, only after the printable sells: print-on-demand poker deck in a tuck box (files in pod-later/, marked POD LATER)',
   ],
-  ai_disclosure: {
-    etsy: 'Answer Etsy’s creation questions truthfully: designed by Play Before Pixels with AI assistance (layout, illustrations and draft text generated with Claude Code from the brand’s own symbol library), then reviewed, edited and selected by the founder. Set the AI flag if Etsy’s form asks [VERIFY current Etsy wording].',
-    site: 'Do not describe the text or art as hand-made or human-written until the founder has rewritten it (human_todo 1).',
-    social: 'Apply the platform’s AI label to any post that uses these images.',
-  },
 };
 const compliance = (key) => [
   'Parent education only: no health, medical or developmental-outcome claims (BRAND.md rule 1); no trademarked program names (talk moves are plain words, rule 6); no diagnosis-related keywords, tags or wording anywhere (diagnosis-search rule); no named schools, companies, apps, devices or competitor brands; no research citations used.',
@@ -29,15 +51,15 @@ const A = {
   slug: 'play-talk-cards',
   title: '52 Play & Talk Cards for Ages 0–5',
   subtitle: 'One play and one talk tip on every card, age-coded for babies, toddlers and preschoolers',
-  etsy_title: '52 Play & Talk Cards for Ages 0-5, Printable Toddler Activity Cards, Baby Play Ideas, Screen-Free Play with Talk Tips, Play Before Pixels',
+  etsy_title: "52 Play and Talk Cards for Ages 0-5, Printable Toddler and Baby Activities, Screen-Free Ideas with Tips, Play Before Pixels",
   format: 'Printable PDF, instant download. 5 files: START HERE (1 page) plus the same 21-page deck as Color and Low-ink, each in US Letter and A4. Inside: 54 poker-size cards (52 plays, a how-to card and a blank) on 6 card sheets, optional card backs, 8 no-cut play pages (every play with its start age, prep, mess, play time, a 2-minute version and easier/harder), a grown-up guide with 8 talk moves, printing and safety tips, type-in blank cards (fillable in free Adobe Acrobat Reader), a 52-week fridge checklist and a “what’s next” page. English text.',
   trim: 'Cards 2.5 × 3.5 in (63.5 × 88.9 mm, poker size), 9 per page with cut lines. US Letter 8.5 × 11 in and A4 210 × 297 mm. Card sheets use 0.25 in top and bottom margins on US Letter so the cards print at true size; if a printer clips the edge, choosing “Fit” prints them slightly smaller. All other pages use 0.5 in margins. No bleed (home printing).',
   pages: 21,
   ages: '0–5 (four bands: 0–12 months, 1–2, 2–3 and 3–5 years; every play shows its start age in months)',
   price_usd: 7.00,
-  price_notes: 'Everyday price $7.00, the spec and DEMAND-CHECK target ($7 printable, 52 plays; category $2.99–$22). Honest value line: 52 plays for about 13 cents each. Under BRAND.md “Honest pricing” (16 CFR 233.1, overrides DEMAND-CHECK rule 2) there is no list, “was” or compare-at price and no standing sale; only genuine, dated promotions (a real launch week, Black Friday) that truly end. Bundle with Family Talk-Along Cards: $12 for both (about 14% off the $14 sum) [founder to confirm]. Etsy net at $7 is roughly $5.70–$5.90 after listing, transaction and processing fees [VERIFY current Etsy fees]. Kill rule: fewer than 5 sales after 60 days with listing and SEO fixed means reprice once, then fold into a bundle. POD deck later at about $22, only after the printable has sold (DEMAND-CHECK section 4 rule 8); landed unit cost at or below 35–40% of retail [VERIFY POD quotes].',
+  price_notes: `Everyday price $7.00, ${SAME_PRICE}. Honest value line: 52 plays for about 13 cents each. ${HONEST} Bundles: a part of the $29 Ages 1–5 Instant Gift Bundle and the $45 Birth-to-5 Printable Library (ops/QUEUE.md), each 10–25% under the live sum of its parts; it can also be a $7 order add-on (GROWTH-ENGINE §5b). The earlier $12 pair with the Family Talk-Along Cards is not in the adopted plan (5–12 listings wait for counsel's G1 answer). Nets: net_per_unit_by_channel (UNVERIFIED fees). ${KILL} POD deck later at about $22, only after the printable has sold (DEMAND-CHECK section 4 rule 8); landed unit cost at or below 35–40% of retail [VERIFY POD quotes].`,
   short_description: '52 printable play cards for ages 0–5: one play, one talk tip and a safety note on every card. Age-coded, no-cut pages, Letter + A4.',
-  long_description: '52 simple plays for babies, toddlers and preschoolers, each on its own card with one talk tip in plain words, like “pause and wait,” “say what you see” or “offer a choice.”\n\nEvery play uses everyday things (a dish towel, a pot and spoon, a cardboard box, rolled-up socks); 46 of the 52 need nothing to buy. Each one shows its start age in months, prep time, mess level and usual play time, plus a 2-minute version for tired days and a make-it-easier / make-it-harder pair.\n\nThe cards are sorted into four age colors, each with its own shape and word label: 0–12 months, 1–2, 2–3 and 3–5 years, 13 plays each. Ages are a guide, never a deadline.\n\nPrep takes about 20 minutes to print and cut, once; most plays then take 0–2 minutes to set up. No time to cut? Play today from the no-cut pages. You also get a grown-up guide, type-in blank cards and a 52-week fridge checklist. Color and low-ink files, US Letter and A4.\n\nEvery play follows our published safety rules, and a grown-up plays along every time. These are ideas for everyday play and conversation, not medical or professional advice. Digital download: nothing ships. That’s about 13 cents a play.',
+  long_description: "52 printable play cards for ages 0–5, in US Letter and A4 PDFs. Each card has one simple play and one talk tip in plain words, like “pause and wait,” “say what you see” or “offer a choice.”\n\nEvery play uses everyday things: a dish towel, a pot and spoon, a cardboard box, rolled-up socks. 46 of the 52 need nothing to buy. Each one shows its start age in months, prep time, mess level and usual play time. It also has a 2-minute version for tired days and a make-it-easier / make-it-harder pair.\n\nThe cards are sorted into four age colors, each with its own shape and word label: 0–12 months, 1–2, 2–3 and 3–5 years. There are 13 plays in each. Ages are a guide, never a deadline.\n\nPrep takes about 20 minutes to print and cut, once. Most plays then take 0–2 minutes to set up. No time to cut? Play today from the no-cut pages. You also get a grown-up guide, type-in blank cards and a 52-week fridge checklist. Color and low-ink files, US Letter and A4.\n\nEvery play follows our published safety rules, and a grown-up plays along every time. These are ideas for everyday play and conversation, not medical or professional advice. Digital download: nothing ships. That’s about 13 cents a play.",
   bullets: [
     '52 plays for ages 0–5, 13 in each age color: 0–12 months, 1–2, 2–3 and 3–5 years',
     'Every card: one play, one plain-words talk tip and a “with a grown-up” safety note',
@@ -46,7 +68,7 @@ const A = {
     'Color + low-ink, US Letter + A4, type-in blank cards and a 52-week fridge checklist',
   ],
   keywords: ['toddler activity cards', 'baby play ideas printable', 'screen free toddler activities', 'printable play cards 0-5', 'talk while you play', 'preschool activity cards', 'toddler busy printable'],
-  etsy_tags: ['toddler activities', 'play cards printable', 'baby play ideas', 'toddler play cards', 'preschool activities', 'screen free play', 'activity cards kids', 'talk while you play', 'toddler printable', 'baby activity cards', 'busy toddler ideas', 'rainy day activities', 'parenting printable'],
+  etsy_tags: ['toddler activities', 'play cards printable', 'baby play ideas', 'toddler play cards', 'preschool activities', 'screen free play', 'activity cards kids', 'talk while you play', 'toddler printable', 'baby activity cards', 'toddler play ideas', 'rainy day activities', 'parenting printable'],
   seo_title: '52 Play & Talk Cards, Ages 0–5 | Printable Play Ideas',
   seo_description: 'Printable cards for ages 0–5: 52 simple plays, each with a talk tip and a safety note. Age-coded, no-cut pages, US Letter and A4. Instant download.',
   alt_text: 'A fan of colorful printable play cards on a sunny yellow background. Each card shows an age chip, a simple icon, a play title such as Color Sort, the start age, prep and mess, a short play, a talk tip and a safety note, under the title 52 Play & Talk Cards.',
@@ -74,15 +96,16 @@ const B = {
   slug: 'family-talk-along-cards',
   title: '52 Family Talk-Along Cards for Ages 5–12',
   subtitle: 'Conversation cards for dinner, the car, bath time and bedtime, with a one-line grown-up tip on each',
-  etsy_title: '52 Family Talk-Along Cards, Ages 5-12, Printable Conversation Cards for Dinner, Car, Bath and Bedtime, Kids Questions, Play Before Pixels',
+  etsy_title: "52 Family Talk-Along Cards, Ages 5-12, Printable Conversation Starters for Dinner, Car, Bath and Bedtime, Kids Questions, Play Before Pixels",
+  amazon_title: 'Family Talk-Along Journal, Ages 5–12: 52 Questions for Dinner, the Car, Bath Time and Bedtime (Black-and-White Interior)',
   format: 'Printable PDF, instant download. 5 files: START HERE (1 page) plus the same 15-page deck as Color and Low-ink, each in US Letter and A4. Inside: 54 poker-size cards (52 questions, a how-to card and a blank) on 6 card sheets, optional card backs, 2 no-cut question pages, a grown-up guide with 6 talk-along habits, printing and safety tips, type-in blank cards (fillable in free Adobe Acrobat Reader), cut-out moment labels with a talk-along week check, and a “what’s next” page. English text.',
   trim: A.trim,
   pages: 15,
   ages: '5–12 (tips for 5–7s and 8–12s in the guide)',
   price_usd: 7.00,
-  price_notes: 'Everyday price $7.00, the spec and DEMAND-CHECK target ($7 PDF first; incumbents sell 120–400-card decks at $15–$30). Honest value line: 52 questions for about 13 cents each. Under BRAND.md “Honest pricing” there is no list, “was” or compare-at price and no standing sale; only genuine, dated promotions. Bundle with 52 Play & Talk Cards: $12 for both [founder to confirm]. Don’t fight 200–400-card decks on Amazon; win on the by-moment structure and the grown-up tip. Kill rule: fewer than 5 sales after 60 days means reprice once, then bundle. POD deck later at about $24, only after the printable has sold [VERIFY POD quotes].',
+  price_notes: `Everyday price $7.00, the same on Etsy and on our own checkout (the spec and DEMAND-CHECK target; incumbents sell 120–400-card decks at $15–$30). Honest value line: 52 questions for about 13 cents each. ${HONEST} Not in the LAUNCH FIRST list (ops/QUEUE.md): 5–12 material waits for counsel's G1 answer, and the earlier $12 pair with 52 Play & Talk Cards is not in the adopted plan. Don’t fight 200–400-card decks on Amazon; win on the by-moment structure and the grown-up tip. Nets: net_per_unit_by_channel (UNVERIFIED fees). ${KILL} POD deck later at about $24, only after the printable has sold [VERIFY POD quotes].`,
   short_description: '52 printable conversation cards for ages 5–12, sorted by moment: dinner, car, bath and bedtime. A grown-up tip on every card.',
-  long_description: '52 conversation cards for ages 5–12, sorted by the moments when families actually talk: passing the peas, waiting at a red light, rinsing shampoo, turning off the lamp.\n\nThere are 13 cards for each moment: dinner, the car, bath time and bedtime. Questions range from silly (“What would a fish say about our bathtub?”) to thoughtful (“What was a brave thing you did this week?”). Every card carries a one-line grown-up tip for keeping the talk going, like “go first with yours” or “just listen; ‘that sounds hard’ is enough.” No trivia, no quizzing.\n\nThe grown-up guide covers six easy talk-along habits and how to use the cards with 5–7s and with 8–12s. Anyone can say “pass,” grown-ups answer too, and in the car a passenger reads while the driver just talks.\n\nPrep takes about 20 minutes to print and cut, once, or start tonight with the two no-cut question pages. You also get type-in blank cards and cut-out labels so each pile can live where it gets used. Color and low-ink files, US Letter and A4. That’s about 13 cents a question.\n\nThis is a digital download. Nothing ships.',
+  long_description: "52 printable talk cards for ages 5–12, in US Letter and A4 PDFs. They are sorted by the moments when families actually talk: passing the peas, waiting at a red light, rinsing shampoo, turning off the lamp.\n\nThere are 13 cards for each moment: dinner, the car, bath time and bedtime. Questions range from silly (“What would a fish say about our bathtub?”) to thoughtful (“What was a brave thing you did this week?”). Every card carries a one-line grown-up tip for keeping the talk going, like “go first with yours” or “just listen; ‘that sounds hard’ is enough.” No trivia, no quizzing.\n\nThe grown-up guide covers six easy talk-along habits and how to use the cards with 5–7s and with 8–12s. Anyone can say “pass,” grown-ups answer too, and in the car a passenger reads while the driver just talks.\n\nPrep takes about 20 minutes to print and cut, once, or start tonight with the two no-cut question pages. You also get type-in blank cards and cut-out labels so each pile can live where it gets used. Color and low-ink files, US Letter and A4. That’s about 13 cents a question.\n\nThis is a digital download. Nothing ships.",
   bullets: [
     '52 conversation cards for ages 5–12, 13 each for dinner, the car, bath time and bedtime',
     'A one-line grown-up tip on every card for keeping the talk going',
@@ -171,8 +194,41 @@ const todo = (L) => [
 A.human_todo = todo(A);
 B.human_todo = todo(B);
 A.compliance_notes = compliance('A'); B.compliance_notes = compliance('B');
+Object.assign(A, pricing(A.price_usd)); Object.assign(B, pricing(B.price_usd, { kdpLater: true }));
+// Honest AI disclosure per channel (COMPLIANCE-GATE 17; G2-08). B adds KDP answers for its planned journal edition.
+A.ai_disclosure = {
+    "as_of": "2026-09-28",
+    "ai_helped_with": "Claude (an AI model made by Anthropic), working in Claude Code, wrote the draft text (activities, talk lines, guide pages, safety notes and this listing), made the illustrations as flat vector art in code from the brand's own symbol library, and built the page layouts and PDF files with scripts.",
+    "humans_did": "The founder, for AlphaPlay LLC, directs the product line and set the brand, safety and honesty rules (brand/BRAND.md) that every draft follows, and she gives the final go-ahead before anything is listed. As of 2026-09-28 no person has rewritten the text or redrawn the art, and the customer panel in panel.md was simulated, not real people. Still to be done by a person before release: rewrite the text in her own words, proof the cover and page 1, and check a printed copy (human_todo).",
+    "etsy_attribution": "Designed by Play Before Pixels",
+    "etsy_ai_flag": true,
+    "etsy_who_made": "I did (the shop made it, using AI tools) [UNVERIFIED form wording]",
+    "etsy": "In Etsy's listing form, say the shop designed this item and that AI tools were used, wherever the form asks. As best known (UNVERIFIED): Etsy's Creativity Standards sort items as Made by, Designed by, Handpicked by or Sourced by; an item made with AI tools belongs under Designed by, and Etsy asks sellers to say in the description that AI was used. Add etsy_description_line at the end of the Etsy description.",
+    "etsy_description_line": "How this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.",
+    "site": "Product page line: 'How this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.' Add 'and edited by the founder' only after she has rewritten the text or art.",
+    "social_ai_label": "Turn on each platform's AI-generated-content label for posts that use these images or this text (label names UNVERIFIED).",
+    "notes": "Answers describe what really happened as of the date above. Platform categories and form wording are from memory (UNVERIFIED): check each form on upload day. Never call any part hand-drawn, handmade or human-written."
+  };
+B.ai_disclosure = {
+    "as_of": "2026-09-28",
+    "ai_helped_with": "Claude (an AI model made by Anthropic), working in Claude Code, wrote the draft text (activities, talk lines, guide pages, safety notes and this listing), made the illustrations as flat vector art in code from the brand's own symbol library, and built the page layouts and PDF files with scripts.",
+    "humans_did": "The founder, for AlphaPlay LLC, directs the product line and set the brand, safety and honesty rules (brand/BRAND.md) that every draft follows, and she gives the final go-ahead before anything is listed. As of 2026-09-28 no person has rewritten the text or redrawn the art, and the customer panel in panel.md was simulated, not real people. Still to be done by a person before release: rewrite the text in her own words, proof the cover and page 1, and check a printed copy (human_todo).",
+    "etsy_attribution": "Designed by Play Before Pixels",
+    "etsy_ai_flag": true,
+    "etsy_who_made": "I did (the shop made it, using AI tools) [UNVERIFIED form wording]",
+    "etsy": "In Etsy's listing form, say the shop designed this item and that AI tools were used, wherever the form asks. As best known (UNVERIFIED): Etsy's Creativity Standards sort items as Made by, Designed by, Handpicked by or Sourced by; an item made with AI tools belongs under Designed by, and Etsy asks sellers to say in the description that AI was used. Add etsy_description_line at the end of the Etsy description.",
+    "etsy_description_line": "How this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.",
+    "kdp_ai_text": "AI-generated (Claude). Answer yes. As best known (UNVERIFIED), KDP counts text an AI tool wrote as AI-generated even after heavy editing; only passages the founder writes herself are her own.",
+    "kdp_ai_images": "AI-generated (Claude; vector art made in code). Answer yes.",
+    "kdp_ai_translation": "None: English only, no machine translation.",
+    "site": "Product page line: 'How this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.' Add 'and edited by the founder' only after she has rewritten the text or art.",
+    "social_ai_label": "Turn on each platform's AI-generated-content label for posts that use these images or this text (label names UNVERIFIED).",
+    "notes": "Answers describe what really happened as of the date above. Platform categories and form wording are from memory (UNVERIFIED): check each form on upload day. Never call any part hand-drawn, handmade or human-written."
+  };
+A.owner = OWNER; B.owner = OWNER;
 Object.assign(A, common); Object.assign(B, common);
-const order = ['slug', 'title', 'subtitle', 'etsy_title', 'format', 'trim', 'pages', 'ages', 'price_usd', 'price_notes', 'short_description', 'long_description', 'bullets', 'keywords', 'etsy_tags', 'seo_title', 'seo_description', 'alt_text', 'editable', 'shareable_piece', 'bonus_offer', 'channels', 'amazon_route', 'language', 'license_tiers', 'faq', 'ai_disclosure', 'compliance_notes', 'human_todo', 'next_products', 'bonus_url', 'listing_images', 'files', 'pod_later'];
+const OPTIONAL = ['amazon_title'];
+const order = ['slug', 'title', 'subtitle', 'etsy_title', 'amazon_title', 'format', 'trim', 'pages', 'ages', 'price_usd', 'price_notes', 'price_floor', 'price_floor_basis', 'net_per_unit_by_channel', 'margin_pct_by_channel', 'net_notes', 'short_description', 'long_description', 'bullets', 'keywords', 'etsy_tags', 'seo_title', 'seo_description', 'alt_text', 'editable', 'shareable_piece', 'bonus_offer', 'channels', 'amazon_route', 'language', 'license_tiers', 'faq', 'ai_disclosure', 'compliance_notes', 'human_todo', 'next_products', 'bonus_url', 'listing_images', 'files', 'pod_later', 'owner'];
 const words = s => s.split(/\s+/).filter(Boolean).length;
 for (const [L, dir] of [[A, ROOT], [B, path.join(ROOT, 'talk-along')]]) {
   const errs = [];
@@ -187,13 +243,14 @@ for (const [L, dir] of [[A, ROOT], [B, path.join(ROOT, 'talk-along')]]) {
   if (L.next_products.length < 2 || L.next_products.length > 3) errs.push('next_products');
   if ('list_price_usd' in L) errs.push('list price not allowed (honest pricing)');
   if (L.slug === 'play-talk-cards' && !L.long_description.includes(SAFE_LINE)) errs.push('missing published-safety-rules line');
-  for (const f of order) if (L[f] === undefined) errs.push('missing field ' + f);
+  for (const f of order) if (L[f] === undefined && !OPTIONAL.includes(f)) errs.push('missing field ' + f);
+  const uf = underFloor(L); if (uf.length) errs.push('net under price_floor: ' + uf.join(', '));
   for (const f of L.listing_images) if (!fs.existsSync(path.join(dir, f))) errs.push('missing image ' + f);
   for (const f of [...L.files.store, ...L.files.etsy_upload]) if (!fs.existsSync(path.join(dir, f))) errs.push('missing file ' + f);
   const all = JSON.stringify(L).toLowerCase();
   for (const bad of ['autism', 'therapy', 'therapist', 'slp', 'clinically', 'cure', 'adhd', 'hanen', 'safety-checked', 'certified', 'safe for all ages', 'late talker', 'speech delay', 'catch up', 'was $', 'tabletopics', 'table topics']) if (all.includes(bad)) errs.push('banned word: ' + bad);
   if (errs.length) { console.error(L.slug, errs); process.exit(1); }
-  const out = {}; order.forEach(k => { out[k] = L[k]; });
+  const out = {}; order.forEach(k => { if (L[k] !== undefined) out[k] = L[k]; });
   fs.writeFileSync(path.join(dir, 'listing.json'), JSON.stringify(out, null, 2) + '\n');
   console.log(L.slug, 'ok', 'long words', lw, 'short', L.short_description.length, 'seo', L.seo_title.length, L.seo_description.length);
 }

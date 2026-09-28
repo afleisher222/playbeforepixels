@@ -17,6 +17,25 @@
   "ages": "3–7",
   "price_usd": 11.99,
   "price_notes": "Paperback $11.99 (KDP). Hardcover $19.99 (IngramSpark case laminate). Street prices for comparable picture books are $11.19–$13.63 (marketing/DEMAND-CHECK.md). Paperback math: KDP premium color print cost is about $1.00 + $0.07 per page = about $3.24 for 32 pages, and the 60% royalty on $11.99 is $7.19, which leaves about $3.95 a copy [VERIFY in KDP's calculator]. Hardcover: check IngramSpark's print cost and set the wholesale discount so each copy clears at least $2–$3; $17.99 is probably too low for a 32-page color case laminate [VERIFY in IngramSpark's calculator]. Main offer: the Play Day bundle at $24.99 (see bundle).",
+  "price_floor": 3.6,
+  "price_floor_basis": "30% margin on a print-on-demand sale of the $11.99 paperback (commerce/PRICING.md §2): 0.30 × $11.99 = $3.60.",
+  "max_partner_cost_usd_by_channel": {
+    "site_pod": 7.14,
+    "site_bundle_play_day": 15.21
+  },
+  "net_per_unit_by_channel": {
+    "kdp_paperback": 3.76,
+    "ingramspark_hardcover_later": null,
+    "site_pod": null,
+    "site_bundle_play_day": null
+  },
+  "margin_pct_by_channel": {
+    "kdp_paperback": 31,
+    "ingramspark_hardcover_later": null,
+    "site_pod": null,
+    "site_bundle_play_day": null
+  },
+  "net_notes": "KDP paperback: 60% royalty at a list price of $9.99 or more (50% below), minus the print cost, less 5% for returns (a return reverses the royalty); Expanded Distribution (40%) stays off. Print costs are from price_notes and are UNVERIFIED: confirm in KDP's pricing calculator. Print cost about $3.24 (premium color, 32 pages). ingramspark_hardcover_later: null until IngramSpark's print cost and wholesale discount are set. site_pod and site_bundle_play_day: null until the site's print-on-demand partner quotes the book; max_partner_cost_usd_by_channel is the most it can charge per unit (printing + shipping, if shipping is free to the buyer) and still keep the 30% floor, with Shopify Payments 2.9% + $0.30 and a 5% refund allowance (UNVERIFIED). At $11.99 that leaves about $3.54, which a 32-page color book is unlikely to meet: link the site to the KDP listing unless a quote proves otherwise. Holds (ops/QUEUE.md): The Day the Tablet Slept on KDP waits for a 4+ age grade or CPSC guidance, and IngramSpark waits for employment counsel.",
   "bundle": {
     "name": "Play Day bundle",
     "slug": "bundle-play-day",
@@ -27,7 +46,7 @@
       "Free Play Day planner and coloring pages (bonus page, same QR in both books)"
     ],
     "price_usd": 24.99,
-    "compare_at_usd": 28.98,
+    "separately_usd": 28.98,
     "discount_note": "About 14% off the two paperbacks bought separately ($11.99 + $16.99), inside the 10–25% bundle rule in DEMAND-CHECK.md section 4.",
     "pitch": "Read it, then play it. Ada's Play Day on the page, and 100 ideas for yours.",
     "age_fit": "The story is for 3–7 and the plays book is for 0–5, so the bundle is sold for ages 3–5 (and younger siblings).",
@@ -39,8 +58,8 @@
     "launch_rule": "List the bundle when 100 Screen-Free Plays goes live (launch item #5 in DEMAND-CHECK.md section 3).",
     "price_display_rule": "Show the bundle as '$24.99 (the two paperbacks are $28.98 bought separately)'. Never show $28.98 as a crossed-out or 'was' price (brand kit, Honest pricing; FTC 16 CFR 233.1)."
   },
-  "short_description": "Shhh… the tablet is sleeping. So Ada and Biscuit the dog build, splash, blast off in a box rocket and bake. A funny bedtime read-aloud for ages 3–7.",
-  "long_description": "Shhh… the tablet is sleeping. So what shall we do?\n\nOn Saturday morning, Ada zooms downstairs to find the family tablet snoring a teeny-tiny zzz-bip under a purple nightcap. It's taking a day off. So Ada and her dog Biscuit make their own fun. They build a block tower (CRASH!), splash through every puddle (SPLOOOSH, all over Papa), turn a big empty box into the ADA-1 rocket and blast off past a planet made entirely of socks. Then it's pancakes with Papa, a trip to the library's sleepy-story corner and a growly bear story at bedtime.\n\nChildren love to join in on the refrain, shout Biscuit's WOOF!, and check on the sleepy tablet as it snoozes through the day. Short, rhythmic read-aloud pages and bold, full-bleed pictures make it a cozy bedtime book and a fun one to read again and again. The tablet is never the bad guy. It just needed a nap, and in the morning Ada can't wait to tell it about her day.\n\nAt the back, grown-ups get 'Talk about it' questions, a 'Plan your own Play Day' page and a QR code for a free printable planner and coloring pages.\n\nFor ages 3–7. Pairs with 100 Screen-Free Plays as the Play Day bundle.",
+  "short_description": "Shhh… the tablet is sleeping. So Ada and her dog build, splash, blast off in a box rocket and bake. A funny bedtime picture book for ages 3–7, in paperback.",
+  "long_description": "The Day the Tablet Slept is a funny 32-page picture book for ages 3–7, in paperback. Shhh… the tablet is sleeping. So what shall we do?\n\nOn Saturday morning, Ada zooms downstairs to find the family tablet snoring a teeny-tiny zzz-bip under a purple nightcap. It's taking a day off. So Ada and her dog Biscuit make their own fun. They build a block tower (CRASH!), splash through every puddle (SPLOOOSH, all over Papa), turn a big empty box into the ADA-1 rocket and blast off past a planet made entirely of socks. Then it's pancakes with Papa, a trip to the library's sleepy-story corner and a growly bear story at bedtime.\n\nChildren love to join in on the refrain, shout Biscuit's WOOF!, and check on the sleepy tablet as it snoozes through the day. Short, rhythmic read-aloud pages and bold, full-bleed pictures make it a cozy bedtime book and a fun one to read again and again. The tablet is never the bad guy. It just needed a nap, and in the morning Ada can't wait to tell it about her day.\n\nAt the back, grown-ups get 'Talk about it' questions, a 'Plan your own Play Day' page and a QR code for a free printable planner and coloring pages.\n\nPairs with 100 Screen-Free Plays as the Play Day bundle.",
   "bullets": [
     "A funny bedtime story starring Ada, her dog Biscuit and a cardboard-box rocket, with a very sleepy tablet in a nightcap as the running joke",
     "A read-aloud refrain ('Shhh… the tablet is sleeping. So what shall we do?') and a WOOF! for children to shout along to",
@@ -152,5 +171,18 @@
     "JUV002070 Juvenile Fiction / Animals / Dogs",
     "JUV047000 Juvenile Fiction / Books & Libraries"
   ],
-  "bisac_notes": "Check each code and its current wording against the BISAC list (bisg.org) before entering it at KDP and IngramSpark [VERIFY]. Never use a condition or diagnosis subject code (brand rule on condition searches)."
+  "bisac_notes": "Check each code and its current wording against the BISAC list (bisg.org) before entering it at KDP and IngramSpark [VERIFY]. Never use a condition or diagnosis subject code (brand rule on condition searches).",
+  "ai_disclosure": {
+    "as_of": "2026-09-28",
+    "ai_helped_with": "Claude (an AI model made by Anthropic), working in Claude Code, wrote the draft story text and grown-up tips, made the illustrations as flat vector art in code from the brand's own symbol library, and laid out the interior, the cover files and this listing with scripts.",
+    "humans_did": "The founder, for AlphaPlay LLC, directs the product line and set the brand, safety and honesty rules (brand/BRAND.md) that every draft follows, and she gives the final go-ahead before anything is listed. As of 2026-09-28 no person has rewritten the text or redrawn the art, and the customer panel in panel.md was simulated, not real people. Still to be done by a person before release: rewrite the text in her own words, proof the cover and page 1, and check a printed copy (human_todo).",
+    "kdp_ai_text": "AI-generated (Claude). Answer yes. As best known (UNVERIFIED), KDP counts text an AI tool wrote as AI-generated even after heavy editing; only passages the founder writes herself are her own.",
+    "kdp_ai_images": "AI-generated (Claude; vector art made in code). Answer yes.",
+    "kdp_ai_translation": "None: English only, no machine translation.",
+    "ingramspark": "Disclose AI-generated text and images wherever IngramSpark's title setup asks (whether it asks is UNVERIFIED), in the same words as the KDP answers. Never register the AI-generated parts as human-authored (legal/protection/PROTECTION-PLAN.md).",
+    "site": "Product page line: 'How this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.' Add 'and edited by the founder' only after she has rewritten the text or art.",
+    "social_ai_label": "Turn on each platform's AI-generated-content label for posts that use these images or this text (label names UNVERIFIED).",
+    "notes": "Answers describe what really happened as of the date above. Platform categories and form wording are from memory (UNVERIFIED): check each form on upload day. Never call any part hand-drawn, handmade or human-written."
+  },
+  "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC."
 }

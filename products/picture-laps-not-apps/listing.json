@@ -35,9 +35,40 @@
   "pages": 32,
   "ages": "0–5 (a read-aloud from the baby-shower years through preschool; the lap games start in the early months)",
   "price_usd": 34.99,
-  "price_notes": "Hardcover $34.99, softcover $24.99 (DEMAND-CHECK: personalized books sell at $29.99–43; Wonderbly $39.99, Librio from $43). Charge shipping separately or test free shipping built into the price. Before listing, get the printer’s unit cost: printing must stay at or below 35–40% of retail (about $14 on the hardcover, $10 on the softcover). If the premium-color casewrap costs more, raise the hardcover to $39.99 or use standard color [VERIFY with the printer’s calculator]. Never discount below cost; a “bring a book” shower bundle ($4.99 inserts + book) is the intended add-on, not a price cut.",
-  "short_description": "A rhyming read-aloud with your child’s name in six rhymes, a dedication and a family reading pledge. Four character looks. Hardcover or softcover.",
-  "long_description": "Laps Not Apps is a warm, rhyming read-aloud about the best seats in town, made for one child. Their name is woven into six of the rhymes: Dad calls them up to the armchair, Grandma saves them a seat, a big brother gives them a turn to sing “QUACK!”, and a sleepy “Goodnight” comes at the end of the day.\n\nYou choose one of four looks for the story’s child, their pronouns, who the book is from, and what they call Grandma (Nana, Abuela, Gigi and more). The family in the story is the same in every copy: Dad, Grandma, who uses a wheelchair, and a big brother. The first page is a personal dedication with your own gift message (or our warm default). Every spread has a short “Lap talk” idea for grown-ups: pause and wait, say what you see and add one word, offer a choice, or stop before the fun word so your child can fill it in.\n\nAt the back you will find 5 simple lap games with safety notes, a “Books before screens” family reading pledge to sign together, and a keepsake page for your child’s favorite laps.\n\nThe words are in English; names with accents (Sofía, Zoë, Ñico) print correctly. Each copy is printed on demand in 8.5 x 8.5 inch full color, as a hardcover or a softcover. Read it aloud from the very first months through preschool. It makes a lasting baby-shower, first-birthday or grandparent gift.",
+  "price_notes": "Hardcover $34.99, softcover $24.99 (DEMAND-CHECK: personalized books sell at $29.99–43; Wonderbly $39.99, Librio from $43). Charge shipping separately or test free shipping built into the price. Before listing, get the printer’s unit cost: printing must stay at or below 35–40% of retail (about $14 on the hardcover, $10 on the softcover). If the premium-color casewrap costs more, raise the hardcover to $39.99 or use standard color [VERIFY with the printer’s calculator]. Never discount below cost; a “bring a book” shower insert + bookplate ($5.00, ops/QUEUE.md) sold alongside the book is the intended add-on, not a price cut. One everyday price per format, shown plainly: no list, 'was' or compare-at price and no standing sale (BRAND.md 'Honest pricing').",
+  "price_floor": 10.5,
+  "price_floor_basis": "30% margin on a print-on-demand sale (commerce/PRICING.md §2): $10.50 on the $34.99 hardcover and $7.50 on the $24.99 softcover (price_floor_by_format).",
+  "price_floor_by_format": {
+    "hardcover": 10.5,
+    "softcover": 7.5
+  },
+  "max_partner_cost_usd_by_channel": {
+    "site_hardcover": 21.42,
+    "site_softcover": 15.21,
+    "etsy_hardcover": 18.96,
+    "etsy_softcover": 13.41,
+    "etsy_hardcover_offsite_ad_sale": 13.71,
+    "etsy_softcover_offsite_ad_sale": 9.66
+  },
+  "net_per_unit_by_channel": {
+    "site_hardcover": null,
+    "site_softcover": null,
+    "etsy_hardcover": null,
+    "etsy_softcover": null,
+    "etsy_hardcover_offsite_ad_sale": null,
+    "etsy_softcover_offsite_ad_sale": null
+  },
+  "margin_pct_by_channel": {
+    "site_hardcover": null,
+    "site_softcover": null,
+    "etsy_hardcover": null,
+    "etsy_softcover": null,
+    "etsy_hardcover_offsite_ad_sale": null,
+    "etsy_softcover_offsite_ad_sale": null
+  },
+  "net_notes": "Printed-to-order items: the partner's price (blank or book + printing + label + shipping, if shipping is free to the buyer) is not quoted yet, so the nets are null and this listing does not pass COMPLIANCE-GATE 18 until the quote fills them in. max_partner_cost_usd_by_channel is the most the partner can charge per unit for the sale to keep the 30% margin floor, from the same UNVERIFIED fees: Etsy $0.20 listing + 6.5% transaction + 3% + $0.25 processing (Etsy charges the percentages on item + shipping), 15% more on an Offsite Ads sale; own site through Shopify Payments 2.9% + $0.30 (Shopify is deferred; a POD partner's own storefront may cost differently); a 5% refund allowance throughout. Here the partner is the book printer (Lulu or Gelato per ORDER-TO-PRINT.md), and its unit cost includes shipping only if shipping is free to the buyer.",
+  "short_description": "A rhyming read-aloud for ages 0–5 with your child’s name in six rhymes, a dedication and a reading pledge. Four character looks. Hardcover or softcover.",
+  "long_description": "Laps Not Apps is a personalized picture book for ages 0–5, printed to order as a hardcover or softcover. It is a warm, rhyming read-aloud about the best seats in town, made for one child. Their name is in six of the rhymes. Dad calls them up to the armchair, and Grandma saves them a seat. A big brother gives them a turn to sing “QUACK!” At the end of the day comes a sleepy “Goodnight.”\n\nYou choose one of four looks for the story’s child, their pronouns, who the book is from, and what they call Grandma (Nana, Abuela, Gigi and more). The family in the story is the same in every copy: Dad, Grandma, who uses a wheelchair, and a big brother. The first page is a personal dedication with your own gift message (or our warm default). Every spread has a short “Lap talk” idea for grown-ups. Pause and wait, say what you see and add one word, or offer a choice. Or stop before the fun word so your child can fill it in.\n\nAt the back are 5 simple lap games with safety notes. There is a “Books before screens” family reading pledge to sign together and a keepsake page for your child’s favorite laps.\n\nThe words are in English; names with accents (Sofía, Zoë, Ñico) print correctly. Each copy is printed on demand in 8.5 x 8.5 inch full color. It makes a lasting baby-shower, first-birthday or grandparent gift.",
   "bullets": [
     "Your child’s name in six rhymes, plus the cover, title page, dedication and pledge",
     "Choose one of four looks, pronouns (she, he or they), who it is from and what they call Grandma",
@@ -73,7 +104,7 @@
   "bonus_url": "https://playbeforepixels.com/bonus/picture-laps-not-apps",
   "bonus_offer": "Free printable lap-reading tracker and 5 more lap games (email + child’s birth month/year only; never a name). The QR code and short link are on the last interior page of the own-site edition only (never in the Etsy edition).",
   "shareable_piece": "The “Books before screens” family reading pledge (interior page 30), signed and photographed, with the Play Before Pixels logo; optional hashtag #PlayBeforePixels.",
-  "compliance_notes": "No health or medical claims: the book is a story plus parent education and claims to treat, prevent or diagnose nothing. No diagnosis or condition wording anywhere (book, keywords, listing). Not presented as written by a speech-language pathologist or clinician. Talk strategies use plain words only, with no trademarked program names. No real brands, apps or products; the only screen is a generic phone resting face-down. No research citations. Child safety: every lap game has adult supervision and a safety line; the safety box covers the small-parts rule for under-3s (toilet-paper-tube test, about 1.25 in / 3.2 cm), no balloons, no cords, car seats (never a lap in a car), safe sleep, and stopping when the child says no. Copyright page: “© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.”, the website (own-site edition only), “First edition 2026 · Version 1.0 · September 2026”, and “Read together, and keep books away from mouths.” No street address is printed: the old Rockville Pike mailbox is retired and the founder’s home address must never appear (legal/ENTITY.md). If a printer or EU/UK GPSR needs a postal address, use the USPS PO Box once it exists [VERIFY]. Logo from brand/logo (horizontal lockup; one-colour white on the tomato band). Customer text is HTML-escaped, length-limited and checked for printable characters; anything unusual stops before printing and goes to the weekly review. Privacy: the child’s name is used only to print; it is not added to marketing, not committed to git, and order files are deleted after delivery [VERIFY retention with counsel]. Personalized items: state the no-change-of-mind-returns policy and misprint reprints before checkout [VERIFY the printer’s policy]. The final files must be checked against the chosen printer’s current template (Lulu, Gelato or other) before upload: trim, bleed, minimum page count, cover dimensions and spine, and CMYK/PDF-X if required. CPSIA: confirm the ordinary-book exemption applies; UK/EU: GPSR responsible person before selling there [VERIFY]. Etsy edition: no URL and no QR code (customer-voice rule 2); the build switches automatically on channel \"etsy\". Customer text is typeset with curly quotes and apostrophes. Customer-voice rule 15: the How to use page says “Talk, sing and read in the language you know best” and that a point, a sign, a sound or a tap on a talking device counts; it also says sitting beside counts as much as sitting on a lap. The one phone in the story rests face-down (spread 1); the brother’s light in the blanket fort is drawn as a plain flashlight so it cannot be read as a phone. Age label is 0–5 everywhere (back cover, listing, mockup), matching the baby-shower positioning and the from-the-early-months lap games.",
+  "compliance_notes": "No health or medical claims: the book is a story plus parent education and claims to treat, prevent or diagnose nothing. No diagnosis or condition wording anywhere (book, keywords, listing). Not presented as written by a speech-language pathologist or clinician. Talk strategies use plain words only, with no trademarked program names. No real brands, apps or products; the only screen is a generic phone resting face-down. No research citations. Child safety: every lap game has adult supervision and a safety line; the safety box covers the small-parts rule for under-3s (toilet-paper-tube test, about 1.25 in / 3.2 cm), no balloons, no cords, car seats (never a lap in a car), safe sleep, and stopping when the child says no. Copyright page: “© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.”, the website (own-site edition only), “First edition 2026 · Version 1.0 · September 2026”, and “Read together, and keep books away from mouths.” No street address is printed: the old commercial mailbox is retired and the founder’s home address must never appear (legal/ENTITY.md). If a printer or EU/UK GPSR needs a postal address, use the USPS PO Box once it exists [VERIFY]. Logo from brand/logo (horizontal lockup; one-colour white on the tomato band). Customer text is HTML-escaped, length-limited and checked for printable characters; anything unusual stops before printing and goes to the weekly review. Privacy: the child’s name is used only to print; it is not added to marketing, not committed to git, and order files are deleted after delivery [VERIFY retention with counsel]. Personalized items: state the no-change-of-mind-returns policy and misprint reprints before checkout [VERIFY the printer’s policy]. The final files must be checked against the chosen printer’s current template (Lulu, Gelato or other) before upload: trim, bleed, minimum page count, cover dimensions and spine, and CMYK/PDF-X if required. CPSIA: confirm the ordinary-book exemption applies; UK/EU: GPSR responsible person before selling there [VERIFY]. Etsy edition: no URL and no QR code (customer-voice rule 2); the build switches automatically on channel \"etsy\". Customer text is typeset with curly quotes and apostrophes. Customer-voice rule 15: the How to use page says “Talk, sing and read in the language you know best” and that a point, a sign, a sound or a tap on a talking device counts; it also says sitting beside counts as much as sitting on a lap. The one phone in the story rests face-down (spread 1); the brother’s light in the blanket fort is drawn as a plain flashlight so it cannot be read as a phone. Age label is 0–5 everywhere (back cover, listing, mockup), matching the baby-shower positioning and the from-the-early-months lap games.",
   "human_todo": [
     "AI-assistance disclosure (be honest wherever asked): the story text, tips, illustrations and layout were drafted with AI assistance (Claude) and are being rewritten and selected by the founder. KDP is not used for this book, but if any platform (Etsy, a printer, an award or a copyright filing) asks about AI-generated content, answer yes for the illustrations and for any text she has not rewritten. Never describe AI-generated material as human-authored in a copyright filing.",
     "Human authorship (required before real orders): open WORDS.md, rewrite or approve each section in your own words, and delete “(draft)” from its heading. Write “## author note” (40–80 words, your own voice) and, if you like, your byline under “## author”. Real orders will not build until this is done. Commit each round so the changes are provable.",
@@ -129,7 +160,7 @@
     },
     {
       "q": "How long does it take to arrive?",
-      "a": "Each book is printed for you after a 2-hour window for spelling fixes, then shipped by our printing partner. Production and shipping times are shown before checkout [VERIFY with the printer before launch]. For a shower or birthday, order at least 3 weeks ahead."
+      "a": "Each book is printed for you, then shipped by our printing partner. Production and shipping times are shown before checkout [VERIFY with the printer before launch]. For a shower or birthday, order at least 3 weeks ahead."
     },
     {
       "q": "Can it ship straight to the family as a gift?",
@@ -137,7 +168,7 @@
     },
     {
       "q": "Can I see the book before it prints?",
-      "a": "The product page shows every page of a sample copy. Your name prints exactly as typed, so check the spelling; you can email a correction within 2 hours of ordering."
+      "a": "The product page shows every page of a sample copy. The name prints exactly as typed, so check the spelling before you pay. Books go to print automatically, so a book can't be changed after checkout."
     },
     {
       "q": "Can I return it?",
@@ -147,5 +178,19 @@
       "q": "Can I buy a copy for a whole class or group?",
       "a": "Each copy is made for one child. For group gifts, use the written quote form on the website; we reply by email."
     }
-  ]
+  ],
+  "ai_disclosure": {
+    "as_of": "2026-09-28",
+    "ai_helped_with": "Claude (an AI model made by Anthropic), working in Claude Code, wrote the draft rhymes, dedication and grown-up tips, made the illustrations and the four character looks as flat vector art in code from the brand's own symbol library, laid out the book and this listing, and wrote the script that stamps each child's name into the book.",
+    "humans_did": "The founder, for AlphaPlay LLC, directs the product line and set the brand, safety and honesty rules (brand/BRAND.md) that every draft follows, and she gives the final go-ahead before anything is listed. As of 2026-09-28 no person has rewritten the text or redrawn the art, and the customer panel in panel.md was simulated, not real people. Still to be done by a person before release: rewrite the text in her own words, proof the cover and page 1, and check a printed copy (human_todo).",
+    "etsy_attribution": "Designed by Play Before Pixels",
+    "etsy_ai_flag": true,
+    "etsy_who_made": "Another company or person (the print partner, named as the shop's production partner) [UNVERIFIED form wording]",
+    "etsy": "In Etsy's listing form, say the shop designed this item and that AI tools were used, wherever the form asks. As best known (UNVERIFIED): Etsy's Creativity Standards sort items as Made by, Designed by, Handpicked by or Sourced by; an item made with AI tools belongs under Designed by, and Etsy asks sellers to say in the description that AI was used. Add etsy_description_line at the end of the Etsy description. List the print partner as a production partner in the shop settings.",
+    "etsy_description_line": "How this was made: the story, pictures and layout were created with AI tools for Play Before Pixels; your child's name is added by our print system.",
+    "site": "Product page line: 'How this was made: the story, pictures and layout were created with AI tools for Play Before Pixels; your child's name is added by our print system.' Add 'and edited by the founder' only after she has rewritten the text or art.",
+    "social_ai_label": "Turn on each platform's AI-generated-content label for posts that use these images or this text (label names UNVERIFIED).",
+    "notes": "Answers describe what really happened as of the date above. Platform categories and form wording are from memory (UNVERIFIED): check each form on upload day. Never call any part hand-drawn, handmade or human-written."
+  },
+  "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC."
 }

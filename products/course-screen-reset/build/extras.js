@@ -314,7 +314,7 @@ L(8, 'guarantee-and-bundle', `<div class="k">Simple pricing</div><h1>$27, or $49
   <p style="margin-top:18px;font-size:16px">Prefer paper? The whole program is also a black-and-white paperback on Amazon.</p>
 </div></section>
 
-<section class="guar" id="guarantee"><div class="wrap"><div class="k">Our guarantee</div><h2>${K.REFUND.days} days, full refund</h2><p class="lead">If the program isn’t right for your family, ${K.REFUND.terms}. The full terms are in our <a href="/refunds" style="color:${C.ink}">refund policy</a>.</p></div></section>
+<section class="guar" id="guarantee"><div class="wrap"><div class="k">Our guarantee</div><h2>${K.REFUND.days} days, full refund</h2><p class="lead">If the program isn’t right for your family, ${K.REFUND.terms}. The full terms are in our <a href="/shipping-returns/" style="color:${C.ink}">refund policy</a>.</p></div></section>
 
 <section><div class="wrap">
   ${K.FOUNDER.salesNote && K.FOUNDER.salesNote !== 'skip' ? `<div class="k">A note from us</div><p class="lead">${esc(K.FOUNDER.salesNote)}</p>` : ''}
@@ -322,6 +322,6 @@ L(8, 'guarantee-and-bundle', `<div class="k">Simple pricing</div><h1>$27, or $49
 
 <section class="faq" style="padding-top:20px"><div class="wrap"><div class="k">Questions</div><h2>Questions parents ask</h2>${faq}</div></section>
 
-<footer><div class="wrap"><img src="${LOGO_W}" alt="Play Before Pixels"><p style="font-size:14px;margin-top:12px;color:#C9D2E1">${COPY} Parent education, not medical advice. Every play follows our published safety rules. <a style="color:#fff" href="/help">Help center</a> · <a style="color:#fff" href="/refunds">Refund policy</a> · <a style="color:#fff" href="/privacy">Privacy</a></p></div></footer>`);
+<footer><div class="wrap"><img src="${LOGO_W}" alt="Play Before Pixels"><p style="font-size:14px;margin-top:12px;color:#C9D2E1">${COPY} Parent education, not medical advice. Every play follows our published safety rules. <a style="color:#fff" href="/help">Help center</a> · <a style="color:#fff" href="/shipping-returns/">Refund policy</a> · <a style="color:#fff" href="/privacy">Privacy</a></p></div></footer>`);
 }
 console.log('extras written');
