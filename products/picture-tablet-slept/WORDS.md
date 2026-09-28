@@ -47,7 +47,6 @@ And it was going…
 ## s2 left
 “Shhh,” whispered Papa.
 “The tablet is sleeping.
-It worked hard all week.
 Today, it gets a day off.”
 
 ## s2 right
@@ -69,16 +68,16 @@ Ada said, “AGAIN!”
 So they built it again. And again. And AGAIN.
 
 ## s4 left
-Outside, the rain had left puddles everywhere.
-Big ones. Small ones. One with a duck in it!
-Ada pulled on her yellow boots.
+Outside: puddles!
+One with a duck in it!
+On went the yellow boots.
 
 ## s4 right
-**SPLISH** went the small one.
-**SPLASH** went the middle one.
-**SPLOOOSH** went the great big one, all over Papa's shoes!
-“Oops,” said Ada. “Oops,” said Papa…
-and he jumped in too.
+**SPLISH!** went the small one.
+**SPLASH!** went the middle one.
+**SPLOOOSH!** went the big one…
+all over Papa.
+Papa laughed. And he jumped in too!
 
 ## s5 left
 Back inside, Ada peeled off
@@ -94,16 +93,16 @@ zzz-bip… zzz-bip…
 > So what shall we do?
 
 ## s6 left
-In the hall sat a big, empty box.
+A big, empty box!
 “That's not a box,” said Ada.
 “That's a **ROCKET!**”
 
 ## s6 right
-She gave it round windows.
-She gave it red wings.
-She gave it a pointy purple top,
+She gave it windows.
+She gave it wings.
+She gave it a purple top,
 just like the tablet's nightcap.
-Biscuit said, **WOOF!** (That means “Me too.”)
+**WOOF!** said Biscuit. (That means “Me too!”)
 
 ## s7 left
 “Ten, nine, eight…” counted Ada.
@@ -118,7 +117,8 @@ Biscuit was the [[co-pilot]].
 He was very good at barking at comets.
 
 ## s8 left
-All that flying made Ada hungry. Her tummy rumbled like a rocket.
+Back on Earth,
+Ada's tummy rumbled like a rocket.
 “Pancakes?” asked Papa.
 “**PANCAKES!**” said Ada.
 
@@ -129,7 +129,7 @@ She stirred and stirred. Papa flipped.
 “That one looks like the moon,” said Ada.
 
 ## s9 left
-After lunch, Ada peeked at the shelf.
+After pancakes, Ada peeked at the shelf.
 The tablet had rolled over.
 Its nightcap had flopped.
 But it was still asleep.
@@ -141,28 +141,26 @@ But it was still asleep.
 
 ## s10 left
 The library had books about dinosaurs,
-books about rockets, books about the moon,
+books about rockets,
 and one book about a dog in boots.
 
 ## s10 right
 “Shhh,” whispered Ms. Rosa the librarian.
 “Books like it quiet.”
 “Just like the tablet!” whispered Ada.
-She picked a book about a bear
-who could not sleep.
+She picked a book about a very growly bear.
 
 ## s11 left
 That night, Papa read the bear book.
-Ada turned the pages.
-She did all the growly bear voices.
-[[**GRRR… YAWWWN.**]]
+Ada did the growly voices.
+[[**GRRR… GRRR… YAWWWN.**]]
 
 ## s11 right
-“What was the best part of today?” asked Papa.
-Ada thought and thought.
+“Best part of today?” asked Papa.
 “The crash. The splash. The rocket.
 The pancakes. The library…”
-She yawned a big bear yawn. “All of it.”
+Ada yawned a big bear yawn.
+“All of it.”
 
 ## s12 left
 Down the hall, in its cozy nightcap,

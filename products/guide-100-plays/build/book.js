@@ -270,7 +270,7 @@ function finderPage() {
   return pg({ kind: 'text', title: 'Quick finder: a play for every moment', html: `
   <div class="live">
     <div class="eyebrow">Quick finder</div><h1>A play for every moment</h1>
-    <p class="lede" style="margin-bottom:.14in">Find the moment, then pick a number in your child’s color. ${BANDS.map(b => `<span class="chipn" style="background:${BC[b.key].t}">${b.label}</span>`).join('')}</p>
+    <p class="lede" style="margin-bottom:.14in">Find the moment, then pick a number from your child’s band: ${BANDS.map(b => `<span class="chipn" style="background:${BC[b.key].t}">${b.from}–${b.to}</span>ages ${b.label}`).join(' · ')}</p>
     <div style="display:flex;flex-direction:column;flex:1;justify-content:space-between">
     ${cats.map(([t, d, ns]) => `<div style="border-top:1.5px solid var(--ink);padding-top:.07in"><div style="display:flex;align-items:baseline;gap:.12in;margin-bottom:.05in"><h2 style="margin:0;font-size:13pt">${t}</h2><span class="small">${d} · ${ns.length} plays</span></div><div>${ns.map(chipN).join('')}</div></div>`).join('')}
     </div>

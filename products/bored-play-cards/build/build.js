@@ -835,7 +835,7 @@ ${css(fontHref, size)}
 ${ALLCSS}
 ${extra}
 </head><body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${SYMBOLS.join('\n')}${ICONS.join('\n')}</defs></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${SYMBOLS.filter(x => !x.includes('id="speech"')).join('\n')}${ICONS.join('\n')}</defs></svg>
 ${pages.join('\n')}
 </body></html>`;
 }
