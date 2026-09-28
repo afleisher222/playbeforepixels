@@ -154,33 +154,41 @@ lst['listing-01'] = ('Hero', f'''<div style="position:absolute;inset:0;backgroun
 tiles = ''
 for i, (slug, name, hexc, tone) in enumerate(GARMENTS):
     x = 130 + (i % 2) * 890
-    y = 470 + (i // 2) * 740
-    tiles += f'''<div class="lay" style="left:{x}px;top:{y}px;width:850px;height:700px;background:#fff;border-radius:36px"></div>
-<div class="lay shadow" style="left:{x+185}px;top:{y+80}px;width:480px">{tee(hexc, tone, B)}</div>
-<div class="lay" style="left:{x+44}px;top:{y+600}px;font-size:48px;font-weight:800;display:flex;align-items:center;gap:18px">
+    y = 430 + (i // 2) * 690
+    tiles += f'''<div class="lay" style="left:{x}px;top:{y}px;width:850px;height:650px;background:#fff;border-radius:36px"></div>
+<div class="lay shadow" style="left:{x+165}px;top:{y+40}px;width:520px">{tee(hexc, tone, B)}</div>
+<div class="lay" style="left:{x+44}px;top:{y+556}px;font-size:48px;font-weight:800;display:flex;align-items:center;gap:18px">
 <span style="width:48px;height:48px;border-radius:50%;background:{hexc};box-shadow:inset 0 0 0 3px rgba(29,41,64,.18)"></span>{name}</div>'''
 lst['listing-02'] = ('Colors', f'''<div style="position:absolute;inset:0;background:var(--wash)"></div>
 <div class="pad" style="top:120px"><div class="kick">4 colors</div><h2 class="disp" style="margin-top:24px">Pick your color</h2></div>
 {tiles}
-<p class="small pad" style="top:1935px;margin:0;transform:translateY(-100%)">Light colors print the ink logo. Navy prints the white logo. The ball is tomato on every color.</p>''')
+<p class="small pad" style="top:1832px;margin:0">Light colors print the ink logo. Navy prints the white logo. The ball is tomato on every color.</p>''')
 
+step3 = ''.join(f'''<div class="lay" style="left:{130+i*590}px;top:1300px;width:560px;height:430px;background:#2A3752;border-radius:36px;padding:56px 50px;color:#fff">
+<svg width="200" height="60" viewBox="0 0 200 60"><rect x="0" y="4" width="16" height="52" rx="3" fill="#fff"/>{ball}</svg>
+<div class="disp" style="font-size:78px;margin-top:34px">{h}</div>
+<div style="font-size:44px;line-height:1.35;margin-top:14px;color:#C9D2E0">{t}</div></div>''' for i, (ball, h, t) in enumerate([
+    ('<circle cx="60" cy="30" r="22" fill="#EE5A36"/><path d="M92 30H150" stroke="#EE5A36" stroke-width="6" stroke-dasharray="10 9"/>', 'Serve', 'A grown-up says something.'),
+    ('<circle cx="120" cy="30" r="22" fill="#EE5A36"/><path d="M34 30H86" stroke="#C9D2E0" stroke-width="6" stroke-dasharray="4 10"/>', 'Pause', 'The gap gives a child a turn.'),
+    ('<circle cx="176" cy="30" r="22" fill="#EE5A36"/><path d="M150 30H40" stroke="#F5B820" stroke-width="6" stroke-dasharray="10 9"/>', 'Return', 'The child answers.')]))
 lst['listing-03'] = ('The idea', f'''<div style="position:absolute;inset:0;background:var(--ink)"></div>
-<div class="pad" style="top:150px;right:auto;width:1080px;color:#fff">
-<div class="kick" style="color:var(--sun)">The idea behind the logo</div>
-<h2 class="disp" style="margin-top:30px;font-size:132px">The ball comes back.</h2>
-<p class="sub" style="color:#fff;margin-top:56px;font-size:54px">Our mark is the P of Play. A ball comes back to close it, like the serve and return of talk and play: a grown-up says something, and a child answers.</p>
+<div class="pad" style="top:120px;color:#fff"><div class="kick" style="color:var(--sun)">The idea behind the logo</div>
+<h2 class="disp" style="margin-top:28px;font-size:132px">The ball comes back.</h2></div>
+<div class="lay" style="left:130px;top:520px;width:1040px">
+<p class="sub" style="color:#fff;font-size:56px">Our mark is the P of Play. A ball comes back to close it, like the serve and return of talk and play: a grown-up says something, and a child answers.</p>
 <p class="sub" style="color:#C9D2E0;margin-top:40px;font-size:50px">The small gap before the ball is the pause that gives the child a turn.</p></div>
-<img src="{B}../../brand/logo/mark-reverse.svg" style="position:absolute;left:1270px;top:560px;width:600px">
-<div class="lay" style="left:1270px;top:1320px;width:600px;text-align:center;color:#C9D2E0;font-size:40px;font-weight:700">serve · pause · return</div>
+<img src="{B}../../brand/logo/mark-reverse.svg" style="position:absolute;left:1340px;top:470px;width:470px">
+{step3}
 <img class="brand" src="{LOGO(B, '-reverse')}">''')
 
 lst['listing-04'] = ('Details', f'''<div style="position:absolute;inset:0;background:var(--wash)"></div>
 <div class="pad" style="top:120px"><div class="kick">The details</div><h2 class="disp" style="margin-top:24px">Made for grown-ups</h2></div>
 <div class="lay" style="left:130px;top:470px;width:860px;height:1060px;background:#fff;border-radius:40px"></div>
-<svg class="lay" style="left:130px;top:470px" width="860" height="560" viewBox="0 0 860 560">
-<path d="M0 0H860V560H0Z" fill="#FFFFFF"/><path d="M60 0Q430 330 800 0" fill="none" stroke="#E6E9EF" stroke-width="54"/></svg>
-<img class="lay" src="{B}labels/neck-label_M_light.png" style="left:260px;top:620px;width:600px;border-radius:12px;box-shadow:0 0 0 2px #EEF1F6">
-<div class="lay" style="left:180px;top:1300px;width:760px;font-size:44px;line-height:1.35;font-weight:700">Printed inside-neck label with your size and care, in place of a stitched tag.</div>
+<svg class="lay" style="left:130px;top:470px" width="860" height="300" viewBox="0 0 860 300">
+<path d="M70 0Q430 250 790 0" fill="none" stroke="#E6E9EF" stroke-width="50"/></svg>
+<div class="lay" style="left:230px;top:700px;width:660px;height:470px;overflow:hidden;border-radius:14px;box-shadow:0 0 0 2px #EEF1F6">
+<img src="{B}labels/neck-label_M_light.png" style="width:660px;display:block"></div>
+<div class="lay" style="left:190px;top:1260px;width:740px;font-size:46px;line-height:1.35;font-weight:700">Brand, size and care printed inside the neck.</div>
 <div class="lay" style="left:1060px;top:500px;width:810px;font-size:52px;line-height:1.3">
 {''.join(f'<div style="display:flex;gap:30px;margin-bottom:62px"><span class="ball" style="width:30px;height:30px;margin-top:18px"></span><div>{t}</div></div>' for t in [
     '<b>Adult unisex sizes</b><br>XS to 3XL',
@@ -192,20 +200,21 @@ lst['listing-04'] = ('Details', f'''<div style="position:absolute;inset:0;backgr
 arrow = '#EE5A36'
 lst['listing-05'] = ('Size guide', f'''<div style="position:absolute;inset:0;background:var(--t-sun)"></div>
 <div class="pad" style="top:120px"><div class="kick">Size guide</div><h2 class="disp" style="margin-top:24px">Find your size</h2></div>
-<div class="lay shadow" style="left:110px;top:470px;width:1000px">{tee('#FFFFFF', 'light', B)}</div>
-<svg class="lay" style="left:110px;top:470px" width="1000" height="900" viewBox="0 0 1000 900">
+<div class="lay shadow" style="left:110px;top:560px;width:1000px">{tee('#FFFFFF', 'light', B)}</div>
+<svg class="lay" style="left:110px;top:560px" width="1000" height="900" viewBox="0 0 1000 900">
 <g stroke="{arrow}" stroke-width="7" fill="{arrow}"><path d="M250 420H750"/><path d="M250 420l26-16v32zM750 420l-26-16v32z"/>
 <path d="M860 110V866" /><path d="M860 110l-16 26h32zM860 866l-16-26h32z"/></g>
 <path d="M792 120H876M772 868H876" stroke="{arrow}" stroke-width="4" stroke-dasharray="10 8"/>
 <circle cx="500" cy="470" r="44" fill="{arrow}"/><text x="500" y="486" text-anchor="middle" font-family="Nunito Sans" font-weight="800" font-size="46" fill="#fff">A</text>
 <circle cx="920" cy="520" r="44" fill="{arrow}"/><text x="920" y="536" text-anchor="middle" font-family="Nunito Sans" font-weight="800" font-size="46" fill="#fff">B</text></svg>
-<div class="lay" style="left:1180px;top:520px;width:700px;font-size:50px;line-height:1.3">
+<div class="lay" style="left:1180px;top:590px;width:700px;font-size:50px;line-height:1.3">
 {''.join(f'<div style="display:flex;gap:28px;margin-bottom:52px"><span class="disp" style="font-size:64px;color:var(--tomato);width:50px;flex:none">{n}</span><div>{t}</div></div>' for n, t in [
     ('1', 'Lay a tee you love flat.'),
     ('2', '<b>A</b> · Measure across the chest, armpit to armpit.'),
     ('3', '<b>B</b> · Measure from the top of the shoulder to the hem.'),
-    ('4', 'Match A and B to the size chart in this listing.')])}</div>
-<div class="chips"><span class="chip"><span class="ball"></span>Unisex fit: for a closer fit, many people pick one size down</span></div>''')
+    ('4', 'Match A and B to the size chart in this listing.')])}
+<div style="font-size:44px;line-height:1.35;color:var(--muted);padding-left:78px">Unisex fit. For a closer fit, many people pick one size down.</div></div>
+<div class="chips"><span class="chip"><span class="ball"></span>Adult sizes XS–3XL</span></div>''')
 
 icon_tee = '<svg viewBox="0 0 1000 900" width="230"><path d="M370 70Q500 175 630 70L792 120Q880 205 944 330L838 410Q800 385 762 372Q756 620 772 868Q500 884 228 868Q244 620 238 372Q200 385 162 410L56 330Q120 205 208 120Z" fill="#3D86D8"/><circle cx="470" cy="330" r="60" fill="#fff"/><circle cx="560" cy="330" r="22" fill="#EE5A36"/></svg>'
 icon_print = '<svg viewBox="0 0 240 240" width="230"><rect x="20" y="70" width="200" height="110" rx="22" fill="#F5B820"/><rect x="60" y="20" width="120" height="60" rx="8" fill="#FFFFFF"/><rect x="60" y="150" width="120" height="80" rx="8" fill="#FFFFFF"/><circle cx="185" cy="105" r="10" fill="#EE5A36"/><rect x="80" y="172" width="80" height="10" rx="5" fill="#1D2940" opacity=".25"/><rect x="80" y="194" width="56" height="10" rx="5" fill="#1D2940" opacity=".25"/></svg>'
@@ -227,8 +236,8 @@ lst['listing-06'] = ('Made to order', f'''<div style="position:absolute;inset:0;
 lst['listing-07'] = ('Pairs with', f'''<div style="position:absolute;inset:0;background:var(--t-grass)"></div>
 <div class="pad" style="top:120px"><div class="kick" style="color:#1F7A4F">Gift idea</div><h2 class="disp" style="margin-top:24px">Pair it with<br>a story and play</h2></div>
 <div class="lay shadow" style="left:90px;top:640px;width:900px;transform:rotate(-4deg)">{tee('#F2EBDD', 'light', B)}</div>
-<img class="lay" src="{B}../picture-tablet-slept/cover.png" style="left:1030px;top:620px;width:760px;border-radius:10px;transform:rotate(3deg);box-shadow:0 30px 40px rgba(29,41,64,.18)">
-<img class="lay" src="{B}../bored-play-cards/cover.png" style="left:1180px;top:1180px;width:620px;border-radius:10px;transform:rotate(-5deg);box-shadow:0 30px 40px rgba(29,41,64,.18)">
+<img class="lay" src="{B}../picture-tablet-slept/cover.png" style="left:1080px;top:560px;width:660px;border-radius:10px;transform:rotate(3deg);box-shadow:0 30px 40px rgba(29,41,64,.18)">
+<img class="lay" src="{B}../bored-play-cards/cover.png" style="left:1330px;top:1080px;width:470px;border-radius:10px;transform:rotate(-5deg);box-shadow:0 30px 40px rgba(29,41,64,.18)">
 <p class="small pad" style="top:1760px;margin:0;right:900px;color:var(--ink)">Our picture book <b>The Day the Tablet Slept</b> and <b>150 “I’m bored!” Play Cards</b> are sold separately.</p>''')
 
 # tote images (for the site's bundle pages only)
