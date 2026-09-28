@@ -1,0 +1,1 @@
+{ "name": "guide-100-plays-build", "private": true, "description": "Build helpers for 100 Screen-Free Plays", "dependencies": { "pdf-lib": "^1.17.1", "qrcode": "^1.5.4" } }

@@ -59,12 +59,12 @@ single({
     kidAt('zara', 'point', 470, 770, 1.0, 'talk', false) +
     kidAt('sam', 'sit', 745, 792, 0.92, 'smile', true) +
     // mini speech bubbles with the block icons
-    G('translate(196 356)', P('M0 0 h96 a20 20 0 0 1 20 20 v48 a20 20 0 0 1 -20 20 h-54 l-22 22 l2 -22 h-22 a20 20 0 0 1 -20 -20 v-48 a20 20 0 0 1 20 -20Z', C.paper) + A.TX(48, 66, '?', 58, C.sky)) +
+    G('translate(196 370)', P('M0 0 h96 a20 20 0 0 1 20 20 v48 a20 20 0 0 1 -20 20 h-54 l-22 22 l2 -22 h-22 a20 20 0 0 1 -20 -20 v-48 a20 20 0 0 1 20 -20Z', C.paper) + A.TX(48, 66, '?', 58, C.sky)) +
     G('translate(360 460)', P('M0 0 h96 a20 20 0 0 1 20 20 v48 a20 20 0 0 1 -20 20 h-22 l2 22 l-22 -22 h-54 a20 20 0 0 1 -20 -20 v-48 a20 20 0 0 1 20 -20Z', C.paper) + A.TX(48, 62, 'ha!', 40, C.ink)),
   texts: [
     T(52, 40, 400, LOGO('lockup-horizontal-white.svg', 44), ''),
     T(48, 104, 560, 'More Talk,<br>Less Tap', 'covertitle'),
-    T(52, 322, 560, 'A Talk Tower story for circle time', 'coversub'),
+    T(52, 318, 560, 'A Talk Tower story for circle time', 'coversub'),
     T(612, 60, 150, 'Circle-time<br>talk games<br>inside!', 'badge'),
   ],
 });

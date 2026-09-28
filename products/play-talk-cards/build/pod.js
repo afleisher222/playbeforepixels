@@ -55,7 +55,7 @@ function tuck(d, guide) {
       <ul>${d.inside.map(t => `<li>${t}</li>`).join('')}</ul>
       <p class="warn">${d.warn}</p>
       <p class="cr">${K.COPY} Printed on demand. playbeforepixels.com</p>
-      <div class="upc">Barcode / UPC<br><small>only if the seller channel requires one</small></div></div>`;
+      <div class="upc">Barcode / UPC<small>only if the seller channel requires one</small></div></div>`;
   const side = rot => `<div class="sd" style="transform:rotate(${rot}deg)"><b>${d.title} Cards</b> · ${d.sub}</div>`;
   let art = '';
   // bleed-filled background under the whole die, white where waste
@@ -87,8 +87,7 @@ function tuck(d, guide) {
       M${X.sideR + T.D} ${y0}V${y0 - T.dust + 12}Q${X.sideR + T.D} ${y0 - T.dust} ${X.sideR + T.D - 20} ${y0 - T.dust}H${X.sideR}V${y0 - T.D}
       M${X.sideL} ${y0 + T.H}V${y0 + T.H + T.dust - 12}Q${X.sideL} ${y0 + T.H + T.dust} ${X.sideL + 20} ${y0 + T.H + T.dust}H${X.front}
       M${X.sideR + T.D} ${y0 + T.H}V${y0 + T.H + T.dust - 12}Q${X.sideR + T.D} ${y0 + T.H + T.dust} ${X.sideR + T.D - 20} ${y0 + T.H + T.dust}H${X.sideR}
-      M${X.front} ${y0 - T.D}V${B + T.flap} M${X.front + T.W} ${y0 - T.D}V${B + T.flap} M${X.front} ${y0 + T.H + T.D}V${y0 + T.H} M${X.front + T.W} ${y0 + T.H + T.D}V${y0 + T.H}
-      M${X.sideR + T.D} ${y0}V${y0} M${X.back} ${y0}V${y0 + T.H}"/>`);
+      M${X.front} ${y0 - T.D}V${B + T.flap} M${X.front + T.W} ${y0 - T.D}V${B + T.flap} M${X.front} ${y0 + T.H + T.D}V${y0 + T.H} M${X.front + T.W} ${y0 + T.H + T.D}V${y0 + T.H}"/>`);
     g = `<svg class="guide" width="${totalW}" height="${totalH}" viewBox="0 0 ${totalW} ${totalH}"><rect x="${B}" y="${B}" width="${totalW - 2 * B}" height="${totalH - 2 * B}" fill="none" stroke="#00AEEF" stroke-width=".6" stroke-dasharray="2 2"/>
       <g stroke="#FF00FF" stroke-width="1.2" fill="none">${cut.join('')}</g><g stroke="#00AEEF" stroke-width="1" stroke-dasharray="5 3">${fold.join('')}</g>
       <text x="${X.back + 10}" y="${y0 - 40}" font-size="9" font-family="sans-serif" fill="#FF00FF">POD LATER · GUIDE ONLY · magenta = cut, cyan dashed = fold</text>
@@ -114,7 +113,7 @@ symbol{overflow:visible}.sk{fill:var(--sk)} .hr{fill:var(--hr)} .sh{fill:var(--s
 .bk ul{margin:0 0 8px;padding-left:15px;font-size:10px;line-height:1.45;font-weight:700}
 .bk .warn{background:${C.wash};border-radius:8px;padding:6px 8px;font-size:8.5px;font-weight:700}
 .bk .cr{font-size:7.5px;opacity:.7}
-.upc{position:absolute;right:20px;bottom:16px;width:1.2in;height:.7in;border:1.2px dashed #9AA3B5;border-radius:4px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:8px;font-weight:800;line-height:1.2}
+.upc{position:absolute;right:20px;bottom:16px;width:1.2in;height:.7in;border:1.2px dashed #9AA3B5;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:8px;font-weight:800;line-height:1.2}
 .upc small{font-weight:600;font-size:6.5px}
 .side{display:flex;align-items:center;justify-content:center}
 .sd{white-space:nowrap;font-size:10px;font-weight:700;color:${C.ink}}

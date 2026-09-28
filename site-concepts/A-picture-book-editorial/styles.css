@@ -333,6 +333,12 @@ button.sc-seg[aria-pressed="true"] .sc-label::after { content: " ✓"; font-size
 .spread { display: grid; grid-template-columns: 1fr 1fr; position: relative; }
 .spread img { width: 100%; aspect-ratio: 1; object-fit: cover; }
 .spread::after { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 36px; transform: translateX(-50%); background: linear-gradient(90deg, rgba(29,41,64,0), rgba(29,41,64,.10) 46%, rgba(29,41,64,.16) 50%, rgba(29,41,64,.06) 54%, rgba(29,41,64,0)); pointer-events: none; }
+.hero-buy { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px var(--m) 28px clamp(18px, 2.2vw, 36px); border-top: 1px solid var(--rule); flex-wrap: wrap; }
+.hero-buy p { margin: 0; }
+.hero-buy i { font: italic 800 22px/1.1 var(--f-display); letter-spacing: -.02em; margin-right: 12px; }
+.hero-buy p > span { font-size: 14.5px; color: var(--ink-2); font-weight: 700; }
+.hero-buy-r { display: flex; align-items: center; gap: 18px; }
+.hero-buy-r b { font: 800 24px/1 var(--f-display); font-variant-numeric: tabular-nums; }
 .spread-cap { display: grid; grid-template-columns: 1fr 1fr; }
 .spread-cap p { margin: 0; padding: 20px clamp(18px, 2.2vw, 36px) 8px; font-size: 16px; line-height: 1.5; color: var(--ink-2); border-left: 1px solid var(--rule); }
 .spread-cap p:first-child { border-left: 0; }
