@@ -1,20 +1,35 @@
 # Product and content queue (ranked; updated by every run)
 
-## LAUNCH FIRST — before Black Friday (Nov 27, 2026), from marketing/DEMAND-CHECK.md §3
-1. Visual routine cards — 200+ editable cards, 0–5 and 5–12 (Etsy + site, $9.50 list / ~$6.50 sale)
-2. "I'm bored" play cards — 150 age-banded cards with talk prompts ($6.50)
-3. Play-First Family Kit — Play First, Then Screens checklist, tokens, helping-jobs page, family play & screen plan, 30-day tracker ($11)
-4. Toddler busy book printable — 120–150 pages, 0–5 ($15.99 list / ~$11–12 sale)
-5. 100 Screen-Free Plays — paperback (KDP) + PDF ($16.99 / $9.99)
-Alternates: Screen-Free Car Ride & Waiting Pack ($6); first-words flash cards ($6.99).
-Kill rule: fewer than 5 sales in 60 days after SEO fixes → reprice once, then fold into a bundle.
+## LAUNCH FIRST — G0 editions only, from G-day (target Fri Oct 16, 2026; business/GROWTH-ENGINE.md §2)
+One everyday price each; no list/sale pairs; same price on Etsy and Gumroad. Etsy ≤5 new listings/week, KDP ≤2 titles/week.
+Every bundle part is live on Gumroad at its everyday price from G-day, so "separately" sums are prices actually charged. On Etsy a bundle shows a "separately" figure only once every part is live on Etsy.
+Personal/Family license only; classroom and site licenses are HELD. Titles, tags and keywords pass the GROWTH-ENGINE §7 banned-word list.
+G-day week (Etsy 5): Toddler Busy Book, 74 activities, ages 1–5 — $11.99 · Ages 1–5 Instant Gift Bundle (busy book + Family Kit 2–5 + bored cards 1–5 + Play & Talk cards; parts $36.49) — $29 · Visual Routine Cards, 0–5 edition — $9.50 (founder decision D1; search words per D9) · 100 Screen-Free Plays PDF — $9.99 · "I'm Bored" Play Cards, 1–3 and 3–5 bands — $6.50
+Week 2 (Etsy ≤5): Play-First Family Kit, 2–5 pages — $11 · 52 Play & Talk Cards — $7 · Routine Cards Starter (60) — $5.00 · 24 Days of Play: Winter Countdown, 2–5 edition — $6.50 (list by Oct 25; sell to Dec 5) · Birth-to-5 Printable Library (parts $55.98) — $45
+KDP: 100 Screen-Free Plays for Ages 0–5 paperback — $16.99 (draft + proof before G-day; publish on proof pass; free KDP ISBN; Expanded Distribution off; parenting categories only).
+November (Etsy ≤5/week): Car Ride & Waiting Pack, 0–5 edition — $6 · Play Recipes for Grandparents — $12 · Talk-First Welcome printable set — $14 · "Bring a book" shower insert + bookplate — $5.00
+KDP adult shelf (from Nov 2): Family Play Plan & 30-Day Planner, 2–5 edition — $12.99 · Grown-ups' Play Log — $12.99 · 30 Days of Back-and-Forth workbook, 0–5 edition — $14.99 (after the email edition has buyers). Each name is checked in brand/ORIGINALITY.md first.
+Gumroad from Dec 15: 30 Days of Back-and-Forth (was the 30-Day Screen Reset; retired name), 0–5 edition — $27 · its bundle (parts $54.49) — $49; /30-days, never /reset; launch Dec 26; self-paced start date Jan 4. No course email is scheduled until the "you each get $5" referral line is removed from all 43 files.
+5–12 material is added free to the same listings when counsel's G1 answer allows. No new listings for it.
+Kill rule: fewer than 5 sales in 60 days after the EXP-03 search-copy decision → reprice once (never below price_floor, no "was" price) → add to a bundle as a part and deactivate the listing (never edit a reviewed listing into a different product; 16 CFR 465.3).
+_(Adopted September 28, 2026 from business/GROWTH-ENGINE.md §8a.)_
 
 ## Next to build
 0. **Board-book printing decision (founder):** Amazon KDP does not print board books and print-on-demand board books are likely unavailable (commerce/storefront-setup-guide.md, unverified). Options: (a) publish "Up! Go! More!" first as a sturdy square paperback talk-along book through print-on-demand (no inventory), and (b) add a true board-book edition later through a pre-sale that funds a short offset print run held and shipped by a fulfillment warehouse — never the founder's home. Also: 32-page square picture-book hardcovers go through IngramSpark, not KDP.
 _(Seeded after the demand check (marketing/DEMAND-CHECK.md) and campaign bible (marketing/CAMPAIGN-BIBLE.md) finish; first candidates below.)_
 1. ALPHAPLAY Spelling Games printable (ages 5–8) — must be genuinely on sale by mid-January 2027 to support the ALPHAPLAY Statement of Use (deadline March 8, 2027). Pinnies were never manufactured; printables (+ optional POD card game) are the use plan (legal/ENTITY.md).
-2. Holiday gift bundle and printable gift-reveal card — before October 31.
+2. $29 Ages 1–5 Instant Gift Bundle + gift-reveal card + play coupons — build by Oct 11 (GROWTH-ENGINE §2c).
 3. Free "3 plays for your child's age" monthly email printable (lead magnet).
+
+### Requests to the product workflows (from business/GROWTH-ENGINE.md; products/ is theirs)
+- Regenerate the record-gap list from the files before acting. As read Sep 28: price_floor is present only on bored-play-cards and course-screen-reset; ai_disclosure is missing on guide-100-plays, toddler-busy-book, board-up-go-more, picture-tablet-slept, picture-laps-not-apps, picture-more-talk-less-tap, first-phone-plan and merch-core; shareable_piece is missing on guide-100-plays, board-up-go-more, picture-tablet-slept and picture-more-talk-less-tap; price_history is missing or empty on every launch product.
+- G0 editions: routine cards 0–5; bored cards 1–3 + 3–5; Family Kit 2–5 pages; Winter Countdown 2–5; Car Ride & Waiting Pack 0–5; 30 Days of Back-and-Forth 0–5 (slug course-screen-reset; the built version has school-age sections throughout; see paperback/source-kdp.html); Family Play Plan planner 2–5.
+- Routine-card listings: apply the founder's D9 answer to titles, tags and keywords ("first then board" and "visual schedule"; REPLACE recommended).
+- Prices: routine-card Starter to $5.00 (listing-starter.json says $4.50); shower insert $5.00; one routine-card price across listing.json, sections 02/03 and the workbook (D1).
+- Share-safe certificate version on every product; gift-inscription page in the 100 Plays paperback before first publish if possible; caregiver page only after the license amendment.
+- Referral copy in products/course-screen-reset/: 43 files (35 in emails/, 7 in funnel/, 1 paperback interior) say "give $5, get $5 … you each get $5 off" with a {{referral_link}}. No referral program exists, so remove the line (or swap in a plain "share the free printable" public link with no reward) before any course email is scheduled or the paperback is uploaded. Restore it only with full terms and the disclosure line once a program runs.
+- The course listing.json "BETA" step (invite 15–30 families at a founding price) is direct outreach to individuals and is not part of this plan without an APPROVED line; any testimonial needs a written release and states experience only.
+- New builds: Play Recipes for Grandparents ($12); Grown-ups' Play Log ($12.99, KDP); ALPHAPLAY Spelling Games (build only; publish needs G1 + counsel Q7).
 
 ## Ideas under research
 - EVERY AGE GROUP (founder, Sept 28, 2026) — research demand monthly before building:
@@ -79,5 +94,12 @@ _(Founder request, Sept 28, 2026: products for every age group and community tha
 27. Everyday Plays, Pay-What-You-Can Edition (0-8, English and Spanish): own site only, suggested $5. Replaces the cut Give-a-Kit program's access goal.
 
 ## Cut (with reason)
+- HELD: Up! Go! More! and The Day the Tablet Slept on KDP (CPSIA: 0–3 hold; Tablet Slept needs a 4+ grade or CPSC guidance); 0–3 KDP activity editions (busy book, car ride).
+- HELD: Hanukkah and other faith countdowns until a paid reviewer from the tradition signs off (COMMUNITY-PRODUCTS #9).
+- HELD until employment counsel clears school, PTA, library and child-care sales in writing: single-classroom and site licenses; organization licenses ($0 in plans; build-only); TpT; IngramSpark (library and school-jobber reach); the Back-and-Forth Tally center edition; classroom, teacher, daycare and library tags, boards and ad audiences.
+- HELD until G1 and counsel Q7: ALPHAPLAY Spelling Games (build only).
+- DEFERRED: Play Club (revisit at list ≥1,500 and course ≥30/month); referral app, gift cards, order-bump and subscription apps until ~25 own-site orders/month.
+- CUT for now: customer-photo pipeline; forward-to-a-friend mechanics; Giving Tuesday "gift of play" framing; two-licence gift SKUs; party-favor cards before their January date.
+- Community editions: publish only as G0 editions with ≥30% new content; otherwise ship as a free update inside the base listing.
 - Slogan "Pencils before pixels" — held: pencilsbeforepixels.com is registered and in use by someone else (legal/DECISION-MEMO.json). "Childhood can't wait. Screens can." and "Paper first" — hold until cleared (matching domains are taken).
 - Coaching and any live service — founder's instruction.

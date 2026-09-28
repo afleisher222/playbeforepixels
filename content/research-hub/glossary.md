@@ -40,7 +40,7 @@ Plain-language meanings of words you'll meet on our research pages. Where it hel
 
 ## Words about autism and development
 
-**Autism (autism spectrum disorder, ASD).** A lifelong neurodevelopmental difference that affects how a person communicates, relates to others and experiences the world, diagnosed by qualified clinicians using established criteria [VERIFY definition against WHO ICD-11 or DSM-5-TR wording]. "ASD" is the clinical term used in most studies. We say plain "autism" and use "ASD" only when quoting a study, because "disorder" frames a way of being as an illness.
+**Autism (autism spectrum disorder, ASD).** A lifelong neurodevelopmental difference that affects how a person communicates, relates to others and experiences the world, diagnosed by qualified clinicians using established criteria [VERIFY definition against WHO ICD-11 or DSM-5-TR wording]. "ASD" (autism spectrum disorder) is the clinical term used in diagnoses and in most studies, so you may see it on your child's reports; that is normal and expected. On our pages we mostly say plain "autism", which many autistic people prefer, and use "ASD" when quoting a study or a clinical document.
 
 **Autistic.** Many autistic people prefer identity-first language ("autistic child") because they see autism as part of who they are. Others prefer "child with autism". We mostly use identity-first language and respect each person's choice.
 

@@ -239,7 +239,7 @@ sources:
 ## Autistic perspectives (added by the respect and inclusion review, 2026-09-28)
 
 - [ ] Search systematically for research by autistic authors and statements from autistic-led organizations on screens, media use and the "virtual autism" label (English, French, German, Romanian, Spanish, Portuguese). Add each with a study page and give it the same care as clinical studies.
-- [ ] Krijnen 2026 and van Asselt 2026: confirm from the paper itself that the author (van Asselt) is autistic and writes from lived experience, as index.md, faq.md (Q24) and both study pages say. If it cannot be confirmed, remove the claim.
+- [ ] Krijnen 2026 and van Asselt 2026: confirm from the paper itself that the author (van Asselt) is autistic and writes from lived experience, as index.md ("Screens can meet real needs", "What critics say"), faq.md (Q24) and both study pages say. If it cannot be confirmed, remove the claim everywhere. Never describe any other named author (including the Krijnen 2026 authors) as autistic unless their own paper says so; the critic bullet in the pillar's short version was reworded on 2026-09-28 so it no longer implies this.
 - [ ] Glossary entries "Autistic traits", "'Severity' scores" and "'Risk' and 'likelihood'" are editorial definitions; have the paid autistic sensitivity reader and the clinician reviewer check them.
 
 ## Leads not yet entered (from the fact-check passes)

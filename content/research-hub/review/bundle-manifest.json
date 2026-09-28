@@ -1,70 +1,70 @@
 {
-  "version": "1846bece005e",
+  "version": "0e756e88c254",
   "built": "2026-09-28",
   "stage": "draft",
-  "verify_marks_left": 172,
+  "verify_marks_left": 184,
   "words": {
-    "all": 10983,
-    "clinician": 4359,
-    "sensitivity": 3323
+    "all": 11942,
+    "clinician": 4831,
+    "sensitivity": 3658
   },
   "pages": [
     {
       "code": "IDX",
       "file": "content/research-hub/index.md",
       "url": "/research/virtual-autism/",
-      "sha256": "0855545e10e1b7d51b60ad415ae714d9893d3fedc6c7e07f49749526f0935137",
-      "words": 3618,
-      "clinician_words": 871,
-      "sensitivity_focus_words": 1422,
-      "blocks": 77
+      "sha256": "b67947fe4d0eeeffa52753e6f35ff3c56a4d77724dfb7907dbaf8b28eaa8421d",
+      "words": 3794,
+      "clinician_words": 880,
+      "sensitivity_focus_words": 1504,
+      "blocks": 79
     },
     {
       "code": "FAQ",
       "file": "content/research-hub/faq.md",
       "url": "/research/virtual-autism/faq/",
-      "sha256": "b097a95bf143a87f7330a745bd87d71308f0c79fab50638027edcacba386c3a1",
-      "words": 2261,
-      "clinician_words": 910,
-      "sensitivity_focus_words": 673,
-      "blocks": 34
+      "sha256": "97cccd31e3c38763c940999f5aa6b2063d03e9f0c4445d9979845ac6709528c2",
+      "words": 2574,
+      "clinician_words": 1031,
+      "sensitivity_focus_words": 823,
+      "blocks": 37
     },
     {
       "code": "GLO",
       "file": "content/research-hub/glossary.md",
       "url": "/research/glossary/",
-      "sha256": "2a7eb98719abf9865cef550b90b094b2f7adaff4ae3e1fde9dd016294a027160",
-      "words": 2125,
-      "clinician_words": 779,
-      "sensitivity_focus_words": 747,
-      "blocks": 72
+      "sha256": "c3419fb5f2d9dd5f25171c73f2c6ef2b98a0168e9919dd9c9d58b3a633a943ff",
+      "words": 2272,
+      "clinician_words": 877,
+      "sensitivity_focus_words": 812,
+      "blocks": 75
     },
     {
       "code": "PED",
       "file": "content/research-hub/pediatrician-questions.md",
       "url": "/research/pediatrician-questions/",
-      "sha256": "bc8d88696c2b1528e7c205ef2295213bf691f60e92e997bc11c9ca46367e8be1",
-      "words": 506,
-      "clinician_words": 506,
-      "sensitivity_focus_words": 50,
-      "blocks": 37
+      "sha256": "99cf8d77fc270582a7f1b0872cdb01352fdbf7c1ed2837880c5e83c03f0a3833",
+      "words": 593,
+      "clinician_words": 593,
+      "sensitivity_focus_words": 68,
+      "blocks": 41
     },
     {
       "code": "EIV",
       "file": "content/research-hub/early-intervention.md",
       "url": "/research/early-intervention/",
-      "sha256": "553e7a9e200a4c4c5ed905784c63a5bf50ec4f416f92661f93af0d0142fa2aee",
-      "words": 1293,
-      "clinician_words": 1293,
-      "sensitivity_focus_words": 219,
-      "blocks": 46
+      "sha256": "d37a1a1bccd5b76487f98a567ac6050311fef26ff12c50c679bdc338ac84537d",
+      "words": 1450,
+      "clinician_words": 1450,
+      "sensitivity_focus_words": 239,
+      "blocks": 50
     },
     {
       "code": "POL",
       "file": "content/research-hub/editorial-policy.md",
       "url": "/research/editorial-policy/",
-      "sha256": "ec37363ba9c8f980cfe4045ea033fba4060cb25be9dd654ac74f82570aa6ead1",
-      "words": 1180,
+      "sha256": "f9d5fb6a7e2ef8948ce9a8f9dc10f3a135f037ac8144e74cb18257f85ade7f6a",
+      "words": 1259,
       "clinician_words": 0,
       "sensitivity_focus_words": 212,
       "blocks": 50

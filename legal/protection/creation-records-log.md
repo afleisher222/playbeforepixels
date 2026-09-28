@@ -30,12 +30,16 @@
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | W-001 | | | | Y/N | Y/N/NA | | | | Single / Standard / GRUW / GRTX | | |
 | W-002 | | | | | | | | | | | |
+| W-LOGO-02 | Play Before Pixels logo v2, "The Maker's Seal" (`brand/logo/`) | Art (logo) | AI-generated baseline (Claude, 2026-09-28); founder's own edits to be logged in section B | N (AI-assisted; see section D) | NA | 2026-09-28 | Not published | | | | |
 
 ## B. Version log (one row per saved milestone)
 
 | Date | Work ID | File name | Stage (idea, sketch, draft, final, published) | Where stored (folder path) | Created on (business device name) | Notes |
 |---|---|---|---|---|---|---|
-| | | | | | | |
+| 2026-09-28 | W-LOGO-02 | `brand/logo/src/build.py` and every file it generates | Draft (AI-generated baseline, before any founder edit) | `brand/logo/` in the business repository | Cloud session (AI) | Built from concept C with the review panel's fixes 3-6. Rejected options on record: `brand/logo/process/2026-09-28_rejected-options.png`. Band colour (`BAND`) and lean (`TILT`) left for the founder. |
+| | W-LOGO-02 | | Founder edit: `BAND` (from sun to ...) | | | What you chose and why |
+| | W-LOGO-02 | | Founder edit: `TILT` (from 8 to ...) | | | What you chose and why |
+| | W-LOGO-02 | | Founder's own choice (e.g. `SEAL['cap']`, `TOP['w']`, `WORD['ball_r']`) | | | What you chose and why |
 
 ## C. Monthly snapshot log
 
@@ -47,7 +51,8 @@
 
 | Work ID | Input (freelancer, stock image, font, AI tool, study figure) | Source / vendor | License or agreement | Commercial use allowed? | Where the signed copy or license is stored |
 |---|---|---|---|---|---|
-| | | | | | |
+| W-LOGO-02 | AI tool: Claude generated the build scripts and the baseline drawing (seal, top, lockups, favicon). Disclose it and claim only the founder's own edits in any copyright filing. | Anthropic | Anthropic's terms for the account used [founder/attorney to confirm and file a copy] | [attorney to confirm] | |
+| W-LOGO-02 | Font: Bricolage Grotesque (outlines of the letters in the wordmark and the ring) | Google Fonts / its designers | SIL Open Font License 1.1 (allows use in logos) | Yes | `brand/fonts/` [add OFL.txt if missing] |
 
 ## E. Research-hub sources (supports fair use and claim substantiation)
 

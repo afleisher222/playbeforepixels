@@ -997,3 +997,20 @@ Nothing below is to be relied on until it has been checked on the official page.
 - Waitlist-to-purchase conversion benchmarks.
 - Order-bump take-rate benchmarks.
 - Post-purchase survey response-rate benchmarks.
+
+## Adopted from business/GROWTH-ENGINE.md §8c (September 28, 2026)
+These override the matching lines above where they differ.
+
+1. **EXP-05:** replace "Holiday Play Gift $34" with "$29 Ages 1–5 Instant Gift Bundle and $45 Birth-to-5 Printable Library". Add: "The bump arm runs only on a checkout with a native, never-pre-ticked add-on (the Gumroad feature is UNVERIFIED; Shopify is deferred until about 25 own-site orders a month). Until then, only bundle share is measured."
+2. **EXP-04c:** set the Black Friday window to **Nov 24 – Dec 2, 2026** (the EVENTS Cyber Week). Name the default mechanism: a dated free bonus printable, not sold separately, with either bundle, each bundle at its price for 30+ days before Nov 24 and shown with no "$X value" for the bonus (16 CFR 251). No Etsy sale-tool event in 2026. Rename "New Year Family Reset" to "New Year Back-and-Forth" (ORIGINALITY A8).
+3. **EXP-10b:** add a bid ceiling of $0.36; negative keywords and negative ASINs loaded before the start; continuation Dec 1–20 at up to $100 only after a Success verdict and a new APPROVED line; January at up to $150 only if 14-day ACoS is at or below 30%; and the $150 net-ad-loss stop. Leave the success and kill thresholds as registered.
+4. **New EXP-14, pin destination.** Question: do product pins earn more money linking to the Etsy listing, or to the email landing page with the product offer? Design: alternate by ISO week for 8 weeks. Metrics, reported separately: orders per 100 outbound clicks and sign-ups per 100 outbound clicks. Minimum sample: 300 outbound clicks per arm (ASSUMPTION). The default until a verdict: product pins go to Etsy and free-printable pins to the landing page.
+5. **New EXP-15, sharing features.** Metric: scans and sign-ups tagged `src=cert`, `src=caregiver` and `src=gift`, per 100 KDP and own-checkout orders. Success is 5 or more; kill is under 0.5 after 8 weeks and one redesign (ASSUMPTION).
+6. **New EXP-16, editions versus new categories.** Metric: the share of new listings that sell within 30 days, comparing editions of proven sellers with new categories. If editions do 1.5× better or more (ASSUMPTION), the studio's build mix moves to 3 editions for every 1 new category.
+7. **Register rows for the checkpoints:** CHK-1 on Dec 31, 2026; CHK-2 on Mar 31, 2027; CHK-3 on May 31, 2027, with the thresholds in §2c.
+8. **§10 conflicts resolved by this file:**
+   - #1: Starter at $5.00 (D2).
+   - #2: review request on day 7, per EXP-13.
+   - #5: Amazon waits for counsel's geo answer.
+   - #7: `price_history` goes on every launch product (request in §8a).
+   - #8: $9.50 recommended (D1), and data decides after that.

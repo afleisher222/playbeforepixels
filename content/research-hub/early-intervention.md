@@ -34,7 +34,7 @@ INTERNAL (remove at publish):
 
 > **This is not medical or legal advice.** Programs and rules differ by state and country and change over time. Always check with your local program. Everything specific on this page is marked [VERIFY] until we have checked it against the official source.
 
-If you're worried about how your child is talking, playing, moving, responding or connecting with you, **you can ask for help now.** You don't need to be sure anything is wrong, you don't need a diagnosis, and you don't need to wait and see. Asking early is a caring step, and it's not your fault. Grandparents and other caregivers can start this too.
+If you're worried about how your child is talking, playing, moving, responding or connecting with you, **you can ask for help now.** You don't need to be sure anything is wrong, you don't need a diagnosis, and you don't need to wait and see. Asking early is a caring step, and it's not your fault. Grandparents and other caregivers can start this too [VERIFY].
 
 This applies whether or not screens are part of the story. Support is useful whatever the reasons behind what you're noticing, and an evaluation is how you find out what your child needs.
 

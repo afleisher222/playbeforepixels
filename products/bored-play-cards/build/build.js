@@ -910,7 +910,7 @@ function companionPages() {
     const m = meta(cd);
     return `<div class="cxr"><i class="bx"></i><span class="nn">${String(i + 1).padStart(2, '0')}</span><div class="c1"><b>${esc(cd.t)}</b><span class="c1m">${icon(cd.c, 'i')}${meter(cd.e)}${fromTxt(m[0])}${k === 'summer' || k === 'rainy' ? ` · ages ${cd.a}` : ''}</span></div><div class="c2">${esc(m[6])}</div><div class="c2">${esc(m[7])}</div><div class="c2 c3">${esc(m[8])}</div></div>`;
   };
-  const head = `<div class="cxl">Tick a box when you’ve played a card. ${icon('build')}${icon('pretend')}${icon('move')}${icon('outside')}${icon('words')}${icon('music')}${icon('kitchen')}${icon('games')} = kind of play · bars = energy · No time to cut? Read titles aloud and let your child pick. Each card’s safety line applies to all its versions.</div>
+  const head = `<div class="cxl">Tick a box when you’ve played a card. Each card’s safety line applies to all its versions.<span style="flex-basis:100%;height:2px"></span>${icon('build')}${icon('pretend')}${icon('move')}${icon('outside')}${icon('words')}${icon('music')}${icon('kitchen')}${icon('games')} = kind of play · bars = energy · No time to cut? Read titles aloud and let your child pick.</div>
   <div class="cxr cxth"><span></span><span></span><div class="c1">Card · starting age</div><div class="c2">Make it easier</div><div class="c2">Make it harder</div><div class="c2 c3">2-minute tired-grown-up version</div></div>`;
   return pages.map((grp, pi) => contentPage('index', `Card index &amp; grown-up companion · ${pi + 1} of ${pages.length}`, null,
     head + grp.map(it => it.band ? `<div class="cxh" style="${tvars(TH[it.band])}"><span>${TH[it.band].name}</span><em>${it.n} cards</em></div>` : row(it)).join('')));

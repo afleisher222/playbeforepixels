@@ -93,25 +93,25 @@
   "svg": "../lockup-stacked.svg",
   "png": "../png/lockup-stacked-2400.png",
   "w": 2400,
-  "h": 3402
+  "h": 3495
  },
  {
   "svg": "../lockup-stacked-reverse.svg",
   "png": "../png/lockup-stacked-reverse-2400.png",
   "w": 2400,
-  "h": 3402
+  "h": 3495
  },
  {
   "svg": "../lockup-stacked-black.svg",
   "png": "../png/lockup-stacked-black-2400.png",
   "w": 2400,
-  "h": 3402
+  "h": 3495
  },
  {
   "svg": "../lockup-stacked-white.svg",
   "png": "../png/lockup-stacked-white-2400.png",
   "w": 2400,
-  "h": 3402
+  "h": 3495
  },
  {
   "svg": "../wordmark.svg",

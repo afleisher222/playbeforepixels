@@ -39,7 +39,7 @@ We sell play products. A site that sells things has a reason to make screens sou
 
 1. **Primary sources first.** We describe a study from the study itself: the abstract at minimum, and the full text wherever we can get it. Press releases and news articles are not enough.
 2. **We say what we read.** Every study page has a "What we read" section: *full text*, *abstract*, or *secondary only*. Secondary-only pages stay unpublished, or clearly marked [VERIFY], until the original is read.
-3. **An allowed-citation list.** A short list of sources has been checked and approved for use across our materials. Anything outside it is marked **[VERIFY]** until a person has read the original and logged it in our research log.
+3. **An allowed-citation list.** A short list of sources has been checked and approved for use across our materials. Anything outside it is marked **[VERIFY]** until the original has been read and logged in our research log. [OWNER DECISION: see the note on review step 1.]
 4. **Balance is a rule, not a courtesy.** We look for, and give equal space to, **critical, skeptical and null** studies and commentary, not only studies that report a link. In our [research library](/research/library/) the critical and null work is listed first.
 5. **We weigh design, not headcount.** A large cohort study or a careful meta-analysis counts for more than many case reports. Each study page says how much weight we think it deserves, and why.
 6. **Grey literature is labelled.** Web posts, handouts, preprints and position statements appear only when they matter to the history or the debate, and they are labelled as such.
@@ -69,7 +69,7 @@ We sell play products. A site that sells things has a reason to make screens sou
 
 Every research page goes through, in order:
 
-1. **Source check.** A person reads each cited source (abstract at minimum) and confirms every number, quote and description. The page's "What we read" field is updated.
+1. **Source check.** A person reads each cited source (abstract at minimum) and confirms every number, quote and description. The page's "What we read" field is updated. [OWNER DECISION, content/research-hub/review/REVIEW-PACK.md section 9 item 1: this sentence and the "AI assistance" line above are true only if a human fact-checker is hired. Otherwise the claims and legal reviewer rewrites both to describe the AI-assisted check honestly. This page cannot publish with either sentence as it stands until that is decided.]
 2. **Balance check.** Does the page give critical and null evidence the same care as supportive evidence?
 3. **Autistic sensitivity read.** A paid autistic reviewer reads each new format before first publication.
 4. **Medical-claims and legal review.** For the main guide, the early intervention page and anything giving practical advice. A clinician reviews the "what parents can do" sections.
@@ -95,7 +95,7 @@ We never ask for, and you should never send, information about your child's heal
 
 ## Privacy
 
-Our research pages do not collect information about children. The free printable asks only for an email and, optionally, a child's birth month and year. See our privacy policy.
+Our research pages do not collect information about children. The free printable linked from our research pages never asks for a child's name, age or birth date. [Final wording follows the owner's choice of hub sign-up route, ops/APPROVALS.md: a direct download, or an email only.] See our privacy policy.
 
 ---
 

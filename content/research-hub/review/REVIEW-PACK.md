@@ -32,7 +32,7 @@ The research hub is how Play Before Pixels answers a parent who types "virtual a
 
 Rebuild: `node content/research-hub/review/build-bundle.js --pdf` (draft) or `--stage review --pdf` (after verification). The version ID changes whenever any of the six pages changes.
 
-**Current bundle (September 28, 2026):** version `1846bece005e`, pre-verification draft, 10,983 words, 4,359 words in clinician scope, 172 `[VERIFY]` marks still open. This build is for scoping and quotes only. Reviewers work on the review version.
+**Current bundle (September 28, 2026):** version `421c24531536`, pre-verification draft, 11,773 words, 4,798 words in clinician scope, 180 `[VERIFY]` marks still open (rebuilt after the simulated reader panel; see `marketing/AWARENESS-ENGINE.md` §13). This build is for scoping and quotes only. Reviewers work on the review version.
 
 ---
 
@@ -106,9 +106,9 @@ About **90 minutes in total over six to eight weeks**, inside the weekly approva
 
 | Role | Work | Hours (est.) | Fee range (UNVERIFIED) | Cap |
 |---|---|---|---|---|
-| **A. Autistic sensitivity reader** | Full read of 10,983 words, comment table, sign-off, one re-check | 7–11 | $300–900. Basis: sensitivity-read snapshots of $0.013–0.04 a word (`marketing/BRAND-RESPECT-PLAN.md` §3) and $35–75 an hour | **$900** |
-| **B. Clinician** | 4,359 words in scope (skim the rest for context), comment table, sign-off, one re-check | 4–7 | Pediatric SLP about $50–120 an hour ($250–850); developmental-behavioral pediatrician about $150–300 an hour ($600–2,100) | **$1,500** |
-| **C. Claims and legal** | All six pages (10,983 words), the reviewer contract rider, memo, clearance form, one follow-up | 4–8 | $250–500 an hour ($1,000–4,000), or a flat fee; less as an add-on to the consumer and privacy attorney's policy review | **$2,500** |
+| **A. Autistic sensitivity reader** | Full read of 11,773 words, comment table, sign-off, one re-check | 7–11 | $300–900. Basis: sensitivity-read snapshots of $0.013–0.04 a word (`marketing/BRAND-RESPECT-PLAN.md` §3) and $35–75 an hour | **$900** |
+| **B. Clinician** | 4,798 words in scope (skim the rest for context), comment table, sign-off, one re-check | 4–7 | Pediatric SLP about $50–120 an hour ($250–850); developmental-behavioral pediatrician about $150–300 an hour ($600–2,100) | **$1,500** |
+| **C. Claims and legal** | All six pages (11,773 words), the reviewer contract rider, memo, clearance form, one follow-up | 4–8 | $250–500 an hour ($1,000–4,000), or a flat fee; less as an add-on to the consumer and privacy attorney's policy review | **$2,500** |
 | **Total** | | 15–26 | $1,550–5,000 | **$4,900** |
 
 - Caps are hard: a candidate above the cap is passed over, not negotiated past it. Marketplace fees count inside each cap.
@@ -123,9 +123,9 @@ About **90 minutes in total over six to eight weeks**, inside the weekly approva
 
 ### Role A: Autistic sensitivity reader
 
-**Scope: all six pages.** A full read of 10,983 words. The sections tagged "Sensitivity focus" in the bundle (3,323 words) matter most:
+**Scope: all six pages.** A full read of 11,773 words. The sections tagged "Sensitivity focus" in the bundle (3,566 words) matter most:
 - IDX: opening boxes; "A note to autistic readers and their families"; "What critics say"; "What parents can do".
-- FAQ: "About the term" (especially Q4, "Did I do this?"); Q9; Q21; "For autistic readers".
+- FAQ: "About the term" (especially Q4, "Is one particular show or video channel the problem?", and Q5, "Did I do this?"); Q10 (children who "got better"); Q22 ("My autistic child loves their tablet"); "For autistic readers".
 - GLO: "Words about the debate"; "Words about autism and development" (the editorial definitions of "Autistic traits", "'Severity' scores" and "'Risk' and 'likelihood'").
 - PED: "About us as a family". EIV: "Common worries". POL: "Respectful language".
 
@@ -154,13 +154,13 @@ About **90 minutes in total over six to eight weeks**, inside the weekly approva
 **Brief A: posting text** (paste as is after the APPROVED line)
 
 ```
-Paid sensitivity read by an autistic reader: plain-language research pages for parents (about 11,000 words)
+Paid sensitivity read by an autistic reader: plain-language research pages for parents (about 12,000 words)
 
 Play Before Pixels (AlphaPlay LLC) is a small US business that makes play books and printables for families. We are preparing a free, ad-free set of six research pages for parents who search for "virtual autism" and screen time. "Virtual autism" is a term some clinicians use; it is not a medical diagnosis, and the studies show associations, not proof that screens cause autism. The pages say exactly that, point worried parents to their pediatrician and to free early intervention, and include a note to autistic readers and their families. The pages carry no product links.
 
 We are looking for an autistic reader (self-identification is enough; we never ask for medical records) to read all six pages and tell us, in writing, where the language, framing or tone is disrespectful, blaming, deficit-based or missing something.
 
-- About 11,000 words across six pages. A marked-up PDF with numbered paragraphs is provided after the contract is signed.
+- About 12,000 words across six pages. A marked-up PDF with numbered paragraphs is provided after the contract is signed.
 - Deliverable: a comment table and a one-page summary, a short sign-off form, and one re-check of our changes (under 2 hours) within 30 days.
 - Time: 10 business days from receiving the files.
 - Fixed fee: $450-$900 depending on experience, paid in full whatever you conclude. "This does not pass" is an acceptable result.
@@ -187,7 +187,7 @@ g. Is there anything else a careful reader would want to know about your indepen
 
 **Who qualifies:** a board-certified developmental-behavioral pediatrician, or a pediatric speech-language pathologist holding the ASHA Certificate of Clinical Competence and a current US state license, with at least five years' work with children aged 0 to 5 and experience of developmental or autism screening or early intervention. Comfortable with neurodiversity-affirming language. US-licensed, because the early-intervention page describes US programs.
 
-**Scope: 4,359 words**, tagged "Clinician scope" with a blue margin bar in the bundle:
+**Scope: 4,798 words**, tagged "Clinician scope" with a blue margin bar in the bundle:
 - IDX: the opening boxes; "What we still don't know"; "What parents can do" (all six parts, including the WHO and AAP guideline paragraph).
 - FAQ: the opening boxes; "If you're worried" (Q12–Q17); "Everyday life with screens" (Q18–Q23).
 - GLO: "Words about autism and development"; "Tests and checklists"; "Help and services".
@@ -217,7 +217,7 @@ g. Is there anything else a careful reader would want to know about your indepen
 **Brief B: posting text**
 
 ```
-Paid clinician review: practical guidance for parents on plain-language research pages (about 4,400 words in scope)
+Paid clinician review: practical guidance for parents on plain-language research pages (about 4,800 words in scope)
 
 Play Before Pixels (AlphaPlay LLC) is a small US business that makes play books and printables for families. We are preparing a free, ad-free set of research pages for parents who search for "virtual autism" and screen time. "Virtual autism" is a term some clinicians use; it is not a medical diagnosis, and the studies show associations, not proof that screens cause autism. The pages carry no product links. We are not clinicians, and we will never present your review as clinical endorsement of anything.
 
@@ -225,7 +225,7 @@ We are looking for a board-certified developmental-behavioral pediatrician, or a
 
 Your job: check the practical sections for accuracy and safety. Would anything delay or discourage a family from seeking an evaluation? Are screening, evaluation and US early-intervention steps described accurately for a general parent audience? Is a printable list of questions for the pediatrician complete and sensible?
 
-- About 4,400 words in scope (clearly marked in a numbered PDF provided after the contract is signed), across a guide, an FAQ, a glossary, an early-intervention how-to and a one-page printable.
+- About 4,800 words in scope (clearly marked in a numbered PDF provided after the contract is signed), across a guide, an FAQ, a glossary, an early-intervention how-to and a one-page printable.
 - Deliverable: a comment table, a summary of at most one page, a short sign-off form, and one re-check of our changes (under 2 hours) within 30 days.
 - Time: 10 business days from receiving the files.
 - Fixed fee: $600-$1,500 depending on credentials, paid in full whatever you conclude.
@@ -249,9 +249,9 @@ h. Is there anything else a careful reader would want to know about your indepen
 
 ### Role C: Claims and legal reviewer
 
-**Who qualifies:** a US attorney in good standing, experienced in advertising and health claims (FTC Act §5, the FTC's health-products substantiation guidance, the Endorsement Guides at 16 CFR Part 255), with publisher or media-law (defamation) experience and consumer-privacy basics. **Preferred route:** add this scope to the consumer and privacy attorney's planned flat review of the policy pages (`business/BUSINESS-PLAN.md` §5.4; `legal/LEGAL-LAUNCH-CHECKLIST.md` row 7): one engagement, one conflict check. This is a business matter, not a question for the founder's employment counsel.
+**Who qualifies:** a US attorney in good standing, experienced in advertising and health claims (FTC Act §5, the FTC's health-products substantiation guidance, the Endorsement Guides at 16 CFR Part 255), with publisher or media-law (defamation) experience and consumer-privacy basics. **Preferred route:** add this scope to the consumer and privacy attorney's planned flat review of the policy pages (`business/BUSINESS-PLAN.md` §5.4; `legal/LEGAL-LAUNCH-CHECKLIST.md` row 7): one engagement, one conflict check. This is a business matter for the company's own consumer and privacy attorney.
 
-**Scope: all six pages (10,983 words), plus the reviewer contract.**
+**Scope: all six pages (11,773 words), plus the reviewer contract.**
 
 **What to check**
 - **Health claims:** no express or implied claim that anything treats, prevents, reduces or reverses autism or any condition. Pay particular attention to the case-report wording, "What parents can do", and the one link to the free play printable and email list (it must read as play and family time only, `brand/BRAND.md` "Autism searches"). No implied claim by placement next to anything sold.
@@ -274,9 +274,9 @@ h. Is there anything else a careful reader would want to know about your indepen
 **Brief C: posting text**
 
 ```
-Flat-fee legal review: health-claims, FTC and publisher review of six plain-language research pages for parents (about 11,000 words), plus a short contractor rider
+Flat-fee legal review: health-claims, FTC and publisher review of six plain-language research pages for parents (about 12,000 words), plus a short contractor rider
 
-Play Before Pixels (AlphaPlay LLC, a Maryland LLC) is a small business that makes play books and printables for families. Before publishing a free, ad-free set of six research pages for parents about screen time and the term "virtual autism" (a term some clinicians use; not a medical diagnosis), we need a US attorney to review them for:
+Play Before Pixels (AlphaPlay LLC) is a small US business that makes play books and printables for families. Before publishing a free, ad-free set of six research pages for parents about screen time and the term "virtual autism" (a term some clinicians use; not a medical diagnosis), we need a US attorney to review them for:
 - express or implied health claims, and FTC Act Section 5 risk, including any implied link between the research pages and products we sell;
 - disclaimers and "not medical or legal advice" wording;
 - accuracy and fairness of how named researchers and organizations are described (defamation and false light);
@@ -289,7 +289,7 @@ First task (short): approve a one-page rider to our contractor agreement for two
 - Deliverables: the approved rider; a memo; marked-up text; a short clearance form; one follow-up on our changes.
 - Flat fee up to $2,500, or tell us your hourly rate and a not-to-exceed estimate.
 - All communication in writing (this platform or email). No calls or video meetings.
-- Please include your bar admission, state and number, your advertising and health-claims experience, and whether you can run a conflict check on AlphaPlay LLC.
+- Please include your bar admission, state and number, your advertising and health-claims experience, and whether you can run a conflict check on AlphaPlay LLC. (We give shortlisted attorneys the LLC's state of organization in writing.)
 ```
 
 ---
@@ -366,7 +366,7 @@ First task (short): approve a one-page rider to our contractor agreement for two
 2. **Template section 6.2 conflicts with "no endorsement".** The freelancer template lets the Company use a contractor's name, likeness and bio "to credit and promote the work". For reviewers, rider R3 must replace it.
 3. **Template section 10** names a county court as the venue; see rider R12.
 4. **Allowlist gaps:** eight hosts needed for H7 and for credential checks are missing (list in section 1). Until they are added, the facts that depend on them stay `[VERIFY]`.
-5. **Firewall findings on the six pages (September 28 run of `ops/TESTS/check_hub_firewall.py`).** FAIL HF-02: the free-printable link on IDX and FAQ points to `/free/five-5-minute-plays/`, but the hub may link only to the product-free twin `/research/play-printable/`. WARN HF-06: IDX has 206 words before its first section (the 30-second answer should fit in 150), and GLO lacks the closing "Worried?" line. Fix all three before freezing the review version, so reviewers see the final text.
+5. **Fixed the same day by the reader-panel pass (re-run: 0 FAIL on the six pages).** **Firewall findings on the six pages (September 28 run of `ops/TESTS/check_hub_firewall.py`).** FAIL HF-02: the free-printable link on IDX and FAQ points to `/free/five-5-minute-plays/`, but the hub may link only to the product-free twin `/research/play-printable/`. WARN HF-06: IDX has 206 words before its first section (the 30-second answer should fit in 150), and GLO lacks the closing "Worried?" line. Fix all three before freezing the review version, so reviewers see the final text.
 6. **"No money from device makers, app makers, EdTech companies or research authors"** (`editorial-policy.md`) is marked `[VERIFY: confirm with the owner]`. Only the founder can confirm it.
 7. **AAP 2026** may replace AAP 2016, which is on the BRAND.md rule 5 allowed list. If H1 confirms it, updating rule 5 is a founder decision.
 8. **Timing:** the SEO calendar's November 2026 slot for the "virtual autism" page comes before the gates can realistically be passed. Move the slot, not the gates.
