@@ -122,6 +122,7 @@ document.addEventListener('pbp:ready', function () {
     // one editorial interrupter when browsing everything
     if (!state.age && !state.type && !state.q && list.length > 6) {
       html.splice(6, 0, '<a class="promo" href="index.html#gifts"><span class="label">Gift sets</span><strong>Two ready-made sets, both cheaper than buying the pieces.</strong><span class="promo-a">See the gift sets →</span><img src="assets/art/kids-cheer.svg" alt=""></a>');
+      html.splice(12, 0, '<a class="promo promo--wide" href="shop.html#type=classroom"><span class="label">For teachers</span><strong>One price for every classroom in your building.</strong><span class="promo-p num"><span data-usd="39">$39</span> whole-school site license</span><span class="promo-a">See classroom materials →</span><img src="assets/art/circle-time.svg" alt=""></a>');
     }
     $('[data-grid]').innerHTML = html.join('');
     PBP.paintPrices($('[data-grid]'));

@@ -901,3 +901,15 @@ textarea.inp { height: auto; min-height: 130px; padding: 14px 16px; resize: vert
   .promo img { width: 52%; }
   .sh-links a { font-size: 19px; }
 }
+.fa[data-age="0-1"] span { display: none; }
+.promo--wide { grid-column: span 3; background: var(--sky); color: #fff; grid-template-columns: 1fr; min-height: 300px; }
+.promo--wide .label { color: var(--ink); }
+.promo--wide strong { max-width: 11em; }
+.promo--wide .promo-a { text-decoration-color: var(--ink); }
+.promo-p { font-weight: 700; }
+.promo-p span { font: 800 44px/1 var(--f-display); letter-spacing: -.04em; color: var(--sun); margin-right: 6px; }
+.promo--wide img { width: 48%; right: 28px; bottom: 24px; }
+@media (max-width: 1180px) { .promo--wide { grid-column: 1 / -1; } }
+@media (max-width: 720px) { .promo, .promo--wide { grid-column: span 1; min-height: 0; padding: 16px; gap: 10px; } .promo strong { font-size: 19px; } .promo img, .promo--wide img { position: static; width: 100%; margin-top: auto; } .promo-p span { font-size: 28px; } .promo .promo-a { font-size: 14px; } }
+.shop-grid .pgrid { grid-auto-flow: row dense; }
+@media (max-width: 720px) { .promo--wide { display: none; } }
