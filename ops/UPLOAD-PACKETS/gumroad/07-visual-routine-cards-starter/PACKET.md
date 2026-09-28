@@ -26,7 +26,7 @@ Use one card at a time with a baby, or two on the first–then board with a todd
 
 You get the cards in the color-coded Rainbow look and in a Low-ink file with line art to color. There are second copies of the busiest cards, plus blank, word-free and photo-frame cards. The three charts come ready-made and blank. Type labels and titles in free Adobe Acrobat Reader. A 2-page grown-up guide covers setup in 2 minutes and easy talk tips. Every card follows our published safety rules.
 
-Want more? The Ages 0–5 Edition has 177 cards. It adds 6 chart layouts and 4 colorways.
+Want more? The Ages 0–5 Edition has 181 cards. It adds 6 chart layouts and 4 colorways.
 
 Instant digital download. No physical item ships.
 

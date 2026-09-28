@@ -12,7 +12,7 @@ Young children learn to communicate by doing it, with a person who answers back.
 
 A 2024 study in JAMA Pediatrics recorded the sounds of family life at home and found that toddlers with more screen time heard fewer words from adults and had fewer back-and-forth exchanges (Brushe and colleagues, 2024). That’s a link, not proof that screens cause anything. But it points to something simple and hopeful: talk and play happen when we’re together, with time to answer.
 
-Five moves to try this week: pause and wait (count to five in your head), say what you see, repeat and add one word, offer a choice, and follow their lead. Talk, sing and read in the language you know best. A sign, a point or a tap on a device counts as communicating.
+Five moves to try this week: pause and wait (count to five in your head), say what you see, repeat and add one word, offer a choice, and follow their lead. Talk, sign, sing and read in the language you know best. A sign, a point or a tap on a device counts as communicating.
 
 If you ever have questions about your child’s development, talk with your pediatrician.
 

@@ -1,14 +1,14 @@
-# Gumroad packet 02: 177 Visual Routine Cards for Ages 0–5: Morning, Meals, Play and Bedtime Charts
+# Gumroad packet 02: 181 Visual Routine Cards for Ages 0–5: Morning, Meals, Play and Bedtime Charts
 
 **Live from:** G-day · **Price:** $9.50 (the same everyday price as Etsy; no 'was' price, no offer codes for 90 days) · **Record:** `products/visual-routine-cards/listing-g0.json`
 
 | Field | Paste |
 |---|---|
 | Product type | Digital product |
-| Name | 177 Visual Routine Cards for Ages 0–5: Morning, Meals, Play and Bedtime Charts |
+| Name | 181 Visual Routine Cards for Ages 0–5: Morning, Meals, Play and Bedtime Charts |
 | Price | $9.50 (pay-what-you-want off; 'allow customers to pay more' off) |
 | URL | gumroad.com/l/`routine-cards` (or the shop's custom domain later) |
-| Summary (the line under the title) | 177 printable routine picture cards and 6 charts for ages 0–5. Fillable PDF, Color and Low-ink, US Letter + A4. Helps little ones see what comes next. |
+| Summary (the line under the title) | 181 printable routine picture cards and 6 charts for ages 0–5. Fillable PDF, Color and Low-ink, US Letter + A4. Helps little ones see what comes next. |
 | Thumbnail (square) | `products/visual-routine-cards/preview/listing-images/ages-0-5/01-cover.png` |
 | Cover | `products/visual-routine-cards/mockup.png` |
 | Call to action | I want this! |
@@ -20,7 +20,7 @@
 
 ## Description (paste)
 ```
-177 printable routine picture cards for ages 0–5, with 6 charts, in US Letter and A4 PDFs. Big, friendly pictures show little ones what comes next at mornings, meals, bath and bedtime. Your child can point to them, carry them and move them to "All done."
+181 printable routine picture cards for ages 0–5, with 6 charts, in US Letter and A4 PDFs. Big, friendly pictures show little ones what comes next at mornings, meals, bath and bedtime. Your child can point to them, carry them and move them to "All done."
 
 The cards cover morning, meals, play, outside, reading together, bath, bedtime, helping jobs, and out and about. There are plan words like More, Stop, My turn and Break, and a feelings check-in. A "Play first / Screens later" pair uses a plain, generic tablet. "What we do next" and "5 more minutes" cards help with the switch.
 
@@ -43,14 +43,14 @@ How this was made: the text, illustrations and page layout were created with AI 
 | 1 | `START-HERE-0-5.pdf` | 0.06 MB | `products/visual-routine-cards/START-HERE-0-5.pdf` |
 | 2 | `visual-routine-cards-0-5.pdf` | 10.72 MB | `products/visual-routine-cards/visual-routine-cards-0-5.pdf` |
 | 3 | `visual-routine-cards-0-5-a4.pdf` | 10.69 MB | `products/visual-routine-cards/visual-routine-cards-0-5-a4.pdf` |
-| 4 | `visual-routine-cards-0-5-low-ink.pdf` | 7.11 MB | `products/visual-routine-cards/visual-routine-cards-0-5-low-ink.pdf` |
-| 5 | `visual-routine-cards-0-5-low-ink-a4.pdf` | 7.12 MB | `products/visual-routine-cards/visual-routine-cards-0-5-low-ink-a4.pdf` |
+| 4 | `visual-routine-cards-0-5-low-ink.pdf` | 7.29 MB | `products/visual-routine-cards/visual-routine-cards-0-5-low-ink.pdf` |
+| 5 | `visual-routine-cards-0-5-low-ink-a4.pdf` | 7.3 MB | `products/visual-routine-cards/visual-routine-cards-0-5-low-ink-a4.pdf` |
 
 Stage them with `python3 ops/UPLOAD-PACKETS/stage.py gumroad 02`.
 
 ## Receipt / thank-you text (paste into the product's receipt or 'content' note)
 ```
-Thank you for choosing 177 Visual Routine Cards for Ages 0–5: Morning, Meals, Play and Bedtime Charts!
+Thank you for choosing 181 Visual Routine Cards for Ages 0–5: Morning, Meals, Play and Bedtime Charts!
 
 Start with START HERE: it tells you which file to print first and takes about 2 minutes.
 Download on a computer, or on a phone in a web browser. Your files stay in your Gumroad Library, so you can download them again any time.

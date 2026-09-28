@@ -1,11 +1,11 @@
-# Etsy packet 03: 177 Visual Routine Cards for Ages 0–5: Morning, Meals, Play and Bedtime Charts
+# Etsy packet 03: 181 Visual Routine Cards for Ages 0–5: Morning, Meals, Play and Bedtime Charts
 
 **Upload slot:** G-day week · **Status:** READY (waits for ops/PAUSE to be lifted and the shop to exist)  
 **Record:** `products/visual-routine-cards/listing-g0.json` · **Price:** $9.50 (one everyday price; no 'was', compare-at or sale price; same price on Gumroad) · **SKU:** `visual-routine-cards-0-5`
 
 ## Title (paste as is)
 ```
-177 Visual Routine Cards for Ages 0-5, Toddler Picture Schedule, Morning and Bedtime Chart, Editable Daily Plan PDF
+181 Visual Routine Cards for Ages 0-5, Toddler Picture Schedule, Morning and Bedtime Chart, Editable Daily Plan PDF
 ```
 115 characters.
 
@@ -54,8 +54,8 @@ Paste the whole of `description.txt` (in this folder). It carries no web address
 ## Listing images, in this order (first = thumbnail)
 | # | File | Alt text |
 |---|---|---|
-| 1 | `products/visual-routine-cards/preview/listing-images/ages-0-5/01-cover.png` | 177 Visual Routine Cards, ages 0–5: a yellow panel with the Play Before Pixels logo, the title, a morning chart filled with picture cards, and big Play first and Screens later cards. |
-| 2 | `products/visual-routine-cards/preview/listing-images/ages-0-5/02-whats-inside.png` | What's inside: 177 cards, 116 pages, 5 files. Six tiles list 177 picture cards, 6 chart layouts, 4 colorways, fillable fields, extras and 2 guide pages, above a row of sample cards. |
+| 1 | `products/visual-routine-cards/preview/listing-images/ages-0-5/01-cover.png` | 181 Visual Routine Cards, ages 0–5: a yellow panel with the Play Before Pixels logo, the title, a morning chart filled with picture cards, and big Play first and Screens later cards. |
+| 2 | `products/visual-routine-cards/preview/listing-images/ages-0-5/02-whats-inside.png` | What's inside: 181 cards, 120 pages, 5 files. Six tiles list 181 picture cards, 6 chart layouts, 4 colorways, fillable fields, extras and 2 guide pages, above a row of sample cards. |
 | 3 | `products/visual-routine-cards/preview/listing-images/ages-0-5/03-grown-up-guide.png` | Two grown-up guide pages, slightly tilted: "Pictures make the plan easy to see" and "The cards are the start of a conversation" with six talk tips beside small cards. |
 | 4 | `products/visual-routine-cards/preview/listing-images/ages-0-5/04-ages-0-5-cards.png` | A grid of 12 cards for ages 0–5, including Wake up, Get dressed, Snack, Blocks, Bath time, Lullaby, Worried and Grocery store, in a varied cast of children. |
 | 5 | `products/visual-routine-cards/preview/listing-images/ages-0-5/05-six-chart-layouts.png` | Six chart layouts shown as small pages: vertical strips, horizontal strips, a First–Then board, a morning chart, a bedtime chart filled with cards, and a Today board. |
@@ -68,10 +68,10 @@ Paste the whole of `description.txt` (in this folder). It carries no web address
 | Slot | Upload as | Size | Source |
 |---|---|---|---|
 | 1 | `1-START-HERE.pdf` | 0.06 MB | `products/visual-routine-cards/etsy-upload/ages-0-5/1-START-HERE.pdf` |
-| 2 | `2-Color-US-Letter.pdf` | 10.39 MB | `products/visual-routine-cards/etsy-upload/ages-0-5/2-Color-US-Letter.pdf` |
-| 3 | `3-Color-A4.pdf` | 10.37 MB | `products/visual-routine-cards/etsy-upload/ages-0-5/3-Color-A4.pdf` |
-| 4 | `4-Low-Ink-US-Letter.pdf` | 7.11 MB | `products/visual-routine-cards/etsy-upload/ages-0-5/4-Low-Ink-US-Letter.pdf` |
-| 5 | `5-Low-Ink-A4.pdf` | 7.12 MB | `products/visual-routine-cards/etsy-upload/ages-0-5/5-Low-Ink-A4.pdf` |
+| 2 | `2-Color-US-Letter.pdf` | 10.7 MB | `products/visual-routine-cards/etsy-upload/ages-0-5/2-Color-US-Letter.pdf` |
+| 3 | `3-Color-A4.pdf` | 10.68 MB | `products/visual-routine-cards/etsy-upload/ages-0-5/3-Color-A4.pdf` |
+| 4 | `4-Low-Ink-US-Letter.pdf` | 7.3 MB | `products/visual-routine-cards/etsy-upload/ages-0-5/4-Low-Ink-US-Letter.pdf` |
+| 5 | `5-Low-Ink-A4.pdf` | 7.3 MB | `products/visual-routine-cards/etsy-upload/ages-0-5/5-Low-Ink-A4.pdf` |
 
 Stage everything for this listing (files + images, renamed in order) with `python3 ops/UPLOAD-PACKETS/stage.py etsy 03`.
 

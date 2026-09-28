@@ -42,7 +42,7 @@ How this was made: the text, illustrations and page layout were created with AI 
 |---|---|---|---|
 | 1 | `START-HERE.pdf` | 0.06 MB | `products/guide-100-plays/START-HERE.pdf` |
 | 2 | `guide-100-plays-letter.pdf` | 2.56 MB | `products/guide-100-plays/guide-100-plays-letter.pdf` |
-| 3 | `guide-100-plays-a4.pdf` | 2.51 MB | `products/guide-100-plays/guide-100-plays-a4.pdf` |
+| 3 | `guide-100-plays-a4.pdf` | 2.52 MB | `products/guide-100-plays/guide-100-plays-a4.pdf` |
 | 4 | `guide-100-plays-low-ink-letter.pdf` | 3.93 MB | `products/guide-100-plays/guide-100-plays-low-ink-letter.pdf` |
 | 5 | `guide-100-plays-low-ink-a4.pdf` | 3.89 MB | `products/guide-100-plays/guide-100-plays-low-ink-a4.pdf` |
 

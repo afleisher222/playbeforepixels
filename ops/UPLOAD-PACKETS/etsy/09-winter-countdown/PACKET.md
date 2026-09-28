@@ -67,7 +67,7 @@ Paste the whole of `description.txt` (in this folder). It carries no web address
 | 1 | `1-START-HERE.pdf` | 0.07 MB | `products/winter-countdown/etsy-upload/1-START-HERE.pdf` |
 | 2 | `2-Color-US-Letter.pdf` | 1.62 MB | `products/winter-countdown/etsy-upload/2-Color-US-Letter.pdf` |
 | 3 | `3-Color-A4.pdf` | 1.62 MB | `products/winter-countdown/etsy-upload/3-Color-A4.pdf` |
-| 4 | `4-Low-Ink-US-Letter.pdf` | 2.58 MB | `products/winter-countdown/etsy-upload/4-Low-Ink-US-Letter.pdf` |
+| 4 | `4-Low-Ink-US-Letter.pdf` | 2.59 MB | `products/winter-countdown/etsy-upload/4-Low-Ink-US-Letter.pdf` |
 | 5 | `5-Low-Ink-A4.pdf` | 2.58 MB | `products/winter-countdown/etsy-upload/5-Low-Ink-A4.pdf` |
 
 Stage everything for this listing (files + images, renamed in order) with `python3 ops/UPLOAD-PACKETS/stage.py etsy 09`.

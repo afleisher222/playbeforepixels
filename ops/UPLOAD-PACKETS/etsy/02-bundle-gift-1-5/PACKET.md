@@ -67,10 +67,10 @@ Do NOT show a 'separately' figure until every counted part is live on Etsy at it
 | Slot | Upload as | Size | Source |
 |---|---|---|---|
 | 1 | `1-START-HERE.pdf` | 0.06 MB | `products/bundle-gift-1-5/etsy-upload/1-START-HERE.pdf` |
-| 2 | `2-Color-US-Letter.zip` | 12.9 MB | `built by stage.py from zip-manifest.json slot 2` |
+| 2 | `2-Color-US-Letter.zip` | 12.91 MB | `built by stage.py from zip-manifest.json slot 2` |
 | 3 | `3-Color-A4.zip` | 12.83 MB | `built by stage.py from zip-manifest.json slot 3` |
 | 4 | `4-Low-Ink-US-Letter.zip` | 16.0 MB | `built by stage.py from zip-manifest.json slot 4` |
-| 5 | `5-Low-Ink-A4.zip` | 15.92 MB | `built by stage.py from zip-manifest.json slot 5` |
+| 5 | `5-Low-Ink-A4.zip` | 15.93 MB | `built by stage.py from zip-manifest.json slot 5` |
 
 The ZIPs are never stored in the repo. Build them at upload time: `python3 ops/UPLOAD-PACKETS/stage.py etsy 02` (writes a staging folder outside git and re-checks sizes and URLs).
 

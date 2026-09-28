@@ -1,4 +1,4 @@
-# Compliance-gate record: 177 Visual Routine Cards (ages 0–5)
+# Compliance-gate record: 181 Visual Routine Cards (ages 0–5)
 
 **Date:** 2026-09-28 · **Checked by:** Claude (Claude Code session), for the founder's review · **Gate:** `ops/COMPLIANCE-GATE.md` (22 lines plus the pricing line)
 **Record:** `products/visual-routine-cards/listing-g0.json` · **Channels:** Etsy (`ops/UPLOAD-PACKETS/etsy/03-visual-routine-cards-0-5/`); Gumroad, our own checkout (`ops/UPLOAD-PACKETS/gumroad/02-visual-routine-cards-0-5/`)

@@ -1,5 +1,15 @@
 # Launch now: the fastest safe path to worldwide sales
 
+## Status note: September 28, 2026, 19:30 UTC (demographic-audit pass)
+
+**Nothing is published, and `ops/PAUSE` stays.** This pass applied the six no-decision changes from `marketing/DEMOGRAPHIC-AUDIT.md` §3 and rebuilt every affected product, listing image, Etsy file and packet:
+- **Site:** the *Laps Not Apps* spreads now pair p07+p08 (Grandma, who uses a wheelchair, is visible on the home band and the product page) and p13+p14, with new alt text.
+- **Every launch guide** (busy book, routine cards, bored cards, family kit, Play & Talk, 100 Plays, winter, course, both bundle START HEREs) now says "Talk, sign, sing and read…", that reading the talk line word for word or playing quietly side by side counts too, and that every play works from a chair, a bed or a wheelchair. Sound plays have a see-it or feel-it version.
+- **Wording:** Family Kit "Screens sleep in their spot", "Video calls … are talk time", "Look at photos of people we love"; Play & Talk "On the way"; bored cards "Anywhere Picnic" (and "Games Day", "Camp Night"); winter no-snow hunt list and FAQ; busy book "Mama, Daddy, Mommy, Papa…"; "hook-and-loop dots" replaces "velcro" in all customer-facing text.
+- **Routine cards:** four new cards (Video call, Other home, Grown-up at work, Count the sleeps), so the 0–5 edition is now **181 cards** (Complete Set 239); titles, pins, the family kit's last page and the Library manifest are updated.
+- **Panels:** 19-seat simulated panels (13 + the six required seats) recorded for Winter Countdown and both bundles; all "judged" and "preachy" scores 1/5. The six seats are in the `ops/ROUTINE.md` template.
+- **Tests:** `check_listings.py` 0 FAIL, 0 WARN · `build_packets.py` 504 checks, 0 FAIL, 3 WARN (the same founder decisions) and no "differs from record" lines · `stage.py --all` OK · `check_fonts.js` 0 problems on every changed product's print and page sources (the 42 course HTML emails use email-safe fonts by design, as before) · PyMuPDF scan of 171 customer-facing PDFs: no Type 3 fonts, no placeholders, no URL in any Etsy file · `node site/build.js` + `site/qa/run.js`: 4194 passed, 0 failed · `unchanged_renders.py --restore` run before commit.
+
 ## Launch readiness: September 28, 2026, 15:45 UTC
 
 This replaces the 06:50 UTC version. It was written after the upload packets were built and after a final critic spot-checked Etsy packets 02, 03 and 05 and the KDP packet against their `listing.json` records and `site/config.json`. **Nothing is published.** `ops/PAUSE` stays, no platform account exists yet, and every platform rule below is from memory and UNVERIFIED (web search was unavailable).
@@ -14,7 +24,7 @@ This replaces the 06:50 UTC version. It was written after the upload packets wer
 
 | Where | What | Packet |
 |---|---|---|
-| Etsy, G-day (target Fri Oct 16) | Toddler Busy Book $11.99 · Ages 1–5 Gift Bundle $29 (no "separately" figure yet) · 177 Visual Routine Cards 0–5 $9.50 · 100 Screen-Free Plays PDF $9.99 · 76 "I'm Bored" Cards 1–5 $6.50 | `ops/UPLOAD-PACKETS/etsy/01`–`05` |
+| Etsy, G-day (target Fri Oct 16) | Toddler Busy Book $11.99 · Ages 1–5 Gift Bundle $29 (no "separately" figure yet) · 181 Visual Routine Cards 0–5 $9.50 · 100 Screen-Free Plays PDF $9.99 · 76 "I'm Bored" Cards 1–5 $6.50 | `ops/UPLOAD-PACKETS/etsy/01`–`05` |
 | Etsy, week 2 (by Oct 25) | Play-First Family Kit 2–5 $11 · 52 Play & Talk Cards $7 · Routine Cards Starter $5 · Winter Countdown $6.50 | `etsy/06`–`09` |
 | Gumroad (unlisted before G-day, public on G-day) | the same products, plus the Birth-to-5 Library at $45, which is Gumroad only because its ZIPs are over Etsy's 20 MB limit | `gumroad/01`–`10` |
 | KDP (draft plus 1 proof, Oct 5–11) | *100 Screen-Free Plays for Ages 0–5* paperback, $16.99 | `kdp/01-100-screen-free-plays/` |
@@ -23,14 +33,15 @@ This replaces the 06:50 UTC version. It was written after the upload packets wer
 
 **(a) What Claude still has to do before G-day**
 
-> **Update, September 28, 2026 (evening):** items 1, 2 and 4 are done.
+> **Update, September 28, 2026 (evening):** items 1, 2, 3 and 4 are done.
+> - Item 3 (19:30 UTC): the 100 Plays Etsy title, tag and KDP keyword ("preschool" → "toddler") and the PDF-only Etsy description and bullets now live in `guide-100-plays/listing.json` (`etsy_long_description`, `etsy_bullets`); `build_packets.py` has no overrides left and shows no "differs from record" lines. The folded title read "Toddler" twice, which check_listings flags as stuffing, so it now says "Easy Baby Ideas by Stage".
 > - 100 Plays hero now shows the printable PDF pages (no paperback), with new alt text.
 > - Gift Bundle: all 5 images have alt text; the headline now reads "+ play coupons included" and no copy calls the coupons "free" (bundle, Library and site). Five more Etsy packets (01, 05, 06, 07, 09) also had empty alt text; all now filled.
 > - Gate records for all 12 launch items are in `ops/COMPLIANCE-RECORDS/` (0 FAIL; the NEEDS FOUNDER lines are listed at the end of each record).
 > - Fixed along the way: tagged PDFs with a language (brand/render.js) for busy book, 100 Plays (incl. KDP), Play & Talk Cards and the course; channel tags (`channel_tag.py`, stamped by `stage.py` and the KDP build); one-page START HERE for the busy book; print-shop permission on every START HERE; color-blind checks in each panel.md; Biscuit renamed Tater in *The Day the Tablet Slept*; "Grown-up corner" retired on the site; the old four-square preview `index.html` replaced by a pointer to `site/dist/`; launch-name desk review (brand/ORIGINALITY.md §F).
 1. **Fix the 100 Plays Etsy hero image** (`products/guide-100-plays/preview/listing-images/01-hero.png`, a G-day listing). It shows "Paperback 8 × 10 in, black-and-white interior" as a format, but the Etsy listing sells only the PDF, and the paperback will not be live on G-day. Make an Etsy-only hero, then rewrite its alt text.
 2. **Fill in the Gift Bundle's image alt text.** All 5 images in `etsy/02` have empty alt text. Also check the "+ free play coupons" headline on image 1 against 16 CFR 251 ("free" inside a paid bundle; UNVERIFIED). "+ play coupons included" is the safe wording.
-3. **Fold the packet-only changes back into the product records**: the 100 Plays Etsy title, one Etsy tag and one KDP keyword ("preschool" became "toddler"), and the PDF-only description (`guide-100-plays/listing.json`). Then re-run `build_packets.py` until it shows no "differs from record" lines.
+3. ~~**Fold the packet-only changes back into the product records**: the 100 Plays Etsy title, one Etsy tag and one KDP keyword ("preschool" became "toddler"), and the PDF-only description (`guide-100-plays/listing.json`). Then re-run `build_packets.py` until it shows no "differs from record" lines.~~ **Done** (see the update above).
 4. **Record the 22-line `ops/COMPLIANCE-GATE.md` result** for each G-day item. There is still no per-item gate record. Gate 20 is still not met: for example, the KDP interior has no language set and no tags. Either fix this in the G0 rebuilds or record the founder's written exception.
 5. **Build the Gate A file** (`ops/GATE-A.md`, with its evidence list), and add the five GROWTH-ENGINE §2a questions to the counsel packet.
 6. **Get the site ready to go live before the paperback ships.** The printed book names playbeforepixels.com, its contact form and `/bonus/guide-100-plays` on pages 1, 2 and 85 and on the cover. Those pages must be live before KDP Publish. Before launch, also:

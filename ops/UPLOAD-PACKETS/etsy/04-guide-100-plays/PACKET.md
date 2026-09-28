@@ -5,9 +5,9 @@
 
 ## Title (paste as is)
 ```
-100 Screen-Free Plays for Ages 0-5, Printable Toddler Activity Book PDF, Baby and Toddler Ideas by Stage, Color and Low-Ink, Letter + A4
+100 Screen-Free Plays for Ages 0-5, Printable Toddler Activity Book PDF, Easy Baby Ideas by Stage, Color and Low-Ink, Letter + A4
 ```
-136 characters.
+129 characters.
 
 ## 13 tags (one per box)
 ```

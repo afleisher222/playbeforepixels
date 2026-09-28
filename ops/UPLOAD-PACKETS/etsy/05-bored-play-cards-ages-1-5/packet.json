@@ -69,7 +69,38 @@
    "alt": "How to download: use a browser, not the app. Four steps: use a web browser on a computer or phone; open Purchases and tap each file; start with file 1, START HERE; lost a file later? It stays in Purchases. Every play follows our published safety rules. For use in your own home."
   }
  ],
- "digital_files": [],
+ "digital_files": [
+  {
+   "name": "1-START-HERE.pdf",
+   "src": "products/bored-play-cards/etsy-upload-ages-1-5/1-START-HERE.pdf",
+   "mb": 0.06,
+   "kind": "pdf"
+  },
+  {
+   "name": "2-Color-US-Letter.pdf",
+   "src": "products/bored-play-cards/etsy-upload-ages-1-5/2-Color-US-Letter.pdf",
+   "mb": 3.85,
+   "kind": "pdf"
+  },
+  {
+   "name": "3-Color-A4.pdf",
+   "src": "products/bored-play-cards/etsy-upload-ages-1-5/3-Color-A4.pdf",
+   "mb": 3.86,
+   "kind": "pdf"
+  },
+  {
+   "name": "4-Low-Ink-US-Letter.pdf",
+   "src": "products/bored-play-cards/etsy-upload-ages-1-5/4-Low-Ink-US-Letter.pdf",
+   "mb": 3.92,
+   "kind": "pdf"
+  },
+  {
+   "name": "5-Low-Ink-A4.pdf",
+   "src": "products/bored-play-cards/etsy-upload-ages-1-5/5-Low-Ink-A4.pdf",
+   "mb": 3.92,
+   "kind": "pdf"
+  }
+ ],
  "ai_disclosure": {
   "as_of": "2026-09-28",
   "ai_helped_with": "Claude (an AI model made by Anthropic), working in Claude Code, wrote the draft text (activities, talk lines, guide pages, safety notes and this listing), made the illustrations as flat vector art in code from the brand's own symbol library, and built the page layouts and PDF files with scripts.",

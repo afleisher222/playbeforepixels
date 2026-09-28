@@ -64,7 +64,7 @@
   {
    "name": "2-Color-US-Letter.zip",
    "src": "built by stage.py from zip-manifest.json slot 2",
-   "mb": 12.9,
+   "mb": 12.91,
    "kind": "zip",
    "fits": true,
    "members": [
@@ -121,7 +121,7 @@
   {
    "name": "5-Low-Ink-A4.zip",
    "src": "built by stage.py from zip-manifest.json slot 5",
-   "mb": 15.92,
+   "mb": 15.93,
    "kind": "zip",
    "fits": true,
    "members": [
