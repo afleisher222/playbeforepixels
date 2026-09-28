@@ -10,10 +10,10 @@
   /* ------------------------------------------------------------------ data */
   PBP.bands = [
     { id: '0-1', label: '0–1', name: 'Babies', c: 'var(--tomato)', ct: 'var(--tomato-t)', art: 'kid-milo-sithold.svg' },
-    { id: '1-3', label: '1–3', name: 'Toddlers', c: 'var(--sun)', ct: 'var(--sun-t)', art: 'kid-zara-cheer.svg' },
-    { id: '3-5', label: '3–5', name: 'Preschool', c: 'var(--grass)', ct: 'var(--grass-t)', art: 'kid-priya-sittalk.svg' },
-    { id: '5-8', label: '5–8', name: 'Early school', c: 'var(--sky)', ct: 'var(--sky-t)', art: 'kid-leo-point.svg' },
-    { id: '8-12', label: '8–12', name: 'Big kids', c: 'var(--plum)', ct: 'var(--plum-t)', art: 'kid-sam-carry.svg' }
+    { id: '1-3', label: '1–3', name: 'Toddlers', c: 'var(--sun)', ct: 'var(--sun-t)', art: 'kid-priya-sittalk.svg' },
+    { id: '3-5', label: '3–5', name: 'Preschool', c: 'var(--grass)', ct: 'var(--grass-t)', art: 'kid-zara-cheer.svg' },
+    { id: '5-8', label: '5–8', name: 'Early school', c: 'var(--sky)', ct: 'var(--sky-t)', art: 'kid-sam-carry.svg' },
+    { id: '8-12', label: '8–12', name: 'Big kids', c: 'var(--plum)', ct: 'var(--plum-t)', art: 'kid-leo-point.svg' }
   ];
   PBP.types = [
     { id: 'board-books', label: 'Board books', group: 'books' },
@@ -160,7 +160,7 @@
     { c: 'var(--paper)', p: 'Best part of today? You first, then me.', t: 'Everyone' },
     { c: 'var(--grass-t)', p: 'Would you rather have a tail or wings?', t: 'Ages 5–8' }
   ];
-  function img(src, cls) { return '<img src="' + IMG + src + '" alt="" loading="lazy" decoding="async"' + (cls ? ' class="' + cls + '"' : '') + '>'; }
+  function img(src, cls) { return '<img src="' + IMG + src + '" alt="" decoding="async"' + (cls ? ' class="' + cls + '"' : '') + '>'; }
   PBP.mock = function (p) {
     var m = p.mock, k = m.k;
     if (k === 'board') return '<div class="mock book book--board">' + img(m.src) + '</div>';

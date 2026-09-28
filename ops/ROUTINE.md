@@ -44,6 +44,8 @@ Run every new or changed public item through ops/COMPLIANCE-GATE.md. Anything th
 - **Social media, all platforms:** post the week's approved, gate-passed faceless posts and pins through the connected scheduler or each platform's official posting API (Pinterest, Instagram and Facebook via Meta, TikTok, YouTube Shorts, LinkedIn, Threads, X, and regional platforms as the international plan adds them), in each live language. Links use tracking tags so the report can show which platform sells. Never post in groups or communities, never DM, never comment as the brand without approval.
 
 
+- **Monthly close (first weekly run of each month):** follow finance/TAX-AUTOPILOT.md §3 — pull reports from connected platforms, update the bookkeeping workbook, draft journal entries for unconnected platforms, reconcile payouts to deposits, check the tax-reserve transfer happened, and write finance/closes/YYYY-MM.md for the accountant. Put anything that needs the founder or accountant in ops/APPROVALS.md.
+
 ## 6. Commit and report
 - Commit in small logical commits and push.
 - Append to ops/RUNLOG.md: date, what was researched, built, improved, published, queued for approval, and any problems.
