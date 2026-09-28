@@ -41,15 +41,15 @@ const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>
   <div class="sh-grid">
     <div class="sh-box" style="background:${C.tSky}"><h4>Play today in three steps</h4><ol>
       <li>Open the US Letter or A4 kit. Read <b>Quick start</b> (page 2) and the <b>teacher script</b> (page 4).</li>
-      <li>Print the tower blocks (pages 6–9) at 100%, or project the slides if there is no time to cut.</li>
+      <li>Print the tower blocks (pages 6–9) at 100% (twice for more than 16 children), or project the slides if there is no time to cut.</li>
       <li>Play one round at circle time and count the tower together.</li></ol></div>
     <div class="sh-box" style="background:${C.tGrass}"><h4>Printing tips</h4><ul>
       <li>Print at <b>100% / actual size</b>, single-sided. White cardstock lasts longest.</li>
       <li>On a phone or tablet? Save the files first, then print from a computer or a print shop.</li>
       <li>Short on color ink? Use the ink-saver files.</li></ul></div>
-    <div class="sh-box" style="background:${C.wash}"><h4>Your license</h4><p style="margin:0">A <b>single-classroom license</b> covers one teacher and their class. A <b>site license</b> covers all staff at one named school, center or library site. Full terms are on kit page 24 and at playbeforepixels.com/license.</p></div>
+    <div class="sh-box" style="background:${C.wash}"><h4>Your license</h4><p style="margin:0">A <b>single-classroom license</b> covers one teacher (or one homeschooling family) and their class. A <b>site license</b> covers all staff at one named school, center or library site. Full terms are on kit page 24 and at playbeforepixels.com/license.</p></div>
     <div class="sh-box" style="background:${C.wash}"><h4>Good to know</h4><ul>
-      <li>Every play follows our published safety rules: an adult leads every round, and with under-3s nearby nothing smaller than a toilet-paper tube opening.</li>
+      <li>Every play follows our published safety rules: an adult leads every round, and with under-3s nearby, nothing small enough to fit through a toilet-paper tube.</li>
       <li>Need your files again? Use the download link in your order email.</li></ul></div>
   </div>
   <div class="sh-bonus">${qrSvg(96)}<div><h4>Free bonus for your class</h4><p>Extra topic cards and 5-minute family talk games. We only ask for an email address: no child names, ever.<br><b>playbeforepixels.com/bonus/picture-more-talk-less-tap</b></p></div></div>

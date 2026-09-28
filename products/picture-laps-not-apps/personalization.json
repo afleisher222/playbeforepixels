@@ -51,6 +51,37 @@
       "rule": "The rhymes never use a pronoun, so verbs always agree and the meter never changes. After {{THEY}} use only can/will/did or past tense.",
       "store_label": "Pronouns: she/her, he/him or they/them"
     },
+    "grandma_name": {
+      "variable": "{{GRANDMA}}",
+      "required": false,
+      "options": [
+        "Grandma",
+        "Granny",
+        "Grammy",
+        "Nana",
+        "Nanna",
+        "Gigi",
+        "Mimi",
+        "Mamaw",
+        "Oma",
+        "Nonna",
+        "Abuela",
+        "Bubbe",
+        "Lola",
+        "Yaya"
+      ],
+      "default": "Grandma",
+      "printed_on": [
+        "s2 left (Then {{GRANDMA}} rolls in)",
+        "s9 left (on {{GRANDMA}}’s lap)",
+        "s9 right ({{GRANDMA}} laughs)",
+        "s9 tip (Who is on {{GRANDMA}}’s lap?)",
+        "s10 right (We drape it from {{GRANDMA}}’s wheelchair)"
+      ],
+      "rule": "A fixed list, never free text: each option scans in the same rhymes. Matching ignores capitals. Anything not on the list, or the same as the child’s name, is held for the weekly review.",
+      "changes": "words only; the drawing of Grandma is the same in every copy",
+      "store_label": "What does your child call Grandma? (optional)"
+    },
     "look": {
       "variable": "LOOK (art, not text)",
       "required": true,
@@ -136,7 +167,8 @@
     "giver, message or date over the limit",
     "message over 4 lines",
     "review wording list in personalize.js (profanity and a few sensitive words)",
-    "any fit failure in render-order.js"
+    "any fit failure in render-order.js",
+    "grandma_name not on the list, or the same as the child’s name"
   ],
   "human_authorship_gate": "build.js --order refuses to build while any WORDS.md heading still ends in (draft) or ## author note is empty. The founder rewrites or approves each section in her own words, then removes (draft).",
   "privacy": "Child names are used only to print the order. They are not added to the email list or any marketing, not committed to git (orders/ is git-ignored except examples/), and order folders are deleted 30 days after delivery [VERIFY retention period with counsel].",
@@ -153,7 +185,8 @@
   },
   "example_orders": [
     "orders/examples/order-sample.json",
-    "orders/examples/order-long-name.json"
+    "orders/examples/order-long-name.json",
+    "orders/examples/order-abuela.json"
   ],
   "commands": {
     "sample": "node build.js",

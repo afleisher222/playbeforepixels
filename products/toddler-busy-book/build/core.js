@@ -9,8 +9,8 @@ const IN = 96;
 const LIVE = { w: 696, h: 960 };             // 7.25 x 10 in live area, centred on Letter (0.625/0.5 in margins) and A4 (0.51/0.84 in)
 const CELL = { w: 216, h: 192 };             // standard piece: 2.25 x 2.0 in (smallest side 2.0 in >= 1.75 in rule)
 const BIG = { w: 288, h: 240 };              // big piece for 1-2 years: 3.0 x 2.5 in
-const PANEL = { w: 696, h: 540, pad: 12 };   // play panel; inner drawing box 672 x 516
-const INNER = { w: PANEL.w - PANEL.pad * 2, h: PANEL.h - PANEL.pad * 2 };
+const PANEL = { w: 696, h: 576, pad: 12 };   // play panel
+const INNER = { w: 672, h: 516 };            // board drawing box, centred in the panel
 const MIN_PIECE_IN = 1.75;
 
 const SLUG = 'toddler-busy-book';
@@ -74,7 +74,7 @@ b,strong{font-weight:800}
 .tt .how b{color:var(--ink)}
 /* play panel */
 .play{position:absolute;left:0;top:118px;width:${PANEL.w}px;height:${PANEL.h}px;border-radius:22px;background:var(--bt);overflow:hidden}
-.play>svg{position:absolute;left:${PANEL.pad}px;top:${PANEL.pad}px}
+.play>svg{position:absolute;left:${(PANEL.w - INNER.w) / 2}px;top:${(PANEL.h - INNER.h) / 2}px}
 /* grown-up band */
 .gu{position:absolute;left:0;right:0;top:${118 + PANEL.h + 12}px;bottom:30px;display:flex;flex-direction:column;gap:8px}
 .talk{display:flex;gap:11px;align-items:flex-start;background:var(--wash);border-radius:14px;padding:10px 14px}
@@ -98,11 +98,11 @@ b,strong{font-weight:800}
 .ft .sp{flex:1}
 .ft .pn{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:11px;color:var(--ink)}
 /* piece sheets */
-.cutnote{position:absolute;left:0;right:0;top:78px;display:flex;gap:8px;align-items:center;font-size:12px;font-weight:700}
+.cutnote{position:absolute;left:0;right:0;top:72px;display:flex;gap:8px;align-items:center;font-size:12px;font-weight:700}
 .cutnote .ui{width:18px;height:18px;color:var(--ink)}
 .grid{position:absolute;left:50%;transform:translateX(-50%)}
-.keep{position:absolute;left:0;right:0;bottom:30px;display:flex;gap:12px;align-items:center;background:var(--wash);border-radius:14px;padding:9px 14px}
-.keep .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:17px;white-space:nowrap}
+.keep{position:absolute;left:0;right:0;bottom:28px;display:flex;gap:12px;align-items:center;background:var(--wash);border-radius:14px;padding:7px 14px}
+.keep .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:16px;white-space:nowrap;line-height:1.1}
 .keep p{font-size:11px;line-height:1.35}
 .keep .ui{width:24px;height:24px;color:var(--grass)}
 /* generic text pages */

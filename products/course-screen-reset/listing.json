@@ -1,0 +1,86 @@
+{
+  "slug": "course-screen-reset",
+  "title": "The 30-Day Screen Reset",
+  "subtitle": "A play-first plan for families: 30 short lessons, 30 easy plays and plain words for tricky moments",
+  "series": "Play Before Pixels parent programs",
+  "format": "Written program, sold and delivered automatically. (1) Online program ($27): 30 daily lesson emails (each lesson under 300 words, plus one play and one plain-word script), a welcome email, automatic check-ins on days 3, 10 and 30, and a day-31 wrap-up (emails/). (2) Instant-download workbook, included: 89 pages in Color and Low-ink, each in US Letter and A4, with 141 type-in fields that work in free Adobe Acrobat Reader, plus START HERE.pdf as file 1 (downloads/). (3) Amazon KDP paperback of the whole program: 90-page black-and-white interior, 8 x 10 in (paperback/). (4) Free lead magnet '7 Days of Play First' (3-page PDF, Letter + A4) and its 7-email funnel (funnel/). No video, no coaching, no calls.",
+  "files": {
+    "downloads": "downloads/1. START HERE.pdf · 2. Workbook - Color - US Letter.pdf · 3. Workbook - Low-ink - US Letter.pdf · 4. Workbook - Color - A4.pdf · 5. Workbook - Low-ink - A4.pdf (each under 5 MB, plain PDFs, no zip). course-screen-reset.pdf is a copy of file 2.",
+    "emails": "emails/ — day-00-welcome, day-01 … day-30, checkin-day-03/10/30, day-31-whats-next; each as .html (email-safe, 600 px) and .md; sequence.json lists send times, subjects, preheaders and merge tags.",
+    "funnel": "funnel/ — f1 … f7 (.html + .md) and sequence.json; funnel/starter/ holds the free PDF in Letter and A4.",
+    "paperback": "paperback/course-screen-reset-kdp-interior.pdf (90 pages, 8.125 x 10.25 in: 8 x 10 trim + 0.125 in bleed top, bottom and outside; text 0.55 in from trim, 0.75 in from the gutter) and paperback/course-screen-reset-kdp-cover.pdf (16.4527 x 10.25 in, spine 0.2027 in for 90 white-paper pages, no spine text). Source: paperback/source-kdp.html.",
+    "sales_page": "sales-page.html (designed) and sales-page.md (copy); preview/sales-page.png",
+    "sources": "build/content.js is the single source for every lesson, play, script, FAQ and safety line. build/workbook.js (all interiors), build/emails.js (all emails), build/extras.js (cover, wrap, mockup, START HERE, starter, listing images, sales page). Rebuild everything with: sh build/make.sh (add --final to refuse the build while any FOUNDER WRITES THIS placeholder remains).",
+    "etsy_edition": "build/etsy/workbook-etsy-color-letter.pdf: the Color Letter workbook with no URL or QR (CUSTOMER-VOICE #2). Held: the program is an email course, so it is not listed on Etsy unless the founder decides to sell a workbook-only edition there."
+  },
+  "trim": "Workbook: US Letter 8.5 x 11 in and A4 210 x 297 mm, no bleed, 0.55 in margins. Paperback: 8 x 10 in trim, KDP interior file 8.125 x 10.25 in with bleed; cover wrap 16.4527 x 10.25 in.",
+  "pages": 89,
+  "page_breakdown": "89 workbook pages = 60 day pages (a lesson page and a play page for each of the 30 days) + 7 planning and tracker pages + 22 guide, week-summary, check-in, scripts-bank, certificate and bonus pages. Paperback: 90 pages (same content, title and copyright pages instead of the cover and FAQ).",
+  "ages": "Families with children aged 1–12 (every play shows a starting age from 6 months to 4 years, with easier and harder versions)",
+  "price_usd": 27,
+  "price_notes": "Program $27 everyday price (DEMAND-CHECK course row; comparable founder-led video courses sell for $71–$99, but we compete on a written, faceless, go-at-your-own-pace format and never compare ourselves to named brands). Screen Reset Bundle $49 = program + Play-First Family Kit ($11) + 100 Screen-Free Plays printable ($9.99) + 150 I'm Bored Play Cards ($6.50) = $54.49 separately, 10% off (DEMAND-CHECK rule 4). NOTE: the spec said '$49 bundle with the Family Kit', but program + Family Kit alone totals $38, so a $49 price for those two would cost MORE than buying separately; the two printables were added to keep the bundle honest. Alternative if the founder prefers a two-item bundle: $34 (10.5% off $38). Paperback $14.99: KDP 60% royalty = $8.99 minus a print cost of about $2.30–$2.90 for a 90-page 8 x 10 B/W book ≈ $6.10–$6.70 a copy [VERIFY in KDP's pricing calculator]. Honest value line: $27 for 30 lessons, 30 plays and 38 scripts is about 90¢ a day. No 'was' prices, no countdowns; a founding-beta price is allowed only if clearly labelled and it genuinely ends (BRAND.md honest pricing). Guarantee: full refund within 30 days of purchase, no questions, no completion condition.",
+  "bundle": {
+    "name": "The Screen Reset Bundle",
+    "slug": "bundle-screen-reset",
+    "price_usd": 49,
+    "compare_parts_usd": 54.49,
+    "contents": ["The 30-Day Screen Reset (program + workbook)", "Play-First Family Kit (printables-family-kit)", "100 Screen-Free Plays, printable PDF (guide-100-plays)", "150 I'm Bored Play Cards (bored-play-cards)"],
+    "delivery": "One checkout on the merchant of record; the three printables are delivered instantly as downloads and the program starts its email sequence."
+  },
+  "amazon_route": "kdp-paperback",
+  "amazon_notes": "KDP paperback of the whole program, black-and-white interior, 8 x 10 in, $14.99. Title on Amazon: 'The 30-Day Screen Reset: A Play-First Plan for Families — 30 Short Lessons, 30 Easy Plays and Plain Words for Tricky Moments'. Say 'black-and-white interior' in the description (CUSTOMER-VOICE #37). Use your own Bowker ISBN. Its back page QR sends readers to the free color trackers and the email list.",
+  "short_description": "A written 30-day plan: one short lesson, one easy play and plain words for a tricky moment each day, plus a printable workbook. No videos or calls.",
+  "long_description": "Fewer screen battles, more play and talk. The 30-Day Screen Reset is a gentle, written program for busy families with children aged 1 to 12.\n\nEvery morning for 30 days you get one short email: a lesson you can read in about three minutes, one easy play made from things you already have, and plain words for one tricky moment, like the show that won't end, 'I'm bored', the hour before dinner, waiting rooms, car rides or 'everyone else gets to'.\n\nNothing is banned. Screens get a steady spot in the day, with the same time and the same ending, and they are never used as a prize or a punishment. The rest of the day fills up with ordinary play and back-and-forth talk.\n\nYour 89-page workbook comes in Color and Low-ink, in US Letter and A4, with type-in pages that work in free Adobe Acrobat Reader: planning pages, pre-filled and blank trackers, weekly check-ins, a scripts bank, a family plan and a certificate for Day 30. Every play has a starting age, easier and harder versions and a 2-minute version for tired days, and every play follows our published safety rules.\n\nIt is parent education, not medical advice. No videos, calls or coaching. 30-day money-back guarantee.",
+  "bullets": [
+    "30 lessons + 30 plays + 38 scripts: one short email a day (about 3 minutes to read) with one easy play and plain words for one tricky moment",
+    "89-page workbook in Color and Low-ink, US Letter and A4: 60 day pages, 7 planning and tracker pages (pre-filled, blank and type-in) and 22 guide, check-in and bonus pages",
+    "No banning and no bribes: screens get a steady spot in the day and are never a reward or a punishment",
+    "Made for real families aged 1–12: starting ages, easier and harder versions, 2-minute tired-grown-up versions, and boxes for siblings and twins every week",
+    "Written, go-at-your-own-pace program with a 30-day money-back guarantee; every play uses things you already have and follows our published safety rules"
+  ],
+  "keywords": [
+    "screen time reset for kids",
+    "30 day screen free challenge",
+    "family screen time plan",
+    "less screen time more play",
+    "screen free activities for kids",
+    "toddler screen time routine",
+    "parenting workbook printable"
+  ],
+  "seo_title": "The 30-Day Screen Reset: A Play-First Plan for Families",
+  "seo_description": "30 short lessons by email, 30 easy plays and plain words for tricky moments, plus a printable workbook. Written program for ages 1–12. 30-day guarantee.",
+  "alt_text": "Cover of The 30-Day Screen Reset: a big tomato-red 30 beside the words Day Screen Reset on a warm yellow background. A smiling child in glasses and a kneeling grown-up stack colored blocks next to a play basket, while a small tablet sleeps under a purple blanket in its own basket. Pills read 30 short lessons, 30 easy plays, 30 plain-word scripts.",
+  "listing_images": [
+    "preview/listing-images/01-hero.png — cover, a day page and the Day 6 email on a phone; $27 and guarantee",
+    "preview/listing-images/02-whats-inside.png — 30 lessons, 30 plays, 38 scripts, 89-page breakdown",
+    "preview/listing-images/03-how-it-works.png — Read, Play, Say; no videos, no calls",
+    "preview/listing-images/04-a-day-inside.png — Day 6 lesson and play pages",
+    "preview/listing-images/05-trackers-and-plans.png — tracker, screen spot plan, certificate",
+    "preview/listing-images/06-ages-and-safety.png — ages 1–12, siblings, tired versions, safety rules",
+    "preview/listing-images/07-screens-have-a-spot.png — the steady spot and the three-part ending",
+    "preview/listing-images/08-guarantee-and-bundle.png — $27 / $49 bundle and the 30-day guarantee"
+  ],
+  "next_products": ["bundle-screen-reset", "printables-family-kit", "guide-100-plays"],
+  "bonus_url": "playbeforepixels.com/bonus/course-screen-reset",
+  "bonus_notes": "The QR code on the last workbook and paperback page goes to https://playbeforepixels.com/bonus/course-screen-reset: free printable color trackers and certificate (for paperback readers) and the monthly '3 plays for your child's age' email. Email + child's birth month/year only, never a name. The free funnel lives at playbeforepixels.com/reset/start. Both pages must be live before the paperback proof is ordered.",
+  "shareable_piece": "The Day 30 certificate (workbook page 82) with the brand mark and website, designed to be photographed for the fridge; the page asks families to leave out the child's name and face.",
+  "channels": [
+    "playbeforepixels.com/reset — sold through ONE merchant of record's course/membership feature (operations/AUTOMATION-MAP.md 3G) so worldwide VAT is handled; the email platform runs emails/ on purchase and funnel/ on free sign-up",
+    "Amazon KDP paperback (print-on-demand, black-and-white, 8 x 10 in) for discovery",
+    "Bundle on the same checkout (bundle-screen-reset)",
+    "Not on Etsy or TpT for now (email course). A no-URL workbook-only Etsy edition is built and held in build/etsy/"
+  ],
+  "launch_notes": "Wave 2 (BLIND-SPOTS): run the email-only founding beta first (15–30 families from the list, clearly labelled founding price, feedback form, no calls), then the public New Year launch Dec 26–Jan 31. The 7-email funnel runs year-round from the free starter. Review request goes out only from our own store, 7 days after purchase, asking 'Which page did your child go back to?', with no incentive.",
+  "compliance_notes": "No health or medical claims: the program is described as parent education; it never says it treats, fixes, prevents or reverses anything, and disclaimers avoid clinical words. No condition or diagnosis terms in any lesson, email, listing or keyword; no autism keywords anywhere. No trademarked program names: talk moves are in plain words (pause and wait, say what you see, repeat and add one, offer a choice, follow their lead, sing and gesture). Citations limited to the BRAND.md list, stated as associations: WHO 2019 (Days 2, 12), AAP 2016 (Day 3), Brushe et al. 2024 (Day 2, 'a link, not proof'), Delgado et al. 2018 (Day 21); listed on a Sources page. No real brands, apps, devices, schools or products; the tablet is a generic, sleepy, never-evil character. Screens are never earned or taken away (CUSTOMER-VOICE #13); no fear words (checked by grep). Every play: starting age in months, prep/mess/play-time/materials icons, easier/harder pair, 2-minute tired version, talk line and a safety note under rule 4 (grown-up present, toilet-paper-tube test for under-3s, no balloons, no cords, water supervised, no choking-hazard foods, grown-ups handle knives/stove/chargers). 100% of plays need nothing to buy. Pediatrician line on the stage/age pages, Day 2, Day 13 and Day 29. Faceless: no video, no founder photo, no calls; emails never promise personal replies. Copyright line: '© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.' Version footer 'Version 1.0 · September 2026' on every page and email. Every marketing email carries the CAN-SPAM footer placeholder [BUSINESS MAILING ADDRESS], unsubscribe and pause links, the give-$5/get-$5 share link and a next-product recommendation. Check the paperback interior and cover against KDP's current templates and cover calculator before upload; Chromium PDFs are RGB with embedded fonts. The logo is the final kit in brand/logo/ (if the v2 logo lands, re-run make.sh; nothing is hard-coded).",
+  "human_todo": [
+    "HUMAN AUTHORSHIP (first): in build/content.js write FOUNDER.welcomeNote (60–120 words), FOUNDER.day30Note (40–80 words) and optionally FOUNDER.signoff. Then reread all 30 lessons, plays and scripts aloud and rewrite them in your own voice, reorder or swap anything, and rewrite sales-page.md and the funnel emails. Commit after each round. Run sh build/make.sh --final: it refuses to finish while any 'FOUNDER WRITES THIS' box remains (welcome email, day-30 email, workbook note page, sales page).",
+    "AI DISCLOSURE: the text and illustrations were drafted with AI. Answer KDP's AI questions honestly (AI-generated text unless you have rewritten it; AI-generated images). Claim only your own words and your selection/arrangement in any copyright registration (legal/protection/PROTECTION-PLAN.md).",
+    "GUARANTEE: update legal/SHIPPING-RETURNS-REFUNDS.md §4 and operations/customer-service/FAQ.md to the same terms used here (full refund within 30 days of purchase, no completion condition), and set the merchant of record's refund window to match. Have counsel confirm the EU/UK 14-day withdrawal wording.",
+    "PLATFORM: pick one merchant of record with a course/membership or drip-email feature; import emails/*.html in order using emails/sequence.json (7:00 local send, day 3/10/30 check-ins at 16:00); import funnel/ as the free sequence and stop it on purchase. Fill the merge tags, including {{logo_url}} (upload brand/logo/png/lockup-horizontal-2400.png) and the PO Box for [BUSINESS MAILING ADDRESS]. Send yourself the full sequence as a test.",
+    "PAGES: build playbeforepixels.com/reset (sales-page.html), /reset/start (free starter sign-up, email + birth month/year only, double opt-in) and /bonus/course-screen-reset before the paperback proof. Create the one-question feedback form for {{feedback_form_link}}.",
+    "BUNDLE: confirm the Play-First Family Kit slug (printables-family-kit is assumed) and that all three printables are live before selling the $49 bundle; otherwise sell the program alone.",
+    "KDP: buy a Bowker ISBN and add it to the copyright page box; choose 8 x 10 in, black-and-white, white paper, bleed ON. Upload paperback/course-screen-reset-kdp-interior.pdf and paperback/course-screen-reset-kdp-cover.pdf, check the spine width (0.2027 in for 90 pages) in KDP's cover calculator, fix every previewer warning, and order a printed proof (check the QR scans and the gray tints print clearly).",
+    "BETA (BLIND-SPOTS #13): invite 15–30 families at a clearly labelled founding price, collect feedback by form, log testimonials with written permission, and publish only experience statements — never speech, development or behavior results.",
+    "OPTIONAL REVIEW: the flat-fee CCC-SLP accuracy review of the talk tips (BLIND-SPOTS #10); credit only with written permission and exact wording."
+  ]
+}

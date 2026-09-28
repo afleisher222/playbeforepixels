@@ -91,10 +91,10 @@ write('cover.html', base(768, 960, coverCss) + coverInner());
   .top{display:flex;justify-content:space-between;align-items:center}.top img{height:.5in}`;
   const files = [
     ['1. START HERE.pdf', 'This page: what’s inside, printing and how the emails work.'],
-    ['2. Workbook – Color – US Letter.pdf', 'The full workbook in color, with type-in fields. Also in A4.'],
-    ['3. Workbook – Low-ink – US Letter.pdf', 'White pages and line drawings to color. Saves ink. Also in A4.'],
-    ['4. Workbook – Color – A4.pdf', 'For international paper sizes.'],
-    ['5. Workbook – Low-ink – A4.pdf', 'Low-ink, A4.'],
+    ['2. Workbook - Color - US Letter.pdf', 'The full workbook in color, with type-in fields. Also in A4.'],
+    ['3. Workbook - Low-ink - US Letter.pdf', 'White pages and line drawings to color. Saves ink. Also in A4.'],
+    ['4. Workbook - Color - A4.pdf', 'For international paper sizes.'],
+    ['5. Workbook - Low-ink - A4.pdf', 'Low-ink, A4.'],
   ];
   write('start-here.html', base(816, 1056, css) + `<section class="page">
     <div class="top"><div class="kick">The 30-Day Screen Reset</div><img src="${LOGO}" alt="Play Before Pixels"></div>
@@ -115,18 +115,19 @@ write('cover.html', base(768, 960, coverCss) + coverInner());
 // ---------------------------------------------------------------- Free starter: 7 Days of Play First (lead magnet), Letter + A4
 for (const [key, w, h] of [['letter', 8.5, 11], ['a4', 8.27, 11.69]]) {
   const picks = [1, 3, 6, 4, 15, 12, 7].map(n => K.DAYS.find(d => d.d === n));
-  const mini = d => { const c = wc(d.d), p = d.play; return `<div class="mini">${artDisc(p.art, c.t, .7)}<div><b>${esc(p.t)}</b><span class="mm">${ageLabel(p.from)} · ${K.PREP[p.prep]} · ${K.MESS[p.mess]}</span><p>${esc(p.how)}</p><p class="tl">${esc(p.talk)}</p><p class="sm"><b>2-minute version:</b> ${esc(p.tired)} <b>Safety:</b> ${esc(p.safe)}</p></div></div>`; };
+  const mini = d => { const c = wc(d.d), p = d.play; return `<div class="mini">${artDisc(p.art, c.t, .95)}<div><b>${esc(p.t)}</b><span class="mm">${ageLabel(p.from)} · ${K.PREP[p.prep]} · ${K.MESS[p.mess]}</span><p>${esc(p.how)}</p><p class="tl">${esc(p.talk)}</p><p class="sm"><b>2-minute version:</b> ${esc(p.tired)} <b>Safety:</b> ${esc(p.safe)}</p></div></div>`; };
   const css = `@page{size:${w}in ${h}in;margin:0}html,body{width:${w}in;height:auto;overflow:visible}
   .page{width:${w}in;height:${h}in;padding:.55in;position:relative;page-break-after:always;display:flex;flex-direction:column;overflow:hidden}
   h1{font-size:30pt;line-height:1.02}.kick{font-family:"Bricolage Grotesque";font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:9.5pt;color:${C.tomato}}
   .lead{font-size:12pt;line-height:1.45;margin:.1in 0 .16in}
-  .mini{display:flex;gap:.14in;align-items:flex-start;border-bottom:1px solid #DCE3EE;padding:.08in 0}.mini b{font-family:"Bricolage Grotesque";font-size:12pt}
-  .mm{display:block;font-size:8.5pt;font-weight:700;color:#4A5570}.mini p{font-size:9.6pt;line-height:1.4;margin:.02in 0}.tl{font-family:"Fredoka";font-weight:600;font-size:10.5pt!important}.sm{font-size:8.4pt!important;color:#4A5570}
+  .disc{flex:none}.disc svg{display:block}.mini{display:flex;gap:.18in;align-items:flex-start;border-bottom:1px solid #DCE3EE;padding:.14in 0}.mini>div>b{font-family:"Bricolage Grotesque";font-size:14pt}
+  .mm{display:block;font-size:8.5pt;font-weight:700;color:#4A5570}.mini p{font-size:10.4pt;line-height:1.45;margin:.03in 0}.tl{font-family:"Fredoka";font-weight:600;font-size:11.5pt!important}.sm{font-size:9pt!important;color:#4A5570}
   .foot{position:absolute;left:.55in;right:.55in;bottom:.3in;display:flex;justify-content:space-between;font-size:7.5pt;color:#5A6478;border-top:1px solid #DCE3EE;padding-top:.05in}
   .spot{display:grid;grid-template-columns:1fr 1fr;gap:.12in .2in;margin:.1in 0}.spot div{border:1.3px solid #C9D2E1;border-radius:10px;padding:.08in .12in;height:.9in;font-weight:800;font-size:10pt}
   .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:.08in;margin:.14in 0}.cell{border:1.5px solid #C9D2E1;border-top:5px solid ${C.sky};border-radius:10px;padding:.06in;height:1.6in;font-size:8.5pt}.cell b{font-family:"Bricolage Grotesque";font-size:16pt;display:block}
   .hero{display:flex;gap:.2in;align-items:center;background:${C.tSun};border-radius:18px;padding:.2in}.hero .sc{width:3in;height:2.1in;flex:none}
   .box{background:${C.tSky};border-radius:12px;padding:.12in .16in;font-size:10pt;margin-top:.12in}
+  .moves5{margin-top:.2in;background:${C.tGrass};border-radius:14px;padding:.16in .2in}.moves5 ol{padding-left:.22in;margin:.08in 0}.moves5 li{font-size:10.3pt;line-height:1.45;margin-bottom:.04in}
   .cta{margin-top:auto;display:flex;gap:.2in;align-items:center;background:${C.tSun};border-radius:14px;padding:.16in}.cta p{font-size:10pt}`;
   const foot = n => `<div class="foot"><span><img src="${MARK}" style="height:.14in;vertical-align:-.03in"> 7 Days of Play First · free starter from The 30-Day Screen Reset</span><span>${SITE} · ${K.VERSION} · ${n}</span></div>`;
   write(`starter-${key}.html`, base(816, 1056, css) + `
@@ -148,7 +149,10 @@ for (const [key, w, h] of [['letter', 8.5, 11], ['a4', 8.27, 11.69]]) {
   </section>
   <section class="page">
     ${picks.slice(4).map(mini).join('')}
-    <div class="cta"><div>${qrSvg(96)}</div><div><b class="bric" style="font-size:14pt">Want the whole month?</b><p>The 30-Day Screen Reset: 30 short lessons by email, 30 plays, plain words for 30 tricky moments and a full workbook. $27, with a 30-day money-back guarantee. Written program; no videos, calls or coaching.</p><p><b>${SITE}/reset</b></p></div></div>
+    <div class="moves5"><b class="bric" style="font-size:14pt">Five small talk moves to try this week</b>
+      <ol>${['pause and wait', 'say what you see', 'repeat and add one', 'offer a choice', 'follow their lead'].map(k => { const m = Object.values(K.MOVES).find(x => x.name.toLowerCase() === k); return `<li><b>${esc(m.name)}.</b> ${esc(m.tip)}</li>`; }).join('')}</ol>
+      <p style="font-size:9.5pt;color:#4A5570">Talk, sing and read in the language you know best. A sign, a point or a tap on a device counts as communicating.</p></div>
+    <div class="cta"><div><img src="${MARK}" style="height:.9in"></div><div><b class="bric" style="font-size:14pt">Want the whole month?</b><p>The 30-Day Screen Reset: 30 short lessons by email, 30 plays, plain words for 30 tricky moments and a full workbook. $27, with a 30-day money-back guarantee. Written program; no videos, calls or coaching.</p><p><b>${SITE}/reset</b></p></div></div>
     ${foot(3)}
   </section>`);
 }
@@ -158,13 +162,13 @@ for (const [key, w, h] of [['letter', 8.5, 11], ['a4', 8.27, 11.69]]) {
   const css = `.m{width:1600px;height:1200px;background:${C.wash};position:relative;overflow:hidden}
   .floor{position:absolute;left:0;right:0;bottom:0;height:430px;background:#E6ECF5}
   .sh{box-shadow:0 26px 50px rgba(29,41,64,.22),0 4px 10px rgba(29,41,64,.12)}
-  .book{position:absolute;left:150px;top:180px;width:560px;height:700px;border-radius:4px 10px 10px 4px;overflow:hidden}
+  .book{position:absolute;left:150px;top:150px;width:560px;height:700px;border-radius:4px 10px 10px 4px;overflow:hidden}
   .book img{width:100%;height:100%;display:block}.book:after{content:"";position:absolute;left:0;top:0;bottom:0;width:18px;background:linear-gradient(90deg,rgba(0,0,0,.12),rgba(0,0,0,0))}
   .pg{position:absolute;width:470px;height:608px;background:#fff}.pg img{width:100%;display:block}
-  .p1{left:760px;top:340px;transform:rotate(-5deg)}.p2{left:1010px;top:300px;transform:rotate(4deg)}
+  .p1{left:760px;top:250px;transform:rotate(-5deg)}.p2{left:1010px;top:215px;transform:rotate(4deg)}
   .phone{position:absolute;left:1180px;top:120px;width:300px;height:600px;border-radius:44px;background:${C.ink};padding:16px}
   .phone .scr{width:100%;height:100%;border-radius:30px;overflow:hidden;background:#fff}.phone img{width:100%;display:block}
-  .tag{position:absolute;left:150px;top:930px;font-family:"Bricolage Grotesque";font-weight:800;font-size:44px}
+  .tag{position:absolute;left:150px;top:960px;font-family:"Bricolage Grotesque";font-weight:800;font-size:44px}
   .tag small{display:block;font-family:"Nunito Sans";font-weight:700;font-size:24px;color:#3A4660;margin-top:8px}`;
   write('mockup.html', base(1600, 1200, css) + `<div class="m"><div class="floor"></div>
     <div class="book sh"><img src="../cover.png"></div>
@@ -174,6 +178,7 @@ for (const [key, w, h] of [['letter', 8.5, 11], ['a4', 8.27, 11.69]]) {
 }
 
 // ---------------------------------------------------------------- listing images (2000 x 2000)
+const SC = (i, css) => `<div style="position:absolute;${css}">${sceneSvg(WEEK_SCENES[i], '', '70 130 470 400')}</div>`;
 const L = (n, name, body, bg = C.tSun) => write(`listing-${pad2(n)}-${name}.html`, base(2000, 2000, `
 .L{width:2000px;height:2000px;background:${bg};position:relative;overflow:hidden;padding:120px 130px}
 .k{font-family:"Bricolage Grotesque";font-weight:800;font-size:40px;letter-spacing:.08em;text-transform:uppercase;color:${C.tomato}}
@@ -197,13 +202,13 @@ L(2, 'whats-inside', `<div class="k">What’s inside</div><h1>Everything for<br>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:40px">
   ${[['30', 'daily lessons by email', 'About 3 minutes to read, each under 300 words', C.sky], ['30', 'easy plays', 'Things you already have; easier, harder and 2-minute versions', C.grass], ['38', 'plain-word scripts', 'For the show that won’t end, “I’m bored”, waiting, and more', C.sun], ['89', 'page workbook', '60 day pages + 7 planning and tracker pages + 22 guide, week, check-in and bonus pages', C.tomato]].map(([n, t, s, c]) => `<div style="background:#fff;border-radius:36px;padding:44px 50px;border-top:16px solid ${c}"><div class="bric" style="font-size:150px;line-height:1;color:${c === C.sun ? '#B98500' : c}">${n}</div><div class="bric" style="font-size:56px;margin:8px 0 10px">${t}</div><div style="font-size:34px;line-height:1.35;color:#3A4660">${s}</div></div>`).join('')}
   </div>
-  <p style="font-size:34px;margin-top:40px;font-weight:700">Color and Low-ink editions · US Letter and A4 · type-in pages in free Acrobat Reader</p>`, '#FFFFFF');
+  <p style="font-size:34px;margin-top:40px;font-weight:700;max-width:1000px">Color and Low-ink editions · US Letter and A4 · type-in pages in free Acrobat Reader</p>${SC(2, 'right:110px;bottom:70px;width:640px;height:545px')}`, '#FFFFFF');
 
 L(3, 'how-it-works', `<div class="k">How it works</div><h1>One small step<br>a day</h1>
   <div style="display:flex;gap:40px;margin-top:70px">
   ${[['book', C.tSky, 'Read', 'A short lesson lands in your inbox each morning.'], ['ball', C.tGrass, 'Play', 'One easy play with things you already have.'], ['hand', C.tTomato, 'Say', 'Plain words for one tricky moment.']].map(([a, t, h, s]) => `<div style="flex:1;background:#fff;border-radius:40px;padding:50px;text-align:center">${artDisc(a, t, 3.2, 'margin:0 auto')}<div class="bric" style="font-size:78px;margin:26px 0 10px">${h}</div><div style="font-size:38px;line-height:1.35">${s}</div></div>`).join('')}
   </div>
-  <div style="margin-top:70px;display:flex;flex-wrap:wrap"><span class="pill">No videos</span><span class="pill">No calls or coaching</span><span class="pill">Go at your own pace</span><span class="pill">Nothing to buy</span></div>`, C.tSky);
+  <div style="margin-top:70px;display:flex;flex-wrap:wrap"><span class="pill">No videos</span><span class="pill">No calls or coaching</span><span class="pill">Go at your own pace</span><span class="pill">Nothing to buy</span></div>${SC(1, 'right:110px;bottom:60px;width:620px;height:528px')}`, C.tSky);
 
 L(4, 'a-day-inside', `<div class="k">A day inside</div><h1>Lesson, play,<br>plain words</h1>
   <div class="pg sh" style="left:130px;top:620px;width:840px;height:1087px"><img src="${PV(22)}"></div>
@@ -219,13 +224,13 @@ L(6, 'ages-and-safety', `<div class="k">Ages 1 to 12</div><h1>One plan for<br>th
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:40px;font-size:38px;line-height:1.35">
   ${[['sprout', 'A starting age on every play', 'From 6 months to big kids, with an easier and a harder version.'], ['people', 'Siblings and twins', 'Boxes for toddlers, school-age kids and mixed ages every week.'], ['bolt', 'Tired-grown-up versions', 'Every play has a 2-minute, no-setup version.'], ['shield', 'Every play follows our published safety rules', 'A grown-up is always there. Tube test for under-3s. No balloons for under-8s.']].map(([i, t, s]) => `<div style="background:#fff;border-radius:36px;padding:44px"><div style="font-size:80px;color:${C.tomato}">${ico(i)}</div><div class="bric" style="font-size:50px;margin:10px 0">${t}</div>${s}</div>`).join('')}
   </div>
-  <p style="font-size:32px;margin-top:40px;color:#3A4660">Parent education, not medical advice. Every child grows on their own timeline; for questions about development, talk with your pediatrician.</p>`, C.tSun);
+  <p style="font-size:32px;margin-top:40px;color:#3A4660;max-width:1080px">Parent education, not medical advice. Every child grows on their own timeline; for questions about development, talk with your pediatrician.</p>${SC(4, 'right:110px;bottom:40px;width:520px;height:443px')}`, C.tSun);
 
 L(7, 'screens-have-a-spot', `<div class="k">No banning, no bribes</div><h1>Screens get a<br><em>steady spot</em></h1>
   <p class="lead">Same time, same place, same ending, every day. Never a prize and never a punishment. The rest of the day fills up with easy play and talk.</p>
   <div style="position:absolute;left:130px;right:130px;top:900px;display:flex;gap:40px">
   ${[['1', 'A warning', '“Two more minutes, then the tablet goes to sleep.”'], ['2', 'A clear ending', 'The episode ends or the timer rings. “Night-night, tablet.”'], ['3', 'A landing', '“Now we go outside and find the moon.”']].map(([n, t, s]) => `<div style="flex:1;background:#fff;border-radius:40px;padding:50px"><div class="bric" style="width:110px;height:110px;border-radius:50%;background:${C.sky};color:#fff;display:flex;align-items:center;justify-content:center;font-size:64px">${n}</div><div class="bric" style="font-size:62px;margin:24px 0 12px">${t}</div><div style="font-family:Fredoka;font-size:42px;line-height:1.3">${s}</div></div>`).join('')}
-  </div>`, C.tPlum);
+  </div>${SC(3, 'right:110px;bottom:50px;width:560px;height:477px')}`, C.tPlum);
 
 L(8, 'guarantee-and-bundle', `<div class="k">Simple pricing</div><h1>$27, or $49<br>as a bundle</h1>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px">
@@ -289,7 +294,7 @@ L(8, 'guarantee-and-bundle', `<div class="k">Simple pricing</div><h1>$27, or $49
 
 <section><div class="wrap two">
   <div><div class="k">It covers</div><h2>The moments that are actually hard</h2><p>Ending screen time kindly. Mornings. The hour before dinner. Big feelings. Waiting rooms and car rides. Grown-up phones. Big kids who say “everyone else gets to”. Siblings and twins. Grandparents and sitters. Sick days and travel days.</p></div>
-  <div><div class="k">Is it for us?</div><h2>Good fit if…</h2><p>You want calmer days without banning screens. You like reading more than watching videos. You want ideas that use what you already have.</p><p><b>Not a fit if</b> you’re looking for therapy, a diagnosis or personal advice about your child. It’s parent education. For questions about development, talk with your pediatrician.</p></div>
+  <div><div class="k">Is it for us?</div><h2>Good fit if…</h2><p>You want calmer days without banning screens. You like reading more than watching videos. You want ideas that use what you already have.</p><p><b>Not a fit if</b> you’re looking for treatment, a diagnosis or personal advice about your child. It’s parent education. For questions about development, talk with your pediatrician.</p></div>
 </div></section>
 
 <section style="background:${C.tSky}"><div class="wrap">

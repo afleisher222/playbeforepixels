@@ -43,20 +43,20 @@ function wordAct(w, band) {
 const b1 = [];
 ['hi', 'ball', 'up', 'cup', 'shoe'].forEach(w => b1.push(wordAct(w, 'b1')));
 
-const animalTile = (x, y, w, h, id, name, sound, s, tintC) => `<g transform="translate(${x},${y})">${tint(0, 0, w, h, 20, '#FFFFFF')}${U(id, w / 2, h / 2 + 4, s)}${T(20, h - 20, name, 26, { a: 'start' })}${bubble(w - 70, 44, sound, tintC)}</g>`;
+const animalTile = (x, y, w, h, id, name, sound, s, tintC) => `<g transform="translate(${x},${y})">${tint(0, 0, w, h, 20, C.tSky)}${U(id, w / 2, h / 2 + 4, s)}${T(20, h - 20, name, 26, { a: 'start' })}${bubble(w - 70, 44, sound, tintC)}</g>`;
 b1.push({
   id: 'moo', band: 'b1', from: 12, cat: 'Animal sounds', title: 'Who says “moo”?',
   how: '<b>Point and moo.</b> Point to an animal, make its sound, then wait. Any sound back is a turn, even a squeal.',
   talk: ['Pause and wait', '“The cow says… (wait) MOO!”'], easier: 'Make the sound for them and pat the picture.', harder: 'Say the sound first and let them find the animal.', tired: 'Pick one animal. Make its sound three times. Done.',
   prep: '0 min', mess: 'None', needs: 'Just this page', cut: false,
-  board: () => { const w = 324, h = 246; return animalTile(0, 0, w, h, 'b-cow', 'cow', 'moo!', 1.7, C.tGrass) + animalTile(348, 0, w, h, 'b-pig', 'pig', 'oink!', 1.7, C.tGrass) + animalTile(0, 270, w, h, 'b-sheep', 'sheep', 'baa!', 1.75, C.tGrass) + animalTile(348, 270, w, h, 'w-duck', 'duck', 'quack!', 1.5, C.tGrass); },
+  board: () => { const w = 324, h = 246; return animalTile(0, 0, w, h, 'b-cow', 'cow', 'moo!', 1.7, '#FFFFFF') + animalTile(348, 0, w, h, 'b-pig', 'pig', 'oink!', 1.7, '#FFFFFF') + animalTile(0, 270, w, h, 'b-sheep', 'sheep', 'baa!', 1.75, '#FFFFFF') + animalTile(348, 270, w, h, 'w-duck', 'duck', 'quack!', 1.5, '#FFFFFF'); },
 });
 b1.push({
   id: 'woof', band: 'b1', from: 12, cat: 'Animal sounds', title: 'Who says “woof”?',
   how: '<b>Point and play.</b> Name the animal, make its sound, and add a move: pant like the dog, hop like the frog.',
   talk: ['Sing and gesture', '“Woof woof! Dog says woof. Hop, hop, ribbit!”'], easier: 'Just the sounds, nice and slow.', harder: 'Mix them up: “Does the cat say woof?” Silly questions make great talk.', tired: 'Hop like the frog once. Ribbit!',
   prep: '0 min', mess: 'None', needs: 'Just this page', cut: false,
-  board: () => { const w = 324, h = 246; return animalTile(0, 0, w, h, 'w-dog', 'dog', 'woof!', 1.55, C.tGrass) + animalTile(348, 0, w, h, 'w-cat', 'cat', 'meow!', 1.5, C.tGrass) + animalTile(0, 270, w, h, 'b-bird', 'bird', 'tweet!', 1.8, C.tGrass) + animalTile(348, 270, w, h, 'b-frog', 'frog', 'ribbit!', 1.75, C.tGrass); },
+  board: () => { const w = 324, h = 246; return animalTile(0, 0, w, h, 'w-dog', 'dog', 'woof!', 1.55, '#FFFFFF') + animalTile(348, 0, w, h, 'w-cat', 'cat', 'meow!', 1.5, '#FFFFFF') + animalTile(0, 270, w, h, 'b-bird', 'bird', 'tweet!', 1.8, '#FFFFFF') + animalTile(348, 270, w, h, 'b-frog', 'frog', 'ribbit!', 1.75, '#FFFFFF'); },
 });
 
 b1.push({
@@ -65,12 +65,14 @@ b1.push({
   talk: ['Say what you see', '“There’s duck! Duck is in the bath. Peekaboo, duck!”'], easier: 'Point to one duck and say “there’s duck!” together.', harder: 'Count the ducks with a finger: one, two, three.', tired: 'Find one duck. Say “peekaboo!” Done.',
   prep: '0 min', mess: 'None', needs: 'Just this page', cut: false,
   board: () => {
-    const floor = 430;
-    return rr(-12, floor, W + 24, H - floor + 12, 0, '#FFFFFF', 'class="tint"') +
-      U('w-duck', 118, 262, 0.95) + U('b-sofa', 150, 350, 2.5) +
-      U('w-duck', 382, 300, 0.85) + U('a-box', 380, 370, 1.45) +
-      U('b-bath', 560, 370, 1.9) + `<g transform="translate(540,284)">${U('w-duck', 0, 0, 0.62)}</g>` +
-      U('b-lamp', 268, 336, 1.25) + U('w-ball', 300, 410, 0.36);
+    const floor = 410;
+    const win = `<g transform="translate(60,40)"><rect class="tint" x="0" y="0" width="170" height="150" rx="12" fill="${C.tSky}"/>${U('w-sun', 120, 48, 0.42)}${U('b-cloud', 60, 90, 0.55, 'style="--cl:#FFFFFF"')}<rect x="80" y="0" width="10" height="150" fill="#FFFFFF"/><rect x="0" y="70" width="170" height="10" fill="#FFFFFF"/></g>`;
+    const frame = `<g transform="translate(470,56)"><rect x="0" y="0" width="130" height="100" rx="8" fill="${C.sun}"/><rect class="tint" x="10" y="10" width="110" height="80" rx="4" fill="#FFFFFF"/>${U('b-tree', 40, 58, 0.36)}${U('w-sun', 90, 34, 0.2)}</g>`;
+    return win + frame + rr(-12, floor, W + 24, H - floor + 80, 0, '#FFFFFF', 'class="tint"') +
+      U('w-duck', 96, 222, 1.15) + U('b-sofa', 170, 330, 3.0) +
+      U('w-duck', 418, 262, 1.05) + U('a-box', 418, 350, 1.9) +
+      U('b-bath', 578, 356, 1.9) + U('w-duck', 552, 272, 0.78) +
+      U('b-lamp', 306, 318, 1.7) + U('w-ball', 318, 392, 0.4);
   },
 });
 
@@ -104,7 +106,7 @@ b1.push({
   how: '<b>Say it with your voice.</b> Use a big, deep voice for big things and a tiny squeaky voice for little ones.',
   talk: ['Say what you see', '“BIG ball! (tiny voice) little ball.”'], easier: 'Just the balls. Point and use your two voices.', harder: 'Ask “Which one is little?” and wait for a point.', tired: 'Say “big” with arms wide and “little” with a pinch.',
   prep: '0 min', mess: 'None', needs: 'Just this page', cut: false,
-  board: () => [['w-ball', 'ball'], ['w-duck', 'duck'], ['b-teddy', 'teddy']].map(([id, n], i) => { const y = i * 172; return `<g transform="translate(0,${y})">${tint(0, 0, W, 160, 20, '#FFFFFF')}${U(id, 150, 82, 1.35)}${U(id, 400, 106, 0.55)}${T(150, 152, 'big', 20, { w: 700 })}${T(400, 152, 'little', 15)}${T(560, 92, n, 30, { a: 'start' })}</g>`; }).join(''),
+  board: () => [['w-ball', 'ball', 1.2], ['w-duck', 'duck', 1.15], ['b-teddy', 'teddy', 1.05]].map(([id, n, s], i) => { const y = i * 178; return `<g transform="translate(0,${y})">${tint(0, 0, W, 160, 20, '#FFFFFF')}${U(id, 130, 78, s)}${U(id, 330, 104, s * 0.42)}${T(250, 104, 'big', 26, { w: 700, a: 'end' })}${T(390, 116, 'little', 17, { a: 'start' })}${T(W - 30, 96, n, 34, { a: 'end' })}</g>`; }).join(''),
 });
 b1.push({
   id: 'teddy', band: 'b1', from: 18, cat: 'Pretend play', title: 'Lunch for Teddy',
@@ -130,7 +132,7 @@ b1.push({
   board: () => {
     const hx = 240, hy = 270, s = 6.4;
     const lab = (t, x, y, tx, ty) => `<line x1="${x}" y1="${y}" x2="${tx - 8}" y2="${ty - 8}" stroke="${C.ink}" stroke-width="2.5" stroke-dasharray="2 7" stroke-linecap="round"/><circle cx="${x}" cy="${y}" r="7" fill="${C.ink}" class="ink"/>` + `<g transform="translate(${tx},${ty})">${rr(0, -30, t.length * 15 + 34, 44, 22, '#FFFFFF', 'class="tint"')}${T(17 + t.length * 7.5, 2, t, 24)}</g>`;
-    return head('D', hx, hy, s, 'smile') + `<ellipse cx="${hx}" cy="${hy + 4 * s * 0.55}" rx="${3.2 * s}" ry="${2.5 * s}" fill="${C.ink}" opacity=".18"/>` +
+    return head('D', hx, hy, s, 'smile') + `<ellipse cx="${hx}" cy="${hy + 3.2 * s}" rx="${3.4 * s}" ry="${2.6 * s}" fill="${C.ink}" opacity=".35"/><ellipse cx="${hx - 1.2 * s}" cy="${hy + 2.4 * s}" rx="${1.1 * s}" ry="${0.8 * s}" fill="#FFFFFF" opacity=".35"/>` +
       lab('hair', hx + 40, hy - 150, 470, 70) + lab('eyes', hx + 54, hy - 6, 500, 170) + lab('nose', hx + 4, hy + 16, 510, 262) + lab('mouth', hx + 22, hy + 62, 480, 360) + lab('ears', hx + 150, hy + 20, 540, 450);
   },
 });
@@ -139,7 +141,7 @@ b1.push({
   how: '<b>Let your child choose.</b> Hold the page and ask “Which song?” A look or a pat picks it. Sing and do the moves.',
   talk: ['Offer a choice', '“Boat song or star song? (wait) Star! Twinkle, twinkle…”'], easier: 'Sing the same song every time. Repeating is the fun part.', harder: 'Stop before the last word of a line and let them fill it in.', tired: 'Hum one song while you rock together.',
   prep: '0 min', mess: 'None', needs: 'Just this page', cut: false,
-  board: () => { const w = 324, h = 246; const tile = (x, y, id, s, t1, t2) => `<g transform="translate(${x},${y})">${tint(0, 0, w, h, 20, '#FFFFFF')}${U(id, w / 2, 100, s)}${T(w / 2, 196, t1, 20)}${T(w / 2, 224, t2, 14, { f: 'Nunito Sans, sans-serif', w: 700, c: '#5B6780' })}</g>`; return tile(0, 0, 'b-boat', 1.5, 'Row, Row, Row Your Boat', 'rock side to side') + tile(348, 0, 'w-star', 1.45, 'Twinkle, Twinkle, Little Star', 'open and shut your hands') + tile(0, 270, 'b-bus', 1.45, 'The Wheels on the Bus', 'roll your arms round') + tile(348, 270, 'b-cow', 1.35, 'Old MacDonald Had a Farm', 'moo! baa! quack!'); },
+  board: () => { const w = 324, h = 246; const tile = (x, y, id, s, t1, t2, tc) => `<g transform="translate(${x},${y})">${tint(0, 0, w, h, 20, tc)}${U(id, w / 2, 100, s)}${T(w / 2, 196, t1, 20)}${T(w / 2, 224, t2, 14, { f: 'Nunito Sans, sans-serif', w: 700, c: '#5B6780' })}</g>`; return tile(0, 0, 'b-boat', 1.5, 'Row, Row, Row Your Boat', 'rock side to side', C.tSky) + tile(348, 0, 'w-star', 1.45, 'Twinkle, Twinkle, Little Star', 'open and shut your hands', C.tPlum) + tile(0, 270, 'b-bus', 1.45, 'The Wheels on the Bus', 'roll your arms round', C.tSun) + tile(348, 270, 'b-cow', 1.35, 'Old MacDonald Had a Farm', 'moo! baa! quack!', C.tTomato); },
   safety: 'Rocking games stay gentle: support your child’s back and head.',
 });
 b1.push({
@@ -182,13 +184,13 @@ b2.push({
       `<g transform="translate(96,478)">${[[C.tomato, 'red'], [C.sun, 'yellow'], [C.sky, 'blue'], [C.grass, 'green']].map(([c, n], i) => `<g transform="translate(${i * 128},0)">${rr(0, -22, 116, 44, 22, '#FFFFFF', 'class="tint"')}<g class="keepc"><circle cx="24" cy="0" r="14" fill="${c}"/></g>${T(46, 7, n, 19, { a: 'start' })}</g>`).join('')}</g>`;
   },
 });
-const shapes = [['s-circle', 'circle', C.tomato, C.tTomato], ['s-square', 'square', C.sky, C.tSky], ['s-triangle', 'triangle', C.grass, C.tGrass], ['s-star', 'star', C.plum, C.tPlum], ['s-heart', 'heart', C.tomato, C.tTomato], ['s-rectangle', 'rectangle', C.sun, C.tSun]];
+const shapes = [['b-s-circle', 'circle', C.tomato, C.tTomato], ['b-s-square', 'square', C.sky, C.tSky], ['b-s-triangle', 'triangle', C.grass, C.tGrass], ['b-s-star', 'star', C.plum, C.tPlum], ['b-s-heart', 'heart', C.tomato, C.tTomato], ['b-s-rectangle', 'rectangle', C.sun, C.tSun]];
 b2.push({
   id: 'shapes', band: 'b2', from: 26, cat: 'Shapes', title: 'Shape match',
   how: '<b>Find the shape’s spot.</b> Pick up a shape card, trace its edge with a finger, then lay it on the pale shape that matches.',
   talk: ['Say what you see', '“Circle. Round, round circle. It goes on the circle!”'], easier: 'Circle, square and triangle only.', harder: 'Find a circle or square in the room: a plate, a window.', tired: 'Trace one shape with a finger. Say its name.',
   prep: '10 min', mess: 'None', needs: 'Scissors, cardstock', cut: true, cols: 3,
-  board: () => gridPos(6, 3, CELL, 12, 36).map(([x, y], i) => slot(x, y, CELL, U(shapes[i][0], CELL.w / 2, CELL.h / 2 - 10, 1.05, `style="--sf:${shapes[i][3]}"`) + T(CELL.w / 2, CELL.h - 16, shapes[i][1], 17, { c: '#5B6780' }))).join(''),
+  board: () => gridPos(6, 3, CELL, 12, 36).map(([x, y], i) => slot(x, y, CELL, `<g opacity=".3">${U(shapes[i][0], CELL.w / 2, CELL.h / 2 - 10, 1.05, `style="--sf:${shapes[i][2]}"`)}</g>` + T(CELL.w / 2, CELL.h - 16, shapes[i][1], 17, { c: '#5B6780' }))).join(''),
   pieces: shapes.map(s => P(s[0], s[1], { s: 1.05, tint: '#FFFFFF', art: U(s[0], 0, 0, 1, `style="--sf:${s[2]}"`) })),
 });
 b2.push({
@@ -225,8 +227,8 @@ b2.push({
   how: '<b>What will they wear?</b> Pick a card. Is it for the sunny day or the rainy, chilly day? Dress the right friend.',
   talk: ['Offer a choice', '“Sun hat or boots for the sunny day? (wait) Sun hat!”'], easier: 'Two cards at a time: one sunny, one rainy.', harder: 'Look outside. What should we wear today?', tired: 'Look out the window and name the weather.',
   prep: '10 min', mess: 'None', needs: 'Scissors, cardstock', cut: true, cols: 3,
-  board: () => `${tint(0, 0, 330, H, 22, C.tSun)}${U('w-sun', 70, 70, 0.62)}${T(118, 80, 'Sunny day', 26, { a: 'start' })}${kidAt('B', 165, 470, 3.2, { face: 'laugh', aL: 30, aR: -30 })}
-    <g transform="translate(342,0)">${tint(0, 0, 330, H, 22, C.tSky)}${U('b-rain', 64, 70, 0.62)}${T(108, 72, 'Rainy,', 24, { a: 'start' })}${T(108, 100, 'chilly day', 24, { a: 'start' })}${kidAt('C', 165, 470, 3.2, { face: 'smile', aL: 20, aR: -20 })}</g>`,
+  board: () => `${tint(0, 0, 330, H, 22, C.tSun)}${U('w-sun', 70, 70, 0.62)}${T(118, 80, 'Sunny day', 26, { a: 'start' })}${kidAt('B', 165, 492, 2.75, { face: 'laugh', aL: 30, aR: -30 })}
+    <g transform="translate(342,0)">${tint(0, 0, 330, H, 22, C.tSky)}${U('b-rain', 64, 70, 0.62)}${T(108, 72, 'Rainy,', 24, { a: 'start' })}${T(108, 100, 'chilly day', 24, { a: 'start' })}${kidAt('C', 165, 492, 2.75, { face: 'smile', aL: 20, aR: -20 })}</g>`,
   pieces: [P('b-sunhat', 'sun hat'), P('b-sunglasses', 'sunglasses'), P('b-shorts', 'shorts'), P('b-tshirt', 't-shirt'), P('b-umbrella', 'umbrella'), P('a-boot', 'boots'), P('b-coat', 'coat'), P('b-mitten', 'mittens')],
 });
 b2.push({
@@ -234,7 +236,7 @@ b2.push({
   how: '<b>Make a pizza together.</b> Your child is the cook. Ask for toppings and let them lay the cards on the pizza.',
   talk: ['Offer a choice', '“Mushrooms or peppers? (wait) Peppers! One more?”'], easier: 'Two kinds of topping only.', harder: 'Order a number: “Three tomatoes, please!”', tired: 'Order one topping. Pretend to munch. Done.',
   prep: '10 min', mess: 'None', needs: 'Scissors, cardstock', cut: true, cols: 3,
-  board: () => `<circle cx="336" cy="258" r="252" fill="${C.s2 || '#E0AC80'}"/><circle cx="336" cy="258" r="226" fill="${C.tomato}"/><circle cx="336" cy="258" r="210" fill="${C.sun}" opacity=".85"/>` + [[-140, -60], [120, -90], [60, 110], [-90, 120], [150, 60], [-10, -160]].map(([x, y]) => `<circle cx="${336 + x}" cy="${258 + y}" r="14" fill="${C.tomato}" opacity=".45"/>`).join('') + bubble(560, 40, 'Order up!', C.tSun),
+  board: () => `<circle cx="336" cy="258" r="252" fill="${C.s2}"/><circle cx="336" cy="258" r="228" fill="${C.tomato}"/><path d="M336 50C420 46 520 100 540 180C556 250 530 330 470 400C420 456 330 470 250 440C170 410 120 340 126 250C130 150 230 54 336 50Z" fill="${C.sun}"/>` + [[250, 150, 40], [420, 190, 34], [300, 330, 46], [440, 360, 30], [200, 300, 26]].map(([x, y, r]) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${C.tSun}"/>`).join('') + [[-140, -60], [120, -90], [60, 110], [-90, 120], [150, 60], [-10, -160]].map(([x, y]) => `<circle cx="${336 + x}" cy="${258 + y}" r="14" fill="${C.tomato}" opacity=".45"/>`).join('') + bubble(570, 40, 'Order up!'),
   pieces: [P('b-slice-tomato', 'tomato'), P('b-slice-tomato', 'tomato'), P('b-slice-tomato', 'tomato'), P('b-pepper', 'pepper'), P('b-pepper', 'pepper'), P('b-mushroom', 'mushroom'), P('b-mushroom', 'mushroom'), P('b-cheese', 'cheese'), P('b-cheese', 'cheese')],
 });
 const feel = [['A', 'laugh', 'silly'], ['B', 'sad', 'sad'], ['C', 'oh', 'surprised'], ['D', 'sleep', 'sleepy'], ['E', 'smile', 'happy'], ['A', 'joy', 'calm']];

@@ -138,7 +138,7 @@ function doc(V) {
     </div>
     <div class="promise">
       <div><b>What this is</b>Parent education about everyday play and talk, for families with children aged about 1 to 12.</div>
-      <div><b>What this isn’t</b>Therapy, treatment or advice about any one child. If you have questions about your child’s development, talk with your pediatrician.</div>
+      <div><b>What this isn’t</b>Treatment, diagnosis or advice about any one child. If you have questions about your child’s development, talk with your pediatrician.</div>
     </div>`, { run: 'Start here' });
 
   // Note + map

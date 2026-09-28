@@ -82,14 +82,14 @@ b3.push({
     [[160, 340], [260, 390], [370, 330], [470, 400]].forEach(([x, y], i) => items.push(U('b-flower', x, y, 0.62, i % 2 ? `style="--pt:${C.plum}"` : '')));
     [[60, 400], [210, 250], [330, 250], [560, 340], [620, 420]].forEach(([x, y]) => items.push(U('b-ladybug', x, y, 0.3)));
     const strip = [['w-sun', 0.28], ['b-tree', 0.3], ['b-bird', 0.32], ['b-flower', 0.32], ['b-ladybug', 0.34]];
-    return rr(-12, g - 40, W + 24, H - g + 52, 0, C.tGrass, 'class="tint"') + items.join('') + `<g transform="translate(26,470)">${strip.map(([id, s], i) => `<g transform="translate(${i * 126},0)">${rr(0, -28, 114, 56, 28, '#FFFFFF', 'class="tint"')}${U(id, 32, 0, s)}${T(84, 9, '?', 26, { w: 700 })}</g>`).join('')}</g>`;
+    return rr(-12, -12, W + 24, g, 0, C.tSky, 'class="tint"') + rr(-12, g - 40, W + 24, H - g + 80, 0, C.tGrass, 'class="tint"') + items.join('') + `<g transform="translate(26,470)">${strip.map(([id, s], i) => `<g transform="translate(${i * 126},0)">${rr(0, -28, 114, 56, 28, '#FFFFFF', 'class="tint"')}${U(id, 32, 0, s)}${T(84, 9, '?', 26, { w: 700 })}</g>`).join('')}</g>`;
   },
   answer: '1 sun, 2 trees, 3 birds, 4 flowers, 5 ladybugs',
 });
 
 // ---------------- patterns ----------------
 const patRow = (y, items, label) => `<g transform="translate(0,${y})">${T(0, 0, label, 15, { a: 'start', f: 'Nunito Sans, sans-serif', w: 800, c: '#5B6780', ls: 1.5 })}<g transform="translate(0,14)">${tint(0, 0, W, CELL.h, 20, '#FFFFFF')}${items.map((it, i) => `<circle cx="${56 + i * 100}" cy="${CELL.h / 2}" r="44" fill="${C.wash}" class="tint"/>` + U(it[0], 56 + i * 100, CELL.h / 2, it[1], it[2] || '')).join('')}${slot(W - CELL.w, 0, CELL, T(CELL.w / 2, CELL.h / 2 + 12, '?', 44, { c: '#9AA6BC', w: 700 }))}</g></g>`;
-const sq = [['s-circle', 0.36, `style="--sf:${C.tomato}"`], ['s-square', 0.36, `style="--sf:${C.sky}"`]];
+const sq = [['b-s-circle', 0.36, `style="--sf:${C.tomato}"`], ['b-s-square', 0.36, `style="--sf:${C.sky}"`]];
 b3.push({
   id: 'patterns1', band: 'b3', from: 42, cat: 'Patterns', title: 'What comes next?',
   how: '<b>Say the pattern out loud.</b> “Apple, banana, apple, banana…” The rhythm helps. Then find the card that comes next.',
@@ -104,8 +104,8 @@ b3.push({
   talk: ['Pause and wait', '“Duck, frog, frog, duck, frog, (wait)… frog!”'], easier: 'Go back to page one’s patterns, or build these with real toys.', harder: 'Make a pattern with three things: red, blue, yellow…', tired: 'Stomp a pattern: stomp, stomp, jump!',
   prep: '10 min', mess: 'None', needs: 'Scissors, cardstock', cut: true, cols: 3,
   board: () => patRow(30, [['w-sun', 0.5], ['w-moon', 0.52], ['w-sun', 0.5], ['w-moon', 0.52]], 'PATTERN 3') + patRow(290, [['w-duck', 0.52], ['b-frog', 0.6], ['b-frog', 0.6], ['w-duck', 0.52]], 'PATTERN 4'),
-  pieces: [P('b-apple', 'apple'), P('b-banana', 'banana'), P('s-circle', 'circle', { art: U('s-circle', 0, 0, 1, `style="--sf:${C.tomato}"`), s: 0.95 }), P('s-square', 'square', { art: U('s-square', 0, 0, 1, `style="--sf:${C.sky}"`), s: 0.95 }), P('w-sun', 'sun'), P('w-moon', 'moon'), P('w-duck', 'duck'), P('b-frog', 'frog')],
-  piecesFor: 'pages for patterns 1–4',
+  pieces: [P('b-apple', 'apple'), P('b-banana', 'banana'), P('b-s-circle', 'circle', { art: U('b-s-circle', 0, 0, 1, `style="--sf:${C.tomato}"`), s: 0.95 }), P('b-s-square', 'square', { art: U('b-s-square', 0, 0, 1, `style="--sf:${C.sky}"`), s: 0.95 }), P('w-sun', 'sun'), P('w-moon', 'moon'), P('w-duck', 'duck'), P('b-frog', 'frog')],
+  piecesFor: 'the pattern pages',
   answer: 'Pattern 3: sun · Pattern 4: frog',
 });
 
@@ -143,7 +143,7 @@ b3.push({
   prep: '10 min', mess: 'None', needs: 'Scissors, cardstock', cut: true, cols: 3,
   board: seqBoard(['Make a pizza', 'Bedtime']),
   pieces: [['bloom', 'flower'], ['seed', 'seed'], ['snow2', 'two balls'], ['sprout', 'sprout'], ['snow3', 'snowman'], ['snow1', 'one ball'], ['pz3', 'pizza'], ['bed2', 'pajamas'], ['pz1', 'dough'], ['bed1', 'bath'], ['pz2', 'sauce'], ['bed3', 'bed']].map(([k, w]) => P('st-' + k, w)),
-  piecesFor: 'both story pages',
+  piecesFor: 'the story pages',
   answer: 'Dough → sauce → pizza · bath → pajamas → bed',
 });
 b3.push(mazeAct(MAZES[4], 4), mazeAct(MAZES[5], 5));
@@ -157,7 +157,7 @@ b3.push({
   board: () => ['small', 'medium', 'big'].map((t, i) => T(CELL.w / 2 + i * (CELL.w + 12), 30, t, 22 + i * 4, { w: 700 })).join('') + [0, 1].map(r => [0, 1, 2].map(i => slot(i * (CELL.w + 12), 56 + r * (CELL.h + 30), CELL)).join('')).join(''),
   pieces: [['w-ball', 0.95, 'medium'], ['b-teddy', 0.55, 'small'], ['w-ball', 1.35, 'big'], ['b-teddy', 1.35, 'big'], ['w-ball', 0.55, 'small'], ['b-teddy', 0.95, 'medium']].map(([id, s]) => P(id, '', { s, word: '' })),
 });
-const oddRows = [[['w-duck', 0.85], ['w-duck', 0.85], ['b-frog', 0.8], ['w-duck', 0.85]], [['s-star', 0.62, `style="--sf:${C.sun}"`], ['s-heart', 0.62, `style="--sf:${C.tomato}"`], ['s-star', 0.62, `style="--sf:${C.sun}"`], ['s-star', 0.62, `style="--sf:${C.sun}"`]], [['a-car', 0.8], ['a-car', 0.8], ['a-car', 0.8], ['b-bus', 0.75]], [['b-apple', 0.72], ['b-cupcake', 0.72], ['b-apple', 0.72], ['b-apple', 0.72]]];
+const oddRows = [[['w-duck', 0.85], ['w-duck', 0.85], ['b-frog', 0.8], ['w-duck', 0.85]], [['b-s-star', 0.62, `style="--sf:${C.sun}"`], ['b-s-heart', 0.62, `style="--sf:${C.tomato}"`], ['b-s-star', 0.62, `style="--sf:${C.sun}"`], ['b-s-star', 0.62, `style="--sf:${C.sun}"`]], [['a-car', 0.8], ['a-car', 0.8], ['a-car', 0.8], ['b-bus', 0.75]], [['b-apple', 0.72], ['b-cupcake', 0.72], ['b-apple', 0.72], ['b-apple', 0.72]]];
 b3.push({
   id: 'odd', band: 'b3', from: 40, cat: 'Look & find', title: 'Which one is different?',
   how: '<b>Spot the odd one out.</b> Look along each row. Three are the same and one is different. Point to it and say why.',
@@ -262,7 +262,7 @@ b3.push({
   board: () => [['uh-oh', 'surprised?'], ['hug', 'loved?'], ['wow', 'amazed?'], ['night-night', 'sleepy?']].map(([w, q], i) => { const x = (i % 2) * 348, y = Math.floor(i / 2) * 270; const art = BB.scenes[w](); const bg = (art.match(/fill="(#[0-9A-Fa-f]{6})"/) || [])[1]; return `<g transform="translate(${x},${y})">${tint(0, 0, 324, 246, 20, bg)}<svg x="0" y="0" width="324" height="246" viewBox="40 150 520 395" overflow="hidden">${art}</svg>${rr(12, 200, q.length * 11 + 30, 34, 17, '#FFFFFF', 'class="tint"')}${T(27 + q.length * 5.5, 223, q, 17)}</g>`; }).join(''),
 });
 defs.add('clip-l', `<clipPath id="halfL" clipPathUnits="userSpaceOnUse"><rect x="-200" y="-200" width="200" height="400"/></clipPath><clipPath id="halfR" clipPathUnits="userSpaceOnUse"><rect x="0" y="-200" width="200" height="400"/></clipPath>`);
-const halves = [['b-apple', 1.55], ['w-ball', 1.6], ['s-heart', 1.55, `style="--sf:${C.tomato}"`], ['a-house', 1.65]];
+const halves = [['b-apple', 1.55], ['w-ball', 1.6], ['b-s-heart', 1.55, `style="--sf:${C.tomato}"`], ['a-house', 1.65]];
 b3.push({
   id: 'halves', band: 'b3', from: 42, cat: 'Matching', title: 'Finish the picture',
   how: '<b>Find the other half.</b> Each picture is missing its right side. Find the card that finishes it and slide it into the box.',

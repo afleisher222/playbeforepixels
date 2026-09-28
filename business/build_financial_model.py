@@ -5,6 +5,8 @@ Every number is either sourced to a repo file or labelled Assumption / [VERIFY].
 All downstream cells are live Excel formulas.
 """
 import datetime
+import json
+import os
 import sys
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
@@ -14,6 +16,8 @@ from openpyxl.chart import LineChart, BarChart, Reference, Series
 from openpyxl.comments import Comment
 
 OUT = sys.argv[1] if len(sys.argv) > 1 else "/home/user/playbeforepixels/business/PlayBeforePixels_Financial_Model.xlsx"
+# Sensitivity runs pass input overrides as JSON, e.g. PBP_OVERRIDES='{"pos": 0.5, "SCHOOL_inc": [1, 1, 1]}'.
+OV = json.loads(os.environ.get("PBP_OVERRIDES", "{}"))
 
 # ---------------------------------------------------------------- styles
 AR = "Arial"
@@ -127,6 +131,8 @@ def a_sub(labels):
     R[0] += 1
 
 def inp(key, label, vals, fmt, unit, src, status, key_lever=False, formula=False):
+    if key in OV:
+        vals = OV[key]
     r = R[0]
     put(wa, f"A{r}", key, font=F_NOTE)
     put(wa, f"B{r}", label, wrap=True)
@@ -146,11 +152,16 @@ def inp(key, label, vals, fmt, unit, src, status, key_lever=False, formula=False
     return r
 
 a_sec("1. General settings")
-inp("start", "Model start month (month 1)", datetime.date(2026, 10, 1), DATEF, "month",
-    "Plan dated Sept 28, 2026. Wave 1 runs Oct-Dec 2026 (marketing/BLIND-SPOTS.md #2).", "Repo")
-inp("pos", "Cost position inside every Low-High range (0 = low, 1 = high)", 0.5, NUM2, "0-1",
-    "Drives the 'Model' column on Startup Costs, Monthly Operating Costs and Retail Readiness Costs.", "Assumption", True)
-inp("ramp", "Months for a new listing to reach full conversion (review ramp)", 6, "0", "months",
+inp("start", "Model start month (month 1; costs start here)", datetime.date(2026, 10, 1), DATEF, "month",
+    "Plan dated Sept 28, 2026. Setup costs (trademark, copyright, attorneys) begin in October 2026.", "Repo")
+inp("first_sale", "First month any listing can take money (Gate A met)", 3, "0", "month #",
+    "Gate A (section 5.12): business bank account open, employment counsel's go-ahead, GL insurance bound and the publish safeguards built. "
+    "As of Sept 28, 2026 none is done, so the model assumes Gate A by the end of Nov 2026 and first sales in Dec 2026 (month 3). "
+    "Each month of slip moves every channel back one month.", "Assumption", True)
+inp("pos", "Cost position inside every Low-High range (0 = low, 1 = high)", 0, NUM2, "0-1",
+    "Base plan = lean path: low-end quotes (0). Mid-point (0.5) and high end (1) are shown as sensitivities in section 3.9. "
+    "Drives the Model column on Startup Costs, Monthly Operating Costs and Retail Readiness Costs.", "Assumption", True)
+inp("ramp", "Months for a new listing to reach full sales rate (review ramp)", 6, "0", "months",
     "A new faceless shop starts with zero reviews against incumbents with 2,000-11,000 (marketing/DEMAND-CHECK.md, 'One honest warning').", "Assumption")
 inp("mdtax", "Maryland sales tax on direct (own-site) sales", 0.06, PCT1, "% of price",
     "commerce/storefront-setup-guide.md A3 (UNVERIFIED). Collected on top of price and remitted: pass-through, never counted as revenue.", "Repo [VERIFY]")
@@ -158,12 +169,18 @@ inp("refund", "Refund and chargeback allowance, direct digital sales", 0.02, PCT
     "ops/GAPS-ROUND-2.md G2-12: first refund request under about $15 is refunded automatically.", "Assumption")
 inp("refund_course", "Refund allowance, 30-Day Screen Reset (money-back guarantee)", 0.05, PCT1, "% of price",
     "DEMAND-CHECK course row: 'Add a money-back guarantee'.", "Assumption")
-inp("taxres", "Tax reserve transfer (% of each positive month's net cash)", 0.25, PCT1, "%",
-    "finance/TAX-AUTOPILOT.md §2: accountant picks the rate; 25-30% is common for self-employment income.", "Repo range")
+inp("taxres", "Tax reserve (% of cumulative profit to date, after one-time costs)", 0.25, PCT1, "%",
+    "finance/TAX-AUTOPILOT.md §2: accountant picks the rate; 25-30% is common. Reserved only against cumulative profit, because a single-member LLC's "
+    "losses pass through to the founder's return; the accountant sets the §195 startup-cost treatment.", "Repo range")
 inp("open", "Opening cash in the business account", 0, CUR0, "$",
     "finance/BANKING.md: the Chase checking account is closed; a new no-fee account opens empty.", "Repo")
-inp("owner", "Owner capital contribution in month 1", 0, CUR0, "$",
-    "Left at $0 so the model shows the funding need. Enter what the founder will put in.", "Assumption", True)
+inp("owner", "Planned owner capital contribution in month 1 (the forecast adds any further top-up needed)", 0, CUR0, "$",
+    "Cash Flow adds a founder top-up in any month the operating account would go below zero, so the funding need is always visible.", "Assumption", True)
+inp("card", "Existing balance on the Chase business card (an LLC liability), paid in month 1", 0, CUR0, "$",
+    "finance/BANKING.md: the Chase business card is still open. Balance not in the repo: founder to enter.", "Founder to enter")
+inp("cap", "Household-money cap: most founder capital the business may take (placeholder)", 12000, CUR0, "$",
+    "ops/GAPS-ROUND-2.md G2-10 asks the founder to write down a cap and a review date; neither is set. $12,000 is a placeholder only. "
+    "Hard stop: when cumulative founder capital reaches the cap, all non-deadline spending stops and the plan is re-forecast.", "Founder to set")
 inp("contin", "Operating contingency (% of monthly operating costs)", 0.10, PCT1, "%",
     "Buffer for price changes; nearly every subscription price in the repo is UNVERIFIED.", "Assumption")
 inp("resmo", "Cash reserve target (months of fixed costs)", 3, "0", "months",
@@ -180,12 +197,12 @@ inp("etsy_oa", "Etsy Offsite Ads fee when an ad drives the sale", 0.15, PCT1, "%
 inp("etsy_oashare", "Share of Etsy sales that come through Offsite Ads", 0.10, PCT1, "% of Etsy sales", "No data yet; check the Etsy statement after 90 days.", "Assumption")
 inp("kdp_roy", "KDP paperback royalty rate (list price $9.99 or more)", 0.60, PCT1, "% of list", "storefront-setup-guide §6: 60% at $9.99+ since June 10, 2025 (UNVERIFIED).", "Repo [VERIFY]")
 inp("kdp_base", "KDP print cost: fixed part", 1.00, CUR2, "$ per copy", "products/*/listing.json price_notes: $1.00 + $0.07/page premium color.", "Repo [VERIFY]")
-inp("kdp_color", "KDP print cost: premium color, per page", 0.07, CUR2, "$ per page", "Same source.", "Repo [VERIFY]")
-inp("kdp_bw", "KDP print cost: black-and-white, per page", 0.012, '$0.000', "$ per page", "Not in the repo. Outside figure from general knowledge.", "[VERIFY]")
-inp("plays_pages", "100 Screen-Free Plays paperback page count", 82, "0", "pages", "Count of page blocks in products/guide-100-plays/source-kdp.html; confirm at upload.", "Repo [VERIFY]")
+inp("kdp_color", "KDP print cost: premium color, per page", 0.07, CUR2, "$ per page", "Same source. KDP may price short color books at a flat rate; confirm in the calculator.", "Repo [VERIFY]")
+inp("kdp_bw_flat", "KDP print cost: black-and-white paperback, 24-108 pages (flat)", 2.30, CUR2, "$ per copy",
+    "products/guide-100-plays/listing.json: KDP's flat $2.30 for 24-108 B/W pages (82-page, 8 x 10 in book). Check whether 8 x 10 counts as large trim, which may cost more.", "Repo [VERIFY]")
 inp("pic_pages", "Picture-book and talk-along paperback page count", 32, "0", "pages", "products/*/listing.json ('pages': 32).", "Repo")
-inp("ing_disc", "IngramSpark wholesale discount given to retailers", 0.55, PCT1, "% of list", "MARKETING-PLAYBOOK libraries row ('Ingram at 55%'); storefront guide range 30-55%.", "Repo", True)
-inp("ing_hc_print", "IngramSpark print cost, 32-page 8.5x8.5 color hardcover", 8.50, CUR2, "$ per copy", "Not in the repo; listing.json says run IngramSpark's calculator.", "[VERIFY]")
+inp("ing_disc", "IngramSpark wholesale discount given to retailers", 0.40, PCT1, "% of list", "Base 40% (storefront guide range 30-55%). 55% reaches library jobbers (MARKETING-PLAYBOOK) but leaves hardcovers about $0.50 a copy; tested as a sensitivity.", "Repo range", True)
+inp("ing_hc_print", "IngramSpark print cost, 32-page 8.5x8.5 color hardcover", 8.50, CUR2, "$ per copy", "Not in the repo; listing.json says run IngramSpark's calculator. Hardcover is gated (weight 0) until the paperback sells.", "[VERIFY]")
 inp("ing_pb_print", "IngramSpark print cost, 32-page color paperback", 3.24, CUR2, "$ per copy", "Proxy: KDP premium-color formula from listing.json.", "Assumption [VERIFY]")
 inp("mor_pct", "Merchant of record (Gumroad) fee", 0.10, PCT1, "% of price", "storefront-setup-guide §13; legal/international-plan.md (UNVERIFIED). Covers card processing, US sales tax and EU/UK VAT.", "Repo [VERIFY]")
 inp("mor_fix", "Merchant of record fixed fee", 0.50, CUR2, "$ per order", "Same source.", "Repo [VERIFY]")
@@ -193,63 +210,84 @@ inp("tpt_payout", "Teachers Pay Teachers payout (Basic seller)", 0.55, PCT1, "% 
 inp("tpt_fix", "TPT per-resource transaction fee", 0.30, CUR2, "$ per sale", "Same source.", "Repo [VERIFY]")
 inp("amz_ref", "Amazon Seller Central / FBA referral fee", 0.15, PCT1, "% of price", "storefront-setup-guide §19 ('about 15%', UNVERIFIED).", "Repo [VERIFY]")
 inp("fba_fee", "Amazon FBA fulfilment fee per board book", 3.50, CUR2, "$ per unit", "Not in the repo.", "[VERIFY]")
+inp("amz_closing", "Amazon closing fee on books (media categories)", 1.80, CUR2, "$ per unit", "Not in the repo; applies to third-party sales in media categories.", "[VERIFY]")
+inp("fba_storage", "FBA monthly, long-term storage and inbound placement allowance", 0.40, CUR2, "$ per unit sold", "Not in the repo; allowance per unit sold.", "Assumption [VERIFY]")
+inp("ship_sub", "Postage absorbed per own-site board-book order (free shipping over a threshold)", 2.00, CUR2, "$ per order", "Free shipping is the market norm; assume the business absorbs about $2 of each order's postage.", "Assumption [VERIFY]")
 inp("faire_comm", "Faire commission (orders from retailers Faire finds)", 0.15, PCT1, "% of wholesale", "storefront-setup-guide §19; 0% on Faire Direct.", "Repo [VERIFY]")
 inp("faire_proc", "Faire payment processing", 0.03, PCT1, "% of wholesale", "Same source; conflicting 1.9-3.5% vs flat ~3%.", "Repo [VERIFY]")
 inp("whsl_pct", "Wholesale price as % of retail", 0.50, PCT1, "% of retail", "marketing/AMAZON-AND-RETAIL-ROADMAP.md B4; board-up-go-more/listing.json.", "Repo")
 inp("bigbox_ref", "Walmart Marketplace / Target Plus referral fee", 0.15, PCT1, "% of price", "Walmart books about 15% (storefront guide §19, UNVERIFIED). Target Plus is invitation-only; its terms are not in the repo.", "[VERIFY]")
 inp("retail_deduct", "Retail deductions and chargebacks allowance", 0.05, PCT1, "% of price", "Not in the repo; big-box programs deduct for compliance misses.", "[VERIFY]")
-inp("tee_pod", "Adult tee: POD base cost incl. print", 12.50, CUR2, "$ per unit", "Not in the repo; shipping assumed charged to the buyer.", "[VERIFY]")
+inp("tee_pod", "Adult tee: POD base cost incl. print", 12.50, CUR2, "$ per unit", "Not in the repo; shipping assumed charged to the buyer. Tee is weight 0 until trademark clearance (Wave 3).", "[VERIFY]")
 
-a_sec("3. Physical products: board book (Wave 3) and retail stock")
+a_sec("3. Physical products: board book (gated option) and retail stock")
 inp("bb_price", "Board book retail price (Up! Go! More!)", 12.99, CUR2, "$", "DEMAND-CHECK §4 rule 9; board-up-go-more/listing.json.", "Repo")
-inp("bb_low", "Offset print cost per copy: low", 1.80, CUR2, "$ per copy", "marketing/BLIND-SPOTS.md #11: roughly $1.80-$4 a copy at 1,000-3,000 copies [VERIFY with quotes].", "Repo [VERIFY]")
-inp("bb_high", "Offset print cost per copy: high", 4.00, CUR2, "$ per copy", "Same source.", "Repo [VERIFY]")
+inp("min_run", "Planned first offset run", 1000, NUM0, "copies", "BLIND-SPOTS #11: quotes at 500, 1,000 and 2,500 copies (5,000 added for a retail edition).", "Assumption")
 r = R[0]
-put(wa, f"A{r}", "bb_print", font=F_NOTE); put(wa, f"B{r}", "Offset print cost per copy used in model")
-put(wa, f"C{r}", f"=C{r-2}+{A['pos']}*(C{r-1}-C{r-2})", fmt=CUR2, font=F_CALC)
-put(wa, f"F{r}", "$ per copy"); put(wa, f"G{r}", "Low + cost position x (High - Low)", wrap=True); put(wa, f"H{r}", "Formula")
+hdr(wa, r, 1, 8, ["ID", "Offset quote table (run size -> print cost per copy)", "Run size", "Cost per copy", "", "Unit", "Source / basis", "Status"]); R[0] += 1
+q0 = R[0]
+for (qty, cost, src, st) in [(500, 5.50, "Above the BLIND-SPOTS range at a short run; no quote exists.", "Assumption [VERIFY]"),
+                             (1000, 4.00, "BLIND-SPOTS #11: $1.80-$4 at 1,000-3,000 copies; a 1,000-copy run sits at the high end.", "Repo [VERIFY]"),
+                             (2500, 2.20, "Interpolated toward $1.80 at 3,000 copies (BLIND-SPOTS #11).", "Assumption [VERIFY]"),
+                             (5000, 1.60, "Below the repo range; retail-edition planning figure only.", "Assumption [VERIFY]")]:
+    rr_ = R[0]
+    put(wa, f"A{rr_}", f"quote_{qty}", font=F_NOTE)
+    put(wa, f"B{rr_}", f"Quote at {qty:,} copies")
+    put(wa, f"C{rr_}", qty, fmt=NUM0, font=F_IN); put(wa, f"D{rr_}", cost, fmt=CUR2, font=F_IN)
+    put(wa, f"F{rr_}", "$ per copy"); put(wa, f"G{rr_}", src, wrap=True); put(wa, f"H{rr_}", st)
+    R[0] += 1
+A["quote_qty"] = f"{q('Assumptions')}!$C${q0}:$C${q0+3}"
+A["quote_cost"] = f"{q('Assumptions')}!$D${q0}:$D${q0+3}"
+r = R[0]
+put(wa, f"A{r}", "bb_print", font=F_NOTE); put(wa, f"B{r}", "Offset print cost per copy used in model (quote at the planned run size)")
+put(wa, f"C{r}", f"=LOOKUP({A['min_run']},{A['quote_qty']},{A['quote_cost']})", fmt=CUR2, font=F_CALC)
+put(wa, f"F{r}", "$ per copy"); put(wa, f"G{r}", "Largest quoted run size at or below the planned run.", wrap=True); put(wa, f"H{r}", "Formula")
 A["bb_print"] = f"{q('Assumptions')}!$C${r}"; R[0] += 1
 inp("freight", "Freight, duties and warehouse receiving", 0.25, PCT1, "% of print cost", "BLIND-SPOTS #11 asks quotes to cover shipping, duties and warehouse fees; no figure given.", "Assumption [VERIFY]")
 r = R[0]
 put(wa, f"A{r}", "landed", font=F_NOTE); put(wa, f"B{r}", "Landed cost per copy (print + freight/duties)")
 put(wa, f"C{r}", f"={A['bb_print']}*(1+{A['freight']})", fmt=CUR2, font=F_CALC)
-put(wa, f"F{r}", "$ per copy"); put(wa, f"G{r}", "DEMAND-CHECK rule 9 target: landed cost at or below 35-40% of retail.", wrap=True); put(wa, f"H{r}", "Formula")
+put(wa, f"F{r}", "$ per copy"); put(wa, f"G{r}", "Cost rules by channel (section 3.8): own site/FBA at or below 35% of retail; Faire/wholesale 25%; chain 20%.", wrap=True); put(wa, f"H{r}", "Formula")
 A["landed"] = f"{q('Assumptions')}!$C${r}"; R[0] += 1
-inp("pick", "3PL pick, pack and ship-handling per single order", 3.50, CUR2, "$ per order", "Not in the repo; postage itself assumed charged to the buyer.", "[VERIFY]")
+inp("pick", "3PL pick, pack and ship-handling per single order", 3.50, CUR2, "$ per order", "Not in the repo; postage is a separate line (ship_sub).", "[VERIFY]")
 inp("whs_handle", "3PL handling per unit on wholesale cartons", 1.00, CUR2, "$ per unit", "Not in the repo.", "[VERIFY]")
-inp("tpl_min", "3PL monthly minimum / storage", 100, CUR0, "$ per month", "Not in the repo.", "[VERIFY]")
+inp("tpl_min", "3PL monthly minimum / storage", 150, CUR0, "$ per month", "Not in the repo; replace with written 3PL quotes (many 3PLs set higher minimums).", "[VERIFY]")
 inp("seller_central", "Amazon Seller Central Professional plan", 39.99, CUR2, "$ per month", "storefront-setup-guide §19 (UNVERIFIED).", "Repo [VERIFY]")
-inp("min_run", "Minimum first offset run", 1000, NUM0, "copies", "BLIND-SPOTS #11: quotes at 500, 1,000 and 2,500 copies.", "Assumption")
 inp("buffer", "Print buffer over pre-sale units", 0.40, PCT1, "%", "BLIND-SPOTS #16: 'Order what sold plus 30-50%'.", "Repo range")
-inp("presale_len", "Pre-sale length before the print order", 3, "0", "months", "BLIND-SPOTS #16: Feb-Apr 2027 pre-sale.", "Repo")
+inp("presale_len", "Pre-sale length before the print decision", 3, "0", "months", "BLIND-SPOTS #16: three-month pre-sale.", "Repo")
 inp("presale_buf", "Buffer in the pre-sale funding goal", 0.15, PCT1, "%", "BLIND-SPOTS #16: goal = printing + shipping + duties + fees + delivery + about 15% buffer.", "Repo")
-inp("school_setup", "School/group wave one-time setup (TPT fee, purchasing kit, host kit build)", 179, CUR0, "$", "TPT Basic $29 (storefront guide §11); purchasing kit $0-50 and Family Night kit $0-100 (MARKETING-PLAYBOOK).", "Repo")
+inp("presale_fail", "Cost of a pre-sale that misses the go line (terms review, pre-order app, card fees not returned on refunds)", 400, CUR0, "$",
+    "Assumption. Below the go line the pre-sale is refunded in full and the talk-along paperback stays on print-on-demand (section 3.10 rule 4).", "Assumption")
+inp("reorder_lead", "Reorder lead time (print + freight)", 3, "0", "months", "Not in the repo; offset printing abroad plus ocean freight commonly takes 2-4 months.", "Assumption [VERIFY]")
+inp("school_setup", "School/group wave one-time setup (TPT Premium, purchasing kit, host-kit build, counsel review of terms, fraud-check SOP)", 739, CUR0, "$",
+    "TPT Premium $59.95/yr and purchasing kit $0-50 (MARKETING-PLAYBOOK); host kit $0-100; counsel review of license and PO terms about $500 (assumption).", "Repo + Assumption")
 inp("retail_lead", "Retail readiness spend lead time before retail launch", 3, "0", "months", "Readiness checklist must be done before pitching (AMAZON-AND-RETAIL-ROADMAP B5).", "Assumption")
 
 a_sec("4. Payout delay by channel (months after the sale month)")
 CH = [
-    ("SITE", "Own site: printables, PDFs and POD tee (Shopify)", "Site sessions (all visitors)", 0, "c",
+    ("SITE", "Own site: printables and PDFs (Shopify)", "Product-months live (products x sales index x season)", 0, "c",
      "Shopify Payments pays out within days (storefront guide A6)."),
-    ("ETSY", "Etsy: printables", "Etsy listing visits", 0, "c", "Etsy deposits on the schedule you choose (A6)."),
-    ("KDP", "Amazon KDP: paperbacks", "Amazon detail-page views", 2, "c", "KDP pays about 60 days after month end (A6)."),
-    ("INGRAM", "IngramSpark: hardcovers, bookstores, libraries", "Retailer and library listing views (est.)", 3, "c",
+    ("ETSY", "Etsy: printables", "Product-months live (products x sales index x season)", 1, "c",
+     "Etsy deposits on a schedule, but new sellers face a 14-day hold and a possible rolling reserve (section 5 risk 1); one month assumed."),
+    ("KDP", "Amazon KDP: paperbacks", "Title-months live (titles x season)", 2, "c", "KDP pays about 60 days after month end (A6)."),
+    ("INGRAM", "IngramSpark: paperbacks to bookstores and libraries", "Title-months live (titles x season)", 3, "c",
      "IngramSpark pays about 90 days after month end (A6, UNVERIFIED)."),
-    ("MOR", "International digital via merchant of record (Gumroad)", "International site sessions", 0, "c",
+    ("MOR", "International digital via merchant of record (Gumroad)", "Product-months live (products x sales index x season)", 0, "c",
      "Gumroad pays weekly (A6, UNVERIFIED)."),
     ("COURSE", "30-Day Screen Reset written course (Wave 2)", "Subscribers reached by the offer", 0, "c",
      "Sold on Shopify; same payout timing."),
-    ("BOARD", "Board book: pre-sale, then 3PL and Amazon FBA (Wave 3)", "Product-page sessions (site + Amazon)", 0, "c",
+    ("BOARD", "Board book: pre-sale, then 3PL and Amazon FBA (gated option; off in base)", "Product-page sessions (site + Amazon)", 0, "c",
      "Shopify within days; Seller Central about every 14 days (A6)."),
-    ("SCHOOL", "School and group licenses + TPT (held for counsel)", "Schools/orgs page + TPT views", 1, "s",
+    ("SCHOOL", "School and group licenses + TPT (overlay only if counsel clears in writing; off in base)", "Schools/orgs page + TPT views", 1, "s",
      "TPT pays monthly; school invoices are net-30 (commerce/PAYMENTS.md)."),
-    ("RETAIL", "Retail and wholesale: Faire, Walmart Marketplace, Target Plus", "Retailer and marketplace views", 1, "c",
+    ("RETAIL", "Retail and wholesale: Faire, Walmart Marketplace (off in base)", "Retailer and marketplace views", 1, "c",
      "Faire/Walmart settlement timing UNVERIFIED; one month assumed."),
 ]
 CH_NAME = {c[0]: c[1] for c in CH}
 for code, name, tl, lag, seas, src in CH:
-    inp(f"lag_{code}", f"Payout delay: {name}", lag, "0", "months", src, "Repo" if code not in ("RETAIL",) else "Assumption")
+    inp(f"lag_{code}", f"Payout delay: {name}", lag, "0", "months", src, "Repo" if code not in ("RETAIL", "ETSY") else "Assumption")
 
-a_sec("5. Seasonality index by calendar month (1.00 = average month)")
+a_sec("5. Seasonality index by calendar month (the forecast divides by the 12-month average, so the index always averages 1.00)")
 a_sub(["ID", "Calendar month", "Consumer index", "School / group index", "", "Unit", "Source / basis", "Status"])
 cons = [1.25, 0.90, 1.00, 1.05, 0.95, 1.00, 0.95, 0.85, 0.85, 0.95, 1.30, 1.35]
 schl = [1.10, 1.00, 1.00, 0.90, 0.70, 0.40, 0.60, 1.30, 1.40, 1.20, 1.00, 0.70]
@@ -272,68 +310,93 @@ A["season_s"] = f"{q('Assumptions')}!$D${s0}:$D${s0+11}"
 
 a_sec("6. Scenario drivers: traffic -> conversion -> orders -> order value (yellow = key levers)")
 a_sub(["ID", "Driver", "Conservative", "Expected", "Strong", "Unit", "Source / basis", "Status"])
+# Driver meaning by channel group (see DRV labels):
+#   P (SITE, ETSY, MOR): base = unused; g1-g3 = monthly growth in sales per product; cvr = orders per live product per month at full ramp
+#   T (KDP, INGRAM): base = titles live at launch; tadd/tcap = titles added per month and cap; cvr = units per title per month at full ramp
+#   L (COURSE): subscribers reached x conversion
+#   V (BOARD, SCHOOL, RETAIL): visits x conversion (optional waves, off in the base plan)
+GROUP = {"SITE": "P", "ETSY": "P", "MOR": "P", "KDP": "T", "INGRAM": "T", "COURSE": "L", "BOARD": "V", "SCHOOL": "V", "RETAIL": "V"}
 SC = {
-    "SITE":   dict(inc=[1, 1, 1], launch=[1, 1, 1], base=[300, 600, 1000], g1=[.08, .12, .12], g2=[.04, .06, .07], g3=[.02, .03, .04], cvr=[.010, .015, .020], items=[1.15, 1.25, 1.35]),
-    "ETSY":   dict(inc=[1, 1, 1], launch=[1, 1, 1], base=[400, 800, 1200], g1=[.08, .12, .12], g2=[.03, .05, .06], g3=[.01, .02, .03], cvr=[.010, .020, .025], items=[1.10, 1.20, 1.30]),
-    "KDP":    dict(inc=[1, 1, 1], launch=[2, 2, 2], base=[300, 600, 900], g1=[.06, .10, .10], g2=[.03, .04, .05], g3=[.01, .02, .03], cvr=[.03, .05, .06], items=[1.00, 1.05, 1.10]),
-    "INGRAM": dict(inc=[1, 1, 1], launch=[3, 3, 3], base=[100, 200, 300], g1=[.04, .06, .06], g2=[.02, .03, .04], g3=[.01, .02, .02], cvr=[.02, .03, .035], items=[1.00, 1.00, 1.05]),
-    "MOR":    dict(inc=[1, 1, 1], launch=[4, 4, 4], cvr=[.008, .012, .016], items=[1.10, 1.20, 1.30]),
+    "SITE":   dict(inc=[1, 1, 1], launch=[3, 3, 3], g1=[0, .005, .01], g2=[0, .005, .01], g3=[0, 0, .005], cvr=[3, 4, 8], items=[1.15, 1.25, 1.35]),
+    "ETSY":   dict(inc=[1, 1, 1], launch=[3, 3, 3], g1=[0, .005, .01], g2=[0, .005, .01], g3=[0, 0, .005], cvr=[5, 7, 13], items=[1.10, 1.20, 1.30]),
+    "KDP":    dict(inc=[1, 1, 1], launch=[3, 3, 3], base=[3, 3, 3], tadd=[.25, .33, .5], tcap=[8, 10, 12], cvr=[2.5, 5, 10], items=[1, 1, 1]),
+    "INGRAM": dict(inc=[1, 1, 1], launch=[5, 5, 5], base=[2, 2, 2], tadd=[.1, .15, .2], tcap=[4, 5, 6], cvr=[.5, 1, 2], items=[1, 1, 1]),
+    "MOR":    dict(inc=[1, 1, 1], launch=[4, 4, 4], g1=[0, .005, .01], g2=[0, .005, .01], g3=[0, 0, .005], cvr=[.8, 1.2, 2.0], items=[1.10, 1.20, 1.30]),
     "COURSE": dict(inc=[1, 1, 1], launch=[4, 4, 4], cvr=[.010, .015, .020], items=[1, 1, 1]),
-    "BOARD":  dict(inc=[1, 1, 1], launch=[5, 5, 5], base=[150, 300, 500], g1=[.04, .06, .06], g2=[.02, .04, .05], g3=[.01, .02, .03], cvr=[.015, .025, .030], items=[1.10, 1.20, 1.30]),
-    "SCHOOL": dict(inc=[0, 1, 1], launch=[13, 13, 10], base=[150, 300, 400], g1=[.04, .06, .06], g2=[.04, .06, .06], g3=[.02, .03, .03], cvr=[.010, .015, .020], items=[1.00, 1.10, 1.20]),
-    "RETAIL": dict(inc=[0, 1, 1], launch=[25, 25, 22], base=[300, 600, 1200], g1=[.03, .05, .08], g2=[.03, .05, .08], g3=[.03, .05, .08], cvr=[.005, .010, .015], items=[3, 4, 5]),
+    "BOARD":  dict(inc=[0, 0, 0], launch=[17, 17, 14], base=[150, 300, 500], g1=[.04, .06, .06], g2=[.02, .04, .05], g3=[.01, .02, .03], cvr=[.015, .025, .030], items=[1.10, 1.20, 1.30]),
+    "SCHOOL": dict(inc=[0, 0, 0], launch=[13, 13, 10], base=[150, 300, 400], g1=[.04, .06, .06], g2=[.04, .06, .06], g3=[.02, .03, .03], cvr=[.010, .015, .020], items=[1.00, 1.10, 1.20]),
+    "RETAIL": dict(inc=[0, 0, 0], launch=[25, 25, 22], base=[300, 600, 1200], g1=[.03, .05, .08], g2=[.03, .05, .08], g3=[.03, .05, .08], cvr=[.005, .010, .015], items=[3, 4, 5]),
 }
 LAUNCH_SRC = {
-    "SITE": "Launch-first five live before Black Friday, Nov 27, 2026 (ops/QUEUE.md).",
-    "ETSY": "Launch-first five on Etsy + site (DEMAND-CHECK §3).",
-    "KDP": "100 Screen-Free Plays paperback, Wave 1 (BLIND-SPOTS #2).",
-    "INGRAM": "IngramSpark hardcovers after KDP (storefront guide Part B, step 5).",
+    "SITE": "Launch-first five (ops/QUEUE.md). Listings are built Oct-Nov; money can be taken only from the first-sale month (Gate A).",
+    "ETSY": "Launch-first five on Etsy + site (DEMAND-CHECK §3); first-sale month applies.",
+    "KDP": "100 Screen-Free Plays, Up! Go! More! and The Day the Tablet Slept paperbacks (Wave 1); live Nov 13 at the earliest, paying from the first-sale month.",
+    "INGRAM": "IngramSpark same-ISBN paperbacks in Wave 2 (section 2.7).",
     "MOR": "Region 2 English-speaking markets after US launch (ops/INTERNATIONAL.md).",
     "COURSE": "Public New Year launch, January 2027 = month 4 (BLIND-SPOTS #2 Wave 2).",
-    "BOARD": "Pre-sale Feb-Apr 2027 = month 5 (BLIND-SPOTS #16; Wave 3).",
-    "SCHOOL": "Held until employment counsel clears school-facing work. Conservative assumes it never opens inside 36 months.",
-    "RETAIL": "After a 12-month sales record (AMAZON-AND-RETAIL-ROADMAP B1, B5). Conservative assumes no retail inside 36 months.",
+    "BOARD": "Gated option, off in every base scenario: runs only after sustained break-even and the POD-paperback proxy test (section 3.10 rule 4). Month 17 = Feb 2028 if switched on.",
+    "SCHOOL": "Off in every base scenario. Overlay only if employment counsel clears school-facing work in writing (section 3.9).",
+    "RETAIL": "Off in every base scenario. Needs three physical SKUs, quoted landed cost within the channel cost rule and a positive self-funding check (section 3.10 rule 5).",
 }
 DRV = [("inc", "Include in scenario (1 = yes, 0 = no)", "0", "flag", True),
-       ("launch", "Launch month (model month #)", "0", "month #", False),
+       ("launch", "Launch month (model month #; never earlier than the first-sale month)", "0", "month #", False),
        ("base", "Traffic in launch month", NUM0, "visits", True),
+       ("tadd", "Titles added per month", NUM2, "titles", False),
+       ("tcap", "Most titles live", "0", "titles", False),
        ("g1", "Monthly traffic growth, year 1", PCT1, "% per month", False),
        ("g2", "Monthly traffic growth, year 2", PCT1, "% per month", False),
        ("g3", "Monthly traffic growth, year 3", PCT1, "% per month", False),
        ("cvr", "Conversion rate (visit -> order) at full ramp", PCT2, "% of visits", True),
        ("items", "Items per order", NUM2, "items", False)]
+a_sec("6a. Digital catalog size (drives the own site, Etsy and the merchant of record)")
+a_sub(["ID", "Driver", "Conservative", "Expected", "Strong", "Unit", "Source / basis", "Status"])
+inp("prod_start", "Digital products live in the first-sale month", [5, 5, 5], "0", "products", "The launch-first five (ops/QUEUE.md; section 1.5 counts them as 5 listings).", "Repo")
+inp("prod_add", "Digital products added per month", [.5, .75, 1.0], NUM2, "products", "Publish cap is 5 new Etsy listings a week (ops/ROUTINE.md), but each product needs demand evidence first; weak items fold into bundles.", "Assumption")
+inp("prod_cap", "Most digital products live at once", [12, 15, 20], "0", "products", "Kill rule and bundling keep the catalog small (ops/QUEUE.md).", "Assumption")
+a_sec("6b. Scenario drivers by channel (yellow = key levers)")
+a_sub(["ID", "Driver", "Conservative", "Expected", "Strong", "Unit", "Source / basis", "Status"])
 for code, name, tl, lag, seas, src in CH:
-    R[0] += 0
     r = R[0]
     for cc in range(1, 9):
         wa.cell(row=r, column=cc).fill = TOT_FILL
-    put(wa, f"B{r}", f"{name}  |  traffic = {tl}", bold=True)
+    put(wa, f"B{r}", f"{name}  |  driver = {tl}", bold=True)
     R[0] += 1
     d = SC[code]
+    grp = GROUP[code]
     for k, lab, fmt, unit, kl in DRV:
         if k not in d:
             continue
-        lab2 = lab
+        lab2, fmt2, unit2 = lab, fmt, unit
+        srcx = ""
+        status = "Assumption"
+        if grp == "P":
+            if k in ("g1", "g2", "g3"):
+                lab2 = f"Monthly growth in sales per product, year {k[1]}"
+            if k == "cvr":
+                lab2, fmt2, unit2 = "Orders per live product per month at full ramp", NUM2, "orders"
+                srcx = "Anchored to section 1.5: all digital channels together sell about 10 (Conservative = section 1 Low), 15 (Expected) or 30 (Strong = section 1 Base) units per product per month at full ramp."
+        if grp == "T":
+            if k == "base":
+                lab2, fmt2, unit2 = "Titles live at launch", "0", "titles"
+                srcx = "KDP: 100 Screen-Free Plays, Up! Go! More!, The Day the Tablet Slept. IngramSpark: the two paperbacks (hardcovers gated)." 
+            if k == "cvr":
+                lab2, fmt2, unit2 = "Units per title per month at full ramp", NUM2, "units"
+                srcx = "KDP and IngramSpark report units per title, not page views, so the driver is units per title (comparable-title benchmark, assumption). Conservative sits at the kill-rule floor (2.5 a month)."
         if code == "RETAIL" and k == "items":
             lab2 = "Units per order (wholesale cartons mixed with single marketplace orders)"
         if code == "COURSE" and k == "cvr":
             lab2 = "Conversion rate (subscriber reached -> purchase)"
-        srcx = ""
-        status = "Assumption"
         if k == "launch":
             srcx = LAUNCH_SRC[code]
-            status = "Repo timing" if code not in ("SCHOOL", "RETAIL") else "Assumption (conditional)"
-        elif k == "cvr" and code == "SITE":
-            srcx = "MARKETING-PLAYBOOK traffic checklist: working target 1.5-3% site conversion."
-            status = "Repo range"
-        elif k == "inc" and code in ("SCHOOL", "RETAIL"):
-            srcx = "Conditional wave. Set to 0 to see the business without it."
-        elif k == "base":
-            srcx = "No sales history yet. Replace with the first 90 days of real data."
-        inp(f"{code}_{k}", lab2, d[k], fmt, unit, srcx, status, key_lever=kl)
+            status = "Repo timing" if code not in ("SCHOOL", "RETAIL", "BOARD") else "Assumption (conditional)"
+        elif k == "inc" and code in ("SCHOOL", "RETAIL", "BOARD"):
+            srcx = "Conditional wave, off in the base plan. Set to 1 to see it as an overlay."
+        elif k == "base" and grp == "V":
+            srcx = "No sales history yet. Replace with real data."
+        inp(f"{code}_{k}", lab2, d[k], fmt2, unit2, srcx, status, key_lever=kl)
     if code == "SITE":
-        inp("intl", "Share of site sessions from outside the US (served by the merchant of record once live)", [.15, .20, .25], PCT1, "% of sessions",
-            "International plan: English-speaking Region 2 first (ops/INTERNATIONAL.md).", "Assumption")
+        inp("site_cvr", "Own-site conversion rate (used only to estimate sessions for list sign-ups)", [.010, .015, .020], PCT2, "% of sessions",
+            "MARKETING-PLAYBOOK traffic checklist: working target 1.5-3% site conversion.", "Repo range")
     if code == "COURSE":
         inp("reach", "Share of the email list that sees and considers the offer each month", [.10, .15, .20], PCT1, "% of list",
             "Course sold by automated email (DEMAND-CHECK course row).", "Assumption")
@@ -341,16 +404,17 @@ for code, name, tl, lag, seas, src in CH:
 R[0] += 1
 sec(wa, R[0], 1, 8, "Email list (owned audience; drives the course)")
 R[0] += 1
-inp("signup", "Site visitors who join the list (free '3 plays for your child's age')", [.02, .03, .04], PCT1, "% of sessions", "BLIND-SPOTS #5 lead magnet.", "Assumption", True)
-inp("optin", "Buyers who join through the bonus QR / short link", [.10, .15, .20], PCT1, "% of orders", "BLIND-SPOTS #5: QR code and short link in every product file.", "Assumption")
+inp("signup", "Own-site visitors who join the list (free '3 plays for your child's age')", [.02, .03, .04], PCT1, "% of sessions", "BLIND-SPOTS #5 lead magnet.", "Assumption", True)
+inp("optin", "Own-site, KDP, IngramSpark and merchant-of-record buyers who join through the bonus QR / short link", [.10, .15, .20], PCT1, "% of orders",
+    "BLIND-SPOTS #5. Etsy and TpT editions carry no URL or QR code (BRAND.md), so Etsy buyers are excluded.", "Assumption")
 inp("churn", "Monthly unsubscribe rate", [.020, .015, .010], PCT1, "% of list", "", "Assumption")
 R[0] += 1
-sec(wa, R[0], 1, 8, "Paid advertising (one test at a time; cut ad sets that miss target CAC)")
+sec(wa, R[0], 1, 8, "Paid advertising: optional tests only. Traffic in this model is organic; ads get no revenue credit, so they are a pure cost.")
 R[0] += 1
-inp("ads_start", "Ads start month", [2, 2, 2], "0", "month #", "MARKETING-PLAYBOOK week 4 (Oct 19-25): Amazon Ads $5-10/day on live titles.", "Repo")
-inp("ads1", "Ad spend per month, year 1", [0, 150, 300], CUR0, "$ per month", "Amazon Ads $5-10/day; Pinterest $10-20/day test after about 60 days (MARKETING-PLAYBOOK).", "Repo range")
-inp("ads2", "Ad spend per month, year 2", [150, 300, 600], CUR0, "$ per month", "Adds Google Search at $10/day once site conversion is at least 1.5% (MARKETING-PLAYBOOK #12).", "Repo range")
-inp("ads3", "Ad spend per month, year 3", [250, 450, 900], CUR0, "$ per month", "Raise only while CAC is under target (MARKETING-PLAYBOOK checklist).", "Assumption")
+inp("ads_start", "Ads start month", [4, 4, 4], "0", "month #", "After the first-sale month and a month of organic data (MARKETING-PLAYBOOK: Amazon Ads $5-10/day on live titles).", "Assumption")
+inp("ads1", "Ad test budget per month, year 1", [0, 150, 300], CUR0, "$ per month", "Amazon Ads floor of $5/day. The playbook's Pinterest and Meta tests ($300-$600 each) wait for the break-even line (section 3.10).", "Repo range")
+inp("ads2", "Ad test budget per month, year 2", [100, 250, 500], CUR0, "$ per month", "One test at a time; cut ad sets that miss target CAC (MARKETING-PLAYBOOK).", "Assumption")
+inp("ads3", "Ad test budget per month, year 3", [150, 350, 700], CUR0, "$ per month", "Raise only while CAC is under target (MARKETING-PLAYBOOK checklist).", "Assumption")
 
 wa.column_dimensions["A"].width = 14
 wa.column_dimensions["B"].width = 58
@@ -403,22 +467,22 @@ TPT = dict(F=f"=1-{a['tpt_payout']}", G=a["tpt_fix"], H=0, I=0, J=0, tax=TAX_TPT
 SCHD = dict(F=0, G=0, H=a["shop_pct"], I=a["shop_fix"], J=0, tax=TAX_SCH)
 
 KDP_COLOR = f"={a['kdp_base']}+{a['kdp_color']}*{a['pic_pages']}"
-KDP_BW = f"={a['kdp_base']}+{a['kdp_bw']}*{a['plays_pages']}"
+KDP_BW = f"={a['kdp_bw_flat']}"
 DIGI = [  # id, product, price, weight, src
-    ("routine", "Visual routine cards (200+ editable, 0-5 and 5-12)", 6.50, 25, "DEMAND-CHECK §3 #1: $9.50 list / about $6.50 sale. Everyday price set at $6.50 under BRAND.md 'Honest pricing' (no permanent anchor discounts)."),
+    ("routine", "Visual routine cards (200+ editable; 0-5 set at launch, 5-12 set added free when G1 clears)", 6.50, 25, "Everyday price $6.50 under BRAND.md 'Honest pricing' (no anchor or permanent sale)."),
     ("bored", "\"I'm bored\" play cards (150, age-banded)", 6.50, 15, "DEMAND-CHECK §3 #2."),
-    ("family", "Play-First Family Kit", 11.00, 20, "DEMAND-CHECK §3 #3."),
-    ("busy", "Toddler busy book printable (120-150 pages)", 11.99, 18, "DEMAND-CHECK §3 #4: $15.99 list, sold at about $11-12; everyday price $11.99 under Honest pricing."),
+    ("family", "Play-First Family Kit (2-5 pages at launch; 5-12 pages added free when G1 clears)", 11.00, 20, "DEMAND-CHECK §3 #3."),
+    ("busy", "Toddler busy book printable (120-150 pages)", 11.99, 18, "Everyday price $11.99 under BRAND.md 'Honest pricing' (DEMAND-CHECK §3 #4 street level)."),
     ("playspdf", "100 Screen-Free Plays (PDF)", 9.99, 10, "DEMAND-CHECK §3 #5."),
     ("car", "Screen-Free Car Ride & Waiting Pack", 6.00, 5, "DEMAND-CHECK §3 first alternate."),
     ("flash", "First-words flash cards (printable)", 6.99, 3, "DEMAND-CHECK §2 #3."),
-    ("alpha", "ALPHAPLAY Spelling Games printable", 6.00, 2, "ops/QUEUE.md #1 (trademark use). No price in repo; $6 is an assumption (never list a single under $5, rule 3)."),
+    ("alpha", "ALPHAPLAY Spelling Games printable (G1; trademark-use product)", 6.00, 0, "ops/QUEUE.md #1. Weight 0: its job is to protect the mark, it is G1 pending counsel, and the demand check found no sales evidence."),
 ]
 UROWS = []  # dicts
 for pid, pname, price, w, src in DIGI:
     UROWS.append(dict(code="SITE", pid=f"SITE_{pid}", prod=pname, route="Own site (Shopify)", wave="1", price=price, w=w, K=0, L=0, O=0, src=src, **SHOP))
 UROWS.append(dict(code="SITE", pid="SITE_tee", prod="Adult tee (POD, 2-3 cleared designs max)", route="Own site (Shopify) + POD partner", wave="1",
-                  price=27, w=2, K=a["tee_pod"], L=0, O=0, src="DEMAND-CHECK tees row: $27; no merch line beyond 2-3 designs.", **SHOP))
+                  price=27, w=0, K=a["tee_pod"], L=0, O=0, src="DEMAND-CHECK tees row: $27. Weight 0 until the designs clear trademark review (Wave 3).", **SHOP))
 for pid, pname, price, w, src in DIGI:
     UROWS.append(dict(code="ETSY", pid=f"ETSY_{pid}", prod=pname, route="Etsy", wave="1", price=("ref", f"SITE_{pid}"), w=w, K=0, L=0, O=0,
                       src="Price linked to the own-site row.", **ETSY))
@@ -427,46 +491,45 @@ for pid, pname, price, w, src in DIGI[:5]:
                       price=("ref", f"SITE_{pid}"), w=w, K=0, L=0, O=0, src="International plan: one MoR for international digital sales.", **MOR))
 UROWS += [
     dict(code="KDP", pid="KDP_plays", prod="100 Screen-Free Plays (paperback, B/W interior)", route="Amazon KDP", wave="1", price=16.99, w=50,
-         K=KDP_BW, L=0, O=0, src="DEMAND-CHECK §3 #5: $16.99 paperback. Print cost uses the B/W rate [VERIFY].", **KDPc),
+         K=KDP_BW, L=0, O=0, src="guide-100-plays/listing.json: $16.99; KDP flat $2.30 B/W print; net about $7.89 [VERIFY].", **KDPc),
     dict(code="KDP", pid="KDP_tablet", prod="The Day the Tablet Slept (paperback)", route="Amazon KDP", wave="1", price=11.99, w=20,
          K=KDP_COLOR, L=0, O=0, src="picture-tablet-slept/listing.json: $11.99; about $3.95/copy royalty.", **KDPc),
     dict(code="KDP", pid="KDP_upgo", prod="Up! Go! More! (talk-along paperback)", route="Amazon KDP", wave="1", price=11.99, w=30,
          K=KDP_COLOR, L=0, O=0, src="board-up-go-more/listing.json: $11.99 paperback edition sells now with no inventory.", **KDPc),
-    dict(code="INGRAM", pid="ING_laps", prod="Laps Not Apps (32-page hardcover)", route="IngramSpark", wave="1", price=19.99, w=35,
-         K=a["ing_hc_print"], L=0, O=0, src="picture-laps-not-apps/listing.json: $19.99; aim print cost at or below 35-40% of list.", **ING),
-    dict(code="INGRAM", pid="ING_tablet", prod="The Day the Tablet Slept (hardcover)", route="IngramSpark", wave="1", price=19.99, w=25,
-         K=a["ing_hc_print"], L=0, O=0, src="picture-tablet-slept/listing.json: hardcover $19.99.", **ING),
-    dict(code="INGRAM", pid="ING_plays", prod="100 Screen-Free Plays (paperback via Ingram)", route="IngramSpark (same ISBN; KDP Expanded Distribution off)", wave="1",
-         price=("ref", "KDP_plays"), w=20, K=KDP_BW, L=0, O=0, src="storefront-setup-guide Part D. Print cost proxy = KDP B/W formula [VERIFY].", **ING),
-    dict(code="INGRAM", pid="ING_upgo", prod="Up! Go! More! (paperback via Ingram)", route="IngramSpark", wave="1",
-         price=("ref", "KDP_upgo"), w=20, K=a["ing_pb_print"], L=0, O=0, src="board-up-go-more/listing.json channels.", **ING),
+    dict(code="INGRAM", pid="ING_plays", prod="100 Screen-Free Plays (paperback via Ingram)", route="IngramSpark (same ISBN; KDP Expanded Distribution off)", wave="2",
+         price=("ref", "KDP_plays"), w=50, K=KDP_BW, L=0, O=0, src="storefront-setup-guide Part D. Print cost proxy = KDP flat B/W rate [VERIFY].", **ING),
+    dict(code="INGRAM", pid="ING_upgo", prod="Up! Go! More! (paperback via Ingram)", route="IngramSpark", wave="2",
+         price=("ref", "KDP_upgo"), w=50, K=a["ing_pb_print"], L=0, O=0, src="board-up-go-more/listing.json channels.", **ING),
+    dict(code="INGRAM", pid="ING_tablet", prod="The Day the Tablet Slept (hardcover; gated)", route="IngramSpark", wave="gated", price=19.99, w=0,
+         K=a["ing_hc_print"], L=0, O=0, src="picture-tablet-slept/listing.json: turn on only after the paperback sells (demand 'Weak'). Weight 0. "
+         "Laps Not Apps is not in this channel: it is now a personalized keepsake printed per order (amazon_route 'none-with-reason').", **ING),
     dict(code="COURSE", pid="CRS_single", prod="30-Day Screen Reset (written program)", route="Own site (Shopify) + automated email", wave="2", price=27, w=70,
          K=0, L=0, O=0, src="DEMAND-CHECK course row: $27.", **dict(SHOP, J=a["refund_course"])),
     dict(code="COURSE", pid="CRS_bundle", prod="30-Day Screen Reset bundle", route="Own site (Shopify) + automated email", wave="2", price=49, w=30,
          K=0, L=0, O=0, src="DEMAND-CHECK course row: $49 bundle.", **dict(SHOP, J=a["refund_course"])),
-    dict(code="BOARD", pid="BB_site", prod="Up! Go! More! board book", route="Own site; offset stock at a 3PL", wave="3", price=("a", a["bb_price"]), w=60,
-         K=a["landed"], L=a["pick"], O=a["landed"], src="Offset run held and shipped by a 3PL, never the founder (BRAND.md). Postage charged to the buyer.", **SHOP),
-    dict(code="BOARD", pid="BB_fba", prod="Up! Go! More! board book", route="Amazon FBA", wave="3", price=("a", a["bb_price"]), w=40,
-         K=a["landed"], L=a["fba_fee"], O=a["landed"], src="AMAZON-AND-RETAIL-ROADMAP A: board books via FBA; CPSIA paperwork first.",
-         F=a["amz_ref"], G=0, H=0, I=0, J=0, tax=TAX_AMZ),
+    dict(code="BOARD", pid="BB_site", prod="Up! Go! More! board book", route="Own site; offset stock at a 3PL", wave="gated", price=("a", a["bb_price"]), w=60,
+         K=a["landed"], L=f"={a['pick']}+{a['ship_sub']}", O=a["landed"], src="Offset run held and shipped by a 3PL, never the founder (BRAND.md). Pick/pack plus about $2 of postage absorbed.", **SHOP),
+    dict(code="BOARD", pid="BB_fba", prod="Up! Go! More! board book", route="Amazon FBA (from the print month; the pre-sale is own-site only)", wave="gated", price=("a", a["bb_price"]), w=40,
+         K=a["landed"], L=f"={a['fba_fee']}+{a['fba_storage']}", O=a["landed"], src="AMAZON-AND-RETAIL-ROADMAP A: board books via FBA; closing fee, storage and placement allowance included [VERIFY].",
+         F=a["amz_ref"], G=a["amz_closing"], H=0, I=0, J=0, tax=TAX_AMZ),
     dict(code="SCHOOL", pid="SCH_tpt", prod="TPT single resource (e.g., talk brain breaks)", route="Teachers Pay Teachers", wave="4 (held)", price=5, w=40,
          K=0, L=0, O=0, src="DEMAND-CHECK teacher table: $5 singles; held for counsel.", **TPT),
     dict(code="SCHOOL", pid="SCH_tptb", prod="Classroom Talk and Play growth bundle", route="Teachers Pay Teachers", wave="4 (held)", price=22, w=20,
          K=0, L=0, O=0, src="DEMAND-CHECK §2 #11: $22-26.", **TPT),
     dict(code="SCHOOL", pid="SCH_class", prod="Single-classroom license", route="Direct invoice / Shopify draft order", wave="4 (held)", price=29, w=20,
          K=0, L=0, O=0, src="MARKETING-PLAYBOOK School Purchasing Kit: Single Classroom $29.", **SCHD),
-    dict(code="SCHOOL", pid="SCH_kit", prod="Host-it-yourself parent-night kit, single site", route="Direct invoice / Shopify", wave="4 (held)", price=129, w=15,
-         K=0, L=0, O=0, src="DEMAND-CHECK: $129 single site.", **SCHD),
-    dict(code="SCHOOL", pid="SCH_kitm", prod="Host kit, multi-site", route="Direct invoice / Shopify", wave="4 (held)", price=249, w=5,
-         K=0, L=0, O=0, src="DEMAND-CHECK: $249 multi-site.", **SCHD),
+    dict(code="SCHOOL", pid="SCH_kit", prod="Host-it-yourself parent-night kit, single site", route="Direct invoice / Shopify", wave="4 (held)", price=129, w=2,
+         K=0, L=0, O=0, src="DEMAND-CHECK: $129 single site. Near-zero weight: no kit sales counts exist and a free leader program competes.", **SCHD),
+    dict(code="SCHOOL", pid="SCH_kitm", prod="Host kit, multi-site", route="Direct invoice / Shopify", wave="4 (held)", price=249, w=0,
+         K=0, L=0, O=0, src="DEMAND-CHECK: $249 multi-site. Weight 0 until there is evidence.", **SCHD),
     dict(code="RETAIL", pid="RT_faire", prod="Up! Go! More! board book (wholesale)", route="Faire wholesale to boutiques", wave="5 (retail)",
-         price=("f", f"={a['bb_price']}*{a['whsl_pct']}"), w=50, K=a["landed"], L=a["whs_handle"], O=a["landed"],
+         price=("f", f"={a['bb_price']}*{a['whsl_pct']}"), w=60, K=a["landed"], L=a["whs_handle"], O=a["landed"],
          src="Wholesale pays about half of retail (AMAZON-AND-RETAIL-ROADMAP B4).", F=a["faire_comm"], G=0, H=a["faire_proc"], I=0, J=a["retail_deduct"], tax=TAX_FAIRE),
     dict(code="RETAIL", pid="RT_wmt", prod="Up! Go! More! board book", route="Walmart Marketplace (3PL-fulfilled)", wave="5 (retail)",
-         price=("a", a["bb_price"]), w=25, K=a["landed"], L=a["pick"], O=a["landed"], src="Walmart Marketplace by application (ROADMAP B3).",
+         price=("a", a["bb_price"]), w=40, K=a["landed"], L=f"={a['pick']}+{a['ship_sub']}", O=a["landed"], src="Walmart Marketplace by application (ROADMAP B3).",
          F=a["bigbox_ref"], G=0, H=0, I=0, J=a["retail_deduct"], tax=TAX_BB),
     dict(code="RETAIL", pid="RT_tgt", prod="Up! Go! More! board book", route="Target Plus (invitation-only) [VERIFY]", wave="5 (retail)",
-         price=("a", a["bb_price"]), w=25, K=a["landed"], L=a["pick"], O=a["landed"], src="Target Plus is invitation-only (ROADMAP B3) [VERIFY terms].",
+         price=("a", a["bb_price"]), w=0, K=a["landed"], L=f"={a['pick']}+{a['ship_sub']}", O=a["landed"], src="Target Plus is invitation-only (ROADMAP B3) [VERIFY terms]. Weight 0: no forecast revenue until an invitation arrives.",
          F=a["bigbox_ref"], G=0, H=0, I=0, J=a["retail_deduct"], tax=TAX_BB),
 ]
 UE_ROW = {}
@@ -505,7 +568,7 @@ for d in UROWS:
             put(wu, f"{colk}{r}", v, fmt=fmt)
     put(wu, f"M{r}", f"=E{r}*(1-F{r}-H{r}-J{r})-G{r}-I{r}-K{r}-L{r}", fmt=CUR2)
     put(wu, f"N{r}", f"=IF(E{r}=0,0,M{r}/E{r})", fmt=PCT1)
-    put(wu, f"P{r}", d["w"], fmt="0", font=F_IN)
+    put(wu, f"P{r}", OV.get("w_" + d["pid"], d["w"]), fmt="0", font=F_IN)
     put(wu, f"Q{r}", d["tax"], wrap=False)
     put(wu, f"R{r}", d["src"], wrap=False)
 
@@ -533,8 +596,9 @@ notes = [
     "KDP and IngramSpark: 'price' is the list price the reader pays; AlphaPlay receives the royalty or publisher compensation shown in Net per unit.",
     "Board book and retail rows: the landed print cost is deducted in Net per unit (true margin). Cash Flow adds it back and instead pays for whole print runs up front.",
     "Fixed per-order fees are applied per item, which slightly understates net on multi-item orders (a conservative simplification).",
-    "IngramSpark hardcover margins are thin at a 55% discount; test a 40% discount or a higher list price (listing.json asks each sale to clear $2-$3).",
-    "Postage on physical orders is assumed charged to the buyer at cost (pass-through).",
+    "IngramSpark: base discount 40%. The hardcover is gated at weight 0 (about $0.50 a copy at 55%); Laps Not Apps is now a per-order personalized book and is not in this channel.",
+    "Board book: own-site orders absorb about $2 of postage; FBA rows include the closing fee and a storage/placement allowance. Mix weights of 0 mark gated products that earn no forecast revenue.",
+    "The board-book blend applies only from the print month; pre-sale orders use the own-site row (no FBA stock exists before printing).",
 ]
 for i, t in enumerate(notes):
     put(wu, f"A{rn+i}", t, font=fnt(bold=(i == 0)) if i == 0 else F_NOTE)
@@ -569,20 +633,31 @@ SU = [
     ("Attorney: digital product license review", "Legal", 0, 300, 1, 1, "PROTECTION-PLAN contracts table.", "Repo [VERIFY]"),
     ("Attorney: successor in operating agreement + durable POA", "Legal/entity", 500, 1500, 6, 1, "BLIND-SPOTS #20.", "Repo [VERIFY]"),
     ("Accountant setup review (W-9 answer, sales tax, chart of accounts)", "Finance", 300, 1000, 1, 1, "No fee in the repo (finance/money-and-tax-setup.md lists the questions).", "Assumption [VERIFY]"),
-    ("Print proofs, about 6 print products at $5-$15", "Product", 30, 90, 1, 1, "BLIND-SPOTS #11.", "Repo"),
+    ("Print proofs, about 6 print products at $5-$15", "Product", 30, 90, 2, 1, "BLIND-SPOTS #11.", "Repo"),
     ("Expert accuracy review (CCC-SLP, flat fee)", "Product", 200, 500, 3, 1, "BLIND-SPOTS #10.", "Repo"),
     ("Sensitivity read", "Product", 150, 600, 3, 1, "BLIND-SPOTS #10.", "Repo"),
-    ("Early review copies for review teams", "Marketing", 100, 300, 2, 1, "BLIND-SPOTS #14.", "Repo"),
-    ("Holiday gift setup (gift cards, reveal card)", "Marketing", 0, 20, 1, 1, "BLIND-SPOTS #6.", "Repo"),
-    ("Human illustrator for the board book (Wave 3)", "Product (Wave 3)", 1500, 5000, 6, 1, "BLIND-SPOTS #17.", "Repo"),
-    ("Library cataloging block", "Library credibility", 75, 150, 9, 1, "BLIND-SPOTS #18 [VERIFY].", "Repo [VERIFY]"),
-    ("One paid review (Kirkus Indie or Foreword Clarion)", "Library credibility", 500, 650, 9, 1, "BLIND-SPOTS #18 [VERIFY].", "Repo [VERIFY]"),
-    ("Juried award entries (2-3 at $75-$100)", "Library credibility", 225, 300, 10, 1, "BLIND-SPOTS #18 [VERIFY].", "Repo [VERIFY]"),
-    ("Spanish 'starter' localization (AI + professional post-edit)", "International", 4700, 5800, 7, 1, "legal/international-plan.md: Spanish mixed, months 4-9.", "Repo (estimate)"),
-    ("Madrid international trademark (EU, UK, CA, AU; 2 classes) - optional", "International", 2500, 4500, 8, 0, "DECISION-MEMO: only once the US application looks safe.", "Repo [VERIFY]"),
+    ("Early review copies for review teams", "Marketing", 100, 300, 3, 1, "BLIND-SPOTS #14.", "Repo"),
+    ("Holiday gift setup (gift cards, reveal card)", "Marketing", 0, 20, 2, 1, "BLIND-SPOTS #6.", "Repo"),
+    # ---- gated items: Include = 0 in the base plan; switch on when the named gate is met ----
+    ("GATED (break-even line): Library cataloging block", "Library credibility", 75, 150, 9, 0, "BLIND-SPOTS #18 [VERIFY]. Deferred on the lean path.", "Repo [VERIFY]"),
+    ("GATED (break-even line): One paid review (Kirkus Indie or Foreword Clarion)", "Library credibility", 500, 650, 9, 0, "BLIND-SPOTS #18 [VERIFY]. Deferred.", "Repo [VERIFY]"),
+    ("GATED (break-even line): Juried award entries (2-3 at $75-$100)", "Library credibility", 225, 300, 10, 0, "BLIND-SPOTS #18 [VERIFY]. Deferred.", "Repo [VERIFY]"),
+    ("GATED (break-even line): Spanish 'starter' localization (AI + professional post-edit)", "International", 4700, 5800, 13, 0, "legal/international-plan.md. No Spanish revenue line exists yet, so it is out of the base plan.", "Repo (estimate)"),
+    ("GATED (Spanish meets targets): French and German starter sets", "International", 9000, 11000, 19, 0, "legal/international-plan.md: about $5,000 per language.", "Repo (estimate)"),
+    ("GATED (with French/German): legal review per market", "International", 1000, 3000, 19, 0, "legal/international-plan.md §8.2: $500-$1,500 per market (unverified).", "Repo [VERIFY]"),
+    ("GATED (US filing looks safe): Madrid international trademark (EU, UK, CA, AU; 2 classes)", "International", 2500, 4500, 8, 0, "DECISION-MEMO: only once the US application looks safe.", "Repo [VERIFY]"),
+    ("GATED (card deck for retail): USPTO class 28 filing", "Legal/IP", 350, 350, 20, 0, "Section 4.5 item 1: $350 per class.", "Repo"),
+    ("GATED (board book printed + series): books 2 and 3 human illustration", "Product (retail)", 3000, 10000, 24, 0, "BLIND-SPOTS #17: $1,500-$5,000 per board book.", "Repo [VERIFY]"),
+    ("GATED (with books 2-3): CPSIA testing for books 2 and 3", "Product (retail)", 600, 2000, 26, 0, "PROTECTION-PLAN: a few hundred dollars per SKU (unverified).", "Repo [VERIFY]"),
+    ("GATED (with books 2-3): offset runs for books 2 and 3 (1,000 each, landed)", "Inventory (retail)", 7250, 10000, 27, 0, "Section 3.8: about $3,625-$5,000 per 1,000-copy run.", "Assumption [VERIFY]"),
+    ("GATED (POD deck sells + retail case): offset card-deck run (5,000 decks)", "Inventory (retail)", 10000, 17500, 30, 0, "Section 4.5 example: 5,000 x $2.00-$3.50 landed.", "Assumption [VERIFY]"),
+    ("GATED (seasonal calendars): tradition reviewers (4 traditions)", "Product", 400, 1200, 14, 0, "Section 5.4: quote needed; $100-$300 each assumed.", "Assumption"),
 ]
 for i, (item, cat, lo, hi, m, inc, src, st) in enumerate(SU):
     r = 6 + i
+    inc = OV.get(f"su_{i}", inc)
+    if "_su_all_gated" in OV and item.startswith("GATED"):
+        inc = OV["_su_all_gated"]
     put(wsu, f"A{r}", item); put(wsu, f"B{r}", cat)
     put(wsu, f"C{r}", lo, fmt=CUR0, font=F_IN); put(wsu, f"D{r}", hi, fmt=CUR0, font=F_IN)
     put(wsu, f"E{r}", f"=C{r}+{A['pos']}*(D{r}-C{r})", fmt=CUR0)
@@ -596,12 +671,17 @@ put(wsu, f"D{rt}", f"=SUMPRODUCT(D{SU_FIRST}:D{SU_LAST},$G${SU_FIRST}:$G${SU_LAS
 put(wsu, f"E{rt}", f"=SUMPRODUCT(E{SU_FIRST}:E{SU_LAST},$G${SU_FIRST}:$G${SU_LAST})", fmt=CUR0, bold=True)
 for c in "ABCDEFGHI":
     wsu[f"{c}{rt}"].border = TOP; wsu[f"{c}{rt}"].fill = TOT_FILL
+put(wsu, f"A{rt+1}", "Gated items not in the base plan (total at model cost)", font=F_NOTE)
+put(wsu, f"E{rt+1}", f"=SUMPRODUCT(E{SU_FIRST}:E{SU_LAST},1-$G${SU_FIRST}:$G${SU_LAST})", fmt=CUR0)
+put(wsu, f"C{rt+1}", f"=SUMPRODUCT(C{SU_FIRST}:C{SU_LAST},1-$G${SU_FIRST}:$G${SU_LAST})", fmt=CUR0)
+put(wsu, f"D{rt+1}", f"=SUMPRODUCT(D{SU_FIRST}:D{SU_LAST},1-$G${SU_FIRST}:$G${SU_LAST})", fmt=CUR0)
 put(wsu, f"A{rt+2}", "Timing summary", bold=True)
 for j, (lab, lo_m, hi_m) in enumerate([("Months 1-3 (Oct-Dec 2026)", 1, 3), ("Months 4-12", 4, 12), ("Year 2", 13, 24), ("Year 3", 25, 36)]):
     r = rt + 3 + j
     put(wsu, f"A{r}", lab)
     put(wsu, f"E{r}", f"=SUMPRODUCT(($F${SU_FIRST}:$F${SU_LAST}>={lo_m})*($F${SU_FIRST}:$F${SU_LAST}<={hi_m})*$G${SU_FIRST}:$G${SU_LAST}*$E${SU_FIRST}:$E${SU_LAST})", fmt=CUR0)
-put(wsu, f"A{rt+8}", "Not included: employment-counsel fees (a personal matter for the founder); board-book CPSIA testing, 3PL setup and print runs (see Retail Readiness Costs and Cash Flow).", font=F_NOTE)
+put(wsu, f"A{rt+8}", "GATED rows are listed with their trigger and month so nothing in the plan is unpriced; they stay at Include = 0 until the named gate is met. "
+                    "Not included: employment-counsel fees (a personal matter for the founder); board-book illustration, CPSIA testing, 3PL setup and the first run (Retail Readiness Costs).", font=F_NOTE)
 for c, w in zip("ABCDEFGHI", [62, 18, 11, 11, 11, 14, 10, 62, 18]):
     wsu.column_dimensions[c].width = w
 wsu.freeze_panes = "B6"
@@ -627,36 +707,43 @@ for m in range(1, 37):
     wo[f"{c}5"].fill = HDR_FILL; wo[f"{c}5"].font = HDR_FONT
     wo.column_dimensions[c].width = 9
 put(wo, f"{CL(GC-1)}3", "Year", font=F_NOTE); put(wo, f"{CL(GC-1)}4", "Month #", font=F_NOTE)
+put(wo, f"{CL(GC-1)}5", "Include (1/0)"); wo[f"{CL(GC-1)}5"].fill = HDR_FILL; wo[f"{CL(GC-1)}5"].font = HDR_FONT
 OP = [
-    ("Shopify Basic plan", "Store", 39, 39, "Monthly", 1, 36, "storefront-setup-guide §1: $39/mo ($29 billed yearly).", "Repo [VERIFY]"),
-    ("Business email on the brand domain", "Tools", 7, 14, "Monthly", 1, 36, "BLIND-SPOTS #4: about $7-$14 a month.", "Repo"),
-    ("Password manager", "Tools", 0, 40, "Annual", 1, 36, "BLIND-SPOTS #4: $0-$40 a year.", "Repo"),
-    ("Email platform, year 1 (free tiers, then budget)", "Email", 0, 20, "Monthly", 1, 12, "MARKETING-PLAYBOOK: Klaviyo free 250 profiles; budget $20/mo.", "Repo [VERIFY]"),
-    ("Email platform, years 2-3", "Email", 20, 39, "Monthly", 13, 36, "MARKETING-PLAYBOOK: about $20-39/mo later.", "Repo [VERIFY]"),
-    ("Claude plan that runs the scheduled routines", "Automation", 100, 200, "Monthly", 1, 36, "No price in the repo; a higher-usage tier is assumed because routines run weekly (ops/ROUTINE.md).", "Assumption [VERIFY]"),
-    ("Claude usage-credit cap (hard limit)", "Automation", 0, 25, "Monthly", 1, 36, "ops/GAPS-ROUND-2.md G2-06: fixed monthly limit such as $25.", "Repo"),
-    ("QuickBooks Online (Simple Start to Essentials)", "Bookkeeping", 38, 85, "Monthly", 1, 36, "finance/money-and-tax-setup.md: $38 Simple Start; Essentials $75-$85 (UNVERIFIED).", "Repo [VERIFY]"),
-    ("Link My Books settlement connector (1-3 channels)", "Connectors", 21, 47, "Monthly", 3, 36, "money-and-tax-setup: from $21/mo, about $13 per extra channel.", "Repo [VERIFY]"),
-    ("Buyer-specific PDF stamping", "Tools", 0, 20, "Monthly", 1, 36, "PROTECTION-PLAN: about $0-$20/mo.", "Repo [VERIFY]"),
-    ("Etsy listing renewals (about 30 listings every 4 months)", "Channels", 1.5, 3, "Monthly", 1, 36, "$0.20 per listing (storefront guide §10); listing count is an assumption.", "Assumption"),
-    ("Sales-tax filing service (optional; the accountant may file)", "Tax", 0, 25, "Monthly", 1, 36, "TAX-AUTOPILOT §1 names services; no price in the repo.", "Assumption [VERIFY]"),
-    ("Domains, MUST tier", "Domains", 61, 61, "Annual", 1, 36, "legal/domain-portfolio.md: about $61 a year.", "Repo [VERIFY]"),
-    ("Domains, SHOULD tier (before paid ads / first print run)", "Domains", 118, 118, "Annual", 5, 36, "legal/domain-portfolio.md: about $118 a year.", "Repo [VERIFY]"),
-    ("USPS PO Box (public business address)", "Admin", 100, 300, "Annual", 1, 36, "legal/ENTITY.md decision; fee not in the repo (TRUST-CHECKLIST says verify at usps.com).", "Assumption [VERIFY]"),
-    ("Commercial resident agent", "Admin", 50, 300, "Annual", 1, 36, "PROTECTION-PLAN: about $50-$300 a year.", "Repo [VERIFY]"),
-    ("Maryland SDAT annual report", "Admin", 300, 300, "Annual", 7, 36, "PROTECTION-PLAN: $300, due Apr 15 (month 7 = Apr 2027).", "Repo"),
-    ("General liability with products-completed operations", "Insurance", 45.17, 125, "Monthly", 1, 36, "PROTECTION-PLAN: about $542/yr average; range $260-$3,000+ (low = average / 12).", "Repo [VERIFY]"),
-    ("Professional liability / E&O", "Insurance", 62, 125, "Monthly", 1, 36, "PROTECTION-PLAN: about $62/mo average; $400-$3,750/yr range.", "Repo [VERIFY]"),
-    ("Media liability / publisher's E&O", "Insurance", 50, 150, "Monthly", 1, 36, "PROTECTION-PLAN: $50-$150/mo (secondary, unverified).", "Repo [VERIFY]"),
-    ("Cyber", "Insurance", 35, 129, "Monthly", 1, 36, "PROTECTION-PLAN: $35-$129/mo.", "Repo [VERIFY]"),
-    ("Umbrella / excess over GL", "Insurance", 25, 50, "Monthly", 3, 36, "PROTECTION-PLAN: 'a few hundred dollars a year' (unverified).", "Repo [VERIFY]"),
-    ("Trademark watch (optional; the monthly DIY search is $0)", "Legal/IP", 0, 750, "Annual", 4, 36, "PROTECTION-PLAN: $395-$750 a year.", "Repo [VERIFY]"),
-    ("Accountant: year-end return and review", "Finance", 500, 1500, "Annual", 7, 36, "No fee in the repo.", "Assumption [VERIFY]"),
-    ("Copyright registrations for new releases (about 4 a year)", "Legal/IP", 260, 340, "Annual", 13, 36, "PROTECTION-PLAN: $65-$85 per filing.", "Repo"),
+    ("Shopify Basic plan", "Store", 39, 39, "Monthly", 1, 36, "storefront-setup-guide §1: $39/mo ($29 billed yearly).", "Repo [VERIFY]", 1),
+    ("Business email on the brand domain", "Tools", 7, 14, "Monthly", 1, 36, "BLIND-SPOTS #4: about $7-$14 a month.", "Repo", 1),
+    ("Password manager", "Tools", 0, 40, "Annual", 1, 36, "BLIND-SPOTS #4: $0-$40 a year.", "Repo", 1),
+    ("Email platform, year 1 (free tiers, then budget)", "Email", 0, 20, "Monthly", 1, 12, "MARKETING-PLAYBOOK: Klaviyo free 250 profiles; budget $20/mo.", "Repo [VERIFY]", 1),
+    ("Email platform, years 2-3", "Email", 20, 39, "Monthly", 13, 36, "MARKETING-PLAYBOOK: about $20-39/mo later.", "Repo [VERIFY]", 1),
+    ("Claude plan that runs the scheduled routines", "Automation", 100, 200, "Monthly", 1, 36, "No price in the repo; a higher-usage tier is assumed because routines run weekly (ops/ROUTINE.md).", "Assumption [VERIFY]", 1),
+    ("Claude usage-credit cap (hard limit)", "Automation", 0, 25, "Monthly", 1, 36, "ops/GAPS-ROUND-2.md G2-06: fixed monthly limit such as $25.", "Repo", 1),
+    ("QuickBooks Online (Simple Start to Essentials)", "Bookkeeping", 38, 85, "Monthly", 1, 36, "finance/money-and-tax-setup.md: $38 Simple Start; Essentials $75-$85 (UNVERIFIED).", "Repo [VERIFY]", 1),
+    ("Link My Books settlement connector (1-3 channels)", "Connectors", 21, 47, "Monthly", 3, 36, "money-and-tax-setup: from $21/mo, about $13 per extra channel.", "Repo [VERIFY]", 1),
+    ("Buyer-specific PDF stamping", "Tools", 0, 20, "Monthly", 3, 36, "PROTECTION-PLAN: about $0-$20/mo.", "Repo [VERIFY]", 1),
+    ("Social scheduler", "Tools", 0, 30, "Monthly", 3, 36, "Publisher role posts through a scheduler (section 5.3); no price in the repo.", "Assumption [VERIFY]", 1),
+    ("Own-site review app", "Tools", 0, 15, "Monthly", 3, 36, "Section 4.7 own-site review app; no price in the repo.", "Assumption [VERIFY]", 1),
+    ("Etsy listing renewals (about 30 listings every 4 months)", "Channels", 1.5, 3, "Monthly", 3, 36, "$0.20 per listing (storefront guide §10); listing count is an assumption.", "Assumption", 1),
+    ("Sales-tax filing service (optional; the accountant may file)", "Tax", 0, 25, "Monthly", 3, 36, "TAX-AUTOPILOT §1 names services; no price in the repo.", "Assumption [VERIFY]", 1),
+    ("Domains, MUST tier", "Domains", 61, 61, "Annual", 1, 36, "legal/domain-portfolio.md: about $61 a year.", "Repo [VERIFY]", 1),
+    ("Domains, SHOULD tier (before paid ads / first print run)", "Domains", 118, 118, "Annual", 5, 36, "legal/domain-portfolio.md: about $118 a year.", "Repo [VERIFY]", 1),
+    ("USPS PO Box (public business address)", "Admin", 100, 300, "Annual", 1, 36, "legal/ENTITY.md decision; fee not in the repo (TRUST-CHECKLIST says verify at usps.com).", "Assumption [VERIFY]", 1),
+    ("Commercial resident agent", "Admin", 50, 300, "Annual", 1, 36, "PROTECTION-PLAN: about $50-$300 a year.", "Repo [VERIFY]", 1),
+    ("Maryland SDAT annual report", "Admin", 300, 300, "Annual", 7, 36, "PROTECTION-PLAN: $300, due Apr 15 (month 7 = Apr 2027).", "Repo", 1),
+    ("GDPR Art. 27 representatives, EU and UK (international digital sales)", "Legal/privacy", 220, 1300, "Annual", 4, 36, "Section 5.8: about EUR 100-600 a year each (unverified); needed once EU/UK buyers are served.", "Repo [VERIFY]", 1),
+    ("General liability with products-completed operations", "Insurance", 45.17, 125, "Monthly", 3, 36, "PROTECTION-PLAN: about $542/yr average (the low end here); range $260-$3,000+. Bound before the first sale (month 3).", "Repo [VERIFY]", 1),
+    ("Professional liability / E&O (switch: off until the broker advises)", "Insurance", 62, 125, "Monthly", 3, 36, "PROTECTION-PLAN: written for coaching, which the business no longer offers. Include = 0 pending the broker.", "Repo [VERIFY]", 0),
+    ("Media liability / publisher's E&O", "Insurance", 50, 150, "Monthly", 3, 36, "PROTECTION-PLAN: $50-$150/mo (secondary, unverified).", "Repo [VERIFY]", 1),
+    ("Cyber", "Insurance", 35, 129, "Monthly", 3, 36, "PROTECTION-PLAN: $35-$129/mo.", "Repo [VERIFY]", 1),
+    ("Umbrella / excess over GL", "Insurance", 25, 50, "Monthly", 5, 36, "PROTECTION-PLAN: 'a few hundred dollars a year' (unverified); within 90 days.", "Repo [VERIFY]", 1),
+    ("Trademark watch (optional; the monthly DIY search is $0)", "Legal/IP", 0, 750, "Annual", 4, 36, "PROTECTION-PLAN: $395-$750 a year.", "Repo [VERIFY]", 1),
+    ("Accountant: year-end return and review", "Finance", 500, 1500, "Annual", 7, 36, "No fee in the repo.", "Assumption [VERIFY]", 1),
+    ("Copyright registrations for new releases (about 4 a year)", "Legal/IP", 260, 340, "Annual", 13, 36, "PROTECTION-PLAN: $65-$85 per filing.", "Repo", 1),
+    ("Upload assistant for KDP/IngramSpark/TpT packets (switch: when uploads exceed the founder cap)", "Contractor", 0, 200, "Monthly", 7, 36, "Section 5.2; not priced in the repo.", "Assumption", 0),
 ]
 OP_FIRST = 6
-for i, (item, cat, lo, hi, fq, st, en, src, stt) in enumerate(OP):
+for i, (item, cat, lo, hi, fq, st, en, src, stt, inc) in enumerate(OP):
     r = OP_FIRST + i
+    inc = OV.get(f"op_{i}", inc)
+    put(wo, f"N{r}", inc, fmt="0", font=F_IN)
     put(wo, f"A{r}", item); put(wo, f"B{r}", cat)
     put(wo, f"C{r}", lo, fmt=CUR2, font=F_IN); put(wo, f"D{r}", hi, fmt=CUR2, font=F_IN)
     put(wo, f"E{r}", f"=C{r}+{A['pos']}*(D{r}-C{r})", fmt=CUR2)
@@ -667,7 +754,7 @@ for i, (item, cat, lo, hi, fq, st, en, src, stt) in enumerate(OP):
     put(wo, f"L{r}", src); put(wo, f"M{r}", stt)
     for m in range(1, 37):
         c = CL(GC + m - 1)
-        put(wo, f"{c}{r}", f"=IF(AND({c}$4>=$G{r},{c}$4<=$H{r}),IF($F{r}=\"Monthly\",$E{r},IF(MOD({c}$4-$G{r},12)=0,$E{r},0)),0)", fmt=CUR0)
+        put(wo, f"{c}{r}", f"=$N{r}*IF(AND({c}$4>=$G{r},{c}$4<=$H{r}),IF($F{r}=\"Monthly\",$E{r},IF(MOD({c}$4-$G{r},12)=0,$E{r},0)),0)", fmt=CUR0)
 OP_LAST = OP_FIRST + len(OP) - 1
 r_sub, r_con, r_tot = OP_LAST + 1, OP_LAST + 2, OP_LAST + 3
 labels = {r_sub: "Subtotal", r_con: "Operating contingency", r_tot: "Total monthly operating costs"}
@@ -688,7 +775,7 @@ wo[f"A{r_sub}"].border = TOP
 put(wo, f"A{r_tot+2}", "Wave-specific fixed costs (3PL minimum, Seller Central, retail EDI and insurance uplift) are added in the forecast only when that wave is live.", font=F_NOTE)
 for c, w in zip("ABCDEFGHIJKLM", [52, 12, 10, 10, 12, 10, 8, 8, 11, 11, 11, 60, 18]):
     wo.column_dimensions[c].width = w
-wo.column_dimensions["N"].width = 8
+wo.column_dimensions["N"].width = 9
 wo.freeze_panes = f"{CL(GC)}6"
 OPTOT = lambda m: f"{q('Monthly Operating Costs')}!{CL(GC+m-1)}${r_tot}"
 

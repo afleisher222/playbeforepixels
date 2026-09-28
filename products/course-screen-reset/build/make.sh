@@ -16,7 +16,7 @@ rm -f build/_*.pdf
 # ---- Etsy edition (no URL or QR) kept in build/etsy until a marketplace listing is chosen
 node "$R" pdf build/etsy/source-etsy-letter.html build/etsy/workbook-etsy-color-letter.pdf
 # ---- KDP paperback interior
-node "$R" pdf paperback/source-kdp.html paperback/course-screen-reset-kdp-interior.pdf
+node "$R" pdf paperback/source-kdp.html paperback/course-screen-reset-kdp-interior.pdf && node build/fixsize.js paperback/course-screen-reset-kdp-interior.pdf 8.125 10.25
 # ---- previews
 rm -rf preview/p*.png && node "$R" pages source.html preview .page 1
 rm -rf paperback/preview && node "$R" pages paperback/source-kdp.html paperback/preview .page 1
@@ -26,7 +26,7 @@ node "$R" png build/dbg/email6.html build/dbg/email-shot.png 420 0 2
 # ---- extras
 cd "$B" && node extras.js && cd "$D"
 node "$R" png build/cover.html cover.png 768 960 1.6667
-node "$R" pdf build/cover-wrap.html paperback/course-screen-reset-kdp-cover.pdf
+node "$R" pdf build/cover-wrap.html paperback/course-screen-reset-kdp-cover.pdf && node build/fixsize.js paperback/course-screen-reset-kdp-cover.pdf $(node -e "const j=require('./build/cover-wrap.json');console.log(j.wrap_in.join(' '))")
 WW=$(node -e "const j=require('./build/cover-wrap.json');console.log(Math.round(j.wrap_in[0]*96)+' '+Math.round(j.wrap_in[1]*96))"); node "$R" png build/cover-wrap.html paperback/cover-wrap-preview.png $WW 1
 node "$R" pdf build/start-here.html "downloads/1. START HERE.pdf"
 mkdir -p funnel/starter

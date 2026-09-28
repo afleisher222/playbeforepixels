@@ -349,8 +349,8 @@ SPREADS.push(() => rect(0, 0, 1750, 875, C.kT) + rect(0, 630, 1750, 245, C.gT) +
   rect(1450, 662, 250, 40, C.sun, 10) +
   lap({ a: 'jo', kid: 'ada-sit', cx: 1575, fy: 686, s: 0.72, ks: 0.85, front: U('book', 76, 168, 0.55), arms: 'book' }) +
   // "a park full of laps": Mama Bea and the baby further back on the striped blanket, so the right page shows more than one lap
-  rect(1180, 606, 170, 30, C.tomato, 8) + [0, 1, 2].map(i => rect(1200 + i * 52, 606, 16, 30, C.tT)).join('') +
-  lap({ a: 'bea', kid: 'baby-up', cx: 1265, fy: 624, s: 0.5, ks: 0.66, kdy: -8, arms: 'lift' }));
+  rect(1180, 640, 170, 30, C.tomato, 8) + [0, 1, 2].map(i => rect(1200 + i * 52, 640, 16, 30, C.tT)).join('') +
+  lap({ a: 'bea', kid: 'baby-up', cx: 1265, fy: 658, s: 0.5, ks: 0.66, kdy: -8, arms: 'lift' }));
 
 // 9 Cat on Grandma's lap — then we share
 SPREADS.push(() => rect(0, 0, 875, 875, C.pT) + rect(0, 755, 875, 120, C.plum) + rect(875, 0, 875, 875, C.sT) + rect(875, 755, 875, 120, C.sun) +
@@ -734,10 +734,10 @@ body { font-family: "Nunito Sans", sans-serif; color: ${C.ink} }
 .note p { font-size: 12pt; line-height: 1.5; margin-top: .14in }
 .note p b { color: ${C.tomato} }
 .note h2 { font-size: 27pt !important; white-space: nowrap }
-.fav { background: #fff; border-radius: .22in; padding: .22in .3in .28in; margin-top: .26in }
+.fav { background: #fff; border-radius: .22in; padding: .2in .3in .24in; margin-top: .18in } /* keeps clear of the four laps drawn along the bottom */
 .fav h3 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 16pt; white-space: nowrap }
 .fav h3 .nm { color: ${C.tomato} }
-.frow { display: flex; align-items: flex-end; gap: .14in; margin-top: .2in; font-weight: 700; font-size: 11.5pt }
+.frow { display: flex; align-items: flex-end; gap: .14in; margin-top: .15in; font-weight: 700; font-size: 11.5pt }
 .frow span { white-space: nowrap }
 .frow i { flex: 1; border-bottom: 2px solid ${C.ink}; height: .2in }
 .last .an p { font-size: 12pt; line-height: 1.5; margin-top: .1in }

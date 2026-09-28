@@ -18,7 +18,7 @@ function wordPanel(a) {
   const m = a.word;
   const art = BB.wordArt(m);
   const bg = (art.match(/fill="(#[0-9A-Fa-f]{6})"/) || [])[1] || '#FFFFFF';
-  const S = INNER.h; // square scene, full panel height
+  const S = PANEL.h - 24; // square scene, full panel height
   const fs = Math.min(m.fs * 0.9, 140);
   const word = `<text x="300" y="${40 + fs * 0.74}" text-anchor="middle" font-family="Fredoka, Nunito Sans, sans-serif" font-weight="600" font-size="${fs}" fill="${m.dark ? '#FFFFFF' : C.ink}" class="ink">${esc(m.w)}</text>`;
   const cueLab = { say: 'Say it', sign: 'Sign it', act: 'Act it' }[m.cue[0]];
@@ -44,7 +44,7 @@ function activityPage(a, ctx, pn) {
   ${play}
   <div class="gu">
     <div class="talk">${ui('u-talk')}<div><span class="lab">Talk while you play <i>· ${a.talk[0]}</i></span><q>${a.talk[1]}</q></div></div>
-    <div class="row3"><div class="box"><span class="lab">Make it easier</span>${a.easier}</div><div class="box"><span class="lab">Make it harder</span>${a.harder}</div><div class="box tired"><span class="lab">Tired-grown-up version · 2 min</span>${a.tired}</div></div>
+    <div class="row3"><div class="box"><span class="lab">Make it easier</span>${a.easier}</div><div class="box"><span class="lab">Make it harder</span>${a.harder}</div><div class="box tired"><span class="lab">Tired? 2-minute version</span>${a.tired}</div></div>
     <div class="meta"><span>${ui('u-pin')}<b>${B.label}</b>&nbsp;· ${monthsLabel(a.from)}</span><span>${ui('u-clock')}Prep: ${a.prep}</span><span>${ui('u-drop-o')}Mess: ${a.mess}</span><span>${ui('u-bag')}Needs: ${a.needs}</span></div>
     <div class="safe">${ui('u-shield')}<span>${safetyLine(a)}</span></div>
   </div>
@@ -55,17 +55,17 @@ function activityPage(a, ctx, pn) {
 function sheetPage(a, ctx, pn) {
   const cell = a.cell === 'big' ? BIG : CELL;
   const cols = a.cols || (a.cell === 'big' ? 2 : 3);
-  const g = pieceGrid(a.pieces, cell, cols, `p.${ctx.actPage[a.id]}`);
+  const g = pieceGrid(a.pieces, cell, cols, 'p.' + ctx.usedBy[a.id].join('+'));
   const minIn = (Math.min(cell.w, cell.h) / 96).toFixed(2).replace(/0$/, '');
   const cm = (Math.min(cell.w, cell.h) / 96 * 2.54).toFixed(1);
-  const forWhat = a.piecesFor ? `the ${a.piecesFor}` : `page ${ctx.actPage[a.id]}: ${a.title}`;
-  const velcro = a.band === 'b3' ? 'Velcro (optional): soft loop dot on the page, scratchy hook dot on the back of each piece. <b>Check dots before each play</b> and throw away any piece whose dot lifts.' : '<b>No velcro dots for under-3s.</b> Lay pieces on top of the page. Throw away any piece that tears, bends or peels.';
+  const forWhat = a.piecesFor ? `${a.piecesFor} (pages ${ctx.usedBy[a.id].join(' and ')})` : `page ${ctx.actPage[a.id]}: ${a.title}`;
+  const velcro = a.band === 'b3' ? 'Velcro is optional: <b>check dots before each play</b>; throw away any piece whose dot lifts.' : '<b>No velcro dots for under-3s:</b> lay pieces on top. Throw away torn or peeling pieces.';
   return `<section class="page band-${a.band} sheet" data-sheet="${a.id}"><div class="live">
   ${header(a.band, 'Cut-out pieces', `<span class="tag">${ui('u-scissors')}${a.pieces.length} pieces · for ${a.piecesFor ? 'pages ' + ctx.usedBy[a.id].join(' and ') : 'page ' + ctx.actPage[a.id]}</span>`)}
-  <div class="tt"><h1 style="font-size:24px">Pieces for ${forWhat.replace(/^the /, '')}</h1></div>
-  <div class="cutnote">${ui('u-scissors')}<span>Grown-up cuts on the dashed lines: straight cuts only. Every piece is ${minIn} in (${cm} cm) or bigger on its shortest side, bigger than a toilet-paper tube.</span></div>
-  <div class="grid" style="top:${a.cell === 'big' ? 124 : 112}px">${g.svg}</div>
-  <div class="keep">${ui('u-shield')}<div class="big">Grown-up keeps<br>the pieces</div><p>Count pieces out and back in, and store them in a labeled pouch. ${velcro} Laminating makes pieces last; round the corners.</p></div>
+  <div class="tt"><h1 style="font-size:23px">Pieces for ${forWhat}</h1></div>
+  <div class="cutnote">${ui('u-scissors')}<span>Cut on the dashed lines: straight cuts only. Every piece is ${minIn} in (${cm} cm) or bigger: bigger than a toilet-paper tube.</span></div>
+  <div class="grid" style="top:${a.cell === 'big' ? 120 : 104}px">${g.svg}</div>
+  <div class="keep">${ui('u-shield')}<div class="big">Grown-up keeps<br>the pieces</div><p>Count pieces out and back in; store them in a labeled pouch. ${velcro}</p></div>
   ${footer(ctx, pn)}
 </div></section>`;
 }

@@ -80,7 +80,7 @@ function sceneCover() { // grown-up and child on the floor with a play basket; t
   const basket = `<g transform="translate(96 ${F})"><path d="M-62-58H62L52 0H-52Z" fill="${C.s3}"/><rect x="-66" y="-66" width="132" height="14" rx="7" fill="${C.s4}"/><path d="M-40-40H40M-44-24H44" stroke="${C.s2}" stroke-width="5" stroke-linecap="round"/></g>`;
   const inBasket = use('ball', `translate(70,${F - 86}) scale(.46)`) + use('block-2', `translate(118,${F - 84}) rotate(-12) scale(.62)`);
   const blocks = use('block-3', `translate(330,${F - 28})`) + use('block-1', `translate(330,${F - 84})`) + use('block-4', `translate(334,${F - 140}) rotate(7)`);
-  const nap = `<g transform="translate(520 ${F})"><g transform="translate(0,-74) scale(.66)"><use href="#tablet-sleeping"/></g><path d="M-48-50C-20-60 20-60 48-50V-34H-48Z" fill="${C.tPlum}"/><path d="M-44-38H44L38 0H-38Z" fill="${C.plum}"/><text x="18" y="-128" font-family="Caveat" font-weight="700" font-size="34" fill="${C.ink}">z z z</text></g>`;
+  const nap = `<g transform="translate(520 ${F})"><g transform="translate(0,-74) scale(.66)"><use href="#tablet-sleeping"/></g><path d="M-48-50C-20-60 20-60 48-50V-34H-48Z" fill="${C.tPlum}"/><path d="M-44-38H44L38 0H-38Z" fill="${C.plum}"/><text x="-20" y="-130" font-family="Caveat" font-weight="700" font-size="34" fill="${C.ink}">z z z</text></g>`;
   const ground = `<ellipse cx="300" cy="${F + 6}" rx="280" ry="26" fill="${C.sun}" fill-opacity=".35"/><circle cx="300" cy="318" r="170" fill="${W}"/>`;
   return ground + adult(g) + blocks + kid(k) + basket + inBasket + nap;
 }

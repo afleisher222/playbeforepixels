@@ -40,13 +40,14 @@ Product codes to confirm in Lulu's product builder or pricing calculator [VERIFY
 
 **Etsy edition (automatic).** Every order the job fetches from Etsy is written with `"channel": "etsy"`. `build.js` then leaves out playbeforepixels.com and the bonus QR code (copyright page, last page, back cover) and prints "You will find more Play Before Pixels books and printables in the same shop" instead (BRAND.md customer-voice rule 2). Test it with `orders/examples/order-long-name.json`, which is an Etsy order.
 
-**Shopify (own site, easiest to automate).** Add fields to the product page as line-item properties: `Child's first name` (required, max 14), `From` (optional, max 32), `Pronouns` (she/her, he/him, they/them), `Look` (1–4, show `picker.png`), `Gift message` (optional, max 180), `Occasion or date` (optional, max 32). Format = a variant (Softcover $24.99 / Hardcover $34.99). Add a required checkbox: "I checked the spelling. The name prints exactly as typed." [VERIFY that the theme supports these fields without a paid app.]
+**Shopify (own site, easiest to automate).** Add fields to the product page as line-item properties: `Child's first name` (required, max 14), `From` (optional, max 32), `Pronouns` (she/her, he/him, they/them), `Grandma` (optional drop-down, exactly the list in `personalization.json`; default Grandma), `Look` (1–4, show `picker.png`), `Gift message` (optional, max 180), `Occasion or date` (optional, max 32). Format = a variant (Softcover $24.99 / Hardcover $34.99). Add a required checkbox: "I checked the spelling. The name prints exactly as typed." [VERIFY that the theme supports these fields without a paid app.]
 
 **Etsy.** Variations: Format and Look (Etsy allows two variation types [VERIFY]). Personalization box with this exact instruction, so it can be read by the script:
 ```
 Name: Maya
 From: Aunt Lily
 Pronouns: she
+Grandma: (optional: Grandma, Nana, Abuela, Gigi … see the list)
 Message: (optional)
 ```
 Anything the script cannot read goes to the review queue. The review drafts a written message for the founder to approve and send in Etsy messages; Etsy's API cannot send buyer messages [VERIFY]. List the printer as a production partner in the listing [VERIFY Etsy's current production-partner rules for print-on-demand books].
@@ -62,7 +63,7 @@ Anything the script cannot read goes to the review queue. The review drafts a wr
 5. Etsy: confirm the personalization box character limit, how the API returns it, and that polling paid-but-unshipped receipts works (Etsy has no order webhooks [VERIFY]).
 6. Shopify: confirm line-item properties arrive in the Admin API order data.
 7. Confirm that CPSIA's ordinary-book exemption applies (paper, ink, binding only) and, before UK/EU sales, the GPSR responsible-person details.
-8. Test the review queue: a name in another script, an emoji, a 15-letter name and a flagged word must each stop before the printer.
+8. Test the review queue: a name in another script, an emoji, a 15-letter name, a flagged word, and a Grandma name not on the list (or the same as the child’s name) must each stop before the printer. `orders/examples/order-abuela.json` (Sofía Ñúñez, Abuela) must build and fit.
 9. Check an Etsy-channel proof: no URL and no QR code anywhere in the book or on the cover.
 10. Every interior carries `Version 1.0 · September 2026` on the copyright page (build.js `VERSION`). Bump it with any change to words or art, and tell past buyers.
 

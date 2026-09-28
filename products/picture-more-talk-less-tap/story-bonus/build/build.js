@@ -321,7 +321,7 @@ spread({
     kidAt('zara', 'sithold', 1224, 766, 1.05, 'talk') + U('star', 1224, 708, 0.72) +
     kidAt('milo', 'sit', 1372, 726, 0.95, 'listenL') + kidAt('sam', 'sit', 1508, 706, 0.95, 'listenL'),
   texts: [
-    T(60, 60, 700, '<p>Ms. Poppy brought out the Talking Star.</p><p>“Whoever holds the star talks. Everybody else listens, with their eyes, their ears and their whole body.”</p>'),
+    T(60, 60, 700, '<p>Ms. Poppy brought out the Talking Star.</p><p>“Whoever holds the star gets a turn. Everybody else listens, in their own way.”</p>'),
     T(876, 60, 700, 'Pass the star.<br>Take a turn.<br>Pass the star.<br>Take a turn.', 'chantbig'),
     T(1250, 80, 0, 'CLACK!', 'boom', 'font-size:60px;transform:rotate(6deg)'),
     T(1330, 180, 0, 'CLACK!', 'boom', 'font-size:60px;transform:rotate(-5deg)'),
@@ -413,7 +413,7 @@ single({
       steps: ['Sit in a circle with the basket in the middle.', 'Each time someone asks a question, tells a joke or shares an idea out loud, they add a block.', 'A good follow-up question counts too!', 'How tall can the tower grow before tidy-up time?'] },
     { n: 2, col: C.sun, name: 'Pass the Talking Star', meta: 'Whole group · 5–10 minutes',
       need: 'Any soft toy to be your Talking Star',
-      steps: ['Give everyone the same starter, like “My favorite animal is…”', 'Whoever holds the star talks. Everyone else listens.', 'Pass the star to the next friend.', 'Saying “pass” is always OK.'] },
+      steps: ['Give everyone the same starter, like “My favorite animal is…”', 'Whoever holds the star gets a turn. Everyone else listens.', 'Pass the star to the next friend.', 'Saying “pass” is always OK.'] },
     { n: 3, col: C.plum, name: 'Ask Me One More', meta: 'Pairs · 5 minutes',
       need: 'Nothing at all',
       steps: ['One friend shares something: “I have a cat.”', 'Their partner listens, then asks one more question: “What is its name?”', 'Swap turns.', 'Grown-ups, show it first with a child.'] },

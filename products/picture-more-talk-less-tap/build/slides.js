@@ -10,16 +10,16 @@ const slides = [];
 const slide = (html, bg = '#fff', dark = false) => slides.push({ html, bg, dark });
 
 // 1 title
-slide(`<div class="title"><div class="tl">${LOGO('lockup-horizontal.svg', 44)}<h1>${NAME}</h1><p class="sub">Let’s build a tower with our words!</p>
+slide(`<div class="title"><div class="tl">${LOGO('lockup-horizontal.svg', 44)}<h1>${NAME}</h1><p class="sub">Let’s build a tower, one turn at a time!</p>
   <div class="moves">${['q', 'j', 'i', 'l'].map(t => `<span style="background:${BLOCK[t].col};color:${BLOCK[t].ink}">${glyph(t, 36)}${BLOCK[t].word}</span>`).join('')}</div></div>
   <div class="tr">${svg('0 0 520 600', E(260, 580, 250, 20, C.wash) + tower(260, 580, ['q', 'j', 'i', 'l', 'q', 'i'], 1.05) + G('translate(262 120) scale(.7)', U('star')) + kidAt('leo', 'cheer', 90, 580, 0.95, 'laugh') + kidAt('zara', 'handup', 430, 580, 0.95, 'talk', true), 'width:100%;height:100%')}</div></div>`, C.tSun);
 // 2 the blocks
 slide(`<h2>How we build our ${NAME}</h2><div class="legend">${['q', 'j', 'i', 'l'].map(t => `<div class="lg" style="background:${BLOCK[t].tint}"><span class="big" style="background:${BLOCK[t].col}">${glyph(t, 110)}</span><b style="color:${BLOCK[t].dark}">${BLOCK[t].label}</b><p>${BLOCK[t].kid}</p></div>`).join('')}</div>`);
 // 3 rules
 slide(`<h2>Our ${NAME} rules</h2><div class="rules">
-  <div><span style="background:${C.sun}">${svg('-60 -60 120 120', `<path d="${A.starPath(48, 25)}" fill="#fff" stroke="#fff" stroke-width="10" stroke-linejoin="round"/>`, 'width:70px;height:70px')}</span>One voice at a time.<small>Whoever holds the star talks.</small></div>
+  <div><span style="background:${C.sun}">${svg('-60 -60 120 120', `<path d="${A.starPath(48, 25)}" fill="#fff" stroke="#fff" stroke-width="10" stroke-linejoin="round"/>`, 'width:70px;height:70px')}</span>One voice at a time.<small>Whoever holds the star takes a turn.</small></div>
   <div><span style="background:${C.sky}">${svg('0 0 100 100', `<text x="50" y="68" font-family="Fredoka, sans-serif" font-weight="700" font-size="44" fill="#fff" text-anchor="middle">pass</text>`, 'width:80px;height:80px')}</span>“Pass” is OK.<small>You can listen and try next time.</small></div>
-  <div><span style="background:${C.plum}">${glyph('l', 80)}</span>Every way of talking counts.<small>Words, signs, pointing, pictures and devices.</small></div>
+  <div><span style="background:${C.plum}">${svg('0 0 100 100', `<path d="M14 22 a12 12 0 0 1 12 -12 h48 a12 12 0 0 1 12 12 v32 a12 12 0 0 1 -12 12 h-30 l-16 16 v-16 h-2 a12 12 0 0 1 -12 -12Z" fill="#fff"/><circle cx="34" cy="38" r="6" fill="${C.plum}"/><circle cx="50" cy="38" r="6" fill="${C.plum}"/><circle cx="66" cy="38" r="6" fill="${C.plum}"/>`, 'width:80px;height:80px')}</span>Every way of talking counts.<small>Words, signs, pointing, pictures and devices.</small></div>
   <div><span style="background:${C.grass}">${svg('0 0 100 100', tower(50, 94, ['q', 'j', 'i'], 0.42), 'width:80px;height:80px')}</span>We build one tower together.<small>Every block helps our class.</small></div></div>`);
 // 4-7 the four moves
 const moveSlide = (t, lines, head) => slide(`<div class="move"><div class="mleft" style="background:${BLOCK[t].col};color:${BLOCK[t].ink}">${glyph(t, 230)}<b>${BLOCK[t].label}</b></div>
@@ -36,7 +36,7 @@ for (const l of W.list('topics', 9)) {
 }
 // 17 whose turn
 slide(`<div class="split"><div>${svg('-280 -280 560 540', `<path d="${A.starPath(230, 118)}" fill="${C.sun}" stroke="${C.sun}" stroke-width="30" stroke-linejoin="round"/>` + Ci(-40, -14, 14, C.ink) + Ci(40, -14, 14, C.ink) + L('M-30 26 Q0 50 30 26', C.ink, 11), 'width:100%;height:100%')}</div>
-  <div><h1 class="xl">Whose turn?</h1><p class="say">Pass the Talking Star.<br>Whoever holds it talks.<br>Everyone else listens.</p></div></div>`, C.tSky);
+  <div><h1 class="xl">Whose turn?</h1><p class="say">Pass the Talking Star.<br>Whoever holds it takes a turn.<br>Everyone else listens.</p></div></div>`, C.tSky);
 // 18 wobble
 slide(`<div class="split"><div>${svg('0 0 300 330', G('rotate(-9 150 320)', tower(150, 320, ['q', 'j', 'i', 'l'], 1.0)) + A.motion(46, 70, 30, 200, C.tomato, 9) + A.motion(254, 70, 30, -20, C.tomato, 9) + A.motion(40, 130, 26, 180, C.tomato, 9) + A.motion(260, 130, 26, 0, C.tomato, 9), 'width:100%;height:100%')}</div>
   <div><h1 class="xl" style="color:${C.tomato}">Tower wobble!</h1><p class="say">One voice at a time.<br>Who has the star?</p></div></div>`, C.tTomato);

@@ -55,7 +55,7 @@ const cutNote = (extra = '') => `<p class="cutnote"><span class="scissor">✂</s
   <div class="covmeta">${pill('Ages 3–7 · Preschool to Grade 2', C.ink)} ${pill('Print · Project · Play', C.tomato)} ${pill('Prep: about 20 min, once · no-cut option', C.wash, C.ink)}</div>
   <div class="covinside">
     <div><b>32</b>tower blocks</div><div><b>36</b>prompt cards</div><div><b>1-page</b>teacher script</div>
-    <div><b>6</b>circle-time games</div><div><b>+</b>family take-home</div><div><b>+</b>bonus story</div>
+    <div><b>7</b>circle-time games</div><div><b>+</b>family take-home</div><div><b>+</b>bonus story</div>
   </div>
 </div>`, { noFoot: false });
 }
@@ -78,8 +78,8 @@ page('inside', 'Inside this kit', () => `
   <div>
     <h3 class="h3">Quick start</h3>
     <ol class="steps">
-      <li><b>Print and cut</b> the tower blocks (pages ${pageNo('blk-q')}–${pageNo('blk-l')}) and one set of prompt cards. About 20 minutes, once; a paper trimmer helps.</li>
-      <li><b>Put up the poster</b> at children’s eye level. Blocks get taped above it.</li>
+      <li><b>Print and cut</b> the tower blocks (pages ${pageNo('blk-q')}–${pageNo('blk-l')}) and one set of prompt cards. About 20 minutes, once; a paper trimmer helps. For more than 16 children, print the block pages twice.</li>
+      <li><b>Put up the poster</b> low, at children’s eye level. Blocks get taped above it: pre-roll tape loops so children can stick their own, and you add the high ones.</li>
       <li><b>Read the teacher script</b> once (page ${pageNo('script')}).</li>
       <li><b>Play one round</b> at circle time. Count the tower together.</li>
     </ol>
@@ -115,7 +115,7 @@ page('before', 'Before you start', () => `
     <li><b>Store</b> each card set in its own envelope or zip bag, labeled with its color.</li>
   </ul></section>
   <section class="tip"><h3 class="h3" style="color:${C.grass}">Ages and groups</h3><ul>
-    <li><b>Ages 3–4:</b> start with two blocks only, ASK and LISTEN. Rounds of 3–5 minutes. You read the cards aloud.</li>
+    <li><b>Ages 3–4:</b> start with COMMENT and LISTEN only. Rounds of 3–5 minutes. You read the cards aloud.</li>
     <li><b>Ages 5–7:</b> use all four blocks and the prompt cards. Rounds of 8–10 minutes.</li>
     <li>Works for a whole class in a circle, a small group of 4–6, or pairs.</li>
     <li>The picture on every card carries its meaning, so pre-readers can play too.</li>
@@ -137,7 +137,7 @@ page('before', 'Before you start', () => `
   </section>
 </div>
 <div class="whybox">
-  <div><h3 class="h3">Why it works</h3><p>Children get better at conversation by having lots of conversations: asking, answering, adding on and listening, with grown-ups and friends who wait for them. The tower makes each of those turns visible, so the whole class can see them and cheer.</p></div>
+  <div><h3 class="h3">Why it works</h3><p>Children get better at conversation by having lots of conversations: asking, answering, adding on and listening, with grown-ups and friends who wait for them. The tower makes each of those turns visible, so the whole class can see them and cheer. For the youngest, saying something back comes before asking a friend a question, so start there.</p></div>
   <div><h3 class="h3">Three talk lines for any time</h3><p class="lines">“Tell me more.”<br>“What happened next?”<br>“I wonder…”</p><p class="small">Most classes love 2–3 of the six variations. Keep your favorites and skip the rest.</p></div>
 </div>
 <div class="needbox"><h3 class="h3">What you need</h3><div class="needs">
@@ -151,24 +151,26 @@ page('before', 'Before you start', () => `
 {
   const steps = [
     ['1', 'Gather', '1 min', 'Children sit in a circle. The poster is up, the blocks are in a basket, and the Talking Star is in your hand.',
-      '“Today we are going to build something with our words. It is called a Talk Tower!”'],
+      '“Today we are going to build something by taking turns to talk. It is called a Talk Tower!”'],
     ['2', 'Meet the blocks', '2 min', 'Hold up one block at a time.',
       '“Blue means <b>ask</b>: you ask a friend a question. Yellow means <b>comment</b>: you say something back. Green means <b>add one</b>: you add one more idea. Purple means <b>listen</b>: you show you heard your friend.”'],
     ['3', 'Show one turn', '1 min', 'Play a turn with a child or another adult so everyone sees it first.',
       '“What did you play today?” <span class="do">(Child answers.)</span> “Me too! I love the sand table.” <span class="do">(Add a yellow block.)</span> “My comment made our tower grow!”'],
-    ['4', 'Play the round', '5 min', 'Draw a topic card. Pass the star around the circle. After each turn, the child adds their block, or you add it together.',
-      '“Whoever holds the star can talk. Everyone else is listening. You can ask, comment, add one, or say pass.”'],
-    ['5', 'Count and celebrate', '1 min', 'Count out loud together, then write today’s height on the weekly tracker.',
-      '“Let’s count our tower: one, two, three… Our tower is ___ blocks tall! We built that with our words and our ears.”'],
+    ['4', 'Play the round', '5 min', 'Draw a topic card and pass the star. After each turn, the child adds a block, or you add it together.',
+      '“Whoever holds the star takes a turn. Everyone else listens, their own way. You can ask, comment, add one, or say pass.”'],
+    ['5', 'Count and celebrate', '1 min', 'Count together. The last child puts the Talking Star on top. Write the height on the tracker.',
+      '“Let’s count our tower: one, two, three… Our tower is ___ blocks tall! We built that together, one turn at a time.”'],
   ];
   const ifs = [
     ['Everyone talks at once', '“Tower wobble! One voice at a time. Who has the star?” Hold up the wobble sign.'],
     ['A child does not want a turn', '“Pass is OK. You can point, nod or show me. Want to earn a listen block?”'],
     ['One child talks a lot', '“Great idea! Hold it for the next round. Let’s hear from someone who hasn’t had a turn.”'],
     ['The tower is small today', '“Every block counts. We will build more tomorrow.”'],
+    ['A child needs to move', 'Let them stand or rock nearby. A moving body can still listen.'],
+    ['The blocks run out', 'Reuse them each round, or add tally marks on the board.'],
   ];
   page('script', 'Teacher script', () => `
-<div class="scripthead"><h2 class="h">Teacher script: your first round</h2><p class="meta">About 10 minutes · whole group · <b>say</b> the words in bold quotes; <span class="do">do</span> the gray notes</p></div>
+<div class="scripthead"><h2 class="h">Teacher script: your first round</h2><p class="meta">About 10 minutes (3–5 for ages 3–4, page ${pageNo('before')}) · whole group · <b>say</b> the words in bold quotes; <span class="do">do</span> the gray notes</p></div>
 <div class="script">${steps.map(([n, t, m, d, s]) => `<div class="srow"><div class="snum">${n}</div><div class="stxt"><h4>${t} <small>${m}</small></h4><p class="do">${d}</p><p class="say">${s}</p></div></div>`).join('')}</div>
 <div class="ifbox"><h4>If this happens…</h4><div class="ifs">${ifs.map(([a, b]) => `<div><b>${a}</b><p>${b}</p></div>`).join('')}</div></div>
 <p class="tinynote">Next time, try a variation from pages ${pageNo('var1')}–${pageNo('var2')}. The bonus story <i>More Talk, Less Tap</i> is a fun way to start on day one.</p>`);
@@ -199,7 +201,7 @@ for (const t of ['q', 'j', 'i', 'l']) {
     <div class="bglyph">${glyph(t, 100, INK)}</div>
     <div class="btxt"><div class="blab" style="font-size:${b.fs}px">${b.label}</div><div class="bkid">${b.kid}</div><div class="bname" style="border-color:${line}">name</div></div></div></div>`;
   page('blk-' + t, `Tower blocks: ${b.label}`, `
-<div class="cardhead"><h2 class="h2">Tower blocks: <span style="color:${b.dark}">${b.label}</span></h2>${cutNote(INK ? 'Children can color their own block before it goes on the tower.' : 'Print on cardstock. Make as many as you need.')}</div>
+<div class="cardhead"><h2 class="h2">Tower blocks: <span style="color:${b.dark}">${b.label}</span></h2>${cutNote((INK ? 'Children can color their own block before it goes on the tower.' : 'Print on cardstock.') + ' 8 per page: for more than 16 children, print it twice.')}</div>
 <div class="grid blocks">${cell.repeat(8)}</div>`);
 }
 
@@ -229,7 +231,7 @@ for (const t of ['q', 'j', 'i', 'l']) {
   const box = t => `<i style="border-color:${BLOCK[t].col}"></i>`;
   const cell = `<td>${['q', 'j', 'i', 'l'].map(box).join('')}</td>`;
   page('week', 'Weekly turn tracker', `
-<div class="cardhead"><h2 class="h2">Talk Tower turn tracker</h2><p class="lead">Week of ______________ · Color a square when a child adds that kind of block. Use it to make sure <b>everyone</b> gets a turn, never to rank or compare children. Print two for a bigger class.</p></div>
+<div class="cardhead"><h2 class="h2">Talk Tower turn tracker</h2><p class="lead">Week of ______________ · Color a square when a child adds that kind of block. Use it to make sure <b>everyone</b> gets a turn, never to rank or compare children. Keep it in your folder, not on the wall. Print two for a bigger class.</p></div>
 <table class="track"><thead><tr><th>Name</th>${['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].map(d => `<th>${d}</th>`).join('')}</tr></thead>
 <tbody>${`<tr><td class="nm"></td>${cell.repeat(5)}</tr>`.repeat(rows)}
 <tr class="tot"><td>Tower height</td>${'<td>____ blocks</td>'.repeat(5)}</tr></tbody></table>
@@ -241,7 +243,7 @@ for (const t of ['q', 'j', 'i', 'l']) {
   const star = (INK ? `<path d="${A.starPath(222, 114)}" fill="#fff" stroke="${C.sun}" stroke-width="14" stroke-linejoin="round"/>` : `<path d="${A.starPath(230, 118)}" fill="${C.sun}" stroke="${C.sun}" stroke-width="30" stroke-linejoin="round"/>`) +
     Ci(-40, -14, 14, C.ink) + Ci(40, -14, 14, C.ink) + Ci(-35, -19, 4.5, '#fff') + Ci(45, -19, 4.5, '#fff') + L('M-30 26 Q0 50 30 26', C.ink, 11) + Ci(-72, 20, 16, C.tomato, 'fill-opacity=".45"') + Ci(72, 20, 16, C.tomato, 'fill-opacity=".45"');
   page('star', 'Talking Star and wobble sign', `
-<div class="cardhead"><h2 class="h2">Talking Star <span class="muted">and</span> “Tower wobble!” sign</h2>${cutNote(INK ? 'Color the star, then glue it to cardstock.' : 'Glue the star to cardstock. Whoever holds it talks.')}</div>
+<div class="cardhead"><h2 class="h2">Talking Star <span class="muted">and</span> “Tower wobble!” sign</h2>${cutNote(INK ? 'Color the star, then glue it to cardstock; a craft-stick handle helps small hands.' : 'Glue the star to cardstock; a craft-stick handle helps small hands. Whoever holds it takes a turn.')}</div>
 <div class="starpage">
   <div class="cell starcell">${svg('-270 -270 540 520', star, 'width:100%;height:100%')}<div class="starlab">Talking Star</div></div>
   <div class="cell wobble"><div class="wobin">${svg('0 0 220 170', G('rotate(-8 110 150)', towerArt(110, 160, ['q', 'j', 'i'], 0.8)) + A.motion(40, 40, 22, 200, C.tomato, 7) + A.motion(180, 40, 22, -20, C.tomato, 7), 'width:150px;height:116px')}
@@ -274,42 +276,42 @@ promptPage('pc-add', 'i', 'ADD ONE', W.list('addone', 9), 'Add one more');
 
 // ------------------------------------------------------------------ 18-19 CIRCLE-TIME VARIATIONS
 const VARS = [
-  { n: 1, t: 'Pass the Talking Star', col: C.sun, who: 'Whole group', time: '5–10 min', need: 'Talking Star, one topic card',
+  { n: 1, prep: 'none', t: 'Pass the Talking Star', col: C.sun, who: 'Whole group', time: '5–10 min', need: 'Talking Star, one topic card',
     steps: ['Read the topic card aloud.', 'Pass the star around the circle. Whoever holds it may ask, comment, add one or pass.', 'Add a block after every turn and count the tower at the end.'],
     easy: 'Everyone finishes the same starter: “I like…”', stretch: 'Each turn connects to the friend before: “Add one to what Maya said.”',
     months: 36, quick: 'Skip the topic card. Ask one question and pass the star to three children. One block each.' },
-  { n: 2, t: 'Add-One Story Tower', col: C.grass, who: 'Whole group', time: '10 min', need: 'Green blocks',
+  { n: 2, prep: 'none', t: 'Add-One Story Tower', col: C.grass, who: 'Whole group', time: '10 min', need: `Green blocks (for a whole class, print page ${pageNo('blk-i')} twice)`,
     steps: ['Start a silly story: “Once there was a dog who wanted to…”', 'Each child adds one thing to the story, and a green block goes on the tower.', 'At the end, retell the whole story together, one block at a time.'],
     easy: 'Add just one word each: “a big… red… bus”.', stretch: 'Add a problem, then ask the circle how to fix it.',
     months: 48, quick: 'Say one story starter. Three children add one word each, then say the whole line together.' },
-  { n: 3, t: 'Ask Me One More', col: C.sky, who: 'Pairs', time: '5 min', need: 'Nothing at all',
+  { n: 3, prep: 'none', t: 'Ask Me One More', col: C.sky, who: 'Pairs', time: '5 min', need: 'Nothing at all',
     steps: ['One partner shares something: “I have a cat.”', 'The other listens, then asks one more question: “What is its name?”', 'Swap. Each pair adds a blue block to the class tower.'],
     easy: 'Hand the asker an ASK card to read or point to.', stretch: 'Try for three questions in a row on the same topic.',
-    months: 48, quick: 'One pair shows the class: one shares, one asks one more question. Everyone claps.' },
-  { n: 4, t: 'Comment Catch', col: C.tomato, who: 'Small group', time: '5 min', need: 'A large soft ball',
+    months: 48, quick: 'One pair shows the class: one shares, one asks one more question. Everyone cheers their way: clap, wave or a silent cheer.' },
+  { n: 4, prep: 'find a soft ball', t: 'Comment Catch', col: C.tomato, who: 'Small group', time: '5 min', need: 'A large soft ball',
     steps: ['Sit in a small circle. One child shares a sentence about the topic.', 'Roll the ball along the floor to a friend.', 'The catcher makes a comment about what they heard, then shares their own sentence and rolls on.'],
     easy: 'Keep a COMMENT card in the middle to point to.', stretch: 'The catcher starts with the sharer’s name: “Leo, that is funny!”',
     months: 42, quick: 'No ball: point to a friend instead of rolling. Two or three turns.' },
-  { n: 5, t: 'Listening Tower', col: C.plum, who: 'Whole group', time: '5 min', need: 'Purple blocks',
+  { n: 5, prep: 'none', t: 'Listening Tower', col: C.plum, who: 'Whole group', time: '5 min', need: `Purple blocks (for a whole class, print page ${pageNo('blk-l')} twice)`,
     steps: ['A child shares one thing about their day.', 'The next child says back one thing they heard, then shares their own.', 'Every say-back earns a purple block. A calm way to end a busy day.'],
     easy: 'The grown-up says it back first, then invites a child to try.', stretch: 'Say back two things you heard.',
     months: 42, quick: 'You share one thing about your day. Two children say back what they heard.' },
-  { n: 6, t: 'Mystery Bag Talk', col: C.ink, who: 'Small group', time: '10 min', need: 'A cloth bag and one classroom object',
+  { n: 6, prep: '1 min to fill the bag', t: 'Mystery Bag Talk', col: C.ink, who: 'Small group', time: '10 min', need: 'A cloth bag and one classroom object',
     steps: ['Hide one object in the bag. Pick something too big to fit through a toilet-paper tube.', 'Children ask questions to guess it: “Is it soft?” Each question adds a blue block.', 'Reveal it, then everyone comments or adds one idea about it.'],
     easy: 'Answer with a yes or no, and let children feel the bag.', stretch: 'The child who guesses hides the next object and answers the questions.',
     months: 36, quick: 'No bag: hold one classroom object behind your back and take three guesses.' },
 ];
-const varCard = v => `<div class="var"><div class="vhead"><span class="vnum" style="background:${v.col}">${v.n}</span><div><h3>${v.t}</h3><p class="vmeta">${v.who} · From ${v.months} months · ${v.time} · <b>You need:</b> ${v.need}</p></div></div>
+const varCard = v => `<div class="var"><div class="vhead"><span class="vnum" style="background:${v.col}">${v.n}</span><div><h3>${v.t}</h3><p class="vmeta">${v.who} · From ${v.months} months · ${v.time} · <b>Prep:</b> ${v.prep} · <b>You need:</b> ${v.need}</p></div></div>
   <ol>${v.steps.map(s => `<li>${s}</li>`).join('')}</ol>
   <p class="vquick"><b>2-minute version, no setup:</b> ${v.quick}</p>
   <div class="vtips"><p><b>Make it easier:</b> ${v.easy}</p><p><b>Make it harder:</b> ${v.stretch}</p></div></div>`;
-page('var1', 'Circle-time variations 1', `<h2 class="h">Circle-time variations</h2><p class="lead">Six more ways to build the tower. Each one works with the same blocks, cards and rules.</p><div class="vars">${VARS.slice(0, 3).map(varCard).join('')}</div>`);
+page('var1', 'Circle-time variations 1', `<h2 class="h">Circle-time variations</h2><p class="lead">Six more ways to build the tower. Each one works with the same blocks, cards and rules, needs nothing to buy, and makes no mess.</p><div class="vars">${VARS.slice(0, 3).map(varCard).join('')}</div>`);
 page('var2', 'Circle-time variations 2', `<h2 class="h">Circle-time variations <span class="muted">(continued)</span></h2><div class="vars">${VARS.slice(3).map(varCard).join('')}</div>
 <div class="vfoot"><b>Keep it a celebration.</b> Count the class tower, not individual turns. No winners, no prizes, and no child is made to talk before they are ready.</div>`);
 
 // ------------------------------------------------------------------ 20-21 FAMILY TAKE-HOME
 // These pages go home, so their footer says so instead of "don't share".
-const FAMFOOT = '© 2026 AlphaPlay LLC · Teachers may copy this page for their class’s families.';
+const FAMFOOT = '© 2026 AlphaPlay LLC · Licensed buyers may copy this page for the families they serve.';
 page('fam1', 'Family letter', `
 <div class="famtop">${LOGO('lockup-horizontal.svg', 30)}<span class="famtag">From our classroom to your home</span></div>
 <h2 class="h">Play ${NAME} at home</h2>
@@ -329,14 +331,14 @@ page('fam1', 'Family letter', `
     <li><b>Say what you see.</b> “You’re smiling! Is that a funny idea?”</li>
     <li><b>Repeat and add one word.</b> “A dog!” “A <i>big</i> dog!”</li>
     <li><b>Follow their lead.</b> Talk about what your child already loves.</li>
-    <li><b>Every way counts.</b> Pointing, signing, gestures and a tap on a talking device are turns too.</li>
+    <li><b>Every way counts.</b> Pointing, signing, gestures and a tap on a talking device are turns too. A talking device is a child’s voice, not screen time.</li>
     <li><b>Use your home language.</b> Talk, sing and read in the language you know best.</li></ul>
     <p class="safe"><b>Safety:</b> an adult plays along. If babies or toddlers are nearby, use objects too big to fit through a toilet-paper tube.</p></div>
 </div>
 <div class="famart">${svg('0 -56 720 306', E(360, 236, 340, 16, C.wash) + teacherAt('sittalk', 150, 236, 0.74, 'talk') + kidAt('priya', 'sithand', 300, 236, 0.74, 'talk', true) + kidAt('milo', 'sitcheer', 560, 236, 0.74, 'laugh', true) + towerArt(430, 236, ['q', 'j', 'i', 'l'], 0.66) +
     G('translate(164 -50)', P('M0 0 h150 a18 18 0 0 1 18 18 v34 a18 18 0 0 1 -18 18 h-100 l-22 20 l2 -20 h-30 a18 18 0 0 1 -18 -18 v-34 a18 18 0 0 1 18 -18Z', C.tSky) + `<text x="84" y="44" font-family="Fredoka, sans-serif" font-weight="600" font-size="19" fill="${C.ink}" text-anchor="middle">What did you play?</text>`), 'width:100%;height:100%')}</div>
 <div class="famfoot">
-  <div class="teacherline">From: <span class="line"></span><br><small>(teacher)</small></div>
+  <div class="teacherline">From: <span class="line"></span><br><small>(teacher or group leader)</small></div>
   <div class="famqr">${qrSvg(92)}<p><b>Free family bonus</b><br>More 5-minute talk games to print at home:<br>playbeforepixels.com/bonus/picture-more-talk-less-tap</p></div>
 </div>`, { foot: FAMFOOT });
 {
@@ -363,11 +365,11 @@ function glyphRaw(t, onWhite) { return K.glyphInner(t, onWhite); }
   page('cert', 'Class certificate', `
 <div class="cert"><div class="certin">
   <p class="ckick">${NAME} certificate</p>
-  <h2 class="ctitle">Our class built a tower of words!</h2>
+  <h2 class="ctitle">Our class built a ${NAME}!</h2>
   <div class="cbig"><span class="blank wide">&nbsp;</span><span>blocks tall</span></div>
   <p class="cline">Class: <span class="blank wide2">&nbsp;</span></p>
   <p class="cline">Date: <span class="blank">&nbsp;</span> &nbsp; Teacher: <span class="blank">&nbsp;</span></p>
-  <p class="cmsg">We asked questions, said kind things back, added big ideas and listened to our friends.</p>
+  <p class="cmsg">We asked questions, said things back, added big ideas and listened to our friends, every way we talk.</p>
   <div class="cart">${svg('0 0 720 320', E(360, 302, 330, 16, C.wash) + art, 'width:100%;height:100%')}</div>
   <div class="cbrand">${LOGO('lockup-horizontal.svg', 26)}<span>playbeforepixels.com</span></div>
 </div></div>`, { foot: '© 2026 AlphaPlay LLC · Photos welcome. Please leave out children’s names and faces.' });
@@ -380,14 +382,14 @@ page('story', 'Bonus read-aloud story', () => `
   <div class="storycov"><img src="story-bonus/story-cover.png" alt="Cover of the bonus story More Talk, Less Tap"></div>
   <div class="storytxt">
     <p class="lead"><b><i>More Talk, Less Tap</i></b> is a 32-page picture-book story that comes free with this kit. Room 5 builds a Talk Tower, one question, joke and idea at a time, until everybody talks at once and… CRASH! Quiet Sam has the idea that saves the day: take turns.</p>
-    <p><b>One difference:</b> in the story, yellow blocks are for jokes and laughs. In the game, yellow means <b>comment</b>, saying something back to a friend. Laughing at a friend’s joke still counts!</p>
+    <p><b>One difference:</b> in the story, yellow blocks are for jokes and laughs. In the game, yellow means <b>comment</b>, saying something back to a friend. Laughing at a friend’s joke still counts! And the “tap” in the title? It is the rain on the window and Bubbles the fish. A tap on a talking device is talk, and it always earns a block.</p>
     <p><b>File:</b> Talk-Tower-Story-Read-Aloud.pdf (square pages). Project it for the group, or print it one or two pages per sheet.</p>
   </div>
 </div>
 <div class="thumbs">${['p07', 'p13', 'p19', 'p26'].map(n => `<img src="story-bonus/preview/${n}.png" alt="">`).join('')}</div>
 <div class="three rtips">
   <section><h3 class="h3" style="color:${C.sky}">Before</h3><ul><li>Show the cover. “What do you think a Talk Tower is?”</li><li>Point to the four blocks. Can anyone guess what each one means?</li></ul></section>
-  <section><h3 class="h3" style="color:${C.grass}">During</h3><ul><li>Invite everyone to shout “CLACK!” and “Up it goes!” with you.</li><li>Pause at the crash. “Uh-oh. What should Room 5 do?”</li><li>Give Sam’s quiet idea a moment of wait time.</li></ul></section>
+  <section><h3 class="h3" style="color:${C.grass}">During</h3><ul><li>Invite everyone to join in on “CLACK!” and “Up it goes!”, loud or whisper-quiet.</li><li>Pause at the crash. “Uh-oh. What should Room 5 do?”</li><li>Give Sam’s quiet idea a moment of wait time.</li></ul></section>
   <section><h3 class="h3" style="color:${C.tomato}">After</h3><ul><li>“Which block would you add first?”</li><li>Play your first ${NAME} round (teacher script, page ${pageNo('script')}).</li><li>The story’s back pages have more talk starters and games.</li></ul></section>
 </div>`);
 
@@ -396,12 +398,12 @@ page('terms', 'License terms and copyright', `
 <h2 class="h">License terms</h2>
 <p class="lead">Thank you for buying an original resource. Your license depends on what you bought:</p>
 <table class="lic"><thead><tr><th></th><th>Single-classroom license<br><span>$6.99</span></th><th>Site license<br><span>$12.99</span></th></tr></thead><tbody>
-<tr><td>Who may use it</td><td>One teacher and the children they teach</td><td>All staff at one named school, center or library site</td></tr>
+<tr><td>Who may use it</td><td>One teacher (or one homeschooling family) and the children they teach</td><td>All staff at one named school, center or library site</td></tr>
 <tr><td>Printing and copies</td><td>Unlimited, for the children in that teacher’s class</td><td>Unlimited, for staff and children at that one site</td></tr>
 <tr><td>Projecting and digital</td><td>Project in class. Post only to a password-protected class page for your own class.</td><td>Project in any room at the site. Post only to the site’s password-protected internal system.</td></tr>
 <tr><td>Not included</td><td>Colleagues, the whole grade, other schools</td><td>Other sites, a whole district, public posting</td></tr>
 </tbody></table>
-<div class="buybox"><div><b>More than one classroom?</b> Each extra teacher needs their own single-classroom license, or one site license covers a whole school, center or library site.</div><div><b>Paying by purchase order?</b> Use the written quote form on our website. Site licenses arrive by email with a license certificate naming your site.</div></div>
+<div class="buybox"><div><b>More than one classroom?</b> Each extra teacher needs their own single-classroom license, or one site license covers a whole school, center or library site. A PTA or parent group may buy the site license for its school.</div><div><b>Paying by purchase order?</b> Use the written quote form on our website. Site licenses arrive by email with a license certificate naming your site.</div></div>
 <div class="two tight">
   <div><h4>Under any license, please don’t</h4><ul class="small">
     <li>sell, share, give away or bundle the files or printed copies;</li><li>post or upload them to public or shared websites, drives or marketplaces;</li>
