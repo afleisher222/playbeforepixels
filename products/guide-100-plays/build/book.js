@@ -191,6 +191,9 @@ function titlePage() {
 function copyrightPage() {
   return pg({ kind: 'copyright', noFolio: true, html: `
   <div class="live" style="justify-content:flex-end;font-size:8.6pt;line-height:1.5">
+    <div data-founder="rewrite" style="margin:1.1in auto auto;text-align:center;max-width:4.2in">
+      <p class="hand" style="font-size:22pt;line-height:1.2;color:${C.tomato}">For every grown-up who gets down on the floor,<br>and every child who pulls them there.</p>
+    </div>
     <p style="font-family:'Bricolage Grotesque';font-weight:800;font-size:12pt">100 Screen-Free Plays for Ages 0–5</p>
     <p>Easy, low-prep play and talk ideas for babies, toddlers and preschoolers, sorted by age</p>
     <p style="margin-top:.12in">First edition, 2026 · ${VERSION}${V.bw ? ' · Black-and-white interior' : V.low ? ' · Low-ink edition' : ' · Full-color edition'}</p>
@@ -257,7 +260,7 @@ function howPage() {
       ${item(`<span class="num" style="background:${C.tPlum}">2</span>`, 'Too tired today?', 'Turn to <b>Tired-grown-up plays</b>: 2 minutes, no setup, played from the couch or the floor.')}
     </ul>
     <div class="boxnote" style="display:flex;gap:.16in;align-items:center"><div class="display" style="font-size:26pt;color:${C.tomato}">3</div><div><b>Three plays a day is a great day.</b> One in the morning, one outside and one to wind down. Most children love 2 or 3 of these plays and ask for them again and again; that’s normal. If interest fades, stop, and try another day.</div></div>
-    <div class="boxnote" style="margin-top:.09in;border:0;background:${C.wash}"><b>Every child is different.</b> If a texture, sound or touch bothers your child, change the play or skip it: a spoon instead of hands, watching first or sitting beside you all count. Big brothers and sisters can lead plays too, with a grown-up right there. <b>Every play works from a chair, a bed or a wheelchair too:</b> bring it to a table or tray and let your child do the fetching. Any sound play can be a see-it or feel-it play: a light flick for “stop,” a hand on the pot for the beat.</div>
+    <div class="boxnote" style="margin-top:.09in;border:0;background:${C.wash}"><b>Every child is different.</b> If a texture, sound or touch bothers your child, change the play or skip it; watching first counts. Big brothers and sisters can lead, with a grown-up right there. <b>Every play works from a chair, bed or wheelchair:</b> bring it to a tray. A sound play can become a see-it or feel-it play: a light flick for “stop,” a hand on the pot for the beat.</div>
   </div>` });
   function drops(l) { return X.drops(l); }
 }
@@ -612,10 +615,33 @@ function bonusPage() {
     <p class="small" style="text-align:center">Find them all at playbeforepixels.com</p>
   </div>` });
 }
+let notesN = 0;
+const NOTE_PROMPTS = [
+  ['Our favorite play so far', 'The moment that made us laugh', 'A sound, sign or word we heard a lot'],
+  ['A play we made up', 'Where we played it', 'What we want to try next'],
+];
 function notesPage() {
+  const set = NOTE_PROMPTS[notesN++ % NOTE_PROMPTS.length];
+  const rule = `<div style="border-bottom:1.2px solid var(--line);height:.36in"></div>`;
   return pg({ kind: 'notes', title: null, html: `
-  <div class="live"><div class="eyebrow">Notes</div><h1>Favorites and funny moments</h1>
-  <div style="flex:1;background:repeating-linear-gradient(to bottom, transparent 0, transparent calc(.36in - 1.2px), var(--line) calc(.36in - 1.2px), var(--line) .36in)"></div></div>` });
+  <div class="live"><div class="eyebrow">Keep it</div><h1>Favorites and funny moments</h1>
+  <p class="lede" style="margin-bottom:.16in">Jot it down while it’s fresh: a date, a play, a word or a laugh. Years from now, these lines are the ones you’ll reread.</p>
+  ${set.map(t => `<div style="display:flex;align-items:flex-end;gap:.14in;margin-bottom:.1in"><b style="flex:none;font-size:10.4pt">${t}</b><div style="flex:1;border-bottom:1.2px solid var(--line);height:.3in"></div></div>`).join('')}
+  <div style="margin-top:.14in;display:flex;flex-direction:column;flex:1;overflow:hidden">${rule.repeat(18)}</div></div>` });
+}
+function closingPage() {
+  return pg({ kind: 'text', title: null, html: `
+  <div class="live" style="align-items:center;text-align:center">
+    <div class="eyebrow">The last page</div>
+    <h1 style="font-size:40pt;margin-top:.1in">That’s a play day.</h1>
+    <p class="lede" data-founder="rewrite" style="max-width:5.3in;font-size:13pt;line-height:1.55">Whatever you tried, a peekaboo, a pillow mountain or one silly voice at dinner, it counted. You said something, your child answered, and you answered back. That’s the whole book.</p>
+    <div class="spacer"></div>
+    <svg class="scene" viewBox="60 110 480 390" style="width:4.6in">${X.sceneGoodnight()}</svg>
+    <div class="spacer"></div>
+    <p class="display" style="font-size:18pt">Tomorrow, pick one more play.</p>
+    <p class="hand" style="font-size:24pt;margin-top:.08in;color:${C.tomato}">Play first. The pixels will keep.</p>
+    <img src="../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels" style="height:.46in;margin-top:.26in">
+  </div>` });
 }
 
 // ---------------------------------------------------------------- assemble
@@ -631,7 +657,9 @@ function assemble(v) {
   if (pages.length % 2 === 1) notesPage();
   tiredPages(); sampleDay(); swapDay(); screensPage(); trackerPage(); plannerPage('tomato', 'Monday'); sourcesPage(); bonusPage();
   if (v.extras) { plannerPage('sky', 'Monday', true); plannerPage('grass', 'Sunday', true); plannerPage('plum', 'Sunday', true); plannerPage('sun', 'Monday', true); }
-  while (pages.length % 2 === 1 || (!v.extras && pages.length < 80)) notesPage();
+  // end on a closing page: the book's last page is even, and the paperback has at least 80 pages
+  while ((pages.length + 1) % 2 === 1 || (!v.extras && pages.length + 1 < 80)) notesPage();
+  closingPage();
   // page numbers for contents
   const index = {};
   pages.forEach((p, i) => { if (p.title && !index[p.title]) index[p.title] = i + 1; });

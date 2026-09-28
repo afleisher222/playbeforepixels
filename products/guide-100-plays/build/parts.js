@@ -86,17 +86,28 @@ function sceneRocket() { // 3–5: box rocket countdown
     <path d="M-78 ${F - 44}L-112 ${F}H-78Z" fill="${C.tomato}"/><path d="M78 ${F - 44}L112 ${F}H78Z" fill="${C.tomato}"/>
     <path d="M-34 ${F}L0 ${F + 30}L34 ${F}Z" fill="${C.sun}"/></g>`;
   const g = Object.assign({}, ADULTS.G5, { x: 450, y: F - 51 * 1.08, s: 1.08, flip: true, legs: 'kneel', aL: 16, aR: -150, face: 'laugh' });
-  const stars = [[120, 190, 1], [300, 140, .7], [540, 260, .8], [340, 250, .5]].map(([x, y, s]) => `<path d="M0-12L3.5-3.5 12 0 3.5 3.5 0 12-3.5 3.5-12 0-3.5-3.5Z" fill="${C.sun}" transform="translate(${x} ${y}) scale(${s * 1.6})"/>`).join('');
+  const stars = [[120, 190, 1], [300, 140, .7], [540, 260, .8], [340, 250, .5]].map(([x, y, s]) => `<circle cx="${x}" cy="${y}" r="${(s * 9).toFixed(1)}" fill="${C.sun}"/>`).join('');
   const nums = `<text x="440" y="176" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="40" fill="${C.ink}">3, 2, 1…</text>`;
   return `<circle cx="300" cy="318" r="160" fill="${C.tomato}"/>` + stars + kid(k) + box + adult(g) + nums;
 }
 function sceneCover() { // cover: tower of blocks, ball, grown-up and child
   const k = Object.assign({}, KIDS.A, { x: 200, y: F - 27 * 1.55, s: 1.55, aL: 16, aR: -124, face: 'laugh' });
-  const g = Object.assign({}, ADULTS.G3, { x: 432, y: F - 51 * 1.15, s: 1.15, flip: true, legs: 'kneel', aL: 12, face: 'laugh' });
-  g.aR = aimAdult(g, 'R', 330, 330);
+  const g = Object.assign({}, ADULTS.G3, { x: 446, y: F - 14 * 1.3, s: 1.3, flip: true, legs: 'cross', aL: 12, face: 'laugh' });
+  g.aR = aimAdult(g, 'R', 352, F - 110);
   const blocks = use('block-3', `translate(318,${F - 28})`) + use('block-1', `translate(318,${F - 84})`) + use('block-2', `translate(318,${F - 140})`) + use('block-4', `translate(322,${F - 196}) rotate(8)`);
   const ball = use('ball', `translate(96,${F - 34}) scale(.68) rotate(-12)`);
   return adult(g) + blocks + kid(k) + ball;
+}
+function sceneGoodnight() { // closing page: story time on the rug, moon up, the tablet asleep on the shelf
+  const g = Object.assign({}, ADULTS.G2, { x: 300, y: F - 14 * 1.2, s: 1.2, legs: 'cross', face: 'smile', armsFront: true });
+  const k = Object.assign({}, KIDS.C, { x: 196, y: F - 27 * 1.3, s: 1.3, face: 'laugh', aL: 16, aR: -40 });
+  const k2 = Object.assign({}, KIDS.A, { x: 408, y: F - 27 * 1.3, s: 1.3, flip: true, face: 'smile', aL: 14, aR: -44 });
+  g.aL = aimAdult(g, 'L', 270, F - 70); g.aR = aimAdult(g, 'R', 330, F - 70);
+  const book = use('book-open', `translate(300,${F - 78}) scale(.5)`, `style="--bc:${C.tomato}"`);
+  const rug = `<ellipse cx="300" cy="${F}" rx="236" ry="22" fill="${C.plum}"/>`;
+  const moon = use('moon', 'translate(470 200) scale(.9)');
+  const dots = [[140, 180, 7], [200, 136, 5], [396, 132, 6], [540, 286, 5]].map(([x, y, r]) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${C.sun}"/>`).join('');
+  return `<circle cx="300" cy="318" r="160" fill="${C.sky}"/>` + moon + dots + rug + adult(g) + kid(k) + kid(k2) + book;
 }
 const SCENES = { b0: sceneBaby, b1: sceneBubbles, b2: scenePuddle, b3: sceneRocket };
 
@@ -163,4 +174,4 @@ function ownCard(id, bandKey) {
   </article>`;
 }
 
-module.exports = { OUT, SLUG, BONUS, TITLE, SUB, COPY, FONTS, W, BC, band, esc, pad2, qrSvg, SCENES, sceneCover, ico, PREP, MESS, TIMEL, fromLabel, drops, artDisc, playCard, ownCard, fld, wherePills, VERSION };
+module.exports = { sceneGoodnight, OUT, SLUG, BONUS, TITLE, SUB, COPY, FONTS, W, BC, band, esc, pad2, qrSvg, SCENES, sceneCover, ico, PREP, MESS, TIMEL, fromLabel, drops, artDisc, playCard, ownCard, fld, wherePills, VERSION };

@@ -42,6 +42,7 @@ function front() {
       <p class="fsub">Easy, low-prep play and talk ideas for babies, toddlers and preschoolers, sorted by age</p>
     </div>
     <div class="fart"><svg viewBox="30 240 540 250" preserveAspectRatio="xMidYMax meet">${sceneCover()}</svg></div>
+    <div class="fbadge display"><b>${P.filter(p => !p.buy).length}</b>plays need nothing to buy</div>
     <div class="fbands">${BANDS.map(b => `<span class="display" style="background:${BC[b.key].c};color:${BC[b.key].fg}">${b.label}</span>`).join('')}</div>
     <div class="ffoot"><img src="${LOGO('lockup-horizontal-reverse')}" alt="Play Before Pixels"><span>Every play: what you need · prep &amp; mess<br>a talk line · a safety note</span></div>
   </div>`;
@@ -59,6 +60,8 @@ const frontCss = `
 .fart svg { width: 100%; height: 100% }
 .fbands { position: absolute; left: .62in; bottom: 1.5in; display: flex; flex-direction: column; gap: .1in }
 .fbands span { font-size: 17pt; padding: .07in .18in; border-radius: 99px; text-align: center; width: 1.05in }
+.fbadge { position: absolute; right: .72in; top: .92in; width: 1.62in; height: 1.62in; border-radius: 50%; background: ${C.sun}; color: ${C.ink}; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-size: 12.5pt; line-height: 1.02; padding: 0 .2in; transform: rotate(8deg) }
+.fbadge b { font-size: 38pt; line-height: .9; font-weight: 800 }
 .ffoot { position: absolute; left: 0; right: 0; bottom: 0; height: 1.16in; background: ${C.ink}; display: flex; align-items: center; justify-content: space-between; padding: 0 .62in .3in; gap: .3in }
 .ffoot img { height: .5in }
 .ffoot span { color: ${W}; font-size: 9.5pt; font-weight: 700; text-align: right; max-width: 3.3in; line-height: 1.35 }`;
@@ -72,6 +75,7 @@ function coverHtml() {
 function back() {
   const sample = P[21];
   return `<div class="back">
+    <div class="bcat"><span>Parenting · Family activities</span><span class="bage display">Ages 0–5</span></div>
     <div class="display bh">Play more. Talk more.<br>No special toys needed.</div>
     <p class="bp">A cup, a box, a sock, or nothing at all. <b>100 Screen-Free Plays</b> gives you a quick play for every age and every moment of an ordinary day, from the first smiles to "and then what happened?"</p>
     <ul class="bl">
@@ -83,13 +87,15 @@ function back() {
     <div class="bmini"><span class="display" style="color:${C.grass}">Play ${sample.n}</span> <b>${esc(sample.t)}</b><span class="tl">${esc(sample.talk)}</span></div>
     <div class="bbands">${BANDS.map((b, i) => `<div style="background:${BC[b.key].c};color:${BC[b.key].fg}"><svg viewBox="-60 -60 120 120"><circle r="58" fill="${W}"/><use href="#a-${['rattle', 'basket', 'boot', 'rocket'][i]}" transform="scale(.8)"/></svg><span class="display">${b.label}</span><small>${b.to - b.from + 1} plays</small></div>`).join('')}</div>
     <div class="bfoot">
-      <div><img src="${LOGO('lockup-horizontal')}" alt="Play Before Pixels"><p>playbeforepixels.com · Parent education, not medical advice.<br>Black-and-white interior · free full-color play pages at the bonus link inside.<br>${COPY}</p></div>
+      <div><img src="${LOGO('lockup-horizontal')}" alt="Play Before Pixels"><p><b>Published by Play Before Pixels / AlphaPlay LLC</b><br>playbeforepixels.com · Parent education, not medical advice.<br>Black-and-white interior · free full-color play pages at the bonus link inside.<br>${COPY}</p></div>
       <div class="isbn" aria-hidden="true"></div>
     </div>
   </div>`;
 }
 const backCss = `
 .back { position: absolute; width: 8.25in; height: 10.25in; background: ${C.tTomato}; padding: .75in .62in .62in .75in; display: flex; flex-direction: column }
+.bcat { display: flex; justify-content: space-between; align-items: center; margin-bottom: .2in; font-size: 9pt; font-weight: 800; letter-spacing: .12em; text-transform: uppercase }
+.bage { background: ${C.tomato}; color: ${W}; border-radius: 99px; padding: .04in .2in .07in; font-size: 18pt; letter-spacing: 0; text-transform: none }
 .bh { font-size: 34pt; line-height: 1.02 }
 .bp { font-size: 12.5pt; line-height: 1.5; margin-top: .24in }
 .bl { list-style: none; margin-top: .2in; font-size: 11pt; line-height: 1.45 }
@@ -118,7 +124,12 @@ html, body { width: ${Wd}in; height: ${Ht}in; overflow: hidden }
 .back { left: 0; top: 0 }
 .spine { position: absolute; left: ${8 + BLEED}in; top: 0; width: ${SPINE}in; height: ${Ht}in; background: ${C.tomato} }
 .front { left: ${8 + BLEED + SPINE - BLEED}in; top: 0 }
-.front .fbg { left: ${BLEED}in }`, `<div class="wrap">${back()}${front()}<div class="spine" title="Spine ${SPINE} in for ${PAGES} pages: no spine text (KDP allows spine text only above 79 pages and with 0.0625 in clearance; this spine is too thin)"></div></div>`);
+/* Spine text: KDP allows it from 79 pages up, with 0.0625 in clear on each side of the spine [VERIFY in KDP's cover template].
+   ${SPINE} in spine - 2 x 0.0625 = ${(SPINE - .125).toFixed(4)} in for the letters, so 6 pt caps (about 0.06 in tall). */
+.spine { z-index: 2; display: flex; align-items: center; justify-content: center; overflow: hidden }
+.spt { transform: rotate(90deg); white-space: nowrap; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 6pt; line-height: 1; letter-spacing: .08em; color: ${W} }
+.spt i { font-style: normal; margin: 0 .08in }
+.front .fbg { left: ${BLEED}in }`, `<div class="wrap">${back()}${front()}<div class="spine">${PAGES >= 80 ? `<div class="spt">100 SCREEN-FREE PLAYS <i>·</i> AGES 0–5 <i>·</i> PLAY BEFORE PIXELS</div>` : ''}</div></div>`);
 }
 
 // ---------------------------------------------------------------- mockup (1600 x 1200)
