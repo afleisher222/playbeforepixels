@@ -19,7 +19,7 @@ const B = {
     { art: 'talkcard', color: 'tomato', name: '52 Play & Talk Cards', title: 'Play and Talk Cards', count: '52 cards', ages: 'Ages 0–5',
       what: 'One play and one talk tip on every card: a card a week for a year, in four age bands.',
       begin: 'This week’s card on the fridge.', folder: 'Play-and-Talk-Cards folder', zip: 'Play-and-Talk-Cards' },
-    { art: 'routine', color: 'sky', name: 'Visual Routine Cards', title: 'Visual Routine Cards', count: 'includes the ages 0–5 cards', ages: 'Ages 0–5',
+    { art: 'routine', color: 'sky', name: 'Visual Routine Cards', title: 'Visual Routine Cards', count: '181 cards', ages: 'Ages 0–5',
       what: 'Picture cards and charts for mornings, meals, play and bedtime, with blank and word-free cards.',
       begin: 'Its START HERE, then one routine you use every day.', folder: 'Visual-Routine-Cards folder', zip: 'Visual-Routine-Cards' },
     { art: 'binder', color: 'grass', name: 'Toddler Busy Book', title: 'Toddler Busy Book', count: '74 activities', ages: 'Ages 1–5',

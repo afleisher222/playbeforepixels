@@ -107,7 +107,7 @@ d = {
          "for 100 Screen-Free Plays, 52 Play & Talk Cards, Visual Routine Cards, the Toddler Busy Book, “I’m Bored” Play Cards "
          "and the Play-First Family Kit, the what’s-inside page and the fold card. Labels: Instant download, Ages 0–5."),
         ("What’s inside: the page listing six play sets for birth to 5, beside labels: 100 Screen-Free Plays, 100 plays for ages "
-         "0–5; 52 Play & Talk Cards, a card a week for ages 0–5; Visual Routine Cards, including the ages 0–5 cards; Toddler Busy "
+         "0–5; 52 Play & Talk Cards, a card a week for ages 0–5; 181 Visual Routine Cards for ages 0–5; Toddler Busy "
          "Book and “I’m Bored” cards, 74 activities and 76 cards for ages 1–5; Family Kit and Play Coupons, ages 2–5 pages and 16 coupons."),
         ("Ready to give: the printable “A gift of play” fold card with For and From lines, and “Surprise! Inside is…” reveal "
          "cards behind it. Notes: print the fold card and write your message inside; the reveal cards list every set; or forward "
