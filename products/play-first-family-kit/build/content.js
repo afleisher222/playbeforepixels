@@ -18,19 +18,19 @@ const CHECK = {
       { n: 2, t: 'Then play and time together', rows: [['goOutside', 'Play outside'], ['readTogether', 'Read together'], ['blocks', 'Play together']] },
     ],
     screen: ['screenSpot', 'Screens, at their spot'],
-    tip: ['Say what you see.', '“Shoes on! You did it all by yourself.”'],
+    tip: ['Say what you see', '“Shoes on! You did it all by yourself.”'],
   },
   big: {
     eyebrow: 'My play-first checklist',
     age: '512',
-    sub: 'Jobs, then play and people, then screens at their usual spot.',
+    sub: 'Jobs first, then play and time together, then screens at their spot.',
     art: 'boardGame',
     sections: [
       { n: 1, t: 'Jobs first', rows: [['makeBedBig', 'Make my bed'], ['dressedBig', 'Get ready for the day'], ['homework', 'Homework or practice'], ['setTableBig', 'A family job'], ['tidyRoom', 'Tidy my room']] },
       { n: 2, t: 'Then play and time together', rows: [['outsideTime', 'Outside or active play'], ['readInBed', 'Read, or be read to'], ['familyGame', 'Game or talk with family'], ['build', 'Make or build something']] },
     ],
     screen: ['screenSpot', 'Screens, at their spot'],
-    tip: ['Ask, then wait.', '“What was the best part of your day?” Count to five before you add anything.'],
+    tip: ['Ask, then wait', '“What was the best part of your day?” Count to five before you add anything.'],
   },
   blank: {
     eyebrow: 'Make-it-yours checklist',
@@ -42,7 +42,7 @@ const CHECK = {
       { n: 2, t: 'Then play and time together', rows: 4 },
     ],
     screen: ['screenSpot', 'Screens, at their spot'],
-    tip: ['Repeat and add one word.', '“Ball.” “Big ball!” “Big red ball!”'],
+    tip: ['Repeat and add one word', '“Ball.” “Big ball!” “Big red ball!”'],
   },
 };
 const SCREEN_NOTE = 'Our screen spot is the same every day. Jobs and play come first because that’s our rhythm, not a race.';
@@ -94,10 +94,10 @@ const RULES = [
 const DAYS30 = [
   ['fort', 'Blanket fort'], ['dance', 'Kitchen dance party'], ['readTogether', 'Read a book together'], ['matchSocks', 'Sock-match race'], ['walk', 'Spot 5 red things'],
   ['drawing', 'Draw each other'], ['stacker', 'Cup tower'], ['puppets', 'Puppet show'], ['bubbles', 'Bubbles outside'], ['pretendKitchen', 'Play restaurant'],
-  ['teddy', 'Hide a toy, give clues'], ['chalk', 'Chalk drawings'], ['helpCook', 'Cook dinner together'], ['music', 'Freeze dance'], ['blocks', 'Build a tall tower'],
+  ['teddy', 'Hide a toy, give clues'], ['birds', 'Watch for birds'], ['helpCook', 'Cook dinner together'], ['music', 'Freeze dance'], ['blocks', 'Build a tall tower'],
   ['tellStory', 'Make up a story'], ['natureWalk', 'Nature walk'], ['ball', 'Roll-the-ball game'], ['sing', 'Sing 3 favorite songs'], ['boardGame', 'Game night'],
-  ['painting', 'Paint together'], ['toyCars', 'Tape roads for cars'], ['picnic', 'Picnic on the floor'], ['dressUp', 'Dress-up parade'], ['garden', 'Garden helper'],
-  ['library', 'Library visit'], ['teaParty', 'Tea party'], ['playTime', 'Pillow path game'], ['talkPictures', 'Look at family photos'], ['familyGame', 'Pick a favorite, again!'],
+  ['stretch', 'Move like animals'], ['toyCars', 'Tape roads for cars'], ['picnic', 'Picnic on the floor'], ['dressUp', 'Dress-up parade'], ['garden', 'Garden helper'],
+  ['library', 'Library visit'], ['teaParty', 'Tea party'], ['peekaboo', 'Hide and seek'], ['talkPictures', 'Look at family photos'], ['familyGame', 'Pick a favorite, again!'],
 ];
 
 module.exports = { VERSION, COPY, BONUS, CHECK, SCREEN_NOTE, TOKENS, SPOT_CARDS, HELP, CHORES, RULES, DAYS30 };

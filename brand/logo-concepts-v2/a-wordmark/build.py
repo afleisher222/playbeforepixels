@@ -247,75 +247,80 @@ def pages(files):
     with open(os.path.join(SRC, 'jobs.json'), 'w') as fh: json.dump(jobs, fh, indent=1)
 
 def preview_sheet(files):
+    """1600 x 1000 presentation board. Labels are HTML text in the brand fonts (allowed on the board only)."""
+    import re
+    def lettering_h(name):      # share of the file's height taken by the lettering (files include clear space)
+        v = [float(t) for t in re.search(r'viewBox="([^"]+)"', files[name]).group(1).split()]
+        return (v[3] - 2 * CLEAR * 2 * BALL_R) / v[3]
+    spine_img_in = 0.5 / lettering_h('logo-stacked.svg')      # image height that makes the lettering 0.5 in
     css = f"""<link rel="stylesheet" href="{FONTS_CSS}"><style>
     html,body{{margin:0}} body{{width:1600px;height:1000px;background:{WASH};font-family:'Nunito Sans',sans-serif;color:{INK};position:relative;overflow:hidden}}
     .card{{position:absolute;border-radius:18px;overflow:hidden;background:#fff}}
-    .lab{{position:absolute;left:22px;bottom:16px;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;opacity:.62}}
-    .lab.w{{color:#fff;opacity:.75}}
+    .lab{{position:absolute;left:22px;bottom:16px;font-size:12.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;opacity:.55}}
+    .lab.w{{color:#fff;opacity:.7}}
     img{{display:block;position:absolute}}
-    h1{{position:absolute;left:40px;top:22px;margin:0;font:800 22px 'Bricolage Grotesque',sans-serif;letter-spacing:-.01em}}
-    .sub{{position:absolute;left:40px;top:54px;font-size:14px;opacity:.7}}
-    .sw{{position:absolute;top:30px;width:26px;height:26px;border-radius:50%}}
-    .spine{{position:absolute;bottom:0;width:0.72in;border-radius:3px 3px 0 0}}
-    .spine .t{{position:absolute;left:50%;top:26px;transform:translateX(-50%) rotate(90deg);transform-origin:center;white-space:nowrap;font:800 15px 'Bricolage Grotesque',sans-serif}}
+    h1{{position:absolute;left:40px;top:24px;margin:0;font:800 23px 'Bricolage Grotesque',sans-serif;letter-spacing:-.01em}}
+    .sub{{position:absolute;left:40px;top:57px;font-size:14px;opacity:.72}}
+    .sw{{position:absolute;top:30px;width:24px;height:24px;border-radius:50%}}
+    .spine{{position:absolute;bottom:0;width:0.72in;border-radius:2px 2px 0 0;overflow:hidden}}
+    .spine .t{{position:absolute;left:50%;top:0;writing-mode:vertical-rl;transform:translateX(-50%);white-space:nowrap;font:800 14px 'Bricolage Grotesque',sans-serif}}
     </style>"""
-    sw = ''.join(f'<div class="sw" style="left:{1330 + i*38}px;background:{c};{"box-shadow:inset 0 0 0 1px #d5dbe6;" if c == PAPER else ""}"></div>'
-                 for i, c in enumerate([INK, TOMATO, PAPER, SUN_T, SKY, SUN, WASH][:6]))
-    body = [f'<h1>play before pixels · concept A · the name is the logo</h1>'
-            '<div class="sub">Custom lowercase from Bricolage Grotesque outlines. The dot of the i is a ball; the full stop is one square pixel. The symbol puts the ball in front of the pixel.</div>', sw]
-    # A: primary logo on white
-    body.append('<div class="card" style="left:40px;top:92px;width:1010px;height:380px">'
-                '<img src="../primary-logo.svg" style="left:65px;top:92px;width:880px">'
-                '<div class="lab">primary logo · site header</div></div>')
-    # B: reversed on ink (stacked)
-    body.append(f'<div class="card" style="left:1070px;top:92px;width:490px;height:380px;background:{INK}">'
-                '<img src="../logo-stacked-white.svg" style="display:none">'
-                f'<img src="../primary-logo-reverse.svg" style="left:0;top:0;width:0">'
-                f'<img src="../{REV_STACK}" style="left:118px;top:38px;width:254px">'
-                '<div class="lab w">reversed · white on ink</div></div>')
-    # C: one colour black
-    body.append('<div class="card" style="left:40px;top:492px;width:360px;height:468px">'
-                '<img src="../primary-logo-black.svg" style="left:30px;top:44px;width:300px">'
-                '<img src="../logo-stacked-black.svg" style="left:78px;top:128px;width:204px">'
-                '<img src="../symbol-black.svg" style="left:128px;top:338px;width:0">'
-                '<div class="lab">one colour · black</div></div>')
-    # D: social avatar + tabs
-    body.append(f'<div class="card" style="left:420px;top:492px;width:360px;height:468px">'
-                f'<img src="../symbol-avatar.svg" style="left:70px;top:34px;width:220px;height:220px;border-radius:50%">'
-                f'<div style="position:absolute;left:34px;top:280px;width:292px;height:44px;border-radius:22px;background:{WASH}"></div>'
-                f'<img src="../symbol-avatar.svg" style="left:40px;top:286px;width:32px;height:32px;border-radius:50%">'
-                f'<div style="position:absolute;left:82px;top:290px;font:800 14px \'Nunito Sans\';">playbeforepixels</div>'
-                f'<div style="position:absolute;left:82px;top:306px;font-size:11px;opacity:.6">paper, talk and play for ages 0-12</div>'
-                # light and dark browser tabs with the favicon at true size
-                f'<div style="position:absolute;left:34px;top:344px;width:292px;height:34px;background:#DEE1E6;border-radius:8px 8px 0 0"></div>'
-                f'<div style="position:absolute;left:42px;top:350px;width:180px;height:28px;background:#fff;border-radius:8px 8px 0 0"></div>'
-                f'<img src="_render/fav-16-light.png" style="left:52px;top:356px;width:16px;height:16px">'
-                f'<div style="position:absolute;left:76px;top:356px;font-size:12px">Play Before Pixels</div>'
-                f'<div style="position:absolute;left:34px;top:384px;width:292px;height:34px;background:#202124;border-radius:8px 8px 0 0"></div>'
-                f'<div style="position:absolute;left:42px;top:390px;width:180px;height:28px;background:#35363A;border-radius:8px 8px 0 0"></div>'
-                f'<img src="_render/fav-16-dark.png" style="left:52px;top:396px;width:16px;height:16px">'
-                f'<div style="position:absolute;left:76px;top:396px;font-size:12px;color:#E8EAED">Play Before Pixels</div>'
-                '<div class="lab">social avatar · browser tabs (actual size)</div></div>')
-    # E: book spines, logo 0.5 in tall, shown at 2x
+    sw = ''.join(f'<div class="sw" style="left:{1370 + i*32}px;background:{c};{"box-shadow:inset 0 0 0 1px #d5dbe6;" if c in (PAPER, SUN_T) else ""}"></div>'
+                 for i, c in enumerate([INK, TOMATO, PAPER, SUN_T, SUN, SKY]))
+    B = [f'<h1>play before pixels. &nbsp;·&nbsp; concept A: the name is the logo</h1>'
+         '<div class="sub">Lowercase drawn from Bricolage Grotesque outlines. The dot on the i is a ball, held in the air; the full stop is one square pixel. '
+         'The symbol puts the same ball in front of the same pixel.</div>', sw]
+    # A - primary logo on white
+    B.append('<div class="card" style="left:40px;top:92px;width:1010px;height:380px">'
+             '<img src="../primary-logo.svg" style="left:75px;top:96px;width:860px">'
+             '<div class="lab">primary logo · site header</div></div>')
+    # B - reversed on ink
+    B.append(f'<div class="card" style="left:1070px;top:92px;width:490px;height:380px;background:{INK}">'
+             '<img src="../logo-stacked-reverse.svg" style="left:108px;top:26px;width:274px">'
+             '<div class="lab w">reversed · white on ink</div></div>')
+    # C - one colour black
+    B.append('<div class="card" style="left:40px;top:492px;width:340px;height:468px">'
+             '<img src="../primary-logo-black.svg" style="left:24px;top:40px;width:292px">'
+             '<img src="../logo-stacked-black.svg" style="left:24px;top:132px;width:176px">'
+             '<img src="../symbol-black.svg" style="left:214px;top:300px;width:104px">'
+             '<div class="lab">one colour · black</div></div>')
+    # D - social avatar + browser tabs at true size
+    tab = lambda top, strip, act, img, col: (
+        f'<div style="position:absolute;left:30px;top:{top}px;width:300px;height:36px;background:{strip};border-radius:10px 10px 0 0"></div>'
+        f'<div style="position:absolute;left:38px;top:{top+6}px;width:196px;height:30px;background:{act};border-radius:9px 9px 0 0"></div>'
+        f'<img src="_render/{img}" style="left:50px;top:{top+13}px;width:16px;height:16px">'
+        f'<div style="position:absolute;left:74px;top:{top+13}px;font-size:12px;line-height:16px;color:{col}">Play Before Pixels</div>')
+    B.append('<div class="card" style="left:400px;top:492px;width:360px;height:468px">'
+             '<img src="../symbol-avatar.svg" style="left:80px;top:28px;width:200px;height:200px;border-radius:50%">'
+             f'<div style="position:absolute;left:30px;top:250px;width:300px;height:48px;border-radius:24px;background:{WASH}"></div>'
+             '<img src="../symbol-avatar.svg" style="left:37px;top:257px;width:34px;height:34px;border-radius:50%">'
+             '<div style="position:absolute;left:82px;top:260px;font-weight:800;font-size:14px">playbeforepixels</div>'
+             '<div style="position:absolute;left:82px;top:277px;font-size:11.5px;opacity:.6">paper, talk and play for ages 0-12</div>'
+             + tab(322, '#DEE1E6', '#FFFFFF', 'fav-16-light.png', INK) + tab(368, '#202124', '#35363A', 'fav-16-dark.png', '#E8EAED') +
+             '<div class="lab">social avatar · browser tabs, true size</div></div>')
+    # E - book spines at true size (lettering 0.5 in tall) + a 2x view of one spine foot
     spines = ''
-    for i, (bg, fg, logo, title) in enumerate([(TOMATO, PAPER, 'logo-stacked-white.svg', 'Up! Go! More!'),
-                                              (SUN_T, INK, 'logo-stacked.svg', 'The Day the Tablet Slept'),
-                                              (SKY, PAPER, 'logo-stacked-white.svg', 'Whose Lap Today?')]):
-        spines += (f'<div class="spine" style="left:{30 + i*104}px;height:{360 - i*18}px;background:{bg};zoom:1">'
-                   f'<div class="t" style="color:{fg};top:{120 - i*9}px">{title}</div>'
-                   f'<img src="../{logo}" style="left:50%;transform:translateX(-50%);bottom:0.14in;height:0.5in;{"" if logo != "logo-stacked.svg" else ""}"></div>')
-    body.append(f'<div class="card" style="left:800px;top:492px;width:360px;height:468px;background:#fff">'
-                f'<div style="position:absolute;left:0;top:0;width:360px;height:410px;zoom:1">'
-                f'<div style="position:absolute;left:24px;top:30px;width:330px;height:380px;transform:scale(1);">{spines}</div>'
-                f'<div style="position:absolute;left:18px;top:410px;width:324px;height:6px;background:{INK};opacity:.18;border-radius:3px"></div></div>'
-                '<div class="lab">book spines · logo 0.5 in tall, 2× zoom</div></div>')
-    # F: tote bag, embroidered
-    body.append(f'<div class="card" style="left:1180px;top:492px;width:380px;height:468px;background:{WASH};box-shadow:inset 0 0 0 1px #e3e8f0">'
-                f'<div style="position:absolute;left:110px;top:30px;width:160px;height:150px;border:18px solid {SUN_T};border-bottom:none;border-radius:80px 80px 0 0;box-sizing:border-box"></div>'
-                f'<div style="position:absolute;left:62px;top:120px;width:256px;height:290px;background:{SUN_T};border-radius:6px"></div>'
-                f'<img src="../logo-stacked.svg" style="left:120px;top:190px;width:140px">'
-                '<div class="lab">tote · embroidered, ink thread</div></div>')
-    return '<!doctype html><html><head><meta charset="utf-8">' + css + '</head><body>' + ''.join(body) + '</body></html>'
+    for i, (bg, fg, logo, title, h) in enumerate([(TOMATO, PAPER, 'logo-stacked-white.svg', 'Up! Go! More!', 330),
+                                                  (SUN_T, INK, 'logo-stacked.svg', 'The Day the Tablet Slept', 350),
+                                                  (SKY, PAPER, 'logo-stacked-white.svg', 'Whose Lap Today?', 318)]):
+        spines += (f'<div class="spine" style="left:{24 + i*81}px;height:{h}px;background:{bg}{";box-shadow:inset 0 0 0 1px #efe3bf" if bg == SUN_T else ""}">'
+                   f'<div class="t" style="color:{fg};top:22px">{title}</div>'
+                   f'<img src="../{logo}" style="left:50%;transform:translateX(-50%);bottom:0.08in;height:{spine_img_in:.3f}in"></div>')
+    zoom = (f'<div style="position:absolute;left:290px;top:176px;width:1.44in;height:{2*1.05:.2f}in;background:{TOMATO};border-radius:4px;overflow:hidden">'
+            f'<img src="../logo-stacked-white.svg" style="left:50%;transform:translateX(-50%);bottom:0.16in;height:{2*spine_img_in:.3f}in"></div>'
+            '<div style="position:absolute;left:290px;top:150px;font-size:11px;font-weight:800;opacity:.5">2× ZOOM</div>')
+    B.append('<div class="card" style="left:780px;top:492px;width:420px;height:468px">'
+             f'<div style="position:absolute;left:0;top:0;width:420px;height:410px">{spines}</div>'
+             f'<div style="position:absolute;left:16px;top:410px;width:260px;height:5px;background:{INK};opacity:.16;border-radius:3px"></div>'
+             + zoom + '<div class="lab">book spines · logo 0.5 in tall, true size</div></div>')
+    # F - tote bag, embroidered
+    B.append(f'<div class="card" style="left:1220px;top:492px;width:340px;height:468px;background:{WASH};box-shadow:inset 0 0 0 1px #e3e8f0">'
+             f'<div style="position:absolute;left:96px;top:34px;width:148px;height:150px;border:15px solid {SUN_T};border-bottom:none;border-radius:74px 74px 0 0;box-sizing:border-box;filter:brightness(.97)"></div>'
+             f'<div style="position:absolute;left:44px;top:128px;width:252px;height:282px;background:{SUN_T};border-radius:4px 4px 10px 10px"></div>'
+             f'<div style="position:absolute;left:44px;top:142px;width:252px;height:0;border-top:2px dashed {INK};opacity:.18"></div>'
+             '<img src="../logo-stacked.svg" style="left:98px;top:196px;width:144px">'
+             '<div class="lab">tote · embroidered in ink thread</div></div>')
+    return '<!doctype html><html><head><meta charset="utf-8">' + css + '</head><body>' + ''.join(B) + '</body></html>'
 
 
 # ---------------------------------------------------------------------------- build

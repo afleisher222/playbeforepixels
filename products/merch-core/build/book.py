@@ -63,21 +63,21 @@ def pg(body, n, bg='#fff'):
 # 1 cover
 pg(f'''<p class="kick" style="margin-top:.1in">Production book · adult merch</p>
 <div class="disp" style="font-size:52pt;line-height:.98">Core merch</div>
-<p class="lead" style="margin-top:12pt;max-width:5.6in">One logo tee in four colors, a tote that only comes in gift bundles, and the inside-neck label and hang tag that carry the brand name on every order.</p>
-<div style="margin-top:14pt;display:flex;gap:6pt;flex-wrap:wrap"><span class="pill ok">Adult sizes only</span><span class="pill ok">Print on demand</span><span class="pill ok">No inventory</span><span class="pill stop">Slogan tees wait for clearance</span></div>
+<p class="lead" style="margin-top:12pt;max-width:5.6in">Two adult tees in four colors (the logo tee and “More talk, less tap”), a “Laps not apps” tote that only comes in gift bundles, and the inside-neck label and hang tag that carry the brand name on every order.</p>
+<div style="margin-top:14pt;display:flex;gap:6pt;flex-wrap:wrap"><span class="pill ok">Adult sizes only</span><span class="pill ok">Print on demand</span><span class="pill ok">No inventory</span><span class="pill wait">Slogans: search before publishing</span></div>
 <img src="mockup.png" style="width:100%;border-radius:12pt;margin-top:20pt;display:block">
 <div style="position:absolute;left:.6in;right:.6in;bottom:1.05in;display:flex;justify-content:space-between;align-items:flex-end">
 <img src="../../brand/logo/lockup-horizontal.svg" style="width:2.3in">
 <p class="small muted" style="text-align:right;margin:0">{COPY}<br>{VERSION}</p></div>''', 1, '#FEF4D8')
 
 # 2 at a glance
-pg('''<p class="kick">The line at a glance</p><h2>Three design slots. One is ready.</h2>
-<p class="lead">DEMAND-CHECK.md allows at most three adult designs, as identity merch rather than a merch line. The logo tee is ready to set up. The two slogan slots stay empty until a slogan is cleared.</p>
+pg('''<p class="kick">The line at a glance</p><h2>Three design slots. Two are filled.</h2>
+<p class="lead">DEMAND-CHECK.md allows at most three adult designs, as identity merch rather than a merch line. brand/ORIGINALITY.md keeps exactly one slogan for a tee (“More talk, less tap”) and one for the tote (“Laps not apps”), so slot 3 stays empty on purpose.</p>
 <table style="margin-top:10pt"><tr><th style="width:22%">Item</th><th style="width:20%">Status</th><th>Files</th><th style="width:19%">Everyday price</th><th style="width:17%">Sold on</th></tr>
 <tr><td><b>Logo tee</b><br><span class="muted">design 1 of 3</span></td><td><span class="pill ok">Ready to set up</span></td><td><code>print/tee-logo_light</code> and <code>_dark</code> (.png + .svg)</td><td>$27 XS–XL<br>$29 2XL · $31 3XL</td><td>Own site, Etsy, Amazon Merch on Demand</td></tr>
-<tr><td><b>Slogan tee</b><br><span class="muted">slot 2</span></td><td><span class="pill stop">Blocked</span><br><span class="small muted">no cleared slogan</span></td><td><code>slogan-slot/</code> template only</td><td>–</td><td>–</td></tr>
-<tr><td><b>Slogan tee</b><br><span class="muted">slot 3</span></td><td><span class="pill stop">Blocked</span></td><td>–</td><td>–</td><td>–</td></tr>
-<tr><td><b>Logo tote</b></td><td><span class="pill wait">Bundle add-on only</span></td><td><code>print/tote-logo_light</code> and <code>_dark</code></td><td>+$22 inside a bundle</td><td>Own-site bundles only</td></tr>
+<tr><td><b>“More talk, less tap” tee</b><br><span class="muted">design 2 of 3</span></td><td><span class="pill wait">Search, then set up</span><br><span class="small muted">class 25 + Etsy + Amazon check</span></td><td><code>print/tee-more-talk-less-tap_light</code> and <code>_dark</code></td><td>$27 XS–XL<br>$29 2XL · $31 3XL</td><td>Own site, Etsy, Amazon Merch on Demand</td></tr>
+<tr><td><b>Slogan tee</b><br><span class="muted">slot 3</span></td><td><span class="pill stop">Empty on purpose</span></td><td><code>slogan-slot/</code> template only</td><td>–</td><td>–</td></tr>
+<tr><td><b>“Laps not apps” tote</b></td><td><span class="pill wait">Bundle add-on only</span></td><td><code>print/tote-laps-not-apps_light</code> and <code>_dark</code> (logo-only fallback: <code>tote-logo_</code>)</td><td>+$22 inside a bundle</td><td>Own-site bundles only</td></tr>
 <tr><td><b>Inside-neck label</b></td><td><span class="pill wait">Fill in 2 fields</span></td><td><code>labels/</code> 7 sizes × light and dark</td><td>included</td><td>printed by the partner</td></tr>
 <tr><td><b>Hang tag / pack-in</b></td><td><span class="pill wait">Optional</span></td><td><code>hang-tag.pdf</code> (site and marketplace editions)</td><td>included</td><td>only if the partner offers it</td></tr></table>
 <div class="box sun" style="margin-top:16pt"><p class="kick" style="color:#8A6300">Six rules for this line</p><ul class="balls">
@@ -85,7 +85,7 @@ pg('''<p class="kick">The line at a glance</p><h2>Three design slots. One is rea
 <li><b>Print on demand only.</b> The partner prints and ships each order. Nothing is ever stocked, packed or shipped by the founder.</li>
 <li><b>The logo comes from <code>brand/logo/</code>, unaltered.</b> No retyping, recoloring, effects or new lockups.</li>
 <li><b>™, never ®.</b> PLAY BEFORE PIXELS is not registered or filed yet.</li>
-<li><b>No slogan without clearance</b> in brand/ORIGINALITY.md, and never an event name.</li>
+<li><b>Only slogans ORIGINALITY.md keeps for that item</b> (the build checks), searched before publishing, and never an event name.</li>
 <li><b>No condition words</b> (diagnosis or condition terms, see BRAND.md) on merch, listings, tags or ads.</li></ul></div>''', 2)
 
 # 3 logo tee print files
@@ -117,18 +117,18 @@ pg(f'''<p class="kick">Design 1 · colorways</p><h2>Four garment colors</h2>
 <div class="grid2"><div class="line"></div><div class="line"></div></div></div>''', 4)
 
 # 5 tote
-pg('''<p class="kick">Bundle add-on</p><h2>Logo tote</h2>
+pg('''<p class="kick">Bundle add-on</p><h2>“Laps not apps” tote</h2>
 <p class="lead">The tote is never listed on its own (DEMAND-CHECK: bundle-only). It is a +$22 add-on inside own-site gift bundles.</p>
 <div class="grid2" style="margin-top:6pt">
-<div><img src="preview/mockups/tote-natural.png" style="width:100%;border-radius:8pt;display:block"><p class="cap"><b>Natural canvas</b> · tote-logo_light</p></div>
-<div><img src="preview/mockups/tote-dark.png" style="width:100%;border-radius:8pt;display:block"><p class="cap"><b>Black</b> · tote-logo_dark</p></div></div>
+<div><img src="preview/mockups/tote-natural.png" style="width:100%;border-radius:8pt;display:block"><p class="cap"><b>Natural canvas</b> · tote-laps-not-apps_light</p></div>
+<div><img src="preview/mockups/tote-dark.png" style="width:100%;border-radius:8pt;display:block"><p class="cap"><b>Black</b> · tote-laps-not-apps_dark</p></div></div>
 <table style="margin-top:10pt"><tr><th style="width:30%">Spec</th><th>Value</th></tr>
 <tr><td>Canvas</td><td>3600 × 3600 px, transparent PNG at 300 dpi (12 × 12 in), plus vector .svg.</td></tr>
-<tr><td>Artwork</td><td>Stacked lockup, the kit's lockup for tote bags. Ink about 9 in wide, centered and raised 0.4 in so it clears the bottom seam.</td></tr>
+<tr><td>Artwork</td><td>“Laps not apps” in Bricolage Grotesque 800 with the tomato ball as the period (ORIGINALITY.md C4 keeps it for the tote), about 9 in wide, with the horizontal lockup 4.3 in wide below. Fallback if the slogan search finds a conflict: <code>tote-logo_light|dark</code>, the stacked logo alone.</td></tr>
 <tr><td>Where it appears</td><td>Holiday gift bundle (tee + tote + a digital play kit) and any later gift bundle. Teacher bundles stay on hold with all school-facing work.</td></tr>
 <tr><td>Check</td><td>Tote print areas differ by blank: confirm the partner's area and shrink the canvas if it is smaller than 12 × 12 in [VERIFY].</td></tr></table>
 <div class="box sun" style="margin-top:14pt"><p class="kick" style="color:#8A6300">Bundle math, the honest way</p>
-<p class="small" style="margin:0">Example: logo tee ($27) + logo tote (+$22) + a digital play kit, sold as one own-site checkout. Price the bundle 10–25% under the sum of its parts and say so in plain words (“$X, or $Y bought separately”). Never show the separate total as a crossed-out price. The print partner ships the tee and tote; the play kit arrives by email.</p></div>''', 5)
+<p class="small" style="margin:0">Example: logo tee ($27) + “Laps not apps” tote (+$22) + a digital play kit, sold as one own-site checkout. Price the bundle 10–25% under the sum of its parts and say so in plain words (“$X, or $Y bought separately”). Never show the separate total as a crossed-out price. The print partner ships the tee and tote; the play kit arrives by email.</p></div>''', 5)
 
 # 6 neck label
 lab = ''.join(f'<div style="text-align:center"><img src="labels/neck-label_{s}_light.png" style="width:100%;border:1px solid var(--line);border-radius:6pt"><p class="cap">{s}</p></div>' for s in ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL'])
@@ -155,32 +155,30 @@ pg('''<p class="kick">Optional</p><h2>Hang tag and pack-in card</h2>
 <tr><td>Etsy</td><td>Marketplace edition</td><td>Etsy editions carry no URL or QR (customer-voice rule 2); Etsy does not allow sending buyers off-platform.</td></tr>
 <tr><td>Amazon Merch on Demand</td><td>None</td><td>Amazon prints its own packaging; no inserts.</td></tr></table>''', 7)
 
-# 8 slogan slots
-pg('''<p class="kick">Slots 2 and 3</p><h2>Slogan tees are on hold</h2>
-<div class="grid2" style="grid-template-columns:1.25fr 1fr;align-items:start">
-<div><p class="lead">No slogan is cleared yet: <code>brand/ORIGINALITY.md</code> does not exist. So this line ships with the logo tee only.</p>
-<h3>Never use</h3><ul class="balls">
-<li>“Pencils before pixels” (the matching domain is in use by someone else)</li>
-<li>“Childhood can't wait. Screens can.” and “Paper first” (held until cleared)</li>
-<li>Any event's name, and any condition word</li>
-<li>Lines that read as superior or shaming (the campaign bible flagged “Built, Not Downloaded”)</li></ul>
-<h3>How a slogan gets onto a tee</h3><ol class="steps">
-<li>Write 5–10 lines in your own words (that is your authorship).</li>
-<li>Tone check: warm, zero shame, no fear words. Then a knockout search and, ideally, the attorney's look.</li>
-<li>Record the winner as CLEARED in brand/ORIGINALITY.md.</li>
-<li>Add it to <code>SLOGANS</code> in build/build.py and run build/render.sh. The script stops if the line is not marked cleared there.</li></ol></div>
-<div><img src="slogan-slot/slogan-tee-TEMPLATE.png" style="width:100%;border-radius:8pt;box-shadow:0 0 0 1px var(--line)"><p class="cap">Layout guide: 11 × 5 in slogan area, brand sign-off below. Not a print file.</p></div></div>
-<div class="founder" style="margin-top:10pt"><p class="kick">Founder slot · your slogan ideas</p><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>''', 8)
+# 8 slogan tee (design 2) and slot 3
+pg('''<p class="kick">Design 2 · slot 3</p><h2>“More talk, less tap” tee</h2>
+<div class="grid2">
+<div><div class="panel checker" style="height:2.9in;border:1px solid var(--line)"><img src="print/tee-more-talk-less-tap_light.png" style="height:2.75in;outline:1.5px dashed #9AA6BA"></div>
+<p class="cap"><b>tee-more-talk-less-tap_light</b> · ink type, tomato ball · White, Natural, Mustard</p></div>
+<div><div class="panel" style="height:2.9in;background:#243150"><img src="print/tee-more-talk-less-tap_dark.png" style="height:2.75in;outline:1.5px dashed #6B7A99"></div>
+<p class="cap"><b>tee-more-talk-less-tap_dark</b> · paper type, tomato ball · Navy</p></div></div>
+<table style="margin-top:8pt"><tr><th style="width:26%">Spec</th><th>Value</th></tr>
+<tr><td>Why this line</td><td>brand/ORIGINALITY.md C3 keeps it “for tee and copy”, and its merch list names exactly this tee. Never trademark it (™ goes on the brand name only).</td></tr>
+<tr><td>Artwork</td><td>Bricolage Grotesque 800, outlined, about 11 in wide; the tomato ball is the period. Horizontal lockup 4.3 in wide below it. 4500 × 5400 px, 300 dpi, transparent, plus vector .svg.</td></tr>
+<tr><td>Before publishing</td><td>USPTO class 25 search plus Etsy, Amazon and Redbubble searches for the exact phrase (ORIGINALITY.md 4b). Log the result. If a live clothing use turns up, pull this design.</td></tr></table>
+<h3>Slot 3 stays empty on purpose</h3>
+<p class="small" style="margin:0 0 5pt">No other line is kept for a tee. “Play first. The pixels will keep.” is copy only; the tagline never goes on children's items; these are retired: “Pencils before pixels”, “Childhood can't wait. Screens can.”, “Paper first”, “Screen-free and proud of it”, “Ask me what I built today”. To fill slot 3: write the line yourself, run the originality check, have ORIGINALITY.md keep it “for tee”, add it to <code>SLOGANS</code> in build/build.py and run build/render.sh. The build stops on anything else.</p>
+<div class="founder" style="margin-top:6pt"><p class="kick">Founder slot · your layout choices and slogan ideas</p><div class="line"></div><div class="line"></div><div class="line"></div></div>''', 8)
 
 # 9 setup
 pg('''<p class="kick">Set up once, then it runs</p><h2>Putting it on sale</h2>
 <ol class="steps">
 <li><b>Pick one print partner</b> (Printful, Printify or Gelato, per commerce/storefront-setup-guide.md) that offers DTG on all four colors, inside-neck label printing, and both Etsy and the site's store integration.</li>
 <li><b>Pick one mid-weight unisex cotton blank.</b> Save its size chart. Fill in fiber and origin in <code>build/build.py</code>, then run <code>build/render.sh</code>.</li>
-<li><b>Create the tee.</b> Upload <code>tee-logo_light.png</code> to White, Natural and Mustard and <code>tee-logo_dark.png</code> to Navy. Sizes XS–3XL. Match the placement on page 3.</li>
+<li><b>Create the tees.</b> Logo tee: upload <code>tee-logo_light.png</code> to White, Natural and Mustard and <code>tee-logo_dark.png</code> to Navy. Slogan tee (after its search): the same with <code>tee-more-talk-less-tap_light|dark.png</code>. Sizes XS–3XL. Match the placement on pages 3 and 8.</li>
 <li><b>Add the labels</b>, light files for light colors and dark files for Navy, one per size. If labels are not offered, remove the label panel from listing image 4 before listing.</li>
 <li><b>Order one sample per color.</b> Check print, colors, label and fit, wash one five times, and photograph it on a flat surface (faceless: hands at most).</li>
-<li><b>Etsy:</b> list the partner as your production partner, mark the item “Designed by” you, disclose the digital and AI tools used for the art, add the size chart, and upload listing images 1–7 in order.</li>
+<li><b>Etsy:</b> list the partner as your production partner, mark the item “Designed by” you, disclose the digital and AI tools used for the art, add the size chart, and upload the seven listing images in order (<code>listing-01…07</code> for the logo tee, <code>slogan-01…07</code> for the slogan tee).</li>
 <li><b>Own site:</b> the same listing, plus the tote bundle and the “Next for you” links (see listing.json).</li>
 <li><b>Amazon Merch on Demand:</b> apply; upload the same 4500 × 5400 files with brand “Play Before Pixels”. Approval and design-slot limits apply [VERIFY current terms].</li>
 <li><b>Money and tax:</b> give the partner your resale certificate, set the shipping profile, and write the returns line (the partner replaces misprints and damage; you decide on size exchanges).</li></ol>
@@ -197,6 +195,7 @@ pg('''<p class="kick">Honest pricing</p><h2>Prices and money</h2>
 <tr><td>Logo tee XS–XL</td><td>$27</td><td class="muted">fill in from the partner, with label</td><td class="muted">aim for $8 or more after fees</td></tr>
 <tr><td>Logo tee 2XL</td><td>$29</td><td class="muted">fill in</td><td class="muted">same target</td></tr>
 <tr><td>Logo tee 3XL</td><td>$31</td><td class="muted">fill in</td><td class="muted">same target</td></tr>
+<tr><td>“More talk, less tap” tee</td><td>same as the logo tee</td><td class="muted">fill in</td><td class="muted">same target</td></tr>
 <tr><td>Tote (bundle only)</td><td>+$22 in a bundle</td><td class="muted">fill in</td><td class="muted">same target</td></tr>
 <tr><td>Holiday gift bundle</td><td>$59 with a tee</td><td class="muted">tee + deck/print costs</td><td class="muted">planned bundle (DEMAND-CHECK #8)</td></tr></table>
 <p class="small muted" style="margin-top:6pt">Bigger sizes cost the partner more, so they cost more here. Etsy fees are roughly a 6.5% transaction fee, payment processing and a listing fee [VERIFY current rates]. If a tee keeps less than $8, raise the everyday price before launch, never by “discounting” later.</p>
@@ -215,11 +214,12 @@ pg('''<p class="kick">Before anything ships</p><h2>Checks and launch list</h2>
 <li class="done">Tote files 3600 × 3600, transparent, light + dark</li>
 <li class="done">Logo placed from brand/logo unaltered; lockup above its minimum size</li>
 <li class="done">Label and tag carry PLAY BEFORE PIXELS™ (™, not ®)</li>
-<li class="done">Adult sizes only; no slogan; no condition or event words</li>
+<li class="done">Adult sizes only; only slogans ORIGINALITY.md keeps; no condition or event words</li>
 <li class="done">Etsy images carry no URL or QR</li>
 <li class="done">Copyright line and version on the book and tag</li></ul></div>
 <div><h3 style="margin-top:0">The founder does</h3><ul class="checks">
 <li>Fill in fiber and origin; rebuild</li>
+<li>Class 25 + Etsy + Amazon + Redbubble search for both slogans; log it</li>
 <li>Order one physical sample per color; wash-test one</li>
 <li>Approve the sample photos and the cover image</li>
 <li>Written QA pass on the listing text</li>
@@ -229,7 +229,7 @@ pg('''<p class="kick">Before anything ships</p><h2>Checks and launch list</h2>
 <div class="box sun" style="margin-top:12pt"><p class="small" style="margin:0"><b>Printer templates change.</b> Check every file against the chosen partner's current template and placement tool before upload.</p></div>
 <div class="founder" style="margin-top:12pt"><p class="kick">Honest authorship</p>
 <p class="small" style="margin:0 0 5pt">The logo art was drawn with AI-assisted tools. Answer every platform's AI question truthfully (Etsy asks), and never register AI-made art as your own work.</p>
-<p class="small" style="margin:0">Your own contribution is the part you can protect: your color choices (page 4), your slogans (page 8) and your dated edits to the logo's build numbers. Commit each change to git so it is provable.</p></div>''', 11)
+<p class="small" style="margin:0">Your own contribution is the part you can protect: your color choices (page 4), your slogan layout and slot-3 line (page 8) and your dated edits to the logo's build numbers. Commit each change to git so it is provable.</p></div>''', 11)
 
 # 12 more from
 covers = ''.join(f'''<div><img src="../{s}/cover.png" style="width:100%;height:2.2in;object-fit:contain;background:var(--wash);border-radius:8pt;padding:6pt"><p class="cap"><b>{t}</b><br>{d}</p></div>''' for s, t, d in [

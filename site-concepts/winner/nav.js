@@ -18,9 +18,9 @@
   /* ---------------- Currency ---------------- */
   var RATES = { USD: 1, GBP: 0.79, EUR: 0.92, CAD: 1.37, AUD: 1.52 };
   var cur = store.get('pbp-cur', 'USD'); if (!RATES[cur]) cur = 'USD';
-  function money(usd) {
+  function money(usd) { // whole prices drop .00
     var v = Math.round(usd * RATES[cur] * 100) / 100;
-    try { return (cur === 'USD' ? '' : '≈ ') + new Intl.NumberFormat('en-US', { style: 'currency', currency: cur }).format(v); }
+    try { return (cur === 'USD' ? '' : '≈ ') + new Intl.NumberFormat('en-US', { style: 'currency', currency: cur, minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits: 2 }).format(v); }
     catch (e) { return '$' + v.toFixed(2); }
   }
   function applyPrices(root) { $$('[data-usd]', root).forEach(function (el) { el.textContent = money(+el.getAttribute('data-usd')); }); }

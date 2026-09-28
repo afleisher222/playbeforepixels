@@ -32,29 +32,28 @@ SEAL = dict(
     track=50,       # extra letter spacing on the ring, in font units (1000 = one em)
     space=250,      # width of the word space in "PLAY BEFORE", font units
     dot_r=27,       # radius of the two balls between the words
-    top_fill=0.92,  # how much of the free middle the top fills (1.0 = touches the clear space)
+    top_fill=0.88,  # how much of the free middle the top fills (1.0 = touches the clear space)
     top_dy=0,       # optical nudge of the top (units, + = down)
 )
-TOP = dict(         # the spinning top, drawn upright in its own units (see class Top)
+TOP = dict(         # the spinning top, drawn upright in its own units (see class Top), then tilted
     tilt=12,        # lean in degrees (clockwise); 0 = upright
-    w=420,          # half-width at the rim
+    w=430,          # half-width at the rim
     rim=112,        # height of the painted rim band
-    dome=150,       # height of the shoulder above the rim
+    dome=130,       # height of the shoulder above the rim
     neck=86,        # half-width where the shoulder meets the handle
-    k1=0.55,        # shoulder: how long it stays upright at the rim (0-1)
-    k2=0.45,        # shoulder: how flat it runs into the neck (0-1)
-    step=34,        # how far the painted rim sticks out past the shoulder and the body (its flange)
+    k1=0.30,        # shoulder: how long it stays upright at the rim (0-1)
+    k2=0.20,        # shoulder: how flat it runs into the neck (0-1)
+    step=0,         # how far the painted rim sticks out past the shoulder and the body (a flange)
     drop=470,       # depth of the body below the rim, to the tip
-    bulge=34,       # outward bulge of the body's sides (0 = straight cone)
+    bulge=0,        # outward bulge of the body's sides (0 = straight cone)
     tip=30,         # softening of the tip
     handle_w=112,   # handle width
     handle_h=210,   # handle height above the shoulder
     centre=0.5,     # 0 = centre by bounding box, 1 = centre by the body's weight
 )
-# favicon cut, drawn on a 16-px grid (1 px = 62.5 units) so every horizontal edge lands on a pixel
-FAV_TOP = dict(TOP, w=437.5, rim=187.5, dome=125, neck=93.75, k1=0.5, k2=0.35, drop=437.5, bulge=28, tip=40,
-               handle_w=125, handle_h=187.5)
-FAV = dict(top_y=31.25)   # favicon: y of the handle's top in a 1000-unit square (tip lands 31.25 from the bottom)
+# favicon cut: same top, heavier handle and band, so it survives 16 px
+FAV_TOP = dict(TOP, rim=150, handle_w=150, handle_h=190, tip=40, dome=140)
+FAV = dict(margin=8)      # favicon: clear space inside the 1000-unit square
 WORD = dict(
     track=-6,       # wordmark letter spacing (font units)
     ball_r=94,      # the round ball that replaces Bricolage's square dot on the i of "Pixels"
@@ -74,8 +73,8 @@ BLACK, WHITE = '#000000', '#FFFFFF'
 
 # what each part is painted with. mono=<colour> makes a one-colour file: one path, everything else knocked out.
 SCHEMES = {
-    'color':   dict(disc=INK,   letters=PAPER, ball=TOMATO, body=TOMATO, band=SUN, handle=PAPER, word=INK,   iball=TOMATO),
-    'reverse': dict(disc=PAPER, letters=INK,   ball=TOMATO, body=TOMATO, band=SUN, handle=INK,   word=PAPER, iball=TOMATO),
+    'color':   dict(disc=INK,   letters=PAPER, ball=TOMATO, body=SKY, band=SUN, handle=PAPER, word=INK,   iball=TOMATO),
+    'reverse': dict(disc=PAPER, letters=INK,   ball=TOMATO, body=SKY, band=SUN, handle=INK,   word=PAPER, iball=TOMATO),
     'black':   dict(mono=BLACK),
     'white':   dict(mono=WHITE),
 }
@@ -231,6 +230,15 @@ class Top:
         k = fill * radius / far
         return (k * c, k * s, -k * s, k * c, cx - k * ax, cy - k * ay)
 
+    def place_box(self, x0, y0, x1, y1):
+        """affine that fits the tilted top, as large as possible, centred in the box (x0,y0)-(x1,y1)"""
+        th = math.radians(self.T['tilt']); c, s = math.cos(th), math.sin(th)
+        rot = [(p[0] * c - p[1] * s, p[0] * s + p[1] * c) for p in self.outline_points()]
+        xs = [p[0] for p in rot]; ys = [p[1] for p in rot]
+        k = min((x1 - x0) / (max(xs) - min(xs)), (y1 - y0) / (max(ys) - min(ys)))
+        ax, ay = (min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2
+        return (k * c, k * s, -k * s, k * c, (x0 + x1) / 2 - k * ax, (y0 + y1) / 2 - k * ay)
+
     def paint(self, sc, m, handle_class=''):
         hc = f' class="{handle_class}"' if handle_class else ''
         return (f'<path{hc} fill="{sc["handle"]}" d="{self.d(self.handle_segs(), m)}"/>'
@@ -352,12 +360,11 @@ def lockup(scheme):
 
 
 def favicon_svg():
-    """16-32 px: the top alone, heavy cut, on a 16-px grid. Ink handle in light tabs, paper in dark tabs."""
-    T = FAV_TOP; top = Top(T)
-    y_rim = FAV['top_y'] + T['handle_h'] + T['dome'] + T['rim']        # y of the rim's lower edge
-    m = (1, 0, 0, 1, 500, y_rim)
-    sc = dict(SCHEMES['color'], handle=INK)
-    body = top.paint(sc, m, handle_class='h')
+    """16-32 px: the top alone, heavy cut, as large as the square allows.
+    Ink handle in light tabs, paper handle in dark tabs (the SVG follows the browser's colour scheme)."""
+    top = Top(FAV_TOP); p = FAV['margin']
+    m = top.place_box(p, p, 1000 - p, 1000 - p)
+    body = top.paint(dict(SCHEMES['color'], handle=INK), m, handle_class='h')
     return doc((0, 0, 1000, 1000), body, 'Play Before Pixels', w=32, h=32,
                style='@media (prefers-color-scheme:dark){.h{fill:#FFFFFF}}')
 

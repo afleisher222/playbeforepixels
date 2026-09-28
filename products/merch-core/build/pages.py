@@ -241,20 +241,62 @@ lst['listing-07'] = ('Pairs with', f'''<div style="position:absolute;inset:0;bac
 <div class="pad" style="top:120px"><div class="kick" style="color:#1F7A4F">Gift idea</div><h2 class="disp" style="margin-top:24px">Pair it with<br>a story and play</h2></div>
 <div class="lay shadow" style="left:90px;top:640px;width:900px;transform:rotate(-4deg)">{tee('#F2EBDD', 'light', B)}</div>
 <img class="lay" src="{B}../picture-tablet-slept/cover.png" style="left:1080px;top:560px;width:660px;border-radius:10px;transform:rotate(3deg);box-shadow:0 30px 40px rgba(29,41,64,.18)">
-<img class="lay" src="{B}../bored-play-cards/preview/listing-images/listing-01.png" style="left:1250px;top:1120px;width:560px;border-radius:10px;transform:rotate(-5deg);box-shadow:0 30px 40px rgba(29,41,64,.18)">
+<img class="lay" src="{B}../bored-play-cards/preview/listing-images/listing-01.png" style="left:1300px;top:1270px;width:500px;border-radius:10px;transform:rotate(-5deg);box-shadow:0 30px 40px rgba(29,41,64,.18)">
 <p class="small pad" style="top:1760px;margin:0;right:900px;color:var(--ink)">Our picture book <b>The Day the Tablet Slept</b> and <b>150 “I’m bored!” Play Cards</b> are sold separately.</p>''')
+
+# ---- design 2: "More talk, less tap" tee (same 7-image structure as the logo tee)
+lst['slogan-01'] = ('Hero', f'''<div style="position:absolute;inset:0;background:var(--t-sky)"></div>
+<div class="pad" style="top:120px"><div class="kick">Adult unisex tee · XS–3XL</div>
+<h1 class="disp" style="margin-top:28px">More talk,<br>less tap tee</h1></div>
+<svg style="position:absolute;left:0;top:0" width="2000" height="2000">{ball_sym(1760, 700, 70, -20)}{block(1690, 845, 1.6, 2, 10)}</svg>
+<div class="lay shadow" style="left:380px;top:600px;width:1240px">{tee('#F2EBDD', 'light', B, design=SLOGAN)}</div>
+<div class="chips"><span class="chip"><span class="ball"></span>4 colors</span><span class="chip"><span class="ball"></span>Printed when you order</span></div>''')
+
+tiles = ''
+for i, (slug, name, hexc, tone) in enumerate(GARMENTS):
+    x = 130 + (i % 2) * 890
+    y = 430 + (i // 2) * 690
+    tiles += f'''<div class="lay" style="left:{x}px;top:{y}px;width:850px;height:650px;background:#fff;border-radius:36px"></div>
+<div class="lay shadow" style="left:{x+165}px;top:{y+40}px;width:520px">{tee(hexc, tone, B, design=SLOGAN)}</div>
+<div class="lay" style="left:{x+44}px;top:{y+556}px;font-size:48px;font-weight:800;display:flex;align-items:center;gap:18px">
+<span style="width:48px;height:48px;border-radius:50%;background:{hexc};box-shadow:inset 0 0 0 3px rgba(29,41,64,.18)"></span>{name}</div>'''
+lst['slogan-02'] = ('Colors', f'''<div style="position:absolute;inset:0;background:var(--wash)"></div>
+<div class="pad" style="top:120px"><div class="kick">4 colors</div><h2 class="disp" style="margin-top:24px">Pick your color</h2></div>
+{tiles}
+<p class="small pad" style="top:1832px;margin:0">Light colors print in ink. Navy prints in white. The tomato-red ball is the period on every color.</p>''')
+
+talk3 = ''.join(f'''<div class="lay" style="left:{130+i*590}px;top:1230px;width:560px;height:500px;background:#2A3752;border-radius:36px;padding:56px 50px;color:#fff">
+<span class="ball" style="width:44px;height:44px"></span>
+<div class="disp" style="font-size:72px;margin-top:30px;line-height:1.02">{h}</div>
+<div style="font-size:44px;line-height:1.35;margin-top:18px;color:#C9D2E0">{t}</div></div>''' for i, (h, t) in enumerate([
+    ('Say what you see', '“Big bubbles! One popped.”'),
+    ('Pause and wait', 'Count to five in your head. Let them take a turn.'),
+    ('Add one word', '“Truck.” “Big truck!”')]))
+lst['slogan-03'] = ('The idea', f'''<div style="position:absolute;inset:0;background:var(--ink)"></div>
+<div class="pad" style="top:120px;color:#fff"><div class="kick" style="color:var(--sun)">The idea behind the line</div>
+<h2 class="disp" style="margin-top:28px;font-size:132px">One more turn.</h2></div>
+<div class="lay" style="left:130px;top:520px;width:1740px">
+<p class="sub" style="color:#fff;font-size:58px">A small reminder we wrote for ourselves: add one more back-and-forth to the day. A question in the car. A song at the sink. A story at bedtime.</p>
+<p class="sub" style="color:#C9D2E0;margin-top:40px;font-size:50px">It’s not a rule and it’s not a judgment. Every family’s day looks different. Three easy ways to start:</p></div>
+{talk3}
+<img class="brand" src="{LOGO(B, '-reverse')}">''')
+
+lst['slogan-04'] = ('Details', lst['listing-04'][1])
+lst['slogan-05'] = ('Size guide', lst['listing-05'][1].replace(f"{tee('#FFFFFF', 'light', B)}", f"{tee('#FFFFFF', 'light', B, design=SLOGAN)}"))
+lst['slogan-06'] = ('Made to order', lst['listing-06'][1])
+lst['slogan-07'] = ('Pairs with', lst['listing-07'][1].replace(f"{tee('#F2EBDD', 'light', B)}", f"{tee('#E6B23F', 'light', B, design=SLOGAN)}"))
 
 # tote images (for the site's bundle pages only)
 lst['tote-01'] = ('Tote hero', f'''<div style="position:absolute;inset:0;background:var(--t-sun)"></div>
 <div class="pad" style="top:120px"><div class="kick">Bundle add-on · not sold on its own</div>
-<h1 class="disp" style="margin-top:28px">Play Before Pixels<br>logo tote</h1></div>
+<h1 class="disp" style="margin-top:28px">Laps not apps<br>tote</h1></div>
 <div class="lay shadow" style="left:500px;top:560px;width:1000px">{tote('#EDE3CC', 'light', B)}</div>
 <div class="chips"><span class="chip"><span class="ball"></span>Add it to a gift bundle</span></div>''')
 lst['tote-02'] = ('Tote colors', f'''<div style="position:absolute;inset:0;background:var(--wash)"></div>
 <div class="pad" style="top:120px"><div class="kick">2 colors</div><h2 class="disp" style="margin-top:24px">Natural or black</h2></div>
 <div class="lay shadow" style="left:80px;top:520px;width:900px">{tote('#EDE3CC', 'light', B)}</div>
 <div class="lay shadow" style="left:1020px;top:520px;width:900px">{tote('#232429', 'dark', B)}</div>
-<p class="small pad" style="top:1640px;margin:0">Stacked logo, about 9 in wide. Printed when you order, as part of a bundle.</p>''')
+<p class="small pad" style="top:1640px;margin:0">Slogan about 9 in wide, with our logo below. Printed when you order, as part of a bundle.</p>''')
 
 for name, (title, body) in lst.items():
     write(f'build/html/{name}.html', page('Listing image: ' + title, body, B, L_CSS))
