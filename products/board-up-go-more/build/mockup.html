@@ -6,31 +6,35 @@
   html,body{margin:0;padding:0}
   body{width:1600px;height:1200px;overflow:hidden;background:#F3F6FB;position:relative;font-family:"Nunito Sans",sans-serif}
   .blob{position:absolute;border-radius:50%}
-  .b1{width:980px;height:980px;left:-160px;top:40px;background:#FEF4D8}
-  .b2{width:620px;height:620px;right:-120px;top:-180px;background:#E3EEFA}
-  .table{position:absolute;left:0;right:0;bottom:0;height:310px;background:#E9EEF6}
-  .ballshadow{position:absolute;left:1335px;top:872px;width:140px;height:26px;border-radius:50%;background:rgba(29,41,64,.18);filter:blur(10px)}
-  /* standing board book */
-  .stand{position:absolute;left:170px;top:190px;width:700px;height:700px;perspective:2200px}
-  .book{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateY(22deg) rotateX(2deg)}
-  .face{position:absolute;inset:0;border-radius:10px 18px 18px 10px;overflow:hidden;background:#F5B820 url(../cover.png) center/cover;transform:translateZ(22px)}
-  .edge{position:absolute;top:6px;bottom:6px;right:-2px;width:44px;transform-origin:right center;transform:rotateY(90deg) translateX(22px);
-        background:repeating-linear-gradient(90deg,#FFFFFF 0 7px,#E4E9F2 7px 8px);border-radius:4px}
-  .spine{position:absolute;top:0;bottom:0;left:0;width:44px;transform-origin:left center;transform:rotateY(-90deg) translateX(-22px);background:#1D2940;border-radius:10px 0 0 10px}
-  .shadow1{position:absolute;left:190px;top:872px;width:720px;height:60px;border-radius:50%;background:rgba(29,41,64,.22);filter:blur(22px)}
-  /* open spread lying flat */
-  .flat{position:absolute;left:800px;top:760px;width:720px;height:360px;perspective:1600px}
-  .spread{position:absolute;inset:0;display:flex;transform:rotateX(52deg) rotateZ(-6deg);transform-style:preserve-3d;box-shadow:0 40px 60px rgba(29,41,64,.25);border-radius:8px}
-  .spread img{width:360px;height:360px;display:block}
-  .spread img:first-child{border-radius:8px 0 0 8px;box-shadow:inset -10px 0 0 rgba(0,0,0,.04)}
-  .spread img:last-child{border-radius:0 8px 8px 0}
-  .gutter{position:absolute;left:356px;top:0;bottom:0;width:8px;background:rgba(29,41,64,.10)}
-  .ball{position:absolute;left:1330px;top:735px;width:150px;height:150px}
+  .b1{width:1000px;height:1000px;left:-200px;top:-40px;background:#FEF4D8}
+  .b2{width:640px;height:640px;right:-140px;top:-200px;background:#E3EEFA}
+  .table{position:absolute;left:0;right:0;bottom:0;height:300px;background:#E9EEF6}
+  /* talk-along paperback (8.5 in), standing, thin */
+  .pbw{position:absolute;left:120px;top:150px;width:720px;height:720px;perspective:2400px}
+  .pb{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateY(18deg)}
+  .pb .face{position:absolute;inset:0;border-radius:3px 6px 6px 3px;background:url(../cover.png) center/cover;transform:translateZ(3px)}
+  .pb .edge{position:absolute;top:2px;bottom:2px;right:0;width:6px;transform-origin:right center;transform:rotateY(90deg) translateX(3px);background:#FFFFFF}
+  .sh1{position:absolute;left:150px;top:850px;width:720px;height:50px;border-radius:50%;background:rgba(29,41,64,.2);filter:blur(22px)}
+  /* board book (6 in), thick, in front */
+  .bbw{position:absolute;left:780px;top:430px;width:500px;height:500px;perspective:1800px}
+  .bb{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateY(-24deg) rotateX(2deg)}
+  .bb .face{position:absolute;inset:0;border-radius:14px;overflow:hidden;background:url(../cover.png) center/cover;transform:translateZ(20px)}
+  .bb .edge{position:absolute;top:8px;bottom:8px;left:-2px;width:40px;transform-origin:left center;transform:rotateY(-90deg) translateX(-20px);background:#1D2940;border-radius:10px}
+  .bb .pages{position:absolute;top:8px;bottom:8px;right:-2px;width:40px;transform-origin:right center;transform:rotateY(90deg) translateX(20px);background:repeating-linear-gradient(90deg,#FFFFFF 0 7px,#E4E9F2 7px 8px);border-radius:6px}
+  .sh2{position:absolute;left:800px;top:905px;width:520px;height:46px;border-radius:50%;background:rgba(29,41,64,.24);filter:blur(18px)}
+  /* toy ball */
+  .ball{position:absolute;left:1340px;top:800px;width:170px;height:170px;border-radius:50%;background:conic-gradient(#EE5A36 0 33%,#F5B820 0 66%,#3D86D8 0);}
+  .ball::after{content:"";position:absolute;left:66px;top:66px;width:38px;height:38px;border-radius:50%;background:#fff}
+  .sh3{position:absolute;left:1340px;top:950px;width:170px;height:30px;border-radius:50%;background:rgba(29,41,64,.2);filter:blur(10px)}
+  .tag{position:absolute;font-family:"Caveat",cursive;font-weight:700;font-size:40px;color:#1D2940}
 </style></head>
 <body>
   <div class="blob b1"></div><div class="blob b2"></div><div class="table"></div>
-  <div class="shadow1"></div>
-  <div class="stand"><div class="book"><div class="spine"></div><div class="edge"></div><div class="face"></div></div></div>
-  <div class="flat"><div class="spread"><img src="../preview/p06.png" alt=""><img src="../preview/p07.png" alt=""><div class="gutter"></div></div></div>
-  
+  <div class="sh1"></div>
+  <div class="pbw"><div class="pb"><div class="edge"></div><div class="face"></div></div></div>
+  <div class="sh2"></div>
+  <div class="bbw"><div class="bb"><div class="edge"></div><div class="pages"></div><div class="face"></div></div></div>
+  <div class="sh3"></div><div class="ball"></div>
+  <div class="tag" style="left:360px;top:1010px">talk-along paperback</div>
+  <div class="tag" style="left:900px;top:1010px">board book</div>
 </body></html>

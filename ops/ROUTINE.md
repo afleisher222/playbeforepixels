@@ -56,6 +56,15 @@ Run every new or changed public item through ops/COMPLIANCE-GATE.md. Anything th
 - The final message of the run is a short plain-language report for the founder: what's new, what sold (if sales data is connected), what needs her (approvals, uploads), and nothing else.
 
 
+## Be proactive (every run — act before anything becomes a problem or a missed chance)
+- **Stay 8 weeks ahead:** keep 8 weeks of approved content, pins, emails and seasonal campaigns scheduled at all times; start seasonal products and gift guides 6 weeks before each date in the events calendar.
+- **Deadlines, 30 days early:** maintain ops/DEADLINES.md (ALPHAPLAY Statement of Use/extension due March 8, 2027; Maryland annual report April 15; estimated taxes; domain, insurance, trade-name and platform renewals; access-key expirations). 30 days before each, prepare every document and put a one-line yes/no in ops/APPROVALS.md.
+- **Double down automatically:** when a product sells well, create its bundle, its next-age or next-series edition, its Amazon/paperback edition and its translations, in that order, through the normal build-and-review process.
+- **Fix or fold automatically:** apply the DEMAND-CHECK kill rule (fewer than 5 sales in 60 days after SEO fixes → reprice once → fold into a bundle).
+- **Test and learn:** run one small, safe improvement test at a time (title, first image, price within the DEMAND-CHECK range, bundle offer) and keep the winner.
+- **Prevent problems:** watch platform news daily; update listings before a rule change takes effect; refresh expiring keys early (the founder creates the key; everything else is prepared).
+- **Never cross a guardrail to be proactive:** no spending, no contacting people, no new platforms or terms, and nothing touching her job, her case or her children without her written approval.
+
 ## Founder updates = money (founder's instruction, September 28, 2026 — overrides other report wording)
 Arielle only wants to hear how much money the business is making. Every report she receives follows this format and nothing else:
 - **Daily:** "Yesterday: $X in sales · This month so far: $Y · Profit this month (est.): $Z." Then either "Nothing needs you." or one line per item in ops/APPROVALS.md.

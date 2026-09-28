@@ -92,10 +92,11 @@ function blankCard(key, opts = {}) {
 function cardBack(key) {
   const th = TH[key];
   const shapes = key === 'summer' ? 'sun' : key === 'rainy' ? 'rain' : null;
+  const op = key === 'b13' ? .38 : .2;
   const dots = [[30, 40, 26], [205, 70, 16], [60, 250, 14], [200, 270, 30], [40, 150, 8], [215, 170, 10], [120, 30, 7], [130, 300, 9]]
     .map(([x, y, r], i) => shapes && i % 2 === 0
-      ? `<g transform="translate(${x - r},${y - r}) scale(${r / 12})" style="color:${th.on}" opacity=".16"><use href="#ic-${shapes}" width="24" height="24"/></g>`
-      : `<circle cx="${x}" cy="${y}" r="${r}" fill="${th.on}" opacity=".14"/>`).join('');
+      ? `<g transform="translate(${x - r},${y - r}) scale(${r / 12})" style="color:#FFFFFF" opacity="${op}"><use href="#ic-${shapes}" width="24" height="24"/></g>`
+      : `<circle cx="${x}" cy="${y}" r="${r}" fill="#FFFFFF" opacity="${op}"/>`).join('');
   const band = BANDS.find(b => b.key === key);
   const sub = band ? band.label : th.name;
   return `<div class="card back" style="${tvars(th)}"><div class="panel">

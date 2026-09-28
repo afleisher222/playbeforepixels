@@ -265,7 +265,7 @@ symbol{overflow:visible}
 .cB .num{top:auto;bottom:auto;top:11px}
 .cB .body{position:absolute;left:16px;right:16px;top:100px;bottom:13px;display:flex;flex-direction:column}
 .cB .q{margin:0;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:700;line-height:1.16;letter-spacing:-.012em}
-.cB .talk p{font-size:10.4px}
+.cB .talk p{font-size:11px}
 .cB .qwrap{flex:1;display:flex;align-items:center;padding-bottom:8px}
 /* backs */
 .back .bgpat{position:absolute;left:0;top:0}
