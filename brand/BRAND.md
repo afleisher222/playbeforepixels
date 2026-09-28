@@ -80,3 +80,6 @@ Flat vector, solid fills, no gradients, no drop shadows, no outlines (or at most
 - `cover.png` — front cover at 1600 px on the long side (for the store and the website).
 - `mockup.png` — a 1600 × 1200 px product photo-style mockup built in HTML/CSS (e.g., the book standing on a wash-colored surface with a soft shadow, a tee laid flat), for the website.
 - `listing.json` — { "slug", "title", "subtitle", "format", "trim", "pages", "ages", "price_usd", "price_notes", "short_description" (≤160 chars), "long_description" (store-ready, 120–250 words, no health claims), "bullets" (5), "keywords" (7, for Amazon/Etsy search), "seo_title" (≤60 chars), "seo_description" (≤155 chars), "alt_text", "channels" (where to sell), "compliance_notes", "human_todo" (what the founder must still supply/do) }.
+
+## Human authorship (copyright) — binding
+AI-generated material is not copyrightable in the U.S. For every product, leave clearly marked places for the founder's own creative contribution (her rewritten text, her choices of words, characters, colors and page order), and keep every draft version in git so her changes are provable. Never label AI-generated material as human-authored in any copyright filing. See legal/protection/PROTECTION-PLAN.md, section "AI-assisted products and copyright".

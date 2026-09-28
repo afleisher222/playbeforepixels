@@ -5,6 +5,13 @@
 **Goal (the owner's words):** "make sure all international markets can find our website to buy our products."
 **Status:** planning draft. The tax items need a cross-border accountant. The product-safety, consumer-law and privacy items need an attorney, or a compliance service in the destination region. Nothing here is legal or tax advice.
 
+**Adversarial review, September 28, 2026 (still a DRAFT):** a second pass tried to disprove every fee, threshold, rule status and platform claim here. Web search was still used up, and every official site tried was blocked: eur-lex.europa.eu, consilium.europa.eu, gov.uk, legislation.gov.uk, canada.ca, laws-lois.justice.gc.ca, ato.gov.au, legislation.gov.au, ird.govt.nz, gesetze-im-internet.de, legifrance.gouv.fr, lucid.verpackungsregister.org, cbp.gov, esafety.gov.au, kdp.amazon.com, etsy.com, stripe.com, gumroad.com, payhip.com and lemonsqueezy.com. **No UNVERIFIED item could be upgraded to verified.** The GitHub-hosted sources were re-read. Corrections are marked **(corrected 2026-09-28)**:
+- The Astro sitemap does **not** generate `x-default` (section 3.2).
+- The Cloudflare Web Analytics page says nothing about cookies (section 6.6).
+- The e-book VAT rates were misleading (section 5.1).
+- **Coaching and live workshops were removed**, because `brand/BRAND.md` rule 19 and `CLAUDE.md` forbid them.
+- The merchant-of-record choice now matches `commerce/storefront-setup-guide.md` (section 5.2).
+
 ---
 
 ## 0. Read this first: how reliable this plan is
@@ -96,7 +103,8 @@ The screen-time-concern signals below are UNVERIFIED in this session. Confirm ea
 ### 3.2 hreflang (tells Google which language version to show)
 
 - Every page lists **every** language version of itself, **including itself**, plus an `x-default`. The tags must be **reciprocal**: if `/es/juego/` points to `/juego/`, then `/juego/` must point back. Codes are BCP 47 language tags, optionally with a region ([MDN, hreflang](https://raw.githubusercontent.com/mdn/content/main/files/en-us/web/html/reference/elements/link/index.md), **[verified 2026-09-27]**: "Values should be valid BCP 47 language tags"). Google's reciprocal-link and `x-default` rules come from [Google's localized-versions guide](https://developers.google.com/search/docs/specialty/international/localized-versions) (UNVERIFIED this session; page blocked).
-- **Use the sitemap method, not hand-typed tags.** It is the least error-prone. The `@astrojs/sitemap` integration's `i18n` option generates `xhtml:link rel="alternate" hreflang` entries automatically ([Astro sitemap docs](https://raw.githubusercontent.com/withastro/docs/main/src/content/docs/en/guides/integrations-guide/sitemap.mdx), **[verified 2026-09-27]**).
+- **Use the sitemap method, not hand-typed tags.** It is the least error-prone. The `@astrojs/sitemap` integration's `i18n` option generates `xhtml:link rel="alternate" hreflang` entries automatically ([Astro sitemap docs](https://raw.githubusercontent.com/withastro/docs/main/src/content/docs/en/guides/integrations-guide/sitemap.mdx), **[verified 2026-09-27; re-read 2026-09-28]**).
+- **(corrected 2026-09-28)** Astro's sitemap docs and its i18n routing docs do **not** mention `x-default`, so the integration should not be assumed to add it. Add the `x-default` entry yourself, either with the sitemap's `serialize` hook or with a `<link rel="alternate" hreflang="x-default">` tag in the page head. After the first build, open `sitemap-0.xml` and check that every page lists itself, its translations and `x-default`. The site is not built in Astro yet (there is no `site/` folder), so this also depends on the web lane actually choosing Astro.
 - Example head tags for the play-guide page, if you prefer HTML tags:
 
 ```html

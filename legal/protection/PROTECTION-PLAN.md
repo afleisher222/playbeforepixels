@@ -420,3 +420,21 @@ The full list is in `../FOR-EMPLOYMENT-COUNSEL.md`. The questions where this pla
 
 ---
 *Educational guidance compiled September 27, 2026 from the sources linked above. It is not legal advice. Review it with a licensed Maryland attorney and an insurance broker before acting.*
+
+---
+
+## ⚠️ Added September 28, 2026 — AI-assisted products and copyright (read this before registering anything)
+
+**The rule.** U.S. copyright protects only human authorship. The U.S. Copyright Office's *Copyright and Artificial Intelligence, Part 2: Copyrightability* (January 2025) concludes that purely AI-generated material is not protected, and that prompting alone is not enough control to make the user an author. Human contributions **are** protected where they are perceptible in the work, including creative selection, coordination or arrangement of material and creative modifications of AI outputs. When registering, the applicant must disclose and exclude ("disclaim") AI-generated material that is more than de minimis. On March 2, 2026 the U.S. Supreme Court denied certiorari in *Thaler v. Perlmutter*, leaving in place the D.C. Circuit's holding that the Copyright Act requires a human author.
+
+**What this means for Play Before Pixels.** The books, illustrations, printables and designs in this repository were drafted with Claude Code (AI). As delivered, much of that material may not be copyrightable, so a copycat who reproduces it could argue there is nothing to infringe. Filing a registration that claims AI-generated material as human-authored can invalidate the registration.
+
+**How to protect the products anyway (in order of strength):**
+1. **Trademark is unaffected.** PLAY BEFORE PIXELS, book-series names and the logo are protected by trademark use and registration regardless of how the products were made. This is the strongest anti-copycat tool and does not depend on authorship. File it first.
+2. **Make Arielle the human author of the parts that matter most.** She rewrites the text of each book in her own words, chooses and arranges the pages, changes compositions, colors and characters, and adds her own material. Keep the before/after files in this repository (git history is dated proof) and log her decisions in `creation-records-log.md`. Her human contributions, selection and arrangement are registrable; the AI-generated remainder is disclaimed.
+3. **Commission human illustrators for flagship titles** under the work-for-hire and IP-assignment agreement in this folder. Human-drawn art assigned to AlphaPlay LLC is fully protected. Use the AI drafts as the art brief.
+4. **Contract terms still bind buyers.** The digital-product license (personal / single classroom / site license; no resale or redistribution) is enforceable against purchasers as a contract whether or not the content is copyrightable.
+5. **Register only what is human-authored, with AI material disclaimed**, following the Copyright Office's registration guidance for works containing AI-generated material. Let the IP attorney prepare the first registrations.
+6. **Speed, brand and email list** remain the practical moat: a large, consistent, trademarked line sold everywhere first.
+
+Sources: U.S. Copyright Office, Copyright and Artificial Intelligence Part 2 (Jan. 2025), https://www.copyright.gov/newsnet/2025/1060.html · Supreme Court denial of certiorari in Thaler v. Perlmutter (Mar. 2, 2026), e.g. https://www.finnegan.com/en/insights/ip-updates/supreme-court-declines-to-hear-thaler-v-perlmutter-leaving-human-authorship-requirement-intact.html
