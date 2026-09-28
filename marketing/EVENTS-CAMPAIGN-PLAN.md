@@ -295,6 +295,7 @@ Each month lists the campaigns to run, the products and bundles to feature, the 
 | Dec 9 | Read-aloud day (confirm the date with LitWorld) |
 | Dec 14 | Party favors |
 | Dec 16 | Canada's family literacy day |
+| Dec 19 | UK storytelling week (verify) |
 | Dec 20 | Book giving day, Feb 14 |
 | Dec 22 | AU/NZ back-to-school |
 | Dec 26 | Handwriting day |
@@ -332,13 +333,16 @@ Each month lists the campaigns to run, the products and bundles to feature, the 
 
 | Date | Start work on |
 |---|---|
-| Jan 4 | March reading month (and the read-and-talk challenge) |
+| Jan 4 | March reading month (and the read-and-talk challenge); library lovers month |
 | Jan 5 | Etsy Valentine retag |
 | Jan 7 | Book day in March (UK/IE) |
 | Jan 8 | The March unplugging day |
+| Jan 9 | Take-your-child-to-the-library day |
 | Jan 10 | Mothering Sunday; the Lunar New Year, Valentine's and Ramadan guides go live |
 | Jan 15 | FPEA Florida homeschool program ad (approval); NCHE (verify); ABA Children's Institute (verify) |
+| Jan 17 | Kindness week |
 | Jan 20 | Promote Ramadan |
+| Jan 24 | Mother-language day |
 
 ### February 2027: love-note season, Lunar New Year, Ramadan, the reading-day cluster
 
@@ -375,7 +379,7 @@ Each month lists the campaigns to run, the products and bundles to feature, the 
 | Feb 15 | Easter; Nowruz; HEAV program ad (approval); US Book Show (verify) |
 | Feb 19 | International Children's Book Day |
 | **Feb 22** | **Spring screen-free week (flagship spring campaign; 10-week lead; confirm the dates on screenfree.org)** |
-| Feb 26 | Storytelling day |
+| Feb 20 | Storytelling day |
 
 UK printed cutoff for Mothering Sunday: Feb 25. US printed cutoff for Eid: Feb 24.
 
@@ -417,9 +421,12 @@ UK printed cutoff for Mothering Sunday: Feb 25. US printed cutoff for Eid: Feb 2
 | Mar 1 | Día del Niño; THSC Texas homeschool program ad (verify) |
 | Mar 14 | Mother's Day (US and others) |
 | Mar 15 | Día de las Madres (Spanish assets by Apr 1) |
+| Mar 12 | World book day (Apr 23) |
+| Mar 14 | Library week |
 | Mar 18 | Passover |
+| Mar 19 | Children's Day / Book Day (Apr 30) |
 | Mar 21 | Día de la Madre (Spain) |
-| Mar 26 | Library week |
+| Mar 25 | Earth Day nature play |
 | Mar 29 | Summer break (8 weeks) |
 
 ### April 2027: children's books, early childhood, Mother's Day run-up
@@ -451,6 +458,7 @@ UK printed cutoff for Mothering Sunday: Feb 25. US printed cutoff for Eid: Feb 2
 | Date | Start work on |
 |---|---|
 | Apr 3 | Mother Goose Day |
+| Apr 6 | Tell a story day |
 | Apr 11 | Eid al-Adha |
 | Apr 15 | SIBA catalog (verify) |
 | Apr 16 | International Day of Play (8-week flagship summer lead) |
@@ -495,10 +503,10 @@ UK printed cutoff for Mothering Sunday: Feb 25. US printed cutoff for Eid: Feb 2
 
 | Date | Start work on |
 |---|---|
-| May 3 | Global Day of Parents |
-| May 15 | Amazon summer event watch; ABA/NEIBA/Heartland catalogs (verify) |
-| May 15–17 | Get outdoors day; Scotland book week |
-| May 20 | Bedtime story day (verify) |
+| May 3 | Scotland's book week |
+| May 4 | Global Day of Parents |
+| May 15 | Get outdoors day; Amazon summer event watch; ABA/NEIBA/Heartland catalogs (verify) |
+| Mid-May | Bedtime story day (confirm the June date first) |
 
 Printed cutoffs: Eid al-Adha May 4, Fête des mères (skipped), end-of-school May 28.
 
@@ -529,9 +537,11 @@ Printed cutoffs: Eid al-Adha May 4, Fête des mères (skipped), end-of-school Ma
 
 | Date | Start work on |
 |---|---|
-| Jun 17 | US back-to-school routines |
-| Jun 23 | Book booksellers' holiday 2027 catalogs [VERIFY] |
-| Jun 26 | Christmas in July; UK play day |
+| Jun 1 | Mud day |
+| Jun 6 | Back-to-school routines season (8-week lead) |
+| Jun 17 | US back-to-school shopping |
+| Jun 23 | UK play day |
+| Jun 26 | Christmas in July; Australia's book week |
 | Jun 27 | Parents' Day |
 
 ### July 2027: summer continues, Christmas in July, back-to-school build
@@ -559,7 +569,7 @@ Printed cutoffs: Eid al-Adha May 4, Fête des mères (skipped), end-of-school Ma
 |---|---|
 | Jul 11 | AU/NZ Father's Day |
 | Jul 18 | US Grandparents Day; UK/EU back-to-school |
-| Jul 24 | Sept library card month |
+| Jul 28 | International Literacy Day |
 
 ### August 2027: back-to-school routines (parent-facing)
 
@@ -585,10 +595,9 @@ Printed cutoffs: Eid al-Adha May 4, Fête des mères (skipped), end-of-school Ma
 | Date | Start work on |
 |---|---|
 | Aug 1 | Texas Book Festival program ad (verify) |
+| Aug 4 | Library card month |
 | Aug 8 | UK Grandparents' Day 2027 (Oct 3) |
-| Aug 9 | International Literacy Day |
 | Aug 16 | Read a book day |
-| Aug 19 | Grandparents Day marketing push |
 
 Also in August: build the Oct 2027–Sep 2028 calendar (the next refresh).
 

@@ -107,6 +107,11 @@ const navItems = [
   ['shop', 'Shop', 'mega-shop'], ['books', 'Books', 'mega-books'], ['teach', 'For Teachers &amp; Groups', 'mega-teach'], ['research', 'Research', 'mega-research']
 ];
 
+function panel(id) {
+  const all = megaPanels();
+  const m = all.match(new RegExp('<div class="mega" id="' + id + '"[\\s\\S]*?(?=\\n  <div class="mega" id=|\\n  <div class="nav-scrim")'));
+  return m ? m[0] : '';
+}
 function header(active) {
   return `<a class="skip-link" href="#main">Skip to content</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="ink" x="-5%" y="-20%" width="110%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.6"/></filter></defs></svg>
@@ -125,7 +130,7 @@ function header(active) {
     <a class="brand" href="index.html"><img src="assets/lockup-horizontal.svg" alt="Play Before Pixels, home" width="141" height="38"></a>
     <nav class="primary-nav" aria-label="Main">
       <ul>
-        ${navItems.map(([k, l, id]) => `<li><button class="nav-top${active === k ? ' is-current' : ''}" type="button" aria-expanded="false" aria-controls="${id}" data-mega="${id}">${l} ${I.chev}</button></li>`).join('\n        ')}
+        ${navItems.map(([k, l, id]) => `<li><button class="nav-top${active === k ? ' is-current' : ''}" type="button" aria-expanded="false" aria-controls="${id}" data-mega="${id}">${l} ${I.chev}</button>${panel(id)}</li>`).join('\n        ')}
         <li><a class="nav-top${active === 'about' ? ' is-current' : ''}" href="info.html#about"${active === 'about' ? ' aria-current="page"' : ''}>About</a></li>
       </ul>
     </nav>
@@ -135,7 +140,7 @@ function header(active) {
       <button class="tool-btn menu-btn" type="button" data-open-menu aria-haspopup="dialog" aria-controls="mnav" aria-expanded="false">${I.menu}<span>Menu</span></button>
     </div>
   </div>
-  ${megaPanels()}
+  <div class="nav-scrim" data-nav-scrim></div>
 </header>`;
 }
 

@@ -66,7 +66,8 @@ function card(cd, key, num, opts = {}) {
     <div class="row">${M(5)}<b>Try it</b><p>${esc(cd.d)}</p></div>
     <div class="talk">${M(6)}${icon('talk', 'ti2')}<div><b>Talk</b><p>${esc(cd.k)}</p></div></div>
   </div>
-  <div class="ft"><span class="wm">${icon(cd.c)}</span>${M(7)}${icon('safe', 'si')}<span>${esc(safe)}</span><i>${numTxt}</i></div>
+  <div class="wmw"><span class="wm">${icon(cd.c)}</span></div>
+  <div class="ft">${M(7)}${icon('safe', 'si')}<span>${esc(safe)}</span><i>${numTxt}</i></div>
 </div></div>`;
 }
 
@@ -210,8 +211,10 @@ h1,h2,h3,p{margin:0}
 .card[style*="--m:${C.sun}"] .ci{color:#C98F00}
 .ci .i{width:16px;height:16px;display:block}
 .bd{padding:3px 10px 0;display:flex;flex-direction:column;gap:7px;position:relative;z-index:1}
-.ft{position:relative}
-.ft .wm{position:absolute;right:10px;bottom:calc(100% + 6px);width:54px;height:54px;color:var(--t);z-index:0;opacity:1;flex:none}
+.wmw{flex:1;min-height:0;container-type:size;position:relative}
+.wm{position:absolute;right:10px;bottom:6px;width:50px;height:50px;color:var(--t)}
+.wm .i{width:50px;height:50px;display:block}
+@container (max-height: 58px){.wm{display:none}}
 .wm .i{width:54px;height:54px;display:block}
 .row b,.talk b{display:block;font-weight:800;font-size:7.8px;letter-spacing:.12em;text-transform:uppercase;opacity:.62;margin-bottom:1px}
 .row p{font-size:12px;line-height:1.3;font-weight:600}
@@ -220,7 +223,7 @@ h1,h2,h3,p{margin:0}
 .talk .ti2{flex:0 0 15px;width:15px;height:15px;color:var(--m);margin-top:1px}
 .card[style*="--m:${C.sun}"] .talk .ti2{color:#C98F00}
 .talk p{font-size:12px;line-height:1.25;font-weight:800}
-.ft{margin-top:auto;padding:4px 9px 6px 9px;display:flex;gap:4px;align-items:flex-start;border-top:1.5px solid var(--t)}
+.ft{margin-top:0;padding:4px 9px 6px 9px;display:flex;gap:4px;align-items:flex-start;border-top:1.5px solid var(--t)}
 .ft .si{flex:0 0 11px;width:11px;height:11px;color:var(--ink);opacity:.55;margin-top:.5px}
 .ft span{font-size:8px;line-height:1.28;font-weight:700;flex:1;opacity:.82}
 .ft i{font-style:normal;font-size:7px;font-weight:800;letter-spacing:.06em;opacity:.45;white-space:nowrap;margin-top:1px}

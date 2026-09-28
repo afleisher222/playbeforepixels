@@ -29,8 +29,10 @@ h1,h2,h3,p{margin:0}
 .card[style*="--m:#F5B820"] .ci{color:#C98F00}
 .ci .i{width:16px;height:16px;display:block}
 .bd{padding:3px 10px 0;display:flex;flex-direction:column;gap:7px;position:relative;z-index:1}
-.ft{position:relative}
-.ft .wm{position:absolute;right:10px;bottom:calc(100% + 6px);width:54px;height:54px;color:var(--t);z-index:0;opacity:1;flex:none}
+.wmw{flex:1;min-height:0;container-type:size;position:relative}
+.wm{position:absolute;right:10px;bottom:6px;width:50px;height:50px;color:var(--t)}
+.wm .i{width:50px;height:50px;display:block}
+@container (max-height: 58px){.wm{display:none}}
 .wm .i{width:54px;height:54px;display:block}
 .row b,.talk b{display:block;font-weight:800;font-size:7.8px;letter-spacing:.12em;text-transform:uppercase;opacity:.62;margin-bottom:1px}
 .row p{font-size:12px;line-height:1.3;font-weight:600}
@@ -39,7 +41,7 @@ h1,h2,h3,p{margin:0}
 .talk .ti2{flex:0 0 15px;width:15px;height:15px;color:var(--m);margin-top:1px}
 .card[style*="--m:#F5B820"] .talk .ti2{color:#C98F00}
 .talk p{font-size:12px;line-height:1.25;font-weight:800}
-.ft{margin-top:auto;padding:4px 9px 6px 9px;display:flex;gap:4px;align-items:flex-start;border-top:1.5px solid var(--t)}
+.ft{margin-top:0;padding:4px 9px 6px 9px;display:flex;gap:4px;align-items:flex-start;border-top:1.5px solid var(--t)}
 .ft .si{flex:0 0 11px;width:11px;height:11px;color:var(--ink);opacity:.55;margin-top:.5px}
 .ft span{font-size:8px;line-height:1.28;font-weight:700;flex:1;opacity:.82}
 .ft i{font-style:normal;font-size:7px;font-weight:800;letter-spacing:.06em;opacity:.45;white-space:nowrap;margin-top:1px}
@@ -431,7 +433,8 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Your child reads the recipe, gathers everything and cooks with you: pancakes, pasta salad, smoothies.</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“What step was trickiest?”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-kitchen"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up at the stove and with sharp knives.</span><i>8–12 · 01</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-kitchen"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up at the stove and with sharp knives.</span><i>8–12 · 01</i></div>
 </div></div></div><div class="mc" style="left:470px;top:390px;transform:rotate(-5deg) scale(1.02);transform-origin:0 0"><div class="card" style="--m:#3D86D8;--t:#E3EEFA;--on:#FFFFFF"><div class="panel">
   <div class="hd"><span class="age">Ages 5–8</span><span class="en"><svg class="mt" viewBox="0 0 17 12" aria-hidden="true"><rect x="0" y="8" width="4.4" height="4" rx="1.4" fill="currentColor" opacity="1"/><rect x="6" y="4" width="4.4" height="8" rx="1.4" fill="currentColor" opacity="1"/><rect x="12" y="0" width="4.4" height="12" rx="1.4" fill="currentColor" opacity="0.22"/></svg>Medium</span></div>
   <div class="ti"><div class="tt"><div class="cat">Build & Make</div><h3>Paper Plane Contest</h3></div><span class="ci"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-build"/></svg></span></div>
@@ -440,7 +443,8 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Fold three different planes. Test each one three times. Which flies farthest? Which loops?</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“What change made it fly farther?”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-build"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up nearby; check in often.</span><i>5–8 · 02</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-build"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up nearby; check in often.</span><i>5–8 · 02</i></div>
 </div></div></div><div class="mc" style="left:620px;top:380px;transform:rotate(5deg) scale(1.02);transform-origin:0 0"><div class="card" style="--m:#F5B820;--t:#FEF4D8;--on:#1D2940"><div class="panel">
   <div class="hd"><span class="age">Ages 1–3</span><span class="en"><svg class="mt" viewBox="0 0 17 12" aria-hidden="true"><rect x="0" y="8" width="4.4" height="4" rx="1.4" fill="currentColor" opacity="1"/><rect x="6" y="4" width="4.4" height="8" rx="1.4" fill="currentColor" opacity="1"/><rect x="12" y="0" width="4.4" height="12" rx="1.4" fill="currentColor" opacity="0.22"/></svg>Medium</span></div>
   <div class="ti"><div class="tt"><div class="cat">Build & Make</div><h3>Tower and Crash</h3></div><span class="ci"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-build"/></svg></span></div>
@@ -449,7 +453,8 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Stack them up together and count “one, two, three.” Then your child knocks it down. Again!</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“Up, up, up… crash!”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-build"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up within reach. Every item bigger than a toilet-paper tube.</span><i>1–3 · 04</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-build"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up within reach. Every item bigger than a toilet-paper tube.</span><i>1–3 · 04</i></div>
 </div></div></div><div class="mc" style="left:745px;top:420px;transform:rotate(14deg) scale(1.02);transform-origin:0 0"><div class="card" style="--m:#2FA36B;--t:#DFF3E9;--on:#FFFFFF"><div class="panel">
   <div class="hd"><span class="age">Ages 3–5</span><span class="en"><svg class="mt" viewBox="0 0 17 12" aria-hidden="true"><rect x="0" y="8" width="4.4" height="4" rx="1.4" fill="currentColor" opacity="1"/><rect x="6" y="4" width="4.4" height="8" rx="1.4" fill="currentColor" opacity="1"/><rect x="12" y="0" width="4.4" height="12" rx="1.4" fill="currentColor" opacity="0.22"/></svg>Medium</span></div>
   <div class="ti"><div class="tt"><div class="cat">Pretend</div><h3>Pretend Café</h3></div><span class="ci"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-pretend"/></svg></span></div>
@@ -458,7 +463,8 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Your child runs a café. Draw a picture menu. You order; they cook and serve.</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“What do you recommend today?”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-pretend"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up nearby.</span><i>3–5 · 03</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-pretend"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up nearby.</span><i>3–5 · 03</i></div>
 </div></div></div>
     <div style="position:absolute;left:64px;bottom:44px;display:flex;gap:10px;flex-wrap:wrap;width:640px"><span class="chip">+ 36 summer & rainy-day cards</span><span class="chip">Editable · US Letter + A4</span></div><img class="lg1" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"></section>
 <section class="page L" style="background:#F3F6FB"><div class="lh"><div class="lk">What’s inside</div><h2>Everything for a<br>play jar that works.</h2></div>
@@ -476,7 +482,8 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Dance. When the song stops, freeze with a feeling face: happy, grumpy, surprised. Guess each other’s.</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“What made your statue grumpy?”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-music"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up nearby.</span><i>3–5 · 17</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-music"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up nearby.</span><i>3–5 · 17</i></div>
 </div></div></div>
     <div style="position:absolute;left:570px;top:320px;width:370px"><div style="display:flex;gap:14px;margin-bottom:22px"><span style="flex:0 0 38px;height:38px;border-radius:50%;background:#EE5A36;color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center">1</span><div><div style="font-family:Bricolage Grotesque;font-weight:800;font-size:25px">Age band color</div><div style="font-size:18px;font-weight:600">Find your child’s cards at a glance</div></div></div><div style="display:flex;gap:14px;margin-bottom:22px"><span style="flex:0 0 38px;height:38px;border-radius:50%;background:#EE5A36;color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center">2</span><div><div style="font-family:Bricolage Grotesque;font-weight:800;font-size:25px">Energy level</div><div style="font-size:18px;font-weight:600">Calm, medium or wiggly</div></div></div><div style="display:flex;gap:14px;margin-bottom:22px"><span style="flex:0 0 38px;height:38px;border-radius:50%;background:#EE5A36;color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center">3</span><div><div style="font-family:Bricolage Grotesque;font-weight:800;font-size:25px">You need</div><div style="font-size:18px;font-weight:600">Everyday things only</div></div></div><div style="display:flex;gap:14px;margin-bottom:22px"><span style="flex:0 0 38px;height:38px;border-radius:50%;background:#EE5A36;color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center">4</span><div><div style="font-family:Bricolage Grotesque;font-weight:800;font-size:25px">Try it</div><div style="font-size:18px;font-weight:600">One or two short steps</div></div></div><div style="display:flex;gap:14px;margin-bottom:22px"><span style="flex:0 0 38px;height:38px;border-radius:50%;background:#EE5A36;color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center">5</span><div><div style="font-family:Bricolage Grotesque;font-weight:800;font-size:25px">Talk prompt</div><div style="font-size:18px;font-weight:600">One thing to say while you play</div></div></div><div style="display:flex;gap:14px;margin-bottom:22px"><span style="flex:0 0 38px;height:38px;border-radius:50%;background:#EE5A36;color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center">6</span><div><div style="font-family:Bricolage Grotesque;font-weight:800;font-size:25px">Safety line</div><div style="font-size:18px;font-weight:600">On every single card</div></div></div></div><img class="lg1" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"></section>
 <section class="page L" style="background:#DFF3E9"><div class="lh"><div class="lk">Sorted by age</div><h2>Ages 1–3 and 3–5</h2><p class="ls" style="font-size:19px">Every 1–3 card uses only things bigger than a toilet-paper tube.</p></div>
@@ -488,7 +495,8 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Turn the pots upside down. Drum loud, then soft, then fast, then slow. Take turns copying each other’s beat.</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“Loud or quiet? Your turn!”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-music"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up within reach. Every item bigger than a toilet-paper tube.</span><i>1–3 · 01</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-music"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up within reach. Every item bigger than a toilet-paper tube.</span><i>1–3 · 01</i></div>
 </div></div></div><div class="mc" style="left:355px;top:240px;transform:rotate(0deg) scale(1.08);transform-origin:0 0"><div class="card" style="--m:#F5B820;--t:#FEF4D8;--on:#1D2940"><div class="panel">
   <div class="hd"><span class="age">Ages 1–3</span><span class="en"><svg class="mt" viewBox="0 0 17 12" aria-hidden="true"><rect x="0" y="8" width="4.4" height="4" rx="1.4" fill="currentColor" opacity="1"/><rect x="6" y="4" width="4.4" height="8" rx="1.4" fill="currentColor" opacity="1"/><rect x="12" y="0" width="4.4" height="12" rx="1.4" fill="currentColor" opacity="1"/></svg>Wiggly</span></div>
   <div class="ti"><div class="tt"><div class="cat">Outdoors</div><h3>Bubble Chase</h3></div><span class="ci"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-outside"/></svg></span></div>
@@ -497,7 +505,8 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Blow bubbles outside. Your child chases and pops them. Wait a moment before you blow the next ones.</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“More bubbles? Say ‘more’!”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-outside"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up holds the bubble liquid.</span><i>1–3 · 13</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-outside"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up holds the bubble liquid.</span><i>1–3 · 13</i></div>
 </div></div></div><div class="mc" style="left:640px;top:250px;transform:rotate(4deg) scale(1.08);transform-origin:0 0"><div class="card" style="--m:#F5B820;--t:#FEF4D8;--on:#1D2940"><div class="panel">
   <div class="hd"><span class="age">Ages 1–3</span><span class="en"><svg class="mt" viewBox="0 0 17 12" aria-hidden="true"><rect x="0" y="8" width="4.4" height="4" rx="1.4" fill="currentColor" opacity="1"/><rect x="6" y="4" width="4.4" height="8" rx="1.4" fill="currentColor" opacity="0.22"/><rect x="12" y="0" width="4.4" height="12" rx="1.4" fill="currentColor" opacity="0.22"/></svg>Calm</span></div>
   <div class="ti"><div class="tt"><div class="cat">Pretend</div><h3>Teddy Picnic</h3></div><span class="ci"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-pretend"/></svg></span></div>
@@ -506,7 +515,8 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Spread the blanket and set a place for each toy. Pretend to pour, share and say “yum.”</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“Teddy wants more. More tea?”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-pretend"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up within reach. Every item bigger than a toilet-paper tube.</span><i>1–3 · 20</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-pretend"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up within reach. Every item bigger than a toilet-paper tube.</span><i>1–3 · 20</i></div>
 </div></div></div>
     <div class="mc" style="left:110px;top:570px;transform:rotate(-3deg) scale(0.95);transform-origin:0 0"><div class="card" style="--m:#2FA36B;--t:#DFF3E9;--on:#FFFFFF"><div class="panel">
   <div class="hd"><span class="age">Ages 3–5</span><span class="en"><svg class="mt" viewBox="0 0 17 12" aria-hidden="true"><rect x="0" y="8" width="4.4" height="4" rx="1.4" fill="currentColor" opacity="1"/><rect x="6" y="4" width="4.4" height="8" rx="1.4" fill="currentColor" opacity="0.22"/><rect x="12" y="0" width="4.4" height="12" rx="1.4" fill="currentColor" opacity="0.22"/></svg>Calm</span></div>
@@ -516,7 +526,8 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Scrub the veggies clean. Count them, then line them up from biggest to smallest.</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“Which is the biggest? The muddiest?”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-kitchen"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Water play: grown-up within arm’s reach the whole time.</span><i>3–5 · 13</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-kitchen"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Water play: grown-up within arm’s reach the whole time.</span><i>3–5 · 13</i></div>
 </div></div></div><div class="mc" style="left:370px;top:560px;transform:rotate(1deg) scale(0.95);transform-origin:0 0"><div class="card" style="--m:#2FA36B;--t:#DFF3E9;--on:#FFFFFF"><div class="panel">
   <div class="hd"><span class="age">Ages 3–5</span><span class="en"><svg class="mt" viewBox="0 0 17 12" aria-hidden="true"><rect x="0" y="8" width="4.4" height="4" rx="1.4" fill="currentColor" opacity="1"/><rect x="6" y="4" width="4.4" height="8" rx="1.4" fill="currentColor" opacity="1"/><rect x="12" y="0" width="4.4" height="12" rx="1.4" fill="currentColor" opacity="0.22"/></svg>Medium</span></div>
   <div class="ti"><div class="tt"><div class="cat">Pretend</div><h3>Pretend Café</h3></div><span class="ci"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-pretend"/></svg></span></div>
@@ -525,7 +536,8 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Your child runs a café. Draw a picture menu. You order; they cook and serve.</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“What do you recommend today?”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-pretend"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up nearby.</span><i>3–5 · 03</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-pretend"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up nearby.</span><i>3–5 · 03</i></div>
 </div></div></div><div class="mc" style="left:620px;top:570px;transform:rotate(4deg) scale(0.95);transform-origin:0 0"><div class="card" style="--m:#2FA36B;--t:#DFF3E9;--on:#FFFFFF"><div class="panel">
   <div class="hd"><span class="age">Ages 3–5</span><span class="en"><svg class="mt" viewBox="0 0 17 12" aria-hidden="true"><rect x="0" y="8" width="4.4" height="4" rx="1.4" fill="currentColor" opacity="1"/><rect x="6" y="4" width="4.4" height="8" rx="1.4" fill="currentColor" opacity="0.22"/><rect x="12" y="0" width="4.4" height="12" rx="1.4" fill="currentColor" opacity="0.22"/></svg>Calm</span></div>
   <div class="ti"><div class="tt"><div class="cat">Kitchen & Helping</div><h3>Snack Patterns</h3></div><span class="ci"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-kitchen"/></svg></span></div>
@@ -534,7 +546,8 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Make a pattern on a plate: cracker, cheese, cracker, cheese. What comes next? Then eat it.</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“How did you know what comes next?”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-kitchen"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Sit to eat; check allergies.</span><i>3–5 · 34</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-kitchen"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Sit to eat; check allergies.</span><i>3–5 · 34</i></div>
 </div></div></div><img class="lg1" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"></section>
 <section class="page L" style="background:#EFE6FA"><div class="lh"><div class="lk">Sorted by age</div><h2>Ages 5–8 and 8–12</h2><p class="ls" style="font-size:19px">Bigger projects, games with rules and real-life skills.</p></div>
     <div class="mc" style="left:70px;top:250px;transform:rotate(-4deg) scale(1.08);transform-origin:0 0"><div class="card" style="--m:#3D86D8;--t:#E3EEFA;--on:#FFFFFF"><div class="panel">
@@ -545,7 +558,8 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Spoon baking soda into a cup on a tray. Add vinegar a little at a time. Try more, try less.</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“What do you notice? Why does it fizz?”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-kitchen"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up helps pour. Don’t taste; keep faces back.</span><i>5–8 · 06</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-kitchen"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up helps pour. Don’t taste; keep faces back.</span><i>5–8 · 06</i></div>
 </div></div></div><div class="mc" style="left:355px;top:240px;transform:rotate(0deg) scale(1.08);transform-origin:0 0"><div class="card" style="--m:#3D86D8;--t:#E3EEFA;--on:#FFFFFF"><div class="panel">
   <div class="hd"><span class="age">Ages 5–8</span><span class="en"><svg class="mt" viewBox="0 0 17 12" aria-hidden="true"><rect x="0" y="8" width="4.4" height="4" rx="1.4" fill="currentColor" opacity="1"/><rect x="6" y="4" width="4.4" height="8" rx="1.4" fill="currentColor" opacity="1"/><rect x="12" y="0" width="4.4" height="12" rx="1.4" fill="currentColor" opacity="1"/></svg>Wiggly</span></div>
   <div class="ti"><div class="tt"><div class="cat">Games & Puzzles</div><h3>Hide and Seek</h3></div><span class="ci"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-games"/></svg></span></div>
@@ -554,7 +568,8 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Play classic hide and seek indoors. The seeker counts to 20 out loud.</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“What makes a great hiding spot?”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-games"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Never hide in appliances, chests, trunks or cars.</span><i>5–8 · 26</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-games"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Never hide in appliances, chests, trunks or cars.</span><i>5–8 · 26</i></div>
 </div></div></div><div class="mc" style="left:640px;top:250px;transform:rotate(4deg) scale(1.08);transform-origin:0 0"><div class="card" style="--m:#3D86D8;--t:#E3EEFA;--on:#FFFFFF"><div class="panel">
   <div class="hd"><span class="age">Ages 5–8</span><span class="en"><svg class="mt" viewBox="0 0 17 12" aria-hidden="true"><rect x="0" y="8" width="4.4" height="4" rx="1.4" fill="currentColor" opacity="1"/><rect x="6" y="4" width="4.4" height="8" rx="1.4" fill="currentColor" opacity="0.22"/><rect x="12" y="0" width="4.4" height="12" rx="1.4" fill="currentColor" opacity="0.22"/></svg>Calm</span></div>
   <div class="ti"><div class="tt"><div class="cat">Games & Puzzles</div><h3>Secret Code</h3></div><span class="ci"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-games"/></svg></span></div>
@@ -563,7 +578,8 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Make a code: A = 1, B = 2… Write a secret message. Swap and crack each other’s.</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“How did you figure it out?”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-games"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up nearby; check in often.</span><i>5–8 · 14</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-games"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up nearby; check in often.</span><i>5–8 · 14</i></div>
 </div></div></div>
     <div class="mc" style="left:110px;top:570px;transform:rotate(-3deg) scale(0.95);transform-origin:0 0"><div class="card" style="--m:#8A5CC7;--t:#EFE6FA;--on:#FFFFFF"><div class="panel">
   <div class="hd"><span class="age">Ages 8–12</span><span class="en"><svg class="mt" viewBox="0 0 17 12" aria-hidden="true"><rect x="0" y="8" width="4.4" height="4" rx="1.4" fill="currentColor" opacity="1"/><rect x="6" y="4" width="4.4" height="8" rx="1.4" fill="currentColor" opacity="1"/><rect x="12" y="0" width="4.4" height="12" rx="1.4" fill="currentColor" opacity="0.22"/></svg>Medium</span></div>
@@ -573,7 +589,8 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Design a package that keeps an egg safe when a grown-up drops it from a chair. Test, fix, retest.</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“What would you change for version two?”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-build"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up does the dropping. Wash hands after.</span><i>8–12 · 16</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-build"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up does the dropping. Wash hands after.</span><i>8–12 · 16</i></div>
 </div></div></div><div class="mc" style="left:370px;top:560px;transform:rotate(1deg) scale(0.95);transform-origin:0 0"><div class="card" style="--m:#8A5CC7;--t:#EFE6FA;--on:#FFFFFF"><div class="panel">
   <div class="hd"><span class="age">Ages 8–12</span><span class="en"><svg class="mt" viewBox="0 0 17 12" aria-hidden="true"><rect x="0" y="8" width="4.4" height="4" rx="1.4" fill="currentColor" opacity="1"/><rect x="6" y="4" width="4.4" height="8" rx="1.4" fill="currentColor" opacity="1"/><rect x="12" y="0" width="4.4" height="12" rx="1.4" fill="currentColor" opacity="0.22"/></svg>Medium</span></div>
   <div class="ti"><div class="tt"><div class="cat">Games & Puzzles</div><h3>Home Escape Room</h3></div><span class="ci"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-games"/></svg></span></div>
@@ -582,7 +599,8 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Design 3 puzzles. Each answer gives one number of a code that “unlocks” the box.</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“Which puzzle stumped us longest?”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-games"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up at home; check in often.</span><i>8–12 · 23</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-games"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up at home; check in often.</span><i>8–12 · 23</i></div>
 </div></div></div><div class="mc" style="left:620px;top:570px;transform:rotate(4deg) scale(0.95);transform-origin:0 0"><div class="card" style="--m:#8A5CC7;--t:#EFE6FA;--on:#FFFFFF"><div class="panel">
   <div class="hd"><span class="age">Ages 8–12</span><span class="en"><svg class="mt" viewBox="0 0 17 12" aria-hidden="true"><rect x="0" y="8" width="4.4" height="4" rx="1.4" fill="currentColor" opacity="1"/><rect x="6" y="4" width="4.4" height="8" rx="1.4" fill="currentColor" opacity="0.22"/><rect x="12" y="0" width="4.4" height="12" rx="1.4" fill="currentColor" opacity="0.22"/></svg>Calm</span></div>
   <div class="ti"><div class="tt"><div class="cat">Outdoors</div><h3>Stargazing</h3></div><span class="ci"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-outside"/></svg></span></div>
@@ -591,7 +609,8 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Lie on a blanket. Find the Moon’s shape, a bright planet, a star pattern. Draw what you see.</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“What shapes can you invent in the stars?”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-outside"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up with you after dark.</span><i>8–12 · 27</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-outside"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up with you after dark.</span><i>8–12 · 27</i></div>
 </div></div></div><img class="lg1" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"></section>
 <section class="page L" style="background:#FDE9E3"><div class="lh"><div class="lk">Bonus sets</div><h2>Summer & rainy-day<br>mini-sets</h2><p class="ls">36 extra cards for sunny afternoons and stuck-inside days.</p></div>
     <div class="mc" style="left:64px;top:330px;transform:rotate(-7deg) scale(1);transform-origin:0 0"><div class="card back" style="--m:#EE5A36;--t:#FDE9E3;--on:#FFFFFF"><div class="panel">
@@ -607,7 +626,8 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Freeze big toys in a tub overnight. Rescue them with warm water and spoons.</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“What melts fastest? Why?”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-games"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Water play: grown-up within arm’s reach the whole time.</span><i>Summer · 02</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-games"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Water play: grown-up within arm’s reach the whole time.</span><i>Summer · 02</i></div>
 </div></div></div>
     <div class="mc" style="left:530px;top:330px;transform:rotate(-5deg) scale(1);transform-origin:0 0"><div class="card back" style="--m:#1D2940;--t:#F3F6FB;--on:#FFFFFF"><div class="panel">
   <svg class="bgdots" viewBox="0 0 222 318" preserveAspectRatio="none" aria-hidden="true"><g transform="translate(4,14) scale(2.1666666666666665)" style="color:#FFFFFF" opacity="0.2"><use href="#ic-rain" width="24" height="24"/></g><circle cx="205" cy="70" r="16" fill="#FFFFFF" opacity="0.2"/><g transform="translate(14,188) scale(1)" style="color:#FFFFFF" opacity="0.2"><use href="#ic-rain" width="24" height="24"/></g><circle cx="214" cy="200" r="13" fill="#FFFFFF" opacity="0.2"/><g transform="translate(32,142) scale(0.6666666666666666)" style="color:#FFFFFF" opacity="0.2"><use href="#ic-rain" width="24" height="24"/></g><circle cx="215" cy="150" r="10" fill="#FFFFFF" opacity="0.2"/><g transform="translate(113,23) scale(0.5833333333333334)" style="color:#FFFFFF" opacity="0.2"><use href="#ic-rain" width="24" height="24"/></g><circle cx="205" cy="296" r="12" fill="#FFFFFF" opacity="0.2"/></svg>
@@ -622,7 +642,8 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Make a cozy nest by the window. Take turns choosing a book and read it with voices.</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“Which character would you be?”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-words"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up within reach of little ones.</span><i>Rainy · 11</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-words"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up within reach of little ones.</span><i>Rainy · 11</i></div>
 </div></div></div>
     <div style="position:absolute;left:64px;top:770px;display:flex;gap:12px"><span class="chip" style="background:#EE5A36;color:#fff"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-sun"/></svg> 18 summer cards</span><span class="chip" style="background:#1D2940;color:#fff"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-rain"/></svg> 18 rainy-day cards</span></div>
     <p style="position:absolute;left:64px;top:840px;width:640px;font-size:19px;font-weight:600;line-height:1.4">Sprinklers, ice rescues and cloud stories. Puddle jumping, reading nests and living-room camp-outs.</p><img class="lg1" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"></section>
@@ -676,7 +697,8 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Build a fort together. Add a door, a sign and a pile of books inside.</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“Who’s allowed in? What’s the password?”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-build"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up nearby.</span><i>3–5 · 01</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-build"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up nearby.</span><i>3–5 · 01</i></div>
 </div></div></div><div class="mc" style="left:772px;top:352px;transform:rotate(2deg) scale(0.62);transform-origin:0 0"><div class="card" style="--m:#F5B820;--t:#FEF4D8;--on:#1D2940"><div class="panel">
   <div class="hd"><span class="age">Ages 1–3</span><span class="en"><svg class="mt" viewBox="0 0 17 12" aria-hidden="true"><rect x="0" y="8" width="4.4" height="4" rx="1.4" fill="currentColor" opacity="1"/><rect x="6" y="4" width="4.4" height="8" rx="1.4" fill="currentColor" opacity="0.22"/><rect x="12" y="0" width="4.4" height="12" rx="1.4" fill="currentColor" opacity="0.22"/></svg>Calm</span></div>
   <div class="ti"><div class="tt"><div class="cat">Words & Stories</div><h3>Picture Walk</h3></div><span class="ci"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-words"/></svg></span></div>
@@ -685,7 +707,8 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Skip the words. Point to the pictures and say what you see. Wait for your child to point too.</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“I see a dog. What do you see?”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-words"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up within reach. Every item bigger than a toilet-paper tube.</span><i>1–3 · 17</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-words"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Grown-up within reach. Every item bigger than a toilet-paper tube.</span><i>1–3 · 17</i></div>
 </div></div></div><img class="lg1" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"></section>
 <section class="page L" style="background:#DFF3E9"><div class="lh"><div class="lk">Made with care</div><h2>Safety line and talk<br>prompt on every card.</h2></div>
     <div style="position:absolute;left:64px;top:300px;width:560px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
@@ -708,6 +731,7 @@ h1,h2,h3,p{margin:0}
     <div class="row"><b>Try it</b><p>Set the tub on a towel on the floor. Fill, pour and “wash” the cups together.</p></div>
     <div class="talk"><svg class="ti2" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-talk"/></svg><div><b>Talk</b><p>“Full or empty? Pour it out!”</p></div></div>
   </div>
-  <div class="ft"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-kitchen"/></svg></span><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Water play: grown-up within arm’s reach the whole time.</span><i>1–3 · 06</i></div>
+  <div class="wmw"><span class="wm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-kitchen"/></svg></span></div>
+  <div class="ft"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-safe"/></svg><span>Water play: grown-up within arm’s reach the whole time.</span><i>1–3 · 06</i></div>
 </div></div></div><img class="lg1" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"></section>
 </body></html>

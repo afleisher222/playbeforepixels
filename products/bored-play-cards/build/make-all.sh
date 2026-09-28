@@ -30,5 +30,12 @@ rm -rf png-templates && mkdir png-templates
 node -e "const m=require('./build/png-templates-manifest.json');m.forEach((n,i)=>require('fs').copyFileSync('$TMP/png/p'+String(i+1).padStart(2,'0')+'.png','png-templates/'+n+'.png'))"
 cp build/PNG-TEMPLATES-HOW-TO-USE.txt png-templates/HOW-TO-USE.txt
 rm -f bored-play-cards-PNG-templates.zip && zip -qr bored-play-cards-PNG-templates.zip png-templates
+# Etsy upload packet: 5 files, each under 20 MB
+rm -rf etsy-upload && mkdir etsy-upload
+cp bored-play-cards.pdf "etsy-upload/1-Im-Bored-Play-Cards-US-Letter.pdf"
+cp bored-play-cards-A4.pdf "etsy-upload/2-Im-Bored-Play-Cards-A4.pdf"
+zip -qj "etsy-upload/3-Editable-Fillable-Blanks-Letter-and-A4.zip" bored-play-cards-EDITABLE-Letter.pdf bored-play-cards-EDITABLE-A4.pdf
+zip -qj "etsy-upload/4-Double-Sided-Cards-Letter-and-A4.zip" bored-play-cards-double-sided-cards-Letter.pdf bored-play-cards-double-sided-cards-A4.pdf
+cp bored-play-cards-PNG-templates.zip "etsy-upload/5-PNG-Templates-300dpi.zip"
 rm -rf "$TMP"
 echo "done"
