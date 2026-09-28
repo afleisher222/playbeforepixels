@@ -160,7 +160,7 @@
     { c: 'var(--paper)', p: 'Best part of today? You first, then me.', t: 'Everyone' },
     { c: 'var(--grass-t)', p: 'Would you rather have a tail or wings?', t: 'Ages 5–8' }
   ];
-  function img(src, cls) { return '<img src="' + IMG + src + '" alt="" decoding="async"' + (cls ? ' class="' + cls + '"' : '') + '>'; }
+  function img(src, cls) { return '<img src="' + IMG + src + '" alt=""' + (cls ? ' class="' + cls + '"' : '') + '>'; }
   PBP.mock = function (p) {
     var m = p.mock, k = m.k;
     if (k === 'board') return '<div class="mock book book--board">' + img(m.src) + '</div>';

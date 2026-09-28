@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop by age and type — Play Before Pixels</title>
+<meta name="description" content="Board books, picture books, printables, a card deck, classroom packs and group kits for ages 0–12. Filter by age band or by type.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-section="shop">
+<a class="skip" href="#main">Skip to content</a>
+<div id="pbp-header"><noscript><nav class="wrap" aria-label="Main"><a href="index.html">Home</a> · <a href="shop.html">Shop</a> · <a href="research.html">Research</a> · <a href="info.html#about">About</a></nav></noscript></div>
+
+<main id="main" tabindex="-1">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><ol id="crumbs"><li><a href="index.html">Home</a></li><li><a href="shop.html" aria-current="page">Shop</a></li></ol></nav>
+
+    <header class="shop-head">
+      <div>
+        <p class="label" id="shop-kicker">The shop</p>
+        <h1 class="d-xl" id="shop-h">Everything, by age.</h1>
+      </div>
+      <p id="shop-intro">Books are printed to order and shipped worldwide; printables, licenses and the written course arrive by email in minutes. Choose an age band on the scale, a type, or both.</p>
+    </header>
+
+    <section class="filters" aria-label="Filters">
+      <div class="running" style="border:0;padding:0;margin-bottom:14px"><p class="label">Age</p><button type="button" class="clear" data-clear-age>All ages</button></div>
+      <div id="age-filter"></div>
+      <div class="filters-row">
+        <p class="label" id="type-l">Type</p>
+        <div class="chips" role="group" aria-labelledby="type-l" id="type-chips"></div>
+      </div>
+      <div class="filters-row" id="sub-row" hidden>
+        <p class="label" id="sub-l">Books</p>
+        <div class="chips" role="group" aria-labelledby="sub-l" id="sub-chips"></div>
+      </div>
+      <div class="filters-meta">
+        <p id="count" role="status" aria-live="polite"></p>
+        <label class="sort">Sort <select id="sort"><option value="featured">Featured</option><option value="price-asc">Price, low to high</option><option value="price-desc">Price, high to low</option><option value="age">Youngest first</option></select></label>
+      </div>
+    </section>
+
+    <section aria-labelledby="shop-h">
+      <div class="grid" id="grid"></div>
+    </section>
+  </div>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="doctor on-ink">
+        <h2 class="d-m">Buying for a class, a library or a whole parent group?</h2>
+        <p>Site licenses cover every teacher at one school; group kits cover unlimited evenings for a year; ten or more books ship straight from the printer at a group price. <a href="info.html#bulk" style="color:#fff;font-weight:800">Bulk &amp; PTA orders</a> · <a href="info.html#licenses" style="color:#fff;font-weight:800">How licenses work</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="pbp-footer"></div>
+<script src="../../commerce/links.js"></script>
+<script src="catalog.js"></script>
+<script src="nav.js"></script>
+<script>
+(function () {
+  var state = { age: "", type: "", sort: "featured" };
+  var ageBox = document.getElementById("age-filter"), grid = document.getElementById("grid");
+  var chips = document.getElementById("type-chips"), subRow = document.getElementById("sub-row"), subChips = document.getElementById("sub-chips");
+  var typeLabel = function (id) {
+    var t = PBP.TYPES.concat(PBP.SUBTYPES).find(function (x) { return x.id === id; }); return t ? t.label : "";
+  };
+  chips.innerHTML = '<button type="button" class="chip" data-type="">All types</button>' + PBP.TYPES.map(function (t) { return '<button type="button" class="chip" data-type="' + t.id + '">' + t.label + "</button>"; }).join("");
+  subChips.innerHTML = '<button type="button" class="chip chip--sub" data-type="books">All books</button>' + PBP.SUBTYPES.map(function (t) { return '<button type="button" class="chip chip--sub" data-type="' + t.id + '">' + t.label + "</button>"; }).join("");
+
+  function readHash() {
+    var h = location.hash.replace(/^#/, ""); state.age = ""; state.type = "";
+    h.split("&").forEach(function (kv) { var p = kv.split("="); if (p[0] === "age") state.age = p[1] || ""; if (p[0] === "type") state.type = p[1] || ""; if (p[0] === "sort") state.sort = p[1] || "featured"; });
+    if (state.age && !PBP.AGES.some(function (a) { return a.id === state.age; })) state.age = "";
+  }
+  function writeHash() {
+    var parts = []; if (state.age) parts.push("age=" + state.age); if (state.type) parts.push("type=" + state.type); if (state.sort !== "featured") parts.push("sort=" + state.sort);
+    var h = parts.length ? "#" + parts.join("&") : " ";
+    history.replaceState(null, "", h === " " ? location.pathname : h);
+    render();
+  }
+  function matchesType(p) {
+    if (!state.type) return true;
+    var grp = PBP.TYPES.find(function (t) { return t.id === state.type; });
+    if (grp && grp.members) return grp.members.indexOf(p.type) > -1;
+    return p.type === state.type;
+  }
+  function render() {
+    ageBox.innerHTML = PBP.ageScale("filter", state.age ? [state.age] : []);
+    var inBooks = state.type === "books" || PBP.SUBTYPES.some(function (s) { return s.id === state.type; });
+    chips.querySelectorAll(".chip").forEach(function (c) { var t = c.getAttribute("data-type"); c.setAttribute("aria-pressed", String(t === state.type || (t === "books" && inBooks))); });
+    subRow.hidden = !inBooks;
+    subChips.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", String(c.getAttribute("data-type") === state.type)); });
+    document.getElementById("sort").value = state.sort;
+
+    var list = PBP.PRODUCTS.filter(function (p) { return (!state.age || p.ages.indexOf(state.age) > -1) && matchesType(p); });
+    var order = PBP.PRODUCTS.map(function (p) { return p.id; });
+    var ageIdx = function (p) { return p.ages.length ? PBP.AGES.findIndex(function (a) { return a.id === p.ages[0]; }) : 99; };
+    list.sort(function (a, b) {
+      if (state.sort === "price-asc") return PBP.fromPrice(a) - PBP.fromPrice(b);
+      if (state.sort === "price-desc") return PBP.fromPrice(b) - PBP.fromPrice(a);
+      if (state.sort === "age") return ageIdx(a) - ageIdx(b);
+      return order.indexOf(a.id) - order.indexOf(b.id);
+    });
+
+    var age = PBP.AGES.find(function (a) { return a.id === state.age; });
+    var head = age ? "Ages " + age.label + "." : state.type ? typeLabel(state.type) + "." : "Everything, by age.";
+    document.getElementById("shop-h").textContent = head;
+    document.getElementById("shop-kicker").textContent = age ? age.name + (state.type ? " · " + typeLabel(state.type) : "") : "The shop";
+    document.title = (age ? "Ages " + age.label : state.type ? typeLabel(state.type) : "Shop by age and type") + " — Play Before Pixels";
+    var crumbs = '<li><a href="index.html">Home</a></li><li><a href="shop.html"' + (age || state.type ? "" : ' aria-current="page"') + ">Shop</a></li>";
+    if (state.type) crumbs += '<li><a href="shop.html#type=' + state.type + '"' + (age ? "" : ' aria-current="page"') + ">" + typeLabel(state.type) + "</a></li>";
+    if (age) crumbs += '<li><a href="shop.html#age=' + age.id + (state.type ? "&type=" + state.type : "") + '" aria-current="page">Ages ' + age.label + "</a></li>";
+    document.getElementById("crumbs").innerHTML = crumbs;
+
+    document.getElementById("count").textContent = list.length + (list.length === 1 ? " thing" : " things") + (age ? " for ages " + age.label : "") + (state.type ? " in " + typeLabel(state.type).toLowerCase() : "");
+
+    if (!list.length) {
+      grid.innerHTML = '<div class="empty"><h2 class="d-m">Nothing here yet.</h2><p>We don’t make ' + typeLabel(state.type).toLowerCase() + " for ages " + (age ? age.label : "") + ' yet. <button type="button" class="link-btn" data-clear-age>Show every age</button> or <button type="button" class="link-btn" data-clear-type>every type</button>.</p></div>';
+      return;
+    }
+    var html = list.map(function (p, i) { return PBP.tile(p, { cls: i === 0 && state.sort === "featured" && list.length > 3 ? "tile--lead" : "" }); });
+    if (list.length > 6 && state.sort === "featured") {
+      html.splice(5, 0, '<aside class="interlude"><p class="label">Not sure where to start?</p><div><p class="d-s">For a baby or toddler, start with <a class="inline-link" href="product.html#up-go-more">Up! Go! More!</a> For three to seven, <a class="inline-link" href="product.html#tablet-slept">The Day the Tablet Slept</a>. For a whole class, the <a class="inline-link" href="product.html#classroom">Classroom Pack</a>.</p></div></aside>');
+    }
+    grid.innerHTML = html.join("");
+  }
+
+  document.addEventListener("click", function (e) {
+    var b;
+    if ((b = e.target.closest("#age-filter [data-age]"))) { var a = b.getAttribute("data-age"); state.age = state.age === a ? "" : a; writeHash(); var nb = document.querySelector('#age-filter [data-age="' + a + '"]'); nb && nb.focus(); return; }
+    if ((b = e.target.closest("#type-chips [data-type], #sub-chips [data-type]"))) { state.type = b.getAttribute("data-type"); writeHash(); var nc = document.querySelector('.chips [data-type="' + state.type + '"]'); nc && nc.focus(); return; }
+    if (e.target.closest("[data-clear-age]")) { state.age = ""; writeHash(); return; }
+    if (e.target.closest("[data-clear-type]")) { state.type = ""; writeHash(); return; }
+  });
+  document.getElementById("sort").addEventListener("change", function (e) { state.sort = e.target.value; writeHash(); });
+  PBP.onHash(function () { readHash(); render(); });
+})();
+</script>
+</body>
+</html>

@@ -11,6 +11,7 @@ The founder adds each key once in the cloud environment's settings (environment 
 | PINTEREST_ACCESS_TOKEN | Pinterest | publish pins |
 | SOCIAL_SCHEDULER_TOKEN | the scheduling tool connected to all social accounts | queue faceless posts on every platform |
 | ETSY_API_KEY, ETSY_ACCESS_TOKEN | Etsy (requires an approved Etsy app) | list and update Etsy products |
+| UPTIME_API_KEY | free uptime monitor (read-only) | read site-up/down history in the daily check |
 | EMAIL_PLATFORM_API_KEY | email list (MailerLite/Kit) | add products to emails and send approved campaigns |
 
 Platforms with no automation API (Amazon KDP, IngramSpark, Teachers Pay Teachers, and any marketplace that forbids automated listing) get ready-to-upload packets in ops/UPLOAD-PACKETS/ instead.

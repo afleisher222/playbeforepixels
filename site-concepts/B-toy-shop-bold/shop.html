@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop by age and type · Play Before Pixels</title>
+<meta name="description" content="Board books, picture books, printables, a card deck, classroom packs and host-it-yourself kits for ages 0–12. Filter by age band or by type.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="shop">
+<a class="skip" href="#main">Skip to content</a>
+<div id="site-header"><nav aria-label="Main" class="wrap" style="padding:16px"><a href="index.html">Play Before Pixels</a> · <a href="shop.html">Shop</a> · <a href="product.html">Books</a> · <a href="shop.html#type=classroom">For Teachers &amp; Groups</a> · <a href="research.html">Research</a> · <a href="about.html">About</a></nav></div>
+
+<main id="main" tabindex="-1">
+  <nav class="crumbs wrap" aria-label="Breadcrumb">
+    <ol data-crumbs>
+      <li><a href="index.html">Home</a></li>
+      <li><span aria-current="page">Shop</span></li>
+    </ol>
+  </nav>
+
+  <header class="shop-hd wrap">
+    <div class="shop-hd-in" data-hd>
+      <h1 class="d2" data-title>Everything</h1>
+      <p class="shop-hd-sub" data-sub>Books, printables, cards, classroom packs and kits for ages 0–12, all on one ruler.</p>
+    </div>
+  </header>
+
+  <div class="filters" data-filters>
+    <div class="wrap filters-in">
+      <div class="f-row" role="group" aria-labelledby="f-age-l">
+        <span class="label f-lab" id="f-age-l">Age</span>
+        <div class="f-ages" data-f-ages></div>
+      </div>
+      <div class="f-row" role="group" aria-labelledby="f-type-l">
+        <span class="label f-lab" id="f-type-l">Type</span>
+        <div class="f-types" data-f-types></div>
+      </div>
+      <div class="f-meta">
+        <p class="f-count num" role="status" data-count>15 products</p>
+        <p class="f-q" data-q hidden></p>
+        <label class="f-sort">Sort <select class="sel" data-sort><option value="featured">Featured</option><option value="low">Price, low to high</option><option value="high">Price, high to low</option><option value="age">Youngest first</option></select></label>
+        <button class="f-clear" type="button" data-clear hidden>Clear all</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="wrap shop-grid" aria-label="Products">
+    <div class="pgrid" data-grid></div>
+    <div class="empty" data-empty hidden>
+      <h2 class="h2">Nothing here, yet.</h2>
+      <p class="lede">No product matches all of those filters. Try a neighbouring age, or clear the type.</p>
+      <p style="margin-top:22px"><button class="btn" type="button" data-clear2>Show everything</button></p>
+    </div>
+  </section>
+
+  <section class="shop-help" aria-labelledby="sh-h">
+    <div class="wrap shop-help-in">
+      <div class="sh-a">
+        <h2 class="h2" id="sh-h">Buying for a school or group?</h2>
+        <p>Site licenses arrive by email as a PDF stamped with your school’s name. Pay by card, or send us a purchase order and we invoice you.</p>
+      </div>
+      <ul class="sh-links nolist">
+        <li><a href="about.html#licenses"><span>How site licenses work</span><span aria-hidden="true">→</span></a></li>
+        <li><a href="about.html#quote"><span>Request a written quote</span><span aria-hidden="true">→</span></a></li>
+        <li><a href="research.html"><span>Read the research behind the kits</span><span aria-hidden="true">→</span></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="../../commerce/links.js"></script>
+<script src="nav.js"></script>
+<script>
+document.addEventListener('pbp:ready', function () {
+  var $ = PBP.$, $$ = PBP.$$, esc = PBP.esc;
+  var state = { age: '', type: '', q: '', sort: 'featured' };
+  var bandOrder = { '0-1': 0, '1-3': 1, '3-5': 2, '5-8': 3, '8-12': 4 };
+
+  function readHash() {
+    var s = { age: '', type: '', q: '', sort: state.sort };
+    location.hash.replace(/^#/, '').split('&').forEach(function (kv) {
+      var i = kv.indexOf('='); if (i < 0) return;
+      var k = kv.slice(0, i), v = decodeURIComponent(kv.slice(i + 1));
+      if (k === 'age' && bandOrder.hasOwnProperty(v)) s.age = v;
+      if (k === 'type' && PBP.types.some(function (t) { return t.id === v; })) s.type = v;
+      if (k === 'q') s.q = v;
+      if (k === 'sort') s.sort = v;
+    });
+    return s;
+  }
+  function writeHash() {
+    var parts = [];
+    if (state.age) parts.push('age=' + state.age);
+    if (state.type) parts.push('type=' + state.type);
+    if (state.q) parts.push('q=' + encodeURIComponent(state.q));
+    if (state.sort !== 'featured') parts.push('sort=' + state.sort);
+    history.replaceState(null, '', location.pathname + (parts.length ? '#' + parts.join('&') : ''));
+  }
+  function band(id) { return PBP.bands.filter(function (b) { return b.id === id; })[0]; }
+
+  // controls
+  $('[data-f-ages]').innerHTML = '<button type="button" class="fa" data-age="" aria-pressed="true">All ages</button>' +
+    PBP.bands.map(function (b) { return '<button type="button" class="fa" data-age="' + b.id + '" aria-pressed="false" style="--c:' + b.c + ';--ct:' + b.ct + '"><b>' + b.label + '</b><span>' + b.name + '</span></button>'; }).join('');
+  $('[data-f-types]').innerHTML = '<button type="button" class="ft-chip" data-type="" aria-pressed="true">All types</button>' +
+    PBP.types.map(function (t) { return '<button type="button" class="ft-chip" data-type="' + t.id + '" aria-pressed="false">' + t.label + ' <span class="num" data-tc="' + t.id + '"></span></button>'; }).join('');
+
+  function matches(p, s) {
+    if (s.age && p.bands.indexOf(s.age) < 0) return false;
+    if (s.type && p.type !== s.type) return false;
+    if (s.q && PBP.search(s.q).indexOf(p) < 0) return false;
+    return true;
+  }
+  function render(announce) {
+    var list = PBP.catalog.filter(function (p) { return matches(p, state); });
+    if (state.sort === 'low') list.sort(function (a, b) { return PBP.minPrice(a) - PBP.minPrice(b); });
+    if (state.sort === 'high') list.sort(function (a, b) { return PBP.minPrice(b) - PBP.minPrice(a); });
+    if (state.sort === 'age') list.sort(function (a, b) { return (a.bands.length ? bandOrder[a.bands[0]] : 9) - (b.bands.length ? bandOrder[b.bands[0]] : 9); });
+
+    var html = list.map(function (p) { return PBP.tile(p); });
+    // one editorial interrupter when browsing everything
+    if (!state.age && !state.type && !state.q && list.length > 6) {
+      html.splice(6, 0, '<a class="promo" href="index.html#gifts"><span class="label">Gift sets</span><strong>Two ready-made sets, both cheaper than buying the pieces.</strong><span class="promo-a">See the gift sets →</span><img src="assets/art/kids-cheer.svg" alt=""></a>');
+    }
+    $('[data-grid]').innerHTML = html.join('');
+    PBP.paintPrices($('[data-grid]'));
+    $('[data-empty]').hidden = list.length > 0;
+    $('[data-count]').textContent = list.length + (list.length === 1 ? ' product' : ' products');
+
+    // headings + breadcrumbs reflect the filter
+    var b = state.age && band(state.age), tl = state.type && PBP.typeLabel(state.type);
+    var title = state.q ? '“' + state.q + '”' : (b && tl ? tl + ', ' + b.label : b ? 'Ages ' + b.label : tl ? tl : 'Everything');
+    $('[data-title]').textContent = title;
+    $('[data-sub]').textContent = state.q ? 'Search results across the whole shop.' : b ? b.name + '. Everything here is made for children aged ' + b.label + ', or for the grown-ups reading with them.' : tl ? typeIntro(state.type) : 'Books, printables, cards, classroom packs and kits for ages 0–12, all on one ruler.';
+    var hd = $('[data-hd]'); hd.style.setProperty('--c', b ? b.c : 'var(--sun)'); hd.classList.toggle('on-dark', !!b && state.age !== '1-3');
+    document.title = (title === 'Everything' ? 'Shop' : title.replace(/[“”]/g, '')) + ' · Play Before Pixels';
+    var cr = '<li><a href="index.html">Home</a></li>';
+    if (b || tl || state.q) cr += '<li><a href="shop.html">Shop</a></li><li><span aria-current="page">' + esc(title) + '</span></li>';
+    else cr += '<li><span aria-current="page">Shop</span></li>';
+    $('[data-crumbs]').innerHTML = cr;
+
+    $$('.fa').forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-age') === state.age ? 'true' : 'false'); });
+    $$('.ft-chip').forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-type') === state.type ? 'true' : 'false'); });
+    PBP.types.forEach(function (t) { var n = PBP.catalog.filter(function (p) { return matches(p, { age: state.age, type: t.id, q: state.q }); }).length; var el = $('[data-tc="' + t.id + '"]'); el.textContent = n; el.parentNode.classList.toggle('is-zero', n === 0); });
+    $('[data-sort]').value = state.sort;
+    var q = $('[data-q]'); q.hidden = !state.q; q.innerHTML = state.q ? 'Search: <b>' + esc(state.q) + '</b> <button type="button" class="f-x" data-clear-q aria-label="Clear search">×</button>' : '';
+    $('[data-clear]').hidden = !(state.age || state.type || state.q);
+    if (announce) PBP.announce(list.length + ' products shown');
+  }
+  function typeIntro(t) {
+    return ({ 'board-books': 'Sturdy pages, one word at a time, for ages 0–3.', 'picture-books': 'Read-alouds with talk-about-it pages at the back.', guides: 'For the grown-ups: plays, plans and what to say.', 'gift-sets': 'Ready-made sets, cheaper than the pieces.', printables: 'PDFs in US Letter and A4, emailed a minute after checkout.', cards: 'Conversation cards for the car, the bath and the table.', classroom: 'PreK–5 materials with single-classroom and whole-school licenses.', 'group-kits': 'Slides, scripts and handouts your own members present.', course: 'Written lessons, one a day. No videos, no live calls.', merch: 'Made to order by our print partner.' })[t] || '';
+  }
+  function set(k, v) { state[k] = v; writeHash(); render(true); }
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('.fa'), t = e.target.closest('.ft-chip');
+    if (a) set('age', a.getAttribute('data-age'));
+    if (t) set('type', t.getAttribute('data-type'));
+    if (e.target.closest('[data-clear], [data-clear2]')) { state.age = state.type = state.q = ''; writeHash(); render(true); $('.fa').focus(); }
+    if (e.target.closest('[data-clear-q]')) { set('q', ''); $('[data-count]').focus && $('.fa').focus(); }
+  });
+  $('[data-sort]').addEventListener('change', function (e) { set('sort', e.target.value); });
+  window.addEventListener('hashchange', function () { var s = readHash(); state.age = s.age; state.type = s.type; state.q = s.q; state.sort = s.sort || 'featured'; render(true); });
+  var s0 = readHash(); state.age = s0.age; state.type = s0.type; state.q = s0.q; state.sort = s0.sort || 'featured';
+  render(false);
+});
+</script>
+</body>
+</html>

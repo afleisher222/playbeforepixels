@@ -1,0 +1,58 @@
+{
+  "_README": "THE FOUNDER'S MANUSCRIPT. Every word in the book comes from this file. Rewrite any line in your own words (words, cues, tips, page order, the note to grown-ups), then set founder_rewritten to true for that entry and run: node build/build.js. Git keeps every version, which records your own creative changes (see legal/protection/PROTECTION-PLAN.md, 'AI-assisted products and copyright'). A print-ready build (PRINT_READY=1 node build/build.js) refuses to run until every entry is marked founder_rewritten and the author credit is filled in.",
+  "title": "Up! Go! More!",
+  "series": "Talk-Along Firsts",
+  "series_number": 1,
+  "author_credit": "",
+  "author_credit_placeholder": "Words by [FOUNDER: your name or pen name]",
+  "note_to_grownups": {
+    "founder_rewritten": false,
+    "heading": "A note for grown-ups",
+    "draft": [
+      "This book is small on purpose. One word, one picture and one thing to copy on each page, so there is room for the most important part: the two of you, taking turns.",
+      "You don't need to read every tip, finish the book or get anything right. Go slow. Wait. Copy your child's sounds and moves, and let them copy yours. That back-and-forth is the whole idea.",
+      "Thank you for reading with your little one."
+    ]
+  },
+  "cue_types": {
+    "say": "a sound to copy",
+    "sign": "a simple hand sign",
+    "act": "a move to do together"
+  },
+  "words": [
+    { "w": "hi", "fs": 150, "acc": "sun", "cue": ["act", "Wave hello!"], "tip": ["Take turns.", "Say “hi!”, then count to five in your head. A look, wave or sound back counts as a turn."], "founder_rewritten": false },
+    { "w": "peekaboo", "fs": 92, "acc": "sky", "cue": ["act", "Hide your eyes… boo!"], "tip": ["Build the pause.", "Hide, wait a beat, then pop out. Soon your child will fill that pause with a squeal or a sound."], "founder_rewritten": false },
+    { "w": "up", "fs": 150, "acc": "sky", "cue": ["act", "Reach your arms up high"], "tip": ["Wait for it.", "Hold your arms out, then pause. When they reach up, say “up!” as you lift."], "founder_rewritten": false },
+    { "w": "down", "fs": 132, "acc": "grass", "cue": ["say", "Let your voice slide: dooown!"], "tip": ["Say it big.", "Crouch low and stretch the word out. Slow, playful words are easier to copy."], "founder_rewritten": false },
+    { "w": "go", "fs": 150, "acc": "grass", "cue": ["say", "Ready, set… go!"], "tip": ["Leave a gap.", "Say “Ready, set…” then stop and wait. Let your child fill in “go!” Any sound counts."], "founder_rewritten": false },
+    { "w": "stop", "fs": 140, "acc": "tomato", "cue": ["act", "Hold up a flat hand"], "tip": ["Make it a game.", "Zoom a toy car and freeze on “stop!” Then let your child be the one who says it."], "founder_rewritten": false },
+    { "w": "ball", "fs": 140, "acc": "plum", "cue": ["say", "Bounce, bounce, boing!"], "tip": ["Add one word.", "If your child says “ball,” you say “big ball” or “roll ball.” Just one step ahead."], "founder_rewritten": false },
+    { "w": "in", "fs": 150, "acc": "sky", "cue": ["say", "In it goes… plop!"], "tip": ["Repeat it.", "Drop blocks in one at a time: “in… in… in!” Words heard again and again are easier to try."], "founder_rewritten": false },
+    { "w": "open", "fs": 132, "acc": "tomato", "cue": ["act", "Close your hands, then pop them open"], "tip": ["Wait for a signal.", "Hold the box shut and wait. A look, a tap or a sound tells you what they want."], "founder_rewritten": false },
+    { "w": "wow", "fs": 144, "acc": "sun", "cue": ["say", "Make a round mouth: wooow!"], "tip": ["Say what you see.", "Look where your child looks and name it: “Wow! Big sun!” Short and bright beats long and busy."], "founder_rewritten": false },
+    { "w": "uh-oh", "fs": 128, "acc": "sun", "cue": ["act", "Hands on cheeks: uh-oh!"], "tip": ["Name the moment.", "Little tumbles are talk moments. Say “uh-oh!” with a big face, then wait."], "founder_rewritten": false },
+    { "w": "help", "fs": 136, "acc": "grass", "cue": ["sign", "Fist on open palm, lift up"], "tip": ["Set up a reason to ask.", "Put a favorite toy just out of reach and wait. A reach, point or sound is asking."], "founder_rewritten": false },
+    { "w": "clap", "fs": 140, "acc": "plum", "cue": ["act", "Clap, clap, clap!"], "tip": ["Copy them.", "Clap back the way your child claps: fast, slow, loud or soft. Copying says “I'm listening.”"], "founder_rewritten": false },
+    { "w": "shoe", "fs": 136, "acc": "sky", "cue": ["act", "Stomp, stomp your feet"], "tip": ["Follow their lead.", "Grabbed a shoe? Talk about the shoe: “Your shoe. Big shoe. Shoe on!”"], "founder_rewritten": false },
+    { "w": "eat", "fs": 150, "acc": "tomato", "cue": ["sign", "Fingertips to your lips"], "tip": ["Talk about now.", "Name what is happening at the table as it happens: “Eat. You eat. Yum!”"], "founder_rewritten": false },
+    { "w": "cup", "fs": 150, "acc": "sky", "cue": ["say", "Sip, sip… ahh!"], "tip": ["Keep it short.", "Two or three words at a time: “Cup. Your cup. Sip!” Short phrases are easy to copy."], "founder_rewritten": false },
+    { "w": "more", "fs": 136, "acc": "grass", "cue": ["sign", "Tap your fingertips together"], "tip": ["Pause the fun.", "Stop the bubbles, ask “more?” and wait. A sign, a look or a sound means go again."], "founder_rewritten": false },
+    { "w": "all done", "fs": 106, "acc": "sun", "cue": ["sign", "Shake open hands side to side"], "tip": ["Offer a choice.", "“More, or all done?” Hold up a hand for each. A point is a real answer."], "founder_rewritten": false },
+    { "w": "bye-bye", "fs": 112, "acc": "plum", "cue": ["act", "Blow a kiss: mwah!"], "tip": ["Make it a routine.", "Same wave, same words, every time. Words that repeat are the easiest to pick up."], "founder_rewritten": false },
+    { "w": "book", "fs": 136, "acc": "sun", "cue": ["sign", "Press palms together, then open"], "tip": ["Let them turn.", "Let your child turn the pages and choose where to stop. Name whatever they point at."], "founder_rewritten": false },
+    { "w": "hug", "fs": 150, "acc": "tomato", "cue": ["act", "Hug yourself tight"], "tip": ["Sing it.", "Put “hug” in any tune you know (“hug, hug, hug!”) and squeeze on the last one."], "founder_rewritten": false },
+    { "w": "night-night", "fs": 84, "acc": "sky", "dark": true, "cue": ["say", "Whisper: shhh… zzz"], "tip": ["Wind down.", "Say “night-night” to everything: the duck, the moon, even the tablet. A calm goodnight game."], "founder_rewritten": false }
+  ],
+  "routines": [
+    ["Hellos & goodbyes", ["hi", "peekaboo", "bye-bye", "hug"], "tomato"],
+    ["Mealtime", ["eat", "cup", "more", "all done", "uh-oh"], "sun"],
+    ["Playtime", ["ball", "go", "stop", "up", "down", "in", "open", "clap", "wow"], "sky"],
+    ["Getting dressed", ["shoe", "help"], "grass"],
+    ["Bedtime", ["book", "night-night"], "plum"]
+  ],
+  "series_books": [
+    { "n": 1, "title": ["Up!", "Go!", "More!"], "theme": "First words", "slug": "board-up-go-more", "status": "this book" },
+    { "n": 2, "title": ["Woof!", "Moo!", "Beep!"], "theme": "Sounds & animals", "slug": "board-woof-moo-beep", "status": "coming soon", "working_title": true },
+    { "n": 3, "title": ["Yum!", "Splash!", "Yawn!"], "theme": "Routines & feelings", "slug": "board-yum-splash-yawn", "status": "coming soon", "working_title": true }
+  ]
+}

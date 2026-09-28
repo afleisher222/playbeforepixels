@@ -304,7 +304,7 @@ ul, ol { margin: 0; padding: 0; }
 .qv-info ul.bul li::before { content: ""; position: absolute; left: 0; top: .62em; width: 8px; height: 8px; background: var(--tomato); border-radius: 50%; }
 
 /* ---------- breadcrumbs ---------- */
-.crumbs { padding: 18px 0 0; }
+.crumbs { padding-top: 18px; }
 .crumbs ol { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 0; font-size: 14px; font-weight: 700; }
 .crumbs li { display: flex; align-items: center; }
 .crumbs li + li::before { content: "/"; margin: 0 10px; color: var(--ink-3); font-weight: 400; }

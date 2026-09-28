@@ -114,22 +114,22 @@
   "h": 317
  },
  {
-  "svg": "/home/user/playbeforepixels/brand/logo/mark-reverse.svg",
+  "svg": "/home/user/playbeforepixels/brand/logo/src/square-mark-reverse.svg",
   "png": "/home/user/playbeforepixels/brand/logo/png/mark-reverse-1024.png",
   "w": 1024,
-  "h": 1147
+  "h": 1024
  },
  {
-  "svg": "/home/user/playbeforepixels/brand/logo/mark-black.svg",
+  "svg": "/home/user/playbeforepixels/brand/logo/src/square-mark-black.svg",
   "png": "/home/user/playbeforepixels/brand/logo/png/mark-black-1024.png",
   "w": 1024,
-  "h": 1147
+  "h": 1024
  },
  {
-  "svg": "/home/user/playbeforepixels/brand/logo/mark-white.svg",
+  "svg": "/home/user/playbeforepixels/brand/logo/src/square-mark-white.svg",
   "png": "/home/user/playbeforepixels/brand/logo/png/mark-white-1024.png",
   "w": 1024,
-  "h": 1147
+  "h": 1024
  },
  {
   "svg": "/home/user/playbeforepixels/brand/logo/mark-sticker.svg",

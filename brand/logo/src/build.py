@@ -200,6 +200,9 @@ def build():
     files['src/tile-apple.svg'] = square_mark(1000, 0.62, bg=SUN_T, cut=MARK)
     files['src/tile-avatar.svg'] = square_mark(1080, 0.50, bg=SUN_T, cut=MARK)
     files['src/square-mark.svg'] = square_mark(1000, 0.84, cut=MARK, nudge=0.0)
+    for suf in ('-reverse', '-black', '-white'):
+        ink, acc = SCHEMES[suf]
+        files[f'src/square-mark{suf}.svg'] = square_mark(1000, 0.84, ink=ink, acc=acc, cut=MARK, nudge=0.0)
     for n, c in files.items():
         with open(os.path.join(OUT, n), 'w') as fh: fh.write(c)
     print('gaps master (stem, cap):', gaps(MARK), ' small:', gaps(SMALL))
@@ -226,7 +229,7 @@ def build():
         for suf in SCHEMES:
             job(f'{base}{suf}.svg', f'{base}{suf}-2400.png', 2400)
     for suf in ('-reverse', '-black', '-white'):
-        job(f'mark{suf}.svg', f'mark{suf}-1024.png', 1024)
+        job(f'src/square-mark{suf}.svg', f'mark{suf}-1024.png', 1024, 1024)
     job('mark-sticker.svg', 'mark-sticker-1024.png', 1024)
     os.makedirs(os.path.join(OUT, 'png'), exist_ok=True)
     with open(os.path.join(HERE, 'jobs.json'), 'w') as fh: json.dump(jobs, fh, indent=1)
