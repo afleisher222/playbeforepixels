@@ -185,6 +185,15 @@ ul.tight li{margin:2px 0}
 .toc td:last-child{text-align:right;font-weight:800;white-space:nowrap}
 .toc tr.h td{font-weight:800;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#56627A;border-bottom:2px solid ${C.ink}}
 .sw{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px;box-shadow:inset 0 0 0 1px rgba(29,41,64,.25)}
+/* Low-ink file: line art children can colour (CUSTOMER-VOICE rule 1). Ink-filled details (eyes, clock hands) stay ink; every
+   other shape becomes white with a thin ink outline. Applies to the shared symbols and to inline art. */
+.low defs symbol *:not(g):not([fill="#1D2940"]):not([fill="none"]),
+.low .card .art *:not(g):not(use):not([fill="#1D2940"]):not([fill="none"]):not(.disc),
+.low svg.ico *:not(g):not(use):not([fill="#1D2940"]):not([fill="none"]),
+.low .band svg *:not(g):not(use):not([fill="#1D2940"]):not([fill="none"]),
+.low .la *:not(g):not(use):not([fill="#1D2940"]):not([fill="none"]){fill:#FFFFFF!important;stroke:${C.ink}!important;stroke-width:1.3px!important;vector-effect:non-scaling-stroke;opacity:1!important}
+.low defs symbol [fill="none"][stroke], .low .card .art [fill="none"][stroke], .low svg.ico [fill="none"][stroke], .low .band svg [fill="none"][stroke], .low .la [fill="none"][stroke]{stroke:${C.ink}!important}
+.low .card .art text, .low svg.ico text, .low .la text{stroke-width:.9px!important}
 /* fields */
 [data-field]{position:relative}
 /* start here */
@@ -303,7 +312,7 @@ function chartToday(cw, start, o = {}) { // Layout 6: Today board, Monday or Sun
       ${slot(null, 'something<br>special')}
       <div style="flex:1;border-radius:18px;background:var(--pn);${cw === 'simple' ? `border:1.5px solid ${C.ink};` : ''}padding:.12in .18in;display:flex;flex-direction:column;gap:.08in">
         <b style="font-size:10px;letter-spacing:.14em;text-transform:uppercase">Weather today · circle one</b>
-        <div style="display:flex;justify-content:space-between">${[['Sunny', A.fsun()], ['Cloudy', A.fcloud()], ['Rainy', A.frain()], ['Snowy', A.fsnow()]].map(([l, a]) => `<div style="text-align:center"><div style="width:.9in;height:.9in;border-radius:50%;background:#fff;${cw === 'simple' ? `border:1.5px solid ${C.ink};` : ''}display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 120 100" style="width:.76in;height:.64in">${a}</svg></div><div style="font-family:Fredoka,sans-serif;font-weight:600;font-size:13px;margin-top:2px">${l}</div></div>`).join('')}</div>
+        <div style="display:flex;justify-content:space-between">${[['Sunny', A.fsun()], ['Cloudy', A.fcloud()], ['Rainy', A.frain()], ['Snowy', A.fsnow()]].map(([l, a]) => `<div style="text-align:center"><div style="width:.9in;height:.9in;border-radius:50%;background:#fff;${cw === 'simple' ? `border:1.5px solid ${C.ink};` : ''}display:flex;align-items:center;justify-content:center"><svg class="la" viewBox="0 0 120 100" style="width:.76in;height:.64in">${a}</svg></div><div style="font-family:Fredoka,sans-serif;font-weight:600;font-size:13px;margin-top:2px">${l}</div></div>`).join('')}</div>
         <div style="font-size:10.5px;display:flex;gap:6px;align-items:flex-end;margin-top:auto"><b>Who I'll see today:</b><span style="flex:1;border-bottom:1.5px solid #9AA6BA;height:18px"${o.fields ? ` data-field="today_who_${start}" data-fsize="11" data-falign="0"` : ''}></span></div>
       </div>
     </div>

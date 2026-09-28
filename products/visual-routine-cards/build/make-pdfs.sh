@@ -1,22 +1,40 @@
 #!/bin/bash
-# Build every PDF for Visual Routine Cards. Run from anywhere.
+# Renders every PDF (tagged), adds real fillable fields (free Adobe Acrobat Reader), bookmarks and metadata.
+# Own-store files -> product root; Etsy files (no URL, no QR) -> etsy-upload/complete and etsy-upload/starter.
 set -e
 cd "$(dirname "$0")"
-R=../../../brand/render.js
-P=..
-TMP=./tmp; mkdir -p $TMP
-node build.js
-node -e "const m=require('./manifest.json'); require('fs').writeFileSync('tmp/toc.json', JSON.stringify(m.letter.bookmarks))"
-for paper in letter a4; do
-  node $R pdf full-$paper.html $TMP/full-$paper.pdf
-  node $R pdf starter-$paper.html $TMP/starter-$paper.pdf
-  node $R pdf editable-$paper.html $TMP/editable-$paper.pdf
-  node fields.js editable-$paper.html $TMP/fields-$paper.json
-done
-python3 finish.py $TMP/full-letter.pdf $P/visual-routine-cards.pdf --toc $TMP/toc.json --title "200+ Visual Routine Cards (US Letter)"
-python3 finish.py $TMP/full-a4.pdf $P/visual-routine-cards-a4.pdf --toc $TMP/toc.json --title "200+ Visual Routine Cards (A4)"
-python3 finish.py $TMP/starter-letter.pdf $P/visual-routine-cards-starter-letter.pdf --title "60 Visual Routine Cards Starter Set (US Letter)"
-python3 finish.py $TMP/starter-a4.pdf $P/visual-routine-cards-starter-a4.pdf --title "60 Visual Routine Cards Starter Set (A4)"
-python3 finish.py $TMP/editable-letter.pdf $P/visual-routine-cards-editable-letter.pdf --fields $TMP/fields-letter.json --title "Visual Routine Cards Editable (US Letter)"
-python3 finish.py $TMP/editable-a4.pdf $P/visual-routine-cards-editable-a4.pdf --fields $TMP/fields-a4.json --title "Visual Routine Cards Editable (A4)"
-ls -la $P/*.pdf
+P=..; mkdir -p tmp $P/etsy-upload/complete $P/etsy-upload/starter
+node -e '
+const m=require("./manifest.json"); const fs=require("fs");
+for (const [k,v] of Object.entries(m.docs)) fs.writeFileSync("tmp/"+k+".toc.json", JSON.stringify(v.bookmarks));'
+one() { # variant out title [toc]
+  node render-pdf.js out/$1.html tmp/$1.raw.pdf
+  node fields.js out/$1.html tmp/$1.fields.json
+  python3 finish.py tmp/$1.raw.pdf "$2" --fields tmp/$1.fields.json ${4:+--toc tmp/$1.toc.json} --title "$3"
+}
+export -f one
+T="200+ Visual Routine Cards"; TS="60 Visual Routine Cards Starter Set"
+cat > tmp/jobs.txt <<JOBS
+full-store-color-letter|$P/visual-routine-cards.pdf|$T (Color, US Letter)|toc
+full-store-color-a4|$P/visual-routine-cards-a4.pdf|$T (Color, A4)|toc
+full-store-low-letter|$P/visual-routine-cards-low-ink.pdf|$T (Low-ink, US Letter)|toc
+full-store-low-a4|$P/visual-routine-cards-low-ink-a4.pdf|$T (Low-ink, A4)|toc
+start-full-store|$P/START-HERE.pdf|START HERE: $T|
+full-etsy-color-letter|$P/etsy-upload/complete/2-Color-US-Letter.pdf|$T (Color, US Letter)|toc
+full-etsy-color-a4|$P/etsy-upload/complete/3-Color-A4.pdf|$T (Color, A4)|toc
+full-etsy-low-letter|$P/etsy-upload/complete/4-Low-Ink-US-Letter.pdf|$T (Low-ink, US Letter)|toc
+full-etsy-low-a4|$P/etsy-upload/complete/5-Low-Ink-A4.pdf|$T (Low-ink, A4)|toc
+start-full-etsy|$P/etsy-upload/complete/1-START-HERE.pdf|START HERE: $T|
+starter-store-color-letter|$P/visual-routine-cards-starter-letter.pdf|$TS (Color, US Letter)|toc
+starter-store-color-a4|$P/visual-routine-cards-starter-a4.pdf|$TS (Color, A4)|toc
+starter-store-low-letter|$P/visual-routine-cards-starter-low-ink-letter.pdf|$TS (Low-ink, US Letter)|toc
+starter-store-low-a4|$P/visual-routine-cards-starter-low-ink-a4.pdf|$TS (Low-ink, A4)|toc
+start-starter-store|$P/START-HERE-starter.pdf|START HERE: $TS|
+starter-etsy-color-letter|$P/etsy-upload/starter/2-Color-US-Letter.pdf|$TS (Color, US Letter)|toc
+starter-etsy-color-a4|$P/etsy-upload/starter/3-Color-A4.pdf|$TS (Color, A4)|toc
+starter-etsy-low-letter|$P/etsy-upload/starter/4-Low-Ink-US-Letter.pdf|$TS (Low-ink, US Letter)|toc
+starter-etsy-low-a4|$P/etsy-upload/starter/5-Low-Ink-A4.pdf|$TS (Low-ink, A4)|toc
+start-starter-etsy|$P/etsy-upload/starter/1-START-HERE.pdf|START HERE: $TS|
+JOBS
+while IFS='|' read -r v o t toc; do echo "one '$v' '$o' '$t' $toc"; done < tmp/jobs.txt | xargs -P 4 -I{} bash -c "{}"
+ls -la $P/*.pdf $P/etsy-upload/*/

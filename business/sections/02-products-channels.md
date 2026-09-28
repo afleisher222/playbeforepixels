@@ -151,7 +151,7 @@ Until then, *Up! Go! More!* sells as the $11.99 print-on-demand paperback.
 
 | Product | Gate | Channel | Price | Condition |
 |---|---|---|---|---|
-| 0–5 Play & Talk POD card deck (52 cards, poker size, tuck box) | G0 + CPSIA gate | Own site via POD, Etsy | $22 | Only after the $7 printable has sold (DEMAND-CHECK #7) and the POD partner supplies a CPC if the deck is marketed to children [VERIFY] |
+| 0–5 Play & Talk POD card deck (52 cards, poker size, tuck box) | G0 + CPSIA gate | Own site via POD, Etsy | $22 | Only after the $6.99 printable has sold (DEMAND-CHECK #7) and the POD partner supplies a CPC if the deck is marketed to children [VERIFY] |
 | First-words POD flash-card deck | G0 + CPSIA gate | Own site via POD, Etsy | $19.99 | After the $6.99 printable sells |
 | Personalized *Laps Not Apps* keepsake | G0 | Etsy order → name-stamped PDF → Gelato or Lulu | $34.99 hardcover; $24.99 softcover | Only if the variable-data workflow runs with no manual step [VERIFY] |
 | Tablet Tuck-In pouch (tablet and phone sizes) | G0 ritual; G1 Keeper insert | Own site via POD | $24 tablet; $16 phone; $32 Book + Pouch | May lead campaign. Zip only, no drawstring; sold as grown-up storage, not a toy |

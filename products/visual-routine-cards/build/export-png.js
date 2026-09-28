@@ -1,5 +1,5 @@
 // Canva-ready PNG export: every card, art-only (transparent), blank frames, chart backgrounds.
-// node export-png.js <outdir>
+// node export-png.js <outdir>   (own-store bonus only; Canva is never the only format: CUSTOMER-VOICE rule 6)
 const { chromium } = require('/opt/node22/lib/node_modules/playwright');
 const path = require('path'); const fs = require('fs');
 const { card, CSS, DEFS, COLORWAYS } = require('./card.js');
@@ -36,15 +36,22 @@ body{background:transparent} .wrap{display:flex;flex-wrap:wrap;gap:8px;width:130
   const p2 = await b.newPage({ viewport: { width: 1400, height: 1000 }, deviceScaleFactor: 2 });
   await p2.goto('file://' + tmp, { waitUntil: 'networkidle' });
   for (const el of await p2.$$('.artonly')) { const n = await el.getAttribute('data-name'); await el.screenshot({ path: path.join(dirs.art, n + '.png'), omitBackground: true }); }
-  // chart backgrounds from the editable HTML (titles left empty for your own text)
+  // chart backgrounds: the blank (fillable) chart pages of the own-store Color and Low-ink files
   for (const paper of ['letter', 'a4']) {
     const d = path.join(OUT, `4-chart-backgrounds-${paper}`); fs.mkdirSync(d, { recursive: true });
-    const p3 = await b.newPage({ viewport: { width: 1400, height: 1000 }, deviceScaleFactor: 1.5 });
-    await p3.goto('file://' + path.join(__dirname, `editable-${paper}.html`), { waitUntil: 'networkidle' }); await p3.evaluate(() => document.fonts.ready);
-    const pages = await p3.$$('.page.chart');
-    let i = 0;
-    for (const el of pages) { i++; const foot = await el.$eval('.foot span', s => s.textContent); const cls = await el.getAttribute('class'); const cw = (cls.match(/cw-([a-z]+)-page/) || [, 'x'])[1]; const slug = cw + '-' + foot.split('·').slice(0, 2).join('-').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').replace(/-move-each-card.*$/, '').replace(/-turn-the-page-sideways$/, ''); await el.screenshot({ path: path.join(d, `${String(i).padStart(2, '0')}-${slug}.png`) }); }
-    await p3.close();
+    for (const ink of ['color', 'low']) {
+      const p3 = await b.newPage({ viewport: { width: 1400, height: 1000 }, deviceScaleFactor: 1.5 });
+      await p3.goto('file://' + path.join(__dirname, 'out', `full-store-${ink}-${paper}.html`), { waitUntil: 'networkidle' }); await p3.evaluate(() => document.fonts.ready);
+      await p3.addStyleTag({ content: '.foot{display:none}' });
+      let i = 0;
+      for (const el of await p3.$$('.page.blankchart')) {
+        i++; const cls = await el.getAttribute('class'); const cw = (cls.match(/cw-([a-z]+)-page/) || [, 'x'])[1];
+        const note = await el.$eval('.foot .fr span', s => s.textContent);
+        const slug = note.split('·').slice(0, 2).join(' ').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+        await el.screenshot({ path: path.join(d, `${cw}-${String(i).padStart(2, '0')}-${slug}.png`) });
+      }
+      await p3.close();
+    }
   }
   await b.close();
   console.log('exported to', OUT);
