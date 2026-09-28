@@ -19,7 +19,7 @@
 
 ## 2. Reply times: internal only, never promised
 
-**What customers are told (the only approved wording, in every language):** most answers are in the FAQ, and every message gets a reply. No page, policy, email, macro, listing, product file or auto-reply names a number of hours or days for a reply, and no holding reply names a date (`ops/COMPLIANCE-GATE.md` line 21; `ops/TESTS/promise-fixes.md`, September 28, 2026). Numbers that come from a policy, such as a refund window or a bank's processing time, are fine; see §3.
+**What customers are told (in every language):** most answers are in the FAQ, and every message gets a reply. No page, policy, email, macro, listing, product file or auto-reply names a number of hours or days for a reply, and no holding reply names a date or "right away" (`ops/TESTS/promise-fixes.md`, September 28, 2026). Numbers that come from a policy, such as a refund window or a bank's processing time, are fine; see §3. **Open conflict for the lead:** `ops/COMPLIANCE-GATE.md` item 21 still names a different approved wording ("an instant automatic reply; a person reviews everything else within [5] business days"), and no automatic reply exists yet. Until the gate is amended, this wording is a proposal, not the gate's approved line.
 
 **How replies really happen:**
 

@@ -5,7 +5,7 @@
 - Run the page through `ops/COMPLIANCE-GATE.md`.
 - Hold the "Schools and organizations" section until employment counsel clears school-facing sales.
 - Add `FAQPage` JSON-LD once the page is published.
-- Never add a reply-time promise (no "within X business days", no "same day"). The approved line is "every message gets a reply" (`ops/TESTS/promise-fixes.md`; COMPLIANCE-GATE 21).
+- Never add a reply-time promise (no "within X business days", no "same day"). This page uses "every message gets a reply" (`ops/TESTS/promise-fixes.md`). That line is not yet the gate's wording: COMPLIANCE-GATE 21 still names "an instant automatic reply; a person reviews everything else within [5] business days", and no automatic reply exists. The lead amends the gate or the page before publishing.
 - License links point to `/licenses` (the canonical path; `/license` redirects there, `ops/TESTS/printed-urls.md`).
 
 ---

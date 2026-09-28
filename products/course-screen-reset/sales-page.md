@@ -49,7 +49,7 @@ Prefer paper? The whole program is also a black-and-white paperback on Amazon.
 If the program isn’t right for your family, email us within 14 days of purchase for a full refund, as long as you’ve completed no more than 30% of the lessons. The full terms are in our refund policy (link: /shipping-returns/).
 
 ## 7. Founder note (optional)
-A short note in your own words in `FOUNDER.salesNote` (build/content.js), or set it to `'skip'` to leave the section out. Until then the designed page shows a dashed FOUNDER WRITES THIS box and `make.sh --final` refuses to finish. No names, photos or credentials needed.
+A short note in your own words in `FOUNDER.salesNote` (build/content.js), or set it to `'skip'` to leave the section out. Until then the designed page prints nothing in its place (`founder-notes.md` §3); `make.sh --final` still refuses to finish while the welcome and day-30 email placeholders remain. No names, photos or credentials needed.
 Reviews appear here only after the founding beta, with written permission, and only about the family’s experience — never about speech, development or behavior results (BLIND-SPOTS #14).
 
 ## 8. FAQ (accordion)

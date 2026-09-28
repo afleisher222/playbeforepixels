@@ -126,7 +126,7 @@ AlphaPlay LLC, d/b/a Play Before Pixels
 > Thanks for catching that! We've updated the shipping address on order {order_number} to:
 > {new_address}
 >
-> If the order had already been sent to the printer, we'll let you know right away what our options are.
+> If the order had already been sent to the printer, we'll email you with the options.
 
 ### 13. Customs, duties or import fees (international)
 > Hi {first_name},
@@ -161,7 +161,7 @@ AlphaPlay LLC, d/b/a Play Before Pixels
 >
 > Thanks for checking before calling your bank. That's a great habit. A charge that reads **"{STATEMENT_DESCRIPTOR}"** is from Play Before Pixels (AlphaPlay LLC), for order {order_number} placed on {date} for {product}, sent to {masked_email}.
 >
-> If you didn't place this order, tell us and we'll cancel and refund it right away.
+> If you didn't place this order, tell us and we'll cancel and refund it.
 
 ### 18. Course refund (30 Days of Back-and-Forth)
 > Hi {first_name},
