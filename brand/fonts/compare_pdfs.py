@@ -11,8 +11,11 @@ Pages whose text contains "[exact]" must be SAME and pages with "[opsz]" are exp
 (test page ops/TESTS/fonts-static-test.html); other pages are reported only.
 
 SAME means: at most 0.5% of ink pixels are more than 64/255 outside the range of the other render's
-3x3 neighbourhood (checked both ways, so missing or extra ink still counts), AND every edge of the
-ink box is within 1 device pixel, AND the text lines are identical. The neighbourhood test absorbs
+3x3 neighbourhood (checked both ways, so missing or extra ink still counts), AND at most 0.01% of
+ALL page pixels are, AND every edge of the ink box is within 1 device pixel, AND the text lines are
+identical, AND no glyph moved more than 0.3 pt along its baseline. (The page-area and glyph tests
+were added by the verifier on 2026-09-28: on full-bleed pages the whole page counts as ink, so the
+first two tests passed picture-tablet-slept p21 "LIBRARY" and p28 "The End", both narrower.) The neighbourhood test absorbs
 anti-aliasing and sub-pixel glyph drift (static fonts store whole-unit advance widths; Chromium
 applies a variable font's HVAR deltas unrounded, so a glyph can sit ~0.1 pt away). Anything that
 moves more than a pixel, or ink that appears or disappears, still counts. The raw per-pixel figure
@@ -33,6 +36,12 @@ import sys
 
 import numpy as np
 import pymupdf
+
+# SAME also needs (verifier, 2026-09-28): at most this share of ALL page pixels outside the
+# envelope, and no glyph moved further than this along its baseline. Static instances store whole-unit
+# advances, so glyphs drift up to ~0.1 pt from the variable render; 0.3 pt leaves room for that.
+MAX_PAGE_FRAC = 0.0001
+MAX_GLYPH_SHIFT_PT = 0.3
 
 
 def fonts(doc):
@@ -87,6 +96,54 @@ def lines(page):
     return [''.join(t for _, t in sorted(v)) for _, v in sorted(rows.items(), key=lambda kv: (kv[0][2], kv[0][:2]))]
 
 
+def glyphs(page, top_pt=0.0):
+    """Every non-space glyph as (row key, position along the baseline, x0, x1, char), rows keyed
+    like lines(). Used to measure how far each glyph moved and how much each text row's extent
+    changed, independently of the page background (see glyph_shift)."""
+    out = collections.defaultdict(list)
+    for b in page.get_text('rawdict')['blocks']:
+        for l in b.get('lines', []):
+            dx, dy = l['dir']
+            for sp in l['spans']:
+                for c in sp['chars']:
+                    if not c['c'].strip():
+                        continue
+                    x, y = c['origin']
+                    if y < top_pt:
+                        continue
+                    key = (round(dx, 2), round(dy, 2), round((dx * y - dy * x) * 2) / 2)
+                    along = dx * x + dy * y
+                    bx0, _, bx1, _ = c['bbox']
+                    out[key].append((along, bx0, bx1, c['c']))
+    # Sort by position (0.01 pt) then character, so glyphs that share an origin (ligature parts,
+    # zero-width marks) come out in the same order from a Type 3 and a TrueType render.
+    return {k: sorted(v, key=lambda g: (round(g[0], 2), g[3])) for k, v in out.items()}
+
+
+def glyph_shift(pv, ps, top_pt=0.0):
+    """(max glyph move in pt, max text-row width change in %, rows compared).
+    Glyphs are paired row by row in reading order. A row whose glyph sequence differs counts as an
+    unbounded move (inf): that is a reflow or a changed character, never SAME.
+    Why this exists: on full-bleed pages (coloured or illustrated backgrounds) the whole page is
+    'ink', so the ink fraction and the ink box cannot see a heading that got narrower. The glyph
+    positions can."""
+    gv, gs = glyphs(pv, top_pt), glyphs(ps, top_pt)
+    if set(gv) != set(gs):
+        return float('inf'), 0.0, 0
+    worst, wmax = 0.0, 0.0
+    for k in gv:
+        a, b = gv[k], gs[k]
+        if [c[3] for c in a] != [c[3] for c in b]:
+            return float('inf'), 0.0, len(gv)
+        worst = max(worst, max(abs(x[0] - y[0]) for x, y in zip(a, b)))
+        wa, wb = a[-1][2] - a[0][1], b[-1][2] - b[0][1]
+        if wa > 1:
+            dw = (wb / wa - 1) * 100
+            if abs(dw) > abs(wmax):
+                wmax = dw
+    return worst, wmax, len(gv)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('variable'); ap.add_argument('static')
@@ -132,7 +189,14 @@ def main():
         dw = (ws / wv - 1) * 100 if wv else 0.0
         lv, ls = lines(pv), lines(ps)
         same_lines = lv == ls
-        same = frac <= 0.005 and edge <= 1 and same_lines
+        # Page-area test and glyph test (added by the verifier, 2026-09-28): the ink fraction alone
+        # passed a narrower 60px heading on a full-bleed picture-book page, because the whole
+        # coloured page counts as ink there. Unchanged pages have 0 pixels outside the envelope.
+        page_frac = float((diff > 64).sum()) / diff.size
+        top_pt = a.ignore_top * 0.75
+        shift, row_dw, _ = glyph_shift(pv, ps, top_pt)
+        same = (frac <= 0.005 and page_frac <= MAX_PAGE_FRAC and edge <= 1 and same_lines
+                and shift <= MAX_GLYPH_SHIFT_PT)
         text = ps.get_text()
         label = next((l for l in text.splitlines() if l.startswith('[')), '')
         expect = 'exact' if '[exact]' in label else 'opsz' if '[opsz]' in label else ''
@@ -142,13 +206,18 @@ def main():
         counts[(expect or 'page', 'SAME' if same else 'CHANGED')] += 1
         row = {'page': i + 1, 'label': label, 'expect': expect, 'ink_px': n_ink, 'diff_frac': round(frac, 5), 'raw_diff_frac': round(raw_frac, 5),
                'mean_diff': round(mean, 2), 'edge_px': edge, 'width_change_pct': round(dw, 2),
+               'page_diff_frac': round(page_frac, 6),
+               'glyph_shift_pt': None if shift == float('inf') else round(shift, 3),
+               'text_row_width_change_pct': round(row_dw, 2),
                'same_lines': same_lines, 'verdict': verdict}
         if not same_lines:
             row['lines_variable'] = [l for l in lv if l not in ls][:6]
             row['lines_static'] = [l for l in ls if l not in lv][:6]
         report['pages'].append(row)
-        print(f"p{i + 1:03d} {verdict:8s} diff>64: {100 * frac:6.2f}% of ink (raw {100 * raw_frac:5.2f}%)  mean {mean:5.2f}  edge {edge:3d}px  "
-              f"width {dw:+6.2f}%  lines {'same' if same_lines else 'DIFFER'}  {label[:90]}")
+        shift_s = ' reflow' if shift == float('inf') else f'{shift:6.2f}pt'
+        print(f"p{i + 1:03d} {verdict:8s} diff>64: {100 * frac:6.2f}% of ink, {100 * page_frac:6.3f}% of page (raw {100 * raw_frac:5.2f}%)  "
+              f"mean {mean:5.2f}  edge {edge:3d}px  width {dw:+6.2f}%  glyph move {shift_s}  text row {row_dw:+6.2f}%  "
+              f"lines {'same' if same_lines else 'DIFFER'}  {label[:90]}")
         if not same_lines:
             print('      variable only:', row['lines_variable'][:3], '\n      static only:  ', row['lines_static'][:3])
         if a.diff_dir and not same:

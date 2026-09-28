@@ -16,8 +16,9 @@
 //  - Only the allowed citations (WHO 2019, AAP 2016, Brushe 2024, Delgado 2018). No program names, no brands.
 
 const FOUNDER = {
-  // Write these yourself. Until you do, the workbook prints a dashed "Founder writes this" box and the emails
-  // print a clearly marked placeholder that the build refuses to ship (see make.sh --final).
+  // Write these yourself (where each one prints: ../founder-notes.md). Until you do, the workbook, paperback and
+  // sales page print nothing in their place, and the emails print a clearly marked placeholder that the build
+  // refuses to ship (see make.sh --final).
   welcomeNote: '',   // 60–120 words: why you made this program, in your voice (no children's names, no employer, no legal matters)
   day30Note: '',     // 40–80 words: your goodbye note for Day 30
   salesNote: '',    // optional 40–80 words for the sales page; set to 'skip' to leave that section out

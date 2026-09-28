@@ -21,10 +21,10 @@
      - Nunito Sans at 12px (9pt) and up;
      - Bricolage Grotesque at 96px (72pt) and up.
    - **Changed:** everything smaller gets **narrower and tighter**. Nunito loses 2% at 11px and 10% at 7px; Bricolage loses 2% at 84px and 10% at 14px.
-3. **Why pin at the top of each axis.** Nunito opsz 12 and Bricolage opsz 96 are also the fonts' default instances. That end of the axis is the only pin at which text can never get wider than before, so no box can newly overflow and no ink can move toward the trim. The cost is tighter small print and tighter sub-display headings.
+3. **Why pin at the top of each axis.** Nunito opsz 12 and Bricolage opsz 96 are also the fonts' default instances. That end of the axis is the only pin at which text can never get wider than before, so no box can newly overflow. (Verifier: the pinned glyphs also have slightly tighter side-bearings, so at a flush box edge the first or last glyph's ink can sit further out. Measured on every Latin letter, that is at most 0.03 em at 12–24px and 0.012 em at 64px, so under 0.7 pt at every size in use, the most being around 48px. Nothing crosses a safe zone because of it.) The cost is tighter small print and tighter sub-display headings.
 4. **picture-tablet-slept, rebuilt:**
-   - Both covers and 26 of 32 interior pages are unchanged.
-   - Six pages change, each in exactly one Bricolage heading (38–84px), which is 1.8–7.8% narrower.
+   - Both covers and 24 of 32 interior pages are unchanged. (Verifier correction: this said 26 of 32; `compare_pdfs.py` missed two full-bleed pages, see "Verifier notes".)
+   - Eight pages change, each in exactly one Bricolage 800 heading or label (32–84px), which is 1.8–7.9% narrower.
    - No line breaks move, and no fallback fonts appear.
 5. **Across the catalogue** (glyph survey of 368 pages):
    - 37% of brand-font glyphs render identically.
@@ -163,18 +163,20 @@ The neighbourhood allowance is needed because static fonts store whole-unit adva
 
 | File | Fonts, variable → static | Pages SAME | Changed |
 |---|---|---|---|
-| `picture-tablet-slept.pdf` (32 pp) | 93 Type 3 → 76 Type 0, **0 Type 3** | 26 | 6 (below) |
+| `picture-tablet-slept.pdf` (32 pp) | 93 Type 3 → 76 Type 0, **0 Type 3** | 24 | 8 (below) |
 | `cover-kdp-paperback.pdf` | 17 Type 3 → 10 Type 0, **0 Type 3** | 1 | none. The title is at 96px+ and the other text is Nunito ≥12px, Fredoka and Caveat. |
 | `cover-ingramspark-hardcover.pdf` | 17 Type 3 → 10 Type 0, **0 Type 3** | 1 | none |
 
 Static fonts embedded: BricolageGrotesque-ExtraBold, Caveat-Bold, Fredoka-Bold / -Medium / -SemiBold, and NunitoSans-Bold / -ExtraBold / -Italic / -Medium / -Regular / -SemiBold.
 
-**The six changed pages.** Each change is one Bricolage 800 heading below 96px. It gets narrower and keeps its line breaks; left-aligned headings lose width on the right, and centred ones pull in from both sides. All other text on these pages is SAME.
+**The eight changed pages.** Each change is one Bricolage 800 heading or label below 96px (p21 and p28 were added by the verifier). It gets narrower and keeps its line breaks; left-aligned headings lose width on the right, and centred ones pull in from both sides. All other text on these pages is SAME.
 
 | Page | Heading | Size | Width |
 |---|---|---|---|
 | p1 | "The Day the / Tablet Slept" | 84px (63 pt) | −1.8% (hard to see) |
 | p16 | "WHOOOOSH!" | 64px | −4.3% |
+| p21 | "LIBRARY" (letter-spaced sign in the art) | 32px | −7.9% |
+| p28 | "The End" (right-aligned) | 60px | −5.5% |
 | p29 | "Talk about it" | 56px | −5.8% |
 | p30 | "Plan your own Play Day" | 56px | −5.7% |
 | p31 | "This book belongs to" | 50px | −6.0% |
@@ -183,7 +185,7 @@ Static fonts embedded: BricolageGrotesque-ExtraBold, Caveat-Bold, Fredoka-Bold /
 **Other checks:**
 - `node ops/TESTS/check_fonts.js picture-tablet-slept`: 7 files, 0 problems.
 - The preflight's Liberation Sans ↑/→ fallbacks are not in the current source.
-- **Not a clean "no visual change":** the six headings above differ. Nothing overflows, nothing moves toward the trim, and the page count and geometry are unchanged.
+- **Not a clean "no visual change":** the eight headings above differ. Nothing overflows, no text moves toward the trim by more than a fraction of a point, and the page count and geometry are unchanged.
 
 ## Pagination check: course KDP interior
 
@@ -229,6 +231,8 @@ State at 05:30: modified PDFs in the working tree, all rendered after `fonts.css
 
 If the lead reverts `fonts.css`, those files go back to Type 3 on their next render. They do not change by themselves.
 
+**Verifier update (about 06:20).** Another lane re-rendered course-screen-reset again at 05:49–05:52: 14 PDFs, same page counts as HEAD (89, 92, 1 and 3). Two of them now carry Type 3: `downloads/3. Workbook - Low-ink - US Letter.pdf` and `5. Workbook - Low-ink - A4.pdf`, 1 font each, on p1. The cause is cause 1 below: the "z z z" is SVG `<text>` in Caveat 700 inside `.art svg`, and the low-ink rule `.art svg *{fill:#fff!important;stroke:#1D2940!important;…}` strokes it. Scratch renders of the four products not yet re-rendered show the same cause in two more low-ink editions: `visual-routine-cards` (full low-ink, 14 Type 3 fonts: "draw it, or", "glue a photo", the size note and "BUS") and `bored-play-cards` (low-ink, 4: "I'm bored!" and the fit-guide labels). Their colour editions, and both `toddler-busy-book` editions, come out with 0 Type 3.
+
 ### What still makes Type 3 with static fonts
 
 Each case was tested on a small page through `brand/render.js`.
@@ -243,6 +247,7 @@ Each case was tested on a small page through `brand/render.js`.
    - The table-of-contents "30" badge is SVG text in Fredoka 600.
    - The low-ink rule `.low .art *{fill:#fff!important;stroke:var(--ink)!important;…}` also strokes that `<text>`, turning it into outlined text.
    - **Fix (that product's lane):** exempt text from the rule, for example `.low .art text{fill:var(--ink)!important;stroke:none!important}`, or keep outlined digits as SVG paths.
+   - **Verifier:** the same pattern (a low-ink rule that strokes every SVG child, including `<text>`) is also in course-screen-reset, visual-routine-cards and bored-play-cards. So this is a catalogue-wide low-ink fix, not a single-product one.
 2. **play-talk-cards deck PDFs** (`play-talk-cards.pdf`, `-A4`, `-low-ink`, `-low-ink-A4` and the four `etsy-upload/` copies).
    - `<i class="heart">♡</i>` is set in Nunito Sans 700. Nunito has no ♡, so it falls back to DejaVu Sans, which Chromium emboldens (52 glyphs on p20).
    - **Fix:** draw the heart as inline SVG, as print-preflight Tier 2 already recommends for fallback glyphs, or set it at weight 400.
@@ -279,3 +284,31 @@ node ops/TESTS/check_fonts.js ops/TESTS/fonts-static-test.html
 ```
 
 For a product, render its HTML both ways and run `compare_pdfs.py` without `--ignore-top`. `--diff-dir` writes a PNG per changed page: red means only in the variable render, blue only in the static render.
+
+---
+
+## Verifier notes (adversarial check, 2026-09-28, about 05:55–06:25)
+
+These were re-run independently in scratch copies, with nothing under `products/` written. The variable baseline was a separate tree in which `fonts.css` really was the variable file, so `render_variable.js` was not used.
+
+- **Confirmed:**
+  - Test page: 0 Type 3 static, Type 3 only in the variable render (294 / 315 per-page font references; 82 / 184 unique font objects).
+  - 77 of 77 `[exact]` pages are SAME: glyph origins within 0.05 pt and 0 pixels outside the envelope. 39 of 39 `[opsz]` pages are narrower, with text-row width −1.9% to −10.2%.
+  - Tablet interior and both covers: 0 Type 3. The working-tree tablet PDF (05:11) is pixel-identical to a fresh static render.
+  - `check_fonts.js`: 0 problems on the test page and on picture-tablet-slept.
+  - `survey_usage.js`: exit 0, every requested weight has a static face.
+  - fonts.css: 19 faces × subsets, the same unicode-range, stretch, display and subset order as `fonts-variable.css`.
+  - Each instance's cmap equals its source's. There is no fvar, gvar, HVAR or MVAR. The name, weight-class and italic flags match `instances.json`.
+  - Widths checked for every glyph, every subset and every weight, at 7 Nunito and 11 Bricolage opsz values: only Bricolage ‹ › ¨ ¸ ˚ get a wider advance.
+  - All 96 PDFs re-rendered since the switch keep HEAD's page counts. Form-field counts are unchanged, and the fields are re-measured in the same build.
+  - `check_listings.py`: 0 FAIL, the same two pre-existing warnings.
+- **Corrected above:**
+  - The tablet has 8 changed pages, not 6. p21 "LIBRARY" (32px, −7.9%) and p28 "The End" (60px, −5.5%) were missed.
+  - The cause was in `compare_pdfs.py`: on full-bleed pages every pixel counts as "ink", so the 0.5%-of-ink test and the ink box cannot see a narrower heading. Its "width" column reads +0.00% on every tablet page for the same reason.
+  - `compare_pdfs.py` now also requires ≤0.01% of all page pixels outside the envelope and ≤0.3 pt glyph movement along the baseline. It prints the glyph movement and the widest text-row width change. The test page still gives 77 SAME / 39 CHANGED; the tablet now gives 24 SAME / 8 CHANGED.
+- **Minor:**
+  - "Font objects" in the verdict are per-page references; the unique objects are fewer.
+  - The source fonts have no name ID 13 (only 0 and 14), so "IDs 0, 13 and 14 are kept" means 0 and 14.
+  - `site-concepts/B-toy-shop-bold` has its own copy of the variable fonts (`assets/fonts/fonts.css`) and does not load `brand/fonts/fonts.css`.
+- **Unchanged decision:** A, B or C is still for the lead or founder.
+
