@@ -4,7 +4,7 @@
 
 **Last updated:** [DATE]
 
-These Terms of Use ("Terms") govern your use of [DOMAIN] and any related pages, downloads, email lists, online courses and events (together, the "Site"). The Site is operated by **AlphaPlay LLC, doing business as Play Before Pixels** ("Play Before Pixels," "we," "us"), [BUSINESS MAILING ADDRESS]. Contact: [hello@DOMAIN].
+These Terms of Use ("Terms") govern your use of [DOMAIN] and any related pages, downloads, email lists and the email-delivered course (together, the "Site"). The Site is operated by **AlphaPlay LLC, doing business as Play Before Pixels** ("Play Before Pixels," "we," "us"), [BUSINESS MAILING ADDRESS]. Contact: [hello@DOMAIN].
 
 By using the Site or buying from us, you agree to these Terms. If you do not agree, please do not use the Site.
 
@@ -12,13 +12,13 @@ By using the Site or buying from us, you agree to these Terms. If you do not agr
 The Site is for adults: parents, caregivers, educators and organizations. It is not directed to children, and we do not knowingly collect personal information from anyone under 13 (see our Privacy Policy). You must be at least 18, or the age of majority where you live, to buy from us or create an account.
 
 ## 2. Educational information only
-Everything on the Site, including books, guides, printables, courses, coaching, workshops and the free research hub, is general educational information about play, conversation and screen habits. It is not medical, psychological, speech-language, therapeutic or legal advice. Please read our Medical & Educational Disclaimer, which is part of these Terms.
+Everything on the Site, including books, guides, printables, the course and the free research hub, is general educational information about play, conversation and screen habits. It is not medical, psychological, speech-language, therapeutic or legal advice. Please read our Medical & Educational Disclaimer, which is part of these Terms.
 
 ## 3. Orders, prices and taxes
 - Prices are shown in U.S. dollars unless the checkout page says otherwise. We may correct pricing errors and may cancel an order placed at an incorrect price, with a full refund.
 - Sales tax, VAT, GST or similar taxes are added where the law requires. International customers may owe import duties, customs fees or taxes that are set by the destination country and are the buyer's responsibility unless the checkout page says they are included.
-- Some products are sold and fulfilled by third parties (for example, marketplaces, print-on-demand partners, book distributors and payment processors). Their terms also apply to those purchases.
-- Shipping, returns and refunds are governed by our Shipping, Returns & Refunds Policy. Coaching and workshops are governed by our Coaching & Workshop Terms.
+- Some products are sold and fulfilled by third parties (for example, Etsy, Gumroad, Amazon KDP, print-on-demand partners and payment processors). Their terms also apply to those purchases.
+- Shipping, returns and refunds are governed by our Shipping, Returns & Refunds Policy. We do not offer coaching, consultations, calls or live workshops.
 
 ## 4. Digital products: your license
 When you buy a digital product (printables, the play guide in digital form, classroom resource pack, course materials), we grant you a personal, non-exclusive, non-transferable license to download, view and print it:
@@ -28,8 +28,8 @@ When you buy a digital product (printables, the play guide in digital form, clas
 
 You may not resell, share, upload to file-sharing or resource-sharing sites, post publicly, remove our copyright notices, or use the materials to train artificial-intelligence models. Licenses for more users are available: contact us.
 
-## 5. Online courses and memberships
-Course access is for the enrolled person only; login sharing is not permitted. Unless the product page says "lifetime access," we will keep a purchased course available for at least [12] months from purchase. If a course or membership renews automatically, the price, billing interval and how to cancel will be shown clearly before you pay, and you can cancel online at any time through [the account page / a link in every receipt].
+## 5. The email-delivered course
+The course is a written course sent as a series of emails to the address used at purchase. It has no live sessions and no calls. The lessons are for the buyer's own household only; please do not forward them or post them publicly. If you unsubscribe from the course emails, you can ask us to resend lessons already sent. We do not currently sell subscriptions or memberships. If we ever offer one, the price, billing interval and how to cancel will be shown clearly before you pay, and you will be able to cancel online at any time.
 
 ## 6. Intellectual property
 The Site and all content on it (text, illustrations, designs, slogans, logos, audio and video) are owned by AlphaPlay LLC or its licensors and are protected by copyright and trademark law. "Play Before Pixels" is a trade name of AlphaPlay LLC. Nothing in these Terms transfers ownership to you. Quotations from published research on the Site are used with attribution for commentary and education; the original authors and publishers own those works, and their inclusion does not mean they endorse us.

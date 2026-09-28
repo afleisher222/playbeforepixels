@@ -4,11 +4,11 @@
 
 **Last updated:** [DATE]
 
-Play Before Pixels (a trade name of AlphaPlay LLC) shares general educational information about play, talk, reading together and family screen habits. Please read this before using our books, guides, printables, courses, coaching, workshops or research hub.
+Play Before Pixels (a trade name of AlphaPlay LLC) shares general educational information about play, talk, reading together and family screen habits. Please read this before using our books, guides, printables, workshop kits, email-delivered course or research hub.
 
 **Not medical or therapy advice.** Our content is not medical, psychological, developmental, speech-language, occupational-therapy or other professional health advice, and it is not a substitute for it. We do not diagnose, treat, cure or prevent any condition, and nothing we offer is intended to.
 
-**About the founder.** The founder is a parent and educator. She is not a physician, psychologist or licensed speech-language pathologist, and coaching with us is not therapy or a clinical service.
+**About the founder.** The founder is a parent and educator. She is not a physician, psychologist or licensed speech-language pathologist. We do not offer coaching, consultations or any therapy or clinical service.
 
 **Talk to a professional about your child.** If you have any concern about your child's development, hearing, speech, language, behavior, sleep, vision or health, please contact your child's pediatrician or another qualified professional. Do not delay or disregard professional advice because of something you read or heard from us. In an emergency, call your local emergency number.
 

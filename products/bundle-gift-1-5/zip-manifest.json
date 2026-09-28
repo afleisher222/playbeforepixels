@@ -97,7 +97,7 @@
     {
      "src": "products/toddler-busy-book/toddler-busy-book-START-HERE.pdf",
      "zip_path": "Toddler-Busy-Book/toddler-busy-book-START-HERE.pdf",
-     "mb": 0.25
+     "mb": 0.04
     },
     {
      "src": "products/toddler-busy-book/toddler-busy-book.pdf",
@@ -120,7 +120,7 @@
      "mb": 7.06
     }
    ],
-   "mb_estimate": 24.23
+   "mb_estimate": 24.02
   },
   {
    "slot": 4,
@@ -277,7 +277,7 @@
     {
      "src": "products/toddler-busy-book/etsy-upload/1-START-HERE.pdf",
      "zip_path": "Toddler Busy Book - START HERE.pdf",
-     "mb": 0.25
+     "mb": 0.04
     },
     {
      "src": "products/play-first-family-kit/etsy-upload-ages-2-5/2-Color-US-Letter.pdf",
@@ -315,8 +315,8 @@
      "mb": 0.83
     }
    ],
-   "mb_members": 15.55,
-   "mb_zipped": 13.06,
+   "mb_members": 15.34,
+   "mb_zipped": 12.9,
    "fits_etsy_20mb": true
   },
   {
@@ -337,7 +337,7 @@
     {
      "src": "products/toddler-busy-book/etsy-upload/1-START-HERE.pdf",
      "zip_path": "Toddler Busy Book - START HERE.pdf",
-     "mb": 0.25
+     "mb": 0.04
     },
     {
      "src": "products/play-first-family-kit/etsy-upload-ages-2-5/3-Color-A4.pdf",
@@ -375,8 +375,8 @@
      "mb": 0.8
     }
    ],
-   "mb_members": 15.51,
-   "mb_zipped": 12.99,
+   "mb_members": 15.3,
+   "mb_zipped": 12.83,
    "fits_etsy_20mb": true
   },
   {
@@ -397,7 +397,7 @@
     {
      "src": "products/toddler-busy-book/etsy-upload/1-START-HERE.pdf",
      "zip_path": "Toddler Busy Book - START HERE.pdf",
-     "mb": 0.25
+     "mb": 0.04
     },
     {
      "src": "products/play-first-family-kit/etsy-upload-ages-2-5/4-Low-Ink-US-Letter.pdf",
@@ -435,8 +435,8 @@
      "mb": 1.06
     }
    ],
-   "mb_members": 17.72,
-   "mb_zipped": 16.16,
+   "mb_members": 17.51,
+   "mb_zipped": 16.0,
    "fits_etsy_20mb": true
   },
   {
@@ -457,7 +457,7 @@
     {
      "src": "products/toddler-busy-book/etsy-upload/1-START-HERE.pdf",
      "zip_path": "Toddler Busy Book - START HERE.pdf",
-     "mb": 0.25
+     "mb": 0.04
     },
     {
      "src": "products/play-first-family-kit/etsy-upload-ages-2-5/5-Low-Ink-A4.pdf",
@@ -495,8 +495,8 @@
      "mb": 1.03
     }
    ],
-   "mb_members": 17.69,
-   "mb_zipped": 16.09,
+   "mb_members": 17.48,
+   "mb_zipped": 15.92,
    "fits_etsy_20mb": true
   }
  ],

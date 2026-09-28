@@ -18,9 +18,9 @@ We aim for our website to conform to the **Web Content Accessibility Guidelines 
 - tagged, accessible PDFs for printables where practical, and a plain-text or large-print version on request.
 
 ## Where we are
-We last reviewed the site on [DATE] using [automated checks (e.g., axe or WAVE) plus manual keyboard and screen-reader testing]. Known limitations: [list any — for example, older PDFs, third-party checkout or course pages we do not control].
+We last reviewed the site on [DATE] using [automated checks (e.g., axe or WAVE) plus manual keyboard and screen-reader testing]. Known limitations: [list any — for example, older PDFs, third-party checkout pages we do not control].
 
-Some parts of our shopping experience are provided by third parties (payment, marketplaces, course hosting). We choose providers that support accessibility and will help you complete a purchase another way if a third-party page does not work for you.
+Some parts of our shopping experience are provided by third parties (payment, marketplaces, email delivery). We choose providers that support accessibility and will help you complete a purchase another way if a third-party page does not work for you.
 
 ## Need help or found a barrier?
 Please tell us. Email [accessibility@DOMAIN] or write to AlphaPlay LLC, [BUSINESS MAILING ADDRESS]. Tell us the page and the problem. Every message gets a reply, and if needed we will provide the information or product in another format or help you place an order directly.

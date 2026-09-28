@@ -1,0 +1,30 @@
+{
+  "_note": "Insurance record for AlphaPlay LLC d/b/a Play Before Pixels. Template: fill after binding. Never store policy numbers, account numbers or personal addresses here. See legal/LEGAL-LAUNCH-CHECKLIST.md row 14 and ops/GATE-A.md item 3.",
+  "last_updated": "",
+  "policies": [
+    {
+      "type": "Commercial general liability with products-completed operations",
+      "status": "",
+      "carrier": "",
+      "carrier_rating": "",
+      "broker": "",
+      "named_insureds": "",
+      "limit_per_occurrence": "",
+      "limit_aggregate": "",
+      "deductible": "",
+      "occurrence_or_claims_made": "",
+      "bound_date": "",
+      "effective_date": "",
+      "renewal_date": "",
+      "annual_premium": "",
+      "business_description_given_to_insurer": "",
+      "certificate_of_insurance_on_file": ""
+    }
+  ],
+  "broker_questions_in_writing": {
+    "injury_from_following_download_instructions_covered": "",
+    "media_liability_needed_for_research_pages": "",
+    "date_asked": "",
+    "date_answered": ""
+  }
+}

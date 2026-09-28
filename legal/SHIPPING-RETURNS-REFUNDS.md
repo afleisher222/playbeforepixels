@@ -4,7 +4,7 @@
 
 **Last updated:** [DATE]
 
-This policy applies to purchases made directly on [DOMAIN] from **AlphaPlay LLC, doing business as Play Before Pixels**. If you bought through a marketplace or bookstore (for example Amazon, Etsy, Teachers Pay Teachers, Faire or Bookshop.org), that seller's return policy applies — please contact them first, and we will help if we can.
+This policy applies to purchases made directly on [DOMAIN] from **AlphaPlay LLC, doing business as Play Before Pixels**. If you bought through a marketplace or bookstore (for example Etsy, Gumroad, or Amazon for books printed through Amazon KDP), that seller's return policy applies — please contact them first, and we will help if we can.
 
 Nothing in this policy limits any right you have under the consumer laws of the place where you live. Where local law gives you more, you get more.
 
@@ -18,7 +18,7 @@ We ship to [the United States and the countries listed at checkout]. Some physic
 ### Processing and delivery times
 | Product | Made/processed in | Typical delivery after processing |
 |---|---|---|
-| Books (paperback, hardcover, library binding) | [X–Y] business days | U.S. [X–Y] business days; international [X–Y] business days |
+| Print-on-demand books (paperback, hardcover) | [X–Y] business days | U.S. [X–Y] business days; international [X–Y] business days |
 | Card deck, printed play guide | [X–Y] business days | same as above |
 | Print-on-demand apparel and merch | [X–Y] business days (made to order) | same as above |
 | Digital downloads | instant, by email and account page | — |
@@ -58,12 +58,12 @@ Please check your address. If a package is returned because of an incorrect addr
 
 ### 4. Online course — "30 Days of Back-and-Forth"
 - **[14]-day guarantee:** If you are not satisfied, email us within [14] days of purchase for a full refund, as long as you have completed no more than [30%] of the lessons. [This section is the single source for the course refund terms. Since September 28, 2026 every customer-facing mention (sales page, emails, START HERE, free starter, listing, workbook FAQ, help-center FAQ, macros) uses exactly these terms; the build reads them from `REFUND` in `products/course-screen-reset/build/content.js`. Founder decision PENDING in `ops/APPROVALS.md`: keep 14 days, or change this policy to 30 days for the course. If the terms change, change them here first, then `REFUND`, then rebuild.]
-- After that, course fees are non-refundable, but you keep access for the stated access period.
+- After that, course fees are non-refundable, and the remaining lesson emails continue on schedule.
 - If the course is sold on a payment plan, refunds are prorated to payments made and remaining installments are cancelled.
 - **Memberships or subscriptions (if offered):** the price, billing interval and renewal date are shown before you pay; you may cancel online at any time through [account page / link in every receipt], and cancellation stops future charges. We send a reminder before any annual renewal. [ATTORNEY: confirm federal (ROSCA) and state automatic-renewal requirements, including California's, for any recurring product.]
 
-### 5. Coaching and workshops
-See our Coaching & Workshop Terms for cancellation, rescheduling and refund rules.
+### 5. No coaching, calls or live workshops
+We do not sell coaching, consultations, calls or live workshops. Workshop kits are digital downloads and follow section 3.
 
 ### 6. Organization and bulk orders
 Bulk orders, quotes, purchase orders, and group/advocacy kits follow the terms in the quote or invoice. Custom-printed or personalized bulk items are non-returnable except for defects.
