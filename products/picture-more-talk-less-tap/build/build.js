@@ -100,7 +100,7 @@ single({
 <p>Text and illustrations © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. All rights reserved.</p>
 <p>No part of this book may be reproduced, stored or transmitted in any form without written permission from the publisher, except for brief quotations in reviews. Reading this book aloud to a class, library group or family is always welcome.</p>
 <p>This is a work of fiction. Room 5, Ms. Poppy and the children are imaginary and are not based on any real school, teacher or child. The games and notes at the back are general ideas for grown-ups to enjoy with children; they are not a program, assessment or professional advice. Please supervise children during all activities and use large blocks that are too big to swallow.</p>
-<p>Published by AlphaPlay LLC, doing business as Play Before Pixels<br>11140 Rockville Pike, Suite 100-559, Rockville, Maryland 20852, USA</p>
+<p>Published by AlphaPlay LLC, doing business as Play Before Pixels</p>
 <p>First edition 2026</p>`, 'legal'),
     T(60, 668, 380, 'ISBN (hardcover, library binding)<br><span>to be assigned</span>', 'isbnbox'),
   ],
