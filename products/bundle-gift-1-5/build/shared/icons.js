@@ -42,8 +42,8 @@ const I = {
     `<circle class="tk" cx="63" cy="33" r="17"/>` + line('M54 30Q60 34 57 42M64 22Q70 30 74 27M66 40Q70 44 72 40', '#3D86D8', 2.2),
   ],
   mitten: [
-    `<g transform="translate(-16 0) scale(.9) translate(6 6)">${mittenShape('ft', 'fs').join('')}</g>`,
-    `<g transform="translate(116 0) scale(-.9 .9) translate(6 6)">${mittenShape('ft', 'fs').join('')}</g>`,
+    `<g transform="rotate(-10 30 60) translate(-4 22) scale(.64)">${mittenShape('ft', 'fs').join('')}</g>`,
+    `<g transform="rotate(10 70 60) translate(104 22) scale(-.64 .64)">${mittenShape('fk', 'fs').join('')}</g>`,
   ],
   window: [
     `<rect class="fk" x="16" y="12" width="68" height="78" rx="8"/>`,
@@ -196,9 +196,9 @@ const I = {
     `<rect class="fs" x="38" y="2" width="26" height="26" rx="5"/>` + star(51, 15, 7, 'fw'),
   ],
   bubbles: [
-    `<circle class="tk" cx="38" cy="58" r="26"/>` + line('M24 50A16 16 0 0 1 32 40', '#FFFFFF', 4),
-    `<circle class="tk" cx="72" cy="30" r="16"/>` + line('M64 26A9 9 0 0 1 69 20', '#FFFFFF', 3.4),
-    `<circle class="tk" cx="76" cy="72" r="10"/>`,
+    `<circle class="fk" cx="38" cy="58" r="26"/><circle class="tk" cx="38" cy="58" r="20"/>` + line('M24 50A16 16 0 0 1 32 40', '#FFFFFF', 4),
+    `<circle class="fp" cx="72" cy="30" r="16"/><circle class="tp" cx="72" cy="30" r="11.5"/>` + line('M64 26A9 9 0 0 1 69 20', '#FFFFFF', 3.4),
+    `<circle class="fg" cx="76" cy="72" r="10"/><circle class="tg" cx="76" cy="72" r="6.5"/>`,
   ],
   sockfriend: [
     `<path class="fk" d="M30 12H62V60Q62 70 72 72L80 74Q92 78 88 88Q86 94 76 92L46 86Q30 82 30 66Z"/>`,

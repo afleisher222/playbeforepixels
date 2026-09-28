@@ -48,7 +48,7 @@ function card(ctx, p, o = {}) {
   const surface = isBundle ? stack(ctx, p.parts) : mock(ctx, p, { sizes: o.sizes });
   const price = isBundle ? `<span class="num">${money(p.price)}</span>` : priceText(p);
   const types = isBundle ? 'bundles' : p.types.join(' ');
-  return `<li class="p-card" data-types="${types}" data-ages="${p.bands.join(' ')}" data-price="${isBundle ? p.price : p.minPrice}" data-order="${o.order || 0}">
+  return `<li class="p-card" data-types="${types}" data-ages="${p.bands.join(' ')}" data-price="${isBundle ? p.price : p.minPrice}" data-lo="${p.range ? p.range[0] : (p.ageText ? parseInt(p.ageText, 10) : 0)}" data-order="${o.order || 0}">
   <div class="surface g-${p.ground}">${surface}</div>
   <${h} class="p-title"><a href="${p.url}">${esc(p.name)}</a></${h}>
   <p class="line">${esc(p.line)}</p>

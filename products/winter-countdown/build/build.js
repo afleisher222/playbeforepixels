@@ -17,6 +17,7 @@ fs.mkdirSync(HTML, { recursive: true });
 const HC = { sky: [C.sky, C.tSky, D.sky], plum: [C.plum, C.tPlum, D.plum], grass: [C.grass, C.tGrass, D.grass], tomato: [C.tomato, C.tTomato, D.tomato] };
 const PREP = m => (m ? `Prep ${m} min` : 'No prep');
 const MESS = ['No mess', 'A little mess', 'Messy'];
+const steps = t => t.split(/(?<=[.!?][”]?)\s+(?=[A-Z“])/);
 const iconAt = (name, ctx, x, y, s) => icon(name, ctx, s).replace('<svg class="ic ', `<svg x="${x}" y="${y}" class="ic `);
 
 // ---------------------------------------------------------------- the scene (cast from chars.js)
@@ -59,7 +60,7 @@ function card(ctx, p) {
     <div class="cbody">
       <div class="cleft">
         <p class="need"><b>You need:</b> ${esc(p.needs)}</p>
-        <p class="how">${esc(p.how)}</p>
+        <ol class="how">${steps(p.how).map(t => `<li>${esc(t)}</li>`).join('')}</ol>
         ${p.hunt ? `<div class="hunt">${HUNT.map(([a, l], i) => `<span class="hi"><i class="tick" ${field(`hunt_${i + 1}`, { check: 1 })}></i>${icon(a, ctx, 26)}<em>${l}</em></span>`).join('')}</div>` : ''}
         <div class="talk li-white">${mi('talk', 14, d)}<div><em>Talk while you play · ${MOVES[p.move]}</em><p>${esc(p.talk)}</p></div></div>
       </div>
@@ -82,17 +83,18 @@ function cardPage(ctx, a, b) {
 }
 
 function cover(ctx) {
-  const flakes = [[40, 40, 34], [700, 30, 46], [610, 150, 26], [300, 22, 22], [470, 95, 30], [720, 300, 24], [30, 330, 26]];
+  const flakes = [[700, 34, 46], [636, 132, 24], [730, 236, 30], [560, 28, 22], [60, 520, 34], [170, 580, 22], [40, 404, 20]];
   return `<div class="cv">
     <div class="cv-panel li-white">
       ${flakes.map(([x, y, s]) => `<div class="flk" style="left:${x}px;top:${y}px">${icon('snowflake', ctx, s)}</div>`).join('')}
       <div class="cv-head">
+        ${logo(ctx, 'lockup', null, 'lockup cv-logo')}
         <p class="kicker">Printable winter countdown · Ages 2–5</p>
         <h1><span class="n24 li-edge">24</span> Days of Play</h1>
         <h2>Winter Countdown</h2>
         <p class="lede">One easy play a day for 24 winter days, made from things you already have. Start any day you like.</p>
       </div>
-      <div class="cv-art">${scene(ctx)}</div>
+      <div class="cv-art">${scene(ctx).replace('width="400" height="300"', 'width="500" height="375"')}</div>
     </div>
     <div class="cv-low">
       <div class="tiles">
@@ -108,6 +110,7 @@ function cover(ctx) {
         <li>${mi('check', 15, D.grass)} A countdown board, plus a blank one</li>
         <li>${mi('check', 15, D.grass)} 24 number tags and a fridge certificate</li>
       </ul>
+      <div class="peek">${[0, 3, 4, 5, 12, 13, 17, 19].map(i => `<div class="pk"><div class="pk-d li-white">${icon(PLAYS[i].art, ctx, 46)}</div><span>${esc(PLAYS[i].t)}</span></div>`).join('')}</div>
     </div>
   </div>`;
 }
@@ -118,7 +121,7 @@ function guide1(ctx) {
     <h2 class="ptitle">How the countdown works</h2>
     <p class="lede2">Winter days can be long and dark. This countdown gives each one a small, warm play to look forward to. It takes about two minutes to start, and there is no wrong way to do it.</p>
     <div class="steps">
-      <div class="step li-white"><b>1</b><div><h4>Print</h4><p>Print pages 6–22 (or the whole file). Card stock is nice but plain paper works.</p></div></div>
+      <div class="step li-white"><b>1</b><div><h4>Print</h4><p>Print pages 6–23 (or the whole file). Card stock is nice but plain paper works.</p></div></div>
       <div class="step li-white"><b>2</b><div><h4>Pick a way</h4><p>Cut the 12 card pages in half and tuck each card in an envelope, bag or jar with its number tag. Or skip the cutting and use the board.</p></div></div>
       <div class="step li-white"><b>3</b><div><h4>Pick a start day</h4><p>Any day works. Many families start on the first of the month; others start the first snowy week or the first day of a break.</p></div></div>
     </div>
@@ -136,6 +139,8 @@ function guide1(ctx) {
       <h4>Why a play a day?</h4>
       <p>Young children learn words and ideas in back-and-forth moments with the people who love them: a look, a laugh, a turn, a word. A short play each day adds more of those moments to ordinary winter days. The screens in your home keep their usual spot; this is simply something warm to add.</p>
     </div>
+    <h3 class="sub">A peek at the first week</h3>
+    <div class="week">${PLAYS.slice(0, 7).map(p => `<div class="wk li-white"><b>Day ${p.n}</b>${icon(p.art, ctx, 54)}<span>${esc(p.t)}</span><em>${PREP(p.prep)}</em></div>`).join('')}</div>
   </div>`;
 }
 
@@ -162,6 +167,12 @@ function guide2(ctx) {
         <li><b>Easier, harder and 2-minute versions.</b> Tired? The 2-minute version still counts.</li>
         <li><b>Safety line.</b> Read it before you start. A grown-up is always there.</li>
       </ol>
+    </div>
+    <h3 class="sub">If today isn’t the day</h3>
+    <div class="ways">
+      <div class="way li-white" style="--c:${C.sun}"><h4>Not interested?</h4><p>Try the 2-minute version, or let your child pick a different day. Watching you play counts too.</p></div>
+      <div class="way li-white" style="--c:${C.grass}"><h4>Busy week?</h4><p>Play two short days at the weekend. There’s nothing to catch up on and no streak to keep.</p></div>
+      <div class="way li-white" style="--c:${C.tomato}"><h4>Two children?</h4><p>Give each a job: one holds, one pours; one hides, one seeks. Take turns being the leader.</p></div>
     </div>
   </div>`;
 }
@@ -220,7 +231,7 @@ function pantry(ctx) {
 function board(ctx, blank) {
   const cells = PLAYS.map(p => `<div class="bc li-white" style="--c:${HC[HEAD[(p.n - 1) % HEAD.length]][0]}">
       <b class="bn">${p.n}</b>
-      ${blank ? `<div class="bl" ${field(`board_play_${p.n}`, { size: 9, multi: 1 })}></div>` : `${icon(p.art, ctx, 50)}<span class="bt">${esc(p.t)}</span>`}
+      ${blank ? `<div class="bl" ${field(`board_play_${p.n}`, { size: 9, multi: 1 })}></div>` : `${icon(p.art, ctx, 66)}<span class="bt">${esc(p.t)}</span>`}
       <i class="spot"></i>
     </div>`).join('');
   return `<div class="pad">
@@ -258,7 +269,7 @@ function tags(ctx, from) {
 
 function certificate(ctx) {
   const { kid, adult, KIDS, ADULTS } = CHARS;
-  const art = `<svg viewBox="0 0 520 250" width="520" height="250" aria-hidden="true">
+  const art = `<svg viewBox="0 0 520 250" width="660" height="317" aria-hidden="true">
     <ellipse class="fw" cx="260" cy="244" rx="250" ry="10"/>
     ${adult(Object.assign({}, ADULTS.G3, { x: 150, y: 244 - 81, s: 1, aL: 20, aR: -140, face: 'laugh' }))}
     ${kid(Object.assign({}, KIDS.C, { x: 250, y: 244 - 27 * 1.1, s: 1.1, aL: 150, aR: -150, face: 'joy' }))}
@@ -272,7 +283,7 @@ function certificate(ctx) {
       <h2 class="cert-t">We played our way<br>through winter!</h2>
       <p class="cert-our hand">Our family</p>
       <div class="cert-art">${art}</div>
-      <div class="flakes">${PLAYS.map(() => icon('snowflake', ctx, 26)).join('')}</div>
+      <div class="flakes">${PLAYS.map(() => icon('snowflake', ctx, 36)).join('')}</div>
       <p class="cert-sub">Color a snowflake for every day you played.</p>
       <div class="cert-lines">
         <div><span>Our favorite day was</span><div class="field" ${field('cert_favorite', { size: 13 })}></div></div>
@@ -292,6 +303,8 @@ function answers(ctx) {
     ['Is this tied to a holiday?', 'No. It’s a winter countdown for any family: snow, cold, cozy days and long nights. Use it to count down to a holiday, a break, a birthday or nothing at all.'],
     ['We have a baby and a preschooler.', 'Every card says its starting age. Let the baby watch from a lap and keep small things out of reach. Many plays have an easier version for younger children.'],
     ['Can I type in it?', 'Yes, in the color and low-ink files, with a free PDF reader: the blank board squares, the Winter Walk Hunt tick boxes and the certificate lines. Pictures and colors can’t be changed.'],
+    ['Can we use it again next winter?', 'Yes. Print a fresh copy each year; your license doesn’t expire. Children often ask for their favorite days again.'],
+    ['A page won’t print right?', ctx.edition === 'etsy' ? 'Open it in a different free PDF reader and print at 100%. Still stuck? Send us a message through the shop.' : 'Open it in a different free PDF reader and print at 100%. Still stuck? Answers are at playbeforepixels.com/help.'],
     ['Can I share it?', 'Your license covers one household, including grandparents and sitters who care for your child. Please don’t share the files. A gift passes the license to the family who receives it.'],
   ];
   return `<div class="pad">
@@ -339,6 +352,7 @@ function startHere(ctx) {
     ? [['1-START-HERE.pdf', 'This page.'], ['2-Color-US-Letter.pdf', 'Color, US Letter (8.5 × 11 in).'], ['3-Color-A4.pdf', 'Color, A4.'], ['4-Low-Ink-US-Letter.pdf', 'Low-ink, US Letter: white pages, line art to color.'], ['5-Low-Ink-A4.pdf', 'Low-ink, A4.']]
     : [['START-HERE.pdf', 'This page.'], ['winter-countdown.pdf', 'Color, US Letter (8.5 × 11 in).'], ['winter-countdown-A4.pdf', 'Color, A4.'], ['winter-countdown-low-ink.pdf', 'Low-ink, US Letter: white pages, line art to color.'], ['winter-countdown-low-ink-A4.pdf', 'Low-ink, A4.']];
   return `<div class="pad">
+    ${logo(ctx, 'lockup', null, 'lockup sh-logo')}
     <div class="sh-top">
       <div><p class="kicker d-sky">Start here · 24 Days of Play: Winter Countdown</p>
       <h2 class="ptitle">Welcome! Here’s how to begin.</h2>
@@ -354,6 +368,13 @@ function startHere(ctx) {
       <div class="shb li-white"><h4>${mi('phone', 16)} On a phone?</h4><p>${ctx.edition === 'etsy' ? 'Download in a web browser, not the shopping app. Your files stay on your Purchases page.' : 'Open the download link in a web browser and save each PDF. Lost it? playbeforepixels.com/help'}</p></div>
       <div class="shb li-white"><h4>${mi('safe', 16, D.tomato)} Safety first</h4><p>Read page 4 before Day 1. Every card has its own safety line, and a grown-up is always there.</p></div>
     </div>
+    <h3 class="sub">What’s inside</h3>
+    <div class="tiles sh-tiles">
+      <div class="tile li-white"><b>24</b><span>play cards, 2 per page</span></div>
+      <div class="tile li-white"><b>${NOBUY}</b><span>need nothing to buy</span></div>
+      <div class="tile li-white"><b>2</b><span>countdown boards, one blank</span></div>
+      <div class="tile li-white"><b>24</b><span>number tags + a certificate</span></div>
+    </div>
     <p class="small tight">Personal license for one household. ${K.OWNER}</p>
   </div>`;
 }
@@ -367,7 +388,7 @@ function extraCss(ctx) {
 .d-sky{color:${D.sky}}.d-tomato{color:${D.tomato}}.d-grass{color:${D.grass}}.d-plum{color:${D.plum}}
 .ptitle{font-size:38px;margin:6px 0 8px}
 .ptitle.sm{font-size:24px;margin:4px 0 0}
-.lede2{font-size:14px;line-height:1.5;max-width:640px;margin-bottom:16px}
+.lede2{font-size:15.5px;line-height:1.5;max-width:660px;margin-bottom:18px}
 .sub{font-size:20px;margin:18px 0 10px}
 .small{font-size:11px;line-height:1.45}
 .nowrap{white-space:nowrap}
@@ -376,14 +397,19 @@ function extraCss(ctx) {
 .cv-panel{position:absolute;left:0;right:0;top:0;height:${Math.round(H * 0.6)}px;background:${C.tSky};overflow:hidden}
 .flk{position:absolute;opacity:.9}
 body.color .flk .fk{fill:#FFFFFF}
-.cv-head{position:absolute;left:52px;top:62px;right:52px}
+.cv-head{position:absolute;left:52px;top:40px;right:52px}
+.cv-logo{height:30px;margin-bottom:22px}
+.peek{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-top:18px}
+.pk{display:flex;flex-direction:column;align-items:center;text-align:center;gap:5px}
+.pk-d{width:64px;height:64px;border-radius:50%;background:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.pk span{font-size:10px;font-weight:800;line-height:1.2}
 .cv-head .kicker{color:${C.ink}}
 .cv h1{font-size:78px;line-height:.95;letter-spacing:-.035em;margin:14px 0 0;display:flex;align-items:center;gap:16px}
 .n24{display:inline-flex;align-items:center;justify-content:center;background:${C.tomato};color:#FFFFFF;border-radius:22px;padding:4px 18px 8px;font-size:92px;line-height:1}
 body.lowink .n24{color:${C.ink};--c:${C.ink}}
 .cv h2{font-size:44px;color:${D.sky};margin:8px 0 0;letter-spacing:-.02em}
 body.lowink .cv h2{color:${C.ink}}
-.cv .lede{font-size:17px;line-height:1.45;font-weight:600;max-width:370px;margin-top:16px}
+.cv .lede{font-size:17px;line-height:1.45;font-weight:600;max-width:330px;margin-top:16px}
 .cv-art{position:absolute;right:26px;bottom:0}
 .cv-low{position:absolute;left:52px;right:52px;top:${Math.round(H * 0.6) + 22}px}
 .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
@@ -399,32 +425,37 @@ body.lowink .cv h2{color:${C.ink}}
 .step>b{flex:none;width:30px;height:30px;border-radius:50%;background:${C.ink};color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-family:"Fredoka",sans-serif;font-size:17px;font-weight:600}
 body.lowink .step>b{background:#FFFFFF;color:${C.ink};box-shadow:inset 0 0 0 2px ${C.ink}}
 .step h4,.way h4,.mv h4,.rule h4,.tb h4,.qa h4,.nx h4,.pmap h4,.prepbox h4,.why h4,.shb h4,.bonus h4{font-size:16px;margin:0 0 4px}
-.step p,.way p,.mv p,.rule p,.tb p,.qa p,.nx p,.pmap p,.prepbox p,.why p,.shb p,.bonus p{font-size:12.2px;line-height:1.45}
+.step p,.way p,.mv p,.rule p,.tb p,.qa p,.nx p,.pmap p,.prepbox p,.why p,.shb p,.bonus p{font-size:13.4px;line-height:1.48}
 .ways{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .way{background:${C.wash};border-radius:16px;padding:12px 14px;border-top:6px solid var(--c)}
 .note{display:flex;gap:14px;align-items:center;background:${C.tSun};border-radius:16px;padding:12px 16px;margin-top:16px;font-size:13px;line-height:1.5}
 .why{background:${C.wash};border-radius:16px;padding:14px 16px;margin-top:14px}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.wk{background:${C.tSky};border-radius:14px;padding:10px 6px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:5px}
+.wk b{font-family:"Fredoka",sans-serif;font-weight:600;font-size:14px}
+.wk span{font-size:11px;font-weight:800;line-height:1.2}
+.wk em{font-style:normal;font-size:10px;font-weight:700;color:#3C4760}
 .moves{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .mv{background:${C.tSky};border-radius:16px;padding:12px 14px}
 .mv .ex{margin-top:6px;font-weight:800;color:${D.sky}}
 body.lowink .mv .ex{color:${C.ink}}
 .lang{display:flex;gap:10px;align-items:flex-start;background:${C.wash};border-radius:14px;padding:10px 14px;margin-top:12px;font-size:12.5px;line-height:1.45}
 .anat{display:grid;grid-template-columns:1fr;gap:10px}
-.anat-card{transform:scale(.72);transform-origin:top left;height:${Math.round(cardH * 0.72)}px;width:${Math.round((W - 96) * 0.72)}px}
+.anat-card{transform:scale(.7);transform-origin:top left;height:${Math.round(cardH * 0.7)}px;width:${Math.round((W - 96) * 0.7)}px}
 .anat-card .card{width:${W - 96}px;height:${cardH}px}
-.anat{grid-template-columns:${Math.round((W - 96) * 0.72)}px 1fr}
-.anat-key{margin:0;padding-left:18px;font-size:11.4px;line-height:1.42}
+.anat{grid-template-columns:${Math.round((W - 96) * 0.7)}px 1fr}
+.anat-key{margin:0;padding-left:18px;font-size:12px;line-height:1.42}
 .anat-key li{margin-bottom:5px}
 .anat-key .chip{font-size:9.5px;padding:1px 7px 1px 5px}
 /* safety */
-.rules{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.rule{display:flex;gap:10px;background:${C.tTomato};border-radius:16px;padding:12px 14px}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.rule{display:flex;gap:12px;background:${C.tTomato};border-radius:16px;padding:16px 16px}
 .rule .mi{margin-top:2px}
 .note2{margin-top:16px;background:${C.wash};border-radius:12px;padding:10px 14px}
 /* pantry */
 .pantry{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
-.pi{display:flex;flex-direction:column;background:${C.tGrass};border-radius:12px;padding:8px 12px;font-size:12.5px;font-weight:700}
-.pi em{font-style:normal;font-weight:800;font-size:10.5px;color:${D.grass};margin-top:2px}
+.pi{display:flex;flex-direction:column;background:${C.tGrass};border-radius:12px;padding:10px 12px;font-size:13.5px;font-weight:700}
+.pi em{font-style:normal;font-weight:800;font-size:11.5px;color:${D.grass};margin-top:2px}
 body.lowink .pi em{color:${C.ink}}
 .twobox{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
 .tb{display:flex;gap:10px;background:${C.wash};border-radius:16px;padding:12px 14px}
@@ -435,7 +466,7 @@ body.lowink .pi em{color:${C.ink}}
 .board{flex:1;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(6,1fr);gap:10px;margin-top:4px}
 .bc{position:relative;background:${C.wash};border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 8px 10px;border:3px solid var(--c)}
 .bn{position:absolute;left:10px;top:6px;font-family:"Fredoka",sans-serif;font-weight:600;font-size:24px;line-height:1}
-.bt{font-size:10.5px;font-weight:800;text-align:center;line-height:1.2;margin-top:4px;max-width:140px}
+.bt{font-size:12px;font-weight:800;text-align:center;line-height:1.2;margin-top:4px;max-width:140px}
 .spot{position:absolute;right:9px;top:9px;width:26px;height:26px;border-radius:50%;border:2px dashed #8C96AA;background:#FFFFFF}
 .bl{position:absolute;left:12px;right:12px;bottom:12px;top:40px;border-bottom:1.4px solid #8C96AA}
 /* list */
@@ -467,28 +498,31 @@ body.lowink .day span{color:${C.ink}}
 .ch-flags .chip{background:#FFFFFF}
 .ch-flags .flag{background:#FFFFFF}
 .disc{flex:none;width:94px;height:94px;border-radius:50%;background:#FFFFFF;display:flex;align-items:center;justify-content:center}
-.meta{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:11.2px;font-weight:700;padding:0 4px;color:#2A3550}
+.meta{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:12.4px;font-weight:700;padding:0 4px;color:#2A3550}
 .meta span{display:inline-flex;align-items:center;gap:5px}
 .meta .nb{color:${D.grass};font-weight:800}
 body.lowink .meta .nb{color:${C.ink}}
 .cbody{flex:1;display:grid;grid-template-columns:1.18fr 1fr;gap:14px;min-height:0}
-.cleft,.cright{display:flex;flex-direction:column;gap:7px;min-height:0}
-.need{font-size:12px;line-height:1.4}
-.how{font-size:13.6px;line-height:1.46}
+.cleft,.cright{display:flex;flex-direction:column;gap:9px;min-height:0}
+.need{font-size:14px;line-height:1.4}
+.how{list-style:none;margin:2px 0 0;padding:0;display:flex;flex-direction:column;gap:7px;counter-reset:st}
+.how li{counter-increment:st;position:relative;padding-left:32px;font-size:15px;line-height:1.42}
+.how li::before{content:counter(st);position:absolute;left:0;top:0;width:23px;height:23px;border-radius:50%;background:var(--t);color:${C.ink};font-family:"Fredoka",sans-serif;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center}
+body.lowink .how li::before{background:#FFFFFF;box-shadow:inset 0 0 0 1.6px ${C.ink}}
 .talk{margin-top:auto;display:flex;gap:8px;align-items:flex-start;background:var(--t);border-radius:14px;padding:9px 12px}
 .talk em{display:block;font-style:normal;font-size:9.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--d)}
 body.lowink .talk em{color:${C.ink}}
-.talk p{font-size:14.5px;font-weight:800;line-height:1.3;margin-top:1px}
-.ez{display:flex;gap:7px;align-items:flex-start;font-size:11.8px;line-height:1.4}
+.talk p{font-size:17px;font-weight:800;line-height:1.3;margin-top:1px}
+.ez{display:flex;gap:8px;align-items:flex-start;font-size:13.6px;line-height:1.42;padding-bottom:7px;border-bottom:1px solid ${C.wash}}
 .ez .mi{margin-top:1px}
-.sf{margin-top:auto;display:flex;gap:7px;align-items:flex-start;font-size:11.8px;line-height:1.4;background:${C.tTomato};border-radius:12px;padding:8px 11px}
+.sf{margin-top:auto;display:flex;gap:8px;align-items:flex-start;font-size:13.4px;line-height:1.42;background:${C.tTomato};border-radius:12px;padding:8px 11px}
 .hunt{display:flex;gap:6px;flex-wrap:wrap}
 .hi{display:inline-flex;align-items:center;gap:4px;background:${C.wash};border-radius:10px;padding:2px 8px 2px 4px;font-size:10.5px;font-weight:800}
 .hi em{font-style:normal}
 .tick{display:inline-block;width:14px;height:14px;border:1.6px solid #8C96AA;border-radius:3px;background:#FFFFFF}
 body.lowink .hi{background:#FFFFFF;box-shadow:inset 0 0 0 1.2px ${C.line}}
 /* tags */
-.taghead{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:10px}
+.taghead{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
 .tags{flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr);border-top:1.6px dashed #8C96AA;border-left:1.6px dashed #8C96AA}
 .tag{border-right:1.6px dashed #8C96AA;border-bottom:1.6px dashed #8C96AA;padding:12px}
 .tg-in{width:100%;height:100%;border-radius:18px;background:var(--c);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
@@ -504,15 +538,15 @@ body.lowink .cert-in{border-color:#8C96AA}
 .cert-our{font-size:56px;color:${D.tomato};margin:6px 0 0;line-height:1}
 body.lowink .cert-our{color:${C.ink}}
 .cert-art{margin-top:6px}
-.flakes{display:grid;grid-template-columns:repeat(12,1fr);gap:6px 10px;margin-top:10px}
+.flakes{display:grid;grid-template-columns:repeat(12,1fr);gap:10px 14px;margin-top:14px}
 body.color .flakes .fk{fill:#FFFFFF}
-.cert-sub{font-size:12.5px;font-weight:700;margin-top:6px}
-.cert-lines{width:100%;display:grid;grid-template-columns:1.6fr 1fr;gap:20px;margin-top:auto;text-align:left;font-size:12px;font-weight:800}
+.cert-sub{font-size:14px;font-weight:700;margin-top:10px}
+.cert-lines{width:100%;display:grid;grid-template-columns:1.6fr 1fr;gap:20px;margin-top:auto;text-align:left;font-size:14px;font-weight:800}
 .cert-lines .field{height:28px;margin-top:4px;background:transparent}
 .posting{font-size:11px;font-weight:700;margin-top:12px;color:#3C4760}
 /* answers */
-.faq{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.qa{background:${C.wash};border-radius:14px;padding:10px 14px}
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.qa{background:${C.wash};border-radius:14px;padding:13px 16px}
 .pmap{margin-top:12px;background:${C.tSky};border-radius:14px;padding:10px 14px}
 /* more */
 .nexts{display:flex;flex-direction:column;gap:10px}
@@ -523,9 +557,11 @@ body.color .flakes .fk{fill:#FFFFFF}
 .colophon{margin-top:auto;border-top:1.5px solid ${C.wash};padding-top:10px}
 .colophon p{font-size:10.2px;line-height:1.5;margin-top:4px}
 /* start here */
+.sh-logo{height:28px;margin-bottom:18px;align-self:flex-start}
+.sh-tiles .tile{background:${C.wash}}
 .sh-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
 .files{list-style:none;margin:0 0 6px;padding:0;display:flex;flex-direction:column;gap:6px}
-.files li{display:flex;gap:12px;align-items:baseline;background:${C.wash};border-radius:10px;padding:8px 12px;font-size:12.5px}
+.files li{display:flex;gap:12px;align-items:baseline;background:${C.wash};border-radius:10px;padding:9px 14px;font-size:13.5px}
 .files b{min-width:230px;font-weight:800}
 .sh-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
 .shb{background:${C.tSky};border-radius:16px;padding:12px 14px}
@@ -587,7 +623,9 @@ function build(edition, ink, size) {
   JOBS.push({ html: file, pdf: raw, fields: fj });
   FINISH.push({ in: raw, out: path.join(PDIR, pdfName), fields: fj, title: `${PRODUCT} (${ink === 'lowink' ? 'Low-ink' : 'Color'}, ${ctx.sizeName})`, edition, version: ctx.version, toc: TOC, ...META });
   if (edition === 'store' && size === 'letter') JOBS.push({ html: file, pages: { dir: path.join(PDIR, 'preview', ink === 'lowink' ? 'low-ink' : ''), scale: 1.5 } });
-  if (edition === 'etsy' && size === 'a4' && ink === 'color') JOBS.push({ html: file, pages: { dir: path.join(__dirname, 'tmp', 'etsy-a4'), scale: 1 } });
+  // Etsy-edition page images (no web address) feed the listing images; the cover PNG comes from the store edition.
+  if (edition === 'etsy' && size === 'letter') JOBS.push({ html: file, pages: { dir: path.join(__dirname, 'tmp', `etsy-${ink}`), scale: 1.5 } });
+  if (edition === 'store' && size === 'letter' && ink === 'color') JOBS.push({ html: file, pages: { dir: path.join(__dirname, 'tmp', 'cover'), selector: 'section.page:first-of-type', scale: 1600 / 1056 } });
   if (edition === 'store' && ink === 'color' && size === 'letter') {
     // committed source: the store edition, color, US Letter, with paths relative to the product folder
     const c2 = K.context({ edition, ink, size, outDir: PDIR, product: PRODUCT });

@@ -47,6 +47,7 @@ function ageRange(text) {
 }
 
 const SCHOOL_RX = /\b(classroom|teachers?|school|child-care|childcare|daycare|day care|library|libraries|PTAs?|PTOs?|storytime|site licen[cs]es?|group licen[cs]es?|in class|preschool staff|centers?|centres?|purchase orders?|quote)\b/i;
+const G1_RX = /\b(?:[5-9]|1[0-2])\s*[–-]\s*(?:8|9|1[0-2])\b|\b[0-4]\s*[–-]\s*1[0-2]\b(?!\s*months)|school[- ]age|big kids?|tweens?|first phone|\bteens?\b|\bgrades?\b/i;
 const INTERNAL_RX = /\[|\bVERIFY\b|UNVERIFIED|\bFOUNDER\b|\bTODO\b|amazon_route|listing\.json|price_floor|\{\{/;
 
 function priceKnown(listing, price) {
@@ -79,8 +80,12 @@ function load(opts = {}) {
     for (const k of ['title', 'alt_text', 'price_usd', 'seo_title', 'seo_description', 'short_description']) {
       if (L[k] == null || L[k] === '') errors.push(`${L._file}: missing ${k}`);
     }
-    const range = ageRange(L.ages);
-    const bands = range ? config.bands.filter(b => range[0] < b.hi && range[1] > b.lo).map(b => b.key) : [];
+    // Ages 5–12 (G1) material waits for counsel: while that gate is closed the site shows the
+    // G0 edition (config g0.ages and g0 copy) and files products only under the bands below 5.
+    const g0 = !gates.ages5to12.open && c.g0 ? c.g0 : null;
+    const range = ageRange(g0 ? g0.ages : L.ages);
+    let bands = range ? config.bands.filter(b => range[0] < b.hi && range[1] > b.lo).map(b => b.key) : [];
+    if (!gates.ages5to12.open) bands = bands.filter(k => config.bands.find(b => b.key === k).lo < 5);
     const buyKey = 'buy_' + L.slug.replace(/-/g, '_');
     const formats = (c.formats || []).map(f => {
       const out = { ...f };
@@ -102,10 +107,12 @@ function load(opts = {}) {
     for (const k of (c.also || [])) if (links[k] && !formats.some(f => f.buyKey === k)) also.push({ key: k, url: links[k] });
     if ((L.channels || []).some(ch => /^Etsy/i.test(ch)) && links.etsy) also.push({ key: 'etsy', url: links.etsy });
 
-    const cut = s => gates.schools.open ? s : String(s).split(/(?<=[.!?])\s+/).filter(x => !SCHOOL_RX.test(x)).join(' ');
-    const long = String(L.long_description || '').split(/\n\s*\n/).map(cut).map(s => s.trim()).filter(Boolean);
-    const bullets = (L.bullets || []).map(cut).map(s => s.trim()).filter(Boolean);
-    const faq = (L.faq || []).filter(q => {
+    const cut = s => String(s).split(/(?<=[.!?])\s+/).filter(x => (gates.schools.open || !SCHOOL_RX.test(x)) && (gates.ages5to12.open || !G1_RX.test(x))).join(' ');
+    const long = g0 ? g0.long : String(L.long_description || '').split(/\n\s*\n/).map(cut).map(s => s.trim()).filter(Boolean);
+    const bullets = g0 ? g0.bullets : (L.bullets || []).map(cut).map(s => s.trim()).filter(Boolean);
+    const faq = (g0 ? [] : (L.faq || [])).filter(q => {
+      if (/available now|in stock|ships? (today|now)/i.test(q.a)) return false;               // nothing is on sale yet
+      if (!gates.ages5to12.open && G1_RX.test(q.q + ' ' + q.a)) return false;
       const t = q.q + ' ' + q.a;
       if (INTERNAL_RX.test(t)) return false;
       if (/\bEtsy\b|Purchases page/i.test(t)) return false;                     // marketplace-only answers
@@ -126,8 +133,9 @@ function load(opts = {}) {
       formats, priced, minPrice: Math.min(...priced.map(f => f.price)),
       available: priced.some(f => f.buyUrl), also,
       cover: c.cover || { src: 'cover.png' }, gallery: c.gallery || [{ src: 'cover.png', altFrom: 'alt_text' }],
-      isbn: !!c.isbn, alt: L.alt_text, short: L.short_description, long, bullets, faq,
-      seoTitle: L.seo_title, seoDescription: L.seo_description,
+      isbn: !!c.isbn, alt: L.alt_text, short: g0 ? g0.short : L.short_description, long, bullets, faq, g0: !!g0,
+      seoTitle: g0 ? g0.seoTitle : L.seo_title, seoDescription: g0 ? g0.seoDescription : L.seo_description,
+      made: ((/Product page line: '(?:How this was made: )?(.+?)'(?=\s+Add|\s*$)/.exec((L.ai_disclosure || {}).site || '') || [])[1] || ''),
       nextRaw: L.next_products || [], cfg: c
     });
   }
@@ -210,4 +218,4 @@ function load(opts = {}) {
   return { ROOT, SITE, config, env, links, listings, products, bySlug, hidden, bundles, words, course, bonusNames, errors, warnings, gates };
 }
 
-module.exports = { load, ageRange, loadLinks, ROOT, SITE };
+module.exports = { load, ageRange, loadLinks, ROOT, SITE, G1_RX, SCHOOL_RX };

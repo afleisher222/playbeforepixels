@@ -29,10 +29,12 @@ function view(ctx, state) {
     name = type.label;
     lede = type.lede;
     path = type.path;
-    title = type.key === 'books' ? 'Talk-Along Books to Read Together | Play Before Pixels' : 'Printables for Families: Play Cards, Busy Books, Routines';
-    desc = type.key === 'books'
-      ? 'Talk-along and read-aloud picture books with a grown-up tip on every page, printed to order. For babies to age 7.'
-      : 'Printable play cards, routine cards and busy-book pages in US Letter and A4, in color and low-ink. Print at home tonight.';
+    title = { books: 'Talk-Along Books to Read Together | Play Before Pixels', printables: 'Printables for Families: Play Cards, Busy Books, Routines', bundles: 'Printable Play Bundles, One Plain Price | Play Before Pixels' }[type.key];
+    desc = {
+      books: 'Talk-along and read-aloud picture books with a grown-up tip on every page, printed to order. For babies to age 7.',
+      printables: 'Printable play cards, routine cards and busy-book pages in US Letter and A4, in color and low-ink. Print at home tonight.',
+      bundles: 'Sets of our printables for young children at one plain price below the parts. Every part and every price listed, no “was” prices.'
+    }[type.key];
   } else {
     name = 'Everything we make';
     lede = 'Talk-along books, printables and a written course, sorted by age. Pick an age or a type to narrow it down.';
@@ -43,18 +45,46 @@ function view(ctx, state) {
   return { band, type, shown, all, name, lede, path, title, desc };
 }
 
+function bundleDetails(ctx) {
+  const { stack, buy } = require('../partials/bits');
+  const { money } = require('../lib/util');
+  return `<section class="section bundles-sec" aria-labelledby="bd-h">
+  <div class="wrap">
+    <div class="section-head"><div><p class="eyebrow">What is in each set</p><h2 class="h2" id="bd-h">Every part, every price.</h2></div>
+      <p class="lede measure">Each set is a fixed group of our printables at one plain price, below the parts’ everyday prices added up. No countdowns, no “was” prices.</p></div>
+    <div class="bd-list">
+    ${ctx.bundles.map(b => `<article class="bd" id="${b.id}" aria-labelledby="${b.id}-h">
+      <div class="surface g-${b.ground} bd-vis">${stack(ctx, b.parts, { label: 'The printables in ' + b.name })}</div>
+      <div class="bd-copy">
+        <p class="eyebrow">${b.parts.length} parts · ages ${esc(b.ageText)}</p>
+        <h3 class="h2 bd-h" id="${b.id}-h">${esc(b.name)}</h3>
+        <p class="lede">${esc(b.line)}</p>
+        <table class="price-table"><caption class="visually-hidden">What is in ${esc(b.name)}</caption>
+          <thead><tr><th scope="col">Part</th><th scope="col">Format</th><th scope="col" class="r">On its own</th></tr></thead>
+          <tbody>${b.parts.map(x => `<tr><th scope="row"><a href="${x.p.url}">${esc(x.p.name)}</a></th><td>${esc(x.f.label)}</td><td class="r num">${money(x.f.price)}</td></tr>`).join('')}</tbody>
+          <tfoot><tr><th scope="row">The set</th><td>One price for all ${b.parts.length}</td><td class="r num">${money(b.price)}</td></tr></tfoot>
+        </table>
+        ${b.buyUrl ? `<a class="btn" href="${esc(b.buyUrl)}" rel="noopener">Buy the set · ${money(b.price)}</a>` : '<div class="soon"><p class="soon-pill">Available soon</p><p class="soon-note">The set goes on sale together with its parts. Nothing can be bought or charged yet.</p></div>'}
+      </div>
+    </article>`).join('\n')}
+    </div>
+  </div>
+</section>`;
+}
+
 function render(ctx, state) {
   const C = ctx.cfg;
   const v = view(ctx, state);
   const trail = [{ name: 'Home', url: '/' }, { name: 'Shop', url: '/shop/' }];
   if (v.band || v.type) trail.push({ name: v.name, url: v.path });
-  const tabs = [`<li><a href="/shop/${v.type && v.type.key !== 'bundles' && v.type.key !== 'course' ? v.type.key + '/' : ''}" class="tab tab--all" data-f-age=""${!v.band ? ' aria-current="true"' : ''}><b>All ages</b><span>0–12</span></a></li>`,
+  const maxAge = Math.max(...C.bands.filter(b => ctx.countBand(b.key)).map(b => b.hi));
+  const tabs = [`<li><a href="${v.type ? v.type.path : '/shop/'}" class="tab tab--all" data-f-age=""${!v.band ? ' aria-current="true"' : ''}><b>All</b><span>ages 0–${maxAge}</span></a></li>`,
     ...C.bands.map(b => ctx.countBand(b.key)
       ? `<li><a href="/shop/ages/${b.key}/" class="tab r-${b.color}" data-f-age="${b.key}"${v.band && v.band.key === b.key ? ' aria-current="true"' : ''}><b>${b.label}</b><span>${b.name}</span></a></li>`
       : `<li><span class="tab tab--off r-${b.color}"><b>${b.label}</b><span>coming later</span></span></li>`)].join('');
   const chip = (key, label, href) => `<a class="chip" href="${href}" data-f-type="${key}" aria-pressed="${(v.type ? v.type.key : '') === key}">${label}</a>`;
   const chips = [chip('', 'All types', v.band ? `/shop/ages/${v.band.key}/` : '/shop/'),
-    ...C.types.map(t => chip(t.key, esc(t.label), t.key === 'books' || t.key === 'printables' ? t.path : `/shop/?type=${t.key}`))].join('');
+    ...C.types.filter(t => t.key !== 'course').map(t => chip(t.key, esc(t.label), t.path))].join('');
 
   const cards = v.shown.map((p, i) => card(ctx, p, { h: 2, order: i, sizes: '(max-width: 760px) 40vw, (max-width: 1060px) 26vw, 18vw' }));
   const first = cards.slice(0, LIMIT).join('\n');
@@ -87,7 +117,13 @@ ${first}
       <a class="link" href="/shop/" data-reset>Show everything ${I.arr}</a>
     </div>
     <template data-all-cards>${allCards}</template>
+    <script type="application/json" data-shop-cfg>${JSON.stringify({
+      limit: LIMIT, allName: 'Everything we make', allLede: view(ctx, {}).lede, titleBase: 'Shop | Play Before Pixels',
+      bands: Object.fromEntries(C.bands.filter(b => ctx.countBand(b.key)).map(b => [b.key, { label: b.label, name: `Ages ${b.label}: ${b.name.toLowerCase()}`, lede: view(ctx, { age: b.key }).lede }])),
+      types: Object.fromEntries(C.types.filter(t => t.key !== 'course').map(t => [t.key, { label: t.label, path: t.path, lede: t.lede }]))
+    }).replace(/</g, '\\u003c')}</script>
   </section>
+  ${v.type && v.type.key === 'bundles' ? bundleDetails(ctx) : ''}
   <section class="section section--wash shop-help" aria-labelledby="sh-h">
     <div class="wrap sh-grid">
       <div><p class="eyebrow">Before you buy</p><h2 class="h2" id="sh-h">Plain answers, one click away.</h2></div>

@@ -20,7 +20,7 @@ module.exports = function home(ctx) {
   const pn = s => +(/p(\d+)/.exec(s) || [0, 0])[1];
 
   const hero = `<section class="hero" aria-labelledby="hero-h">
-  <div class="hero-grid">
+  <div class="wrap hero-grid">
     <div class="hero-title">
       <p class="eyebrow">Talk-along books &amp; paper play · ages 0–${maxAge}</p>
       <h1 class="display" id="hero-h">One word<br>for them.<br><span class="hl">One tip</span><br>for you.</h1>
@@ -39,7 +39,7 @@ module.exports = function home(ctx) {
 
   // ---- 2. Shop by age: the saturated ruler ----
   const minor = { '0-1': 12, '1-3': 4, '3-5': 4, '5-8': 3, '8-12': 4 };
-  const ruler = `<section class="section section--wash ages" aria-labelledby="ages-h">
+  const ruler = `<section class="section section--wash ages-sec" aria-labelledby="ages-h">
   <div class="wrap">
     <div class="section-head">
       <div><p class="eyebrow">Shop by age</p><h2 class="h2" id="ages-h">Start where your child is.</h2></div>
@@ -51,10 +51,11 @@ module.exports = function home(ctx) {
         const p = ctx.bySlug[C.home.rulerShelf[b.key]];
         const obj = p && n ? `<span class="shelf-obj">${mock(ctx, p, { sizes: '160px', widths: [240, 480] })}</span>` : '<span class="shelf-obj shelf-obj--empty"></span>';
         const inner = `${obj}<span class="scale" style="--ticks:${minor[b.key] || 4}"><span class="num0">${b.lo}</span>${i === C.bands.length - 1 ? `<span class="end">${b.hi}</span>` : ''}</span>
-          <span class="band-l"><b>${b.label}<small> ${b.unit}</small></b><span>${b.name}${n ? ` · ${n} ${n === 1 ? 'thing' : 'things'}` : ' · coming later'}</span></span>`;
+          <span class="band-l"><b>${b.label}<small> ${b.unit}</small></b><span>${b.name}<small>${n ? `${n} to choose from` : 'coming later'}</small></span></span>`;
         return `<li class="r-${b.color}" style="--span:${b.hi - b.lo}">${n ? `<a class="seg" href="/shop/ages/${b.key}/">${inner}</a>` : `<span class="seg seg--off">${inner}</span>`}</li>`;
       }).join('\n      ')}
     </ol>
+    ${ctx.gates.ages5to12.open ? '' : '<p class="ruler-note">Books and printables for ages 5 to 12 are on the way. Until then, everything here is for babies, toddlers and preschoolers.</p>'}
   </div>
 </section>`;
 
@@ -122,7 +123,7 @@ module.exports = function home(ctx) {
       <a class="btn" href="/free/">Get the free printable ${I.arr}</a>
       ${course ? `<div class="course-note">
         <p class="kicker">Want the whole month?</p>
-        <p><a class="course-link" href="${course.url}"><b>${esc(course.name)}</b></a> is a written program: one short lesson and one easy play each morning for 30 days, by email, with an 89-page workbook. No videos, no calls. <span class="num">${money(course.minPrice)}</span>${course.available ? '' : ', opening soon'}.</p>
+        <p><a class="course-link" href="${course.url}"><b>${esc(course.name)}</b></a> is a written program: one short lesson and one easy play each morning for 30 days, by email, with a printable workbook. No videos, no calls. <span class="num">${money(course.minPrice)}</span>${course.available ? '' : ', opening soon'}.</p>
       </div>` : ''}
     </div>
   </div>
@@ -136,6 +137,7 @@ module.exports = function home(ctx) {
       <p class="col-big">Founded by a parent and educator.</p>
       <p>We make things you can hold: books, cards and printable pages. No apps, no accounts, no coaching and no live sessions. Just paper, talk and play.</p>
       <p class="col-links"><a class="link" href="/about/">About us ${I.arr}</a><a class="link" href="/research/">Research notes ${I.arr}</a></p>
+      <p class="col-figure"><b class="num">194</b>fewer conversational turns per day, linked with screen time at 36 months (Brushe ME et al., <i>JAMA Pediatrics</i> 2024). An association, not proof that screens cause it.</p>
     </div>
     <dl class="col-table">
       <div><dt>Made by</dt><dd>Play Before Pixels, a trade name of AlphaPlay LLC</dd></div>

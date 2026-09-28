@@ -91,6 +91,7 @@ const AGES = {
   '1-2': { word: '1–2 yrs', long: '1 to 2 years', c: C.grass, t: C.tGrass, d: D.grass, shape: 'sq' },
   '2-3': { word: '2–3 yrs', long: '2 to 3 years', c: C.sun, t: C.tSun, d: D.sun, shape: 'star' },
   '3-5': { word: '3–5 yrs', long: '3 to 5 years', c: C.tomato, t: C.tTomato, d: D.tomato, shape: 'dot' },
+  '1+': { word: 'from 1 yr', long: 'Best from 1 year', c: C.grass, t: C.tGrass, d: D.grass, shape: 'sq' },
   '2+': { word: 'from 2 yrs', long: 'Best from 2 years', c: C.sun, t: C.tSun, d: D.sun, shape: 'star' },
   '3+': { word: 'from 3 yrs', long: 'Best from 3 years', c: C.tomato, t: C.tTomato, d: D.tomato, shape: 'dot' },
 };

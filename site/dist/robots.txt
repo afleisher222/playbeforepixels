@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /search/
+Disallow: /bonus/
+Disallow: /thank-you/
+
+Sitemap: https://playbeforepixels.com/sitemap.xml

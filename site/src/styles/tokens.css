@@ -1,0 +1,42 @@
+/* Tokens (DESIGN-SYSTEM §2). Components never use raw hex. */
+:root {
+  --ink: #1D2940;
+  --ink-2: #47526B;          /* secondary text, 7.4:1 on white */
+  --ink-3: #5E6883;          /* tertiary / meta: 5.5:1 on white, >=4.59:1 on every brand tint */
+  --paper: #FFFFFF;
+  --wash: #F3F6FB;
+  --rule: #D8DEE9;
+  --rule-2: #E7EBF2;
+  --tomato: #EE5A36;
+  --tomato-ink: #BF3A19;     /* tomato for text on white, 5.1:1 */
+  --sun: #F5B820;
+  --sky: #3D86D8;
+  --sky-ink: #2366B3;
+  --grass: #2FA36B;
+  --grass-ink: #1E7A4D;
+  --plum: #8A5CC7;
+  --tomato-t: #FDE9E3;
+  --sun-t: #FEF4D8;
+  --sky-t: #E3EEFA;
+  --grass-t: #DFF3E9;
+  --plum-t: #EFE6FA;
+  --mat: #1D2940;            /* cutting mat */
+
+  --f-display: "Bricolage Grotesque", "Nunito Sans", system-ui, sans-serif;
+  --f-body: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-word: "Fredoka", "Nunito Sans", sans-serif;
+  --f-hand: "Caveat", "Nunito Sans", cursive;
+
+  --gutter: clamp(16px, 4vw, 56px);
+  --maxw: 1320px;
+  --header-h: 76px;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+
+  --lift: 0 1px 0 rgba(29, 41, 64, .06), 0 2px 3px rgba(29, 41, 64, .08), 0 14px 24px -12px rgba(29, 41, 64, .28);
+  --lift-hi: 0 1px 0 rgba(29, 41, 64, .06), 0 4px 6px rgba(29, 41, 64, .08), 0 26px 40px -16px rgba(29, 41, 64, .34);
+  --grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .11  0 0 0 0 .16  0 0 0 0 .25  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  --fibre: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='.012 .09' numOctaves='2' seed='4'/><feColorMatrix values='0 0 0 0 .11  0 0 0 0 .16  0 0 0 0 .25  0 0 0 .22 -.04'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>");
+  --torn: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 26' preserveAspectRatio='none'><path d='M0 0 H640 V10 L640.0 11.1 L636.6 14.7 L625.9 12.9 L615.9 8.1 L612.1 9.3 L606.3 6.7 L594.3 11.0 L585.5 9.7 L577.1 7.1 L569.5 7.4 L557.7 8.1 L554.2 9.6 L544.2 9.8 L532.3 8.2 L523.2 9.3 L511.7 6.1 L507.9 8.1 L504.6 12.5 L496.2 20.7 L487.0 14.2 L476.6 6.7 L469.8 8.1 L464.2 7.8 L456.3 6.2 L446.5 12.8 L439.0 10.7 L430.0 10.0 L425.3 14.5 L415.4 10.5 L411.2 7.8 L399.9 11.7 L387.9 8.8 L383.2 12.5 L377.1 11.6 L371.0 14.0 L364.3 9.6 L353.4 8.2 L346.6 14.6 L334.7 13.9 L331.3 12.2 L327.2 7.0 L323.9 12.4 L314.6 17.2 L309.7 8.4 L300.6 14.7 L295.9 6.2 L284.6 14.2 L281.6 7.1 L270.5 8.1 L259.6 12.2 L252.2 8.1 L243.6 8.2 L240.5 12.9 L229.3 14.0 L218.4 7.2 L210.0 7.3 L201.4 15.0 L197.7 9.7 L194.0 7.0 L183.1 9.5 L177.1 11.3 L171.8 9.6 L160.4 10.5 L152.7 11.7 L142.0 14.2 L136.9 10.8 L130.9 9.3 L125.3 7.5 L117.7 12.0 L111.6 17.1 L106.8 10.6 L98.8 16.1 L89.2 14.4 L83.6 8.7 L79.2 13.5 L73.2 14.2 L62.0 11.8 L52.8 10.6 L48.7 14.3 L41.5 17.8 L32.1 8.2 L21.7 12.2 L13.9 12.8 L7.9 12.6 L3.0 14.3 L0 10 Z'/></svg>");
+
+  color-scheme: light;
+}

@@ -17,7 +17,7 @@ function head(ctx, pg) {
   const hub = !!pg.hub;
   const ld = (pg.jsonld || []).map(jsonld).join('\n');
   return `<!doctype html>
-<html lang="en" data-page="${esc(pg.key || '')}">
+<html lang="en" data-page="${esc(pg.key || '')}" data-nav="${esc(pg.nav || '')}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,9 +26,8 @@ function head(ctx, pg) {
 <link rel="canonical" href="${url}">
 ${alt}
 ${robots}
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#111827" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
 <meta property="og:site_name" content="${esc(S.name)}">
 <meta property="og:type" content="${pg.ogType || 'website'}">
 <meta property="og:title" content="${esc(pg.ogTitle || title)}">
@@ -40,15 +39,14 @@ ${robots}
 <meta property="og:image:alt" content="${esc(pg.ogAlt || S.name)}">
 <meta property="og:locale" content="${S.locale}">
 <meta name="twitter:card" content="summary_large_image">
-${hub ? '' : `<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">`}
-${hub ? `<style>${ctx.assets.hubCss}</style>` : `<link rel="preload" href="${ctx.assets.fontPreload[0]}" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="${ctx.assets.fontPreload[1]}" as="font" type="font/woff2" crossorigin>
+<link rel="manifest" href="/site.webmanifest">
+${ctx.assets.fontPreload.map(f => `<link rel="preload" href="${f}" as="font" type="font/woff2" crossorigin>`).join('\n')}
 <link rel="stylesheet" href="${ctx.assets.fontsCss}">
 <link rel="stylesheet" href="${ctx.assets.css}">
-<script src="${ctx.assets.js}" defer></script>`}
+${hub ? '' : `<script src="${ctx.assets.js}" defer></script>`}
 ${ld}
 </head>`;
 }
@@ -222,7 +220,7 @@ ${analytics(ctx, pg)}
 function hubPage(ctx, pg, body) {
   const S = ctx.cfg.site;
   return `${head(ctx, { ...pg, hub: true })}
-<body class="hub">
+<body class="hub" data-page="${esc(pg.key || '')}">
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="hub-header"><div class="wrap hub-mast">
   <a class="brand" href="/research/"><img src="/assets/brand/lockup-horizontal.svg" alt="Play Before Pixels ${esc(S.hubName)}" width="262" height="32"></a>

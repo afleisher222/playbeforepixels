@@ -1,0 +1,186 @@
+{
+ "slug": "winter-countdown",
+ "title": "24 Days of Play: Winter Countdown, Ages 2–5",
+ "subtitle": "One easy screen-free play a day for 24 winter days, with a talk line and a safety line on every card",
+ "version": "Version 1.0 · September 2026",
+ "etsy_title": "24 Days of Play Winter Countdown for Ages 2-5, Printable Toddler Activity Cards, Cozy Indoor Ideas, Screen-Free, Letter and A4 PDF",
+ "amazon_title": "24 Days of Play: A Winter Countdown Activity Book for Ages 2–5",
+ "format": "Digital download: 5 plain PDFs, no zip. English text. START HERE (1 page) + Color and Low-ink editions, each in US Letter and A4 (25 pages per file). 25 pages = cover + 2-page grown-up guide + safety rules + what you need + countdown board + blank board + all-24 list + 12 play-card pages (2 cards each) + 2 number-tag pages + certificate + good to know + more from Play Before Pixels. Every file has 31 type-in fields (blank board, hunt tick boxes, certificate). Etsy files carry no web address or QR code; the own-store edition adds the bonus QR code.",
+ "trim": "US Letter 8.5 × 11 in and A4 210 × 297 mm (separate files), 0.5 in margins, no bleed. Play cards are half a page (one straight cut per page); number tags are 12 per page on a 3 × 4 straight-line grid, each about 2.3 × 2.1 in. Print at 100% (actual size).",
+ "pages": 25,
+ "ages": "2–5 (every play shows a starting age in months: 17 plays from 24 months, 5 from 30 months, 1 from 36 months, 1 from 42 months)",
+ "activities": "24 plays, one a day, plus a countdown board, a blank board and a certificate. 22 of the 24 need nothing to buy.",
+ "prep_time": "About 15 minutes once to print and cut the 12 card pages and the tags. Each day 0–5 minutes (one play is frozen the night before, about 2 minutes). No-cut option: hang the board and read each day from the list page.",
+ "season": {
+  "list_by": "2026-10-25",
+  "sell_until": "2026-12-05",
+  "note": "Seasonal listing (business/GROWTH-ENGINE.md §2c and §8; marketing/EVENTS-CAMPAIGN-PLAN.md). Deactivate on Dec 5; relist next autumn as the same product with a new version line."
+ },
+ "price_usd": 6.5,
+ "price_notes": "Everyday price $6.50, the same on Etsy and on our own checkout (Gumroad at launch), per ops/QUEUE.md Week 2 (business/GROWTH-ENGINE.md §5a entry tier). Value line: 24 plays, about 27¢ each. Honest pricing (BRAND.md): one everyday price, no 'was', compare-at or anchor price and no countdown timer. It stops selling on Dec 5 because the season ends, not as a pressure tactic: the listing never says 'ending soon'. Never below $5 (commerce/PRICING.md section 1). Not part of either bundle, so no bundle arithmetic depends on it.",
+ "price_floor": 3.0,
+ "price_floor_basis": "$3.00 net per digital sale (commerce/PRICING.md section 2; COMPLIANCE-GATE 18). Every channel's net must stay at or above it, and no repricing or promotion may go below it.",
+ "net_per_unit_by_channel": {
+  "etsy": 5.11,
+  "etsy_offsite_ad_sale": 4.13,
+  "site_gumroad": 4.54,
+  "site_gumroad_discover_sale": 3.74
+ },
+ "margin_pct_by_channel": {
+  "etsy": 79,
+  "etsy_offsite_ad_sale": 64,
+  "site_gumroad": 70,
+  "site_gumroad_discover_sale": 58
+ },
+ "net_notes": "Estimated net per unit in USD, after fees and a 5% refund allowance (GAPS-ROUND-2 G2-11), rounded to the cent. Every fee is UNVERIFIED: no live check was possible on 2026-09-28 (web search unavailable). Same fee model as every other listing (commerce/PRICING.md section 2): Etsy digital $0.20 listing + 6.5% transaction + 3% + $0.25 payment processing, and an Offsite Ads sale adds 15%; Gumroad as merchant of record 10% + $0.50, plus 2.9% + $0.30 card processing counted to be safe; a Gumroad Discover sale costs about 30% instead of 10% + $0.50. Check each fee on the platform's own fee page before listing and replace these numbers.",
+ "short_description": "24 winter plays for ages 2–5, one a day, from things you already have. Talk line and safety line on every card. PDF, Letter and A4.",
+ "long_description": "24 winter plays for ages 2–5, one a day. It is a printable PDF in US Letter and A4, with color and low-ink files.\n\nWinter days can be long and dark. Each card gives the day one small, warm play: paper snowball toss, a blanket bear cave, an ice rescue, a flashlight shadow show, a cozy book nest. 22 of the 24 use only things most homes have.\n\nEvery card shows a starting age in months, prep, mess and a rough play time. It has short steps, one thing to say while you play, an easier way, a harder way, a 2-minute version for tired days and its own safety line.\n\nHang the countdown board and color a circle after each play. Or skip the cutting and read each day from the list page. Start any day, skip days, or play a favorite twice.\n\nIt is a winter countdown for any family: snow, cold and long nights. It is not tied to any holiday or faith.\n\nYou get a 2-page grown-up guide, safety rules, a what-you-need list, a blank board, 24 number tags and a fridge certificate. Type in the blank board and certificate with a free PDF reader.\n\nEvery play follows our published safety rules. Digital file in English; nothing is shipped. Personal license for one household.",
+ "bullets": [
+  "24 winter plays for ages 2–5, one a day, on 12 half-page card pages. Each 25-page file also has a guide, safety rules, boards, tags and a certificate.",
+  "Every card shows a starting age, prep, mess and play time, short steps, a talk line, easier and harder versions, a 2-minute version and a safety line.",
+  "22 of the 24 plays need nothing to buy. About 15 minutes to print and cut once; most days take 0–5 minutes to set up.",
+  "Five plain PDFs: START HERE, color and low-ink, each in US Letter and A4. Type in the blank board, hunt tick boxes and certificate.",
+  "A secular winter theme for any family. Start any day and play in any order. Every play follows our published safety rules."
+ ],
+ "keywords": [
+  "winter countdown",
+  "winter activities",
+  "toddler activities",
+  "snow day activities",
+  "winter printable",
+  "screen free play",
+  "kids countdown"
+ ],
+ "etsy_tags": [
+  "winter countdown",
+  "winter activities",
+  "toddler activities",
+  "snow day activities",
+  "winter printable",
+  "screen free play",
+  "kids countdown",
+  "countdown calendar",
+  "winter break ideas",
+  "indoor activities",
+  "toddler printable",
+  "family activity",
+  "cozy winter"
+ ],
+ "seo_title": "24 Days of Play: Winter Countdown | Play Before Pixels",
+ "seo_description": "24 printable winter plays for ages 2–5, one a day, from things you already have. Talk line and safety line on every card. Letter and A4.",
+ "editable": "Color and low-ink PDFs: type-in boxes on the 24 blank-board squares, 5 tick boxes on the Winter Walk Hunt card, and the certificate's favorite-day and date lines. Text and ticks only; fonts, colors and pictures can't be changed.",
+ "language": "English. The guide and talk page tell families to talk in the language they know best; a sign, a point or a device tap counts.",
+ "license_tiers": [
+  {
+   "tier": "personal",
+   "price_usd": 6.5,
+   "covers": "One household, including grandparents and sitters who care for your child. A gift passes the license to the family that receives it."
+  }
+ ],
+ "faq": [
+  {
+   "q": "What’s inside?",
+   "a": "24 play cards (2 per page), a 2-page grown-up guide, safety rules, a what-you-need list, a countdown board, a blank board, a list of all 24 plays, 24 number tags, a certificate and a quick-answers page."
+  },
+  {
+   "q": "Is it tied to a holiday?",
+   "a": "No. It is a winter countdown for any family: snow, cold, cozy days and long nights. Count down to a break, a trip, a birthday or nothing at all."
+  },
+  {
+   "q": "When should we start?",
+   "a": "Any day. The plays aren’t tied to dates. Many families start on the first of the month; others start the first snowy week or the first day of a break."
+  },
+  {
+   "q": "How long does prep take?",
+   "a": "About 15 minutes once to print and cut. Most days take 0–5 minutes. One play (Ice Rescue) needs 2 minutes the night before. No time to cut? Use the board and the list page."
+  },
+  {
+   "q": "How does delivery work?",
+   "a": "Instant download: nothing ships. On Etsy your files stay on your Purchases page; on our site the link is in your order email. On a phone, use a web browser, not the shopping app."
+  },
+  {
+   "q": "Which file do I print?",
+   "a": "Pick one: US Letter or A4, color or low-ink. Every file has the same 25 pages. START HERE says which pages to print."
+  },
+  {
+   "q": "We have a baby and a preschooler.",
+   "a": "Every card shows its starting age. Let the baby watch from a lap and keep small things out of reach. Many plays have an easier version."
+  },
+  {
+   "q": "Is it safe for toddlers?",
+   "a": "Every play follows our published safety rules and has its own safety line, and every card says “With a grown-up.” You know your child best: skip anything that doesn’t suit them."
+  },
+  {
+   "q": "Is this professional advice?",
+   "a": "No. These are everyday play ideas for families. Questions about your child’s growth or health? Your child’s doctor is a good place to start."
+  },
+  {
+   "q": "Refunds?",
+   "a": "Digital downloads follow the shop’s published refund policy. If a file won’t open or print, we fix it or send it again."
+  }
+ ],
+ "alt_text": "Cover of the printable “24 Days of Play: Winter Countdown”: a tomato-red 24 badge beside a navy title, a smiling grown-up and child beside a snowman on a pale blue winter scene, and a row of play icons such as a bear cave, a penguin and a flashlight.",
+ "listing_images": [
+  "preview/listing-images/listing-01.png: hero with the number first, cover and card pages (thumbnail)",
+  "preview/listing-images/listing-02.png: what's inside, 6 labelled pages",
+  "preview/listing-images/listing-03.png: a play-card page with what every card shows",
+  "preview/listing-images/listing-04.png: three ways to use it (board and blank board)",
+  "preview/listing-images/listing-05.png: color vs low-ink and the 5 files",
+  "preview/listing-images/listing-06.png: secular winter theme and the all-24 list"
+ ],
+ "channels": [
+  "Etsy digital download: upload the 5 PDFs in etsy-upload/ (no web address or QR code inside, COMPLIANCE-GATE 16); 6 listing images; list by Oct 25, deactivate Dec 5",
+  "Play Before Pixels website shop (instant digital delivery, Gumroad at launch): START-HERE.pdf + the 4 store-edition PDFs",
+  "Amazon KDP activity edition later (see amazon_route)"
+ ],
+ "amazon_route": "kdp-activity-edition: later, for winter 2027. Re-flow the 24 plays as an 8.5 × 11 in paperback activity book (one play per page with a coloring panel, plus the guide, safety and certificate pages); the cut-out tags and board become a single-sided fill-in chart. If the interior is black and white, say so in the subtitle. Not built yet: check KDP print cost first [VERIFY].",
+ "ai_disclosure": {
+  "as_of": "2026-09-28",
+  "ai_helped_with": "Claude (an AI model made by Anthropic), working in Claude Code, wrote the draft text (plays, talk lines, guide pages, safety notes and this listing), drew the illustrations as flat vector art in code from the brand's shared symbol and icon library, and built the page layouts and PDF files with scripts.",
+  "humans_did": "The founder, for AlphaPlay LLC, directs the product line and set the brand, safety and honesty rules (brand/BRAND.md) that every draft follows, and gives the final go-ahead before anything is listed. As of 2026-09-28 no person has rewritten the text or redrawn the art.",
+  "etsy_attribution": "Designed by Play Before Pixels",
+  "etsy_ai_flag": true,
+  "site": "Product page line: 'Illustrations and text are made with AI assistance.' Say 'edited by the founder' only after she has.",
+  "social_ai_label": "Apply each platform's AI label to posts that use these images.",
+  "kdp_ai_text": "AI-generated",
+  "kdp_ai_images": "AI-generated",
+  "kdp_ai_translation": "none"
+ },
+ "next_products": [
+  "toddler-busy-book",
+  "bored-play-cards",
+  "bundle-gift-1-5"
+ ],
+ "bonus_url": "playbeforepixels.com/bonus/winter-countdown",
+ "bonus_offer": "Store edition only: the free “Five 5-Minute Plays” printable and the monthly “3 plays for your child’s age” email. Sign-up is for adults, asks only for an email and, optionally, the child's birth month and year, and uses double opt-in. The QR code is on the last page of the store PDFs. Etsy files carry no link.",
+ "shareable_piece": "“We played our way through winter!” fridge certificate (page 23; type-in favorite day and date) with the brand mark; it says “Posting a photo? Leave out names and faces.”",
+ "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.",
+ "files": {
+  "store": [
+   "START-HERE.pdf",
+   "winter-countdown.pdf",
+   "winter-countdown-A4.pdf",
+   "winter-countdown-low-ink.pdf",
+   "winter-countdown-low-ink-A4.pdf"
+  ],
+  "etsy_upload": [
+   "etsy-upload/1-START-HERE.pdf",
+   "etsy-upload/2-Color-US-Letter.pdf",
+   "etsy-upload/3-Color-A4.pdf",
+   "etsy-upload/4-Low-Ink-US-Letter.pdf",
+   "etsy-upload/5-Low-Ink-A4.pdf"
+  ],
+  "source": "source.html (store edition, color, US Letter). build/content.js = every play; build/build.js = layout; bash build/make.sh rebuilds and checks everything",
+  "previews": "preview/p01–p25.png (color), preview/low-ink/, preview/start-here-store/, preview/start-here-etsy/",
+  "cover": "cover.png (1236 × 1600)",
+  "mockup": "mockup.png (1600 × 1200)"
+ },
+ "compliance_notes": "Rule 1: no health, developmental or outcome claims; the safety page says these are everyday play ideas, not medical or developmental advice, and points to the child's doctor. No diagnosis wording anywhere, including tags. Rule 2: no company, app, show or device is named (the FAQ says 'a free PDF reader'). Rule 4 child safety, checked play by play: every card has its own safety line and 'With a grown-up'; Ice Rescue uses toys too big to fit through a toilet-paper tube and says stay within arm's reach; no balloons, no cords, scarves or ties (the build fails if the play text names them); food play (Snowy Toast) says thin strips, sitting down, check allergies; no whole grapes, nuts, popcorn, marshmallows or hard candy anywhere in the plays; flashlight play says screwed-shut battery door and keep button batteries away; windows closed, no climbing. Secular: the build fails if the play text names a holiday, faith, gift or advent term (GROWTH-ENGINE §8 item 7). Customer-voice rules: 22 of 24 plays need nothing to buy (92%, over 70%); every play has a starting age, easier/harder pair and a 2-minute version; no prep is longer than the play; cut pages say 'Grown-up keeps the pieces'; tags are on a straight-line grid with 12 pieces per page; the guide has the 2-minute setup, the why, three talk moves and 'Most children love 2–3 of these'; the talk page says 'Talk, sing and read in the language you know best' and counts a sign, point or device tap. Screens keep their usual spot; nothing rewards or removes screen time. Accessibility: age labels use color + shape + words; small colored text uses darkened accents (4.5:1 or better); PDFs are tagged. Etsy files checked for no URL, 'www', 'http' or '.com' (build/finish check). No Type 3 fonts; no placeholder text. Owner line on every page. Version line on every page.",
+ "human_todo": [
+  "Rewrite the plays in your own words in build/content.js, run `bash products/winter-countdown/build/make.sh`, and commit each draft so your authorship is on record",
+  "Proof the cover and page 1 yourself (15 minutes) and print one card page and one tag page at home to check sizes",
+  "Search the title “24 Days of Play” for conflicts before listing (GROWTH-ENGINE §7 plain-names rule; brand/ORIGINALITY.md)",
+  "Build playbeforepixels.com/bonus/winter-countdown (free printable + email sign-up) before the store edition goes live; the QR code already points there",
+  "List on Etsy by Oct 25, 2026 and set a reminder to deactivate on Dec 5, 2026"
+ ]
+}

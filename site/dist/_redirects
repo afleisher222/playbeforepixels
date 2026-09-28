@@ -1,0 +1,18 @@
+# Written by site/build.js. Printed and emailed URLs that must keep working (ops/TESTS/printed-urls.md).
+/license /licenses/ 301
+/license/ /licenses/ 301
+/faq /help/ 301
+/faq/ /help/ 301
+/30-days/start /free/ 301
+/30-days/start/ /free/ 301
+/shop/course-screen-reset /30-days/ 301
+/shop/course-screen-reset/ /30-days/ 301
+/shop/30-day-screen-reset /30-days/ 301
+/shop/30-day-screen-reset/ /30-days/ 301
+/bonus/bore /bonus/bored-play-cards/ 301
+/refunds /shipping-returns/ 301
+/refunds/ /shipping-returns/ 301
+/resend-download /help/#downloads 301
+/resend-download/ /help/#downloads 301
+/free/7-days-of-play-first /free/ 301
+/free/7-days-of-play-first/ /free/ 301

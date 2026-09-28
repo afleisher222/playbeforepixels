@@ -1,0 +1,87 @@
+{
+ "built": "2026-09-28T12:46:01.819Z",
+ "preview": false,
+ "pages": [
+  "/",
+  "/30-days/",
+  "/404.html",
+  "/about/",
+  "/accessibility/",
+  "/bonus/board-up-go-more/",
+  "/bonus/bored-play-cards/",
+  "/bonus/course-screen-reset/",
+  "/bonus/family-talk-along-cards/",
+  "/bonus/first-phone-plan/",
+  "/bonus/guide-100-plays/",
+  "/bonus/merch-core/",
+  "/bonus/picture-laps-not-apps/",
+  "/bonus/picture-more-talk-less-tap/",
+  "/bonus/picture-tablet-slept/",
+  "/bonus/play-first-family-kit/",
+  "/bonus/play-talk-cards/",
+  "/bonus/toddler-busy-book/",
+  "/bonus/visual-routine-cards/",
+  "/bonus/winter-countdown/",
+  "/contact/",
+  "/disclaimer/",
+  "/disclosures/",
+  "/free/",
+  "/help/",
+  "/licenses/",
+  "/privacy/",
+  "/research/",
+  "/search/",
+  "/shipping-returns/",
+  "/shop/",
+  "/shop/ages/0-1/",
+  "/shop/ages/1-3/",
+  "/shop/ages/3-5/",
+  "/shop/board-up-go-more/",
+  "/shop/books/",
+  "/shop/bored-play-cards/",
+  "/shop/bundles/",
+  "/shop/guide-100-plays/",
+  "/shop/picture-laps-not-apps/",
+  "/shop/picture-tablet-slept/",
+  "/shop/play-first-family-kit/",
+  "/shop/play-talk-cards/",
+  "/shop/printables/",
+  "/shop/toddler-busy-book/",
+  "/shop/visual-routine-cards-starter/",
+  "/shop/visual-routine-cards/",
+  "/terms/",
+  "/thank-you/"
+ ],
+ "indexable": 31,
+ "redirects": 17,
+ "printedChecked": 32,
+ "hidden": [
+  {
+   "slug": "first-phone-plan",
+   "why": "Ages 9–12 only: waits for counsel's G1 answer (business/GROWTH-ENGINE.md §7 item 5)."
+  },
+  {
+   "slug": "merch-core-logo-tee",
+   "why": "The tee's print files and mockups still carry the retired 'Return' P mark; the product lane must rebuild them with the Maker's Seal before it can be shown (brand/BRAND.md 'Logo')."
+  },
+  {
+   "slug": "merch-core-more-talk-tee",
+   "why": "listing status: files-ready"
+  },
+  {
+   "slug": "merch-core-tote",
+   "why": "listing status: bundle-add-on-only"
+  },
+  {
+   "slug": "picture-more-talk-less-tap",
+   "why": "listing status: held-pending-counsel"
+  },
+  {
+   "slug": "winter-countdown",
+   "why": "not described in site/config.json yet (add it to show it)"
+  }
+ ],
+ "warnings": [
+  "winter-countdown: new listing has no site/config.json entry, so it is not shown"
+ ]
+}
