@@ -478,49 +478,6 @@ spreads.s12 = () => {
   return s;
 };
 
-// ------------------------------------------------------------------ story text (per page)
-const RF = (t, col) => `<span class="ref" style="color:${col}">${t}</span>`;
-const EM = (t, col = C.tomato) => `<span class="em" style="color:${col}">${t}</span>`;
-const story = [
-  // [spreadKey, leftText, rightText]
-  ['s1', { x: 48, y: 52, w: 430, html: `On Saturday morning, Ada zoomed downstairs to find the tablet. Her slippers were on the wrong feet. She did not care one bit.` },
-         { x: 56, y: 52, w: 560, html: `But the tablet was wearing a nightcap. Its eyes were closed. And it was going…<span class="zz" style="color:${C.sky}">zzz… zzz… zzz.</span>` }],
-  ['s2', { x: 48, y: 52, w: 720, html: `“The tablet is sleeping,” whispered Papa. “It worked hard all week. Today, it gets to rest.”` },
-         { x: 56, y: 52, w: 720, html: `“Sleeping?” said Ada. “In the DAYTIME?”<br>“Everybody needs a rest sometimes,” said Papa.${RF('Shhh… the tablet is sleeping.<br>So what shall we do today?', C.grass)}` }],
-  ['s3', { x: 48, y: 52, w: 720, html: `Ada found the blocks. One, two, three… a tower! Four, five, six… taller than Biscuit! Biscuit sat very still and watched.` },
-         { x: 56, y: 52, w: 720, html: `Seven… eight… ${EM('CRASH!')} Biscuit jumped. Ada giggled. “Again!” So they built it again. And again. And AGAIN.` }],
-  ['s4', { x: 48, y: 52, w: 720, html: `Outside, last night’s rain had left puddles everywhere — big ones, small ones, and one with a real duck in it! Ada pulled on her yellow boots.` },
-         { x: 56, y: 48, w: 720, size: 27, html: `${EM('SPLISH', C.sky)} went the small one. ${EM('SPLASH', C.sky)} went the middle one. ${EM('SPLOOOSH', C.sky)} went the great big one — all over Papa’s shoes!<br>“Oops,” said Ada. “Oops,” said Papa… and jumped in, too.` }],
-  ['s5', { x: 48, y: 52, w: 460, html: `Back inside, Ada peeled off her wet boots and tiptoed to the shelf.<br>Tip… tip… tip…` },
-         { x: 56, y: 52, w: 720, html: `The tablet was still sleeping. It snored a teeny-tiny snore: zzz-bip… zzz-bip…${RF('Shhh… the tablet is sleeping.<br>So what shall we do now?', C.plum)}` }],
-  ['s6', { x: 48, y: 52, w: 720, html: `In the hall sat a big, empty box.<br>“That’s not a box,” said Ada. “That’s a ${EM('ROCKET!')}”` },
-         { x: 56, y: 52, w: 720, html: `She gave it round windows. She gave it red wings. She gave it a pointy top — just like the tablet’s nightcap.` }],
-  ['s7', { x: 48, y: 52, w: 470, cls: 'w', html: `“Ten, nine, eight…” counted Ada. Biscuit held on tight. <span class="nw">“…three, two, ONE!”</span><span class="big" style="color:${C.sun}">WHOOOOSH!</span>` },
-         { x: 56, y: 52, w: 560, cls: 'w', html: `Past the moon. Past the stars. Past a planet made entirely of socks. Biscuit was the <span class="nw">co-pilot</span>. He was very good at barking at comets.` }],
-  ['s8', { x: 48, y: 52, w: 460, html: `All that flying made Ada hungry. Her tummy rumbled like a rocket.<br>“Pancakes?” asked Papa.<br>“${EM('PANCAKES!')}” said Ada.` },
-         { x: 56, y: 52, w: 720, html: `Ada cracked the egg (mostly into the bowl). She stirred and stirred. Papa flipped. ${EM('Flip! Flop! Plop!')}<br>“That one looks like the moon,” said Ada.` }],
-  ['s9', { x: 48, y: 52, w: 720, html: `After lunch, Ada peeked at the shelf. The tablet had rolled over, and its nightcap had flopped. But it was still sleeping.` },
-         { x: 56, y: 44, w: 720, html: `${RF('Shhh… the tablet is sleeping.<br>So what shall we do now?', C.plum).replace('class="ref"', 'class="ref first"')}“Let’s go find some stories,” said Papa.` }],
-  ['s10', { x: 48, y: 52, w: 720, html: `The library had books about dinosaurs, books about rockets, books about the moon, and one book about a dog in boots.` },
-          { x: 56, y: 52, w: 590, size: 27, html: `“Shhh,” whispered Ms. Rosa the librarian. “Books like it quiet.”<br>“Just like the tablet!” whispered Ada. She picked a book about a bear who could not sleep.` }],
-  ['s11', { x: 48, y: 52, w: 720, html: `That night, Papa read the bear book. Ada turned the pages. She did all the growly bear voices. <span class="nw">${EM('GRRR… YAWWWN.', C.plum)}</span>` },
-          { x: 56, y: 52, w: 720, size: 27, html: `“What was your favorite part of today?” asked Papa. Ada thought and thought. “The crash. The splash. The rocket. The pancakes. The library…” She yawned a big bear yawn. “All of it.”` }],
-  ['s12', { x: 48, y: 52, w: 720, cls: 'w', html: `Down the hall, in its cozy nightcap, the tablet slept. It had rested all day long, and it was dreaming a quiet, happy dream.` },
-          { x: 56, y: 52, w: 720, cls: 'w', html: `And snug in her bed, Ada slept too.${RF('Shhh… everybody is sleeping.<br>What a good, good day.', C.sun)}` }],
-];
-
-// ------------------------------------------------------------------ single pages (coords 0..816)
-function coverArt(back = false) {
-  let s = PAGE_BG(C.sky) + R(-12, 664, 840, 170, C.tomato);
-  if (back) return s;
-  s += stars([[70, 300, .45, C.sun], [770, 300, .4, C.paper], [740, 470, .3, C.sun], [60, 470, .3, C.paper]], C.sun);
-  s += cabinet(320, 560, 260, 124, C.grass, C.sun);
-  s += tabletOnPillow(450, 560, 1.12, -5);
-  s += zzz(590, 420, 0.9, C.sun);
-  s += ada({ x: 190, y: 700, s: 1.0, face: 'face-smile', armL: { a: 16, b: 10 }, armR: { shh: true } });
-  s += dog(650, 700, 0.74, 'dog', false);
-  return s;
-}
 function endpaper(bg, col1, col2) {
   let s = PAGE_BG(bg);
   const icons = [
@@ -538,81 +495,231 @@ function endpaper(bg, col1, col2) {
   for (let r = 0; r < 6; r++) for (let c = 0; c < 6; c++) { const x = 62 + c * 138 + (r % 2 ? 69 : 0), y = 60 + r * 140; s += icons[(k++ * 5 + r) % icons.length](x, y); }
   return s;
 }
-const pages = [];
-function page(vbx, art, texts = [], extra = '') {
-  return `<section class="page">
-<svg class="art" xmlns="http://www.w3.org/2000/svg" viewBox="${vbx} -12 840 840" width="840" height="840">${art}</svg>
-${texts.map(t => `<div class="t ${t.cls || ''}" style="left:${t.x + 12}px;top:${t.y + 12}px;width:${t.w}px;${t.size ? `font-size:${t.size}px;` : ''}${t.align ? `text-align:${t.align};` : ''}">${t.html}</div>`).join('\n')}
-${extra}${GUIDES ? '<div class="guide-trim"></div><div class="guide-safe"></div>' : ''}
+// ------------------------------------------------------------------ words: WORDS.md is the founder's file (human authorship)
+const QR = JSON.parse(fs.readFileSync(path.join(OUT, 'qr.json'), 'utf8'));
+const BONUS = 'playbeforepixels.com/bonus/picture-tablet-slept';
+const LOGO = (f, w) => fs.readFileSync(path.join(OUT, '../../brand/logo', f), 'utf8').replace(/<title>[\s\S]*?<\/title>/, '').replace(/ width="[\d.]+" height="[\d.]+"/, ` width="${w}"`);
+function readWords() {
+  const src = fs.readFileSync(path.join(OUT, 'WORDS.md'), 'utf8').replace(/<!--[\s\S]*?-->/g, '');
+  const out = {}; let key = null;
+  src.split('\n').forEach(l => { const m = l.match(/^##\s+(.+?)\s*$/); if (m) { key = m[1].trim(); out[key] = []; } else if (key) out[key].push(l); });
+  for (const k in out) out[k] = out[k].join('\n').trim();
+  return out;
+}
+const WORDS = readWords();
+const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+function md(text, o = {}) {
+  const em = o.em || C.tomato;
+  const inline = t => esc(t).replace(/\[\[(.+?)\]\]/g, '<span class="nw">$1</span>').replace(/\*\*(.+?)\*\*/g, `<span class="em" style="color:${em}">$1</span>`);
+  const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
+  let html = '', ref = [];
+  const flush = () => { if (ref.length) { html += `<span class="ref${html ? '' : ' first'}" style="color:${o.ref || C.grass}">${ref.map(inline).join('<br>')}</span>`; ref = []; } };
+  lines.forEach(l => {
+    if (l.startsWith('>')) { ref.push(l.replace(/^>\s*/, '')); return; }
+    flush();
+    const big = l.match(/^==(.+)==$/);
+    if (big) html += `<span class="${o.bigCls || 'big'}" style="color:${o.bigCol || C.sun}">${inline(big[1])}</span>`;
+    else html += `<span class="ln">${inline(l)}</span>`;
+  });
+  flush();
+  return html;
+}
+function need(k) { if (!(k in WORDS)) throw new Error(`WORDS.md is missing the section "## ${k}"`); return WORDS[k]; }
+
+// per-page text box (trim coords) and colors; the words come from WORDS.md
+const LAYOUT = {
+  s1: [{ x: 48, y: 52, w: 430 }, { x: 56, y: 52, w: 560, bigCls: 'zz', bigCol: C.sky }],
+  s2: [{ x: 48, y: 52, w: 700 }, { x: 56, y: 52, w: 700, ref: C.grass }],
+  s3: [{ x: 48, y: 52, w: 700 }, { x: 56, y: 52, w: 700 }],
+  s4: [{ x: 48, y: 52, w: 700 }, { x: 56, y: 48, w: 700, size: 27, em: C.sky }],
+  s5: [{ x: 48, y: 52, w: 460 }, { x: 56, y: 52, w: 700, ref: C.plum }],
+  s6: [{ x: 48, y: 52, w: 700 }, { x: 56, y: 52, w: 700 }],
+  s7: [{ x: 48, y: 52, w: 470, cls: 'w', em: C.sun }, { x: 56, y: 52, w: 560, cls: 'w' }],
+  s8: [{ x: 48, y: 52, w: 460 }, { x: 56, y: 52, w: 700 }],
+  s9: [{ x: 48, y: 52, w: 700 }, { x: 56, y: 44, w: 700, ref: C.plum }],
+  s10: [{ x: 48, y: 52, w: 700 }, { x: 56, y: 52, w: 590, size: 27 }],
+  s11: [{ x: 48, y: 52, w: 700, em: C.plum }, { x: 56, y: 52, w: 700, size: 27 }],
+  s12: [{ x: 48, y: 52, w: 700, cls: 'w' }, { x: 56, y: 52, w: 700, cls: 'w', ref: C.sun }],
+};
+const box = (k, L) => ({ ...L, html: md(need(k), L) });
+
+// ------------------------------------------------------------------ interior pages (KDP / IngramSpark: trim 8.5 x 8.5, bleed top, bottom and outside edge only)
+// Even pages are left-hand pages (bleed on the left); odd pages are right-hand pages (bleed on the right). 96 px = 1 in.
+const PW = 828, PH = 840;
+function page(no, art, texts = [], extra = () => '', spread = false) {
+  const side = no % 2 ? 'R' : 'L';
+  const vbx = spread ? (side === 'L' ? -12 : 816) : (side === 'L' ? -12 : 0);
+  const off = side === 'L' ? 12 : 0; // trim-left edge, in page px
+  const trimL = off, safe = 36;
+  return `<section class="page ${side}" data-page="${no}">
+<svg class="art" xmlns="http://www.w3.org/2000/svg" viewBox="${vbx} -12 ${PW} ${PH}" width="${PW}" height="${PH}">${art}</svg>
+${texts.map(t => `<div class="t ${t.cls || ''}" style="left:${t.x + off}px;top:${t.y + 12}px;width:${t.w}px;${t.size ? `font-size:${t.size}px;` : ''}${t.align ? `text-align:${t.align};` : ''}">${t.html}</div>`).join('\n')}
+${extra(off)}${GUIDES ? `<div class="guide" style="left:${trimL}px;top:12px;width:816px;height:816px;border:1px solid red"></div><div class="guide" style="left:${trimL + safe}px;top:${12 + safe}px;width:${816 - 2 * safe}px;height:${816 - 2 * safe}px;border:1px dashed #09f"></div>` : ''}
 </section>`;
 }
+const slot = (x, y, w, h, title, body) => off => `<div class="slot" style="left:${x + off}px;top:${y + 12}px;width:${w}px;height:${h}px"><b>${title}</b><span>${body}</span></div>`;
+const both = (...fs) => off => fs.map(f => f(off)).join('');
 
-// 1 front cover
-const COVER_TEXT = [{ x: 44, y: 40, w: 728, cls: 'title', html: `The Day the<br>Tablet <span style="color:${C.sun}">Slept</span>` },
-  { x: 44, y: 736, w: 728, cls: 'byline', html: `A Play Before Pixels read-aloud` }];
-pages.push(page(-12, coverArt(), COVER_TEXT));
-// 2 endpaper
-pages.push(page(-12, endpaper(C.tSky, C.sky, C.sun)));
-// 3 title page
-pages.push(page(-12, PAGE_BG(C.paper) + Ci(408, 570, 200, C.tSun) + cabinet(278, 650, 260, 100, C.sky) + tabletOnPillow(408, 650, 0.9, -4) + zzz(530, 520, 0.7, C.sky),
-  [{ x: 60, y: 80, w: 696, cls: 'title ink center', html: `The Day the<br>Tablet Slept` }, { x: 60, y: 272, w: 696, cls: 'sub center', html: `A Play Before Pixels read-aloud` }]));
-// 4 copyright
-const ISBN_BOX = `<div class="isbn" style="left:${60 + 12}px;top:${560 + 12}px"><b>ISBN / barcode</b><span>to be supplied by publisher</span></div>`;
-pages.push(page(-12, PAGE_BG(C.wash) + G('translate(640 760) scale(0.7)', U('dog-lie')) + zzz(700, 640, 0.5, C.sky),
-  [{ x: 60, y: 70, w: 600, cls: 'small', html: `<p><b>The Day the Tablet Slept</b></p>
-<p>Text and illustrations © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. All rights reserved.</p>
+const pages = [];
+// p1 (R) title page
+const authorLine = need('author');
+pages.push(page(1, PAGE_BG(C.paper) + Ci(408, 610, 220, C.tSun) + rocketWithCrew(196, 760, 0.42, -8, false) + starU(120, 520, C.sun, 0.6, 10) + starU(300, 470, C.tomato, 0.45, -8) +
+  ada({ x: 420, y: 760, s: 0.95, face: 'face-laugh', armL: { a: 16, b: 10 }, armR: { a: 150, b: 20 } }) + dog(560, 760, 0.62, 'dog-happy') + R(-12, 760, 840, 80, C.tSky),
+  [{ x: 60, y: 76, w: 696, cls: 'title ink center', html: `The Day the<br>Tablet Slept` },
+   { x: 60, y: 268, w: 696, cls: 'sub center', html: `A Play Before Pixels read-aloud` },
+   ...(authorLine ? [{ x: 60, y: 304, w: 696, cls: 'author center', html: esc(authorLine) }] : [])]));
+// p2 (L) copyright
+const ISBN_BOX = off => `<div class="isbn" style="left:${60 + off}px;top:${566 + 12}px"><b>ISBN / barcode</b><span>paperback and hardcover ISBNs<br>to be added by the publisher</span></div>`;
+pages.push(page(2, PAGE_BG(C.wash) + G('translate(650 740) scale(0.66)', U('dog-lie')) + zzz(700, 630, 0.5, C.sky),
+  [{ x: 60, y: 64, w: 640, cls: 'small', html: `<p><b>The Day the Tablet Slept</b></p>
+<p>© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. All rights reserved.</p>
 <p>No part of this book may be reproduced, stored or transmitted in any form or by any means without written permission from the publisher, except for brief quotations in a review.</p>
-<p>First edition, 2026.</p>
-<p>The illustrations were drawn as flat digital art. The text is set in Fredoka, with Bricolage Grotesque and Nunito Sans.</p>
+<p>First edition, 2026. Paperback and hardcover.</p>
+<p>The illustrations are flat digital art. The text is set in Fredoka, with Bricolage Grotesque and Nunito Sans.</p>
 <p><b>A note for grown-ups:</b> puddle play, cooking and box-building are best enjoyed with a grown-up close by. The tablet in this story is a made-up character and is not based on any real product.</p>
-<p>Published by AlphaPlay LLC, doing business as Play Before Pixels.</p>` }], ISBN_BOX));
-// 5 dedication
-pages.push(page(-12, PAGE_BG(C.tTomato) + rocketWithCrew(408, 700, 0.5, 0, false) + stars([[250, 560, .5, C.sun], [570, 520, .4, C.plum], [600, 640, .3, C.tomato]], C.sun),
-  [{ x: 90, y: 150, w: 636, cls: 'ded center', html: `For every grown-up who ever said, “Let’s see what we can make,”<br><br>and every kid who turned a box into a rocket.` }]));
-// 6-29 story
-story.forEach(([k, lt, rt]) => { const art = spreads[k](); pages.push(page(-12, art, [lt])); pages.push(page(804, art, [rt])); });
-// 30 talk about it
+<p><b>Free Play Day planner</b> for grown-ups to print: ${BONUS}</p>
+<p>Published by AlphaPlay LLC, doing business as Play Before Pixels · playbeforepixels.com</p>` }],
+  both(ISBN_BOX, off => `<div class="logo" style="left:${60 + off}px;top:${712 + 12}px;width:210px">${LOGO('lockup-horizontal.svg', 210)}</div>`)));
+// p3 (R) dedication (founder writes it)
+const ded = need('dedication');
+pages.push(page(3, PAGE_BG(C.tTomato) + rocketWithCrew(408, 730, 0.5, 0, false) + stars([[250, 590, .5, C.sun], [570, 550, .4, C.plum], [600, 670, .3, C.tomato]], C.sun),
+  ded ? [{ x: 90, y: 130, w: 636, cls: 'ded center', html: md(ded) }] : [],
+  ded ? () => '' : slot(90, 110, 636, 300, 'Founder writes this page', 'Your dedication, in your own words.<br>Type it under <i>## dedication</i> in WORDS.md, then rebuild.<br>This box disappears once you do.')));
+// p4-p27 story spreads
+Object.keys(LAYOUT).forEach((k, i) => {
+  const art = spreads[k](); const [L, Rt] = LAYOUT[k]; const no = 4 + i * 2;
+  pages.push(page(no, art, [box(`${k} left`, L)], undefined, true));
+  pages.push(page(no + 1, art, [box(`${k} right`, Rt)], undefined, true));
+});
+// p28 (L) morning
+pages.push(page(28, PAGE_BG(C.tSun) + R(-12, 610, 840, 240, C.grass) + windowFrame(60, 250, 190, 220, C.sky, U('sun', 155, 340, 0.55)) +
+  cabinet(400, 490, 360, 160, C.sky) + tabletOnPillow(580, 490, 0.95, 0, true) + G('translate(650 472) rotate(8) scale(0.34)', U('nightcap')) +
+  line('M488 270 L468 250', C.sun, 8) + line('M580 240 L580 214', C.sun, 8) + line('M672 270 L692 250', C.sun, 8) +
+  ada({ x: 300, y: 700, s: 1.0, outfit: 'pj', face: 'face-laugh', armL: { a: 20, b: 10 }, armR: { a: 150, b: 20 } }) + dog(100, 710, 0.62, 'dog-happy'),
+  [{ ...box('morning', { x: 48, y: 44, w: 720 }) }, { x: 48, y: 700, w: 720, cls: 'end', align: 'right', html: `The End` }]));
+// p29 (R) talk about it
 const qs = [
-  ['Why do you think the tablet needed a rest? When do <i>you</i> like to rest?', C.tomato],
-  ['Ada did lots of things on her day. Which one would you like to try first?', C.sun],
+  ['Why do you think the tablet was so sleepy? When do <i>you</i> like to rest?', C.tomato],
+  ['Crash, splash, rocket, pancakes, library… which part would you pick?', C.sun],
   ['What could a big box turn into at our house?', C.sky],
-  ['What should we cook together? What will your job be?', C.grass],
-  ['Point to Biscuit whenever you spot him. What is he doing?', C.plum],
-  ['Let’s plan our own “tablet sleeps” day. Pick three things to do!', C.tomato],
+  ['Say the sleepy part with me: “Shhh…” What does Biscuit say?', C.grass],
+  ['What should we cook together? What will your job be?', C.plum],
+  ['Let’s plan our own Play Day. Pick three things to do!', C.tomato],
 ];
-pages.push(page(-12, PAGE_BG(C.tGrass) + R(-12, -12, 840, 196, C.grass) + G('translate(690 150) scale(0.42) rotate(8)', U('tablet-sleeping')) +
-  block(76, 734, C.tomato, 'c', 0.66, -8) + G('translate(206 780) scale(0.5) rotate(-6)', U('boot')) + G('translate(318 782) scale(0.1) rotate(18)', U('rocket')) + G('translate(440 766) scale(0.62)', U('pancake')) + bookU(540, 728, C.plum, 0.46, 6) + dog(700, 792, 0.3, 'dog-happy'),
+pages.push(page(29, PAGE_BG(C.tGrass) + R(-12, -12, 840, 196, C.grass) + G('translate(690 150) scale(0.42) rotate(8)', U('tablet-sleeping')) +
+  block(76, 734, C.tomato, 'c', 0.66, -8) + G('translate(206 780) scale(0.5) rotate(-6)', U('boot')) + G('translate(318 782) scale(0.1) rotate(18)', U('rocket')) + G('translate(440 766) scale(0.62)', U('pancake')) + bookU(540, 728, C.plum, 0.46, 6) + dog(700, 780, 0.3, 'dog-happy'),
   [{ x: 48, y: 44, w: 600, cls: 'talk-h', html: `Talk about it` },
    { x: 48, y: 118, w: 560, cls: 'talk-sub', html: `For grown-ups: after reading, try a few of these. Pause, wait, and let your child answer. There are no wrong answers.` }],
-  `<ol class="qs" style="left:${48 + 12}px;top:${214 + 12}px">${qs.map(([q, c], i) => `<li><span class="num" style="background:${c}">${i + 1}</span><span>${q}</span></li>`).join('')}</ol>
-<div class="tip" style="left:${48 + 12}px;top:${628 + 12}px"><b>Read it again, and…</b> say what you see (“Biscuit is jumping!”), repeat and add one word (“Splash!” → “Big splash!”), and follow your child’s lead. Puddles, cooking and box-building are best with a grown-up close by.</div>`));
-// 31 the end
-pages.push(page(-12, PAGE_BG(C.tSun) + R(-12, 600, 840, 240, C.grass) + windowFrame(60, 200, 200, 230, C.sky, U('sun', 160, 300, 0.6)) +
-  cabinet(400, 470, 360, 170, C.sky) + tabletOnPillow(580, 470, 0.95, 0, true) + G('translate(650 452) rotate(8) scale(0.34)', U('nightcap')) +
-  line('M488 250 L468 230', C.sun, 8) + line('M580 220 L580 194', C.sun, 8) + line('M672 250 L692 230', C.sun, 8) +
-  ada({ x: 290, y: 690, s: 1.0, outfit: 'pj', face: 'face-laugh', armL: { a: 20, b: 10 }, armR: { a: 150, b: 20 } }) + dog(96, 700, 0.62, 'dog-happy'),
-  [{ x: 48, y: 52, w: 720, html: `In the morning, the tablet woke up and stretched. “Good morning!” said Ada. “Wait till I tell you about my day…”` },
-   { x: 48, y: 700, w: 720, cls: 'end', align: 'right', html: `The End` }]));
-// 32 back cover
-const backArt = coverArt(true) + G('translate(96 560) scale(0.46) rotate(-6)', U('tablet-sleeping')) + zzz(210, 520, 0.5, C.sun) + dog(400, 700, 0.62, 'dog-happy') +
-  stars([[740, 110, .4, C.sun], [60, 400, .3, C.paper]], C.sun);
-pages.push(page(-12, backArt,
-  [{ x: 60, y: 70, w: 690, cls: 'blurb', html: `<p class="blurb-h">Shhh… the tablet is sleeping.<br>So what shall we do today?</p>
-<p>Ada’s tablet is taking a day off — nightcap and all. So Ada builds a tower (CRASH!), splashes every puddle, blasts off in a cardboard-box rocket, flips pancakes with Papa and finds the perfect library book.</p>
-<p>A warm, funny read-aloud about a day full of play, and a tablet that simply needed a good rest. Includes “Talk about it” questions for grown-ups.</p>` },
-   { x: 48, y: 736, w: 480, cls: 'backmeta', html: `Ages 3–7 · Play Before Pixels` }],
-  `<div class="isbn back" style="left:${588 + 12}px;top:${664 + 12}px"><b>ISBN / barcode</b><span>2 × 1.2 in · keep clear</span></div>`));
+  off => `<ol class="qs" style="left:${48 + off}px;top:${214 + 12}px">${qs.map(([q, c], i) => `<li><span class="num" style="background:${c}">${i + 1}</span><span>${q}</span></li>`).join('')}</ol>
+<div class="tip" style="left:${48 + off}px;top:${620 + 12}px"><b>Read it again, and…</b> say what you see (“Biscuit is jumping!”), repeat and add one word (“Splash!” → “Big splash!”), and follow your child’s lead. Let them shout the “Shhh…” and the “WOOF!”</div>`));
+// p30 (L) plan your own play day + bonus QR
+const qrSvg = (px, col = C.ink) => `<svg viewBox="-2 -2 ${QR.n + 4} ${QR.n + 4}" width="${px}" height="${px}" shape-rendering="crispEdges"><rect x="-2" y="-2" width="${QR.n + 4}" height="${QR.n + 4}" fill="#fff"/><path d="${QR.d}" fill="${col}"/></svg>`;
+const planRow = (y, label, icon, col) => G('', R(48, y, 720, 118, C.paper, 22) + R(48, y, 150, 118, col, 22) + R(150, y, 48, 118, col) + icon + R(250, y + 84, 470, 4, C.tSky, 2));
+pages.push(page(30, PAGE_BG(C.tSky) + R(-12, -12, 840, 180, C.sky) +
+  planRow(200, 'Morning', U('sun', 123, 259, 0.42), C.tSun) +
+  planRow(334, 'Afternoon', G('translate(123 312) scale(0.17)', U('rocket')), C.tTomato) +
+  planRow(468, 'Bedtime', G('translate(99 232) scale(0.42)', '') + U('moon', 118, 527, 0.62), C.tPlum) +
+  R(48, 612, 720, 168, C.paper, 22) + dog(724, 176, 0.36, 'dog-happy'),
+  [{ x: 48, y: 40, w: 640, cls: 'talk-h', html: `Plan your own Play Day` },
+   { x: 48, y: 108, w: 620, cls: 'talk-sub', html: `Draw or write one thing for each part of the day. Then do it together!` },
+   { x: 230, y: 212, w: 500, cls: 'plan', html: `Morning` }, { x: 230, y: 346, w: 500, cls: 'plan', html: `Afternoon` }, { x: 230, y: 480, w: 500, cls: 'plan', html: `Bedtime story` }],
+  off => `<div class="qr" style="left:${70 + off}px;top:${630 + 12}px">${qrSvg(132)}</div>
+<div class="bonus" style="left:${226 + off}px;top:${630 + 12}px"><b>Free for grown-ups:</b> a printable Play Day planner and coloring pages. Scan the code or visit<br><span class="url">${BONUS}</span><br><span class="pair">Want more ideas? This story pairs with <i>100 Screen-Free Plays</i>.</span></div>`));
+// p31 (R) a note from the author (founder writes it)
+const note = need('note');
+pages.push(page(31, PAGE_BG(C.tSun) + R(-12, 650, 840, 200, C.paper) + G('translate(640 600) scale(0.5)', U('dog-lie')),
+  [{ x: 60, y: 60, w: 696, cls: 'talk-h ink', html: `A note from the author` }, ...(note ? [{ x: 60, y: 150, w: 660, cls: 'note', html: md(note) }] : [])],
+  both(note ? () => '' : slot(60, 150, 696, 360, 'Founder writes this page', 'A short note in your own voice (60–120 words): why you wrote this story.<br>Type it under <i>## note</i> in WORDS.md, then rebuild.<br>Keep it about play, reading and family time. No health claims.'),
+    off => `<div class="logo" style="left:${258 + off}px;top:${680 + 12}px;width:300px">${LOGO('lockup-horizontal.svg', 300)}</div><div class="t tag center" style="left:${60 + off}px;top:${764 + 12}px;width:696px">Books and printables for talking and playing together · playbeforepixels.com</div>`)));
+// p32 (L) endpaper
+pages.push(page(32, endpaper(C.tSky, C.sky, C.sun)));
+if (pages.length !== 32) throw new Error('expected 32 interior pages, got ' + pages.length);
+
+// ------------------------------------------------------------------ covers (art in trim coords 0..816; backgrounds oversized for bleed and hardcover wrap)
+function frontCover() {
+  let s = R(-200, -200, 1216, 1216, C.sky) + R(-200, 700, 1216, 520, C.grass);
+  s += stars([[60, 330, .45, C.sun], [770, 300, .4], [520, 300, .3, C.sun], [40, 560, .3], [600, 420, .35, C.paper]], C.paper);
+  // speed lines + smoke
+  [[40, 470, 90], [20, 540, 120], [60, 610, 80]].forEach(([x, y, w]) => s += R(x, y, w, 16, C.paper, 8, 'fill-opacity=".55"'));
+  // tablet, asleep on its shelf (small, the running joke)
+  s += cabinet(598, 604, 180, 96, C.plum, C.sun) + tabletOnPillow(688, 604, 0.7, -5) + zzz(716, 398, 0.55, C.sun);
+  // the box rocket, with Ada and Biscuit on board
+  let r = flames(318, 668, 0.62, 0);
+  r += Ci(250, 780, 34, C.paper) + Ci(318, 792, 40, C.paper) + Ci(390, 780, 34, C.paper) + Ci(200, 792, 22, C.paper) + Ci(440, 794, 22, C.paper);
+  r += P('M176 470 L118 392 L186 386 L222 470Z', C.s3) + P('M460 470 L518 392 L450 386 L414 470Z', C.s3) + R(176, 452, 284, 30, C.s3, 4);
+  r += dog(170, 520, 0.6, 'dog-happy');
+  r += ada({ x: 356, y: 668, s: 0.98, face: 'face-laugh', noLegs: true, armL: { a: 150, b: -14 }, armR: { a: 158, b: -20 } });
+  r += P('M180 560 L108 676 L180 660Z', C.tomato) + P('M456 560 L528 676 L456 660Z', C.tomato);
+  r += R(168, 470, 300, 200, C.s2, 10) + R(168, 504, 300, 20, C.sun);
+  r += Ci(240, 596, 38, C.paper) + Ci(240, 596, 29, C.tSky) + caveat(302, 620, 'ADA-1', 46, C.plum);
+  r += line('M430 548 L446 548', C.s3, 4) + line('M190 646 L204 646', C.s3, 4);
+  s += G('rotate(-6 318 570)', r);
+  return s;
+}
+const FRONT_TEXT = [{ x: 44, y: 40, w: 728, cls: 'title', html: `The Day the<br>Tablet <span style="color:${C.sun}">Slept</span>` },
+  { x: 48, y: 244, w: 600, cls: 'byline', html: authorLine ? `${esc(authorLine)} · A Play Before Pixels read-aloud` : `A Play Before Pixels read-aloud` }];
+function backCover() {
+  let s = R(-200, -200, 1216, 1216, C.sky) + R(-200, 700, 1216, 520, C.grass);
+  s += stars([[740, 90, .4, C.sun], [470, 560, .3, C.paper], [700, 520, .3, C.sun]], C.sun);
+  s += dog(340, 700, 0.56, 'dog-happy') + G('translate(470 616) scale(0.13) rotate(10)', U('rocket'));
+  return s;
+}
+const BACK_TEXT = [{ x: 56, y: 60, w: 690, cls: 'blurb', html: `<p class="blurb-h">Shhh… the tablet is sleeping.<br>So what shall we do?</p>
+<p>Build a tower (CRASH!). Splash every puddle. Blast off in a cardboard-box rocket with Biscuit the dog as co-pilot. Flip pancakes with Papa, then find the perfect bedtime book.</p>
+<p>A funny, cozy read-aloud with a refrain kids love to join in on, and one very sleepy tablet in a nightcap. With “Talk about it” questions and a Play Day planner for grown-ups.</p>` },
+  { x: 56, y: 640, w: 300, cls: 'backmeta', html: `Picture book · Ages 3–7` }];
+const BACK_EXTRA = `<div class="logo" style="left:56px;top:722px;width:220px">${LOGO('lockup-horizontal-white.svg', 220)}</div>
+<div class="isbn back" style="left:588px;top:664px"><b>ISBN / barcode</b><span>2 × 1.2 in · keep clear</span></div>`;
+// A canvas whose origin is trim (0,0); panel shows art from (ax, ay).
+function canvas(art, texts, extra, ax, ay) {
+  return `<div class="canvas" style="left:${-ax - 200}px;top:${-ay - 200}px">
+<svg class="art" xmlns="http://www.w3.org/2000/svg" viewBox="-200 -200 1216 1216" width="1216" height="1216">${art}</svg>
+<div class="inner">${texts.map(t => `<div class="t ${t.cls || ''}" style="left:${t.x}px;top:${t.y}px;width:${t.w}px;">${t.html}</div>`).join('')}${extra}</div></div>`;
+}
+const panel = (x, y, w, h, inner, bg = '') => `<div class="panel" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;${bg ? `background:${bg}` : ''}">${inner}</div>`;
+const FRONT = (ax, ay) => canvas(frontCover(), FRONT_TEXT, '', ax, ay);
+const BACK = (ax, ay) => canvas(backCover(), BACK_TEXT, BACK_EXTRA, ax, ay);
+const spine = (x, y, w, h, grassTop) => panel(x, y, w, h, `<div style="position:absolute;left:0;right:0;top:${grassTop}px;bottom:0;background:${C.grass}"></div>`, C.sky);
+
+// KDP paperback wrap: bleed 0.125 | back 8.5 | spine | front 8.5 | bleed 0.125; height 8.75. Spine = pages x 0.002347 in (premium color) [VERIFY in KDP's cover calculator].
+const KDP_SPINE_IN = +(process.env.KDP_SPINE_IN || (32 * 0.002347).toFixed(4));
+// IngramSpark case laminate: wrap 0.625 | board (trim - 0.185) | hinge 0.5 | spine | hinge 0.5 | board | wrap 0.625; height 0.625 + (trim + 0.25) + 0.625.
+// Spine width for case laminate comes from IngramSpark's Cover Template Generator only; 0.25 in is a placeholder [VERIFY].
+const HC_SPINE_IN = +(process.env.HC_SPINE_IN || 0.25);
+function wrapHtml(kind) {
+  let W, H, body = '', guides = '';
+  if (kind === 'kdp') {
+    const sp = KDP_SPINE_IN * 96; W = 828 * 2 + sp; H = 840;
+    body = panel(0, 0, 828, 840, BACK(-12, -12)) + spine(828, 0, sp, 840, 712) + panel(828 + sp, 0, 828, 840, FRONT(0, -12));
+    guides = [[12, 12, 816, 816], [828 + sp, 12, 816, 816]].map(([x, y, w, h]) => `<div class="guide" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;border:1px solid red"></div>`).join('') +
+      `<div class="guide" style="left:828px;top:0;width:${sp}px;height:840px;border-left:1px dashed #09f;border-right:1px dashed #09f"></div>`;
+  } else {
+    const wrap = 60, board = 8.315 * 96, hinge = 48, sp = HC_SPINE_IN * 96, bh = 840; W = 2 * (wrap + board + hinge) + sp; H = wrap * 2 + bh;
+    const half = wrap + board + hinge;
+    // board shows trim x 9..807 (centered), y -12..828
+    body = panel(0, 0, half, H, BACK(9 - wrap, -12 - wrap)) + spine(half, 0, sp, H, wrap + 712) + panel(half + sp, 0, half, H, FRONT(9 - hinge, -12 - wrap));
+    guides = [[wrap, wrap, board, bh], [half + sp + hinge, wrap, board, bh]].map(([x, y, w, h]) => `<div class="guide" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;border:1px solid red"></div>`).join('') +
+      `<div class="guide" style="left:${wrap + board}px;top:0;width:${2 * hinge + sp}px;height:${H}px;border-left:1px dashed #09f;border-right:1px dashed #09f;background:rgba(0,150,255,.08)"></div>`;
+  }
+  return { W, H, html: (g) => `<!doctype html><html><head><meta charset="utf-8"><title>${kind === 'kdp' ? 'KDP paperback cover' : 'IngramSpark case laminate cover'}</title>
+<link rel="stylesheet" href="../../brand/fonts/fonts.css"><style>${CSS}
+@page { size: ${(W / 96).toFixed(4)}in ${(H / 96).toFixed(4)}in; margin: 0 }
+html,body{width:${W}px;height:${H}px;overflow:hidden}
+</style></head><body>${defs}<div class="wrap" style="width:${W}px;height:${H}px">${body}${g ? guides : ''}</div></body></html>` };
+}
 
 // ------------------------------------------------------------------ html
 const CSS = `
-@page { size: 8.75in 8.75in; margin: 0 }
+@page { size: 8.625in 8.75in; margin: 0 }
 * { box-sizing: border-box }
 html, body { margin: 0; padding: 0; background: #FFFFFF }
 body { -webkit-print-color-adjust: exact; print-color-adjust: exact }
-.page { width: 8.75in; height: 8.75in; page-break-after: always; break-after: page; overflow: hidden; position: relative; background: #FFFFFF }
+.page { width: 8.625in; height: 8.75in; page-break-after: always; break-after: page; overflow: hidden; position: relative; background: #FFFFFF }
 .page:last-child { page-break-after: auto; break-after: auto }
-.art { position: absolute; left: 0; top: 0; width: 100%; height: 100% }
+.art { position: absolute; left: 0; top: 0 }
+.page .art { width: 100%; height: 100% }
 .t { position: absolute; font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 500; font-size: 28px; line-height: 1.32; color: #1D2940; letter-spacing: .1px }
+.t .ln { display: block }
 .t.w { color: #FFFFFF }
 .t .em { font-weight: 700 }
 .nw { white-space: nowrap }
@@ -624,92 +731,107 @@ body { -webkit-print-color-adjust: exact; print-color-adjust: exact }
 .t.title.ink { color: #1D2940; font-size: 84px }
 .t.center { text-align: center }
 .t.sub { font-family: "Nunito Sans", sans-serif; font-weight: 800; font-size: 20px; letter-spacing: 3px; text-transform: uppercase; color: #EE5A36 }
-.t.byline { font-family: "Nunito Sans", sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 2.5px; text-transform: uppercase; color: #FFFFFF; text-align: center }
+.t.author { font-family: "Nunito Sans", sans-serif; font-weight: 700; font-size: 22px; color: #1D2940 }
+.t.byline { font-family: "Nunito Sans", sans-serif; font-weight: 800; font-size: 19px; letter-spacing: 2.5px; text-transform: uppercase; color: #FFFFFF }
 .t.small { font-family: "Nunito Sans", sans-serif; font-weight: 400; font-size: 15px; line-height: 1.5 }
-.t.small p { margin: 0 0 10px }
+.t.small p { margin: 0 0 9px }
 .t.ded { font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 500; font-size: 34px; line-height: 1.3; color: #1D2940 }
-.t.talk-h { font-family: "Bricolage Grotesque", "Nunito Sans", sans-serif; font-weight: 800; font-size: 58px; line-height: 1; color: #FFFFFF; letter-spacing: -1px }
+.t.note { font-family: "Nunito Sans", sans-serif; font-weight: 500; font-size: 21px; line-height: 1.5 }
+.t.talk-h { font-family: "Bricolage Grotesque", "Nunito Sans", sans-serif; font-weight: 800; font-size: 56px; line-height: 1; color: #FFFFFF; letter-spacing: -1px }
+.t.talk-h.ink { color: #1D2940; font-size: 50px }
 .t.talk-sub { font-family: "Nunito Sans", sans-serif; font-weight: 600; font-size: 18px; line-height: 1.4; color: #FFFFFF }
+.t.plan { font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 600; font-size: 30px; color: #1D2940 }
+.t.tag { font-family: "Nunito Sans", sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .5px; color: #1D2940 }
 .t.end { font-family: "Bricolage Grotesque", "Nunito Sans", sans-serif; font-weight: 800; font-size: 60px; color: #FFFFFF; letter-spacing: -1px }
 .t.blurb { font-family: "Nunito Sans", sans-serif; font-weight: 500; font-size: 21px; line-height: 1.45; color: #FFFFFF }
 .t.blurb p { margin: 0 0 14px }
-.t.blurb .blurb-h { font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 600; font-size: 36px; line-height: 1.18; color: #F5B820; margin-bottom: 22px }
-.t.backmeta { font-family: "Nunito Sans", sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 2px; text-transform: uppercase; color: #FFFFFF; text-align: left }
+.t.blurb .blurb-h { font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 600; font-size: 38px; line-height: 1.16; color: #F5B820; margin-bottom: 22px }
+.t.backmeta { font-family: "Nunito Sans", sans-serif; font-weight: 800; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; color: #FFFFFF }
 .qs { position: absolute; width: 720px; margin: 0; padding: 0; list-style: none; font-family: "Nunito Sans", sans-serif; font-size: 19px; line-height: 1.35; color: #1D2940; font-weight: 600 }
-.qs li { display: flex; align-items: center; gap: 16px; background: #FFFFFF; border-radius: 18px; padding: 11px 18px 11px 12px; margin-bottom: 10px; min-height: 58px }
+.qs li { display: flex; align-items: center; gap: 16px; background: #FFFFFF; border-radius: 18px; padding: 10px 18px 10px 12px; margin-bottom: 9px; min-height: 56px }
 .qs .num { flex: 0 0 38px; height: 38px; border-radius: 50%; color: #FFFFFF; font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 700; font-size: 21px; display: flex; align-items: center; justify-content: center }
 .tip { position: absolute; width: 720px; font-family: "Nunito Sans", sans-serif; font-size: 16px; line-height: 1.45; color: #1D2940; background: #FEF4D8; border-radius: 18px; padding: 14px 20px }
+.qr { position: absolute; width: 132px; height: 132px }
+.qr svg { display: block }
+.bonus { position: absolute; width: 520px; font-family: "Nunito Sans", sans-serif; font-size: 17px; line-height: 1.45; color: #1D2940 }
+.bonus .url { font-weight: 800; color: #3D86D8; font-size: 16px }
+.bonus .pair { display: inline-block; margin-top: 8px; font-size: 15px; color: #1D2940 }
+.logo { position: absolute }
+.logo svg { display: block; width: 100%; height: auto }
+.slot { position: absolute; border: 3px dashed #EE5A36; border-radius: 18px; background: rgba(255,255,255,.85); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; font-family: "Nunito Sans", sans-serif; color: #1D2940 }
+.slot b { font-size: 20px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #EE5A36; margin-bottom: 10px }
+.slot span { font-size: 17px; line-height: 1.5 }
 .isbn { position: absolute; width: 192px; height: 115px; background: #FFFFFF; border: 2px dashed #1D2940; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: "Nunito Sans", sans-serif; color: #1D2940; text-align: center }
 .isbn b { font-size: 15px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase }
-.isbn span { font-size: 11.5px; margin-top: 4px }
-.guide-trim { position: absolute; left: 12px; top: 12px; right: 12px; bottom: 12px; border: 1px solid rgba(255,0,0,.8); pointer-events: none }
-.guide-safe { position: absolute; left: 48px; top: 48px; right: 48px; bottom: 48px; border: 1px dashed rgba(0,160,255,.9); pointer-events: none }
+.isbn span { font-size: 11.5px; margin-top: 4px; line-height: 1.3 }
+.panel { position: absolute; overflow: hidden }
+.canvas { position: absolute; width: 1216px; height: 1216px }
+.canvas .inner { position: absolute; left: 200px; top: 200px; width: 816px; height: 816px }
+.guide { position: absolute; pointer-events: none; z-index: 9 }
 `;
 const defs = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${SYMBOLS}</defs></svg>`;
-const html = `<!doctype html>
+const doc = (title, body, css = '') => `<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
-<title>The Day the Tablet Slept — Play Before Pixels (print interior + covers, 8.75 x 8.75 in with bleed)</title>
+<title>${title}</title>
 <link rel="stylesheet" href="../../brand/fonts/fonts.css">
-<style>${CSS}</style></head>
+<style>${CSS}${css}</style></head>
 <body>
 ${defs}
-${pages.join('\n')}
+${body}
 </body></html>`;
-fs.writeFileSync(path.join(OUT, GUIDES ? process.env.GUIDES_OUT : 'source.html'), html);
-
-// cover.html: front cover cropped to trim (816 x 816 css px) for the store image
-if (!GUIDES) {
-  const coverPage = pages[0];
-  fs.writeFileSync(path.join(OUT, 'cover.html'), `<!doctype html><html><head><meta charset="utf-8"><title>Cover</title>
-<link rel="stylesheet" href="../../brand/fonts/fonts.css"><style>${CSS}
-html,body{width:816px;height:816px;overflow:hidden} .crop{position:absolute;left:-12px;top:-12px}</style></head>
-<body>${defs}<div class="crop">${coverPage}</div></body></html>`);
-  // mockup.html: 1600 x 1200 product shot
-  const spreadSvg = k => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1632 816" width="100%" height="100%">${spreads[k]()}</svg>`;
-  const s7 = story.find(x => x[0] === 's7');
-  const txt = (t, dx) => `<div class="t ${t.cls || ''}" style="left:${t.x + dx}px;top:${t.y}px;width:${t.w}px;${t.size ? `font-size:${t.size}px;` : ''}">${t.html}</div>`;
-  fs.writeFileSync(path.join(OUT, 'mockup.html'), `<!doctype html><html><head><meta charset="utf-8"><title>Mockup</title>
+const w = (f, s) => fs.writeFileSync(path.join(OUT, f), s);
+if (GUIDES) {
+  w('_guides.html', doc('guides', pages.join('\n')));
+  w('_cover-kdp-guides.html', wrapHtml('kdp').html(true));
+  w('_cover-hc-guides.html', wrapHtml('hc').html(true));
+  console.log('guides written'); process.exit(0);
+}
+w('source.html', doc('The Day the Tablet Slept: interior, 32 pages, 8.625 x 8.75 in (8.5 x 8.5 trim + bleed on top, bottom and outside edge)', pages.join('\n')));
+// review file: facing pages side by side (checks that every spread meets cleanly at the gutter)
+const pairs = [[1]]; for (let i = 2; i <= 32; i += 2) pairs.push(i < 32 ? [i, i + 1] : [i]);
+w('spreads.html', doc('Spreads (review only)', pairs.map(p => `<div class="spread" style="display:flex;justify-content:${p[0] === 1 ? 'flex-end' : 'flex-start'};width:1656px">${p.map(n => pages[n - 1].replace('class="page', 'style="page-break-after:auto" class="page')).join('')}</div>`).join('\n'),
+  `.spread{margin:0 0 0 0}`));
+const kdp = wrapHtml('kdp'), hc = wrapHtml('hc');
+w('cover-kdp-paperback.html', kdp.html(false));
+w('cover-ingramspark-hardcover.html', hc.html(false));
+w('cover.html', `<!doctype html><html><head><meta charset="utf-8"><title>Cover</title><link rel="stylesheet" href="../../brand/fonts/fonts.css"><style>${CSS}
+html,body{width:816px;height:816px;overflow:hidden}</style></head><body>${defs}${panel(0, 0, 816, 816, FRONT(0, 0))}</body></html>`);
+w('back.html', `<!doctype html><html><head><meta charset="utf-8"><title>Back cover</title><link rel="stylesheet" href="../../brand/fonts/fonts.css"><style>${CSS}
+html,body{width:816px;height:816px;overflow:hidden}</style></head><body>${defs}${panel(0, 0, 816, 816, BACK(0, 0))}</body></html>`);
+// mockup 1600 x 1200
+const spreadArt = k => spreads[k]();
+const openSpread = k => {
+  const [L, Rt] = LAYOUT[k];
+  const t = (b, dx) => `<div class="t ${b.cls || ''}" style="left:${b.x + dx}px;top:${b.y}px;width:${b.w}px;${b.size ? `font-size:${b.size}px;` : ''}">${b.html}</div>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1632 816" width="1632" height="816" style="position:absolute;left:0;top:0">${spreadArt(k)}</svg>${t(box(k + ' left', L), 0)}${t(box(k + ' right', Rt), 816)}`;
+};
+w('mockup.html', `<!doctype html><html><head><meta charset="utf-8"><title>Mockup</title>
 <link rel="stylesheet" href="../../brand/fonts/fonts.css"><style>${CSS}
 html,body{width:1600px;height:1200px;overflow:hidden;background:${C.wash}}
-.surface{position:absolute;left:0;right:0;top:760px;bottom:0;background:${C.tSky}}
+.surface{position:absolute;left:0;right:0;top:780px;bottom:0;background:${C.tSky}}
 .shadow{position:absolute;border-radius:50%;background:rgba(29,41,64,.22);filter:blur(22px)}
-.book{position:absolute;left:150px;top:190px;width:600px;height:600px;transform:perspective(2200px) rotateY(16deg);transform-origin:left center}
+.book{position:absolute;left:130px;top:210px;width:600px;height:600px;transform:perspective(2200px) rotateY(16deg);transform-origin:left center}
 .book .face{position:absolute;inset:0;overflow:hidden;border-radius:3px 10px 10px 3px}
-.book .face .crop{position:absolute;left:-12px;top:-12px;transform:scale(${600 / 816});transform-origin:12px 12px}
-.book .spine{position:absolute;left:-26px;top:0;width:26px;height:600px;background:#2f6fb8;border-radius:4px 0 0 4px}
-.book .pages{position:absolute;right:-12px;top:6px;width:12px;height:588px;background:#fff;border-radius:0 4px 4px 0}
-.open{position:absolute;left:790px;top:600px;width:720px;height:360px;transform:perspective(2400px) rotateX(24deg) rotateZ(-3deg);transform-origin:center bottom}
+.book .face .panel{transform:scale(${600 / 816});transform-origin:0 0}
+.book .spinebar{position:absolute;left:-24px;top:0;width:24px;height:600px;background:#2f6fb8;border-radius:4px 0 0 4px}
+.book .pg{position:absolute;right:-12px;top:6px;width:12px;height:588px;background:#fff;border-radius:0 4px 4px 0}
+.open{position:absolute;left:790px;top:640px;width:720px;height:360px;transform:perspective(2400px) rotateX(24deg) rotateZ(-3deg);transform-origin:center bottom}
 .open .rim{position:absolute;left:-10px;top:-6px;right:-10px;bottom:-10px;background:#FFFFFF;border-radius:10px}
 .open .sheet{position:absolute;inset:0;overflow:hidden;border-radius:4px}
 .open .sheet .inner{position:absolute;left:0;top:0;width:1632px;height:816px;transform:scale(${720 / 1632});transform-origin:0 0}
 .open .gut{position:absolute;left:356px;top:0;width:8px;height:360px;background:rgba(29,41,64,.14)}
-.tag{position:absolute;left:830px;top:250px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:64px;line-height:1;color:${C.ink};letter-spacing:-1.5px}
-.tag small{display:block;font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:24px;letter-spacing:.5px;color:${C.tomato};margin-top:18px}
-.tag .pill{display:inline-block;margin-top:22px;font-family:"Nunito Sans",sans-serif;font-weight:800;font-size:18px;letter-spacing:2px;text-transform:uppercase;background:${C.sun};color:${C.ink};padding:10px 18px;border-radius:30px}
+.tag{position:absolute;left:830px;top:190px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:58px;line-height:1.02;color:${C.ink};letter-spacing:-1.5px}
+.tag .hl{color:${C.tomato}}
+.tag small{display:block;font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:23px;letter-spacing:.3px;color:${C.ink};margin-top:20px;line-height:1.4}
+.mlogo{position:absolute;left:834px;top:540px;width:250px}
+.mlogo svg{display:block;width:100%;height:auto}
 </style></head><body>${defs}
 <div class="surface"></div>
-<div class="shadow" style="left:170px;top:760px;width:640px;height:70px"></div>
-<div class="shadow" style="left:800px;top:900px;width:720px;height:70px"></div>
-<div class="book"><div class="spine"></div><div class="face"><div class="crop">${coverPage}</div></div><div class="pages"></div></div>
-<div class="tag">A read-aloud about<br>a very sleepy tablet<small>32-page picture book · ages 3–7</small><span class="pill">Play Before Pixels</span></div>
-<div class="open"><div class="rim"></div><div class="sheet"><div class="inner">${spreadSvg('s7')}${txt(s7[1], 0)}${txt(s7[2], 816)}</div></div><div class="gut"></div></div>
+<div class="shadow" style="left:150px;top:780px;width:640px;height:70px"></div>
+<div class="shadow" style="left:800px;top:940px;width:720px;height:70px"></div>
+<div class="book"><div class="spinebar"></div><div class="face">${panel(0, 0, 816, 816, FRONT(0, 0))}</div><div class="pg"></div></div>
+<div class="tag">Blocks. Puddles.<br>A box <span class="hl">rocket.</span><br>One very sleepy tablet.<small>A funny bedtime read-aloud with a refrain<br>kids shout along to · 32 pages · ages 3–7</small></div>
+<div class="mlogo">${LOGO('lockup-horizontal.svg', 250)}</div>
+<div class="open"><div class="rim"></div><div class="sheet"><div class="inner">${openSpread('s7')}</div></div><div class="gut"></div></div>
 </body></html>`);
-}
-// cover-wrap.html: one-piece paperback cover (back | spine | front) for printers that want a wrap file.
-// SPINE_IN must be recalculated from the printer's own calculator for the final paper and page count.
-if (!GUIDES) {
-  const SPINE_IN = 0.075; const sp = SPINE_IN * 96; const W = 828 * 2 + sp;
-  fs.writeFileSync(path.join(OUT, 'cover-wrap.html'), `<!doctype html><html><head><meta charset="utf-8"><title>Cover wrap</title>
-<link rel="stylesheet" href="../../brand/fonts/fonts.css"><style>${CSS}
-@page { size: ${(W / 96).toFixed(4)}in 8.75in; margin: 0 }
-html,body{width:${W}px;height:840px;overflow:hidden}
-.wrap{position:relative;width:${W}px;height:840px;overflow:hidden}
-.part{position:absolute;top:0;height:840px;overflow:hidden}
-.part .page{position:absolute;top:0}
-</style></head><body>${defs}<div class="wrap">
-<div class="part" style="left:0;width:828px">${pages[31].replace('<section class="page">', '<section class="page" style="left:0">')}</div>
-<div class="part" style="left:828px;width:${sp}px;background:${C.sky}"></div>
-<div class="part" style="left:${828 + sp}px;width:828px">${pages[0].replace('<section class="page">', '<section class="page" style="left:-12px">')}</div>
-</div></body></html>`);
-}
-console.log('pages:', pages.length);
+console.log('pages:', pages.length, '| kdp wrap in:', (kdp.W / 96).toFixed(4), 'x', (kdp.H / 96).toFixed(4), '| hardcover wrap in:', (hc.W / 96).toFixed(4), 'x', (hc.H / 96).toFixed(4));

@@ -1,3 +1,5 @@
+> **Update, September 28, 2026:** AlphaPlay LLC's Chase business checking account has been closed; the Chase business credit card remains open. Open a new no-fee, no-minimum business checking account first — see finance/BANKING.md. Every reference below to "the business checking account" means that new account.
+
 # Money and tax setup: Play Before Pixels
 
 **For:** AlphaPlay LLC, doing business as Play Before Pixels (Maryland)

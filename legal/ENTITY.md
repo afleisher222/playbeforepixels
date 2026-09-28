@@ -18,3 +18,5 @@
 - Classes: 9 (downloadable game software; downloadable children's educational software; downloadable printable course materials in spelling and literacy), 16 (printed instruction sheets for spelling and literacy games), 25 (sports pinnies), 28 (children's educational games for spelling and literacy), 41 (online games; online instruction in spelling and literacy).
 - Opportunity: a genuine ALPHAPLAY-branded spelling/literacy game line sold through the Play Before Pixels shop could support a Statement of Use for the goods actually sold. The SOU must claim ONLY goods actually in use in commerce, with a real specimen; unused goods are deleted or carried by extension. Have a trademark attorney file it.
 - The Markavo, CopyMark and TCLP emails are private solicitations, not USPTO notices.
+
+- **Banking (September 28, 2026):** the Chase business checking account is closed; the Chase business credit card remains open. A new no-fee, no-minimum business checking account is required before any platform can pay out. See finance/BANKING.md.
