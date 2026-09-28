@@ -661,7 +661,7 @@ const FRONT_TEXT = [{ x: 44, y: 40, w: 728, cls: 'title', html: `The Day the<br>
 function backCover() {
   let s = R(-200, -200, 1216, 1216, C.sky) + R(-200, 700, 1216, 520, C.grass);
   s += stars([[740, 90, .4, C.sun], [470, 560, .3, C.paper], [700, 520, .3, C.sun]], C.sun);
-  s += dog(400, 700, 0.6, 'dog-happy') + G('translate(640 520) scale(0.36) rotate(6)', U('tablet-sleeping')) + zzz(730, 520, 0.4, C.sun);
+  s += dog(440, 700, 0.6, 'dog-happy') + G('translate(640 520) scale(0.36) rotate(6)', U('tablet-sleeping')) + zzz(730, 520, 0.4, C.sun);
   // what happens in the story, as a row of little icons
   s += block(60, 452, C.tomato, 'c', 0.8, -8) + G('translate(160 516) scale(0.62) rotate(-6)', U('boot')) + G('translate(250 518) scale(0.12) rotate(14)', U('rocket')) +
     G('translate(350 496) scale(0.7)', U('pancake')) + bookU(420, 448, C.sun, 0.56, 6) + G('translate(520 492) scale(0.6)', U('duck'));

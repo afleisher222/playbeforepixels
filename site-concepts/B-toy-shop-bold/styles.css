@@ -1081,3 +1081,4 @@ select.inp { appearance: none; background-image: linear-gradient(45deg, transpar
   .hero-c .stage .book--pb { width: 50cqmin; transform: translate(44%, -20%) rotate(-5deg); }
   .hero-mini { max-width: 92%; }
 }
+.card.c1 p, .card.c3 p { visibility: hidden; }

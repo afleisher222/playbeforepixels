@@ -367,14 +367,16 @@ scenes.in = () => {
 
 scenes.open = () => {
   const bx = 400, top = 356;
-  const duck = use('duck', `translate(${bx + 6},${top - 22}) scale(1.25)`);
+  const duck = use('duck', `translate(${bx + 6},${top - 14}) scale(1.2)`);
   const box = `<rect x="${bx - 80}" y="${top}" width="160" height="${F - top}" rx="12" fill="${C.tomato}"/>
     <rect x="${bx - 14}" y="${top}" width="28" height="${F - top}" fill="${C.sun}"/>`;
-  const lid = `<g transform="rotate(104 ${bx + 86} ${top - 2})"><rect x="${bx - 86}" y="${top - 26}" width="172" height="28" rx="10" fill="${C.tomato}"/><rect x="${bx - 14}" y="${top - 26}" width="28" height="28" fill="${C.sun}"/></g>`;
+  const lid = `<path d="M${bx - 80} ${top + 2}L${bx - 6} ${top + 2}L${bx - 36} ${top - 44}Q${bx - 40} ${top - 50} ${bx - 48} ${top - 48}L${bx - 110} ${top - 30}Q${bx - 118} ${top - 26} ${bx - 112} ${top - 18}Z" fill="${C.tomato}"/>
+    <path d="M${bx + 80} ${top + 2}L${bx + 6} ${top + 2}L${bx + 36} ${top - 44}Q${bx + 40} ${top - 50} ${bx + 48} ${top - 48}L${bx + 110} ${top - 30}Q${bx + 118} ${top - 26} ${bx + 112} ${top - 18}Z" fill="${C.tomato}"/>
+    <rect x="${bx - 76}" y="${top - 8}" width="152" height="16" rx="8" fill="${C.ink}"/>`;
   const k = Object.assign({}, KIDS.A, { x: 190, y: F - 27 * 1.5, s: 1.5, aL: 142, aR: -142, face: 'laugh', lL: 6, lR: -6 });
   const sparks = [[bx - 70, 250, .9], [bx + 76, 232, .7], [bx - 18, 214, .55]].map(([x, y, s]) => `<g transform="translate(${x},${y}) scale(${s})"><use href="#star"/></g>`).join('');
   const rug = `<ellipse cx="300" cy="${F}" rx="250" ry="24" fill="${C.plum}"/>`;
-  return bg(C.tTomato) + circle(300, 318, 150, '#FFFFFF') + rug + duck + box + lid + kid(k) + sparks;
+  return bg(C.tTomato) + circle(300, 318, 150, '#FFFFFF') + rug + lid + duck + box + kid(k) + sparks;
 };
 
 scenes.help = () => {

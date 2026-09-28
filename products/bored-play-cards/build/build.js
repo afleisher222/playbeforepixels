@@ -58,15 +58,16 @@ function card(cd, key, num, opts = {}) {
   if (isMini && /^1/.test(cd.a || '') && !/toilet/.test(safe)) safe += ' Under-3s: items bigger than a toilet-paper tube.';
   const numTxt = isMini ? `${key === 'summer' ? 'Summer' : 'Rainy'} · ${String(num).padStart(2, '0')}` : `${band.ages} · ${String(num).padStart(2, '0')}`;
   const seasonIc = isMini ? `<span class="ss">${icon(key === 'summer' ? 'sun' : 'rain', 'ssi')}</span>` : '';
-  return `<div class="card" style="${tvars(th)}"${opts.id ? ` id="${opts.id}"` : ''}><div class="panel">
-  <div class="hd"><span class="age">${seasonIc}${ageTxt}</span><span class="en">${meter(cd.e)}${ENERGY[cd.e]}</span></div>
-  <div class="ti"><div class="tt"><div class="cat">${CATS[cd.c].name}</div><h3>${esc(cd.t)}</h3></div><span class="ci">${icon(cd.c)}</span></div>
+  const M = n => opts.marks ? `<span class="mk m${n}">${n}</span>` : '';
+  return `<div class="card${opts.marks ? ' marked' : ''}" style="${tvars(th)}"${opts.id ? ` id="${opts.id}"` : ''}><div class="panel">
+  <div class="hd"><span class="age">${M(1)}${seasonIc}${ageTxt}</span><span class="en">${M(2)}${meter(cd.e)}${ENERGY[cd.e]}</span></div>
+  <div class="ti"><div class="tt"><div class="cat">${CATS[cd.c].name}</div><h3>${esc(cd.t)}</h3></div><span class="ci">${M(3)}${icon(cd.c)}</span></div>
   <div class="bd">
-    <div class="row"><b>You need</b><p>${esc(cd.n)}</p></div>
-    <div class="row"><b>Try it</b><p>${esc(cd.d)}</p></div>
-    <div class="talk">${icon('talk', 'ti2')}<div><b>Talk</b><p>${esc(cd.k)}</p></div></div>
+    <div class="row">${M(4)}<b>You need</b><p>${esc(cd.n)}</p></div>
+    <div class="row">${M(5)}<b>Try it</b><p>${esc(cd.d)}</p></div>
+    <div class="talk">${M(6)}${icon('talk', 'ti2')}<div><b>Talk</b><p>${esc(cd.k)}</p></div></div>
   </div>
-  <div class="ft">${icon('safe', 'si')}<span>${esc(safe)}</span><i>${numTxt}</i></div>
+  <div class="ft">${M(7)}${icon('safe', 'si')}<span>${esc(safe)}</span><i>${numTxt}</i></div>
 </div></div>`;
 }
 
@@ -351,14 +352,12 @@ function anatomyPage() {
     [6, 'Talk', 'One thing to say or ask while you play.'],
     [7, 'Safety line', 'Read it before you start, every time.'],
   ];
-  const pos = [[18, 12], [202, 12], [218, 46], [14, 104], [14, 146], [14, 236], [14, 296]];
-  const dots = pos.map(([x, y], i) => `<span class="mk" style="left:${x}px;top:${y}px">${i + 1}</span>`).join('');
   const bands = BANDS.map(b => `<div class="bdg" style="background:${TH[b.key].t}"><span style="background:${TH[b.key].m}"></span><b>${b.label}</b></div>`).join('');
   const energies = [['c', 'Calm', 'Sit-down play for winding down, quiet mornings and before bed.'], ['m', 'Medium', 'Up-and-about play: pretend, building, helping, walks.'], ['w', 'Wiggly', 'Big-body play for burning energy, indoors or out.']];
   const cats = Object.entries(CATS).map(([k, v]) => `<div class="ct">${icon(k)}<span>${v.name}</span></div>`).join('');
   const body = `
   <div class="an">
-    <div class="an-card"><div class="scale">${card(sample, 'b35', 17)}${dots}</div></div>
+    <div class="an-card"><div class="scale">${card(sample, 'b35', 17, { marks: true })}</div></div>
     <div class="an-leg">${marks.map(([n, h, t]) => `<div class="lg"><span class="mk s">${n}</span><div><h4>${h}</h4><p>${t}</p></div></div>`).join('')}</div>
   </div>
   <div class="an-row"><span class="kick">Four age bands</span><div class="bands">${bands}<div class="bdg" style="background:${C.tTomato}"><span style="background:${C.tomato}"></span><b>Summer</b></div><div class="bdg" style="background:${C.wash}"><span style="background:${C.ink}"></span><b>Rainy day</b></div></div>
@@ -370,8 +369,15 @@ function anatomyPage() {
 }
 const anatomyCss = `<style>
 .an{display:flex;gap:26px;align-items:flex-start;margin-bottom:14px}
-.an-card{flex:0 0 3.5in;height:4.9in;position:relative}
+.an-card{flex:0 0 3.5in;height:4.75in;position:relative;margin-left:8px}
 .an-card .scale{position:absolute;left:0;top:0;width:240px;height:336px;transform:scale(1.4);transform-origin:0 0}
+.marked .panel{overflow:visible}.marked .hd{border-radius:11px 11px 0 0}
+.marked .age,.marked .en,.marked .ci,.marked .row,.marked .talk,.marked .ft{position:relative}
+.mk.m1,.mk.m4,.mk.m5,.mk.m6,.mk.m7{left:-27px;top:50%;transform:translateY(-50%)}
+.mk.m4,.mk.m5{top:0;transform:none}
+.mk.m2,.mk.m3{right:-24px;top:50%;transform:translateY(-50%)}
+.mk.m3{right:-30px}
+.mk.m1{left:-26px}
 .mk{position:absolute;width:17px;height:17px;border-radius:50%;background:${C.tomato};color:#fff;font-weight:800;font-size:10px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px #fff;z-index:3}
 .mk.s{position:static;flex:0 0 24px;width:24px;height:24px;font-size:12.5px;box-shadow:none}
 .an-leg{flex:1;padding-top:4px}
