@@ -392,7 +392,7 @@ function doc(V) {
     </div>`, { run: 'Sources' });
 
   // More from Play Before Pixels + bonus
-  const next = [['100 Screen-Free Plays', 'Paperback and printable guide for ages 0–5, sorted by age.', 'book'], ['150 “I’m Bored” Play Cards', 'Age-banded play cards with a talk prompt on each.', 'box'], ['Play-First Family Kit', 'Screen rhythm chart, family play plan, helping jobs and more.', 'list'], ['The Day the Tablet Slept', 'A funny bedtime read-aloud for ages 3–7.', 'moon']];
+  const next = [['100 Screen-Free Plays', 'Paperback and printable guide for ages 0–5, sorted by age.', 'book'], ['76 “I’m Bored” Play Cards', 'Age-banded play cards with a talk prompt on each.', 'box'], ['Play-First Family Kit', 'Screen rhythm chart, family play plan, helping jobs and more.', 'list'], ['Toddler Busy Book', '74 printable activities for ages 1–5.', 'blocks']];
   page(`${H('What’s next', 'More from Play Before Pixels', C.tomato)}
     <div class="nextg">${next.map(([t, s, a]) => `<div class="nx">${artDisc(a, C.tSun, .9)}<div><b>${t}</b><span>${s}</span></div></div>`).join('')}</div>
     ${V.url ? `<div class="bonus">

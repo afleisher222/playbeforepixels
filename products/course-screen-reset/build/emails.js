@@ -27,9 +27,9 @@ const TAG = { unsub: '{{unsubscribe_link}}', pause: '{{pause_or_change_time_link
 
 const NEXT = [ // next-product recommendation per week (BRAND.md: every email recommends a next product)
   { t: 'Play-First Family Kit', s: 'A screen-rhythm chart, a family play plan and helping-jobs pages to put this week on the fridge.', u: SITE + '/shop/play-first-family-kit' },
-  { t: '150 “I’m Bored” Play Cards', s: 'Age-banded play ideas with a talk prompt on every card, for the “there’s nothing to do” moments.', u: SITE + '/shop/bored-play-cards' },
+  { t: '76 “I’m Bored” Play Cards', s: 'Age-banded play ideas with a talk prompt on every card, for the “there’s nothing to do” moments.', u: SITE + '/shop/bored-play-cards' },
   { t: '100 Screen-Free Plays', s: 'The paperback and printable guide for ages 0–5, sorted by age, with a talk line on every play.', u: SITE + '/shop/guide-100-plays' },
-  { t: 'The Day the Tablet Slept', s: 'A funny bedtime read-aloud for ages 3–7 about a box rocket, the family dog and one very sleepy tablet.', u: SITE + '/shop/picture-tablet-slept' },
+  { t: 'Toddler Busy Book', s: '74 printable busy-book activities for ages 1–5, for waiting rooms, car rides and quiet time.', u: SITE + '/shop/toddler-busy-book' },
   { t: '100 Screen-Free Plays', s: 'Keep going after Day 30: 100 more easy plays, sorted by age.', u: SITE + '/shop/guide-100-plays' },
 ];
 
@@ -153,7 +153,7 @@ const funnel = [
     paras: ['You’re nearly through your seven days. By now you may have noticed when the asking happens and which play your child wants again.', 'If you’d like to keep going, 30 Days of Back-and-Forth is the full program: 30 short daily lessons by email, 30 easy plays with versions for toddlers and preschoolers, plain words for 30 tricky moments, and a designed workbook with trackers, a family plan and a certificate.', 'It covers what the starter doesn’t: mornings, the hour before dinner, big feelings when screens end, waiting rooms, car rides, grown-up phones, “that’s not fair!”, siblings, grandparents and sick days.', 'It’s written, not filmed. No videos, no calls, no coaching. You do it at your own pace.'],
     play: 12, offer: true },
   { id: 'f7-invite', send: 'day 7', subject: 'Keep going: 30 Days of Back-and-Forth', pre: `$27, with a ${R.short}.`,
-    paras: ['Your seven days are done. Thank you for spending them with us.', 'If you’d like the whole month, 30 Days of Back-and-Forth is $27. You get 30 daily lessons by email, 30 plays, 30 scripts for tricky moments and the full workbook (Color and Low-ink, Letter and A4, fillable in free Acrobat Reader).', 'Or choose the 30 Days of Back-and-Forth Bundle for $49: the program plus the Play-First Family Kit, the 100 Screen-Free Plays printable guide and the 150 “I’m Bored” Play Cards. Bought separately, those come to $54.49.', `Either way, there’s a guarantee: if it isn’t right for your family, ${R.terms}.`, 'And if now isn’t the time, that’s fine. You’ll keep getting our free monthly play email, and the starter is yours to keep.'],
+    paras: ['Your seven days are done. Thank you for spending them with us.', 'If you’d like the whole month, 30 Days of Back-and-Forth is $27. You get 30 daily lessons by email, 30 plays, 30 scripts for tricky moments and the full workbook (Color and Low-ink, Letter and A4, fillable in free Acrobat Reader).', 'Or choose the 30 Days of Back-and-Forth Bundle for $49: the program plus the Play-First Family Kit, the 100 Screen-Free Plays printable guide and the 76 “I’m Bored” Play Cards. Bought separately, those come to $54.49.', `Either way, there’s a guarantee: if it isn’t right for your family, ${R.terms}.`, 'And if now isn’t the time, that’s fine. You’ll keep getting our free monthly play email, and the starter is yours to keep.'],
     play: 7, offer: true, final: true },
 ];
 

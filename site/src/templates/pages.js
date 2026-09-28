@@ -204,7 +204,8 @@ function research(ctx) {
   const body = `<div class="wrap">${crumbs(trail)}</div>
 ${head({ eyebrow: S.hubName, h1: 'Quiet, careful notes on the research.', lede: 'Short, plain summaries of published studies and guidance about young children, play, talk and screens. No products, no ads.' })}
 <section class="wrap hub-body">${list}</section>`;
-  const html = ctx.hubPage({ key: 'research', path: '/research/', title: `${S.hubName}: Research on Play, Talk and Screens`,
+  // An empty "being reviewed" page is thin content: keep it out of search until a note is published.
+  const html = ctx.hubPage({ key: 'research', path: '/research/', noindex: !pages.length, title: `${S.hubName}: Research on Play, Talk and Screens`,
     description: 'Plain summaries of published research on young children, play, talk and screens. Notes appear here once each one has been reviewed.',
     jsonld: [seo.breadcrumbs(ctx, trail)] }, body);
   return { html, pages };

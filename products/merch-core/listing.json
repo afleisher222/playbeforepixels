@@ -68,13 +68,13 @@
     },
     "net_notes": "ESTIMATES (UNVERIFIED): no print-partner quote exists yet. Assumed partner cost: $12.95 for a printed XS–XL tee with inside label ($14.95 2XL, $16.95 3XL) plus $4.75 standard shipping, which the buyer pays at the partner's rate. Fees: Etsy $0.20 listing + 6.5% transaction + 3% + $0.25 processing on item + shipping; own site 2.9% + $0.30; a 5% refund allowance. Etsy Offsite Ads stay off (GROWTH-ENGINE launch plan): an ad-driven sale would net only about $4.47, under price_floor, so no etsy_offsite_ad_sale net is listed. merch_on_demand is null: Amazon pays a royalty it sets; fill it from Amazon's royalty table for a $27 list price. Rule: when the real quote arrives, replace these figures. If the partner charges more than max_partner_cost_usd_by_channel, raise the everyday price before launch (never a 'was' price).",
     "short_description": "Our spinning-top logo on a soft-colored adult unisex tee. 4 colors, XS-3XL, printed when you order. Grown-up sizes only.",
-    "long_description": "The Play Before Pixels logo tee is for the grown-ups who sit on the floor, build the tower and wait for the answer.\n\nOur logo is a maker's seal, like the stamp pressed into the bottom of a good wooden toy. In the middle is a spinning top: one of the oldest toys there is, and it needs nothing but a hand. It sits high on the chest, about 10.5 inches wide, in ink on light colors or in white on navy.\n\nChoose White, Natural, Mustard or Navy in adult unisex sizes XS to 3XL. Your size and care details are printed inside the neck.\n\nEach tee is printed when you order it by our print partner and shipped to you with tracking, so allow a few extra days before it ships. Nothing sits in a warehouse.\n\nWe make grown-up sizes only. We don't make kids' clothing.\n\nCare: machine wash cold, inside out; tumble dry low; don't iron the print.\n\nLooking for a gift? It pairs well with our picture book The Day the Tablet Slept and our 150 \"I'm bored!\" Play Cards, sold separately.",
+    "long_description": "The Play Before Pixels logo tee is for the grown-ups who sit on the floor, build the tower and wait for the answer.\n\nOur logo is a maker's seal, like the stamp pressed into the bottom of a good wooden toy. In the middle is a spinning top: one of the oldest toys there is, and it needs nothing but a hand. It sits high on the chest, about 10.5 inches wide, in ink on light colors or in white on navy.\n\nChoose White, Natural, Mustard or Navy in adult unisex sizes XS to 3XL. Your size and care details are printed inside the neck.\n\nEach tee is printed when you order it by our print partner and shipped to you with tracking, so allow a few extra days before it ships. Nothing sits in a warehouse.\n\nWe make grown-up sizes only. We don't make kids' clothing.\n\nCare: machine wash cold, inside out; tumble dry low; don't iron the print.\n\nLooking for a gift? It pairs well with our book 100 Screen-Free Plays and our \"I'm bored!\" Play Cards, sold separately.",
     "bullets": [
       "Our logo: a spinning top in a round maker's seal, beside our name with a tomato-red dot on the i",
       "4 colors: White, Natural and Mustard with the ink logo; Navy with the white logo",
       "Adult unisex sizes XS to 3XL, with size and care printed inside the neck",
       "Printed when you order by our print partner, then shipped with tracking",
-      "Grown-up sizes only; pairs with our picture book and play cards as a gift"
+      "Grown-up sizes only; pairs with our play book and play cards as a gift"
     ],
     "keywords": [
       "play before pixels shirt",
@@ -110,7 +110,7 @@
       "preview/listing-images/listing-04.png - details: printed neck label, sizes, print on demand, care, grown-up sizes only",
       "preview/listing-images/listing-05.png - size guide: how to measure (the numeric chart comes from the chosen blank and goes in the listing's size chart)",
       "preview/listing-images/listing-06.png - how your tee gets to you in 3 steps",
-      "preview/listing-images/listing-07.png - gift idea: pairs with The Day the Tablet Slept and 150 I'm bored! Play Cards",
+      "preview/listing-images/listing-07.png - gift idea: pairs with 100 Screen-Free Plays and the I'm bored! Play Cards",
       "cover.png - 1600 x 1600 store and website hero",
       "mockup.png - 1600 x 1200 website flat-lay of the whole line (navy logo tee, white More talk, less tap tee, natural Laps not apps tote)",
       "preview/mockups/tee-white|natural|mustard|navy.png - 1600 x 1200 flat-lay per color for variant photos"
@@ -134,7 +134,7 @@
     "next_products": [
       "merch-core-more-talk-tee",
       "bundle-holiday-gift",
-      "picture-tablet-slept"
+      "guide-100-plays"
     ],
     "bonus_url": "playbeforepixels.com/bonus/merch-core",
     "bonus_notes": "The site-edition pack-in card (hang-tag.pdf page 2) carries a QR and the short link https://playbeforepixels.com/bonus/merch-core. The page should offer the free play printable and the email sign-up (email only; child's birth month and year optional; never a child's name). Etsy and Amazon orders get no URL or QR.",
@@ -298,7 +298,7 @@
     },
     "net_notes": "ESTIMATES (UNVERIFIED): no print-partner quote exists yet. Assumed partner cost: $12.95 for a printed XS–XL tee with inside label ($14.95 2XL, $16.95 3XL) plus $4.75 standard shipping, which the buyer pays at the partner's rate. Fees: Etsy $0.20 listing + 6.5% transaction + 3% + $0.25 processing on item + shipping; own site 2.9% + $0.30; a 5% refund allowance. Etsy Offsite Ads stay off (GROWTH-ENGINE launch plan): an ad-driven sale would net only about $4.47, under price_floor, so no etsy_offsite_ad_sale net is listed. merch_on_demand is null: Amazon pays a royalty it sets; fill it from Amazon's royalty table for a $27 list price. Rule: when the real quote arrives, replace these figures. If the partner charges more than max_partner_cost_usd_by_channel, raise the everyday price before launch (never a 'was' price).",
     "short_description": "\"More talk, less tap.\" in bold type with our tomato-red ball as the period. Adult unisex tee, 4 colors, XS-3XL, printed when you order.",
-    "long_description": "This adult unisex tee says \"More talk, less tap.\" It is printed to order for grown-ups, in 4 colors and sizes XS to 3XL. It's a small reminder we wrote for ourselves, printed where we'd see it.\n\nIt's about adding, not taking away. One more back-and-forth in the day: a question in the car, a song at the sink, a story at bedtime. It isn't a rule and it isn't a judgment. Every family's day looks different. And a tap on a talking device is talk too.\n\nThe two lines are set in our bold display type, about 11 inches wide, with our tomato-red ball as the period and the Play Before Pixels logo underneath. Choose White, Natural or Mustard with ink type, or Navy with white type, in adult unisex sizes XS to 3XL. Your size and care details are printed inside the neck.\n\nEach tee is printed when you order it by our print partner and shipped to you with tracking, so allow a few extra days before it ships. Nothing sits in a warehouse.\n\nWe make grown-up sizes only. We don't make kids' clothing.\n\nCare: machine wash cold, inside out; tumble dry low; don't iron the print.\n\nLooking for a gift? It pairs well with our picture book The Day the Tablet Slept and our 150 \"I'm bored!\" Play Cards, sold separately.",
+    "long_description": "This adult unisex tee says \"More talk, less tap.\" It is printed to order for grown-ups, in 4 colors and sizes XS to 3XL. It's a small reminder we wrote for ourselves, printed where we'd see it.\n\nIt's about adding, not taking away. One more back-and-forth in the day: a question in the car, a song at the sink, a story at bedtime. It isn't a rule and it isn't a judgment. Every family's day looks different. And a tap on a talking device is talk too.\n\nThe two lines are set in our bold display type, about 11 inches wide, with our tomato-red ball as the period and the Play Before Pixels logo underneath. Choose White, Natural or Mustard with ink type, or Navy with white type, in adult unisex sizes XS to 3XL. Your size and care details are printed inside the neck.\n\nEach tee is printed when you order it by our print partner and shipped to you with tracking, so allow a few extra days before it ships. Nothing sits in a warehouse.\n\nWe make grown-up sizes only. We don't make kids' clothing.\n\nCare: machine wash cold, inside out; tumble dry low; don't iron the print.\n\nLooking for a gift? It pairs well with our book 100 Screen-Free Plays and our \"I'm bored!\" Play Cards, sold separately.",
     "bullets": [
       "\"More talk, less tap.\" in bold two-line type, with our tomato-red ball as the period and our logo below",
       "A gentle reminder to add one more back-and-forth to the day, never a rule or a judgment",
@@ -340,7 +340,7 @@
       "preview/listing-images/slogan-04.png - details: printed neck label, sizes, print on demand, care, grown-up sizes only",
       "preview/listing-images/slogan-05.png - size guide: how to measure",
       "preview/listing-images/slogan-06.png - how your tee gets to you in 3 steps",
-      "preview/listing-images/slogan-07.png - gift idea: pairs with The Day the Tablet Slept and 150 I'm bored! Play Cards",
+      "preview/listing-images/slogan-07.png - gift idea: pairs with 100 Screen-Free Plays and the I'm bored! Play Cards",
       "preview/mockups/tee-more-talk-white|natural|mustard|navy.png - 1600 x 1200 flat-lay per color for variant photos",
       "mockup.png - 1600 x 1200 website flat-lay of the whole line"
     ],
@@ -498,7 +498,7 @@
       "laps not apps tote",
       "canvas tote bag gift",
       "parent gift bundle",
-      "library book tote",
+      "book bag for parents",
       "story time tote bag",
       "gift for new parents",
       "family play gift set"

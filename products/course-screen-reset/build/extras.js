@@ -48,16 +48,16 @@ write('cover.html', base(768, 960, coverCss) + coverInner());
   const DPI = 96, px = v => Math.round(v * DPI);
   const back = `<div class="back">
     <h2>More play and talk, with screens in a steady spot.</h2>
-    <p class="bl">A gentle, practical 30-day plan for busy families. Each day brings one short lesson, one easy play with things you already have, and plain words for a tricky moment: the show that won’t end, “I’m bored”, the hour before dinner, waiting rooms, car rides and “everyone else gets to”.</p>
+    <p class="bl">A gentle, practical 30-day plan for busy families. Each day brings one short lesson, one easy play with things you already have, and plain words for a tricky moment: the show that won’t end, “I’m bored”, the hour before dinner, waiting rooms, car rides and “that’s not fair!”.</p>
     <ul>
       <li><b>30 lessons</b> you can read in about three minutes</li>
-      <li><b>30 plays</b>, each with an easier version, a big-kid version and a 2-minute version for tired days</li>
+      <li><b>30 plays</b>, each with an easier version, a harder version and a 2-minute version for tired days</li>
       <li><b>38 scripts</b> for tricky moments, plus trackers, planning pages and a family plan</li>
       <li><b>No banning.</b> Screens get a steady spot in the day and are never a reward or a punishment</li>
     </ul>
     <p class="note">For families with children aged 1 to 5. Black-and-white interior. Parent education, not medical advice.</p>
     <div class="series"><b>Free bonus inside:</b> color trackers, a certificate to print and a monthly play email at ${BONUS}</div>
-    <div class="series"><b>Collect the Play Before Pixels shelf</b><span>100 Screen-Free Plays · The Day the Tablet Slept · Up! Go! More!</span></div>
+    <div class="series"><b>Collect the Play Before Pixels shelf</b><span>100 Screen-Free Plays for Ages 0–5, and more at playbeforepixels.com</span></div>
     <div class="bot"><div><img src="${LOGO}" alt="Play Before Pixels"><div class="site">${SITE}</div></div><div class="isbn" aria-hidden="true"></div></div>
   </div>`;
   const css = `@page{size:${Wd}in ${Hd}in;margin:0}html,body{width:${Wd}in;height:${Hd}in}
@@ -243,7 +243,7 @@ L(7, 'screens-have-a-spot', `<div class="k">No banning, no bribes</div><h1>Scree
 L(8, 'guarantee-and-bundle', `<div class="k">Simple pricing</div><h1>$27, or $49<br>as a bundle</h1>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px">
   <div style="background:#fff;border-radius:40px;padding:56px"><div class="bric" style="font-size:60px">The program</div><div class="bric" style="font-size:150px;color:${C.tomato};line-height:1.1">$27</div><div style="font-size:36px;line-height:1.45">30 lessons by email<br>Workbook: Color + Low-ink, Letter + A4<br>Type-in pages<br>Scripts bank and certificate</div></div>
-  <div style="background:#fff;border-radius:40px;padding:56px;border:10px solid ${C.sun}"><div class="bric" style="font-size:60px">The bundle</div><div class="bric" style="font-size:150px;color:${C.tomato};line-height:1.1">$49</div><div style="font-size:36px;line-height:1.45">The program, plus:<br>Play-First Family Kit<br>100 Screen-Free Plays (printable)<br>150 “I’m Bored” Play Cards<br><span style="color:#3A4660">$54.49 if bought separately</span></div></div>
+  <div style="background:#fff;border-radius:40px;padding:56px;border:10px solid ${C.sun}"><div class="bric" style="font-size:60px">The bundle</div><div class="bric" style="font-size:150px;color:${C.tomato};line-height:1.1">$49</div><div style="font-size:36px;line-height:1.45">The program, plus:<br>Play-First Family Kit<br>100 Screen-Free Plays (printable)<br>76 “I’m Bored” Play Cards<br><span style="color:#3A4660">$54.49 if bought separately</span></div></div>
   </div>
   <div style="margin-top:50px;background:${C.tGrass};border-radius:40px;padding:44px 56px;font-size:40px;line-height:1.4"><b class="bric" style="font-size:52px">${K.REFUND.short[0].toUpperCase() + K.REFUND.short.slice(1)}.</b><br>Not right for your family? Email us within ${K.REFUND.days} days of purchase for a full refund, as long as you’ve completed no more than ${K.REFUND.maxDone} of the lessons.</div>${SC(4, 'right:110px;bottom:40px;width:470px;height:400px')}`, '#FFFFFF');
 
@@ -309,7 +309,7 @@ L(8, 'guarantee-and-bundle', `<div class="k">Simple pricing</div><h1>$27, or $49
   <div class="k">Pricing</div><h2>Pick one</h2>
   <div class="two">
     <div class="price"><h3>The program</h3><div class="pp">$27</div><p>30 lessons by email, the full workbook, scripts bank and certificate.</p><a class="btn" href="{{program_checkout_link}}">Start the 30 days</a></div>
-    <div class="price b"><h3>The 30 Days of Back-and-Forth Bundle</h3><div class="pp">$49</div><p>The program plus the Play-First Family Kit, 100 Screen-Free Plays (printable) and 150 “I’m Bored” Play Cards. $54.49 if bought separately.</p><a class="quiet" style="margin:0" href="{{bundle_checkout_link}}">Choose the bundle <svg viewBox="0 0 24 24" width=".9em" height=".9em" style="vertical-align:-.1em" aria-hidden="true"><path d="M3 12h16M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    <div class="price b"><h3>The 30 Days of Back-and-Forth Bundle</h3><div class="pp">$49</div><p>The program plus the Play-First Family Kit, 100 Screen-Free Plays (printable) and 76 “I’m Bored” Play Cards. $54.49 if bought separately.</p><a class="quiet" style="margin:0" href="{{bundle_checkout_link}}">Choose the bundle <svg viewBox="0 0 24 24" width=".9em" height=".9em" style="vertical-align:-.1em" aria-hidden="true"><path d="M3 12h16M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
   </div>
   <p style="margin-top:18px;font-size:16px">Prefer paper? Print the workbook at home in color or low-ink, in US Letter or A4.</p>
 </div></section>

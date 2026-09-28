@@ -41,7 +41,7 @@ We don’t ban anything. Screens get a steady spot in the day, the same time and
 
 ## 5. Pricing — “Pick one”
 - **The program — $27.** 30 lessons by email, the full workbook, scripts bank and certificate. About 90¢ a day. [Start the 30 days]
-- **The 30 Days of Back-and-Forth Bundle — $49.** The program plus the Play-First Family Kit, 100 Screen-Free Plays (printable) and 150 “I’m Bored” Play Cards. $54.49 if bought separately. [Choose the bundle →] (quiet link)
+- **The 30 Days of Back-and-Forth Bundle — $49.** The program plus the Play-First Family Kit, 100 Screen-Free Plays (printable) and 76 “I’m Bored” Play Cards. $54.49 if bought separately. [Choose the bundle →] (quiet link)
 
 Prefer paper? Print the workbook at home in color or low-ink, in US Letter or A4.
 

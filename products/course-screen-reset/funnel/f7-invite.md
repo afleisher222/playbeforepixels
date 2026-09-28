@@ -12,7 +12,7 @@ Your seven days are done. Thank you for spending them with us.
 
 If you’d like the whole month, 30 Days of Back-and-Forth is $27. You get 30 daily lessons by email, 30 plays, 30 scripts for tricky moments and the full workbook (Color and Low-ink, Letter and A4, fillable in free Acrobat Reader).
 
-Or choose the 30 Days of Back-and-Forth Bundle for $49: the program plus the Play-First Family Kit, the 100 Screen-Free Plays printable guide and the 150 “I’m Bored” Play Cards. Bought separately, those come to $54.49.
+Or choose the 30 Days of Back-and-Forth Bundle for $49: the program plus the Play-First Family Kit, the 100 Screen-Free Plays printable guide and the 76 “I’m Bored” Play Cards. Bought separately, those come to $54.49.
 
 Either way, there’s a guarantee: if it isn’t right for your family, email us within 14 days of purchase for a full refund, as long as you’ve completed no more than 30% of the lessons.
 

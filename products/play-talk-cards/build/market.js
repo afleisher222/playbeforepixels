@@ -148,16 +148,16 @@ function includedImage(key, pages, bg, bullets) {
 function nextImage(key) {
   const A = K.DECK_A, B = K.DECK_B;
   const left = key === 'A' ? [K.cardA(A[8], 0), K.cardA(A[27], 0)] : [K.cardB(B[3], 0), K.cardB(B[41], 0)];
-  const right = key === 'A' ? [K.cardB(B[3], 0), K.cardB(B[41], 0)] : [K.cardA(A[8], 0), K.cardA(A[27], 0)];
-  const lt = key === 'A' ? ['Ages 0–5', '52 Play & Talk Cards'] : ['Ages 5–12', '52 Family Talk-Along Cards'];
-  const rt = key === 'A' ? ['Ages 5–12', 'Family Talk-Along Cards'] : ['Ages 0–5', 'Play & Talk Cards'];
+  const right = key === 'A' ? [K.cardA(A[40], 0), K.cardA(A[48], 0)] : [K.cardA(A[8], 0), K.cardA(A[27], 0)];
+  const lt = key === 'A' ? ['Babies and toddlers', 'Ages 0–3'] : ['Ages 5–12', '52 Family Talk-Along Cards'];
+  const rt = key === 'A' ? ['Preschoolers', 'Ages 3–5'] : ['Ages 0–5', 'Play & Talk Cards'];
   return ['08-grow-with-it', `<div class="sq" style="background:${C.tPlum}">
-    <div class="h"><p class="k" style="color:${C.plum}">One brand, every age</p><h1>${key === 'A' ? 'Ready for the next stage' : 'Little ones at home too?'}</h1><p>${key === 'A' ? 'When the little ones grow, the talk keeps going with Family Talk-Along Cards for ages 5–12.' : 'Play & Talk Cards give babies, toddlers and preschoolers one play and one talk tip per card.'}</p></div>
+    <div class="h"><p class="k" style="color:${C.plum}">One brand, every age</p><h1>${key === 'A' ? 'Grows with your child' : 'Little ones at home too?'}</h1><p>${key === 'A' ? 'Four age colors take you from first peekaboo to preschool pretend play. Play any card that fits your child today.' : 'Play & Talk Cards give babies, toddlers and preschoolers one play and one talk tip per card.'}</p></div>
     ${fan(left, 270, 540, .96, 70, 7)}${fan(right, 730, 540, .96, 70, 7)}
     <svg class="abs" style="left:460px;top:500px" width="80" height="60" viewBox="0 0 80 60"><path d="M8 30H64M48 12L68 30L48 48" stroke="${C.plum}" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
     <div class="abs" style="left:90px;top:778px;width:360px;text-align:center"><b style="font-size:18px;letter-spacing:.12em;text-transform:uppercase;opacity:.7">${lt[0]}</b><div style="font:800 25px 'Bricolage Grotesque',sans-serif">${lt[1]}</div></div>
     <div class="abs" style="left:550px;top:778px;width:360px;text-align:center"><b style="font-size:18px;letter-spacing:.12em;text-transform:uppercase;opacity:.7">${rt[0]}</b><div style="font:800 25px 'Bricolage Grotesque',sans-serif">${rt[1]}</div></div>
-    <div class="band" style="background:${C.plum}"><span>Each sold separately · bundle both and save</span><img src="${K.LOGO.lockupWhite}" alt=""></div></div>`];
+    <div class="band" style="background:${C.plum}"><span>${key === 'A' ? 'One deck from birth to 5 · 13 plays for each age' : 'Each sold separately'}</span><img src="${K.LOGO.lockupWhite}" alt=""></div></div>`];
 }
 
 function mockup(key) {

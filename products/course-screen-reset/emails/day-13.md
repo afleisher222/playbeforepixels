@@ -48,7 +48,7 @@ Name the feeling, keep the limit, stay close. That’s all. No lecture, no threa
 Today’s pages in your workbook: Day 13. {{workbook_download_link}}
 
 ---
-**Next for your family:** 150 “I’m Bored” Play Cards. Age-banded play ideas with a talk prompt on every card, for the “there’s nothing to do” moments. https://playbeforepixels.com/shop/bored-play-cards
+**Next for your family:** 76 “I’m Bored” Play Cards. Age-banded play ideas with a talk prompt on every card, for the “there’s nothing to do” moments. https://playbeforepixels.com/shop/bored-play-cards
 
 **Share the free printable:** know a family who might like it? Our free 7 Days of Play First starter is at https://playbeforepixels.com/30-days/start
 

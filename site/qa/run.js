@@ -333,9 +333,16 @@ async function settle(page) {
     ok(await page.evaluate(() => !document.querySelector('[data-slide="1"]').hidden && document.activeElement.dataset.thumb === '1'), 'gallery thumbnails work with arrow keys');
     await page.check('input[name=format][value=pdf]');
     ok(/\$9\.99/.test(await page.textContent('[data-price-out]')) && /download/i.test(await page.textContent('[data-ship]')), 'format change updates price and ship line');
-    await page.goto(base + '/shop/board-up-go-more/');
-    await page.click('[data-word="0"]');
-    ok(/hi/.test(await page.textContent('[data-wo-word]')), 'word explorer shows the chosen word');
+    // The word explorer lives on the Up! Go! More! page, which exists only while that book is shown
+    // (listing status 'held' removes it and its URL redirects to /shop/books/).
+    if (PAGES.includes('/shop/board-up-go-more/')) {
+      await page.goto(base + '/shop/board-up-go-more/');
+      await page.click('[data-word="0"]');
+      ok(/hi/.test(await page.textContent('[data-wo-word]')), 'word explorer shows the chosen word');
+    } else {
+      await page.goto(base + '/shop/board-up-go-more/');
+      ok(new URL(page.url()).pathname === '/shop/books/', 'held book URL /shop/board-up-go-more/ goes to /shop/books/');
+    }
     ok(!errs.length, 'no script errors during desktop interaction: ' + errs.join(' | '));
     await c.close();
   }

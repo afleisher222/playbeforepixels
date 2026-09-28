@@ -316,8 +316,8 @@ function labelsPage(P, S, n, total) {
 // ---------- last page: what's next ----------
 function nextPage(P, S, n, total, qrSvg) {
   const nexts = P.key === 'A' ? [
-    ['Family Talk-Along Cards', 'Ages 5–12 · 52 questions for dinner, the car, bath time and bedtime', C.sky, 'plate'],
-    ['“I’m Bored” Play Cards', 'Ages 1–12 · 150 age-banded screen-free plays, each with a talk prompt', C.tomato, 'storybox'],
+    ['“I’m Bored” Play Cards', 'Ages 1–5 · 76 play cards in two age bands, each with a talk prompt', C.tomato, 'storybox'],
+    ['Toddler Busy Book', 'Ages 1–5 · 74 printable activities for waiting rooms, car rides and quiet time', C.sky, 'basket'],
     ['100 Screen-Free Plays', 'Ages 0–5 · the activity book, sorted by age, with a talk line on every play', C.grass, 'bookopen'],
   ] : [
     ['“I’m Bored” Play Cards', 'Ages 1–12 · 150 age-banded screen-free plays, each with a talk prompt', C.tomato, 'storybox'],

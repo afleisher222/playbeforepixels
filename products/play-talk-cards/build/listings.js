@@ -76,7 +76,7 @@ const A = {
   shareable_piece: 'The 52-week “Our Play & Talk Year” fridge checklist (page 20) with the small brand lockup, designed to be photographed; sharing is invited, never required.',
   bonus_offer: 'Store edition only (QR on page 21 and START HERE): extra printable cards and one short, age-matched play idea a month by email at playbeforepixels.com/bonus/play-talk-cards; email plus optional child birth month/year, never names.',
   amazon_route: 'none-with-reason: a cut-apart card deck does not work as a KDP paperback (thin pages, cutting destroys the book). On Amazon the same play-and-talk content is carried by the 100 Screen-Free Plays KDP paperback (guide-100-plays); the physical deck goes to POD or FBA-later only after the printable sells (marketing/AMAZON-AND-RETAIL-ROADMAP.md, card decks row).',
-  next_products: ['family-talk-along-cards', 'bored-play-cards', 'guide-100-plays'],
+  next_products: ['bored-play-cards', 'toddler-busy-book', 'guide-100-plays'],
   bonus_url: 'playbeforepixels.com/bonus/play-talk-cards',
   listing_images: ['preview/listing-images/01-hero.png', 'preview/listing-images/02-every-card.png', 'preview/listing-images/03-age-coded.png', 'preview/listing-images/04-print-at-home.png', 'preview/listing-images/05-talk-moves.png', 'preview/listing-images/06-whats-included.png', 'preview/listing-images/07-safety.png', 'preview/listing-images/08-grow-with-it.png'],
   files: {

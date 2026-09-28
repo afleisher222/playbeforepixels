@@ -186,6 +186,7 @@ fs.writeFileSync(path.join(DIST, '_headers'), [
 ].join('\n') + '\n');
 
 // ---------- write pages ----------
+for (const [p, v] of out) if (/\u0001|\\u0001IMG/.test(v.html)) fail.push(`${p}: an image token was never swapped for its URL (check JSON-LD and attributes)`);
 for (const [p, v] of out) write(path.join(DIST, p.endsWith('/') ? p + 'index.html' : p), v.html);
 
 // ---------- sitemap and robots ----------

@@ -238,11 +238,11 @@ lst['listing-06'] = ('Made to order', f'''<div style="position:absolute;inset:0;
 <img class="brand" src="{LOGO(B)}">''')
 
 lst['listing-07'] = ('Pairs with', f'''<div style="position:absolute;inset:0;background:var(--t-grass)"></div>
-<div class="pad" style="top:120px"><div class="kick" style="color:#1F7A4F">Gift idea</div><h2 class="disp" style="margin-top:24px">Pair it with<br>a story and play</h2></div>
+<div class="pad" style="top:120px"><div class="kick" style="color:#1F7A4F">Gift idea</div><h2 class="disp" style="margin-top:24px">Pair it with<br>a book of plays</h2></div>
 <div class="lay shadow" style="left:90px;top:640px;width:900px;transform:rotate(-4deg)">{tee('#F2EBDD', 'light', B)}</div>
-<img class="lay" src="{B}../picture-tablet-slept/cover.png" style="left:1080px;top:560px;width:660px;border-radius:10px;transform:rotate(3deg);box-shadow:0 30px 40px rgba(29,41,64,.18)">
-<img class="lay" src="{B}../bored-play-cards/preview/listing-images/listing-01.png" style="left:1300px;top:1270px;width:500px;border-radius:10px;transform:rotate(-5deg);box-shadow:0 30px 40px rgba(29,41,64,.18)">
-<p class="small pad" style="top:1760px;margin:0;right:900px;color:var(--ink)">Our picture book <b>The Day the Tablet Slept</b> and <b>150 “I’m bored!” Play Cards</b> are sold separately.</p>''')
+<img class="lay" src="{B}../guide-100-plays/cover.png" style="left:1080px;top:560px;width:660px;border-radius:10px;transform:rotate(3deg);box-shadow:0 30px 40px rgba(29,41,64,.18)">
+<img class="lay" src="{B}../bored-play-cards/preview/listing-images/ages-1-5/listing-01.png" style="left:1300px;top:1270px;width:500px;border-radius:10px;transform:rotate(-5deg);box-shadow:0 30px 40px rgba(29,41,64,.18)">
+<p class="small pad" style="top:1760px;margin:0;right:900px;color:var(--ink)">Our book <b>100 Screen-Free Plays</b> and our <b>“I’m bored!” Play Cards</b> are sold separately.</p>''')
 
 # ---- design 2: "More talk, less tap" tee (same 7-image structure as the logo tee)
 lst['slogan-01'] = ('Hero', f'''<div style="position:absolute;inset:0;background:var(--t-sky)"></div>
