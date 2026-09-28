@@ -2,8 +2,8 @@
 // Used by book.js (interiors) and extras.js (cover, wrap, mockup, listing images).
 const path = require('path');
 const fs = require('fs');
-let QR = null; // qrcode lib is borrowed from bored-play-cards/build; qr.json caches the result so the build also works without it
-try { QR = require(path.join(__dirname, '../../bored-play-cards/build/node_modules/qrcode')); } catch (e) { /* use cache */ }
+let QR = null; // qrcode (npm install in build/); qr.json caches the result so the build also works without it
+try { QR = require('qrcode'); } catch (e) { /* use cache */ }
 const CH = require('./chars.js');
 const { ART, UI } = require('./icons.js');
 const { P, BANDS, MOVES, WHERE } = require('./plays.js');

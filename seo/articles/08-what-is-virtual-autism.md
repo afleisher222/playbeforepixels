@@ -12,6 +12,7 @@ related_product: NONE. Per BRAND.md ("Autism searches"), this page links to no p
 free_printable: /free/five-5-minute-plays/
 citations: ["Harlé 2019", "Heffler 2020", "Kushima 2022", "Takahashi 2023", "Madigan 2019", "Brushe 2024", "WHO 2019", "AAP 2016"]
 verify_before_publish:
+  - "Confirm each full paper or report title in Sources against the journal or publisher page. Author, journal, year, volume and pages come from the verified list in brand/BRAND.md rule 5; the titles were written from memory. Add verified DOI links at the same time."
   - "US early intervention (IDEA Part C): every state runs a program for children under 3; evaluation is at no cost to families; parents can contact it directly without a doctor's referral; services may be free or low-cost depending on the state. Confirm on the CDC 'Learn the Signs. Act Early.' page or the US Department of Education IDEA site, and link the page you checked."
   - "Children 3 and older: families can ask their local public school district for a free evaluation (IDEA Part B / Child Find). Confirm on the same official source and link it."
   - "Do not link or name any specific state or county program."

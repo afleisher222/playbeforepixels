@@ -11,7 +11,8 @@ audience: Parents of children aged 3–12; PreK–5 teachers (teacher section ga
 related_product: Laps Not Apps — /shop/laps-not-apps/ (parents); PreK–5 Screen-Free Classroom Pack — /schools/classroom-pack/ (teachers, gated)
 free_printable: /free/family-screen-agreement/ (5–12) or /free/five-5-minute-plays/ (0–5)
 citations: ["Delgado 2018", "UNESCO GEM 2023", "WHO 2019", "AAP 2016"]
-verify_before_publish: []
+verify_before_publish:
+  - "Confirm each full paper or report title in Sources against the journal or publisher page. Author, journal, year, volume and pages come from the verified list in brand/BRAND.md rule 5; the titles were written from memory. Add verified DOI links at the same time."
 publish_gate: "partial: the section marked GATE (For teachers) stays hidden until employment counsel clears school-facing content. The parent version can publish now."
 status: draft
 last_reviewed: 2026-09-28

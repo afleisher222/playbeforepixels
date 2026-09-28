@@ -12,6 +12,7 @@ related_product: NONE (research hub page). Links only to the free play printable
 free_printable: /free/five-5-minute-plays/
 citations: ["Brushe 2024", "Takahashi 2023", "Madigan 2019", "WHO 2019", "AAP 2016"]
 verify_before_publish:
+  - "Confirm each full paper or report title in Sources against the journal or publisher page. Author, journal, year, volume and pages come from the verified list in brand/BRAND.md rule 5; the titles were written from memory. Add verified DOI links at the same time."
   - "US early intervention statement (same check as the virtual-autism page): free evaluation for under-3s, direct parent contact allowed; school district evaluation for 3+. Link the official page you checked."
 publish_gate: none
 status: draft

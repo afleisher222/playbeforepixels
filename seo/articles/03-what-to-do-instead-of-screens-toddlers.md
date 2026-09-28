@@ -11,7 +11,8 @@ audience: Parents and caregivers of toddlers (1–3)
 related_product: Play and Talk Cards — /shop/play-and-talk-cards/
 free_printable: /free/five-5-minute-plays/
 citations: ["AAP 2016", "WHO 2019", "Brushe 2024"]
-verify_before_publish: []
+verify_before_publish:
+  - "Confirm each full paper or report title in Sources against the journal or publisher page. Author, journal, year, volume and pages come from the verified list in brand/BRAND.md rule 5; the titles were written from memory. Add verified DOI links at the same time."
 publish_gate: none
 status: draft
 last_reviewed: 2026-09-28

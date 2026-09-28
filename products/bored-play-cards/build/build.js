@@ -103,7 +103,7 @@ function cardBack(key) {
   <svg class="bgdots" viewBox="0 0 222 318" preserveAspectRatio="none" aria-hidden="true">${dots}</svg>
   <div class="bk"><div class="bkc"><span class="bk1">I’m</span><span class="bk2">bored!</span></div>
   <div class="bks">Play cards · ${sub}</div></div>
-  <div class="bkb">Play Before Pixels</div>
+  <div class="bkb">${logo(key === 'b13' ? 'wordmark' : key === 'rainy' ? 'wordmark-reverse' : 'wordmark-white', 'lgb')}</div>
 </div></div>`;
 }
 
@@ -113,6 +113,8 @@ const SIZES = {
   a4: { name: 'A4', w: 210 / 25.4, h: 297 / 25.4, css: '210mm 297mm' },
 };
 let SZ = SIZES.letter; // current size while building
+let BASE = '../../'; // path from the HTML file to the repo root
+const logo = (file, cls = 'lg') => `<img class="${cls}" src="${BASE}brand/logo/${file}.svg" alt="Play Before Pixels">`;
 const pg = (cls, inner, style = '') => `<section class="page ${cls}"${style ? ` style="${style}"` : ''}>${inner}</section>`;
 
 function cropMarks(cols, rows, cw, ch, x0, y0) {
@@ -134,17 +136,17 @@ function cardSheet(items, label) {
     [1, 2].map(j => `<i class="gl h" style="top:${y0 + j * 3.5}in;left:${x0}in;width:7.5in"></i>`).join('') +
     `<i class="gl box" style="left:${x0}in;top:${y0}in;width:7.5in;height:10.5in"></i>`;
   const side = (txt, left) => `<div class="sl" style="left:${left ? x0 / 2 : SZ.w - x0 / 2}in;top:${y0 + 5.25}in;transform:translate(-50%,-50%) rotate(${left ? -90 : 90}deg)">${txt}</div>`;
-  return pg('sheet', cells + guides + cropMarks(3, 3, 2.5, 3.5, x0, y0) + (label ? side(label, true) + side(COPY, false) : ''));
+  return pg('sheet', cells + guides + cropMarks(3, 3, 2.5, 3.5, x0, y0) + (label ? side(`<span class="sll">${logo('wordmark', 'lgs')}<span>playbeforepixels.com · ${label}</span></span>`, true) + side(COPY, false) : ''));
 }
 function chunk(a, n) { const r = []; for (let i = 0; i < a.length; i += n) r.push(a.slice(i, i + n)); return r; }
 
 // Standard content page with 0.5in margins, header strip and footer.
 function contentPage(cls, eyebrow, title, body, opts = {}) {
   return pg('cp ' + cls, `<div class="cpin">
-  <header class="phd"><span class="brand">Play Before Pixels</span><span class="pe">${eyebrow}</span></header>
+  <header class="phd">${logo('lockup-horizontal', 'lgh')}<span class="pe">${eyebrow}</span></header>
   ${title ? `<h2 class="ph">${title}</h2>` : ''}
   ${body}
-  </div><footer class="pf"><span>“I’m Bored” Play Cards</span><span>${COPY} For use in your own home.</span></footer>`, opts.style);
+  </div><footer class="pf"><span class="pfl">${logo('wordmark', 'lgf')}<span>playbeforepixels.com · “I’m Bored” Play Cards</span></span><span>${COPY} For use in your own home.</span></footer>`, opts.style);
 }
 
 // ---------- illustrations ----------
@@ -243,13 +245,15 @@ h1,h2,h3,p{margin:0}
 .bk1,.bk2{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;letter-spacing:-.03em;line-height:.9;color:var(--ink)}
 .bk1{font-size:30px}.bk2{font-size:36px}
 .bks{margin-top:12px;color:var(--on);font-weight:800;font-size:9px;letter-spacing:.14em;text-transform:uppercase}
-.bkb{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:var(--on);font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:11px;opacity:.85}
+.bkb{position:absolute;bottom:15px;left:0;right:0;display:flex;justify-content:center}
+.lgb{height:12px;display:block}
 /* sheet */
 .sheet .cell{position:absolute;width:2.5in;height:3.5in}
 .gl{position:absolute;display:block;border:0 dashed #D3DAE6}
 .gl.v{border-left-width:.6px}.gl.h{border-top-width:.6px}.gl.box{border-width:.6px}
 .cm{position:absolute;display:block;background:#8A94A8}
 .cm.v{width:.6px}.cm.h{height:.6px}
+.sll{display:flex;align-items:center;gap:6px}.lgs{height:7px;display:block}
 .sl{position:absolute;white-space:nowrap;text-align:center;font-size:7px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8A94A8}
 /* content pages */
 .cp .cpin{position:absolute;left:.5in;right:.5in;top:.5in;bottom:.72in;display:flex;flex-direction:column}
@@ -258,7 +262,10 @@ h1,h2,h3,p{margin:0}
 .pe{font-weight:800;font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.6}
 .ph{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:38px;line-height:1.02;letter-spacing:-.025em;margin-bottom:14px}
 .lead{font-size:15px;line-height:1.5;font-weight:600;max-width:6.4in}
-.pf{position:absolute;left:.5in;right:.5in;bottom:.4in;display:flex;justify-content:space-between;font-size:7.5px;font-weight:700;color:#7C879C;letter-spacing:.02em}
+.lgh{height:.24in;display:block}
+.lgf{height:9px;display:block}
+.pfl{display:flex;align-items:center;gap:8px}
+.pf{position:absolute;left:.5in;right:.5in;bottom:.4in;display:flex;justify-content:space-between;align-items:center;font-size:7.5px;font-weight:700;color:#7C879C;letter-spacing:.02em}
 .hand{font-family:"Caveat",cursive;font-weight:700}
 .kick{font-weight:800;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.62;display:block;margin-bottom:4px}
 .pill{display:inline-flex;align-items:center;gap:6px;border-radius:30px;padding:6px 13px;font-weight:800;font-size:12px}
@@ -270,7 +277,7 @@ function coverPage() {
   const fan = [['b812', CARDS.b812[0], 1], ['b58', CARDS.b58[1], 2], ['summer', MINI.summer.cards[1], 2], ['b13', CARDS.b13[3], 4], ['b35', CARDS.b35[2], 3]];
   const fanHtml = fan.map(([k, cd, n], i) => `<div class="fan" style="transform:rotate(${(i - 2) * 9}deg)">${card(cd, k, n)}</div>`).join('');
   return pg('cover', `
-  <div class="cv-top"><span class="brand">Play Before Pixels</span><span class="cv-tag">Printable play cards · US Letter + A4</span></div>
+  <div class="cv-top">${logo('lockup-horizontal', 'lgc')}<span class="cv-tag">playbeforepixels.com · US Letter + A4</span></div>
   <h1 class="cv-h"><span>I’m</span><span>bored!</span></h1>
   <div class="cv-sub">Play Cards</div>
   <p class="cv-p">150 screen-free play ideas for ages 1–12, each with what you need, how to play, a talk prompt and a safety note.</p>
@@ -283,7 +290,7 @@ function coverPage() {
 const coverCss = `<style>
 .cover{background:${C.wash}}
 .cv-top{position:absolute;left:.55in;right:.55in;top:.5in;display:flex;justify-content:space-between;align-items:center}
-.cv-top .brand{font-size:17px}
+.lgc{height:.36in;display:block}
 .cv-tag{font-weight:800;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
 .cv-h{position:absolute;left:.5in;top:.95in;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:124px;line-height:.84;letter-spacing:-.045em}
 .cv-h span{display:block}
@@ -564,11 +571,12 @@ function dividerPages() {
   const gx = 0.14, gy = 0.35, H = 3.95, x0 = (SZ.w - (3 * 2.4 + 2 * gx)) / 2, y0 = (SZ.h - (2 * H + gy)) / 2 + 0.15;
   return chunk(D, 6).map((grp, pi) => {
     const cells = grp.map((d, i) => `<div class="dcell" style="left:${x0 + (i % 3) * (2.4 + gx)}in;top:${y0 + Math.floor(i / 3) * (H + gy)}in">${divider(d, pi * 6 + i)}</div>`).join('');
-    return pg('divs', `<div class="dhd"><span class="brand">Play Before Pixels</span><span class="pe">Box dividers · cut around the tab · ${pi + 1} of 3</span></div>${cells}`);
+    return pg('divs', `<div class="dhd">${logo('lockup-horizontal', 'lgh')}<span class="pe">Box dividers · cut around the tab · ${pi + 1} of 3</span></div>${cells}<div class="dft">${logo('wordmark', 'lgf')}<span>playbeforepixels.com · ${COPY}</span></div>`);
   });
 }
 const dividerCss = `<style>
 .divs .dhd{position:absolute;left:.5in;right:.5in;top:.45in;display:flex;justify-content:space-between;align-items:center}
+.dft{position:absolute;left:.5in;right:.5in;bottom:.4in;display:flex;gap:8px;align-items:center;font-size:7.5px;font-weight:700;color:#7C879C}
 .dcell{position:absolute;width:2.4in;height:3.95in}
 .dv{position:relative;width:2.4in;height:3.95in}
 .dsvg{position:absolute;left:-2px;top:-2px;width:calc(2.4in + 4px);height:calc(3.95in + 4px);overflow:visible}
@@ -585,7 +593,7 @@ const dividerCss = `<style>
 function labelPages() {
   const ways = [[C.tomato, '#FFFFFF', C.tTomato], [C.sun, C.ink, C.tSun], [C.sky, '#FFFFFF', C.tSky], [C.grass, '#FFFFFF', C.tGrass]];
   const round = ([m, on, t], i) => `<div class="rl" style="--m:${m};--on:${on};--t:${t}"><div class="rli">
-    <span class="rlk">Play Before Pixels</span><span class="rl1">I’m</span><span class="rl2">bored!</span><span class="rl3">Pull a card. Play together.</span>
+    <span class="rlk">${logo(on === C.ink ? 'wordmark' : 'wordmark-white', 'lgr')}</span><span class="rl1">I’m</span><span class="rl2">bored!</span><span class="rl3">Pull a card. Play together.</span>
     <span class="rld">${[C.sun, C.grass, C.sky, C.plum, C.tomato].filter(c => c !== m).map(c => `<i style="background:${c}"></i>`).join('')}</span></div></div>`;
   const p1 = contentPage('labels', 'Jar labels · 1 of 2', 'Round jar labels', `<p class="lead">Four colorways. Cut on the dashed circle and stick to the jar with clear tape or glue dots. Label size: 3.4 in / 8.6 cm.</p>
     <div class="rgrid">${ways.map(round).join('')}</div>`);
@@ -602,7 +610,7 @@ const labelCss = `<style>
 .rl{width:3.4in;height:3.4in;border-radius:50%;outline:.8px dashed #B7C1D3;outline-offset:3px;background:var(--m);display:flex;align-items:center;justify-content:center}
 .rli{width:2.9in;height:2.9in;border-radius:50%;border:2.5px solid rgba(255,255,255,.55);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--on)}
 .rl[style*="--m:${C.sun}"] .rli{border-color:rgba(29,41,64,.25)}
-.rlk{font-weight:800;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.85;margin-bottom:6px}
+.rlk{margin-bottom:9px}.lgr{height:13px;display:block}
 .rl1,.rl2{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;letter-spacing:-.04em;line-height:.86}
 .rl1{font-size:40px}.rl2{font-size:58px}
 .rl3{font-weight:800;font-size:12px;margin-top:9px}
@@ -713,7 +721,7 @@ function bonusPage() {
     <div class="bnt"><p class="lead">Scan the code or type the link for this pack’s free companion: a printable seasonal mini-set of play cards and a short “play at this age” email each month.</p>
     <p class="bnp">We only ask for your email and your child’s birth month and year, never names. Unsubscribe any time.</p></div>
   </div>
-  <span class="kick" style="margin-top:22px">Next in the collection</span>
+  <span class="kick" style="margin-top:22px">More from Play Before Pixels</span>
   <div class="nx">${next.map(([h, t, bg]) => `<div class="nxi" style="background:${bg}"><h4>${h}</h4><p>${t}</p></div>`).join('')}</div>
   <div class="bye">${byeArt()}<span class="hand">Happy playing!</span></div>
   <div class="legal">
@@ -748,7 +756,7 @@ function bandSheets(key, withBacks) {
   while (fronts.length % 9) fronts.push(blankCard(key));
   const groups = chunk(fronts, 9);
   const total = groups.length;
-  const lbl = i => `“I’m Bored” Play Cards · ${TH[key].name} · sheet ${i + 1} of ${total}`;
+  const lbl = i => `${TH[key].name} · sheet ${i + 1} of ${total}`;
   if (!withBacks) return groups.map((g, i) => cardSheet(g, lbl(i)));
   const backs = Array.from({ length: 9 }, () => cardBack(key));
   return groups.flatMap((g, i) => [cardSheet(g, lbl(i)), cardSheet(backs, `Backs · ${TH[key].name} · reverse of sheet ${i + 1}`)]);
@@ -827,8 +835,9 @@ function showcaseDoc() {
 }
 
 // ---------- write ----------
-SZ = SIZES.letter;
+SZ = SIZES.letter; BASE = '../../';
 fs.writeFileSync(path.join(ROOT, 'source.html'), doc('../../brand/fonts/fonts.css', SZ, mainPages(false)));
+BASE = '../../../';
 fs.writeFileSync(path.join(__dirname, 'duplex-letter.html'), doc('../../../brand/fonts/fonts.css', SZ, duplexPages()));
 fs.writeFileSync(path.join(__dirname, 'editable-letter.html'), doc('../../../brand/fonts/fonts.css', SZ, editablePages(), edCss));
 fs.writeFileSync(path.join(__dirname, 'cover.html'), doc('../../../brand/fonts/fonts.css', SZ, [coverPage()], '<style>body{width:8.5in}</style>'));

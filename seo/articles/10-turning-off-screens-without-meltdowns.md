@@ -11,7 +11,8 @@ audience: Parents of children aged 2–12
 related_product: The 30-Day Screen Reset (written course) — /shop/30-day-screen-reset/; Visual Routine Cards — /shop/visual-routine-cards/
 free_printable: /free/7-day-screen-free-challenge/
 citations: ["AAP 2016"]
-verify_before_publish: []
+verify_before_publish:
+  - "Confirm each full paper or report title in Sources against the journal or publisher page. Author, journal, year, volume and pages come from the verified list in brand/BRAND.md rule 5; the titles were written from memory. Add verified DOI links at the same time."
 publish_gate: none
 status: draft
 last_reviewed: 2026-09-28

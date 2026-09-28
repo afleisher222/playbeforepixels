@@ -28,6 +28,40 @@ _(Seeded after the demand check (marketing/DEMAND-CHECK.md) and campaign bible (
 - Professional license for therapists, clinics and early-intervention programs: share printables with the families they serve (per-practice annual license). Language must stay parent-education, never therapy; consider a licensed SLP/OT reviewer credit.
 - "For professionals" page: bulk and licensed materials for SLPs, OTs, pediatric practices and child-care centers.
 
+### COMMUNITY EDITIONS — verify demand in monthly research before building
+_(Founder request, Sept 28, 2026: products for every age group and community that would be profitable. Full specs, safety notes, holds and the cut list are in marketing/COMMUNITY-PRODUCTS.md. Numbers match that file. Every price and demand claim is VERIFY. Nothing here jumps ahead of the launch five, and every edition of a launch product waits for the final English files. Low-priority items stay in that file only.)_
+
+**High priority**
+1. Bilingual Routine Cards (200+ Tarjetas de Rutina; 0-5 and 5-12): Spanish, side-by-side and any-language files. $9.50 list / ~$6.50 sale. Paid translator + native reviewer; no immigration-status mentions.
+2. Two-Home Routine Cards (2-12): Home 1 / Home 2 calendar, pickup and packing cards. $9.50 / ~$6.50; Solo Parent Bundle ~$19. "Not a parenting plan or legal document."
+3. Screen-Free Sitter Kit (children 1-10, written for teen and adult sitters 13+): the queued babysitter kit plus nanny-share log and play plan pages. $8 / ~$6; $10 two-pack. No contract pages; "not a first-aid certification".
+4. Grandparent's Play Kit on 52 Then-and-Now Play Cards (3-12 + grandparents): absorbs the queued grandparent kit; large type, play-by-mail letters. $6.50 cards; $12-15 kit. Holiday gift guides now; Grandparents Day 2027.
+5. Play-Based Preschool at Home: 36-Week Year Plan (3-5, sibling lane 1-3): after launch #4 and #5 ship. $29 / ~$19; $24.99 KDP. Co-op license and TPT held for counsel.
+6. Kit Familiar + 150 Tarjetas "Estoy aburrido" (2-12, bilingual first-phone agreement 9-12): after English launch #2 and #3 are final. $11 kit; $6.50 cards; $19 bilingual bundle.
+7. Helping Hands Real-Work Cards (18 months-8): Montessori-inspired (descriptions only) picture-step jobs, shelf labels, jobs chart. $7.50. Water only, no chemicals, no knives or stove for under-5s.
+
+**Medium priority**
+8. Screen-Free Car Ride & Waiting Pack (0-12): the queued alternate, upgraded with Long Drive & No-Signal and City Walk & Transit sections (one listing). $6; $9.99 KDP. List late October.
+9. Countdown Play Calendars (2-12): secular Winter Countdown this season; Ramadan and Lent 2027, then Hanukkah and Shabbat, only after a paid reviewer from each tradition signs off. $9.99 / ~$6.50 each. Feeds the holiday gift bundle.
+10. Play & Talk Take-Home License, Congregation Edition (0-8): $49 / $89 per year. Build the shared automated license engine here and reuse it for every license tier.
+11. 52 Weeks of Family Night & Rest-Day Plays (0-12, teen helper roles): the "52 Weeks of Play" reposition; absorbs the family unplugged weekend kit and the Rhythm calendar. $12 / ~$8; $14.99 KDP.
+12. Far-Away Grown-Up Kit, Deployment Edition (1-12): countdown, while-you're-away and homecoming sections. $12 / ~$8. No clinical words, no insignia, no location questions.
+13. Our Big Move Play Kit (0-12): military and civilian "Moving With Kids" listings. $10 / ~$6.50. List March-April 2027.
+14. 150 Mixed-Age Table Talk Cards (3-12, three age rungs per card): $9.99 / ~$6.50. No "Morning Basket" in title or keywords; co-op license held.
+15. Primeras Palabras / First Words: 50 bilingual talk-along cards (0-3) + bilingual Up! Go! More! square paperback. $6.99; $12.99 paperback. Waits for the QUEUE #0 paperback decision.
+16. Four Seasons Outdoor Play & Talk Cards + KDP Field Notebook (1-12): merges Big-Backyard cards and the Field Notebook. $7.50 / ~$6.50; $9.99 KDP.
+17. Small-Space Play: 100 Quiet, No-Mess Apartment Plays (0-8): $9.99 / ~$6.50. At least 30% new content vs the bored cards (VERIFY overlap).
+18. 5-Minute Plays: 100 Plays for Busy Days (0-12): merges One Grown-Up Plays. $7. Targets situations, never family status.
+19. 100 Screen-Free Plays: Large-Print Edition (0-5, bonus 5-12): after launch #5 ships. $17.99 KDP; $9.99 PDF.
+20. Grandfamily Routine Cards (2-12): first add editable caregiver names (Grandma, Abuela, Lola, Auntie, blank) to the base routine cards. $9.50 / ~$6.50; $16 bundle.
+21. First Days Here Routine Cards (2-12, foster and adoptive): $9.50 / ~$6.50; $49-99 license for private agencies and associations only. Banned-word list in the spec; Montgomery County DHHS auto-declined.
+22. Many-Kids Routine Board (0-12, 2-6 child columns): $11 / ~$7.50; Big Family Bundle $15.
+23. One Play, Three Ways: 75 Mixed-Age Plays (0-12): $7. Big-kid materials kept away from under-3s on every card.
+24. Dad & Me Play Missions: 52 Weekly Missions (2-10): $7; Father's Day gift edition $9, listed in May.
+25. Provider Edition Play & Routine Pack (0-5 + 5-12): $24 / $49 license. HELD until employment counsel answers; build last.
+26. Picture-First Talk Moments Poster & How-to-Use Guide (0-5): free inside every routine-card edition and as a lead magnet; no standalone listing.
+27. Everyday Plays, Pay-What-You-Can Edition (0-8, English and Spanish): own site only, suggested $5. Replaces the cut Give-a-Kit program's access goal.
+
 ## Cut (with reason)
 - Slogan "Pencils before pixels" — held: pencilsbeforepixels.com is registered and in use by someone else (legal/DECISION-MEMO.json). "Childhood can't wait. Screens can." and "Paper first" — hold until cleared (matching domains are taken).
 - Coaching and any live service — founder's instruction.

@@ -12,6 +12,7 @@ related_product: Screen Reset Pack (0–5), versión en español pendiente; hast
 free_printable: /es/gratis/cinco-juegos-de-5-minutos/ (pendiente; hasta entonces /free/five-5-minute-plays/ en inglés)
 citations: ["WHO 2019", "AAP 2016", "Madigan 2019", "Takahashi 2023", "Brushe 2024"]
 verify_before_publish:
+  - "Confirm each full paper or report title in Sources against the journal or publisher page. Author, journal, year, volume and pages come from the verified list in brand/BRAND.md rule 5; the titles were written from memory. Add verified DOI links at the same time."
   - "Revisión por hablante nativo de español (neutro) antes de publicar."
 publish_gate: none
 status: draft
@@ -39,7 +40,7 @@ Si alguna vez te has preguntado si estás "haciendo bien" lo de las pantallas, n
 | 3 a 4 años | No más de 1 hora al día; menos es mejor | Máximo 1 hora al día de programas de calidad, vistos juntos |
 | 5 años | (la guía de la OMS cubre a menores de 5 años) | La declaración cubre de 0 a 5 años; a partir de ahí, conviene un plan familiar de uso de medios |
 
-*Fuentes: OMS, Directrices sobre actividad física, comportamiento sedentario y sueño para menores de 5 años (2019); American Academy of Pediatrics, "Media and Young Minds", Pediatrics 2016;138(5).*
+*Fuentes: directrices de la OMS de 2019 sobre actividad física, comportamiento sedentario y sueño en menores de 5 años; American Academy of Pediatrics, "Media and Young Minds", Pediatrics 2016;138(5).*
 
 Las dos guías coinciden más de lo que difieren: muy poco o nada de pantallas para bebés, alrededor de una hora al día como máximo de los 2 a los 5 años, y siempre es mejor acompañar al niño que dejarlo solo con el dispositivo.
 

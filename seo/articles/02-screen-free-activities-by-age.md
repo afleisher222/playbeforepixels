@@ -11,7 +11,8 @@ audience: Parents and caregivers of children aged 0–12
 related_product: 100 Plays Before Pixels — /shop/100-plays-before-pixels/
 free_printable: /free/five-5-minute-plays/ (0–5) and /free/7-day-screen-free-challenge/ (5–12)
 citations: ["WHO 2019", "AAP 2016"]
-verify_before_publish: []
+verify_before_publish:
+  - "Confirm each full paper or report title in Sources against the journal or publisher page. Author, journal, year, volume and pages come from the verified list in brand/BRAND.md rule 5; the titles were written from memory. Add verified DOI links at the same time."
 publish_gate: none
 status: draft
 last_reviewed: 2026-09-28

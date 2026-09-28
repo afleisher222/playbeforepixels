@@ -11,7 +11,8 @@ audience: Parents, grandparents and caregivers of children aged 0–3
 related_product: Up! Go! More! talk-along board book — /shop/up-go-more/
 free_printable: /free/five-5-minute-plays/
 citations: ["Brushe 2024", "WHO 2019", "AAP 2016"]
-verify_before_publish: []
+verify_before_publish:
+  - "Confirm each full paper or report title in Sources against the journal or publisher page. Author, journal, year, volume and pages come from the verified list in brand/BRAND.md rule 5; the titles were written from memory. Add verified DOI links at the same time."
 publish_gate: none
 status: draft
 last_reviewed: 2026-09-28

@@ -12,6 +12,7 @@ related_product: Screen-Smart Family Plan (5–12) — /shop/screen-smart-family
 free_printable: /free/family-screen-agreement/
 citations: ["AAP 2016", "WHO 2019"]
 verify_before_publish:
+  - "Confirm each full paper or report title in Sources against the journal or publisher page. Author, journal, year, volume and pages come from the verified list in brand/BRAND.md rule 5; the titles were written from memory. Add verified DOI links at the same time."
   - "The AAP's free online Family Media Plan tool is still published on HealthyChildren.org. Confirm the exact current URL before linking it, and add the link in the 'A free tool' paragraph."
 publish_gate: none
 status: draft
