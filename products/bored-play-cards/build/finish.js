@@ -16,6 +16,7 @@ const VERSION = 'Version 1.0 · September 2026';
   fs.mkdirSync(path.join(ROOT, 'etsy-upload'), { recursive: true });
   for (const e of manifest) {
     const html = path.join(ROOT, e.html), out = path.join(ROOT, e.pdf);
+    fs.mkdirSync(path.dirname(out), { recursive: true });
     const page = await browser.newPage({ viewport: { width: 1200, height: 1000 } });
     await page.goto('file://' + html, { waitUntil: 'networkidle' });
     await page.evaluate(() => document.fonts.ready);

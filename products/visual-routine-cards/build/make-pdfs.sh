@@ -3,7 +3,7 @@
 # Own-store files -> product root; Etsy files (no URL, no QR) -> etsy-upload/complete and etsy-upload/starter.
 set -e
 cd "$(dirname "$0")"
-P=..; mkdir -p tmp $P/etsy-upload/complete $P/etsy-upload/starter
+P=..; mkdir -p tmp $P/etsy-upload/complete $P/etsy-upload/ages-0-5 $P/etsy-upload/starter
 node -e '
 const m=require("./manifest.json"); const fs=require("fs");
 for (const [k,v] of Object.entries(m.docs)) fs.writeFileSync("tmp/"+k+".toc.json", JSON.stringify(v.bookmarks));'
@@ -13,7 +13,7 @@ one() { # variant out title [toc]
   if [ -n "$4" ]; then python3 finish.py "tmp/$1.raw.pdf" "$2" --fields "tmp/$1.fields.json" --toc "tmp/$1.toc.json" --title "$3"
   else python3 finish.py "tmp/$1.raw.pdf" "$2" --fields "tmp/$1.fields.json" --title "$3"; fi
 }
-T="$(node -p "require('./manifest.json').cards") Visual Routine Cards"; TS="$(node -p "require('./manifest.json').starter") Visual Routine Cards Starter Set"
+T="$(node -p "require('./manifest.json').cards") Visual Routine Cards"; TS="$(node -p "require('./manifest.json').starter") Visual Routine Cards Starter Set"; TG="$(node -p "require('./manifest.json').g0") Visual Routine Cards, Ages 0–5"
 JOBS=(
 "full-store-color-letter|$P/visual-routine-cards.pdf|$T (Color, US Letter)|toc"
 "full-store-color-a4|$P/visual-routine-cards-a4.pdf|$T (Color, A4)|toc"
@@ -25,6 +25,16 @@ JOBS=(
 "full-etsy-low-letter|$P/etsy-upload/complete/4-Low-Ink-US-Letter.pdf|$T (Low-ink, US Letter)|toc"
 "full-etsy-low-a4|$P/etsy-upload/complete/5-Low-Ink-A4.pdf|$T (Low-ink, A4)|toc"
 "start-full-etsy|$P/etsy-upload/complete/1-START-HERE.pdf|START HERE: $T|"
+"g0-store-color-letter|$P/visual-routine-cards-0-5.pdf|$TG (Color, US Letter)|toc"
+"g0-store-color-a4|$P/visual-routine-cards-0-5-a4.pdf|$TG (Color, A4)|toc"
+"g0-store-low-letter|$P/visual-routine-cards-0-5-low-ink.pdf|$TG (Low-ink, US Letter)|toc"
+"g0-store-low-a4|$P/visual-routine-cards-0-5-low-ink-a4.pdf|$TG (Low-ink, A4)|toc"
+"start-g0-store|$P/START-HERE-0-5.pdf|START HERE: $TG|"
+"g0-etsy-color-letter|$P/etsy-upload/ages-0-5/2-Color-US-Letter.pdf|$TG (Color, US Letter)|toc"
+"g0-etsy-color-a4|$P/etsy-upload/ages-0-5/3-Color-A4.pdf|$TG (Color, A4)|toc"
+"g0-etsy-low-letter|$P/etsy-upload/ages-0-5/4-Low-Ink-US-Letter.pdf|$TG (Low-ink, US Letter)|toc"
+"g0-etsy-low-a4|$P/etsy-upload/ages-0-5/5-Low-Ink-A4.pdf|$TG (Low-ink, A4)|toc"
+"start-g0-etsy|$P/etsy-upload/ages-0-5/1-START-HERE.pdf|START HERE: $TG|"
 "starter-store-color-letter|$P/visual-routine-cards-starter-letter.pdf|$TS (Color, US Letter)|toc"
 "starter-store-color-a4|$P/visual-routine-cards-starter-a4.pdf|$TS (Color, A4)|toc"
 "starter-store-low-letter|$P/visual-routine-cards-starter-low-ink-letter.pdf|$TS (Low-ink, US Letter)|toc"

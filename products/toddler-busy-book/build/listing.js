@@ -53,8 +53,8 @@ const L = {
     'Matching, sorting, colors, shapes, pretend play, first words from our board book, counting, patterns, rhymes and 8 mazes',
     'Color + Low-ink, US Letter + A4, type-in covers, labels and planners (Monday/Sunday), assembly, laminating and velcro guide'
   ],
-  keywords: ['toddler busy book', 'busy binder printable', 'toddler activities', 'preschool activities', 'quiet book printable', 'learning binder', 'screen free activities'],
-  etsy_tags: ['toddler busy book', 'busy binder', 'busy book printable', 'quiet book', 'toddler activities', 'preschool printable', 'learning binder', 'screen free play', 'matching game', 'toddler printable', 'homeschool toddler', 'busy book pages', 'first words'],
+  keywords: ['toddler busy book', 'busy binder printable', 'toddler activities', 'toddler activity pages', 'quiet book printable', 'learning binder', 'screen free activities'],
+  etsy_tags: ['toddler busy book', 'busy binder', 'busy book printable', 'quiet book', 'toddler activities', 'toddler learning', 'learning binder', 'screen free play', 'matching game', 'toddler printable', 'homeschool toddler', 'busy book pages', 'first words'],
   seo_title: `${N} Toddler Busy Book Activities | Play Before Pixels`,
   seo_description: `${N} printable busy book activities for ages 1–5, sorted by age, with a talk line on every page. ${S.noCut} no-cut pages. Color + Low-ink, Letter + A4.`,
   alt_text: 'Cover of the printable Toddler Busy Book by Play Before Pixels: a navy title on a pale blue page, a smiling toddler and grown-up on a big yellow circle, and four white piece cards showing a duck, a red apple, a purple star and a ball, with age chips for 1–2, 2–3 and 3–5 years.',
@@ -74,7 +74,7 @@ const L = {
   channels: [
     'Etsy digital download: upload the 5 plain PDFs in etsy-upload/ (START HERE + Color Letter/A4 + Low-ink Letter/A4), each under 15 MB; the Etsy edition carries no URL or QR code',
     'Play Before Pixels website shop (automatic digital delivery): the four website-edition PDFs, START HERE (Letter + A4) and toddler-busy-book-PNG-templates.zip',
-    'Amazon: KDP paperback activity-book edition later (see amazon_route)'
+    'Amazon: none at launch. The KDP activity edition in amazon_route is HELD (no 0–3 KDP activity editions before CPSC guidance; ops/QUEUE.md)'
   ],
   amazon_route: `kdp-activity-edition: a paperback built from the ${S.noCut} no-cut activities (first words, look-and-find, sing & move, mazes and roads, counting, feelings), 8.5 × 11 in, premium color, single-sided mark-making pages per CUSTOMER-VOICE rule 20, with cut-piece activities replaced by point-and-name versions (no scissors in a bound book for toddlers) [VERIFY KDP color cost and page limits]. Not built yet: see human_todo. HELD (ops/QUEUE.md): 0–3 KDP activity editions, this one included, wait for CPSC guidance. The printable stays on Etsy and our site.`,
   next_products: ['board-up-go-more', 'guide-100-plays', 'bored-play-cards'],
@@ -99,13 +99,13 @@ const L = {
     'Open a main PDF in a free PDF reader on a computer and a phone: type a name on a binder cover and a blank planner, save, reprint',
     'Read every activity once more for safety in your own home context, especially the 1–2 and 2–3 pages',
     'Build the free bonus page at playbeforepixels.com/bonus/toddler-busy-book (Busy Book Extras + email sign-up asking only email and child’s birth month/year) before the website listing goes live; the QR code already points there',
-    'Make sure playbeforepixels.com/help and /licenses exist (the FAQ and license page point to them in the website edition)',
-    'Etsy: upload the 5 files in etsy-upload/, add the 10 listing images (listing-01 as thumbnail), paste etsy_title, etsy_tags and long_description, set $11.99 with no "was" price, and put prep time and cost per activity in the description as written',
+    'Make sure playbeforepixels.com/help exists (the FAQ points to it in the website edition)',
+    'Etsy (G-day week): upload the 5 files in etsy-upload/, add the 10 listing images (listing-01 as thumbnail), paste etsy_title, etsy_tags and long_description, set $11.99 with no "was" price, Offsite Ads off, and put prep time and cost per activity in the description as written; create the same product on Gumroad at $11.99',
     'Website: add the product with mockup.png and cover.png, deliver the 4 website-edition PDFs + START HERE + PNG zip, and link "Next for your child’s age" to next_products',
     'Decide whether the Etsy listing should mention the PNG template set (it is only in the website download, because Etsy files must be plain PDFs)',
     'Later: build the KDP activity edition described in amazon_route (HELD until CPSC guidance for 0–3 activity books); list seasonal add-on packs; the bundles are the $29 Ages 1–5 Instant Gift Bundle and the $45 Birth-to-5 Printable Library (ops/QUEUE.md)',
     'Check every printer and marketplace template against the current rules before upload (printables here; KDP later)',
-    'Confirm two license lines added after the customer panel match your license terms and the /licenses page: "Can I give it as a gift?" (give the printed book, not the files) and child-care, classroom and library licenses',
+    'Confirm the gift line matches your license terms: "Can I give it as a gift?" (give the printed book, not the files). Child-care, classroom and library licenses are HELD until employment counsel clears school-facing sales in writing; the PDFs say they are not available yet',
     'Decide whether to say "hook-and-loop dots" instead of "velcro" (a brand name) across this product and the customer-voice rules'
   ],
   // Honest AI disclosure per channel (COMPLIANCE-GATE 17; G2-08), including KDP answers for the planned activity edition.
@@ -125,9 +125,13 @@ const L = {
     "social_ai_label": "Turn on each platform's AI-generated-content label for posts that use these images or this text (label names UNVERIFIED).",
     "notes": "Answers describe what really happened as of the date above. Platform categories and form wording are from memory (UNVERIFIED): check each form on upload day. Never call any part hand-drawn, handmade or human-written."
   },
-  owner: OWNER
+  owner: OWNER,
+  list_price_usd: null,
+  price_history: [],
+  status: 'ready-pending-accounts',
+  edition: 'G0 (ages 1–5 only): the whole product is already a G0 edition; nothing is held back (ops/QUEUE.md LAUNCH FIRST: Toddler Busy Book, 74 activities, ages 1–5 — $11.99)'
 };
-const bad = /\b(therapy|autism|adhd|speech|slp|clinically|cure)\b/i;
+const bad = /\b(therapy|autism|adhd|speech|slp|clinically|cure|preschool|classroom|teacher|daycare|library|visual schedule)\b/i;
 for (const k of ['keywords', 'etsy_tags']) if (L[k].some(t => bad.test(t))) throw new Error('banned keyword');
 if (L.etsy_tags.length > 13 || L.etsy_tags.some(t => t.length > 20)) throw new Error('etsy tags');
 if (L.short_description.length > 160 || L.seo_title.length > 60 || L.seo_description.length > 155) throw new Error('length: ' + [L.short_description.length, L.seo_title.length, L.seo_description.length]);

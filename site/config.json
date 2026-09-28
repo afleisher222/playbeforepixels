@@ -420,71 +420,6 @@
         }
       ]
     },
-    "visual-routine-cards": {
-      "name": "Visual Routine Cards",
-      "line": "Picture cards and charts for mornings, meals, play and bedtime, ages 0–5",
-      "types": [
-        "printables"
-      ],
-      "ground": "plum-t",
-      "mock": "sheet",
-      "formats": [
-        {
-          "id": "pdf",
-          "label": "Printable PDF",
-          "detail": "160 pages · fillable · color and low-ink · US Letter and A4",
-          "price": 9.5,
-          "buy": [
-            "buy_visual_routine_cards"
-          ],
-          "ship": "Instant download. Nothing ships."
-        }
-      ],
-      "gallery": [
-        {
-          "src": "mockup.png",
-          "alt": "A morning chart filled with picture cards on a table, with more cards and a pencil beside it."
-        },
-        {
-          "src": "cover.png",
-          "altFrom": "alt_text"
-        },
-        {
-          "pdf": "visual-routine-cards.pdf",
-          "page": 8,
-          "alt": "A sheet of morning cards: wake up, open curtains, potty, wash face and more, each with a word label."
-        },
-        {
-          "pdf": "visual-routine-cards.pdf",
-          "page": 21,
-          "alt": "Plan words: first, then, wait, all done and today, as picture cards."
-        },
-        {
-          "pdf": "visual-routine-cards.pdf",
-          "page": 2,
-          "alt": "Pictures make the plan easy to see: what is inside the set."
-        }
-      ],
-      "g0": {
-        "ages": "0–5",
-        "short": "Printable picture routine cards and charts for ages 0–5. Fillable PDF, color and low-ink, US Letter and A4. Shows little ones what comes next.",
-        "seoTitle": "Visual Routine Cards for Ages 0–5 | Play Before Pixels",
-        "seoDescription": "Printable picture routine cards and charts for toddlers and preschoolers. Fillable PDF, color and low-ink, US Letter and A4.",
-        "long": [
-          "Big, friendly pictures show little ones what comes next at mornings, meals, bath and bedtime. Your child can point to them, carry them and move them to “All done.”",
-          "The cards cover morning, meals, play, outside, reading together, bath, bedtime, helping jobs, and out and about. There are plan words like More, Stop, My turn and Break, and a feelings check-in. A “Play first / Screens later” pair uses a plain, generic tablet, and “What we do next” and “5 more minutes” cards help with the switch.",
-          "Choose from chart layouts including vertical and horizontal strips, a first–then board, morning and bedtime charts and a Today board. Every chart comes ready-made and blank. Type labels and titles in free Adobe Acrobat Reader, in any language with accents, or use the word-free, blank and photo-frame cards.",
-          "A 2-page grown-up guide covers setup in 2 minutes, easy talk tips and use by age. Every card follows our published safety rules. Instant digital download; nothing ships."
-        ],
-        "bullets": [
-          "Picture cards for ages 0–5 for mornings, meals, play, bath, bedtime and out and about",
-          "Plan words, a feelings check-in, and “Play first / Screens later” cards",
-          "Chart layouts including a first–then board, each ready-made and blank",
-          "Fillable labels and titles, plus word-free, blank and photo-frame cards",
-          "Color and low-ink files, US Letter and A4, with a grown-up guide"
-        ]
-      }
-    },
     "visual-routine-cards-starter": {
       "name": "Visual Routine Cards: Starter Set",
       "line": "60 picture cards and 3 charts for ages 0–5",
@@ -595,7 +530,48 @@
           "A 2-page grown-up guide, plus an easier, a harder and a 2-minute version of every card",
           "Plain PDFs: START HERE, color and low-ink, US Letter and A4",
           "Every play follows our published safety rules"
-        ]
+        ],
+        "site": {
+          "cover": {
+            "pdf": "bored-play-cards-ages-1-5.pdf",
+            "page": 1
+          },
+          "gallery": [
+            {
+              "pdf": "bored-play-cards-ages-1-5.pdf",
+              "page": 1,
+              "altFrom": "alt_text"
+            },
+            {
+              "pdf": "bored-play-cards-ages-1-5.pdf",
+              "page": 2,
+              "alt": "Start here: boredom is where play begins, and how the cards work."
+            },
+            {
+              "pdf": "bored-play-cards-ages-1-5.pdf",
+              "page": 6,
+              "alt": "What play looks like at each age: age bands are a starting point, not a rule."
+            },
+            {
+              "pdf": "bored-play-cards-ages-1-5.pdf",
+              "page": 11,
+              "alt": "A play card for ages 1–3, Paint with Water: prep, mess and play time, steps, a talk line and a safety note."
+            }
+          ],
+          "formats": [
+            {
+              "id": "pdf",
+              "label": "Printable PDF",
+              "detail": "76 cards for ages 1–5 · color and low-ink · US Letter and A4",
+              "price": 6.5,
+              "buy": [
+                "buy_bored_play_cards_ages_1_5",
+                "buy_bored_play_cards"
+              ],
+              "ship": "Instant download. Nothing ships."
+            }
+          ]
+        }
       }
     },
     "play-talk-cards": {
@@ -708,7 +684,48 @@
           "A Family Play & Screen Plan and a 30-day tracker of plays that need nothing to buy",
           "Type names, dates, jobs and plan answers in free Adobe Acrobat Reader",
           "Color and low-ink files in US Letter and A4, plus a 2-page grown-up guide"
-        ]
+        ],
+        "site": {
+          "cover": {
+            "pdf": "play-first-family-kit-ages-2-5.pdf",
+            "page": 1
+          },
+          "gallery": [
+            {
+              "pdf": "play-first-family-kit-ages-2-5.pdf",
+              "page": 1,
+              "altFrom": "alt_text"
+            },
+            {
+              "pdf": "play-first-family-kit-ages-2-5.pdf",
+              "page": 2,
+              "alt": "What’s inside: nine tools, one calm rhythm, organized so you only print what fits your family."
+            },
+            {
+              "pdf": "play-first-family-kit-ages-2-5.pdf",
+              "page": 3,
+              "alt": "Start here, grown-ups: jobs first, then play and time together, then screens at their usual spot."
+            },
+            {
+              "pdf": "play-first-family-kit-ages-2-5.pdf",
+              "page": 6,
+              "alt": "My picture checklist, Play First, Then Screens: point to each picture, say it together and tick it when it’s done."
+            }
+          ],
+          "formats": [
+            {
+              "id": "pdf",
+              "label": "Printable PDF",
+              "detail": "9 tools for ages 2–5 · fillable · color and low-ink · US Letter and A4",
+              "price": 11,
+              "buy": [
+                "buy_play_first_family_kit_ages_2_5",
+                "buy_play_first_family_kit"
+              ],
+              "ship": "Instant download. Nothing ships."
+            }
+          ]
+        }
       }
     },
     "course-screen-reset": {
@@ -853,6 +870,53 @@
     "bundle-library-0-5": {
       "show": false,
       "why": "Shown as a set on /shop/bundles/ (config bundles: birth-to-5-library)."
+    },
+    "visual-routine-cards-0-5": {
+      "name": "Visual Routine Cards",
+      "line": "Picture cards and charts for mornings, meals, play and bedtime, ages 0–5",
+      "types": [
+        "printables"
+      ],
+      "ground": "plum-t",
+      "mock": "sheet",
+      "formats": [
+        {
+          "id": "pdf",
+          "label": "Printable PDF",
+          "detail": "Fillable · color and low-ink · US Letter and A4",
+          "price": 9.5,
+          "buy": [
+            "buy_visual_routine_cards_0_5",
+            "buy_visual_routine_cards"
+          ],
+          "ship": "Instant download. Nothing ships."
+        }
+      ],
+      "gallery": [
+        {
+          "pdf": "visual-routine-cards-0-5.pdf",
+          "page": 1,
+          "altFrom": "alt_text"
+        },
+        {
+          "pdf": "visual-routine-cards-0-5.pdf",
+          "page": 2,
+          "alt": "The grown-up guide: why pictures make the plan easy to see, and how to start."
+        }
+      ],
+      "requireFiles": [
+        "visual-routine-cards-0-5.pdf"
+      ],
+      "cover": {
+        "pdf": "visual-routine-cards-0-5.pdf",
+        "page": 1
+      },
+      "_note": "The ages 0–5 (G0) edition. Shown only once its own PDF exists; the full 0–12 listing (listing.json) is held until G1.",
+      "url": "/shop/visual-routine-cards/"
+    },
+    "visual-routine-cards": {
+      "show": false,
+      "why": "Full ages 0–12 edition: held until counsel's G1 answer (listing status held-until-g1). The site shows the 0–5 edition (visual-routine-cards-0-5)."
     }
   },
   "bundles": [
@@ -905,7 +969,7 @@
           "pdf"
         ],
         [
-          "visual-routine-cards",
+          "visual-routine-cards-0-5",
           "pdf"
         ],
         [
@@ -990,11 +1054,12 @@
     },
     "mat": [
       "toddler-busy-book",
-      "visual-routine-cards",
-      "bored-play-cards",
       "play-talk-cards",
+      "winter-countdown",
+      "visual-routine-cards-0-5",
+      "bored-play-cards",
       "play-first-family-kit",
-      "winter-countdown"
+      "gift-reveal-coupons"
     ]
   },
   "free": {

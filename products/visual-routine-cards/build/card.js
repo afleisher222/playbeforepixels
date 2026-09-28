@@ -20,7 +20,8 @@ const lowPreview = html => `<div class="lowprev">${html.replace(/href="#/g, 'hre
 const LOWPREV_CSS = `.lodefs symbol *:not(g):not([fill="${C.ink}"]):not([fill="none"]),
 .lowprev .card .art *:not(g):not(use):not([fill="${C.ink}"]):not([fill="none"]):not(.disc){fill:#FFFFFF!important;stroke:${C.ink}!important;stroke-width:1.3px!important;vector-effect:non-scaling-stroke;opacity:1!important}
 .lodefs symbol [fill="none"][stroke], .lowprev .card .art [fill="none"][stroke]{stroke:${C.ink}!important}
-.lowprev .card .art text{stroke-width:.9px!important}`;
+/* SVG text is filled, never outlined: stroked text makes Chromium write a Type 3 font into the PDF (print preflight G1) */
+.lodefs :is(text, #svg-text-fill), .lowprev :is(text, #svg-text-fill){fill:${C.ink}!important;stroke:none!important}`;
 
 function labelSize(label) {
   const n = label.length;

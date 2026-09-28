@@ -2,7 +2,7 @@
 # Renders every PDF: fillable fields, bookmarks, metadata. Store files -> product root; Etsy files -> etsy-upload/.
 set -e
 cd "$(dirname "$0")"
-P=..; mkdir -p tmp $P/etsy-upload
+P=..; mkdir -p tmp $P/etsy-upload $P/etsy-upload-ages-2-5
 node -e '
 const m=require("./out/manifest.json"); const fs=require("fs");
 for (const [k,v] of Object.entries(m)) fs.writeFileSync("tmp/"+k+".toc.json", JSON.stringify(v.toc));'
@@ -22,4 +22,16 @@ one kit-etsy-color-a4 "$P/etsy-upload/3-Color-A4.pdf" "$T (Color, A4)" toc
 one kit-etsy-low-letter "$P/etsy-upload/4-Low-Ink-US-Letter.pdf" "$T (Low-ink, US Letter)" toc
 one kit-etsy-low-a4 "$P/etsy-upload/5-Low-Ink-A4.pdf" "$T (Low-ink, A4)" toc
 one start-here-etsy "$P/etsy-upload/1-START-HERE.pdf" "START HERE: $T"
-ls -la $P/*.pdf $P/etsy-upload
+# Ages 2-5 edition (G0: the one that launches; business/GROWTH-ENGINE.md §8a)
+T0="Play-First Family Kit, Ages 2–5"
+one kit-g0-store-color-letter $P/play-first-family-kit-ages-2-5.pdf "$T0 (Color, US Letter)" toc
+one kit-g0-store-color-a4 $P/play-first-family-kit-ages-2-5-a4.pdf "$T0 (Color, A4)" toc
+one kit-g0-store-low-letter $P/play-first-family-kit-ages-2-5-low-ink.pdf "$T0 (Low-ink, US Letter)" toc
+one kit-g0-store-low-a4 $P/play-first-family-kit-ages-2-5-low-ink-a4.pdf "$T0 (Low-ink, A4)" toc
+one start-here-g0-store $P/START-HERE-ages-2-5.pdf "START HERE: $T0"
+one kit-g0-etsy-color-letter "$P/etsy-upload-ages-2-5/2-Color-US-Letter.pdf" "$T0 (Color, US Letter)" toc
+one kit-g0-etsy-color-a4 "$P/etsy-upload-ages-2-5/3-Color-A4.pdf" "$T0 (Color, A4)" toc
+one kit-g0-etsy-low-letter "$P/etsy-upload-ages-2-5/4-Low-Ink-US-Letter.pdf" "$T0 (Low-ink, US Letter)" toc
+one kit-g0-etsy-low-a4 "$P/etsy-upload-ages-2-5/5-Low-Ink-A4.pdf" "$T0 (Low-ink, A4)" toc
+one start-here-g0-etsy "$P/etsy-upload-ages-2-5/1-START-HERE.pdf" "START HERE: $T0"
+ls -la $P/*.pdf $P/etsy-upload $P/etsy-upload-ages-2-5

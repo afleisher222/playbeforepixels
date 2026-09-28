@@ -47,6 +47,12 @@ let QR = '';
 let PAGENO = 0;
 let START_QUICK = null; // quick-start page numbers for START HERE (Color and Low-ink files)
 const gcw = () => (X.low ? 'simple' : 'rainbow'); // colorway for sample cards on guide pages
+// Tiers: full = Complete Set 0–12 (held until counsel's G1 answer; ships later as a free update to the 0–5 listing),
+// g0 = Ages 0–5 edition (the G0 launch listing: business/GROWTH-ENGINE.md §8a), starter = 60-card Starter Set (0–5).
+const G0 = () => X.tier === 'g0';
+const BIGKID = () => X.tier === 'full'; // 5–12 material appears only in the full (held) tier
+const tierList = () => (X.tier === 'starter' ? STARTER : X.tier === 'g0' ? YOUNG : CARDS);
+const TIERNAME = { full: 'Complete Set', g0: 'Ages 0–5 Edition', starter: 'Starter Set' };
 const wordmark = (h = '11px') => sized(X.low ? LOGO.wordK : LOGO.word, h);
 const lockup = (h = '.42in') => sized(X.low ? LOGO.lockK : LOGO.lock, h);
 
@@ -194,7 +200,8 @@ ul.tight li{margin:2px 0}
 .low .band svg *:not(g):not(use):not([fill="#1D2940"]):not([fill="none"]),
 .low .la *:not(g):not(use):not([fill="#1D2940"]):not([fill="none"]){fill:#FFFFFF!important;stroke:${C.ink}!important;stroke-width:1.3px!important;vector-effect:non-scaling-stroke;opacity:1!important}
 .low defs symbol [fill="none"][stroke], .low .card .art [fill="none"][stroke], .low svg.ico [fill="none"][stroke], .low .band svg [fill="none"][stroke], .low .la [fill="none"][stroke]{stroke:${C.ink}!important}
-.low .card .art text, .low svg.ico text, .low .la text{stroke-width:.9px!important}
+/* SVG text stays filled ink, never outlined: stroked text makes Chromium write a Type 3 font into the PDF (print preflight G1) */
+.low :is(text, #svg-text-fill){fill:${C.ink}!important;stroke:none!important} /* :is() with an id gives id-level specificity, so this beats the line-art rules above */
 /* Simple sample on the Color file's print guide: same line art the Low-ink file prints */
 ${LOWPREV_CSS}
 /* step numbers sit OUTSIDE the card footprint, so they stay visible after a card is placed (panel fix) */
@@ -347,10 +354,11 @@ function checklist(cw, kind, start, o = {}) { // 5–12 weekly checklists (pre-f
     <div class="tipbar"><span class="lab">Our day</span><span><b>Screens have their own spot in our day:</b> <span class="hand" style="font-size:16px;display:inline-block;min-width:1.5in;height:20px;border-bottom:1.5px solid #9AA6BA;vertical-align:bottom"${f ? ` data-field="cl_${kind}_${start}_spot" data-fsize="11" data-falign="0"` : ''}>${f ? '' : 'after dinner'}</span>. Same spot every day, list or no list.</span></div>
   </div>`, { cls: `chart cw-${cw}-page${f ? ' blankchart' : ''}`, note: `Big-kid ${m ? 'morning' : 'evening'} checklist · ${start === 'mon' ? 'Monday' : 'Sunday'} start · ${f ? 'Blank: type or write your own jobs' : 'Pre-filled'} · Laminate and use a dry-erase marker` });
 }
-const prefilledCharts = cw => [chartStrip(cw), chartHoriz(cw), chartFirstThen(cw), chartRoutine(cw, 'morning'), chartRoutine(cw, 'bedtime'), chartToday(cw, 'mon'), chartToday(cw, 'sun'),
-  checklist(cw, 'morning', 'mon'), checklist(cw, 'morning', 'sun'), checklist(cw, 'evening', 'mon'), checklist(cw, 'evening', 'sun')];
-const blankCharts = cw => [chartStrip(cw, { fields: true }), chartHoriz(cw, { fields: true }), chartRoutine(cw, 'morning', { fields: true }), chartRoutine(cw, 'bedtime', { fields: true }), chartToday(cw, 'mon', { fields: true }), chartToday(cw, 'sun', { fields: true }),
-  checklist(cw, 'morning', 'mon', { blank: true }), checklist(cw, 'morning', 'sun', { blank: true }), checklist(cw, 'evening', 'mon', { blank: true }), checklist(cw, 'evening', 'sun', { blank: true })];
+// big = include the 5–12 weekly checklists (full tier only; the 0–5 edition holds them back until counsel's G1 answer)
+const prefilledCharts = (cw, big = true) => [chartStrip(cw), chartHoriz(cw), chartFirstThen(cw), chartRoutine(cw, 'morning'), chartRoutine(cw, 'bedtime'), chartToday(cw, 'mon'), chartToday(cw, 'sun'),
+  ...(big ? [checklist(cw, 'morning', 'mon'), checklist(cw, 'morning', 'sun'), checklist(cw, 'evening', 'mon'), checklist(cw, 'evening', 'sun')] : [])];
+const blankCharts = (cw, big = true) => [chartStrip(cw, { fields: true }), chartHoriz(cw, { fields: true }), chartRoutine(cw, 'morning', { fields: true }), chartRoutine(cw, 'bedtime', { fields: true }), chartToday(cw, 'mon', { fields: true }), chartToday(cw, 'sun', { fields: true }),
+  ...(big ? [checklist(cw, 'morning', 'mon', { blank: true }), checklist(cw, 'morning', 'sun', { blank: true }), checklist(cw, 'evening', 'mon', { blank: true }), checklist(cw, 'evening', 'sun', { blank: true })] : [])];
 
 // ---------------- extras ----------------
 function extrasPage() {
@@ -376,7 +384,7 @@ function extrasPage() {
 const LABEL_ART = { morning: 'wakeUp', meals: 'breakfast', play: 'blocks', outside: 'park', reading: 'readTogether', bath: 'bathTime', bedtime: 'sleep', helping: 'tidyToys', feelings: 'fHappy', about: 'shopping', words: 'wFirst', screens: 'playFirst', 'bk-morning': 'alarm', 'bk-after': 'homework', 'bk-evening': 'readInBed', 'bk-jobs': 'tidyRoom' };
 function labelsPage() {
   // every label is a word + an icon + (in color) the routine color: never color alone (gate #20). 1.6 in tall: big-piece size.
-  const labels = CATS.map(c => `<div class="slabel" style="background:${X.low ? '#fff' : c.t};${X.low ? '' : `border-top:8px solid ${c.c};`}">${art(LABEL_ART[c.id], 70)}<div class="nm">${esc(c.name)}</div><div class="ag">${c.age === 'all ages' ? 'All ages' : 'Ages ' + c.age}</div></div>`).join('');
+  const labels = CATS.filter(c => BIGKID() || !c.id.startsWith('bk-')).map(c => `<div class="slabel" style="background:${X.low ? '#fff' : c.t};${X.low ? '' : `border-top:8px solid ${c.c};`}">${art(LABEL_ART[c.id], 70)}<div class="nm">${esc(c.name)}</div><div class="ag">${c.age === 'all ages' ? 'All ages' : 'Ages ' + c.age}</div></div>`).join('');
   return page(`<div class="in" style="gap:.14in">
     <div><span class="kicker">Extras</span><h2 style="font-size:24px;margin-top:2px">Storage labels</h2><p class="note" style="margin-top:4px">One label per routine group, for zip pouches, envelopes, a photo box or binder rings. Each label shows the routine's name and picture, so nobody has to match by color alone.</p></div>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.12in">${labels}</div>
@@ -392,15 +400,15 @@ function coverPage() {
   const starter = X.tier === 'starter';
   const pos = [[0.05, .45, -8, .95], [2.1, .1, -2, 1.02], [4.15, .45, 7, .95], [1.1, 3.0, 5, .95], [3.2, 3.05, -5, .95]];
   const ids = ['morning-brush-teeth', 'play-blocks', 'bedtime-sleep', 'screens-play-first', 'screens-screens-later'];
-  const meta = starter ? [`${N_START} picture cards`, '3 chart layouts', 'Play first / screens later', 'Fillable blanks', 'US Letter + A4'] : [`${N_ALL} picture cards`, '6 chart layouts', '4 colorways', 'Fillable blanks', 'US Letter + A4'];
+  const meta = starter ? [`${N_START} picture cards`, '3 chart layouts', 'Play first / screens later', 'Fillable blanks', 'US Letter + A4'] : [`${tierList().length} picture cards`, '6 chart layouts', '4 colorways', 'Fillable blanks', 'US Letter + A4'];
   return page(`<div class="in"><div class="cv-panel">
-    <div style="display:flex;justify-content:space-between;align-items:center">${lockup('.42in')}<span class="chip age" style="font-size:9.5px;padding:5px 11px">${starter ? 'Ages 0–5' : 'Ages 0–5 and 5–12'}</span></div>
-    <h1 class="cv-title" style="margin-top:.26in">${starter ? `<span class="num">${N_START}</span> Visual<br>Routine Cards` : `<span class="num">${N_ALL}</span> Visual<br>Routine Cards`}</h1>
+    <div style="display:flex;justify-content:space-between;align-items:center">${lockup('.42in')}<span class="chip age" style="font-size:9.5px;padding:5px 11px">${BIGKID() ? 'Ages 0–5 and 5–12' : 'Ages 0–5'}</span></div>
+    <h1 class="cv-title" style="margin-top:.26in"><span class="num">${tierList().length}</span> Visual<br>Routine Cards</h1>
     <p class="cv-sub">Helps little ones see what comes next. Morning, meals, play, outside, reading, bath, bedtime, helping jobs and feelings.</p>
     <div class="cv-meta">${meta.map(s => `<span>${s}</span>`).join('')}</div>
     <div class="cv-prep">${clockIco}${PREP}.</div>
     <div class="cv-fan">${fan(ids, pos)}</div>
-  </div></div>`, { cls: 'cover', note: `${starter ? 'Starter Set' : 'Complete Set'} · ${X.low ? 'Low-ink' : 'Color'} · ${PAPER[X.paper].name}` });
+  </div></div>`, { cls: 'cover', note: `${TIERNAME[X.tier]} · ${X.low ? 'Low-ink' : 'Color'} · ${PAPER[X.paper].name}` });
 }
 function welcomePage() {
   // FOUNDER-EDIT: rewrite this welcome in your own words (human-authorship requirement, brand/BRAND.md).
@@ -417,9 +425,13 @@ function welcomePage() {
     ['+', 'make it yours', 'Blank, word-free and photo-frame cards, second copies of busy cards, and blank charts you can type into.', C.sun, C.tSun],
     ['16', 'routine groups', 'Morning to bedtime, feelings, plan words, out and about, and four big-kid groups. Monday and Sunday starts.', C.ink, C.wash],
   ];
+  if (G0()) {
+    tiles[0] = [`${N_YOUNG}`, 'picture cards', 'For ages 0–5: morning to bedtime, helping jobs and out and about. Feelings, plan words and the screens pair work at any age.', C.tomato, C.tTomato];
+    tiles[5] = [String(CATS.filter(c => !c.id.startsWith('bk-')).length), 'routine groups', 'Morning to bedtime, feelings, plan words and out and about. Monday and Sunday starts.', C.ink, C.wash];
+  }
   return page(`<div class="in" style="gap:.16in">
     <div><span class="kicker">Grown-up guide · 1 of 2</span><h1 class="g-title">Pictures make the plan easy to see</h1>
-    <p class="g-lede">Little ones live in the now. A short row of pictures shows them what is happening, what comes next and when it's done. They can point to it, carry it and move it themselves. Bigger kids can run their own mornings with a checklist they helped write. Use as few or as many cards as your family needs.</p></div>
+    <p class="g-lede">Little ones live in the now. A short row of pictures shows them what is happening, what comes next and when it's done. They can point to it, carry it and move it themselves.${BIGKID() ? ' Bigger kids can run their own mornings with a checklist they helped write.' : ''} Use as few or as many cards as your family needs.</p></div>
     <div class="g-grid" style="grid-template-columns:repeat(3,1fr)">${tiles.map(([n, h, p, c, t]) => `<div class="tile" style="--c:${c === C.sun ? '#B98200' : c};--t:${t}"><div class="big">${n}</div><h3 style="margin-top:4px">${h}</h3><p>${p}</p></div>`).join('')}</div>
     <div class="g-grid" style="grid-template-columns:1fr 1fr">
       <div class="tile" style="--t:${C.tSun}"><h3>Set up in 2 minutes</h3><p><b>1.</b> Pick one routine you already do, like bedtime.<br><b>2.</b> Print its cards and one chart at 100% (Actual size).<br><b>3.</b> Lay three cards on the chart and start tonight. Laminating and dots can wait for the weekend.</p></div>
@@ -459,6 +471,7 @@ function agesPage() {
     ['5–8 years', C.plum, C.tPlum, 'Big-kid cards and checklists', 'Switch to the 5–12 cards or the weekly checklist. They tick, you notice. Swap in a card when something new is happening.'],
     ['8–12 years', C.ink, C.wash, 'They write the plan', 'Blank cards and the fillable checklist let them set their own routine. Agree together where screens fit in the day, and keep that spot steady.'],
   ];
+  if (!BIGKID()) stages.splice(4); // the 0–5 edition stops at 5
   return page(`<div class="in" style="gap:.14in">
     <div><span class="kicker">Use them by age</span><h1 class="g-title">Start small, grow the plan with your child</h1>
     <p class="g-lede">Every child is different, so use these as starting points, not targets. If a step feels like too much, drop back to fewer cards. If it feels too easy, hand over more of the plan.</p></div>
@@ -481,7 +494,7 @@ function tocPage(rows, quick) {
       <div class="g-grid">
         <div class="tile" style="--t:${C.tSky}"><h3>Printer settings</h3><p>Print at <b>100% / Actual size</b>, never "Fit to page", so cards stay 2.2 in (5.6 cm). White cardstock, 65–110 lb (176–300 gsm). Landscape pages turn by themselves in most printers; if not, choose "Auto-rotate".</p></div>
         <div class="tile" style="--t:${C.tGrass}"><h3>Your two files</h3><p>This is the <b>${X.low ? 'Low-ink' : 'Color'} file</b>. ${other} Both come in US Letter and A4.</p></div>
-        <div class="tile" style="--t:${C.tPlum}"><h3>What you can type</h3><p>Open this PDF in free <b>Adobe Acrobat Reader</b> (computer or phone). You can type labels on blank, word-free and photo cards, chart titles and names${X.tier === 'starter' ? '' : ', and big-kid jobs, and tick the checklist boxes'}. Accents work (á, ñ, ü); for other alphabets, write by hand. Colors and pictures can't be changed.${X.store && X.tier === 'full' ? ' Bonus Canva-ready PNGs are on the free bonus page.' : ''}</p></div>
+        <div class="tile" style="--t:${C.tPlum}"><h3>What you can type</h3><p>Open this PDF in free <b>Adobe Acrobat Reader</b> (computer or phone). You can type labels on blank, word-free and photo cards, chart titles and names${BIGKID() ? ', and big-kid jobs, and tick the checklist boxes' : ''}. Accents work (á, ñ, ü); for other alphabets, write by hand. Colors and pictures can't be changed.${X.store && X.tier === 'full' ? ' Bonus Canva-ready PNGs are on the free bonus page.' : ''}</p></div>
       </div>
     </div>
     <div class="tile" style="--t:${C.tTomato};display:flex;gap:.2in;align-items:center"><div class="big" style="--c:${C.tomato};flex:0 0 auto">2</div><div><h3>Start tonight: print just 2 pages</h3><p>Page <b>${quick.cards}</b> (bedtime cards) and page <b>${quick.chart}</b> (the vertical strip). Pick four cards from that page, like ${quick.four}, lay them on the strip, and move each one to All done as you go. Everything else can wait.</p></div></div>
@@ -498,7 +511,7 @@ function laminatePage() {
       <div class="tile" style="--t:${C.tGrass}"><div class="big" style="--c:${C.grass}">3</div><h3>Cut with a sealed edge</h3><p>Leave about 1/8 in (3 mm) of sealed plastic and round the corners so they're soft in little hands.</p></div>
       <div class="tile" style="--t:${C.tTomato}"><div class="big" style="--c:${C.tomato}">4</div><h3>Dots, ages 3+</h3><p><b>Rough (hook)</b> dots on chart slots, <b>soft (loop)</b> dots on card backs. 3/4 in (19 mm) coin dots fit best.</p></div>
       <div class="tile" style="--t:${C.tPlum}"><div class="big" style="--c:${C.plum}">5</div><h3>Under 3: no dots</h3><p>Lay cards on top of the chart, drop finished cards in the All done pocket, or slide the chart into a page protector and tuck cards in.</p></div>
-      <div class="tile" style="--t:${C.wash}"><div class="big">6</div><h3>Store and reuse</h3><p>Storage labels go on pouches or envelopes. Laminated blanks and checklists take dry-erase markers.</p></div>
+      <div class="tile" style="--t:${C.wash}"><div class="big">6</div><h3>Store and reuse</h3><p>Storage labels go on pouches or envelopes. Laminated blanks${BIGKID() ? ' and checklists' : ' and charts'} take dry-erase markers.</p></div>
     </div>
     <div class="safety"><h3>Safety for little hands</h3><ul class="tight">
       <li><b>A grown-up stays close and keeps the pieces.</b> Routine cards are a together activity, not a toy to leave in the crib or bed.</li>
@@ -506,7 +519,7 @@ function laminatePage() {
       <li>Velcro dots, laminating scraps and loose plastic are small parts. <b>Check dots before each play; remove any that lift.</b> Keep spares out of reach, and skip magnets for any child who still puts things in their mouth.</li>
       <li>Hang charts low enough to reach without climbing, and away from blind cords. Every card follows our published safety rules.</li></ul></div>
     <div style="display:flex;gap:.3in;align-items:center">
-      <div style="width:2.2in;height:2.2in;border:2px dashed ${C.ink};border-radius:.17in;display:flex;align-items:center;justify-content:center;flex:0 0 auto;position:relative"><div style="width:1.25in;height:1.25in;border-radius:50%;background:${X.low ? '#fff' : C.tTomato};border:2px solid ${X.low ? C.ink : C.tomato};display:flex;align-items:center;justify-content:center;text-align:center;font-size:8.5px;font-weight:800;line-height:1.2;color:${X.low ? C.ink : '#C8431F'}">toilet-paper<br>tube opening<br>≈ 1.25 in</div></div>
+      <div style="width:2.2in;height:2.2in;border:2px dashed ${C.ink};border-radius:.17in;display:flex;align-items:center;justify-content:center;flex:0 0 auto;position:relative"><div style="width:1.25in;height:1.25in;border-radius:50%;background:${X.low ? '#fff' : C.tTomato};border:2px solid ${X.low ? C.ink : C.tomato};display:flex;align-items:center;justify-content:center;text-align:center;font-size:8.5px;font-weight:800;line-height:1.2;color:${X.low ? C.ink : '#C8431F'}">toilet-paper<br>tube opening<br>about 1.25 in</div></div>
       <div><h3 style="font-size:16px;margin-bottom:4px">Size check</h3><p style="font-size:11.2px;line-height:1.45">Measure the dashed square with a ruler after printing. If it's <b>2.2 in (5.6 cm)</b> on each side, you printed at the right size and every card is bigger than a toilet-paper tube opening. If it's smaller, reprint at 100% / Actual size.</p></div>
     </div>
   </div>`, { note: 'Laminate, stick and store · Safety' });
@@ -527,11 +540,11 @@ function indexPage(list, cardStart) {
 function bonusPage() {
   const starter = X.tier === 'starter';
   const next = starter
-    ? [['The Complete Set', `All ${N_ALL} cards for ages 0–12, 6 chart layouts, 4 colorways and Monday or Sunday starts.`, C.tomato], ['Play-First Family Kit', 'A play-first checklist, helping jobs, together tokens and a family play plan.', C.sky], ['"I\'m Bored" Play Cards', '150 age-banded play ideas with a talk prompt on every card.', C.grass]]
+    ? [['Visual Routine Cards, Ages 0–5', `All ${N_YOUNG} cards for ages 0–5, 6 chart layouts, 4 colorways and Monday or Sunday starts.`, C.tomato], ['Play-First Family Kit', 'A play-first checklist, helping jobs, together tokens and a family play plan.', C.sky], ['"I\'m Bored" Play Cards', '150 age-banded play ideas with a talk prompt on every card.', C.grass]]
     : [['Play-First Family Kit', 'A play-first checklist, helping jobs, together tokens and a family play plan.', C.sky], ['"I\'m Bored" Play Cards', '150 age-banded play ideas with a talk prompt on every card.', C.grass], ['Toddler Busy Book', 'Paper-and-play pages for ages 0–5, sorted by age band.', C.plum]];
   const top = X.store
     ? `<div><span class="kicker">Thank you</span><h1 class="g-title">Your free bonus is waiting</h1>
-    <p class="g-lede">Scan the code for free seasonal routine cards (holidays, back to school, travel days)${starter ? '' : ', the Canva-ready PNG set'} and short, practical play ideas for your child's age. We only ask for your email and, if you like, your child's birth month and year, never a name.</p></div>
+    <p class="g-lede">Scan the code for free seasonal routine cards (holidays, back to school, travel days)${X.tier === 'full' ? ', the Canva-ready PNG set' : ''} and short, practical play ideas for your child's age. We only ask for your email and, if you like, your child's birth month and year, never a name.</p></div>
     <div style="display:flex;gap:.3in;align-items:center" class="tile">
       <div style="width:1.75in;height:1.75in;background:#fff;padding:.12in;border-radius:12px;flex:0 0 auto">${QR}</div>
       <div><h3 style="font-size:18px">Scan, or type the short link</h3><p style="font-family:Fredoka,sans-serif;font-weight:600;font-size:17px;margin-top:6px;color:#C8431F">${BONUS}</p><p class="note" style="margin-top:6px">Free companion download. Unsubscribe any time. Need your files again? Your download link stays in your order email; help is at ${SITE}/help.</p></div>
@@ -550,7 +563,7 @@ function bonusPage() {
     <div style="margin-top:auto" class="note">
       <p><b style="color:${C.ink}">Terms of use.</b> For one family's personal use, including grandparents and sitters who care for your child. You may print as many copies as your family needs. Giving it as a gift? Pass the files on, or print one set for that family. Please don't share, sell or upload the files.</p>
       <p style="margin-top:6px">These cards are a parenting resource for everyday routines, not a medical or professional service. Questions? ${X.store ? `Use the contact form at ${SITE}.` : 'Send us a message through Etsy.'}</p>
-      <p style="margin-top:6px">Illustrations and text created with AI assistance and edited by Play Before Pixels. ${COPY}</p>
+      <p style="margin-top:6px">How this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels. ${COPY}</p>
     </div>
   </div>`, { note: X.store ? 'Thank you · Free bonus' : 'Thank you' });
 }
@@ -565,35 +578,37 @@ function starterHowPage() {
     </div>
     <div class="tile" style="--t:${C.wash}"><h3 style="margin-bottom:8px">Try this tonight: a four-card bedtime</h3>
       <div style="display:flex;align-items:center;justify-content:space-between">${['bath-bath-time', 'bedtime-pajamas', 'bedtime-brush-teeth', 'reading-bedtime-story'].map((id, i) => `${i ? `<svg viewBox="-34 -26 68 52" style="width:.34in"><path d="M-30-8H6V-22L32 0 6 22V8H-30Z" fill="${X.low ? C.ink : C.tomato}"/></svg>` : ''}<div style="width:1.32in;height:1.32in"><div style="transform:scale(.6);transform-origin:top left">${card(byId(id), gcw())}</div></div>`).join('')}</div></div>
-    <div class="tile" style="--t:${C.tTomato}"><h3>Want more?</h3><p>The Complete Set has all ${N_ALL} cards, including ${N_BIG} big-kid cards for ages 5–12, 6 chart layouts, 4 colorways and Monday or Sunday starts.</p></div>
+    <div class="tile" style="--t:${C.tTomato}"><h3>Want more?</h3><p>The Ages 0–5 Edition has all ${N_YOUNG} cards, 6 chart layouts, 4 colorways and Monday or Sunday starts.</p></div>
   </div>`, { note: 'Grown-up guide' });
 }
 
 // ---------------- START HERE (1 page per tier and edition) ----------------
 function startHerePage() {
   const starter = X.tier === 'starter';
-  const pre = starter ? 'visual-routine-cards-starter' : 'visual-routine-cards';
+  const pre = starter ? 'visual-routine-cards-starter' : G0() ? 'visual-routine-cards-0-5' : 'visual-routine-cards';
   const files = X.store
     ? (starter
       ? [['START-HERE-starter.pdf', 'This page'], [`${pre}-letter.pdf`, 'Color, US Letter'], [`${pre}-a4.pdf`, 'Color, A4'], [`${pre}-low-ink-letter.pdf`, 'Low-ink, US Letter: white cards, no tinted grounds'], [`${pre}-low-ink-a4.pdf`, 'Low-ink, A4']]
+      : G0() ? [['START-HERE-0-5.pdf', 'This page'], [`${pre}.pdf`, 'Color, US Letter: Rainbow, Soft and Navy'], [`${pre}-a4.pdf`, 'Color, A4'], [`${pre}-low-ink.pdf`, 'Low-ink, US Letter: Simple white cards, no tinted grounds'], [`${pre}-low-ink-a4.pdf`, 'Low-ink, A4']]
       : [['START-HERE.pdf', 'This page'], [`${pre}.pdf`, 'Color, US Letter: Rainbow, Soft and Navy'], [`${pre}-a4.pdf`, 'Color, A4'], [`${pre}-low-ink.pdf`, 'Low-ink, US Letter: Simple white cards, no tinted grounds'], [`${pre}-low-ink-a4.pdf`, 'Low-ink, A4']])
     : [['1-START-HERE.pdf', 'This page'], ['2-Color-US-Letter.pdf', starter ? 'Color, US Letter' : 'Color, US Letter: Rainbow, Soft and Navy'], ['3-Color-A4.pdf', 'Color, A4'], ['4-Low-Ink-US-Letter.pdf', 'Low-ink, US Letter: white cards, no tinted grounds'], ['5-Low-Ink-A4.pdf', 'Low-ink, A4']];
   const what = starter
     ? `${N_START} picture cards, second copies of the busiest cards, blank, word-free and photo-frame cards, 3 chart layouts (ready-made and blank) and a short grown-up guide.`
+    : G0() ? `${N_YOUNG} picture cards, second copies of the busiest cards, blank, word-free and photo-frame cards, 6 chart layouts (ready-made and blank, Monday and Sunday starts), storage labels and a grown-up guide.`
     : `${N_ALL} picture cards, second copies of the busiest cards, blank, word-free and photo-frame cards, 6 chart layouts and big-kid checklists (ready-made and blank, Monday and Sunday starts), storage labels and a grown-up guide.`;
   return page(`<div class="in" style="gap:.16in">
-    <div style="display:flex;justify-content:space-between;align-items:center">${lockup('.42in')}<span class="chip age">${starter ? 'Ages 0–5' : 'Ages 0–5 and 5–12'}</span></div>
-    <div><span class="kicker">File 1 · Start here</span><h1 class="g-title">${starter ? `${N_START} Visual Routine Cards · Starter Set` : `${N_ALL} Visual Routine Cards`}</h1>
+    <div style="display:flex;justify-content:space-between;align-items:center">${lockup('.42in')}<span class="chip age">${BIGKID() ? 'Ages 0–5 and 5–12' : 'Ages 0–5'}</span></div>
+    <div><span class="kicker">File 1 · Start here</span><h1 class="g-title">${starter ? `${N_START} Visual Routine Cards · Starter Set` : G0() ? `${N_YOUNG} Visual Routine Cards · Ages 0–5` : `${N_ALL} Visual Routine Cards`}</h1>
     <p class="g-lede">Thank you! Here's what each file holds and how to print and fill it in. ${PREP}.</p></div>
     <div class="tile" style="--t:${C.tSun}"><h3>Your files</h3><table class="sh-files">${files.map(([f, d]) => `<tr><td>${f}</td><td>${d}</td></tr>`).join('')}</table><p class="note" style="margin-top:6px">Pick one file for your paper size and ink. Each file holds ${what}</p></div>
     ${START_QUICK ? `<div class="tile" style="--t:${C.tTomato}"><h3>Start tonight: print just 2 pages</h3><p>Color file: pages <b>${START_QUICK.color.cards}</b> (bedtime cards) and <b>${START_QUICK.color.chart}</b> (vertical strip). Low-ink file: pages <b>${START_QUICK.low.cards}</b> and <b>${START_QUICK.low.chart}</b>. Pick four cards from that page, like ${START_QUICK.color.four}, and lay them on the strip. Everything else can wait.</p></div>` : ''}
     <div class="g-grid" style="grid-template-columns:1fr 1fr">
       <div class="tile" style="--t:${C.tSky}"><h3>Printing</h3><p>Print at <b>100% / Actual size</b> so cards stay 2.2 in (5.6 cm). Use white cardstock. Print only the pages you need: the Print guide near the front of each file lists every page. Landscape chart pages turn by themselves in most printers.</p></div>
-      <div class="tile" style="--t:${C.tGrass}"><h3>Typing your own words</h3><p>Open the PDF in free <b>Adobe Acrobat Reader</b> on a computer or phone and tap a line to type. You can type card labels, chart titles and names${starter ? '' : ', big-kid jobs, and tick checklist boxes'}. Colors and pictures can't be changed. Save, then print, or print blank and write by hand.</p></div>
+      <div class="tile" style="--t:${C.tGrass}"><h3>Typing your own words</h3><p>Open the PDF in free <b>Adobe Acrobat Reader</b> on a computer or phone and tap a line to type. You can type card labels, chart titles and names${BIGKID() ? ', big-kid jobs, and tick checklist boxes' : ''}. Colors and pictures can't be changed. Save, then print, or print blank and write by hand.</p></div>
     </div>
     ${X.store ? `<div class="g-grid" style="grid-template-columns:1fr 1.25fr">
       <div class="tile" style="--t:${C.tSky}"><h3>Downloading</h3><p>Open the download link in your order email in a web browser. On a phone, save each PDF to Files, then open it in Adobe Acrobat Reader.</p></div>
-      <div class="tile" style="--t:${C.wash};display:flex;align-items:center;gap:.18in"><div style="width:1in;height:1in;background:#fff;padding:.06in;border-radius:10px;flex:0 0 auto">${QR}</div><div><h3>Free bonus</h3><p>Scan for free seasonal routine cards${starter ? '' : ' and the Canva-ready PNG set'}: <b>${BONUS}</b>. Lost a file? Help is at <b>${SITE}/help</b>.</p></div></div>
+      <div class="tile" style="--t:${C.wash};display:flex;align-items:center;gap:.18in"><div style="width:1in;height:1in;background:#fff;padding:.06in;border-radius:10px;flex:0 0 auto">${QR}</div><div><h3>Free bonus</h3><p>Scan for free seasonal routine cards${X.tier === 'full' ? ' and the Canva-ready PNG set' : ''}: <b>${BONUS}</b>. Lost a file? Help is at <b>${SITE}/help</b>.</p></div></div>
     </div>` : `<div class="tile" style="--t:${C.tSky}"><h3>Downloading: use a browser, not the app</h3><p>The Etsy app can't download files. Open Etsy in a web browser, go to You › Purchases and reviews, and choose Download files. On a phone, save each PDF to Files, then open it in Adobe Acrobat Reader. Your files stay on your Purchases page to download again any time.</p></div>`}
     <div class="safety"><h3>Safety in one line</h3><p>A grown-up stays close and keeps the pieces. Print at full size, use no velcro dots with children under 3, and check dots before each play for older children. Every card follows our published safety rules.</p></div>
     <p class="note" style="margin-top:auto">License: one family's personal use, including grandparents and sitters. Giving it as a gift? Pass the files on, or print one set for that family. Please don't share or resell the files.</p>
@@ -617,7 +632,7 @@ ${pages.join('\n')}
 function assemble(marks) {
   PAGENO = 0;
   const starter = X.tier === 'starter';
-  const list = starter ? STARTER : CARDS;
+  const list = tierList();
   const cws = X.low ? ['simple'] : (starter ? ['rainbow'] : ['rainbow', 'soft', 'navy']);
   const M = marks || {};
   const m = {}; const bm = []; const out = [];
@@ -632,9 +647,9 @@ function assemble(marks) {
   }
   // print guide rows
   const rows = [{ h: 'Guide' }, { t: starter ? 'Grown-up guide, talk tips, print guide, laminating and safety' : 'Grown-up guide, ages, print guide, laminating and safety, card index', p: R('guide', 'cards-' + cws[0]) }, { h: `Cards (${list.length} + second copies + blanks)` }];
-  cws.forEach(cw => { rows.push({ t: `${cwName(cw)}: picture cards${starter ? '' : ' (0–5, all ages, 5–12)'}`, p: R('cards-' + cw, 'second-' + cw), cw }, { t: `${cwName(cw)}: second copies + blank cards`, p: R('second-' + cw, 'end-' + cw), cw }); });
-  rows.push({ t: `Word-free cards (${cwName(cws[0])}) + photo-frame cards`, p: R('wordfree', 'charts-' + cws[0]), cw: cws[0] }, { h: starter ? 'Charts' : 'Charts and checklists' });
-  cws.forEach(cw => { rows.push({ t: `${cwName(cw)}: ${starter ? '3 layouts' : '6 layouts + big-kid checklists'}, ready-made`, p: R('charts-' + cw, 'blank-' + cw), cw }, { t: `${cwName(cw)}: blank + fillable`, p: R('blank-' + cw, 'cend-' + cw), cw }); });
+  cws.forEach(cw => { rows.push({ t: `${cwName(cw)}: picture cards${starter ? '' : BIGKID() ? ' (0–5, all ages, 5–12)' : ' (0–5 and all ages)'}`, p: R('cards-' + cw, 'second-' + cw), cw }, { t: `${cwName(cw)}: second copies + blank cards`, p: R('second-' + cw, 'end-' + cw), cw }); });
+  rows.push({ t: `Word-free cards (${cwName(cws[0])}) + photo-frame cards`, p: R('wordfree', 'charts-' + cws[0]), cw: cws[0] }, { h: BIGKID() ? 'Charts and checklists' : 'Charts' });
+  cws.forEach(cw => { rows.push({ t: `${cwName(cw)}: ${starter ? '3 layouts' : BIGKID() ? '6 layouts + big-kid checklists' : '6 layouts'}, ready-made`, p: R('charts-' + cw, 'blank-' + cw), cw }, { t: `${cwName(cw)}: blank + fillable`, p: R('blank-' + cw, 'cend-' + cw), cw }); });
   if (!starter) rows.push({ t: 'Extras: Today markers, All done pocket, storage labels', p: R('extras', 'bonus') });
   rows.push({ t: X.store ? 'Free bonus and what\'s next' : 'What\'s next', p: M.bonus ? `${M.bonus}` : '–' });
   // quick start (panel fix): the card page holding the most bedtime cards, plus the vertical strip
@@ -647,7 +662,7 @@ function assemble(marks) {
   if (!starter) { mark('index', 'Card index'); out.push(indexPage(list, M['cards-' + cws[0]] || 0)); }
   cws.forEach(cw => {
     mark('cards-' + cw, `Cards · ${cwName(cw)}`);
-    if (starter) out.push(...cardPages(list, cw, { age: 'Ages 0–5' }));
+    if (!BIGKID()) out.push(...cardPages(list, cw, { age: 'Ages 0–5' }));
     else { out.push(...cardPages(YOUNG, cw, { age: 'Ages 0–5' })); out.push(...cardPages(BIG, cw, { age: 'Ages 5–12' })); }
     mark('second-' + cw); out.push(secondCopiesPage(cw), blankCardPage(cw));
     m['end-' + cw] = PAGENO + 1;
@@ -656,7 +671,7 @@ function assemble(marks) {
   cws.forEach(cw => {
     mark('charts-' + cw, `Charts · ${cwName(cw)}`);
     if (starter) { out.push(chartStrip(cw), chartFirstThen(cw), chartRoutine(cw, 'morning')); mark('blank-' + cw, `Blank charts · ${cwName(cw)}`); out.push(chartStrip(cw, { fields: true }), chartRoutine(cw, 'morning', { fields: true })); }
-    else { out.push(...prefilledCharts(cw)); mark('blank-' + cw, `Blank charts · ${cwName(cw)}`); out.push(...blankCharts(cw)); }
+    else { out.push(...prefilledCharts(cw, BIGKID())); mark('blank-' + cw, `Blank charts · ${cwName(cw)}`); out.push(...blankCharts(cw, BIGKID())); }
     m['cend-' + cw] = PAGENO + 1;
   });
   if (!starter) { mark('extras', 'Extras'); out.push(extrasPage(), labelsPage()); }
@@ -669,7 +684,7 @@ function buildDoc(ctx) {
   const p1 = assemble(null);
   const p2 = assemble(p1.m);
   if (p2.out.length !== p1.out.length) throw new Error('page count changed between passes');
-  const t = X.tier === 'starter' ? `${N_START} Visual Routine Cards Starter Set` : `${N_ALL} Visual Routine Cards`;
+  const t = X.tier === 'starter' ? `${N_START} Visual Routine Cards Starter Set` : G0() ? `${N_YOUNG} Visual Routine Cards, Ages 0–5` : `${N_ALL} Visual Routine Cards`;
   return { html: wrapDoc(p2.out, `${t} · ${X.low ? 'Low-ink' : 'Color'} · ${PAPER[X.paper].name}`), pages: p2.out.length, bookmarks: p2.bm };
 }
 function buildStartHere(ctx) {
@@ -677,8 +692,7 @@ function buildStartHere(ctx) {
   for (const low of [false, true]) { X = Object.assign({}, ctx, { low }); const a = assemble(assemble(null).m); q[low ? 'low' : 'color'] = a.m.quick; }
   START_QUICK = q;
   X = ctx; PAGENO = 0;
-  const t = X.tier === 'starter' ? 'Starter Set' : 'Complete Set';
-  return wrapDoc([startHerePage()], `START HERE · Visual Routine Cards ${t}`);
+  return wrapDoc([startHerePage()], `START HERE · Visual Routine Cards ${TIERNAME[X.tier]}`);
 }
 
 // ---------------- write everything ----------------
@@ -689,8 +703,8 @@ async function main() {
   const FONT_OUT = path.relative(OUTDIR, path.join(BRAND, 'fonts/fonts.css'));
   const FONT_ROOT = path.relative(ROOT, path.join(BRAND, 'fonts/fonts.css'));
   const write = (file, html, rootRel) => fs.writeFileSync(file, html.replace('FONTHREF', rootRel ? FONT_ROOT : FONT_OUT));
-  const manifest = { cards: N_ALL, young: N_YOUNG, big: N_BIG, starter: N_START, second_copies: SECOND.length, docs: {} };
-  for (const tier of ['full', 'starter']) for (const ed of ['store', 'etsy']) for (const ink of ['color', 'low']) for (const paper of ['letter', 'a4']) {
+  const manifest = { cards: N_ALL, g0: N_YOUNG, young: N_YOUNG, big: N_BIG, starter: N_START, second_copies: SECOND.length, docs: {} };
+  for (const tier of ['full', 'g0', 'starter']) for (const ed of ['store', 'etsy']) for (const ink of ['color', 'low']) for (const paper of ['letter', 'a4']) {
     const ctx = { paper, store: ed === 'store', low: ink === 'low', tier };
     const name = `${tier}-${ed}-${ink}-${paper}`;
     const d = buildDoc(ctx);
@@ -698,7 +712,7 @@ async function main() {
     manifest.docs[name] = { pages: d.pages, bookmarks: d.bookmarks };
     if (name === 'full-store-color-letter') write(path.join(ROOT, 'source.html'), d.html, true);
   }
-  for (const tier of ['full', 'starter']) for (const ed of ['store', 'etsy']) {
+  for (const tier of ['full', 'g0', 'starter']) for (const ed of ['store', 'etsy']) {
     write(path.join(OUTDIR, `start-${tier}-${ed}.html`), buildStartHere({ paper: 'letter', store: ed === 'store', low: false, tier }));
   }
   fs.writeFileSync(path.join(BUILD, 'manifest.json'), JSON.stringify(manifest, null, 1));
@@ -708,4 +722,4 @@ if (require.main === module) main().catch(e => { console.error(e); process.exit(
 
 // for marketing.js (listing images are rendered from the Etsy edition: no URL, no QR)
 function setCtx(ctx) { X = Object.assign({ paper: 'letter', store: false, low: false, tier: 'full' }, ctx); PAGENO = 0; }
-module.exports = { setCtx, starterHowPage, prefilledCharts, blankCharts, chartStrip, chartHoriz, chartFirstThen, chartRoutine, chartToday, checklist, coverPage, welcomePage, talkPage, agesPage, laminatePage, css, wrapDoc, PAPER, N_ALL, N_YOUNG, N_BIG, N_START, COPY, BONUS, PREP, VERSION, SECOND, LOGO, sized, buildDoc };
+module.exports = { setCtx, bonusPage, startHerePage, indexPage, tocPage, starterHowPage, prefilledCharts, blankCharts, chartStrip, chartHoriz, chartFirstThen, chartRoutine, chartToday, checklist, coverPage, welcomePage, talkPage, agesPage, laminatePage, css, wrapDoc, PAPER, N_ALL, N_YOUNG, N_BIG, N_START, COPY, BONUS, PREP, VERSION, SECOND, LOGO, sized, buildDoc };

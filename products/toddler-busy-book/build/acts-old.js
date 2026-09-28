@@ -134,7 +134,7 @@ b3.push({
   talk: ['Say what you see', '“First, a seed. Next, it grows. Last… a flower!”'], easier: 'Give the first card, then choose between two for “next.”', harder: 'Tell the story back to you in their own words.', tired: 'Tell one story with just your fingers: first, next, last.',
   prep: '10 min (one card sheet for both story pages)', mess: 'None', needs: 'The story cards (cut once)', cut: false, usesPiecesOf: 'seq2',
   board: seqBoard(['Plant a seed', 'Build a snowman']),
-  answer: 'Seed → sprout → flower · one ball → two balls → snowman',
+  answer: 'Seed, sprout, flower · one ball, two balls, snowman',
 });
 b3.push({
   id: 'seq2', band: 'b3', from: 44, cat: 'Little stories', title: 'First, next, last: more stories',
@@ -144,7 +144,7 @@ b3.push({
   board: seqBoard(['Make a pizza', 'Bedtime']),
   pieces: [['bloom', 'flower'], ['seed', 'seed'], ['snow2', 'two balls'], ['sprout', 'sprout'], ['snow3', 'snowman'], ['snow1', 'one ball'], ['pz3', 'pizza'], ['bed2', 'pajamas'], ['pz1', 'dough'], ['bed1', 'bath'], ['pz2', 'sauce'], ['bed3', 'bed']].map(([k, w]) => P('st-' + k, w)),
   piecesFor: 'the story pages',
-  answer: 'Dough → sauce → pizza · bath → pajamas → bed',
+  answer: 'Dough, sauce, pizza · bath, pajamas, bed',
 });
 b3.push(mazeAct(MAZES[4], 4), mazeAct(MAZES[5], 5));
 
@@ -175,7 +175,7 @@ b3.push({
     const scene = (y, v) => `<g transform="translate(0,${y})">${tint(0, 0, W, 246, 20, '#FFFFFF')}<svg x="0" y="0" width="${W}" height="246" viewBox="0 0 ${W} 246" overflow="hidden">${rr(0, 170, W, 76, 0, C.tGrass, 'class="tint"')}${U('w-sun', 600, 50, 0.45)}${v ? '' : U('b-cloud', 380, 44, 0.55, `style="--cl:${C.tSky}"`)}${U('b-tree', 110, 130, 1.25)}${v ? '' : U('b-bird', 150, 70, 0.4)}${U('b-pond', 380, 196, 1.5)}${U('w-duck', 390, 176, 0.4)}${U('b-flower', 560, 170, 0.62, v ? `style="--pt:${C.plum}"` : '')}${U('w-ball', 250, 206, v ? 0.3 : 0.22)}</svg></g>`;
     return scene(0, 0) + scene(270, 1);
   },
-  answer: 'Cloud gone · bird gone · flower red→purple · ball bigger',
+  answer: 'Cloud gone · bird gone · flower red to purple · ball bigger',
 });
 
 // ---------------- pretend play ----------------

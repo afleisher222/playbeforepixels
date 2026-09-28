@@ -45,7 +45,8 @@ const morningIds = ['morning-wake-up', 'morning-potty', 'morning-get-dressed', '
 const bedIds = ['bath-bath-time', 'bedtime-pajamas', 'bedtime-brush-teeth', 'reading-bedtime-story', 'bedtime-lullaby', 'bedtime-cuddle', 'bedtime-lights-off', 'bedtime-sleep'];
 
 // ---------------- cover.png source (page 1 of the PDF) ----------------
-bld.setCtx({ store: true, low: false, tier: 'full' });
+// The website cover shows the Ages 0–5 edition: the only routine-card edition that launches (G0; business/GROWTH-ENGINE.md §8a).
+bld.setCtx({ store: true, low: false, tier: 'g0' });
 const coverHtml = `<!doctype html><html><head><meta charset="utf-8"><title>Cover</title>${baseCss}</head><body style="margin:0">${require('./card.js').DEFS}${bld.coverPage()}</body></html>`;
 bld.setCtx({ store: false, low: false, tier: 'full' });
 
@@ -58,7 +59,7 @@ const mockup = `${head('Mockup')}${require('./card.js').DEFS}
   ${scaled(`<div class="paper">${filledChart(bld.chartStrip('rainbow'), ['bath-bath-time', 'bedtime-pajamas', 'bedtime-brush-teeth', 'reading-bedtime-story', 'meals-dinner', 'play-play-time'])}</div>`, 478, 175, .375, 3)}
   ${scaled(cd('feelings-happy'), 520, 34, .52, -7, 'shadow')}
   ${scaled(cd('screens-play-first'), 640, 28, .52, 6, 'shadow')}
-  ${scaled(cd('bk-after-homework'), 700, 470, .48, 9, 'shadow')}
+  ${scaled(cd('outside-slide'), 700, 470, .48, 9, 'shadow')}
 </div></body></html>`;
 
 // ---------------- listing images (Etsy edition) ----------------
@@ -166,6 +167,38 @@ const dl = (starter) => `<div class="li" style="background:#fff">
 </div>`;
 L.push(dl(false));
 
+// ---------------- Ages 0–5 edition listing images (9; the G0 launch listing) ----------------
+// Same images as the Complete Set minus the 5–12 image; every count and page number is the 0–5 edition's own.
+const M = require('./manifest.json');
+const PG0 = M.docs['g0-store-color-letter'].pages;
+const YCARDS = CARDS.filter(c => !c.cat.startsWith('bk-'));
+const cardPg = 3 * (Math.ceil(NY / 12) + 2), wfPg = Math.ceil(NY / 12) + 1, chartPg = 3 * 13, guidePg = PG0 - cardPg - wfPg - chartPg;
+const L0 = [];
+L0.push(L[0].replace('Ages 0–5 and 5–12', 'Ages 0–5').replace(`<span style="color:${C.tomato}">${N}</span>`, `<span style="color:${C.tomato}">${NY}</span>`).replace(`<span class="pill">${N} cards</span>`, `<span class="pill">${NY} cards</span>`));
+const stats0 = [
+  [`${NY}`, 'picture cards', 'For ages 0–5: morning to bedtime, helping jobs, out and about. Feelings, plan words and screens cards work at any age.', C.tomato, C.tTomato],
+  ['6', 'chart layouts', 'Strips, a first–then board, morning and bedtime charts and a Today board, ready-made and blank.', C.sky, C.tSky],
+  ['4', 'colorways', 'Rainbow, Soft and Navy, plus Simple in a separate low-ink file.', C.grass, C.tGrass],
+  ['Aa', 'fillable', 'Type labels, chart titles and names in free Adobe Acrobat Reader.', C.plum, C.tPlum],
+  ['+', 'extras', 'Second copies of busy cards, blank, word-free and photo-frame cards, storage labels.', '#B98200', C.tSun],
+  ['2', 'guide pages', 'Set up in 2 minutes, talk tips, use by age, laminating and safety.', C.ink, C.wash],
+];
+L0.push(`<div class="li" style="background:#fff">
+  <div style="position:absolute;left:60px;top:56px"><div class="k">What's inside</div><h1 style="font-size:62px;margin-top:10px">${NY} cards · ${PG0} pages · 5 files</h1><p style="font-size:19px;font-weight:700;margin-top:10px;max-width:860px;line-height:1.4">Color file: ${cardPg} card pages, ${wfPg} word-free and photo pages, ${chartPg} chart pages, ${guidePg} guide and extras pages. Plus a Low-ink file and START HERE. US Letter and A4.</p></div>
+  <div style="position:absolute;left:60px;right:60px;top:300px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px">${stats0.map(([n, h, p, c, t]) => `<div class="stat" style="--c:${c};--t:${t}"><b>${n}</b><span>${h}</span><p>${p}</p></div>`).join('')}</div>
+  <div style="position:absolute;left:60px;right:60px;top:800px;display:flex;justify-content:space-between">${['morning-brush-teeth', 'meals-lunch', 'play-puzzle', 'outside-slide', 'reading-read-together', 'feelings-calm'].map(id => `<div style="width:132px;height:132px"><div style="transform:scale(.6);transform-origin:top left">${cd(id)}</div></div>`).join('')}</div>
+</div>`);
+bld.setCtx({ store: false, low: false, tier: 'g0' });
+L0.push(`<div class="li" style="background:${C.wash}">
+  <div style="position:absolute;left:60px;top:52px"><div class="k">Grown-up guide inside</div><h1 style="font-size:58px;margin-top:8px">Set up in 2 minutes</h1><p style="font-size:20px;margin-top:10px;font-weight:700;max-width:860px;line-height:1.4">Plain-words guide: what your child is practicing, three easy talk tips, what to do if interest fades, and how to use the cards from birth to 5.</p></div>
+  ${scaled(pageImg(bld.welcomePage(), 400), 70, 300, 1, -2)}
+  ${scaled(pageImg(bld.talkPage(), 400), 520, 320, 1, 2)}
+</div>`);
+L0.push(L[3], L[5], L[6], L[7]);
+L0.push(L[8].replace('Card labels, chart titles, names, big-kid jobs and tick boxes.', 'Card labels, chart titles and names.').replace(`All ${N} pictures with no words`, `All ${NY} pictures with no words`));
+L0.push(dl(false));
+bld.setCtx({ store: false, low: false, tier: 'full' });
+
 // ---------------- starter listing images (5) ----------------
 bld.setCtx({ store: false, low: false, tier: 'starter' });
 const S = CARDS.filter(c => c.starter);
@@ -204,5 +237,6 @@ const defs = require('./card.js').DEFS;
 fs.writeFileSync(path.join(__dirname, 'cover.html'), coverHtml.replace('FONTHREF', FONT));
 fs.writeFileSync(path.join(__dirname, 'mockup.html'), mockup);
 fs.writeFileSync(path.join(__dirname, 'listing.html'), `${head('Listing images')}${defs}${DEFS_LO}${L.join('\n')}</body></html>`);
+fs.writeFileSync(path.join(__dirname, 'listing-g0.html'), `${head('Ages 0–5 listing images')}${defs}${DEFS_LO}${L0.join('\n')}</body></html>`);
 fs.writeFileSync(path.join(__dirname, 'listing-starter.html'), `${head('Starter listing images')}${defs}${LS.join('\n')}</body></html>`);
-console.log('listing images', L.length, 'starter', LS.length);
+console.log('listing images', L.length, 'g0', L0.length, 'starter', LS.length);

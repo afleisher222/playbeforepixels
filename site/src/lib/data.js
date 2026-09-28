@@ -70,13 +70,23 @@ function load(opts = {}) {
   const statusRx = new RegExp(config.hideWhenStatus, 'i');
   const gates = config.gates;
 
+  // A product lane may add a separate ages 0–5 (G0) listing such as "bored-play-cards-1-5" next to
+  // the full one. When the site describes the base slug with a g0 block, that G0 listing takes the
+  // base product's place (same page URL, its own words), and the full listing is left out.
+  const baseOf = slug => { const b = slug.replace(/-(?:ages-)?\d+-\d+$/, ''); return b !== slug && !config.products[slug] && config.products[b] && config.products[b].g0 ? b : null; };
+  const g0Listing = new Set(listings.map(l => baseOf(l.slug)).filter(Boolean));
   const products = [];
-  for (const L of listings) {
-    const c = config.products[L.slug] || {};
+  for (const L0 of listings) {
+    if (g0Listing.has(L0.slug)) { hidden.push({ slug: L0.slug, why: 'replaced on the site by its ages 0–5 listing' }); continue; }
+    const base = baseOf(L0.slug);
+    const L = base ? { ...L0, slug: base, _g0slug: L0.slug } : L0;
+    const c = base ? { ...config.products[base], ...(config.products[base].g0.site || {}), g0: undefined } : (config.products[L.slug] || {});
     const status = typeof L.status === 'string' ? L.status : '';
     if (c.show === false) { hidden.push({ slug: L.slug, why: c.why }); continue; }
+    const missing = (c.requireFiles || []).filter(x => !exists(P('products', L._dir, x)));
+    if (missing.length) { hidden.push({ slug: L.slug, why: 'waiting for ' + missing.join(', ') }); warnings.push(`${L.slug}: not shown until ${missing.join(', ')} exists in products/${L._dir}/`); continue; }
     if (status && statusRx.test(status)) { hidden.push({ slug: L.slug, why: 'listing status: ' + status.split(/[.;(]/)[0].trim() }); continue; }
-    if (!config.products[L.slug]) { hidden.push({ slug: L.slug, why: 'not described in site/config.json yet (add it to show it)' }); warnings.push(`${L.slug}: new listing has no site/config.json entry, so it is not shown`); continue; }
+    if (!base && !config.products[L.slug]) { hidden.push({ slug: L.slug, why: 'not described in site/config.json yet (add it to show it)' }); warnings.push(`${L.slug}: new listing has no site/config.json entry, so it is not shown`); continue; }
     for (const k of ['title', 'alt_text', 'price_usd', 'seo_title', 'seo_description', 'short_description']) {
       if (L[k] == null || L[k] === '') errors.push(`${L._file}: missing ${k}`);
     }
@@ -140,13 +150,15 @@ function load(opts = {}) {
     });
   }
   // config entries that point at listings that no longer exist
-  for (const s of Object.keys(config.products)) if (!listings.some(l => l.slug === s)) warnings.push(`site/config.json describes ${s}, but no listing has that slug`);
+  for (const s of Object.keys(config.products)) if (!listings.some(l => l.slug === s || l.slug.replace(/-(?:ages-)?\d+-\d+$/, '') === s)) warnings.push(`site/config.json describes ${s}, but no listing has that slug`);
 
   const bySlug = Object.fromEntries(products.map(p => [p.slug, p]));
 
   // Bundles: honest sum of parts, computed from the listings.
   const bundles = [];
   for (const b of config.bundles) {
+    const absent = b.parts.filter(([slug]) => !bySlug[slug]).map(([slug]) => slug);
+    if (absent.length) { warnings.push(`bundle ${b.id}: not shown until ${absent.join(', ')} is shown`); hidden.push({ slug: b.id, why: 'a part is not shown yet: ' + absent.join(', ') }); continue; }
     const parts = b.parts.map(([slug, fmt]) => {
       const p = bySlug[slug];
       if (!p) { errors.push(`bundle ${b.id}: part ${slug} is not a shown product`); return null; }

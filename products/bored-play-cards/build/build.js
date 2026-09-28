@@ -70,6 +70,18 @@ const ALL = [
 ];
 const N_ALL = ALL.length;
 const N_FREE = ALL.filter(x => !meta(x.cd)[5]).length; // "nothing to buy" cards
+// Tiers: full = all four bands + seasonal sets (5–12 material HELD until counsel's G1 answer; ships later as a free update
+// to the same listing), g0 = the Ages 1–5 edition that launches (1–3 and 3–5 bands only; business/GROWTH-ENGINE.md §8a).
+// The seasonal sets span ages 1–12, so they stay with the full tier.
+let TIER = 'full';
+const G0 = () => TIER === 'g0';
+const BKEYS = () => (G0() ? ['b13', 'b35'] : ['b13', 'b35', 'b58', 'b812']);
+const SKEYS = () => (G0() ? [] : ['summer', 'rainy']);
+const ACT = () => ALL.filter(x => BKEYS().includes(x.k) || SKEYS().includes(x.k));
+const nAll = () => ACT().length;
+const nFree = () => ACT().filter(x => !meta(x.cd)[5]).length;
+const nMain = () => BKEYS().reduce((s, k) => s + CARDS[k].length, 0);
+const AGES = () => (G0() ? '1–5' : '1–12');
 
 // ---------- icons (flat, 24-unit grid, currentColor) ----------
 const ICONS = [
@@ -352,6 +364,8 @@ body.low *{background-color:transparent!important;box-shadow:none!important;colo
 body.low .page{background:#fff!important}
 body.low svg:not(.qr):not(.mt) *{fill:#fff!important;stroke:${C.ink}!important;stroke-width:1.1px!important;vector-effect:non-scaling-stroke;opacity:1!important}
 body.low svg.mt rect{fill:${C.ink}!important}
+/* SVG text stays filled ink, never outlined: stroked text makes Chromium write a Type 3 font into the PDF (print preflight G1) */
+body.low :is(text, #svg-text-fill){fill:${C.ink}!important;stroke:none!important} /* :is() with an id gives id-level specificity, so this beats the line-art rule above */
 body.low .i,body.low .mi,body.low .fi,body.low .ssi,body.low .si,body.low .ti2,body.low .sci{overflow:visible}
 body.low .panel{border-color:var(--m)}
 body.low .hd{border-bottom:2px solid var(--m)}
@@ -369,18 +383,19 @@ body.low .fan .panel,body.low .mc .panel{background-color:#fff!important}
 
 // ---------- pages ----------
 function coverPage() {
-  const chips = ['150 cards + 36 seasonal', 'Ages 1–12, sorted by age', 'Calm · Medium · Wiggly', 'A talk prompt on every card'];
-  const fan = [['b812', CARDS.b812[0], 1], ['b58', CARDS.b58[1], 2], ['summer', MINI.summer.cards[1], 2], ['b13', CARDS.b13[3], 4], ['b35', CARDS.b35[2], 3]];
+  const chips = G0() ? [`${nMain()} cards · 2 age bands`, 'Ages 1–5, sorted by age', 'Calm · Medium · Wiggly', 'A talk prompt on every card'] : ['150 cards + 36 seasonal', 'Ages 1–12, sorted by age', 'Calm · Medium · Wiggly', 'A talk prompt on every card'];
+  const fan = G0() ? [['b35', CARDS.b35[16], 17], ['b13', CARDS.b13[12], 13], ['b35', CARDS.b35[0], 1], ['b13', CARDS.b13[3], 4], ['b35', CARDS.b35[2], 3]]
+    : [['b812', CARDS.b812[0], 1], ['b58', CARDS.b58[1], 2], ['summer', MINI.summer.cards[1], 2], ['b13', CARDS.b13[3], 4], ['b35', CARDS.b35[2], 3]];
   const fanHtml = fan.map(([k, cd, n], i) => `<div class="fan" style="transform:rotate(${(i - 2) * 9}deg)">${card(cd, k, n)}</div>`).join('');
   return pg('cover', `
   <div class="cv-top">${logo('lockup-horizontal', 'lgc')}<span class="cv-tag">${site('playbeforepixels.com · ')}${edName()}</span></div>
   <h1 class="cv-h"><span>I’m</span><span>bored!</span></h1>
   <div class="cv-sub">Play Cards</div>
-  <p class="cv-p">150 screen-free play ideas for ages 1–12, each with what you need, how to play, a talk prompt and a safety note.</p>
+  <p class="cv-p">${nMain()} screen-free play ideas for ages ${AGES()}, each with what you need, how to play, a talk prompt and a safety note.</p>
   <div class="cv-art">${coverArt(560, 470)}</div>
   <div class="cv-fan">${fanHtml}</div>
   <div class="cv-chips">${chips.map((c, i) => `<span class="pill" style="background:${[C.tSun, C.tGrass, C.tSky, C.tPlum][i]}">${c}</span>`).join('')}</div>
-  <div class="cv-extra"><span><b>Prep:</b> about 30 min to print and cut every card with a paper trimmer, then use them again and again. No time? Print one sheet, or point and pick from the card index with no cutting.</span></div>
+  <div class="cv-extra"><span><b>Prep:</b> about ${G0() ? 15 : 30} min to print and cut every card with a paper trimmer, then use them again and again. No time? Print one sheet, or point and pick from the card index with no cutting.</span></div>
   <div class="cv-ft">${VERSION} · ${COPY}</div>
   `);
 }
@@ -409,15 +424,14 @@ function welcomeArt() {
   const blocks = `<use href="#block-1" transform="translate(330,${Fl - 20}) scale(.72)"/><use href="#block-3" transform="translate(372,${Fl - 20}) scale(.72)"/><use href="#block-2" transform="translate(351,${Fl - 61}) scale(.72)"/>`;
   return `<svg viewBox="0 0 ${W} ${H}" width="100%" height="100%" aria-hidden="true"><circle cx="220" cy="118" r="70" fill="${C.tSun}"/><rect x="20" y="${Fl}" width="370" height="6" rx="3" fill="${C.ink}" opacity=".08"/>${adult(g)}${kid(k)}${blocks}</svg>`;
 }
-const N_BLANK = () => ['b13', 'b35', 'b58', 'b812'].reduce((s, k) => s + (9 - CARDS[k].length % 9) % 9, 0) + 9;
+const N_BLANK = () => BKEYS().reduce((s, k) => s + (9 - CARDS[k].length % 9) % 9, 0) + (SKEYS().length ? 9 : 0);
 function welcomePage(guide) {
   const inside = [
-    ['150', 'play cards in 4 age bands: 1–3, 3–5, 5–8, 8–12'],
-    ['36', 'seasonal cards: 18 summer + 18 rainy-day'],
+    ...(G0() ? [[String(nMain()), 'play cards in 2 age bands: 1–3 and 3–5']] : [['150', 'play cards in 4 age bands: 1–3, 3–5, 5–8, 8–12'], ['36', 'seasonal cards: 18 summer + 18 rainy-day']]),
     [String(N_BLANK()), `blank “your idea” cards${LOW ? ' to write on' : ' you can type in or write on'}`],
-    ['24', 'box dividers: ages, kinds of play, favorites, blanks'],
+    [String(dividerList().length), 'box dividers: ages, kinds of play, favorites, blanks'],
     ['12', 'jar labels, including energy jars and blanks'],
-    ['6', 'card-back designs for double-sided printing'],
+    [String(BKEYS().length + SKEYS().length), 'card-back designs for double-sided printing'],
     ['1', 'Today’s Play Menu choice board'],
     ['3', 'Our Play Week planners: example, Monday and Sunday start'],
   ];
@@ -429,7 +443,7 @@ function welcomePage(guide) {
       <div class="whyi"><span class="wn" style="background:${C.tSky};color:${C.sky}">${icon('talk')}</span><div><h4>Talk is built in</h4><p>Every card has a talk line. The back-and-forth (your question, their answer, your answer back) turns an activity into time together.</p></div></div>
       <div class="whyi"><span class="wn" style="background:${C.tGrass};color:${C.grass}">${icon('star')}</span><div><h4>Sorted by age and energy</h4><p>Pick your child’s age band, then ask: calm, medium or wiggly? Matching the mood makes a “yes” more likely.</p></div></div>
       <div class="whyi"><span class="wn" style="background:${C.tTomato};color:${C.tomato}">${icon('safe')}</span><div><h4>Safety on every card</h4><p>Every card has its own safety line and follows the rules on page ${guide.safety}. Every card for ages 1–3 uses only things too big to fit through a toilet-paper tube.</p></div></div>
-      <div class="whyi"><span class="wn" style="background:${C.tSun};color:#A87700">${icon('kitchen')}</span><div><h4>Made from everyday things</h4><p>Pots, socks, boxes, paper, a walk outside. ${N_FREE} of the ${N_ALL} cards need nothing you have to buy.</p></div></div>
+      <div class="whyi"><span class="wn" style="background:${C.tSun};color:#A87700">${icon('kitchen')}</span><div><h4>Made from everyday things</h4><p>Pots, socks, boxes, paper, a walk outside. ${nFree()} of the ${nAll()} cards need nothing you have to buy.</p></div></div>
       <div class="wart">${welcomeArt()}</div>
     </div>
     <div class="inside"><span class="kick">What’s inside</span>
@@ -438,7 +452,7 @@ function welcomePage(guide) {
     </div>
   </div>
   <div class="steps">${steps.map(([h, t], i) => `<div class="st"><span class="sn" style="background:${[C.sun, C.grass, C.sky, C.plum][i]};color:${i ? '#fff' : C.ink}">${i + 1}</span><h4>${h}</h4><p>${t}</p></div>`).join('')}</div>
-  <div class="gu"><div class="gut"><span class="kick">Prep budget</span><p><b>About 30 minutes</b> to print and cut all the cards with a paper trimmer, then they last for years (laminating is optional). <b>No time today?</b> Print one sheet, or read titles from the card index on page ${guide.index} and let your child pick: no cutting at all.</p></div><div class="gut"><span class="kick">Your job as the grown-up</span><p>You don’t have to entertain. Set out the things on the card, play for the first few minutes, then let your child lead. The grown-up guide on page ${guide.guide} has the rest.</p></div></div>`;
+  <div class="gu"><div class="gut"><span class="kick">Prep budget</span><p><b>About ${G0() ? 15 : 30} minutes</b> to print and cut all the cards with a paper trimmer, then they last for years (laminating is optional). <b>No time today?</b> Print one sheet, or read titles from the card index on page ${guide.index} and let your child pick: no cutting at all.</p></div><div class="gut"><span class="kick">Your job as the grown-up</span><p>You don’t have to entertain. Set out the things on the card, play for the first few minutes, then let your child lead. The grown-up guide on page ${guide.guide} has the rest.</p></div></div>`;
   return contentPage('welcome', 'Start here', 'Boredom is where<br>play begins.', body);
 }
 const welcomeCss = `<style>
@@ -503,11 +517,12 @@ function pantryPage(guide) {
     ['Bubbles', 'grown-up holds the liquid'],
   ];
   const picks = [['b13', 'Peekaboo Towel'], ['b13', 'Knee Bounce Ride'], ['b35', 'Animal Charades'], ['b35', 'I Spy Colors'], ['b58', 'Would You Rather?'], ['b58', 'One-Word Story'], ['b812', 'Twenty Questions'], ['b812', 'Silly Debate']]
-    .map(([k, t]) => ({ k, cd: CARDS[k].find(c => c.t === t) }));
+    .map(([k, t]) => ({ k, cd: CARDS[k].find(c => c.t === t) })).filter(x => BKEYS().includes(x.k));
+  if (G0()) for (const k of ['b13', 'b35']) for (const i of FIRST[k]) if (picks.length < 8 && !picks.some(x => x.cd === CARDS[k][i])) picks.push({ k, cd: CARDS[k][i] });
   const body = `
   <div class="pgrid">
     <div class="pbox"><span class="kick">Pantry list · 25 things most homes already have</span>
-      <p class="psm">${N_FREE} of the ${N_ALL} cards use only everyday things like these (the “Nothing to buy” flag). Keep small things (the ones marked 3+ or 5+) away from children under 3.</p>
+      <p class="psm">${nFree()} of the ${nAll()} cards use only everyday things like these (the “Nothing to buy” flag). Keep small things (the ones marked 3+ or 5+) away from children under 3.</p>
       <div class="pl">${P.map(([t, n]) => `<div class="pli"><i class="bx"></i><span>${t}${n ? ` <em>${n}</em>` : ''}</span></div>`).join('')}</div>
     </div>
     <div class="pside">
@@ -562,7 +577,7 @@ function anatomyPage() {
     [8, 'Who and what', '“With a grown-up” or “Can do alone,” plus “Nothing needed” or “Nothing to buy.”'],
     [9, 'Safety line', 'Read it before you start, every time.'],
   ];
-  const bands = BANDS.map(b => `<div class="bdg" style="background:${TH[b.key].t}"><span style="background:${TH[b.key].m}"></span><b>${b.label}</b></div>`).join('');
+  const bands = BANDS.filter(b => BKEYS().includes(b.key)).map(b => `<div class="bdg" style="background:${TH[b.key].t}"><span style="background:${TH[b.key].m}"></span><b>${b.label}</b></div>`).join('');
   const energies = [['c', 'Calm', 'Sit-down play for winding down.'], ['m', 'Medium', 'Up-and-about: pretend, building, helping.'], ['w', 'Wiggly', 'Big-body play, indoors or out.']];
   const cats = Object.entries(CATS).map(([k, v]) => `<div class="ct">${icon(k)}<span>${v.name}</span></div>`).join('');
   const body = `
@@ -570,7 +585,7 @@ function anatomyPage() {
     <div class="an-card"><div class="scale">${card(sample, 'b35', 17, { marks: true })}</div></div>
     <div class="an-leg">${marks.map(([n, h, t]) => `<div class="lg"><span class="mk s">${n}</span><div><h4>${h}</h4><p>${t}</p></div></div>`).join('')}</div>
   </div>
-  <div class="an-row"><span class="kick">Age bands, always with a word label</span><div class="bands">${bands}<div class="bdg" style="background:${C.tTomato}"><span style="background:${C.tomato}"></span><b>Summer</b></div><div class="bdg" style="background:${C.wash}"><span style="background:${C.ink}"></span><b>Rainy day</b></div></div>
+  <div class="an-row"><span class="kick">Age bands, always with a word label</span><div class="bands">${bands}${SKEYS().length ? `<div class="bdg" style="background:${C.tTomato}"><span style="background:${C.tomato}"></span><b>Summer</b></div><div class="bdg" style="background:${C.wash}"><span style="background:${C.ink}"></span><b>Rainy day</b></div>` : ''}</div>
   <p class="note">Bands overlap on purpose. Children move between them, so try the band above or below whenever a card fits your child.</p></div>
   <div class="an-row"><span class="kick">Three energy levels</span><div class="ens">${energies.map(([e, h, t]) => `<div class="enx"><div class="enh"><span class="en">${meter(e)}${h}</span></div><p>${t}</p></div>`).join('')}</div>
   <p class="note">Wiggly cards count toward active play. The World Health Organization’s 2019 guidelines recommend at least 180 minutes a day of varied physical activity for children aged 1–4, spread across the day.</p></div>
@@ -616,17 +631,24 @@ function agesPage() {
     ['b58', 'Let me try', 'Building, making, games with rules, and inventions of their own.', 'Set it up, then step back. Be the tester, the audience or the rule-checker.', 'Ask “why?” and “how did you figure that out?”, and give them time to answer.'],
     ['b812', 'My idea!', 'Projects, challenges, strategy, and real skills like cooking, fixing and planning.', 'Be the assistant, not the boss. Offer the time and materials, then admire the result.', 'Ask for their plan and their opinion, and share yours too.'],
   ];
+  const PA = P.filter(([k]) => BKEYS().includes(k));
   const body = `<p class="lead">Every child plays differently, and age bands are a starting point, not a rule. Here is what play often looks like in each band, and the easiest way for a grown-up to join in.</p>
-  <div class="ages">${P.map(([k, h, play, role, talk]) => `<div class="agp" style="${tvars(TH[k])}">
+  <div class="ages${G0() ? ' two' : ''}">${PA.map(([k, h, play, role, talk]) => `<div class="agp" style="${tvars(TH[k])}">
     <div class="agh"><span>${TH[k].name}</span><h3>${h}</h3></div>
     <div class="agb"><div><span class="kick">Play looks like</span><p>${play}</p></div><div><span class="kick">Your part</span><p>${role}</p></div><div class="agt">${icon('talk', 'ti2')}<div><span class="kick">Talk tip</span><p>${talk}</p></div></div><div class="ag3"><span class="kick">Three to try first</span><div>${FIRST[k].map(i => `<span class="agc">${esc(CARDS[k][i].t)}</span>`).join('')}</div></div></div>
   </div>`).join('')}</div>
+  ${G0() ? `<div class="gd2" style="margin-top:14px">
+    <div class="gbox" style="background:${C.tSky}"><span class="kick">Between two bands?</span><p>Children move between bands all the time. Play a 3–5 card with a two-year-old and be the helper, or bring back a 1–3 favorite for a four-year-old. The card index gives an easier and a harder way for every card.</p></div>
+    <div class="gbox" style="background:${C.tPlum}"><span class="kick">Big brothers and sisters</span><p>An older child can join any card as the reader, the rule-keeper or the helper. Keep small things from their games away from children under 3.</p></div>
+  </div>
+  <div style="height:1.6in;margin-top:10px">${byeArt()}</div>` : ''}
   <p class="ped">Every child plays and talks on their own timeline. If you have questions about your child’s development, talk with your pediatrician.</p>`;
   return contentPage('agespg', 'Play at every age', 'What play looks<br>like at each age.', body);
 }
 const agesCss = `<style>
 .agespg .lead{margin-bottom:10px;font-size:13.5px}.agespg .ph{margin-bottom:10px}
 .ages{display:grid;grid-template-columns:1fr 1fr;gap:14px;flex:1}
+.ages.two{flex:0 0 auto;align-items:start}
 .agp{border-radius:18px;background:var(--t);overflow:hidden;display:flex;flex-direction:column}
 .agh{background:var(--m);padding:9px 16px}
 .agh span{display:inline-block;background:#fff;color:var(--ink);border-radius:20px;padding:2px 9px;font-weight:800;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase}
@@ -700,7 +722,7 @@ function tipsPage(G) {
     ['Energy check', 'Ask “calm, medium or wiggly?” first, then pull from that energy.'],
     ['Play Menu', 'Put four cards on the menu in the morning: calm, wiggly, together and free choice.'],
     ['Big helper', 'An older child reads a 1–3 card aloud and plays it with a younger one, with a grown-up close by.'],
-    ['Season swap', 'Add the summer or rainy-day set when the weather turns.'],
+    G0() ? ['Move up a band', 'When the 1–3 cards feel easy, mix in a few 3–5 cards. Keep the under-3 size rule for little siblings.'] : ['Season swap', 'Add the summer or rainy-day set when the weather turns.'],
   ];
   const S = ['Cardstock, 65–110 lb / 176–300 gsm', 'A paper trimmer or scissors', 'Laminator and 3–5 mil pouches (optional)', 'Corner rounder (optional)', 'Hook-and-loop dots (optional, ages 3+)', 'A big jar or a 3 × 5 in recipe box'];
   const body = `<div class="tp">${T.map(([h, t], i) => `<div class="tpi"><span class="tn">${i + 1}</span><div><h4>${h}</h4><p>${t}</p></div></div>`).join('')}</div>
@@ -743,18 +765,21 @@ function divider(d, idx) {
     <div class="dbody">${inner}</div>
   </div>`;
 }
-function dividerPages() {
-  const D = [
-    ...BANDS.map(b => ({ m: TH[b.key].m, t: TH[b.key].t, tab: b.label, num: b.ages, h: b.label, p: `${CARDS[b.key].length} play cards` })),
+function dividerList() {
+  return [
+    ...BANDS.filter(b => BKEYS().includes(b.key)).map(b => ({ m: TH[b.key].m, t: TH[b.key].t, tab: b.label, num: b.ages, h: b.label, p: `${CARDS[b.key].length} play cards` })),
     ...Object.entries(CATS).map(([k, v]) => ({ m: C.ink, t: C.wash, tab: v.short, ic: k, h: v.name, p: 'Kind of play' })),
-    { m: C.tomato, t: C.tTomato, tab: 'Summer', ic: 'sun', h: 'Summer', p: '18 cards' },
-    { m: C.ink, t: C.wash, tab: 'Rainy day', ic: 'rain', h: 'Rainy day', p: '18 cards' },
+    ...(SKEYS().length ? [{ m: C.tomato, t: C.tTomato, tab: 'Summer', ic: 'sun', h: 'Summer', p: '18 cards' },
+      { m: C.ink, t: C.wash, tab: 'Rainy day', ic: 'rain', h: 'Rainy day', p: '18 cards' }] : []),
     { m: C.tomato, t: C.tTomato, tab: 'Favorites', ic: 'heart', h: 'Family favorites', p: 'The ones we play again and again' },
     { m: C.grass, t: C.tGrass, tab: 'Tried it', ic: 'star', h: 'Tried it!', p: 'Played at least once' },
     { m: C.sky, t: C.tSky, tab: 'Save for later', ic: 'later', h: 'Save for later', p: 'Not today, maybe next time' },
     { m: C.plum, t: C.tPlum, tab: 'Our ideas', ic: 'pen', h: 'Our own ideas', p: 'Cards we made up ourselves' },
     ...[[C.sun, C.tSun], [C.grass, C.tGrass], [C.sky, C.tSky], [C.plum, C.tPlum], [C.tomato, C.tTomato], [C.ink, C.wash]].map(([m, t]) => ({ m, t, tab: '', blank: true })),
   ];
+}
+function dividerPages() {
+  const D = dividerList();
   const gx = 0.14, gy = 0.3, H = 3.95, x0 = (SZ.w - (3 * 2.4 + 2 * gx)) / 2, y0 = (SZ.h - (2 * H + gy)) / 2 + 0.12;
   const pages = chunk(D, 6);
   return pages.map((grp, pi) => {
@@ -887,7 +912,7 @@ const weekCss = `<style>
 // Card index + grown-up companion: every card with its starting age, easier, harder and 2-minute version (rules 14, 15).
 function companionPages() {
   const items = [];
-  for (const k of ['b13', 'b35', 'b58', 'b812', 'summer', 'rainy']) {
+  for (const k of [...BKEYS(), ...SKEYS()]) {
     const list = CARDS[k] || MINI[k].cards;
     items.push({ band: k, n: list.length });
     list.forEach((cd, i) => items.push({ k, cd, i }));
@@ -989,7 +1014,7 @@ function faqPage(guide) {
     ['Color or low-ink?', LOW ? 'You are holding the low-ink file: white backgrounds and line art to color. The color file has the same cards in full color, with type-in blanks.' : 'Both have the same cards. Low-ink uses white backgrounds and line art to color; this color file adds type-in blanks.'],
     ['How do I type on the blanks?', LOW ? 'Use the color file: open it in a free PDF reader that supports fill-in forms (a computer is easiest), click a box and type. In this low-ink file, the blanks are for writing by hand.' : 'Open this file in a free PDF reader that supports fill-in forms (a computer is easiest), click a box and type, then save a copy. You can type text and tick circles; fonts, colors and pictures stay as they are.'],
     ['Can I print it again, or at a print shop?', 'Yes. Print as many copies as your household needs, at home or at a print shop. Grandparents and sitters who care for your child count as your household.'],
-    ['Can a teacher, center or library use it?', STORE() ? 'This file is a personal license for one household. Classrooms, child-care rooms, libraries and groups need a classroom or site license from playbeforepixels.com. Most cards work with 2–6 children at a time.' : 'This file is a personal license for one household. Classrooms, child-care rooms, libraries and groups need a classroom or site license: message us through the shop. Most cards work with 2–6 children at a time.'],
+    ['Can a teacher, center or library use it?', 'Not yet. This file is licensed for one household. Classroom, child-care, library and group licenses are not available yet.'],
     ['Can I give it as a gift?', 'Yes. Print and cut the cards, put them in a jar with one of the labels, and give the jar. The family you give it to becomes the household this license covers.'],
     ['My child dislikes mess or loud noise.', 'Skip those cards, or use the easier version: a spoon instead of hands, a towel on the pot, watching first and joining later. Every child may pass.'],
     ['Is it in other languages?', 'The cards are in English. Say the talk lines in the language you know best; a sign, a point or a device tap counts as an answer.'],
@@ -1026,7 +1051,7 @@ function bonusPage() {
   <div class="bye">${byeArt()}<span class="hand">Happy playing!</span></div>
   <div class="legal">
     <p><b>${COPY}</b> All rights reserved. ${VERSION}.</p>
-    <p>Print permission (personal license): you may print this file for your own household as often as you like, at home or at a print shop; grandparents and sitters who care for your child count as your household. Please don’t share, resell or post the file or its pages. Classrooms, child-care centers, libraries and groups need a classroom or site license: ${STORE() ? 'see playbeforepixels.com or write to us through the contact form.' : 'message us through the shop.'}</p>
+    <p>Print permission (personal license): you may print this file for your own household as often as you like, at home or at a print shop; grandparents and sitters who care for your child count as your household. Please don’t share, resell or post the file or its pages. Classroom, child-care, library and group licenses are not available yet.</p>
     <p>These cards are ideas for supervised play at home. They are parent education, not medical, developmental or professional advice, and they don’t replace the judgment of the grown-up in charge. Follow the safety page and every card’s safety line, and skip anything that doesn’t suit your child.</p>
     <p>Play Before Pixels is an independent small business. No brands, products or organizations are named or endorsed in this pack.</p>
   </div>`);
@@ -1051,13 +1076,14 @@ const bonusCss = `<style>
 
 // ---------- START HERE (one page; file 1 of the Etsy five-file set, rule 4) ----------
 function startHereDoc() {
+  const sfx = G0() ? '-ages-1-5' : '';
   const files = STORE()
-    ? [['START-HERE.pdf', 'This page.'], ['bored-play-cards.pdf', 'Color, US Letter. Type-in blanks.'], ['bored-play-cards-A4.pdf', 'Color, A4. Type-in blanks.'], ['bored-play-cards-low-ink.pdf', 'Low-ink, US Letter. Line art to color.'], ['bored-play-cards-low-ink-A4.pdf', 'Low-ink, A4. Line art to color.']]
+    ? [[`START-HERE${sfx}.pdf`, 'This page.'], [`bored-play-cards${sfx}.pdf`, 'Color, US Letter. Type-in blanks.'], [`bored-play-cards${sfx}-A4.pdf`, 'Color, A4. Type-in blanks.'], [`bored-play-cards${sfx}-low-ink.pdf`, 'Low-ink, US Letter. Line art to color.'], [`bored-play-cards${sfx}-low-ink-A4.pdf`, 'Low-ink, A4. Line art to color.']]
     : [['1-START-HERE.pdf', 'This page.'], ['2-Color-US-Letter.pdf', 'Color, US Letter. Type-in blanks.'], ['3-Color-A4.pdf', 'Color, A4. Type-in blanks.'], ['4-Low-Ink-US-Letter.pdf', 'Low-ink, US Letter. Line art to color.'], ['5-Low-Ink-A4.pdf', 'Low-ink, A4. Line art to color.']];
   const page = pg('cp shp', `<div class="cpin">
   <header class="phd">${logo('lockup-horizontal', 'lgh')}<span class="pe">File 1 of 5 · Start here</span></header>
   <h2 class="ph">Start here</h2>
-  <p class="lead">“I’m Bored” Play Cards: 150 play cards for ages 1–12, plus 18 summer and 18 rainy-day cards. Every file has the same cards; pick the ink and the paper size you want.</p>
+  <p class="lead">“I’m Bored” Play Cards: ${G0() ? `${nMain()} play cards for ages 1–5, in two age bands (1–3 and 3–5)` : '150 play cards for ages 1–12, plus 18 summer and 18 rainy-day cards'}. Every file has the same cards; pick the ink and the paper size you want.</p>
   <div class="shg">
     <div class="sbx"><span class="kick">Your 5 files</span>${files.map(([f, t], i) => `<div class="sfr"><span class="snum">${i + 1}</span><div><b>${f}</b><span>${t}</span></div></div>`).join('')}
       <p class="ssm"><b>US Letter</b> is for the USA and Canada. <b>A4</b> is for most other countries.</p></div>
@@ -1067,11 +1093,11 @@ function startHereDoc() {
       ${STORE() ? `<div class="sqr"><div>${QR_HELP}<span>Re-download and help<br>${HELP}</span></div><div>${QR_BONUS}<span>Free bonus mini-set<br>${BONUS}</span></div></div>` : ''}</div>
   </div>
   <div class="shg">
-    <div class="sbx" style="background:${C.tSun}"><span class="kick">Print settings</span><p>Print at <b>100% / actual size</b>, not “fit to page.” Use cardstock (65–110 lb / 176–300 gsm) for the cards. Print only what you need: the page guide is on page ${GUIDE.letter.tips} of each main file. Double-sided backs are optional; the steps are on the same page.</p><p><b>Prep:</b> about 30 minutes to print and cut every card with a paper trimmer, then use them again and again. No time? Print one sheet today.</p></div>
+    <div class="sbx" style="background:${C.tSun}"><span class="kick">Print settings</span><p>Print at <b>100% / actual size</b>, not “fit to page.” Use cardstock (65–110 lb / 176–300 gsm) for the cards. Print only what you need: the page guide is on page ${GUIDE[GK('letter')].tips} of each main file. Double-sided backs are optional; the steps are on the same page.</p><p><b>Prep:</b> about ${G0() ? 15 : 30} minutes to print and cut every card with a paper trimmer, then use them again and again. No time? Print one sheet today.</p></div>
     <div class="sbx" style="background:${C.tGrass}"><span class="kick">Typing in the blanks</span><p>The <b>color</b> files have type-in boxes on the blank cards, planners, blank labels, blank dividers and certificate. Open the file in a free PDF reader that supports fill-in forms (a computer is easiest), click a box, type, then save a copy.</p><p><b>What you can edit:</b> text boxes and tick circles, yes. Fonts, colors and pictures, no. The low-ink files have the same blanks to write on by hand.</p></div>
   </div>
-  <div class="sbx sinside"><span class="kick">Inside every main file · page numbers</span><div class="sig">${GUIDE.letter.list.map(([h, n]) => `<div class="pgr"><span>${h}</span><b>${n}</b></div>`).join('')}</div></div>
-  <div class="sbx sfull"><span class="kick">Print permission and safety</span><p>Print these files for your own household (grandparents and sitters count too), at home or at a print shop. <b>Print shops:</b> this customer may print copies for their family. Please don’t share or resell the files. <b>Classrooms, centers and libraries</b> need a separate license.</p><p>Before you play, read the safety page (page ${GUIDE.letter.safety} of each main file). Every play follows our published safety rules, and every card has its own safety line.</p></div>
+  <div class="sbx sinside"><span class="kick">Inside every main file · page numbers</span><div class="sig">${GUIDE[GK('letter')].list.map(([h, n]) => `<div class="pgr"><span>${h}</span><b>${n}</b></div>`).join('')}</div></div>
+  <div class="sbx sfull"><span class="kick">Print permission and safety</span><p>Print these files for your own household (grandparents and sitters count too), at home or at a print shop. <b>Print shops:</b> this customer may print copies for their family. Please don’t share or resell the files. Licenses for classrooms, centers and libraries are not available yet.</p><p>Before you play, read the safety page (page ${GUIDE[GK('letter')].safety} of each main file). Every play follows our published safety rules, and every card has its own safety line.</p></div>
   </div><footer class="pf"><span class="pfl">${logo('wordmark', 'lgf')}<span>${site('playbeforepixels.com · ')}“I’m Bored” Play Cards · ${VERSION}</span></span><span>${COPY}</span></footer>`);
   return page;
 }
@@ -1108,13 +1134,13 @@ function seasonalBlankSheet() {
   return cardSheet(items, 'Blank seasonal cards · your ideas');
 }
 function backsPages() {
-  return ['b13', 'b35', 'b58', 'b812', 'summer', 'rainy'].map(k => cardSheet(Array.from({ length: 9 }, () => cardBack(k)), `Card backs · ${TH[k].name} · print on the back of each ${TH[k].name} sheet`));
+  return [...BKEYS(), ...SKEYS()].map(k => cardSheet(Array.from({ length: 9 }, () => cardBack(k)), `Card backs · ${TH[k].name} · print on the back of each ${TH[k].name} sheet`));
 }
 const ALLCSS = [certCss, faqCss, coverCss, welcomeCss, guideCss, anatomyCss, agesCss, safetyCss, tipsCss, dividerCss, labelCss, menuCss, weekCss, indexCss, bonusCss, shCss].join('\n');
 function doc(fontHref, size, pages, extra = '', title = '') {
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${title || `“I’m Bored” Play Cards · ${LOW ? 'Low-ink' : 'Color'} · ${size.name} · Play Before Pixels`}</title>
+<title>${title || `“I’m Bored” Play Cards${G0() ? ', Ages 1–5' : ''} · ${LOW ? 'Low-ink' : 'Color'} · ${size.name} · Play Before Pixels`}</title>
 ${css(fontHref, size)}
 ${ALLCSS}
 ${LOW ? lowCss : ''}
@@ -1127,10 +1153,11 @@ ${pages.join('\n')}
 
 // Sections in order; page numbers are computed so the page guide is always right.
 const GUIDE = {};
+const GK = (sz = SZ.key) => (G0() ? 'g0-' : '') + sz; // page numbers differ per tier and paper size
 function mainPages() {
   const secs = [];
   const add = (name, pages, show = true) => secs.push({ name, pages: Array.isArray(pages) ? pages : [pages], show });
-  const g0 = GUIDE[SZ.key] || { safety: 7, index: 40, guide: 3, tips: 8 };
+  const g0 = GUIDE[GK()] || { safety: 7, index: 40, guide: 3, tips: 8 };
   add('cover', coverPage(), false);
   add('Start here', welcomePage(g0));
   add('Grown-up guide & pantry list', [guidePage(g0), pantryPage(g0)]);
@@ -1139,9 +1166,11 @@ function mainPages() {
   add('tips', null); // placeholder, filled below once page numbers are known
   add('Ages 1–3 cards', bandFronts('b13'));
   add('Ages 3–5 cards', bandFronts('b35'));
-  add('Ages 5–8 cards', bandFronts('b58'));
-  add('Ages 8–12 cards', bandFronts('b812'));
-  add('Summer + rainy-day sets, seasonal blanks', [...bandFronts('summer'), ...bandFronts('rainy'), seasonalBlankSheet()]);
+  if (!G0()) {
+    add('Ages 5–8 cards', bandFronts('b58'));
+    add('Ages 8–12 cards', bandFronts('b812'));
+    add('Summer + rainy-day sets, seasonal blanks', [...bandFronts('summer'), ...bandFronts('rainy'), seasonalBlankSheet()]);
+  }
   add('Card backs (optional)', backsPages());
   add('Card index & grown-up companion', companionPages());
   add('Box dividers', dividerPages());
@@ -1167,9 +1196,9 @@ function mainPages() {
 function buildMain() {
   // two passes: the first finds page numbers, the second prints them
   let r = mainPages();
-  GUIDE[SZ.key] = r.g;
+  GUIDE[GK()] = r.g;
   r = mainPages();
-  if (JSON.stringify(r.g) !== JSON.stringify(GUIDE[SZ.key])) throw new Error('page numbers moved between passes');
+  if (JSON.stringify(r.g) !== JSON.stringify(GUIDE[GK()])) throw new Error('page numbers moved between passes');
   return r.pages;
 }
 
@@ -1198,32 +1227,39 @@ fs.rmSync(GEN, { recursive: true, force: true });
 fs.mkdirSync(GEN, { recursive: true });
 const FONT = '../../../../brand/fonts/fonts.css';
 const manifest = [];
-const PDFNAME = {
-  store: { color: { letter: 'bored-play-cards.pdf', a4: 'bored-play-cards-A4.pdf' }, low: { letter: 'bored-play-cards-low-ink.pdf', a4: 'bored-play-cards-low-ink-A4.pdf' }, start: 'START-HERE.pdf' },
-  etsy: { color: { letter: 'etsy-upload/2-Color-US-Letter.pdf', a4: 'etsy-upload/3-Color-A4.pdf' }, low: { letter: 'etsy-upload/4-Low-Ink-US-Letter.pdf', a4: 'etsy-upload/5-Low-Ink-A4.pdf' }, start: 'etsy-upload/1-START-HERE.pdf' },
-};
+// Output names per tier. Full (held until G1): the original names. Ages 1–5 edition (launches): "-ages-1-5" names and
+// its own Etsy folder, etsy-upload-ages-1-5/ (5 files, the Etsy limit).
+const pdfNames = sfx => ({
+  store: { color: { letter: `bored-play-cards${sfx}.pdf`, a4: `bored-play-cards${sfx}-A4.pdf` }, low: { letter: `bored-play-cards${sfx}-low-ink.pdf`, a4: `bored-play-cards${sfx}-low-ink-A4.pdf` }, start: `START-HERE${sfx}.pdf` },
+  etsy: { color: { letter: `etsy-upload${sfx}/2-Color-US-Letter.pdf`, a4: `etsy-upload${sfx}/3-Color-A4.pdf` }, low: { letter: `etsy-upload${sfx}/4-Low-Ink-US-Letter.pdf`, a4: `etsy-upload${sfx}/5-Low-Ink-A4.pdf` }, start: `etsy-upload${sfx}/1-START-HERE.pdf` },
+});
 BASE = '../../../../';
-for (const ed of ['store', 'etsy']) {
-  ED = ed;
+for (const tier of ['full', 'g0']) for (const ed of ['store', 'etsy']) {
+  TIER = tier; ED = ed;
+  const PDFNAME = pdfNames(tier === 'g0' ? '-ages-1-5' : '');
+  const tp = tier === 'g0' ? 'g0-' : '';
   for (const low of [false, true]) {
     LOW = low;
     for (const sz of ['letter', 'a4']) {
       SZ = SIZES[sz];
       const pages = buildMain();
-      const file = `${ed}-${low ? 'low' : 'color'}-${sz}.html`;
+      const file = `${tp}${ed}-${low ? 'low' : 'color'}-${sz}.html`;
       fs.writeFileSync(path.join(GEN, file), doc(FONT, SZ, pages));
-      manifest.push({ html: `build/gen/${file}`, pdf: PDFNAME[ed][low ? 'low' : 'color'][sz], ed, low, size: sz, fields: !low, pages: pages.length });
+      manifest.push({ html: `build/gen/${file}`, pdf: PDFNAME[ed][low ? 'low' : 'color'][sz], tier, ed, low, size: sz, fields: !low, pages: pages.length });
     }
   }
   LOW = false; SZ = SIZES.letter;
-  fs.writeFileSync(path.join(GEN, `${ed}-start-here.html`), doc(FONT, SZ, [startHereDoc()], '', `START HERE · “I’m Bored” Play Cards · Play Before Pixels`));
-  manifest.push({ html: `build/gen/${ed}-start-here.html`, pdf: PDFNAME[ed].start, ed, low: false, size: 'letter', fields: false, start: true, pages: 1 });
+  fs.writeFileSync(path.join(GEN, `${tp}${ed}-start-here.html`), doc(FONT, SZ, [startHereDoc()], '', `START HERE · “I’m Bored” Play Cards${tier === 'g0' ? ', Ages 1–5' : ''} · Play Before Pixels`));
+  manifest.push({ html: `build/gen/${tp}${ed}-start-here.html`, pdf: PDFNAME[ed].start, tier, ed, low: false, size: 'letter', fields: false, start: true, pages: 1 });
 }
+TIER = 'full';
 // ../source.html: the store color US Letter edition (BRAND deliverable), with paths from the product folder
 ED = 'store'; LOW = false; SZ = SIZES.letter; BASE = '../../';
 fs.writeFileSync(path.join(ROOT, 'source.html'), doc('../../brand/fonts/fonts.css', SZ, buildMain()));
 BASE = '../../../../';
+TIER = 'g0'; // website cover and mockup show the Ages 1–5 edition, the one that launches (G0)
 fs.writeFileSync(path.join(GEN, 'cover.html'), doc(FONT, SZ, [coverPage()], '<style>body{width:8.5in}</style>'));
+TIER = 'full';
 fs.writeFileSync(path.join(GEN, 'png-templates.html'), doc(FONT, SZ, pngTemplatesDoc(), '<style>.asset{page-break-after:auto}</style>'));
 fs.writeFileSync(path.join(GEN, 'manifest.json'), JSON.stringify(manifest, null, 1));
 
@@ -1231,12 +1267,14 @@ const counts = Object.fromEntries(Object.entries(CARDS).map(([k, v]) => [k, v.le
 console.log('cards', counts, 'summer', MINI.summer.cards.length, 'rainy', MINI.rainy.cards.length, 'nothing-to-buy', `${N_FREE}/${N_ALL}`, 'blanks', N_BLANK());
 console.log('pages', manifest.map(m => `${m.ed}-${m.low ? 'low' : 'color'}-${m.size}:${m.pages}`).join(' '));
 console.log('guide', JSON.stringify(GUIDE));
+fs.writeFileSync(path.join(GEN, 'guide.json'), JSON.stringify({ GUIDE, g0: { cards: { b13: CARDS.b13.length, b35: CARDS.b35.length } } }, null, 1));
 
 // ---------- store images: mockup (1600x1200) and Etsy listing images (2000x2000 = 1000px pages at 2x) ----------
 // Listing images use the Etsy-edition previews (no URL or QR anywhere in marketplace images).
-const PV = n => `prev-etsy/p${String(n).padStart(2, '0')}.png`;
-const PVS = n => `../../preview/p${String(n).padStart(2, '0')}.png`;
-const PL = n => `prev-etsy-low/p${String(n).padStart(2, '0')}.png`;
+let PFX = ''; // '' = full-edition previews, 'g0-' = Ages 1–5 previews
+const PV = n => `${PFX}prev-etsy/p${String(n).padStart(2, '0')}.png`;
+const PVS = n => `../../preview/${PFX ? 'ages-1-5/' : ''}p${String(n).padStart(2, '0')}.png`;
+const PL = n => `${PFX}prev-etsy-low/p${String(n).padStart(2, '0')}.png`;
 const GL = GUIDE.letter;
 ED = 'etsy'; LOW = false; SZ = SIZES.letter;
 const CD = (k, i, extra = '') => `<div class="mc ${extra}">${card((CARDS[k] || MINI[k].cards)[i], k, i + 1)}</div>`;
@@ -1267,10 +1305,10 @@ function mockupPage() {
     <div class="paper" style="left:760px;top:170px;width:560px;height:725px;transform:rotate(6deg)"><img src="${PVS(GL.at['Ages 1–3 cards'])}"></div>
     <div style="position:absolute;left:120px;top:250px;width:560px;height:700px"><svg viewBox="-110 -110 220 300" width="100%" height="100%">${jarSVG({ lab: C.tomato })}</svg></div>
     <div style="position:absolute;left:170px;top:915px;width:470px;height:50px;border-radius:50%;background:rgba(29,41,64,.16);filter:blur(16px)"></div>
-    ${place(BK('b812'), 1330, 250, 16, 0.95)}
+    ${place(BK(G0() ? 'b35' : 'b812'), 1330, 250, 16, 0.95)}
     ${place(CD('b35', 16), 640, 590, -10, 1.12)}
     ${place(CD('b13', 3), 945, 560, -1, 1.12)}
-    ${place(CD('b58', 1), 1245, 580, 8, 1.12)}
+    ${place(G0() ? CD('b35', 2) : CD('b58', 1), 1245, 580, 8, 1.12)}
   </section>`;
 }
 function L(inner, bg = C.wash) { return `<section class="page L" style="background:${bg}">${inner}${logo('lockup-horizontal', 'lg1')}</section>`; }
@@ -1334,6 +1372,51 @@ function listingPages(G) {
     <div style="position:absolute;left:64px;bottom:120px;right:64px;background:#fff;border-radius:20px;padding:16px 22px;font-size:19px;font-weight:700">Every play follows our published safety rules. For use in your own home.</div>`, C.tSun));
   return P;
 }
+function listingPagesG0(G) {
+  const P = [];
+  const A = G.at, sheet1 = A['Ages 1–3 cards'], N = nMain();
+  P.push(L(`<div class="lh"><div class="lk">Printable · ages 1–5</div><h2 style="font-size:92px">${N} “I’m bored!”<br>Play Cards</h2><p class="ls">Screen-free play ideas for toddlers and little kids, sorted by age and energy, with a talk line on every card.</p></div>
+    <div style="position:absolute;left:40px;top:410px;width:330px;height:430px"><svg viewBox="-110 -110 220 300" width="100%" height="100%">${jarSVG({ lab: C.tomato })}</svg></div>
+    ${place(CD('b35', 16), 330, 440, -14, 1.02)}${place(CD('b13', 12), 470, 390, -5, 1.02)}${place(CD('b13', 3), 620, 380, 5, 1.02)}${place(CD('b35', 2), 745, 420, 14, 1.02)}
+    <div style="position:absolute;left:64px;bottom:44px;display:flex;gap:10px;flex-wrap:wrap;width:640px"><span class="chip">Ages 1–3 + 3–5</span><span class="chip">Color + low-ink · Letter + A4</span></div>`, C.tSun));
+  const inside = [[String(N), 'play cards, 2 age bands'], [String(N_BLANK()), 'blank “your idea” cards'], ['2', 'grown-up guide pages'], [String(N), 'easier, harder and 2-minute versions'], [String(dividerList().length), 'box dividers'], ['12', 'jar labels'], ['2', 'card-back designs'], ['4', 'Play Menu + planners'], ['1', 'Play Jar Star certificate']];
+  P.push(L(`<div class="lh"><div class="lk">What’s inside</div><h2>Everything for a<br>play jar that works.</h2></div>
+    <div style="position:absolute;left:64px;top:290px;width:420px">${inside.map(([n, t]) => `<div style="display:flex;gap:14px;align-items:baseline;padding:7px 0;border-bottom:2px solid #E1E7F1;font-size:19px;font-weight:700"><b style="font-family:Bricolage Grotesque;font-size:29px;color:#C4401F;width:62px">${n}</b>${t}</div>`).join('')}</div>
+    <div class="paper" style="${at(520, 300, -4)};width:230px;height:298px"><img src="${PV(sheet1)}"></div>
+    <div class="paper" style="${at(730, 290, 5)};width:230px;height:298px"><img src="${PV(G.index)}"></div>
+    <div class="paper" style="${at(510, 600, 3)};width:230px;height:298px"><img src="${PV(A['Box dividers'])}"></div>
+    <div class="paper" style="${at(735, 610, -4)};width:230px;height:298px"><img src="${PV(G.tips)}"></div>`));
+  P.push(L(`<div class="lh"><div class="lk">Grown-up guide inside</div><h2>Two-minute setup,<br>three talk lines.</h2><p class="ls" style="font-size:19px">Plus a pantry list, a 2-minute version of every card, and “most children love 2–3 of these; that’s normal.”</p></div>
+    <div class="paper" style="${at(90, 330, -3)};width:420px;height:543px"><img src="${PV(G.guide)}"></div>
+    <div class="paper" style="${at(500, 320, 3)};width:420px;height:543px"><img src="${PV(G.guide + 1)}"></div>`, C.tSky));
+  const marks = [['Age band + starting age', 'Color plus a word label'], ['Energy level', 'Calm, medium or wiggly'], ['Prep, mess, play time', 'Before you say yes'], ['You need · Try it', 'Everyday things, short steps'], ['Talk line', 'One thing to say while you play'], ['Flags + safety line', 'With a grown-up · Nothing to buy']];
+  P.push(L(`<div class="lh"><div class="lk">How the cards work</div><h2>Read a card in<br>five seconds.</h2></div>
+    ${place(CD('b35', 16), 90, 290, -3, 1.75)}
+    <div style="position:absolute;left:570px;top:300px;width:380px">${marks.map(([h, t], i) => `<div style="display:flex;gap:14px;margin-bottom:20px"><span style="flex:0 0 38px;height:38px;border-radius:50%;background:${C.ink};color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center">${i + 1}</span><div><div style="font-family:Bricolage Grotesque;font-weight:800;font-size:24px">${h}</div><div style="font-size:18px;font-weight:600">${t}</div></div></div>`).join('')}</div>`, '#FFFFFF'));
+  P.push(L(`<div class="lh"><div class="lk">Sorted by age</div><h2>Ages 1–3 and 3–5</h2><p class="ls" style="font-size:19px">Every 1–3 card uses only things too big to fit through a toilet-paper tube.</p></div>
+    ${place(CD('b13', 0), 88, 214, -1.5, 0.97)}${place(CD('b13', 12), 382, 210, 0, 0.97)}${place(CD('b13', 19), 676, 214, 1.5, 0.97)}
+    ${place(CD('b35', 12), 88, 560, -1.5, 0.97)}${place(CD('b35', 2), 382, 556, 0, 0.97)}${place(CD('b35', 33), 676, 560, 1.5, 0.97)}`, C.tGrass));
+  P.push(L(`<div class="lh"><div class="lk">Jar labels · dividers · low-ink files</div><h2>Color or low-ink.<br>Same cards.</h2></div>
+    <div class="paper" style="${at(64, 300, -3)};width:300px;height:388px"><img src="${PV(A['Jar labels'] + 1)}"></div>
+    <div class="paper" style="${at(350, 290, 2)};width:300px;height:388px"><img src="${PV(A['Box dividers'])}"></div>
+    <div class="paper" style="${at(640, 300, 5)};width:300px;height:388px"><img src="${PL(sheet1)}"></div>
+    <span class="tag" style="left:660px;top:700px">Low-ink edition</span>
+    ${['b13', 'b35'].map((k, i) => place(BK(k), 300 + i * 200, 740, (i - 0.5) * 6, 0.52)).join('')}`, '#FFFFFF'));
+  const Fm = [['5 plain PDFs, no zip', 'START HERE + color and low-ink, each in US Letter and A4'], ['Type-in blanks', 'Color files: blank cards, labels, dividers, planners and certificate. Text and ticks only.'], ['Prep: about 15 min', 'Print and cut with a trimmer, then use again and again'], [`${N} plays, about ${Math.round(100 * PRICE / N)}¢ each`, `$${PRICE.toFixed(2)} for ${N} cards in two age bands`], ['Instant download', 'Digital files only. Nothing is shipped.']];
+  P.push(L(`<div class="lh"><div class="lk">Files, prep and value</div><h2>Print it your way.</h2></div>
+    <div style="position:absolute;left:64px;top:240px;width:500px">${Fm.map(([h, t], i) => `<div style="background:#fff;border-radius:20px;padding:15px 22px;margin-bottom:13px;border-left:10px solid ${[C.sun, C.grass, C.sky, C.plum, C.tomato][i]}"><div style="font-family:Bricolage Grotesque;font-weight:800;font-size:26px">${h}</div><div style="font-size:18px;font-weight:600;line-height:1.3">${t}</div></div>`).join('')}</div>
+    <div class="paper" style="${at(630, 240, 4)};width:290px;height:375px"><img src="${PV(1)}"></div>
+    <div class="paper" style="${at(600, 505, -3)};width:290px;height:375px"><img src="${PV(A['Play Menu + weekly planners'] + 1)}"></div>`));
+  const S = [['Use a web browser', 'On a computer or your phone’s browser. The shopping app often can’t save files.'], ['Open Purchases', 'Sign in, open your account’s Purchases page and tap each file.'], ['Start with file 1', 'START HERE says which file to print and how.'], ['Lost a file later?', 'It stays in Purchases. Download it again any time.']];
+  P.push(L(`<div class="lh"><div class="lk">How to download</div><h2>Use a browser,<br>not the app.</h2></div>
+    <div class="paper" style="${at(610, 300, 4)};width:320px;height:414px"><img src="g0-prev-etsy-start/p01.png"></div>
+    <div style="position:absolute;left:64px;top:300px;width:520px">${S.map(([h, t], i) => `<div style="display:flex;gap:16px;margin-bottom:26px"><span style="flex:0 0 52px;height:52px;border-radius:50%;background:${[C.sun, C.grass, C.sky, C.plum][i]};color:${i ? '#fff' : C.ink};font-family:Bricolage Grotesque;font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center">${i + 1}</span><div><div style="font-family:Bricolage Grotesque;font-weight:800;font-size:28px">${h}</div><div style="font-size:19px;font-weight:600;line-height:1.35">${t}</div></div></div>`).join('')}</div>
+    <div style="position:absolute;left:64px;bottom:120px;right:64px;background:#fff;border-radius:20px;padding:16px 22px;font-size:19px;font-weight:700">Every play follows our published safety rules. For use in your own home.</div>`, C.tSun));
+  return P;
+}
 BASE = '../../../../';
+TIER = 'g0'; PFX = 'g0-';
 fs.writeFileSync(path.join(GEN, 'mockup.html'), doc(FONT, SZ, [mockupPage()], mkCss + '<style>body{width:1600px}</style>'));
+fs.writeFileSync(path.join(GEN, 'listing-g0.html'), doc(FONT, SZ, listingPagesG0(GUIDE['g0-letter']), mkCss));
+TIER = 'full'; PFX = '';
 fs.writeFileSync(path.join(GEN, 'listing.html'), doc(FONT, SZ, listingPages(GL), mkCss));

@@ -1,0 +1,384 @@
+{
+ "GUIDE": {
+  "letter": {
+   "safety": 7,
+   "index": 40,
+   "guide": 3,
+   "tips": 8,
+   "at": {
+    "cover": 1,
+    "Start here": 2,
+    "Grown-up guide & pantry list": 3,
+    "How to read a card · play at every age": 5,
+    "Safety rules": 7,
+    "tips": 8,
+    "Ages 1–3 cards": 9,
+    "Ages 3–5 cards": 14,
+    "Ages 5–8 cards": 19,
+    "Ages 8–12 cards": 24,
+    "Summer + rainy-day sets, seasonal blanks": 29,
+    "Card backs (optional)": 34,
+    "Card index & grown-up companion": 40,
+    "Box dividers": 47,
+    "Jar labels": 51,
+    "Play Menu + weekly planners": 53,
+    "Play Jar Star certificate": 57,
+    "Quick answers": 58,
+    "Free bonus · more · license": 59
+   },
+   "list": [
+    [
+     "Start here",
+     "2"
+    ],
+    [
+     "Grown-up guide & pantry list",
+     "3–4"
+    ],
+    [
+     "How to read a card · play at every age",
+     "5–6"
+    ],
+    [
+     "Safety rules",
+     "7"
+    ],
+    [
+     "Print, cut, laminate & store",
+     "8"
+    ],
+    [
+     "Ages 1–3 cards",
+     "9–13"
+    ],
+    [
+     "Ages 3–5 cards",
+     "14–18"
+    ],
+    [
+     "Ages 5–8 cards",
+     "19–23"
+    ],
+    [
+     "Ages 8–12 cards",
+     "24–28"
+    ],
+    [
+     "Summer + rainy-day sets, seasonal blanks",
+     "29–33"
+    ],
+    [
+     "Card backs (optional)",
+     "34–39"
+    ],
+    [
+     "Card index & grown-up companion",
+     "40–46"
+    ],
+    [
+     "Box dividers",
+     "47–50"
+    ],
+    [
+     "Jar labels",
+     "51–52"
+    ],
+    [
+     "Play Menu + weekly planners",
+     "53–56"
+    ],
+    [
+     "Play Jar Star certificate",
+     "57"
+    ],
+    [
+     "Quick answers",
+     "58"
+    ],
+    [
+     "Free bonus · more · license",
+     "59"
+    ]
+   ]
+  },
+  "a4": {
+   "safety": 7,
+   "index": 40,
+   "guide": 3,
+   "tips": 8,
+   "at": {
+    "cover": 1,
+    "Start here": 2,
+    "Grown-up guide & pantry list": 3,
+    "How to read a card · play at every age": 5,
+    "Safety rules": 7,
+    "tips": 8,
+    "Ages 1–3 cards": 9,
+    "Ages 3–5 cards": 14,
+    "Ages 5–8 cards": 19,
+    "Ages 8–12 cards": 24,
+    "Summer + rainy-day sets, seasonal blanks": 29,
+    "Card backs (optional)": 34,
+    "Card index & grown-up companion": 40,
+    "Box dividers": 47,
+    "Jar labels": 51,
+    "Play Menu + weekly planners": 53,
+    "Play Jar Star certificate": 57,
+    "Quick answers": 58,
+    "More from us · license": 59
+   },
+   "list": [
+    [
+     "Start here",
+     "2"
+    ],
+    [
+     "Grown-up guide & pantry list",
+     "3–4"
+    ],
+    [
+     "How to read a card · play at every age",
+     "5–6"
+    ],
+    [
+     "Safety rules",
+     "7"
+    ],
+    [
+     "Print, cut, laminate & store",
+     "8"
+    ],
+    [
+     "Ages 1–3 cards",
+     "9–13"
+    ],
+    [
+     "Ages 3–5 cards",
+     "14–18"
+    ],
+    [
+     "Ages 5–8 cards",
+     "19–23"
+    ],
+    [
+     "Ages 8–12 cards",
+     "24–28"
+    ],
+    [
+     "Summer + rainy-day sets, seasonal blanks",
+     "29–33"
+    ],
+    [
+     "Card backs (optional)",
+     "34–39"
+    ],
+    [
+     "Card index & grown-up companion",
+     "40–46"
+    ],
+    [
+     "Box dividers",
+     "47–50"
+    ],
+    [
+     "Jar labels",
+     "51–52"
+    ],
+    [
+     "Play Menu + weekly planners",
+     "53–56"
+    ],
+    [
+     "Play Jar Star certificate",
+     "57"
+    ],
+    [
+     "Quick answers",
+     "58"
+    ],
+    [
+     "More from us · license",
+     "59"
+    ]
+   ]
+  },
+  "g0-letter": {
+   "safety": 7,
+   "index": 21,
+   "guide": 3,
+   "tips": 8,
+   "at": {
+    "cover": 1,
+    "Start here": 2,
+    "Grown-up guide & pantry list": 3,
+    "How to read a card · play at every age": 5,
+    "Safety rules": 7,
+    "tips": 8,
+    "Ages 1–3 cards": 9,
+    "Ages 3–5 cards": 14,
+    "Card backs (optional)": 19,
+    "Card index & grown-up companion": 21,
+    "Box dividers": 24,
+    "Jar labels": 28,
+    "Play Menu + weekly planners": 30,
+    "Play Jar Star certificate": 34,
+    "Quick answers": 35,
+    "More from us · license": 36
+   },
+   "list": [
+    [
+     "Start here",
+     "2"
+    ],
+    [
+     "Grown-up guide & pantry list",
+     "3–4"
+    ],
+    [
+     "How to read a card · play at every age",
+     "5–6"
+    ],
+    [
+     "Safety rules",
+     "7"
+    ],
+    [
+     "Print, cut, laminate & store",
+     "8"
+    ],
+    [
+     "Ages 1–3 cards",
+     "9–13"
+    ],
+    [
+     "Ages 3–5 cards",
+     "14–18"
+    ],
+    [
+     "Card backs (optional)",
+     "19–20"
+    ],
+    [
+     "Card index & grown-up companion",
+     "21–23"
+    ],
+    [
+     "Box dividers",
+     "24–27"
+    ],
+    [
+     "Jar labels",
+     "28–29"
+    ],
+    [
+     "Play Menu + weekly planners",
+     "30–33"
+    ],
+    [
+     "Play Jar Star certificate",
+     "34"
+    ],
+    [
+     "Quick answers",
+     "35"
+    ],
+    [
+     "More from us · license",
+     "36"
+    ]
+   ]
+  },
+  "g0-a4": {
+   "safety": 7,
+   "index": 21,
+   "guide": 3,
+   "tips": 8,
+   "at": {
+    "cover": 1,
+    "Start here": 2,
+    "Grown-up guide & pantry list": 3,
+    "How to read a card · play at every age": 5,
+    "Safety rules": 7,
+    "tips": 8,
+    "Ages 1–3 cards": 9,
+    "Ages 3–5 cards": 14,
+    "Card backs (optional)": 19,
+    "Card index & grown-up companion": 21,
+    "Box dividers": 24,
+    "Jar labels": 28,
+    "Play Menu + weekly planners": 30,
+    "Play Jar Star certificate": 34,
+    "Quick answers": 35,
+    "More from us · license": 36
+   },
+   "list": [
+    [
+     "Start here",
+     "2"
+    ],
+    [
+     "Grown-up guide & pantry list",
+     "3–4"
+    ],
+    [
+     "How to read a card · play at every age",
+     "5–6"
+    ],
+    [
+     "Safety rules",
+     "7"
+    ],
+    [
+     "Print, cut, laminate & store",
+     "8"
+    ],
+    [
+     "Ages 1–3 cards",
+     "9–13"
+    ],
+    [
+     "Ages 3–5 cards",
+     "14–18"
+    ],
+    [
+     "Card backs (optional)",
+     "19–20"
+    ],
+    [
+     "Card index & grown-up companion",
+     "21–23"
+    ],
+    [
+     "Box dividers",
+     "24–27"
+    ],
+    [
+     "Jar labels",
+     "28–29"
+    ],
+    [
+     "Play Menu + weekly planners",
+     "30–33"
+    ],
+    [
+     "Play Jar Star certificate",
+     "34"
+    ],
+    [
+     "Quick answers",
+     "35"
+    ],
+    [
+     "More from us · license",
+     "36"
+    ]
+   ]
+  }
+ },
+ "g0": {
+  "cards": {
+   "b13": 38,
+   "b35": 38
+  }
+ }
+}

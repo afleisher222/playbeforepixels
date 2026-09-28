@@ -167,7 +167,7 @@ function licenses(ctx) {
 // ---------------- Accessibility (policy draft + what we tested) ----------------
 function accessibility(ctx, qa) {
   const tested = qa && qa.pages ? `<h2>What we tested on this site</h2>
-  <p>Every page listed in our sitemap was checked with an automated browser suite on ${esc(qa.date)} at four widths (1440, 768, 390 and 360 pixels, the phone widths with touch emulation):</p>
+  <p>Every page on this site was checked with an automated browser suite on ${esc(qa.date)} at ${qa.widths.length} widths (${qa.widths.join(', ').replace(/, (\d+)$/, ' and $1')} pixels; every width below 1000 with touch and phone emulation), ${qa.pass} checks in all:</p>
   <ul>
     <li>no sideways scrolling, no broken links or images, and no script errors;</li>
     <li>one main heading per page and no skipped heading levels;</li>

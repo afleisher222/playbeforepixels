@@ -1,5 +1,5 @@
 {
- "built": "2026-09-28T13:06:27.381Z",
+ "built": "2026-09-28T13:42:08.029Z",
  "preview": false,
  "pages": [
   "/",
@@ -62,6 +62,10 @@
  "printedChecked": 32,
  "hidden": [
   {
+   "slug": "bored-play-cards",
+   "why": "replaced on the site by its ages 0–5 listing"
+  },
+  {
    "slug": "bundle-gift-1-5",
    "why": "Shown as a set on /shop/bundles/ (config bundles: instant-gift-bundle)."
   },
@@ -88,6 +92,14 @@
   {
    "slug": "picture-more-talk-less-tap",
    "why": "listing status: held-pending-counsel"
+  },
+  {
+   "slug": "play-first-family-kit",
+   "why": "replaced on the site by its ages 0–5 listing"
+  },
+  {
+   "slug": "visual-routine-cards",
+   "why": "Full ages 0–12 edition: held until counsel's G1 answer (listing status held-until-g1). The site shows the 0–5 edition (visual-routine-cards-0-5)."
   }
  ],
  "warnings": []

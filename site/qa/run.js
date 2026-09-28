@@ -194,6 +194,34 @@ async function settle(page) {
   ok(/Sitemap: https:\/\/playbeforepixels\.com\/sitemap\.xml/.test(rb), 'robots.txt points at the sitemap');
   await ctx.close();
 
+  // ---------- 2b. every glyph is drawn by a brand font (like ops/TESTS/check_fonts.js, over HTTP) ----------
+  {
+    const BRAND = /^(Bricolage Grotesque|Nunito Sans|Fredoka|Caveat)/i;
+    const c = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+    const page = await c.newPage();
+    const cdp = await c.newCDPSession(page);
+    for (const p of ['/', '/shop/', '/shop/board-up-go-more/', '/30-days/', '/shop/bundles/', '/free/', '/help/', '/privacy/', '/research/', '/404.html']) {
+      await page.goto(base + p, { waitUntil: 'networkidle' });
+      await page.evaluate(() => document.fonts.ready);
+      await cdp.send('DOM.enable'); await cdp.send('CSS.enable');
+      const { root } = await cdp.send('DOM.getDocument', { depth: -1 });
+      const bad = new Map();
+      const walk = async n => {
+        if (n.nodeType === 1 && ['SCRIPT', 'STYLE', 'TEMPLATE', 'NOSCRIPT', 'HEAD'].includes(n.nodeName)) return;
+        if (n.nodeType === 1 && (n.children || []).some(k => k.nodeType === 3 && k.nodeValue.trim())) {
+          try {
+            const { fonts } = await cdp.send('CSS.getPlatformFontsForNode', { nodeId: n.nodeId });
+            for (const f of fonts) if (!BRAND.test(f.familyName)) bad.set(f.familyName, (bad.get(f.familyName) || 0) + f.glyphCount);
+          } catch (e) { /* hidden nodes have no layout */ }
+        }
+        for (const k of n.children || []) await walk(k);
+      };
+      await walk(root);
+      ok(!bad.size, `${p}: glyphs drawn by non-brand fonts: ${[...bad].map(([f, g]) => f + ' ×' + g).join(', ')}`);
+    }
+    await c.close();
+  }
+
   // ---------- 3. interaction: desktop ----------
   {
     const c = await browser.newContext({ viewport: { width: 1440, height: 900 } });

@@ -155,7 +155,7 @@
     var n = 0, html = '';
     if (prods.length) html += '<p class="grp" id="sg-p">Products</p><ul role="group" aria-labelledby="sg-p">' + prods.slice(0, 6).map(function (it) { return row(it, q, forSheet ? 'sr-' + (n++) : null); }).join('') + '</ul>';
     if (pages.length) html += '<p class="grp" id="sg-a">Pages and answers</p><ul role="group" aria-labelledby="sg-a">' + pages.slice(0, forSheet ? 6 : 30).map(function (it) { return row(it, q, forSheet ? 'sr-' + (n++) : null); }).join('') + '</ul>';
-    if (forSheet) html += '<p class="search-all"><a class="link" href="/search/?q=' + encodeURIComponent(q) + '">See every result for “' + esc(q) + '” <span class="arr" aria-hidden="true">→</span></a></p>';
+    if (forSheet) html += '<p class="search-all"><a class="link" href="/search/?q=' + encodeURIComponent(q) + '">See every result for “' + esc(q) + '” <svg class="arr" viewBox="0 0 16 10" aria-hidden="true" focusable="false"><path d="M1 5h13M10 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>';
     box.innerHTML = html;
     return res;
   }

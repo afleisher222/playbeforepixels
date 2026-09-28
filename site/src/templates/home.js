@@ -71,7 +71,7 @@ module.exports = function home(ctx) {
       <div class="museum">
         <p class="eyebrow">Read-aloud · ages ${esc(bp.ageText)}</p>
         <h2 class="h2" id="band-h">${esc(bp.name)}</h2>
-        <p class="m-quote">“Ten, nine, eight…” counted Ada. Biscuit held on tight.</p>
+        <p class="m-quote">“Shhh… the tablet is sleeping. So what shall we do?”</p>
       </div>
       <dl class="museum-label">
         <div><dt>Pages</dt><dd>16–17 of 32</dd></div>

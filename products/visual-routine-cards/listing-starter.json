@@ -1,7 +1,7 @@
 {
   "slug": "visual-routine-cards-starter",
   "title": "60 Visual Routine Cards for Toddlers: Starter Set with 3 Charts",
-  "etsy_title": "60 Visual Routine Cards for Toddlers, Editable Morning & Bedtime Chart, First Then Board, Daily Schedule PDF, Play Before Pixels",
+  "etsy_title": "60 Visual Routine Cards for Toddlers, Editable Morning and Bedtime Picture Chart, Daily Schedule PDF, Play Before Pixels",
   "subtitle": "60 picture cards for ages 0–5 plus 3 charts, fillable PDF. Helps little ones see what comes next.",
   "format": "Digital download, 5 plain PDFs (no zip): START HERE + Color US Letter (24 pages) + Color A4 (24 pages) + Low-ink US Letter (24 pages) + Low-ink A4 (24 pages). Fillable fields for free Adobe Acrobat Reader merged into every file; bookmarked; tagged.",
   "trim": "US Letter 8.5 × 11 in and A4 210 × 297 mm, 0.5 in margins, no bleed. The first–then board is a landscape page. Every card is 2.2 × 2.2 in (5.6 cm).",
@@ -9,7 +9,7 @@
   "pages_breakdown": "Color file, 24 pages = 7 card pages (5 picture-card pages + second copies + blank cards) + 6 word-free and photo-frame pages + 5 chart pages (strip, first–then and morning chart ready-made; strip and morning chart blank fillable) + 5 guide pages (cover, 2-page grown-up guide, print guide, laminating and safety) + 1 thank-you page. Low-ink file: the same 24 pages in the Simple colorway. Letter and A4 counts are never added together.",
   "ages": "0–5",
   "price_usd": 5,
-  "price_notes": "Everyday price $5.00 (decision D2 in business/GROWTH-ENGINE.md, adopted in ops/QUEUE.md), the same on Etsy and on our own checkout; it meets commerce/PRICING.md's rule never to list a single printable under $5. Honest value line: 60 cards, about 8¢ each. One price, shown plainly: no list, 'was', compare-at or crossed-out price and no standing sale (BRAND.md 'Honest pricing'; 16 CFR 233.1). A promotion is allowed only if it is real and time-limited, with its start and end dates recorded in price_history before it runs. Never discounted: any discount would push an Etsy Offsite Ads sale under the $3.00 floor. It can be a $5 order add-on (GROWTH-ENGINE §5b). Nets: net_per_unit_by_channel (UNVERIFIED fees). The listing and the PDF both point buyers to the $9.50 Complete Set.",
+  "price_notes": "Everyday price $5.00 (decision D2 in business/GROWTH-ENGINE.md, adopted in ops/QUEUE.md), the same on Etsy and on our own checkout; it meets commerce/PRICING.md's rule never to list a single printable under $5. Honest value line: 60 cards, about 8¢ each. One price, shown plainly: no list, 'was', compare-at or crossed-out price and no standing sale (BRAND.md 'Honest pricing'; 16 CFR 233.1). A promotion is allowed only if it is real and time-limited, with its start and end dates recorded in price_history before it runs. Never discounted: any discount would push an Etsy Offsite Ads sale under the $3.00 floor. It can be a $5 order add-on (GROWTH-ENGINE §5b). Nets: net_per_unit_by_channel (UNVERIFIED fees). The listing and the PDF both point buyers to the $9.50 Ages 0–5 Edition (listing-g0.json).",
   "price_floor": 3,
   "price_floor_basis": "$3.00 net per digital sale (commerce/PRICING.md §2; COMPLIANCE-GATE 18). Every channel's net must stay at or above it, and no repricing or promotion may go below it.",
   "net_per_unit_by_channel": {
@@ -23,8 +23,8 @@
     "site_gumroad": 66
   },
   "net_notes": "Estimated net per unit in USD, after fees and a 5% refund allowance (GAPS-ROUND-2 G2-11), rounded to the cent. Every fee is UNVERIFIED: no live check was possible on 2026-09-28 (web search unavailable). Fee model: commerce/PRICING.md §2, which points to commerce/storefront-setup-guide.md; where sources disagree, the more cautious figure is used (business/STRESS-TEST.md 'Needs a live check'). Etsy digital: $0.20 listing + 6.5% transaction + 3% + $0.25 payment processing; an Offsite Ads sale adds 15% (12% once the shop passes $10,000 in 12 months). Own checkout at launch (ops/QUEUE.md): Gumroad as merchant of record, 10% + $0.50, plus 2.9% + $0.30 card processing counted to be safe (the storefront guide says processing is included); a sale that comes through Gumroad Discover costs about 30% instead of 10% + $0.50. Shopify (deferred until about 25 own-site orders a month) would net more: 2.9% + $0.30. Before listing, check each fee on the platform's own fee page or calculator and replace these numbers. Gumroad Discover is left out on purpose: at $5.00 a Discover sale would net about $2.81, under the $3.00 floor, so sell the Starter on Gumroad as a direct sale or order add-on with Discover turned off (ops/PRE-MORTEM.md #38; whether Discover can be turned off for one product is UNVERIFIED). The Etsy Offsite Ads case clears the floor by only about $0.08.",
-  "short_description": "60 printable routine picture cards for ages 0–5, plus a strip, a first–then board and a morning chart. Fillable PDF, US Letter + A4.",
-  "long_description": "60 printable routine picture cards for ages 0–5, with three charts, in US Letter and A4 PDFs. It's a simple place to start. The cards cover a little one's day: waking up, potty, getting dressed, meals and play. Others show outside time, reading together, bath, bedtime, helping jobs and a feelings check-in. There are plan words too, like First, Then and Wait. A \"Play first / Screens later\" pair uses a plain, generic tablet, with no brands and no apps.\n\nUse one card at a time with a baby, or two on the first–then board with a toddler. A preschooler can use a morning chart of up to nine steps. Your child points to each picture and moves it to \"All done.\"\n\nYou get the cards in the color-coded Rainbow look and in a Low-ink file with line art to color. There are second copies of the busiest cards, plus blank, word-free and photo-frame cards. The three charts come ready-made and blank. Type labels and titles in free Adobe Acrobat Reader. A 2-page grown-up guide covers setup in 2 minutes and easy talk tips. Every card follows our published safety rules.\n\nWant more? The Complete Set has 235 cards for ages 0–12. It adds 6 chart layouts and 4 colorways.\n\nInstant digital download. No physical item ships.",
+  "short_description": "60 printable routine picture cards for ages 0–5, plus a strip, a two-step picture board and a morning chart. Fillable PDF, US Letter + A4.",
+  "long_description": "60 printable routine picture cards for ages 0–5, with three charts, in US Letter and A4 PDFs. It's a simple place to start. The cards cover a little one's day: waking up, potty, getting dressed, meals and play. Others show outside time, reading together, bath, bedtime, helping jobs and a feelings check-in. There are plan words too, like First, Then and Wait. A \"Play first / Screens later\" pair uses a plain, generic tablet, with no brands and no apps.\n\nUse one card at a time with a baby, or two on the first–then board with a toddler. A preschooler can use a morning chart of up to nine steps. Your child points to each picture and moves it to \"All done.\"\n\nYou get the cards in the color-coded Rainbow look and in a Low-ink file with line art to color. There are second copies of the busiest cards, plus blank, word-free and photo-frame cards. The three charts come ready-made and blank. Type labels and titles in free Adobe Acrobat Reader. A 2-page grown-up guide covers setup in 2 minutes and easy talk tips. Every card follows our published safety rules.\n\nWant more? The Ages 0–5 Edition has 177 cards. It adds 6 chart layouts and 4 colorways.\n\nInstant digital download. No physical item ships.",
   "bullets": [
     "60 cards on 24 pages (Color file) = 7 card pages + 6 word-free and photo pages + 5 chart pages + 6 guide pages; about 8¢ a card; about 20 minutes to prep one routine",
     "Morning, meals, play, outside, reading, bath, bedtime, helping jobs, feelings and plan words, plus a Play first / Screens later pair with a plain, generic tablet",
@@ -35,29 +35,29 @@
   "keywords": [
     "toddler routine cards",
     "visual routine cards",
-    "first then board",
+    "toddler picture schedule",
     "morning routine chart",
     "bedtime routine chart",
     "toddler daily schedule",
-    "preschool routine printable"
+    "baby routine printable"
   ],
   "etsy_tags": [
     "toddler routine",
     "visual routine cards",
-    "first then board",
+    "picture chart",
     "morning routine",
     "bedtime routine",
     "toddler schedule",
-    "preschool printable",
+    "baby routine cards",
     "routine chart",
     "daily schedule kids",
     "toddler printable",
-    "visual schedule",
+    "kids daily routine",
     "potty routine",
     "kids routine cards"
   ],
   "seo_title": "60 Visual Routine Cards for Toddlers | Play Before Pixels",
-  "seo_description": "60 printable routine cards for toddlers plus a first–then board and morning chart. Fillable PDF, US Letter and A4. Helps little ones see what comes next.",
+  "seo_description": "60 printable routine cards for toddlers, a two-step picture board and a morning chart. Fillable PDF, Letter and A4. Shows little ones what comes next.",
   "listing_images_alt": [
     "60 Visual Routine Cards Starter Set, ages 0–5: a sky-blue panel with the logo, the title, a vertical strip chart holding four cards, and big Sleep and Breakfast cards.",
     "All 60 Starter Set cards in a small grid, above three tiles: 60 cards, 3 charts and fillable fields.",
@@ -95,7 +95,7 @@
   },
   "shareable_piece": "The finished morning chart on the fridge, with the small Play Before Pixels wordmark in the footer.",
   "next_products": [
-    "visual-routine-cards",
+    "visual-routine-cards-0-5",
     "play-first-family-kit",
     "bored-play-cards"
   ],
@@ -127,7 +127,7 @@
     },
     {
       "q": "Can I give it as a gift?",
-      "a": "Yes. Buy it and pass the files on, or print and laminate one set for the family you are giving it to. The personal license then belongs to that family. [VERIFY whether the store can send the download straight to a gift recipient.]"
+      "a": "Yes. Buy it and pass the files on, or print and laminate one set for the family you are giving it to. The personal license then belongs to that family."
     },
     {
       "q": "Can a classroom, child-care center, library or PTA use it?",
@@ -139,11 +139,11 @@
     },
     {
       "q": "Does it work for children who sign, point or use a talking device?",
-      "a": "Yes. A sign, a point, a tap on a card or a device, even a \"no\", counts as communicating. Every card comes word-free too, and the Complete Set adds More, Stop, My turn, Break and Help cards."
+      "a": "Yes. A sign, a point, a tap on a card or a device, even a \"no\", counts as communicating. Every card comes word-free too, and the Ages 0–5 Edition adds More, Stop, My turn, Break and Help cards."
     },
     {
       "q": "What ages is it for?",
-      "a": "Birth to 5. The guide shows ways to use the cards from one card at a time (0–12 months) to a nine-step morning chart. Ages are a guide, never a deadline. Big-kid cards for 5–12 are in the Complete Set."
+      "a": "Birth to 5. The guide shows ways to use the cards from one card at a time (0–12 months) to a nine-step morning chart. Ages are a guide, never a deadline."
     },
     {
       "q": "Is it safe for toddlers?",
@@ -155,7 +155,7 @@
     },
     {
       "q": "Refunds?",
-      "a": "Digital downloads follow the shop's published refund policy. If a file will not open or print, we fix it or send it again [link the policy page at launch]."
+      "a": "Digital downloads follow the shop's published refund policy. The policy is linked on every product page and at checkout. If a file will not open or print, we fix it or send it again."
     },
     {
       "q": "Is it on Amazon?",
@@ -164,6 +164,7 @@
   ],
   "list_price_usd": null,
   "price_history": [],
+  "status": "ready-pending-accounts",
   "editable": "Fillable text fields (free Adobe Acrobat Reader, computer or phone) are merged into every Color and Low-ink file: card labels on blank, word-free and photo-frame cards; chart titles and names; the \"When every card is done, we:\" line; Today board \"Who I'll see today\"; big-kid checklist jobs, week, name and screen spot, plus tick boxes. Colors and pictures: not editable. Typed text shows in a standard font (Helvetica), not the brand fonts.",
   "ai_disclosure": {
     "as_of": "2026-09-28",
@@ -174,7 +175,7 @@
     "etsy_who_made": "I did (the shop made it, using AI tools) [UNVERIFIED form wording]",
     "etsy": "In Etsy's listing form, say the shop designed this item and that AI tools were used, wherever the form asks. As best known (UNVERIFIED): Etsy's Creativity Standards sort items as Made by, Designed by, Handpicked by or Sourced by; an item made with AI tools belongs under Designed by, and Etsy asks sellers to say in the description that AI was used. Add etsy_description_line at the end of the Etsy description.",
     "etsy_description_line": "How this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.",
-    "site": "Product page line: 'How this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.' Add 'and edited by the founder' only after she has rewritten the text or art. The PDFs' last page now says 'Illustrations and text created with AI assistance and edited by Play Before Pixels'; until the founder has edited the text, 'edited by' overstates the human part, so that line in build/ should match what happened (product build lane).",
+    "site": "Product page line: 'How this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.' Add 'and edited by the founder' only after she has rewritten the text or art. The PDFs' last page uses the same 'How this was made' line (fixed 2026-09-28: it used to say 'edited by Play Before Pixels', which overstated the human part).",
     "social_ai_label": "Turn on each platform's AI-generated-content label for posts that use these images or this text (label names UNVERIFIED).",
     "notes": "Answers describe what really happened as of the date above. Platform categories and form wording are from memory (UNVERIFIED): check each form on upload day. Never call any part hand-drawn, handmade or human-written."
   },
@@ -183,7 +184,7 @@
   "human_todo": [
     "Price is $5.00 (decision D2, adopted in ops/QUEUE.md; it meets the $5 minimum in commerce/PRICING.md). On Gumroad, sell it as a direct sale or order add-on with Discover turned off (see net_notes).",
     "Create the Etsy listing with the 5 files in etsy-upload/starter/ and the 5 listing images in order (the last one is \"How to download\"); plain price, no sale.",
-    "Link it to the Complete Set listing in the description and the shop section.",
+    "Link it to the Ages 0–5 Edition listing (listing-g0.json) in the description and the shop section.",
     "Same print, size-check and Acrobat Reader phone test as the Complete Set."
   ]
 }

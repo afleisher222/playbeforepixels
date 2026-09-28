@@ -132,7 +132,7 @@ const guide1 = {
       <div class="cols3" style="margin-top:8px">
         <div><div class="lab" style="color:${C.tomato}">Say what you see</div><p class="disp" style="font-size:17px;margin:3px 0">“Big red apple!”</p><p>Name what your child is looking at, in a few words.</p></div>
         <div><div class="lab" style="color:${C.tomato}">Pause and wait</div><p class="disp" style="font-size:17px;margin:3px 0">“Ready, set… (wait)”</p><p>Count to five in your head. Give your child room to take a turn.</p></div>
-        <div><div class="lab" style="color:${C.tomato}">Add one word</div><p class="disp" style="font-size:17px;margin:3px 0">“Duck.” → “Yellow duck!”</p><p>Repeat what your child says and add one word.</p></div>
+        <div><div class="lab" style="color:${C.tomato}">Add one word</div><p class="disp" style="font-size:17px;margin:3px 0">“Duck.” Then: “Yellow duck!”</p><p>Repeat what your child says and add one word.</p></div>
       </div></div>
     <div class="card t-plum" style="margin-top:14px"><h3>Every turn counts</h3><p>Talk, sing and read in the language you know best. A sign, a point, a look, a sound or a device tap all count as a turn. There’s no right answer on any page: if your child calls the frog a “duck,” say “A green frog! Ribbit!” and keep playing.</p></div>
     <div class="cols2" style="margin-top:14px">
@@ -239,7 +239,7 @@ const finder2 = { id: 'find2', html: (ctx, pn) => pageWrap('', `${textHead('Page
 const copyright = {
   id: 'copy', html: (ctx, pn) => pageWrap('', `${textHead('The small print', 'License, copyright and version')}
     <div class="cols2" style="margin-top:16px">
-      <div class="card"><h3>Your license</h3><p>Thank you for buying this book. It’s licensed for use in <b>your own home</b>: print as many copies as your family needs. Please don’t share, resell, post or upload the files.<span class="site-only"> Child-care, classroom and library licenses: playbeforepixels.com/licenses.</span></p></div>
+      <div class="card"><h3>Your license</h3><p>Thank you for buying this book. It’s licensed for use in <b>your own home</b>: print as many copies as your family needs. Please don’t share, resell, post or upload the files.</p></div>
       <div class="card"><h3>Parent education</h3><p>This book is parent education and play ideas. It is not medical, developmental or professional advice and doesn’t diagnose, treat or prevent anything. Every play follows our published safety rules (page ${ctx.actPage['x-safety']}); a grown-up is always part of play.</p></div>
     </div>
     <div class="card t-sky" style="margin-top:14px"><h3>Copyright</h3><p>${COPYRIGHT} All rights reserved. The characters and art belong to the Play Before Pixels family of products, including the Up! Go! More! talk-along board book.</p><p style="margin-top:6px"><b>${VERSION}.</b> If we improve this file, we’ll tell past buyers what changed; we never swap a file quietly.</p></div>
@@ -383,7 +383,7 @@ const faq = {
       ['Is anything shipped?', 'No, it’s a digital download. You print at home or at a print shop, as many copies as your own family needs.'],
       ['My child only wants one page. Is that OK?', 'Completely. Most children love two or three pages and repeat them. Try that page’s “harder” line when it feels easy.'],
       ['Is this a lesson plan or a program?', 'No. It’s play for families: pages to talk about together, with no tests or scores. It isn’t medical or professional advice. Questions about development go to your pediatrician.'],
-      ['Can I use it with a group or class?', 'This copy is for your own home. <span class="site-only">Child-care, classroom and library licenses are at playbeforepixels.com/licenses.</span><span class="etsy-only">For a child-care, classroom or library license, send us a message through the shop.</span>'],
+      ['Can I use it with a group or class?', 'Not yet. This copy is for your own home. Child-care, classroom and library licenses are not available yet.'],
       ['Can I share it with a friend?', 'Please share a photo of your busy book, not the files. If a friend would like a copy, they can buy their own; it keeps new pages coming.'],
       ['Is it only in English?', 'The printed words are in English. Say every word, talk line and rhyme in the language you know best; any language works. Type your family’s own words on the make-your-own pages (p.' + ctx.actPage['x-own2'] + '–' + ctx.actPage['x-own3'] + ').'],
       ['Can I give it as a gift?', 'Yes. Print it, slip the pages into a binder with a cover in their favorite color and give it ready to play. Please give the printed book, not the files.'],

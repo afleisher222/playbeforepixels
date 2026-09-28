@@ -14,22 +14,29 @@ cd "$(dirname "$0")/.."
 R=../../brand/render.js
 TMP=$(mktemp -d)
 node build/build.js
-node build/check.js build/gen/{store,etsy}-{color,low}-{letter,a4}.html build/gen/{store,etsy}-start-here.html
+node build/check.js build/gen/{,g0-}{store,etsy}-{color,low}-{letter,a4}.html build/gen/{,g0-}{store,etsy}-start-here.html
 # remove superseded files from earlier builds (zips, separate editable/duplex PDFs)
 rm -f bored-play-cards-EDITABLE-*.pdf bored-play-cards-double-sided-*.pdf bored-play-cards-PNG-templates.zip
-rm -rf etsy-upload && mkdir etsy-upload
+rm -rf etsy-upload etsy-upload-ages-1-5 && mkdir etsy-upload etsy-upload-ages-1-5
 node build/finish.js
 # previews: store color Letter (website + QA), low-ink QA, Etsy editions for the listing images
-rm -rf preview/p*.png preview/low-ink build/gen/prev-etsy build/gen/prev-etsy-low build/gen/prev-etsy-start
+rm -rf preview/p*.png preview/low-ink preview/ages-1-5 build/gen/prev-etsy build/gen/prev-etsy-low build/gen/prev-etsy-start build/gen/g0-prev-etsy build/gen/g0-prev-etsy-low build/gen/g0-prev-etsy-start
 node $R pages build/gen/store-color-letter.html preview .page 1.5
 node $R pages build/gen/store-low-letter.html preview/low-ink .page 1
 node $R pages build/gen/etsy-color-letter.html build/gen/prev-etsy .page 1
 node $R pages build/gen/etsy-low-letter.html build/gen/prev-etsy-low .page 1
 node $R pages build/gen/etsy-start-here.html build/gen/prev-etsy-start .page 1
+# Ages 1-5 edition (G0, the one that launches): website previews + Etsy-edition previews for its listing images
+node $R pages build/gen/g0-store-color-letter.html preview/ages-1-5 .page 1.5
+node $R pages build/gen/g0-etsy-color-letter.html build/gen/g0-prev-etsy .page 1
+node $R pages build/gen/g0-etsy-low-letter.html build/gen/g0-prev-etsy-low .page 1
+node $R pages build/gen/g0-etsy-start-here.html build/gen/g0-prev-etsy-start .page 1
 node $R png build/gen/cover.html cover.png 816 1056 1.51515
 node $R pages build/gen/mockup.html $TMP/mock .mock 1 && cp $TMP/mock/p01.png mockup.png
 rm -rf preview/listing-images && node $R pages build/gen/listing.html preview/listing-images .L 2
 for f in preview/listing-images/p*.png; do mv "$f" "preview/listing-images/listing-${f##*/p}"; done
+node $R pages build/gen/listing-g0.html preview/listing-images/ages-1-5 .L 2
+for f in preview/listing-images/ages-1-5/p*.png; do mv "$f" "preview/listing-images/ages-1-5/listing-${f##*/p}"; done
 # PNG template set (300 dpi), store bonus only
 node $R pages build/gen/png-templates.html $TMP/png .asset 3.125
 rm -rf png-templates && mkdir png-templates

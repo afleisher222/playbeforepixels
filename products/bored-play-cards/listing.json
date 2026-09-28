@@ -12,7 +12,7 @@
   "activities": "186 plays: 150 play cards (38 for ages 1–3, 38 for 3–5, 37 for 5–8, 37 for 8–12) + 18 summer + 18 rainy-day cards. 168 of the 186 need nothing to buy.",
   "prep_time": "About 30 min to print and cut every card with a paper trimmer, then reusable. No-cut option: pick from the card index. Each card also shows its own prep: none, 2 min or 10 min.",
   "price_usd": 6.5,
-  "price_notes": "Everyday price $6.50, the same on Etsy and on our own checkout (Gumroad at launch), per ops/QUEUE.md LAUNCH FIRST (business/GROWTH-ENGINE.md §8a); the DEMAND-CHECK price for 150 cards (competitors $3–$7; $5–$9 with extras). Value line: 150 plays, about 4¢ each (186 with the seasonal sets, about 3.5¢ each). Honest pricing (BRAND.md, overrides DEMAND-CHECK rule 2): no 'was', compare-at or anchor price and no permanent sale; only real, time-limited promotions that truly end, with dates recorded here. Never below $5 (DEMAND-CHECK rule 3). net_per_unit_by_channel is estimated from the fee model in net_notes (UNVERIFIED fees) and must stay at or above price_floor $3.00 (COMPLIANCE-GATE #18). Bundles: the 1–3 and 3–5 bands are a part of the $29 Ages 1–5 Instant Gift Bundle, and the cards are a part of the $45 Birth-to-5 Printable Library (ops/QUEUE.md), each 10–25% under the live sum of its parts. Kill rule: under 5 sales after 60 days with the listing fixed, reprice once, then fold into a bundle. POD deck only after the printable sells.",
+  "price_notes": "Everyday price $6.50, the same on Etsy and on our own checkout (Gumroad at launch), per ops/QUEUE.md LAUNCH FIRST (business/GROWTH-ENGINE.md §8a); the DEMAND-CHECK price for 150 cards (competitors $3–$7; $5–$9 with extras). Value line: 150 plays, about 4¢ each (186 with the seasonal sets, about 3.5¢ each). Honest pricing (BRAND.md, overrides DEMAND-CHECK rule 2): no 'was', compare-at or anchor price and no permanent sale; only real, time-limited promotions that truly end, with dates recorded here. Never below $5 (DEMAND-CHECK rule 3). net_per_unit_by_channel is estimated from the fee model in net_notes (UNVERIFIED fees) and must stay at or above price_floor $3.00 (COMPLIANCE-GATE #18). Bundles: the 1–3 and 3–5 bands are a part of the $29 Ages 1–5 Instant Gift Bundle, and the cards are a part of the $45 Birth-to-5 Printable Library (ops/QUEUE.md), each 10–25% under the live sum of its parts. Kill rule (ops/QUEUE.md): fewer than 5 sales in 60 days after the EXP-03 search-copy decision → reprice once (never below price_floor, no 'was' price) → add to a bundle as a part and deactivate the listing. POD deck only after the printable sells.",
   "price_floor": 3.0,
   "price_floor_basis": "$3.00 net per digital sale (commerce/PRICING.md §2; COMPLIANCE-GATE 18). Every channel's net must stay at or above it, and no repricing or promotion may go below it.",
   "net_per_unit_by_channel": {
@@ -31,7 +31,7 @@
   },
   "net_notes": "Estimated net per unit in USD, after fees and a 5% refund allowance (GAPS-ROUND-2 G2-11), rounded to the cent. Every fee is UNVERIFIED: no live check was possible on 2026-09-28 (web search unavailable). Fee model: commerce/PRICING.md §2, which points to commerce/storefront-setup-guide.md; where sources disagree, the more cautious figure is used (business/STRESS-TEST.md 'Needs a live check'). Etsy digital: $0.20 listing + 6.5% transaction + 3% + $0.25 payment processing; an Offsite Ads sale adds 15% (12% once the shop passes $10,000 in 12 months). Own checkout at launch (ops/QUEUE.md): Gumroad as merchant of record, 10% + $0.50, plus 2.9% + $0.30 card processing counted to be safe (the storefront guide says processing is included); a sale that comes through Gumroad Discover costs about 30% instead of 10% + $0.50. Shopify (deferred until about 25 own-site orders a month) would net more: 2.9% + $0.30. Before listing, check each fee on the platform's own fee page or calculator and replace these numbers. kdp_activity_edition_later: planned, not built; fill in from KDP's calculator before it is published.",
   "short_description": "150 printable play cards for ages 1–12, sorted by age and energy. Each has what you need, a talk line and a safety line. PDF in Letter and A4.",
-  "long_description": "150 printable play cards for ages 1–12, plus 36 summer and rainy-day cards. It is a PDF download in US Letter and A4.\n\nWhen your child says “I’m bored,” pull a card and play. Most cards use things you already have: pots, socks, boxes and paper. 168 of the 186 cards need nothing to buy.\n\nEach card has an age band and a starting age. It shows the energy level: calm, medium or wiggly. It lists what you need, prep time, mess and a rough play time. It gives short steps, one thing to say while you play, and a safety line. Cards for kids under 5 say “With a grown-up.”\n\nA two-page grown-up guide shows how to start in two minutes. It has three talk tips and a pantry list. The card index gives an easier way, a harder way and a 2-minute tired-grown-up way for every card.\n\nYou also get 39 blank cards, card backs, 24 box dividers, 12 jar labels, a Play Menu, weekly planners and a fridge certificate.\n\nYou get five PDFs: START HERE, color and low-ink, each in Letter and A4. In the color files you can type in the blank cards, labels, dividers, planners and certificate. You can type text and tick circles. You can’t change fonts, colors or pictures.\n\nEvery play follows our published safety rules. Digital file in English; nothing is shipped. Personal license for one household; classroom and site licenses are separate.",
+  "long_description": "150 printable play cards for ages 1–12, plus 36 summer and rainy-day cards. It is a PDF download in US Letter and A4.\n\nWhen your child says “I’m bored,” pull a card and play. Most cards use things you already have: pots, socks, boxes and paper. 168 of the 186 cards need nothing to buy.\n\nEach card has an age band and a starting age. It shows the energy level: calm, medium or wiggly. It lists what you need, prep time, mess and a rough play time. It gives short steps, one thing to say while you play, and a safety line. Cards for kids under 5 say “With a grown-up.”\n\nA two-page grown-up guide shows how to start in two minutes. It has three talk tips and a pantry list. The card index gives an easier way, a harder way and a 2-minute tired-grown-up way for every card.\n\nYou also get 39 blank cards, card backs, 24 box dividers, 12 jar labels, a Play Menu, weekly planners and a fridge certificate.\n\nYou get five PDFs: START HERE, color and low-ink, each in Letter and A4. In the color files you can type in the blank cards, labels, dividers, planners and certificate. You can type text and tick circles. You can’t change fonts, colors or pictures.\n\nEvery play follows our published safety rules. Digital file in English; nothing is shipped. Personal license for one household.",
   "bullets": [
     "150 play cards in four age bands, plus 18 summer and 18 rainy-day cards. Each 59-page file has 8 guide pages, 25 card sheets and 26 pages of extras.",
     "Every card shows the age band, a starting age, the energy level, prep, mess and play time, what you need, steps, a talk line and a safety line.",
@@ -59,7 +59,7 @@
     "activity jar kids",
     "printable play cards",
     "family play ideas",
-    "preschool activities",
+    "kids play ideas",
     "indoor activities",
     "summer activity kids"
   ],
@@ -72,16 +72,6 @@
       "tier": "personal",
       "price_usd": 6.5,
       "covers": "One household: print and copy for your own home, including grandparents and sitters who care for your child. Sold on Etsy and our site. A gift passes this license to the family that receives it."
-    },
-    {
-      "tier": "single-classroom",
-      "price_usd": 12,
-      "covers": "One teacher, one classroom or one child-care room, plus copies of cards or index pages sent home to those children's families. Our site only [founder to confirm price]."
-    },
-    {
-      "tier": "site",
-      "price_usd": 29,
-      "covers": "All staff at one named school, child-care center or library site, including its family events; delivered by automated email with a license certificate naming the site. A PTA or parent group may buy it for its school. Our site only [founder to confirm price; counsel to confirm terms]."
     }
   ],
   "faq": [
@@ -103,23 +93,15 @@
     },
     {
       "q": "Which license do I need?",
-      "a": "Personal ($6.50) for your own household, including grandparents and sitters who care for your child. Single-classroom for one teacher or one child-care room, and site for a whole school, center or library; both are on our site only [founder to confirm prices]."
+      "a": "The personal license ($6.50) covers your own household, including grandparents and sitters who care for your child. It is the only license offered right now."
     },
     {
       "q": "Can I give it as a gift?",
-      "a": "Yes. Print and cut the cards, put them in a jar with one of the 12 labels, and give the jar. Or forward the download to the family. The personal license then belongs to that family. [VERIFY whether the store can send the download straight to a gift recipient.]"
+      "a": "Yes. Print and cut the cards, put them in a jar with one of the 12 labels, and give the jar. Or forward the download to the family. The personal license then belongs to that family."
     },
     {
-      "q": "Can a teacher or child-care center use it?",
-      "a": "Yes, with a single-classroom or site license. Most cards are written for one grown-up and one to three children; many work with 2–6 at a time. Keep the under-3 size rule for every object, and check allergies before any food card."
-    },
-    {
-      "q": "Can our PTA or parent group use it?",
-      "a": "A PTA may buy the site license for its school and use the cards at family events. Printed sets to take home need one personal copy per family, or ask for a quote through the contact form [counsel to confirm]."
-    },
-    {
-      "q": "Can a library use it?",
-      "a": "Yes, with a site license naming your library: use the cards at in-person programs and copy card pages for the families who attend [counsel to confirm terms]."
+      "q": "Can a classroom, child-care center, library or PTA use it?",
+      "a": "Not yet. This pack is licensed for one household. Classroom, child-care, library and group licenses are not available yet."
     },
     {
       "q": "Is there a Spanish version?",
@@ -143,11 +125,11 @@
     },
     {
       "q": "Refunds?",
-      "a": "Digital downloads follow the shop’s published refund policy. If a file won’t open or print, we fix it or send it again [link the policy page at launch]."
+      "a": "Digital downloads follow the shop’s published refund policy, which is linked on every product page and at checkout. If a file won’t open or print, we fix it or send it again."
     },
     {
       "q": "Is there a printed deck or a book?",
-      "a": "Not yet. A paperback activity edition is planned (see amazon_route), and a print-on-demand deck may follow once the printable sells. We would say so here."
+      "a": "Not yet. If a printed edition is made, we will say so here."
     }
   ],
   "alt_text": "Cover of the printable “I’m bored! Play Cards”: bold navy title with red “Play Cards”, a jar of colorful cards, a smiling child holding up a card beside a grown-up, and a fan of age-coded play cards in yellow, green, blue, purple and red.",
@@ -216,18 +198,21 @@
     "images": "cover.png (1236 × 1600), mockup.png (1600 × 1200), preview/p01–p59.png (store color Letter), preview/low-ink/ (low-ink QA), preview/listing-images/listing-01–10.png (2000 × 2000, Etsy edition)",
     "qa": "build/check.js (text fit on every card and page), build/verify.py (sizes, page sizes, version and copyright on every page, no URL in Etsy files, banned words, form fill test)"
   },
-  "compliance_notes": "Rule 1: no health, medical, therapy, developmental or outcome claims; the last page says the cards are parent education, not medical or developmental advice. No diagnosis words in the product, images, keywords or tags. Rule 2: no company, app or device is named; the fill-in instructions say 'a free PDF reader that supports fill-in forms' and downloads say 'use a web browser, not the shopping app'. Rule 4 child safety, audited card by card (all 186): every card has its own safety line; every card for under-5s is flagged 'With a grown-up'; every Ages 1–3 card and every seasonal card that includes age 1 uses only things too big to fit through a toilet-paper tube (fixed in this audit: palm-size crayons instead of chunky crayons, a wide brush, big spoons and big cups, no sticks on the toddler nature walk); older cards with small things (coins, dice, tape, seeds, dough, shakers) say to keep them from under-3s; no balloons; no cords, strings, ties or long scarves (cloth strips are short; bags are paper or cloth); every water card says grown-up within arm's reach; no whole grapes, nuts, popcorn, hard candy or marshmallows, and snack cards use thin, soft pieces (cheese cubes removed); grown-ups handle knives, stove, oven, glass and tools. Every cut piece is 1.5 in or larger (cards 2.5 × 3.5, small labels 2.3 × 1.6, dividers 2.4 × 3.95, round labels 3.4); cut sheets print 'Grown-up keeps the pieces'; velcro is for ages 3+ with 'Check dots before each play; remove any that lift' and a no-dots route for under-3s. Rule 5: only the WHO 2019 under-5 guidelines are cited. Rule 6: talk tips in plain words, no program names. Rule 7 and logo: original titles, art and layout; supplied logo files only, one-color white on grass, plum, sky and tomato, reverse on ink, primary on sun. Customer-voice rules: color + low-ink files in Letter and A4, plain PDFs under 15 MB, START HERE first, no URL or QR in Etsy files, version footer on every page, prep budget on page 1 and in the listing, prep/mess/time icons and starting age on every card, easier/harder and 2-minute versions for every card, 90% 'Nothing to buy', corner flags, no quiz or trivia cards (Family Trivia replaced by Clue Trail), 2-page grown-up guide with 'most children love 2–3 of these', home-language line, pediatrician line on the stage page, blank + pre-filled + fillable planners, labels and dividers. Small text is ink on white chips or tints (no white small text on tomato, sky or grass). Honest pricing: no anchor or 'was' price. AI-assisted content is never described as human-made. Customer panel (September 28, 2026, see panel.md): 'Sock Puppet Hello' renamed 'Sock Friend Hello' (BRAND.md logo section keeps 'sock puppet' out of marks); talk lines that asked a toddler to say a word now model it ('More bubbles? More!', 'Again? Again!', 'Quack, quack! Your turn, duck.'); Mirror Faces can be played side by side at a mirror; 5–12 cards that a child reads no longer say 'your child'; the rain gauge is plastic, not glass; the license now names grandparents and sitters and points classrooms, centers, libraries and groups to a classroom or site license (Etsy files say 'message us through the shop', no URL); English-only is stated in format, language and faq.",
+  "compliance_notes": "Rule 1: no health, medical, therapy, developmental or outcome claims; the last page says the cards are parent education, not medical or developmental advice. No diagnosis words in the product, images, keywords or tags. Rule 2: no company, app or device is named; the fill-in instructions say 'a free PDF reader that supports fill-in forms' and downloads say 'use a web browser, not the shopping app'. Rule 4 child safety, audited card by card (all 186): every card has its own safety line; every card for under-5s is flagged 'With a grown-up'; every Ages 1–3 card and every seasonal card that includes age 1 uses only things too big to fit through a toilet-paper tube (fixed in this audit: palm-size crayons instead of chunky crayons, a wide brush, big spoons and big cups, no sticks on the toddler nature walk); older cards with small things (coins, dice, tape, seeds, dough, shakers) say to keep them from under-3s; no balloons; no cords, strings, ties or long scarves (cloth strips are short; bags are paper or cloth); every water card says grown-up within arm's reach; no whole grapes, nuts, popcorn, hard candy or marshmallows, and snack cards use thin, soft pieces (cheese cubes removed); grown-ups handle knives, stove, oven, glass and tools. Every cut piece is 1.5 in or larger (cards 2.5 × 3.5, small labels 2.3 × 1.6, dividers 2.4 × 3.95, round labels 3.4); cut sheets print 'Grown-up keeps the pieces'; velcro is for ages 3+ with 'Check dots before each play; remove any that lift' and a no-dots route for under-3s. Rule 5: only the WHO 2019 under-5 guidelines are cited. Rule 6: talk tips in plain words, no program names. Rule 7 and logo: original titles, art and layout; supplied logo files only, one-color white on grass, plum, sky and tomato, reverse on ink, primary on sun. Customer-voice rules: color + low-ink files in Letter and A4, plain PDFs under 15 MB, START HERE first, no URL or QR in Etsy files, version footer on every page, prep budget on page 1 and in the listing, prep/mess/time icons and starting age on every card, easier/harder and 2-minute versions for every card, 90% 'Nothing to buy', corner flags, no quiz or trivia cards (Family Trivia replaced by Clue Trail), 2-page grown-up guide with 'most children love 2–3 of these', home-language line, pediatrician line on the stage page, blank + pre-filled + fillable planners, labels and dividers. Small text is ink on white chips or tints (no white small text on tomato, sky or grass). Honest pricing: no anchor or 'was' price. AI-assisted content is never described as human-made. Customer panel (September 28, 2026, see panel.md): 'Sock Puppet Hello' renamed 'Sock Friend Hello' (BRAND.md logo section keeps 'sock puppet' out of marks); talk lines that asked a toddler to say a word now model it ('More bubbles? More!', 'Again? Again!', 'Quack, quack! Your turn, duck.'); Mirror Faces can be played side by side at a mirror; 5–12 cards that a child reads no longer say 'your child'; the rain gauge is plastic, not glass; the license names grandparents and sitters; classroom, center, library and group licenses are HELD (ops/QUEUE.md), so the PDFs say they are not available yet; English-only is stated in format, language and faq.",
   "human_todo": [
+    "HELD (G1): do not list these full-edition files (ages 1–12, with the seasonal sets). The Ages 1–5 edition (listing-g0.json) is the launch listing. When counsel clears 5–12 material, upload etsy-upload/ into that same listing as a free update and tell past buyers.",
     "Rewrite the cards in your own words in build/cards.js and build/companion.js, run `bash products/bored-play-cards/build/make-all.sh`, and commit each draft so your authorship is on record",
     "Proof the cover and page 1 yourself (15–30 min) and read every Ages 1–3 and seasonal card once more for your own home context",
     "Build playbeforepixels.com/bonus/bored-play-cards (seasonal mini-set + email sign-up asking only email and birth month/year) and playbeforepixels.com/help (re-download and printing answers) before the store listing goes live; both QR codes already point there",
-    "HELD until employment counsel clears school-facing sales in writing (ops/QUEUE.md: personal/family license only at launch). After that, set up the single-classroom ($12) and site ($29) licenses on our site: product pages, automated email with a stamped license certificate, and playbeforepixels.com/license terms (legal/protection/digital-product-license.md). The PDFs already tell classrooms, centers and libraries they need one. Founder confirms prices; counsel confirms terms",
     "Publish the 'Our safety rules' page on the site: listings say 'Every play follows our published safety rules'",
     "Print one Letter and one A4 test at 100% on cardstock: a card sheet, a backs page on the reverse (check alignment on your printer), a divider page, a jar-label page; laminate one card and round the corners",
     "Open a color PDF in a free PDF reader on a computer and on a phone, type in a blank card, tick an energy circle, save and reprint (rule 23 phone test)",
-    "Etsy: upload the 5 PDFs in etsy-upload/, the 10 listing images (listing-10 last), etsy_title, etsy_tags and long_description; set $6.50 with no compare-at price; answer the AI/creation questions as in ai_disclosure [VERIFY current Etsy fees and file limits]",
-    "Own site: deliver START-HERE.pdf plus the 4 store PDFs (png-templates/ as an optional extra); show mockup.png and cover.png and 'Next for your child's age' from next_products",
     "Later: the KDP activity edition in amazon_route, and a POD deck only after the printable sells",
-    "Later: a Spanish edition made by a human translator (never machine translation), listed only once it exists"
-  ]
+    "Later: a Spanish edition made by a human translator (never machine translation), listed only once it exists",
+    "HELD until employment counsel clears school-facing sales in writing: classroom and site licenses (founder sets prices, counsel sets terms). Until then every file and listing says they are not available yet."
+  ],
+  "license_notes": "Personal/family license only (ops/QUEUE.md LAUNCH FIRST). Classroom, site, library, child-care and PTA licenses are HELD until employment counsel clears school-facing sales in writing; they are not offered in any file or listing. The PDFs and the FAQ say they are 'not available yet'.",
+  "status": "held-until-g1",
+  "status_note": "Not a separate listing. The Ages 1–5 edition (listing-g0.json) is the one that launches. When counsel's G1 answer allows 5–12 material, these files (four bands plus the summer and rainy-day sets) replace the Ages 1–5 files inside the same Etsy and Gumroad listings as a free update, announced to past buyers (ops/QUEUE.md; business/GROWTH-ENGINE.md §7 item 5).",
+  "price_history": []
 }

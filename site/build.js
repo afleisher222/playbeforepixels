@@ -29,7 +29,8 @@ const legal = require('./src/templates/legal');
 const seo = require('./src/lib/seo');
 
 const t0 = Date.now();
-const PREVIEW = process.argv.includes('--preview');
+// Cloudflare Pages sets CF_PAGES_BRANCH; any branch other than main builds as a noindex preview.
+const PREVIEW = process.argv.includes('--preview') || (!!process.env.CF_PAGES_BRANCH && process.env.CF_PAGES_BRANCH !== 'main');
 const log = (...a) => console.log('[build]', ...a);
 const D = load();
 const { ROOT, SITE, config: C } = D;
@@ -76,7 +77,7 @@ const img = new Images({ root: ROOT, outDir: path.join(SITE, 'assets/img'), base
 const qaFile = path.join(SITE, 'qa/last-run.json');
 const ctx = {
   ROOT, cfg: C, env: D.env, links: D.links, products: D.products, bundles: D.bundles, bySlug: D.bySlug,
-  words: D.words, course: D.course, gates: D.gates, img,
+  words: D.words, course: D.course, gates: D.gates, img, warn: m => warn.push(m),
   anyAvailable: D.products.some(p => p.available),
   countBand: k => D.products.filter(p => p.bands.includes(k)).length + D.bundles.filter(b => b.bands.includes(k)).length,
   countType: k => k === 'bundles' ? D.bundles.length : D.products.filter(p => p.types.includes(k)).length,

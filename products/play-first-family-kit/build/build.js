@@ -265,6 +265,8 @@ ul.b li .ball{transform:translateY(-.01in)}
 .low .art *,.low .defs *{fill:#fff!important;stroke:var(--ink)!important;stroke-width:1.25px!important;vector-effect:non-scaling-stroke}
 .low .art [fill="#1D2940"],.low .defs [fill="#1D2940"]{fill:var(--ink)!important}
 .low .ck{display:none}
+/* SVG text stays filled ink, never outlined: stroked text makes Chromium write a Type 3 font into the PDF (print preflight G1) */
+.low .art text,.low .defs text{fill:var(--ink)!important;stroke:none!important}
 .low .art.draw *{fill:none!important;stroke:#B8C2D3!important}
 .low .art.draw text{fill:#8C97AB!important;stroke:none!important}
 .low .art .disc{fill:none!important;stroke:none!important}
@@ -461,17 +463,17 @@ function cover(ctx) {
     ${U('block-1', `translate(230,${floor - 22}) scale(.62)`)}${U('block-3', `translate(262,${floor - 22}) scale(.62)`)}${U('block-2', `translate(246,${floor - 54}) scale(.62)`)}
     ${U('ball', `translate(452,${floor - 26}) scale(.55)`)}${star(70, 60, 1.1, C.sun)}${star(420, 50, .8, C.tomato)}${heart(330, 70, .45)}
   </svg>`;
-  return `<div style="display:flex;justify-content:space-between;align-items:center">${(ctx.low ? LOGO.lockK : LOGO.lock).replace('<svg', '<svg style="height:.62in;width:auto"')}<span class="chips">${chip('25')}${chip('512')}</span></div>
-  <div style="display:flex;flex-direction:column;gap:.1in;margin-top:.25in"><span class="eyebrow" style="color:var(--ink)">A printable kit for the whole family · ages 2–12</span>
+  return `<div style="display:flex;justify-content:space-between;align-items:center">${(ctx.low ? LOGO.lockK : LOGO.lock).replace('<svg', '<svg style="height:.62in;width:auto"')}<span class="chips">${chip('25')}${ctx.g0 ? '' : chip('512')}</span></div>
+  <div style="display:flex;flex-direction:column;gap:.1in;margin-top:.25in"><span class="eyebrow" style="color:var(--ink)">A printable kit for the whole family · ages ${ctx.g0 ? '2–5' : '2–12'}</span>
   <h1 class="h1" style="font-size:52pt;line-height:.95">Play-First<br>Family Kit</h1>
   <p class="lede" style="font-size:14pt;max-width:6in"><b>Play First, Then Screens.</b> Jobs, then play and time together, then screens at their usual spot. A calm shape for the day, with nothing taken away.</p></div>
   <div style="flex:1;min-height:0;margin:.1in 0">${scene}</div>
-  <div class="toc" style="grid-template-columns:repeat(5,1fr);gap:.08in">${[['playFirst', '10 printable tools'], ['boardGame', '24 together tokens'], ['setTable', 'Helping jobs + chore chart'], ['talkDay', '3-page family plan'], ['star30', '30-day tracker']].map(([a, t]) => `<div style="grid-template-columns:1fr;text-align:center;padding:.08in"><div style="display:flex;justify-content:center">${a === 'star30' ? `<svg class="art" viewBox="0 0 120 100" style="width:.78in;height:.65in"><circle class="disc" cx="60" cy="52" r="44"/><text x="60" y="66" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="600" font-size="40" fill="${C.tomato}">30</text></svg>` : art(a)}</div><div class="nm" style="font-size:8.6pt">${t}</div></div>`).join('')}</div>
+  <div class="toc" style="grid-template-columns:repeat(5,1fr);gap:.08in">${[['playFirst', ctx.g0 ? '9 printable tools' : '10 printable tools'], ['boardGame', '24 together tokens'], ['setTable', ctx.g0 ? 'Little helping jobs' : 'Helping jobs + chore chart'], ['talkDay', '3-page family plan'], ['star30', '30-day tracker']].map(([a, t]) => `<div style="grid-template-columns:1fr;text-align:center;padding:.08in"><div style="display:flex;justify-content:center">${a === 'star30' ? `<svg class="art" viewBox="0 0 120 100" style="width:.78in;height:.65in"><circle class="disc" cx="60" cy="52" r="44"/><text x="60" y="66" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="600" font-size="40" fill="${C.tomato}">30</text></svg>` : art(a)}</div><div class="nm" style="font-size:8.6pt">${t}</div></div>`).join('')}</div>
   <p class="small" style="text-align:center">Fillable PDF · pre-filled and blank · ${ctx.low ? 'ink-saving line art' : '4 colorways'} · Monday and Sunday starts · US Letter and A4 · ${ctx.low ? 'Low-ink edition (4 colorways in the color file)' : 'Color edition'}</p>`;
 }
 function inside(ctx, P) {
   const tiles = [
-    ['playFirst', 'Play First, Then Screens checklists', `Ages 2–5 pictures, ages 5–12, and fillable blanks · ${ctx.low ? 'Mon + Sun starts' : '4 colorways × Mon + Sun'}`, P.cl25],
+    ['playFirst', 'Play First, Then Screens checklists', `Ages 2–5 pictures${ctx.g0 ? '' : ', ages 5–12,'} and fillable blanks · ${ctx.low ? 'Mon + Sun starts' : '4 colorways × Mon + Sun'}`, P.cl25],
     ['blocks', 'The Play-First Board', 'First, then, later on one page · ages 2–5', P.board],
     ['feedPet', 'Little helping jobs', '12 picture jobs, pre-filled and blank · ages 2–5', P.help],
     ['setTableBig', 'Family jobs chart', '12 chores with a “who” column · ages 5–12', P.chores],
@@ -481,10 +483,10 @@ function inside(ctx, P) {
     ['talkDay', 'Our Family Play & Screen Plan', '3 warm fill-in pages to make together', P.plan],
     ['natureWalk', '30 Days of Play First', '30 no-buy plays with a 3-page guide, plus a blank tracker', P.tracker],
     ['dance', 'Play-First Family certificate', 'A finished-it page to celebrate', P.cert],
-  ];
-  return hd({ eyebrow: 'What’s inside', title: '10 tools, one calm rhythm', lede: 'Organized by age, so you only print what fits your family. Start with the grown-up guide on the next page.', age: 'grown', prepT: 'About 20 min to prep, then reusable' })
+  ].filter(t => !(ctx.g0 && t[0] === 'setTableBig')); // the Ages 2–5 edition holds back the 5–12 jobs chart (G1)
+  return hd({ eyebrow: 'What’s inside', title: ctx.g0 ? '9 tools, one calm rhythm' : '10 tools, one calm rhythm', lede: 'Organized by age, so you only print what fits your family. Start with the grown-up guide on the next page.', age: 'grown', prepT: 'About 20 min to prep, then reusable' })
     + `<div class="toc" style="flex:1;grid-auto-rows:1fr">${tiles.map(([a, t, s, p]) => `<div>${art(a)}<div><div class="nm">${t}</div><div class="small" style="color:var(--ink)">${s}</div><div class="pg">Page ${p}</div></div></div>`).join('')}</div>
-  <div class="steps" style="grid-template-columns:repeat(4,1fr)">${[['Section A', 'Grown-up guide, printing and safety', 'pages 3–5'], ['Sections B–C', 'Checklists and ages 2–5 tools', `pages ${P.cl25}–${P.helpEnd}`], ['Section D', 'Ages 5–12 jobs chart', `pages ${P.chores}–${P.choresEnd}`], ['Section E', 'Whole-family tools', `pages ${P.tokens}–${P.cert}`]].map(([a, b, c]) => `<div class="step" style="grid-template-columns:1fr"><div><div class="eyebrow">${a}</div><div style="font-weight:800;font-size:9pt;line-height:1.25;margin:.03in 0">${b}</div><div class="small">${c}</div></div></div>`).join('')}</div>
+  <div class="steps" style="grid-template-columns:repeat(${ctx.g0 ? 3 : 4},1fr)">${[['Section A', 'Grown-up guide, printing and safety', 'pages 3–5'], ['Sections B–C', 'Checklists and ages 2–5 tools', `pages ${P.cl25}–${P.helpEnd}`], ...(ctx.g0 ? [] : [['Section D', 'Ages 5–12 jobs chart', `pages ${P.chores}–${P.choresEnd}`]]), [ctx.g0 ? 'Section D' : 'Section E', 'Whole-family tools', `pages ${P.tokens}–${P.cert}`]].map(([a, b, c]) => `<div class="step" style="grid-template-columns:1fr"><div><div class="eyebrow">${a}</div><div style="font-weight:800;font-size:9pt;line-height:1.25;margin:.03in 0">${b}</div><div class="small">${c}</div></div></div>`).join('')}</div>
   <div class="card" style="--cbg:var(--tS)"><div class="body"><b>Fillable pages:</b> pages marked “fillable” have type-in boxes that work in free Adobe Acrobat Reader on a computer or phone. You can type names, dates, jobs, rules, token ideas and plan answers. Colors and pictures can’t be changed. Every fillable page also prints blank for writing by hand.</div></div>
   <p class="small">License: personal and family use in your own home. Please don’t share or resell the files. Thank you for supporting a small, independent studio.</p>`;
 }
@@ -492,7 +494,7 @@ function guide1(ctx) {
   return hd({ eyebrow: 'Section A · Grown-up guide · 1 of 2', title: 'Start here, grown-ups', lede: 'This kit gives your day a simple shape: <b>jobs first, then play and time together, then screens at their usual spot.</b> Nothing to take away, only more play to add.', age: 'grown', prepT: 'Setup 2 min' })
     + `<div class="rhythm">${[['tidyToys', '1 · Jobs first', 'var(--tT)'], ['familyGame', '2 · Then play and time together', 'var(--tG)'], ['screenSpot', '3 · Then screens, at their spot', 'var(--tK)']].map(([a, t, c], i) => `${i ? '<div class="ar"><svg viewBox="0 0 20 30" width=".2in" height=".3in"><path d="M4 3L16 15 4 27" stroke="var(--ink)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>' : ''}<div class="rs" style="background:${c}">${art(a)}<div class="kid">${t}</div></div>`).join('')}</div>
   <div><div class="h2" style="margin-bottom:.08in">Set up in 2 minutes</div><div class="steps">${[
-      ['Pick one checklist per child.', 'Pictures for ages 2–5, words for ages 5–12, or the fillable blank. Choose a colorway they like.'],
+      ['Pick one checklist per child.', ctx.g0 ? 'Pictures for ages 2–5, or the fillable blank. Choose a colorway they like.' : 'Pictures for ages 2–5, words for ages 5–12, or the fillable blank. Choose a colorway they like.'],
       ['Write in your screen spot.', 'For example, “after dinner”. Keep it the same every day, and the same length.'],
       ['Cut the together tokens.', 'Keep them in an envelope. A grown-up keeps the pieces.'],
       ['Put it at eye level.', 'Walk through it together once: “First jobs, then we play, then screens.”'],
@@ -511,7 +513,7 @@ function guide2(ctx) {
       ['var(--tG)', '25', 'Point and say each picture on the checklist. Use the Play-First Board to show first, then, later. Two or three helping jobs a day is plenty.'],
       ['var(--tK)', '58', 'They tick their own boxes on the ages 5–12 checklist and pick the together token. Add 3 or 4 jobs from the family jobs chart.'],
       ['var(--tP)', '812', 'Fill in the blank checklist together and let them write their own jobs and play. Make the Family Plan together; let them lead one part.'],
-    ].map(([c, a, t]) => `<div style="background:${c}">${chip(a)}<p class="body">${t}</p></div>`).join('')}</div>
+    ].filter(([, a]) => !ctx.g0 || a === '25').concat(ctx.g0 ? [['var(--tK)', 'all', 'Big brothers and sisters can join in: the together tokens, the Family Plan and the rules poster work at any age. Pictures work at any age too.']] : []).map(([c, a, t]) => `<div style="background:${c}">${chip(a)}<p class="body">${t}</p></div>`).join('')}</div>
   <div class="card" style="--cbg:var(--tT)"><div class="h2">How screens fit in this kit</div><ul class="b">
     <li><span class="ball"></span><span>Screens have a <b>fixed spot</b> in the day, the same time and about the same length each day.</span></li>
     <li><span class="ball"></span><span>The spot <b>never grows or shrinks</b> with jobs or behavior. That keeps screens from becoming the prize, so jobs and play can simply be part of the day.</span></li>
@@ -552,7 +554,12 @@ function tips(ctx) {
   <div class="card" style="--cbg:#fff;border:1.5px solid var(--line)"><div class="sizecheck"><div class="sq"><span class="kid" style="font-size:11pt;text-align:center">Actual size<br>${TOK}</span><div class="cir">Small-parts size<br>about 1.25 in</div></div><div><div class="h2">Check your print</div><p class="body">After printing the tokens, measure this square. It should be <b>${TOK}</b> on each side. If it’s smaller, your printer shrank the page: print again at 100% / Actual size.</p><p class="body" style="margin-top:.06in">The circle shows the small-parts size for under-3s. Every piece in this kit is much bigger.</p></div></div></div>`;
 }
 function more(ctx, qr) {
-  const items = [
+  const items = ctx.g0 ? [
+    ['wakeUp', '177 Visual Routine Cards', 'Ages 0–5', 'Picture cards for mornings, meals, bath and bedtime.'],
+    ['fort', '76 “I’m Bored” Play Cards', 'Ages 1–5', 'Pick-a-card play ideas, each with a talk line.'],
+    ['blocks', 'Toddler Busy Book', 'Ages 1–5', '74 paper-and-play activities, sorted by age, with a talk line on every page.'],
+    ['readTogether', '52 Play & Talk Cards', 'Ages 0–5', 'One simple play and one talk tip on every card.'],
+  ] : [
     ['wakeUp', '200+ Visual Routine Cards', 'Ages 0–12', 'Picture cards for mornings, meals, bath and bedtime.'],
     ['fort', '150 “I’m Bored” Play Cards', 'Ages 1–12', 'Pick-a-card play ideas, each with a talk prompt.'],
     ['talkDay', '30 Days of Back-and-Forth', 'Ages 1–12', 'A written 30-day plan by email: one short lesson and one easy play a day, plus a workbook.'],
@@ -581,7 +588,7 @@ function buildDoc(ctx, qr) {
   add('guide2', 'A', c => guide2(c));
   add('tips', 'A', c => tips(c), 'Printing, laminating, velcro and safety');
   const cws = ctx.low ? [null] : COLORWAYS.map(c => c.id);
-  [['little', 'cl25', 'Checklist, ages 2–5 (pre-filled)'], ['big', 'cl512', 'Checklist, ages 5–12 (pre-filled)'], ['blank', 'clBlank', 'Checklist, make-it-yours (fillable)']].forEach(([kind, key, label]) => {
+  [['little', 'cl25', 'Checklist, ages 2–5 (pre-filled)'], ['big', 'cl512', 'Checklist, ages 5–12 (pre-filled)'], ['blank', 'clBlank', 'Checklist, make-it-yours (fillable)']].filter(([k]) => !(ctx.g0 && k === 'big')).forEach(([kind, key, label]) => {
     let first = true;
     cws.forEach(cw => ['mon', 'sun'].forEach(st => { add(first ? key : key + cw + st, 'B', c => checklist(c, kind, cw || 'tomato', st), first ? label : null, cw || 'tomato'); pages[pages.length - 1].cw = cw || 'tomato'; first = false; }));
   });
@@ -590,10 +597,12 @@ function buildDoc(ctx, qr) {
   add('helpSun', 'C', c => helping(c, false, 'sun'));
   add('helpB', 'C', c => helping(c, true, 'mon'), 'Helping jobs (fillable)');
   add('helpEnd', 'C', c => helping(c, true, 'sun'));
-  add('chores', 'D', c => chores(c, false, 'mon'), 'Family jobs chart, ages 5–12');
-  add('choresSun', 'D', c => chores(c, false, 'sun'));
-  add('choresB', 'D', c => chores(c, true, 'mon'), 'Family jobs chart (fillable)');
-  add('choresEnd', 'D', c => chores(c, true, 'sun'));
+  if (!ctx.g0) { // 5–12 jobs chart: held back from the Ages 2–5 edition until counsel's G1 answer
+    add('chores', 'D', c => chores(c, false, 'mon'), 'Family jobs chart, ages 5–12');
+    add('choresSun', 'D', c => chores(c, false, 'sun'));
+    add('choresB', 'D', c => chores(c, true, 'mon'), 'Family jobs chart (fillable)');
+    add('choresEnd', 'D', c => chores(c, true, 'sun'));
+  }
   add('tokens', 'E', (c, P) => tokens(c, false, P.board), 'Together tokens');
   add('tokensB', 'E', (c, P) => tokens(c, true, P.board), 'Make-your-own tokens (fillable)');
   add('cards', 'E', c => spotCards(c), 'Screen-spot cards');
@@ -613,7 +622,8 @@ function buildDoc(ctx, qr) {
   const toc = [];
   const html = pages.map((p, i) => {
     if (p.toc) toc.push([p.toc, i + 1]);
-    const body = p.fn(ctx, P);
+    let body = p.fn(ctx, P);
+    if (ctx.g0) body = body.replace(/Section E ·/g, 'Section D ·').replace('After school or nap', 'After nap');
     return `<section class="page ${p.cw ? 'cw-' + p.cw : ''}${['tokens', 'tokensB', 'cards'].includes(p.key) ? ' tight' : ''}${CANVA.test(p.key) ? ' canva' : ''}" data-key="${p.key}">${body}${footer(ctx, i + 1)}</section>`;
   }).join('\n');
   return { html, toc, n: pages.length, P };
@@ -629,17 +639,18 @@ function wrap(ctx, body, outFile, title) {
 
 // ---------------------------------------------------------------- START HERE (1 page)
 function startHere(ctx, qr) {
+  const pre = ctx.g0 ? 'play-first-family-kit-ages-2-5' : 'play-first-family-kit';
   const files = ctx.store
-    ? [['play-first-family-kit.pdf', 'Full color, US Letter'], ['play-first-family-kit-a4.pdf', 'Full color, A4'], ['play-first-family-kit-low-ink.pdf', 'White backgrounds, line art to color, US Letter'], ['play-first-family-kit-low-ink-a4.pdf', 'Low-ink, A4'], ['Canva-ready PNGs', 'Blank checklists, charts and plan pages (US Letter and A4 sizes) to decorate in Canva or any photo app']]
+    ? [[`${pre}.pdf`, 'Full color, US Letter'], [`${pre}-a4.pdf`, 'Full color, A4'], [`${pre}-low-ink.pdf`, 'White backgrounds, line art to color, US Letter'], [`${pre}-low-ink-a4.pdf`, 'Low-ink, A4'], ...(ctx.g0 ? [] : [['Canva-ready PNGs', 'Blank checklists, charts and plan pages (US Letter and A4 sizes) to decorate in Canva or any photo app']])]
     : [['2-Color-US-Letter.pdf', 'Full color, US Letter'], ['3-Color-A4.pdf', 'Full color, A4'], ['4-Low-Ink-US-Letter.pdf', 'White backgrounds, line art to color, US Letter'], ['5-Low-Ink-A4.pdf', 'Low-ink, A4']];
-  const body = `<section class="page"><div style="display:flex;justify-content:space-between;align-items:center">${LOGO.lock.replace('<svg', '<svg style="height:.5in;width:auto"')}<span class="chips">${chip('25')}${chip('512')}</span></div>
-  ${hd({ eyebrow: 'File 1 · Start here', title: 'Play-First Family Kit', lede: 'Thank you! Here’s what each file holds and how to print and fill it in. About 20 minutes to prep, then reusable.', age: '', prepT: '' })}
+  const body = `<section class="page"><div style="display:flex;justify-content:space-between;align-items:center">${LOGO.lock.replace('<svg', '<svg style="height:.5in;width:auto"')}<span class="chips">${chip('25')}${ctx.g0 ? '' : chip('512')}</span></div>
+  ${hd({ eyebrow: 'File 1 · Start here', title: ctx.g0 ? 'Play-First Family Kit · Ages 2–5' : 'Play-First Family Kit', lede: 'Thank you! Here’s what each file holds and how to print and fill it in. About 20 minutes to prep, then reusable.', age: '', prepT: '' })}
   <div class="card" style="--cbg:var(--tS)"><div class="h2">Your files</div><ul class="b">${files.map(([f, d]) => `<li><span class="ball"></span><span><b>${f}</b> · ${d}</span></li>`).join('')}</ul><p class="small" style="color:var(--ink)">Pick one file for your paper size. Color and low-ink files hold the same tools; the color file adds 4 colorways of each checklist.</p></div>
   <div class="steps"><div class="card" style="--cbg:var(--tK)"><div class="h2">Printing</div><ul class="b"><li><span class="ball"></span><span>Print at <b>100% / Actual size</b>.</span></li><li><span class="ball"></span><span>Print only the pages you need. Page 2 of each file is a contents list.</span></li><li><span class="ball"></span><span>Cardstock for tokens, cards and the board.</span></li></ul></div>
   <div class="card" style="--cbg:var(--tG)"><div class="h2">Filling in</div><ul class="b"><li><span class="ball"></span><span>Open the PDF in free <b>Adobe Acrobat Reader</b> (computer or phone) and tap a line to type.</span></li><li><span class="ball"></span><span>You can type names, dates, jobs, rules, token ideas and plan answers. Colors and pictures can’t be changed.</span></li><li><span class="ball"></span><span>Save, then print. Or print blank and write by hand.</span></li></ul></div></div>
   <div class="card" style="--cbg:var(--tT)"><div class="h2">Downloading: use a browser, not the app</div><p class="body">${ctx.store ? 'Open your download link from the order email in a web browser. On a phone, save each PDF to Files, then open it in Adobe Acrobat Reader.' : 'Open your Etsy Purchases page in a web browser (not the Etsy app) and download each file. On a phone, save each PDF to Files, then open it in Adobe Acrobat Reader. Your files stay on your Purchases page to download again anytime.'}</p></div>
   ${ctx.store ? `<div class="card" style="flex-direction:row;align-items:center;gap:.2in"><div style="width:1.3in;flex:0 0 auto">${qr.replace('<svg', '<svg style="width:100%;height:auto;display:block"')}</div><div><div class="h2">Free bonus and re-downloads</div><p class="body">Scan for your free companion printables: <b>${T.BONUS}</b>. Lost a file? Your link stays in your order email; help is at <b>playbeforepixels.com/help</b>.</p></div></div>` : ''}
-  ${ctx.store ? '' : `<div style="flex:1;display:flex;flex-direction:column;gap:.08in;justify-content:flex-end"><div class="h2">The 10 tools inside</div><div class="toc" style="grid-template-columns:repeat(5,1fr);gap:.08in">${[['playTime', 'Play First, Then Screens checklists'], ['blocks', 'Play-First Board'], ['feedPet', 'Little helping jobs'], ['setTableBig', 'Family jobs chart'], ['boardGame', 'Together tokens'], ['alarm', 'Screen-spot cards'], ['familyMeal', 'Family Play Rules poster'], ['talkDay', 'Family Play & Screen Plan'], ['natureWalk', '30 Days of Play First'], ['dance', 'Certificate']].map(([a, t]) => `<div style="grid-template-columns:1fr;text-align:center;padding:.06in .05in .08in;gap:.02in"><div style="display:flex;justify-content:center">${art(a)}</div><div class="nm" style="font-size:7.8pt">${t}</div></div>`).join('')}</div></div>`}
+  ${ctx.store ? '' : `<div style="flex:1;display:flex;flex-direction:column;gap:.08in;justify-content:flex-end"><div class="h2">The ${ctx.g0 ? 9 : 10} tools inside</div><div class="toc" style="grid-template-columns:repeat(5,1fr);gap:.08in">${[['playTime', 'Play First, Then Screens checklists'], ['blocks', 'Play-First Board'], ['feedPet', 'Little helping jobs'], ['setTableBig', 'Family jobs chart'], ['boardGame', 'Together tokens'], ['alarm', 'Screen-spot cards'], ['familyMeal', 'Family Play Rules poster'], ['talkDay', 'Family Play & Screen Plan'], ['natureWalk', '30 Days of Play First'], ['dance', 'Certificate']].filter(t => !(ctx.g0 && t[0] === 'setTableBig')).map(([a, t]) => `<div style="grid-template-columns:1fr;text-align:center;padding:.06in .05in .08in;gap:.02in"><div style="display:flex;justify-content:center">${art(a)}</div><div class="nm" style="font-size:7.8pt">${t}</div></div>`).join('')}</div></div>`}
   <p class="small">License: personal and family use in your own home. Please don’t share or resell. Every play follows our published safety rules; a grown-up keeps the cut pieces.</p>
   ${footer(ctx, 1)}</section>`;
   return body;
@@ -648,25 +659,27 @@ function startHere(ctx, qr) {
 (async () => {
   const qr = await QR.toString('https://' + T.BONUS, { type: 'svg', margin: 0, errorCorrectionLevel: 'M', color: { dark: '#1D2940', light: '#FFFFFF' } });
   const manifest = {};
-  for (const ed of ['store', 'etsy']) for (const ink of ['color', 'low']) for (const size of ['letter', 'a4']) {
+  // tier '' = full kit, ages 2–12 (5–12 pages HELD until counsel's G1 answer; ships later as a free update to the same listing)
+  // tier 'g0-' = Ages 2–5 edition, the one that launches (business/GROWTH-ENGINE.md §8a)
+  for (const tier of ['', 'g0-']) for (const ed of ['store', 'etsy']) for (const ink of ['color', 'low']) for (const size of ['letter', 'a4']) {
     fieldN = 0;
-    const ctx = { size, low: ink === 'low', store: ed === 'store', ed };
-    const name = `kit-${ed}-${ink}-${size}`;
+    const ctx = { size, low: ink === 'low', store: ed === 'store', ed, g0: tier === 'g0-' };
+    const name = `kit-${tier}${ed}-${ink}-${size}`;
     const out = path.join(OUT, name + '.html');
     const doc = buildDoc(ctx, qr);
-    fs.writeFileSync(out, wrap(ctx, doc.html, out, `Play-First Family Kit · ${ink === 'low' ? 'Low-ink' : 'Color'} · ${SIZES[size].name}`));
+    fs.writeFileSync(out, wrap(ctx, doc.html, out, `Play-First Family Kit${ctx.g0 ? ', Ages 2–5' : ''} · ${ink === 'low' ? 'Low-ink' : 'Color'} · ${SIZES[size].name}`));
     manifest[name] = { pages: doc.n, toc: doc.toc, P: doc.P };
     if (ed === 'etsy' && ink === 'color' && size === 'letter') fs.writeFileSync(path.join(OUT, name + '-mk.html'), wrap(ctx, doc.html, out, 'Play-First Family Kit · listing renders').replace('<body class="', '<body class="mk '));
-    if (ed === 'store' && ink === 'color' && size === 'letter') {
+    if (!ctx.g0 && ed === 'store' && ink === 'color' && size === 'letter') {
       const src = path.join(ROOT, 'source.html');
       fieldN = 0; const d2 = buildDoc(ctx, qr);
       fs.writeFileSync(src, wrap(ctx, d2.html, src, 'Play-First Family Kit · Color · US Letter'));
     }
   }
-  for (const ed of ['store', 'etsy']) {
-    fieldN = 0; const ctx = { size: 'letter', low: false, store: ed === 'store', ed };
-    const out = path.join(OUT, `start-here-${ed}.html`);
-    fs.writeFileSync(out, wrap(ctx, startHere(ctx, qr), out, 'START HERE · Play-First Family Kit'));
+  for (const tier of ['', 'g0-']) for (const ed of ['store', 'etsy']) {
+    fieldN = 0; const ctx = { size: 'letter', low: false, store: ed === 'store', ed, g0: tier === 'g0-' };
+    const out = path.join(OUT, `start-here-${tier}${ed}.html`);
+    fs.writeFileSync(out, wrap(ctx, startHere(ctx, qr), out, `START HERE · Play-First Family Kit${ctx.g0 ? ', Ages 2–5' : ''}`));
   }
   fs.writeFileSync(path.join(OUT, 'manifest.json'), JSON.stringify(manifest, null, 1));
   console.log(Object.entries(manifest).map(([k, v]) => `${k}: ${v.pages} pages`).join('\n'));

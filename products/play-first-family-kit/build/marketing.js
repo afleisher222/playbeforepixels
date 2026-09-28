@@ -91,6 +91,32 @@ imgs.push(frame(C.tK, head('How to use', 'Print, fill, play', 'About 20 minutes 
   <div style="position:absolute;left:70px;right:70px;top:360px;display:grid;grid-template-columns:repeat(2,1fr);gap:22px">
   ${[['1', 'Download in a browser', 'Use a web browser, not the Etsy app. Your files stay on your Purchases page.'], ['2', 'Fill in (optional)', 'Open in free Adobe Acrobat Reader and type names, jobs and your screen spot.'], ['3', 'Print at 100%', 'Charts on paper; tokens, cards and the board on cardstock. About 20 minutes to prep, then reusable.'], ['4', 'Laminate or use page protectors', 'Dry-erase week after week. Velcro is for ages 3+ only; check dots before each play.']].map(([n, t, s]) => `<div style="background:#fff;border-radius:22px;padding:26px 28px;display:flex;gap:18px"><div style="width:52px;height:52px;border-radius:50%;background:${C.sky};color:#fff;font-family:Fredoka,sans-serif;font-weight:600;font-size:28px;display:flex;align-items:center;justify-content:center;flex:0 0 auto">${n}</div><div><div style="font-weight:800;font-size:25px">${t}</div><div style="font-size:19px;line-height:1.35;margin-top:6px;font-weight:600">${s}</div></div></div>`).join('')}</div>
   <div style="position:absolute;left:70px;right:70px;bottom:70px;background:#fff;border-radius:22px;padding:24px 30px;font-size:20px;font-weight:700;line-height:1.4">Digital download: no physical item ships. Personal and family use. Every play follows our published safety rules.</div>`));
+// ---------------- Ages 2–5 edition listing images (9; the G0 launch listing) ----------------
+const m0 = require('./out/manifest.json')['kit-g0-etsy-color-letter'].P;
+const pg0 = k => `tmp/ep0/p${String(m0[k]).padStart(2, '0')}.png`;
+const lo0 = n => `tmp/epl0/p${String(n).padStart(2, '0')}.png`;
+const N0 = require('./out/manifest.json')['kit-g0-etsy-color-letter'].pages;
+const i0 = [];
+i0.push(frame(C.tS, `
+  <div class="logo" style="position:absolute;left:70px;top:60px">${L}</div>
+  <div style="position:absolute;right:70px;top:62px;display:flex;gap:10px"><span class="pill"><i style="background:${C.grass}"></i>Ages 2–5</span></div>
+  <div style="position:absolute;left:70px;top:150px"><div class="h" style="font-size:100px"><span style="color:${C.tomato}">9</span> Play-First<br>Family Tools</div></div>
+  <div style="position:absolute;left:70px;top:390px;width:380px"><div style="font-size:30px;font-weight:800">Play First, Then Screens.</div><div style="font-size:22px;font-weight:600;margin-top:8px;line-height:1.32">Picture checklists, tokens, helping jobs, a family plan and a 30-day tracker.</div></div>
+  ${sheet(pg0('help'), 470, 440, 320, -4, 2)}${sheet(pg0('cl25'), 620, 410, 330, 5, 3)}
+  <div style="position:absolute;left:70px;top:600px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;z-index:6">${['Fillable PDF', 'US Letter + A4', '4 colorways'].map(t => `<span class="pill">${t}</span>`).join('')}</div>
+  ${tok(tk(1), 70, 790, 170, -7, 4)}${tok(tk(3), 250, 800, 170, 6, 5)}`));
+const tiles0 = [['cl25', 'Play First, Then Screens checklists', '16 pages: ages 2–5 pictures, fillable blank'], ['board', 'Play-First Board', 'first, then, later'], ['help', 'Little helping jobs', 'ages 2–5 · 4 pages'], ['tokens', 'Together tokens', '12 + 12 blank'], ['cards', 'Screen-spot cards', '6 cards'], ['poster', 'Family Play Rules poster', 'pre-filled + blank'], ['plan', 'Family Play & Screen Plan', '3 pages'], ['tracker', '30 Days of Play First', '30 plays + guide + blank'], ['cert', 'Certificate', 'to celebrate']];
+i0.push(frame('#fff', head('What’s inside', '9 tools in one download', `${N0} pages = 16 checklist pages + 12 tool pages + 3 family-plan pages + 3 play-guide pages + 1 certificate + 5 guide pages + 1 “what’s next” page.`) + `
+  <div style="position:absolute;left:70px;right:70px;top:330px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px">${tiles0.map(([k, t, s], i) => `<div style="background:${[C.tT, C.tK, C.tG, C.tS, C.tP][i % 5]};border-radius:18px;padding:14px 14px 16px;display:flex;flex-direction:column;gap:10px"><div style="background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 2px 8px rgba(29,41,64,.12)"><img src="${pg0(k)}" style="width:100%;display:block"></div><div style="font-weight:800;font-size:16px;line-height:1.2">${t}</div><div style="font-size:14px;font-weight:600;color:#56627A">${s}</div></div>`).join('')}</div>`));
+i0.push(frame(C.tP, head('A 2-minute grown-up guide', 'Plain words, no lectures', 'Set up in 2 minutes, three easy talk lines, and how it works from age 2 to 5. Screens keep one steady spot in the day.', C.plum) + sheet(pg0('guide1'), 80, 360, 420, -3, 2) + sheet(pg0('guide2'), 510, 380, 420, 3, 3)));
+i0.push(frame('#fff', head('Play First, Then Screens checklist', '4 colorways, Monday or Sunday start', 'Big pictures for ages 2–5, plus a fillable blank to make your own.') + sheet(pg0('cl25'), 60, 380, 300, -6, 1) + sheet(pg0('cl25skysun'), 250, 360, 300, -2, 2) + sheet(pg0('clBlankgrassmon'), 450, 370, 300, 2, 3) + sheet(pg0('cl25plumsun'), 650, 385, 300, 6, 4)
+  + `<div class="cap" style="left:90px;top:840px">Ages 2–5 · Tomato</div><div class="cap" style="left:300px;top:840px">Sunday start · Sky</div><div class="cap" style="left:520px;top:840px">Fillable · Grass</div><div class="cap" style="left:720px;top:840px">Sunday start · Plum</div>`));
+i0.push(imgs[4].replace(/tmp\/ep\/p(\d+)\.png/g, (x, n) => { const key = Object.keys(m).find(k => m[k] === +n); return pg0(key); }));
+i0.push(imgs[6].replace(/tmp\/ep\/p(\d+)\.png/g, (x, n) => { const key = Object.keys(m).find(k => m[k] === +n); return pg0(key); }));
+i0.push(imgs[7].replace(/tmp\/ep\/p(\d+)\.png/g, (x, n) => { const key = Object.keys(m).find(k => m[k] === +n); return pg0(key); }));
+i0.push(imgs[8].replace(/tmp\/ep\/p(\d+)\.png/g, (x, n) => { const key = Object.keys(m).find(k => m[k] === +n); return pg0(key); }).replace(lo(6), lo0(6)));
+i0.push(imgs[9]);
+fs.writeFileSync(path.join(__dirname, 'listing-g0.html'), `<!doctype html><html><head><meta charset="utf-8">${base}</head><body style="display:flex;flex-direction:column;gap:20px;background:#ddd">${i0.join('\n')}</body></html>`);
 const listing = `<!doctype html><html><head><meta charset="utf-8">${base}</head><body style="display:flex;flex-direction:column;gap:20px;background:#ddd">${imgs.join('\n')}</body></html>`;
 fs.writeFileSync(path.join(__dirname, 'listing.html'), listing);
 console.log('mockup.html + listing.html (' + imgs.length + ' images)');

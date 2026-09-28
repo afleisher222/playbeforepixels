@@ -9,7 +9,9 @@ import fitz  # PyMuPDF
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 os.chdir(ROOT)
 STORE = ['START-HERE.pdf', 'bored-play-cards.pdf', 'bored-play-cards-A4.pdf', 'bored-play-cards-low-ink.pdf', 'bored-play-cards-low-ink-A4.pdf']
+STORE += [f.replace('START-HERE', 'START-HERE-ages-1-5').replace('bored-play-cards', 'bored-play-cards-ages-1-5') for f in STORE]  # Ages 1-5 edition (G0)
 ETSY = sorted(glob.glob('etsy-upload/*'))
+ETSY0 = sorted(glob.glob('etsy-upload-ages-1-5/*'))
 BANNED = r'\b(therapy|therapist|autis\w*|adhd|clinically|cure[sd]?|heal(s|ing)?|reverse[sd]?|speech|slp|diagnos\w*|delay|late talker|catch up|rewir\w*|damage|addict\w*|toxic|zombie|safety-checked|certified|safe for all ages|canva|adobe|acrobat)\b'
 fail = []
 
@@ -34,14 +36,15 @@ def check(path, etsy):
             fail.append(f'{path} p{i+1}: banned word "{m.group(0)}" :: …{flat[max(0,m.start()-40):m.end()+40]}…')
         widgets += len(list(p.widgets()))
     low = 'low-ink' in path.lower() or 'Low-Ink' in path
-    if not start and not low and widgets < 300: fail.append(f'{path}: only {widgets} fillable fields')
+    if not start and not low and widgets < (150 if 'ages-1-5' in path else 300): fail.append(f'{path}: only {widgets} fillable fields')
     if (start or low) and widgets: fail.append(f'{path}: {widgets} fields in a non-fillable file')
     print(f'{path:44s} {d.page_count:3d} pages {mb:5.1f} MB {widgets:4d} fields')
     return d
 
 for f in STORE: check(f, False)
-if len(ETSY) != 5: fail.append(f'etsy-upload has {len(ETSY)} files, expected 5')
-for f in ETSY: check(f, True)
+for folder, files in (('etsy-upload', ETSY), ('etsy-upload-ages-1-5', ETSY0)):
+    if len(files) != 5: fail.append(f'{folder} has {len(files)} files, expected 5')
+    for f in files: check(f, True)
 for z in glob.glob('**/*.zip', recursive=True):
     if 'node_modules' not in z: fail.append(f'zip found: {z}')
 

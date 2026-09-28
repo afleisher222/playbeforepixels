@@ -8,7 +8,16 @@ const seo = require('../lib/seo');
 
 function galleryItems(ctx, p) {
   const base = `products/${p.dir}/`;
-  return p.gallery.map((g, i) => {
+  const fs = require('fs'), path = require('path');
+  const has = rel => fs.existsSync(path.join(ctx.ROOT, base, rel));
+  // A picture a product lane is re-rendering right now is left out of this build, not fatal.
+  const gal = p.gallery.filter(g => {
+    const need = g.spread || [g.pdf || g.src].filter(Boolean);
+    const ok = need.every(has);
+    if (!ok && ctx.warn) ctx.warn(`${p.slug}: gallery picture missing (${need.join(', ')}), left out`);
+    return ok;
+  });
+  return gal.map((g, i) => {
     const alt = g.altFrom ? p.listing[g.altFrom] : g.alt;
     if (g.css) return { kind: 'css', alt };
     if (g.spread) return { kind: 'spread', alt, srcs: g.spread.map(s => base + s) };
