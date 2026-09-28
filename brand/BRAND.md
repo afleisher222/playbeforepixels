@@ -85,3 +85,11 @@ Flat vector, solid fills, no gradients, no drop shadows, no outlines (or at most
 
 ## Human authorship (copyright) — binding
 AI-generated material is not copyrightable in the U.S. For every product, leave clearly marked places for the founder's own creative contribution (her rewritten text, her choices of words, characters, colors and page order), and keep every draft version in git so her changes are provable. Never label AI-generated material as human-authored in any copyright filing. See legal/protection/PROTECTION-PLAN.md, section "AI-assisted products and copyright".
+
+## Website: calm, never cluttered (founder's instruction — binding)
+- One job per section and one primary button per screen; secondary links are quiet text links.
+- Generous white space; nothing competes with the product images and book art.
+- Homepage: at most 6 sections. Product grids: at most 8 items before "See all". Navigation: 5 top-level items.
+- No pop-ups on arrival, no auto-playing anything, no countdown timers, no badge overload, no walls of logos or icons.
+- Copy is short and specific; details live one click deeper (tabs, accordions, dedicated pages).
+- Every page passes a "squint test": with eyes half-closed, the one most important thing is still obvious.
