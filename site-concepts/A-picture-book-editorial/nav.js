@@ -24,7 +24,8 @@
     if (!usd) return "Free";
     var c = CUR[PBP.currency], v = usd * c.rate;
     if (PBP.currency !== "USD") v = Math.ceil(v) - 0.01; /* local .99 price points */
-    return new Intl.NumberFormat(c.locale, { style: "currency", currency: PBP.currency }).format(v);
+    var whole = Math.abs(v - Math.round(v)) < 0.001;
+    return new Intl.NumberFormat(c.locale, { style: "currency", currency: PBP.currency, minimumFractionDigits: whole ? 0 : 2, maximumFractionDigits: whole ? 0 : 2 }).format(v);
   };
   PBP.price = function (usd) { return '<span class="money" data-usd="' + usd + '">' + PBP.money(usd) + "</span>"; };
   function refreshMoney() {
