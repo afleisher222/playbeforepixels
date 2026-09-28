@@ -17,7 +17,6 @@ Every file here is a draft. Nothing is sent, posted or published until the found
 | teacher-freebie-landing-copy.md | No, it's educator-facing |
 | pta-outreach-email.md, library-programming-email.md, childcare-center-email.md, school-purchasing-info-sheet.md, employer-erg-email.md, fundraiser-program-one-pager.md, partner-kit.md, wholesale-line-sheet.md | No, they're group or school-facing |
 | press-release-launch.md, media-pitch-gift-guide.md | No: press waits for counsel |
-| podcast-pitch-OPTIONAL-audio-only.md | **On hold.** BRAND.md's no-direct-contact rule bans podcasts. That file offers a written alternative. |
 
 ## Before every cold-email batch (paste into the approval request)
 - [ ] Every address is a role address the organization published itself. No purchased or scraped lists.

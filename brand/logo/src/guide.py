@@ -62,29 +62,29 @@ def clearspace(kind, h_px):
     for cx, cy in ((x0 - u/2, y0 - u/2), (x0 + w + u/2, y0 - u/2), (x0 - u/2, y0 + h + u/2), (x0 + w + u/2, y0 + h + u/2)):
         body.append(f'<circle cx="{f(cx)}" cy="{f(cy)}" r="{f(u/2)}" fill="none" stroke="{TOMATO}" stroke-width="{f(u/40)}"/>')
     m = u * 0.15
-    return inline(f'{f(x0-u-m)} {f(y0-u-m)} {f(w+2*u+2*m)} {f(h+2*u+2*m)}', ''.join(body), h=h_px)
+    return inline(f'{f(x0-u-m)} {f(y0-u-m)} {f(w+2*u+2*m)} {f(h+2*u+2*m)}', ''.join(body), h=h_px, w=None if h_px else 440)
 
 # ---------------------------------------------------------------- don'ts
 def dont_bigball():
     d, _, (w, h) = mark()
-    return inline(f'-40 -40 {f(w+360)} {f(h+80)}', f'<path fill="{INK}" d="{d}"/><circle cx="{w+130}" cy="{h-190}" r="190" fill="{TOMATO}"/>', h=150)
+    return inline(f'-40 -40 {f(w+360)} {f(h+80)}', f'<path fill="{INK}" d="{d}"/><circle cx="{w+130}" cy="{h-190}" r="190" fill="{TOMATO}"/>', h=100)
 def dont_circle_p():
     d, b, (w, h) = mark(); s = 0.55; ox = 500 - w*s/2; oy = 500 - h*s/2
     d2, b2, _ = mark(ox, oy, s)
-    return inline('0 0 1000 1000', f'<circle cx="500" cy="500" r="500" fill="{TOMATO}"/>' + art(d2, [b2], PAPER, PAPER), h=150)
+    return inline('0 0 1000 1000', f'<circle cx="500" cy="500" r="500" fill="{TOMATO}"/>' + art(d2, [b2], PAPER, PAPER), h=100)
 def dont_recolor():
-    return mark_inline(150, ink=SKY, acc=PLUM)
+    return mark_inline(100, ink=SKY, acc=PLUM)
 def dont_square_ball():
     d, b, (w, h) = mark(); r = b[2]
-    return inline(f'-40 -40 {f(w+80)} {f(h+80)}', f'<path fill="{INK}" d="{d}"/><rect x="{f(b[0]-r)}" y="{f(b[1]-r)}" width="{f(2*r)}" height="{f(2*r)}" fill="{TOMATO}"/>', h=150)
+    return inline(f'-40 -40 {f(w+80)} {f(h+80)}', f'<path fill="{INK}" d="{d}"/><rect x="{f(b[0]-r)}" y="{f(b[1]-r)}" width="{f(2*r)}" height="{f(2*r)}" fill="{TOMATO}"/>', h=100)
 def dont_pplay():
     md, mb, (mw, mh) = mark(0, 0, 1.0)
     d, bs, w = words('Play Before Pixels', mw + 200, CAP)
-    return inline(f'-40 -120 {f(mw+200+w+80)} {f(CAP+320)}', art(md + d, [mb] + bs), w=300)
+    return inline(f'-40 -120 {f(mw+200+w+80)} {f(CAP+320)}', art(md + d, [mb] + bs), w=150)
 def dont_two_p():
     """a nested big-P/little-p monogram (never: Planned Parenthood's parent-and-child P)"""
     d, b, (w, h) = mark(); d2, b2, _ = mark(w*0.45, h*0.52, 0.45)
-    return inline(f'-40 -40 {f(w+80)} {f(h*1.0+80)}', art(d, [b]) + f'<path fill="{TOMATO}" d="{d2}"/>', h=150)
+    return inline(f'-40 -40 {f(w+80)} {f(h*1.0+80)}', art(d, [b]) + f'<path fill="{TOMATO}" d="{d2}"/>', h=100)
 
 BUSY = ('background: repeating-linear-gradient(45deg, #F5B820 0 18px, #3D86D8 18px 36px, #2FA36B 36px 54px, #EE5A36 54px 72px);')
 
@@ -139,10 +139,10 @@ def html():
     pages.append(page(4, 'Clear space', f'''
   <p class="body">Keep a clear zone around every version equal to <b>one ball</b>: the diameter of the ball in that artwork. Nothing else (text, edges, other logos, photo detail) goes inside the shaded area. The SVG and PNG files already include half a ball of margin.</p>
   <div class="grid cs">
-    <figure>{clearspace('mark', 190)}<figcaption>Mark</figcaption></figure>
+    <figure>{clearspace('mark', 200)}<figcaption>Mark</figcaption></figure>
     <figure>{clearspace('stacked', 190)}<figcaption>Stacked lockup</figcaption></figure>
-    <figure class="wide">{clearspace('horizontal', 150)}<figcaption>Horizontal lockup</figcaption></figure>
-    <figure class="wide">{clearspace('wordmark', 90)}<figcaption>Wordmark (the ball on the i sets the unit)</figcaption></figure>
+    <figure>{clearspace('horizontal', None)}<figcaption>Horizontal lockup</figcaption></figure>
+    <figure>{clearspace('wordmark', None)}<figcaption>Wordmark (the ball on the i sets the unit)</figcaption></figure>
   </div>''', kicker='Room to breathe'))
     # 5 minimum sizes -----------------------------------------------------------
     pages.append(page(5, 'Minimum sizes', f'''
@@ -287,7 +287,7 @@ figcaption { font-size: 9.5pt; line-height: 1.4; color: #4A5468; margin-top: .08
 .sw { display: flex; align-items: center; gap: 6px; font-size: 9pt }
 .sw i { width: 22px; height: 22px; border-radius: 50%; border: 1px solid #d9dee8; display: inline-block }
 .sw span { color: #6B7488 }
-.colors { grid-template-columns: repeat(5, 1fr); gap: .16in }
+.colors { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .16in }
 .ctile { height: 1.45in; border-radius: 10px; display: flex; align-items: center; justify-content: center }
 .apps { grid-template-columns: 1fr 1fr 1fr; align-items: start }
 .apps .wide2 { grid-column: 1 / span 2 }
@@ -295,8 +295,9 @@ figcaption { font-size: 9.5pt; line-height: 1.4; color: #4A5468; margin-top: .08
 .tab.dark { background: #202124; color: #E8EAED } .tab.light { background: #DEE1E6; color: #1D2940 }
 .zoomrow { display: flex; gap: .16in; align-items: center }
 img.px { image-rendering: pixelated; border: 1px solid #E3E7EF }
-.dos { grid-template-columns: repeat(5, 1fr); gap: .14in .16in }
+.dos { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .14in .16in }
 .ddt { height: 1.3in; background: #F3F6FB; border-radius: 10px; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative }
+.ddt svg { max-height: 100px; max-width: 88%; width: auto } .ddt img { max-height: 100px; max-width: 88% }
 .dd figcaption { font-size: 8.5pt; margin-top: .05in }
 .dd.ok .ddt { box-shadow: inset 0 0 0 3px #2FA36B } .dd.no .ddt { box-shadow: inset 0 0 0 3px #EE5A36 }
 .dd.ok b { color: #1F7A4F } .dd.no b { color: #C23E1E }
@@ -323,11 +324,11 @@ img.px { image-rendering: pixelated; border: 1px solid #E3E7EF }
 def og():
     doc = f'''<!doctype html><html><head><meta charset="utf-8"><title>Play Before Pixels</title>
 <link rel="stylesheet" href="../../fonts/fonts.css">
-<style>html,body{{margin:0}} body{{width:1200px;height:630px;background:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 110px;box-sizing:border-box;position:relative;overflow:hidden;font-family:"Bricolage Grotesque",sans-serif;color:{INK}}}
+<style>html,body{{margin:0}} body{{width:1200px;height:630px;background:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 0 22px;box-sizing:border-box;position:relative;overflow:hidden;font-family:"Bricolage Grotesque",sans-serif;color:{INK}}}
 .band{{position:absolute;left:0;right:0;bottom:0;height:22px;background:{SUN}}}
-p{{font-weight:700;font-size:50px;letter-spacing:-.01em;margin:56px 0 0 6px;display:flex;align-items:baseline}}
+p{{font-weight:700;font-size:50px;letter-spacing:-.01em;margin:40px 0 0;display:flex;align-items:baseline}}
 p i{{display:inline-block;width:15px;height:15px;border-radius:50%;background:{TOMATO};margin-left:4px}}</style></head>
-<body><img src="../lockup-horizontal.svg" style="width:760px;margin-left:-20px"><p>Talk, touch and play come first<i></i></p><div class="band"></div></body></html>'''
+<body><img src="../lockup-horizontal.svg" style="width:780px"><p>Talk, touch and play come first<i></i></p><div class="band"></div></body></html>'''
     open(os.path.join(HERE, 'og.html'), 'w').write(doc)
 
 if __name__ == '__main__':
