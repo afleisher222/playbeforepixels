@@ -1,0 +1,71 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Account Setup Checklist</title>
+<link rel="stylesheet" href="../brand/fonts/fonts.css">
+<style>
+@page{size:8.5in 11in;margin:0.5in}
+body{font-family:'Nunito Sans',sans-serif;color:#1D2940;font-size:10.5pt;line-height:1.4;margin:0}
+h1{font:800 22pt 'Bricolage Grotesque';margin:0 0 2pt}
+.sub{color:#47526B;margin:0 0 10pt}
+h2{font:800 13pt 'Bricolage Grotesque';margin:12pt 0 4pt;padding-top:6pt;border-top:1.5pt solid #1D2940;break-after:avoid}
+h2 .t{font:700 9pt 'Nunito Sans';color:#5E6883;letter-spacing:.08em;text-transform:uppercase;margin-left:6pt}
+ul{margin:0;padding-left:0;list-style:none}
+li{padding:2pt 0 2pt 18pt;position:relative}
+li:before{content:"";position:absolute;left:0;top:5pt;width:10pt;height:10pt;border:1.2pt solid #1D2940;border-radius:2pt}
+.v{font-family:ui-monospace,Menlo,monospace;background:#F3F6FB;padding:0 3pt;border-radius:2pt;font-size:9.5pt}
+.box{background:#FEF4D8;border-radius:6pt;padding:6pt 9pt;margin:6pt 0}
+.never{background:#FDE9E3}
+section{break-inside:avoid}
+</style></head><body>
+<h1>Account Setup Checklist</h1>
+<p class="sub">Play Before Pixels, a trade name of AlphaPlay LLC · about 2–3 hours · do the steps in this order. Everything goes in the LLC's name, never your personal accounts.</p>
+
+<div class="box"><b>Have ready:</b> the LLC's EIN letter · your photo ID (two IDs for the PO Box) · the Chase business card · a password manager · your phone for codes. Turn on two-factor login (authenticator app) on every account and save the recovery codes in the password manager.</div>
+
+<section><h2>1. Business bank account <span class="t">30 min · online</span></h2><ul>
+<li>A no-fee, no-minimum business checking account, with a separate savings sub-account for taxes.</li>
+<li>Account holder: <span class="v">AlphaPlay LLC</span> · DBA: <span class="v">Play Before Pixels</span> · Tax ID: <b>the LLC's EIN</b> (never your Social Security number).</li>
+<li>Write the account and routing numbers into your password manager; every shop below pays out here.</li>
+</ul></section>
+
+<section><h2>2. Domain and business email <span class="t">15 min</span></h2><ul>
+<li>At cloudflare.com: register <span class="v">playbeforepixels.com</span> · turn on <b>auto-renew</b> and <b>registrar lock</b>.</li>
+<li>Registrant: AlphaPlay LLC. Keep WHOIS privacy on.</li>
+<li>Create the business email <span class="v">hello@playbeforepixels.com</span> (Cloudflare Email Routing or your existing Google Workspace). Use it for every account below.</li>
+</ul></section>
+
+<section><h2>3. PO Box <span class="t">10 min online + one visit</span></h2><ul>
+<li>Reserve at usps.com (small box is enough). Bring two IDs to the counter.</li>
+<li>The PO Box becomes the <b>only public address</b>: email footers, policies, shop profiles, KDP proof delivery.</li>
+</ul></section>
+
+<div class="box never"><b>Never enter:</b> your home address on any public profile · your photo · your children · your employer · a personal phone number as a public contact.</div>
+
+<section><h2>4. Etsy <span class="t">20 min</span></h2><ul>
+<li>Shop name: <span class="v">PlayBeforePixels</span> · Seller type: <b>business</b>, legal name AlphaPlay LLC, EIN.</li>
+<li>Payouts: the new bank account, deposit schedule weekly.</li>
+<li>Shop icon and banners: <span class="v">marketing/social-kit/etsy-shop-icon-500.png</span>, <span class="v">etsy-banner-3360x840.png</span>.</li>
+<li>Put the shop on <b>vacation mode</b>. Do not list anything until your lawyer's written yes.</li>
+</ul></section>
+
+<section><h2>5. Amazon KDP + book proof <span class="t">30 min</span></h2><ul>
+<li>kdp.amazon.com · tax interview as <b>AlphaPlay LLC</b> with the EIN · bank for royalties.</li>
+<li>Create paperback: files and text in <span class="v">ops/UPLOAD-PACKETS/kdp/01-100-screen-free-plays/</span>. Author/brand: <span class="v">Play Before Pixels</span>. ISBN: <b>get a free KDP ISBN</b>. Expanded Distribution: <b>off</b>.</li>
+<li>Save as draft, then <b>Order proof copy</b> shipped to the PO Box. Don't click Publish until the proof looks right and the website is live.</li>
+</ul></section>
+
+<section><h2>6. Gumroad <span class="t">15 min</span></h2><ul>
+<li>Username: <span class="v">playbeforepixels</span> · Name: Play Before Pixels · payout: the new bank account · tax info: LLC + EIN.</li>
+<li>Leave products unpublished; the pages are ready in <span class="v">ops/UPLOAD-PACKETS/gumroad/</span>.</li>
+</ul></section>
+
+<section><h2>7. Pinterest <span class="t">10 min</span></h2><ul>
+<li>Create a <b>Business</b> account · username <span class="v">playbeforepixels</span> · display name Play Before Pixels.</li>
+<li>Profile image: <span class="v">marketing/social-kit/avatar-1080.png</span> · bio: copy from <span class="v">marketing/social-kit/BIOS.md</span> (Pinterest section).</li>
+<li>Claim the website <span class="v">playbeforepixels.com</span> once the domain is live.</li>
+</ul></section>
+
+<section><h2>8. Hand the keys to Claude <span class="t">10 min</span></h2><ul>
+<li>Never paste a key, password or code into chat.</li>
+<li>Add each platform's access key in the Claude cloud environment → Edit → <b>API credentials</b> (names and hosts are in <span class="v">ops/CLOUD-RUNBOOK.md</span>).</li>
+<li>Tell Claude "accounts are open." Claude does the listings, pins and store setup from there.</li>
+</ul></section>
+</body></html>
