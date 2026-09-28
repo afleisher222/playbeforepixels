@@ -212,10 +212,10 @@ h1,h2,h3,p{margin:0}
 .ci .i{width:16px;height:16px;display:block}
 .bd{padding:3px 10px 0;display:flex;flex-direction:column;gap:7px;position:relative;z-index:1}
 .wmw{flex:1;min-height:0;container-type:size;position:relative}
+.blank .ft{margin-top:auto}
 .wm{position:absolute;right:10px;bottom:6px;width:50px;height:50px;color:var(--t)}
 .wm .i{width:50px;height:50px;display:block}
 @container (max-height: 58px){.wm{display:none}}
-.wm .i{width:54px;height:54px;display:block}
 .row b,.talk b{display:block;font-weight:800;font-size:7.8px;letter-spacing:.12em;text-transform:uppercase;opacity:.62;margin-bottom:1px}
 .row p{font-size:12px;line-height:1.3;font-weight:600}
 .talk{background:var(--t);border-radius:9px;padding:5px 8px 6px 6px;display:flex;gap:5px;align-items:flex-start;margin-top:1px}

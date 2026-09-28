@@ -49,6 +49,8 @@ new parent · worried parent · grandparent gift-buyer · preschool teacher · K
 - Write or refresh 1–2 research-hub or SEO articles (seo/articles/), including translations (Spanish first, then French, Portuguese, German) as the international plan directs.
 - Draft that week's faceless social posts and pins from the campaign bible (marketing/CAMPAIGN-BIBLE.md) into content/queue/.
 - Virtual-autism education uses only the safe framing sentence in BRAND.md: a term some clinicians use; not a diagnosis; associations, not causation; talk to your pediatrician; free early intervention. Respectful toward autistic people. Outreach goes only to places marked OUTREACH in marketing/virtual-autism-outreach.md — never to mainstream autism organizations, never repeated messages, never where self-promotion is banned.
+- Events & holidays: every run, read marketing/EVENTS-CAMPAIGN-PLAN.md and the calendar; start any campaign whose prep start date falls in the next 7 days (gift-guide page, bundle, email, faceless posts, POD cutoff notice); paid placements go to ops/APPROVALS.md first.
+  - The calendar is marketing/Events_and_Holidays_Calendar_2026-2027.xlsx. Also start any row still marked "Planned" whose prep start date has already passed. Update each row's Status as work moves. Re-check any Confirmed = N date on its official URL before starting. Never use another organization's event name as our brand, and apply the exclusions in the plan's rules.
 
 
 ## 3b. Worldwide expansion (every run, one step at a time)
