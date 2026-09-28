@@ -122,7 +122,7 @@ MOMENTS.forEach(m => PROMPTS[m.key].forEach(pr => DECK_B.push(Object.assign({ ki
 DECK_B.push({ kind: 'blank' });
 const MOMENT_SUB = { dinner: 'Table talk', car: 'A passenger reads', bath: 'Grown-up stays close', bedtime: 'Wind-down talk' };
 
-function qSize(q) { const L = q.length; return L <= 44 ? 22 : L <= 62 ? 20 : L <= 80 ? 18.5 : 17.5; }
+function qSize(q) { const L = q.length; return L <= 44 ? 26 : L <= 62 ? 23.5 : L <= 80 ? 21.5 : 20; }
 
 function cardB(cd, b = 0) {
   const W = CW + 2 * b, H = CH + 2 * b;
@@ -140,7 +140,7 @@ function cardB(cd, b = 0) {
     <div class="mo"><b>${m.name}</b><span>${MOMENT_SUB[m.key]}</span></div>
     <span class="num">${pad2(cd.no)}</span>
     <div class="body">
-      <p class="q" style="font-size:${qSize(cd.q)}px">${esc(cd.q)}</p>
+      <div class="qwrap"><p class="q" style="font-size:${qSize(cd.q)}px">${esc(cd.q)}</p></div>
       <div class="talk"><span class="tl">${speech(col, 13)}Grown-up tip</span><p>${esc(cd.k)}</p></div>
     </div>
   </div>
@@ -161,6 +161,7 @@ function howtoB(b = 0) {
         <li>“Pass” is always allowed.</li>
       </ol>
       <ul class="key">${MOMENTS.map(m => `<li><svg viewBox="-11 -11 22 22" width="13" height="13"><circle r="9" fill="${C[m.color]}"/></svg><b>${m.name}</b></li>`).join('')}</ul>
+      <svg class="strip" viewBox="0 0 210 50" width="210" height="50" aria-hidden="true">${MOMENTS.map((m, i) => `<circle cx="${27 + i * 52}" cy="25" r="23" fill="${TINT[m.color]}"/><g transform="translate(${27 + i * 52},25)">${icon(m.icon, .34)}</g>`).join('')}</svg>
       <p class="safe big">${shield(C.ink, 12)}<span>In the car, a passenger reads. The driver just talks.</span></p>
     </div>
   </div>
@@ -265,6 +266,7 @@ symbol{overflow:visible}
 .cB .body{position:absolute;left:16px;right:16px;top:100px;bottom:13px;display:flex;flex-direction:column}
 .cB .q{margin:0;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:700;line-height:1.16;letter-spacing:-.012em}
 .cB .talk p{font-size:10.4px}
+.cB .qwrap{flex:1;display:flex;align-items:center;padding-bottom:8px}
 /* backs */
 .back .bgpat{position:absolute;left:0;top:0}
 .bk-label{position:absolute;left:34px;right:34px;top:88px;height:160px;background:#fff;border-radius:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:${C.ink}}

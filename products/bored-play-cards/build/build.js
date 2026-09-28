@@ -55,7 +55,6 @@ function card(cd, key, num, opts = {}) {
   const isMini = !band;
   const ageTxt = isMini ? `Ages ${cd.a}` : band.label;
   let safe = cd.s || (band ? band.safe : 'Grown-up nearby.');
-  if (isMini && /^1/.test(cd.a || '') && !/toilet/.test(safe)) safe += ' Under-3s: items bigger than a toilet-paper tube.';
   const numTxt = isMini ? `${key === 'summer' ? 'Summer' : 'Rainy'} · ${String(num).padStart(2, '0')}` : `${band.ages} · ${String(num).padStart(2, '0')}`;
   const seasonIc = isMini ? `<span class="ss">${icon(key === 'summer' ? 'sun' : 'rain', 'ssi')}</span>` : '';
   const M = n => opts.marks ? `<span class="mk m${n}">${n}</span>` : '';
@@ -67,8 +66,7 @@ function card(cd, key, num, opts = {}) {
     <div class="row">${M(5)}<b>Try it</b><p>${esc(cd.d)}</p></div>
     <div class="talk">${M(6)}${icon('talk', 'ti2')}<div><b>Talk</b><p>${esc(cd.k)}</p></div></div>
   </div>
-  <span class="wm">${icon(cd.c)}</span>
-  <div class="ft">${M(7)}${icon('safe', 'si')}<span>${esc(safe)}</span><i>${numTxt}</i></div>
+  <div class="ft"><span class="wm">${icon(cd.c)}</span>${M(7)}${icon('safe', 'si')}<span>${esc(safe)}</span><i>${numTxt}</i></div>
 </div></div>`;
 }
 
@@ -209,7 +207,8 @@ h1,h2,h3,p{margin:0}
 .card[style*="--m:${C.sun}"] .ci{color:#C98F00}
 .ci .i{width:16px;height:16px;display:block}
 .bd{padding:3px 10px 0;display:flex;flex-direction:column;gap:7px;position:relative;z-index:1}
-.wm{position:absolute;right:10px;bottom:34px;width:54px;height:54px;color:var(--t);z-index:0}
+.ft{position:relative}
+.ft .wm{position:absolute;right:10px;bottom:calc(100% + 6px);width:54px;height:54px;color:var(--t);z-index:0;opacity:1;flex:none}
 .wm .i{width:54px;height:54px;display:block}
 .row b,.talk b{display:block;font-weight:800;font-size:7.8px;letter-spacing:.12em;text-transform:uppercase;opacity:.62;margin-bottom:1px}
 .row p{font-size:12px;line-height:1.3;font-weight:600}

@@ -124,3 +124,11 @@ Every listing.json includes `amazon_route` (kdp-paperback · kdp-activity-editio
 - **Every social post and pin:** brand mark, the website, and a link to a product or the free printable.
 - **Marketplaces:** brand name in every listing title/shop name; include the website only where the platform's rules allow outside links (never break a marketplace rule to promote).
 - **Everything stays honest:** no fake scarcity, no fake reviews, no pressure tactics; sharing is invited, never required.
+
+## Answers already included — no one should need to email (binding)
+- **Every product includes** a "How to use" page, printing tips (Letter/A4, paper type, home vs. print shop, lamination), age guidance, safety notes, and answer keys where relevant.
+- **Every product page includes** a short FAQ: what's inside, formats and sizes, how delivery works, printing, license terms (personal / single classroom / site), refunds, and the Amazon/other-store versions.
+- **Help center on the site:** searchable answers for orders, downloads (including phones and tablets), printing, licenses, school purchase orders and quotes, shipping and printing times for print-on-demand, returns, gift orders, international orders and currencies, accessibility requests, privacy requests, and wholesale.
+- **Automatic emails answer before they're asked:** order confirmation with the download link and printing tips; a resend-my-download page; print-on-demand shipping notices with tracking; license certificate for schools.
+- **Contact form shows matching answers as the person types**, before they can send; an auto-reply with the top answers goes out for anything sent anyway.
+- **Anything that still arrives** is answered by a saved reply the routine sends, or drafted for the founder only if it needs her decision (refund exceptions, legal notices, press).
