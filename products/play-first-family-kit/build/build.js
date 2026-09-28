@@ -8,6 +8,8 @@ const B = require('./base.js');
 const { A, NEW_SYMBOLS, R, Ci, Gp, U, star, heart, tablet, stand, adult, bust } = require('./art.js');
 const T = require('./content.js');
 const { C } = B;
+A.screenSpot = () => tablet(52, 52, .62) + Gp('translate(94,72)', U('clock', 'scale(.46)', `--ck1:${C.sun}`));
+const TOK = '2.1 in (5.3 cm)';
 
 const ROOT = path.resolve(__dirname, '..');
 const BRAND = path.resolve(__dirname, '../../../brand');
@@ -43,7 +45,7 @@ html,body{margin:0;padding:0;background:#fff;color:var(--ink);font-family:"Nunit
 symbol{overflow:visible}
 .sk{fill:var(--sk)} .hr{fill:var(--hr)} .sh{fill:var(--sh)} .pa{fill:var(--pa)} .so{fill:var(--so)} .hw{fill:var(--hw)} .ck{fill:${C.tomato};opacity:.28}
 h1,h2,h3,p{margin:0}
-.page{width:${sz.w};height:${sz.h};padding:.5in .5in .56in;position:relative;overflow:hidden;break-after:page;page-break-after:always;display:flex;flex-direction:column;gap:.13in;background:#fff}
+.page{--m:var(--tomato);--t:var(--tT);--m2:var(--sun);--t2:var(--tS);--tt:var(--wash);width:${sz.w};height:${sz.h};padding:.5in .5in .56in;position:relative;overflow:hidden;break-after:page;page-break-after:always;display:flex;flex-direction:column;gap:.13in;background:#fff}
 .page:last-child{break-after:auto;page-break-after:auto}
 .cw-tomato{--m:var(--tomato);--t:var(--tT);--m2:var(--sun);--t2:var(--tS)}
 .cw-sky{--m:var(--sky);--t:var(--tK);--m2:var(--grass);--t2:var(--tG)}
@@ -96,7 +98,7 @@ h1,h2,h3,p{margin:0}
 .row{}
 .clr.r{flex:1 1 0;min-height:0;border-bottom:1px solid var(--line)}
 .clr.r .ic{height:100%;display:flex;align-items:center;justify-content:center;padding:.04in 0}
-.clr.r .ic .art{height:100%;max-height:.86in;width:auto;aspect-ratio:1.2}
+.clr.r .ic .art{height:86%;max-height:.8in;width:auto;aspect-ratio:1.2}
 .clr.r .lb{font-family:"Fredoka","Nunito Sans",sans-serif;font-weight:600;font-size:var(--lbs);line-height:1.1;padding:0 .1in 0 .12in}
 .clr.r .lb.blank{padding-right:.15in}
 .clr.r .lb.blank .fl{height:.34in;border-bottom:1.3px dashed var(--cut)}
@@ -116,7 +118,7 @@ h1,h2,h3,p{margin:0}
 /* ---------- token grids ---------- */
 .cutnote{display:flex;justify-content:space-between;align-items:center;gap:.1in;font-size:7.6pt;font-weight:700;color:var(--ink)}
 .cutnote .safe{background:var(--tS);border-radius:.08in;padding:.05in .1in;flex:1}
-.tg{display:grid;grid-template-columns:repeat(3,2.2in);grid-auto-rows:2.2in;border-top:1.6px dashed var(--cut);border-left:1.6px dashed var(--cut);align-self:center}
+.tg{display:grid;grid-template-columns:repeat(3,2.1in);grid-auto-rows:2.1in;border-top:1.6px dashed var(--cut);border-left:1.6px dashed var(--cut);align-self:center}
 .tg>.tk{border-right:1.6px dashed var(--cut);border-bottom:1.6px dashed var(--cut);padding:.14in;position:relative}
 .tk .in{height:100%;border-radius:.16in;background:var(--tt);display:flex;flex-direction:column;align-items:center;padding:.06in .08in .1in}
 .tk .in .art{width:100%;flex:1;min-height:0}
@@ -159,7 +161,7 @@ h1,h2,h3,p{margin:0}
 .chr.r{flex:1 1 0;min-height:0;border-bottom:1px solid var(--line)}
 .chr.r:nth-child(odd){background:var(--wash)}
 .chr .ic{height:100%;display:flex;align-items:center;justify-content:center;padding:.03in 0}
-.chr .ic .art{height:100%;max-height:.6in;width:auto;aspect-ratio:1.2}
+.chr .ic .art{height:88%;max-height:.56in;width:auto;aspect-ratio:1.2}
 .chr .lb{font-family:"Fredoka",sans-serif;font-weight:600;font-size:11.5pt;padding-left:.08in;line-height:1.05}
 .chr .who2{padding-right:.1in}
 .chr .who2 .fl,.chr .lb .fl{height:.3in;border-bottom:1.2px dashed var(--cut)}

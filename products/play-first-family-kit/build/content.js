@@ -12,24 +12,24 @@ const CHECK = {
     eyebrow: 'My picture checklist',
     age: '25',
     sub: 'Point to each picture. Say it together. Tick it when it’s done.',
-    art: 'playFirst',
+    art: 'blocks',
     sections: [
       { n: 1, t: 'Jobs first', rows: [['getDressed', 'Get dressed'], ['brushTeeth', 'Brush teeth'], ['tidyToys', 'Tidy toys'], ['setTable', 'A helping job']] },
       { n: 2, t: 'Then play and time together', rows: [['goOutside', 'Play outside'], ['readTogether', 'Read together'], ['blocks', 'Play together']] },
     ],
-    screen: ['screensLater', 'Screens, at their spot'],
+    screen: ['screenSpot', 'Screens, at their spot'],
     tip: ['Say what you see.', '“Shoes on! You did it all by yourself.”'],
   },
   big: {
     eyebrow: 'My play-first checklist',
     age: '512',
     sub: 'Jobs, then play and people, then screens at their usual spot.',
-    art: 'playFirstBig',
+    art: 'boardGame',
     sections: [
       { n: 1, t: 'Jobs first', rows: [['makeBedBig', 'Make my bed'], ['dressedBig', 'Get ready for the day'], ['homework', 'Homework or practice'], ['setTableBig', 'A family job'], ['tidyRoom', 'Tidy my room']] },
       { n: 2, t: 'Then play and time together', rows: [['outsideTime', 'Outside or active play'], ['readInBed', 'Read, or be read to'], ['familyGame', 'Game or talk with family'], ['build', 'Make or build something']] },
     ],
-    screen: ['screensLaterBig', 'Screens, at their spot'],
+    screen: ['screenSpot', 'Screens, at their spot'],
     tip: ['Ask, then wait.', '“What was the best part of your day?” Count to five before you add anything.'],
   },
   blank: {
@@ -41,7 +41,7 @@ const CHECK = {
       { n: 1, t: 'Jobs first', rows: 5 },
       { n: 2, t: 'Then play and time together', rows: 4 },
     ],
-    screen: ['screensLater', 'Screens, at their spot'],
+    screen: ['screenSpot', 'Screens, at their spot'],
     tip: ['Repeat and add one word.', '“Ball.” “Big ball!” “Big red ball!”'],
   },
 };
@@ -55,9 +55,9 @@ const TOKENS = [
   ['sing', 'Sing together'], ['puppets', 'Puppet show'], ['bubbles', 'Bubbles outside'],
 ];
 const SPOT_CARDS = [
-  { art: 'playFirst', t: 'Play first!', s: 'Jobs, then play and time together.' },
+  { art: 'blocks', t: 'Play first!', s: 'Jobs, then play and time together.' },
   { art: 'familyGame', t: 'Together time', s: 'Pick a together token.' },
-  { art: 'screensLater', t: 'Screen spot', s: 'Screens come last, after:', field: 'spot_after' },
+  { art: 'screenSpot', t: 'Screen spot', s: 'Screens come last, after:', field: 'spot_after' },
   { art: 'alarm', t: '5 more minutes', s: 'Find a good place to stop.' },
   { art: 'devicesSleep', t: 'Screens go to sleep', s: 'Say goodnight and put it away.' },
   { art: 'kickBall', t: 'What we do next', s: 'Next we will:', field: 'next_do' },

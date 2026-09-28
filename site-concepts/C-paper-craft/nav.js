@@ -238,7 +238,7 @@
       location.href = t ? t.getAttribute('href') : 'shop.html';
     });
     sOut.addEventListener('click', function (e) { if (e.target.closest('a')) closeDialog($('#search'), false); });
-    $('#search').onOpen = function () { renderSearch(); };
+    $('#search').onOpen = function () { renderSearch(); setTimeout(function () { sInput.select(); }, 60); };
   }
 
   /* ---------------- Cart ---------------- */
