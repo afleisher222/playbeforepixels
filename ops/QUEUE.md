@@ -14,6 +14,15 @@ Gumroad from Dec 15: 30 Days of Back-and-Forth (was the 30-Day Screen Reset; ret
 Kill rule: fewer than 5 sales in 60 days after the EXP-03 search-copy decision → reprice once (never below price_floor, no "was" price) → add to a bundle as a part and deactivate the listing (never edit a reviewed listing into a different product; 16 CFR 465.3).
 _(Adopted September 28, 2026 from business/GROWTH-ENGINE.md §8a.)_
 
+## MERCH WAVE — ready-pending-accounts, starts after printables sell (February 2027 or later; business/GROWTH-ENGINE.md: no print-partner account before then)
+Adult items only, print on demand, one print partner for all four. Every item waits for the partner quote, its sample gate (each folder's QUALITY-STANDARD.md) and the slogan/logo searches in brand/ORIGINALITY.md §4. Nets and floors: ops/TESTS/margin-audit.md.
+- Logo tee (products/merch-core) — $27 XS–XL · $29 2XL · $33 3XL (3XL raised from $31 before any sale: margin audit Sep 28).
+- "More talk, less tap" tee (products/merch-core) — same prices; after the class 25 + Etsy + Amazon slogan search.
+- "Laps not apps" tote (products/merch-core) — own-site bundle add-on only, $22 share.
+- "Talk, touch and play come first" mug, 11 oz / 15 oz (products/merch-mug) — $22 / $25. Food contact: the partner's lead-safe ceramic only, lead/cadmium report and Prop 65 answer on file first. DEMAND-CHECK rates mugs weak: list only after the logo tee has sold.
+- Sticker sheet, 5 kiss-cut vinyl stickers (products/merch-stickers) — $15. Adults only, "Not a toy. Keep away from young children." DEMAND-CHECK says bundle-only: lead with it as an own-site add-on to a tee or mug.
+- Held (CPSIA): kids' sizes, kids' drinkware, kids' stickers and any toy.
+
 ## Next to build
 0. **Board-book printing decision (founder):** Amazon KDP does not print board books and print-on-demand board books are likely unavailable (commerce/storefront-setup-guide.md, unverified). Options: (a) publish "Up! Go! More!" first as a sturdy square paperback talk-along book through print-on-demand (no inventory), and (b) add a true board-book edition later through a pre-sale that funds a short offset print run held and shipped by a fulfillment warehouse — never the founder's home. Also: 32-page square picture-book hardcovers go through IngramSpark, not KDP.
 _(Seeded after the demand check (marketing/DEMAND-CHECK.md) and campaign bible (marketing/CAMPAIGN-BIBLE.md) finish; first candidates below.)_

@@ -141,7 +141,7 @@ td{border-bottom:1px solid var(--line);padding:7px 8px;vertical-align:top}.muted
 .fill{border:2px dashed #C8431F;border-radius:10px;padding:12px 16px;margin-top:10px;color:#C8431F;font-weight:700}
 .foot{position:absolute;left:.8in;right:.8in;bottom:.45in;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:10px;font-size:11px;color:var(--muted)}
 .foot img{height:22px}
-code{font-size:12.5px;background:var(--wash);padding:1px 5px;border-radius:4px}"""
+code{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:12.5px;background:var(--wash);padding:1px 5px;border-radius:4px}"""
 
 
 def foot(n):
