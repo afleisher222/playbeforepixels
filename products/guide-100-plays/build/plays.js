@@ -406,7 +406,7 @@ const P = [
     how: 'Build pens from blocks for each animal. Your child is the zookeeper: who lives where, what do they eat, who is awake? Take a "tour".',
     talk: '“Who lives here? What does the lion eat?”', move: 'lead',
     safe: 'Small toy animals are fine for 3+ but must stay away from babies and toddlers.' },
-  { t: 'Pasta tower', age: '3–5 yrs', mat: ['a lump of play dough', 'a wooden spoon', 'dry penne pasta'], prep: 1, mess: 1, where: ['in', 'kitchen'], art: 'spoon',
+  { t: 'Pasta tower', age: '3–5 yrs', mat: ['a lump of play dough', 'a wooden spoon', 'dry penne pasta'], prep: 1, mess: 1, where: ['in', 'kitchen'], art: 'stacker',
     how: 'Stand the spoon upright in the dough. Your child threads pasta onto the handle to build a tower, counting as they go. Make patterns: big, little, big.',
     talk: '“How many now? Let’s count!”', move: 'add',
     safe: 'Dry pasta is a choking risk for under-3s: keep it away from little siblings. Towers, not necklaces.' },

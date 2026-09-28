@@ -70,7 +70,9 @@ const ART = [
   sym('dough', Ci(-20, 18, 24, C.plum) + `<g transform="rotate(-20)">${R(-44, -34, 88, 22, C.s2, 11)}${R(-60, -28, 18, 10, C.s3, 5)}${R(42, -28, 18, 10, C.s3, 5)}</g>` + Ci(26, 26, 14, C.grass)),
   sym('mail', R(-44, -28, 88, 60, C.sky, 6) + Pa('M-44-24L0 8L44-24', 'none', `stroke="${W}" stroke-width="6" stroke-linejoin="round"`) + R(22, -22, 14, 16, C.tomato, 2)),
   sym('sun', [0, 45, 90, 135, 180, 225, 270, 315].map(a => R(-5, -52, 10, 16, C.sun, 5, `transform="rotate(${a})"`)).join('') + Ci(0, 0, 30, C.sun)),
-  sym('spoon', E(0, 36, 40, 14, C.plum) + R(-5, -50, 10, 84, C.s3, 5) + E(0, -52, 12, 8, C.s3) + [22, 8, -6, -20].map((y, i) => R(-13, y, 26, 12, i % 2 ? C.tomato : C.sun, 3)).join('')),
+  // a real wooden spoon; the ring tower that used to carry this id is 'stacker' below
+  sym('spoon', `<g transform="rotate(28)">${Pa('M-3.5 2C-3.5-4-17-10-17-27C-17-41-9-50 0-50C9-50 17-41 17-27C17-10 3.5-4 3.5 2L5.5 44A5.5 5.5 0 0 1-5.5 44Z', C.s3)}${E(0, -28, 11, 16, C.s4, 'fill-opacity=".35"')}${E(-4, -31, 3, 7, W, 'fill-opacity=".45"')}</g>`),
+  sym('stacker', E(0, 36, 40, 14, C.plum) + R(-5, -50, 10, 84, C.s3, 5) + E(0, -52, 12, 8, C.s3) + [22, 8, -6, -20].map((y, i) => R(-13, y, 26, 12, i % 2 ? C.tomato : C.sun, 3)).join('')),
   sym('spade', `<g transform="rotate(30)">${R(-5, 4, 10, 42, C.s3, 5)}${R(-10, 40, 20, 10, C.ink, 5)}${Pa('M-18 4H18V-24C18-40 0-52 0-52C0-52-18-40-18-24Z', C.sky)}</g>` + E(-28, 40, 20, 8, C.s4)),
   sym('hat', Pa('M-36 12C-36-26-18-40 0-40C18-40 36-26 36 12Z', C.sun) + R(-50, 8, 100, 14, C.sun, 7) + R(-6, -40, 12, 50, C.tomato, 6, 'fill-opacity=".5"')),
   sym('note-sq', `<g transform="rotate(-8)">${R(-42, -40, 50, 50, C.sun, 3)}${Ci(-17, -15, 10, C.tomato)}</g><g transform="rotate(6)">${R(-6, -8, 50, 50, C.tGrass, 3)}${R(-6, -8, 50, 50, C.grass, 3, 'fill-opacity=".55"')}${Pa('M19 4L32 28H6Z', W)}</g>`),
