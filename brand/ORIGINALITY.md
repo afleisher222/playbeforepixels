@@ -119,6 +119,15 @@ These G-day and week-2 names were listed above as "not yet reviewed". This is a 
 | F5 | **60 Visual Routine Cards Starter Set** | Low | Same line as "Visual Routine Cards" (section 2, unchanged); "starter set" is generic. | **KEEP.** |
 | F6 | **Play Coupons and gift-reveal cards** | Low | Generic ("play coupon" is a common phrase). | **KEEP as a description**, never as a mark. |
 
+### G. Design-only children's books (held from sale), September 28, 2026
+
+Desk review only, from the repo and background knowledge (UNVERIFIED). No web, USPTO, Amazon or Goodreads search was run, so both titles are **unsearched** and stay provisional until the exact-title searches in 4b are done. Neither book is announced, listed or pre-sold (`products/*/MANUFACTURING.md`).
+
+| # | Name | Conflict | Why | Decision |
+|---|---|---|---|---|
+| G1 | ***Duck! Bubbles! All Done!*** A talk-along bath book for ages 0–2 (`products/bath-book-splash-talk/`) | Low (provisional) | Three words from the book itself, in the *Up! Go! More!* pattern; no book with this exact title is known (UNVERIFIED). "Bath book", "bubbles" and "duck" are generic and can't be owned. It avoids "Splash", which is already in the working title *Yum! Splash! Yawn!* (B2), so the two never compete in search. | **KEEP (provisional).** Exact-title search before any announcement. Never "Rubber Ducky" or any character name. Series label on the cover is the generic "Talk-Along Bath Book", not a new series mark. |
+| G2 | ***Soft! Bumpy! Crinkle!*** A talk-along cloth book for ages 0–1 (`products/cloth-book-touch-talk/`) | Low (provisional) | Texture words from the book itself. "Crinkle" and "touch and feel" are common category words for cloth books, so the title is descriptive, not distinctive; no book with this exact title is known (UNVERIFIED). The art uses our own cast and an ink-and-white face, not any other brand's high-contrast cards or characters. | **KEEP (provisional).** Exact-title search before any announcement. Never use "Touch and Feel" as part of the title (a long-running series name from another publisher, UNVERIFIED) or copy another brand's page layouts; keep it in plain description only ("a cloth book to touch and look at"). |
+
 ---
 
 ## 2. Final product-name list (after renames)
@@ -128,6 +137,7 @@ These G-day and week-2 names were listed above as "not yet reviewed". This is a 
 **Books**
 - *Up! Go! More!* 22 First Words to Say, Sign and Act Out: A Talk-Along Book for Ages 0–3 (Talk-Along Firsts, Book 1). Unchanged.
 - *Woof! Moo! Beep!* and *Yum! Splash! Yawn!* (Talk-Along Firsts, Books 2 and 3; working titles, unsearched). Also the Talk-Along Firsts 3-pack.
+- ***Duck! Bubbles! All Done!*** (talk-along bath book, ages 0–2) and ***Soft! Bumpy! Crinkle!*** (talk-along cloth book, ages 0–1). **New September 28, 2026; design only, held from sale; unsearched** (section G).
 - *The Day the Tablet Slept*: A funny bedtime read-aloud about a box rocket, a dog named **Tater** and one very sleepy tablet. **The dog was Biscuit.**
 - ***Whose Lap Today?*** A personalized keepsake read-aloud with your child's name in six rhymes. **Was *Laps Not Apps*.**
 - ***100 Screen-Free Plays for Ages 0–5*** (paperback and PDF). **Was *100 Plays Before Pixels*** in the commerce, SEO and site files.
@@ -239,7 +249,8 @@ All of them are listed in section 4.
   - *100 Screen-Free Plays for Ages 0–5* (the most crowded naming lane);
   - *30 Days of Back-and-Forth*;
   - *Woof! Moo! Beep!*;
-  - *Yum! Splash! Yawn!*.
+  - *Yum! Splash! Yawn!*;
+  - *Duck! Bubbles! All Done!* and *Soft! Bumpy! Crinkle!* (before any announcement; both are held, section G).
 - **USPTO, Etsy and TPT knockout searches on the new names:**
   - Play-First Family Kit;
   - Play & Talk Classroom Pack;

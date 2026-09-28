@@ -1,0 +1,113 @@
+{
+  "slug": "bath-book-splash-talk",
+  "title": "Duck! Bubbles! All Done!",
+  "subtitle": "A Talk-Along Bath Book for Ages 0–2: 6 Bath-Time Words to Say and Play",
+  "status": "design-only-held",
+  "status_notes": "DESIGN ONLY, HELD FROM SALE (September 28, 2026). A bath book is a children's product for under-3s: it needs CPSIA third-party lab testing, a Children's Product Certificate and permanent tracking labels, and EU toy/GPSR compliance for any EU sale. There is no print on demand for bath books, so it needs a factory run with a minimum order and a 3PL, which conflicts with the no-inventory rule and the $500 launch budget. It follows the board-book pre-sale gate (MANUFACTURING.md; ops/QUEUE.md 'Held: design-only children's products'). Not listed anywhere; no pre-orders.",
+  "format": "Sealed waterproof bath book (EVA foam pages in a phthalate-free film; material UNVERIFIED until the factory quote), 8 printed panels: front cover, 6 word pages, back cover. Factory run only; no print on demand exists.",
+  "trim": "5.5 x 5.5 in trim, 0.125 in bleed (5.75 x 5.75 in panels), rounded die-cut corners r 0.375 in, text and faces 0.5 in inside trim for the heat-seal edge. All sizes UNVERIFIED: they come from the chosen factory's bath-book template.",
+  "pages": 8,
+  "ages": "0–2, always with a grown-up within arm's reach at bath time",
+  "price_usd": 12.99,
+  "price_notes": "Planning price only, UNVERIFIED; nothing is for sale. $12.99 matches the planned board book. The price is set only after written factory, lab, duty and 3PL quotes show landed cost within the channel cost rule (business/sections/03-financial-model.md §3.8 and §3.10 rule 4). No pre-sale until the board-book gate is met.",
+  "price_floor": 3.9,
+  "price_floor_basis": "30% of the $12.99 planning price (0.30 x 12.99 = $3.90), the same floor share used for print-on-demand books (commerce/PRICING.md §2). The binding test for a stocked product is the landed-cost rule in §3.8; recompute from real quotes.",
+  "net_per_unit_by_channel": {
+    "own_site_presale": null
+  },
+  "net_notes": "No channel is live and no quote exists, so there is no net yet. Fill own_site_presale from written quotes (unit + freight + duty + lab + 3PL pick-and-pack) before any pre-sale.",
+  "short_description": "Six bath-time words, one per page, each with a short grown-up tip. A bold, high-contrast talk-along bath book for ages 0–2. Design preview only.",
+  "long_description": "Duck! Bubbles! All Done! is a talk-along bath book for ages 0–2, made for the minutes you already spend together in the tub. Each of its six pages shows one big bath-time word: splash, pour, bubbles, duck, wash and all done. The word sits in huge rounded letters above one bold, simple picture on a bright, high-contrast page.\n\nUnder every picture is one short grown-up tip. Say it as you do it, pause before you pour, offer a choice, copy their sounds, name each body part as you wash, then sign and say all done. A look, a sound or a splash counts as your little one's turn. There is nothing to get right.\n\nThe back cover repeats the bath rule that matters most: stay within arm's reach every second. The book is for talk and play, not a float or a seat.\n\nThis is a design preview. The book is not for sale yet. A bath book has to be made in a factory run and safety-tested by an independent lab before anyone can buy it, and we will only take orders once that is done. Talk, sign, sing and read in the language you know best.",
+  "bullets": [
+    "Six bath-time words, one per page: splash, pour, bubbles, duck, wash, all done",
+    "One short grown-up tip on every page: say it, pause, offer a choice, copy sounds, name as you go",
+    "Bold, simple, high-contrast pictures with huge rounded letters, using the same friendly cast as Up! Go! More!",
+    "Bath safety on the back cover: stay within arm's reach every second; the book is for talk and play, not a float",
+    "Design preview only: not for sale until a factory run passes independent lab testing"
+  ],
+  "keywords": [
+    "bath book for babies",
+    "talk-along bath book",
+    "baby bath time words",
+    "toddler bath book ages 0-2",
+    "high contrast bath book",
+    "first words bath toy book",
+    "bath time talk and play"
+  ],
+  "seo_title": "Duck! Bubbles! All Done! Talk-Along Bath Book, Ages 0–2",
+  "seo_description": "A talk-along bath book for ages 0–2: six bath-time words, one per page, each with a short grown-up tip. Design preview; not for sale yet.",
+  "alt_text": "Cover of Duck! Bubbles! All Done!, a talk-along bath book: big white title on sky blue, a laughing toddler in a tomato-red tub with a yellow duck and bubbles, the Play Before Pixels logo and a 0–2 years badge on a navy band. The book has rounded corners.",
+  "bonus_url": "https://playbeforepixels.com/bonus/bath-book-splash-talk",
+  "next_products": [
+    "board-up-go-more",
+    "cloth-book-touch-talk",
+    "play-talk-cards"
+  ],
+  "shareable_piece": "The printable bath-time song sheet at the bonus link (a fridge sheet with the six words and a splash song), carrying a small brand mark; not built yet.",
+  "channels": [
+    "HELD: not listed on any channel (design-only; see MANUFACTURING.md). No pre-orders.",
+    "HELD: Play Before Pixels website pre-sale only after the board-book gate (business/sections/03-financial-model.md §3.10 rule 4), written quotes, CPSIA testing plan and a 3PL contract exist",
+    "HELD: Amazon (FBA or 3PL-fulfilled) only after a Children's Product Certificate and stock at a 3PL exist",
+    "HELD: EU and UK sale only after EU toy-safety and GPSR compliance (and UKCA) exist"
+  ],
+  "amazon_route": "fba-later (design only; a factory-run bath book cannot use KDP or print on demand; FBA or 3PL fulfillment only after testing, certificate and stock exist)",
+  "compliance_notes": "DESIGN ONLY, HELD FROM SALE. Children's product for under-3s: needs CPSIA third-party testing at a CPSC-accepted lab (lead, phthalates, small parts, and the ASTM F963 bath-toy tests that apply; UNVERIFIED), a Children's Product Certificate, permanent tracking labels on product and packaging, and EU toy-safety (EN 71, CE, responsible person) plus GPSR compliance for any EU sale (all UNVERIFIED; MANUFACTURING.md). Safety design: no detachable parts, no cords, nothing small, rounded die-cut corners, and a bath-safety line on the book (stay within arm's reach; not a float or a seat), brand rule 4 on water play. No health, development or learning claims: talk and play language only (hard rule 1); no condition or diagnosis is named or targeted in text, keywords or ads. Talk strategies in plain words, no trademarked program names (rule 6). The all-done hand sign is described as a simple sign, not a sign-language course. 'Talk, sign, sing and read in the language you know best' is on the back cover (customer-voice rule 15). 'Version 1.0 · September 2026' is on the back cover (rule 3). No flaps or glued parts (rule 20). Legal owner: © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. Files are RGB from Chromium; check the final file against the chosen factory's current bath-book template (trim, bleed, die line, corner radius, heat-seal margin, CMYK) before any production. Title recorded in brand/ORIGINALITY.md (section G, unsearched).",
+  "human_todo": [
+    "HUMAN AUTHORSHIP (do first, before any pre-sale): rewrite the six words' order, the tips and the back-cover text in your own words in build/build.js (WORDS and back()), then run bash build/render-all.sh and commit. Every version stays in git.",
+    "Decide whether this book is worth pursuing at all before spending anything. It stays held until every board-book gate condition in business/sections/03-financial-model.md §3.10 rule 4 is met in writing.",
+    "When the gate is met: get 2–3 written bath-book factory quotes for this spec (MANUFACTURING.md), plus a CPSC-accepted lab quote, a customs broker and a 3PL quote. Confirm the trim, die line, corner radius, heat-seal margin and film (ask for non-PVC first) against the factory template and adjust build/build.js.",
+    "Ask a product-safety attorney which rules apply (children's product vs toy, ASTM F963 sections, warnings, EU/UK) and who issues the Children's Product Certificate.",
+    "Get an ISBN or UPC for the barcode box, and have the factory print the tracking label into the boxed area.",
+    "Set up playbeforepixels.com/bonus/bath-book-splash-talk (a printable bath-time song sheet; birth month and year only) before any pre-sale, and test the printed QR code.",
+    "Search the title 'Duck! Bubbles! All Done!' (Amazon, Goodreads, USPTO) before any announcement (brand/ORIGINALITY.md section G).",
+    "Before anything ships (customer-voice rule 21): written QA pass, a physical pre-production sample checked in water, and your approval of the cover and page 1."
+  ],
+  "faq": [
+    {
+      "q": "Can I buy this bath book?",
+      "a": "Not yet. This is a design preview. A bath book is made in a factory run and has to pass independent safety testing before anyone can buy it. We will only take orders once that is done."
+    },
+    {
+      "q": "Why can't you print it on demand like your paperbacks?",
+      "a": "Printers that make one book at a time don't make sealed, waterproof bath books. It needs a factory run, lab testing and a warehouse, so it waits until we can do all of that properly."
+    },
+    {
+      "q": "What ages is it for?",
+      "a": "Ages 0–2, with a grown-up within arm's reach the whole time. Babies look and splash; toddlers start to copy the words and the all-done sign."
+    },
+    {
+      "q": "What's inside?",
+      "a": "Six bath-time words, one per page: splash, pour, bubbles, duck, wash and all done. Each page has one big picture and one short grown-up tip."
+    },
+    {
+      "q": "Is it safe to leave my child with it in the bath?",
+      "a": "Never leave a child alone in or near water, with or without a book. The book is for talk and play together, not a float or a seat."
+    },
+    {
+      "q": "How will I clean it?",
+      "a": "Squeeze out the water, wipe it dry and stand it open to dry after each bath. Check every page before each bath, and stop using it if anything splits or peels."
+    },
+    {
+      "q": "Will it teach my baby to talk?",
+      "a": "It's a book for talking and playing together. We don't promise any result; every child talks on their own timeline. If you have questions about your child's talking, your child's doctor is a good place to start."
+    },
+    {
+      "q": "We speak another language at home. Does it still work?",
+      "a": "Yes. Talk, sign, sing and read in the language you know best. Say each word in your home language."
+    },
+    {
+      "q": "How will I know when it's available?",
+      "a": "Join the free email list at playbeforepixels.com. We'll only announce it once testing is done and a ship date is real."
+    }
+  ],
+  "ai_disclosure": {
+    "as_of": "2026-09-28",
+    "ai_helped_with": "Claude (an AI model made by Anthropic), working in Claude Code, wrote the draft words and grown-up tips, made the illustrations as flat vector art in code from the brand's own symbol library, and laid out the print file, the die-line proof, the mockup and this listing with scripts.",
+    "humans_did": "The founder, for AlphaPlay LLC, directs the product line and set the brand, safety and honesty rules (brand/BRAND.md) that every draft follows. As of 2026-09-28 no person has rewritten the text or redrawn the art. Before any pre-sale a person must rewrite the words in her own voice and approve the cover and page 1 (human_todo).",
+    "site": "Product page line, once the page exists: 'How this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.' Add 'and edited by the founder' only after she has rewritten the text or art.",
+    "social_ai_label": "Turn on each platform's AI-generated-content label for posts that use these images or this text (label names UNVERIFIED).",
+    "notes": "Never call any part hand-drawn, handmade or human-written. Not on KDP, Etsy or any marketplace, so no platform form applies yet."
+  },
+  "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.",
+  "price_history": []
+}

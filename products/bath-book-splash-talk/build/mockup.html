@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Duck! Bubbles! All Done! mockup</title>
+<link rel="stylesheet" href="../../../brand/fonts/fonts.css">
+<style>
+  html,body{margin:0;padding:0}
+  body{width:1600px;height:1200px;overflow:hidden;background:#E3EEFA;position:relative;font-family:"Nunito Sans",sans-serif}
+  .grid{position:absolute;left:0;right:0;top:0;height:760px;background:repeating-linear-gradient(90deg,transparent 0 156px,rgba(255,255,255,.9) 156px 162px),repeating-linear-gradient(0deg,transparent 0 156px,rgba(255,255,255,.9) 156px 162px)}
+  .ledge{position:absolute;left:0;right:0;top:760px;height:440px;background:#FFFFFF}
+  .ledge::before{content:"";position:absolute;left:0;right:0;top:0;height:36px;background:#F3F6FB}
+  .book{position:absolute;border-radius:52px;overflow:hidden}
+  .b1w{position:absolute;left:170px;top:190px;width:640px;height:640px;perspective:2200px}
+  .b1{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateY(16deg) rotateZ(-3deg)}
+  .b1 .face{position:absolute;inset:0;border-radius:46px;background:url(../cover.png) center/cover;transform:translateZ(14px)}
+  .b1 .edge{position:absolute;inset:0;border-radius:46px;background:#1D2940;transform:translateZ(0) translate(18px,10px)}
+  .b1 .edge2{position:absolute;inset:0;border-radius:46px;background:#F3F6FB;transform:translate(10px,6px)}
+  .sh1{position:absolute;left:210px;top:815px;width:640px;height:60px;border-radius:50%;background:rgba(29,41,64,.22);filter:blur(24px)}
+  .b2w{position:absolute;left:880px;top:430px;width:520px;height:520px;perspective:1800px}
+  .b2{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(38deg) rotateZ(8deg)}
+  .b2 .face{position:absolute;inset:0;border-radius:38px;background:url(page-duck.png) center/cover;transform:translateZ(12px)}
+  .b2 .edge{position:absolute;inset:0;border-radius:38px;background:#E4E9F2;transform:translate(0,14px)}
+  .sh2{position:absolute;left:900px;top:860px;width:540px;height:70px;border-radius:50%;background:rgba(29,41,64,.18);filter:blur(22px)}
+  .bub{position:absolute;border-radius:50%;background:#FFFFFF;box-shadow:inset -8px -8px 0 rgba(61,134,216,.12)}
+  .tag{position:absolute;font-family:"Caveat",cursive;font-weight:700;font-size:44px;color:#1D2940}
+  .pill{position:absolute;left:60px;top:60px;background:#1D2940;color:#fff;border-radius:99px;padding:12px 24px;font-weight:800;font-size:22px;letter-spacing:.12em;text-transform:uppercase}
+</style></head>
+<body>
+  <div class="grid"></div><div class="ledge"></div>
+  <div class="pill">Design preview · not for sale yet</div>
+  <div class="sh1"></div>
+  <div class="b1w"><div class="b1"><div class="edge"></div><div class="edge2"></div><div class="face"></div></div></div>
+  <div class="sh2"></div>
+  <div class="b2w"><div class="b2"><div class="edge"></div><div class="face"></div></div></div>
+  <div class="bub" style="left:1180px;top:170px;width:120px;height:120px"></div>
+  <div class="bub" style="left:1330px;top:110px;width:70px;height:70px"></div>
+  <div class="bub" style="left:1420px;top:250px;width:90px;height:90px"></div>
+  <div class="bub" style="left:880px;top:220px;width:54px;height:54px"></div>
+  <div class="tag" style="left:250px;top:1020px">talk-along bath book, 8 pages</div>
+  <div class="tag" style="left:1000px;top:1020px">one word + one tip per page</div>
+</body></html>

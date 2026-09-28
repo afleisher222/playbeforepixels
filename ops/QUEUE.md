@@ -93,6 +93,13 @@ _(Founder request, Sept 28, 2026: products for every age group and community tha
 26. Picture-First Talk Moments Poster & How-to-Use Guide (0-5): free inside every routine-card edition and as a lead magnet; no standalone listing.
 27. Everyday Plays, Pay-What-You-Can Edition (0-8, English and Spanish): own site only, suggested $5. Replaces the cut Give-a-Kit program's access goal.
 
+## Held: design-only children's products (not for sale)
+_Added September 28, 2026. Files are finished so the founder can see them; nothing is listed, announced or pre-sold. Each record says `"status": "design-only-held"`._
+- **Duck! Bubbles! All Done!** talk-along bath book, ages 0–2 (`products/bath-book-splash-talk/`; 8 panels, 5.5 in trim, rounded die line, EVA/vinyl spec, all sizes UNVERIFIED). Why held: `products/bath-book-splash-talk/MANUFACTURING.md`.
+- **Soft! Bumpy! Crinkle!** talk-along cloth book, ages 0–1 (`products/cloth-book-touch-talk/`; 8 panels, 6 in finished, maker spec for crinkle, soft and bumpy patches, safety mirror film and ribbon tabs, all sizes UNVERIFIED). Why held: `products/cloth-book-touch-talk/MANUFACTURING.md`.
+- Both are children's products for under-3s: CPSIA third-party lab testing, a Children's Product Certificate, permanent tracking labels, and EU toy-safety/GPSR compliance before any EU sale. Neither has print on demand, so each needs a factory run (minimum order) and a 3PL, which conflicts with the no-inventory rule and the $500 launch budget.
+- Path: the board-book pre-sale gate (item 0 above; business/sections/03-financial-model.md §3.10 rule 4, all five conditions in writing), then written factory, lab, broker and 3PL quotes, then an own-site pre-sale with a go line and full refunds below it. Most likely added to a board-book run rather than run alone. Titles are unsearched (brand/ORIGINALITY.md section G).
+
 ## Cut (with reason)
 - HELD: Up! Go! More! and The Day the Tablet Slept on KDP (CPSIA: 0–3 hold; Tablet Slept needs a 4+ grade or CPSC guidance); 0–3 KDP activity editions (busy book, car ride).
 - HELD: Hanukkah and other faith countdowns until a paid reviewer from the tradition signs off (COMMUNITY-PRODUCTS #9).

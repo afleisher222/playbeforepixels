@@ -545,7 +545,7 @@ def detect_kinds(d: dict):
         kinds.add("digital")
     if re.search(r"paperback|hardcover|picture book|board book|softcover|casewrap", fmt):
         kinds.add("book")
-    if re.search(r"\btee\b|t-shirt|\btote\b|dtg|canvas", fmt):
+    if re.search(r"\btee\b|t-shirt|\btote\b|dtg|canvas|\bmug\b|sublimation|sticker", fmt):
         kinds.add("merch")
     return kinds
 
@@ -673,12 +673,12 @@ MARKET_LINK_RX = rx(r"playbeforepixels\.com|play before pixels\.com|https?://|\b
 HUMAN_MADE_RX = rx(r"\b(hand[- ]drawn|hand[- ]illustrated|handmade|hand[- ]painted|original artwork by|illustrated by|drawn by)\b")
 
 PRODUCT_RX = rx(r"\b(books?|board book|picture book|paperback|hardcover|read-aloud|cards?|deck|printables?|kit|guide|workbook|course|program(me)?|"
-                r"charts?|tee|t-shirt|shirt|tote|planner|tracker|journal|games?|activity book|busy book|poster|checklist|set|bundle|activities|plays)\b")
+                r"charts?|tee|t-shirt|shirt|tote|mugs?|stickers?|sticker sheet|planner|tracker|journal|games?|activity book|busy book|poster|checklist|set|bundle|activities|plays)\b")
 AGE_RX = rx(r"\bages?\b[^.]{0,30}?\d{1,2}\s*(?:–|-|to)\s*\d{1,2}|\baged\s+\d{1,2}\s*(?:–|-|to)\s*\d{1,2}|"
             r"\b\d{1,2}\s*(?:–|-|to)\s*\d{1,2}\s*(?:years?|yrs|year-olds|months|mos?)\b|\b(for kids|for children|kids)\s+\d{1,2}\s*(?:–|-|to)\s*\d{1,2}\b|"
             r"\bages?\s+\d{1,2}\s*\+")
 ADULT_RX = rx(r"\b(adults?|grown-ups?|grown-up sizes|unisex)\b")
-FORMAT_RX = rx(r"\b(printable|pdf|digital download|instant download|download|paperback|hardcover|softcover|board book|"
+FORMAT_RX = rx(r"\b(printable|pdf|digital download|instant download|download|paperback|hardcover|softcover|board book|bath book|cloth book|"
                r"picture book|e-?mails?|written program|print[- ]on[- ]demand|printed (when|to) (you )?order|tee|t-shirt|tote|"
                r"us letter|a4|fillable|poker[- ]size)\b")
 

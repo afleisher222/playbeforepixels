@@ -27,8 +27,8 @@ const TITLE = ['Duck!', 'Bubbles!', 'All done!'];
 const drop = (x, y, s, c) => `<path transform="translate(${x},${y}) scale(${s})" d="M0-16C6-6 10 0 10 5A10 10 0 0 1-10 5C-10 0-6-6 0-16Z" fill="${c}"/>`;
 const bubbleAt = (x, y, r, hl = C.sky) => `<g transform="translate(${x},${y}) scale(${(r / 20).toFixed(3)})" style="--bh:${hl}">${use('bubble')}</g>`;
 // bathtub: rim top at y, centered at cx, width w. Drawn in front of the child.
-function tub(cx, y, w, col = C.tomato, water = C.sky) {
-  const x0 = cx - w / 2, h = 150;
+function tub(cx, y, w, col = C.tomato, water = C.sky, h = 112) {
+  const x0 = cx - w / 2;
   return `<rect x="${x0 - 8}" y="${y - 12}" width="${w + 16}" height="26" rx="13" fill="${col}"/>
   <path d="M${x0} ${y}H${x0 + w}V${y + h - 50}A50 50 0 0 1 ${x0 + w - 50} ${y + h}H${x0 + 50}A50 50 0 0 1 ${x0} ${y + h - 50}Z" fill="${col}"/>
   <rect x="${x0 + 40}" y="${y + h - 6}" width="30" height="34" rx="12" fill="${col}"/><rect x="${x0 + w - 70}" y="${y + h - 6}" width="30" height="34" rx="12" fill="${col}"/>
@@ -43,11 +43,11 @@ scenes.splash = () => {
   const k = Object.assign({}, KIDS.A, { x: 300, y: 402, s: 1.35, aL: 150, aR: -150, face: 'laugh', legs: false });
   const drops = [[196, 220, 1.3], [160, 280, 1], [230, 170, .9], [404, 220, 1.3], [440, 280, 1], [370, 170, .9], [128, 344, .8], [472, 344, .8]]
     .map(([x, y, s]) => drop(x, y, s, C.sky)).join('');
-  return bg(C.sky) + circle(300, 318, 176, '#FFFFFF') + drops + waterBack(300, 400, 300, C.sky) + kid(k) + tub(300, 396, 330);
+  return bg(C.sky) + circle(300, 318, 176, '#FFFFFF') + drops + kid(k) + tub(300, 396, 330);
 };
 scenes.pour = () => {
-  const cup = `<g style="--c1:${C.tomato};--c2:${C.sun}" transform="translate(236,236) rotate(-118) scale(1.9)">${use('cup')}</g>`;
-  const stream = `<path d="M292 250C300 300 318 330 318 392" stroke="${C.sky}" stroke-width="30" fill="none" stroke-linecap="round"/>`;
+  const cup = `<g transform="translate(236,228) rotate(120) scale(1.9)"><path d="M24-8C40-8 40 22 22 22" stroke="${C.sun}" stroke-width="9" fill="none" stroke-linecap="round"/><path d="M-24-30H24L20 30Q19 36 12 36H-12Q-19 36-20 30Z" fill="${C.tomato}"/><rect x="-27" y="-36" width="54" height="12" rx="6" fill="${C.sun}"/></g>`;
+  const stream = `<path d="M286 262C298 306 316 334 318 404" stroke="${C.sky}" stroke-width="30" fill="none" stroke-linecap="round"/>`;
   const splashes = drop(270, 378, .9, C.sky) + drop(366, 370, 1.1, C.sky) + drop(390, 330, .7, C.sky);
   return bg(C.sun) + circle(300, 318, 176, '#FFFFFF') + stream + cup + splashes + tub(300, 408, 330);
 };
@@ -59,37 +59,35 @@ scenes.bubbles = () => {
   return bg(C.plum) + circle(300, 318, 176, C.tPlum) + bs + kid(k) + `<rect x="110" y="420" width="380" height="200" rx="40" fill="${C.sky}"/>` + foam;
 };
 scenes.duck = () => {
-  const waves = `<path d="M-20 420C40 390 90 450 150 420S260 390 300 420 410 450 450 420 560 390 620 420V620H-20Z" fill="${C.sky}"/>`;
+  const waves = `<path d="M96 430C140 400 180 452 228 426S300 400 340 426 420 452 470 426 504 410 504 430V470A26 26 0 0 1 478 496H122A26 26 0 0 1 96 470Z" fill="${C.sky}"/>`;
   return bg(C.ink) + circle(300, 318, 176, '#FFFFFF') + `<g transform="translate(300,330) scale(4.4)">${use('duck')}</g>` + waves;
 };
 scenes.wash = () => {
-  const k = Object.assign({}, KIDS.E, { x: 300, y: 404, s: 1.35, aL: 20, aR: -40, face: 'joy', legs: false });
+  const k = Object.assign({}, KIDS.E, { x: 300, y: 404, s: 1.35, aL: 20, aR: -150, face: 'joy', legs: false });
   const head = [300, 404 - 69 * 1.35];
   const suds = [[-26, -34, 16], [0, -42, 18], [26, -34, 16], [-40, -16, 12], [40, -16, 12]].map(([dx, dy, r]) => `<circle cx="${head[0] + dx}" cy="${head[1] + dy}" r="${r}" fill="#FFFFFF"/>`).join('')
-    + bubbleAt(214, 170, 16, C.grass) + bubbleAt(392, 176, 20, C.grass) + bubbleAt(430, 236, 12, C.grass);
-  // grown-up arm from the right with a washcloth on the child's arm
-  const g = Object.assign({}, ADULTS.G5, { x: 560, y: 560, s: 1.2, flip: true, aR: 58, aL: 0 });
-  const arm = `<g style="--sk:${g.skin};--sh:${g.shirt}" transform="translate(520,300) rotate(66) scale(1.3)">${use('g-arm')}</g>`;
-  const cloth = `<rect x="386" y="318" width="64" height="54" rx="12" fill="${C.sun}" transform="rotate(-12 418 345)"/><rect x="392" y="330" width="52" height="7" rx="3.5" fill="#FFFFFF" opacity=".6" transform="rotate(-12 418 345)"/>`;
-  return bg(C.grass) + circle(300, 318, 176, '#FFFFFF') + waterBack(300, 400, 300, C.sky) + kid(k) + suds + arm + cloth + tub(300, 396, 330);
+    + bubbleAt(204, 200, 18, C.grass) + bubbleAt(404, 196, 22, C.grass) + bubbleAt(440, 262, 14, C.grass);
+  const kh = K.kidHand(k, 'R');
+  const cloth = `<g transform="translate(${kh[0] + 4},${kh[1] - 4}) rotate(-14)"><rect x="-30" y="-26" width="60" height="52" rx="12" fill="${C.sun}"/><rect x="-24" y="-14" width="48" height="7" rx="3.5" fill="#FFFFFF" opacity=".6"/><rect x="-24" y="4" width="48" height="7" rx="3.5" fill="#FFFFFF" opacity=".6"/></g>`;
+  return bg(C.grass) + circle(300, 318, 176, C.tGrass) + kid(k) + suds + cloth + tub(300, 396, 330);
 };
 scenes.alldone = () => {
-  // child wrapped in a hooded towel, arms up out of the towel, empty tub behind
-  const k = Object.assign({}, KIDS.D, { x: 300, y: 440, s: 1.5, aL: 140, aR: -140, face: 'laugh', shirt: C.sun, pants: C.sun, legs: false });
-  const hy = 440 - 69 * 1.5;
-  const hood = `<path d="M${300 - 46} ${hy + 22}C${300 - 60} ${hy - 58} ${300 + 60} ${hy - 58} ${300 + 46} ${hy + 22}C${300 + 34} ${hy - 26} ${300 - 34} ${hy - 26} ${300 - 46} ${hy + 22}Z" fill="${C.sun}"/>`;
-  const wrap = `<path d="M232 372C232 340 368 340 368 372V470H232Z" fill="${C.sun}"/><path d="M240 400H360" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity=".7"/><path d="M240 424H360" stroke="${C.tomato}" stroke-width="8" stroke-linecap="round"/>`;
-  return bg(C.tomato) + circle(300, 318, 176, '#FFFFFF') + kid(k) + wrap + hood + `<rect x="150" y="466" width="300" height="12" rx="6" fill="${C.tTomato}"/>`;
+  // child in a hooded towel (hood behind the head, towel as the top), arms up: all done!
+  const k = Object.assign({}, KIDS.D, { x: 300, y: 470, s: 2.1, aL: 138, aR: -138, face: 'laugh', shirt: C.sun, pants: C.sun, legs: false,
+    back: `<circle cx="0" cy="-72" r="33" fill="${C.sun}"/>`,
+    front: `<path d="M-26-40Q0-48 26-40L32 0Q32 8 24 8H-24Q-32 8-32 0Z" fill="${C.sun}"/><rect x="-30" y="-20" width="60" height="7" rx="3.5" fill="${C.tomato}"/><rect x="-30" y="-8" width="60" height="7" rx="3.5" fill="#FFFFFF" opacity=".7"/>` });
+  const tubBack = `<rect x="120" y="466" width="360" height="30" rx="15" fill="${C.tTomato}"/>`;
+  return bg(C.tomato) + circle(300, 318, 176, '#FFFFFF') + tubBack + kid(k);
 };
 
 // ---------- manuscript (DRAFT: founder rewrites in her own words; see ../human_todo in listing.json) ----------
 const WORDS = [
-  { w: 'splash', scene: 'splash', fs: 128, dark: true, tip: ['Say it as you do it.', 'Pat the water: “splash, splash!” Then stop and wait for your little one’s turn.'] },
-  { w: 'pour', scene: 'pour', fs: 138, dark: false, tip: ['Pause before you pour.', 'Hold the cup up and wait. Then say “pour!” as the water falls.'] },
-  { w: 'bubbles', scene: 'bubbles', fs: 118, dark: true, tip: ['Offer a choice.', '“Big bubble or little bubble?” A look or a reach is an answer.'] },
-  { w: 'duck', scene: 'duck', fs: 138, dark: true, tip: ['Copy their sounds.', 'A quack, a squeal, a splash: copy it back, then wait for more.'] },
-  { w: 'wash', scene: 'wash', fs: 138, dark: true, tip: ['Name as you go.', '“Wash your arm. Wash your toes.” One body part, one word at a time.'] },
-  { w: 'all done', scene: 'alldone', fs: 112, dark: true, tip: ['Sign it and say it.', 'Open hands, twist them: “all done!” Then wrap up for a cuddle.'] },
+  { w: 'splash', scene: 'splash', fs: 104, dark: true, tip: ['Say it as you do it.', 'Pat the water: “splash, splash!” Then stop and wait for your little one’s turn.'] },
+  { w: 'pour', scene: 'pour', fs: 116, dark: false, tip: ['Pause before you pour.', 'Hold the cup up and wait. Then say “pour!” as the water falls.'] },
+  { w: 'bubbles', scene: 'bubbles', fs: 100, dark: true, tip: ['Offer a choice.', '“Big bubble or little bubble?” A look or a reach is an answer.'] },
+  { w: 'duck', scene: 'duck', fs: 116, dark: true, tip: ['Copy their sounds.', 'A quack, a squeal, a splash: copy it back, then wait for more.'] },
+  { w: 'wash', scene: 'wash', fs: 116, dark: true, tip: ['Name as you go.', '“Wash your arm. Wash your toes.” One body part, one word at a time.'] },
+  { w: 'all done', scene: 'alldone', fs: 96, dark: true, tip: ['Sign it and say it.', 'Open hands, twist them: “all done!” Then wrap up for a cuddle.'] },
 ];
 WORDS.forEach(p => {
   const n = (p.tip[0] + ' ' + p.tip[1]).split(/\s+/).length;
@@ -104,17 +102,16 @@ const art = (svg, label) => `<svg class="art" viewBox="0 0 600 600" role="img" a
 function wordPage(p, i) {
   return {
     cls: `word-page${p.dark ? ' dark' : ''}`, html: `
-  ${art(scenes[p.scene](), p.w)}
+  ${art(scenes[p.scene]().replace(/^(<rect[^>]*\/>)/, '$1<g transform="translate(300,306) scale(.71) translate(-300,-318)">') + '</g>', p.w)}
   <h2 class="word" style="font-size:${p.fs}px">${p.w}</h2>
-  <div class="card"><p class="tip"><span class="lab">Grown-up tip</span> <strong>${p.tip[0]}</strong> ${p.tip[1]}</p></div>
-  <span class="pno">${i + 2}</span>`
+  <div class="card"><p class="tip"><span class="lab">Grown-up tip</span> <strong>${p.tip[0]}</strong> ${p.tip[1]}</p></div>`
   };
 }
 function coverArt() {
-  const k = Object.assign({}, KIDS.A, { x: 430, y: 432, s: 1.18, aL: 150, aR: -150, face: 'laugh', legs: false });
-  const bs = [[350, 228, 22], [520, 214, 26], [468, 168, 14], [372, 170, 12], [540, 290, 14]].map(([x, y, r]) => bubbleAt(x, y, r, C.sky)).join('');
-  return bg(C.sky) + circle(432, 330, 150, '#FFFFFF') + bs + waterBack(430, 424, 230, C.sky) + kid(k) +
-    `<g transform="translate(344,410) scale(1.35)">${use('duck')}</g>` + tub(438, 422, 250, C.tomato, C.tSky) +
+  const k = Object.assign({}, KIDS.A, { x: 436, y: 372, s: 1.12, aL: 122, aR: -122, face: 'laugh', legs: false });
+  const bs = [[566, 150, 16], [530, 112, 10], [596, 204, 10], [312, 166, 11]].map(([x, y, r]) => bubbleAt(x, y, r, C.sky)).join('');
+  return bg(C.sky) + circle(436, 300, 140, '#FFFFFF') + bs + kid(k) +
+    `<g transform="translate(350,346) scale(1.25)">${use('duck')}</g>` + tub(436, 368, 256, C.tomato, C.tSky) + [[486, 360, 17], [516, 352, 20], [546, 362, 15], [392, 364, 13]].map(([x, y, r]) => `<circle cx="${x}" cy="${y}" r="${r}" fill="#FFFFFF"/>`).join('') +
     `<rect x="-10" y="486" width="620" height="130" fill="${C.ink}"/>`;
 }
 const cover = rel => ({
@@ -143,7 +140,7 @@ const back = rel => ({
       </div>
       <div class="isbn"><span>ISBN / barcode</span><small>2 × 1.2 in, supplied by the factory or ISBN agency</small></div>
     </div>
-    <p class="legal">${COPYRIGHT} ${VERSION}. More talk and play: <i>Up! Go! More!</i> and <i>Soft! Bumpy! Crinkle!</i></p>
+    <p class="legal">${COPYRIGHT} ${VERSION}. More talk and play: <b>Up! Go! More!</b> and <b>Soft! Bumpy! Crinkle!</b></p>
   </div>`
 });
 
@@ -161,7 +158,7 @@ symbol{overflow:visible}
 .pg{position:absolute;left:0;top:0;width:600px;height:600px;overflow:hidden;transform:scale(${SCALE});transform-origin:0 0;font-family:"Nunito Sans","Helvetica Neue",Arial,sans-serif;color:var(--ink)}
 .art{position:absolute;left:0;top:0;width:100%;height:100%;display:block}
 .logo{display:block;width:auto}
-.word{position:absolute;left:${SAFE}px;right:${SAFE}px;top:${SAFE - 26}px;margin:0;text-align:center;font-family:"Fredoka","Nunito Sans",sans-serif;font-weight:600;line-height:1.08;letter-spacing:-.01em;color:var(--ink);white-space:nowrap}
+.word{position:absolute;left:${SAFE}px;right:${SAFE}px;top:${SAFE - 14}px;margin:0;text-align:center;font-family:"Fredoka","Nunito Sans",sans-serif;font-weight:600;line-height:1.08;letter-spacing:-.01em;color:var(--ink);white-space:nowrap}
 .dark .word{color:#fff}
 .card{position:absolute;left:${SAFE}px;right:${SAFE}px;bottom:${SAFE}px;background:#fff;border-radius:20px;padding:11px 16px 12px}
 .tip{margin:0;font-size:15px;line-height:1.3;font-weight:600;color:var(--ink)}
@@ -173,17 +170,17 @@ symbol{overflow:visible}
 .cover .ctitle{position:absolute;left:${SAFE - 3}px;top:${SAFE + 40}px;margin:0;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:64px;line-height:.94;letter-spacing:-.035em;color:#fff}
 .cover .ctitle span{display:block}.cover .ctitle i{font-style:normal;color:${C.sun}}
 .csub{position:absolute;left:${SAFE}px;top:318px;width:180px;margin:0;font-weight:800;font-size:17px;line-height:1.2;color:#fff}
-.cband{position:absolute;left:${SAFE}px;right:${SAFE}px;top:486px;height:${535 - 486}px;display:flex;align-items:center;justify-content:space-between}
-.age{display:flex;flex-direction:column;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;background:${C.tomato};color:#fff;font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;line-height:1;margin-top:-30px}
+.cband{position:absolute;left:${SAFE}px;right:${SAFE}px;top:478px;height:${535 - 478}px;display:flex;align-items:center;justify-content:space-between}
+.age{display:flex;flex-direction:column;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:${C.tomato};color:#fff;font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;line-height:1}
 .age b{font-family:"Fredoka",sans-serif;font-weight:600;font-size:21px;letter-spacing:0;margin-bottom:2px}
 .back .bk{position:absolute;left:${SAFE}px;right:${SAFE}px;top:${SAFE - 40}px;bottom:${SAFE}px;display:flex;flex-direction:column}
 .bhead{height:44px;display:flex;align-items:center}
 .btitle{margin:22px 0 6px;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:27px;letter-spacing:-.025em;line-height:1}
-.blurb{margin:0;font-size:13.5px;line-height:1.36}
-.lang{margin:7px 0 0;font-family:"Caveat",cursive;font-weight:700;font-size:19px;color:${C.tomato};line-height:1.1}
-.safe{margin:9px 0 0;background:#fff;border-left:7px solid ${C.tomato};border-radius:10px;padding:7px 11px;font-size:12.5px;line-height:1.32}
+.blurb{margin:0;font-size:15px;line-height:1.36}
+.lang{margin:8px 0 0;font-family:"Caveat",cursive;font-weight:700;font-size:21px;color:${C.tomato};line-height:1.1}
+.safe{margin:9px 0 0;background:#fff;border-left:7px solid ${C.tomato};border-radius:10px;padding:8px 12px;font-size:14px;line-height:1.32}
 .safe b{font-weight:800}
-.care{margin:7px 0 0;font-size:10.5px;line-height:1.35}
+.care{margin:8px 0 0;font-size:11.5px;line-height:1.35}
 .brow{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
 .bl{display:flex;flex-direction:column;gap:8px}
 .bonus{display:flex;align-items:center;gap:9px}
@@ -193,7 +190,7 @@ symbol{overflow:visible}
 .isbn{width:${(2 * PPI).toFixed(1)}px;height:${(1.2 * PPI).toFixed(1)}px;background:#fff;border:1.5px dashed #9AA3B5;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 12px}
 .isbn span{font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase}.isbn small{font-size:9px;opacity:.7;margin-top:4px;line-height:1.3}
 .legal{margin:8px 0 0;font-size:8.5px;line-height:1.35;opacity:.9}
-.legal i{font-style:italic}
+.legal b{font-weight:800}
 </style>`;
 
 // ---------- die line overlay (separate file; the factory's own die line always wins) ----------

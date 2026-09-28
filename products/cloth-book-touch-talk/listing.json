@@ -1,0 +1,114 @@
+{
+  "slug": "cloth-book-touch-talk",
+  "title": "Soft! Bumpy! Crinkle!",
+  "subtitle": "A Talk-Along Cloth Book for Ages 0–1: Touch, Look and Say",
+  "status": "design-only-held",
+  "status_notes": "DESIGN ONLY, HELD FROM SALE (September 28, 2026). A cloth book is a children's product and a soft toy for under-3s: it needs CPSIA third-party lab testing (including sharp points and edges and flammability as applicable), a Children's Product Certificate and a permanent sewn-in tracking label, and EU toy/GPSR compliance for any EU sale. There is no print on demand for cloth books, so it needs a factory run with a minimum order and a 3PL, which conflicts with the no-inventory rule and the $500 launch budget. It follows the board-book pre-sale gate (MANUFACTURING.md; ops/QUEUE.md 'Held: design-only children's products'). Not listed anywhere; no pre-orders.",
+  "format": "Sewn soft cloth book, 4 leaves = 8 printed fabric panels (front cover, 6 word pages, back cover) with a crinkle page, a soft-fabric patch, a bumpy patch, a safety-mirror-film panel and three closed-loop ribbon tabs. Factory run only; no print on demand exists.",
+  "trim": "6 x 6 in finished page with rounded corners r 0.5 in; 0.375 in seam allowance on every edge (6.75 x 6.75 in printed panel); text and faces 0.375 in inside the finished edge. All sizes UNVERIFIED: they come from the chosen factory's cloth-book template.",
+  "pages": 8,
+  "ages": "0–1, played with a grown-up close by",
+  "price_usd": 16.99,
+  "price_notes": "Planning price only, UNVERIFIED; nothing is for sale. Sewn cloth books with a mirror and crinkle page usually cost more to make than board books. The price is set only after written factory, lab, duty and 3PL quotes show landed cost within the channel cost rule (business/sections/03-financial-model.md §3.8 and §3.10 rule 4). No pre-sale until the board-book gate is met.",
+  "price_floor": 5.1,
+  "price_floor_basis": "30% of the $16.99 planning price (0.30 x 16.99 = $5.10), the same floor share used for print-on-demand books (commerce/PRICING.md §2). The binding test for a stocked product is the landed-cost rule in §3.8; recompute from real quotes.",
+  "net_per_unit_by_channel": {
+    "own_site_presale": null
+  },
+  "net_notes": "No channel is live and no quote exists, so there is no net yet. Fill own_site_presale from written quotes (unit + freight + duty + lab + 3PL pick-and-pack) before any pre-sale.",
+  "short_description": "A soft talk-along cloth book for ages 0–1: crinkle, soft and bumpy pages, a safety mirror and bold black-and-white first pages. Design preview only.",
+  "long_description": "Soft! Bumpy! Crinkle! is a talk-along cloth book for ages 0–1, made for the first year of laps, looks and back-and-forth. It has six soft pages, each with one first word and one short grown-up tip.\n\nThe first pages are bold ink-and-white pictures, a smiling face and a checkered frame, that are easy to look at together up close. Then come the pages to touch: a crinkle page to scrunch, a soft patch to stroke, a bumpy shell to tap, and a safety mirror page for a 'who's that?' moment. The last page waves bye-bye.\n\nEvery tip is one small thing to try: say hi close up and wait, look in the mirror together, crinkle and pause, say what you feel, name it as you touch, wave and wait. A look, a coo or a kick counts as your baby's turn.\n\nThis is a design preview. The book is not for sale yet. A cloth book has to be sewn in a factory run and safety-tested by an independent lab, and we will only take orders once that is done. It has no buttons, no loose parts and no glass. Talk, sign, sing and read in the language you know best.",
+  "bullets": [
+    "Six first words, one per soft page: hi, look, crinkle, soft, bumpy, bye-bye",
+    "Things to touch: a crinkle page, a soft patch, a bumpy patch, a safety mirror and three ribbon tabs",
+    "Bold ink-and-white pictures on the first pages, then bright colours and the same friendly cast as Up! Go! More!",
+    "One short grown-up tip on every page; a look, a coo or a kick counts as a turn",
+    "Design preview only: not for sale until a factory run passes independent lab testing"
+  ],
+  "keywords": [
+    "cloth book for babies",
+    "soft crinkle book 0-1",
+    "high contrast baby book",
+    "talk-along cloth book",
+    "baby texture cloth book",
+    "newborn soft book with mirror",
+    "baby first words cloth book"
+  ],
+  "seo_title": "Soft! Bumpy! Crinkle! Talk-Along Cloth Book, Ages 0–1",
+  "seo_description": "A soft talk-along cloth book for ages 0–1: crinkle, soft and bumpy pages, a safety mirror and a grown-up tip on every page. Design preview.",
+  "alt_text": "Cover of Soft! Bumpy! Crinkle!, a talk-along cloth book: big white title on navy beside a large black-and-white smiling face in a white ring, the Play Before Pixels logo and a 0–1 year badge on a tomato band, rounded corners.",
+  "bonus_url": "https://playbeforepixels.com/bonus/cloth-book-touch-talk",
+  "next_products": [
+    "bath-book-splash-talk",
+    "board-up-go-more",
+    "play-talk-cards"
+  ],
+  "shareable_piece": "The printable first-words song sheet at the bonus link, with a small brand mark; not built yet.",
+  "channels": [
+    "HELD: not listed on any channel (design-only; see MANUFACTURING.md). No pre-orders.",
+    "HELD: Play Before Pixels website pre-sale only after the board-book gate (business/sections/03-financial-model.md §3.10 rule 4), written quotes, CPSIA testing plan and a 3PL contract exist",
+    "HELD: Amazon (FBA or 3PL-fulfilled) only after a Children's Product Certificate and stock at a 3PL exist",
+    "HELD: EU and UK sale only after EU toy-safety and GPSR compliance (and UKCA) exist"
+  ],
+  "amazon_route": "fba-later (design only; a factory-sewn cloth book cannot use KDP or print on demand; FBA or 3PL fulfillment only after testing, certificate and stock exist)",
+  "compliance_notes": "DESIGN ONLY, HELD FROM SALE. Children's product and soft toy for under-3s: needs CPSIA third-party testing at a CPSC-accepted lab (lead, phthalates, small parts after use-and-abuse, sharp points and edges, flammability as applicable, ASTM F963 cord/loop and stuffing rules; UNVERIFIED), a Children's Product Certificate, a permanent sewn-in tracking label and packaging marks, care and fibre-content labelling, and EU toy-safety (EN 71-1/-2/-3, CE, responsible person) plus GPSR compliance for any EU sale (all UNVERIFIED; MANUFACTURING.md). Safety design: no detachable parts, no buttons, no cords; ribbon tabs are closed loops at least 0.6 in wide, ends sealed inside the seam, sticking out 1 in or less; every seam and appliqué double lockstitched; the mirror is flexible safety mirror film with enclosed edges, never glass or rigid acrylic; crinkle film fully enclosed. A check-before-each-play line is on the back cover. No health, development, vision or learning claims: the high-contrast pages are described only as bold pictures to look at together (hard rule 1); no condition or diagnosis is named or targeted. Talk strategies in plain words, no trademarked program names (rule 6). 'Talk, sign, sing and read in the language you know best' and 'Version 1.0 · September 2026' are on the back cover (rules 15 and 3). No hook-and-loop, flaps or glued parts (rules 8 and 20). Legal owner: © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. Files are RGB from Chromium; check against the chosen factory's cloth-book template (finished size, seam allowance, corner radius, print method, colour profile) before any production. Title recorded in brand/ORIGINALITY.md (section G, unsearched).",
+  "human_todo": [
+    "HUMAN AUTHORSHIP (do first, before any pre-sale): rewrite the words, tips and back-cover text in your own words in build/build.js (WORDS and back()), then run bash build/render-all.sh and commit. Every version stays in git.",
+    "Decide whether this book is worth pursuing at all before spending anything. It stays held until every board-book gate condition in business/sections/03-financial-model.md §3.10 rule 4 is met in writing.",
+    "When the gate is met: get 2–3 written cloth-book factory quotes for this spec (MANUFACTURING.md: fabric, print method, batting, crinkle film, safety mirror film, ribbon, sewn label), plus a CPSC-accepted lab quote, a customs broker and a 3PL quote. Adjust the finished size and seam allowance in build/build.js to the factory template.",
+    "Ask a product-safety attorney which rules apply (toy standard sections, flammability, cord and loop limits, stuffing-law labels, textile labelling, EU/UK) and who issues the Children's Product Certificate. Have the lab measure the ribbon tabs after tension tests.",
+    "Approve a printed fabric strike-off (pages 1–3 must stay true ink and white) and a sewn pre-production sample before the run.",
+    "Get a UPC or ISBN for the swing tag or header card (never printed on the fabric).",
+    "Set up playbeforepixels.com/bonus/cloth-book-touch-talk (a printable first-words song sheet; birth month and year only) before any pre-sale, and test the printed QR code.",
+    "Search the title 'Soft! Bumpy! Crinkle!' (Amazon, Goodreads, USPTO) before any announcement (brand/ORIGINALITY.md section G).",
+    "Before anything ships (customer-voice rule 21): written QA pass, a physical sample check (seams, tabs, mirror), and your approval of the cover and page 1."
+  ],
+  "faq": [
+    {
+      "q": "Can I buy this cloth book?",
+      "a": "Not yet. This is a design preview. A cloth book is sewn in a factory run and has to pass independent safety testing before anyone can buy it. We will only take orders once that is done."
+    },
+    {
+      "q": "Why isn't it printed on demand?",
+      "a": "Nobody prints sewn cloth books with a mirror and a crinkle page one at a time. It needs a factory run, lab testing and a warehouse, so it waits until we can do all of that properly."
+    },
+    {
+      "q": "What ages is it for?",
+      "a": "Ages 0–1, played with a grown-up close by. The first pages are bold black-and-white pictures to look at together; the touch pages are for reaching, scrunching and patting."
+    },
+    {
+      "q": "What's inside?",
+      "a": "Six soft pages with one word each: hi, look, crinkle, soft, bumpy and bye-bye. There's a crinkle page, a soft patch, a bumpy patch, a safety mirror and three ribbon tabs, plus one short grown-up tip on every page."
+    },
+    {
+      "q": "Is the mirror glass?",
+      "a": "No. It's a flexible safety mirror film, never glass, with its edges sewn inside a fabric frame."
+    },
+    {
+      "q": "Are there buttons or small parts?",
+      "a": "No buttons, beads, snaps, squeakers or hook-and-loop. The ribbon tabs are short closed loops sewn into the seam. Check the seams, tabs and mirror before each play, and stop using the book if anything is loose or torn."
+    },
+    {
+      "q": "Will the black-and-white pages help my baby's eyes or brain?",
+      "a": "We don't make claims like that. They're bold pictures that are easy to look at together up close, and a nice place to say hi and wait for a look back."
+    },
+    {
+      "q": "How do I wash it?",
+      "a": "The care label will give the exact instructions once the fabric is tested. We plan for surface washing or a cold hand wash and air drying flat."
+    },
+    {
+      "q": "How will I know when it's available?",
+      "a": "Join the free email list at playbeforepixels.com. We'll only announce it once testing is done and a ship date is real."
+    }
+  ],
+  "ai_disclosure": {
+    "as_of": "2026-09-28",
+    "ai_helped_with": "Claude (an AI model made by Anthropic), working in Claude Code, wrote the draft words and grown-up tips, made the illustrations as flat vector art in code from the brand's own symbol library, and laid out the print file, the maker spec, the mockup and this listing with scripts.",
+    "humans_did": "The founder, for AlphaPlay LLC, directs the product line and set the brand, safety and honesty rules (brand/BRAND.md) that every draft follows. As of 2026-09-28 no person has rewritten the text or redrawn the art. Before any pre-sale a person must rewrite the words in her own voice and approve the cover and page 1 (human_todo).",
+    "site": "Product page line, once the page exists: 'How this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.' Add 'and edited by the founder' only after she has rewritten the text or art.",
+    "social_ai_label": "Turn on each platform's AI-generated-content label for posts that use these images or this text (label names UNVERIFIED).",
+    "notes": "Never call any part hand-drawn, handmade or human-written. Not on KDP, Etsy or any marketplace, so no platform form applies yet."
+  },
+  "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.",
+  "price_history": []
+}
