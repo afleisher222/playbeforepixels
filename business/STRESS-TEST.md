@@ -314,7 +314,7 @@ $1,000,000 a year is a multi-year question. It would need about 8.5 times the pl
 | All fixed costs, mid-point | $1,061 | 122 | 4.0 |
 | All fixed costs, lean, but insurance at its mid-point (+$149 a month, $164 with contingency) | $732 | 84 | 2.8 |
 
-The insurance row matters because insurance is 27% of the lean fixed costs, and its lean figures are not quotes. `legal/protection/PROTECTION-PLAN.md` gives GL as an *average* of about $542 a year (range about $260 to $3,000+, and children's products may price higher), cyber as a "from about $35 a month" floor and media liability as unverified. The broker quote is therefore the single number most likely to move the break-even line.
+The insurance row matters because insurance is about 30% of the lean fixed costs, and its lean figures are not quotes. `legal/protection/PROTECTION-PLAN.md` gives GL as an *average* of about $542 a year (range about $260 to $3,000+, and children's products may price higher), cyber as a "from about $35 a month" floor and media liability as unverified. The broker quote is therefore the single number most likely to move the break-even line.
 
 **Units needed if only one product sold** (all fixed costs, lean path):
 
@@ -338,7 +338,7 @@ Each lever was applied to the same 10,000 random futures. The effect sizes are A
 
 | Rank | Lever | Change in median profit | Median deepest loss | Futures past $12k cap | Where to act |
 |---|---|---|---|---|---|
-| **1** | **Hold every cost at the lean-path written quote.** Approve nothing above the lowest quote without a written decision | **+$2,006** | **$7,631** | **0%** | `business/build_financial_model.py` (Monthly Operating Costs and Startup Costs, cost position `pos` = 0); the approval rule in `business/sections/03-financial-model.md` §3.10 rule 3 and §3.12 decision 3; insurance quotes per `legal/protection/PROTECTION-PLAN.md` |
+| **1** | **Hold every cost at the lean-path figure.** Approve nothing above the lowest written quote without a written decision | **+$2,006** | **$7,631** | **0.2%** | `business/build_financial_model.py` (Monthly Operating Costs and Startup Costs, cost position `pos` = 0); the approval rule in `business/sections/03-financial-model.md` §3.12 decision 3 and §3.6 "Hard stop" (gated one-time items: §3.10 rule 3); insurance quotes per `legal/protection/PROTECTION-PLAN.md` |
 | **2** | **Cut about $100 a month from the lean fixed costs.** Candidates: ask the broker whether one package policy costs less than four separate ones; pay for Shopify yearly ($29 against $39, UNVERIFIED); defer Link My Books until order volume needs it ($21); confirm the lowest Claude tier the routines can run on ($100 is an ASSUMPTION). Insurance cover itself is not to be dropped without the broker's advice | **+$1,200** | $10,301 | 30% | `finance/money-and-tax-setup.md` (bookkeeping stack); `commerce/storefront-setup-guide.md` §1 (Shopify billing); `legal/protection/PROTECTION-PLAN.md` (insurance); Claude plan row in `business/build_financial_model.py` |
 | **3** | **Raise traffic 20%:** steady Pinterest pins, Etsy search titles and tags, UK-spelling variants, and backlinks from library and nonprofit resource pages | **+$881** | $10,811 | 36% | `marketing/MARKETING-PLAYBOOK.md` (organic tactics); `seo/SEO-PLAN.md`; publish cadence in `ops/ROUTINE.md` |
 | **4** | **Raise conversion 20%:** strong first thumbnails and mockups, "What's inside" previews, the Start Here page, clear price and licence, and a rule-following review engine for the first 10–25 reviews | **+$877** | $10,814 | 36% | `products/<slug>/listing.json`, `mockup.png` and preview PNGs (edited by the product workflows); review engine, tactic 4 in `marketing/MARKETING-PLAYBOOK.md`; `marketing/CUSTOMER-VOICE.md` |
@@ -354,7 +354,7 @@ Each lever was applied to the same 10,000 random futures. The effect sizes are A
 | Keep Etsy Offsite Ads off while the shop is under $10k a year (UNVERIFIED threshold) | +$44 | Etsy shop settings; `commerce/storefront-setup-guide.md` §10 |
 | **$150 a month of Amazon Ads** (the plan's Expected budget) | **−$684**, although median sales rise $1,829 | `marketing/MARKETING-PLAYBOOK.md`; workbook `ads1` |
 
-**How to read this.** Levers 1 and 2 are certain in size: every dollar not spent is a dollar kept, whatever sales do. Lever 1 matters most for safety, because it is what keeps the funding need inside the household cap. Levers 3–5 depend on execution. They are roughly equal, and they multiply: a shop with 20% more traffic *and* 20% better conversion gets about 44% more orders. None of the five needs paid advertising, and none touches the gated waves (board book, retail, schools).
+**How to read this.** Lever 2 is certain in size: every dollar not spent is a dollar kept, whatever sales do. Lever 1 is not. Its size is exactly the cost drift this test assumes (each cost lands 0–50% of the way up its quoted range, most often 10%). If real quotes come in at the lean figures anyway, it adds nothing; if the lean figures cannot be bought (insurance is the likeliest case, section 5), it cannot be pulled. Read it as "cost drift of this size would cost about $2,000 of year-1 profit and push 41% of futures past the cap". It still matters most for safety, because it is what keeps the funding need inside the household cap. Levers 3–5 depend on execution. They are roughly equal, and they multiply: a shop with 20% more traffic *and* 20% better conversion gets about 44% more orders. None of the five needs paid advertising, and none touches the gated waves (board book, retail, schools).
 
 ---
 
@@ -408,7 +408,7 @@ After 60–90 days of sales, collect these numbers, put them in a JSON file and 
 | Refunds ÷ gross sales | Shopify, Etsy and Gumroad payouts | `refund` |
 | Actual quotes | Broker, attorney and tool invoices | edit the workbook Low column, then `cost_pos` |
 
-Once the base holds real rates, set `"MC": {"traction_median": 1.0}` and narrow `traction_sigma`. The Monte Carlo then spreads around what the shop actually does. The plan's Conservative trigger still applies: if May 2027 orders run below 43 a month, cut every cost to its lowest tier and re-forecast (`business/sections/03-financial-model.md` §3.10 rule 6).
+Once the base holds real rates, set `"MC": {"traction_median": 1.0}` and narrow `traction_sigma`. The Monte Carlo then spreads around what the shop actually does. The plan's Conservative trigger still applies, but its month is mislabelled in the plan. Rule 6 of §3.10 (and the Apr–Sep 2027 row of the section 5 milestone table) says "if month-6 orders (May 2027) run below Conservative's 43 a month". In the workbook, 43 is Conservative's forecast for model month 6, which is **March 2027** (42.5 orders, Break-even tab cell B31). Conservative's May 2027 forecast is 70 orders. Read as written, the trigger fires in about 34% of the simulated futures; read as intended (March below 43, or May below 70), it fires in about 55–57%. Until the plan is corrected, use **March 2027 orders below 43** (or May below 70): cut every cost to its lowest tier and re-forecast.
 
 ## Needs a live check
 
@@ -421,10 +421,10 @@ Each item below comes from the repo's unverified figures or from my own knowledg
    - Offsite Ads at 15%, or 12% and mandatory above $10,000 of sales in 12 months, and whether it can be turned off below that;
    - the one-time shop-opening fee (about $15).
 2. **Shopify (UNVERIFIED):** Basic at $39 a month or $29 billed yearly; Shopify Payments at 2.9% + $0.30 online on Basic; whether the digital-download app is free.
-3. **Gumroad (UNVERIFIED):** 10% + $0.50 per sale *plus* 2.9% + $0.30 card processing; 30% on Discover-marketplace sales; that it is merchant of record for US sales tax and EU/UK VAT.
+3. **Gumroad (UNVERIFIED):** 10% + $0.50 per sale *plus* 2.9% + $0.30 card processing; 30% on Discover-marketplace sales; that it is merchant of record for US sales tax and EU/UK VAT. **Other merchants of record for the course:** Lemon Squeezy's and Payhip's current fees (the course listing assumes about 5% + $0.50), and whether Lemon Squeezy still takes new stores.
 4. **KDP:**
    - the 60% royalty at list prices of $9.99 and up, and 50% below (since June 10, 2025);
-   - whether 8 × 10 in and 8.5 × 8.5 in count as large trim;
+   - whether 8 × 10 in and 8.5 × 8.5 in count as large trim (as I recall, KDP treats any trim wider than 6.12 in or taller than 9 in as large, which would cover both; UNVERIFIED);
    - print cost for the 82-page B/W book ($2.30 or $2.84);
    - print cost for the 32-page premium-colour books ($3.24, $3.56 or a flat rate).
    Check all four in KDP's pricing calculator.
@@ -432,8 +432,30 @@ Each item below comes from the repo's unverified figures or from my own knowledg
 6. **Amazon Ads:** typical cost per click and click-to-sale rate for children's picture books and parent activity books (this test assumes $0.75 and 7%).
 7. **Conversion benchmarks:** Etsy listing-visit conversion (assumed 2%) and new-store Shopify conversion (assumed 1.5%). The shop's own data replaces both within 90 days.
 8. **Email platform free tiers:** Klaviyo (250 profiles), MailerLite, Kit (whether sequences are still in the free plan) and Sender (2,500). This sets whether the email cost starts around April 2027.
-9. **Insurance:** broker quotes for GL with products-completed operations, media liability, cyber and umbrella, and whether one package policy is cheaper. Also whether E&O is still needed with no coaching.
+9. **Insurance:** broker quotes for GL with products-completed operations, media liability, cyber and umbrella, and whether one package policy is cheaper. Also whether E&O is still needed with no coaching. The lean figures are an average (GL) and floors (cyber, media), so this quote can move the break-even line from 65 to about 84 orders a month (section 5).
 10. **Claude plan:** the monthly price of the tier that can run the scheduled routines (assumed $100).
 11. **Small fixed costs:** USPS PO Box fee; QuickBooks Simple Start price; Link My Books price; accountant's year-end fee.
 12. **Etsy seller base rate:** average and median yearly sales per active Etsy seller from Etsy's latest annual report (recalled here as roughly $1,500–$2,000 on average).
 13. **Competitor yardsticks:** the 2,189-sale and 10.4k-sale shop counts in `marketing/DEMAND-CHECK.md` (shop-level snippet evidence).
+
+## Verification
+
+*Adversarial re-check, September 28, 2026. I recalculated a scratch copy of the workbook in LibreOffice (the business file was not touched), re-derived the figures below by hand or with fresh code, and re-ran `stress_test.py` with five seeds. Product, brand, site and content files were read only.*
+
+**Re-checked and confirmed:**
+1. **Workbook anchors** (recalculated Dashboard and Break-even tabs): year-1 sales $5,849 / $11,195 / $27,228; Strong year 3 $118,153; Expected founder capital $7,715; one-time costs $4,941 lean ($15,731 high); Expected year-1 operating costs $5,812 and ads $1,350. All match.
+2. **Base calibration.** With repeat purchases switched off, the script reproduces the workbook channel by channel (Etsy $4,811, own site $2,864, KDP $2,416, IngramSpark $191). The only gaps are Gumroad (+$4) and the course (−$53). The +1% total gap is the repeat stream, as stated.
+3. **Unit economics by hand.** $6.50 on Etsy = 6.50 × (1 − 6.5% − 3% − 1.5% − 2%) − $0.45 = $5.21; Gumroad $5.22 / $4.73; KDP $7.89 / $7.35 and $3.95 / $3.63; bundle $27.28. They also match the workbook's Break-even tab ($5.205, $9.12, $9.98, $10.16, $7.894, $24.567).
+4. **Fixed costs and break-even.** The year-2 lean items sum to $515.75, plus 10% = $567.33; ÷ $8.73 = 65 orders. The mid-point is $1,061 ÷ $8.73 = 122. The six named costs come to $338.09.
+5. **$1M arithmetic.** $1,000,000 ÷ $11.547 = 86,605 orders. The windows are 95, 61 and 31 days, which gives 912, 1,420 and 2,794 orders a day. The ratios 1,742× the P90 and 50.6× hold.
+6. **Paid ads.** 400 clicks × 7% = 28 units a month for 9 months: $3,651 of sales against a $1,207 profit loss. The break-even cost per click is $0.10–$0.55, all below $0.75.
+7. **Monte Carlo stability.** Across seeds 1–4 and the default: P50 sales $6,201–$6,372; P50 operating result ($3,259)–($3,331); P(profit) 25.9–27.2%; share past the cap 41.2–41.6%. The headline figures are not seed noise.
+8. **Sources.** Checked in the named files: Gate A status, the DEMAND-CHECK yardsticks (2,189 and 10.4k), the plan's 65-order line, the 1.5× CAC rule, the Klaviyo and MailerLite 250 limits, and the list passing 250 in April 2027 (workbook: 219 in March, 290 in April). The routine-card $9.50 price is also confirmed.
+
+**Changed in this report:**
+- **Wrong, now fixed:** the Conservative trigger month. 43 orders is March 2027, not May; May's figure is 70 (section 9). The same mislabel sits in the plan's §3.10 rule 6 and its section 5 milestone table, which the lead should fix; I did not edit the plan.
+- **Wrong citation, now fixed:** "hold ads until break-even, as §3.10 says". The rule is in §3.4 and covers only Pinterest and Meta; Expected runs Amazon Ads before break-even. Lever 1's "approval rule" now points to §3.12 decision 3 and §3.6.
+- **Overstated, now fixed:** "$4–$8 per paperback" (really $3–$8), "80–93%" (73–78% via Gumroad), "$3.60–$3.95 colour" (really $2.97–$3.95). The course "corrected" net assumed Gumroad; the merchant of record is unchosen, so it is now $21.37–$23.80. Lever 1 was called "certain in size" and "in the founder's hands"; its size is the assumed drift, and the lean insurance figures are averages and floors. "Every shop took years" is not in the source. Lever 1's "0%" is 0.19%.
+- **Understated or missed, now added:** the headline odds depend heavily on the 0.60× traction median (section 3 has the 0.40× and 1.00× results). Insurance at mid-point alone moves break-even from 65 to 84 orders. The $4.50 starter listing is not in the workbook. The 100-plays paperback is now 86 pages, which does not change the print cost.
+- **Labels:** $567 is now "Derived", not "SOURCE". The catalog range in section 3 is marked as a little wider than the workbook's.
+- **Not re-run:** the tables in sections 2, 3 and 6 stand as the script prints them. My edits are text and caveats; `stress_test.py` is unchanged. The new figures come from the same code with the inputs named above.
