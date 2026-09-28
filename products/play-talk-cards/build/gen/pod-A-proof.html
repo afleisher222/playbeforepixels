@@ -11,7 +11,12 @@ symbol{overflow:visible}
 .num{right:12px;min-width:30px;justify-content:center;padding:0 7px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-size:12.5px}
 .cA .body{position:absolute;left:15px;right:15px;top:117px;bottom:12px;display:flex;flex-direction:column}
 .cA h3{margin:0 0 3px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:18px;line-height:1.05;letter-spacing:-.015em}
-.need{margin:0 0 5px;font-size:9.5px;line-height:1.25;font-weight:700}
+.meta{margin:0 0 5px;display:flex;flex-wrap:nowrap;justify-content:space-between;gap:4px;font-size:7.3px;line-height:1;font-weight:800;color:#1D2940;opacity:.78;white-space:nowrap}
+.meta span{display:inline-flex;align-items:center;gap:2px}
+.meta svg{flex:none;color:var(--band)}
+.ver{margin:5px 0 0;font-size:6.8px;font-weight:700;opacity:.55;text-align:right}
+.num small{font-size:8px;font-weight:800;margin-right:3px;font-family:"Nunito Sans",sans-serif;opacity:.75}
+.need{margin:0 0 4px;font-size:9.5px;line-height:1.25;font-weight:700}
 .need i{font-style:normal;font-weight:800;font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin-right:3px}
 .play{margin:0;font-size:11.2px;line-height:1.36;font-weight:600}
 .talk{margin-top:auto;background:var(--tint);border-radius:10px;padding:6px 9px 7px}
@@ -20,6 +25,7 @@ symbol{overflow:visible}
 .talk p{margin:0;font-size:10.2px;line-height:1.3;font-weight:700}
 .safe{margin:6px 0 0;display:flex;align-items:flex-start;gap:5px;font-size:8.2px;line-height:1.25;font-weight:700;opacity:.82;min-height:20px}
 .safe svg{flex:none;margin-top:1px}
+.safe b{font-weight:900}
 /* special cards */
 .special .sp-head{position:absolute;left:15px;right:15px;top:14px;color:#fff}
 .sp-kick{display:block;font-weight:800;font-size:8px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-bottom:3px}
@@ -59,14 +65,18 @@ symbol{overflow:visible}
 .bk-t{margin:0;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:25px;letter-spacing:-.02em;line-height:1}
 .bk-s{margin:5px 0 0;font-size:10px;font-weight:800;letter-spacing:.06em}
 .bk-b{margin:10px 0 0;font-size:8px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:.6}
-/* ink-saver colorway */
+/* low-ink colorway: white grounds, outlined panels, line-art backs */
 .ink .card{--deco:transparent}
-.ink .cA:not(.special) .bandbg,.ink .cB:not(.special) .bandbg{background:var(--tint)}
+.ink .card .bandbg{background:#fff!important;border-bottom:2px solid var(--band)}
+.ink .cA .art > circle[fill="#fff"],.ink .cB .art > circle[fill="#fff"]{stroke:var(--band);stroke-width:1.5}
+.ink .chip,.ink .num{border:1.3px solid var(--band)}
 .ink .cB:not(.special){--on:#1D2940}
-.ink .cA:not(.special) .talk,.ink .cB:not(.special) .talk{background:#fff;border:1.4px solid var(--band)}
-.ink .special .bandbg{background:var(--tint)}
+.ink .cA .talk,.ink .cB .talk{background:#fff;border:1.4px solid var(--band)}
 .ink .special .sp-head,.ink .special .sp-head h3{color:#1D2940}
+.ink .key{background:#fff;border:1.2px solid var(--band)}
+.ink .strip > circle{fill:#fff;stroke:#B9C1D0;stroke-width:1}
 .ink .back .bgpat rect{fill:#fff}
+.ink .back .bgpat g *{fill:none!important;stroke:#9AA3B5;stroke-width:1.2}
 .ink .back .bk-label{border:2px solid #1D2940}
 .wrap{display:flex;flex-wrap:wrap;gap:18px;padding:22px;width:1210px}.pc{position:relative}.trimln{position:absolute;left:12px;top:12px;width:240px;height:336px;outline:1.2px solid #FF00FF}.safeln{position:absolute;left:27px;top:27px;width:210px;height:306px;outline:1px dashed #00AEEF}.lg{width:100%;font:700 14px sans-serif;color:#1D2940}</style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="t-head" overflow="visible"><circle class="sk" cx="-23" cy="3" r="6"/><circle class="sk" cx="23" cy="3" r="6"/><circle class="sk" r="24"/></symbol>
 <symbol id="face-smile" overflow="visible"><circle cx="-8.5" cy="-1" r="3.9" fill="#FFFFFF"/><circle cx="-8.5" cy="-0.30000000000000004" r="3.1" fill="#1D2940"/><circle cx="-7.4" cy="-1.4" r="1" fill="#FFFFFF"/><circle cx="8.5" cy="-1" r="3.9" fill="#FFFFFF"/><circle cx="8.5" cy="-0.30000000000000004" r="3.1" fill="#1D2940"/><circle cx="9.6" cy="-1.4" r="1" fill="#FFFFFF"/><circle class="ck" cx="-14.5" cy="7.5" r="4.3"/><circle class="ck" cx="14.5" cy="7.5" r="4.3"/><path d="M-6.5 8.5Q0 14.5 6.5 8.5" stroke="#1D2940" stroke-width="2.7" fill="none" stroke-linecap="round"/></symbol>
@@ -129,12 +139,13 @@ symbol{overflow:visible}
       <ol class="steps">
         <li>Find your child’s color.</li>
         <li>Pick a card, or let your child pick.</li>
-        <li>Play for five minutes or more.</li>
+        <li>Play while it’s fun. Stop before it isn’t.</li>
         <li>Try the talk tip. Then wait.</li>
       </ol>
       <ul class="key"><li><svg viewBox="-11 -11 22 22" width="13" height="13" aria-hidden="true"><path transform="scale(1)" d="M0-9L9.5 7.5H-9.5Z" fill="#3D86D8" stroke="#3D86D8" stroke-width="2.5" stroke-linejoin="round"/></svg><b>0–1</b> year</li><li><svg viewBox="-11 -11 22 22" width="13" height="13" aria-hidden="true"><rect transform="scale(1)" x="-7.8" y="-7.8" width="15.6" height="15.6" rx="2.5" fill="#2FA36B"/></svg><b>1–2</b> years</li><li><svg viewBox="-11 -11 22 22" width="13" height="13" aria-hidden="true"><path transform="scale(1)" d="M0-10L2.9-3.9 9.5-3.1 4.6 1.4 5.9 8 0 4.7-5.9 8-4.6 1.4-9.5-3.1-2.9-3.9Z" fill="#F5B820" stroke="#F5B820" stroke-width="1.5" stroke-linejoin="round"/></svg><b>2–3</b> years</li><li><svg viewBox="-11 -11 22 22" width="13" height="13" aria-hidden="true"><circle r="8.6" fill="#EE5A36"/></svg><b>3–5</b> years</li></ul>
       <svg class="strip" viewBox="0 0 210 50" width="210" height="50" aria-hidden="true"><circle cx="27" cy="25" r="23" fill="#E3EEFA"/><g transform="translate(27,25)"><g transform="scale(0.36)"><g transform="scale(.78)" ><use href="#ball" transform="" /></g></g></g><circle cx="79" cy="25" r="23" fill="#DFF3E9"/><g transform="translate(79,25)"><g transform="scale(0.36)"><g transform="translate(0,26) scale(.62)" ><use href="#block-1" transform="" /></g><g transform="translate(0,-10) scale(.62)" ><use href="#block-3" transform="" /></g><g transform="translate(-26,26) scale(.62)" ><use href="#block-2" transform="" /></g><g transform="translate(26,26) scale(.62)" ><use href="#block-4" transform="" /></g><g transform="translate(4,-44) scale(.5) rotate(8)" ><use href="#block-2" transform="" /></g></g></g><circle cx="131" cy="25" r="23" fill="#FEF4D8"/><g transform="translate(131,25)"><g transform="scale(0.36)"><path d="M-30-6C-30-30 22-30 22-6V16C22 26 14 32 4 32H-12C-22 32-30 26-30 16Z" fill="#3D86D8" /><rect x="-16" y="-32" width="28" height="8" rx="4" fill="#3D86D8" /><circle cx="-2" cy="-36" r="5" fill="#F5B820" /><path d="M20-2L40-16L42-10L24 8Z" fill="#3D86D8" /><path d="M-30 -2C-44 -2-44 18-30 18" stroke="#3D86D8" stroke-width="7" fill="none"/><rect x="-30" y="2" width="52" height="6" rx="3" fill="#FFFFFF" opacity=".5"/><g transform="translate(30,24)" ><path d="M-12-8H12L9 10H-9Z" fill="#EE5A36" /><rect x="-16" y="10" width="32" height="5" rx="2.5" fill="#EE5A36" /></g></g></g><circle cx="183" cy="25" r="23" fill="#FDE9E3"/><g transform="translate(183,25)"><g transform="scale(0.36)"><path d="M-18 18L-34 40V20Z" fill="#EE5A36" /><path d="M18 18L34 40V20Z" fill="#EE5A36" /><path d="M-10 36Q0 60 10 36Z" fill="#F5B820" /><rect x="-20" y="-22" width="40" height="60" rx="6" fill="#F5B820" /><path d="M-20-22L0-52L20-22Z" fill="#EE5A36" /><circle cx="0" cy="-4" r="10" fill="#3D86D8" /><circle cx="-3" cy="-7" r="3" fill="#FFFFFF" opacity=".8"/><rect x="-12" y="16" width="24" height="6" rx="3" fill="#FFFFFF" opacity=".6"/></g></g></svg>
       <p class="safe big"><svg viewBox="0 0 20 22" width="12" height="13.200000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#8A5CC7"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Every card: a grown-up plays along and stays within reach.</span></p>
+      <p class="ver">Version 1.0 · September 2026</p>
     </div>
   </div>
 </div><i class="trimln"></i><i class="safeln"></i></div><div class="pc"><div class="card cA" style="--band:#3D86D8;--tint:#E3EEFA;--b:12px;width:264px;height:360px">
@@ -147,10 +158,11 @@ symbol{overflow:visible}
     <span class="num">01</span>
     <div class="body">
       <h3>Peekaboo Cloth</h3>
-      <p class="need"><i>You need</i> A dish towel</p>
+      <p class="need"><i>Needs</i> A dish towel</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 4 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 0 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">Hide your face behind the towel, then pop out: “Peekaboo!” Later, let baby pull it off your head.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#3D86D8"/><use href="#speech"/></svg>Talk tip <em>· Pause and wait</em></span><p>Pause before “boo.” A kick, a grin or a squeal is baby’s turn.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Put the towel away after play; never leave it in the crib.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Put the towel away after play; never leave it in the crib.</span></p>
     </div>
   </div>
 </div><i class="trimln"></i><i class="safeln"></i></div><div class="pc"><div class="card cA" style="--band:#2FA36B;--tint:#DFF3E9;--b:12px;width:264px;height:360px">
@@ -163,10 +175,11 @@ symbol{overflow:visible}
     <span class="num">20</span>
     <div class="body">
       <h3>Pillow Mountain</h3>
-      <p class="need"><i>You need</i> Couch cushions</p>
+      <p class="need"><i>Needs</i> Couch cushions</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 12 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 2 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~10 min</span></p>
       <p class="play">Pile the cushions on the floor to make a mountain. Help your child climb up, then slide down.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#2FA36B"/><use href="#speech"/></svg>Talk tip <em>· Say what you see</em></span><p>Say it as they move: “Up, up, up! Down!”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>On the floor, away from furniture corners. Stay within reach.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> On the floor, away from furniture corners. Stay within reach.</span></p>
     </div>
   </div>
 </div><i class="trimln"></i><i class="safeln"></i></div><div class="pc"><div class="card cA" style="--band:#F5B820;--tint:#FEF4D8;--b:12px;width:264px;height:360px">
@@ -179,10 +192,11 @@ symbol{overflow:visible}
     <span class="num">33</span>
     <div class="body">
       <h3>Sock Puppet Chat</h3>
-      <p class="need"><i>You need</i> A clean sock, a marker</p>
-      <p class="play">Draw eyes on a sock and slip it on your hand. The puppet says hello, asks a question, then waits.</p>
+      <p class="need"><i>Needs</i> A clean grown-up sock, a marker (yours)</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 24 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 2 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
+      <p class="play">Draw eyes on the sock and slip it on your hand. The puppet says hello, asks a question, then waits.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#F5B820"/><use href="#speech"/></svg>Talk tip <em>· Pause and wait</em></span><p>Puppets are patient. Give extra time to answer.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Draw the face on. No buttons or stick-on eyes.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Draw the face on: no buttons or stick-on eyes. You keep the marker.</span></p>
     </div>
   </div>
 </div><i class="trimln"></i><i class="safeln"></i></div><div class="pc"><div class="card cA" style="--band:#EE5A36;--tint:#FDE9E3;--b:12px;width:264px;height:360px">
@@ -195,10 +209,11 @@ symbol{overflow:visible}
     <span class="num">44</span>
     <div class="body">
       <h3>Box Rocket</h3>
-      <p class="need"><i>You need</i> A big box, crayons</p>
+      <p class="need"><i>Needs</i> A big box, crayons</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 36 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 5 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~15 min</span></p>
       <p class="play">Draw buttons and windows on the box. Climb in, count down from ten, and blast off to the moon.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#EE5A36"/><use href="#speech"/></svg>Talk tip <em>· Follow their lead</em></span><p>Ask “Where are we flying? What’s out the window?”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Pull out staples and tape first. A grown-up stays nearby.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Pull out staples and tape first. A grown-up stays nearby.</span></p>
     </div>
   </div>
 </div><i class="trimln"></i><i class="safeln"></i></div><div class="pc"><div class="card cA special blank" style="--band:#8A5CC7;--tint:#EFE6FA;--b:12px;width:264px;height:360px">

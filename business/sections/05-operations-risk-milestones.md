@@ -1,6 +1,6 @@
 # 5. Operations, team, legal summary, risks, KPIs and milestones
 
-*Play Before Pixels, a trade name of AlphaPlay LLC (Maryland). Founder and sole member: Arielle Fleisher. Section 5 of the expansion business plan. Draft for the founder, September 28, 2026. Internal planning file, not for publication.*
+*Play Before Pixels, a trade name of AlphaPlay LLC (Maryland). Founder and sole member: Arielle Fleisher. Section 5 of the expansion business plan. Revised draft for the founder, September 28, 2026. Internal planning file, not for publication.*
 
 **How to read this section.** Figures taken from repository files name the file beside them. Anything the business has not observed is marked in one of two ways:
 - **[VERIFY]** marks an outside fact from general knowledge. Web search was not available for this draft. Confirm it on a primary source before money is spent or anything is signed. Where a source file already calls a figure "unverified", this section keeps that label.
@@ -13,11 +13,12 @@ Questions that touch the founder's employment are not analyzed here. They go onl
 ## 5.0 Summary
 
 - **The team is software plus contractors.** Scheduled Claude Code routines do the daily work: research, building, compliance checks, publishing through official APIs, customer email, bookkeeping and deadline tracking (`ops/ROUTINE.md`). Paid specialists do what software must not do or cannot do: human illustration, SLP accuracy review, sensitivity reads, translation, legal work, accounting, insurance, lab testing and, from Wave 3, warehousing. The founder approves and signs. She does not build, post, pack, ship, call or appear.
-- **The operating design is written but not yet built.** The rules, the routine, the compliance gate and the SOPs exist. The safety systems that let the routines publish unattended do not exist yet: the verified approval channel, the heartbeat and watchdog, the publish ledger, the CI check, the full-stop card, the comment word lists and the suppression list (`ops/GAPS-ROUND-2.md` "Still to do"). All six `listing.json` files leave `ai_disclosure` and `price_floor` blank, so every one of them fails compliance-gate lines 17 and 18 today.
+- **The operating design is written but not yet built.** The rules, the routine, the compliance gate and the SOPs exist. The safety systems that let the routines publish unattended do not exist yet: the verified approval channel, the heartbeat and watchdog, the publish ledger, the CI check, the full-stop card, the comment word lists and the suppression list (`ops/GAPS-ROUND-2.md` "Still to do"). None of the eleven `listing.json` files has a `price_floor`, and ten have no `ai_disclosure`, so they fail compliance-gate lines 17 and 18 today (5.7).
 - **Two legal dates dominate the next six months.** Copyright filings should go in before about November 11, 2026, ahead of the likely fee increase. The ALPHAPLAY Statement of Use or extension (Serial No. 99650345) is due **March 8, 2027**, with an internal filing target of February 1 (`legal/protection/PROTECTION-PLAN.md` §6b, §9).
-- **The critical-path blocker is banking.** AlphaPlay LLC's business checking account is closed (`finance/BANKING.md`). No platform can pay out until a new account exists, so nothing else in this section can start producing money before it.
+- **The critical-path blocker is Gate A.** AlphaPlay LLC's business checking account is closed (`finance/BANKING.md`). There is also no employment-counsel go-ahead, no general-liability policy, and none of the publish safeguards. The financial model assumes all four are in place by the end of November 2026, with first sales in December 2026. Each month of slip moves every channel back a month and adds about $600 of founder capital (section 3.9).
+- **Funding is founder capital, capped.** On the lean path the business needs about $7,700–$7,800 of founder capital, all of it between October 2026 and April 2027, and it is self-funding from May 2027 in both the Conservative and Expected cases (section 3.6). The founder has not yet set the household-money cap; the model uses a $12,000 placeholder, with a hard stop when it is reached.
 - **The biggest risks are reputation and dependency.** A single overstated line about screens and autism, a platform account action, or a policy change on AI-made content could each hurt the business faster than any competitor could. The mitigations are mostly rules the routine already follows. Their weak point is that the enforcement machinery has not yet been built.
-- **Growth is gated, not scheduled.** The 24-month table in 5.12 moves to each wave only when written conditions are true. School-facing work is a separate track that opens only if employment counsel clears it. The plan works without it.
+- **Growth is gated, not scheduled.** The 24-month table in 5.12 moves to each wave only when written conditions are true. School-facing work is a separate track that opens only if employment counsel clears it in writing, and no base figure in the financial model depends on it. The board book and every retail step are gated by units sold (section 4.9). On the Expected numbers, none of them opens within the 24-month window.
 
 ---
 
@@ -31,7 +32,7 @@ Questions that touch the founder's employment are not analyzed here. They go onl
 | Publishing to the site, Shopify, Etsy, Pinterest, email and the social scheduler | Routine, through official APIs only | None once the item is approved |
 | Uploads with no API (KDP, IngramSpark, TpT) | Routine prepares packets in `ops/UPLOAD-PACKETS/` | Uploads them in batches, grouped for school breaks, until a contractor can be authorized (5.4) |
 | Customer email, refunds, reviews, privacy requests | Automatic emails, FAQ, saved replies; the weekly inbound batch (`ops/ROUTINE.md` §5b) | Approves exceptions only |
-| Printing and shipping | KDP, IngramSpark, the POD partner; a 3PL from Wave 3 | None |
+| Printing and shipping | KDP, IngramSpark, the POD partner; a 3PL only if the board-book gate is met | None |
 | Payouts, tax reserve, bookkeeping | Bank rules, QuickBooks Online, Link My Books; routine's monthly close | Once-a-year payment scheduling; signs returns |
 | Legal, tax, insurance, safety testing | Attorneys, accountant, broker, lab (5.4) | Signs |
 | Deadlines | Routine keeps `ops/DEADLINES.md` and prepares each filing 30 days ahead | Signs or approves the filing |
@@ -94,11 +95,11 @@ Every contractor is engaged in writing and paid by the LLC. None requires a call
 
 | Contractor | When | Scope | Cost (source) |
 |---|---|---|---|
-| **Illustrator** | Before the board-book print order (Wave 3); later for other flagship titles | Human art for print-run books, using the AI drafts as the brief. Source files delivered. | $1,500–$5,000 per board book (BLIND-SPOTS #17); lawyer review of the template $300–$700 |
+| **Illustrator** | Only after the board-book gate (section 3.10 rule 4), before its pre-sale; later for other flagship titles | Human art for print-run books, using the AI drafts as the brief. Source files delivered. | $1,500–$5,000 per board book (BLIND-SPOTS #17); lawyer review of the template $300–$700 |
 | **SLP accuracy reviewer** (CCC-SLP) | Before the *Up! Go! More!*, 100-plays and Reset launches | Flat-fee accuracy review of the talk tips. Credited only with written permission and exact wording ("Reviewed for accuracy by …"), disclosed as paid, never presented as the author | $200–$500 flat (BLIND-SPOTS #10) |
 | **Sensitivity readers** (1–2 autistic readers) | Before the research hub, homepage and founder story go live | Respect and framing review | $150–$600 (BLIND-SPOTS #10) |
 | **Tradition reviewers** | Before any Ramadan, Lent, Hanukkah or Shabbat countdown calendar | Sign-off from a paid reviewer from each tradition | Not priced in the source files; quote needed (assumption) |
-| **Translators and post-editors** | Spanish months 4–9; French and German months 9–18 if Spanish meets its targets | AI draft plus a full human post-edit for site and printables; native transcreation for books and card prompts; legal pages reviewed by a lawyer licensed in the market | About $0.07 a word post-edited; $200–$800 per title transcreated; about $5,000 for the Spanish starter set (mixed); $500–$1,500 legal review per market (`legal/international-plan.md` §8.2, unverified) |
+| **Translators and post-editors** | Spanish once the break-even line has held for two months (section 3.10 rule 3); French and German only if Spanish meets its targets | AI draft plus a full human post-edit for site and printables; native transcreation for books and card prompts; legal pages reviewed by a lawyer licensed in the market | About $0.07 a word post-edited; $200–$800 per title transcreated; about $5,000 for the Spanish starter set (mixed); $500–$1,500 legal review per market (`legal/international-plan.md` §8.2, unverified) |
 | **Trademark attorney** | Now | PLAY BEFORE PIXELS clearance and filing; ALPHAPLAY Statement of Use or extension; attorney of record to take the founder's personal email off the public record (G2-22) | Clearance about $500–$2,500 per name (DECISION-MEMO, unverified); ALPHAPLAY work $300–$1,000 (BLIND-SPOTS #9) |
 | **Business and IP attorney** | Now | Operating agreement with a successor or designee, IP assignment (after employment counsel answers ownership question 2), template review, copyright filing order | $500–$2,000 for the operating agreement and assignment (PROTECTION-PLAN, unverified) |
 | **Consumer and privacy attorney** | Before launch | Flat review of all policy pages; cookie decision; EU withdrawal button; Art. 27 representative decision | About $500–$2,000 (DECISION-MEMO, estimate) |
@@ -106,7 +107,7 @@ Every contractor is engaged in writing and paid by the LLC. None requires a call
 | **Employment counsel** (the founder's own) | Now | Every item in `legal/FOR-EMPLOYMENT-COUNSEL.md`. Gates launch scope, trademark filings and all G1 and G2 work. | Not in the source files |
 | **Accountant (CPA)** | Before the first platform tax interview | Tax classification and which TIN goes on W-9s; tax-reserve %; estimated payments or extra withholding (G2-14); startup costs, hobby-loss and QBI questions (G2-15); retirement plan by early December 2026 (G2-16); Maryland sales-tax treatment of digital goods | Not in the source files; quote needed (assumption) |
 | **Insurance broker** | Before the first sale | GL with products-completed operations first; reassess E&O now that coaching is gone; media liability; cyber; umbrella; a quote at big-box retailer limits for later | See 5.8 |
-| **CPSC-accepted lab** | Wave 3 | Third-party testing for the board book; the deck if it is marketed to children | A few hundred dollars per SKU (PROTECTION-PLAN, unverified) |
+| **CPSC-accepted lab** | Only after the board-book gate | Third-party testing for the board book; the deck if it is marketed to children | A few hundred dollars per SKU (PROTECTION-PLAN, unverified) |
 | **Upload assistant** (optional) | When manual uploads exceed the founder's cap (5.2) | KDP, IngramSpark and TpT uploads from the prepared packets | Not priced; assumption: hourly, a few hours a month |
 
 **Paying contractors.** Pay by the business card where possible. The processor then reports the payment on a 1099-K; otherwise the LLC may owe a 1099-NEC (`finance/money-and-tax-setup.md` §2, §8, unverified; the accountant confirms).
@@ -117,7 +118,7 @@ Every contractor is engaged in writing and paid by the LLC. None requires a call
 
 **Today:** no inventory anywhere. Digital files deliver themselves. KDP, IngramSpark and one POD partner print and ship. Nothing is ever held at the founder's home (`brand/BRAND.md`).
 
-**The first stocked product** is the *Up! Go! More!* board book. It is printed offset only if its pre-sale funds the run, and it is delivered straight to a third-party warehouse (section 2.3, Wave 3). Amazon FBA is the alternative for Amazon orders.
+**The first stocked product** would be the *Up! Go! More!* board book. It is printed offset only after the board-book gate is met (section 3.10 rule 4) and its pre-sale reaches the go line, and it goes straight to a third-party warehouse. Amazon FBA is the alternative for Amazon orders. On the Expected numbers this does not happen within the 24-month window, so no 3PL is needed in the base plan.
 
 **3PL selection criteria** (assumption unless cited):
 1. Onboarding and support by email and portal, with no calls required.
@@ -128,7 +129,7 @@ Every contractor is engaged in writing and paid by the LLC. None requires a call
 6. EDI capability, or a partner EDI provider, for the retail stages in section 4 [VERIFY per 3PL].
 7. Pricing quoted in writing for receiving, storage, pick and pack, and minimums [VERIFY with quotes].
 
-**When the 3PL is chosen:** alongside the printer quotes in January 2027, so the funding goal includes receiving and storage.
+**When the 3PL is chosen:** only after the board-book gate is met. The January 2027 printer quotes are for information only, but they should ask for 3PL receiving and storage prices so the go line can be recalculated from real figures.
 
 ---
 
@@ -158,7 +159,7 @@ Every contractor is engaged in writing and paid by the LLC. None requires a call
 +-------------------------+     +------------------------------------------------+
                                                       |
                                                       v
-   BUYERS --> storefronts --> instant download / POD / KDP / IngramSpark / 3PL (Wave 3)
+   BUYERS --> storefronts --> instant download / POD / KDP / IngramSpark / 3PL (gated)
                                                       |
                                                       v
    PAYOUTS --> business checking (NOT YET OPEN) --> tax-reserve sub-account (bank rule)
@@ -193,7 +194,7 @@ Every contractor is engaged in writing and paid by the LLC. None requires a call
 | Spending caps (usage credits, ad accounts, virtual card) | Not set | G2-06 |
 | Four new SOPs (refunds and disputes, school-order fraud checks, reviews, privacy requests) | Not written | G2-12, G2-13, G2-20, G2-24 |
 
-**Rule for switching the routines on to publish:** the first six rows marked "not built" or "not done" above, plus the spending caps, must be finished first. Research and building can run now, because they publish nothing.
+**Rule for switching the routines on to publish:** the first six rows marked "not built" or "not done" above, plus the spending caps, must be finished first. Research and building can run now, because they publish nothing. This list is part of Gate A (5.12), and Gate A sets the financial model's first-sale month.
 
 ---
 
@@ -201,13 +202,26 @@ Every contractor is engaged in writing and paid by the LLC. None requires a call
 
 These are small fixes, but each one would fail the compliance gate or contradict a binding rule. The routine can make all of them. The founder approves the policy wording.
 
-1. **Listing records.** All six `listing.json` files have a blank `ai_disclosure` and a blank `price_floor`, and five of the six lack `amazon_route`. This fails gate lines 17 and 18 and the Amazon-edition rule.
-2. **Reply promises.** `operations/AUTOMATION-MAP.md` still says there is "always a 2-business-day promise". The policy drafts carry the same promise, which the weekly batch cannot keep. Change them to the approved wording in gate line 21 (G2-19).
-3. **Coaching remnants.** `legal/COACHING-WORKSHOP-TERMS.md`, `legal/protection/coaching-agreement.md`, `legal/protection/workshop-agreement.md` and the coaching mentions in the privacy policy, terms and refund policy describe services the business no longer offers. Retire them, or turn the workshop terms into a license for host-it-yourself kits.
-4. **Outreach drafts.** `marketing/virtual-autism-outreach.md` contains an audio podcast pitch. That conflicts with the no-direct-contact rule of September 28, 2026 (`brand/BRAND.md`). Retire the pitch and keep the written listing requests.
-5. **Site copy.** The outreach checklist lists four `index.html` fixes that must happen before any outreach: the implied recovery claim, the autism-named hub title, the link to an autism-named domain, and the "book a speaker" offer.
-6. **Group payment terms.** `commerce/PAYMENTS.md` still offers net-30 without the fraud checks in G2-13. This is moot until counsel clears group sales, but fix it before that track opens.
-7. **Commit rule.** `CLAUDE.md` says "push to `main`". Change it once the CI check and branch protection are live.
+1. **Listing records** (regenerated from the files on September 28, 2026; other sessions are still adding records, so the routine re-checks before acting). There are eleven `listing.json` files, plus a starter-tier file for the routine cards.
+   - None has a `price_floor`.
+   - Only `play-first-family-kit` has an `ai_disclosure`.
+   - Three lack `amazon_route`: `guide-100-plays`, `play-talk-cards` and `visual-routine-cards`, plus its starter-tier file.
+
+   This fails gate lines 17 and 18 and the Amazon-edition rule.
+2. **Anchor pricing in three price notes.** `BRAND.md` "Honest pricing" (16 CFR 233.1) overrides DEMAND-CHECK rule 2, but three records still carry list-and-sale pairs:
+   - `visual-routine-cards`: "List at $9.50 and run a standing 30–40% sale", with `price_usd` still 9.5;
+   - `play-talk-cards`: "List at $10.75 and run the usual 35% Etsy sale", and a bundle at "$11.99 (list $17.99)";
+   - `guide-100-plays`: PDF "list at $14.99 … about 33% off".
+
+   Each becomes one everyday price: $6.50, $6.99 and $9.99.
+3. **Holiday bundle note.** `play-first-family-kit` still refers to a "$39 digital + deck" holiday bundle. The 2026 bundle is digital-only at about $29 (section 2.5).
+4. **Library availability question.** Add one question to `legal/FOR-EMPLOYMENT-COUNSEL.md` (the founder or counsel adds it; this plan does not edit that file): is passive IngramSpark catalog availability to libraries and school jobbers allowed? Active library or school marketing stays G2 (section 2.7).
+5. **Reply promises.** `operations/AUTOMATION-MAP.md` still says there is "always a 2-business-day promise". The policy drafts carry the same promise, which the weekly batch cannot keep. Change them to the approved wording in gate line 21 (G2-19).
+6. **Coaching remnants.** `legal/COACHING-WORKSHOP-TERMS.md`, `legal/protection/coaching-agreement.md`, `legal/protection/workshop-agreement.md` and the coaching mentions in the privacy policy, terms and refund policy describe services the business no longer offers. Retire them, or turn the workshop terms into a license for host-it-yourself kits.
+7. **Outreach drafts.** `marketing/virtual-autism-outreach.md` contains an audio podcast pitch. That conflicts with the no-direct-contact rule of September 28, 2026 (`brand/BRAND.md`). Retire the pitch and keep the written listing requests.
+8. **Site copy.** The outreach checklist lists four `index.html` fixes that must happen before any outreach: the implied recovery claim, the autism-named hub title, the link to an autism-named domain, and the "book a speaker" offer.
+9. **Group payment terms.** `commerce/PAYMENTS.md` still offers net-30 without the fraud checks in G2-13. This is moot until counsel clears group sales, but fix it before that track opens.
+10. **Commit rule.** `CLAUDE.md` says "push to `main`". Change it once the CI check and branch protection are live.
 
 ---
 
@@ -262,7 +276,7 @@ Platform triggers: Amazon Seller Central requires a certificate of insurance wit
 - The site is directed to adults (COPPA). No child accounts and no child names; email sign-up asks only for the child's birth month and year.
 - Maryland PIPA: reasonable security, and breach notice within 45 days, with the Maryland Attorney General notified before consumers. Maryland's MODPA thresholds (35,000 Maryland consumers) are unlikely to apply soon.
 - CAN-SPAM and CASL: double opt-in, the PO Box in every footer, and opt-outs honored within 10 business days.
-- GDPR and UK GDPR: decide on EU and UK Art. 27 representatives (about €100–€600 a year each, unverified) before the first EU- or UK-targeted campaign.
+- GDPR and UK GDPR: decide on EU and UK Art. 27 representatives (about €100–€600 a year each, unverified) before the first EU- or UK-targeted campaign. The financial model budgets them from January 2027, when international digital sales begin.
 - Access and deletion requests are closed within 30 days across every connected system, with a hashed suppression entry (G2-24).
 
 ### Tax
@@ -285,7 +299,7 @@ Likelihood and impact are this plan's judgment (assumption), rated H, M or L. "S
 | 5 | **Reputational damage around "virtual autism"** from an overstated line, a critic's screenshot or a pile-on | M / H | Spike in comments or mentions; a critical post; review pile-on | The term appears only on research-hub pages with the safe framing sentence; the hub gets a non-medical name; no autism keywords on any product, listing or ad; paid SLP and sensitivity reads; comments off on hub posts; reply once, kindly, with sources, and fix the copy first if we overstated; holding statements prepared; `ops/PAUSE` for anything viral; the four `index.html` fixes before any outreach | R; F approves replies |
 | 6 | **Intersection with the founder's employment.** Business activity, public records or group sales raise questions only her employment counsel can answer. | M / H | Any item touching schools, her role, her employer or public records of her name | Every such question goes only to counsel. G1 and G2 products are built but unpublished until counsel answers. The outreach exclusion list and suppression list are checked before every batch. Nothing she made for or used in her teaching is sold. Nothing about her employment or legal matters is published. Any touch creates `ops/PAUSE`. | C; F |
 | 7 | **Key person unavailable** (illness, family needs, work demands) and approvals stop | M / H | No verified approval in 21 days | Maintenance mode after 21 days keeps the business running without growth; successor or designee in the operating agreement; a durable power of attorney for business and digital accounts ($500–$1,500, BLIND-SPOTS #20); password-manager emergency kit; attorney of record on trademarks; accountant with read-only access; a one-page "if I'm unavailable" sheet; monthly export of the email list and sales | F once; A |
-| 8 | **Cash-flow squeeze.** Peak costs fall in October and November while payouts lag. The pre-sale and later a retail order must be paid before revenue arrives. | M / M | 13-week forecast below the 3-month reserve target; owner money in above her cap | Pre-sale funds the print run (printing, shipping, duties, fees, delivery and a 15% buffer); a household-money cap and review date written down by the founder; a usage-credit cap (for example $25 a month) and ad-account limits; one virtual card for tools; the tax reserve kept separate; chargeback packets within 48 hours ($15 Shopify fee per chargeback, unverified) | R; F sets caps |
+| 8 | **Cash-flow squeeze.** One-time costs fall in October 2026 – March 2027, before sales can cover them, while payouts lag (Etsy about a month, KDP about 60 days, IngramSpark about 90). Any later print run or retail order must be paid before its revenue arrives. | M / M | 13-week forecast below the 3-month reserve target; cumulative founder capital approaching the cap | Lean path as the base plan (lowest written quote for each cost; section 3.12); a household-money cap and review date written down by the founder, with a hard stop when it is reached (section 3.6); no print run without the board-book gate, so no inventory is funded by customers or by debt; a funded ceiling for any chain order (section 4.5 item 9); a usage-credit cap and ad-account limits; one virtual card for tools; the tax reserve kept separate; chargeback packets within 48 hours ($15 Shopify fee per chargeback, unverified) | R; F sets caps |
 | 9 | **Copycats** reproduce listings, printables or art. AI-made material may not be protected by copyright. | H / M | Monthly copycat watch; Google Alerts; reverse-image search | Trademark first; license terms bind buyers; the notice line and embedded CMI in every file; buyer-stamped PDFs where supported; platform IP portals set up in advance; the escalation ladder from report to DMCA notice to the Copyright Claims Board ($100 total); speed and series depth as the practical moat. Never file without her approval. | R; F approves; A |
 | 10 | **Automation failure or misuse.** The routine stops silently, a key expires, a web page injects instructions, or a bad run marks its own approvals. | M / H | Missing heartbeat; published count of 0 while approved items wait; token expiry within 14 days | Heartbeat plus outside watchdog; verified approval channel the routine cannot write to; AlphaPlay-only account with no personal connectors; research and publish split; run lock; CI check; weekly backup; full-stop card | R; F once |
 | 11 | **Product-safety incident or non-compliant physical product** | L / H | Customer safety report; failed lab test | Adult-only merch; CPSIA testing, CPC and tracking labels before the board book sells; the deck's target age decided before printing; activity safety rules in every product; a recall plan with lot tracing at the 3PL; GL insurance before the first sale | R; A; F signs CPC |
@@ -303,12 +317,14 @@ Targets come from the source files where they exist. Where the files set none, t
 
 | Area | KPI | Target or rule | Source |
 |---|---|---|---|
-| **Money** | Net revenue per month vs. plan | Budget on the Low case: about $5,050 net in year one, roughly $420 a month. Target the Base case: about $15,750, roughly $1,310 a month. Monthly figures derived from section 1.5. | Section 1.5 |
+| **Money** | Orders per month vs. the break-even line | **About 65 orders a month by month 12 (September 2027) on the lean path**, or about 100 at mid-point costs. The same line as section 3.10 rule 1 | Section 3.7 |
+| | Gross sales vs. plan | Budget pace, Conservative: $5,849 in year 1 (net contribution $4,470). Target, Expected: $11,195 in year 1 (net contribution $8,400). Monthly targets come from the 36-Month Forecast tab, month by month, so the scorecard compares like with like. | Section 3.0 |
+| | Founder capital in vs. cap | At or under the household-money cap; lean path about $7,800 in total, all by April 2027 | Section 3.6 |
 | | Profit after fees, costs and refunds | Positive by product within 8 weeks, or cut or fixed | `ops/ROUTINE.md` §6 |
 | | Net per unit vs. `price_floor`, by channel | Never below the floor | Gate line 18 |
-| | Landed cost vs. retail (physical) | 35–40% or less for own channels; 20% or less for any chain product (assumption, section 4); wholesale at least 2× landed cost | DEMAND-CHECK rule 9; quarterly SOP |
+| | Landed cost vs. retail (physical) | Cost rule by channel: 35% or less for own site and FBA, 25% or less for Faire and wholesale, 20% or less for chains, with positive chain contribution at a 25% returns reserve | Section 3.8; section 4.4 |
 | | Cash vs. reserve | 3 months of costs in the business account (BLIND-SPOTS says 2–3) | ROUTINE §6; BLIND-SPOTS #20 |
-| | Tool and ad spend vs. cap; owner money in vs. cap | At or under the caps she sets | G2-06, G2-10 |
+| | Tool and ad spend vs. cap | At or under the caps she sets | G2-06, G2-10 |
 | **Customers and list** | Opt-in rate on lead pages | Above 25% | MARKETING-PLAYBOOK |
 | | Cost per subscriber on paid tests | Under $2 | MARKETING-PLAYBOOK |
 | | Email sign-ups per sale, by channel (QR scan rate) | Set after 8 weeks of Wave 1 data (assumption) | Section 2.6 |
@@ -317,8 +333,8 @@ Targets come from the source files where they exist. Where the files set none, t
 | | Ad set CAC | Cut when CAC stays above 1.5× first-order gross margin after spending 2× target CAC; one paid test at a time | MARKETING-PLAYBOOK |
 | **Products** | Sales per listing | At least 5 in 60 days after SEO fixes, or reprice once and then fold into a bundle | `ops/QUEUE.md` kill rule |
 | | Refund rate; dispute rate | Refunds under 3% of orders; disputes under 0.5% (both assumptions; card networks are commonly said to watch rates near 1% [VERIFY]) | G2-12 scorecard line |
-| | Ratings on the lead physical SKU | 50+ at 4.5 stars by R2; 150+ by R3; 300+ by R4 (assumptions) | Section 4.9 |
-| **Stocked goods** (Wave 3 on) | Return and defect rate; on-time complete shipping | Under 3%; 98% or more (assumptions) | Section 4.7 |
+| | Units and ratings on the lead physical SKU | Gates are set in units: POD paperback 40+ a month for 3 months (gate B0); 1,250–2,500 units and 25+ ratings at 4.5 by R2; 5,000–10,000 units, 400+ a month and about 100 ratings by R4 (assumptions) | Section 4.9 |
+| **Stocked goods** (only after gate B0) | Return and defect rate; on-time complete shipping | Under 3%; 98% or more (assumptions) | Section 4.7 |
 | **Operations health** | Heartbeat age | Every scheduled run writes one; alert at 8 days | G2-01 |
 | | Content scheduled ahead | 8 weeks of approved posts, pins and emails | ROUTINE, "Be proactive" |
 | | Publish limits | At most 5 new Etsy listings and 2 new KDP titles a week; at most 2 new articles a week | ROUTINE §5, search-quality rule |
@@ -341,14 +357,15 @@ PLAY BEFORE PIXELS · WEEKLY SCORECARD · week of YYYY-MM-DD
 Data connected: [list]   Estimated (late-reporting): KDP ~60d, IngramSpark ~90d
 
 MONEY
-  Revenue this week / month to date / plan pace (Low | Base)
+  Orders this month vs break-even line (~65/month lean)
+  Revenue this week / month to date / plan pace (Conservative | Expected)
   Profit after fees, costs, refunds            this week / MTD
   By channel: site · Etsy · KDP · IngramSpark · MoR · other
   Top 3 and bottom 3 products (revenue, profit, units)
   Any product below price_floor on any channel
   Cash in business account vs 3-month reserve target
   Tax reserve moved this week (and any deposit that missed the rule)
-  Tool + ad cost vs cap      Owner money in vs cap
+  Tool + ad cost vs cap      Founder capital in to date vs household-money cap
 
 CUSTOMERS
   New subscribers (by source, by age band)     Opt-in rate by lead page
@@ -377,31 +394,36 @@ Any exceeded cap becomes one line in `ops/APPROVALS.md` (ROUTINE §6). The month
 
 ## 5.12 Twenty-four-month milestones and gates (October 2026 to September 2028)
 
-Dates are assumptions built on the wave dates in section 2.3 and the retail stages in section 4.9. A gate is passed only when **every** condition is true. The routine checks gates in the monthly plan update and moves the next step into `ops/QUEUE.md` only when a gate is met. If a gate slips, what follows it slips too. Nothing spends money without a line approved in `ops/APPROVALS.md`.
+The dates follow the financial model (section 3): first sales in December 2026, and break-even and funding figures from the lean path. A gate is passed only when **every** condition is true. The routine checks gates in the monthly plan update and moves the next step into `ops/QUEUE.md` only when a gate is met. If a gate slips, everything after it slips too. Nothing spends money without a line approved in `ops/APPROVALS.md`, and no spending takes cumulative founder capital past the household-money cap.
 
 ### Main track
 
 | When | Wave / stage | Milestones | Gate to pass before moving on |
 |---|---|---|---|
-| **Oct 2026** (month 1) | Foundations | New business bank account and tax-reserve sub-account; trade name filed; PO Box; business email; counsel questions sent; AlphaPlay-only routine account; spending caps; policies corrected (5.7) and sent for review; GL insurance quoted; `listing.json` gaps fixed; trademark knockout search | **Gate A, open for business:** bank account open and connected; employment counsel's go-ahead for the G0 launch; privacy policy and PO Box live; GL insurance bound before the first physical sale; heartbeat, watchdog, verified approval channel and connector guard working before the routine publishes anything |
-| **Oct–Dec 2026** (months 1–3) | Wave 1 | Launch-first five (routine cards and bored cards by Oct 18; Family Kit and 100-plays PDF by Oct 31; busy book and paperback by Nov 13); holiday gift bundle by Oct 31; copyright filings before Nov 11; ALPHAPLAY product chosen by Nov 30; accountant decisions (retirement plan by early December); G1 answer requested for mid-December | **Gate B, Wave 1 working (by Jan 1, 2027):** first monthly close reconciles every payout; at least 4 consecutive weeks of clean heartbeats; approvals held within 60 minutes a week for 4 weeks; every live listing passed the gate; kill rule applied to any listing under 5 sales in 60 days |
-| **Jan 2027** (month 4) | Wave 2 | 30-Day Screen Reset public launch (Dec 26); ALPHAPLAY Spelling Games on sale by mid-January if G1 clears; merchant of record live for English-speaking markets (`ops/INTERNATIONAL.md` Region 2); IngramSpark titles; PLAY BEFORE PIXELS filed after clearance; board-book and 3PL quotes requested at 500, 1,000, 2,500 and 5,000 copies | **Gate C, ready to commit to a print run (by about Feb 1, 2027):** ALPHAPLAY Statement of Use or extension filed; quotes show a landed cost at or below $4.55–$5.20 for the $12.99 book; product-safety counsel has said who certifies; illustrator contract signed; the 13-week forecast covers any deposit without exceeding the owner-money cap |
-| **Feb–Jun 2027** (months 5–9) | Wave 3 | Board-book pre-sale Feb–Apr; human illustration; lab testing; 3PL signed; Spanish starter set (about $5,000 mixed, months 4–9); Screen-Free Week campaign; POD Play & Talk deck if the $7 printable has sold; Amazon Merch application | **Gate D, place the print order:** pre-sale meets its funding goal (printing, shipping, duties, about 8–10% fees, delivery and a 15% buffer); order size = pre-sold units plus 30–50%; recall plan written. **R1 (section 4), stocked product live, about Jul 2027:** stock at the 3PL; CPC and tracking labels done; first 30 days shipped with no safety complaint |
-| **Jul–Dec 2027** (months 10–15) | Wave 4 | Community editions that monthly research supports; Faire (US and Canada); rep-group test in independent stores; Walmart Marketplace application; subscription stage kit; French and German starter sets only if Spanish meets its targets; Amazon insurance certificate if any month tops $10,000 | **Gate E, subscription launch:** at least 6 months of monthly-printable email data by age band; cancellation flow tested; subscription terms reviewed. **Gate F, next language:** Spanish pages reach traffic and sales targets set at the April 2027 quarterly review (assumption). **R2, wholesale proven, about Dec 2027:** 90+ days of stocked sales; lead SKU 4.5 stars with 50+ ratings; first independent-store reorders; retail cost rule met at a quoted run size |
-| **Jan–Jun 2028** (months 16–21) | Retail stage 3: online big-box | Walmart Marketplace live; board books 2 and 3; card deck in retail packaging if the POD deck sold; GS1 barcodes and class 28 filing for the deck; insurance quote at retailer limits | **R3, big-box online proven:** 6+ months live on at least one big-box website; return rate under 3%; on-time shipping 98%+; 150+ ratings on the lead SKU |
-| **Jul–Sep 2028** (months 22–24) | Retail stage 4: representation | Written approaches to distributors and chain-focused reps using the proof pack; attorney reviews each agreement; EDI tested with the 3PL; order-funding plan approved | **R4, representation signed:** 12 months of stocked sales; three-book series live; 300+ ratings at 4.5+; reorder rate 30%+; the agreement names the rep or distributor as the face of the account, with the founder in writing only. The buyer pitch (R5) follows in the second half of 2028. |
+| **Oct–Nov 2026** (months 1–2) | Foundations | New business bank account and tax-reserve sub-account; trade name filed; PO Box; business email; counsel questions sent (G1 answer requested first); AlphaPlay-only routine account; spending caps; household-money cap written down; policies corrected (5.7) and sent for review; GL insurance quoted; `listing.json` gaps fixed; trademark knockout search; copyright filings before Nov 11. Listings built (routine cards and bored cards by Oct 18; Family Kit and 100-plays PDF by Oct 31; busy book and paperback by Nov 13) | **Gate A, open for business (target: end of November 2026; the model's first sales are in December):** bank account open and connected; employment counsel's go-ahead for the G0 launch; privacy policy and PO Box live; **GL insurance bound before the first sale**; heartbeat, watchdog, verified approval channel, connector guard, publish ledger, CI check, full-stop card and spending caps working before the routine publishes anything (5.6) |
+| **Dec 2026** (month 3) | Wave 1 sales | Launch-first five live; 2026 digital holiday bundle; KDP paperbacks; the free "3 plays" email offer | **Gate B, Wave 1 working (by end of January 2027):** first monthly close reconciles every payout; 4 consecutive weeks of clean heartbeats; approvals within 60 minutes a week for 4 weeks; every live listing passed the gate |
+| **Jan–Mar 2027** (months 4–6) | Wave 2 | 30-Day Screen Reset public launch in January, with the founding-member offer inside it; ALPHAPLAY Spelling Games on sale by mid-January if G1 clears; merchant of record live for English-speaking markets (`ops/INTERNATIONAL.md` Region 2); IngramSpark paperbacks live in February, and the monthly target.com, walmart.com and registry check starts; Amazon Ads test at $5 a day; PLAY BEFORE PIXELS filed after clearance; information-only printer quotes at 500, 1,000, 2,500 and 5,000 copies | **Gate C, trademark and first-quarter check (by March 8, 2027):** ALPHAPLAY Statement of Use filed, or the $625 extension; kill rule applied to any listing with fewer than 5 sales in 60 days; orders tracked against the break-even line |
+| **Apr–Sep 2027** (months 7–12) | Wave 3: spring and summer | Screen-Free Week campaign; Summer Play Kit; POD Play & Talk deck if the printable has sold; Amazon Merch application; cleared tees | **Conservative trigger (May 2027):** if orders run below 43 a month, stop ad tests, move every tool to its lowest tier and re-forecast (section 3.10 rule 6). **Gate D, break-even line (by September 2027):** about 65 orders a month on the lean path; trailing-12-month operating result at or above zero (the Expected model reaches it in August 2027); founder capital within the cap. Two consecutive months at the line, plus room under the cap, unlock the gated one-time items: Spanish localization first, then library credibility |
+| **Oct 2027 – Mar 2028** (months 13–18) | Wave 4 | Community editions that monthly research supports; subscription stage kit; Spanish starter set if Gate D is met; Amazon insurance certificate if any month tops $10,000 | **Gate E, subscription launch:** at least 6 months of monthly-printable email data by age band; cancellation flow tested; subscription terms reviewed. **Gate F, next language:** Spanish pages reach the traffic and sales targets set at the quarterly review (assumption) |
+| **Apr–Sep 2028** (months 19–24) | Board-book gate check (quarterly) | The routine reports each of the five B0 conditions (section 3.10 rule 4; section 4.9). The finance conditions come into view around mid-2028 in the Expected model. The demand condition (the POD paperback at 40+ units a month for 3 months) is not met at the modelled 5 a month | **B0:** only if all five conditions hold, then illustrator, CPSIA test and pre-sale, with its go line deciding the print. Retail gates R1–R5 are set by units sold (section 4.9) and do not come into view in this window on the Expected numbers |
 
-**Stop points.** At Gate C, if no quote meets the landed-cost rule, the board book stays a POD paperback and Wave 3 runs digital-only. At R2 and R4, the right answer may be "stay here". Direct sales, Amazon and wholesale are profitable at our prices, and chain retail is not required for the business to succeed (section 4.9).
+**Cost rule by channel (used at Gate B0 and at every retail gate).** Landed cost at or below 35% of retail for the own site and Amazon FBA; 25% for Faire and wholesale; 20% for chain retail, with positive contribution at a 25% returns reserve (section 3.8). A quote is judged against the channel the run is meant for.
+
+**Stop points.**
+- At the **cap**: when cumulative founder capital reaches the household-money cap, all spending that is not deadline-driven stops, and the plan is re-forecast from real data (section 3.6).
+- At **Gate D**: if the break-even line is not met by September 2027, the gated one-time items stay off, and the Conservative trigger applies.
+- At **B0**: if the paperback does not reach its demand line, the board book stays a print-on-demand paperback, and nothing is printed.
+- At **R2 and R4**: the right answer may be "stay here". **Direct sales and Amazon are profitable at our prices. Wholesale of a single $12.99 book loses money at current costs** (section 4.4), and chain retail is not required for the business to succeed.
 
 ### Conditional track: school- and group-facing products (G2)
 
 | Step | Condition | Earliest timing |
 |---|---|---|
-| **Gate S, cleared to sell to groups** | Employment counsel answers the listed questions in writing and allows it. The exclusion and suppression lists exist and are checked by the routine. The purchasing kit is built: quote form, W-9 on request, PO and invoice, license tiers and an automated license stamper. The G2-13 fraud checks are in `operations/SOPs/school-orders.md`. | TpT listings by December 15, 2026 for the January window, only if every condition is met by then. Otherwise the August 2027 back-to-school season. |
+| **Gate S, cleared to sell to groups** | Employment counsel answers the listed questions in writing and allows it. The exclusion and suppression lists exist and are checked by the routine. The purchasing kit is built: quote form, W-9 on request, PO and invoice, license tiers and an automated license stamper. The G2-13 fraud checks are in `operations/SOPs/school-orders.md`. Setup budget about $739, including TpT Premium and counsel review of the license and PO terms (section 3). | The earliest school window after every condition is met: January (TpT listings by December 15) or the August back-to-school season. The overlay in section 3.9 assumes October 2027. |
 | Launch | Classroom products, the host-it-yourself parent-night kit, child-care editions and licenses at the prices in section 2.3 | After Gate S |
-| Retail and library extension | School and library jobbers, educational-supply retailers | After Gate S and R1 |
+| Retail and library extension | Active marketing to school and library jobbers and educational-supply retailers (passive IngramSpark catalog availability is outside this track if counsel confirms it; 5.7 item 4) | After Gate S and R1 |
 
-If counsel does not clear this track, it stays closed. The bottom-up plan in section 1.5 excludes all group revenue, so the main track does not depend on it. Even if cleared, three limits remain: nothing the founder made for or used in her teaching is sold; no one on the outreach exclusion list is contacted, listed or targeted; and no rep or distributor agreement may include those organizations as accounts.
+If counsel does not clear this track, it stays closed. No base figure in the financial model includes group revenue. If counsel clears the track in writing, the overlay adds about $1,900 to the Expected year-3 operating result (section 3.9). The main track does not depend on it. Even if cleared, three limits remain: nothing the founder made for or used in her teaching is sold; no one on the outreach exclusion list is contacted, listed or targeted; and no rep or distributor agreement may include those organizations as accounts.
 
 ### Fixed dates inside the window
 | Date | Item |
@@ -421,9 +443,19 @@ If counsel does not clear this track, it stays closed. The bottom-up plan in sec
 
 1. **Open the new business bank account** with a tax-reserve sub-account. Everything that earns money waits on it.
 2. **Approve the build list for switching the routines on to publish:** a separate AlphaPlay-only Claude account, spending caps, the approval Worker, the heartbeat watchdog, the publish ledger, CI with branch protection, and the full-stop card (5.6).
-3. **Write down two numbers:** the most household money she will put into the business, with a review date (G2-10), and the automatic refund limit (about $15 is suggested in G2-12).
+3. **Write down three numbers:**
+   - the household-money cap, with a review date (G2-10). The lean path needs about $7,800 by April 2027; the model uses a $12,000 placeholder, and reaching the cap triggers the hard stop;
+   - the balance on the Chase business card, which is an LLC liability;
+   - the automatic refund limit (about $15 is suggested in G2-12).
 4. **Confirm the scope of her authorship work:** rewrites on flagship titles only, with trademark, license terms and human illustrators protecting the rest (5.2).
 5. **Engage the professionals by email:** the trademark attorney now (ALPHAPLAY and PLAY BEFORE PIXELS clearance); the business and IP attorney (operating agreement with a successor, then the IP assignment); the accountant before any platform tax interview; the insurance broker for GL before the first sale.
 6. **Set up continuity:** a durable power of attorney for business and digital accounts, and a password-manager emergency kit (risk 7).
-7. **Approve the record fixes in 5.7:** listing fields, reply promises, coaching remnants, the podcast pitch and the four `index.html` lines.
+7. **Approve the record fixes in 5.7:**
+   - listing fields;
+   - the three anchor-price notes and the holiday-bundle note;
+   - the library-availability question for counsel;
+   - reply promises;
+   - coaching remnants;
+   - the podcast pitch;
+   - the four `index.html` lines.
 8. **Adopt the gates in 5.12** as the rule for moving between waves. The routine then checks them monthly and reports "Plan update: …" in one line each quarter.

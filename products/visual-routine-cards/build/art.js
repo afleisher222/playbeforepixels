@@ -305,13 +305,13 @@ A.wThen = () => U('arrow', 'translate(60,52) scale(1.2)', `--ar:${K}`) + bigNum(
 A.wNow = () => Ci(60, 52, 30, G) + Ci(60, 52, 14, W) + Ci(60, 52, 7, G);
 A.wNext = () => U('arrow', 'translate(52,52) scale(.9)', `--ar:${S}`) + U('arrow', 'translate(84,52) scale(.6)', `--ar:${T}`);
 A.wLater = () => U('clock', 'translate(60,52) scale(1.2)', `--ck1:${P}`);
-A.wWait = () => handUp(60, 58, 1.45, SK[2], 0);
+A.wWait = () => handUp(60, 62, 1.18, SK[2], 0);
 A.wAllDone = () => U('check', 'translate(60,52) scale(1.3)');
 A.wToday = () => R(28, 20, 64, 66, 8, W) + R(28, 20, 64, 18, 8, T) + R(28, 30, 64, 8, 0, T) + R(40, 12, 6, 14, 3, I) + R(74, 12, 6, 14, 3, I) + star(60, 62, 1.6, S);
 A.wChange = () => R(26, 20, 68, 64, 12, W) + star(60, 50, 2.2, P) + Tx(88, 34, 0, T, '!', 20);
-A.wHelp = () => handUp(50, 60, 1.35, SK[4], -10) + heart(92, 28, .2);
-A.wYes = () => Ci(60, 52, 32, G) + St('M45 52L56 63 76 41', W, 8);
-A.wNo = () => Ci(60, 52, 32, T) + St('M47 39L73 65M73 39L47 65', W, 8);
+A.wHelp = () => handUp(52, 64, 1.12, SK[4], -10) + heart(92, 28, .2);
+A.wYes = () => Pa('M28 22H92Q100 22 100 30V66Q100 74 92 74H56L40 88V74H28Q20 74 20 66V30Q20 22 28 22Z', G) + St('M44 48L55 59 76 37', W, 8); // speech bubble, so it never looks like All done
+A.wNo = () => Pa('M28 22H92Q100 22 100 30V66Q100 74 92 74H56L40 88V74H28Q20 74 20 66V30Q20 22 28 22Z', T) + St('M47 35L73 61M73 35L47 61', W, 8);
 
 // PLAY FIRST / SCREENS LATER
 A.playFirst = () => Ci(24, 22, 13, T) + bigNum(24, 30, '1', W, 20) + U('block-1', 'translate(50,74) scale(.44)') + U('block-3', 'translate(76,74) scale(.44)') + U('block-2', 'translate(63,50) scale(.44)') + U('ball', 'translate(96,70) scale(.24)') + star(96, 26, .6, S);
@@ -388,7 +388,7 @@ A.frain = () => U('cloud', 'translate(62,44) scale(.95)', `--cl:${GREY}`) + drop
 A.fsnow = () => U('cloud', 'translate(62,44) scale(.95)', `--cl:${GREY}`) + [[42, 78], [60, 86], [78, 78], [51, 94], [69, 94]].map(([x, y]) => Ci(x, y, 4.5, K)).join('');
 
 // RULE 26 (marketing/CUSTOMER-VOICE.md): a "What we do next" card and a 5-minute wrap-up card
-A.whatNext = () => U('arrow', 'translate(42,54) scale(.78)', `--ar:${K}`) + Ci(92, 54, 22, tS) + U('ball', 'translate(92,54) scale(.34)') + star(24, 22, .55, S) + star(104, 20, .4, T);
-A.fiveMore = () => Gp('translate(52,56)', U('clock', 'scale(1.05)', `--ck1:${G}`)) + Ci(94, 26, 17, T) + bigNum(94, 33.5, '5', W, 22) + St('M86 70q6 6 14 2', S, 3.5) + St('M90 82q6 4 12 0', S, 3.5);
+A.whatNext = () => U('arrow', 'translate(42,54) scale(.78)', `--ar:${K}`) + U('ball', 'translate(88,54) scale(.34)') + star(24, 22, .55, S) + star(104, 20, .4, T);
+A.fiveMore = () => Gp('translate(52,56)', U('clock', 'scale(1.05)', `--ck1:${G}`)) + Ci(94, 26, 17, T) + bigNum(94, 33.5, '5', W, 22);
 
 module.exports = { A, NEW_SYMBOLS, CAST, R, Ci, Pa, St, Gp, U, Tx, star, moon, sun, tablet, heart, bigNum, stand, kid, adult, head, bust };

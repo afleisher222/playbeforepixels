@@ -467,6 +467,8 @@ function tocPage(rows) {
         <div class="tile" style="--t:${C.tPlum}"><h3>What you can type</h3><p>Open this PDF in free <b>Adobe Acrobat Reader</b> (computer or phone). You can type labels on blank, word-free and photo cards, chart titles, names and big-kid jobs, and tick the checklist boxes. Colors and pictures can't be changed.${X.store && X.tier === 'full' ? ' Bonus Canva-ready PNGs are on the free bonus page.' : ''}</p></div>
       </div>
     </div>
+    <div class="tile" style="--t:${C.wash};margin-top:auto"><h3 style="margin-bottom:8px">One card, four colorways</h3>
+      <div style="display:flex;gap:.2in;justify-content:space-between">${COLORWAYS.map(cw => `<div style="text-align:center"><div style="width:1.54in;height:1.54in"><div style="transform:scale(.7);transform-origin:top left">${card(byId('play-blocks'), cw.id)}</div></div><div style="font-weight:800;font-size:10.5px;margin-top:4px">${cw.name}</div><div class="note">${cw.id === 'simple' ? 'Low-ink file' : 'Color file'} · ${cw.note}</div></div>`).join('')}</div></div>
   </div>`, { note: 'Print guide' });
 }
 function laminatePage() {
@@ -676,4 +678,4 @@ if (require.main === module) main().catch(e => { console.error(e); process.exit(
 
 // for marketing.js (listing images are rendered from the Etsy edition: no URL, no QR)
 function setCtx(ctx) { X = Object.assign({ paper: 'letter', store: false, low: false, tier: 'full' }, ctx); PAGENO = 0; }
-module.exports = { setCtx, prefilledCharts, blankCharts, chartStrip, chartHoriz, chartFirstThen, chartRoutine, chartToday, checklist, coverPage, welcomePage, talkPage, agesPage, laminatePage, css, wrapDoc, PAPER, N_ALL, N_YOUNG, N_BIG, N_START, COPY, BONUS, PREP, VERSION, SECOND, LOGO, sized, buildDoc };
+module.exports = { setCtx, starterHowPage, prefilledCharts, blankCharts, chartStrip, chartHoriz, chartFirstThen, chartRoutine, chartToday, checklist, coverPage, welcomePage, talkPage, agesPage, laminatePage, css, wrapDoc, PAPER, N_ALL, N_YOUNG, N_BIG, N_START, COPY, BONUS, PREP, VERSION, SECOND, LOGO, sized, buildDoc };

@@ -38,7 +38,7 @@ Retailers and channel companies are named here only as routes to research. None 
 | What a big-box buyer expects [VERIFY] | Where we are (September 28, 2026) | Source |
 |---|---|---|
 | A physical, shelf-ready product line | None. Printables, KDP paperbacks and IngramSpark hardcovers only. The POD card-deck files exist (`products/play-talk-cards/pod-later/`: 54 fronts, back and tuck box for two decks) but have not been printed. | `products/`; section 2.1 |
-| Sales history on the product being pitched | None yet. Wave 1 launches before Black Friday, November 27, 2026. | `ops/QUEUE.md` |
+| Sales history on the product being pitched | None yet. Wave 1 listings are built for the holiday season; they take money once Gate A is met (the model assumes December 2026). | `ops/QUEUE.md`; section 3.2 |
 | Reviews and ratings | None yet | — |
 | A registered or pending trademark | PLAY BEFORE PIXELS is not yet cleared or filed. The name is rated medium risk as a descriptive mark. Filing in classes 16 and 41 is planned at $700. ALPHAPLAY (SN 99650345) needs its Statement of Use or an extension by March 8, 2027. | `legal/DECISION-MEMO.json`; `legal/protection/PROTECTION-PLAN.md` §6b, §10 |
 | Product liability insurance | Not bought. The plan specifies $1M per occurrence / $2M aggregate CGL with products-completed operations, at about $542 a year on average, bound before the first sale. Chain limits are quoted separately (4.5 item 4). | PROTECTION-PLAN §2 |
@@ -185,17 +185,17 @@ Every item has to be in place before a rep or distributor presents the line. The
 
 ## 4.6 Which products are retail candidates
 
-The rule from section 2.9 still holds: printables, POD items and personalized books cannot go on a store shelf. The candidates are the physical, repeatable formats that the demand check already supports.
+The rule from section 2.9 still holds: printables, POD items and personalized books cannot go on a store shelf. The honest short list is shorter than in the first draft. **The only in-store candidate is the three-book Talk-Along Firsts series, sold through a distributor.** Everything else is an online, independent-store or conditional item.
 
 | Candidate | Evidence (`DEMAND-CHECK.md`) | Retail role | Conditions |
 |---|---|---|---|
-| **Talk-Along Firsts board-book series:** *Up! Go! More!* plus books 2 and 3 | Strong category. The Learn-to-Talk series has 1,448 ratings. A self-published imitation book has 196 ratings and a #1 sub-category badge. *My Words Book* shows BSR #580 in Books. *First 100 Words* has sold 8M+ copies. The top sellers lead with SLP authorship, which we cannot claim. | **Lead line.** A series of three with matching spines is what a buyer can shelve. | Offset run at a 3PL; CPSIA testing and CPC; human illustration; books 2 and 3 cleared; retail cost rule met ($2.60 at $12.99) |
-| **Talk-Along Firsts 3-pack boxed set** | The 6-book Learn-to-Talk series; "3-book bundle, save $8" listings; box sets sold as separate listings | Gift and holiday item for online big-box and independent stores | Only after all three books exist. It fails the chain margin test at current planning costs (4.4). |
-| **0–5 Play & Talk card deck** (52–54 cards) | *Little Talk Deck* has 1,418 ratings at about $27. A 0–5 card brand is already sold at Target. The same content sells strongly as printables (a 10.4k-sale bored-jar shop). | **Second line,** and the best retail margin (4.4) | The $7 printable sells, then the $22 POD deck sells (DEMAND-CHECK rule 8), then an offset deck with retail packaging. Target-age and toy decision; GS1 GTIN; class 28 trademark. |
-| **First-words flash-card deck** | Bestseller badges on first-words flash-card printables; *First 100 Words* 8M+ copies | Companion to the board-book series on the same shelf | Same path as the play deck. It reuses the board-book art. |
-| **Activity books:** *100 Screen-Free Plays* (later the 150- and 365-play editions) and KDP activity editions of the printables | *Play & Learn Toddler Activities* has 699 ratings. *150+ Screen-Free Activities* has 423 Goodreads ratings. *Toddler's Busy Book* has about 811 ratings and #308 in Family Activity. | Book-aisle title through a distributor, in the parenting section | The retail edition needs an offset run for margin and returnability. The KDP POD paperback is not a retail product. |
+| **Talk-Along Firsts board-book series:** *Up! Go! More!* plus books 2 and 3 | Strong category. The Learn-to-Talk series has 1,448 ratings. A self-published imitation book has 196 ratings and a #1 sub-category badge. *My Words Book* shows BSR #580 in Books. *First 100 Words* has sold 8M+ copies. The top sellers lead with SLP authorship, which we cannot claim. | **The in-store candidate**, through a distributor or a publisher licence (4.2). Department: books (baby and board books) [VERIFY how each chain assigns it]. | The board-book gate (section 3.10 rule 4); offset run at a 3PL; CPSIA testing and CPC; human illustration; books 2 and 3 cleared; a separate retail edition that meets the chain cost rule with a 25% returns reserve (4.4) |
+| **Talk-Along Firsts 3-pack boxed set** | The 6-book Learn-to-Talk series; "3-book bundle, save $8" listings; box sets sold as separate listings | **A target.com, Amazon and Q4 gift item**, plus independent stores; not a chain-shelf item | Only after all three books exist. It fails the chain margin test at current planning costs (4.4). |
+| **0–5 Play & Talk card deck** (52–54 cards) | DEMAND-CHECK rates the 0–5 deck "unclear as a deck; strong as content". *Little Talk Deck* (1,418 ratings, about $27) is the comparable for the 5–12 family deck, not the 0–5 deck. A 0–5 card brand is sold at Target. The $19.99 retail price and the $2.00–$3.50 landed cost are assumptions. | **Conditional candidate only** | The $6.99 printable sells, then the $22 POD deck sells with its own sell-through data (DEMAND-CHECK rule 8). Decide the intended user now: a deck the grown-up reads may avoid toy classification [VERIFY with counsel]. Name the department first (toys and games, baby, or books), because it sets the buyer, the margin, whether toy-safety rules (ASTM F963) apply, and the rep type that covers it. Then GS1 GTIN and the class 28 trademark. |
+| **First-words flash-card deck** | Bestseller badges on first-words flash-card *printables*; a traditional title's 8M+ copies | **Online and independent stores only.** A low-price category led by large publishers [VERIFY typical mass price]. | POD first; reuses the board-book art |
+| **Activity books:** *100 Screen-Free Plays* (later 150 and 365 plays) and KDP activity editions | *Play & Learn Toddler Activities* has 699 ratings; *150+ Screen-Free Activities* 423 Goodreads ratings; *Toddler's Busy Book* about 811 ratings | **Online and independent stores only.** A parenting trade paperback has little space in mass stores. | Stays print-on-demand through KDP and IngramSpark |
 | **Family talk-along deck, ages 5–12** | Moderate: 6+ brands with more than one product each | Later line extension | G1: waits for counsel's answer on school-age products (section 2.2) |
-| **Book + pouch gift set** (*The Day the Tablet Slept* + Tablet Tuck-In pouch) | The book's demand is weak; the pouch is untested | Not a candidate until the pouch sells DTC | Revisit after the May 2027 campaign |
+| **Book + pouch gift set** (*The Day the Tablet Slept* + Tablet Tuck-In pouch) | The book's demand is weak; the pouch is untested | Not a candidate until the pouch sells direct | Revisit after the May 2027 campaign |
 
 **Not retail candidates:** printables and every digital product; POD merch and tees; the personalized *Laps Not Apps* keepsake (made to order); site licenses and host-it-yourself kits; the 30-Day Screen Reset.
 
@@ -209,20 +209,27 @@ Classroom products, library editions and the education channel (school and libra
 
 ## 4.7 The numbers a buyer asks for, and how the routine will produce them
 
-Reps, distributors and buyers ask for roughly the same pack [VERIFY]. The routine can assemble it automatically each month from connected sales data, so it is always current when a gate is reached. Recommendation: add a monthly **"retail proof pack"** step to `ops/ROUTINE.md`, written to `business/retail-proof/YYYY-MM.md`.
+Book buyers and distributors judge mainly on **point-of-sale data**, such as Circana BookScan, and on **units per store per week** [VERIFY]. Amazon ratings and our own-site data are supporting evidence, not the main case. Own-site sales and third-party FBA sales of the board book may not register in point-of-sale data at all [VERIFY]. The plan therefore adds sales channels that point-of-sale data can see:
+- Ingram-supplied retail for the paperbacks;
+- once there is stocked product, Amazon selling as the retailer through a distributor.
 
-| Metric | What it shows | Our source | Gate target (assumption) |
+It also collects independent-store sell-through as units per store per week, not only reorder flags.
+
+The routine can assemble the proof pack automatically each month from connected sales data, so it is current whenever a gate is reached. Recommendation: add a monthly **"retail proof pack"** step to `ops/ROUTINE.md`, written to `business/retail-proof/YYYY-MM.md`.
+
+| Metric | What it shows | Our source | Gate use (section 4.9; targets are assumptions) |
 |---|---|---|---|
-| **Units per week by SKU and channel (velocity)** | Demand without discounting | Shopify, Amazon Seller Central, Faire, Walmart reports | Steady or rising for 6 straight months on the lead SKU |
-| **Sell-through at independent stores** | Stock sells off real shelves | Faire reorder data as a proxy; a store survey by email | 30% or more of stocking stores reorder within 120 days |
-| **Ratings and reviews** | Social proof buyers can check themselves | Amazon, Etsy, own-site review app (FTC-compliant, no incentives beyond a disclosed free copy, BLIND-SPOTS #14) | Lead SKU at 4.5 stars or above with 300+ ratings. Benchmarks: 196 ratings earned a #1 sub-category badge; category leaders sit at 1,400+. |
-| **Amazon Best Sellers Rank history** | Relative position in the category | Seller Central | Held in the top of its sub-category for the gate period |
-| **Repeat purchase rate** | The brand, not a one-off gift | Shopify customer data | Tracked from Wave 1; the target is set after 90 days of data |
+| **Point-of-sale units** where visible | What a book buyer checks first | Distributor or wholesaler reports; point-of-sale data through the distributor [VERIFY access] | R4 onward |
+| **Units per week by SKU and channel (velocity)** | Demand without discounting | Shopify, KDP, Amazon Seller Central, Faire and Walmart reports | Every gate is set in units (4.9) |
+| **Units per store per week** at independent stores | Stock sells off real shelves | Store reorders plus a written store survey | R2: a measured rate from at least 10 stores over 120 days |
+| **Ratings and reviews** | Social proof buyers can check themselves | Amazon, Etsy and the own-site review app (FTC-compliant; no incentive beyond a disclosed free copy, BLIND-SPOTS #14) | Set from *our* volume, not the category leaders': 25 ratings at 4.5+ by R2, 100 by R4. At an assumed 1–2% of buyers leaving a rating [VERIFY], that is about 1,250–2,500 and 5,000–10,000 units of the lead SKU |
+| **Amazon Best Sellers Rank history** | Relative position in the category | Seller Central | Supporting evidence only |
+| **Repeat purchase rate** | The brand, not a one-off gift | Shopify customer data | Tracked from Wave 1; target set after 90 days of data |
 | **Return and defect rate** | Product quality and packaging | Marketplaces and 3PL | Under 3% |
-| **On-time, complete shipping rate** | Operational reliability | 3PL | 98% or more of orders shipped complete and on time |
-| **Email list by age band** | An owned audience to send to the retailer's page | Email platform | Tracked; no target set in the source files |
-| **Margin sheet per SKU** | The buyer's margin and ours | Section 4.4 table with real quotes | Meets the retail cost rule |
-| **Marketing support plan** | How we send shoppers to the retailer | Pins, SEO, email, Amazon Ads first (MARKETING-PLAYBOOK row 10) | Written, faceless, with a budget the founder approved |
+| **On-time, complete shipping rate** | Operational reliability | 3PL | 98% or more |
+| **Email list by age band** | An owned audience to send to the retailer's page | Email platform | Tracked (Expected model: about 3,500 by month 36) |
+| **Margin sheet per SKU** | The buyer's margin and ours | The Unit Economics tab, with real quotes, and the 4.4 walk | Meets the channel cost rule with a 25% returns reserve |
+| **Marketing support plan** | How we send shoppers to the retailer | Pins, SEO, email, and ads pointing to the retailer's listing | **A committed budget of $300–$600 per retail launch** (assumption; section 3.8), written, faceless and approved by the founder |
 
 No metric may be inflated, estimated without a label, or built on incentivized reviews. A retail deck that overstates sell-through is both a contract risk and an FTC risk.
 
@@ -242,6 +249,7 @@ No metric may be inflated, estimated without a label, or built on incentivized r
 | Insurance, contracts, trademark | Broker and attorney, by email | Signs | Calendars renewals 30 days ahead (`ops/DEADLINES.md`) |
 
 **Where retail tests the rules, and the answer in each case:**
+0. **"The retailer wants a named supplier contact."** AlphaPlay LLC is never the direct vendor of record to a chain. For books, the distributor or wholesaler is the supplier. For non-book items, a rep's vendor-of-record partner or a consolidator is. A publisher licence (4.2) is the other route. Direct vendor status normally brings QA calls, cost negotiations, audits, recall coordination and line reviews [VERIFY], none of which fits the no-contact rule.
 1. **"The buyer wants to meet the founder."** The rep or distributor is the face of the account, and the agreement says so. If a retailer requires the owner in person, on video or on a call, that route is declined. The same applies to accelerator programs with live cohorts, open-call pitch days and trade-show booths the founder would staff.
 2. **"The retailer wants a factory or vendor audit."** The audit is of the printer's facility and the 3PL. Neither involves the founder's home, and her home address never appears on vendor forms (PROTECTION-PLAN §1: principal office is not the home address).
 3. **"The retailer's founder-story marketing wants a face."** The brand story stays anonymous and illustrated (`content/founder-story.md`, counsel review before publication). No photo, no video.
@@ -251,32 +259,58 @@ No metric may be inflated, estimated without a label, or built on incentivized r
 
 ---
 
-## 4.9 Timeline with gates
+## 4.9 Gates by units sold, with two dated scenarios
 
-Dates are assumptions built on the wave dates in section 2.3. A gate is passed only when every condition is met. If a gate slips, everything after it slips too. Nothing in this table spends money before the founder approves it in `ops/APPROVALS.md`.
+The first draft dated every gate on the calendar and set rating targets from the category leaders. The plan's own demand model cannot support those dates. For example, the first draft had the board book reaching 300 ratings by July 2028, while the Expected model sold about 60 board books in year 1. The gates are now **unit volumes**. The dates follow from the velocity the business actually achieves.
 
-| When | Stage | Work | Gate to pass before moving on |
+**How many units a rating target implies.** Assumption: 1–2% of buyers leave a rating [VERIFY against our own review-request data]. On that basis:
+- 25 ratings needs about 1,250–2,500 units of the lead SKU;
+- 100 ratings needs about 5,000–10,000 units;
+- 300 ratings needs about 15,000–30,000 units.
+
+### The gates
+
+| Gate | Stage | Every condition must be true | Work unlocked (founder approves each spend in `ops/APPROVALS.md`) |
 |---|---|---|---|
-| **Oct–Dec 2026** | Stage 1: proof online (Wave 1) | Launch-first five; KDP paperbacks; IngramSpark titles live; retail proof pack starts collecting data | **R0, foundations:** business bank account open (`finance/BANKING.md`); counsel's go-ahead for launch; trademark clearance started; CGL insurance in force before the first physical sale |
-| **Jan 2027** | Stage 1 | Offset quotes for the board book at 500, 1,000, 2,500 **and 5,000** copies, with 3PL receiving and storage; each printer confirms CPSIA status in writing; illustrator contract sent | Quotes in hand; a retail landed cost calculated for each quantity |
-| **Feb–Apr 2027** | Stage 1 (Wave 3 pre-sale) | Board-book pre-sale; CPSIA testing booked; human illustration; PLAY BEFORE PIXELS filed | Pre-sale meets its funding goal (printing + shipping + duties + about 8–10% fees + delivery + 15% buffer, BLIND-SPOTS #16) |
-| **May–Jul 2027** | Stage 1 → 2 | Offset run delivered to the 3PL; CPC issued; Amazon Seller Central/FBA listing; own-site sales | **R1, stocked product live:** stock at a 3PL, CPC and tracking labels done, ISBN barcodes printed, first 30 days shipped without a safety complaint |
-| **Aug–Dec 2027** | Stage 2: wholesale | Faire (US and Canada first, per the international plan); rep-group test in independent stores; POD card deck sells, then an offset deck quote; Walmart Marketplace application (Wave 4) | **R2, wholesale proven (around Dec 2027):** 90+ days of stocked sales; lead SKU at 4.5+ stars with 50+ ratings (assumption); first independent-store reorders; retail cost rule met at a quoted run size |
-| **Jan–Jun 2028** | Stage 3: online big-box | Walmart Marketplace live; target.com and walmart.com checked for Ingram-fed listings; books 2 and 3 published; card deck in retail packaging if the POD deck sold; GS1 GTINs and class 28 filed for the deck | **R3, big-box online proven:** 6+ months live on at least one big-box website; return rate under 3%; on-time shipping 98%+; 150+ ratings on the lead SKU (assumption) |
-| **Mid-2028** | Stage 4: distributor or rep | Written approaches to book distributors and to chain-focused reps, using the proof pack; attorney reviews the agreements | **R4, representation signed (around Jul 2028):** 12 months of stocked sales; three-book series live; 300+ ratings at 4.5+ on the lead SKU (assumption); reorder rate of 30%+; EDI tested with the 3PL; insurance quoted at retailer limits; order funding plan approved |
-| **Jul–Dec 2028** | Stage 5: buyer pitch | The rep or distributor presents at the relevant line reviews; the founder answers written questions only | **R5, a purchase order**, on terms that pass the 4.4 margin walk with real numbers, funded without personal guarantees (PROTECTION-PLAN §1) |
-| **2029** | On shelf | Test in a subset of stores or online first [VERIFY typical first-order shape]; the routine tracks velocity by week | Continued placement depends on sell-through; plan the reorder and the next reset |
+| **R0, foundations** | 1 | Gate A (section 5.12): business bank account open; counsel's go-ahead for the G0 launch; **GL insurance bound before the first sale**; publish safeguards built; trademark clearance started | Wave 1 listings take money; retail proof pack starts collecting data |
+| **Passive Target touchpoint** | 3 (no pitch) | IngramSpark paperbacks live | Monthly check of target.com and walmart.com for our ISBNs, and of Target baby-registry eligibility [VERIFY]; registry-driven sales tracked where visible |
+| **B0, board-book gate** (section 3.10 rule 4) | 1 → 2 | (a) Trailing-12-month result positive for 6 months. (b) Retained cash covers the A0 and A costs, a 2,500-copy run (about $6,875 landed) and the 3-month reserve: about $11,000 on the lean path. (c) The POD *Up! Go! More!* paperback sells **40+ units a month for 3 months**. (d) Written quotes within the channel cost rule. (e) Product-safety counsel has said who certifies. | Illustrator, CPSIA test, then the pre-sale; its go line (about 920 copies at 1,000; recalculated from real quotes) decides the print. Below it, refund and stop |
+| **R1, stocked product live** | 2 | Stock at the 3PL; CPC and tracking labels; ISBN barcodes; first 30 days shipped with no safety complaint | Amazon FBA; own-site sales |
+| **R2, wholesale proven** | 2 | 12 months of stocked sales; **lead SKU at 1,250–2,500 units** and at least 25 ratings at 4.5+; measured sell-through (units per store per week) from at least 10 independent stores over 120 days; Stage 2 held within its capped loss; the channel cost rule met at a quoted run | Retail gate (section 3.10 rule 5); Walmart Marketplace application; offset deck quote only if the POD deck sold |
+| **R3, big-box online proven** | 3 | 6+ months live on at least one big-box website (Walmart Marketplace or wholesaler-fed listings); return rate under 3%; on-time shipping 98%+ | Written distributor submission once book 1 has about 6 months of stocked data and books 2 and 3 are in illustration (4.2) |
+| **R4, representation signed** | 4 | **Lead SKU at 5,000–10,000 units** (about 100 ratings at 4.5+); velocity of at least **400 units a month for 6 months** (assumption); the three-book series scheduled into the distributor's selling season on retail-edition ISBNs; the PLAY BEFORE PIXELS application past its first examination without a substantive refusal (4.5 item 1); EDI tested; insurance quoted at chain limits; an order-funding plan within the ceiling (4.5 item 9); the agreement names the distributor or rep as the face of the account | Line review through the distributor or rep; founder answers in writing only |
+| **R5, a purchase order** | 5 | Terms pass the 4.4 margin walk with real numbers and a 25% returns reserve; the order fits the funded ceiling; no personal guarantee (PROTECTION-PLAN §1) | Retail-edition run printed against the PO, never on speculation |
+
+### What the dates look like on the plan's own numbers
+
+| Gate | Expected (model) | Conservative (model) |
+|---|---|---|
+| R0, first sales | Dec 2026 (assumed; each month of slip moves everything) | Dec 2026 |
+| Passive target.com check | From about Feb 2027, once the IngramSpark paperbacks are live [VERIFY that listings appear] | Same |
+| B0 finance conditions (a) and (b) | Met around mid-2028 (positive trailing-12-month result from Aug 2027; total cash passes about $11,000 in mid-2028) | Not met within 36 months (total cash about $8,900 at month 36) |
+| B0 demand condition (c) | **Not met within 36 months.** The model's paperback rate is about 5 units a month, one-eighth of the gate | Not met (about 2.5 a month) |
+| R1 | Late 2028 at the very earliest, and only if the paperback outsells Expected about eight times over | After 2029 |
+| R2 to R5 | Set by board-book velocity after R1 (below) | Not in view |
+
+| Board-book velocity after R1 | R2 (1,250–2,500 units) | R4 (5,000–10,000 units, 400+ a month) | Earliest line review, then shelf |
+|---|---|---|---|
+| 40 a month (paperback-like) | 3–5 years after R1 | Not realistic | None |
+| 100 a month (what gate B0 assumes) | 12–25 months after R1: 2030–2031 | 4–8 years after R1: 2033 or later | Not realistic this decade |
+| 400 a month (a breakout title) | 3–6 months after R1: 2029 | 12–25 months after R1: 2030–2031 | Line review 2030–2031; shelf the following year |
+
+**The honest reading.** A Target shelf is a real long-range goal, but on the plan's own Expected numbers it is **not reachable within the 36-month horizon**. It is realistically **no earlier than 2030**, and only if the talk-along line becomes a breakout title. The plan keeps the goal because it shapes good early choices: the series design, the retail-ready files, the trademark, the safety paperwork and the proof pack. It spends nothing on retail until units justify it. The nearest real Target presence is the passive target.com listing of our print-on-demand paperbacks, which could come in 2027 without any pitch [VERIFY].
 
 **Decision points where the right answer may be "stop here":**
-- **At R2:** if independent stores do not reorder, the product is not ready for chains. Stay DTC, Amazon and Faire, and improve the product.
-- **At R4:** if no distributor or rep will take the line on written-only terms, stay in stages 2–3. Those channels are profitable at our prices, and chain retail is not required for the business to succeed.
+- **At B0:** if the paperback does not reach its demand line, the board book stays a print-on-demand paperback. Nothing is printed, and the retail track waits.
+- **At R2:** if independent stores do not sell through, the product is not ready for chains. Stay with direct sales and Amazon, and improve the product.
+- **At R4:** if no distributor or rep will take the line on written-only terms, stay in stages 1–3. **Direct sales and Amazon are profitable at our prices. Wholesale of a single $12.99 book is not, at current costs** (4.4), and chain retail is not required for the business to succeed.
 - **At R5:** if the order's funding need or its deduction terms would put the LLC at risk, decline or shrink the order. A chain order that fails through late shipping or unsold returns does more harm than no order.
 
 ---
 
 ## 4.10 What not to do
 
-- Do not approach Target or Walmart buyers before R4. A first impression without data is hard to undo [VERIFY].
+- Do not approach Target or Walmart buyers before R4, and never directly: only through the distributor or rep. A first impression without data is hard to undo [VERIFY].
 - Do not pay a consultant or "placement" service that promises shelf space for a fee.
 - Do not offer the KDP POD paperback as a retail product. It cannot meet retail margins or returns terms.
 - Do not print retail packaging before the trademark is cleared and filed.
@@ -289,13 +323,14 @@ Dates are assumptions built on the wave dates in section 2.3. A gate is passed o
 
 ## 4.11 Decisions this section needs from the founder
 
-1. **Adopt the retail cost rule** (landed cost at or below 20% of retail for any product planned for a chain) next to DEMAND-CHECK rule 9, and add it to the board-book `price_notes`.
-2. **Approve the January 2027 quote request at four quantities** (500, 1,000, 2,500 and 5,000), so the retail edition is costed from the first quote.
-3. **Approve a monthly retail proof pack** in `ops/ROUTINE.md`, starting with Wave 1 data.
-4. **Confirm the written-only rule for retail partners:** every rep, distributor and 3PL agreement names the partner as the face of the account.
-5. **Add class 28 to the trademark plan** before any card deck is made for retail, and ask the attorney whether class 28 or 16 fits a talk-along card deck.
-6. **Ask the insurance broker** for a quote at typical big-box limits alongside the $1M/$2M CGL, so the step-up cost is known early.
-7. **Ask counsel two retail questions:** PROTECTION-PLAN question 9 (who certifies under CPSIA), and whether suggesting a retail price to resellers raises any issue [VERIFY].
+1. **Adopt the cost rule by channel** (landed cost at or below 35% of retail for own channels, 25% for wholesale and 20% for chains, with positive chain contribution at a 25% returns reserve). Add it to the board-book `price_notes`.
+2. **Withdraw the spring 2027 pre-sale and adopt gate B0** (section 3.10 rule 4) as the only route to an offset board book.
+3. **Approve information-only printer quotes in January 2027** at 500, 1,000, 2,500 and 5,000 copies. Include a retail-edition spec: the current 26-page extent against 14–18 pages and a smaller trim, at 5,000 and 10,000 copies.
+4. **Confirm that AlphaPlay LLC is never the direct vendor of record to a chain.** Every distributor, rep, vendor-of-record and 3PL agreement names the partner as the face of the account, with the founder in writing only.
+5. **Approve a monthly retail proof pack** in `ops/ROUTINE.md`, starting with Wave 1 data, plus the monthly target.com, walmart.com and registry check.
+6. **Add class 28 to the trademark plan** before any card deck is made for retail, and ask the attorney whether class 28 or 16 fits a talk-along card deck.
+7. **Ask the insurance broker** for a quote at typical chain limits, with the sales-scaled premium for products for children under 3, so the step-up cost is known early.
+8. **Ask counsel three retail questions:** PROTECTION-PLAN question 9 (who certifies under CPSIA); whether suggesting a retail price to resellers raises any issue [VERIFY]; and whether a card deck the grown-up reads avoids toy classification.
 
 ---
 

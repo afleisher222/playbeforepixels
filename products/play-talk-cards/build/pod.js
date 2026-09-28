@@ -54,7 +54,7 @@ function tuck(d, guide) {
       <h2>${d.title} Cards</h2><p>${d.blurb}</p>
       <ul>${d.inside.map(t => `<li>${t}</li>`).join('')}</ul>
       <p class="warn">${d.warn}</p>
-      <p class="cr">${K.COPY} Printed on demand. playbeforepixels.com</p>
+      <p class="cr">${K.COPY} ${K.VERSION}. Printed on demand. playbeforepixels.com</p>
       <div class="upc">Barcode / UPC<small>only if the seller channel requires one</small></div></div>`;
   const side = rot => `<div class="sd" style="transform:rotate(${rot}deg)"><b>${d.title} Cards</b> · ${d.sub}</div>`;
   let art = '';

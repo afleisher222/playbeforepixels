@@ -12,7 +12,12 @@ symbol{overflow:visible}
 .num{right:12px;min-width:30px;justify-content:center;padding:0 7px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-size:12.5px}
 .cA .body{position:absolute;left:15px;right:15px;top:117px;bottom:12px;display:flex;flex-direction:column}
 .cA h3{margin:0 0 3px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:18px;line-height:1.05;letter-spacing:-.015em}
-.need{margin:0 0 5px;font-size:9.5px;line-height:1.25;font-weight:700}
+.meta{margin:0 0 5px;display:flex;flex-wrap:nowrap;justify-content:space-between;gap:4px;font-size:7.3px;line-height:1;font-weight:800;color:#1D2940;opacity:.78;white-space:nowrap}
+.meta span{display:inline-flex;align-items:center;gap:2px}
+.meta svg{flex:none;color:var(--band)}
+.ver{margin:5px 0 0;font-size:6.8px;font-weight:700;opacity:.55;text-align:right}
+.num small{font-size:8px;font-weight:800;margin-right:3px;font-family:"Nunito Sans",sans-serif;opacity:.75}
+.need{margin:0 0 4px;font-size:9.5px;line-height:1.25;font-weight:700}
 .need i{font-style:normal;font-weight:800;font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin-right:3px}
 .play{margin:0;font-size:11.2px;line-height:1.36;font-weight:600}
 .talk{margin-top:auto;background:var(--tint);border-radius:10px;padding:6px 9px 7px}
@@ -21,6 +26,7 @@ symbol{overflow:visible}
 .talk p{margin:0;font-size:10.2px;line-height:1.3;font-weight:700}
 .safe{margin:6px 0 0;display:flex;align-items:flex-start;gap:5px;font-size:8.2px;line-height:1.25;font-weight:700;opacity:.82;min-height:20px}
 .safe svg{flex:none;margin-top:1px}
+.safe b{font-weight:900}
 /* special cards */
 .special .sp-head{position:absolute;left:15px;right:15px;top:14px;color:#fff}
 .sp-kick{display:block;font-weight:800;font-size:8px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-bottom:3px}
@@ -60,14 +66,18 @@ symbol{overflow:visible}
 .bk-t{margin:0;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:25px;letter-spacing:-.02em;line-height:1}
 .bk-s{margin:5px 0 0;font-size:10px;font-weight:800;letter-spacing:.06em}
 .bk-b{margin:10px 0 0;font-size:8px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:.6}
-/* ink-saver colorway */
+/* low-ink colorway: white grounds, outlined panels, line-art backs */
 .ink .card{--deco:transparent}
-.ink .cA:not(.special) .bandbg,.ink .cB:not(.special) .bandbg{background:var(--tint)}
+.ink .card .bandbg{background:#fff!important;border-bottom:2px solid var(--band)}
+.ink .cA .art > circle[fill="#fff"],.ink .cB .art > circle[fill="#fff"]{stroke:var(--band);stroke-width:1.5}
+.ink .chip,.ink .num{border:1.3px solid var(--band)}
 .ink .cB:not(.special){--on:#1D2940}
-.ink .cA:not(.special) .talk,.ink .cB:not(.special) .talk{background:#fff;border:1.4px solid var(--band)}
-.ink .special .bandbg{background:var(--tint)}
+.ink .cA .talk,.ink .cB .talk{background:#fff;border:1.4px solid var(--band)}
 .ink .special .sp-head,.ink .special .sp-head h3{color:#1D2940}
+.ink .key{background:#fff;border:1.2px solid var(--band)}
+.ink .strip > circle{fill:#fff;stroke:#B9C1D0;stroke-width:1}
 .ink .back .bgpat rect{fill:#fff}
+.ink .back .bgpat g *{fill:none!important;stroke:#9AA3B5;stroke-width:1.2}
 .ink .back .bk-label{border:2px solid #1D2940}
 </style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="t-head" overflow="visible"><circle class="sk" cx="-23" cy="3" r="6"/><circle class="sk" cx="23" cy="3" r="6"/><circle class="sk" r="24"/></symbol>
 <symbol id="face-smile" overflow="visible"><circle cx="-8.5" cy="-1" r="3.9" fill="#FFFFFF"/><circle cx="-8.5" cy="-0.30000000000000004" r="3.1" fill="#1D2940"/><circle cx="-7.4" cy="-1.4" r="1" fill="#FFFFFF"/><circle cx="8.5" cy="-1" r="3.9" fill="#FFFFFF"/><circle cx="8.5" cy="-0.30000000000000004" r="3.1" fill="#1D2940"/><circle cx="9.6" cy="-1.4" r="1" fill="#FFFFFF"/><circle class="ck" cx="-14.5" cy="7.5" r="4.3"/><circle class="ck" cx="14.5" cy="7.5" r="4.3"/><path d="M-6.5 8.5Q0 14.5 6.5 8.5" stroke="#1D2940" stroke-width="2.7" fill="none" stroke-linecap="round"/></symbol>
@@ -130,12 +140,13 @@ symbol{overflow:visible}
       <ol class="steps">
         <li>Find your child’s color.</li>
         <li>Pick a card, or let your child pick.</li>
-        <li>Play for five minutes or more.</li>
+        <li>Play while it’s fun. Stop before it isn’t.</li>
         <li>Try the talk tip. Then wait.</li>
       </ol>
       <ul class="key"><li><svg viewBox="-11 -11 22 22" width="13" height="13" aria-hidden="true"><path transform="scale(1)" d="M0-9L9.5 7.5H-9.5Z" fill="#3D86D8" stroke="#3D86D8" stroke-width="2.5" stroke-linejoin="round"/></svg><b>0–1</b> year</li><li><svg viewBox="-11 -11 22 22" width="13" height="13" aria-hidden="true"><rect transform="scale(1)" x="-7.8" y="-7.8" width="15.6" height="15.6" rx="2.5" fill="#2FA36B"/></svg><b>1–2</b> years</li><li><svg viewBox="-11 -11 22 22" width="13" height="13" aria-hidden="true"><path transform="scale(1)" d="M0-10L2.9-3.9 9.5-3.1 4.6 1.4 5.9 8 0 4.7-5.9 8-4.6 1.4-9.5-3.1-2.9-3.9Z" fill="#F5B820" stroke="#F5B820" stroke-width="1.5" stroke-linejoin="round"/></svg><b>2–3</b> years</li><li><svg viewBox="-11 -11 22 22" width="13" height="13" aria-hidden="true"><circle r="8.6" fill="#EE5A36"/></svg><b>3–5</b> years</li></ul>
       <svg class="strip" viewBox="0 0 210 50" width="210" height="50" aria-hidden="true"><circle cx="27" cy="25" r="23" fill="#E3EEFA"/><g transform="translate(27,25)"><g transform="scale(0.36)"><g transform="scale(.78)" ><use href="#ball" transform="" /></g></g></g><circle cx="79" cy="25" r="23" fill="#DFF3E9"/><g transform="translate(79,25)"><g transform="scale(0.36)"><g transform="translate(0,26) scale(.62)" ><use href="#block-1" transform="" /></g><g transform="translate(0,-10) scale(.62)" ><use href="#block-3" transform="" /></g><g transform="translate(-26,26) scale(.62)" ><use href="#block-2" transform="" /></g><g transform="translate(26,26) scale(.62)" ><use href="#block-4" transform="" /></g><g transform="translate(4,-44) scale(.5) rotate(8)" ><use href="#block-2" transform="" /></g></g></g><circle cx="131" cy="25" r="23" fill="#FEF4D8"/><g transform="translate(131,25)"><g transform="scale(0.36)"><path d="M-30-6C-30-30 22-30 22-6V16C22 26 14 32 4 32H-12C-22 32-30 26-30 16Z" fill="#3D86D8" /><rect x="-16" y="-32" width="28" height="8" rx="4" fill="#3D86D8" /><circle cx="-2" cy="-36" r="5" fill="#F5B820" /><path d="M20-2L40-16L42-10L24 8Z" fill="#3D86D8" /><path d="M-30 -2C-44 -2-44 18-30 18" stroke="#3D86D8" stroke-width="7" fill="none"/><rect x="-30" y="2" width="52" height="6" rx="3" fill="#FFFFFF" opacity=".5"/><g transform="translate(30,24)" ><path d="M-12-8H12L9 10H-9Z" fill="#EE5A36" /><rect x="-16" y="10" width="32" height="5" rx="2.5" fill="#EE5A36" /></g></g></g><circle cx="183" cy="25" r="23" fill="#FDE9E3"/><g transform="translate(183,25)"><g transform="scale(0.36)"><path d="M-18 18L-34 40V20Z" fill="#EE5A36" /><path d="M18 18L34 40V20Z" fill="#EE5A36" /><path d="M-10 36Q0 60 10 36Z" fill="#F5B820" /><rect x="-20" y="-22" width="40" height="60" rx="6" fill="#F5B820" /><path d="M-20-22L0-52L20-22Z" fill="#EE5A36" /><circle cx="0" cy="-4" r="10" fill="#3D86D8" /><circle cx="-3" cy="-7" r="3" fill="#FFFFFF" opacity=".8"/><rect x="-12" y="16" width="24" height="6" rx="3" fill="#FFFFFF" opacity=".6"/></g></g></svg>
       <p class="safe big"><svg viewBox="0 0 20 22" width="12" height="13.200000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#8A5CC7"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Every card: a grown-up plays along and stays within reach.</span></p>
+      <p class="ver">Version 1.0 · September 2026</p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#3D86D8;--tint:#E3EEFA;--b:12px;width:264px;height:360px">
@@ -148,10 +159,11 @@ symbol{overflow:visible}
     <span class="num">01</span>
     <div class="body">
       <h3>Peekaboo Cloth</h3>
-      <p class="need"><i>You need</i> A dish towel</p>
+      <p class="need"><i>Needs</i> A dish towel</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 4 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 0 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">Hide your face behind the towel, then pop out: “Peekaboo!” Later, let baby pull it off your head.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#3D86D8"/><use href="#speech"/></svg>Talk tip <em>· Pause and wait</em></span><p>Pause before “boo.” A kick, a grin or a squeal is baby’s turn.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Put the towel away after play; never leave it in the crib.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Put the towel away after play; never leave it in the crib.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#3D86D8;--tint:#E3EEFA;--b:12px;width:264px;height:360px">
@@ -164,10 +176,11 @@ symbol{overflow:visible}
     <span class="num">02</span>
     <div class="body">
       <h3>Copy Cat Faces</h3>
-      <p class="need"><i>You need</i> Just you</p>
+      <p class="need"><i>Needs</i> Just you</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From birth</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 0 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~3 min</span></p>
       <p class="play">Hold baby face to face, close enough to see you well. Open wide, smile big, stick out your tongue. Watch baby try it too.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#3D86D8"/><use href="#speech"/></svg>Talk tip <em>· Repeat and add one</em></span><p>Copy baby’s sounds back: “ba” becomes “ba-ba!” Then wait for another.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#3D86D8;--tint:#E3EEFA;--b:12px;width:264px;height:360px">
@@ -180,10 +193,11 @@ symbol{overflow:visible}
     <span class="num">03</span>
     <div class="body">
       <h3>Kitchen Drum</h3>
-      <p class="need"><i>You need</i> A pot and a wooden spoon</p>
+      <p class="need"><i>Needs</i> A pot and a wooden spoon</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 6 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 1 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">Turn the pot upside down on the floor. Tap it, then hand baby the spoon. Take turns: soft, then loud.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#3D86D8"/><use href="#speech"/></svg>Talk tip <em>· Say what you see</em></span><p>Name the sounds as they happen: “Bang! Bang! Soft… LOUD!”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#3D86D8;--tint:#E3EEFA;--b:12px;width:264px;height:360px">
@@ -196,10 +210,11 @@ symbol{overflow:visible}
     <span class="num">04</span>
     <div class="body">
       <h3>Where’s Duck?</h3>
-      <p class="need"><i>You need</i> A big toy and a towel</p>
+      <p class="need"><i>Needs</i> A big toy and a towel</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 6 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 1 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">Hide the toy under the towel with a little bit showing. Ask “Where’s duck?” and let baby find it. Cheer!</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#3D86D8"/><use href="#speech"/></svg>Talk tip <em>· Pause and wait</em></span><p>Ask, then count to five in your head before you help.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#3D86D8;--tint:#E3EEFA;--b:12px;width:264px;height:360px">
@@ -212,10 +227,11 @@ symbol{overflow:visible}
     <span class="num">05</span>
     <div class="body">
       <h3>Bubble Watch</h3>
-      <p class="need"><i>You need</i> Bubbles</p>
+      <p class="need"><i>Needs</i> Bubbles</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 6 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 1 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">Blow a few bubbles slowly above baby. Let baby watch, reach and pop. Blow again when baby looks at you.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#3D86D8"/><use href="#speech"/></svg>Talk tip <em>· Say what you see</em></span><p>Use the same short words each time: “Up, up… pop!”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A grown-up holds the bottle. Wipe bubble mix off little hands.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> You hold the bottle and blow away from baby’s face. Wipe little hands.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#3D86D8;--tint:#E3EEFA;--b:12px;width:264px;height:360px">
@@ -228,10 +244,11 @@ symbol{overflow:visible}
     <span class="num">06</span>
     <div class="body">
       <h3>Rock and Stop</h3>
-      <p class="need"><i>You need</i> A song you know</p>
+      <p class="need"><i>Needs</i> A song you know</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From birth</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 0 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">Hold baby and sway while you sing. Stop in the middle and wait. Start again when baby wiggles or looks at you.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#3D86D8"/><use href="#speech"/></svg>Talk tip <em>· Sing and gesture</em></span><p>The pause is the game. Baby’s wiggle means “more!”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#3D86D8;--tint:#E3EEFA;--b:12px;width:264px;height:360px">
@@ -244,10 +261,11 @@ symbol{overflow:visible}
     <span class="num">07</span>
     <div class="body">
       <h3>Roll It Back</h3>
-      <p class="need"><i>You need</i> A big soft ball</p>
+      <p class="need"><i>Needs</i> A big soft ball</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 7 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 1 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">For babies who can sit: sit facing each other, legs apart. Roll the ball to baby, then help roll it back.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#3D86D8"/><use href="#speech"/></svg>Talk tip <em>· Pause and wait</em></span><p>Say “Ready… roll!” and wait for baby to look at you first.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#3D86D8;--tint:#E3EEFA;--b:12px;width:264px;height:360px">
@@ -260,10 +278,11 @@ symbol{overflow:visible}
     <span class="num">08</span>
     <div class="body">
       <h3>First Book Chat</h3>
-      <p class="need"><i>You need</i> A board book</p>
+      <p class="need"><i>Needs</i> A board book</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 3 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 0 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">Sit baby on your lap. Point to one picture and name it. Let baby pat the pictures and help turn the pages.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#3D86D8"/><use href="#speech"/></svg>Talk tip <em>· Follow their lead</em></span><p>Talk about whatever baby looks at, even the same page again.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#3D86D8;--tint:#E3EEFA;--b:12px;width:264px;height:360px">
@@ -276,10 +295,11 @@ symbol{overflow:visible}
     <span class="num">09</span>
     <div class="body">
       <h3>In and Out</h3>
-      <p class="need"><i>You need</i> A basket and 4–5 big toys</p>
+      <p class="need"><i>Needs</i> A basket and 4–5 big toys</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 8 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 1 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">Drop toys into the basket one by one: “In!” Tip them out: “Out!” Let baby dump and fill.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#3D86D8"/><use href="#speech"/></svg>Talk tip <em>· Say what you see</em></span><p>One word for each move: “in,” “out,” “all gone!”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#3D86D8;--tint:#E3EEFA;--b:12px;width:264px;height:360px">
@@ -292,10 +312,11 @@ symbol{overflow:visible}
     <span class="num">10</span>
     <div class="body">
       <h3>Leaf Hello</h3>
-      <p class="need"><i>You need</i> A tree or a big plant</p>
+      <p class="need"><i>Needs</i> A tree or a big plant</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 3 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 0 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">Carry baby close to a tree or a window plant. Touch a leaf together, look up at the sky, feel the breeze.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#3D86D8"/><use href="#speech"/></svg>Talk tip <em>· Repeat and add one</em></span><p>Name it, then add one word: “Leaf. Green leaf. Soft leaf.”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Leaves and petals stay out of mouths.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Leaves and petals stay out of mouths.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#3D86D8;--tint:#E3EEFA;--b:12px;width:264px;height:360px">
@@ -308,10 +329,11 @@ symbol{overflow:visible}
     <span class="num">11</span>
     <div class="body">
       <h3>Tickle Countdown</h3>
-      <p class="need"><i>You need</i> Just you</p>
+      <p class="need"><i>Needs</i> Just you</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 4 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 0 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~3 min</span></p>
       <p class="play">Wiggle your fingers in the air: “One… two… three…” then a gentle tickle. Do it again, a little slower.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#3D86D8"/><use href="#speech"/></svg>Talk tip <em>· Pause and wait</em></span><p>Stop at “two…” A squeal or a kick asks for “three!”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#3D86D8;--tint:#E3EEFA;--b:12px;width:264px;height:360px">
@@ -324,10 +346,11 @@ symbol{overflow:visible}
     <span class="num">12</span>
     <div class="body">
       <h3>Stack and Crash</h3>
-      <p class="need"><i>You need</i> Plastic cups or big blocks</p>
+      <p class="need"><i>Needs</i> Plastic cups or big blocks</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 6 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 1 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">Stack three cups into a tower. Let baby knock it over. Cheer, and build it again together.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#3D86D8"/><use href="#speech"/></svg>Talk tip <em>· Sing and gesture</em></span><p>Say “up, up, up… crash!” and throw your arms wide on “crash.”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#3D86D8;--tint:#E3EEFA;--b:12px;width:264px;height:360px">
@@ -340,10 +363,11 @@ symbol{overflow:visible}
     <span class="num">13</span>
     <div class="body">
       <h3>Sock Off!</h3>
-      <p class="need"><i>You need</i> A clean sock</p>
-      <p class="play">Slip a loose sock halfway onto baby’s foot. Let baby pull it off: “Sock off!” Try the other foot.</p>
+      <p class="need"><i>Needs</i> A clean grown-up sock</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 6 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 0 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~3 min</span></p>
+      <p class="play">Slip a big, loose sock halfway onto baby’s foot. Let baby pull it off: “Sock off!” Try the other foot.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#3D86D8"/><use href="#speech"/></svg>Talk tip <em>· Say what you see</em></span><p>Say it as it happens: “Foot! Sock on… sock off!”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Put the sock away after play; socks stay out of mouths.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#2FA36B;--tint:#DFF3E9;--b:12px;width:264px;height:360px">
@@ -356,10 +380,11 @@ symbol{overflow:visible}
     <span class="num">14</span>
     <div class="body">
       <h3>Box Car</h3>
-      <p class="need"><i>You need</i> A big cardboard box</p>
+      <p class="need"><i>Needs</i> A big cardboard box</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 12 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 3 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~10 min</span></p>
       <p class="play">Your toddler sits in the box. Push it slowly around the room. Stop at “stations” to wave hello.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#2FA36B"/><use href="#speech"/></svg>Talk tip <em>· Pause and wait</em></span><p>Say “Ready, set…” and wait for “go!” Any sound counts.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Push slowly on the floor. Pull out staples and tape first.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Push slowly on the floor. Pull out staples and tape first.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#2FA36B;--tint:#DFF3E9;--b:12px;width:264px;height:360px">
@@ -372,10 +397,11 @@ symbol{overflow:visible}
     <span class="num">15</span>
     <div class="body">
       <h3>Stir the Soup</h3>
-      <p class="need"><i>You need</i> A pot, a big spoon, big blocks</p>
+      <p class="need"><i>Needs</i> A pot, a big spoon, big blocks</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 12 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 1 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~10 min</span></p>
       <p class="play">Drop blocks into the pot and stir. Blow on the “hot” soup. Serve a spoonful to a teddy.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#2FA36B"/><use href="#speech"/></svg>Talk tip <em>· Offer a choice</em></span><p>Ask “Hot soup or cold soup?” Hold up two hands and wait.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#2FA36B;--tint:#DFF3E9;--b:12px;width:264px;height:360px">
@@ -388,10 +414,11 @@ symbol{overflow:visible}
     <span class="num">16</span>
     <div class="body">
       <h3>Animal Voices</h3>
-      <p class="need"><i>You need</i> Toy animals or a picture book</p>
+      <p class="need"><i>Needs</i> Big toy animals or a picture book</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 12 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 1 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">Hold up an animal and make its sound. Pass it to your child. Swap animals and go again.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#2FA36B"/><use href="#speech"/></svg>Talk tip <em>· Pause and wait</em></span><p>Say “The cow says…” and leave a gap for “moo.”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#2FA36B;--tint:#DFF3E9;--b:12px;width:264px;height:360px">
@@ -404,10 +431,11 @@ symbol{overflow:visible}
     <span class="num">17</span>
     <div class="body">
       <h3>Pour and Splash</h3>
-      <p class="need"><i>You need</i> A tub of water, 2 plastic cups</p>
+      <p class="need"><i>Needs</i> A tub of water, 2 plastic cups</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 12 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 3 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Messy</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~10 min</span></p>
       <p class="play">Set the tub on a towel. Pour water from cup to cup. Let your child pour, splash and fill.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#2FA36B"/><use href="#speech"/></svg>Talk tip <em>· Say what you see</em></span><p>Talk as it happens: “Full… empty! Pour, pour.”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Water play: a grown-up within arm’s reach the whole time. Tip the water out after.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Water play: a grown-up within arm’s reach the whole time. Tip the water out after.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#2FA36B;--tint:#DFF3E9;--b:12px;width:264px;height:360px">
@@ -420,10 +448,11 @@ symbol{overflow:visible}
     <span class="num">18</span>
     <div class="body">
       <h3>Block Tower</h3>
-      <p class="need"><i>You need</i> Big blocks</p>
+      <p class="need"><i>Needs</i> Big blocks</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 14 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 1 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">Build a tower together, one block each. Count as you go. Let them knock it down and start again.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#2FA36B"/><use href="#speech"/></svg>Talk tip <em>· Repeat and add one</em></span><p>They say “block,” you say “big block!”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#2FA36B;--tint:#DFF3E9;--b:12px;width:264px;height:360px">
@@ -436,10 +465,11 @@ symbol{overflow:visible}
     <span class="num">19</span>
     <div class="body">
       <h3>Hat Parade</h3>
-      <p class="need"><i>You need</i> 3–4 hats from around the house</p>
+      <p class="need"><i>Needs</i> 3–4 hats from around the house</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 12 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 2 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">Try on hats in front of a mirror. Make a silly face in each one. March around the room.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#2FA36B"/><use href="#speech"/></svg>Talk tip <em>· Offer a choice</em></span><p>Ask “Sun hat or winter hat?” Let them choose yours too.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Only hats with no ties, cords or pom-poms. Stay within reach.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#2FA36B;--tint:#DFF3E9;--b:12px;width:264px;height:360px">
@@ -452,10 +482,11 @@ symbol{overflow:visible}
     <span class="num">20</span>
     <div class="body">
       <h3>Pillow Mountain</h3>
-      <p class="need"><i>You need</i> Couch cushions</p>
+      <p class="need"><i>Needs</i> Couch cushions</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 12 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 2 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~10 min</span></p>
       <p class="play">Pile the cushions on the floor to make a mountain. Help your child climb up, then slide down.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#2FA36B"/><use href="#speech"/></svg>Talk tip <em>· Say what you see</em></span><p>Say it as they move: “Up, up, up! Down!”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>On the floor, away from furniture corners. Stay within reach.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> On the floor, away from furniture corners. Stay within reach.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#2FA36B;--tint:#DFF3E9;--b:12px;width:264px;height:360px">
@@ -468,10 +499,11 @@ symbol{overflow:visible}
     <span class="num">21</span>
     <div class="body">
       <h3>Sock Toss</h3>
-      <p class="need"><i>You need</i> A basket of clean socks</p>
-      <p class="play">Toss socks into the basket. Find a big one and a tiny one. Hide one on your head!</p>
+      <p class="need"><i>Needs</i> Rolled-up pairs of socks, a basket</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 15 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 1 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
+      <p class="play">Toss the sock balls into the basket. Find a big one and a little one. Balance one on your head!</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#2FA36B"/><use href="#speech"/></svg>Talk tip <em>· Repeat and add one</em></span><p>“Sock” becomes “big sock!” or “red sock!”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#2FA36B;--tint:#DFF3E9;--b:12px;width:264px;height:360px">
@@ -484,10 +516,11 @@ symbol{overflow:visible}
     <span class="num">22</span>
     <div class="body">
       <h3>Teddy’s Bedtime</h3>
-      <p class="need"><i>You need</i> A stuffed toy, a small towel</p>
+      <p class="need"><i>Needs</i> A stuffed toy, a small towel</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 15 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 0 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">Tuck teddy in with the towel. Read teddy a book, sing teddy a song, whisper “night-night.”</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#2FA36B"/><use href="#speech"/></svg>Talk tip <em>· Follow their lead</em></span><p>If they feed teddy instead, talk about the snack.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#2FA36B;--tint:#DFF3E9;--b:12px;width:264px;height:360px">
@@ -500,10 +533,11 @@ symbol{overflow:visible}
     <span class="num">23</span>
     <div class="body">
       <h3>Chair Tunnel</h3>
-      <p class="need"><i>You need</i> Two chairs and a blanket</p>
+      <p class="need"><i>Needs</i> Two chairs and a blanket</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 12 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 3 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~10 min</span></p>
       <p class="play">Drape the blanket over two chairs to make a tunnel. Crawl through together, then take turns.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#2FA36B"/><use href="#speech"/></svg>Talk tip <em>· Say what you see</em></span><p>Say the word as they move: “In… through… out!”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Use sturdy chairs that won’t tip. Stay within reach.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Use sturdy chairs that won’t tip. Stay within reach.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#2FA36B;--tint:#DFF3E9;--b:12px;width:264px;height:360px">
@@ -516,10 +550,11 @@ symbol{overflow:visible}
     <span class="num">24</span>
     <div class="body">
       <h3>Clap and Stomp</h3>
-      <p class="need"><i>You need</i> Just you</p>
+      <p class="need"><i>Needs</i> Just you</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 12 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 0 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~3 min</span></p>
       <p class="play">Clap twice, stomp twice, pat your knees. Let your child copy you, then you copy their moves.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#2FA36B"/><use href="#speech"/></svg>Talk tip <em>· Follow their lead</em></span><p>Copy whatever they do. They’re the leader now.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#2FA36B;--tint:#DFF3E9;--b:12px;width:264px;height:360px">
@@ -532,10 +567,11 @@ symbol{overflow:visible}
     <span class="num">25</span>
     <div class="body">
       <h3>Pull-Out Box</h3>
-      <p class="need"><i>You need</i> An empty tissue box, 6 washcloths</p>
+      <p class="need"><i>Needs</i> An empty tissue box, 6 washcloths</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 12 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 2 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">Stuff the washcloths into the box. Your child pulls them out one by one. Stuff them back in and go again.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#2FA36B"/><use href="#speech"/></svg>Talk tip <em>· Pause and wait</em></span><p>Hold one up: “More?” Wait for a look, a point or a sound.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Pull out the plastic film from the box opening first. Stay within reach.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#2FA36B;--tint:#DFF3E9;--b:12px;width:264px;height:360px">
@@ -548,10 +584,11 @@ symbol{overflow:visible}
     <span class="num">26</span>
     <div class="body">
       <h3>Kick and Chase</h3>
-      <p class="need"><i>You need</i> A big soft ball</p>
+      <p class="need"><i>Needs</i> A big soft ball</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 15 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 0 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~10 min</span></p>
       <p class="play">Roll or kick the ball across the room. Race to it together. Catch it and sit on it!</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#2FA36B"/><use href="#speech"/></svg>Talk tip <em>· Offer a choice</em></span><p>Ask “Kick it or roll it?” Show both, then wait.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#2FA36B"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#F5B820;--tint:#FEF4D8;--b:12px;width:264px;height:360px">
@@ -564,10 +601,11 @@ symbol{overflow:visible}
     <span class="num">27</span>
     <div class="body">
       <h3>Blanket Fort</h3>
-      <p class="need"><i>You need</i> A blanket, chairs, pillows</p>
+      <p class="need"><i>Needs</i> A blanket, chairs, pillows</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 24 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 5 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~15 min</span></p>
       <p class="play">Build a fort together. Bring in a book and a teddy. Read inside, then peek out the door.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#F5B820"/><use href="#speech"/></svg>Talk tip <em>· Say what you see</em></span><p>Use place words: “in,” “under,” “on top,” “behind.”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sturdy chairs only; nothing heavy on top. Stay within reach.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Sturdy chairs only; nothing heavy on top. Stay within reach.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#F5B820;--tint:#FEF4D8;--b:12px;width:264px;height:360px">
@@ -580,10 +618,11 @@ symbol{overflow:visible}
     <span class="num">28</span>
     <div class="body">
       <h3>Tea Party</h3>
-      <p class="need"><i>You need</i> Cups, plates, stuffed toys</p>
+      <p class="need"><i>Needs</i> Plastic cups and plates, stuffed toys</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 24 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 2 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~10 min</span></p>
       <p class="play">Set a pretend table for the toys. Pour pretend tea, pass pretend cake, and clink cups: “Cheers!”</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#F5B820"/><use href="#speech"/></svg>Talk tip <em>· Offer a choice</em></span><p>Ask as Bear: “More tea? Milk or honey?” Wait for the answer.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#F5B820;--tint:#FEF4D8;--b:12px;width:264px;height:360px">
@@ -596,10 +635,11 @@ symbol{overflow:visible}
     <span class="num">29</span>
     <div class="body">
       <h3>Color Sort</h3>
-      <p class="need"><i>You need</i> Big blocks in 3 colors, 3 bowls</p>
+      <p class="need"><i>Needs</i> Big blocks in 3 colors, 3 bowls</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 26 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 2 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~10 min</span></p>
       <p class="play">Put one of each color in a bowl. Your child sorts the rest. Mix them all up and sort again.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#F5B820"/><use href="#speech"/></svg>Talk tip <em>· Repeat and add one</em></span><p>“Red” becomes “red block goes here!”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#F5B820;--tint:#FEF4D8;--b:12px;width:264px;height:360px">
@@ -612,10 +652,11 @@ symbol{overflow:visible}
     <span class="num">30</span>
     <div class="body">
       <h3>Car Ramp</h3>
-      <p class="need"><i>You need</i> A board or big book, toy cars</p>
+      <p class="need"><i>Needs</i> A board or big book, big toy cars</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 24 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 2 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~10 min</span></p>
       <p class="play">Prop the board on the sofa to make a ramp. Race the cars down. Which one goes the farthest?</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#F5B820"/><use href="#speech"/></svg>Talk tip <em>· Say what you see</em></span><p>Say what happens: “Fast! Slow! Crash!”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Only cars bigger than a toilet-paper tube, with no loose wheels.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#F5B820;--tint:#FEF4D8;--b:12px;width:264px;height:360px">
@@ -628,10 +669,11 @@ symbol{overflow:visible}
     <span class="num">31</span>
     <div class="body">
       <h3>Big Paper Art</h3>
-      <p class="need"><i>You need</i> Big paper, chunky crayons, tape</p>
+      <p class="need"><i>Needs</i> Big paper, jumbo egg-shaped crayons, tape</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 24 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 2 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~10 min</span></p>
       <p class="play">Tape the paper to the floor. Draw lines, dots and circles side by side. Swap crayons now and then.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#F5B820"/><use href="#speech"/></svg>Talk tip <em>· Say what you see</em></span><p>Describe, don’t quiz: “Round and round. A big circle!”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Crayons too big to fit in a toilet-paper tube. Toss broken bits.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#F5B820;--tint:#FEF4D8;--b:12px;width:264px;height:360px">
@@ -644,10 +686,11 @@ symbol{overflow:visible}
     <span class="num">32</span>
     <div class="body">
       <h3>Freeze Dance</h3>
-      <p class="need"><i>You need</i> A song to sing or play</p>
+      <p class="need"><i>Needs</i> A song to sing or play</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 24 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 0 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">Dance to a song. When the music stops, freeze! Take turns being the one who stops the music.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#F5B820"/><use href="#speech"/></svg>Talk tip <em>· Follow their lead</em></span><p>Let your child shout “stop!” and “go!” for you.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#F5B820;--tint:#FEF4D8;--b:12px;width:264px;height:360px">
@@ -660,10 +703,11 @@ symbol{overflow:visible}
     <span class="num">33</span>
     <div class="body">
       <h3>Sock Puppet Chat</h3>
-      <p class="need"><i>You need</i> A clean sock, a marker</p>
-      <p class="play">Draw eyes on a sock and slip it on your hand. The puppet says hello, asks a question, then waits.</p>
+      <p class="need"><i>Needs</i> A clean grown-up sock, a marker (yours)</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 24 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 2 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
+      <p class="play">Draw eyes on the sock and slip it on your hand. The puppet says hello, asks a question, then waits.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#F5B820"/><use href="#speech"/></svg>Talk tip <em>· Pause and wait</em></span><p>Puppets are patient. Give extra time to answer.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Draw the face on. No buttons or stick-on eyes.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Draw the face on: no buttons or stick-on eyes. You keep the marker.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#F5B820;--tint:#FEF4D8;--b:12px;width:264px;height:360px">
@@ -676,10 +720,11 @@ symbol{overflow:visible}
     <span class="num">34</span>
     <div class="body">
       <h3>Nature Basket</h3>
-      <p class="need"><i>You need</i> A basket, a walk outside</p>
+      <p class="need"><i>Needs</i> A basket, a walk outside</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 24 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 0 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~15 min</span></p>
       <p class="play">Collect big leaves, sticks and pinecones. At home, sort them: bumpy, smooth, big, small.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#F5B820"/><use href="#speech"/></svg>Talk tip <em>· Say what you see</em></span><p>Name how they feel: “Bumpy pinecone. Smooth stick.”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Only things bigger than a toilet-paper tube. Skip berries and mushrooms.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Only things bigger than a toilet-paper tube. No berries or mushrooms. Wash hands after.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#F5B820;--tint:#FEF4D8;--b:12px;width:264px;height:360px">
@@ -692,10 +737,11 @@ symbol{overflow:visible}
     <span class="num">35</span>
     <div class="body">
       <h3>Pretend Shop</h3>
-      <p class="need"><i>You need</i> Empty food boxes, a bag</p>
-      <p class="play">Set up a shop on the sofa. Your child fills the bag and pays you with a leaf. Then swap jobs.</p>
+      <p class="need"><i>Needs</i> Empty food boxes, a bag</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 26 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 3 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~15 min</span></p>
+      <p class="play">Set up a shop on the sofa. Your child fills the bag and pays you with a high five. Then swap jobs.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#F5B820"/><use href="#speech"/></svg>Talk tip <em>· Offer a choice</em></span><p>Ask “Cereal or crackers today?” and wait.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#F5B820;--tint:#FEF4D8;--b:12px;width:264px;height:360px">
@@ -708,10 +754,11 @@ symbol{overflow:visible}
     <span class="num">36</span>
     <div class="body">
       <h3>Toy Bath</h3>
-      <p class="need"><i>You need</i> A tub of water, a washable toy, a cloth</p>
-      <p class="play">Give the toy a bath: wash its hands, feet and tummy. Dry it with a towel and tuck it in.</p>
+      <p class="need"><i>Needs</i> A tub of water, a washable toy, a cloth</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 24 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 3 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Messy</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~10 min</span></p>
+      <p class="play">Give the toy a bath: wash its hands, feet and tummy. Dry it off and tuck it in.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#F5B820"/><use href="#speech"/></svg>Talk tip <em>· Say what you see</em></span><p>Name body parts: “Wash the toes. Now the knees!”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Water play: a grown-up within arm’s reach the whole time. Tip the water out after.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Water play: a grown-up within arm’s reach the whole time. Tip the water out after.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#F5B820;--tint:#FEF4D8;--b:12px;width:264px;height:360px">
@@ -724,10 +771,11 @@ symbol{overflow:visible}
     <span class="num">37</span>
     <div class="body">
       <h3>Animal Moves</h3>
-      <p class="need"><i>You need</i> Space to move</p>
+      <p class="need"><i>Needs</i> Space to move</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 24 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 0 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">Hop like a frog, stomp like an elephant, tiptoe like a cat. Take turns picking the animal.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#F5B820"/><use href="#speech"/></svg>Talk tip <em>· Sing and gesture</em></span><p>Add the sound and the move: “Hop, hop, ribbit!”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#F5B820;--tint:#FEF4D8;--b:12px;width:264px;height:360px">
@@ -740,10 +788,11 @@ symbol{overflow:visible}
     <span class="num">38</span>
     <div class="body">
       <h3>Shape Hunt</h3>
-      <p class="need"><i>You need</i> Just you</p>
+      <p class="need"><i>Needs</i> Just you</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 30 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 0 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~10 min</span></p>
       <p class="play">Walk around the house looking for circles: a plate, a clock, a wheel. Then hunt for squares.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#F5B820"/><use href="#speech"/></svg>Talk tip <em>· Say what you see</em></span><p>Point and name: “Round, like the clock!”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#F5B820;--tint:#FEF4D8;--b:12px;width:264px;height:360px">
@@ -756,10 +805,11 @@ symbol{overflow:visible}
     <span class="num">39</span>
     <div class="body">
       <h3>Little Helper</h3>
-      <p class="need"><i>You need</i> A damp cloth</p>
+      <p class="need"><i>Needs</i> A cloth damp with plain water</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 24 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 1 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">Wipe the table together after a meal. Then let your child wipe a chair, then a toy.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#F5B820"/><use href="#speech"/></svg>Talk tip <em>· Say what you see</em></span><p>Talk as you work: “Wipe, wipe. All clean!”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Plain water only: no sprays or wipes. Stay within reach.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#EE5A36;--tint:#FDE9E3;--b:12px;width:264px;height:360px">
@@ -772,10 +822,11 @@ symbol{overflow:visible}
     <span class="num">40</span>
     <div class="body">
       <h3>Story Box</h3>
-      <p class="need"><i>You need</i> A box, 3 toys from around the house</p>
+      <p class="need"><i>Needs</i> A box, 3 toys from around the house</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 36 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 2 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~10 min</span></p>
       <p class="play">Pull out 3 toys. Make up a story that uses all three. Take turns adding one sentence each.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#EE5A36"/><use href="#speech"/></svg>Talk tip <em>· Follow their lead</em></span><p>Let the story go anywhere. Ask, “And then what?”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A grown-up plays along and stays nearby.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> A grown-up plays along and stays nearby.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#EE5A36;--tint:#FDE9E3;--b:12px;width:264px;height:360px">
@@ -788,10 +839,11 @@ symbol{overflow:visible}
     <span class="num">41</span>
     <div class="body">
       <h3>Obstacle Course</h3>
-      <p class="need"><i>You need</i> Pillows, a chair, a blanket</p>
+      <p class="need"><i>Needs</i> Pillows, a chair, a blanket</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 36 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 5 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~15 min</span></p>
       <p class="play">Build a course: crawl under the chair, hop over the pillows, roll across the blanket.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#EE5A36"/><use href="#speech"/></svg>Talk tip <em>· Take turns</em></span><p>Give two-step directions: “Crawl under, then jump!” Then swap.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Clear the space of sharp corners. A grown-up stays nearby.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Clear the space of sharp corners. A grown-up stays nearby.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#EE5A36;--tint:#FDE9E3;--b:12px;width:264px;height:360px">
@@ -804,10 +856,11 @@ symbol{overflow:visible}
     <span class="num">42</span>
     <div class="body">
       <h3>I Spy Colors</h3>
-      <p class="need"><i>You need</i> Just you</p>
+      <p class="need"><i>Needs</i> Just you</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 36 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 0 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">“I spy something green.” Your child guesses. Then they pick something and give you the clue.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#EE5A36"/><use href="#speech"/></svg>Talk tip <em>· Take turns</em></span><p>If they get stuck, add a hint: “It’s round…”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A grown-up plays along and stays nearby.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> A grown-up plays along and stays nearby.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#EE5A36;--tint:#FDE9E3;--b:12px;width:264px;height:360px">
@@ -820,10 +873,11 @@ symbol{overflow:visible}
     <span class="num">43</span>
     <div class="body">
       <h3>Restaurant</h3>
-      <p class="need"><i>You need</i> Paper, crayons, plates</p>
+      <p class="need"><i>Needs</i> Paper, crayons, plates</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 36 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 5 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~15 min</span></p>
       <p class="play">Draw a menu together. Your child takes your order, “cooks” it and brings it to the table. Swap roles.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#EE5A36"/><use href="#speech"/></svg>Talk tip <em>· Offer a choice</em></span><p>Ask “Soup or pizza? Anything else?”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A grown-up plays along and stays nearby.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> A grown-up plays along and stays nearby.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#EE5A36;--tint:#FDE9E3;--b:12px;width:264px;height:360px">
@@ -836,10 +890,11 @@ symbol{overflow:visible}
     <span class="num">44</span>
     <div class="body">
       <h3>Box Rocket</h3>
-      <p class="need"><i>You need</i> A big box, crayons</p>
+      <p class="need"><i>Needs</i> A big box, crayons</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 36 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 5 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~15 min</span></p>
       <p class="play">Draw buttons and windows on the box. Climb in, count down from ten, and blast off to the moon.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#EE5A36"/><use href="#speech"/></svg>Talk tip <em>· Follow their lead</em></span><p>Ask “Where are we flying? What’s out the window?”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Pull out staples and tape first. A grown-up stays nearby.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Pull out staples and tape first. A grown-up stays nearby.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#EE5A36;--tint:#FDE9E3;--b:12px;width:264px;height:360px">
@@ -852,10 +907,11 @@ symbol{overflow:visible}
     <span class="num">45</span>
     <div class="body">
       <h3>Kitchen List</h3>
-      <p class="need"><i>You need</i> Paper, a crayon</p>
+      <p class="need"><i>Needs</i> Paper, a crayon</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 42 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 2 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~10 min</span></p>
       <p class="play">Draw a list together: an apple, a cup, a spoon. Hunt for each one in the kitchen and check it off.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#EE5A36"/><use href="#speech"/></svg>Talk tip <em>· Say what you see</em></span><p>“Found the spoon! What’s next on our list?”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A grown-up plays along and stays nearby.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> You choose the list. Knives, the stove and cleaners stay off it.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#EE5A36;--tint:#FDE9E3;--b:12px;width:264px;height:360px">
@@ -868,10 +924,11 @@ symbol{overflow:visible}
     <span class="num">46</span>
     <div class="body">
       <h3>Do What I Do</h3>
-      <p class="need"><i>You need</i> Just you</p>
+      <p class="need"><i>Needs</i> Just you</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 36 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 0 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">Touch your nose, hop on one foot, spin around once. Your child copies. Then they’re the leader.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#EE5A36"/><use href="#speech"/></svg>Talk tip <em>· Take turns</em></span><p>Being the leader means practicing clear directions.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A grown-up plays along and stays nearby.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> A grown-up plays along and stays nearby.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#EE5A36;--tint:#FDE9E3;--b:12px;width:264px;height:360px">
@@ -884,10 +941,11 @@ symbol{overflow:visible}
     <span class="num">47</span>
     <div class="body">
       <h3>Shadow Animals</h3>
-      <p class="need"><i>You need</i> A flashlight, a wall</p>
-      <p class="play">Dim the lights. Shine the flashlight on a wall and make hand shadows: a bird, a dog, a bunny.</p>
+      <p class="need"><i>Needs</i> A flashlight, a wall</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 36 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 2 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~10 min</span></p>
+      <p class="play">Dim the lights. Shine the flashlight on a wall and make hand shadows: a bird, a dog, a crocodile.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#EE5A36"/><use href="#speech"/></svg>Talk tip <em>· Pause and wait</em></span><p>Ask “What animal is this?” Let them guess, then try a new one.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A grown-up holds the flashlight. Battery covers stay closed.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> A grown-up holds the flashlight. Battery covers stay shut.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#EE5A36;--tint:#FDE9E3;--b:12px;width:264px;height:360px">
@@ -900,10 +958,11 @@ symbol{overflow:visible}
     <span class="num">48</span>
     <div class="body">
       <h3>Book Bridge</h3>
-      <p class="need"><i>You need</i> Books or blocks, toy cars</p>
+      <p class="need"><i>Needs</i> Books or blocks, toy cars</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 36 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 3 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~10 min</span></p>
       <p class="play">Build a bridge between two stacks. Drive cars over it. Make it longer. Will it hold?</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#EE5A36"/><use href="#speech"/></svg>Talk tip <em>· Wonder aloud</em></span><p>Say “I wonder if it will hold?” Then wait and see.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A grown-up plays along and stays nearby.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> A grown-up plays along and stays nearby.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#EE5A36;--tint:#FDE9E3;--b:12px;width:264px;height:360px">
@@ -916,10 +975,11 @@ symbol{overflow:visible}
     <span class="num">49</span>
     <div class="body">
       <h3>Sock Match</h3>
-      <p class="need"><i>You need</i> A pile of clean socks</p>
+      <p class="need"><i>Needs</i> A pile of clean socks</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 36 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 1 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~10 min</span></p>
       <p class="play">Dump the socks out. Race to find matching pairs. Roll each pair into a ball.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#EE5A36"/><use href="#speech"/></svg>Talk tip <em>· Offer a choice</em></span><p>Hold up two: “Same or different?”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A grown-up plays along and stays nearby.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> A grown-up plays along and stays nearby.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#EE5A36;--tint:#FDE9E3;--b:12px;width:264px;height:360px">
@@ -932,10 +992,11 @@ symbol{overflow:visible}
     <span class="num">50</span>
     <div class="body">
       <h3>Water Painting</h3>
-      <p class="need"><i>You need</i> A cup of water, a paintbrush</p>
+      <p class="need"><i>Needs</i> A cup of water, a paintbrush</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 36 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 2 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~15 min</span></p>
       <p class="play">Outside, “paint” a fence, a step or the sidewalk with water. Watch the picture dry and disappear.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#EE5A36"/><use href="#speech"/></svg>Talk tip <em>· Wonder aloud</em></span><p>“Where did it go? I wonder if the sun dried it.”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Play away from the street. A grown-up stays nearby.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Water play: a grown-up within arm’s reach, away from the street.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#EE5A36;--tint:#FDE9E3;--b:12px;width:264px;height:360px">
@@ -948,10 +1009,11 @@ symbol{overflow:visible}
     <span class="num">51</span>
     <div class="body">
       <h3>Feelings Faces</h3>
-      <p class="need"><i>You need</i> A mirror</p>
+      <p class="need"><i>Needs</i> A wall mirror or an unbreakable one</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 36 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 0 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">Make faces in the mirror together: happy, sad, surprised, grumpy. Guess each other’s face.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#EE5A36"/><use href="#speech"/></svg>Talk tip <em>· Say what you see</em></span><p>“Your eyebrows went up. Surprised!” Ask when they felt that way.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A grown-up plays along and stays nearby.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Use a wall mirror or an unbreakable one. A grown-up stays nearby.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA" style="--band:#EE5A36;--tint:#FDE9E3;--b:12px;width:264px;height:360px">
@@ -964,10 +1026,11 @@ symbol{overflow:visible}
     <span class="num">52</span>
     <div class="body">
       <h3>Sound Walk</h3>
-      <p class="need"><i>You need</i> A walk outside</p>
+      <p class="need"><i>Needs</i> A walk outside</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 36 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 0 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~15 min</span></p>
       <p class="play">Stand still and listen. Count sounds on your fingers: a bird, a car, the wind. Walk on and listen again.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#EE5A36"/><use href="#speech"/></svg>Talk tip <em>· Take turns</em></span><p>Whisper “What do you hear?” Take turns naming sounds.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Hold hands near the street. A grown-up stays close.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#EE5A36"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Hold hands near the street. A grown-up stays close.</span></p>
     </div>
   </div>
 </div></section><section class="page"><div class="card cA special blank" style="--band:#8A5CC7;--tint:#EFE6FA;--b:12px;width:264px;height:360px">

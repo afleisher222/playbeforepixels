@@ -116,9 +116,9 @@ function startPage(P, S, n, total) {
     <h3 class="h3">The 8 talk moves on the cards</h3>
     <div class="moves">${Object.values(MOVES).map((m, i) => `<div class="mv" style="--c:${[C.tomato, C.sun, C.sky, C.grass, C.plum, C.tomato, C.sun, C.sky][i]}">${K.speech([C.tomato, C.sun, C.sky, C.grass, C.plum, C.tomato, C.sun, C.sky][i], 22)}<b>${m.name}</b><p>${m.how}</p></div>`).join('')}</div>
     <div class="whyband">
-      <div><b>Why play and talk?</b> Little ones learn to talk by talking with you: a look, a sound, your answer, their turn. Everyday play gives you lots of those back-and-forth moments, with nothing to buy and nothing to teach.</div>
-      <div><b>Three talk lines to try today:</b> “Your turn!” · “Tell me more.” · “What happens next?” <b>Talk, sing and read in the language you know best.</b> A sign, a point or a tap on a talking device counts as a turn.</div>
-      <div><b>Most children love 2–3 of these</b> and want them again and again. That’s perfect: repeat the favorites and skip the rest. Tired day? Every play has a 2-minute version on the no-cut pages.</div>
+      <div><b>Why play and talk?</b> Little ones learn to talk by talking with you: a look, a sound, your answer, their turn. Play is full of those moments.</div>
+      <div><b>Try:</b> “Your turn!” · “Tell me more.” · “What next?” <b>Talk, sing and read in the language you know best.</b> A sign, a point or a device tap counts.</div>
+      <div><b>Most children love 2–3 of these</b> and want them again and again. Repeat the favorites. Tired day? Use the 2-minute versions.</div>
     </div>
   </div>
   ${foot(P, n, total)}
@@ -233,9 +233,9 @@ function sheetPage(P, S, cardsHtml, note, n, total) {
   return `<section class="page sheet">
   <div class="grid" style="left:${S.gx}px;top:${S.gy}px">${cells}</div>
   ${gridLines(S)}
-  <div class="sidenote l" style="width:${S.H}px"><span>${esc(P.short)} · ${esc(note)} · page ${n} of ${total}</span></div>
+  <div class="sidenote l" style="width:${S.H}px"><span>${esc(P.short)} · ${esc(note)} · page ${n} of ${total} · ${K.VERSION}</span></div>
   <div class="sidenote r" style="width:${S.H}px"><span>Print at Actual size (100%) · cut on the lines · Grown-up keeps the pieces</span></div>
-  <div class="sheetfoot" style="left:${S.gx}px;width:${3 * K.CW}px;top:${S.gy + 3 * K.CH}px;height:${S.H - S.gy - 3 * K.CH}px"><span>${store() ? 'playbeforepixels.com · ' : ''}${K.COPY} Personal/family license · ${K.VERSION}</span></div>
+  <div class="sheetfoot" style="left:${S.gx}px;width:${3 * K.CW}px;top:${S.gy + 3 * K.CH}px;height:${S.H - S.gy - 3 * K.CH}px"><span>${store() ? 'playbeforepixels.com · © 2026 AlphaPlay LLC' : '© 2026 AlphaPlay LLC · personal/family license'}</span></div>
 </section>`;
 }
 
@@ -409,7 +409,7 @@ ${K.CARD_CSS}
 .h3{margin:0 0 10px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:19px;letter-spacing:-.01em;display:flex;align-items:center;gap:8px}
 .two{display:grid;grid-template-columns:1.05fr 1fr;gap:28px;margin-bottom:18px}
 .bigsteps{list-style:none;margin:0;padding:0;counter-reset:s}
-.bigsteps li{counter-increment:s;position:relative;padding-left:40px;margin:0 0 12px;font-size:13px;line-height:1.42;min-height:28px}
+.bigsteps li{counter-increment:s;position:relative;padding-left:40px;margin:0 0 9px;font-size:13px;line-height:1.42;min-height:28px}
 .bigsteps li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--c);color:#fff;font-family:"Fredoka",sans-serif;font-weight:600;font-size:15px;display:flex;align-items:center;justify-content:center}
 .bigsteps b{font-weight:800;display:block}
 .agekey{display:flex;flex-direction:column;gap:7px}
@@ -493,7 +493,7 @@ ${K.CARD_CSS}
 /* additions: prep line, why band, no-cut pages, share mark, start here */
 .prepline{margin:0 0 12px;font-size:12.5px;line-height:1.4;background:#fff;border-radius:12px;padding:7px 12px}
 .whyband{margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.whyband>div{background:${C.tSun};border-radius:14px;padding:11px 13px;font-size:11px;line-height:1.42}
+.whyband>div{background:${C.tSun};border-radius:14px;padding:10px 13px;font-size:10.8px;line-height:1.4}
 .whyband.b>div{background:${C.tSky}}
 .whyband b{font-weight:800}
 .ptitle.sm{font-size:30px;display:flex;align-items:center;gap:10px;margin-bottom:6px}
@@ -592,7 +592,7 @@ function buildPages(P, S, qrSvg, opts = {}) {
   else { pages.push(noCutB(P, S, MOMENTS.slice(0, 2), ++n, TOTAL, 1)); pages.push(noCutB(P, S, MOMENTS.slice(2), ++n, TOTAL, 2)); }
   for (let s = 0; s < 6; s++) {
     const cards = P.deck.slice(s * 9, s * 9 + 9).map(cd => P.card(cd, 0));
-    pages.push(sheetPage(P, S, cards, `Card sheet ${s + 1} of 6`, ++n, TOTAL));
+    pages.push(sheetPage(P, S, cards, `Sheet ${s + 1} of 6`, ++n, TOTAL));
   }
   pages.push(sheetPage(P, S, Array(9).fill(P.back(0)), 'Card backs (optional)', ++n, TOTAL));
   const blank = P.key === 'A' ? K.blankA(0) : K.blankB(0);

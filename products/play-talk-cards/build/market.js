@@ -56,8 +56,8 @@ function imagesA() {
     <div class="band"><span>Printable PDF · US Letter + A4 · Instant download, nothing ships</span><img src="${K.LOGO.lockupWhite}" alt=""></div></div>`]);
   // anatomy
   const s = 2.0, cx = 84, cy = 248;
-  const marks = [[8, 12, 1], [240 - 62, 12, 2], [4, 142, 3], [4, 175, 4], [4, 268, 5], [4, 306, 6]];
-  const notes = [['Age color and shape', 'Find your child’s color at a glance.'], ['Card number', 'All 52 plays are numbered for the tracker.'], ['What you need', 'Things you already have at home.'], ['The play', 'Short, clear steps. Five minutes or more.'], ['Talk tip', 'One plain-words idea for back-and-forth talk.'], ['Safety note', 'Built in, on every single card.']];
+  const marks = [[8, 12, 1], [240 - 62, 12, 2], [4, 146, 3], [4, 192, 4], [4, 268, 5], [4, 306, 6]];
+  const notes = [['Age color and shape', 'Find your child’s color at a glance.'], ['Card number', 'All 52 plays are numbered for the tracker.'], ['Needs, age, prep, mess', 'Everyday things, a start age in months, prep and mess at a glance.'], ['The play', 'Short, clear steps, with start age, prep and mess.'], ['Talk tip', 'One plain-words idea for back-and-forth talk.'], ['With a grown-up', 'A safety note built into every single card.']];
   out.push(['02-every-card', `<div class="sq" style="background:${C.wash}">
     <div class="h"><p class="k" style="color:${C.tomato}">On every card</p><h1>A play. A talk tip.<br>A safety note.</h1></div>
     ${at(K.cardA(D[33], 0), cx, cy, s)}
@@ -70,15 +70,15 @@ function imagesA() {
     ${picks.map((i, j) => at(cA(i), 52 + j * 232, 350, .86)).join('')}
     ${BANDS.map((b, j) => `<div class="abs" style="left:${52 + j * 232}px;top:668px;width:206px;text-align:center"><div style="display:inline-flex;align-items:center;gap:8px;font:600 34px Fredoka,sans-serif">${K.shapeSvg(b.shape, C[b.color], 26)}${b.ages}</div><div style="font-size:18px;font-weight:800;margin-top:2px">${b.label}</div><div style="font-size:15px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin-top:4px">13 plays</div></div>`).join('')}
     <div class="band" style="background:${C.wash};color:${C.ink};justify-content:center"><span>Ages are a guide, not a rule. Play any card that fits your child today.</span></div></div>`]);
-  out.push(printImage('A', prev(5), C.tSky));
+  out.push(printImage('A', prev(12), C.tSky));
   // talk moves
   const mcol = [C.tomato, C.sun, C.sky, C.grass, C.plum, C.tomato, C.sun, C.sky];
   out.push(['05-talk-moves', `<div class="sq" style="background:${C.tGrass}">
     <div class="h"><p class="k" style="color:${C.grass}">Talk while you play</p><h1>8 simple talk moves,<br>in plain words</h1></div>
     <div class="abs" style="left:64px;right:64px;top:300px;display:grid;grid-template-columns:1fr 1fr;gap:16px">${Object.values(MOVES).map((m, i) => `<div style="background:#fff;border-radius:20px;padding:18px 22px;display:flex;gap:14px;align-items:flex-start">${speech(mcol[i], 40)}<div><b style="font-size:23px;font-weight:800">${m.name}</b><p style="margin:4px 0 0;font-size:17px;line-height:1.35">${m.how}</p></div></div>`).join('')}</div>
     <div class="band" style="background:${C.grass};justify-content:center"><span>One talk tip on every card. No scripts, nothing to memorize.</span></div></div>`]);
-  out.push(includedImage('A', [[1, 'Cover and contents'], [2, 'Grown-up guide'], [4, '6 card sheets'], [11, 'Make-your-own cards'], [12, '52-week tracker'], [13, 'Free bonus + what’s next']], C.wash,
-    ['54 poker-size cards (52 plays + how-to + blank)', 'Card backs · cut lines · type-in blank cards', '4 PDFs: US Letter + A4, full color + ink-saver']));
+  out.push(includedImage('A', [[1, 'Cover and contents'], [2, 'Grown-up guide'], [4, '8 no-cut play pages'], [12, '6 card sheets'], [19, 'Type-in blank cards'], [20, '52-week tracker']], C.wash,
+    ['54 poker-size cards (52 plays + how-to + blank)', 'Start age, prep, mess, 2-minute version, easier/harder for every play', 'Color + low-ink, US Letter + A4, plus START HERE']));
   // safety
   out.push(['07-safety', `<div class="sq" style="background:${C.tTomato}">
     <div class="h"><p class="k" style="color:${C.tomato}">Safety built in</p><h1>Simple safety basics<br>on every card</h1></div>
@@ -109,14 +109,14 @@ function imagesB() {
     ${[7, 20, 33, 42].map((i, j) => at(cB(i), 52 + j * 232, 350, .86)).join('')}
     ${MOMENTS.map((m, j) => `<div class="abs" style="left:${52 + j * 232}px;top:668px;width:206px;text-align:center"><div style="font:800 30px 'Bricolage Grotesque',sans-serif;color:${C[m.color] === C.sun ? C.ink : C[m.color]}">${m.name}</div><div style="font-size:16px;font-weight:700;margin-top:4px;line-height:1.3">${m.where}</div></div>`).join('')}
     <div class="band" style="background:${C.wash};color:${C.ink};justify-content:center"><span>For ages 5–12 · grown-ups answer too · “pass” is always allowed</span></div></div>`]);
-  out.push(printImage('B', prev(5), C.tSun));
+  out.push(printImage('B', prev(6), C.tSun));
   const hcol = [C.tomato, C.sun, C.sky, C.plum, C.grass, C.tomato];
   out.push(['05-talk-habits', `<div class="sq" style="background:${C.tPlum}">
     <div class="h"><p class="k" style="color:${C.plum}">Grown-up guide inside</p><h1>6 easy talk-along<br>habits</h1></div>
     <div class="abs" style="left:64px;right:64px;top:300px;display:grid;grid-template-columns:1fr 1fr;gap:18px">${HABITS.map((h, i) => `<div style="background:#fff;border-radius:20px;padding:22px 24px;display:flex;gap:14px;align-items:flex-start">${speech(hcol[i], 40)}<div><b style="font-size:24px;font-weight:800">${h.name}</b><p style="margin:4px 0 0;font-size:18px;line-height:1.35">${h.how}</p></div></div>`).join('')}</div>
     <div class="band" style="background:${C.plum};justify-content:center"><span>A one-line grown-up tip on every card, too.</span></div></div>`]);
-  out.push(includedImage('B', [[1, 'Cover and contents'], [2, 'Grown-up guide'], [4, '6 card sheets'], [11, 'Make-your-own cards'], [12, 'Labels + weekly check'], [13, 'Free bonus + what’s next']], C.wash,
-    ['54 poker-size cards (52 questions + how-to + blank)', 'Card backs · cut lines · type-in blank cards', '4 PDFs: US Letter + A4, full color + ink-saver']));
+  out.push(includedImage('B', [[1, 'Cover and contents'], [2, 'Grown-up guide'], [4, 'No-cut question pages'], [6, '6 card sheets'], [13, 'Type-in blank cards'], [14, 'Labels + weekly check']], C.wash,
+    ['54 poker-size cards (52 questions + how-to + blank)', 'Card backs · cut lines · no-cut pages', 'Color + low-ink, US Letter + A4, plus START HERE']));
   out.push(['07-real-life', `<div class="sq" style="background:${C.wash}">
     <div class="h"><p class="k" style="color:${C.tomato}">Made for real life</p><h1>Keep them where<br>the talking happens</h1></div>
     <div class="abs" style="left:64px;right:64px;top:330px;display:grid;grid-template-columns:1fr 1fr;gap:22px">${[
@@ -136,7 +136,7 @@ function printImage(key, sheetPng, bg) {
     <div class="h"><p class="k" style="color:${C.ink};opacity:.7">Print at home</p><h1>Print, cut, ${key === 'A' ? 'play' : 'talk'}</h1></div>
     ${sheetImg(sheetPng, 70, 250, 470, -4)}
     <ol class="list abs" style="left:600px;right:56px;top:270px">${steps.map(([a, b], i) => `<li style="display:flex;gap:16px;margin-bottom:30px"><span style="flex:none;width:44px;height:44px;border-radius:50%;background:${[C.tomato, C.sky, C.grass][i]};color:#fff;font:600 23px Fredoka,sans-serif;display:flex;align-items:center;justify-content:center">${i + 1}</span><span><b style="display:block;font:800 28px 'Bricolage Grotesque',sans-serif">${a}</b><span style="font-size:19px;line-height:1.38">${b}</span></span></li>`).join('')}</ol>
-    <div class="abs" style="left:600px;right:40px;top:700px;display:flex;flex-wrap:wrap;gap:10px">${['2.5 × 3.5 in poker size', 'US Letter + A4', 'Ink-saver version', 'Type-in blank cards'].map(t => `<span class="pill">${t}</span>`).join('')}</div></div>`];
+    <div class="abs" style="left:600px;right:40px;top:700px;display:flex;flex-wrap:wrap;gap:10px">${['2.5 × 3.5 in poker size', 'US Letter + A4', 'Low-ink version', 'Type-in blank cards'].map(t => `<span class="pill">${t}</span>`).join('')}</div></div>`];
 }
 function includedImage(key, pages, bg, bullets) {
   const dir = key === 'A' ? path.join(ROOT, 'preview') : path.join(ROOT, 'talk-along/preview');
@@ -161,7 +161,7 @@ function nextImage(key) {
 }
 
 function mockup(key) {
-  const sheet = key === 'A' ? path.join(ROOT, 'preview/p05.png') : path.join(ROOT, 'talk-along/preview/p04.png');
+  const sheet = key === 'A' ? path.join(ROOT, 'preview/p13.png') : path.join(ROOT, 'talk-along/preview/p06.png');
   const D = key === 'A' ? K.DECK_A : K.DECK_B, f = key === 'A' ? K.cardA : K.cardB;
   const picks = key === 'A' ? [2, 18, 30, 45] : [4, 16, 31, 47];
   const back = key === 'A' ? K.backA(0) : K.backB(0);

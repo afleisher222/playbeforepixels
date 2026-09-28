@@ -13,7 +13,12 @@ symbol{overflow:visible}
 .num{right:12px;min-width:30px;justify-content:center;padding:0 7px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-size:12.5px}
 .cA .body{position:absolute;left:15px;right:15px;top:117px;bottom:12px;display:flex;flex-direction:column}
 .cA h3{margin:0 0 3px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:18px;line-height:1.05;letter-spacing:-.015em}
-.need{margin:0 0 5px;font-size:9.5px;line-height:1.25;font-weight:700}
+.meta{margin:0 0 5px;display:flex;flex-wrap:nowrap;justify-content:space-between;gap:4px;font-size:7.3px;line-height:1;font-weight:800;color:#1D2940;opacity:.78;white-space:nowrap}
+.meta span{display:inline-flex;align-items:center;gap:2px}
+.meta svg{flex:none;color:var(--band)}
+.ver{margin:5px 0 0;font-size:6.8px;font-weight:700;opacity:.55;text-align:right}
+.num small{font-size:8px;font-weight:800;margin-right:3px;font-family:"Nunito Sans",sans-serif;opacity:.75}
+.need{margin:0 0 4px;font-size:9.5px;line-height:1.25;font-weight:700}
 .need i{font-style:normal;font-weight:800;font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin-right:3px}
 .play{margin:0;font-size:11.2px;line-height:1.36;font-weight:600}
 .talk{margin-top:auto;background:var(--tint);border-radius:10px;padding:6px 9px 7px}
@@ -22,6 +27,7 @@ symbol{overflow:visible}
 .talk p{margin:0;font-size:10.2px;line-height:1.3;font-weight:700}
 .safe{margin:6px 0 0;display:flex;align-items:flex-start;gap:5px;font-size:8.2px;line-height:1.25;font-weight:700;opacity:.82;min-height:20px}
 .safe svg{flex:none;margin-top:1px}
+.safe b{font-weight:900}
 /* special cards */
 .special .sp-head{position:absolute;left:15px;right:15px;top:14px;color:#fff}
 .sp-kick{display:block;font-weight:800;font-size:8px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-bottom:3px}
@@ -61,14 +67,18 @@ symbol{overflow:visible}
 .bk-t{margin:0;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:25px;letter-spacing:-.02em;line-height:1}
 .bk-s{margin:5px 0 0;font-size:10px;font-weight:800;letter-spacing:.06em}
 .bk-b{margin:10px 0 0;font-size:8px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:.6}
-/* ink-saver colorway */
+/* low-ink colorway: white grounds, outlined panels, line-art backs */
 .ink .card{--deco:transparent}
-.ink .cA:not(.special) .bandbg,.ink .cB:not(.special) .bandbg{background:var(--tint)}
+.ink .card .bandbg{background:#fff!important;border-bottom:2px solid var(--band)}
+.ink .cA .art > circle[fill="#fff"],.ink .cB .art > circle[fill="#fff"]{stroke:var(--band);stroke-width:1.5}
+.ink .chip,.ink .num{border:1.3px solid var(--band)}
 .ink .cB:not(.special){--on:#1D2940}
-.ink .cA:not(.special) .talk,.ink .cB:not(.special) .talk{background:#fff;border:1.4px solid var(--band)}
-.ink .special .bandbg{background:var(--tint)}
+.ink .cA .talk,.ink .cB .talk{background:#fff;border:1.4px solid var(--band)}
 .ink .special .sp-head,.ink .special .sp-head h3{color:#1D2940}
+.ink .key{background:#fff;border:1.2px solid var(--band)}
+.ink .strip > circle{fill:#fff;stroke:#B9C1D0;stroke-width:1}
 .ink .back .bgpat rect{fill:#fff}
+.ink .back .bgpat g *{fill:none!important;stroke:#9AA3B5;stroke-width:1.2}
 .ink .back .bk-label{border:2px solid #1D2940}
 
 .sq{width:1000px;height:1000px;position:relative;overflow:hidden}
@@ -148,7 +158,7 @@ symbol{overflow:visible}
     <circle cx="232" cy="84" r="46" style="fill:var(--deco)"/><circle cx="196" cy="8" r="16" style="fill:var(--deco)"/>
     <circle cx="46" cy="44" r="29" fill="#fff"/><g transform="translate(46,44)"><g transform="scale(0.46)"><circle cx="0" cy="0" r="36" fill="#E3EEFA" /><circle cx="0" cy="0" r="24" fill="#FFFFFF" /><g transform="translate(-46,0)" ><rect x="-3" y="-10" width="6" height="44" rx="3" fill="#1D2940" /><rect x="-8" y="-34" width="4" height="20" rx="2" fill="#1D2940" /><rect x="-2" y="-34" width="4" height="20" rx="2" fill="#1D2940" /><rect x="4" y="-34" width="4" height="20" rx="2" fill="#1D2940" /><rect x="-8" y="-18" width="16" height="10" rx="5" fill="#1D2940" /></g><g transform="translate(46,0)" ><rect x="-3" y="-6" width="6" height="40" rx="3" fill="#1D2940" /><ellipse cx="0" cy="-20" rx="8" ry="13" fill="#1D2940"/></g><circle cx="-6" cy="-4" r="8" fill="#2FA36B" /><circle cx="8" cy="4" r="7" fill="#EE5A36" /><circle cx="4" cy="-10" r="5" fill="#F5B820" /></g></g></svg>
     <div class="mo"><b>Dinner</b><span>Table talk</span></div>
-    <span class="num">03</span>
+    <span class="num"><small>5–12 ·</small>03</span>
     <div class="body">
       <div class="qwrap"><p class="q" style="font-size:26px">Who made you smile today? What did they do?</p></div>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#EE5A36"/><use href="#speech"/></svg>Grown-up tip</span><p>Listen for new names and ask one more question about them.</p></div>
@@ -161,7 +171,7 @@ symbol{overflow:visible}
     <circle cx="232" cy="84" r="46" style="fill:var(--deco)"/><circle cx="196" cy="8" r="16" style="fill:var(--deco)"/>
     <circle cx="46" cy="44" r="29" fill="#fff"/><g transform="translate(46,44)"><g transform="scale(0.46)"><g transform="translate(-4,2) scale(.72)" ><use href="#moon" transform="" /></g><g transform="translate(30,-26) scale(1.3)" ><use href="#star" transform="" /></g><g transform="translate(34,16) scale(.9)" ><use href="#star" transform="" /></g></g></g></svg>
     <div class="mo"><b>Bedtime</b><span>Wind-down talk</span></div>
-    <span class="num">41</span>
+    <span class="num"><small>5–12 ·</small>41</span>
     <div class="body">
       <div class="qwrap"><p class="q" style="font-size:26px">What’s something you’re wondering about?</p></div>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#8A5CC7"/><use href="#speech"/></svg>Grown-up tip</span><p>“I don’t know. Let’s find out tomorrow” is a great answer.</p></div>
@@ -177,10 +187,11 @@ symbol{overflow:visible}
     <span class="num">08</span>
     <div class="body">
       <h3>First Book Chat</h3>
-      <p class="need"><i>You need</i> A board book</p>
+      <p class="need"><i>Needs</i> A board book</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 3 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 0 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>No mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~5 min</span></p>
       <p class="play">Sit baby on your lap. Point to one picture and name it. Let baby pat the pictures and help turn the pages.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#3D86D8"/><use href="#speech"/></svg>Talk tip <em>· Follow their lead</em></span><p>Talk about whatever baby looks at, even the same page again.</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#3D86D8"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Stay within reach. Every item bigger than a toilet-paper tube.</span></p>
     </div>
   </div>
 </div></div><div class="fc" style="transform:translate(35px,3.5px) rotate(3.5deg) scale(0.96);z-index:9"><div class="card cA" style="--band:#F5B820;--tint:#FEF4D8;--b:0px;width:240px;height:336px">
@@ -193,10 +204,11 @@ symbol{overflow:visible}
     <span class="num">27</span>
     <div class="body">
       <h3>Blanket Fort</h3>
-      <p class="need"><i>You need</i> A blanket, chairs, pillows</p>
+      <p class="need"><i>Needs</i> A blanket, chairs, pillows</p>
+      <p class="meta"><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/></svg>From 24 mo</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5h8M2 6.5h8M2 9.5h5"/></svg>Prep 5 min</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/></svg>Low mess</span><span><svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/></svg>~15 min</span></p>
       <p class="play">Build a fort together. Bring in a book and a teddy. Read inside, then peek out the door.</p>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#F5B820"/><use href="#speech"/></svg>Talk tip <em>· Say what you see</em></span><p>Use place words: “in,” “under,” “on top,” “behind.”</p></div>
-      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sturdy chairs only; nothing heavy on top. Stay within reach.</span></p>
+      <p class="safe"><svg viewBox="0 0 20 22" width="11" height="12.100000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#F5B820"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>With a grown-up.</b> Sturdy chairs only; nothing heavy on top. Stay within reach.</span></p>
     </div>
   </div>
 </div></div></div>

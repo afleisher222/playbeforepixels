@@ -13,7 +13,12 @@ symbol{overflow:visible}
 .num{right:12px;min-width:30px;justify-content:center;padding:0 7px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-size:12.5px}
 .cA .body{position:absolute;left:15px;right:15px;top:117px;bottom:12px;display:flex;flex-direction:column}
 .cA h3{margin:0 0 3px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:18px;line-height:1.05;letter-spacing:-.015em}
-.need{margin:0 0 5px;font-size:9.5px;line-height:1.25;font-weight:700}
+.meta{margin:0 0 5px;display:flex;flex-wrap:nowrap;justify-content:space-between;gap:4px;font-size:7.3px;line-height:1;font-weight:800;color:#1D2940;opacity:.78;white-space:nowrap}
+.meta span{display:inline-flex;align-items:center;gap:2px}
+.meta svg{flex:none;color:var(--band)}
+.ver{margin:5px 0 0;font-size:6.8px;font-weight:700;opacity:.55;text-align:right}
+.num small{font-size:8px;font-weight:800;margin-right:3px;font-family:"Nunito Sans",sans-serif;opacity:.75}
+.need{margin:0 0 4px;font-size:9.5px;line-height:1.25;font-weight:700}
 .need i{font-style:normal;font-weight:800;font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin-right:3px}
 .play{margin:0;font-size:11.2px;line-height:1.36;font-weight:600}
 .talk{margin-top:auto;background:var(--tint);border-radius:10px;padding:6px 9px 7px}
@@ -22,6 +27,7 @@ symbol{overflow:visible}
 .talk p{margin:0;font-size:10.2px;line-height:1.3;font-weight:700}
 .safe{margin:6px 0 0;display:flex;align-items:flex-start;gap:5px;font-size:8.2px;line-height:1.25;font-weight:700;opacity:.82;min-height:20px}
 .safe svg{flex:none;margin-top:1px}
+.safe b{font-weight:900}
 /* special cards */
 .special .sp-head{position:absolute;left:15px;right:15px;top:14px;color:#fff}
 .sp-kick{display:block;font-weight:800;font-size:8px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-bottom:3px}
@@ -61,14 +67,18 @@ symbol{overflow:visible}
 .bk-t{margin:0;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:25px;letter-spacing:-.02em;line-height:1}
 .bk-s{margin:5px 0 0;font-size:10px;font-weight:800;letter-spacing:.06em}
 .bk-b{margin:10px 0 0;font-size:8px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:.6}
-/* ink-saver colorway */
+/* low-ink colorway: white grounds, outlined panels, line-art backs */
 .ink .card{--deco:transparent}
-.ink .cA:not(.special) .bandbg,.ink .cB:not(.special) .bandbg{background:var(--tint)}
+.ink .card .bandbg{background:#fff!important;border-bottom:2px solid var(--band)}
+.ink .cA .art > circle[fill="#fff"],.ink .cB .art > circle[fill="#fff"]{stroke:var(--band);stroke-width:1.5}
+.ink .chip,.ink .num{border:1.3px solid var(--band)}
 .ink .cB:not(.special){--on:#1D2940}
-.ink .cA:not(.special) .talk,.ink .cB:not(.special) .talk{background:#fff;border:1.4px solid var(--band)}
-.ink .special .bandbg{background:var(--tint)}
+.ink .cA .talk,.ink .cB .talk{background:#fff;border:1.4px solid var(--band)}
 .ink .special .sp-head,.ink .special .sp-head h3{color:#1D2940}
+.ink .key{background:#fff;border:1.2px solid var(--band)}
+.ink .strip > circle{fill:#fff;stroke:#B9C1D0;stroke-width:1}
 .ink .back .bgpat rect{fill:#fff}
+.ink .back .bgpat g *{fill:none!important;stroke:#9AA3B5;stroke-width:1.2}
 .ink .back .bk-label{border:2px solid #1D2940}
 
 .sq{width:1000px;height:1000px;position:relative;overflow:hidden}
@@ -141,5 +151,5 @@ symbol{overflow:visible}
 <symbol id="wheel-s" overflow="visible"><circle r="8" fill="#1D2940"/><circle r="3" fill="#FFFFFF"/></symbol>
 <symbol id="leaf" overflow="visible"><path d="M0-26C16-18 18 6 0 26C-18 6-16-18 0-26Z" fill="#2FA36B"/><path d="M0-18V22" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" opacity=".6"/></symbol></defs></svg><div class="sq" style="background:#F3F6FB">
     <div class="h"><p class="k" style="color:#EE5A36">Instant download</p><h1>What’s inside</h1></div>
-    <div class="abs" style="left:96px;width:808px;top:196px;display:grid;grid-template-columns:repeat(3,224px);gap:20px 68px"><div><img src="../../../preview/p01.png" style="width:100%;display:block;border-radius:4px;box-shadow:0 10px 24px rgba(29,41,64,.14)"><p style="margin:8px 0 0;font-size:17px;font-weight:800;text-align:center;white-space:nowrap">Cover and contents</p></div><div><img src="../../../preview/p02.png" style="width:100%;display:block;border-radius:4px;box-shadow:0 10px 24px rgba(29,41,64,.14)"><p style="margin:8px 0 0;font-size:17px;font-weight:800;text-align:center;white-space:nowrap">Grown-up guide</p></div><div><img src="../../../preview/p04.png" style="width:100%;display:block;border-radius:4px;box-shadow:0 10px 24px rgba(29,41,64,.14)"><p style="margin:8px 0 0;font-size:17px;font-weight:800;text-align:center;white-space:nowrap">6 card sheets</p></div><div><img src="../../../preview/p11.png" style="width:100%;display:block;border-radius:4px;box-shadow:0 10px 24px rgba(29,41,64,.14)"><p style="margin:8px 0 0;font-size:17px;font-weight:800;text-align:center;white-space:nowrap">Make-your-own cards</p></div><div><img src="../../../preview/p12.png" style="width:100%;display:block;border-radius:4px;box-shadow:0 10px 24px rgba(29,41,64,.14)"><p style="margin:8px 0 0;font-size:17px;font-weight:800;text-align:center;white-space:nowrap">52-week tracker</p></div><div><img src="../../../preview/p13.png" style="width:100%;display:block;border-radius:4px;box-shadow:0 10px 24px rgba(29,41,64,.14)"><p style="margin:8px 0 0;font-size:17px;font-weight:800;text-align:center;white-space:nowrap">Free bonus + what’s next</p></div></div>
-    <ul class="list abs" style="left:64px;right:64px;bottom:34px;display:flex;justify-content:space-between;gap:14px"><li style="flex:1;background:#fff;border-radius:16px;padding:12px 14px;font-size:15.5px;font-weight:800;line-height:1.3;text-align:center;display:flex;align-items:center;justify-content:center">54 poker-size cards (52 plays + how-to + blank)</li><li style="flex:1;background:#fff;border-radius:16px;padding:12px 14px;font-size:15.5px;font-weight:800;line-height:1.3;text-align:center;display:flex;align-items:center;justify-content:center">Card backs · cut lines · type-in blank cards</li><li style="flex:1;background:#fff;border-radius:16px;padding:12px 14px;font-size:15.5px;font-weight:800;line-height:1.3;text-align:center;display:flex;align-items:center;justify-content:center">4 PDFs: US Letter + A4, full color + ink-saver</li></ul></div></body></html>
+    <div class="abs" style="left:96px;width:808px;top:196px;display:grid;grid-template-columns:repeat(3,224px);gap:20px 68px"><div><img src="../../../preview/p01.png" style="width:100%;display:block;border-radius:4px;box-shadow:0 10px 24px rgba(29,41,64,.14)"><p style="margin:8px 0 0;font-size:17px;font-weight:800;text-align:center;white-space:nowrap">Cover and contents</p></div><div><img src="../../../preview/p02.png" style="width:100%;display:block;border-radius:4px;box-shadow:0 10px 24px rgba(29,41,64,.14)"><p style="margin:8px 0 0;font-size:17px;font-weight:800;text-align:center;white-space:nowrap">Grown-up guide</p></div><div><img src="../../../preview/p04.png" style="width:100%;display:block;border-radius:4px;box-shadow:0 10px 24px rgba(29,41,64,.14)"><p style="margin:8px 0 0;font-size:17px;font-weight:800;text-align:center;white-space:nowrap">8 no-cut play pages</p></div><div><img src="../../../preview/p12.png" style="width:100%;display:block;border-radius:4px;box-shadow:0 10px 24px rgba(29,41,64,.14)"><p style="margin:8px 0 0;font-size:17px;font-weight:800;text-align:center;white-space:nowrap">6 card sheets</p></div><div><img src="../../../preview/p19.png" style="width:100%;display:block;border-radius:4px;box-shadow:0 10px 24px rgba(29,41,64,.14)"><p style="margin:8px 0 0;font-size:17px;font-weight:800;text-align:center;white-space:nowrap">Type-in blank cards</p></div><div><img src="../../../preview/p20.png" style="width:100%;display:block;border-radius:4px;box-shadow:0 10px 24px rgba(29,41,64,.14)"><p style="margin:8px 0 0;font-size:17px;font-weight:800;text-align:center;white-space:nowrap">52-week tracker</p></div></div>
+    <ul class="list abs" style="left:64px;right:64px;bottom:34px;display:flex;justify-content:space-between;gap:14px"><li style="flex:1;background:#fff;border-radius:16px;padding:12px 14px;font-size:15.5px;font-weight:800;line-height:1.3;text-align:center;display:flex;align-items:center;justify-content:center">54 poker-size cards (52 plays + how-to + blank)</li><li style="flex:1;background:#fff;border-radius:16px;padding:12px 14px;font-size:15.5px;font-weight:800;line-height:1.3;text-align:center;display:flex;align-items:center;justify-content:center">Start age, prep, mess, 2-minute version, easier/harder for every play</li><li style="flex:1;background:#fff;border-radius:16px;padding:12px 14px;font-size:15.5px;font-weight:800;line-height:1.3;text-align:center;display:flex;align-items:center;justify-content:center">Color + low-ink, US Letter + A4, plus START HERE</li></ul></div></body></html>

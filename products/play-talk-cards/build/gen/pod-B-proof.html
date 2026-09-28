@@ -11,7 +11,12 @@ symbol{overflow:visible}
 .num{right:12px;min-width:30px;justify-content:center;padding:0 7px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-size:12.5px}
 .cA .body{position:absolute;left:15px;right:15px;top:117px;bottom:12px;display:flex;flex-direction:column}
 .cA h3{margin:0 0 3px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:18px;line-height:1.05;letter-spacing:-.015em}
-.need{margin:0 0 5px;font-size:9.5px;line-height:1.25;font-weight:700}
+.meta{margin:0 0 5px;display:flex;flex-wrap:nowrap;justify-content:space-between;gap:4px;font-size:7.3px;line-height:1;font-weight:800;color:#1D2940;opacity:.78;white-space:nowrap}
+.meta span{display:inline-flex;align-items:center;gap:2px}
+.meta svg{flex:none;color:var(--band)}
+.ver{margin:5px 0 0;font-size:6.8px;font-weight:700;opacity:.55;text-align:right}
+.num small{font-size:8px;font-weight:800;margin-right:3px;font-family:"Nunito Sans",sans-serif;opacity:.75}
+.need{margin:0 0 4px;font-size:9.5px;line-height:1.25;font-weight:700}
 .need i{font-style:normal;font-weight:800;font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin-right:3px}
 .play{margin:0;font-size:11.2px;line-height:1.36;font-weight:600}
 .talk{margin-top:auto;background:var(--tint);border-radius:10px;padding:6px 9px 7px}
@@ -20,6 +25,7 @@ symbol{overflow:visible}
 .talk p{margin:0;font-size:10.2px;line-height:1.3;font-weight:700}
 .safe{margin:6px 0 0;display:flex;align-items:flex-start;gap:5px;font-size:8.2px;line-height:1.25;font-weight:700;opacity:.82;min-height:20px}
 .safe svg{flex:none;margin-top:1px}
+.safe b{font-weight:900}
 /* special cards */
 .special .sp-head{position:absolute;left:15px;right:15px;top:14px;color:#fff}
 .sp-kick{display:block;font-weight:800;font-size:8px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-bottom:3px}
@@ -59,14 +65,18 @@ symbol{overflow:visible}
 .bk-t{margin:0;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:25px;letter-spacing:-.02em;line-height:1}
 .bk-s{margin:5px 0 0;font-size:10px;font-weight:800;letter-spacing:.06em}
 .bk-b{margin:10px 0 0;font-size:8px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:.6}
-/* ink-saver colorway */
+/* low-ink colorway: white grounds, outlined panels, line-art backs */
 .ink .card{--deco:transparent}
-.ink .cA:not(.special) .bandbg,.ink .cB:not(.special) .bandbg{background:var(--tint)}
+.ink .card .bandbg{background:#fff!important;border-bottom:2px solid var(--band)}
+.ink .cA .art > circle[fill="#fff"],.ink .cB .art > circle[fill="#fff"]{stroke:var(--band);stroke-width:1.5}
+.ink .chip,.ink .num{border:1.3px solid var(--band)}
 .ink .cB:not(.special){--on:#1D2940}
-.ink .cA:not(.special) .talk,.ink .cB:not(.special) .talk{background:#fff;border:1.4px solid var(--band)}
-.ink .special .bandbg{background:var(--tint)}
+.ink .cA .talk,.ink .cB .talk{background:#fff;border:1.4px solid var(--band)}
 .ink .special .sp-head,.ink .special .sp-head h3{color:#1D2940}
+.ink .key{background:#fff;border:1.2px solid var(--band)}
+.ink .strip > circle{fill:#fff;stroke:#B9C1D0;stroke-width:1}
 .ink .back .bgpat rect{fill:#fff}
+.ink .back .bgpat g *{fill:none!important;stroke:#9AA3B5;stroke-width:1.2}
 .ink .back .bk-label{border:2px solid #1D2940}
 .wrap{display:flex;flex-wrap:wrap;gap:18px;padding:22px;width:1210px}.pc{position:relative}.trimln{position:absolute;left:12px;top:12px;width:240px;height:336px;outline:1.2px solid #FF00FF}.safeln{position:absolute;left:27px;top:27px;width:210px;height:306px;outline:1px dashed #00AEEF}.lg{width:100%;font:700 14px sans-serif;color:#1D2940}</style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="t-head" overflow="visible"><circle class="sk" cx="-23" cy="3" r="6"/><circle class="sk" cx="23" cy="3" r="6"/><circle class="sk" r="24"/></symbol>
 <symbol id="face-smile" overflow="visible"><circle cx="-8.5" cy="-1" r="3.9" fill="#FFFFFF"/><circle cx="-8.5" cy="-0.30000000000000004" r="3.1" fill="#1D2940"/><circle cx="-7.4" cy="-1.4" r="1" fill="#FFFFFF"/><circle cx="8.5" cy="-1" r="3.9" fill="#FFFFFF"/><circle cx="8.5" cy="-0.30000000000000004" r="3.1" fill="#1D2940"/><circle cx="9.6" cy="-1.4" r="1" fill="#FFFFFF"/><circle class="ck" cx="-14.5" cy="7.5" r="4.3"/><circle class="ck" cx="14.5" cy="7.5" r="4.3"/><path d="M-6.5 8.5Q0 14.5 6.5 8.5" stroke="#1D2940" stroke-width="2.7" fill="none" stroke-linecap="round"/></symbol>
@@ -135,6 +145,7 @@ symbol{overflow:visible}
       <ul class="key"><li><svg viewBox="-11 -11 22 22" width="13" height="13"><circle r="9" fill="#EE5A36"/></svg><b>Dinner</b></li><li><svg viewBox="-11 -11 22 22" width="13" height="13"><circle r="9" fill="#F5B820"/></svg><b>Car</b></li><li><svg viewBox="-11 -11 22 22" width="13" height="13"><circle r="9" fill="#3D86D8"/></svg><b>Bath</b></li><li><svg viewBox="-11 -11 22 22" width="13" height="13"><circle r="9" fill="#8A5CC7"/></svg><b>Bedtime</b></li></ul>
       <svg class="strip" viewBox="0 0 210 50" width="210" height="50" aria-hidden="true"><circle cx="27" cy="25" r="23" fill="#FDE9E3"/><g transform="translate(27,25)"><g transform="scale(0.34)"><circle cx="0" cy="0" r="36" fill="#E3EEFA" /><circle cx="0" cy="0" r="24" fill="#FFFFFF" /><g transform="translate(-46,0)" ><rect x="-3" y="-10" width="6" height="44" rx="3" fill="#1D2940" /><rect x="-8" y="-34" width="4" height="20" rx="2" fill="#1D2940" /><rect x="-2" y="-34" width="4" height="20" rx="2" fill="#1D2940" /><rect x="4" y="-34" width="4" height="20" rx="2" fill="#1D2940" /><rect x="-8" y="-18" width="16" height="10" rx="5" fill="#1D2940" /></g><g transform="translate(46,0)" ><rect x="-3" y="-6" width="6" height="40" rx="3" fill="#1D2940" /><ellipse cx="0" cy="-20" rx="8" ry="13" fill="#1D2940"/></g><circle cx="-6" cy="-4" r="8" fill="#2FA36B" /><circle cx="8" cy="4" r="7" fill="#EE5A36" /><circle cx="4" cy="-10" r="5" fill="#F5B820" /></g></g><circle cx="79" cy="25" r="23" fill="#FEF4D8"/><g transform="translate(79,25)"><g transform="scale(0.34)"><g transform="scale(.42)" ><use href="#car-front" transform="" /></g></g></g><circle cx="131" cy="25" r="23" fill="#E3EEFA"/><g transform="translate(131,25)"><g transform="scale(0.34)"><g transform="translate(-10,-16) scale(1)" ><use href="#bub" transform="" /></g><g transform="translate(8,-26) scale(.8)" ><use href="#bub" transform="" /></g><g transform="translate(24,-12) scale(.7)" ><use href="#bub" transform="" /></g><g transform="translate(-26,-10) scale(.36)" ><use href="#duck" transform="" /></g><rect x="-48" y="-4" width="96" height="14" rx="7" fill="#3D86D8" /><path d="M-44 6H44C44 26 32 36 14 36H-14C-32 36-44 26-44 6Z" fill="#3D86D8" /><rect x="-34" y="34" width="8" height="10" rx="4" fill="#1D2940" /><rect x="26" y="34" width="8" height="10" rx="4" fill="#1D2940" /><rect x="34" y="-30" width="6" height="28" rx="3" fill="#1D2940" /><rect x="26" y="-32" width="20" height="6" rx="3" fill="#1D2940" /></g></g><circle cx="183" cy="25" r="23" fill="#EFE6FA"/><g transform="translate(183,25)"><g transform="scale(0.34)"><g transform="translate(-4,2) scale(.72)" ><use href="#moon" transform="" /></g><g transform="translate(30,-26) scale(1.3)" ><use href="#star" transform="" /></g><g transform="translate(34,16) scale(.9)" ><use href="#star" transform="" /></g></g></g></svg>
       <p class="safe big"><svg viewBox="0 0 20 22" width="12" height="13.200000000000001" aria-hidden="true"><path d="M10 0L20 4V10C20 16 15.5 20.5 10 22C4.5 20.5 0 16 0 10V4Z" fill="#1D2940"/><path d="M5.5 11l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>In the car, a passenger reads. The driver just talks.</span></p>
+      <p class="ver">Version 1.0 · September 2026</p>
     </div>
   </div>
 </div><i class="trimln"></i><i class="safeln"></i></div><div class="pc"><div class="card cB" style="--band:#EE5A36;--tint:#FDE9E3;--on:#fff;--b:12px;width:264px;height:360px">
@@ -144,7 +155,7 @@ symbol{overflow:visible}
     <circle cx="232" cy="84" r="46" style="fill:var(--deco)"/><circle cx="196" cy="8" r="16" style="fill:var(--deco)"/>
     <circle cx="46" cy="44" r="29" fill="#fff"/><g transform="translate(46,44)"><g transform="scale(0.46)"><circle cx="0" cy="0" r="36" fill="#E3EEFA" /><circle cx="0" cy="0" r="24" fill="#FFFFFF" /><g transform="translate(-46,0)" ><rect x="-3" y="-10" width="6" height="44" rx="3" fill="#1D2940" /><rect x="-8" y="-34" width="4" height="20" rx="2" fill="#1D2940" /><rect x="-2" y="-34" width="4" height="20" rx="2" fill="#1D2940" /><rect x="4" y="-34" width="4" height="20" rx="2" fill="#1D2940" /><rect x="-8" y="-18" width="16" height="10" rx="5" fill="#1D2940" /></g><g transform="translate(46,0)" ><rect x="-3" y="-6" width="6" height="40" rx="3" fill="#1D2940" /><ellipse cx="0" cy="-20" rx="8" ry="13" fill="#1D2940"/></g><circle cx="-6" cy="-4" r="8" fill="#2FA36B" /><circle cx="8" cy="4" r="7" fill="#EE5A36" /><circle cx="4" cy="-10" r="5" fill="#F5B820" /></g></g></svg>
     <div class="mo"><b>Dinner</b><span>Table talk</span></div>
-    <span class="num">01</span>
+    <span class="num"><small>5–12 ·</small>01</span>
     <div class="body">
       <div class="qwrap"><p class="q" style="font-size:21.5px">What was the best part of your day? What was the trickiest part?</p></div>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#EE5A36"/><use href="#speech"/></svg>Grown-up tip</span><p>Go first with yours. Kids open up when grown-ups share too.</p></div>
@@ -157,7 +168,7 @@ symbol{overflow:visible}
     <circle cx="232" cy="84" r="46" style="fill:var(--deco)"/><circle cx="196" cy="8" r="16" style="fill:var(--deco)"/>
     <circle cx="46" cy="44" r="29" fill="#fff"/><g transform="translate(46,44)"><g transform="scale(0.46)"><g transform="scale(.42)" ><use href="#car-front" transform="" /></g></g></g></svg>
     <div class="mo"><b>Car</b><span>A passenger reads</span></div>
-    <span class="num">18</span>
+    <span class="num"><small>5–12 ·</small>18</span>
     <div class="body">
       <div class="qwrap"><p class="q" style="font-size:26px">What’s something you’re looking forward to?</p></div>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#F5B820"/><use href="#speech"/></svg>Grown-up tip</span><p>Share something you’re looking forward to as well.</p></div>
@@ -170,7 +181,7 @@ symbol{overflow:visible}
     <circle cx="232" cy="84" r="46" style="fill:var(--deco)"/><circle cx="196" cy="8" r="16" style="fill:var(--deco)"/>
     <circle cx="46" cy="44" r="29" fill="#fff"/><g transform="translate(46,44)"><g transform="scale(0.46)"><g transform="translate(-10,-16) scale(1)" ><use href="#bub" transform="" /></g><g transform="translate(8,-26) scale(.8)" ><use href="#bub" transform="" /></g><g transform="translate(24,-12) scale(.7)" ><use href="#bub" transform="" /></g><g transform="translate(-26,-10) scale(.36)" ><use href="#duck" transform="" /></g><rect x="-48" y="-4" width="96" height="14" rx="7" fill="#3D86D8" /><path d="M-44 6H44C44 26 32 36 14 36H-14C-32 36-44 26-44 6Z" fill="#3D86D8" /><rect x="-34" y="34" width="8" height="10" rx="4" fill="#1D2940" /><rect x="26" y="34" width="8" height="10" rx="4" fill="#1D2940" /><rect x="34" y="-30" width="6" height="28" rx="3" fill="#1D2940" /><rect x="26" y="-32" width="20" height="6" rx="3" fill="#1D2940" /></g></g></svg>
     <div class="mo"><b>Bath</b><span>Grown-up stays close</span></div>
-    <span class="num">30</span>
+    <span class="num"><small>5–12 ·</small>30</span>
     <div class="body">
       <div class="qwrap"><p class="q" style="font-size:21.5px">If a bubble could carry a message anywhere, what would yours say?</p></div>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#3D86D8"/><use href="#speech"/></svg>Grown-up tip</span><p>Blow the message away together.</p></div>
@@ -183,7 +194,7 @@ symbol{overflow:visible}
     <circle cx="232" cy="84" r="46" style="fill:var(--deco)"/><circle cx="196" cy="8" r="16" style="fill:var(--deco)"/>
     <circle cx="46" cy="44" r="29" fill="#fff"/><g transform="translate(46,44)"><g transform="scale(0.46)"><g transform="translate(-4,2) scale(.72)" ><use href="#moon" transform="" /></g><g transform="translate(30,-26) scale(1.3)" ><use href="#star" transform="" /></g><g transform="translate(34,16) scale(.9)" ><use href="#star" transform="" /></g></g></g></svg>
     <div class="mo"><b>Bedtime</b><span>Wind-down talk</span></div>
-    <span class="num">45</span>
+    <span class="num"><small>5–12 ·</small>45</span>
     <div class="body">
       <div class="qwrap"><p class="q" style="font-size:26px">What’s your favorite memory of our family?</p></div>
       <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#8A5CC7"/><use href="#speech"/></svg>Grown-up tip</span><p>Share one of your favorite memories of them.</p></div>
