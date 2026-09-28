@@ -1,5 +1,14 @@
 # Product and content queue (ranked; updated by every run)
 
+## LAUNCH FIRST — before Black Friday (Nov 27, 2026), from marketing/DEMAND-CHECK.md §3
+1. Visual routine cards — 200+ editable cards, 0–5 and 5–12 (Etsy + site, $9.50 list / ~$6.50 sale)
+2. "I'm bored" play cards — 150 age-banded cards with talk prompts ($6.50)
+3. Play-First Family Kit — Play First, Then Screens checklist, tokens, helping-jobs page, family play & screen plan, 30-day tracker ($11)
+4. Toddler busy book printable — 120–150 pages, 0–5 ($15.99 list / ~$11–12 sale)
+5. 100 Screen-Free Plays — paperback (KDP) + PDF ($16.99 / $9.99)
+Alternates: Screen-Free Car Ride & Waiting Pack ($6); first-words flash cards ($6.99).
+Kill rule: fewer than 5 sales in 60 days after SEO fixes → reprice once, then fold into a bundle.
+
 ## Next to build
 0. **Board-book printing decision (founder):** Amazon KDP does not print board books and print-on-demand board books are likely unavailable (commerce/storefront-setup-guide.md, unverified). Options: (a) publish "Up! Go! More!" first as a sturdy square paperback talk-along book through print-on-demand (no inventory), and (b) add a true board-book edition later through a pre-sale that funds a short offset print run held and shipped by a fulfillment warehouse — never the founder's home. Also: 32-page square picture-book hardcovers go through IngramSpark, not KDP.
 _(Seeded after the demand check (marketing/DEMAND-CHECK.md) and campaign bible (marketing/CAMPAIGN-BIBLE.md) finish; first candidates below.)_
