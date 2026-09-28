@@ -42,6 +42,11 @@ PIXEL_SPACE = 52      # space between the s and the square
 STACK_LEADING = 980   # baseline-to-baseline distance
 STACK_INDENT  = (0, 0, 0)
 
+# --- small cut: for book spines, labels and anything under ~1 in (25 mm) wide -------------------
+# Bricolage's own small optical size (wider, more open letters) plus a little more air everywhere,
+# so the gaps around the ball and the square do not fill in with ink when printed tiny.
+SMALL = dict(FONT_OPSZ=14, TRACK=30, WORD_SPACE=226, BALL_GAP=104, PIXEL_SPACE=88, STACK_LEADING=1010)
+
 # --- the symbol: the same ball, in front of the same pixel (avatar, stickers) -----------------
 SYM_R      = 230      # ball radius
 SYM_S      = 311      # pixel side (same ball-to-pixel ratio as in the wordmark: 138 / 204)
@@ -53,8 +58,9 @@ AVATAR_PAD = 0.21     # a wider margin for round-cropped social avatars
 
 # --- favicon: a separate cut drawn on the 16-pixel grid (numbers are in screen pixels) ---------
 FAV_BALL   = (5.5, 10.5, 5.5)     # ball centre x, centre y, radius
-FAV_PIXEL  = (9.0, 0.0, 7.0)      # pixel left x, top y, side (sits on whole pixels: crisp edges)
-FAV_GAP    = 0.8                  # ring cut around the ball, in pixels
+FAV_PIXEL  = (8.0, 0.0, 8.0)      # pixel left x, top y, side: on whole pixels for crisp edges, and drawn a
+                                  # little bigger than in the symbol so it still reads as a square at 16 px
+FAV_GAP    = 0.9                  # ring cut around the ball, in pixels
 
 # --- colours (brand palette only) -------------------------------------------------------------
 INK, PAPER, WASH = '#1D2940', '#FFFFFF', '#F3F6FB'
@@ -93,6 +99,14 @@ def load_font():
     return tt.getGlyphSet(), tt.getGlyphOrder(), hb.Font(hb.Face(hb.Blob.from_file_path(cache)))
 
 GS, ORDER, HBF = load_font()
+
+def use_cut(overrides):
+    """Switch the lettering numbers (and the font instance) to another cut, e.g. SMALL. Returns the old values."""
+    global GS, ORDER, HBF
+    g = globals(); old = {k: g[k] for k in overrides}
+    g.update(overrides)
+    GS, ORDER, HBF = load_font()
+    return old
 
 def bounds(name):
     bp = BoundsPen(GS); GS[name].draw(bp); return bp.bounds
@@ -252,7 +266,7 @@ def preview_sheet(files):
     def lettering_h(name):      # share of the file's height taken by the lettering (files include clear space)
         v = [float(t) for t in re.search(r'viewBox="([^"]+)"', files[name]).group(1).split()]
         return (v[3] - 2 * CLEAR * 2 * BALL_R) / v[3]
-    spine_img_in = 0.5 / lettering_h('logo-stacked.svg')      # image height that makes the lettering 0.5 in
+    spine_img_in = 0.5 / lettering_h('logo-stacked-small.svg')      # image height that makes the lettering 0.5 in
     css = f"""<link rel="stylesheet" href="{FONTS_CSS}"><style>
     html,body{{margin:0}} body{{width:1600px;height:1000px;background:{WASH};font-family:'Nunito Sans',sans-serif;color:{INK};position:relative;overflow:hidden}}
     .card{{position:absolute;border-radius:18px;overflow:hidden;background:#fff}}
@@ -281,8 +295,10 @@ def preview_sheet(files):
     # C - one colour black
     B.append('<div class="card" style="left:40px;top:492px;width:340px;height:468px">'
              '<img src="../primary-logo-black.svg" style="left:24px;top:40px;width:292px">'
-             '<img src="../logo-stacked-black.svg" style="left:24px;top:132px;width:176px">'
-             '<img src="../symbol-black.svg" style="left:214px;top:300px;width:104px">'
+             '<img src="../logo-stacked-black.svg" style="left:24px;top:146px;width:170px">'
+             '<img src="../symbol-black.svg" style="left:222px;top:196px;width:100px">'
+             '<img src="../primary-logo-small-black.svg" style="left:24px;top:354px;width:1.4in">'
+             '<div style="position:absolute;left:186px;top:360px;font-size:11px;font-weight:700;opacity:.5">small cut, 1.4 in wide</div>'
              '<div class="lab">one colour · black</div></div>')
     # D - social avatar + browser tabs at true size
     tab = lambda top, strip, act, img, col: (
@@ -300,19 +316,19 @@ def preview_sheet(files):
              '<div class="lab">social avatar · browser tabs, true size</div></div>')
     # E - book spines at true size (lettering 0.5 in tall) + a 2x view of one spine foot
     spines = ''
-    for i, (bg, fg, logo, title, h) in enumerate([(TOMATO, PAPER, 'logo-stacked-white.svg', 'Up! Go! More!', 330),
-                                                  (SUN_T, INK, 'logo-stacked.svg', 'The Day the Tablet Slept', 350),
-                                                  (SKY, PAPER, 'logo-stacked-white.svg', 'Whose Lap Today?', 318)]):
+    for i, (bg, fg, logo, title, h) in enumerate([(TOMATO, PAPER, 'logo-stacked-small-white.svg', 'Up! Go! More!', 330),
+                                                  (SUN_T, INK, 'logo-stacked-small.svg', 'The Day the Tablet Slept', 350),
+                                                  (SKY, PAPER, 'logo-stacked-small-white.svg', 'Whose Lap Today?', 318)]):
         spines += (f'<div class="spine" style="left:{24 + i*81}px;height:{h}px;background:{bg}{";box-shadow:inset 0 0 0 1px #efe3bf" if bg == SUN_T else ""}">'
                    f'<div class="t" style="color:{fg};top:22px">{title}</div>'
                    f'<img src="../{logo}" style="left:50%;transform:translateX(-50%);bottom:0.08in;height:{spine_img_in:.3f}in"></div>')
-    zoom = (f'<div style="position:absolute;left:290px;top:176px;width:1.44in;height:{2*1.05:.2f}in;background:{TOMATO};border-radius:4px;overflow:hidden">'
-            f'<img src="../logo-stacked-white.svg" style="left:50%;transform:translateX(-50%);bottom:0.16in;height:{2*spine_img_in:.3f}in"></div>'
-            '<div style="position:absolute;left:290px;top:150px;font-size:11px;font-weight:800;opacity:.5">2× ZOOM</div>')
+    zoom = (f'<div style="position:absolute;left:266px;top:176px;width:1.44in;height:{2*1.05:.2f}in;background:{TOMATO};border-radius:4px;overflow:hidden">'
+            f'<img src="../logo-stacked-small-white.svg" style="left:50%;transform:translateX(-50%);bottom:0.16in;height:{2*spine_img_in:.3f}in"></div>'
+            '<div style="position:absolute;left:266px;top:150px;font-size:11px;font-weight:800;opacity:.5">2× ZOOM</div>')
     B.append('<div class="card" style="left:780px;top:492px;width:420px;height:468px">'
              f'<div style="position:absolute;left:0;top:0;width:420px;height:410px">{spines}</div>'
              f'<div style="position:absolute;left:16px;top:410px;width:260px;height:5px;background:{INK};opacity:.16;border-radius:3px"></div>'
-             + zoom + '<div class="lab">book spines · logo 0.5 in tall, true size</div></div>')
+             + zoom + '<div class="lab">book spines · small cut, 0.5 in tall, true size</div></div>')
     # F - tote bag, embroidered
     B.append(f'<div class="card" style="left:1220px;top:492px;width:340px;height:468px;background:{WASH};box-shadow:inset 0 0 0 1px #e3e8f0">'
              f'<div style="position:absolute;left:96px;top:34px;width:148px;height:150px;border:15px solid {SUN_T};border-bottom:none;border-radius:74px 74px 0 0;box-sizing:border-box;filter:brightness(.97)"></div>'
@@ -330,6 +346,13 @@ def build():
     for suf, (ink, ball, bg) in SCHEMES.items():
         files[f'primary-logo{suf}.svg'] = lettering_svg(one, ink, ball, bg)
         files[f'logo-stacked{suf}.svg'] = lettering_svg(stk, ink, ball, bg)
+    old = use_cut(SMALL)                                            # small cut for spines and tiny print
+    one_s, stk_s = comp_oneline(), comp_stacked()
+    use_cut(old)
+    for suf in ('', '-black', '-white'):
+        ink, ball, bg = SCHEMES[suf]
+        files[f'primary-logo-small{suf}.svg'] = lettering_svg(one_s, ink, ball, bg)
+        files[f'logo-stacked-small{suf}.svg'] = lettering_svg(stk_s, ink, ball, bg)
     files['symbol.svg'] = symbol_svg(INK, TOMATO)
     files['symbol-black.svg'] = symbol_svg(BLACK, BLACK)
     files['symbol-reverse.svg'] = symbol_svg(PAPER, TOMATO, bg=INK)

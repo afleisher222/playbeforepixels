@@ -591,7 +591,7 @@ function bonusPage() {
     <div style="display:flex;gap:.3in;align-items:center;background:${C.tTomato};border-radius:.18in;padding:.24in">
       <div class="qrbox" style="background:#FFFFFF;border-radius:.12in;padding:.08in;flex:none">${qrSvg(150)}</div>
       <div><p style="font-size:11pt;margin-bottom:.08in">Scan the code or visit</p><p class="display" style="font-size:15pt;margin-bottom:.12in;word-break:break-all">${BONUS}</p>
-      <ul style="font-size:9.8pt;padding-left:.18in"><li>The play pages in full color, to print or keep on your phone</li><li>The Sunday-start play week planner</li><li>Printable "play of the day" cards</li><li>Three new plays each month for your child’s age</li></ul>
+      <ul style="font-size:9.8pt;padding-left:.18in"><li>${V.bw ? 'The play pages in full color, to print or keep on your phone' : 'A phone-friendly copy of the play pages'}</li><li>The Sunday-start play week planner</li><li>Printable "play of the day" cards</li><li>Three new plays each month for your child’s age</li></ul>
       <p class="small" style="margin-top:.08in">We only ask for your email and your child’s birth month and year, never a name. Unsubscribe anytime.</p></div>
     </div>
     <h2 style="margin-top:.32in;margin-bottom:.12in">What’s next from Play Before Pixels</h2>

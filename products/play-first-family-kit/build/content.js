@@ -23,7 +23,7 @@ const CHECK = {
   big: {
     eyebrow: 'My play-first checklist',
     age: '512',
-    sub: 'Jobs first, then play and time together, then screens at their spot.',
+    sub: 'Jobs, then play and time together, then screens.',
     art: 'boardGame',
     sections: [
       { n: 1, t: 'Jobs first', rows: [['makeBedBig', 'Make my bed'], ['dressedBig', 'Get ready for the day'], ['homework', 'Homework or practice'], ['setTableBig', 'A family job'], ['tidyRoom', 'Tidy my room']] },

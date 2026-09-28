@@ -414,7 +414,7 @@
       document.title = name + ' · Shop · Play Before Pixels';
       // Controls state
       $$('[data-age]').forEach(function (b) { var on = (b.getAttribute('data-age') || '') === (s.age || ''); b.setAttribute('aria-current', on ? 'true' : 'false'); });
-      $$('[data-type-f]').forEach(function (b) { b.setAttribute('aria-pressed', String((b.getAttribute('data-type-f') || '') === (s.type || '') && !col)); });
+      $$('[data-type-f]').forEach(function (b) { var k = b.getAttribute('data-type-f') || ''; b.setAttribute('aria-pressed', String(k === (s.type || '') && !col && !(q && !k))); });
       $$('[data-col]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-col') === (s.c || ''))); });
       var navCur = { books: 'mega-books', teachers: 'mega-teach' }[s.c] || 'mega-shop';
       $$('.nav-top[data-mega]').forEach(function (b) { b.classList.toggle('is-current', b.getAttribute('data-mega') === navCur); });
@@ -422,7 +422,7 @@
       if (s.item && byId(s.item)) openQuick(s.item); else if ($('#qv').classList.contains('is-open')) closeDialog($('#qv'), true);
     }
     $$('[data-age]').forEach(function (b) { b.addEventListener('click', function (e) { e.preventDefault(); var s = parse(); s.age = b.getAttribute('data-age'); delete s.item; write(s); }); });
-    $$('[data-type-f]').forEach(function (b) { b.addEventListener('click', function () { var s = parse(); s.type = b.getAttribute('data-type-f'); delete s.c; delete s.item; write(s); }); });
+    $$('[data-type-f]').forEach(function (b) { b.addEventListener('click', function () { var s = parse(); s.type = b.getAttribute('data-type-f'); delete s.c; delete s.item; if (!s.type) delete s.q; write(s); }); });
     $$('[data-col]').forEach(function (b) { b.addEventListener('click', function () { var s = parse(); s.c = b.getAttribute('data-col'); delete s.type; delete s.item; write(s); }); });
     if (sortSel) sortSel.addEventListener('change', function () { var s = parse(); s.sort = sortSel.value === 'featured' ? '' : sortSel.value; write(s, true); });
     if (more) more.addEventListener('click', function () { expanded = true; apply(); var c = cards.filter(function (x) { return !x.hidden; })[LIMIT]; if (c) { var a = c.querySelector('.p-title a'); a.focus(); } });

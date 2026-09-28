@@ -156,7 +156,7 @@ pg('''<p class="kick">Optional</p><h2>Hang tag and pack-in card</h2>
 <tr><td>Amazon Merch on Demand</td><td>None</td><td>Amazon prints its own packaging; no inserts.</td></tr></table>''', 7)
 
 # 8 slogan tee (design 2) and slot 3
-pg('''<p class="kick">Design 2 · slot 3</p><h2>“More talk, less tap” tee</h2>
+pg('''<p class="kick">Design 2 of 3</p><h2>“More talk, less tap” tee</h2>
 <div class="grid2">
 <div><div class="panel checker" style="height:2.9in;border:1px solid var(--line)"><img src="print/tee-more-talk-less-tap_light.png" style="height:2.75in;outline:1.5px dashed #9AA6BA"></div>
 <p class="cap"><b>tee-more-talk-less-tap_light</b> · ink type, tomato ball · White, Natural, Mustard</p></div>

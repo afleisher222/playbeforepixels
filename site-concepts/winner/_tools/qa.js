@@ -181,6 +181,8 @@ const ok = (c, m) => { if (c) { passes++; } else { fails++; console.log('  FAIL'
   ok(await page.evaluate(() => [...document.querySelectorAll('.p-card')].filter(c => !c.hidden).length >= 2), 'shop results show matching products');
   await page.click('.tab[data-age="3-5"]'); await page.waitForTimeout(100);
   ok(page.url().includes('q=cards') && page.url().includes('age=3-5'), 'age filter narrows search results');
+  await page.click('[data-type-f=""]'); await page.waitForTimeout(100);
+  ok(!page.url().includes('q=') && page.url().includes('age=3-5'), '"All types" clears the search but keeps the age');
   // Cart announces additions and syncs across tabs
   await page.goto(url('shop.html')); await page.evaluate(() => { try { localStorage.clear(); } catch (e) {} }); await page.reload();
   const other = await ctx.newPage(); await other.goto(url('research.html'));

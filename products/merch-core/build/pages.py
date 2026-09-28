@@ -276,7 +276,7 @@ lst['slogan-03'] = ('The idea', f'''<div style="position:absolute;inset:0;backgr
 <div class="pad" style="top:120px;color:#fff"><div class="kick" style="color:var(--sun)">The idea behind the line</div>
 <h2 class="disp" style="margin-top:28px;font-size:132px">One more turn.</h2></div>
 <div class="lay" style="left:130px;top:520px;width:1740px">
-<p class="sub" style="color:#fff;font-size:58px">A small reminder we wrote for ourselves: add one more back-and-forth to the day. A question in the car. A song at the sink. A story at bedtime.</p>
+<p class="sub" style="color:#fff;font-size:58px">A small reminder we wrote for ourselves: add one more <span style="white-space:nowrap">back-and-forth</span> to the day. A question in the car. A song at the sink. A story at bedtime.</p>
 <p class="sub" style="color:#C9D2E0;margin-top:40px;font-size:50px">It’s not a rule and it’s not a judgment. Every family’s day looks different. Three easy ways to start:</p></div>
 {talk3}
 <img class="brand" src="{LOGO(B, '-reverse')}">''')

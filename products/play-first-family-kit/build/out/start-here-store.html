@@ -18,6 +18,7 @@ h1,h2,h3,p{margin:0}
 .art .disc{fill:var(--t,var(--wash))}
 .art{display:block}
 .art.ghost{opacity:.22}
+.art.a-bubbles .disc{fill:var(--tK)!important}
 .low .art.ghost{opacity:.35}
 /* footer */
 .ft{position:absolute;left:.5in;right:.5in;bottom:.19in;height:.2in;display:flex;align-items:center;justify-content:space-between;gap:.15in;font-size:6.2pt;color:var(--mute);white-space:nowrap}
@@ -49,11 +50,11 @@ h1,h2,h3,p{margin:0}
 .lines{position:relative;background-image:repeating-linear-gradient(to bottom,transparent 0,transparent calc(.3in - 1px),var(--line) calc(.3in - 1px),var(--line) .3in);border-radius:.04in}
 .cb{display:inline-block;width:.19in;height:.19in;border:1.6px solid var(--ink);border-radius:.04in;flex:0 0 auto;background:#fff}
 /* ---------- checklist ---------- */
-.band{display:flex;align-items:stretch;gap:.16in;background:var(--m);color:#fff;border-radius:.2in;padding:.2in .24in;min-height:1.3in}
+.band{display:flex;align-items:stretch;gap:.16in;background:var(--m);color:#fff;border-radius:.2in;padding:.16in .24in;min-height:1.22in}
 .band .l{flex:1;display:flex;flex-direction:column;justify-content:center;gap:.05in}
 .band .eyebrow{color:#fff;opacity:.92}
 .band .h1{font-size:28pt;color:#fff}
-.band .sub{font-size:9.6pt;font-weight:700;line-height:1.3}
+.band .sub{font-size:14pt;font-weight:800;line-height:1.15}
 .band .pic{width:1.18in;background:#fff;border-radius:.16in;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
 .band .pic .art{width:1.05in;height:.9in}
 .clg{flex:1;display:flex;flex-direction:column;min-height:0}
@@ -72,8 +73,8 @@ h1,h2,h3,p{margin:0}
 .clr .dc i{width:.36in;height:.36in;border-radius:50%;border:2px solid var(--m);display:block;background:#fff}
 .clr.scr .dc i{border-style:solid;border-color:var(--ink)}
 .sec{display:flex;align-items:center;gap:.09in;background:var(--t);border-radius:.1in;height:.34in;padding:0 .12in;margin-top:.08in;font-weight:800;font-size:9.5pt}
-.sec b{width:.24in;height:.24in;border-radius:50%;background:var(--m);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Fredoka",sans-serif;font-weight:600;font-size:10pt}
-.sec.s3{background:var(--wash)} .sec.s3 b{background:var(--ink)}
+.sec b{width:.26in;height:.26in;border-radius:50%;background:#fff;border:2px solid var(--m);color:var(--ink);display:flex;align-items:center;justify-content:center;font-family:"Fredoka",sans-serif;font-weight:600;font-size:10pt}
+.sec.s3{background:var(--wash)} .sec.s3 b{background:var(--ink);border-color:var(--ink);color:#fff}
 .clr.scr .lb{font-size:var(--lbs)}
 .clr.scr .aft{display:flex;align-items:flex-end;gap:.06in;font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:8.5pt;margin-top:.05in}
 .clr.scr .aft .fl{height:.24in;flex:1}
@@ -170,7 +171,7 @@ h1,h2,h3,p{margin:0}
 /* ---------- tracker ---------- */
 .tr{flex:1;display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(6,1fr);gap:.09in;min-height:0}
 .tr>div{border-radius:.13in;border:1.6px solid var(--line);display:flex;flex-direction:column;align-items:center;padding:.04in .06in .07in;position:relative;min-height:0;background:#fff}
-.tr .dn{position:absolute;left:.07in;top:.05in;font-family:"Fredoka",sans-serif;font-weight:600;font-size:10pt;width:.26in;height:.26in;border-radius:50%;background:var(--tn);color:#fff;display:flex;align-items:center;justify-content:center}
+.tr .dn{position:absolute;left:.07in;top:.05in;font-family:"Fredoka",sans-serif;font-weight:600;font-size:10pt;width:.26in;height:.26in;border-radius:50%;background:#fff;border:2px solid var(--tn);color:var(--ink);display:flex;align-items:center;justify-content:center}
 .tr .art{flex:1;min-height:0;width:100%}
 .tr .nm{font-weight:800;font-size:7.8pt;line-height:1.12;text-align:center;min-height:.24in;display:flex;align-items:center}
 .tr .fl{flex:0 0 .42in;width:100%;border-bottom:1.2px dashed var(--cut)}
@@ -181,7 +182,7 @@ h1,h2,h3,p{margin:0}
 /* ---------- guide ---------- */
 .steps{display:grid;grid-template-columns:1fr 1fr;gap:.12in}
 .step{display:grid;grid-template-columns:.34in 1fr;gap:.1in;align-items:start;background:var(--wash);border-radius:.14in;padding:.12in .14in}
-.step b.n{width:.34in;height:.34in;border-radius:50%;background:var(--tomato);color:#fff;font-family:"Fredoka",sans-serif;font-weight:600;font-size:13pt;display:flex;align-items:center;justify-content:center}
+.step b.n{width:.34in;height:.34in;border-radius:50%;background:#fff;border:2px solid var(--tomato);color:var(--ink);font-family:"Fredoka",sans-serif;font-weight:600;font-size:13pt;display:flex;align-items:center;justify-content:center}
 .talk{display:grid;grid-template-columns:repeat(3,1fr);gap:.12in}
 .talk>div{border-radius:.14in;padding:.14in;background:var(--tt);display:flex;flex-direction:column;gap:.05in}
 .ball{display:inline-block;width:.1in;height:.1in;border-radius:50%;background:var(--tomato);margin-right:.07in;vertical-align:.01in;flex:0 0 auto}
@@ -189,6 +190,7 @@ ul.b{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.
 ul.b li{display:flex;gap:0;align-items:baseline;font-size:9.8pt;line-height:1.42}
 ul.b li .ball{transform:translateY(-.01in)}
 .placeholder{border:2px dashed var(--plum);border-radius:.14in;padding:.14in .18in;background:#fff}
+.mk .placeholder{display:none}
 .placeholder b{color:var(--plum);font-size:7.4pt;letter-spacing:.1em;text-transform:uppercase}
 .agecards{display:grid;grid-template-columns:repeat(3,1fr);gap:.12in}
 .agecards>div{border-radius:.16in;padding:.16in;display:flex;flex-direction:column;gap:.06in}
@@ -210,7 +212,10 @@ ul.b li .ball{transform:translateY(-.01in)}
 .low .band .eyebrow,.low .band .h1{color:var(--ink)}
 .low .band .pic{border:1.5px solid var(--ink)}
 .low .sec,.low .tipbar>div,.low .step,.low .toc>div,.low .card,.low .agecards>div,.low .talk>div,.low .cutnote .safe{background:#fff!important;border:1.5px solid var(--ink)}
-.low .sec b{background:var(--ink)}
+.low .sec b{background:var(--ink);border-color:var(--ink);color:#fff}
+.low .ball{background:var(--ink)}
+.low .sizecheck .cir{border-color:var(--ink)}
+.low .tr .dn,.low .step b.n{border-color:var(--ink)}
 .low .tk .in,.low .sc .in,.low .hj>div,.low .poster>div,.low .bstep{background:#fff!important;border:1.5px solid var(--ink)}
 .low .chr.r:nth-child(odd){background:#fff}
 .low .chr .dc i{border-color:var(--ink)}

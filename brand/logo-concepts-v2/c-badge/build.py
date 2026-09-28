@@ -31,30 +31,36 @@ SEAL = dict(
     inner=40,       # clear space between the letters and the top
     track=50,       # extra letter spacing on the ring, in font units (1000 = one em)
     space=250,      # width of the word space in "PLAY BEFORE", font units
-    dot_r=27,       # radius of the two balls between the words
-    top_fill=0.88,  # how much of the free middle the top fills (1.0 = touches the clear space)
+    dot_r=29,       # radius of the two balls between the words
+    top_fill=0.82,  # how much of the free middle the top fills (1.0 = touches the clear space)
     top_dy=0,       # optical nudge of the top (units, + = down)
 )
 TOP = dict(         # the spinning top, drawn upright in its own units (see class Top), then tilted
-    tilt=12,        # lean in degrees (clockwise); 0 = upright
+    tilt=8,         # lean in degrees (clockwise); 0 = upright
     w=430,          # half-width at the rim
-    rim=112,        # height of the painted rim band
-    dome=130,       # height of the shoulder above the rim
+    rim=104,        # height of the painted rim band
+    dome=165,       # height of the shoulder above the rim
     neck=86,        # half-width where the shoulder meets the handle
-    k1=0.30,        # shoulder: how long it stays upright at the rim (0-1)
-    k2=0.20,        # shoulder: how flat it runs into the neck (0-1)
+    k1=0.55,        # shoulder: how long it stays upright at the rim (0-1)
+    k2=0.35,        # shoulder: how flat it runs into the neck (0-1)
     step=0,         # how far the painted rim sticks out past the shoulder and the body (a flange)
-    drop=470,       # depth of the body below the rim, to the tip
-    bulge=0,        # outward bulge of the body's sides (0 = straight cone)
+    drop=450,       # depth of the body below the rim, to the tip
+    bulge=22,       # outward bulge of the body's sides (0 = straight cone)
     tip=30,         # softening of the tip
     handle_w=112,   # handle width
     handle_h=210,   # handle height above the shoulder
     centre=0.5,     # 0 = centre by bounding box, 1 = centre by the body's weight
+    bridge=0.13,    # one-colour files: the band is cut as a stripe that stops this far (x w) short of each edge
 )
-# favicon cut: same top, heavier handle and band, so it survives 16 px
-FAV_TOP = dict(TOP, rim=150, handle_w=150, handle_h=190, tip=40, dome=140)
-FAV = dict(margin=8)      # favicon: clear space inside the 1000-unit square
+# favicon cut: the same top standing upright, drawn on a 16-px grid (1 px = 62.5 units) so the band,
+# the rim and the handle land on whole pixels at 16 and 32 px. y_rim = the rim's lower edge in the square.
+FAV_TOP = dict(TOP, tilt=0, w=437.5, rim=187.5, dome=125, neck=100, drop=406.25, bulge=14, tip=40,
+               handle_w=125, handle_h=218.75)
+FAV = dict(y_rim=562.5)
 WORD = dict(
+    straight_y=True,  # draw "y" as a v with a straight tail (Bricolage's own y looks like a u with a hook)
+    y_tail=-161,    # where that tail is cut (font units; the p descends to -161)
+    y_tail_w=160,   # tail thickness, measured across (font units)
     track=-6,       # wordmark letter spacing (font units)
     ball_r=94,      # the round ball that replaces Bricolage's square dot on the i of "Pixels"
     ball_y=650,     # height of that ball's centre above the baseline (font units)
@@ -62,7 +68,7 @@ WORD = dict(
 LOCKUP = dict(
     disc=1.80,      # small seal diameter, as a multiple of the wordmark's cap height
     gap=0.48,       # space between small seal and wordmark, x cap height
-    top_fill=0.76,  # how much of the small seal the top fills
+    top_fill=0.70,  # how much of the small seal the top fills
     lift=0.0,       # raise the small seal against the cap height (x cap height)
 )
 
@@ -155,23 +161,27 @@ class Top:
         nx, ny = drop / L, wd / L                                   # outward normal of the right side
         tpx, tpy = -ux * tip, drop - uy * tip                       # where the right side hands over to the tip
         mx, my = (wd + tpx) / 2 + nx * bulge, tpy / 2 + ny * bulge
-        s = [('M', (-w, 0)), ('L', (-w, -rim)), ('L', (-wd, -rim)),
+        s = [('M', (-w, 0)), ('L', (-w, -rim))] + ([('L', (-wd, -rim))] if st else []) + [
              ('C', (-wd, -rim - dome * k1), (-(neck + (wd - neck) * k2), yt), (-neck, yt))]
         if with_handle:                                            # one outline: body and handle as one shape
             hw = T['handle_w'] / 2; top = yt - T['handle_h']
             s += [('L', (-hw, yt)), ('L', (-hw, top + hw)), ('A', hw, (hw, top + hw)), ('L', (hw, yt))]
         s += [('L', (neck, yt)),
               ('C', (neck + (wd - neck) * k2, yt), (wd, -rim - dome * k1), (wd, -rim)),
-              ('L', (w, -rim)), ('L', (w, 0)), ('L', (wd, 0)),
+             ] + ([('L', (w, -rim))] if st else []) + [('L', (w, 0))] + ([('L', (wd, 0))] if st else []) + [
               ('Q', (mx, my), (tpx, tpy)),
               ('Q', (0, drop), (-tpx, tpy)),
               ('Q', (-mx, my), (-wd, 0)),
               ('Z',)]
         return s
 
-    def band_segs(self):
-        w, rim = self.T['w'], self.T['rim']
-        return [('M', (-w, -rim)), ('L', (w, -rim)), ('L', (w, 0)), ('L', (-w, 0)), ('Z',)]
+    def band_segs(self, bridge=0.0):
+        w, rim = self.T['w'], self.T['rim']; x = w * (1 - bridge)
+        return [('M', (-x, -rim)), ('L', (x, -rim)), ('L', (x, 0)), ('L', (-x, 0)), ('Z',)]
+
+    def mono_d(self, m):
+        """one-colour top: silhouette plus the band as a stencil stripe (for even-odd knockouts)"""
+        return self.d(self.segs(True), m) + self.d(self.band_segs(self.T['bridge']), m)
 
     def handle_segs(self):
         T = self.T; hw = T['handle_w'] / 2; yt = -T['rim'] - T['dome']
@@ -288,7 +298,7 @@ def seal(sc, cx=0.0, cy=0.0, k=1.0, S=SEAL, T=TOP):
     balls = [(cx + k * sx * r_mid * math.sin(gap_c), cy - k * r_mid * math.cos(gap_c), k * S['dot_r']) for sx in (1, -1)]
     top = Top(T); m = top.place(cx, cy + S['top_dy'] * k, (r_in - S['inner']) * k, S['top_fill'])
     if 'mono' in sc:                                             # one path, even-odd: every part is a hole in the disc
-        d = circle_d(cx, cy, R * k) + d1 + d2 + ''.join(circle_d(*b) for b in balls) + top.d(top.segs(True), m)
+        d = circle_d(cx, cy, R * k) + d1 + d2 + ''.join(circle_d(*b) for b in balls) + top.mono_d(m)
         return f'<path fill="{sc["mono"]}" fill-rule="evenodd" d="{d}"/>'
     return (f'<circle cx="{f(cx)}" cy="{f(cy)}" r="{f(R * k)}" fill="{sc["disc"]}"/>'
             f'<path fill="{sc["letters"]}" d="{d1}{d2}"/>'
@@ -301,11 +311,30 @@ def seal_small(sc, cx, cy, r, T=TOP, fill=None):
     fill = fill or LOCKUP['top_fill']
     top = Top(T); m = top.place(cx, cy, r, fill)
     if 'mono' in sc:
-        return f'<path fill="{sc["mono"]}" fill-rule="evenodd" d="{circle_d(cx, cy, r)}{top.d(top.segs(True), m)}"/>'
+        return f'<path fill="{sc["mono"]}" fill-rule="evenodd" d="{circle_d(cx, cy, r)}{top.mono_d(m)}"/>'
     return f'<circle cx="{f(cx)}" cy="{f(cy)}" r="{f(r)}" fill="{sc["disc"]}"/>' + top.paint(sc, m)
 
 
 # ============================================================== wordmark
+def straight_y(m, adv):
+    """A plain, unmistakable y, hand-built from Bricolage's own v: the v's right stroke carries on below the
+    baseline at the same slope, as thick as the v's arms, and is cut level with the descender of the p.
+    The left arm runs on until it meets the tail, as in a classic grotesque y."""
+    v = [(173, 0), (6, 527), (182, 527), (279, 129), (290, 129), (389, 527), (556, 527), (389, 0)]   # Bricolage 800 v
+    (ox0, oy0), (ox1, oy1) = v[6], v[7]                    # right stroke, outer edge (556,527) -> (389,0)
+    k = (ox0 - ox1) / (oy0 - oy1)                           # dx/dy of the strokes
+    xo = lambda y: ox1 + k * y                              # tail, right edge
+    xi = lambda y: ox1 - WORD['y_tail_w'] + k * y           # tail, left edge (parallel)
+    kl = (v[1][0] - v[0][0]) / (v[1][1] - v[0][1])          # left arm, outer edge
+    xl = lambda y: v[0][0] + kl * y
+    yj = (v[0][0] - (ox1 - WORD['y_tail_w'])) / (k - kl)    # where the left arm meets the tail
+    yb = WORD['y_tail']
+    pts = v[1:7] + [(xo(yb), yb), (xi(yb), yb), (xl(yj), yj)]
+    dx = (adv - (v[6][0] - v[1][0])) / 2 - v[1][0]          # centre the ink in the y's own advance
+    q = [aff(m, (x + dx, y)) for x, y in pts]
+    return 'M' + 'L'.join(f'{f(x)} {f(y)}' for x, y in q) + 'Z'
+
+
 def wordmark(text, ox, base, s):
     """one-line wordmark. The i of Pixels trades Bricolage's square dot (a pixel) for a round ball."""
     d, balls, x = [], [], 0.0
@@ -316,6 +345,8 @@ def wordmark(text, ox, base, s):
             d.append(glyph(WORD_FONT, 'dotlessi', m))
             x0, _, x1, _ = ink_box(WORD_FONT, 'dotlessi')
             balls.append((gx + s * (x0 + x1) / 2, base - s * WORD['ball_y'], s * WORD['ball_r']))
+        elif name == 'y' and WORD['straight_y']:
+            d.append(straight_y(m, adv))
         elif name != 'space':
             d.append(glyph(WORD_FONT, name, m))
         x += adv + WORD['track']
@@ -360,11 +391,10 @@ def lockup(scheme):
 
 
 def favicon_svg():
-    """16-32 px: the top alone, heavy cut, as large as the square allows.
+    """16-32 px: the top alone, heavy cut, standing upright on a 16-px grid (crisp band, no blur).
     Ink handle in light tabs, paper handle in dark tabs (the SVG follows the browser's colour scheme)."""
-    top = Top(FAV_TOP); p = FAV['margin']
-    m = top.place_box(p, p, 1000 - p, 1000 - p)
-    body = top.paint(dict(SCHEMES['color'], handle=INK), m, handle_class='h')
+    top = Top(FAV_TOP)
+    body = top.paint(dict(SCHEMES['color'], handle=INK), (1, 0, 0, 1, 500, FAV['y_rim']), handle_class='h')
     return doc((0, 0, 1000, 1000), body, 'Play Before Pixels', w=32, h=32,
                style='@media (prefers-color-scheme:dark){.h{fill:#FFFFFF}}')
 

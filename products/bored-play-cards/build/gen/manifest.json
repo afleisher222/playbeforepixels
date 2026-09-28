@@ -1,0 +1,94 @@
+[
+ {
+  "html": "build/gen/store-color-letter.html",
+  "pdf": "bored-play-cards.pdf",
+  "ed": "store",
+  "low": false,
+  "size": "letter",
+  "fields": true,
+  "pages": 60
+ },
+ {
+  "html": "build/gen/store-color-a4.html",
+  "pdf": "bored-play-cards-A4.pdf",
+  "ed": "store",
+  "low": false,
+  "size": "a4",
+  "fields": true,
+  "pages": 60
+ },
+ {
+  "html": "build/gen/store-low-letter.html",
+  "pdf": "bored-play-cards-low-ink.pdf",
+  "ed": "store",
+  "low": true,
+  "size": "letter",
+  "fields": false,
+  "pages": 60
+ },
+ {
+  "html": "build/gen/store-low-a4.html",
+  "pdf": "bored-play-cards-low-ink-A4.pdf",
+  "ed": "store",
+  "low": true,
+  "size": "a4",
+  "fields": false,
+  "pages": 60
+ },
+ {
+  "html": "build/gen/store-start-here.html",
+  "pdf": "START-HERE.pdf",
+  "ed": "store",
+  "low": false,
+  "size": "letter",
+  "fields": false,
+  "start": true,
+  "pages": 1
+ },
+ {
+  "html": "build/gen/etsy-color-letter.html",
+  "pdf": "etsy-upload/2-Color-US-Letter.pdf",
+  "ed": "etsy",
+  "low": false,
+  "size": "letter",
+  "fields": true,
+  "pages": 60
+ },
+ {
+  "html": "build/gen/etsy-color-a4.html",
+  "pdf": "etsy-upload/3-Color-A4.pdf",
+  "ed": "etsy",
+  "low": false,
+  "size": "a4",
+  "fields": true,
+  "pages": 60
+ },
+ {
+  "html": "build/gen/etsy-low-letter.html",
+  "pdf": "etsy-upload/4-Low-Ink-US-Letter.pdf",
+  "ed": "etsy",
+  "low": true,
+  "size": "letter",
+  "fields": false,
+  "pages": 60
+ },
+ {
+  "html": "build/gen/etsy-low-a4.html",
+  "pdf": "etsy-upload/5-Low-Ink-A4.pdf",
+  "ed": "etsy",
+  "low": true,
+  "size": "a4",
+  "fields": false,
+  "pages": 60
+ },
+ {
+  "html": "build/gen/etsy-start-here.html",
+  "pdf": "etsy-upload/1-START-HERE.pdf",
+  "ed": "etsy",
+  "low": false,
+  "size": "letter",
+  "fields": false,
+  "start": true,
+  "pages": 1
+ }
+]

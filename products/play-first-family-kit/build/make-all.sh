@@ -14,7 +14,7 @@ node $R pages out/kit-store-color-letter.html tmp/cover '.page[data-key="cover"]
 node export-png.js out/kit-store-color-letter.html $P/canva-png/us-letter letter 2.5
 node export-png.js out/kit-store-color-a4.html $P/canva-png/a4 a4 2.5
 # Etsy-edition renders (no URL/QR) feed the listing images
-node $R pages out/kit-etsy-color-letter.html tmp/ep .page 1.5
+node $R pages out/kit-etsy-color-letter-mk.html tmp/ep .page 1.5   # same pages, founder-note placeholder hidden
 node $R pages out/kit-etsy-low-letter.html tmp/epl .page 1.5
 node $R pages out/kit-etsy-color-letter.html tmp/tk '.page[data-key="tokens"] .tk .in' 2
 node $R pages out/kit-etsy-color-letter.html tmp/sc '.page[data-key="cards"] .sc .in' 2

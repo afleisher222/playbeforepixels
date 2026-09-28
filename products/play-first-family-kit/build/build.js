@@ -294,16 +294,17 @@ function checklist(ctx, kind, cw, start) {
   rows += `<div class="sec s3"><b>3</b>Then screens, at their usual spot</div>`;
   rows += `<div class="clr r scr"><div class="ic">${art(K.screen[0])}</div><div class="lb">${K.screen[1]}<div class="aft">after <span class="fl" ${fld('screen_after', { size: 10 })}></span></div></div>${cells}</div>`;
   const cwName = ctx.low ? 'Low-ink' : COLORWAYS.find(c => c.id === cw).name;
-  return `<div class="band"><div class="l"><span class="eyebrow">${K.eyebrow} · ${AGES[K.age][1]}</span><h1 class="h1">Play First, Then Screens</h1><div class="sub">${K.sub}</div></div><div class="pic">${art(K.art, '', false)}</div></div>
+  return `<div class="chips" style="justify-content:space-between"><span class="eyebrow">Section B · ${K.eyebrow}${blank ? ' · fillable' : ''}</span><span class="chips">${chip(K.age)}${prep('Prep 0 min · print and go')}</span></div>
+  <div class="band"><div class="l"><h1 class="h1">Play First, Then Screens</h1><div class="sub">${K.sub}</div></div><div class="pic">${art(K.art, '', false)}</div></div>
   <div class="who">Name <span class="fl" ${fld('name', { size: 12 })}></span> Week of <span class="fl" style="flex:.7" ${fld('week', { size: 12 })}></span></div>
-  <div class="clg" style="--icw:${icw};--lbs:${lbs}"><div class="clr dh"><div class="st">${start === 'mon' ? 'Monday' : 'Sunday'} start · ${cwName}${blank ? ' · fillable' : ''}</div>${days}</div>${rows}</div>
+  <div class="clg" style="--icw:${icw};--lbs:${lbs}"><div class="clr dh"><div class="st">${start === 'mon' ? 'Monday' : 'Sunday'} start · ${cwName}</div>${days}</div>${rows}</div>
   <div class="tipbar"><div class="t1"><b class="k">Talk tip · ${K.tip[0]}</b>${K.tip[1]}</div><div class="t2"><b class="k">Our screen spot</b>${T.SCREEN_NOTE}</div></div>`;
 }
 
 // ---------------------------------------------------------------- tokens + cards + board
 const TINTS = ['var(--tT)', 'var(--tK)', 'var(--tG)', 'var(--tS)', 'var(--tP)'];
 function cutNote(lead) {
-  return `<div class="cutnote"><span class="safe">${lead ? lead + ' ' : ''}<b>Grown-up keeps the pieces.</b> Big-piece size: ${TOK}, bigger than the toilet-paper-tube test. Print at 100%. Velcro is for ages 3+ only: check dots before each play; remove any that lift.</span></div>`;
+  return `<div class="cutnote"><span class="safe">${lead ? lead + ' ' : ''}<b>Grown-up keeps the pieces.</b> Every piece is at least ${TOK}, bigger than the toilet-paper-tube test. Print at 100%. Velcro is for ages 3+ only: check dots before each play; remove any that lift.</span></div>`;
 }
 function tokens(ctx, blank, pgBoard) {
   const items = blank ? Array.from({ length: 12 }, () => null) : T.TOKENS;
@@ -377,7 +378,7 @@ function plan2() {
   <div class="card" style="--cbg:var(--tS)"><div class="h2">What the guidelines say</div>
     <ul class="b"><li><span class="ball"></span><span><b>Ages 1–4:</b> at least 180 minutes a day of active play, in any mix. No screen time under age 1; no more than 1 hour a day at ages 2–4 (WHO, 2019).</span></li>
     <li><span class="ball"></span><span><b>Ages 2–5:</b> about 1 hour a day of high-quality programs, watched together when you can (AAP, 2016).</span></li>
-    <li><span class="ball"></span><span><b>Ages 6 and up:</b> consistent limits, so screens don’t take the place of sleep, active play and time together; plus screen-free times and places, like dinner and bedrooms (AAP, 2016).</span></li></ul>
+    <li><span class="ball"></span><span><b>For families:</b> choose screen-free times and places together, like meals, car rides and bedrooms, and make a family plan (AAP, 2016). For older children, there’s no single number; this plan helps you choose what fits.</span></li></ul>
     <p class="cite">Sources: World Health Organization, Guidelines on physical activity, sedentary behaviour and sleep for children under 5 years of age (2019). American Academy of Pediatrics, “Media and Young Minds,” Pediatrics 2016;138(5). Every family is different; your pediatrician is a good person to ask about your child.</p></div>`;
 }
 function plan3() {
@@ -393,7 +394,7 @@ function plan3() {
 function tracker(ctx, blank) {
   const cols = ['var(--tomato)', 'var(--sky)', 'var(--grass)', 'var(--plum)', 'var(--tomato)', 'var(--sky)'];
   const cells = T.DAYS30.map((d, i) => `<div style="--tn:${cols[Math.floor(i / 5)]}"><span class="dn">${i + 1}</span>${blank ? drawSpot() + `<span class="fl" ${fld('day', { size: 9, multi: 1, align: 1 })}></span>` : art(d[0]) + `<div class="nm">${d[1]}</div>`}</div>`).join('');
-  return hd({ eyebrow: `Section E · Whole family${blank ? ' · fillable' : ''}`, title: '30 Days of Play First', lede: blank ? 'Write your own 30 plays, then color a tile each day you play first.' : 'Color a tile each day you play first. Every idea uses what you already have. Skipped a day? Pick up tomorrow; there’s no behind.', age: 'all', prepT: 'Prep 0 min · print and go' })
+  return hd({ eyebrow: `Section E · Whole family${blank ? ' · fillable' : ''}`, title: '30 Days of Play First', lede: blank ? 'Write your own 30 plays, then color a tile each day you play first.' : 'Color a tile each day you play first. Every idea uses things most homes already have. Skipped a day? Pick up tomorrow; there’s no behind.', age: 'all', prepT: 'Prep 0 min · print and go' })
     + `<div class="tr">${cells}</div>`
     + `<div class="tipbar"><div class="t1"><b class="k">Talk tip · Follow their lead</b>Let your child pick the order. Their plan, their pride.</div><div class="t2"><b class="k">Safety</b>A grown-up stays close for every play. Bubbles, water and cooking: within arm’s reach.</div></div>`;
 }
@@ -420,7 +421,7 @@ function cover(ctx) {
     ${U('ball', `translate(452,${floor - 26}) scale(.55)`)}${star(70, 60, 1.1, C.sun)}${star(420, 50, .8, C.tomato)}${heart(330, 70, .45)}
   </svg>`;
   return `<div style="display:flex;justify-content:space-between;align-items:center">${(ctx.low ? LOGO.lockK : LOGO.lock).replace('<svg', '<svg style="height:.62in;width:auto"')}<span class="chips">${chip('25')}${chip('512')}</span></div>
-  <div style="display:flex;flex-direction:column;gap:.1in;margin-top:.25in"><span class="eyebrow" style="color:var(--tomato)">A printable kit for the whole family · ages 2–12</span>
+  <div style="display:flex;flex-direction:column;gap:.1in;margin-top:.25in"><span class="eyebrow" style="color:var(--ink)">A printable kit for the whole family · ages 2–12</span>
   <h1 class="h1" style="font-size:52pt;line-height:.95">Play-First<br>Family Kit</h1>
   <p class="lede" style="font-size:14pt;max-width:6in"><b>Play First, Then Screens.</b> Jobs, then play and time together, then screens at their usual spot. A calm shape for the day, with nothing taken away.</p></div>
   <div style="flex:1;min-height:0;margin:.1in 0">${scene}</div>
@@ -505,7 +506,7 @@ function tips(ctx) {
     <li><span class="ball"></span><span><b>Grown-up keeps the pieces.</b> Every cut piece is ${TOK} or larger, bigger than the toilet-paper-tube test for under-3s. Print at 100% so they stay that size, and store them out of reach.</span></li>
     <li><span class="ball"></span><span>A grown-up stays close for every play. Water, bubbles and cooking: always within arm’s reach. Grown-ups handle knives, heat and glass.</span></li>
     <li><span class="ball"></span><span>Every play follows our published safety rules.</span></li></ul></div>
-  <div class="card" style="--cbg:#fff;border:1.5px solid var(--line)"><div class="sizecheck"><div class="sq"><span class="kid" style="font-size:11pt;text-align:center">Actual size<br>${TOK}</span><div class="cir">Small-parts size<br>about 1.25 in</div></div><div><div class="h2">Check your print</div><p class="body">After printing the tokens, measure this square. It should be <b>${TOK}</b> on each side. If it’s smaller, your printer shrank the page: print again at 100% / Actual size.</p><p class="body" style="margin-top:.06in">The red circle shows the small-parts size for under-3s. Every piece in this kit is much bigger.</p></div></div></div>`;
+  <div class="card" style="--cbg:#fff;border:1.5px solid var(--line)"><div class="sizecheck"><div class="sq"><span class="kid" style="font-size:11pt;text-align:center">Actual size<br>${TOK}</span><div class="cir">Small-parts size<br>about 1.25 in</div></div><div><div class="h2">Check your print</div><p class="body">After printing the tokens, measure this square. It should be <b>${TOK}</b> on each side. If it’s smaller, your printer shrank the page: print again at 100% / Actual size.</p><p class="body" style="margin-top:.06in">The circle shows the small-parts size for under-3s. Every piece in this kit is much bigger.</p></div></div></div>`;
 }
 function more(ctx, qr) {
   const items = [
@@ -567,7 +568,7 @@ function buildDoc(ctx, qr) {
   const html = pages.map((p, i) => {
     if (p.toc) toc.push([p.toc, i + 1]);
     const body = p.fn(ctx, P);
-    return `<section class="page ${p.cw ? 'cw-' + p.cw : ''}${['tokens', 'tokensB', 'cards'].includes(p.key) ? ' tight' : ''}${CANVA.test(p.key) ? ' canva' : ''}" data-key="${p.key}">${body}${p.key === 'cover' ? '' : footer(ctx, i + 1)}</section>`;
+    return `<section class="page ${p.cw ? 'cw-' + p.cw : ''}${['tokens', 'tokensB', 'cards'].includes(p.key) ? ' tight' : ''}${CANVA.test(p.key) ? ' canva' : ''}" data-key="${p.key}">${body}${footer(ctx, i + 1)}</section>`;
   }).join('\n');
   return { html, toc, n: pages.length, P };
 }
@@ -609,6 +610,7 @@ function startHere(ctx, qr) {
     const doc = buildDoc(ctx, qr);
     fs.writeFileSync(out, wrap(ctx, doc.html, out, `Play-First Family Kit · ${ink === 'low' ? 'Low-ink' : 'Color'} · ${SIZES[size].name}`));
     manifest[name] = { pages: doc.n, toc: doc.toc, P: doc.P };
+    if (ed === 'etsy' && ink === 'color' && size === 'letter') fs.writeFileSync(path.join(OUT, name + '-mk.html'), wrap(ctx, doc.html, out, 'Play-First Family Kit · listing renders').replace('<body class="', '<body class="mk '));
     if (ed === 'store' && ink === 'color' && size === 'letter') {
       const src = path.join(ROOT, 'source.html');
       fieldN = 0; const d2 = buildDoc(ctx, qr);

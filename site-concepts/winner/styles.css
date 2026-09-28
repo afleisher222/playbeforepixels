@@ -71,7 +71,7 @@ ul, ol { margin: 0; padding: 0; }
 ::selection { background: var(--sun); color: var(--ink); }
 
 /* Focus: always visible for keyboard users */
-:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; border-radius: 3px; }
+:focus-visible { outline: 3px solid var(--sky-ink); outline-offset: 3px; border-radius: 3px; }
 .on-ink :focus-visible, .footer :focus-visible, .mat :focus-visible { outline-color: var(--sun); }
 
 .skip-link {

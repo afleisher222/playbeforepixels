@@ -1,0 +1,59 @@
+[
+ {
+  "svg": "/home/user/playbeforepixels/brand/logo-concepts-v2/c-badge/favicon.svg",
+  "png": "/home/user/playbeforepixels/brand/logo-concepts-v2/c-badge/tests/px/fav16-light.png",
+  "w": 16,
+  "h": 16,
+  "bg": "#FFFFFF",
+  "scheme": "light"
+ },
+ {
+  "svg": "/home/user/playbeforepixels/brand/logo-concepts-v2/c-badge/favicon.svg",
+  "png": "/home/user/playbeforepixels/brand/logo-concepts-v2/c-badge/tests/px/fav16-dark.png",
+  "w": 16,
+  "h": 16,
+  "bg": "#202124",
+  "scheme": "dark"
+ },
+ {
+  "svg": "/home/user/playbeforepixels/brand/logo-concepts-v2/c-badge/favicon.svg",
+  "png": "/home/user/playbeforepixels/brand/logo-concepts-v2/c-badge/tests/px/fav32-light.png",
+  "w": 32,
+  "h": 32,
+  "bg": "#FFFFFF",
+  "scheme": "light"
+ },
+ {
+  "svg": "/home/user/playbeforepixels/brand/logo-concepts-v2/c-badge/favicon.svg",
+  "png": "/home/user/playbeforepixels/brand/logo-concepts-v2/c-badge/tests/px/fav32-dark.png",
+  "w": 32,
+  "h": 32,
+  "bg": "#202124",
+  "scheme": "dark"
+ },
+ {
+  "svg": "/home/user/playbeforepixels/brand/logo-concepts-v2/c-badge/primary-logo.svg",
+  "png": "/home/user/playbeforepixels/brand/logo-concepts-v2/c-badge/test-logo.png",
+  "w": 1600,
+  "h": 273,
+  "bg": "#FFFFFF"
+ },
+ {
+  "html": "/home/user/playbeforepixels/brand/logo-concepts-v2/c-badge/tests/test-large.html",
+  "png": "/home/user/playbeforepixels/brand/logo-concepts-v2/c-badge/test-large.png",
+  "w": 512,
+  "h": 512
+ },
+ {
+  "html": "/home/user/playbeforepixels/brand/logo-concepts-v2/c-badge/tests/test-small.html",
+  "png": "/home/user/playbeforepixels/brand/logo-concepts-v2/c-badge/test-small.png",
+  "w": 640,
+  "h": 360
+ },
+ {
+  "html": "/home/user/playbeforepixels/brand/logo-concepts-v2/c-badge/tests/preview-sheet.html",
+  "png": "/home/user/playbeforepixels/brand/logo-concepts-v2/c-badge/preview-sheet.png",
+  "w": 1600,
+  "h": 1000
+ }
+]
