@@ -124,6 +124,8 @@ d = {
          "later (held): " + MAN["etsy_status"])),
     ],
     "etsy_status": MAN["etsy_status"],
+    "status": "ready-pending-accounts",
+    "status_notes": "Week 2 item, Gumroad only (ops/QUEUE.md LAUNCH FIRST; blocked on Etsy by size, see etsy_status). The Gumroad packet is built; waits only for Gate A, the accounts and the founder's go (ops/PAUSE).",
     "amazon_route": ("none-with-reason: a bundle of separate printables is not one book. Its parts each have their own Amazon route "
                      "(the busy book, the cards and the family kit list KDP activity editions in their own listing.json)."),
     "ai_disclosure": LC.ai_disclosure(extra_kdp=False),

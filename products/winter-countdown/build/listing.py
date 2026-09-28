@@ -113,7 +113,9 @@ d = {
                      "and board become a single-sided fill-in chart. If the interior is black and white, say so in the subtitle. "
                      "Not built yet: check KDP print cost first [VERIFY]."),
     "ai_disclosure": LC.ai_disclosure(),
-    "next_products": ["toddler-busy-book", "bored-play-cards", "bundle-gift-1-5"],
+    "next_products": ["toddler-busy-book", "bored-play-cards-ages-1-5", "bundle-gift-1-5"],
+    "status": "ready-pending-accounts",
+    "status_notes": "Week 2 item (ops/QUEUE.md LAUNCH FIRST: list by Oct 25, sell to Dec 5). Etsy and Gumroad packets are built; waits only for Gate A, the accounts and the founder's go (ops/PAUSE).",
     "bonus_url": "playbeforepixels.com/bonus/winter-countdown",
     "bonus_offer": ("Store edition only: the free “Five 5-Minute Plays” printable and the monthly “3 plays for your child’s age” "
                     "email. Sign-up is for adults, asks only for an email and, optionally, the child's birth month and year, and "

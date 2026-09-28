@@ -15,7 +15,7 @@ Hello [First name],
 
 I'm writing from Play Before Pixels. We publish practical play guides for families with children ages 0–12.
 
-Many parent and caregiver groups run lunch-and-learns. We offer a licensed, host-it-yourself session called **"Screen-Smart Working Parents"**. Anyone on your team can present it using the kit, so you don't need to book a speaker.
+Many parent and caregiver groups run lunch-and-learns. We offer a licensed, host-it-yourself session called **"More Talk at Home"**. Anyone on your team can present it using the kit, so you don't need to book a speaker.
 
 The kit includes:
 - 45-minute slides with speaker notes, and a facilitator script

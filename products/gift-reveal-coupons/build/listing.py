@@ -105,6 +105,8 @@ d = {
                      "Its plays can appear in a future KDP activity edition instead."),
     "ai_disclosure": LC.ai_disclosure(extra_kdp=False),
     "next_products": ["bundle-gift-1-5", "toddler-busy-book", "play-talk-cards"],
+    "status": "ready-pending-accounts",
+    "status_notes": "Ships from G-day inside both bundles as an uncounted add-on. A standalone $5 listing is not in the ops/QUEUE.md launch order and has no upload packet yet, so it waits for a queue slot.",
     "bonus_url": f"playbeforepixels.com/bonus/{SLUG}",
     "bonus_offer": ("Store edition only: the free “Five 5-Minute Plays” printable and the monthly “3 plays for your child’s age” "
                     "email (adults only; email and, optionally, the child's birth month and year; double opt-in). QR code on the "

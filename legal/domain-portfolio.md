@@ -55,7 +55,7 @@ Legend. **CF?** means Cloudflare Registrar supports the TLD. "Yes (docs)" means 
 |---|---|---|---|---|---|---|
 | 15 | playbeforepixels.family | Parent audience | NXDOMAIN | Likely | 25.00 | |
 | 16 | playbeforepixels.education | Educator audience | NXDOMAIN | Likely | 28.00 | Say only "classroom resource", never anything implying accreditation |
-| 17 | playbeforepixels.academy | Course: "30-Day Screen Reset" | NXDOMAIN | Likely | 32.00 | Better to run the course at playbeforepixels.com/reset |
+| 17 | playbeforepixels.academy | Course: "30 Days of Back-and-Forth" | NXDOMAIN | Likely | 32.00 | Better to run the course at playbeforepixels.com/30-days |
 | 18 | playbeforepixels.school | Educators | NXDOMAIN | Likely | 32.00 | Could be mistaken for a real school. Redirect only |
 | 19 | playbeforepixels.store | Store alias | NXDOMAIN | Likely | 55.00 | Renewals are high. Low value if .shop is owned |
 | 20 | playbeforepixels.kids | Parent audience | NXDOMAIN | **No?** (UNVERIFIED) | 30.00 | The .kids registry has child-safety content policies (UNVERIFIED). May need a registrar other than Cloudflare |
@@ -120,7 +120,7 @@ The Cloudflare docs do not name .de, .fr, .es, .ie, .eu or .au in the pages that
 
 Tip: if a rename is still a real possibility, spend about $10.50 to hold the best backup's .com (for example `tinkerlark.com`) until the name decision is final. Do not buy all of them.
 
-## Education-hub domains ("The Virtual Autism Project"): assessment
+## Education-hub domains ("Play Before Pixels Research Notes"): assessment
 
 - **Signal:** `virtualautismproject.com`, `.org`, `thevirtualautismproject.com` and `.org` are all NXDOMAIN, so they are probably available. `virtualautism.com` and `virtualautism.org` are already registered by others, and the .org has a live Wix site.
 - **Recommendation: do not buy these, and do not use "autism" in any domain or hub name.** Rename the hub to something non-medical and host it at `playbeforepixels.com/research`. **Decided September 28, 2026: "Play Before Pixels Research Notes"** (`legal/ENTITY.md`). Reasons:
@@ -161,7 +161,7 @@ DNS check from the session (A-record lookup only; a name with no website can sti
 - **No website found (possibly available):** virtualautismproject, virtualautismawareness, virtualautismadvocacy, virtualautismresearch, virtualautismhelp, virtualautismfacts, virtualautismguide, thevirtualautismproject, aboutvirtualautism, understandingvirtualautism, virtualautisminfo — in .com/.org/.net/.co/.info.
 
 **Recommendation (founder decides):**
-- ~~Only if the research hub keeps the name "The Virtual Autism Project": buy virtualautismproject.com, virtualautismproject.org, thevirtualautismproject.com and virtualautismresearch.com (≈ $40–50/yr at cost), each 301-redirecting to playbeforepixels.com/research.~~ **Moot (September 28, 2026):** the hub is "Play Before Pixels Research Notes", so buy no "virtual autism" domain of any kind (same decision as `legal/DECISION-MEMO.json` and `marketing/SOCIAL-HANDLES.md`).
+- ~~Only if the research hub keeps the name "Play Before Pixels Research Notes": buy virtualautismproject.com, virtualautismproject.org, thevirtualautismproject.com and virtualautismresearch.com (≈ $40–50/yr at cost), each 301-redirecting to playbeforepixels.com/research.~~ **Moot (September 28, 2026):** the hub is "Play Before Pixels Research Notes", so buy no "virtual autism" domain of any kind (same decision as `legal/DECISION-MEMO.json` and `marketing/SOCIAL-HANDLES.md`).
 - Do **not** register the film's name in other endings (virtualautism.net/.co/.info): it can look like trading on another organization's name (bad-faith/UDRP risk). There is no partnership: virtualautism.org is DO NOT CONTACT (`marketing/virtual-autism-outreach.md`, row 49).
 - Do not attempt to buy every variant (~70 names, $700–1,000+/yr): domains create no rights in the phrase.
 - Counsel review of the hub's name is still recommended (legal/DECISION-MEMO.json, needs_a_lawyer).

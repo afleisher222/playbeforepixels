@@ -6,7 +6,7 @@
 ---
 
 ## Play Before Pixels for classrooms
-Play Before Pixels makes print-based, play-first resources for PreK–5 classrooms and families: talk-along picture books, a 52-card play deck, the *100 Plays* guide, a PreK–5 Screen-Free Classroom Pack, and host-it-yourself Family Night kits.
+Play Before Pixels makes print-based, play-first resources for PreK–5 classrooms and families: talk-along picture books, a 52-card play deck, the *100 Plays* guide, a Play & Talk Classroom Pack (PreK–5), and host-it-yourself Family Night kits.
 
 - **No student accounts, logins or devices are needed.**
 - **We collect no student data.**

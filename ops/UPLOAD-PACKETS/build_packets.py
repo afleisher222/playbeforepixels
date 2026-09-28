@@ -104,14 +104,19 @@ OVERRIDES = {
     # (etsy_title, etsy_tags, keywords, etsy_long_description, etsy_bullets).
 }
 
+def _count(rel):  # the leading count in a record's title, so names never drift from the product (e.g. "181 Visual ...")
+    m = re.match(r"\s*(\d+)", rd(rel)["title"])
+    return m.group(1) if m else ""
+
+_RC, _BC, _SC = _count("visual-routine-cards/listing-g0.json"), _count("bored-play-cards/listing-g0.json"), _count("visual-routine-cards/listing-starter.json")
 NAMES = {  # for "next for your child's age" lines (live products only)
     "toddler-busy-book": "Toddler Busy Book (74 activities, ages 1–5)",
-    "bored-play-cards": "“I’m Bored” Play Cards (76 cards, ages 1–5)", "bored-play-cards-ages-1-5": "“I’m Bored” Play Cards (76 cards, ages 1–5)",
+    "bored-play-cards": f"“I’m Bored” Play Cards ({_BC} cards, ages 1–5)", "bored-play-cards-ages-1-5": f"“I’m Bored” Play Cards ({_BC} cards, ages 1–5)",
     "play-talk-cards": "52 Play & Talk Cards (ages 0–5)", "guide-100-plays": "100 Screen-Free Plays (ages 0–5)",
-    "visual-routine-cards": "177 Visual Routine Cards (ages 0–5)", "visual-routine-cards-0-5": "177 Visual Routine Cards (ages 0–5)",
+    "visual-routine-cards": f"{_RC} Visual Routine Cards (ages 0–5)", "visual-routine-cards-0-5": f"{_RC} Visual Routine Cards (ages 0–5)",
     "play-first-family-kit": "Play-First Family Kit (ages 2–5)", "play-first-family-kit-ages-2-5": "Play-First Family Kit (ages 2–5)",
     "bundle-gift-1-5": "Ages 1–5 Instant Gift Bundle", "bundle-library-0-5": "Birth-to-5 Printable Library",
-    "winter-countdown": "24 Days of Play: Winter Countdown (ages 2–5)", "visual-routine-cards-starter": "60 Routine Cards Starter",
+    "winter-countdown": "24 Days of Play: Winter Countdown (ages 2–5)", "visual-routine-cards-starter": f"Visual Routine Cards Starter Set ({_SC} cards, ages 0–5)",
     "gift-reveal-coupons": None, "board-up-go-more": None, "bundle-30-days": None,
 }
 

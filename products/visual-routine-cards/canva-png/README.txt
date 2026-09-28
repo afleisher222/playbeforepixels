@@ -6,7 +6,7 @@ These PNGs are an extra. Everything you need is already in the Color and Low-ink
 fillable fields for free Adobe Acrobat Reader.
 
 WHAT'S HERE
-1-cards-rainbow            All 230 cards, finished, 300 dpi at 2.2 in (660 x 660 px), transparent corners.
+1-cards-rainbow            All 239 cards, finished, 300 dpi at 2.2 in (660 x 660 px), transparent corners.
 2-art-only-transparent     The picture from every card on a transparent background (720 x 600 px).
 3-blank-card-frames        Empty card frames in all 4 colorways. Add any picture and your own word.
 4-chart-backgrounds-*      Every blank chart and checklist, Color and Low-ink, US Letter and A4.

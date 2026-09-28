@@ -273,10 +273,8 @@ Sources: https://www.uspto.gov/sites/default/files/documents/USPTO-fee-schedule_
 Sources: https://www.copyright.gov/rulemaking/feestudy2026/ · https://www.copyright.gov/eco/help-deposit-req.html · https://www.law.cornell.edu/uscode/text/17/1203 · https://www.copyright.gov/help/faq/faq-register.html
 
 ### 6d. ISBNs and LCCN (before launch)
-- **ISBNs (unverified):** buy from Bowker (myidentifiers.com) with **AlphaPlay LLC as publisher** and the **Play Before Pixels imprint**.
-  - Each format needs its own ISBN: paperback, hardcover, library binding, e-book, and possibly the card deck and play guide.
-  - Use the same ISBN for a given format on KDP and IngramSpark.
-  - Free KDP ISBNs cost $0 but work only on KDP and show "Independently published".
+- **ISBNs: decided September 28, 2026 (business/DECISIONS.md).** KDP editions use **Amazon KDP's free ISBN** (saves about $295). It costs $0, works only on KDP and shows "Independently published" as the imprint (UNVERIFIED).
+  - Buy your own ISBNs (Bowker, myidentifiers.com, with **AlphaPlay LLC as publisher** and the **Play Before Pixels imprint**) only if IngramSpark or other non-KDP print editions are added later. Each such format then needs its own ISBN.
   - Search excerpts show 1 ISBN for $125 and 10 for $295. The 100-pack at about $575 is unverified. Free barcodes from the KDP and IngramSpark cover tools are unverified.
 - **LCCN through the Preassigned Control Number (PCN) program.** Create a PrePub Book Link account and request an LCCN before publication. Self-published and POD books are **not** eligible for CIP. Print the LCCN on the copyright page and send the required copy after publication. There is no LOC fee (verify).
 
@@ -384,7 +382,7 @@ Source: https://www.wipo.int/en/web/madrid-system/fees/sched
 | ALPHAPLAY first extension (if 5 classes) or SOU | $625 or $150/class |
 | Copyright filings (for example, 8 filings at $45–$85) | about $360–$680 |
 | DMCA agent (if needed) | $6 |
-| ISBNs, 10-pack | $295 (unverified) |
+| ISBNs | $0: KDP's free ISBN (founder's decision, business/DECISIONS.md); a Bowker 10-pack ($295, unverified) only if IngramSpark editions are added |
 | GL insurance | about $542/yr average |
 | E&O insurance | about $744/yr average ($62/mo) |
 | Cyber insurance | about $420–$1,552/yr |

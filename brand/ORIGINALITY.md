@@ -86,7 +86,7 @@
 | D8 | **Site layout and palette** (compared with primary.com) | Low | Nothing in it is copied. | **KEEP.** No shop-by-color grids and no photo grids of kids in solid-color clothes. |
 | D9 | **Talk Tower cover art** (a column of five stacked blocks) | Medium (follows A12) | It is the toy-block motif BRAND.md bans for series marks. | **DROP.** Redraw it as a paper chain. |
 | D10 | **Fonts**: Bricolage Grotesque, Nunito Sans, Fredoka and Caveat | None found | All four are under the SIL Open Font License (OFL), and none declares a Reserved Font Name. | **KEEP.** Add `brand/fonts/OFL.txt`. Re-render `picture-tablet-slept.pdf` so it no longer embeds Liberation Sans fallback glyphs. Self-host the site fonts through `brand/fonts/fonts.css`. |
-| D11 | **Logo "The Return"** | Low (moderate-low overall) | See section 3. | **KEEP.** File it only together with the wordmark. |
+| D11 | **Logo** (was "The Return", retired September 28, 2026; now "The Maker's Seal") | Low (moderate-low overall) | See section 3. | **KEEP the Maker's Seal.** File it only as the seal with its words, plus the wordmark. |
 | D12 | **Site rule breaks** (not an originality issue, but found in the same pass): an 8-item nav, "Work with me", "Book a consult", a "Your photo here" slot, the OECD PISA card, and a "© 2026 Play Before Pixels" footer | Medium | They break BRAND.md's binding rules. | **DROP** the coaching section, the consult buttons and the portrait slot. Cut the nav to 5 items. Change the footer to "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC." Remove the PISA card or mark it [VERIFY]. |
 
 ### E. Words kept out of every name, keyword, listing and title
@@ -134,9 +134,9 @@ These G-day and week-2 names were listed above as "not yet reviewed". This is a 
 - ***30 Days of Back-and-Forth*** (paperback edition). **Was the Screen Reset paperback.**
 
 **Printables, kits and decks for parents**
-- 200+ Visual Routine Cards. Unchanged.
-- "I'm Bored" Play Cards (150). Unchanged.
-- ***Play-First Family Kit (ages 0–5)***, with the Play First, Then Screens checklist and ***Our Fridge-Door Plan***. **Absorbs the Screen Reset Pack.**
+- Visual Routine Cards: **181 cards** in the ages 0–5 edition that launches, **239** in the complete set (held for G1), and a 60-card Starter Set. Unchanged name.
+- "I'm Bored" Play Cards: **76 cards** in the ages 1–5 edition that launches, **150** in the complete set (held for G1). Unchanged name.
+- ***Play-First Family Kit*** (the launch edition covers **ages 2–5**), with the Play First, Then Screens checklist and ***Our Fridge-Door Plan***. **Absorbs the Screen Reset Pack.**
 - ***Play-First Family Kit (ages 5–12)***. **Absorbs the Screen-Smart Family Plan.**
 - 52 Play & Talk Cards for Ages 0–5 (printable first, POD deck later). Unchanged.
 - ***52 Family Talk-Along Cards for Ages 5–12***. **Also replaces the "Talk Time deck."**
@@ -180,32 +180,21 @@ These G-day and week-2 names were listed above as "not yet reviewed". This is a 
 
 ## 3. Logo decision and residual risk
 
-**Decision: KEEP Concept 1, "The Return."** It is an open ink P whose round-ended bowl is closed by a tomato ball, and the same ball dots the i in "Pixels". The small gap before the ball stands for the pause that gives a child a turn.
+**Decision (September 28, 2026; business/DECISIONS.md): the logo is "The Maker's Seal" only.** A round ink seal with PLAY BEFORE / PIXELS around the ring and an upright spinning top in the middle (sky-blue body, tomato band, two tomato dots), adopted with the review panel's two fixes (tomato band, upright top). The earlier "Return" P mark was rejected because it read as the letter r; it is retired and archived in `brand/logo-archive/v1-the-return/`. Its analysis is kept there, not here.
 
-**Why it won.** On the judges' totals, Concept 2 led by half a point (22 to 21.5), but the founder asked for a unique logo, and Concept 1 scored highest on uniqueness (7 against 5). Concept 2's outer shape, a circle with one square corner, is the standard chat-bubble shape used in Google's messaging icons, and at 16 px it becomes a plain bubble.
+**Where the kit and rules live.** The final kit is in `brand/logo/`. The rules are in `brand/logo/logo-guidelines.pdf` and the binding Logo section of `brand/BRAND.md`. The idea, the blind-test findings and the residual similarity risks (common badge format, tops in toy marks, award-medal confusion, the dreidel rule, greyscale band contrast) are in `brand/logo/logo-notes.md`.
 
-**Where the kit and rules live.** The final kit is in `brand/logo/`. The rules are in `brand/logo/logo-guidelines.pdf` and the binding Logo section of `brand/BRAND.md`.
+**Residual similarity risk: moderate-low** now that the band is tomato and the top is upright (logo-notes.md). Only the seal with its words, filed as a composite mark, is defensible; never file the bare top.
 
-**Residual similarity risk: moderate-low.** No kids', parenting or education brand was found using this construction. The parts are common, though, so only the mark and wordmark **together** are defensible.
+**The four-square mark** is retired everywhere; the old preview `index.html` that showed it now only points to `site/dist/`.
 
-| Neighbor | How close | Our guard |
-|---|---|---|
-| Patreon | Its remembered coral circle next to a navy bar. Its current mark, per Simple Icons, is a single black blob. | The ball stays small and inside the letter, never a big circle beside the stem. Do a side-by-side check before filing. |
-| Single-letter P marks: Product Hunt (a P knocked out of a circle), Pexels (a P in a green rounded square; its name is one letter from "Pixels"), pixiv (a p in a blue rounded square), Pinterest, PBS, Poki | The field is crowded. At 16 px, our icon reads as "a P with a dot". | Never put the P on a saturated tile or circle. App tiles use the pale sun tint #FEF4D8. File the mark only with the wordmark. |
-| "Letter P + ball" pickleball stock templates | They share the idea, not the drawing. | None needed beyond the rules above. |
-| A ball dotting an i (and a faint echo of Pixar's lamp in a "Pix-" word) | Low. | The dot is a plain tomato ball, with no stripe or star. |
-| Bricolage Grotesque (an open-source font) | Other brands can use the same typeface. | The custom P and the ball carry the distinctiveness. Never retype the name. |
-| Planned Parenthood's parent-and-child P | Avoided. | Two-P and nested-p monograms are banned. |
-
-**Not the logo, but more urgent:** the live preview site still shows the retired four-square mark (D1, rated high). Replacing it before launch is the single biggest logo-originality fix left.
-
-**Authorship.** Before filing, the founder makes and dates her own edits to the numbers at the top of `brand/logo/src/build.py` (ball size, terminal angle, stroke weights), rebuilds, keeps every version in git, and logs the change in `legal/protection/creation-records-log.md`.
+**Authorship.** Before filing, the founder may make and date her own edits to the numbers at the top of `brand/logo/src/build.py`, rebuild, and log each change in `EDIT_LOG` and `legal/protection/creation-records-log.md` (logo-notes.md "Founder authorship").
 
 **Still not done:**
-- a reverse-image search (Google Lens, TinEye) of `mark.svg` and `mark-small.svg`;
-- a USPTO design-code search;
+- a reverse-image search (Google Lens, TinEye) of `mark.svg`, `mark-small.svg` and `favicon.svg`;
+- a USPTO design-code search (toys and tops; circles with lettering);
 - a WIPO image search;
-- the Patreon side-by-side;
+- side-by-sides with the stock spinning-top logos named in logo-notes.md;
 - the attorney's knockout search.
 
 All of them are listed in section 4.
@@ -225,7 +214,7 @@ All of them are listed in section 4.
      - Osmo's "Play Beyond The Screen".
    - **Opinion needed:** on the failure-to-function risk (TMEP 1202.04).
    - **Fallback:** run the same search on **Puddlefort**.
-2. **The Return logo, filed as a combined mark with the wordmark.**
+2. **The Maker's Seal logo, filed as a composite mark (the seal with its words), plus the wordmark.**
    - a USPTO design-code search (26.01 circles, 27.03 letters) in classes 9, 16, 25, 28, 35 and 41;
    - a WIPO Global Brand Database image search;
    - a reverse-image search;
@@ -243,7 +232,7 @@ All of them are listed in section 4.
 
 ### 4b. Owed before launch, but not needing an attorney (task #18: founder or routine)
 
-- **Exact-title searches before buying ISBNs** (Amazon Books, Goodreads, Bookshop.org, catalog.loc.gov, USPTO):
+- **Exact-title searches before the first KDP upload** (KDP editions use the free KDP ISBN) (Amazon Books, Goodreads, Bookshop.org, catalog.loc.gov, USPTO):
   - *Up! Go! More!*;
   - *The Day the Tablet Slept*;
   - *Whose Lap Today?*;

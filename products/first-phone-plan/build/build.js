@@ -586,7 +586,7 @@ function more(ctx, qr) {
     ['fort', '150 “I’m Bored” Play Cards', 'Ages 1–12', 'Pick-a-card play ideas sorted by age and energy, each with a talk prompt.'],
     ['boardGame', 'Play-First Family Kit', 'Ages 2–12', 'Play First, Then Screens checklists, together tokens and a family plan.'],
     ['talkDay', '52 Family Talk-Along Cards', 'Ages 5–12', 'Dinner, car and bedtime questions that get big kids talking.'],
-    ['packTomorrow', '230 Visual Routine Cards', 'Ages 0–12', 'Morning and bedtime routines, including a 5–12 set.'],
+    ['packTomorrow', '239 Visual Routine Cards', 'Ages 0–12', 'Morning and bedtime routines, including a 5–12 set.'],
   ];
   const tiles = `<div class="toc" style="grid-template-columns:1fr 1fr;gap:.12in;flex:1;grid-auto-rows:1fr">${items.map(([a, t, g, s]) => `<div style="grid-template-columns:1.4in 1fr;padding:.16in">${art(a).replace('class="art ', 'style="width:1.4in;height:1.17in" class="art ')}<div><div class="nm" style="font-size:12pt">${t}</div><div class="eyebrow" style="margin:.04in 0">${g}</div><div class="body">${s}</div></div></div>`).join('')}</div>`;
   const tail = ctx.store

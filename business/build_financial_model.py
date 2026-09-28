@@ -621,7 +621,7 @@ SU = [
     ("Principal office / resident agent change (SDAT)", "Legal/entity", 25, 50, 1, 1, "PROTECTION-PLAN: $25 ($50 expedited).", "Repo"),
     ("DMCA designated agent registration", "Legal/IP", 6, 6, 1, 1, "PROTECTION-PLAN: $6, renews every 3 years.", "Repo"),
     ("Etsy shop opening fee (may apply)", "Channels", 0, 15, 1, 1, "storefront-setup-guide §10.", "Repo [VERIFY]"),
-    ("Bowker ISBNs, 10-pack", "Publishing", 295, 295, 1, 1, "PROTECTION-PLAN; DECISION-MEMO (UNVERIFIED).", "Repo [VERIFY]"),
+    ("ISBNs: KDP's free ISBN (founder's decision; a Bowker 10-pack, $295, only if IngramSpark editions are added)", "Publishing", 0, 0, 1, 1, "business/DECISIONS.md 2026-09-28.", "Decided"),
     ("Trademark clearance search + attorney opinion, PLAY BEFORE PIXELS", "Legal/IP", 500, 2500, 1, 1, "legal/DECISION-MEMO.json step 2.", "Repo [VERIFY]"),
     ("USPTO application, PLAY BEFORE PIXELS, classes 16 + 41", "Legal/IP", 700, 700, 2, 1, "PROTECTION-PLAN #7: $350/class, within 90 days.", "Repo"),
     ("ALPHAPLAY Statement of Use ($150/class) or extension (up to $625)", "Legal/IP", 150, 625, 5, 1, "PROTECTION-PLAN #6: due Mar 8, 2027; target Feb 1, 2027.", "Repo"),

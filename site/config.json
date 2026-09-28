@@ -242,7 +242,7 @@
    ]
   },
   "picture-laps-not-apps": {
-   "name": "Laps Not Apps",
+   "name": "Whose Lap Today?",
    "line": "A personalized read-aloud with your child’s name in six rhymes",
    "series": "Play Before Pixels read-alouds",
    "types": [
@@ -277,7 +277,7 @@
    "gallery": [
     {
      "src": "mockup.png",
-     "alt": "Laps Not Apps as a hardcover on a sunny surface, beside an open spread of a grandmother reading to a child on her lap."
+     "alt": "Whose Lap Today? as a hardcover on a sunny surface, beside an open bedtime spread: a sleepy child at the moonlit window, and Dad rocking the child to sleep."
     },
     {
      "src": "cover.png",
@@ -783,7 +783,7 @@
   },
   "merch-core-logo-tee": {
    "show": false,
-   "why": "The tee's print files and mockups still carry the retired 'Return' P mark; the product lane must rebuild them with the Maker's Seal before it can be shown (brand/BRAND.md 'Logo')."
+   "why": "Merch waits until sales pay for it: the $500 launch budget has no print-on-demand samples or Shopify (business/LAUNCH-BUDGET-500.md). Its files were rebuilt with the Maker's Seal on Sep 28, 2026."
   },
   "winter-countdown": {
    "name": "24 Days of Play: Winter Countdown",
@@ -993,7 +993,7 @@
    "buy": [
     "buy_birth_to_5_library"
    ],
-   "source": "ops/QUEUE.md Week 2 (parts $55.98). The six parts are inferred: the six launch printables sum to exactly $55.98.",
+   "source": "products/bundle-library-0-5/listing.json bundle (parts $55.98); ops/QUEUE.md Week 2.",
    "free": [
     [
      "gift-reveal-coupons",

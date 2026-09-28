@@ -57,7 +57,7 @@ This replaces the 06:50 UTC version. It was written after the upload packets wer
 8. **On each upload day:** run `stage.py`, then record the listing in `ops/PUBLISHED.json` and swap its `{{ETSY_LISTING_URL:…}}` placeholder in `marketing/pins/pins.csv`.
 
 **(b) Founder decisions still open** (each one takes minutes; details in `ops/APPROVALS.md` and `ops/UPLOAD-PACKETS/README.md`)
-1. **D9:** KEEP or REPLACE the "first then" and "visual schedule" search words. REPLACE is recommended. It affects the Family Kit title, which is week 2. The routine-card titles are already clean, but "first–then board" still appears in one image's alt text and in the Starter's description.
+1. **D9:** KEEP or REPLACE the "first then" and "visual schedule" search words. REPLACE is recommended. It affects the Family Kit title, which is week 2. The routine-card titles are already clean, but "First–Then board" still names a chart layout in the 0–5 and Starter descriptions and in one image's alt text.
 2. **KDP UK, Canada and Australia prices.** The plan's £7.99, CA$12.99 and AU$14.99 net below the $5.10 floor. The recommended prices are £13.99, CA$22.99 and AU$26.99.
 3. **"Preschoolers" in the KDP subtitle and cover.** Keep it as an age word, or change both. Also say whether the "preschool" ban covers image text and body copy, or only titles, tags and keywords.
 4. **Keep the name "Birth-to-5 Printable Library"**, which is on Gumroad only, or rename it.
@@ -102,6 +102,8 @@ This replaces the 06:50 UTC version. It was written after the upload packets wer
 
 ---
 
+> **Read with the $500 budget.** Everything below this line was written before the founder capped launch spending at $500 with no ads (business/LAUNCH-BUDGET-500.md, business/DECISIONS.md). Where it disagrees, the budget and ops/QUEUE.md win: one domain; Etsy, Gumroad, KDP and Pinterest only at launch; Shopify, Printful, IngramSpark, merch and the other social platforms wait (GROWTH-ENGINE §2a); *The Day the Tablet Slept* and *Up! Go! More!* stay HELD.
+
 _Written September 28, 2026, after the founder asked to "launch everything as soon as possible worldwide" and to have Claude run the social media and marketplaces automatically. The detailed setup steps for each platform are in `commerce/storefront-setup-guide.md`. This file sets the order and says who does each step._
 
 ## The honest picture
@@ -122,10 +124,10 @@ Protection comes first, so do these in this order.
 2. **Put the LLC in order:** confirm AlphaPlay LLC is in good standing, and register the trade name "Play Before Pixels" (about $25, Maryland Business Express). Checklist rows 2–3.
 3. **Open a no-fee business checking account** under the LLC's EIN, never your Social Security number (`finance/BANKING.md`).
 4. **Rent a USPS PO Box.** It is the only address that ever appears in public; your home address goes on government filings only (`legal/ENTITY.md`).
-5. **Buy the domain `playbeforepixels.com`** plus the core set, about $72–75 in total (`legal/domain-portfolio.md`), at Cloudflare.
+5. **Buy the domain `playbeforepixels.com`** only (about $10–12 at Cloudflare; the other domains in `legal/domain-portfolio.md` are skipped under the $500 budget).
 6. **Open the accounts in one sitting (about 90 minutes).** Use a business email and an authenticator app. Claim the handles at the same time (`marketing/SOCIAL-HANDLES.md`).
-   - To sell: Etsy, Gumroad, Shopify, Printful and Amazon KDP. Check the existing "AlphaPlay" Shopify store first, because it may be reusable.
-   - To be found: Pinterest, Instagram with a Facebook Page, TikTok and YouTube.
+   - To sell: Etsy, Gumroad and Amazon KDP. (Shopify and Printful wait until sales pay for them; check the existing "AlphaPlay" Shopify store then.)
+   - To be found: Pinterest only. Instagram, Facebook, TikTok and YouTube wait until February (GROWTH-ENGINE §2a).
 7. **Put the API keys in the cloud environment settings** (the environment menu → Edit), never in chat. The names are listed in `ops/SECRETS.md`. This is the step that lets Claude run everything.
 8. **Get an insurance quote** for general liability plus products coverage (checklist row 14).
 
@@ -147,10 +149,10 @@ Protection comes first, so do these in this order.
 
 ## Wave 2: books and print products (weeks 2–4)
 
-- **Amazon KDP paperbacks.** Titles: *100 Screen-Free Plays*, *The Day the Tablet Slept*, and *Up! Go! More!* as a square paperback. They reach buyers through Amazon's own marketplaces (US, UK, Germany, France, Spain, Italy, Netherlands, Poland, Sweden, Japan, Canada, Australia and others [VERIFY list]).
+- **Amazon KDP paperback.** *100 Screen-Free Plays for Ages 0–5* only, with KDP's free ISBN. (*The Day the Tablet Slept* and *Up! Go! More!* are HELD: ops/QUEUE.md "Cut".) They reach buyers through Amazon's own marketplaces (US, UK, Germany, France, Spain, Italy, Netherlands, Poland, Sweden, Japan, Canada, Australia and others [VERIFY list]).
   - Order **one printed proof of each book and look at it before release**. This is quality control, and it protects the brand.
-- **IngramSpark** for bookstores and libraries worldwide.
-- **Printful merch**, adult sizes only, sold through Shopify and Etsy. Orders print and ship automatically.
+- **IngramSpark** for bookstores and libraries: HELD for employment counsel.
+- **Printful merch**, adult sizes only: waits until sales pay for samples and Shopify.
 
 ## Wave 3: channels that sync from Shopify (weeks 4–8)
 

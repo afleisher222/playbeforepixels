@@ -192,7 +192,7 @@ const starter = {
     etsy_files: ['etsy-upload/starter/1-START-HERE.pdf', 'etsy-upload/starter/2-Color-US-Letter.pdf', 'etsy-upload/starter/3-Color-A4.pdf', 'etsy-upload/starter/4-Low-Ink-US-Letter.pdf', 'etsy-upload/starter/5-Low-Ink-A4.pdf'],
   },
   shareable_piece: 'The finished morning chart on the fridge, with the small Play Before Pixels wordmark in the footer.',
-  next_products: ['visual-routine-cards-0-5', 'play-first-family-kit', 'bored-play-cards'],
+  next_products: ['visual-routine-cards-0-5', 'play-first-family-kit-ages-2-5', 'bored-play-cards-ages-1-5'],
   ...common,
   faq: common.faq.map(f => f.q === 'What ages is it for?' ? { q: f.q, a: 'Birth to 5. The guide shows ways to use the cards from one card at a time (0–12 months) to a nine-step morning chart. Ages are a guide, never a deadline.' }
     : f.q === 'Does it work for children who sign, point or use a talking device?' ? { q: f.q, a: 'Yes. A sign, a point, a tap on a card or a device, even a "no", counts as communicating. Every card comes word-free too, and the Ages 0–5 Edition adds More, Stop, My turn, Break and Help cards.' }
@@ -260,7 +260,7 @@ const g0 = {
   },
   g1_held_material: `${NB} big-kid cards for ages 5–12, the 8 weekly big-kid checklists (ready-made and blank) and the 5–12 use-by-age tiles are held back. They are in the Complete Set files (listing.json) and are added free to this same listing when counsel's G1 answer allows (ops/QUEUE.md). Never a new listing.`,
   shareable_piece: 'The finished morning chart or Today board on the fridge: every page footer carries the small Play Before Pixels wordmark (plus the website on own-store files), so a photo of a filled chart shows the brand without extra stickers.',
-  next_products: ['play-first-family-kit', 'bored-play-cards', 'toddler-busy-book'],
+  next_products: ['play-first-family-kit-ages-2-5', 'bored-play-cards-ages-1-5', 'toddler-busy-book'],
   starter_tier: { listing: 'listing-starter.json', price_usd: SP, cards: NS },
   ...common,
   faq: faq0,

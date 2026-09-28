@@ -8,7 +8,7 @@ meta_description: "What WHO and the American Academy of Pediatrics recommend for
 target_keyword: "screen time by age"   # demand UNVERIFIED (hypothesis)
 secondary_keywords: ["how much screen time for a 2 year old", "screen time for toddlers", "screen time guidelines under 5"]
 audience: Parents and caregivers of children aged 0–5
-related_product: Screen Reset Pack (0–5) — /shop/screen-reset-pack-0-5/
+related_product: Play-First Family Kit (ages 2–5) — /shop/play-first-family-kit/
 free_printable: /free/five-5-minute-plays/
 citations: ["WHO 2019", "AAP 2016", "Madigan 2019", "Takahashi 2023", "Brushe 2024"]
 verify_before_publish:
@@ -107,7 +107,7 @@ You're not alone, and nothing is ruined. Start with one moment of the day and on
 
 ## Make the first swap easy
 
-If you'd like a ready-made plan, our **Screen Reset Pack (0–5)** has play-first routine charts, a 30-day tracker and simple swaps for the moments screens usually fill. [See the Screen Reset Pack](/shop/screen-reset-pack-0-5/).
+If you'd like a ready-made plan, our **Play-First Family Kit (ages 2–5)** has play-first routine charts, a 30-day tracker and simple swaps for the moments screens usually fill. [See the Play-First Family Kit](/shop/play-first-family-kit/).
 
 Or start free: download **Five 5-Minute Plays**, five quick games with a talk tip on each, for babies to preschoolers. [Get the free printable](/free/five-5-minute-plays/).
 

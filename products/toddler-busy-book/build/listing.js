@@ -79,7 +79,7 @@ const L = {
     'Amazon: none at launch. The KDP activity edition in amazon_route is HELD (no 0–3 KDP activity editions before CPSC guidance; ops/QUEUE.md)'
   ],
   amazon_route: `kdp-activity-edition: a paperback built from the ${S.noCut} no-cut activities (first words, look-and-find, sing & move, mazes and roads, counting, feelings), 8.5 × 11 in, premium color, single-sided mark-making pages per CUSTOMER-VOICE rule 20, with cut-piece activities replaced by point-and-name versions (no scissors in a bound book for toddlers) [VERIFY KDP color cost and page limits]. Not built yet: see human_todo. HELD (ops/QUEUE.md): 0–3 KDP activity editions, this one included, wait for CPSC guidance. The printable stays on Etsy and our site.`,
-  next_products: ['board-up-go-more', 'guide-100-plays', 'bored-play-cards'],
+  next_products: ['play-first-family-kit-ages-2-5', 'guide-100-plays', 'bored-play-cards-ages-1-5'],
   bonus_url: 'playbeforepixels.com/bonus/toddler-busy-book',
   bonus_offer: 'Free companion printable “Busy Book Extras” (seasonal pages in the same three age bands) plus a monthly “play at this age” email. Sign-up asks only for an email and the child’s birth month and year; never a name. QR code and short link are on the last page of the website edition (the Etsy edition has no URL or QR, per the marketplace rule).',
   shareable_piece: `Busy Book Star certificate (page ${A['x-cert']}, type-in name, favorite page and date) and the four binder covers, designed to be photographed, each with the Play Before Pixels mark.`,

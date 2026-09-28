@@ -19,11 +19,11 @@ window.PBP_LINKS = {
   shopify: "",                        // Store home: https://playbeforepixels.com, https://shop.playbeforepixels.com, or https://{store}.myshopify.com
   shop_book_up_go_more: "",           // Up! Go! More! board book on your store: https://{store-domain}/products/{handle} (KDP can't print board books)
   shop_book_tablet_slept: "",         // The Day the Tablet Slept on your store (signed or bundle copies): https://{store-domain}/products/{handle}
-  shop_book_100_plays: "",            // 100 Plays Before Pixels on your store (print or printable): https://{store-domain}/products/{handle}
-  shop_book_laps_not_apps: "",        // Laps Not Apps hardcover on your store: https://{store-domain}/products/{handle}
+  shop_book_100_plays: "",            // 100 Screen-Free Plays on your store (print or printable): https://{store-domain}/products/{handle}
+  shop_book_laps_not_apps: "",        // Whose Lap Today? (was Laps Not Apps) personalized book on your store: https://{store-domain}/products/{handle}
   shop_book_more_talk_less_tap: "",   // More Talk, Less Tap library-bound edition on your store: https://{store-domain}/products/{handle} (later)
   group_orders: "",                   // Schools, libraries, groups, workshops, B2B: https://{store-domain}/collections/{handle} or /pages/{handle}
-  booking: "",                        // Paid coaching bookings: https://calendly.com/{handle}/{event}, https://{name}.as.me/, or a Shopify product URL
+  booking: "",                        // RETIRED: stays empty forever. No coaching, consults or live services (brand/BRAND.md, binding).
   course: "",                         // Online course sales page: https://{school}.teachable.com, https://{name}.podia.com, or your course subdomain (90 days)
   newsletter_form: "",                // Hosted newsletter sign-up page from your email tool (leave empty if the form is built into the site)
 
@@ -32,8 +32,8 @@ window.PBP_LINKS = {
   amazon_storefront: "",              // Amazon Influencer storefront: https://www.amazon.com/shop/{handle} (approval needed, not guaranteed; 90 days)
   kdp_book_up_go_more: "",            // Amazon page for Up! Go! More!: https://www.amazon.com/dp/{ASIN}[?tag={storeid}-20] (fill only for a Kindle or other Amazon edition; no KDP board books)
   kdp_book_tablet_slept: "",          // Amazon page for The Day the Tablet Slept: https://www.amazon.com/dp/{ASIN}[?tag={storeid}-20]
-  kdp_book_100_plays: "",             // Amazon page for 100 Plays Before Pixels: https://www.amazon.com/dp/{ASIN}[?tag={storeid}-20]
-  kdp_book_laps_not_apps: "",         // Amazon page for Laps Not Apps (listed from KDP or from IngramSpark's feed): https://www.amazon.com/dp/{ASIN}
+  kdp_book_100_plays: "",             // Amazon page for 100 Screen-Free Plays: https://www.amazon.com/dp/{ASIN}[?tag={storeid}-20]
+  kdp_book_laps_not_apps: "",         // Amazon page for Whose Lap Today? (listed from KDP or from IngramSpark's feed): https://www.amazon.com/dp/{ASIN}
   kdp_book_more_talk_less_tap: "",    // Amazon page for More Talk, Less Tap: https://www.amazon.com/dp/{ASIN} (fill only for a paperback or Kindle edition; KDP has no library binding)
   amazon_merch: "",                   // Merch on Demand product or brand search: https://www.amazon.com/dp/{ASIN} (invite-only; 90 days)
   amazon_brand_store: "",             // Amazon Brand Store: https://www.amazon.com/stores/{BrandName}/page/{id} (needs Seller Central and Brand Registry; later)
@@ -42,8 +42,8 @@ window.PBP_LINKS = {
   bookshop: "",                       // Bookshop.org affiliate shop: https://bookshop.org/shop/{affiliate-shop}
   bookshop_book_up_go_more: "",       // Bookshop page for Up! Go! More!: https://bookshop.org/a/{affiliate-id}/{ISBN13} (only if an Ingram edition exists)
   bookshop_book_tablet_slept: "",     // Bookshop page for The Day the Tablet Slept: https://bookshop.org/a/{affiliate-id}/{ISBN13}
-  bookshop_book_100_plays: "",        // Bookshop page for 100 Plays Before Pixels: https://bookshop.org/a/{affiliate-id}/{ISBN13}
-  bookshop_book_laps_not_apps: "",    // Bookshop page for Laps Not Apps (IngramSpark hardcover): https://bookshop.org/a/{affiliate-id}/{ISBN13}
+  bookshop_book_100_plays: "",        // Bookshop page for 100 Screen-Free Plays: https://bookshop.org/a/{affiliate-id}/{ISBN13}
+  bookshop_book_laps_not_apps: "",    // Bookshop page for Whose Lap Today? (IngramSpark hardcover): https://bookshop.org/a/{affiliate-id}/{ISBN13}
   bookshop_book_more_talk_less_tap: "", // Bookshop page for More Talk, Less Tap: https://bookshop.org/a/{affiliate-id}/{ISBN13} (only if an Ingram edition exists)
   bn_press: "",                       // Barnes & Noble product page: https://www.barnesandnoble.com/w/{slug}/{id} (later)
   kobo: "",                           // Kobo ebook page: https://www.kobo.com/us/en/ebook/{slug} (later)

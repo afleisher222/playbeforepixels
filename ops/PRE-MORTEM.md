@@ -707,7 +707,7 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
 
 ### 25. Children's product-safety paperwork is missing (CPSIA, EU GPSR) · 12 (3 × 4)
 - **Story:**
-  - The ages 0–3 *Up! Go! More!* paperback and the personalized *Laps Not Apps* ship through print-on-demand on the belief that paper books are "ordinary books". Books for children 3 and under may fall outside that exemption (UNVERIFIED).
+  - The ages 0–3 *Up! Go! More!* paperback and the personalized *Whose Lap Today?* ship through print-on-demand on the belief that paper books are "ordinary books". Books for children 3 and under may fall outside that exemption (UNVERIFIED).
   - EU orders would make AlphaPlay the "manufacturer", with no EU responsible person.
 - **Early warning:** the CPSIA or GPSR check fails on a publish candidate (G4); inbox terms such as "Children's Product Certificate" or "GPSR" (L10).
 - **Protection today:**

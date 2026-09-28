@@ -8,6 +8,9 @@ Prepared September 27, 2026, for the founder of Play Before Pixels (a trade name
 
 > **Verification status. Please read.** On 2026-09-27 no live source could be reached: the web-search budget was exhausted and the network blocked the official sites (Shopify, Amazon/KDP, Etsy, IRS, Maryland Comptroller and others). Every fee, rule and tax threshold in this guide comes from an earlier research pass and the researcher's knowledge (current to June 2026), and is **UNVERIFIED** unless marked **VERIFIED**. The only VERIFIED item is the Amazon Influencer storefront, which is backed by an official Amazon page. Each item links to the official page. **Open that page on the day you sign up and check the number there.** Where two sources disagree, both figures are shown.
 
+
+> **Superseded in part (September 28, 2026).** Where this guide disagrees with these decisions, the decisions win: the launch budget is **$500** with **no ads** (business/LAUNCH-BUDGET-500.md); the own checkout at launch is **Gumroad**, and Shopify waits until about 25 own-site orders a month (ops/QUEUE.md, GROWTH-ENGINE D4); **no coaching, consults or live services**; KDP editions use **Amazon's free ISBN** (business/DECISIONS.md); IngramSpark, school, library and classroom channels are **HELD** for employment counsel; social platforms other than Pinterest wait until February. Retired names follow brand/ORIGINALITY.md.
+
 ---
 
 ## Part A: Link the money first (do this before opening any shop)
@@ -20,17 +23,17 @@ These steps are what make the accountant handoff easy. They come before any stor
 - Walmart requires an EIN and does not accept an SSN (secondary source, UNVERIFIED: [goaura.com](https://goaura.com/blog/walmart-seller-application)). AlphaPlay LLC already has an EIN (`legal/ENTITY.md`).
 
 ### A2. One bank account in, one card out
-- **Every payout goes to ONE business checking account** in AlphaPlay LLC's name, with the "Play Before Pixels" trade name added: Shopify Payments, KDP, IngramSpark, Etsy, TPT, TikTok Shop, Amazon Associates/Influencer, Merch on Demand, Gumroad, Stripe (bookings and course), Faire and Walmart.
-- **Pay every business cost from ONE business card:** POD partner invoices, printers, ISBNs (Bowker), platform subscriptions and ads.
+- **Every payout goes to ONE business checking account** in AlphaPlay LLC's name, with the "Play Before Pixels" trade name added: Shopify Payments, KDP, IngramSpark, Etsy, TPT, TikTok Shop, Amazon Associates/Influencer, Merch on Demand, Gumroad (course and downloads), Faire and Walmart.
+- **Pay every business cost from ONE business card:** POD partner invoices, printers, platform subscriptions and (later, only when sales pay for them) ads.
 - If a platform can pay only through PayPal (TPT historically did; UNVERIFIED), use a PayPal **business** account that transfers into that same checking account.
 
 ### A3. Sales tax: who collects it (UNVERIFIED; confirm with the accountant and at [marylandtaxes.gov](https://www.marylandtaxes.gov/))
-- **Your own direct sales** (Shopify, Stripe/Calendly, Payhip, most course platforms): **you** collect and file. Maryland's rate is 6%, and it has applied to digital products (printables) since 2021. Shopify Tax only *calculates* the tax; it does not file it for you. `legal/ENTITY.md` says to add these new activities to AlphaPlay LLC's existing Maryland sales-and-use tax registration.
+- **Your own direct sales** (Shopify, Payhip, most course platforms; Gumroad is merchant of record for its sales, UNVERIFIED): **you** collect and file. Maryland's rate is 6%, and it has applied to digital products (printables) since 2021. Shopify Tax only *calculates* the tax; it does not file it for you. `legal/ENTITY.md` says to add these new activities to AlphaPlay LLC's existing Maryland sales-and-use tax registration.
 - **Marketplaces** remit sales tax for your sales there as "marketplace facilitators": Amazon Seller Central, Etsy, TikTok Shop, Walmart and TPT (TikTok, Walmart and TPT are UNVERIFIED).
 - **Gumroad** is merchant of record (since Jan 1, 2025): it collects and remits US sales tax **and** EU/UK VAT on your sales. Tell the accountant so those sales are not taxed twice.
 - **Worldwide digital sales:** printables sold on Shopify to EU/UK buyers can trigger VAT registration or OSS/IOSS filing. Routing international digital sales through Gumroad avoids that.
 - **Other states:** watch for economic nexus in each state where direct sales grow. Maryland's own threshold is $100,000 or 200 transactions (UNVERIFIED).
-- **Coaching services** are generally not subject to Maryland sales tax (UNVERIFIED). Ask the accountant.
+- **Coaching services:** none. The business sells no coaching, consults or live services (brand/BRAND.md, binding), so this question does not arise.
 
 ### A4. Resale certificates
 - Give your POD partner (Printful, Printify or Gelato) your Maryland sales tax registration or a multistate resale certificate. Otherwise it charges you sales tax on fulfillment orders (UNVERIFIED).
@@ -54,7 +57,7 @@ Federal 1099-K threshold: **$20,000 AND 200 transactions** (restored by the July
 | TPT | Bank or PayPal business, transferred to checking (UNVERIFIED) | 1099-K (UNVERIFIED) | TPT (UNVERIFIED) | Sales report (CSV) |
 | TikTok Shop | Business checking, after delivery and settlement | 1099-K | TikTok (UNVERIFIED) | Seller Center > Finance statements |
 | Gumroad (optional) | Business checking, weekly (UNVERIFIED) | 1099-K | **Gumroad** (merchant of record: US sales tax + EU/UK VAT) | Sales CSV + payouts CSV |
-| Calendly/Acuity bookings via Stripe | Business checking | 1099-K from Stripe | You, if the service is taxable (coaching generally isn't; UNVERIFIED) | Stripe Dashboard: payouts + balance report |
+| ~~Calendly/Acuity bookings via Stripe~~ | Removed | Removed | Removed | No coaching or live services (brand/BRAND.md, binding) |
 | Course platform | Via your Stripe/PayPal, or the platform's own payments | 1099-K from whichever company processes the payments | You, unless the platform is merchant of record (UNVERIFIED) | Platform sales export + Stripe/PayPal export |
 | Faire (later) | Business checking | Probably 1099-K (UNVERIFIED) | Wholesale sales are generally exempt when the retailer gives a resale certificate | Order + payout history (CSV); keep the retailers' resale certificates |
 | Walmart (later) | Business checking | 1099-K (UNVERIFIED) | Walmart (UNVERIFIED) | Settlement report (CSV) |
@@ -71,11 +74,11 @@ Federal 1099-K threshold: **$20,000 AND 200 transactions** (restored by the July
 
 | Step | When | Channel | Why here |
 |---|---|---|---|
-| 0 | Before anything | **Part A** (business checking, business card, W-9 answer from the accountant, Maryland sales tax update, monthly folder), plus register `playbeforepixels.com` (MUST tier in `legal/domain-portfolio.md`) and buy **Bowker ISBNs** | Everything below pays into Part A. Your own ISBNs let KDP and IngramSpark share one ISBN per format. |
+| 0 | Before anything | **Part A** (business checking, business card, W-9 answer from the accountant, Maryland sales tax update, monthly folder), plus register `playbeforepixels.com` (MUST tier in `legal/domain-portfolio.md`) (no ISBN purchase: KDP editions use Amazon's free ISBN, founder's decision in business/DECISIONS.md) | Everything below pays into Part A. Own ISBNs are needed only if IngramSpark editions are ever added. |
 | 1 | Launch | **Shopify** (the hub) + Shopify Payments + Shopify Tax | Master catalog and checkout. Other channels sync from it. |
 | 2 | Launch | **ONE POD partner** (Printful, Printify or Gelato) connected to Shopify | Merch products must exist before the channels sync them. One partner keeps cost-of-goods records simple. |
 | 3 | Launch | **Facebook & Instagram** and **Google & YouTube** apps inside Shopify | Free channels that check out through Shopify, so no new 1099s. |
-| 4 | Launch | **Booking tool** (Calendly or Acuity + Stripe) *or* Shopify-sold sessions | Coaching revenue. Selling sessions through Shopify avoids a separate Stripe 1099-K. |
+| 4 | — | ~~Booking tool~~ **Removed** | No coaching, consults or live services (brand/BRAND.md, binding). |
 | 5 | Launch | **Amazon KDP** → **IngramSpark** → **Author Central** (once a book is live) → **Bookshop.org affiliate** | Books in order of dependency. |
 | 6 | Launch | **Etsy** | Printables and designed merch to Etsy's buyers. Etsy handles the sales tax. |
 | 7 | Launch | **Teachers Pay Teachers** | Teacher resource pack, sold to teachers and schools. |
@@ -95,7 +98,7 @@ Each channel lists: **Requirements · Fees · List first · Children's-product r
 ### 1. Shopify: the hub (launch)
 - **Requirements:** open signup. Shopify Payments needs a US business or bank account and identity verification, which you complete yourself. Register for Maryland sales tax (Part A3), because Shopify does not file it. Source: [shopify.com/pricing](https://www.shopify.com/pricing) (blocked, UNVERIFIED); secondary: [2hatslogic.com](https://www.2hatslogic.com/blog/shopify-pricing/).
 - **Fees (UNVERIFIED):** Basic $39/mo, Grow $105/mo, Advanced $399/mo (or $29/$79/$299 per month billed annually). Shopify Payments US online card rates are 2.9%+30¢, 2.7%+30¢ and 2.5%+30¢ by plan. A third-party payment gateway adds 2%, 1% or 0.6%. There is a new-store promo (a 3-day trial, then about $1/mo for 3 months on some plans) that changes often.
-- **List first:** the *100 Plays* printable guide (taxable at 6% in Maryland), the adult Play Before Pixels tee, the "More talk, less tap" tee and the "Laps not apps" tote through your POD partner, the Screen Reset Consult (if you sell sessions through Shopify), a "Groups & classrooms" collection or inquiry page for workshops, classroom sets and bulk orders (invoice these as **draft orders** so the money stays in Shopify Payments), and books once printed copies exist.
+- **List first:** the *100 Plays* printable guide (taxable at 6% in Maryland), the adult Play Before Pixels tee, the "More talk, less tap" tee and the "Laps not apps" tote through your POD partner, and later (HELD until employment counsel clears group sales) a "Groups & classrooms" collection for workshop kits, classroom sets and bulk orders (invoice these as **draft orders** so the money stays in Shopify Payments), and books once printed copies exist.
 - **Children's products:** no Shopify-specific rule is in the findings, but the general CPSIA rules above still apply to what you sell.
 - **Payout and tax records:** payouts go to your business checking. Payouts, the Finance summary and the transactions report all export as CSV. Look for the 1099-K in the admin under Settings > Payments > Documents (path UNVERIFIED).
 - **Domain note:** if the main site stays on Cloudflare Pages at `playbeforepixels.com`, connect Shopify to a subdomain such as `shop.playbeforepixels.com` (steps UNVERIFIED; see Shopify's domain help).
@@ -125,26 +128,21 @@ Each channel lists: **Requirements · Fees · List first · Children's-product r
 - **Payout and tax records:** none from Google. Money flows through Shopify.
 - **Paste into links.js:** `google_merchant` = `https://www.youtube.com/@{handle}/store` once the Store tab appears, plus `youtube`.
 
-### 5. Booking: Calendly or Acuity + Stripe (launch), or Shopify-sold sessions
-- **Requirements:** open signup. Paid bookings need a paid plan and a connected Stripe account (UNVERIFIED).
-- **Fees (UNVERIFIED):** Calendly Standard about $10–12 per seat per month, and Acuity from about $16–20/mo, plus Stripe's US card rate of 2.9%+30¢. Sources: [calendly.com/pricing](https://calendly.com/pricing), [acuityscheduling.com/signup-pricing](https://acuityscheduling.com/signup-pricing), [stripe.com/pricing](https://stripe.com/pricing) (all blocked).
-- **List first:** the Screen Reset Consult (60 min), then Family Reset Coaching (4 weeks).
-- **Children's products:** not applicable (a service for parents).
-- **Payout and tax records:** Stripe pays out to your checking and issues a 1099-K. Export payouts and the balance report from the Stripe Dashboard. **Fewer-forms option:** sell sessions as Shopify products so there's one processor and one 1099-K.
-- **Paste into links.js:** `booking`.
+### 5. Booking: removed (no coaching or live services)
+- **Removed September 28, 2026.** The business sells no coaching, consults or live services (brand/BRAND.md "Self-running product business", binding; the Screen Reset Consult and Family Reset Coaching are retired, brand/ORIGINALITY.md). No booking tool and no `booking` link.
 
 ### 6. Amazon KDP: paperback, hardcover, Kindle (launch)
-- **Requirements:** open signup. You complete the tax interview and enter bank details. KDP offers **paperback, hardcover and ebook only: no board books, spiral binding or library binding** ([KDP help](https://kdp.amazon.com/en_US/help/topic/G201834180), cited by the prior pass). Hardcover trims run 5.5×8.5 to 8.25×11, with no square hardcover (UNVERIFIED). **Page minimums (UNVERIFIED):** paperback about 24 pages, hardcover about 75 pages, so a 32-page picture book cannot be a KDP hardcover. Use **your own Bowker ISBN**, not KDP's free ISBN, and leave **Expanded Distribution OFF** for any ISBN that is also on IngramSpark (standard practice, UNVERIFIED).
+- **Requirements:** open signup. You complete the tax interview and enter bank details. KDP offers **paperback, hardcover and ebook only: no board books, spiral binding or library binding** ([KDP help](https://kdp.amazon.com/en_US/help/topic/G201834180), cited by the prior pass). Hardcover trims run 5.5×8.5 to 8.25×11, with no square hardcover (UNVERIFIED). **Page minimums (UNVERIFIED):** paperback about 24 pages, hardcover about 75 pages, so a 32-page picture book cannot be a KDP hardcover. Use **KDP's free ISBN** (founder's decision, business/DECISIONS.md, September 28, 2026) and leave **Expanded Distribution OFF**. A free KDP ISBN can't be reused on IngramSpark, so any IngramSpark edition would need its own ISBN.
 - **Fees (UNVERIFIED):** no listing fee. Amazon.com paperbacks earn 50% of list price minus print cost below $9.99, and 60% at $9.99 or more (since June 10, 2025). Hardcovers earn 60% minus print cost. Expanded Distribution earns 40% minus print cost. Ebooks earn 35%, or 70% at $2.99–$9.99, minus delivery cost. Low-priced picture books fall in the 50% band.
-- **List first:** *The Day the Tablet Slept* (paperback + fixed-layout Kindle) and *100 Plays Before Pixels* (paperback).
+- **List first:** *100 Screen-Free Plays for Ages 0–5* (paperback) only. *The Day the Tablet Slept* and *Up! Go! More!* are HELD (ops/QUEUE.md "Cut").
 - **Children's products:** there is no CPSIA paperwork step in the KDP findings. Books are printed and sold by Amazon.
 - **Payout and tax records:** royalties are paid monthly, about 60 days after month end, for each marketplace. You receive a 1099-MISC for royalties above $10 (UNVERIFIED); KDP does not issue a 1099-K. Download the Payments report and the Prior Months' Royalties report from the Reports tab.
 - **Paste into links.js:** `kdp_book_tablet_slept`, `kdp_book_100_plays` (`https://www.amazon.com/dp/{ASIN}`, plus `?tag=` once Associates is approved).
 
 ### 7. IngramSpark: bookstores, libraries, Bookshop.org (launch)
-- **Requirements:** open signup with **your own Bowker ISBNs** (you can't reuse a KDP free ISBN). This is likely the route for **short picture-book hardcovers** that KDP can't print; the exact minimum is UNVERIFIED. Board books and true library binding are very likely **not** available as print-on-demand, so they need a short-run offset printer or a library-binding vendor (UNVERIFIED). Source: [ingramspark.com](https://www.ingramspark.com/) (blocked).
+- **HELD** until employment counsel clears library and school-jobber reach (ops/QUEUE.md "Cut"). **Requirements:** open signup with **your own ISBNs** (you can't reuse a KDP free ISBN, and KDP editions use the free one). This is likely the route for **short picture-book hardcovers** that KDP can't print; the exact minimum is UNVERIFIED. Board books and true library binding are very likely **not** available as print-on-demand, so they need a short-run offset printer or a library-binding vendor (UNVERIFIED). Source: [ingramspark.com](https://www.ingramspark.com/) (blocked).
 - **Fees (UNVERIFIED):** title setup and upload fees were removed in 2023, and revision fees may apply after a free window. You set the wholesale discount (US range about 30–55%) and whether books are returnable. Print cost is deducted. A newer annual or market-access fee was reported but not confirmed.
-- **List first:** *Laps Not Apps* hardcover, plus the same print ISBNs as KDP for *The Day the Tablet Slept* and *100 Plays Before Pixels* (with KDP Expanded Distribution off).
+- **List first (only after the hold lifts):** the *Whose Lap Today?* hardcover (was *Laps Not Apps*). KDP titles use KDP's free ISBN, so an IngramSpark edition of them needs its own ISBN.
 - **Children's products:** nothing specific in the findings.
 - **Payout and tax records:** paid monthly to your checking about 90 days after month end (UNVERIFIED). Likely a 1099-MISC. Download the compensation and sales reports as CSV.
 - **Paste into links.js:** nothing for IngramSpark itself (it has no storefront). Its books show up through `bookshop_book_*`, `bn_press` and possibly `kdp_book_laps_not_apps`.
@@ -229,7 +227,7 @@ Each channel lists: **Requirements · Fees · List first · Children's-product r
 ### 18. Online course platform: Podia, Teachable or Kajabi (within 90 days; pick ONE)
 - **Requirements:** open signup. Whether each platform is merchant of record is UNVERIFIED. Teachable's built-in payments have handled EU VAT and issue 1099-Ks, while Podia and Kajabi mostly pay through your own Stripe or PayPal.
 - **Fees (UNVERIFIED; they change often):** Podia has a free plan with a transaction fee and paid plans at about $39–$89/mo. Teachable Starter is about $39/mo plus a 7.5% fee. Kajabi is about $89–$149/mo with no transaction fee. Sources: [podia.com/pricing](https://www.podia.com/pricing), [teachable.com/pricing](https://teachable.com/pricing), [kajabi.com/pricing](https://kajabi.com/pricing) (blocked).
-- **List first:** the "30-Day Screen Reset" course.
+- **List first:** the *30 Days of Back-and-Forth* course (was the 30-Day Screen Reset; retired name), $27, on Gumroad from Dec 15.
 - **Children's products:** n/a.
 - **Payout and tax records:** the 1099-K comes from whichever company processes the payments. Export both the platform's sales report and the Stripe/PayPal report.
 - **Paste into links.js:** `course`.
@@ -248,9 +246,9 @@ Each channel lists: **Requirements · Fees · List first · Children's-product r
 | Title (site format) | Print route | Where it is sold | links.js fields |
 |---|---|---|---|
 | *Up! Go! More!* (board book) | **Not KDP** (no board books). Probably not IngramSpark print-on-demand either (UNVERIFIED). Use a short-run offset printer and hold stock. | Your Shopify store; later Seller Central and Faire | `shop_book_up_go_more` (+ `kdp_book_up_go_more` only for a Kindle edition) |
-| *The Day the Tablet Slept* (picture book, ~32 pp) | KDP paperback + Kindle; IngramSpark paperback under the same ISBN (Expanded Distribution off) | Amazon, Bookshop, B&N, libraries, your store | `kdp_book_tablet_slept`, `bookshop_book_tablet_slept`, `shop_book_tablet_slept` |
-| *100 Plays Before Pixels* (paperback, parents) | KDP paperback; IngramSpark same ISBN; the printable version on Shopify/Etsy/Gumroad | Everywhere | `kdp_book_100_plays`, `bookshop_book_100_plays`, `shop_book_100_plays` |
-| *Laps Not Apps* (hardcover) | **IngramSpark hardcover** if under ~75 pages (KDP hardcover minimum, UNVERIFIED) | Bookshop, B&N, Amazon (from the Ingram feed), your store | `bookshop_book_laps_not_apps`, `kdp_book_laps_not_apps`, `shop_book_laps_not_apps` |
+| *The Day the Tablet Slept* (picture book, ~32 pp; HELD) | KDP paperback + Kindle with KDP's free ISBN; an IngramSpark edition would need its own ISBN | Amazon, Bookshop, B&N, libraries, your store | `kdp_book_tablet_slept`, `bookshop_book_tablet_slept`, `shop_book_tablet_slept` |
+| *100 Screen-Free Plays* (paperback, parents) | KDP paperback with KDP's free ISBN; the printable version on Etsy and Gumroad | Everywhere | `kdp_book_100_plays`, `bookshop_book_100_plays`, `shop_book_100_plays` |
+| *Whose Lap Today?* (was *Laps Not Apps*; hardcover) | **IngramSpark hardcover** if under ~75 pages (KDP hardcover minimum, UNVERIFIED) | Bookshop, B&N, Amazon (from the Ingram feed), your store | `bookshop_book_laps_not_apps`, `kdp_book_laps_not_apps`, `shop_book_laps_not_apps` |
 | *More Talk, Less Tap* (library binding) | **Not KDP.** Probably not IngramSpark (UNVERIFIED). Use a library-binding vendor. | School and library orders through `group_orders` | `shop_book_more_talk_less_tap`, `group_orders` |
 
 ---
@@ -267,7 +265,7 @@ Each channel lists: **Requirements · Fees · List first · Children's-product r
 | **A second POD partner** | Two partners mean two sets of cost-of-goods invoices to match. |
 | **Both Gumroad and Payhip** | Pick one digital checkout, or none, besides Shopify. |
 | **B&N Press for print** | IngramSpark already reaches B&N, so this is duplicate listings and another 1099. |
-| **KDP Expanded Distribution on an ISBN that's also on IngramSpark** | It conflicts with the IngramSpark listing (standard practice, UNVERIFIED). |
+| **KDP Expanded Distribution** | Off for every KDP title (ops/QUEUE.md); it would also conflict with any later IngramSpark listing (standard practice, UNVERIFIED). |
 | **Kids' apparel (onesies, toddler tees) on any marketplace at launch** | Not a skip forever: wait until you have CPSIA documents (CPC, test reports, tracking labels). TikTok requires category approval. |
 
 ---
@@ -278,7 +276,7 @@ Each channel lists: **Requirements · Fees · List first · Children's-product r
 2. Does AlphaPlay LLC's Maryland sales-and-use tax registration cover retail and digital sales, and what is the filing frequency? (Maryland returns are generally due by the 20th of the following month; UNVERIFIED.)
 3. Should international digital sales go through Gumroad to avoid EU/UK VAT registration?
 4. How should gross marketplace sales, platform fees and marketplace-remitted sales tax be recorded, so 1099-Ks (gross) reconcile with bank deposits (net)?
-5. Should coaching and workshops be taxed or reported differently from product sales?
+5. Should the host-it-yourself workshop kits (a product, never a live service) be taxed or reported differently from other product sales?
 6. **Re-check live on sign-up day:** Shopify plan prices; KDP royalty bands and page minimums; TPT's Basic fee ($29 vs free); the TikTok Shop referral rate (6% vs 8%); Etsy's setup fee; Faire's processing fees; the 1099-K and 1099-NEC thresholds and Maryland's $600 state rule; Maryland's 6% digital-goods rule.
 
 *Prepared from the verified-storefront findings of 2026-09-27. Only the Amazon Influencer storefront is VERIFIED; every other item is UNVERIFIED until checked on the linked official page.*

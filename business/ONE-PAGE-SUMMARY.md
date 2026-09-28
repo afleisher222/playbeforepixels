@@ -2,7 +2,7 @@
 
 *AlphaPlay LLC (Maryland), trading as Play Before Pixels. Sole member: the founder. Revised expansion plan, September 28, 2026. Internal planning document, not for publication. Every figure is a planning estimate from `business/PlayBeforePixels_Financial_Model.xlsx`, not a forecast of income or a promise of results.*
 
-**What.** Play Before Pixels sells age-banded play-and-talk products for families of young children: printables, print-on-demand paperbacks and a written 30-Day Screen Reset course. It is faceless and sells products only, with no coaching, calls or live events. The founder never holds stock, and the brand makes no health claims. Scheduled Claude Code routines run the work; the founder approves and signs.
+**What.** Play Before Pixels sells age-banded play-and-talk products for families of young children: printables, print-on-demand paperbacks and a written 30 Days of Back-and-Forth course. It is faceless and sells products only, with no coaching, calls or live events. The founder never holds stock, and the brand makes no health claims. Scheduled Claude Code routines run the work; the founder approves and signs.
 
 **Who.** Now: parents of children aged 0–5 and gift-givers. When employment counsel's G1 answer allows: parents of 5–12s. From January 2027: English-speaking buyers abroad, through a merchant of record. Later, and only if counsel clears it in writing: schools, PTAs, libraries and child-care groups.
 
@@ -15,7 +15,7 @@
 | Wave | When | What |
 |---|---|---|
 | 1 | Dec 2026 | Launch-first five printables, KDP paperbacks, digital holiday bundle |
-| 2 | Jan–Mar 2027 | 30-Day Screen Reset, ALPHAPLAY Spelling Games, international digital sales, IngramSpark paperbacks |
+| 2 | Jan–Mar 2027 | 30 Days of Back-and-Forth, ALPHAPLAY Spelling Games, international digital sales, IngramSpark paperbacks |
 | 3 | Apr–Sep 2027 | Spring and summer packs; print-on-demand card deck if its printable sells; cleared tees |
 | 4 | Oct 2027 – Mar 2028 | Subscription stage kit; community editions; Spanish once the break-even line holds |
 | Gated | When units justify it | Offset board book (gate B0); retail stages (R1–R5); school-facing products (Gate S, counsel) |

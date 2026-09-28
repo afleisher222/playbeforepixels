@@ -27,8 +27,8 @@ This is about 20–25 hours in total, or 5–6 hours a week.
 **2. Write a one-page plan with three waves, a "not now" list and a Friday scorecard.**
 - **Why:** About 15 products and 12+ stores at once is too much to launch at once for a one-person, hands-off business. Busy Toddler and Big Little Feelings both grew by doing one thing well first.
 - **First step:** Write one page with these parts.
-  - **Wave 1 (Oct–Dec):** website, email list, printables including the Screen Reset Pack, the 100-play guide paperback, and instant holiday gifts. Sell only on your Shopify site, Amazon/KDP and Etsy.
-  - **Wave 2 (Jan):** public New Year launch of the 30-Day Screen Reset. The ALPHAPLAY product goes on sale by mid-January.
+  - **Wave 1 (Oct–Dec):** website, email list, printables including the Play-First Family Kit, the 100-play guide paperback, and instant holiday gifts. Sell only on your Shopify site, Amazon/KDP and Etsy.
+  - **Wave 2 (Jan):** public New Year launch of *30 Days of Back-and-Forth*. The ALPHAPLAY product goes on sale by mid-January.
   - **Wave 3 (Feb–Jun):** board-book pre-sale, then a Screen-Free Week push.
   - **Not now:** TikTok Shop, Meta shops, Faire (wholesale pays about half of retail, which print-on-demand can't absorb), Google Shopping, audiobooks, translations, library binding, more than 2–3 merch designs, and anything school-facing.
   - **Friday scorecard (15 minutes):** new subscribers, sign-up rate, sales and profit by product and store, refunds, hours worked, and money earned per hour. Put a tracking tag on every link so these numbers are real.
@@ -142,7 +142,7 @@ This is about 20–25 hours in total, or 5–6 hours a week.
   Add the school-age track and a free 7-day January email challenge after that.
 - **Time:** 8–12 hours once, then about 1 hour a month.
 
-**13. Run an email-only founding beta of the 30-Day Screen Reset.**
+**13. Run an email-only founding beta of *30 Days of Back-and-Forth*.**
 - **Why:** A course with no reviews sells poorly. A small paid beta gives you feedback and honest testimonials before the January launch.
 - **First step:** Invite 15–30 families from your list at a clearly labeled founding price ($27–$49). Deliver it by daily email with a feedback form and no live calls. Run it Oct 26–Nov 22 if the course is ready; otherwise run it in early January, before the public launch.
 

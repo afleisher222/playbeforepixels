@@ -562,7 +562,7 @@ function more(ctx, qr) {
     ['blocks', 'Toddler Busy Book', 'Ages 1–5', '74 paper-and-play activities, sorted by age, with a talk line on every page.'],
     ['readTogether', '52 Play & Talk Cards', 'Ages 0–5', 'One simple play and one talk tip on every card.'],
   ] : [
-    ['wakeUp', '200+ Visual Routine Cards', 'Ages 0–12', 'Picture cards for mornings, meals, bath and bedtime.'],
+    ['wakeUp', '239 Visual Routine Cards', 'Ages 0–12', 'Picture cards for mornings, meals, bath and bedtime.'],
     ['fort', '150 “I’m Bored” Play Cards', 'Ages 1–12', 'Pick-a-card play ideas, each with a talk prompt.'],
     ['talkDay', '30 Days of Back-and-Forth', 'Ages 1–12', 'A written 30-day plan by email: one short lesson and one easy play a day, plus a workbook.'],
     ['walk', 'First Phone Agreement Kit', 'Ages 9–12', 'A warm agreement you write together, phone-free zones and 30 phone-free afternoons.'],

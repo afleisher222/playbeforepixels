@@ -1,10 +1,6 @@
 # Play Before Pixels logo: notes (v2, "The Maker's Seal")
 
-**Status (September 28, 2026): draft, not adopted.** The kit is built and every file the site and products reference is in place. It becomes final only after three things happen, in this order:
-
-1. The founder makes her own dated edits (see "Founder authorship" below).
-2. The parent blind check passes.
-3. `ADOPTED = True` is set in `src/build.py`.
+**Status (September 28, 2026): ADOPTED** (business/DECISIONS.md; `ADOPTED = True` in `src/build.py`). On the founder's instruction the review panel's two fixes were applied: the top's band is tomato `#EE5A36` and the top stands upright (`TILT = 0`). Two items remain open and do not block use: the founder may still make and log her own dated edits (see "Founder authorship" below), and the parent blind check (below) and an attorney's clearance come before any filing.
 
 Rules for using the logo are in `logo-guidelines.pdf` (its source is `logo-guidelines.html`). Every file here is rebuilt from the numbers at the top of `src/build.py` with one command: `bash brand/logo/src/rebuild.sh`. The previous kit, "The Return", is archived intact in `brand/logo-archive/v1-the-return/`. The founder rejected it on September 28, 2026 because it read as the letter r.
 
@@ -35,8 +31,8 @@ Our logo is a maker's seal, like the stamp pressed into the bottom of a good woo
 
    | Reading reported | Fix in this kit |
    |---|---|
-   | Ukraine and Sweden flags; IKEA and Walmart (blue top with a yellow band) | Change the band to tomato. **Founder edit, still pending.** |
-   | "Wobbling", "toppling", "crashing UFO", "lopsided, melting" (the 8° lean) | Set the lean to 0. **Founder edit, still pending.** |
+   | Ukraine and Sweden flags; IKEA and Walmart (blue top with a yellow band) | Band changed to tomato. **Done (September 28, 2026).** |
+   | "Wobbling", "toppling", "crashing UFO", "lopsided, melting" (the 8° lean) | Lean set to 0. **Done (September 28, 2026).** |
    | Pin, gem, cone, radish, "soft ice-cream" | Rounder, taller shoulder; firmer cone; longer peg. Done. |
    | A grey smudge at 16 px (the rounded peg sat on a half pixel) | Square peg on whole pixels. Done. |
    | Dreidel risk | Rules added: round shoulders, no flat faces, never faceted or four-sided, nothing drawn on the body. |
@@ -65,15 +61,15 @@ Changes made in this build (AI-made, logged in `EDIT_LOG`):
   - Kept from C: the straight-tailed y and the one-colour files as single even-odd paths with a stencil band.
   - From B: its "Floor Time" scene (a grown-up and a child with a ball) belongs in the illustration system (About page, workshop kits, "why" sections), never as a mark. It is not part of this kit.
 
-Left for the founder (the panel's fixes 1 and 2): `BAND` (still sun) and `TILT` (still 8°). The kit, the guidelines and every PNG will show them as they are until she changes them.
+The panel's fixes 1 and 2 are applied: `BAND` is tomato and `TILT` is 0 (EDIT_LOG, September 28, 2026). The kit, the guidelines and every PNG show the fixed drawing.
 
 ## Residual similarity risk (honest)
 
-**Overall: moderate-low once the founder's band and lean edits are made; moderate until then.** No search tool could reach the USPTO or image-search services in this session, so every item below is a design-risk screen, not clearance.
+**Overall: moderate-low** now that the band is tomato and the top is upright. No search tool could reach the USPTO or image-search services in this session, so every item below is a design-risk screen, not clearance.
 
 1. **The badge format is common.** A ring of text around an icon is a stock badge layout, so what can be protected is this drawing with its words, not the format. Stock logo shops sell spinning-top logos aimed at daycares, kindergartens and toy shops: BrandCrowd's "Colorful Spinning Top" and "Fast Spinning Top", and Branition's "Spinning Top". Their listings turned up in a web search. UNVERIFIED: I did not view the images, so any resemblance is unchecked. Compare them side by side before filing.
 2. **Tops in toy trademarks.** A top is close to descriptive for class 28 toys, so never file the bare top. UNVERIFIED: no USPTO search was run. Design category 21 covers games, toys and sporting articles, but the exact section code for tops could not be confirmed, because the USPTO design-code site is blocked here.
-3. **Blue, yellow and red; flags; stores.** While the band is sun yellow, the top is blue over yellow (the Ukraine and Sweden flags, IKEA, Walmart's colours) and, with the tomato balls, forms the blue/yellow/red "Google triad" that ORIGINALITY.md D1 warns about. The panel's tomato band removes this. Until then, the risk stands.
+3. **Blue, yellow and red; flags; stores.** While the band is sun yellow, the top is blue over yellow (the Ukraine and Sweden flags, IKEA, Walmart's colours) and, with the tomato balls, forms the blue/yellow/red "Google triad" that ORIGINALITY.md D1 warns about. The tomato band (applied September 28, 2026) removes this.
 4. **Award-medal confusion.** A round seal on a book cover can pass for an award medal, which is a consumer-protection problem as well as a misreading. Rules: never gold, foil or sun yellow; no laurels; spine or back cover only; never upper right on a front cover.
 5. **Dreidel.** A top with a peg is related to the dreidel, a four-sided top with Hebrew letters that is tied to Hanukkah. The round, faceless, letter-free body keeps it clearly a generic toy top. The rules forbid faceted or four-sided drawing and anything drawn on the body.
 6. **Colour contrast inside the top.** Tomato and sky have almost the same lightness (1.1:1), so a tomato band separates from the body by hue alone. In greyscale printing the band disappears, so use the one-colour files, which cut the band as a stencil. UNVERIFIED: this has not been checked in a colour-blindness simulator. Do that after the band edit.
@@ -87,12 +83,8 @@ Left for the founder (the panel's fixes 1 and 2): `BAND` (still sun) and `TILT` 
 
 The drawing was generated with AI help (Claude). In the U.S., AI-generated material is not protected by copyright, so the founder's own recorded choices are what make the final drawing hers. Trademark rights come from use and filing, not from who drew the mark. Both matter.
 
-- **Make the two panel edits yourself.** They were deliberately not made in this build. In `src/build.py`:
-  - set `BAND`: the panel recommends tomato `'#EE5A36'`, which removes the flag and store readings;
-  - set `TILT`: the panel recommends `0`, one upright drawing everywhere.
-
-  Each is a one-value change. Make them one at a time. After each: run `bash brand/logo/src/rebuild.sh`, look at `blind-test/test-small.png` and the guidelines, then run `python3 brand/logo/src/snapshot.py`.
-- **Then make at least one choice of your own**, for example `SEAL['cap']` (ring lettering size), `TOP['w']` (how wide the top is) or `WORD['ball_r']` (the ball on the i). Rebuild and check the gap report the build prints, so nothing touches.
+- **The two panel edits are done** (`BAND` tomato, `TILT` 0), applied on your instruction on September 28, 2026 and logged in `EDIT_LOG`. To change either, edit the value in `src/build.py`, run `bash brand/logo/src/rebuild.sh`, look at `blind-test/test-small.png` and the guidelines, then run `python3 brand/logo/src/snapshot.py`.
+- **Optionally, make at least one choice of your own**, for example `SEAL['cap']` (ring lettering size), `TOP['w']` (how wide the top is) or `WORD['ball_r']` (the ball on the i). Rebuild and check the gap report the build prints, so nothing touches.
 - **Log every change the same day, in two places:**
   - a dated line in `EDIT_LOG` at the top of `src/build.py` (what changed, from → to, and why);
   - the same line in `legal/protection/creation-records-log.md`, section B (work ID W-LOGO-02, already registered in sections A and D).

@@ -38,7 +38,7 @@ So the plan is **one global website with three "doors" to buy**:
 
 | Door | What sells through it | Countries | Why |
 |---|---|---|---|
-| **A. Own site, digital products** (printables, the digital play guide, workshop kits, "The 30-Day Screen Reset" written course; the classroom pack **only after employment counsel clears it**, section 9) | Checkout run by a **merchant of record** (MoR), which collects and pays VAT/GST worldwide | Every country the MoR supports | EU and UK tax digital sales to consumers **from the first sale**, with no threshold, when the seller is outside those regions (see section 4). An MoR removes that burden. |
+| **A. Own site, digital products** (printables, the digital play guide, workshop kits, "30 Days of Back-and-Forth" written course; the classroom pack **only after employment counsel clears it**, section 9) | Checkout run by a **merchant of record** (MoR), which collects and pays VAT/GST worldwide | Every country the MoR supports | EU and UK tax digital sales to consumers **from the first sale**, with no threshold, when the seller is outside those regions (see section 4). An MoR removes that burden. |
 | **B. Marketplaces that print or stock locally** (paperback and hardcover books, later board books, merch) | Amazon (KDP), IngramSpark to retailers worldwide, Bookshop.org, Etsy, Faire wholesale, marketplace-seller print-on-demand (POD) | UK, CA, AU, EU, JP and others | Local printing avoids import duties, slow delivery and surprise fees. The marketplace is usually the seller of record, so it handles VAT and much of the product-safety and packaging paperwork (UNVERIFIED per marketplace; see section 5). |
 | **C. Own site, physical direct-to-consumer (DTC)** | Books, card deck and merch shipped by you or your POD partner | **US only at launch.** Add CA, UK and AU only after section 5's checklist is done | Direct shipping into the EU from a US seller triggers the EU responsible-person rule, packaging take-back (EPR) registrations and import VAT. It is not worth it at low volume. |
 
@@ -418,7 +418,7 @@ A **merchant of record** is legally the seller to the customer. It charges and p
 |---|---|---|---|---|---|
 | Printable bundle | $12 | £10 | €12 | C$16 | A$18 |
 | 100-activity play guide (digital) | $19 | £16 | €19 | C$26 | A$29 |
-| "The 30-Day Screen Reset" course | $79 | £69 | €79 | C$109 | A$119 |
+| "30 Days of Back-and-Forth" course | $79 | £69 | €79 | C$109 | A$119 |
 
 These prices are illustrative, not researched. Set real prices in the pricing lane.
 
@@ -442,7 +442,7 @@ These prices are illustrative, not researched. Set real prices in the pricing la
 2. **Children's books and slogans need transcreation, not translation.** Rhythm, rhyme and "talk-along" prompts must work aloud. Hire a native children's-book translator for books and card prompts. Machine output is acceptable only as a first draft.
 3. **AI plus professional review** is fine for the website, printables instructions, emails and course transcripts. Budget a full human **post-edit** (a reviewer corrects the machine draft line by line), not a skim.
 4. **Legal pages** (terms, privacy, refunds, the withdrawal waiver) must be **translated and then checked by a lawyer licensed in that market**. French and Quebec law require French for consumer terms (UNVERIFIED).
-5. **Every translator and reviewer gets the BRAND.md "do-not-say" list, translated.** That means no health or medical claims, no "therapy" words, no naming or criticizing any school, district, company or EdTech product, and no implication that the founder is a speech-language pathologist. Terms like "retraso" (delay), "thérapie" (therapy) and "Förderung" (support/therapy) need a native reviewer's eye for implied clinical meaning. The "Virtual Autism Project" research hub should **not be translated** until a native reviewer confirms the title and summaries make no clinical claim in that language.
+5. **Every translator and reviewer gets the BRAND.md "do-not-say" list, translated.** That means no health or medical claims, no "therapy" words, no naming or criticizing any school, district, company or EdTech product, and no implication that the founder is a speech-language pathologist. Terms like "retraso" (delay), "thérapie" (therapy) and "Förderung" (support/therapy) need a native reviewer's eye for implied clinical meaning. The "Play Before Pixels Research Notes" research hub should **not be translated** until a native reviewer confirms the title and summaries make no clinical claim in that language.
 6. **Do not recruit translators or reviewers from the founder's school system** (see section 9). Use independent professionals found through translator associations or vetted freelance platforms.
 7. **Language variants:**
    - one Spanish (`es`, neutral Latin American base) with a short Spain review pass;
@@ -471,7 +471,7 @@ Confirm rates with two or three quotes, for example through the American Transla
 | Card deck (about 100 cards) | 2,500 | $375 | transcreate | Only after the toy question is settled |
 | Two talk-along picture books | about 1,400 | $400–$1,600 flat | transcreate | Bilingual English/Spanish edition recommended |
 | Two board books | about 300 | $300–$800 flat | transcreate | US bilingual edition only at first |
-| "30-Day Screen Reset" course (text plus video transcripts) | 24,000 | $3,600 | $1,700 | Subtitles first; AI voice dubbing later, reviewed by a native speaker |
+| "30 Days of Back-and-Forth" course (text plus video transcripts) | 24,000 | $3,600 | $1,700 | Subtitles first; AI voice dubbing later, reviewed by a native speaker |
 | Classroom resource pack | 10,000 | $1,500 | $700 | **Blocked pending employment counsel (section 9)** |
 
 **Phase budgets per language (rough):**

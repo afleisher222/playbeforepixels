@@ -8,7 +8,7 @@ meta_description: "Screen-free activities sorted by age, from newborns to 12-yea
 target_keyword: "screen-free activities by age"   # demand UNVERIFIED (hypothesis)
 secondary_keywords: ["screen free activities for kids", "activities for 5 year olds without screens", "things to do with a 1 year old at home"]
 audience: Parents and caregivers of children aged 0–12
-related_product: 100 Plays Before Pixels — /shop/100-plays-before-pixels/
+related_product: 100 Screen-Free Plays — /shop/guide-100-plays/
 free_printable: /free/five-5-minute-plays/ (0–5) and /free/7-day-screen-free-challenge/ (5–12)
 citations: ["WHO 2019", "AAP 2016"]
 verify_before_publish:
@@ -113,7 +113,7 @@ Screen-free play isn't about being a perfect parent or banning screens forever. 
 
 ## Keep 100 ideas in one place
 
-Our **100 Plays Before Pixels** guide collects 100 screen-free plays sorted by age, each with a talk tip and a safety note, so you never have to think up an idea on the spot. [See 100 Plays Before Pixels](/shop/100-plays-before-pixels/).
+Our **100 Screen-Free Plays** guide collects 100 screen-free plays sorted by age, each with a talk tip and a safety note, so you never have to think up an idea on the spot. [See 100 Screen-Free Plays](/shop/guide-100-plays/).
 
 Start free: **Five 5-Minute Plays** for ages 0–5 ([download](/free/five-5-minute-plays/)) or the **7-Day Screen-Free Challenge** for ages 5–12 ([download](/free/7-day-screen-free-challenge/)).
 

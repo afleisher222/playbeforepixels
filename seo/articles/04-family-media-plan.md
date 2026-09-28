@@ -8,7 +8,7 @@ meta_description: "A step-by-step guide to a family media plan for kids 5 to 12:
 target_keyword: "family media plan"   # demand UNVERIFIED (hypothesis)
 secondary_keywords: ["family screen time rules", "family screen time agreement template", "screen time rules for 8 year old"]
 audience: Parents of children aged 5–12
-related_product: Screen-Smart Family Plan (5–12) — /shop/screen-smart-family-plan/
+related_product: Play-First Family Kit (ages 5–12) — /shop/play-first-family-kit/
 free_printable: /free/family-screen-agreement/
 citations: ["AAP 2016", "WHO 2019"]
 verify_before_publish:
@@ -134,7 +134,7 @@ If screen use is tied up with sleep problems, big mood changes, or worries about
 
 ## Get the complete plan
 
-Our **Screen-Smart Family Plan (5–12)** is a printable kit with an editable family plan, a screen agreement, a rules poster, a "time's up" routine card and a 30-day tracker. [See the Family Plan](/shop/screen-smart-family-plan/).
+Our **Play-First Family Kit (ages 5–12)** is a printable kit with an editable family plan, a screen agreement, a rules poster, a "time's up" routine card and a 30-day tracker. [See the Family Plan](/shop/play-first-family-kit/).
 
 Start free with our **Family Screen Agreement** template. [Download it free](/free/family-screen-agreement/).
 

@@ -34,7 +34,7 @@
 >
 > This month, try "Say What You See": on your next walk or drive, take turns naming one thing you spot, then add one describing word ("a dog" → "a big, fluffy dog"). For older kids, make it a challenge: who can add the silliest detail?
 >
-> Families can download a free printable, "Five 5-Minute Screen-Free Plays", at [LINK]. Play Before Pixels also publishes talk-along picture books and a Screen-Smart Family Plan for ages 5–12. Its materials are educational and are not medical or speech-language advice.
+> Families can download a free printable, "Five 5-Minute Screen-Free Plays", at [LINK]. Play Before Pixels also publishes talk-along picture books and a Play-First Family Kit for ages 5–12. Its materials are educational and are not medical or speech-language advice.
 
 **300-word newsletter column: "Five plays for the 5 p.m. slump"**
 > Late afternoon is hard for everyone. Here are five plays that take two minutes to start and need nothing you don't already have.

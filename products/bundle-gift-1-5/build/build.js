@@ -46,7 +46,13 @@ const B = {
   next: [
     ['book100', 'plum', 'Birth-to-5 Printable Library', 'This bundle plus the visual routine cards and 100 Screen-Free Plays, for every stage from birth to 5.'],
     ['snowflake', 'sky', '24 Days of Play: Winter Countdown', 'One easy winter play a day for ages 2–5, from things you already have.'],
-    ['routine', 'grass', 'Visual Routine Cards', 'Picture cards for mornings, meals, play and bedtime.'],
+    ['routine', 'grass', '181 Visual Routine Cards', 'Picture cards for ages 0–5, for mornings, meals, play and bedtime.'],
+  ],
+  // The Library is sold on our own checkout only (too large for Etsy), so the Etsy edition names a set that is on Etsy.
+  nextEtsy: [
+    ['book100', 'plum', '100 Screen-Free Plays', 'Easy plays for ages 0–5 with things you already have, sorted by age, with a talk line on every play.'],
+    ['snowflake', 'sky', '24 Days of Play: Winter Countdown', 'One easy winter play a day for ages 2–5, from things you already have.'],
+    ['routine', 'grass', '181 Visual Routine Cards', 'Picture cards for ages 0–5, for mornings, meals, play and bedtime.'],
   ],
   subject: 'Printable gift bundle for ages 1-5: toddler busy book, family kit pages, bored play cards, play and talk cards, and play coupons',
   keywords: 'printable gift bundle, toddler activities, busy book, play cards, play coupons',

@@ -8,7 +8,7 @@ meta_description: "A large research review found an advantage for reading on pap
 target_keyword: "reading on paper vs screen"   # demand UNVERIFIED (hypothesis)
 secondary_keywords: ["print vs digital reading comprehension", "are paper books better for kids", "reading comprehension screens vs paper"]
 audience: Parents of children aged 3–12; PreK–5 teachers (teacher section gated)
-related_product: Laps Not Apps — /shop/laps-not-apps/ (parents); PreK–5 Screen-Free Classroom Pack — /schools/classroom-pack/ (teachers, gated)
+related_product: Whose Lap Today? — /shop/picture-laps-not-apps/ (parents); Play & Talk Classroom Pack (PreK–5) — /schools/classroom-pack/ (teachers, gated)
 free_printable: /free/family-screen-agreement/ (5–12) or /free/five-5-minute-plays/ (0–5)
 citations: ["Delgado 2018", "UNESCO GEM 2023", "WHO 2019", "AAP 2016"]
 verify_before_publish:
@@ -90,7 +90,7 @@ UNESCO's 2023 *Global Education Monitoring Report*, "Technology in education: A 
 
 **Talking with families:** when parents ask, share the research neutrally: "A large review found readers understood informational text a little better on paper, especially under time pressure, so we use paper for close reading." Keep the focus on what helps learning, never on any particular product or program.
 
-**Ready-to-print routines:** the **PreK–5 Screen-Free Classroom Pack** includes paper-first reading routines, talk cards and a family take-home sheet, with single-classroom and whole-school site licenses. [See the Classroom Pack](/schools/classroom-pack/).
+**Ready-to-print routines:** the **Play & Talk Classroom Pack (PreK–5)** includes paper-first reading routines, talk cards and a family take-home sheet, with single-classroom and whole-school site licenses. [See the Classroom Pack](/schools/classroom-pack/).
 <!-- /GATE -->
 
 ## Quick answers
@@ -106,7 +106,7 @@ Keep it low-pressure. Offer paper for school reading and bedtime, let them choos
 
 ## Bring back the lap
 
-Our picture book **Laps Not Apps** is made for reading aloud, with a gentle story about the best seat in the house. [See Laps Not Apps](/shop/laps-not-apps/).
+Our picture book **Whose Lap Today?** is made for reading aloud, with a gentle story about the best seat in the house. [See Whose Lap Today?](/shop/picture-laps-not-apps/).
 
 Free for families: the **Family Screen Agreement** (ages 5–12, [download](/free/family-screen-agreement/)) or **Five 5-Minute Plays** (ages 0–5, [download](/free/five-5-minute-plays/)).
 

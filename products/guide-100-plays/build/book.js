@@ -583,9 +583,9 @@ function sourcesPage() {
 }
 function bonusPage() {
   const next = [
-    ['I’m Bored Play Cards', '150 age-banded play cards with a talk prompt on every card', 'note-sq', C.tSun],
-    ['Visual Routine Cards', '200+ picture cards for mornings, meals and bedtime', 'list', C.tSky],
-    ['Up! Go! More!', 'A talk-along first-words book for ages 0–3', 'ball', C.tGrass],
+    ['76 “I’m Bored” Play Cards', 'Play cards for ages 1–5, sorted by age, with a talk prompt on every card', 'note-sq', C.tSun],
+    ['181 Visual Routine Cards', 'Picture cards for ages 0–5, for mornings, meals and bedtime', 'list', C.tSky],
+    ['52 Play & Talk Cards', 'One play and one talk tip on every card, for ages 0–5', 'ball', C.tGrass],
   ];
   const cards = `<div class="grid3">${next.map(([t, d, a, bg]) => `<div class="card" style="background:${bg};text-align:center"><svg class="scene" viewBox="-60 -60 120 120" style="width:1in;height:1in"><circle r="58" fill="#FFFFFF"/><use href="#a-${a}" transform="scale(.8)"/></svg><div class="display" style="font-size:13pt;margin:.06in 0 .04in">${t}</div><p style="font-size:9pt">${d}</p></div>`).join('')}</div>`;
   if (V.etsy) return pg({ kind: 'text', title: BONUST(), html: `

@@ -55,5 +55,5 @@
 1. **Day 0: "Your 25 brain breaks are here."** Download link plus a tip: laminate 5 favorites for the transition basket.
 2. **Day 2: "How to run one tomorrow in 2 minutes."** One card walked through step by step.
 3. **Day 5: "What studies say about screens and young children, in one page."** A neutral research teaser using BRAND.md citations only, with "not medical advice".
-4. **Day 8: "The full PreK–5 Screen-Free Classroom Pack."** A 15% code for our own store. For site licenses, link the /schools page. On TPT: [link].
+4. **Day 8: "The full Play & Talk Classroom Pack (PreK–5)."** A 15% code for our own store. For site licenses, link the /schools page. On TPT: [link].
 5. **Day 12: "Share with a colleague."** Link to this page, plus the "Gift a colleague" offer: 20% off for them, a free printable for you. **No reward is ever tied to reviews.**

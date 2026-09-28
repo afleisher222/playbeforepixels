@@ -339,7 +339,7 @@ Each such change needs a draft, a "What changed" note and the full review (a new
 
 ## 12. Founder decisions
 
-1. **The hub's name.** **Decided:** "Play Before Pixels Research Notes" at `/research/` (`legal/ENTITY.md`, founder's choice). Drop "The Virtual Autism Project" everywhere.
+1. **The hub's name.** **Decided:** "Play Before Pixels Research Notes" at `/research/` (`legal/ENTITY.md`, founder's choice). Drop "Play Before Pixels Research Notes" everywhere.
 2. **A budget for paid reviewers:** a research checker for source checks, an autistic sensitivity reader, and a clinician for "What parents can do". Estimates are in BRAND-RESPECT-PLAN §3–4. Without these reviewers, no hub page can be published.
 3. **Analytics tool.** Choose between:
    - a cookieless tool that reports time on page and downloads (for example Plausible, from about $9 a month, UNVERIFIED);

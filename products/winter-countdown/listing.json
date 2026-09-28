@@ -160,9 +160,11 @@
  },
  "next_products": [
   "toddler-busy-book",
-  "bored-play-cards",
+  "bored-play-cards-ages-1-5",
   "bundle-gift-1-5"
  ],
+ "status": "ready-pending-accounts",
+ "status_notes": "Week 2 item (ops/QUEUE.md LAUNCH FIRST: list by Oct 25, sell to Dec 5). Etsy and Gumroad packets are built; waits only for Gate A, the accounts and the founder's go (ops/PAUSE).",
  "bonus_url": "playbeforepixels.com/bonus/winter-countdown",
  "bonus_offer": "Store edition only: the free “Five 5-Minute Plays” printable and the monthly “3 plays for your child’s age” email. Sign-up is for adults, asks only for an email and, optionally, the child's birth month and year, and uses double opt-in. The QR code is on the last page of the store PDFs. Etsy files carry no link.",
  "shareable_piece": "“We played our way through winter!” fridge certificate (page 23; type-in favorite day and date) with the brand mark; it says “Posting a photo? Leave out names and faces.”",

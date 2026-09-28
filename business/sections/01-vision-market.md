@@ -3,6 +3,8 @@
 **Play Before Pixels, a trade name of AlphaPlay LLC (Maryland). Owner: the founder.**
 Expansion business plan, section 1 of the set. Status: draft for the founder, September 28, 2026.
 
+> **Decisions made after this plan (September 28, 2026; business/DECISIONS.md). Where this plan disagrees, these win:** the logo is the Maker's Seal only; KDP editions use Amazon's free ISBN; the *30 Days of Back-and-Forth* course is kept, fully self-running, with nothing needed from the founder; launch spending is capped at **$500 with no ads at launch** (business/LAUNCH-BUDGET-500.md). The launch order and prices live in ops/QUEUE.md "LAUNCH FIRST".
+
 **How to read the numbers in this section.** Every figure comes from a file in this repository, and the file is named beside it. Figures marked **[VERIFY]** come from outside that evidence base or were never checked on a live page. Web search was not available for this draft, so confirm them before they appear in anything sent outside the business. Figures marked **(assumption)** are planning inputs chosen for this plan. They are not observations and they are not forecasts. School-facing and group-facing work is on hold until the founder's employment counsel answers (`marketing/BLIND-SPOTS.md` item 1). This section treats that work as a later wave that depends on counsel's answer.
 
 ---
@@ -83,7 +85,7 @@ The prices come from `marketing/DEMAND-CHECK.md` §3. That file's anchor-and-dis
 
 ### B. Parents of 5–12s, and educators of 5–12s
 
-- **Parents of 5–12s want structure.** They buy the Family Kit and the written 30-Day Screen Reset ($27; $49 bundle), and later the Daylight Guild quest line and the first-phone agreement for ages 9–12 (`marketing/CAMPAIGN-BIBLE.md`; `ops/QUEUE.md`). Some of this audience reads recent books that question screen-based learning (`brand/BRAND.md`). Those titles are internal research only and never appear as a keyword, ad term or line of copy (`marketing/MARKETING-PLAYBOOK.md`).
+- **Parents of 5–12s want structure.** They buy the Family Kit and the written 30 Days of Back-and-Forth ($27; $49 bundle), and later the Daylight Guild quest line and the first-phone agreement for ages 9–12 (`marketing/CAMPAIGN-BIBLE.md`; `ops/QUEUE.md`). Some of this audience reads recent books that question screen-based learning (`brand/BRAND.md`). Those titles are internal research only and never appear as a keyword, ad term or line of copy (`marketing/MARKETING-PLAYBOOK.md`).
 - **Gate.** The campaign bible marks school-age-specific campaigns [G1] ("build now, publish when counsel's answer allows"), each with a 0–5 fallback. The launch-first five already include a 5–12 routine-card set and the Family Kit. **Open item for the founder:** confirm with counsel that parent-bought 5–12 products are outside the hold, so that the launch list and the [G1] gate agree.
 - **Educators of 5–12s** (PreK–5 teachers, homeschool parent-teachers, child-care staff) spend small amounts of their own money ($3–25) and buy on trust in other teachers, a free sample, print quality and the school calendar (`marketing/MARKETING-PLAYBOOK.md`, Segment 2). **Every teacher-facing product is held until counsel answers.** That includes TPT, classroom packs, talk brain breaks and the Talk Tower kit. Nothing the founder made for or used in her own teaching may be sold.
 
@@ -170,7 +172,7 @@ Two conclusions follow. First, even very small shares of the US 0–5 population
 
 **What the bottom-up leaves out, on purpose.** These streams are sized in later sections, once their gates open and their inputs exist:
 
-- the 30-Day Screen Reset (January 2027);
+- *30 Days of Back-and-Forth* (January 2027);
 - the holiday gift bundle;
 - alternates such as the car-ride pack ($6) and flash cards ($6.99);
 - the offset board book (a gated option; its pre-sale fails its own funding line in every scenario, section 3.9);
@@ -196,7 +198,7 @@ Competitors are described by type, as the brand rules require. The evidence and 
 | **Family conversation card-deck brands** | Retail presence, large decks | 6+ brands; a talk deck with 1,418 ratings at about $27; 120–400 cards | $15–$30 | We organize by moment (dinner, car, bath, bedtime) with a grown-up tip on each card. We sell the PDF first, then the print-on-demand deck. |
 | **Personalized-book companies** | Gifting, emotional value | 4M+ copies at $39.99; personalized books from $43 | $29.99–$43 | A $34.99 personalized keepsake, fully scripted from order to printer [VERIFY the variable-data workflow], with a reading-pledge page. |
 | **Premium stage-based play-kit subscriptions** (physical toys by age) | Stage organization, a "why it matters" guide, premium look | The founder's own quality benchmark (`brand/BRAND.md`) | premium subscriptions [VERIFY] | We match the organization by age in months and the plain-language "why", with no inventory, lower prices and digital delivery. We never copy names, stage names, designs or trade dress, and never imply affiliation. |
-| **Face-led parenting courses** | Personal trust, video | Paid courses at $71–$99 | $71–$99 | A written, text-only 30-Day Screen Reset at $27, with a money-back guarantee, delivered by automated email. |
+| **Face-led parenting courses** | Personal trust, video | Paid courses at $71–$99 | $71–$99 | A written, text-only 30 Days of Back-and-Forth at $27, with a money-back guarantee, delivered by automated email. |
 | **Parent-night and workshop providers** | Turnkey programs for groups | Kits at $200 (intro) and $499 (with $199 renewals); live speakers $2,500+ | $199–$2,500+ | $129 single-site host kit with a word-for-word volunteer script and bilingual handouts, delivered as an automated licensed PDF. Held for counsel. |
 | **Free guidance from health bodies, nonprofits and blogs** | Free, authoritative, widely shared | A free family media plan; free leader programs; free idea lists | $0 | These act as a price ceiling for plain information and as partners for resource listings. We charge only for designed, ready-to-use, age-banded tools, and our research briefs stay free. |
 
@@ -226,7 +228,7 @@ To be plain about it: most of what we sell could be copied within months. The de
 
 | Asset | How it compounds | Status and dates | Current weakness |
 |---|---|---|---|
-| **Brand** (PLAY BEFORE PIXELS name, "The Return" logo, palette, voice) | Consistent look across every product, page and pin builds recognition. The exact phrase goes in every subtitle and site title. | Name kept by decision (`legal/DECISION-MEMO.json`); final logo kit in `brand/logo/` | The name is descriptive, so it is at risk of a failure-to-function refusal (TMEP 1202.04). It must always be used as a brand (imprint, header, labels), not only as a slogan. Puddlefort is the named fallback. |
+| **Brand** (PLAY BEFORE PIXELS name, Maker's Seal logo (adopted September 28, 2026; "The Return" is retired), palette, voice) | Consistent look across every product, page and pin builds recognition. The exact phrase goes in every subtitle and site title. | Name kept by decision (`legal/DECISION-MEMO.json`); final logo kit in `brand/logo/` | The name is descriptive, so it is at risk of a failure-to-function refusal (TMEP 1202.04). It must always be used as a brand (imprint, header, labels), not only as a slogan. Puddlefort is the named fallback. |
 | **Trademarks** | A registered mark can be licensed or sold, and it supports Amazon Brand Registry and takedowns. | **ALPHAPLAY** (Serial 99650345, Notice of Allowance Sept 8, 2026): Statement of Use or extension due **March 8, 2027**. Its sole product, the ALPHAPLAY Spelling Games printable, must be genuinely on sale by mid-January (internal deadline Feb 1). **PLAY BEFORE PIXELS:** knockout search, then attorney clearance, then filing in classes 16 and 41 first (about $700) (`legal/protection/PROTECTION-PLAN.md` §6b). | Every filing waits for employment counsel's go-ahead. TM only, never ® until registration. |
 | **Series** | "A Play Before Pixels Book" on at least two different titles supports the series mark, and collectors buy the set. | Board book → 3-book series; stage kits; card-deck expansions; bundles that add seasonal packs automatically | Book 2 and book 3 of the board-book series are not yet written. |
 | **Email list** | We own it: Amazon, KDP and Etsy never give us buyers' contact details. The birth month and year let one list sell the right product at the right age for years. | Free "3 plays for your child's age" offer; QR bonus in own-site and book editions (not Etsy or TpT editions); welcome and after-purchase sequences (`marketing/BLIND-SPOTS.md` items 5 and 12). The model's Expected case reaches about 690 subscribers by September 2027 and 3,500 by month 36. | Zero subscribers today. Needs the PO Box and privacy policy before the first send. |

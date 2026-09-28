@@ -8,7 +8,7 @@ meta_description: "Why switching off a screen is hard for kids, and 10 calm, pra
 target_keyword: "toddler meltdown when screen turned off"   # demand UNVERIFIED (hypothesis)
 secondary_keywords: ["how to turn off tablet without tantrum", "screen time transitions", "kids angry when screen time ends"]
 audience: Parents of children aged 2–12
-related_product: The 30-Day Screen Reset (written course) — /shop/30-day-screen-reset/; Visual Routine Cards — /shop/visual-routine-cards/
+related_product: 30 Days of Back-and-Forth (written course) — /30-days/; Visual Routine Cards — /shop/visual-routine-cards/
 free_printable: /free/7-day-screen-free-challenge/
 citations: ["AAP 2016"]
 verify_before_publish:
@@ -87,7 +87,7 @@ If meltdowns are very frequent, very long, involve your child hurting themselves
 
 ## Help for the harder weeks
 
-**The 30-Day Screen Reset** is a self-paced written course, one short lesson a day, that walks your family through new routines step by step, including the screen-off moment. [See the course](/shop/30-day-screen-reset/). For little ones, our **Visual Routine Cards** show what comes next in pictures. [See the cards](/shop/visual-routine-cards/).
+**30 Days of Back-and-Forth** is a self-paced written course, one short lesson a day, that walks your family through new routines step by step, including the screen-off moment. [See the course](/30-days/). For little ones, our **Visual Routine Cards** show what comes next in pictures. [See the cards](/shop/visual-routine-cards/).
 
 Start free with the **7-Day Screen-Free Challenge**. [Download it](/free/7-day-screen-free-challenge/).
 

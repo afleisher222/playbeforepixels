@@ -445,10 +445,10 @@ Checked against the source files on September 28, 2026. "Not found" means a sear
 6. **Cast check** against the new cast rule (rule 35): someone signing, hearing aids or glasses shown in passing.
 7. **Add a version footer** to the interior.
 
-### picture-laps-not-apps (Laps Not Apps)
+### picture-laps-not-apps (Whose Lap Today?)
 1. **listing.json has no `next_products` or `bonus_url`,** which breaks BRAND "Every product leads to the next". Add both.
 2. **Audit** that the story text never lectures and all teaching sits in the "Lap talk" band (rule 29). Add a "preachy" score to panel.md.
-3. **Title test.** Thumbnail and pin click-tests of "Laps Not Apps" against additive alternatives before any paid ads (no-guilt test).
+3. **Title test.** Thumbnail and pin click-tests of "Whose Lap Today?" against additive alternatives before any paid ads (no-guilt test).
 4. **Physical proof** from IngramSpark; confirm story text is at least 18 pt (rule 45).
 5. **Awards.** Candidate for the Kirkus Indie review and Cybils once final art is locked. Check each award's AI-art rule first.
 6. **Add a version footer and the home-language line** on the grown-ups page.

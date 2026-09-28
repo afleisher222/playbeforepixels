@@ -29,7 +29,7 @@ These are ranked by return per founder-hour across all segments. Do them in this
 | 7 | **One host-it-yourself "Family Night in a Box", sold to many buyers.** The same kit goes to Title I and family-engagement staff, PTAs (as a fundraiser), libraries, child-care centers, YMCAs and parks & rec, and faith and moms' groups. A local host presents it, so no founder is needed. | Schools, orgs | $0–100 | 10–15 h once | Counsel |
 | 8 | **Teachers Pay Teachers Premium store plus a teacher freebie.** Teachers already buy there, and schools pay through TPT School Express at your listed price (confirmed). | Teachers | $59.95/yr (confirmed) | 20–30 h setup, then about 1 listing/wk | Counsel |
 | 9 | **Small-batch, lawful cold email with weekly approval.** Libraries, child-care and CCR&R, non-excluded districts' family-engagement staff, birth professionals, ERGs. Sent at 20–40 a day on a schedule. Uses only role addresses the organizations published. Every batch is checked against the suppression list. | Schools, orgs | $6–50/mo | About 1 h/wk to approve | Counsel (birth-pro outreach may start earlier; see Organizations) |
-| 10 | **Seasonal campaigns reused every year, with one paid test at a time.** Holiday gifts (Oct 15–Dec 15), then the New Year Family Reset (Dec 26–Jan 31), then Screen-Free Week (May 3–9, 2027 [UNVERIFIED]; confirm on screenfree.org). Paid tests run Amazon Ads first, then Pinterest, then Meta. Add one paid trade review (Kirkus Indie picture book $399 or BlueInk $445) for library credibility. | All | Ads $150–600 per test | 6–8 h per campaign in year one | Press waits for counsel |
+| 10 | **Seasonal campaigns reused every year, with one paid test at a time.** Holiday gifts (Oct 15–Dec 15), then the New Year Back-and-Forth (Dec 26–Jan 31), then Screen-Free Week (May 3–9, 2027 [UNVERIFIED]; confirm on screenfree.org). Paid tests run Amazon Ads first, then Pinterest, then Meta. Add one paid trade review (Kirkus Indie picture book $399 or BlueInk $445) for library credibility. | All | Ads $150–600 per test | 6–8 h per campaign in year one | Press waits for counsel |
 
 **Not now:** national conference booths; in-person homeschool conventions and state conference tables (both break the no-contact and no-inventory rules); Faire wholesale (2027, only once offset stock sits at a 3PL); board-book marketing (only after an offset run at a 3PL plus CPSIA testing and a Children's Product Certificate); TikTok Shop, Meta shops and audiobooks; podcasts; paid TPT "Promote Products".
 
@@ -77,7 +77,7 @@ Covers public districts (never the excluded school system), private and independ
 - Baker & Taylor stopped operating in January 2026 (confirmed). Never plan around it.
 
 ### Lead offer
-PreK–5 Screen-Free Classroom Pack site license, with a same-day written quote and a W-9 on request. For family engagement: the Family-Night Host Kit plus a loaner book set, billed as one PO line.
+Play & Talk Classroom Pack (PreK–5) site license, with a same-day written quote and a W-9 on request. For family engagement: the Family-Night Host Kit plus a loaner book set, billed as one PO line.
 
 ### Tactics, ranked
 All school-facing tactics wait for counsel except the book-distribution setup in tactic 2, which is parent-safe.
@@ -163,7 +163,7 @@ This is the **launch audience, and it has no counsel gate** for the 0–5 produc
 Pinterest, Google questions, Amazon, Etsy, Babylist and Amazon registries, gift guides, parenting newsletters, Meta and Pinterest feeds, and Reddit (each subreddit's own rules apply). Leave out every MCPS-connected group and anything local to Montgomery County.
 
 ### Lead offer
-Free "Five 5-Minute Screen-Free Plays" (0–5) and "Family Screen Agreement Starter" (5–12). These lead to the 0–5 Screen Reset Pack and the Screen-Smart Family Plan. Seasonal hook: a free 7-Day Screen-Free Challenge that leads to the 30-Day Reset.
+Free "Five 5-Minute Screen-Free Plays" (0–5) and "Family Screen Agreement Starter" (5–12). These lead to the Play-First Family Kit (ages 0–5) and the Play-First Family Kit (ages 5–12). Seasonal hook: a free 7-Day Screen-Free Challenge that leads to the 30-Day Reset.
 
 ### Tactics, ranked
 | Rank | Tactic | Cost | Time | Impact | When |
@@ -226,7 +226,7 @@ A free Organization Partner Kit: price sheet, sample pages, newsletter blurbs an
 | 4 | **Child-care centers, family child-care networks, CCR&R.** Site licenses and lending bundles built from POD card decks. A "staff meeting in a box" licensed to approved trainers. Never contact the Montgomery County DHHS resource center. | $0 | 8 h + 2 h/wk | High | Oct–Jan |
 | 5 | **Free research briefs and a monthly newsletter column** under a free reprint license with a credit line. BRAND.md citations only. No "virtual autism" in org materials. | $0–30/mo | 10 h + 2 h/mo | High | Oct; January column offered in Nov |
 | 6 | **Cold email and contact-form engine** with a hard exclusion filter. The routine drafts about 75–125 emails a week; the founder approves; sends are scheduled. Follow up on days 4 and 10. Submit contact forms by hand only, never with bots. Canada: CASL. UK: PECR (sole traders need consent). EU: skip. | $0–50/mo | about 1 h/wk | High | Oct–Nov, Jan–Mar |
-| 7 | **Employers and ERGs:** a "Screen-Smart Working Parents" lunch-and-learn that the ERG presents itself. Reach them through the Company Page, the business domain and public HR/ERG contacts. Optional LinkedIn ads test at $300–500. See `templates/employer-erg-email.md`. | $0–500 | 12 h + 1 h/wk | Medium | Oct–Nov; Apr–May |
+| 7 | **Employers and ERGs:** a "More Talk at Home" lunch-and-learn that the ERG presents itself. Reach them through the Company Page, the business domain and public HR/ERG contacts. Optional LinkedIn ads test at $300–500. See `templates/employer-erg-email.md`. | $0–500 | 12 h + 1 h/wk | Medium | Oct–Nov; Apr–May |
 | 8 | **Home-visiting nonprofits:** grant-ready take-home bundles and a budget justification sheet with no sole-source claims. Say plainly the materials are supplementary, not an evidence-based model. | $50–200 in samples | 6 h + 1 h/wk | Medium | Mar–May; Jul–Aug |
 | 9 | **Pediatric practices and hospital new-parent programs:** a waiting-room kit under $15 retail per family, invoiced only. **No referral fees, commissions or gifts. Never ask anyone to "prescribe" or recommend.** See `templates/pediatric-practice-email.md`. | $100–300 | 6 h + 1 h/wk | Medium | Jan–Apr |
 | 10 | **Faith communities and moms' groups:** a nonsectarian Meeting in a Box with a 20% group discount (not a donation per sale). Never target ads by religion. | $0 | 6 h + 1 h/wk | Medium | Pitch now for Jan–May |
@@ -324,7 +324,7 @@ Amazon .com, .co.uk, .ca, .com.au, .de and .es (Mexico is Kindle only); Pinteres
 | 5 | Oct 26–Nov 1 | Start the book advance-copy team (no review required). Approve the weekly pin batch. **B:** Partner Kit and research brief #1. Register on BidNet Direct (free). **If cleared:** list TPT Premium (first 4 listings) and launch the teacher freebie. |
 | 6 | Nov 2–8 | Registry-ready pages and "order by" dates for holiday shipping. **If cleared:** press kit plus gift-guide pitch batch 1 (20 national editors; samples ship from the printer); library and child-care cold-email batch 1 (40). **If not cleared:** 2 SEO articles. |
 | 7 | Nov 9–15 | Amazon Ads search-term harvest. Test 1 parenting newsletter sponsorship ($50–250). **If cleared:** gift-guide batch 2; Title I and family-engagement batch 1 for non-excluded districts; PTA/PTO batch 1 aimed at spring planning. Birth-professional printable to 5 national-directory contacts. |
-| 8 | Nov 16–22 | Last call for online holiday guides. Write the New Year "Family Screen Reset" kit (course, Family Plan, 7-day challenge). **If cleared:** Classroom Set SKUs live; follow-ups to batch 1. |
+| 8 | Nov 16–22 | Last call for online holiday guides. Write the New Year "New Year Back-and-Forth" kit (course, Family Plan, 7-day challenge). **If cleared:** Classroom Set SKUs live; follow-ups to batch 1. |
 | 9 | Nov 23–29 | Black Friday (Nov 27): one email plus Etsy and store promos. Holiday pins from the queue. Keep the week light. |
 | 10 | Nov 30–Dec 6 | Monthly metrics review (checklist below). Kill or keep each ad. **If cleared:** offer the January newsletter column to organizations; employer/ERG batch 1 for January wellness calendars. Skip NAEYC (no-contact rule). |
 | 11 | Dec 7–13 | Seasonal switch to "instant gifts" once printer shipping cutoffs pass. Publish January TPT listings by Dec 15. Request 2027 prospectuses for inserts and ads only (state AEYC, IBPA 2027 display deadlines). |

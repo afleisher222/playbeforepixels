@@ -4,7 +4,7 @@
 **Gate:** press waits for employment counsel.
 **Timing:**
 - Online holiday guides: now until about mid-November [UNVERIFIED].
-- "New Year reset": Dec–Jan.
+- "New Year Back-and-Forth": Dec–Jan.
 - Screen-Free Week (early May): Feb–Mar.
 - Holiday 2027 print guides: May–Jul 2027.
 
@@ -50,7 +50,7 @@ Play Before Pixels offers educational materials, not medical, therapy or speech-
 
 Hi [First name],
 
-For your [holiday / back-to-school] guide: **100 Plays Before Pixels** ($[__]) plus the printed **Screen-Smart Family Plan** ($[__]). Together they give families low-prep games plus a simple family agreement and weekly play plan for ages 5–12.
+For your [holiday / back-to-school] guide: **100 Screen-Free Plays** ($[__]) plus the printed **Play-First Family Kit (ages 5–12)** ($[__]). Together they give families low-prep games plus a simple family agreement and weekly play plan for ages 5–12.
 
 Press kit and images: [LINK]. I'm happy to send a sample from our printer.
 

@@ -77,8 +77,8 @@ Prices come from marketing/DEMAND-CHECK.md where it sets them. No price goes bel
 | **Instant Gift Bundle** (digital) | Play-First Family Kit + "I'm bored" play cards + gift-reveal card (+ busy book for 0–5) | DEMAND-CHECK #8 "digital" version; the last-minute save on every holiday | Every holiday after the printed cutoff |
 | **Grandparent Play Kit** | Card deck + talk-along books + "I'm bored" cards (+ 100 Plays paperback). A4 printable version for the UK and AU | New bundle (G25) | Grandparents Days (UK, AU, US), Thanksgiving, Christmas |
 | **Printable Mega-Bundle** | Play-First Family Kit + toddler busy book + visual routine cards + "I'm bored" cards | Fair bundle discount | Black Friday–Cyber Week, New Year |
-| **Screen Reset Bundle** | Screen Reset Pack + 30-Day Screen Reset course (+ visual routine cards) | $49 bundle (DEMAND-CHECK course row) | Boxing week, January reset, the March unplugging day, spring screen-free week |
-| **Talk-First Welcome Bundle** | Up! Go! More! + Laps Not Apps + Play-First Family Kit (0–12 months); personalized keepsake book when launched | Evergreen | Baby showers, first birthdays, big-sibling gifts, Mother's Day |
+| **30 Days of Back-and-Forth Bundle** | Play-First Family Kit + 30 Days of Back-and-Forth course (+ visual routine cards) | $49 bundle (DEMAND-CHECK course row) | Boxing week, New Year Back-and-Forth, the March unplugging day, spring screen-free week |
+| **Talk-First Welcome Bundle** | Up! Go! More! + Whose Lap Today? + Play-First Family Kit (0–12 months); personalized keepsake book when launched | Evergreen | Baby showers, first birthdays, big-sibling gifts, Mother's Day |
 | **Play Day bundle** | The Day the Tablet Slept + 100 Screen-Free Plays | $24.99 bundle (DEMAND-CHECK) | Christmas Eve book, book-giving day (Feb 14), reading months |
 | **Summer Play Kit** | Bucket list, 10-week "camp at home" calendar, summer bored-jar cards, Play-First checklist | $10, listed in March 2027 (DEMAND-CHECK #6) | Summer break, International Day of Play, end of school year |
 | **Spring screen-free week pack** | 7-day log, bingo, pledge, certificate, posters (family edition only) | $6 family (DEMAND-CHECK #10); classroom edition held | Spring screen-free week, the March unplugging day |
@@ -119,7 +119,7 @@ All pages sit one click deep under `/gifts/`. They use the calm-site rules: one 
 | `/es/regalos/dia-de-reyes` (Spanish, human-reviewed) | Nov 30, 2026 | — |
 | `/gifts/christmas-eve-book` (section) | Dec 1, 2026 | — |
 | `/gifts/travel-play` | Dec 1, 2026 | Mar and Jun 2027 |
-| `/reset` (new screen in the house → 30-day reset) | Dec 15, 2026 | Jan 31, 2027 |
+| `/30-days` (new screen in the house → *30 Days of Back-and-Forth*) | Dec 15, 2026 | Jan 31, 2027 |
 | `/gifts/baby-shower`, `/gifts/first-birthday`, `/gifts/big-sibling` (evergreen) | Nov 2026 | Quarterly |
 | `/gifts/lunar-new-year`, `/gifts/ramadan-30-evenings`, `/gifts/valentines-family` | Jan 10, 2027 | — |
 | `/gifts/party-favors` (evergreen) | Jan 2027 | — |
@@ -187,7 +187,7 @@ Each month lists the campaigns to run, the products and bundles to feature, the 
 | Oct 25 | Order-by page; St Nicholas; Christmas Eve book |
 | Oct 27 | Hanukkah |
 | Oct 30 | Black Friday and shop-small weekend |
-| Oct 31 | New Year reset |
+| Oct 31 | New Year Back-and-Forth |
 
 **Approvals to file (ops/APPROVALS.md), one line each:**
 - IBPA membership and the ALA 2027 display (Oct 5)
@@ -217,7 +217,7 @@ Each month lists the campaigns to run, the products and bundles to feature, the 
 - Printable Mega-Bundle, Holiday Play Gift Set, Instant Gift Bundle, Grandparent Play Kit
 - Play Day bundle; talk-along books
 - Card deck (the stocking-stuffer hero)
-- 30-Day Screen Reset course (Cyber Monday digital)
+- 30 Days of Back-and-Forth course (Cyber Monday digital)
 
 **Gift-guide pages:** order-by dates (Nov 1), stocking stuffers (Nov 1), Hanukkah (Nov 10), `/bundles` (Nov 13), baby-shower, first-birthday and big-sibling evergreen pages (November).
 
@@ -274,16 +274,16 @@ Each month lists the campaigns to run, the products and bundles to feature, the 
 - **Kwanzaa**, Dec 26–Jan 1: light touch; inclusive-cast talk-along books in the winter guide; no Kwanzaa-branded product.
 - **AU/NZ summer holidays** (from Dec 18).
 
-**Products and bundles:** Instant Gift Bundle, Holiday Play Gift Set (before the cutoffs), Play Day bundle, Screen Reset Bundle (from Dec 26), Car Ride & Waiting Pack.
+**Products and bundles:** Instant Gift Bundle, Holiday Play Gift Set (before the cutoffs), Play Day bundle, 30 Days of Back-and-Forth Bundle (from Dec 26), Car Ride & Waiting Pack.
 
-**Gift-guide pages:** Christmas Eve book section (Dec 1), travel play (Dec 1), `/reset` (Dec 15).
+**Gift-guide pages:** Christmas Eve book section (Dec 1), travel play (Dec 1), `/30-days` (Dec 15).
 
 **Email themes:**
 - "A book on Christmas Eve" (Dec 1)
 - The last order-by reminders, sent 3 days before each cutoff
 - "Instant gifts, no shipping" (Dec 19, Dec 23)
 - "New screen in the house?" (Dec 26)
-- "Your 30-day family reset starts Jan 4" (Dec 28)
+- "Your 30 Days of Back-and-Forth start Jan 4" (Dec 28)
 
 **Social themes:** order-by reminders (plain text, no timers), advent plays, winter-break plays, calm family plan carousels.
 
@@ -302,10 +302,10 @@ Each month lists the campaigns to run, the products and bundles to feature, the 
 | Dec 27 | Valentine's Day; Lunar New Year; Ramadan |
 | Dec 29 | Safer Internet Day (verify) |
 
-### January 2027: the 30-Day Screen Reset (Wave 2)
+### January 2027: *30 Days of Back-and-Forth* (Wave 2)
 
 **Campaigns and dates:**
-- **New Year reset** (Jan 1–31): the 30-Day Screen Reset starts Mon Jan 4, with Global Family Day (Jan 1) as the opener.
+- **New Year Back-and-Forth** (Jan 1–31): *30 Days of Back-and-Forth* starts Mon Jan 4, with Global Family Day (Jan 1) as the opener.
 - **First-Saturday outdoor play**, Jan 2.
 - **Three Kings Day**, Jan 6: Spanish digital; Spain/EU print.
 - **Paper-and-pencil play day**, Jan 23 (handwriting day; no research claims beyond BRAND.md).
@@ -315,19 +315,19 @@ Each month lists the campaigns to run, the products and bundles to feature, the 
 - **Online parenting summits and bundle sales** (January; approved placements only).
 
 **Products and bundles:**
-- Screen Reset Bundle ($49), 30-Day Screen Reset course
+- 30 Days of Back-and-Forth Bundle ($49), 30 Days of Back-and-Forth course
 - Visual routine cards; school-age family plan [G1] (fallback: Play-First Family Kit)
 - Printable Mega-Bundle
 
-**Gift-guide pages:** `/reset` (hero); Lunar New Year, Ramadan and family Valentines pages by Jan 10; party favors.
+**Gift-guide pages:** `/30-days` (hero); Lunar New Year, Ramadan and family Valentines pages by Jan 10; party favors.
 
 **Email themes:**
-- Reset sequence (daily for enrollees; weekly for the list)
+- Back-and-Forth sequence (daily for enrollees; weekly for the list)
 - "Start the year together"
 - "Día de Reyes: juegos para regalar" (Spanish segment)
 - "Tell a story without a book" (end of month)
 
-**Social themes:** a 30-day reset carousel series, calm-routine pins, "paper and pencil play", AU back-to-school routines.
+**Social themes:** a 30 Days of Back-and-Forth carousel series, calm-routine pins, "paper and pencil play", AU back-to-school routines.
 
 **Prep starts this month:**
 
@@ -351,7 +351,7 @@ Each month lists the campaigns to run, the products and bundles to feature, the 
 - **Read-aloud day**, Wed Feb 3 [VERIFY]. The school play-day angle on Feb 3 is on HOLD; post the home "unstructured play day" only.
 - **Take-your-child-to-the-library day** and **first-Saturday outdoor play**, Sat Feb 6.
 - **Lunar New Year**, Sat Feb 6 (Korea's Seollal Sun Feb 7). US printed cutoff was Jan 26.
-- **Ramadan** begins about Mon Feb 8: "30 evenings of play" and the Reset course.
+- **Ramadan** begins about Mon Feb 8: "30 evenings of play" and the Back-and-Forth course.
 - **Safer Internet Day**, Tue Feb 9 [VERIFY]: balance angle only; never name an app or platform.
 - **Valentine's Day** and **book giving day**, Sun Feb 14. US printed cutoff Feb 3.
 - **Kindness week**, Feb 14–20.
@@ -388,7 +388,7 @@ UK printed cutoff for Mothering Sunday: Feb 25. US printed cutoff for Eid: Feb 2
 **Campaigns and dates:**
 - **March reading month** (all March), with the "15 minutes of read-and-talk" challenge inside it. **Schedule nothing on March 2.**
 - **Book day in March (UK/IE)**, Thu Mar 4: A4 "book day at home" printables. No World Book Day logos or materials.
-- **The March unplugging day**, sundown Fri Mar 5 to Sat Mar 6: a "24 hours of play" printable plan plus the Screen Reset Bundle.
+- **The March unplugging day**, sundown Fri Mar 5 to Sat Mar 6: a "24 hours of play" printable plan plus the 30 Days of Back-and-Forth Bundle.
 - **First-Saturday outdoor play**, Mar 6.
 - **Mothering Sunday (UK/IE)**, Mar 7.
 - **Eid al-Fitr**, Tue Mar 9 (Mar 10 where moon sighting decides).
@@ -399,7 +399,7 @@ UK printed cutoff for Mothering Sunday: Feb 25. US printed cutoff for Eid: Feb 2
 
 **Products and bundles:**
 - Play Day bundle, talk-along books; Up! Go! More! as the spring hero for ages 0–2
-- Screen Reset Bundle
+- 30 Days of Back-and-Forth Bundle
 - Spring screen-free week pack (build now)
 - Card deck, Car Ride & Waiting Pack
 
@@ -473,7 +473,7 @@ UK printed cutoff for Mothering Sunday: Feb 25. US printed cutoff for Eid: Feb 2
 - **Mother Goose Day** and **first-Saturday outdoor play**, Sat May 1. **Día de la Madre (Spain)**, May 2.
 - **Spring screen-free week**, about Mon May 3–Sun May 9 [VERIFY on screenfree.org]. This is the flagship spring campaign:
   - a 7-day printable plan and the $6 family pack
-  - the Screen Reset Bundle
+  - the 30 Days of Back-and-Forth Bundle
   - an email series and carousels
   - generic wording only
   - no event logo and no implied endorsement
@@ -488,7 +488,7 @@ UK printed cutoff for Mothering Sunday: Feb 25. US printed cutoff for Eid: Feb 2
 - **Deadlines for the ALA 2027 IBPA display:** register by **May 21**, materials by **May 26**.
 - **ABA member mailing / regional holiday catalogs** for holiday 2027: prep May 15, booking June–July [VERIFY].
 
-**Products and bundles:** spring screen-free week pack, Screen Reset Bundle, 30-Day Screen Reset course, card deck, "I'm bored" cards, Summer Play Kit, Play-First Family Kit.
+**Products and bundles:** spring screen-free week pack, 30 Days of Back-and-Forth Bundle, 30 Days of Back-and-Forth course, card deck, "I'm bored" cards, Summer Play Kit, Play-First Family Kit.
 
 **Gift-guide pages:** `/summer` and `/gifts/summer-starter-kit` (May 10).
 
@@ -552,7 +552,7 @@ Printed cutoffs: Eid al-Adha May 4, Fête des mères (skipped), end-of-school Ma
 - **Christmas in July** and **Parents' Day**, Sun Jul 25: gift-bundle reminder and keepsake-book pre-order (if planned).
 - **Día de los Abuelos (ES/BR)**, Jul 26: only if the Spanish grandparent printable is live.
 
-**Products and bundles:** visual routine cards, school-age family plan [G1], Screen Reset Pack, Holiday Play Gift Set (Christmas in July), Summer Play Kit.
+**Products and bundles:** visual routine cards, school-age family plan [G1], Play-First Family Kit, Holiday Play Gift Set (Christmas in July), Summer Play Kit.
 
 **Gift-guide pages:** `/gifts/back-to-school-routines` (Jul 1); the Christmas hub refresh (Jul 10).
 
@@ -582,7 +582,7 @@ Printed cutoffs: Eid al-Adha May 4, Fête des mères (skipped), end-of-school Ma
 - **Online back-to-school bundles/summits** (August; approved placements only).
 - **Grandparents Day guide live Aug 15** (US printed cutoff Sep 1). **AU Father's Day guide live Aug 10** (AU printed cutoff Aug 25).
 
-**Products and bundles:** visual routine cards (Letter + A4), school-age family plan [G1], Screen Reset Pack, Grandparent Play Kit.
+**Products and bundles:** visual routine cards (Letter + A4), school-age family plan [G1], Play-First Family Kit, Grandparent Play Kit.
 
 **Email themes:**
 - "New school-year routines"
@@ -633,7 +633,7 @@ Also in August: build the Oct 2027–Sep 2028 calendar (the next refresh).
 | **Oct 5** | Diwali campaign (live Oct 20; US printed cutoff Oct 27). File approval lines: IBPA/ALA 2027 display, holiday ad caps. Verify LibLearnX 2027. November games month content. |
 | **Oct 12** | 24 Days of Play advent build (list by Oct 25). Pull every POD partner and carrier deadline page (due Oct 20). Printful surcharge check (Oct 15). **Gift guide live Oct 15.** Kindness-day content (Oct 16). Children's Day (India) and stocking-stuffer builds (Oct 18). |
 | **Oct 19** | Evergreen baby-shower, first-birthday and big-sibling pages. Combined Book Exhibit and Great Homeschool Conventions inquiries (approval first). ALSC inquiry. **Halloween US printed cutoff Oct 20.** US Thanksgiving campaign (Oct 22). Children's-day (Nov 20) content (Oct 23). |
-| **Oct 26** | Order-by-dates page build (live Nov 1). St Nicholas and Christmas Eve book sections. Hanukkah "8 Nights of Play" (live Nov 10). **Diwali printed cutoff Oct 27.** Black Friday and shop-small offers (Oct 30). **New Year reset build starts Oct 31.** Halloween Oct 31. |
+| **Oct 26** | Order-by-dates page build (live Nov 1). St Nicholas and Christmas Eve book sections. Hanukkah "8 Nights of Play" (live Nov 10). **Diwali printed cutoff Oct 27.** Black Friday and shop-small offers (Oct 30). **New Year Back-and-Forth build starts Oct 31.** Halloween Oct 31. |
 | **Nov 2** | **Order-by page live Nov 1**; reading month starts. Cyber Week and Etsy sale setup (by Nov 15). Giving Tuesday email. MomCo, Wild + Free and Bologna inquiries. AU/NZ summer guide. Diwali Nov 6–10. Outdoor play Nov 7. |
 | **Nov 9** | Read-aloud week and nursery rhyme week (Nov 9–13/15). Three Kings Spanish editions (by Nov 30). **Hanukkah guide live Nov 10.** Offers and emails locked Nov 13. Kindness day Nov 13; Children's Day (India) Nov 14. Stocking stuffers from Nov 15. January summits and bundles (approval). |
 | **Nov 16** | **US Thanksgiving printed cutoff Nov 16.** Tucson festival ad inquiry. Winter-break travel build. **Hanukkah US standard cutoff Nov 20.** Children's day Nov 20. Global Family Day content. Dec 5 outdoor post. |

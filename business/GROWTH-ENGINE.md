@@ -6,6 +6,8 @@ _AlphaPlay LLC, trading as Play Before Pixels. Internal planning file, not for p
 
 **Names.** Retired names are never used (`brand/ORIGINALITY.md` "Retired names"). The January course is ***30 Days of Back-and-Forth*** at `/30-days`. It was the "30-Day Screen Reset", which was retired because "Reset" implies reversing harm (BRAND rule 1) and sits close to an existing "Reset" plan (S: ORIGINALITY A4). Its exact-title check is still open (S: the course `listing.json` human_todo). The January campaign is the **New Year Back-and-Forth** (S: ORIGINALITY A8). The folder slug `course-screen-reset` stays until task #9. Model figures that say "Reset" refer to this course.
 
+**Budget (founder's decision, September 28, 2026; business/DECISIONS.md).** Launch spending is capped at **$500**, with **no ads, no paid reviewers and one domain** at launch (`business/LAUNCH-BUDGET-500.md`). Every paid test, paid reviewer or optional purchase below waits until sales pay for it and a new APPROVED line names it. Where this file says otherwise, the budget wins.
+
 ---
 
 ## 1. For the founder, in five lines
@@ -28,7 +30,7 @@ _AlphaPlay LLC, trading as Play Before Pixels. Internal planning file, not for p
 | 2 | Sep 29 | Apply for a no-fee online business checking account with a tax sub-account, under the EIN | 30 | No platform can pay out until it exists. The Chase checking account is closed (S: `finance/BANKING.md`) |
 | 3 | Sep 30 | Ask for 2–3 quotes in writing (online forms or email, and ask for no calls) for general liability plus products cover, with E&O off unless the broker advises it. Bind the lowest quote on the day counsel says yes | 35 | Insurance is about 43% of the lean monthly base before contingency ($155 of $362; S: `03-financial-model.md` §3.0), or 27% of all fixed costs once annual bills are spread ($155 of $567; S: STRESS-TEST §5) |
 | 4 | Oct 1–2 | Buy playbeforepixels.com, set up business email, rent a USPS PO Box, file the $25 trade name, confirm AlphaPlay LLC's good standing, and add retail and digital-product sales to its Maryland sales-and-use tax registration | 75 | The PO Box is the only public address (S: LAUNCH-NOW). Good standing and the tax license are "must do before launch" (S: `legal/LEGAL-LAUNCH-CHECKLIST.md` rows 2, 3 and 5) |
-| 5 | By Oct 4 | Write down the **household-money cap** and a review date (the placeholder is $12,000, S: 03 §3.6), plus the Chase card balance | 10 | No ad and no optional spend happens without this (S: `ops/GAPS-ROUND-2.md` G2-10) |
+| 5 | By Oct 4 | Launch spending is capped at **$500** (decided Sep 28; `business/LAUNCH-BUDGET-500.md`). Write down a review date and the most household money the business may use after launch before sales cover it (the old placeholder was $12,000, S: 03 §3.6), plus the Chase card balance | 10 | No optional spend happens without this (S: `ops/GAPS-ROUND-2.md` G2-10) |
 | 6 | Oct 5–9 | **One 75-minute account sitting:** Etsy seller account (payouts to the new bank, shop not opened); KDP (LLC tax interview; author is the brand or a pen name until Q9 is answered); Gumroad; one free email platform; Pinterest business account plus the API request; Etsy Open API app request; one virtual card with a monthly limit (G2-06); keys into the environment (`ops/SECRETS.md`); personal connectors removed (G2-02); a platform-notice filter in the business mailbox (G2-07). Every public profile (Etsy shop and "About", KDP author, Gumroad, Pinterest) shows the logo and the brand name only, with no founder photo, name or story | 75 | Nothing Claude runs can start without these (S: LAUNCH-NOW Wave 0 steps 6–7) |
 | 7 | Oct 5–11 | Upload *100 Screen-Free Plays* to KDP as a draft and order one proof, sent to the PO Box | 15 | Takes the proof's printing and shipping time off the critical path (A) |
 | 8 | G-day | Type "go" in an interactive session | 1 | Only her go removes `ops/PAUSE` (S: `ops/ROUTINE.md` step 0.3) |
@@ -37,7 +39,7 @@ _AlphaPlay LLC, trading as Play Before Pixels. Internal planning file, not for p
 **Total: 271 minutes, about 4½ hours (A).** These wait until after Jan 31, 2027: Shopify, Instagram/Facebook, TikTok, YouTube, IngramSpark, Printful, Merch on Demand, Amazon Associates (with the program's disclosure sentence at every link), Bookshop, Faire and TpT. TpT, IngramSpark's library reach and all school channels are **HELD** until employment counsel clears them in writing.
 
 **Off the sales path, but they cannot slip:**
-- Copyright filings before **Nov 11, 2026**. They need the founder's human-authorship rewrites (S: `business/ONE-PAGE-SUMMARY.md` item 6).
+- Copyright filings before **Nov 11, 2026**. They need the founder's human-authorship rewrites (S: `business/ONE-PAGE-SUMMARY.md` item 6). Their fees (about $45–$85 each, U) are **not** in the $500 launch list; they are paid from the buffer only if the founder chooses.
 - The ALPHAPLAY Statement of Use, or the $625 extension, by **Mar 8, 2027**. The packet is prepared by Feb 1 (S: `ops/DEADLINES.md`).
 - BRAND rule 21: a founder proof of the cover and page 1 for every new SKU, at 15–30 minutes each (A).
 
@@ -115,7 +117,7 @@ Nothing goes live before Gate A. Etsy gets at most 5 new listings a week and KDP
 **Wk 5 · Oct 26 – Nov 1**
 - **Live:**
   - The order-by note on Nov 1, in the Etsy announcement, on Gumroad and by email (S: EVENTS).
-  - **Only if** counsel's answer (c) allows it and an APPROVED line exists: **one** paid test, Amazon Sponsored Products on *100 Plays*. It is registered as EXP-10b ($150 over 30 days) and follows the rules in §5e.
+  - **No paid test at launch** (the $500 budget has no ad line; `business/LAUNCH-BUDGET-500.md`). EXP-10b (Amazon Sponsored Products on *100 Plays*, $150 over 30 days, rules in §5e) waits until sales pay for it, counsel's answer (c) allows it and a new APPROVED line exists.
 - **Studio:**
   - The Black Friday default: a **dated free bonus printable**, not sold separately, with either bundle from Nov 24 to Dec 2, with the end date shown. There is no Etsy percent-off event and no KDP price cut. "Free" rules (16 CFR 251, U): each bundle has been at its price for at least 30 days before Nov 24, so the $45 Library must be listed by Oct 25; neither bundle price rises before or during the offer; the condition and end date are stated up front; the bonus shows no "$X value", because it is not sold separately; and the offer really ends on Dec 2 (S: EXPERIMENTS EXP-04c).
   - Build the Car Ride & Waiting Pack as a 0–5 edition ($6).
@@ -135,8 +137,8 @@ Nothing goes live before Gate A. Etsy gets at most 5 new listings a week and KDP
 
 **Wk 8 · Nov 16–22**
 - **Studio:**
-  - Stage the /30-days page on Gumroad with a **0–5 edition** of *30 Days of Back-and-Forth*. The version as built has school-age sections throughout (G1): about 59 matching lines in `products/course-screen-reset/paperback/source-kdp.html`.
-  - Before any course email is scheduled, the product workflow removes the "give $5, get $5 … you each get $5 off" line from the 43 course files that carry it (§4 "Referral"), because no referral program exists.
+  - Stage the /30-days page on Gumroad with the **0–5 edition** of *30 Days of Back-and-Forth* (built Sep 28; the 1–12 build is held in `build/held-5-12/`).
+  - ~~Remove the "give $5, get $5" line from the 43 course files~~ **Done Sep 28** (0 files carry it; §4 "Referral").
   - Draft the Dec 26 – Jan 31 emails.
   - New Year retag and a photo refresh for the routine cards (S: DEMAND-CHECK rule 7).
 
@@ -427,6 +429,8 @@ Revisit it when the list passes about 1,500 and the course sells 30 or more a mo
 
 ### 5e. Paid acceleration rules (binding once adopted into ROUTINE; §8b)
 
+**Not at launch.** The $500 launch budget has no ad line (business/LAUNCH-BUDGET-500.md). None of the tests below starts until sales pay for it and the founder writes a new APPROVED line.
+
 **Preconditions for any spend:**
 1. The household-money cap is set.
 2. Counsel has answered the Montgomery County geo question for marketplace ads.
@@ -614,6 +618,7 @@ Kill rule: fewer than 5 sales in 60 days after the EXP-03 search-copy decision �
 
 ```
 ## Paid acceleration (binding once adopted)
+- No ads at launch: the $500 launch budget (business/LAUNCH-BUDGET-500.md) has no ad line. No paid test starts until sales pay for it and a new APPROVED line names it.
 - Nothing paid runs until: the household-money cap is set (G2-10); counsel has answered whether marketplace ads that cannot exclude Montgomery County, MD meet the playbook's geo rule; an APPROVED line names the cap and dates; the platform's own spending limit is set; the charge sits on the capped virtual card (G2-06).
 - One paid test at a time, in this order: Amazon Sponsored Products on 100 Screen-Free Plays (EXP-10b) → Etsy Ads on the $29 and $45 bundles only → Pinterest (only after the break-even line has held 2 months) → Meta.
 - No tracking pixels or tags (Meta, Pinterest, TikTok, Google Ads, Gumroad pixel settings, email open-tracking where it can be switched off) until counsel and the published privacy policy allow them. Measure with platform reports, UTM tags, email-platform source tags and Gumroad referrers.
@@ -627,7 +632,7 @@ Kill rule: fewer than 5 sales in 60 days after the EXP-03 search-copy decision �
 ### 8c. `ops/EXPERIMENTS.md` (it exists: 13 pre-registered experiments; these are additions and alignments)
 
 1. **EXP-05:** replace "Holiday Play Gift $34" with "$29 Ages 1–5 Instant Gift Bundle and $45 Birth-to-5 Printable Library". Add: "The bump arm runs only on a checkout with a native, never-pre-ticked add-on (the Gumroad feature is UNVERIFIED; Shopify is deferred until about 25 own-site orders a month). Until then, only bundle share is measured."
-2. **EXP-04c:** set the Black Friday window to **Nov 24 – Dec 2, 2026** (the EVENTS Cyber Week). Name the default mechanism: a dated free bonus printable, not sold separately, with either bundle, each bundle at its price for 30+ days before Nov 24 and shown with no "$X value" for the bonus (16 CFR 251). No Etsy sale-tool event in 2026. Rename "New Year Family Reset" to "New Year Back-and-Forth" (ORIGINALITY A8).
+2. **EXP-04c:** set the Black Friday window to **Nov 24 – Dec 2, 2026** (the EVENTS Cyber Week). Name the default mechanism: a dated free bonus printable, not sold separately, with either bundle, each bundle at its price for 30+ days before Nov 24 and shown with no "$X value" for the bonus (16 CFR 251). No Etsy sale-tool event in 2026. Rename "New Year Back-and-Forth" to "New Year Back-and-Forth" (ORIGINALITY A8).
 3. **EXP-10b:** add a bid ceiling of $0.36; negative keywords and negative ASINs loaded before the start; continuation Dec 1–20 at up to $100 only after a Success verdict and a new APPROVED line; January at up to $150 only if 14-day ACoS is at or below 30%; and the $150 net-ad-loss stop. Leave the success and kill thresholds as registered.
 4. **New EXP-14, pin destination.** Question: do product pins earn more money linking to the Etsy listing, or to the email landing page with the product offer? Design: alternate by ISO week for 8 weeks. Metrics, reported separately: orders per 100 outbound clicks and sign-ups per 100 outbound clicks. Minimum sample: 300 outbound clicks per arm (ASSUMPTION). The default until a verdict: product pins go to Etsy and free-printable pins to the landing page.
 5. **New EXP-15, sharing features.** Metric: scans and sign-ups tagged `src=cert`, `src=caregiver` and `src=gift`, per 100 KDP and own-checkout orders. Success is 5 or more; kill is under 0.5 after 8 weeks and one redesign (ASSUMPTION).

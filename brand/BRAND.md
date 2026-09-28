@@ -98,7 +98,7 @@ AI-generated material is not copyrightable in the U.S. For every product, leave 
 - Every listing.json includes "next_products" (2–3 slugs: the next age stage, the matching series item, the best bundle) and "bonus_url" (playbeforepixels.com/bonus/<slug>).
 - Every product includes a QR code and short link to a free companion bonus that joins the email list (no child names collected; birth month/year only).
 - Series and stages are designed as sets (matching spines, numbered stage kits, card-deck expansions) so customers want the whole collection.
-- The site shows "Next for your child's age" on every product page and in every order email; bundles are offered at a fair discount; a give-$5/get-$5 referral program runs through the store platform.
+- The site shows "Next for your child's age" on every product page and in every order email; bundles are offered at a fair discount; a give-$5/get-$5 referral program runs through the store platform once one exists (DEFERRED until about 25 own-site orders a month, ops/QUEUE.md "Cut"). Until then no email, product or page promises a reward.
 
 ## Autism searches (binding)
 - Never target people searching for "autism" (or any diagnosis) with product ads, product listings, keywords, hashtags or emails. No autism keywords on any product, listing or ad — anywhere, in any language.
@@ -119,7 +119,7 @@ Every listing.json includes `amazon_route` (kdp-paperback · kdp-activity-editio
 ## Everything promotes the brand (binding)
 - **Every product:** the Play Before Pixels logo and playbeforepixels.com on the cover/first page and in the footer of every printable page; a "More from Play Before Pixels" last page showing the next products for the child's age; the QR/bonus link; a shareable piece (certificate, badge, fridge sheet or finished page) designed to be photographed and posted, with a small brand mark.
 - **Books:** back-cover "collect the series" strip, website on the copyright page, a free bonus printable offer.
-- **Every email:** one "share with a friend" referral link (give $5 / get $5) and a next-product recommendation.
+- **Every email:** one "share with a friend" link (reward-free until a referral program with full terms runs; then give $5 / get $5) and a next-product recommendation.
 - **Every site page:** share buttons on articles and free printables; every free printable requires only an email and carries the brand URL on every page.
 - **Every social post and pin:** brand mark, the website, and a link to a product or the free printable.
 - **Marketplaces:** brand name in every listing title/shop name; include the website only where the platform's rules allow outside links (never break a marketplace rule to promote).

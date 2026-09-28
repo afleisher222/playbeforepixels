@@ -58,7 +58,7 @@ Print at 100% / Actual size. Low-ink files save ink; A4 files are for printers o
 
 Something won't open or print? Reply to this email and we'll fix it or refund it.
 
-Next for your child's age: “I’m Bored” Play Cards (76 cards, ages 1–5) · 177 Visual Routine Cards (ages 0–5) (playbeforepixels.com/shop/).
+Next for your child's age: “I’m Bored” Play Cards (76 cards, ages 1–5) · 181 Visual Routine Cards (ages 0–5) (playbeforepixels.com/shop/).
 
 Know a family who'd like some play ideas? Our free printable is at playbeforepixels.com/free/
 

@@ -12,7 +12,7 @@ const G = require('./gift.js');
 const { C, D, esc, icon, mi, logo, qr, bonusUrl } = K;
 
 // B: { slug, product, short, ages, kicker, count, parts: [{art, color, name, count, ages, what, begin, folder}],
-//      free: {art, name, what, folder}, fold: {...}, next: [[art,color,name,text]], firstWeek: [..], bg }
+//      free: {art, name, what, folder}, fold: {...}, next: [[art,color,name,text]], nextEtsy (optional: Etsy edition's list, when an item is not on Etsy), firstWeek: [..], bg }
 function make(B, buildDir) {
   const HC = { sky: [C.sky, C.tSky, D.sky], plum: [C.plum, C.tPlum, D.plum], grass: [C.grass, C.tGrass, D.grass], tomato: [C.tomato, C.tTomato, D.tomato], sun: [C.sun, C.tSun, D.sun] };
 
@@ -60,7 +60,7 @@ function make(B, buildDir) {
       <p class="kicker d-plum">What’s next</p>
       <h2 class="ptitle">More from Play Before Pixels</h2>
       <p class="lede2">${ctx.edition === 'etsy' ? 'Find them in our shop.' : 'Find them all at playbeforepixels.com.'}</p>
-      <div class="nexts">${B.next.map(([a, c, h, t]) => `<div class="nx li-white" style="--c:${C[c]}"><div class="nx-ic">${icon(a, ctx, 56)}</div><div><h4>${esc(h)}</h4><p>${esc(t)}</p></div></div>`).join('')}</div>
+      <div class="nexts">${((ctx.edition === 'etsy' && B.nextEtsy) || B.next).map(([a, c, h, t]) => `<div class="nx li-white" style="--c:${C[c]}"><div class="nx-ic">${icon(a, ctx, 56)}</div><div><h4>${esc(h)}</h4><p>${esc(t)}</p></div></div>`).join('')}</div>
       <div class="bonus store-only li-white">
         <div class="qrwrap">${qr(bonusUrl(B.slug), 118)}</div>
         <div><p class="kicker">For grown-ups</p><h4>Free printable: Five 5-Minute Plays</h4>

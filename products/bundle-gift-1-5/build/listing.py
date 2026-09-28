@@ -123,10 +123,12 @@ d = {
          "later (held): " + MAN["etsy_status"])),
     ],
     "etsy_status": MAN["etsy_status"],
+    "status": "ready-pending-accounts",
+    "status_notes": "G-day item (ops/QUEUE.md LAUNCH FIRST): Etsy and Gumroad packets are built; waits only for Gate A, the accounts and the founder's go (ops/PAUSE).",
     "amazon_route": ("none-with-reason: a bundle of separate printables is not one book. Its parts each have their own Amazon route "
                      "(the busy book, the cards and the family kit list KDP activity editions in their own listing.json)."),
     "ai_disclosure": LC.ai_disclosure(extra_kdp=False),
-    "next_products": ["bundle-library-0-5", "winter-countdown", "visual-routine-cards"],
+    "next_products": ["bundle-library-0-5", "winter-countdown", "visual-routine-cards-0-5"],
     "bonus_url": f"playbeforepixels.com/bonus/{SLUG}",
     "bonus_offer": ("Store edition only: the free “Five 5-Minute Plays” printable and the monthly “3 plays for your child’s age” email "
                     "(adults only; email and, optionally, birth month and year; double opt-in). QR code on the last gift page. Etsy files carry no link."),

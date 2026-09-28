@@ -16,8 +16,8 @@ FOR IMMEDIATE RELEASE
 
 The launch includes:
 - ***The Day the Tablet Slept*** ([format], ages [__], $[__]): a talk-along picture book with a short grown-up tip on each spread that turns reading into back-and-forth conversation.
-- ***100 Plays Before Pixels*** ([format], $[__]): a guide of low-prep games for toddlers through school-age children, organized by age and by moment ("while dinner cooks", "in the car", "at a restaurant").
-- **The 0–5 Screen Reset Pack** ($[__]) and **the Screen-Smart Family Plan for ages 5–12** ($[__]): printable routines, family agreements and weekly play plans.
+- ***100 Screen-Free Plays*** ([format], $[__]): a guide of low-prep games for toddlers through school-age children, organized by age and by moment ("while dinner cooks", "in the car", "at a restaurant").
+- **Play-First Family Kit (ages 0–5)** ($[__]) and **the Play-First Family Kit for ages 5–12** ($[__]): printable routines, family agreements and weekly play plans.
 - **A 52-card play deck** ($[__]): one play idea per card, for grab-and-go moments.
 
 "Parents tell us the hardest moment is 5 p.m., when everyone is tired and the tablet is right there," said the Play Before Pixels team. "We wanted to hand families something they can open and use in two minutes, without feeling judged."
@@ -44,7 +44,7 @@ AlphaPlay LLC, [BUSINESS MAILING ADDRESS]
 | | |
 |---|---|
 | Company | AlphaPlay LLC, doing business as Play Before Pixels |
-| Products | Talk-along picture books; the *100 Plays* guide; 0–5 Screen Reset Pack; Screen-Smart Family Plan (5–12); 52-card deck; 30-Day Screen Reset (written course) |
+| Products | Talk-along picture books; the *100 Plays* guide; Play-First Family Kit (ages 0–5); Play-First Family Kit (ages 5–12); 52-card deck; 30 Days of Back-and-Forth (written course) |
 | Ages | 0–5 and 5–12 |
 | Prices | $[__]–$[__] |
 | Where to buy | [store], Amazon, Etsy; Ingram for bookstores and libraries |

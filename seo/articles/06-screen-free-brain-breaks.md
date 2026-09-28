@@ -8,7 +8,7 @@ meta_description: "Thirty 1- to 3-minute brain breaks for PreK–5 that need no 
 target_keyword: "screen-free brain breaks"   # demand UNVERIFIED (hypothesis)
 secondary_keywords: ["brain breaks without video", "movement breaks for classroom", "quick brain breaks for kindergarten"]
 audience: PreK–5 teachers, aides, child-care staff, homeschool parents
-related_product: PreK–5 Screen-Free Classroom Pack — /schools/classroom-pack/
+related_product: Play & Talk Classroom Pack (PreK–5) — /schools/classroom-pack/
 free_printable: /free/7-day-screen-free-challenge/ (family take-home)
 citations: ["WHO 2019", "UNESCO GEM 2023"]
 verify_before_publish:
@@ -101,7 +101,7 @@ Brain breaks aren't a behavior intervention or a treatment for anything. They're
 
 ## Get the whole set, ready to print
 
-The **PreK–5 Screen-Free Classroom Pack** includes printable brain-break cards (with seated versions), talk cards for morning meeting, paper-first reading routines and a family take-home sheet, with single-classroom and whole-school site licenses. [See the Classroom Pack](/schools/classroom-pack/).
+The **Play & Talk Classroom Pack (PreK–5)** includes printable brain-break cards (with seated versions), talk cards for morning meeting, paper-first reading routines and a family take-home sheet, with single-classroom and whole-school site licenses. [See the Classroom Pack](/schools/classroom-pack/).
 
 Free take-home for families: the **7-Day Screen-Free Challenge**. [Download it](/free/7-day-screen-free-challenge/).
 

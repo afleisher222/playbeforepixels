@@ -116,7 +116,7 @@ Corrected maths: a full three-reviewer pass on 13 products would cost about $5,8
 
 ## 4. "Virtual autism": explain it once, then don't use it
 
-**Why.** The brand already agrees with the critics. Section 4 of marketing/virtual-autism-outreach.md says the term is not a diagnosis, that the studies show associations and not causes, and that the parent-blame criticism is fair: "The first three points are correct, and we agree with them." Yet content/founder-story.md still uses the term in its short and long versions, the outreach bio reuses it, and index.html still shows "The Virtual Autism Project". For a brand that wants respect, the term should move from "allowed with framing" to "explained once, then not used".
+**Why.** The brand already agrees with the critics. Section 4 of marketing/virtual-autism-outreach.md says the term is not a diagnosis, that the studies show associations and not causes, and that the parent-blame criticism is fair: "The first three points are correct, and we agree with them." Yet content/founder-story.md still uses the term in its short and long versions, the outreach bio reuses it, and index.html still shows "Play Before Pixels Research Notes". For a brand that wants respect, the term should move from "allowed with framing" to "explained once, then not used".
 
 **The history.** Parent blame has a documented history: Waltz M., "Mothers and Autism: The Evolution of a Discourse of Blame", *AMA Journal of Ethics* 2015;17(4):353–358. This is the correct source. The ASAN 2017 piece is not; it covers the politics of neurodiversity, causation and cure.
 
@@ -296,7 +296,7 @@ Corrected maths: a full three-reviewer pass on 13 products would cost about $5,8
 
 | Award / review | For | Fee | When |
 |---|---|---|---|
-| Kirkus Indie review | Lead picture book (Laps Not Apps or The Day the Tablet Slept, once final art is locked) | $399 (picture book, per playbook); BlueInk alternative $445 | As soon as the final proof exists. The author may choose not to publish the review. |
+| Kirkus Indie review | Lead picture book (Whose Lap Today? or The Day the Tablet Slept, once final art is locked) | $399 (picture book, per playbook); BlueInk alternative $445 | As soon as the final proof exists. The author may choose not to publish the review. |
 | Kirkus Indie Awards | Same book, only if the review is strong | ~$199 | After the review |
 | Cybils | Picture and board books | Free | Public nominations each autumn [VERIFY dates] |
 | Foreword INDIES | Books published in 2026 | $119 after Sept 30, 2026 | Register by Jan 15, 2027. Only titles actually published in 2026 qualify. |

@@ -221,7 +221,7 @@ Every experiment below lists its hypothesis, design, metric and how the routine 
 
 ### EXP-02 · Etsy first photo (thumbnail)
 
-**Hypothesis.** A first photo that shows the contents and the count (for example, a "what's inside" grid with "235 cards", the count in `listing.json` today) earns at least 25% more listing views a day than a cover-style first photo, without lowering orders per view. Etsy lets the seller choose which photo comes first, and the first photo is the search thumbnail (UNVERIFIED wording of Etsy's help page).
+**Hypothesis.** A first photo that shows the contents and the count (for example, a "what's inside" grid with "181 cards", the count in `listing-g0.json` today for the ages 0–5 edition that launches) earns at least 25% more listing views a day than a cover-style first photo, without lowering orders per view. Etsy lets the seller choose which photo comes first, and the first photo is the search thumbnail (UNVERIFIED wording of Etsy's help page).
 
 **Design.**
 - **Listings.** At the day-14 checkpoint, the two launch listings with the most Etsy views get this test. The two with the fewest views get EXP-03. (ASSUMPTION: many views but few clicks through suggests the first impression is the problem; few views suggests findability is.)
@@ -261,7 +261,7 @@ Every experiment below lists its hypothesis, design, metric and how the routine 
 
 ### EXP-03 · Etsy titles and tags (search copy)
 
-**Hypothesis.** Search copy that leads with the parent's moment ("Morning and Bedtime Routine Cards…") earns at least 25% more Etsy views than search copy that leads with the count ("235 Visual Routine Cards…"), or the reverse. DEMAND-CHECK rule 1 favours the count, and this tests that on our own listings.
+**Hypothesis.** Search copy that leads with the parent's moment ("Morning and Bedtime Routine Cards…") earns at least 25% more Etsy views than search copy that leads with the count ("181 Visual Routine Cards…"), or the reverse. DEMAND-CHECK rule 1 favours the count, and this tests that on our own listings.
 
 **Design.**
 - **Listings.** The two launch listings with the fewest views at day 14 (the EXP-02 rule).
@@ -303,17 +303,17 @@ Every experiment below lists its hypothesis, design, metric and how the routine 
 
 #### EXP-04a · Tiered editions (runs from Day 0; observe)
 
-**Hypothesis.** When a Starter Set (60 cards) and the Complete Set (235 cards) are both offered openly, at least half of routine-card buyers choose the Complete Set. That would show the everyday price of the full set is read as fair value.
+**Hypothesis.** When a Starter Set (60 cards) and the ages 0–5 edition (181 cards; the 239-card Complete Set stays held until G1) are both offered openly, at least half of routine-card buyers choose the 181-card edition. That would show the everyday price of the full set is read as fair value.
 
 **Design.**
-- **Own store:** one product page with an edition choice (Starter or Complete). Both are shown to every visitor, and the order of the two options does not change.
+- **Own store:** one product page with an edition choice (Starter or the 181-card ages 0–5 edition). Both are shown to every visitor, and the order of the two options does not change.
 - **Etsy:** two separate listings, because a digital listing on Etsy delivers the same files to every variation (UNVERIFIED). This uses 1 of the 5 new Etsy listings allowed per week (ROUTINE §5).
-- **Price:** Starter at **$5.00, not $4.50.** `commerce/PRICING.md` §1 says never list a single printable under $5, and check_listings enforces `single_printable_min` 5.00. `products/visual-routine-cards/listing-starter.json` says $4.50; see Conflicts. Complete at its `listing.json` everyday price ($9.50 today).
+- **Price:** Starter at **$5.00, not $4.50.** `commerce/PRICING.md` §1 says never list a single printable under $5, and check_listings enforces `single_printable_min` 5.00. `products/visual-routine-cards/listing-starter.json` now says $5.00 (fixed September 28, 2026). The 181-card ages 0–5 edition at its `listing-g0.json` everyday price ($9.50 today).
 
 **Metric.**
-- Share of tier units that are Complete, by channel.
+- Share of tier units that are the 181-card edition, by channel.
 - Net per 100 product-page views for the pair.
-- Upgrade rate: Starter buyers who buy the Complete Set or a bundle within 60 days. On the own store this is matched by customer in memory, never written down. On Etsy, it uses the buyer user ID hashed in memory, only if the API exposes it (UNVERIFIED).
+- Upgrade rate: Starter buyers who buy the 181-card edition or a bundle within 60 days. On the own store this is matched by customer in memory, never written down. On Etsy, it uses the buyer user ID hashed in memory, only if the API exposes it (UNVERIFIED).
 
 **Minimum sample.** 40 tier orders across both channels. (Verification: the Expected case gives about 13 orders a product on all channels in 90 days, so the Starter and Complete listings together reach about 13–25 tier orders by day 90. This carries over unless routine cards sell about twice the Expected rate.)
 
@@ -349,7 +349,7 @@ Every experiment below lists its hypothesis, design, metric and how the routine 
 
 #### EXP-04c · Genuine, dated promotions (event-based; measured, not A/B)
 
-**Events in or near the window:** Black Friday to Cyber Monday (Nov 27 to Nov 30, 2026, if Day 0 is before then; corrected in verification, since Cyber Monday 2026 is Nov 30 and Dec 1 is a Tuesday; §8c item 2 widens the window to Nov 24 to Dec 2) and the New Year Family Reset (Dec 26 to Jan 31, `marketing/MARKETING-PLAYBOOK.md` weeks 12–13).
+**Events in or near the window:** Black Friday to Cyber Monday (Nov 27 to Nov 30, 2026, if Day 0 is before then; corrected in verification, since Cyber Monday 2026 is Nov 30 and Dec 1 is a Tuesday; §8c item 2 widens the window to Nov 24 to Dec 2) and the New Year Back-and-Forth (Dec 26 to Jan 31, `marketing/MARKETING-PLAYBOOK.md` weeks 12–13).
 
 **Lawful structure (house rule, stricter than the minimum):**
 - A comparison ("% off", crossed-out price, Etsy sale price) is allowed only on items whose current everyday price has been openly offered for **at least 90 days** with the dates in `price_history`. This is an ASSUMPTION chosen to satisfy the FTC's "reasonably substantial period" test (16 CFR 233.1), California's 3-month former-price rule (Cal. Bus. & Prof. Code §17501, UNVERIFIED) and, for EU buyers, the rule that a price reduction must be measured against the lowest price of the previous 30 days (Price Indication Directive 98/6/EC Art. 6a, as amended by Directive (EU) 2019/2161, UNVERIFIED). In practice **no launch product qualifies in 2026.**
@@ -1041,7 +1041,7 @@ Nothing below is to be relied on until it has been checked on the official page.
 These override the matching lines above where they differ.
 
 1. **EXP-05:** replace "Holiday Play Gift $34" with "$29 Ages 1–5 Instant Gift Bundle and $45 Birth-to-5 Printable Library". Add: "The bump arm runs only on a checkout with a native, never-pre-ticked add-on (the Gumroad feature is UNVERIFIED; Shopify is deferred until about 25 own-site orders a month). Until then, only bundle share is measured."
-2. **EXP-04c:** set the Black Friday window to **Nov 24 – Dec 2, 2026** (the EVENTS Cyber Week). Name the default mechanism: a dated free bonus printable, not sold separately, with either bundle, each bundle at its price for 30+ days before Nov 24 and shown with no "$X value" for the bonus (16 CFR 251). No Etsy sale-tool event in 2026. Rename "New Year Family Reset" to "New Year Back-and-Forth" (ORIGINALITY A8).
+2. **EXP-04c:** set the Black Friday window to **Nov 24 – Dec 2, 2026** (the EVENTS Cyber Week). Name the default mechanism: a dated free bonus printable, not sold separately, with either bundle, each bundle at its price for 30+ days before Nov 24 and shown with no "$X value" for the bonus (16 CFR 251). No Etsy sale-tool event in 2026. Rename "New Year Back-and-Forth" to "New Year Back-and-Forth" (ORIGINALITY A8).
 3. **EXP-10b:** add a bid ceiling of $0.36; negative keywords and negative ASINs loaded before the start; continuation Dec 1–20 at up to $100 only after a Success verdict and a new APPROVED line; January at up to $150 only if 14-day ACoS is at or below 30%; and the $150 net-ad-loss stop. Leave the success and kill thresholds as registered.
 4. **New EXP-14, pin destination.** Question: do product pins earn more money linking to the Etsy listing, or to the email landing page with the product offer? Design: alternate by ISO week for 8 weeks. Metrics, reported separately: orders per 100 outbound clicks and sign-ups per 100 outbound clicks. Minimum sample: 300 outbound clicks per arm (ASSUMPTION). The default until a verdict: product pins go to Etsy and free-printable pins to the landing page.
 5. **New EXP-15, sharing features.** Metric: scans and sign-ups tagged `src=cert`, `src=caregiver` and `src=gift`, per 100 KDP and own-checkout orders. Success is 5 or more; kill is under 0.5 after 8 weeks and one redesign (ASSUMPTION).
@@ -1070,7 +1070,7 @@ A second agent re-ran the checks below from the source files, not from this repo
 9. **Other citations.** Spot-checked and correct: DEMAND-CHECK §3 kill rule and the 2,189-sale shop; rules 1, 3 and 12; MARKETING-PLAYBOOK 1.5–3%, above 25%, $0.38 a click, 3–5 pins a day, £7.99 / AU$14.99, Dec 26 to Jan 31 and weeks 12–13; STRESS-TEST §6 (+15% order value; $150 of ads is −$684 of median profit); KDP 2.5 / 5 / 10; ROUTINE steps 0.3, 0.4 and 0.8, 5 Etsy listings a week and the 60-minute cap; COMPLIANCE-GATE items; BRAND rules 1–7; TAX-AUTOPILOT's 10-minute download; the privacy policy's coaching and workshop wording.
 
 **Wrong or overstated, and fixed in this file**
-1. **Routine-card count.** It is 235, not 230 (`listing.json` since the commit that added this file). Fixed in EXP-02, EXP-03 and EXP-04a.
+1. **Routine-card count.** It is 235, not 230 (`listing.json` since the commit that added this file). Fixed in EXP-02, EXP-03 and EXP-04a. _(Update, September 28, 2026: after four new cards the ages 0–5 edition that launches has 181 cards and the Complete Set 239; the three experiments now use 181.)_
 2. **"Decides for 25% effects" was overstated.** The Etsy view tests are sized for 1.5×. At about 88 counted views per arm, a true 1.25× lift is caught only 42–61% of the time. Fixed in the register, section 0 and EXP-02. Section 2 now notes the thin control and the lift condition.
 3. **EXP-08 power.** A simulation of the four-style P(best) rule at 9,000 impressions per style picked a true 1.3× leader 19% of the time, 1.5× 53% and 2× 98%. The draft also said "for 6 weeks", which contradicts "posting ends day 75". Both fixed.
 4. **EXP-10a would call the Expected case a Kill.** Its bands are the workbook's full-ramp rates, but days 31–90 are ramp months 2–3, where the model gives about 2.1 units a title a month. Ramp-adjusted bands were added for the day-90 read.

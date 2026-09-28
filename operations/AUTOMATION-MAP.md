@@ -73,7 +73,7 @@
 | Channel | What sells there | Who is the seller / who collects sales tax | Delivery | Payout | Into the books |
 |---|---|---|---|---|---|
 | **Shopify (own shop)** | Printables (US buyers), POD merch, physical card deck, classroom single licenses, school/group invoices (draft orders) | **AlphaPlay LLC.** Shopify Tax calculates MD tax; we file | Digital-download app; POD app; license email | Shopify Payments → checking | Link My Books → QBO |
-| **Merchant of record** (Lemon Squeezy, Gumroad or Payhip; pick ONE) | Printables, bundles, 30-Day Screen Reset course (written), workshop kits, research briefs, for **worldwide** buyers | **The MoR** (it collects VAT/GST and US sales tax) | MoR emails the download or course access | MoR → checking | Monthly journal entry (gross vs. net: accountant decides) |
+| **Merchant of record** (Lemon Squeezy, Gumroad or Payhip; pick ONE) | Printables, bundles, 30 Days of Back-and-Forth course (written), workshop kits, research briefs, for **worldwide** buyers | **The MoR** (it collects VAT/GST and US sales tax) | MoR emails the download or course access | MoR → checking | Monthly journal entry (gross vs. net: accountant decides) |
 | **Etsy** | Printables, POD merch, card deck | Etsy (marketplace facilitator) | Etsy digital delivery; POD partner linked as production partner | Etsy Payments → checking | Link My Books → QBO |
 | **Teachers Pay Teachers** | Classroom pack, printables (TpT license framework) | TpT | TpT delivers | TpT (historically via PayPal) → checking | Monthly journal entry; PayPal→checking recorded as a transfer |
 | **TikTok Shop** | Physical only (merch, card deck, books). No digital goods | TikTok | POD partner integration | TikTok → checking | Link My Books → QBO |
@@ -88,7 +88,7 @@
 
 ## 3. Flows by product type
 
-### 3A. Printable bundles and PDFs (0–5 Screen Reset Pack; 5–12 Screen-Smart Family Plan; *100 Plays* PDF; card-deck printable)
+### 3A. Printable bundles and PDFs (Play-First Family Kit (ages 0–5); 5–12 Play-First Family Kit (ages 5–12); *100 Plays* PDF; card-deck printable)
 ```
 Buyer clicks "Buy" on site
  ├─ US buyer ──> Shopify checkout ──> digital-download app emails link (limit e.g. 5 downloads / 30 days)
@@ -115,7 +115,7 @@ Marketplace order ──> marketplace delivers the file + sends its receipt ─�
 - **Etsy:** Payment settings → deposit schedule weekly. Add the POD partner under production partners. Shop policies should match our refund policy.
 - **TpT:** use TpT's license options (single / additional licenses at a discount).
 
-### 3C. PreK–5 Screen-Free Classroom Pack: licenses
+### 3C. Play & Talk Classroom Pack (PreK–5): licenses
 | License | How it's bought | Delivery |
 |---|---|---|
 | Single classroom | Self-serve: Shopify, MoR or TpT | Instant download. The PDF footer shows "Single-Classroom License" |
@@ -163,7 +163,7 @@ Shopify / Etsy / TikTok order ──> POD app auto-submits the order (auto-confi
 
 **Scope:** adult sizes only until the CPSIA documents are in hand (`legal/LEGAL-LAUNCH-CHECKLIST.md` rows 29–30).
 
-### 3G. The 30-Day Screen Reset (written course)
+### 3G. 30 Days of Back-and-Forth (written course)
 - Sold and delivered by the MoR's course or membership feature, or by one course platform, whichever the storefront guide settles on.
 - **Access emailed automatically.** Daily lessons are drip emails or unlocks. There are no videos of the founder.
 - **Refund rule:** follows `legal/SHIPPING-RETURNS-REFUNDS.md` §4. The platform's refund window must be set to match.

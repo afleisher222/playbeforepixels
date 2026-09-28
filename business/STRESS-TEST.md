@@ -62,8 +62,8 @@ Play Before Pixels is a sound business on a small scale, but it will not be a fa
 | *Up! Go! More!* paperback (32 pp., colour) | KDP | $11.99 | $3.95 (33%) | $3.63 | Same |
 | *100 Screen-Free Plays* paperback | IngramSpark, 40% | $16.99 | $7.89 | $7.04 | Access fee plus large-trim print (UNVERIFIED) |
 | *Up! Go! More!* paperback | IngramSpark, 40% | $11.99 | $3.95 | $2.97 | Colour print about $4.00 plus access fee (UNVERIFIED) |
-| 30-Day Screen Reset | Workbook: Shopify. listing.json: merchant of record | $27.00 | $24.57 (91%) | $21.37 if the MoR is Gumroad; $23.80 at about 5% + $0.50 | The course is sold through one merchant of record (SOURCE `products/course-screen-reset/listing.json`; `operations/AUTOMATION-MAP.md` 3G). The MoR is not chosen yet: the automation map lists Lemon Squeezy, Gumroad or Payhip. Gumroad costs 12.9% + $0.80. The listing's own estimate is about 5% + $0.50 (UNVERIFIED), which nets $23.80 |
-| 30-Day Screen Reset bundle | Same | $49.00 | $44.83 (91%) | $39.43 (Gumroad) to about $43.60 | Same |
+| 30 Days of Back-and-Forth | Workbook: Shopify. listing.json: merchant of record | $27.00 | $24.57 (91%) | $21.37 if the MoR is Gumroad; $23.80 at about 5% + $0.50 | The course is sold through one merchant of record (SOURCE `products/course-screen-reset/listing.json`; `operations/AUTOMATION-MAP.md` 3G). The MoR is not chosen yet: the automation map lists Lemon Squeezy, Gumroad or Payhip. Gumroad costs 12.9% + $0.80. The listing's own estimate is about 5% + $0.50 (UNVERIFIED), which nets $23.80 |
+| 30 Days of Back-and-Forth bundle | Same | $49.00 | $44.83 (91%) | $39.43 (Gumroad) to about $43.60 | Same |
 
 **What this shows:**
 - **Digital products carry the business.** They keep about $4.70–$11 of a $6.50–$12 sale. A colour paperback keeps about $3.00–$3.95 (IngramSpark's corrected figure is $2.97).
@@ -320,7 +320,7 @@ The insurance row matters because insurance is about 30% of the lean fixed costs
 
 | Product | Net per unit | Units a month | Per day |
 |---|---|---|---|
-| 30-Day Screen Reset ($27; Shopify fees) | $24.57 | 23 | 0.8 |
+| 30 Days of Back-and-Forth ($27; Shopify fees) | $24.57 | 23 | 0.8 |
 | Play-First Family Kit, own site ($11) | $10.16 | 56 | 1.8 |
 | Toddler busy book, Etsy ($11.99) | $9.98 | 57 | 1.9 |
 | Play-First Family Kit, Etsy ($11) | $9.12 | 62 | 2.0 |

@@ -19,7 +19,7 @@ Orders by email or written PO only.
 |---|---|---|---|---|---|---|
 | PBP-PB-TABLET | *The Day the Tablet Slept*, talk-along picture book | Paperback 8.5 × 8.5 in, 32 pp | [__] | [__] | $__ | Print on demand, now |
 | PBP-HC-TABLET | *The Day the Tablet Slept*, Library/Classroom Edition | Hardcover (case laminate) | [__] | [__] | $__ | Print on demand via Ingram |
-| PBP-GUIDE-100 | *100 Plays Before Pixels* | Paperback 8 × 10 in | 0–12 | [__] | $__ | Print on demand |
+| PBP-GUIDE-100 | *100 Screen-Free Plays* | Paperback 8 × 10 in | 0–12 | [__] | $__ | Print on demand |
 | PBP-DECK-52 | Play Before Pixels 52-card play deck | Poker size, boxed | Grown-ups (confirm CPSIA status before marketing to children) | [UPC __] | $__ | Print on demand |
 | PBP-BB-UPGO | *Up! Go! More!* talk-along board book | 6 × 6 in board | 0–3 | [__] | $__ | **Not yet.** Needs an offset run held at a 3PL, plus CPSIA testing and a Children's Product Certificate |
 | PBP-KIT-FAMILY | Family Night in a Box (host-it-yourself) | Digital license + printed components | Families, PreK–5 | — | $__ | Organizations only |

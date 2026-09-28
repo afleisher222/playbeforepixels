@@ -2,6 +2,8 @@
 
 *Play Before Pixels, a trade name of AlphaPlay LLC (Maryland). Owner: the founder. Section 3 of the expansion business plan. Revised draft for the founder, September 28, 2026. Internal planning file, not for publication.*
 
+> **Decisions made after this plan (September 28, 2026; business/DECISIONS.md). Where this plan disagrees, these win:** the logo is the Maker's Seal only; KDP editions use Amazon's free ISBN; the *30 Days of Back-and-Forth* course is kept, fully self-running, with nothing needed from the founder; launch spending is capped at **$500 with no ads at launch** (business/LAUNCH-BUDGET-500.md). The launch order and prices live in ops/QUEUE.md "LAUNCH FIRST".
+
 **The workbook:** `business/PlayBeforePixels_Financial_Model.xlsx`: 9 tabs and about 18,600 live formulas. A full LibreOffice recalculation returns no errors. The generator script is `business/build_financial_model.py`, and it accepts input overrides for sensitivity runs.
 
 **How to read this section.** Every figure either comes from a repository file or is produced by the workbook, and the source is named. **[VERIFY]** marks an outside fact that is not in the repository. Web search was not available for this draft, so each of these must be checked on the live page or in a written quote before money is spent. **(assumption)** marks a planning input chosen for the model. Most platform fees in the repository are themselves marked UNVERIFIED (`commerce/storefront-setup-guide.md`). The model uses them as given, and its Status column flags them.
@@ -89,7 +91,7 @@ The first draft drove every channel by visits × conversion. The review pointed 
 | KDP paperbacks | Titles live: 3 at launch, then added each month up to a cap | +0.25 a month, cap 8 | +0.33 a month, cap 10 | +0.5 a month, cap 12 |
 | | **Units per title per month at full ramp** | **2.5** (the kill-rule floor) | **5** | **10** |
 | IngramSpark paperbacks (from Feb 2027) | Titles: 2, then added up to a cap; units per title per month | cap 4; 0.5 | cap 5; 1 | cap 6; 2 |
-| 30-Day Screen Reset (from Jan 2027) | Share of the email list reached each month × conversion | 10% × 1.0% | 15% × 1.5% | 20% × 2.0% |
+| 30 Days of Back-and-Forth (from Jan 2027) | Share of the email list reached each month × conversion | 10% × 1.0% | 15% × 1.5% | 20% × 2.0% |
 
 **The anchors.** Section 1.5 sets the per-listing rates as: floor 2.5, Low 10, Base 30, breakout 75 units per product per month. Conservative is set at the Low case (9.8). Strong is set at section 1's Base (30.3). Expected sits between them (14.8). No scenario uses the breakout rate.
 
@@ -108,7 +110,7 @@ The first draft drove every channel by visits × conversion. The review pointed 
 | 3 | Amazon KDP paperbacks (*100 Screen-Free Plays*, *Up! Go! More!*, *The Day the Tablet Slept*) | Dec 2026 | On |
 | 4 | IngramSpark same-ISBN paperbacks to bookstores and libraries (passive catalog availability only) | Feb 2027 | On |
 | 5 | International digital sales through a merchant of record (Gumroad) | Jan 2027 | On |
-| 6 | 30-Day Screen Reset (written course) | Jan 2027 | On |
+| 6 | 30 Days of Back-and-Forth (written course) | Jan 2027 | On |
 | 7 | Board book: pre-sale, then 3PL and Amazon FBA | — | **Off.** A gated option; the go / no-go logic is built in (3.10 rule 4) |
 | 8 | School and group licenses + TPT | — | **Off.** Overlay only if employment counsel clears it in writing (3.9) |
 | 9 | Retail and wholesale (Faire, Walmart Marketplace) | — | **Off.** Target Plus has a mix weight of 0 until an invitation arrives |
@@ -140,11 +142,11 @@ Everyday prices follow `BRAND.md` "Honest pricing", which overrides the anchor-a
 | *Up! Go! More!* / *The Day the Tablet Slept* paperbacks (32 pp. colour) | KDP | $11.99 | **$3.95** | 33% | 60% royalty minus $3.24 premium-colour print ($1.00 + $0.07 × 32) [VERIFY: KDP may price short colour books at a flat rate] |
 | Same paperbacks | IngramSpark at a 40% discount | $16.99 / $11.99 | $7.89 / $3.95 | 46% / 33% | 60% of list minus print (proxy: the KDP figures) [VERIFY in the IngramSpark calculator] |
 | *The Day the Tablet Slept* hardcover (gated) | IngramSpark | $19.99 | $3.49 at 40%; about $0.50 at 55% | 17% | $8.50 print [VERIFY]. Mix weight 0 until the paperback sells |
-| 30-Day Screen Reset | Own site | $27.00 | $24.57 | 91% | Shopify fees, 5% money-back allowance |
+| 30 Days of Back-and-Forth | Own site | $27.00 | $24.57 | 91% | Shopify fees, 5% money-back allowance |
 
 **One figure for each book.** Sections 1, 2 and 3 now all use **$7.89** for *100 Screen-Free Plays* and **$3.95** for the 32-page colour paperbacks. Section 1's earlier $5 a copy and the first model's $8.21 are withdrawn.
 
-**IngramSpark.** The base discount is **40%**. At the 55% library-jobber discount, the hardcover nets about $0.50 a copy, and `ops/ROUTINE.md`'s 8-week upkeep rule would cut it. *Laps Not Apps* is no longer in this channel: it is now a personalized keepsake printed per order (`amazon_route` "none-with-reason"). Passive catalog availability to bookstores and libraries is in the base plan. Active library or school marketing is G2 and stays held.
+**IngramSpark.** The base discount is **40%**. At the 55% library-jobber discount, the hardcover nets about $0.50 a copy, and `ops/ROUTINE.md`'s 8-week upkeep rule would cut it. *Whose Lap Today?* is no longer in this channel: it is now a personalized keepsake printed per order (`amazon_route` "none-with-reason"). Passive catalog availability to bookstores and libraries is in the base plan. Active library or school marketing is G2 and stays held.
 
 **Board book, gated option.** Net per unit depends on the print run, because the quote table sets the print cost by run size.
 
@@ -181,7 +183,7 @@ The first draft used the $2.90 mid-point of a range that runs from 1,000 to 3,00
 | Attorney: successor + durable power of attorney: $500 / $1,500 | `BLIND-SPOTS` #20 |
 | Copyright filings before November 11, 2026: $360 / $680 | `PROTECTION-PLAN` |
 | ALPHAPLAY attorney + Statement of Use or extension: $450 / $1,625 | `BLIND-SPOTS` #9; `PROTECTION-PLAN` #6 |
-| Bowker ISBNs (10): $295 | `PROTECTION-PLAN` |
+| ISBNs: $0 (KDP's free ISBN, business/DECISIONS.md; was Bowker 10 for $295) | `PROTECTION-PLAN` |
 | Accountant setup review: $300 / $1,000 | assumption [VERIFY] |
 
 **Gated one-time items, not in the base plan** (Include = 0; each switches on only when its trigger is met). They total about $46,100 at the low end and $76,450 at the high end.
@@ -290,7 +292,7 @@ The scenarios differ only in demand inputs (3.2) and the ad test budget. Costs, 
 
 | If only this sold | Units a month | Per day |
 |---|---|---|
-| 30-Day Screen Reset | 22 | 0.7 |
+| 30 Days of Back-and-Forth | 22 | 0.7 |
 | Play-First Family Kit on the own site | 54 | 1.8 |
 | Toddler busy book on Etsy | 55 | 1.8 |
 | Play-First Family Kit on Etsy | 60 | 2.0 |

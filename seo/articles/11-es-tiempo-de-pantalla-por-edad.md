@@ -8,7 +8,7 @@ meta_description: "Lo que recomiendan la OMS y la Academia Americana de Pediatr�
 target_keyword: "tiempo de pantalla por edad"   # demanda NO VERIFICADA (hipótesis)
 secondary_keywords: ["tiempo de pantalla niños", "cuánto tiempo de pantalla para un niño de 2 años", "pantallas y bebés recomendaciones"]
 audience: Madres, padres y cuidadores de niños de 0 a 5 años (EE. UU. hispano, México, Latinoamérica, España)
-related_product: Screen Reset Pack (0–5), versión en español pendiente; hasta entonces, /shop/screen-reset-pack-0-5/ (en inglés)
+related_product: Play-First Family Kit (2 a 5 años), versión en español pendiente; hasta entonces, /shop/play-first-family-kit/ (en inglés)
 free_printable: /es/gratis/cinco-juegos-de-5-minutos/ (pendiente; hasta entonces /free/five-5-minute-plays/ en inglés)
 citations: ["WHO 2019", "AAP 2016", "Madigan 2019", "Takahashi 2023", "Brushe 2024"]
 verify_before_publish:
@@ -92,7 +92,7 @@ Este artículo es información general, no un consejo médico. Si te preocupa al
 
 ## Da el primer paso
 
-Nuestro **Screen Reset Pack (0–5)** trae rutinas de "primero jugar", un registro de 30 días e ideas de reemplazo para los momentos en que suelen aparecer las pantallas. La versión en español está en preparación. [Ver la versión en inglés](/shop/screen-reset-pack-0-5/).
+Nuestro **Play-First Family Kit (2 a 5 años)** trae rutinas de "primero jugar", un registro de 30 días e ideas de reemplazo para los momentos en que suelen aparecer las pantallas. La versión en español está en preparación. [Ver la versión en inglés](/shop/play-first-family-kit/).
 
 O empieza gratis con **Cinco juegos de 5 minutos**, cinco juegos rápidos con un consejo para conversar en cada uno. [Descargar gratis](/es/gratis/cinco-juegos-de-5-minutos/).
 

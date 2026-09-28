@@ -1,4 +1,4 @@
-// Build script for "Laps Not Apps" — PERSONALIZED keepsake edition (8.5 x 8.5 in picture book, 32 interior pages).
+// Build script for "Whose Lap Today?" (was "Laps Not Apps"; brand/ORIGINALITY.md B7) — PERSONALIZED keepsake edition (8.5 x 8.5 in picture book, 32 interior pages).
 // Every word comes from WORDS.md (the founder's file); every order variable comes from personalize.js (map: personalization.json).
 // Modes:
 //   node build.js [--look 1-4]      sample book for the example order: source.html (cover + 32 interior + back), interior-only.html,
@@ -479,7 +479,7 @@ function coverArt() {
 const TAGLINE = fill(need('title tagline'));
 const COVER = `<div class="page cover">${svgPage(coverArt())}
   <div class="cv-top logo">${LOGO('lockup-horizontal.svg')}</div>
-  <h1 class="cv-title">Laps<br><span>Not Apps</span></h1>
+  <h1 class="cv-title">Whose Lap<br><span>Today?</span></h1>
   <div class="cv-sub" data-fit="cover-tagline" data-min="15"><span class="pill">${TAGLINE}</span></div>
 </div>`;
 pages.push(COVER);
@@ -488,7 +488,7 @@ pages.push(COVER);
 pages.push(`<div class="page">${svgPage(rect(0, 0, 875, 875, C.paper) + `<ellipse cx="437" cy="650" rx="240" ry="30" fill="${C.kT}"/>` +
   `<g transform="translate(${437 - 120 * 1.05} ${650 - 298 * 1.05}) scale(1.05)">${U('armchair')}</g>` + U('book', 437 - 60, 650 - 298 * 1.05 + 214 * 1.05 - 49, 0.75) +
   text(640, 440, 'saved for you', 44, C.tomato, 'Caveat', 700) + `<path d="M606 456 Q570 486 536 516" stroke="${C.tomato}" stroke-width="4" fill="none" stroke-linecap="round"/>`)}
-  <div class="tp"><h1>Laps <span>Not</span> Apps</h1>
+  <div class="tp"><h1>Whose <span>Lap</span> Today?</h1>
     <p data-fit="title-tagline" data-min="15">${TAGLINE}</p>
     <p class="byline">${AUTHOR ? fill(AUTHOR) : 'A Play Before Pixels read-aloud'}</p>
   </div>
@@ -498,7 +498,7 @@ pages.push(`<div class="page">${svgPage(rect(0, 0, 875, 875, C.paper) + `<ellips
 // I2 Copyright page
 pages.push(`<div class="page">${svgPage(rect(0, 0, 875, 875, C.paper))}
   <div class="copy">
-    <p class="copy-title">Laps Not Apps</p>
+    <p class="copy-title">Whose Lap Today?</p>
     <p>Personalized edition. Each copy is printed on demand for one reader.</p>
     <p>© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.</p>
     <p>All rights reserved. No part of this book may be reproduced, stored or shared in any form without written permission from the publisher, except for brief quotations in reviews.</p>
@@ -645,7 +645,7 @@ const BACK = `<div class="page back">${svgPage(rect(0, 0, 875, 875, C.sun) + `<c
     </ul>
   </div>
   <div class="series"><div class="series-h">Collect the books</div>
-    <div class="srow"><i style="background:${C.tomato}"></i>Laps Not Apps</div>
+    <div class="srow"><i style="background:${C.tomato}"></i>Whose Lap Today?</div>
     <div class="srow"><i style="background:${C.sky}"></i>The Day the Tablet Slept</div>
     <div class="srow"><i style="background:${C.grass}"></i>Up! Go! More!</div>
   </div>
@@ -801,7 +801,7 @@ function coverWrap(format, dims) {
   const PW = (Wt - S) / 2, py = (H - 8.75) / 2;
   const bx = soft ? 0 : (PW - 8.75) / 2, fx = soft ? 8.5 + S : PW + S + (PW - 8.75) / 2;
   const ext = (x, w, band) => `<div style="position:absolute;left:${x}in;top:0;width:${w}in;height:${H}in;background:${C.sun}"></div><div style="position:absolute;left:${x}in;top:${py + band}in;width:${w}in;height:${H - py - band}in;background:${C.tomato}"></div>`;
-  const spineText = S >= 0.25 ? `<div class="sp-text">Laps Not Apps <span>· made for ${NAME}</span></div>` : '';
+  const spineText = S >= 0.25 ? `<div class="sp-text">Whose Lap Today? <span>· made for ${NAME}</span></div>` : '';
   const css = `@page { size: ${Wt}in ${H}in; margin: 0 } html, body { width: ${Wt}in; height: ${H}in; overflow: hidden }
   .wrap { position: relative; width: ${Wt}in; height: ${H}in; overflow: hidden; background: ${C.sun} }
   .panel { position: absolute; top: 0; width: ${PW}in; height: ${H}in; overflow: hidden }
@@ -813,7 +813,7 @@ function coverWrap(format, dims) {
   const panel = (x, band, pageHtml, cls, left) => `<div class="panel" style="left:${x}in">${ext(0, PW, band)}${pageHtml.replace(`class="page ${cls}"`, `class="page ${cls}" style="left:${left}in"`)}</div>`;
   const body = `<div class="wrap">${panel(0, 7.5, BACK, 'back', bx)}${panel(PW + S, 7.9, COVER, 'cover', fx - PW - S)}
     <div class="spine">${spineText}</div></div>`;
-  return doc(`Laps Not Apps cover wrap (${format})`, body, css);
+  return doc(`Whose Lap Today? cover wrap (${format})`, body, css);
 }
 // Placeholder dimensions until the printer's own calculator/API gives the real ones [VERIFY]
 const WRAP_DEFAULTS = { hardcover: { w: 19.0, h: 10.25, spine: 0.25 }, softcover: { spine: 0.08 } };
@@ -826,26 +826,26 @@ if (MODE === 'order') {
   const fontsRel = path.relative(out, path.join(DIR, '../../brand/fonts/fonts.css'));
   ARGS.fonts = ARGS.fonts || fontsRel;
   const dims = { ...WRAP_DEFAULTS[NZ.format], ...(ARGS['cover-w'] ? { w: +ARGS['cover-w'] } : {}), ...(ARGS['cover-h'] ? { h: +ARGS['cover-h'] } : {}), ...(ARGS.spine ? { spine: +ARGS.spine } : {}) };
-  fs.writeFileSync(path.join(out, 'interior.html'), doc('Laps Not Apps interior', interior.join('\n')));
+  fs.writeFileSync(path.join(out, 'interior.html'), doc('Whose Lap Today? interior', interior.join('\n')));
   fs.writeFileSync(path.join(out, 'cover-wrap.html'), coverWrap(NZ.format, dims));
   fs.writeFileSync(path.join(out, 'check.json'), JSON.stringify({ order_id: ORDER.order_id || null, format: NZ.format, look: NZ.look, pronouns: NZ.pronouns, vars: NZ.vars, holds: NZ.holds, drafts_left: DRAFTS, channel: ORDER.channel || null, etsy_edition_no_url: ETSY, version: VERSION, cover_dims_in: dims, dims_are_placeholders: !(ARGS['cover-w'] || ARGS.spine), interior_pages: interior.length }, null, 2));
   console.log(`order ${ORDER.order_id}: ${interior.length} interior pages → ${out}${NZ.holds.length ? '\nHOLD for review: ' + NZ.holds.join('; ') : ''}`);
   process.exit(NZ.holds.length ? 4 : 0);
 }
 if (MODE === 'template') {
-  fs.writeFileSync(path.join(DIR, 'template.html'), doc('Laps Not Apps — variable template', pages.join('\n')));
+  fs.writeFileSync(path.join(DIR, 'template.html'), doc('Whose Lap Today? — variable template', pages.join('\n')));
   console.log(`template: ${pages.length} pages; ${DRAFTS.length} WORDS.md sections still marked (draft)`);
   process.exit(0);
 }
 // sample
-fs.writeFileSync(path.join(DIR, 'source.html'), doc('Laps Not Apps', pages.join('\n')));
-fs.writeFileSync(path.join(DIR, 'interior-only.html'), doc('Laps Not Apps interior', interior.join('\n')));
+fs.writeFileSync(path.join(DIR, 'source.html'), doc('Whose Lap Today?', pages.join('\n')));
+fs.writeFileSync(path.join(DIR, 'interior-only.html'), doc('Whose Lap Today? interior', interior.join('\n')));
 for (const fmt of ['hardcover', 'softcover']) fs.writeFileSync(path.join(DIR, `cover-wrap-${fmt}.html`), coverWrap(fmt, WRAP_DEFAULTS[fmt]));
-fs.writeFileSync(path.join(DIR, 'cover.html'), doc('Laps Not Apps cover', `<div class="trim">${COVER}</div>`, `html,body{width:816px;height:816px;overflow:hidden} .trim{width:816px;height:816px;overflow:hidden;position:relative} .trim .page{position:absolute;left:-12px;top:-12px}`));
+fs.writeFileSync(path.join(DIR, 'cover.html'), doc('Whose Lap Today? cover', `<div class="trim">${COVER}</div>`, `html,body{width:816px;height:816px;overflow:hidden} .trim{width:816px;height:816px;overflow:hidden;position:relative} .trim .page{position:absolute;left:-12px;top:-12px}`));
 
 // Character picker (store image + the reference for the "Look" option)
 const pick = Object.entries(PZ.LOOKS).map(([n, L]) => `<div class="card"><svg viewBox="-12 -16 144 212" class="kid"><use href="#look-${n}" width="120" height="200"/></svg><div class="lk">${L.label}</div><div class="ld">${L.desc}</div></div>`).join('');
-fs.writeFileSync(path.join(DIR, 'picker.html'), `<!doctype html><html><head><meta charset="utf-8"><title>Laps Not Apps character picker</title>
+fs.writeFileSync(path.join(DIR, 'picker.html'), `<!doctype html><html><head><meta charset="utf-8"><title>Whose Lap Today? character picker</title>
 <link rel="stylesheet" href="../../brand/fonts/fonts.css"><style>
 *{margin:0;padding:0;box-sizing:border-box} html,body{width:1600px;height:1200px;overflow:hidden;background:${C.wash};font-family:'Nunito Sans',sans-serif;color:${C.ink}}
 .logo{position:absolute;left:80px;top:64px;width:300px} .logo svg{display:block;width:100%;height:auto}
@@ -861,13 +861,13 @@ h1{position:absolute;left:80px;right:80px;top:170px;font-family:'Bricolage Grote
 .step{flex:1;display:flex;align-items:center;gap:18px;font-size:26px;font-weight:800}
 .step i{flex:0 0 58px;height:58px;border-radius:50%;background:${C.tomato};color:#fff;font-style:normal;font-family:'Bricolage Grotesque',sans-serif;font-size:30px;display:flex;align-items:center;justify-content:center}
 </style></head><body>${DEFS}<div class="logo">${LOGO('lockup-horizontal.svg')}</div>
-<h1>Choose your child’s look</h1><div class="sub">Laps Not Apps · the story’s child changes; the family in the story stays the same.</div>
+<h1>Choose your child’s look</h1><div class="sub">Whose Lap Today? · the story’s child changes; the family in the story stays the same.</div>
 <div class="grid">${pick}</div>
 <div class="steps"><div class="step"><i>1</i>Pick a look</div><div class="step"><i>2</i>Type the name</div><div class="step"><i>3</i>Add who it’s from</div><div class="step"><i>4</i>We print and ship it</div></div>
 </body></html>`);
 
 // Mockup (website/store hero)
-fs.writeFileSync(path.join(DIR, 'mockup.html'), `<!doctype html><html><head><meta charset="utf-8"><title>Laps Not Apps mockup</title>
+fs.writeFileSync(path.join(DIR, 'mockup.html'), `<!doctype html><html><head><meta charset="utf-8"><title>Whose Lap Today? mockup</title>
 <link rel="stylesheet" href="../../brand/fonts/fonts.css"><style>
 *{margin:0;padding:0;box-sizing:border-box} html,body{width:1600px;height:1200px;overflow:hidden;background:${C.wash}}
 .floor{position:absolute;left:0;right:0;top:960px;bottom:0;background:${C.kT}}
@@ -887,7 +887,7 @@ fs.writeFileSync(path.join(DIR, 'mockup.html'), `<!doctype html><html><head><met
 .looks{display:flex;gap:10px;margin-top:22px}.looks svg{width:62px;height:62px;background:#fff;border-radius:50%}
 </style></head><body><div class="blob"></div><div class="blob2"></div><div class="floor"></div><div class="shadow"></div>${DEFS}
 <div class="book"><div class="inner"><div class="spine"></div><img src="cover.png" alt=""><div class="hinge"></div></div></div>
-<div class="tag">Laps Not Apps<small>A rhyming read-aloud with your child’s<br>name in six rhymes · ages 0–5</small><span class="pill">Personalized keepsake</span>
+<div class="tag">Whose Lap Today?<small>A rhyming read-aloud with your child’s<br>name in six rhymes · ages 0–5</small><span class="pill">Personalized keepsake</span>
 <div class="looks">${Object.keys(PZ.LOOKS).map(n => `<svg viewBox="12 -8 96 96"><use href="#look-${n}" width="120" height="200"/></svg>`).join('')}</div></div>
 <div class="spread"><img src="preview/p25.png" alt=""><img src="preview/p26.png" alt=""></div>
 </body></html>`);
