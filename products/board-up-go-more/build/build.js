@@ -16,7 +16,7 @@ const HR = ['#2B1D16', '#5A3825', '#A0522D', '#E3B04B', '#1D2940'];
 const KIDS = {
   A: { skin: SK[3], hair: HR[0], hs: 'puffs', shirt: C.tomato, pants: C.sky, shoe: C.ink },
   B: { skin: SK[0], hair: HR[3], hs: 'tuft', shirt: C.grass, pants: C.plum, shoe: C.tomato },
-  C: { skin: SK[2], hair: HR[1], hs: 'curly', shirt: C.sky, pants: C.ink, shoe: C.grass },
+  C: { skin: SK[2], hair: HR[1], hs: 'curly', shirt: C.sky, pants: C.ink, shoe: C.grass, aid: true }, // hearing aid (inclusive cast, customer-voice rule 35)
   D: { skin: SK[4], hair: HR[4], hs: 'short', shirt: C.sun, pants: C.grass, shoe: C.sky },
   E: { skin: SK[1], hair: HR[2], hs: 'bob', shirt: C.plum, pants: C.tomato, shoe: C.ink },
 };
@@ -24,7 +24,7 @@ const ADULTS = {
   G1: { skin: SK[5], hair: HR[0], hs: 'short', shirt: C.grass, pants: C.ink, shoe: C.tomato },
   G2: { skin: SK[1], hair: HR[1], hs: 'bun', shirt: C.tomato, pants: C.sky, shoe: C.ink },
   G3: { skin: SK[0], hair: HR[3], hs: 'long', shirt: C.sky, pants: C.ink, shoe: C.sun },
-  G4: { skin: SK[2], hair: C.wash, hs: 'bun', shirt: C.plum, pants: C.sky, shoe: C.tomato },
+  G4: { skin: SK[2], hair: C.wash, hs: 'bun', shirt: C.plum, pants: C.sky, shoe: C.tomato, glasses: true },
   G5: { skin: SK[3], hair: HR[0], hs: 'wrap', hw: C.sun, shirt: C.tomato, pants: C.ink, shoe: C.sun },
 };
 
@@ -59,6 +59,7 @@ const SYMBOLS = [
   sym('h-long', `<path class="hr" d="M-27 12C-29-18-15-27 0-27C15-27 29-18 27 12C25-4 16-12 6-11C-8-9-24-6-27 12Z"/>`),
   sym('hb-long', `<rect class="hr" x="-30" y="-10" width="17" height="58" rx="8.5"/><rect class="hr" x="13" y="-10" width="17" height="58" rx="8.5"/>`),
   sym('h-wrap', `<path class="hw" d="M-27 4C-31-31 31-31 27 4C18-8-18-8-27 4Z"/><circle class="hw" cx="9" cy="-28" r="10"/><circle class="hw" cx="21" cy="-21" r="8"/>`),
+  sym('glasses', `<circle cx="-8.5" cy="-1" r="7.2" stroke="${I}" stroke-width="2.2" fill="none"/><circle cx="8.5" cy="-1" r="7.2" stroke="${I}" stroke-width="2.2" fill="none"/><path d="M-1.6-2Q0-3.6 1.6-2" stroke="${I}" stroke-width="2.2" fill="none" stroke-linecap="round"/>`),
   sym('beard', `<path class="hr" d="M-22 2C-22 32 22 32 22 2C17 19-17 19-22 2Z"/>`),
   // toddler parts (origin = hip)
   sym('t-body', `<rect class="sh" x="-18" y="-45" width="36" height="40" rx="15"/><path class="pa" d="M-18-19H18V-6A10 10 0 0 1 8 4H-8A10 10 0 0 1-18-6Z"/>`),
@@ -118,7 +119,8 @@ function kid(o) {
   const legId = side => (d.sock === side ? 't-leg-sock' : 't-leg');
   const legs = d.legs ? use(legId('L'), `translate(-8,-4) rotate(${d.lL})`) + use(legId('R'), `translate(8,-4) rotate(${d.lR})`) : '';
   const arms = (d.hideL ? '' : use('t-arm', `translate(-14,-38) rotate(${d.aL})`)) + (d.hideR ? '' : use('t-arm', `translate(14,-38) rotate(${d.aR})`));
-  const head = `<g transform="translate(0,-69) rotate(${d.tilt})">${hairBack(d.hs)}${use('t-head')}${use('face-' + d.face)}${hairFront(d.hs)}</g>`;
+  const aid = d.aid ? `<path d="M24.5-9C31.5-8.5 32 2 27 6.5" stroke="${C.plum}" stroke-width="4.6" fill="none" stroke-linecap="round"/><circle cx="22.5" cy="3" r="2.6" fill="${C.plum}"/>` : '';
+  const head = `<g transform="translate(0,-69) rotate(${d.tilt})">${hairBack(d.hs)}${use('t-head')}${use('face-' + d.face)}${hairFront(d.hs)}${aid}</g>`;
   const inner = (d.back || '') + legs + use('t-body') + (d.armsFront ? head + arms : arms + head) + (d.front || '');
   return `<g style="${vars(d)}" transform="translate(${d.x},${d.y}) scale(${d.flip ? -d.s : d.s},${d.s})">${inner}</g>`;
 }
@@ -140,7 +142,7 @@ function adult(o) {
     legs = leg(-12, thL, shL) + leg(12, thR, shR);
   }
   const arms = (d.hideL ? '' : use('g-arm', `translate(-22,-80) rotate(${d.aL})`)) + (d.hideR ? '' : use('g-arm', `translate(22,-80) rotate(${d.aR})`));
-  const head = `<g transform="translate(0,-126) scale(.92) rotate(${d.tilt})">${hairBack(d.hs)}${use('t-head')}${d.beard ? use('beard') : ''}${use('face-' + d.face)}${hairFront(d.hs)}</g>`;
+  const head = `<g transform="translate(0,-126) scale(.92) rotate(${d.tilt})">${hairBack(d.hs)}${use('t-head')}${d.beard ? use('beard') : ''}${use('face-' + d.face)}${d.glasses ? use('glasses') : ''}${hairFront(d.hs)}</g>`;
   const inner = (d.back || '') + legs + use('g-neck') + use('g-body') + (d.armsFront ? head + arms : arms + head) + (d.front || '');
   return `<g style="${vars(d)}" transform="translate(${d.x},${d.y}) scale(${d.flip ? -d.s : d.s},${d.s})">${inner}</g>`;
 }
@@ -328,13 +330,12 @@ scenes['night-night'] = () => {
 
 // ---------- new scenes (revision 2: 22 words) ----------
 scenes.peekaboo = () => {
-  const s = 1.55;
-  // a little cloth held up over the eyes (hands at its corners), smile peeking out below
-  const hx = 14 + 26 * 12 / Math.hypot(12, 28), hy = -38 - 26 * 28 / Math.hypot(12, 28);
-  const cloth = `<rect x="-31" y="-88" width="62" height="28" rx="9" fill="${C.tomato}"/><rect x="-31" y="-66" width="62" height="6" rx="3" fill="${C.sun}"/>`;
-  const k = Object.assign({}, KIDS.E, { x: 214, y: F - 27 * s, s, face: 'laugh', armsFront: true,
-    front: cloth + `<circle class="sk" cx="${-hx}" cy="${hy}" r="7"/><circle class="sk" cx="${hx}" cy="${hy}" r="7"/>` });
-  k.aL = aim(12, -28); k.aR = aim(-12, -28);
+  const s = 1.55, kc = KIDS.E;
+  // both hands over the eyes (the classic peekaboo), smile peeking out below
+  const arm = f => `<path d="M${f * 14}-40L${f * 17}-47" stroke="${kc.shirt}" stroke-width="11" stroke-linecap="round" fill="none"/>` +
+    `<path d="M${f * 17}-46Q${f * 20}-56 ${f * 12}-63" stroke="${kc.skin}" stroke-width="9" stroke-linecap="round" fill="none"/>` +
+    `<g transform="translate(${f * 9.8},-70) scale(${f * 0.86},0.86)">${use('palm')}</g>`; // fingers up against the hair so the hands read as hands
+  const k = Object.assign({}, kc, { x: 214, y: F - 27 * s, s, face: 'laugh', hideL: true, hideR: true, front: arm(-1) + arm(1) });
   const g = Object.assign({}, ADULTS.G5, { x: 418, y: F - 51 * 1.12, s: 1.12, flip: true, legs: 'kneel', aL: 118, aR: -118, face: 'laugh' });
   const pops = [[330, 236, -20], [512, 250, 24], [300, 300, -60]].map(([x, y, r]) => `<rect x="${x}" y="${y}" width="8" height="20" rx="4" fill="${C.sky}" transform="rotate(${r} ${x + 4} ${y + 10})"/>`).join('');
   return bg(C.tSky) + circle(300, 318, 150, '#FFFFFF') + adult(g) + kid(k) + pops;
@@ -382,10 +383,9 @@ scenes.open = () => {
 scenes.help = () => {
   const shelf = `<rect x="378" y="252" width="168" height="16" rx="8" fill="${C.plum}"/><rect x="516" y="252" width="16" height="${F - 252 + 2}" rx="8" fill="${C.plum}"/>`;
   const duck = use('duck', 'translate(456,222) scale(.95)');
-  const k = Object.assign({}, KIDS.B, { x: 370, y: F - 27 * 1.5, s: 1.5, face: 'oh', aL: 14, lL: 4, lR: -4 });
-  k.aR = aimKid(k, 'R', 430, 270);
-  const g = Object.assign({}, ADULTS.G1, { x: 170, y: F - 51 * 1.12, s: 1.12, legs: 'kneel', face: 'smile', aL: 12 });
-  g.aR = aimAdult(g, 'R', 292, 360);
+  const k = Object.assign({}, KIDS.B, { x: 414, y: F - 27 * 1.5, s: 1.5, face: 'oh', aL: 14, lL: 4, lR: -4 });
+  k.aR = aimKid(k, 'R', 520, 318); // reaching up toward the toy: a reach is asking
+  const g = Object.assign({}, ADULTS.G1, { x: 196, y: F - 51 * 1.12, s: 1.12, legs: 'kneel', face: 'smile', aL: 12, aR: -34 }); // waiting, hand open
   return bg(C.tGrass) + circle(300, 318, 150, '#FFFFFF') + shelf + duck + adult(g) + kid(k);
 };
 

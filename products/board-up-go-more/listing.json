@@ -10,12 +10,12 @@
   "price_usd": 11.99,
   "price_notes": "Paperback $11.99 at launch (KDP and IngramSpark). At 60% KDP royalty minus an estimated $3.24 print cost (premium color, 32 pages, $1.00 + $0.07/page), about $3.95 per copy [VERIFY in the KDP pricing calculator; KDP standard color needs 72+ pages, so a 32-page color book prints as premium color]. Board book $12.99 (DEMAND-CHECK section 4, rule 9) and a Talk-Along Firsts 3-pack at $29.99 marked 'save', only when books 2 and 3 exist and the landed unit cost from the offset quote is at or below 35–40% of retail [VERIFY quotes]. Wholesale is typically 50% of retail and applies to the board book only, once it is stocked at a 3PL.",
   "short_description": "22 first words, one per page, each with a sound, sign or move to copy and a grown-up tip. A talk-along book for ages 0–3.",
-  "long_description": "Up! Go! More! is a bright, uncluttered first-words book for babies and toddlers, built for laps, not screens. Each of its 22 pages shows one everyday word a little one really uses, from hi and peekaboo to eat, help, more, all done and night-night. The word is set in huge rounded letters above one big, friendly picture.\n\nEvery page also gives you two small things to do together. A Say it, Sign it or Act it cue offers one sound, simple hand sign or move to copy, like tapping fingertips for more or hiding your eyes for peekaboo. A short grown-up tip turns reading into a back-and-forth chat: pause and wait, add one word, offer a choice, copy each other, or follow your child's lead. There is no script and nothing to get right. Pick any tip and skip any tip.\n\nThe front pages explain how to read together in four plain steps. The back pages show where the words live in your day, from mealtime to bedtime, and include a keepsake word list, pages to add your family's own words, and a free printable bonus for grown-ups. The paperback has paper pages: read it together, and keep it away from mouths.\n\nUp! Go! More! is Book 1 of the Talk-Along Firsts series. Next come sounds and animals, then routines and feelings.",
+  "long_description": "Up! Go! More! is a bright, uncluttered first-words book for babies and toddlers, built for laps and back-and-forth. Each of its 22 pages shows one everyday word a little one really uses, from hi and peekaboo to eat, help, more, all done and night-night. The word is set in huge rounded letters above one big, friendly picture.\n\nEvery page also gives you two small things to do together. A Say it, Sign it or Act it cue offers one sound, simple hand sign or move to copy, like tapping fingertips for more or hiding your eyes for peekaboo. A short grown-up tip turns reading into a back-and-forth chat: pause and wait, add one word, offer a choice, copy each other, or follow your child's lead. A look, a point, a sign or a tap on a talking device all count as a turn. There is no script and nothing to get right. Pick any tip and skip any tip.\n\nThe front pages explain how to read together in four plain steps. The back pages show where the words live in your day, from mealtime to bedtime, and include a keepsake word list, pages to add your family's own words, and a free printable bonus for grown-ups. The paperback has paper pages: read it together, and keep it away from mouths.\n\nUp! Go! More! is Book 1 of the Talk-Along Firsts series. Next come sounds and animals, then routines and feelings.",
   "bullets": [
     "22 real first words, one per page: hi, peekaboo, up, down, go, stop, ball, in, open, wow, uh-oh, help, clap, shoe, eat, cup, more, all done, bye-bye, book, hug, night-night",
     "A Say it, Sign it or Act it cue on every page: one sound, simple hand sign or move for you and your little one to copy together",
-    "A grown-up tip on every page with one easy talk idea: wait, add a word, offer a choice, copy each other, follow their lead",
-    "Huge rounded letters and one big, bold, uncluttered picture per page, with an inclusive cast of toddlers, parents and grandparents",
+    "A grown-up tip on every page with one easy talk idea: wait, add a word, offer a choice, copy each other, follow their lead. A sign, a point or a device tap counts as a turn",
+    "Huge rounded letters and one big, bold, uncluttered picture per page, with a varied cast of toddlers, parents and grandparents (a grandparent in glasses, a toddler with a hearing aid)",
     "Extras for families: a how-to-read page, a words-through-your-day guide, a keepsake word list, add-your-own-words pages and a free printable bonus"
   ],
   "keywords": [
@@ -65,7 +65,7 @@
     "Play Before Pixels website shop linking to the retailer listings (no stock held)",
     "LATER, Wave 3: board book sold on the website, Amazon (FBA or seller-fulfilled by the 3PL) and Faire wholesale, only after an offset run is stored and shipped by a fulfillment warehouse and CPSIA paperwork exists"
   ],
-  "compliance_notes": "No health or medical claims: this is a parent-education picture book, not a treatment or professional service of any kind, and it claims no outcome for any child. It is not presented as written by a speech-language professional, and no diagnosis or condition is named or targeted in its text, keywords or ads (BRAND.md hard rule 1 and the diagnosis-search rule). Talk strategies are described in plain words, with no trademarked program names. No real brands, logos, schools or products; the tablet on the night-night page is a generic, neutral object. No research citations are used. Hand signs are described as simple signs, not as a sign-language course. The inside pages say that every child talks on their own timeline and point parents to their child's doctor with questions. Safety: no small objects are suggested (blocks, a ball, a cup and a duck toy only; no food choking hazards) and adult reading together is assumed. The paperback has paper pages, so the copyright page and listing say 'read together, and keep this paper book away from mouths' (customer-voice rule 20); the 'Add your own words' page is a grown-up keepsake page, not a child mark-making page. Talk tips include 'Talk, sing and read in the language you know best' (rule 15). Both editions carry 'Version 1.0 · September 2026' on the copyright page (rule 3); bump it and tell past buyers on any file change. Grown-up tip labels and cue chips on sun-yellow pages use ink text for contrast. The board book is a children's product for under-3s: before sale, confirm CPSIA obligations with the printer (permanent tracking label, Children's Product Certificate from third-party testing, or documentation of the ordinary-book exemption if it applies) [VERIFY], and check UK/EU toy-safety rules for board books [VERIFY]. Legal owner: © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. The files are RGB from Chromium. Check each final file against the chosen printer's current template before upload (KDP cover calculator and previewer, IngramSpark cover template generator, and the offset printer's board-book dieline for trim, bleed, board thickness, spine, corner radius and CMYK conversion).",
+  "compliance_notes": "No health or medical claims: this is a parent-education picture book, not a treatment or professional service of any kind, and it claims no outcome for any child. It is not presented as written by a speech-language professional, and no diagnosis or condition is named or targeted in its text, keywords or ads (BRAND.md hard rule 1 and the diagnosis-search rule). Talk strategies are described in plain words, with no trademarked program names. No real brands, logos, schools or products; the tablet on the night-night page is a generic, neutral object. No research citations are used. Hand signs are described as simple signs, not as a sign-language course. The inside pages say that every child talks on their own timeline and point parents to their child's doctor with questions. Safety: no small objects are suggested (blocks, a ball, a cup and a duck toy only; no food choking hazards) and adult reading together is assumed. The paperback has paper pages, so the copyright page says 'Paper pages: read together and keep away from mouths' and the listing says the same (customer-voice rule 20); the 'Add your own words' page is a grown-up keepsake page, not a child mark-making page. Talk tips include 'Talk, sing and read in the language you know best. Every language counts.' (rule 15). Both editions carry 'Version 1.0 · September 2026' on the copyright page (rule 3); bump it and tell past buyers on any file change. Grown-up tip labels and cue chips on sun-yellow pages use ink text for contrast. The board book is a children's product for under-3s: before sale, confirm CPSIA obligations with the printer (permanent tracking label, Children's Product Certificate from third-party testing, or documentation of the ordinary-book exemption if it applies) [VERIFY], and check UK/EU toy-safety rules for board books [VERIFY]. Legal owner: © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. The files are RGB from Chromium. Check each final file against the chosen printer's current template before upload (KDP cover calculator and previewer, IngramSpark cover template generator, and the offset printer's board-book dieline for trim, bleed, board thickness, spine, corner radius and CMYK conversion). Customer panel, September 28, 2026 (see panel.md): the how-to page and word list now say a look, a point, a sign, a sound or a tap on a talking device counts (customer-voice rule 28), and the cast now includes a grandparent in glasses and a toddler with a hearing aid (rule 35). The mockup labels the board book 'coming later' so no one expects to buy it now. Nothing has shipped, so the files stay Version 1.0.",
   "human_todo": [
     "HUMAN AUTHORSHIP (do first): open build/manuscript.json and rewrite the words, cues, tips, page order and the 'note for grown-ups' in your own words. Set founder_rewritten to true on each entry, fill in author_credit, then run build/render-all.sh and commit. Every version stays in git as proof of your own creative changes. PRINT_READY=1 node build/build.js refuses to build until this is done.",
     "The dashed orange boxes in the files are founder slots (author credit, note to grown-ups, ISBNs, 'Printed in', batch number). Fill each one; none may be printed as-is.",
@@ -79,7 +79,64 @@
     "Set up the bonus page at playbeforepixels.com/bonus/board-up-go-more before the book goes live. It should deliver the printable word cards and the one-page say/sign/act fridge sheet the book promises, and ask for birth month and year only. Scan the printed QR code to test it.",
     "BOARD BOOK (Wave 3, not now): get an offset printer quote for 6 x 6 in board books with rounded corners (26-page file; confirm the minimum run, board caliper and dieline), and a quote from a fulfillment warehouse (3PL) to receive, store and ship the run. The founder never stores or ships stock. Price at $12.99 only if landed cost is at or below 35–40% of retail. Complete CPSIA testing and the Children's Product Certificate, then add 'Printed in' and batch/tracking info.",
     "Before anything ships (customer-voice rule 21): do a written QA pass (spelling, word count 22, age labels, safety lines, contrast), order a physical proof from every printer, and approve the cover and page 1 yourself.",
-    "Photograph the printed proofs for store listings next to mockup.png, and add the paperback to the website shop with a 'Next for your child's age' link to next_products"
+    "Photograph the printed proofs for store listings next to mockup.png, and add the paperback to the website shop with a 'Next for your child's age' link to next_products",
+    "FOUNDER DECISION (customer-voice fix list #2): keep 'ages 0–3, read together' on the paperback cover, or relabel it '18 months and up, for reading together'. The listing already says the paperback has paper pages and is a book to share.",
+    "Libraries: get a Library of Congress PCN/LCCN before publication if you want library orders (the librarian asked), and confirm the BISAC codes in listing.json [VERIFY].",
+    "Add a saved reply for read-aloud permission: in-person group reading is welcome; recorded or online read-alouds are answered case by case in writing.",
+    "Bonus page: draw the five hand signs (more, all done, eat, help, book) as simple pictures on the fridge sheet, as the teacher and SLP asked; the book describes them in words only.",
+    "Books 2 and 3: include a child who signs or uses a talking device in the cast (rule 35). A Spanish or bilingual edition comes only after sales, with a human translator and its own ISBN.",
+    "Proof check: on the printed proof, look at the navy night-night and 'The end' pages for even ink and no banding (customer-voice rule 45)."
   ],
-  "amazon_route": "kdp-paperback"
+  "amazon_route": "kdp-paperback",
+  "bisac": [
+    "JUV009000 Juvenile Fiction / Concepts / General [VERIFY]",
+    "JNF013000 Juvenile Nonfiction / Concepts / General [VERIFY]",
+    "JNF048000 Juvenile Nonfiction / Sign Language [VERIFY]"
+  ],
+  "faq": [
+    {
+      "q": "What ages is it for?",
+      "a": "Ages 0–3, read together with a grown-up. Babies look and listen; toddlers start to copy the sounds, signs and moves. The paperback has paper pages, so it is a book to share, not a baby's own book to chew."
+    },
+    {
+      "q": "What's inside?",
+      "a": "22 word pages, each with one word, one big picture, one sound, sign or move to copy and a grown-up tip. Plus a how-to-read page, a words-through-your-day page, a keepsake word list, add-your-own-words frames and a QR code for a free printable bonus."
+    },
+    {
+      "q": "Is there a board book?",
+      "a": "Not yet. The paperback is available now, printed on demand. A sturdy 6 x 6 in board book is planned for later."
+    },
+    {
+      "q": "How does delivery work?",
+      "a": "Each copy is printed when you order it and shipped by the printer. Print on demand usually takes a few extra days; tracking comes by email."
+    },
+    {
+      "q": "Is it a good gift?",
+      "a": "Yes. Order it with the recipient's address and use the store's gift options at checkout. The free bonus asks only for a child's birth month and year."
+    },
+    {
+      "q": "Are the hand signs from a sign language?",
+      "a": "They are simple everyday signs many families use, described in plain words. The book is not a sign-language course."
+    },
+    {
+      "q": "My child signs, points or uses a talking device. Is this book a good fit?",
+      "a": "Yes. The book says it plainly: a look, a point, a sign, a sound or a tap on a talking device is your child's turn."
+    },
+    {
+      "q": "We speak another language at home. Can we use it?",
+      "a": "Yes. Talk, sing and read in the language you know best; every language counts. Say each word in your home language, and use the 'Add your own words' page for your family's words. There is no Spanish or bilingual edition yet."
+    },
+    {
+      "q": "Can I read it aloud at storytime or in class?",
+      "a": "Yes, reading the printed book aloud to a group in person is welcome. For a recorded or online read-aloud, ask first through the contact form at playbeforepixels.com."
+    },
+    {
+      "q": "Can we order copies for a class, child-care center, library or family night?",
+      "a": "Yes. Use the quote form at playbeforepixels.com. Copies are printed on demand and shipped straight to you by the printer, with an emailed invoice."
+    },
+    {
+      "q": "Returns?",
+      "a": "Printing mistakes or damage are replaced by the store you bought from. See playbeforepixels.com for the full refund policy."
+    }
+  ]
 }
