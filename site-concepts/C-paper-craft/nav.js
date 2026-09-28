@@ -136,17 +136,18 @@
   $$('[data-mega]').forEach(function (btn) {
     var li = btn.parentElement; var panel = panelOf(btn);
     btn.addEventListener('click', function () {
-      if (openMega === btn) { if (Date.now() - openedAt > 450) closeMega(false); }
+      if (openMega === btn) { if (Date.now() - openedAt > 450) { clearTimeout(hoverT); btn.parentElement._hoverLock = true; closeMega(false); } }
       else openMegaPanel(btn);
     });
     btn.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowDown') { e.preventDefault(); openMegaPanel(btn); var f = focusables(panel)[0]; if (f) f.focus(); }
     });
     if (finePointer) {
-      li.addEventListener('mouseenter', function () { clearTimeout(hoverT); hoverT = setTimeout(function () { openMegaPanel(btn); }, openMega ? 0 : 110); });
-      li.addEventListener('mouseleave', function () { clearTimeout(hoverT); hoverT = setTimeout(function () { if (openMega === btn) closeMega(false); }, 220); });
+      li.addEventListener('mouseenter', function () { if (li._hoverLock) return; clearTimeout(hoverT); hoverT = setTimeout(function () { openMegaPanel(btn); }, openMega ? 0 : 110); });
+      li.addEventListener('mouseleave', function () { li._hoverLock = false; clearTimeout(hoverT); hoverT = setTimeout(function () { if (openMega === btn) closeMega(false); }, 220); });
     }
-    panel.addEventListener('click', function (e) { if (e.target.closest('a')) closeMega(false); });
+    // After a deliberate close (link chosen or trigger clicked shut), don't let hover reopen it until the pointer leaves.
+    panel.addEventListener('click', function (e) { if (e.target.closest('a')) { clearTimeout(hoverT); li._hoverLock = true; closeMega(false); } });
   });
   if (scrim) scrim.addEventListener('click', function () { closeMega(false); });
   var hdr = $('.site-header');

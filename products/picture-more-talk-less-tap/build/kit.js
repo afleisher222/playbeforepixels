@@ -15,6 +15,14 @@ const { NAME, VERSION, BLOCK, glyph, topicIcon, qrSvg, LOGO, esc } = K;
 const SIZE = (process.argv[2] || 'letter').toLowerCase();
 // Ink-saver edition (BRAND.md customer-voice rule 1): white backgrounds, outline blocks and cards children can color in.
 const INK = (process.argv[3] || '').toLowerCase() === 'ink';
+// Ink-saver towers: white blocks with a colored outline and colored glyph (children can color them in).
+const JIT = [0, 4, -3, 5, -2, 3, -4];
+function inkTower(x, baseY, seq, sc = 1, tilt = 0) {
+  let out = '';
+  seq.forEach((t, i) => { const bx = x - 48 * sc + JIT[i % JIT.length] * sc, by = baseY - (i + 1) * 64 * sc; out += G(`translate(${bx.toFixed(1)} ${by.toFixed(1)}) scale(${sc})`, R(3, 3, 90, 58, '#fff', 12, `stroke="${BLOCK[t].col}" stroke-width="5"`) + K.glyphInner(t, true)); });
+  return tilt ? G(`rotate(${tilt} ${x} ${baseY})`, out) : out;
+}
+const towerArt = (...a) => INK ? inkTower(...a) : tower(...a);
 const SLIDES = (() => { try { return JSON.parse(fs.readFileSync(path.join(__dirname, 'slides-count.json'), 'utf8')).n; } catch (e) { return 20; } })();
 const DIM = SIZE === 'a4' ? { w: '210mm', h: '297mm', label: 'A4' } : { w: '8.5in', h: '11in', label: 'US Letter' };
 const SUFFIX = (SIZE === 'a4' ? '-a4' : '') + (INK ? '-ink' : '');
@@ -31,7 +39,7 @@ const cutNote = (extra = '') => `<p class="cutnote"><span class="scissor">✂</s
 // ------------------------------------------------------------------ 1 COVER
 {
   const art = E(360, 452, 350, 34, C.wash) +
-    tower(368, 452, ['q', 'j', 'i', 'l', 'q', 'i', 'j'], 0.92, 0) +
+    towerArt(368, 452, ['q', 'j', 'i', 'l', 'q', 'i', 'j'], 0.92, 0) +
     G('translate(372 -2) scale(.62)', U('star')) +
     kidAt('leo', 'cheer', 88, 456, 0.9, 'laugh') +
     kidAt('priya', 'handup', 214, 456, 0.9, 'talk') +
@@ -168,9 +176,9 @@ page('before', 'Before you start', () => `
 
 // ------------------------------------------------------------------ 5 POSTER
 {
-  const art = R(0, 380, 700, 80, C.tSun, 18) + E(350, 380, 330, 18, C.sun) +
+  const art = (INK ? E(350, 384, 330, 14, C.wash) : R(0, 380, 700, 80, C.tSun, 18) + E(350, 380, 330, 18, C.sun)) +
     kidAt('milo', 'cheer', 110, 400, 0.95, 'laugh') + kidAt('zara', 'handup', 590, 400, 0.95, 'talk', true) +
-    tower(350, 386, ['q', 'j', 'i', 'l'], 1.12);
+    towerArt(350, 386, ['q', 'j', 'i', 'l'], 1.12);
   page('poster', 'Wall poster', `
 <div class="poster">
   <div class="pbanner"><span>Our</span> ${NAME}</div>
@@ -236,7 +244,7 @@ for (const t of ['q', 'j', 'i', 'l']) {
 <div class="cardhead"><h2 class="h2">Talking Star <span class="muted">and</span> “Tower wobble!” sign</h2>${cutNote(INK ? 'Color the star, then glue it to cardstock. Whoever holds the star talks; everyone else listens.' : 'Glue the star to cardstock. Whoever holds the star talks; everyone else listens.')}</div>
 <div class="starpage">
   <div class="cell starcell">${svg('-270 -270 540 520', star, 'width:100%;height:100%')}<div class="starlab">Talking Star</div></div>
-  <div class="cell wobble"><div class="wobin">${svg('0 0 220 170', G('rotate(-8 110 150)', tower(110, 160, ['q', 'j', 'i'], 0.8)) + A.motion(40, 40, 22, 200, C.tomato, 7) + A.motion(180, 40, 22, -20, C.tomato, 7), 'width:150px;height:116px')}
+  <div class="cell wobble"><div class="wobin">${svg('0 0 220 170', G('rotate(-8 110 150)', towerArt(110, 160, ['q', 'j', 'i'], 0.8)) + A.motion(40, 40, 22, 200, C.tomato, 7) + A.motion(180, 40, 22, -20, C.tomato, 7), 'width:150px;height:116px')}
     <div><div class="wobt">Tower wobble!</div><p>One voice at a time.<br>Who has the star?</p></div></div></div>
 </div>`);
 }
@@ -325,8 +333,8 @@ page('fam1', 'Family letter', `
     <li><b>Use your home language.</b> Talk, sing and read in the language you know best.</li></ul>
     <p class="safe"><b>Safety:</b> an adult plays along. If babies or toddlers are nearby, use objects too big to fit through a toilet-paper tube.</p></div>
 </div>
-<div class="famart">${svg('0 0 720 250', E(360, 236, 340, 16, C.wash) + teacherAt('sittalk', 150, 236, 0.74, 'talk') + kidAt('priya', 'sithand', 300, 236, 0.74, 'talk', true) + kidAt('milo', 'sitcheer', 560, 236, 0.74, 'laugh', true) + tower(430, 236, ['q', 'j', 'i', 'l'], 0.66) +
-    G('translate(136 2)', P('M0 0 h150 a18 18 0 0 1 18 18 v34 a18 18 0 0 1 -18 18 h-100 l-22 20 l2 -20 h-30 a18 18 0 0 1 -18 -18 v-34 a18 18 0 0 1 18 -18Z', C.tSky) + `<text x="84" y="44" font-family="Fredoka, sans-serif" font-weight="600" font-size="19" fill="${C.ink}" text-anchor="middle">What did you play?</text>`), 'width:100%;height:100%')}</div>
+<div class="famart">${svg('0 -56 720 306', E(360, 236, 340, 16, C.wash) + teacherAt('sittalk', 150, 236, 0.74, 'talk') + kidAt('priya', 'sithand', 300, 236, 0.74, 'talk', true) + kidAt('milo', 'sitcheer', 560, 236, 0.74, 'laugh', true) + towerArt(430, 236, ['q', 'j', 'i', 'l'], 0.66) +
+    G('translate(164 -50)', P('M0 0 h150 a18 18 0 0 1 18 18 v34 a18 18 0 0 1 -18 18 h-100 l-22 20 l2 -20 h-30 a18 18 0 0 1 -18 -18 v-34 a18 18 0 0 1 18 -18Z', C.tSky) + `<text x="84" y="44" font-family="Fredoka, sans-serif" font-weight="600" font-size="19" fill="${C.ink}" text-anchor="middle">What did you play?</text>`), 'width:100%;height:100%')}</div>
 <div class="famfoot">
   <div class="teacherline">From: <span class="line"></span><br><small>(teacher)</small></div>
   <div class="famqr">${qrSvg(92)}<p><b>Free family bonus</b><br>More 5-minute talk games to print at home:<br>playbeforepixels.com/bonus/picture-more-talk-less-tap</p></div>
@@ -351,7 +359,7 @@ function glyphRaw(t, onWhite) { return K.glyphInner(t, onWhite); }
 
 // ------------------------------------------------------------------ 22 CERTIFICATE
 {
-  const art = tower(160, 300, ['q', 'j', 'i', 'l', 'q'], 0.88) + kidAt('priya', 'cheer', 330, 300, 0.78, 'laugh') + kidAt('leo', 'cheer', 470, 300, 0.78, 'laugh', true) + kidAt('sam', 'handup', 600, 300, 0.78, 'smile', true) + G('translate(160 -6) scale(.45)', U('star'));
+  const art = towerArt(160, 300, ['q', 'j', 'i', 'l', 'q'], 0.88) + kidAt('priya', 'cheer', 330, 300, 0.78, 'laugh') + kidAt('leo', 'cheer', 470, 300, 0.78, 'laugh', true) + kidAt('sam', 'handup', 600, 300, 0.78, 'smile', true) + G('translate(160 -6) scale(.45)', U('star'));
   page('cert', 'Class certificate', `
 <div class="cert"><div class="certin">
   <p class="ckick">${NAME} certificate</p>
@@ -416,13 +424,13 @@ page('more', 'More from Play Before Pixels', `
   <div class="mo" style="background:${C.tSky}"><span class="motag" style="background:${C.sky}">For little siblings, 0–5</span><h3>52 Play &amp; Talk Cards</h3><p>One simple play and one talk tip on every card, for the youngest talkers at home.</p></div>
 </div>
 <div class="bonusbox">${qrSvg(128)}<div><h3>Your free bonus</h3><p>Scan for a free printable of extra ${NAME} topic cards and family talk games. We only ask for an email address: no child names, ever.</p><p class="url">playbeforepixels.com/bonus/picture-more-talk-less-tap</p></div></div>
-<div class="moreart">${svg('0 0 720 230', E(360, 222, 330, 14, C.wash) + kidAt('priya', 'cheer', 120, 222, 0.72, 'laugh') + kidAt('milo', 'handup', 240, 222, 0.72, 'talk') + tower(360, 222, ['q', 'j', 'i'], 0.72) + kidAt('zara', 'point', 480, 222, 0.72, 'smile', true) + kidAt('sam', 'cheer', 600, 222, 0.72, 'laugh', true), 'width:100%;height:100%')}</div>
+<div class="moreart">${svg('0 0 720 230', E(360, 222, 330, 14, C.wash) + kidAt('priya', 'cheer', 120, 222, 0.72, 'laugh') + kidAt('milo', 'handup', 240, 222, 0.72, 'talk') + towerArt(360, 222, ['q', 'j', 'i'], 0.72) + kidAt('zara', 'point', 480, 222, 0.72, 'smile', true) + kidAt('sam', 'cheer', 600, 222, 0.72, 'laugh', true), 'width:100%;height:100%')}</div>
 <p class="share">Loved it? A short review and a photo of your tower (no children’s faces or names, please) help other teachers find us.</p>`);
 
 // ------------------------------------------------------------------ assemble
 const total = pages.length;
 const DEFFOOT = '© 2026 AlphaPlay LLC · Licensed for one classroom or one site. Please don’t share or post.';
-const foot = (i, txt) => `<footer class="foot"><span class="fl">${LOGO('lockup-horizontal.svg', 15)}<span>playbeforepixels.com</span></span><span class="fmid">${txt || DEFFOOT}</span><span class="fr"><em>${VERSION}${INK ? ' · ink-saver' : ''}</em><b>${i + 1}</b></span></footer>`;
+const foot = (i, txt) => `<footer class="foot"><span class="fl">${LOGO('lockup-horizontal.svg', 15)}<span>playbeforepixels.com</span></span><span class="fmid">${txt || DEFFOOT}</span><span class="fr"><em>${VERSION}</em><b>${i + 1}</b></span></footer>`;
 const body = pages.map((p, i) => `<!-- ${p.id}: ${p.title} -->\n<section class="page ${p.cls}" style="background:${p.bg}"><div class="body">${typeof p.body === 'function' ? p.body() : p.body}</div>${foot(i, p.foot)}</section>`).join('\n');
 const CSS = require('./kitcss.js')(DIM);
 const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${NAME} Classroom Game Kit (${DIM.label}${INK ? ', ink-saver' : ''}) · Play Before Pixels</title>

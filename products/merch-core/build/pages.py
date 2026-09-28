@@ -186,9 +186,9 @@ lst['listing-04'] = ('Details', f'''<div style="position:absolute;inset:0;backgr
 <div class="lay" style="left:130px;top:470px;width:860px;height:1060px;background:#fff;border-radius:40px"></div>
 <svg class="lay" style="left:130px;top:470px" width="860" height="300" viewBox="0 0 860 300">
 <path d="M70 0Q430 250 790 0" fill="none" stroke="#E6E9EF" stroke-width="50"/></svg>
-<div class="lay" style="left:230px;top:700px;width:660px;height:470px;overflow:hidden;border-radius:14px;box-shadow:0 0 0 2px #EEF1F6">
+<div class="lay" style="left:230px;top:640px;width:660px;height:548px;overflow:hidden;border-radius:14px;box-shadow:0 0 0 2px #EEF1F6">
 <img src="{B}labels/neck-label_M_light.png" style="width:660px;display:block"></div>
-<div class="lay" style="left:190px;top:1260px;width:740px;font-size:46px;line-height:1.35;font-weight:700">Brand, size and care printed inside the neck.</div>
+<div class="lay" style="left:190px;top:1290px;width:740px;font-size:46px;line-height:1.35;font-weight:700">Brand, size and care printed inside the neck.</div>
 <div class="lay" style="left:1060px;top:500px;width:810px;font-size:52px;line-height:1.3">
 {''.join(f'<div style="display:flex;gap:30px;margin-bottom:62px"><span class="ball" style="width:30px;height:30px;margin-top:18px"></span><div>{t}</div></div>' for t in [
     '<b>Adult unisex sizes</b><br>XS to 3XL',
@@ -237,7 +237,7 @@ lst['listing-07'] = ('Pairs with', f'''<div style="position:absolute;inset:0;bac
 <div class="pad" style="top:120px"><div class="kick" style="color:#1F7A4F">Gift idea</div><h2 class="disp" style="margin-top:24px">Pair it with<br>a story and play</h2></div>
 <div class="lay shadow" style="left:90px;top:640px;width:900px;transform:rotate(-4deg)">{tee('#F2EBDD', 'light', B)}</div>
 <img class="lay" src="{B}../picture-tablet-slept/cover.png" style="left:1080px;top:560px;width:660px;border-radius:10px;transform:rotate(3deg);box-shadow:0 30px 40px rgba(29,41,64,.18)">
-<img class="lay" src="{B}../bored-play-cards/cover.png" style="left:1330px;top:1080px;width:470px;border-radius:10px;transform:rotate(-5deg);box-shadow:0 30px 40px rgba(29,41,64,.18)">
+<img class="lay" src="{B}../bored-play-cards/preview/listing-images/listing-01.png" style="left:1250px;top:1120px;width:560px;border-radius:10px;transform:rotate(-5deg);box-shadow:0 30px 40px rgba(29,41,64,.18)">
 <p class="small pad" style="top:1760px;margin:0;right:900px;color:var(--ink)">Our picture book <b>The Day the Tablet Slept</b> and <b>150 “I’m bored!” Play Cards</b> are sold separately.</p>''')
 
 # tote images (for the site's bundle pages only)

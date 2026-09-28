@@ -368,6 +368,7 @@ ul, ol { margin: 0; padding: 0; }
   opacity: 0; visibility: hidden; transform: translateY(-6px);
   transition: opacity .16s var(--ease), transform .2s var(--ease), visibility 0s linear .2s;
 }
+.mega:not(.is-open) { pointer-events: none; }
 .mega.is-open { opacity: 1; visibility: visible; transform: none; transition: opacity .16s var(--ease), transform .2s var(--ease), visibility 0s; }
 .mega::after { content: ""; position: absolute; left: 0; right: 0; bottom: -22px; height: 24px; background: #fff; -webkit-mask: var(--torn) 0 0 / 640px 24px repeat-x; mask: var(--torn) 0 0 / 640px 24px repeat-x; filter: drop-shadow(0 3px 2px rgba(29,41,64,.1)); }
 .mega-inner { display: grid; gap: clamp(24px, 3vw, 56px); padding-block: 36px 40px; }

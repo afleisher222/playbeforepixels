@@ -117,6 +117,7 @@ const ok = (c, m) => { if (c) { passes++; } else { fails++; console.log('  FAIL'
   ok(await page.locator('[data-cart-count]').first().textContent() === '1', 'quick add updates count');
   ok(await page.locator('[data-toast]').evaluate(e => e.classList.contains('is-on')), 'toast shows');
   // quick view via card title
+  await page.click('[data-show-more]');
   await page.click('.p-card[data-id="classroom-pack"] h3 a'); await page.waitForTimeout(350);
   ok(await page.locator('#qv').evaluate(e => e.classList.contains('is-open')), 'card opens quick view');
   ok(await page.evaluate(() => document.getElementById('qv').contains(document.activeElement)), 'focus moves into quick view');
