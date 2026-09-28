@@ -777,7 +777,7 @@ symbol{overflow:visible}
 .bigbooks{display:flex;flex-direction:column;gap:10px}
 .bb{display:flex;align-items:center;gap:18px;background:#fff;border-radius:16px;padding:9px}
 .bb .mini{width:104px;height:104px;flex:0 0 104px}
-.bb .mini .mt{font-size:19px;left:9px;top:9px}
+.bb .mini .mt{font-size:17px;left:9px;top:9px}
 .bb>div:last-child>b{display:block;font-family:"Fredoka",sans-serif;font-weight:600;font-size:20px;line-height:1.1}
 .bb>div:last-child>span{display:block;font-size:13px;margin-top:2px}
 .bb>div:last-child>small{display:block;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:${C.tomato};margin-top:5px}

@@ -569,7 +569,8 @@ pages.push(page(1, PAGE_BG(C.paper) + Ci(408, 610, 220, C.tSun) + rocketWithCrew
    { x: 60, y: 268, w: 696, cls: 'sub center', html: `A Play Before Pixels read-aloud` },
    ...(authorLine ? [{ x: 60, y: 304, w: 696, cls: 'author center', html: esc(authorLine) }] : [])]));
 // p2 (L) copyright
-const ISBN_BOX = off => `<div class="isbn" style="left:${60 + off}px;top:${566 + 12}px"><b>ISBN / barcode</b><span>paperback and hardcover ISBNs<br>to be added by the publisher</span></div>`;
+const ISBN_PB = need('isbn-paperback'), ISBN_HC = need('isbn-hardcover');
+const ISBN_BOX = (ISBN_PB || ISBN_HC) ? off => `<div class="t small" style="left:${60 + off}px;top:${566 + 12}px;width:400px"><p>${ISBN_PB ? `Paperback ISBN ${esc(ISBN_PB)}<br>` : ''}${ISBN_HC ? `Hardcover ISBN ${esc(ISBN_HC)}` : ''}</p></div>` : off => `<div class="isbn" style="left:${60 + off}px;top:${566 + 12}px"><b>ISBN / barcode</b><span>paperback and hardcover ISBNs<br>to be added by the publisher</span></div>`;
 pages.push(page(2, PAGE_BG(C.wash) + G('translate(650 740) scale(0.66)', U('dog-lie')) + zzz(700, 630, 0.5, C.sky),
   [{ x: 60, y: 64, w: 640, cls: 'small', html: `<p><b>The Day the Tablet Slept</b></p>
 <p>© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. All rights reserved.</p>
@@ -577,7 +578,7 @@ pages.push(page(2, PAGE_BG(C.wash) + G('translate(650 740) scale(0.66)', U('dog-
 <p>First edition, 2026. Paperback and hardcover.</p>
 <p>The illustrations are flat digital art. The text is set in Fredoka, with Bricolage Grotesque and Nunito Sans.</p>
 <p><b>A note for grown-ups:</b> puddle play, cooking and box-building are best enjoyed with a grown-up close by. The tablet in this story is a made-up character and is not based on any real product.</p>
-<p><b>Free Play Day planner</b> for grown-ups to print: ${BONUS}</p>
+<p><b>Free Play Day planner</b> for grown-ups to print:<br><span class="nw">${BONUS}</span></p>
 <p>Published by AlphaPlay LLC, doing business as Play Before Pixels · playbeforepixels.com</p>` }],
   both(ISBN_BOX, off => `<div class="logo" style="left:${60 + off}px;top:${712 + 12}px;width:210px">${LOGO('lockup-horizontal.svg', 210)}</div>`)));
 // p3 (R) dedication (founder writes it)

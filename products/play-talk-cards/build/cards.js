@@ -33,7 +33,7 @@ function cardA(cd, b = 0) {
   const bd = cd.band, col = C[bd.color], tint = TINT[bd.color];
   const mv = MOVES[cd.m];
   const art = `<svg class="art" viewBox="0 0 240 108" width="240" height="108" aria-hidden="true">
-    ${bandDeco(bd.shape, 30, 84, 3.2, 'color:var(--deco)')}${bandDeco(bd.shape, 214, 30, 2.2, 'color:var(--deco)')}
+    ${bandDeco(bd.shape, 30, 84, 3.2, 'color:var(--deco)')}${bandDeco(bd.shape, 214, 86, 2.4, 'color:var(--deco)')}
     <circle cx="120" cy="58" r="45" fill="#fff"/><g transform="translate(120,58)">${icon(cd.i, .74)}</g></svg>`;
   return `<div class="card cA" style="--band:${col};--tint:${tint};--b:${b}px;width:${W}px;height:${H}px">
   <div class="bandbg" style="height:${b + 108}px"></div>
@@ -67,6 +67,7 @@ function howtoA(b = 0) {
         <li>Try the talk tip. Then wait.</li>
       </ol>
       <ul class="key">${BANDS.map(bd => `<li>${shapeSvg(bd.shape, C[bd.color], 13)}<b>${bd.ages}</b> ${bd.unit === 'yr' ? 'year' : 'years'}</li>`).join('')}</ul>
+      <svg class="strip" viewBox="0 0 210 50" width="210" height="50" aria-hidden="true">${[['ball', C.tSky], ['tower', C.tGrass], ['teapot', C.tSun], ['rocket', C.tTomato]].map(([id, t], i) => `<circle cx="${27 + i * 52}" cy="25" r="23" fill="${t}"/><g transform="translate(${27 + i * 52},25)">${icon(id, .36)}</g>`).join('')}</svg>
       <p class="safe big">${shield(C.plum, 12)}<span>Every card: a grown-up plays along and stays within reach.</span></p>
     </div>
   </div>
@@ -223,10 +224,10 @@ symbol{overflow:visible}
 .chip b{font-family:"Fredoka","Nunito Sans",sans-serif;font-weight:600;font-size:13px;letter-spacing:0}
 .num{right:12px;min-width:30px;justify-content:center;padding:0 7px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-size:12.5px}
 .cA .body{position:absolute;left:15px;right:15px;top:117px;bottom:12px;display:flex;flex-direction:column}
-.cA h3{margin:0 0 3px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:17px;line-height:1.05;letter-spacing:-.015em}
+.cA h3{margin:0 0 3px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:18px;line-height:1.05;letter-spacing:-.015em}
 .need{margin:0 0 5px;font-size:9.5px;line-height:1.25;font-weight:700}
 .need i{font-style:normal;font-weight:800;font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin-right:3px}
-.play{margin:0;font-size:10.6px;line-height:1.36;font-weight:600}
+.play{margin:0;font-size:11.2px;line-height:1.36;font-weight:600}
 .talk{margin-top:auto;background:var(--tint);border-radius:10px;padding:6px 9px 7px}
 .talk .tl{display:flex;align-items:center;gap:5px;font-weight:800;font-size:7.5px;letter-spacing:.11em;text-transform:uppercase;margin-bottom:2px}
 .talk .tl em{font-style:normal;opacity:.7}
@@ -247,8 +248,9 @@ symbol{overflow:visible}
 .key li{display:flex;align-items:center;gap:5px;font-size:9.5px;font-weight:700}
 .key b{font-family:"Fredoka",sans-serif;font-weight:600;font-size:12px}
 .cB .key b{font-family:"Nunito Sans",sans-serif;font-weight:800;font-size:10px}
+.strip{display:block;margin:10px auto 0}
 .safe.big{margin-top:auto;font-size:9px;opacity:1}
-.bl-body{position:absolute;left:15px;right:15px;top:74px;bottom:12px;display:flex;flex-direction:column}
+.card .body.bl-body{position:absolute;left:15px;right:15px;top:74px;bottom:12px;display:flex;flex-direction:column}
 .bl-lab{margin:6px 0 0;font-weight:800;font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;opacity:.6}
 .ln{display:block;height:17px;border-bottom:1.2px solid rgba(29,41,64,.28)}
 .bl-talk{margin-top:10px}

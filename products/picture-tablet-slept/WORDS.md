@@ -181,3 +181,9 @@ In the morning, the tablet woke up and stretched.
 “Good morning!” said Ada.
 “Wait till I tell you about my day…”
 Biscuit said, **WOOF!**
+
+## isbn-paperback
+<!-- Not creative words, just a convenience: paste the paperback ISBN here (e.g. 978-...) and it prints on the copyright page. -->
+
+## isbn-hardcover
+<!-- Paste the hardcover ISBN here. -->
