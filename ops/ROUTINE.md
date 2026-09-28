@@ -6,7 +6,8 @@
 Every scheduled run follows this file. It is the operating procedure; CLAUDE.md and brand/BRAND.md are the rules.
 
 ## 0. Start
-1. Attach and clone the repo (`afleisher222/playbeforepixels`, push access) if the session does not have it; `git pull`.
+1. Attach and clone the repo (`afleisher222/playbeforepixels`, push access) if the session does not have it. Then run `bash ops/cloud/bootstrap.sh`: it switches to the working branch **`claude/live`** and installs the Python tools. Routines may push only to `claude/`-prefixed branches, so **all work is committed and pushed to `claude/live`, never to `main`** (`main` is a mirror that interactive sessions update). See `ops/CLOUD-RUNBOOK.md`.
+   - **Run budget (Max plan; usage is shared with the founder's own Claude use):** daily check has no workflow and stays short; daily studio uses at most 6 agents; weekly research uses at most 10. If any tool call reports a usage or rate limit, stop starting new work, commit what is finished, record `limit` in ops/HEARTBEAT.json and ops/RUNLOG.md, and end the run.
 2. Read CLAUDE.md, brand/BRAND.md, legal/ENTITY.md, ops/AUTOFIX.md, ops/COMPLIANCE-GATE.md, ops/QUEUE.md, and the last 3 entries of ops/RUNLOG.md.
 3. **If the file `ops/PAUSE` exists: do research and building only. Publish, post, list, send and upload NOTHING.** Record "paused" in the run log. Also carry out the API steps in ops/FULL-STOP.md (pause the scheduler queue, email automations and any ads), and list the manual steps for the founder. (G2-04)
 4. **Connector guard:** if this session can reach any personal account (Gmail, Google Drive, Google Calendar, or anything not owned by AlphaPlay LLC), publish nothing. Record it in ops/HEARTBEAT.json and the run log. (G2-02)

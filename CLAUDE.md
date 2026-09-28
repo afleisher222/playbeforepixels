@@ -21,4 +21,4 @@ This private repository IS the business. Every Claude Code session and scheduled
 `node brand/render.js pdf <in.html> <out.pdf>` · `node brand/render.js pages <in.html> <outdir> .page 1` · `node brand/render.js png <in.html> <out.png> <w> <h> <scale>`
 
 ## Commits
-Commit finished work in small logical commits; push to `main`. Never commit secrets or API tokens — those live in the environment's secrets.
+Run `bash ops/cloud/bootstrap.sh` at the start of every session. The working branch is **`claude/live`**: commit finished work in small logical commits and push to `claude/live` (scheduled routines are only allowed to push to `claude/` branches). Interactive sessions also push the same commits to `main` as a mirror. Never commit secrets or API tokens — those live in the environment's API credentials. Operating plan for the cloud: `ops/CLOUD-RUNBOOK.md`.
