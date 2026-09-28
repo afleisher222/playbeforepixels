@@ -1,0 +1,151 @@
+{
+ "order": 2,
+ "week": "G-day week",
+ "slug": "bundle-gift-1-5",
+ "record": "products/bundle-gift-1-5/listing.json",
+ "status": "READY",
+ "etsy_status": "READY: all 5 Etsy slots fit.",
+ "title": "Toddler Gift Bundle Ages 1-5, Printable Busy Book, Play Cards, Family Kit, Coupons, Screen-Free Instant Download Present, Letter and A4",
+ "tags": [
+  "toddler gift bundle",
+  "printable gift",
+  "busy book printable",
+  "toddler activities",
+  "screen free gift",
+  "play cards",
+  "instant gift",
+  "last minute gift",
+  "grandparent gift",
+  "toddler printable",
+  "gift for toddler",
+  "family activity",
+  "play coupons"
+ ],
+ "price_usd": 29.0,
+ "quantity": 999,
+ "sku": "bundle-gift-1-5",
+ "section": "Gift Guide: Ages 1–5",
+ "category_hint": "Toys & Games > Toys > Learning & School (closest match for a printable activity bundle) — UNVERIFIED",
+ "description": "Four printable play sets for ages 1–5, plus a free book of play coupons, in one instant download. Color and low-ink, US Letter and A4.\n\nInside: the Toddler Busy Book with 74 activities, the Play-First Family Kit with its ages 2–5 pages, 76 “I’m Bored” play cards for ages 1–5, and 52 Play & Talk Cards, one for every week of the year. The free Play Coupons set adds 16 coupons for plays to do together.\n\nIt is ready to give. The gift pages include a fold card to write your message in and two “Surprise! Inside is…” reveal cards that list every set. Or forward the download: the license passes to the family who receives it.\n\nEvery set has its own START HERE page, grown-up guide and safety page, so no one needs to read everything at once. Most plays use things you already have.\n\nEvery play follows our published safety rules. Digital files in English; nothing is shipped. Personal license for one household.\n\nPREP: About 2 minutes to open START HERE. Each set shows its own prep; most plays take 0–5 minutes to set up.\n\nWHAT'S INSIDE\n• Four printable play sets for ages 1–5 in one download: Toddler Busy Book, Play-First Family Kit pages, “I’m Bored” cards and 52 Play & Talk Cards.\n• Free inside: 16 play coupons, blank coupons and a coupon-book cover.\n• Ready to give: a fold card and two “Surprise! Inside is…” reveal cards. The license passes to the family who receives it.\n• Every set in color and low-ink, US Letter and A4, each with its own START HERE, grown-up guide and safety page.\n• Instant download: nothing ships. Every play follows our published safety rules.\n\nYOUR FILES\nSTART HERE (PDF) plus 4 ZIP files, one per format: Color US Letter, Color A4, Low-ink US Letter, Low-ink A4. Download only the format you need. On a computer, double-click a ZIP to open it; on a phone, save it to your Files app and tap it.\n\nHOW TO DOWNLOAD\nAfter you pay, open Etsy in a web browser (not the app), go to You > Purchases and download the files. Start with START HERE. Print at 100% / Actual size.\n\nGOOD TO KNOW\n• Personal license for one household. Giving it as a gift? The license passes to the family who receives it.\n• Every play follows our published safety rules, with a grown-up there for every play.\n• Digital download: nothing ships. Printed words are in English.\n• Digital downloads can't be returned once downloaded. If a file won't open or print, or doesn't match this description, message us through Etsy and we'll fix it or refund it.\n\nHow this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.",
+ "images": [
+  {
+   "order": 1,
+   "file": "products/bundle-gift-1-5/preview/listing-images/listing-01.png",
+   "alt": ""
+  },
+  {
+   "order": 2,
+   "file": "products/bundle-gift-1-5/preview/listing-images/listing-02.png",
+   "alt": ""
+  },
+  {
+   "order": 3,
+   "file": "products/bundle-gift-1-5/preview/listing-images/listing-03.png",
+   "alt": ""
+  },
+  {
+   "order": 4,
+   "file": "products/bundle-gift-1-5/preview/listing-images/listing-04.png",
+   "alt": ""
+  },
+  {
+   "order": 5,
+   "file": "products/bundle-gift-1-5/preview/listing-images/listing-05.png",
+   "alt": ""
+  }
+ ],
+ "digital_files": [
+  {
+   "name": "1-START-HERE.pdf",
+   "src": "products/bundle-gift-1-5/etsy-upload/1-START-HERE.pdf",
+   "mb": 0.06,
+   "kind": "pdf"
+  },
+  {
+   "name": "2-Color-US-Letter.zip",
+   "src": "built by stage.py from zip-manifest.json slot 2",
+   "mb": 12.82,
+   "kind": "zip",
+   "fits": true,
+   "members": [
+    "products/bundle-gift-1-5/etsy-upload/gift-pages/Gift-Pages-Color-US-Letter.pdf",
+    "products/toddler-busy-book/etsy-upload/2-Toddler-Busy-Book-Color-US-Letter.pdf",
+    "products/toddler-busy-book/etsy-upload/1-START-HERE.pdf",
+    "products/play-first-family-kit/etsy-upload-ages-2-5/2-Color-US-Letter.pdf",
+    "products/play-first-family-kit/etsy-upload-ages-2-5/1-START-HERE.pdf",
+    "products/bored-play-cards/etsy-upload-ages-1-5/2-Color-US-Letter.pdf",
+    "products/bored-play-cards/etsy-upload-ages-1-5/1-START-HERE.pdf",
+    "products/play-talk-cards/etsy-upload/2-Color-US-Letter.pdf",
+    "products/play-talk-cards/etsy-upload/1-START-HERE.pdf",
+    "products/gift-reveal-coupons/etsy-upload/2-Color-US-Letter.pdf"
+   ]
+  },
+  {
+   "name": "3-Color-A4.zip",
+   "src": "built by stage.py from zip-manifest.json slot 3",
+   "mb": 12.73,
+   "kind": "zip",
+   "fits": true,
+   "members": [
+    "products/bundle-gift-1-5/etsy-upload/gift-pages/Gift-Pages-Color-A4.pdf",
+    "products/toddler-busy-book/etsy-upload/3-Toddler-Busy-Book-Color-A4.pdf",
+    "products/toddler-busy-book/etsy-upload/1-START-HERE.pdf",
+    "products/play-first-family-kit/etsy-upload-ages-2-5/3-Color-A4.pdf",
+    "products/play-first-family-kit/etsy-upload-ages-2-5/1-START-HERE.pdf",
+    "products/bored-play-cards/etsy-upload-ages-1-5/3-Color-A4.pdf",
+    "products/bored-play-cards/etsy-upload-ages-1-5/1-START-HERE.pdf",
+    "products/play-talk-cards/etsy-upload/3-Color-A4.pdf",
+    "products/play-talk-cards/etsy-upload/1-START-HERE.pdf",
+    "products/gift-reveal-coupons/etsy-upload/3-Color-A4.pdf"
+   ]
+  },
+  {
+   "name": "4-Low-Ink-US-Letter.zip",
+   "src": "built by stage.py from zip-manifest.json slot 4",
+   "mb": 15.9,
+   "kind": "zip",
+   "fits": true,
+   "members": [
+    "products/bundle-gift-1-5/etsy-upload/gift-pages/Gift-Pages-Low-Ink-US-Letter.pdf",
+    "products/toddler-busy-book/etsy-upload/4-Toddler-Busy-Book-Low-ink-US-Letter.pdf",
+    "products/toddler-busy-book/etsy-upload/1-START-HERE.pdf",
+    "products/play-first-family-kit/etsy-upload-ages-2-5/4-Low-Ink-US-Letter.pdf",
+    "products/play-first-family-kit/etsy-upload-ages-2-5/1-START-HERE.pdf",
+    "products/bored-play-cards/etsy-upload-ages-1-5/4-Low-Ink-US-Letter.pdf",
+    "products/bored-play-cards/etsy-upload-ages-1-5/1-START-HERE.pdf",
+    "products/play-talk-cards/etsy-upload/4-Low-Ink-US-Letter.pdf",
+    "products/play-talk-cards/etsy-upload/1-START-HERE.pdf",
+    "products/gift-reveal-coupons/etsy-upload/4-Low-Ink-US-Letter.pdf"
+   ]
+  },
+  {
+   "name": "5-Low-Ink-A4.zip",
+   "src": "built by stage.py from zip-manifest.json slot 5",
+   "mb": 15.82,
+   "kind": "zip",
+   "fits": true,
+   "members": [
+    "products/bundle-gift-1-5/etsy-upload/gift-pages/Gift-Pages-Low-Ink-A4.pdf",
+    "products/toddler-busy-book/etsy-upload/5-Toddler-Busy-Book-Low-ink-A4.pdf",
+    "products/toddler-busy-book/etsy-upload/1-START-HERE.pdf",
+    "products/play-first-family-kit/etsy-upload-ages-2-5/5-Low-Ink-A4.pdf",
+    "products/play-first-family-kit/etsy-upload-ages-2-5/1-START-HERE.pdf",
+    "products/bored-play-cards/etsy-upload-ages-1-5/5-Low-Ink-A4.pdf",
+    "products/bored-play-cards/etsy-upload-ages-1-5/1-START-HERE.pdf",
+    "products/play-talk-cards/etsy-upload/5-Low-Ink-A4.pdf",
+    "products/play-talk-cards/etsy-upload/1-START-HERE.pdf",
+    "products/gift-reveal-coupons/etsy-upload/5-Low-Ink-A4.pdf"
+   ]
+  }
+ ],
+ "ai_disclosure": {
+  "as_of": "2026-09-28",
+  "ai_helped_with": "Claude (an AI model made by Anthropic), working in Claude Code, wrote the draft text (plays, talk lines, guide pages, safety notes and this listing), drew the illustrations as flat vector art in code from the brand's shared symbol and icon library, and built the page layouts and PDF files with scripts.",
+  "humans_did": "The founder, for AlphaPlay LLC, directs the product line and set the brand, safety and honesty rules (brand/BRAND.md) that every draft follows, and gives the final go-ahead before anything is listed. As of 2026-09-28 no person has rewritten the text or redrawn the art.",
+  "etsy_attribution": "Designed by Play Before Pixels",
+  "etsy_ai_flag": true,
+  "site": "Product page line: 'Illustrations and text are made with AI assistance.' Say 'edited by the founder' only after she has.",
+  "social_ai_label": "Apply each platform's AI label to posts that use these images."
+ },
+ "differs_from_record": []
+}

@@ -1,0 +1,62 @@
+{
+ "order": 10,
+ "slug": "bundle-library-0-5",
+ "name": "Birth-to-5 Printable Library: 6 Printable Play Sets + Play Coupons",
+ "price_usd": 45.0,
+ "permalink": "library",
+ "summary": "Six printable play sets for ages 0–5, every stage from birth to 5 in one download, plus 16 play coupons. Color and low-ink, Letter and A4.",
+ "description": "Six printable play sets for ages 0–5, every stage from birth to 5, plus a free book of play coupons, in one instant download from our own shop. Color and low-ink, US Letter and A4.\n\nInside: 100 Screen-Free Plays sorted by stage, 52 Play & Talk Cards (one for every week of the year), Visual Routine Cards with the ages 0–5 cards, the Toddler Busy Book with 74 activities, 76 “I’m Bored” play cards for ages 1–5, and the Play-First Family Kit with its ages 2–5 pages. The free Play Coupons set adds 16 coupons for plays to do together.\n\nStart with the set for your child’s age today; the rest waits until you need it. Every set has its own START HERE page, grown-up guide and safety page. Most plays use things you already have.\n\nIt is ready to give: a fold card and two “Surprise! Inside is…” reveal cards list every set, and the license passes to the family who receives it.\n\nEvery play follows our published safety rules. Digital files in English; nothing is shipped. Personal license for one household.\n\nGiving it as a gift? The license passes to the family who receives it.\n\nHow this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.",
+ "files": [
+  {
+   "name": "START-HERE.pdf",
+   "source": "products/bundle-library-0-5/START-HERE.pdf",
+   "mb": 0.06
+  },
+  {
+   "name": "Library-Pages.zip",
+   "source": "built by stage.py from zip-manifest.json (store_download slot 2)",
+   "mb": 1.94
+  },
+  {
+   "name": "Toddler-Busy-Book.zip",
+   "source": "built by stage.py from zip-manifest.json (store_download slot 3)",
+   "mb": 23.49
+  },
+  {
+   "name": "Play-First-Family-Kit.zip",
+   "source": "built by stage.py from zip-manifest.json (store_download slot 4)",
+   "mb": 13.64
+  },
+  {
+   "name": "Bored-Play-Cards.zip",
+   "source": "built by stage.py from zip-manifest.json (store_download slot 5)",
+   "mb": 15.66
+  },
+  {
+   "name": "Play-and-Talk-Cards.zip",
+   "source": "built by stage.py from zip-manifest.json (store_download slot 6)",
+   "mb": 5.74
+  },
+  {
+   "name": "Visual-Routine-Cards.zip",
+   "source": "built by stage.py from zip-manifest.json (store_download slot 7)",
+   "mb": 35.09
+  },
+  {
+   "name": "100-Screen-Free-Plays.zip",
+   "source": "built by stage.py from zip-manifest.json (store_download slot 8)",
+   "mb": 12.35
+  },
+  {
+   "name": "Play-Coupons.zip",
+   "source": "built by stage.py from zip-manifest.json (store_download slot 9)",
+   "mb": 3.8
+  }
+ ],
+ "thumbnail": "products/bundle-library-0-5/preview/listing-images/listing-01.png",
+ "cover": "products/bundle-library-0-5/mockup.png",
+ "receipt": "Thank you for choosing Birth-to-5 Printable Library: 6 Printable Play Sets + Play Coupons!\n\nStart with START HERE: it tells you which file to print first and takes about 2 minutes.\nDownload on a computer, or on a phone in a web browser. Your files stay in your Gumroad Library, so you can download them again any time.\nPrint at 100% / Actual size. Low-ink files save ink; A4 files are for printers outside the US.\n\nSomething won't open or print? Reply to this email and we'll fix it or refund it.\n\nNext for your child's age: 24 Days of Play: Winter Countdown (ages 2–5) · Ages 1–5 Instant Gift Bundle (playbeforepixels.com/shop/).\n\nKnow a family who'd like some play ideas? Our free printable is at playbeforepixels.com/free/\n\nParent education, not medical advice. Every play follows our published safety rules.\nPlay Before Pixels is a trade name of AlphaPlay LLC.",
+ "refund_policy": "Digital files can't be returned once downloaded, so digital products are generally non-refundable once the download has been accessed. We always fix or refund a file that is corrupted, incomplete, materially different from its description, or charged twice. EU and UK buyers keep any cancellation right their law gives them. Full policy: playbeforepixels.com/shipping-returns/",
+ "discover": true,
+ "live_from": "Week 2 (must be live by Oct 25 for the Black Friday bonus rule)"
+}

@@ -1,99 +1,87 @@
 # Launch now: the fastest safe path to worldwide sales
 
-## Launch readiness: September 28, 2026, 06:50 UTC
+## Launch readiness: September 28, 2026, 15:45 UTC
 
-This section lists what still stands between today and the first sale of the five Wave 1 products on Etsy and the *100 Screen-Free Plays* paperback on KDP. It was written after the four fix lanes (print fonts, print files, listings, promises) and their verifiers.
-- **Where things stand:** `ops/TESTS/check_listings.py` shows 0 FAIL on all 17 records. The 2 warnings left are D9. The 100 Plays files have no placeholders and no Type 3 fonts, and the KDP footer sits at least 0.4 in above the trim.
-- **Still in place:** `ops/PAUSE` stays, and the target G-day is Fri Oct 16 (`business/GROWTH-ENGINE.md` §2).
-- **Platform rules** below come from memory and are UNVERIFIED.
+This replaces the 06:50 UTC version. It was written after the upload packets were built and after a final critic spot-checked Etsy packets 02, 03 and 05 and the KDP packet against their `listing.json` records and `site/config.json`. **Nothing is published.** `ops/PAUSE` stays, no platform account exists yet, and every platform rule below is from memory and UNVERIFIED (web search was unavailable).
 
-**(a) Blockers Claude can still fix in the repo**
-1. **Build the ages 0–5 (G0) editions.** Until counsel answers G1, only G0 editions may go on Etsy. Three products are built only as all-ages sets: the routine cards (0–12), the "I'm Bored" cards (1–12, four bands) and the Family Kit (2–12). The busy book (1–5) and 100 Plays (0–5) already fit.
-   - Also reconcile the launch list. `ops/QUEUE.md` puts the $29 Ages 1–5 Gift Bundle on G-day and moves the Family Kit to week 2. Wave 1 below still lists the Family Kit.
-2. **Remove the held classroom, site and library licenses from the launch files and listings.** A printed book can never be recalled, so the paperback text matters most. The offers are still in:
-   - the 100 Plays KDP interior p2 and every edition's p2 and START HERE (`build/book.js` line 202, `build/extras.js` line 281);
-   - busy book p130 and START HERE p8;
-   - bored cards p58, plus the bored-cards long description and 4 FAQ answers;
-   - the 100 Plays FAQ answer, which also names playbeforepixels.com (gate 16).
-3. **Clean the launch listings.**
-   - Remove the 9 bracketed notes from the FAQs ("[VERIFY …]", "[counsel to confirm]", "[link the policy page at launch]"…).
-   - Make `check_listings.py` scan `faq` for brackets, URLs and license offers.
-   - Apply the GROWTH-ENGINE §7 banned-word list, which the checker does not test. "Preschool" appears 8 times in titles, tags and keywords across the five, including the KDP subtitle. Replace it, or have the lead record in writing that the age word is allowed.
-4. **Fix the AI line in the routine-card PDFs.** They say "edited by Play Before Pixels", but no person has edited them (gates 8 and 17). Fix it in the G0 rebuild.
-   - In the same G0 rebuilds, stop each product's low-ink rule from outlining SVG text, for example `.low .art text{stroke:none!important}`. Outlined text comes out as Type 3. The Family Kit low-ink Etsy files already contain it.
-5. **Finish the 100 Plays paperback before the proof:**
-   - replace the 26 gradient write-on lines with vector rules (preflight Tier 2);
-   - ease the 4.3 pt body-to-footer gap on 9 pages;
-   - move the front-cover tagline, which sits about 0.33 in from the trim (the brand minimum is 0.375 in);
-   - correct `listing.json` "trim": it says 0.5 in, but the footer is at about 0.42–0.45 in;
-   - rebuild and re-run the preflight.
-6. **Gate 20 is not met on the launch files.** The busy-book and 100 Plays PDFs are untagged and have no language set. No launch product has a color-blind check recorded in `panel.md`.
-7. **Record the gate and write the packets.**
-   - Run the 22-line `ops/COMPLIANCE-GATE.md` on each launch item and record the result; no record exists yet.
-   - Write the upload packets; `ops/UPLOAD-PACKETS/` is empty. That means 5 Etsy packets, plus the KDP packet: 7 keyword boxes, categories, £/CA$/AU$ prices, AI answers, and Expanded Distribution off.
-8. **Complete the counsel packet.** `legal/FOR-EMPLOYMENT-COUNSEL.md` still lacks:
-   - the five questions in GROWTH-ENGINE §2a: the Gate A yes/no, G1, ads that cannot exclude Montgomery County, pages before Gate A, and the KDP author line;
-   - G2-25 and the PRE-MORTEM fix 8 questions.
-9. **Build the Gate A machinery.** None of these exists yet: the approval channel (G2-03), `ops/GATE-A.md` with its evidence files, the file gates (`check_files.py`, `check_print.py`) and the exposure guard (PRE-MORTEM fixes 2, 5 and 6).
-   - The watchdog and the token broker are needed before routines publish on their own. They are not needed for a first sale uploaded by hand.
-10. **Stand up the pages the paperback prints** before the book ships:
-    - playbeforepixels.com, its contact form and `/bonus/guide-100-plays` (also a QR code);
-    - a `/licenses` page that says only the family license is sold;
-    - the policy drafts, finished (G2-19) so counsel reviews final text.
+**Where things stand**
+- `ops/UPLOAD-PACKETS/` holds every packet, generated from the product records. `build_packets.py` runs 503 checks: 0 FAIL and 3 WARN, all of them founder decisions. `stage.py --all` dry run: OK. `ops/TESTS/check_listings.py`: 0 FAIL, 0 WARN.
+- **Spot-check (critic, 15:45 UTC).** In all ten Etsy packets the title, 13 tags and price match the record exactly. The only exception is 100 Plays, which is changed on purpose (see Claude item 3). Every image and file path exists. Site prices match: $11.99, $9.50, $9.99 PDF / $16.99 paperback, $6.50, $11, $7, and bundles $29 and $45 on /shop/bundles/.
+- **PDF scan.** The critic scanned all 43 PDFs in the ready Etsy packets and the KDP packet with PyMuPDF. None has Type 3 fonts, and none has FOUNDER, PLACEHOLDER, [VERIFY], TODO or lorem. No Etsy PDF has a web address. The only "classroom" and "teacher" words are the honest line "licenses … are not available yet" and one "you don't need to be a teacher".
+- **KDP files:** the interior is 86 pages at 8.125 × 10.25 in, and the cover wrap is 16.4437 × 10.25 in. Both match the packet.
 
-**(b) Founder decisions**
-1. **The logo.** Every launch file and listing image carries the current kit, which is not final. Once you choose, Claude rebuilds only the launch products.
-2. **D9, the routine-card search words.** REPLACE is recommended.
-3. **Reply-time wording (gate 21).** The FAQ and policies cannot be published until you choose one:
-   - amend the gate to the new line ("every question gets a reply" is safer than "every message");
-   - or restore "an instant automatic reply; a person reviews everything else within [5] business days" in about 10 places.
-4. **Print fonts: A, B or C** (`ops/TESTS/fonts-static.md`). A is recommended: keep the static fonts, and accept small text 2–10% narrower. The G0 rebuilds will use your choice.
-5. **The paperback ISBN.** Either use the free KDP ISBN (the adopted plan), or buy your own from Bowker: about $295 for 10, with AlphaPlay LLC as the imprint (`commerce/storefront-setup-guide.md` Part C).
-6. **Large print.** Gate 20 asks for an 18 pt edition of text-heavy products, but the queue builds the 100 Plays large-print edition after launch. Approve that exception in writing, or Claude builds it now.
-7. **Confirm D1–D3:** routine cards at $9.50, the Starter at $5.00, and Etsy Offsite Ads off. The listings already use these answers. The other PENDING lines in `ops/APPROVALS.md` do not block these six items.
+**Ready the day the accounts open** (after Gate A and "go")
 
-**(c) Founder one-time steps** (in this order; about 4½ hours in all, per GROWTH-ENGINE §2a)
-1. **Make the GitHub repository private today.** GitHub's API still showed it as public at 06:46 UTC.
-2. Send counsel the completed packet, and ask for a written Gate A answer by Fri Oct 16.
-3. Open a no-fee business checking account under the EIN.
-4. Get written quotes for general liability plus products cover. Bind the lowest on the day counsel says yes.
-5. Set up the business basics and write down your household-money cap:
-   - buy playbeforepixels.com and set up the business email;
-   - rent the USPS PO Box;
-   - file the $25 trade name;
-   - confirm good standing;
-   - add digital products to the Maryland sales-and-use tax registration.
-6. Open the accounts in one sitting:
-   - Etsy, with payouts to the new bank and the shop not yet opened;
-   - KDP, with the LLC tax interview;
-   - the Etsy API request;
-   - a capped virtual card;
-   - the keys, entered in the environment settings;
-   - personal connectors removed (G2-02);
-   - a usage cap (G2-06) and the platform-notice filter (G2-07).
-7. Have an attorney review the privacy policy, terms, refund policy and disclaimer (Gate A item 7). Include two questions: the seller address (G2-23) and the personal Gmail on the trademark record (G2-22).
-8. Upload the KDP draft and order one proof to the PO Box. Check the proof, then click Publish. Until Etsy approves the API app, upload each Etsy packet by hand (about 10 minutes each).
-9. Type "go".
+| Where | What | Packet |
+|---|---|---|
+| Etsy, G-day (target Fri Oct 16) | Toddler Busy Book $11.99 · Ages 1–5 Gift Bundle $29 (no "separately" figure yet) · 177 Visual Routine Cards 0–5 $9.50 · 100 Screen-Free Plays PDF $9.99 · 76 "I'm Bored" Cards 1–5 $6.50 | `ops/UPLOAD-PACKETS/etsy/01`–`05` |
+| Etsy, week 2 (by Oct 25) | Play-First Family Kit 2–5 $11 · 52 Play & Talk Cards $7 · Routine Cards Starter $5 · Winter Countdown $6.50 | `etsy/06`–`09` |
+| Gumroad (unlisted before G-day, public on G-day) | the same products, plus the Birth-to-5 Library at $45, which is Gumroad only because its ZIPs are over Etsy's 20 MB limit | `gumroad/01`–`10` |
+| KDP (draft plus 1 proof, Oct 5–11) | *100 Screen-Free Plays for Ages 0–5* paperback, $16.99 | `kdp/01-100-screen-free-plays/` |
+| Gumroad, Dec 15 | the course, $27, with the $49 bundle and the free starter; all 42 drip emails written | `gumroad/11-course-30-days/` |
+| Profiles and Pinterest | social kit images and bios; 12 boards and 60 pins | `marketing/social-kit/`, `marketing/pins/` |
 
-**(d) Needs a live web check** (all UNVERIFIED)
+**(a) What Claude still has to do before G-day**
+1. **Fix the 100 Plays Etsy hero image** (`products/guide-100-plays/preview/listing-images/01-hero.png`, a G-day listing). It shows "Paperback 8 × 10 in, black-and-white interior" as a format, but the Etsy listing sells only the PDF, and the paperback will not be live on G-day. Make an Etsy-only hero, then rewrite its alt text.
+2. **Fill in the Gift Bundle's image alt text.** All 5 images in `etsy/02` have empty alt text. Also check the "+ free play coupons" headline on image 1 against 16 CFR 251 ("free" inside a paid bundle; UNVERIFIED). "+ play coupons included" is the safe wording.
+3. **Fold the packet-only changes back into the product records**: the 100 Plays Etsy title, one Etsy tag and one KDP keyword ("preschool" became "toddler"), and the PDF-only description (`guide-100-plays/listing.json`). Then re-run `build_packets.py` until it shows no "differs from record" lines.
+4. **Record the 22-line `ops/COMPLIANCE-GATE.md` result** for each G-day item. There is still no per-item gate record. Gate 20 is still not met: for example, the KDP interior has no language set and no tags. Either fix this in the G0 rebuilds or record the founder's written exception.
+5. **Build the Gate A file** (`ops/GATE-A.md`, with its evidence list), and add the five GROWTH-ENGINE §2a questions to the counsel packet.
+6. **Get the site ready to go live before the paperback ships.** The printed book names playbeforepixels.com, its contact form and `/bonus/guide-100-plays` on pages 1, 2 and 85 and on the cover. Those pages must be live before KDP Publish. Before launch, also:
+   - fill in the contact email (`PBP_CONTACT_EMAIL`) and the PO Box;
+   - remove Teachers Pay Teachers, Faire and the "classroom resource pack" from the legal drafts;
+   - get the lead's decision on hiding *Laps Not Apps* (personalized, not self-running, and not on the G0 list).
+7. **Fix these side issues** (none of them blocks G-day):
+   - Point merch `next_products` at a product that exists; `bundle-holiday-gift` does not exist.
+   - Fix the course emails that say "paperback" in case KDP is not live by Dec 26.
+   - Resize the busy-book bonus PNG pieces for ages 1–2 to 2.5 in.
+   - The Laps back cover promotes two held books; fix it before Laps is sold.
+   - *More Talk, Less Tap* stays held; it prints a classroom license.
+8. **On each upload day:** run `stage.py`, then record the listing in `ops/PUBLISHED.json` and swap its `{{ETSY_LISTING_URL:…}}` placeholder in `marketing/pins/pins.csv`.
+
+**(b) Founder decisions still open** (each one takes minutes; details in `ops/APPROVALS.md` and `ops/UPLOAD-PACKETS/README.md`)
+1. **D9:** KEEP or REPLACE the "first then" and "visual schedule" search words. REPLACE is recommended. It affects the Family Kit title, which is week 2. The routine-card titles are already clean, but "first–then board" still appears in one image's alt text and in the Starter's description.
+2. **KDP UK, Canada and Australia prices.** The plan's £7.99, CA$12.99 and AU$14.99 net below the $5.10 floor. The recommended prices are £13.99, CA$22.99 and AU$26.99.
+3. **"Preschoolers" in the KDP subtitle and cover.** Keep it as an age word, or change both. Also say whether the "preschool" ban covers image text and body copy, or only titles, tags and keywords.
+4. **Keep the name "Birth-to-5 Printable Library"**, which is on Gumroad only, or rename it.
+5. **Course refund window:** 14 days (the current draft) or 30.
+6. Still pending from earlier:
+   - reply-time wording (gate 21);
+   - large-print exception (gate 20);
+   - confirm D1–D3 (the listings already use these answers).
+
+**(c) Founder one-time steps** (in order; about 4½ hours in all, per GROWTH-ENGINE §2a)
+1. **Today:** make the GitHub repository private (`ops/APPROVALS.md`, URGENT).
+2. Send counsel the packet and ask for a written Gate A answer by Fri Oct 16.
+3. Open the business bank account, rent the PO Box, buy the domain, set up the business email, and file the trade name and tax registration.
+4. Get insurance quotes, and bind one when counsel says yes.
+5. **One account sitting, Oct 5–9:**
+   - Etsy (shop not opened), KDP, Gumroad, the email platform, and a Pinterest business account;
+   - the API requests, a capped card, and the keys in the environment settings;
+   - use only `marketing/social-kit/` images and `BIOS.md` text.
+6. Save the KDP draft from `kdp/01`, and order one proof to the PO Box.
+7. Have an attorney review the policies. Then write an APPROVED line for each listing and type "go".
+8. On proof arrival:
+   - check the cover and page 1 (15–30 minutes);
+   - then click Publish, but only once the site pages the book prints are live.
+
+**(d) Live checks needed** (all UNVERIFIED)
 - **Etsy:**
-  - fees, and whether Offsite Ads can be turned off below $10,000 a year;
-  - listing limits: 5 files of up to 20 MB each, 140-character titles, and 13 tags of up to 20 characters;
-  - the "Designed by" and AI-disclosure wording;
-  - whether a PO Box is accepted, and what EU and UK buyers are shown about the seller;
-  - whether a download can go straight to a gift recipient.
+  - 5 files of up to 20 MB each, 140-character titles, and 13 tags of up to 20 characters;
+  - category paths and the AI-disclosure and "Designed by" wording;
+  - whether Offsite Ads can be turned off;
+  - whether a PO Box is accepted, and what EU and UK buyers are shown about the seller.
 - **KDP:**
-  - the minimum margin with bleed (0.375 in assumed);
-  - the barcode's size and position;
-  - the spine for 86 pages on white paper (the wrap is 16.4437 in);
-  - the large-trim print cost and the 60% royalty at $16.99;
-  - the AI-generated vs. AI-assisted definitions, and the rules on author and pen names;
-  - whether the copyright page needs a free ISBN printed on it;
-  - GPSR data for the EU marketplaces;
-  - whether TrueType fonts, RGB and live transparency are accepted.
-- **Tax and safety:**
-  - Maryland's 6% tax on digital products, and what Etsy and Amazon collect as marketplace facilitators;
-  - CPSIA for paper printables aimed at ages 0–5.
+  - the spine (0.1937 in for 86 pages) and the barcode spot, checked with KDP's cover calculator;
+  - the print cost and royalty at $16.99, and the UK, CA and AU royalty amounts;
+  - the category names, the AI-content definitions, and the brand-as-author rule;
+  - the free ISBN and imprint text.
+- **Gumroad:**
+  - the fee;
+  - the effect of the Discover setting on the $5 Starter's net;
+  - handling of VAT as merchant of record.
+- **Pinterest:** the bulk-upload CSV columns, and where pin images are hosted (`{{PIN_MEDIA_BASE_URL}}`).
+- **Tax and safety:** Maryland digital-goods tax and marketplace-facilitator rules; CPSIA for paper printables for ages 0–5.
 
 ---
 

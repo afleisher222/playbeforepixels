@@ -1,0 +1,107 @@
+{
+ "order": 9,
+ "week": "Week 2 (list by Oct 25; deactivate Dec 5)",
+ "slug": "winter-countdown",
+ "record": "products/winter-countdown/listing.json",
+ "status": "READY",
+ "etsy_status": "READY",
+ "title": "24 Days of Play Winter Countdown for Ages 2-5, Printable Toddler Activity Cards, Cozy Indoor Ideas, Screen-Free, Letter and A4 PDF",
+ "tags": [
+  "winter countdown",
+  "winter activities",
+  "toddler activities",
+  "snow day activities",
+  "winter printable",
+  "screen free play",
+  "kids countdown",
+  "countdown calendar",
+  "winter break ideas",
+  "indoor activities",
+  "toddler printable",
+  "family activity",
+  "cozy winter"
+ ],
+ "price_usd": 6.5,
+ "quantity": 999,
+ "sku": "winter-countdown",
+ "section": "Seasonal",
+ "category_hint": "Toys & Games > Toys > Learning & School (or 'Advent calendars' is NOT used: the countdown is secular) — UNVERIFIED",
+ "description": "24 winter plays for ages 2–5, one a day. It is a printable PDF in US Letter and A4, with color and low-ink files.\n\nWinter days can be long and dark. Each card gives the day one small, warm play: paper snowball toss, a blanket bear cave, an ice rescue, a flashlight shadow show, a cozy book nest. 22 of the 24 use only things most homes have.\n\nEvery card shows a starting age in months, prep, mess and a rough play time. It has short steps, one thing to say while you play, an easier way, a harder way, a 2-minute version for tired days and its own safety line.\n\nHang the countdown board and color a circle after each play. Or skip the cutting and read each day from the list page. Start any day, skip days, or play a favorite twice.\n\nIt is a winter countdown for any family: snow, cold and long nights. It is not tied to any holiday or faith.\n\nYou get a 2-page grown-up guide, safety rules, a what-you-need list, a blank board, 24 number tags and a fridge certificate. Type in the blank board and certificate with a free PDF reader.\n\nEvery play follows our published safety rules. Digital file in English; nothing is shipped. Personal license for one household.\n\nPREP: About 15 minutes once to print and cut the 12 card pages and the tags. Each day 0–5 minutes (one play is frozen the night before, about 2 minutes). No-cut option: hang the board and read each day from the list page.\n\nWHAT'S INSIDE\n• 24 winter plays for ages 2–5, one a day, on 12 half-page card pages. Each 25-page file also has a guide, safety rules, boards, tags and a certificate.\n• Every card shows a starting age, prep, mess and play time, short steps, a talk line, easier and harder versions, a 2-minute version and a safety line.\n• 22 of the 24 plays need nothing to buy. About 15 minutes to print and cut once; most days take 0–5 minutes to set up.\n• Five plain PDFs: START HERE, color and low-ink, each in US Letter and A4. Type in the blank board, hunt tick boxes and certificate.\n• A secular winter theme for any family. Start any day and play in any order. Every play follows our published safety rules.\n\nHOW TO DOWNLOAD\nAfter you pay, open Etsy in a web browser (not the app), go to You > Purchases and download the files. Start with START HERE. Print at 100% / Actual size.\n\nGOOD TO KNOW\n• Personal license for one household. Please don't resell or share the files.\n• Every play follows our published safety rules, with a grown-up there for every play.\n• Digital download: nothing ships. Printed words are in English.\n• Digital downloads can't be returned once downloaded. If a file won't open or print, or doesn't match this description, message us through Etsy and we'll fix it or refund it.\n\nHow this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.",
+ "images": [
+  {
+   "order": 1,
+   "file": "products/winter-countdown/preview/listing-images/listing-01.png",
+   "alt": ""
+  },
+  {
+   "order": 2,
+   "file": "products/winter-countdown/preview/listing-images/listing-02.png",
+   "alt": ""
+  },
+  {
+   "order": 3,
+   "file": "products/winter-countdown/preview/listing-images/listing-03.png",
+   "alt": ""
+  },
+  {
+   "order": 4,
+   "file": "products/winter-countdown/preview/listing-images/listing-04.png",
+   "alt": ""
+  },
+  {
+   "order": 5,
+   "file": "products/winter-countdown/preview/listing-images/listing-05.png",
+   "alt": ""
+  },
+  {
+   "order": 6,
+   "file": "products/winter-countdown/preview/listing-images/listing-06.png",
+   "alt": ""
+  }
+ ],
+ "digital_files": [
+  {
+   "name": "1-START-HERE.pdf",
+   "src": "products/winter-countdown/etsy-upload/1-START-HERE.pdf",
+   "mb": 0.07,
+   "kind": "pdf"
+  },
+  {
+   "name": "2-Color-US-Letter.pdf",
+   "src": "products/winter-countdown/etsy-upload/2-Color-US-Letter.pdf",
+   "mb": 1.62,
+   "kind": "pdf"
+  },
+  {
+   "name": "3-Color-A4.pdf",
+   "src": "products/winter-countdown/etsy-upload/3-Color-A4.pdf",
+   "mb": 1.62,
+   "kind": "pdf"
+  },
+  {
+   "name": "4-Low-Ink-US-Letter.pdf",
+   "src": "products/winter-countdown/etsy-upload/4-Low-Ink-US-Letter.pdf",
+   "mb": 2.58,
+   "kind": "pdf"
+  },
+  {
+   "name": "5-Low-Ink-A4.pdf",
+   "src": "products/winter-countdown/etsy-upload/5-Low-Ink-A4.pdf",
+   "mb": 2.58,
+   "kind": "pdf"
+  }
+ ],
+ "ai_disclosure": {
+  "as_of": "2026-09-28",
+  "ai_helped_with": "Claude (an AI model made by Anthropic), working in Claude Code, wrote the draft text (plays, talk lines, guide pages, safety notes and this listing), drew the illustrations as flat vector art in code from the brand's shared symbol and icon library, and built the page layouts and PDF files with scripts.",
+  "humans_did": "The founder, for AlphaPlay LLC, directs the product line and set the brand, safety and honesty rules (brand/BRAND.md) that every draft follows, and gives the final go-ahead before anything is listed. As of 2026-09-28 no person has rewritten the text or redrawn the art.",
+  "etsy_attribution": "Designed by Play Before Pixels",
+  "etsy_ai_flag": true,
+  "site": "Product page line: 'Illustrations and text are made with AI assistance.' Say 'edited by the founder' only after she has.",
+  "social_ai_label": "Apply each platform's AI label to posts that use these images.",
+  "kdp_ai_text": "AI-generated",
+  "kdp_ai_images": "AI-generated",
+  "kdp_ai_translation": "none"
+ },
+ "differs_from_record": []
+}

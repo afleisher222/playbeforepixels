@@ -1,0 +1,103 @@
+{
+ "order": 8,
+ "week": "Week 2",
+ "slug": "visual-routine-cards-starter",
+ "record": "products/visual-routine-cards/listing-starter.json",
+ "status": "READY",
+ "etsy_status": "READY",
+ "title": "60 Visual Routine Cards for Toddlers, Editable Morning and Bedtime Picture Chart, Daily Schedule PDF, Play Before Pixels",
+ "tags": [
+  "toddler routine",
+  "visual routine cards",
+  "picture chart",
+  "morning routine",
+  "bedtime routine",
+  "toddler schedule",
+  "baby routine cards",
+  "routine chart",
+  "daily schedule kids",
+  "toddler printable",
+  "kids daily routine",
+  "potty routine",
+  "kids routine cards"
+ ],
+ "price_usd": 5,
+ "quantity": 999,
+ "sku": "visual-routine-cards-starter",
+ "section": "Routine Cards",
+ "category_hint": "Paper & Party Supplies > Paper > Calendars & Planners (or 'Chore charts') — UNVERIFIED",
+ "description": "60 printable routine picture cards for ages 0–5, with three charts, in US Letter and A4 PDFs. It's a simple place to start. The cards cover a little one's day: waking up, potty, getting dressed, meals and play. Others show outside time, reading together, bath, bedtime, helping jobs and a feelings check-in. There are plan words too, like First, Then and Wait. A \"Play first / Screens later\" pair uses a plain, generic tablet, with no brands and no apps.\n\nUse one card at a time with a baby, or two on the first–then board with a toddler. A preschooler can use a morning chart of up to nine steps. Your child points to each picture and moves it to \"All done.\"\n\nYou get the cards in the color-coded Rainbow look and in a Low-ink file with line art to color. There are second copies of the busiest cards, plus blank, word-free and photo-frame cards. The three charts come ready-made and blank. Type labels and titles in free Adobe Acrobat Reader. A 2-page grown-up guide covers setup in 2 minutes and easy talk tips. Every card follows our published safety rules.\n\nWant more? The Ages 0–5 Edition has 177 cards. It adds 6 chart layouts and 4 colorways.\n\nInstant digital download. No physical item ships.\n\nWHAT'S INSIDE\n• 60 cards on 24 pages (Color file) = 7 card pages + 6 word-free and photo pages + 5 chart pages + 6 guide pages; about 8¢ a card; about 20 minutes to prep one routine\n• Morning, meals, play, outside, reading, bath, bedtime, helping jobs, feelings and plan words, plus a Play first / Screens later pair with a plain, generic tablet\n• 3 charts, ready-made and blank: vertical strip, first–then board and a 9-step morning chart\n• Fillable in free Adobe Acrobat Reader: card labels, chart titles and names (colors and pictures are not editable); Color and Low-ink files, US Letter and A4\n• 2-page grown-up guide: setup in 2 minutes, talk tips, laminating, and safety notes; every card 2.2 in (5.6 cm)\n\nHOW TO DOWNLOAD\nAfter you pay, open Etsy in a web browser (not the app), go to You > Purchases and download the files. Start with START HERE. Print at 100% / Actual size.\n\nGOOD TO KNOW\n• Personal license for one household. Please don't resell or share the files.\n• Every play follows our published safety rules, with a grown-up there for every play.\n• Digital download: nothing ships. Printed words are in English.\n• Digital downloads can't be returned once downloaded. If a file won't open or print, or doesn't match this description, message us through Etsy and we'll fix it or refund it.\n\nHow this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.",
+ "images": [
+  {
+   "order": 1,
+   "file": "products/visual-routine-cards/preview/listing-images/starter/01-starter-cover.png",
+   "alt": "60 Visual Routine Cards Starter Set, ages 0–5: a sky-blue panel with the logo, the title, a vertical strip chart holding four cards, and big Sleep and Breakfast cards."
+  },
+  {
+   "order": 2,
+   "file": "products/visual-routine-cards/preview/listing-images/starter/02-starter-whats-inside.png",
+   "alt": "All 60 Starter Set cards in a small grid, above three tiles: 60 cards, 3 charts and fillable fields."
+  },
+  {
+   "order": 3,
+   "file": "products/visual-routine-cards/preview/listing-images/starter/03-starter-grown-up-guide.png",
+   "alt": "Two grown-up guide pages, slightly tilted: a Starter Set setup page with a four-card bedtime, and a page of talk tips."
+  },
+  {
+   "order": 4,
+   "file": "products/visual-routine-cards/preview/listing-images/starter/04-starter-in-use.png",
+   "alt": "A morning chart filled with nine cards, next to an All done pocket holding Bath time and Pajamas cards, with a talk tip."
+  },
+  {
+   "order": 5,
+   "file": "products/visual-routine-cards/preview/listing-images/starter/05-how-to-download.png",
+   "alt": "How to download: open Etsy in a web browser, go to Purchases, open the PDF in Adobe Acrobat Reader. The 5 files are listed, with a 2.2 inch card-size square."
+  }
+ ],
+ "digital_files": [
+  {
+   "name": "1-START-HERE.pdf",
+   "src": "products/visual-routine-cards/etsy-upload/starter/1-START-HERE.pdf",
+   "mb": 0.06,
+   "kind": "pdf"
+  },
+  {
+   "name": "2-Color-US-Letter.pdf",
+   "src": "products/visual-routine-cards/etsy-upload/starter/2-Color-US-Letter.pdf",
+   "mb": 2.05,
+   "kind": "pdf"
+  },
+  {
+   "name": "3-Color-A4.pdf",
+   "src": "products/visual-routine-cards/etsy-upload/starter/3-Color-A4.pdf",
+   "mb": 2.05,
+   "kind": "pdf"
+  },
+  {
+   "name": "4-Low-Ink-US-Letter.pdf",
+   "src": "products/visual-routine-cards/etsy-upload/starter/4-Low-Ink-US-Letter.pdf",
+   "mb": 2.7,
+   "kind": "pdf"
+  },
+  {
+   "name": "5-Low-Ink-A4.pdf",
+   "src": "products/visual-routine-cards/etsy-upload/starter/5-Low-Ink-A4.pdf",
+   "mb": 2.7,
+   "kind": "pdf"
+  }
+ ],
+ "ai_disclosure": {
+  "as_of": "2026-09-28",
+  "ai_helped_with": "Claude (an AI model made by Anthropic), working in Claude Code, wrote the draft text (activities, talk lines, guide pages, safety notes and this listing), made the illustrations as flat vector art in code from the brand's own symbol library, and built the page layouts and PDF files with scripts.",
+  "humans_did": "The founder, for AlphaPlay LLC, directs the product line and set the brand, safety and honesty rules (brand/BRAND.md) that every draft follows, and she gives the final go-ahead before anything is listed. As of 2026-09-28 no person has rewritten the text or redrawn the art, and the customer panel in panel.md was simulated, not real people. Still to be done by a person before release: rewrite the text in her own words, proof the cover and page 1, and check a printed copy (human_todo).",
+  "etsy_attribution": "Designed by Play Before Pixels",
+  "etsy_ai_flag": true,
+  "etsy_who_made": "I did (the shop made it, using AI tools) [UNVERIFIED form wording]",
+  "etsy": "In Etsy's listing form, say the shop designed this item and that AI tools were used, wherever the form asks. As best known (UNVERIFIED): Etsy's Creativity Standards sort items as Made by, Designed by, Handpicked by or Sourced by; an item made with AI tools belongs under Designed by, and Etsy asks sellers to say in the description that AI was used. Add etsy_description_line at the end of the Etsy description.",
+  "etsy_description_line": "How this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.",
+  "site": "Product page line: 'How this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels.' Add 'and edited by the founder' only after she has rewritten the text or art. The PDFs' last page uses the same 'How this was made' line (fixed 2026-09-28: it used to say 'edited by Play Before Pixels', which overstated the human part).",
+  "social_ai_label": "Turn on each platform's AI-generated-content label for posts that use these images or this text (label names UNVERIFIED).",
+  "notes": "Answers describe what really happened as of the date above. Platform categories and form wording are from memory (UNVERIFIED): check each form on upload day. Never call any part hand-drawn, handmade or human-written."
+ },
+ "differs_from_record": []
+}
