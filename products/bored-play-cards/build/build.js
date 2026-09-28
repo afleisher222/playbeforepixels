@@ -336,7 +336,7 @@ const welcomeCss = `<style>
 .wn .i{width:21px;height:21px}
 .whyi h4,.st h4{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:16px;margin:0 0 2px;letter-spacing:-.01em}
 .whyi p{font-size:12.2px;line-height:1.45;font-weight:600}
-.wart{height:1.75in;margin-top:4px}
+.wart{height:1.55in;margin-top:0}
 .inside{background:${C.wash};border-radius:18px;padding:16px 18px}
 .in{display:flex;gap:10px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E1E7F1;font-size:12px;font-weight:600;line-height:1.3}
 .in b{flex:0 0 30px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:19px;color:${C.tomato}}

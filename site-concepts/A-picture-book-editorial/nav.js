@@ -299,7 +299,7 @@
     requestAnimationFrame(function () { el.classList.add("is-open"); });
     if (id === "mobile-menu") doc.querySelector(".tool-menu").setAttribute("aria-expanded", "true");
     var target = id === "search" ? el.querySelector("input") : id === "bag" ? el.querySelector("#bag-h") : el.querySelector(".m-close");
-    setTimeout(function () { target && target.focus(); }, 30);
+    if (target) target.focus();
     if (id === "search") runSearch(el.querySelector("input").value);
   }
   function closeLayer(swap) {

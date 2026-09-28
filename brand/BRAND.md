@@ -115,3 +115,12 @@ AI-generated material is not copyrightable in the U.S. For every product, leave 
 
 ## Amazon edition for every product (binding)
 Every listing.json includes `amazon_route` (kdp-paperback · kdp-activity-edition · merch-on-demand · fba-later · none-with-reason). Every printable that works on paper also gets a KDP paperback activity-book edition. See marketing/AMAZON-AND-RETAIL-ROADMAP.md.
+
+## Everything promotes the brand (binding)
+- **Every product:** the Play Before Pixels logo and playbeforepixels.com on the cover/first page and in the footer of every printable page; a "More from Play Before Pixels" last page showing the next products for the child's age; the QR/bonus link; a shareable piece (certificate, badge, fridge sheet or finished page) designed to be photographed and posted, with a small brand mark.
+- **Books:** back-cover "collect the series" strip, website on the copyright page, a free bonus printable offer.
+- **Every email:** one "share with a friend" referral link (give $5 / get $5) and a next-product recommendation.
+- **Every site page:** share buttons on articles and free printables; every free printable requires only an email and carries the brand URL on every page.
+- **Every social post and pin:** brand mark, the website, and a link to a product or the free printable.
+- **Marketplaces:** brand name in every listing title/shop name; include the website only where the platform's rules allow outside links (never break a marketplace rule to promote).
+- **Everything stays honest:** no fake scarcity, no fake reviews, no pressure tactics; sharing is invited, never required.

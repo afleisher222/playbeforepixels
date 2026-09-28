@@ -638,7 +638,7 @@ const seriesPage = () => ({
   cls: 'inner series-pg', html: `
   <div class="in">
     <p class="kicker">The ${MS.series} series</p>
-    <h2 class="ptitle">One word, one picture, one tip. Three books.</h2>
+    <h2 class="ptitle">Collect all three</h2>
     <div class="bigbooks">${MS.series_books.map(b => `<div class="bb">${miniCover(b)}<div><b>Book ${b.n}: ${b.title.join(' ')}</b><span>${b.theme}</span><small>${b.status === 'this book' ? 'You are holding it' : 'Coming soon'}</small></div></div>`).join('')}</div>
     <p class="note">Same size, same style, same grown-up tips, made to sit together on the shelf.</p>
   </div>`
@@ -774,13 +774,13 @@ symbol{overflow:visible}
 .qrbox .qr{display:block}
 .link{margin:0 0 14px;font-weight:800;font-size:14px;color:${C.tomato}}
 .bonus-pg .lede{max-width:400px}
-.bigbooks{display:flex;flex-direction:column;gap:12px}
-.bb{display:flex;align-items:center;gap:16px;background:#fff;border-radius:16px;padding:10px}
-.bb .mini{width:112px;height:112px;flex:0 0 112px}
-.bb .mt{font-size:18px}
-.bb b{display:block;font-family:"Fredoka",sans-serif;font-weight:600;font-size:20px;line-height:1.1}
-.bb span{display:block;font-size:13px;margin-top:2px}
-.bb small{display:block;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:${C.tomato};margin-top:5px}
+.bigbooks{display:flex;flex-direction:column;gap:10px}
+.bb{display:flex;align-items:center;gap:18px;background:#fff;border-radius:16px;padding:9px}
+.bb .mini{width:104px;height:104px;flex:0 0 104px}
+.bb .mini .mt{font-size:19px;left:9px;top:9px}
+.bb>div>b{display:block;font-family:"Fredoka",sans-serif;font-weight:600;font-size:20px;line-height:1.1}
+.bb>div>span{display:block;font-size:13px;margin-top:2px}
+.bb>div>small{display:block;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:${C.tomato};margin-top:5px}
 .end-pg .endtx{position:absolute;left:48px;right:48px;top:350px;text-align:center;color:#fff}
 .endtx h2{margin:0;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:52px;letter-spacing:-.03em}
 .endtx p{margin:6px 0 0;font-family:"Caveat",cursive;font-weight:700;font-size:26px;color:${C.sun}}
