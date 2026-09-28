@@ -953,11 +953,11 @@ function listingPages() {
   const P = [];
   // 1 hero
   P.push(L(`<div class="lh"><div class="lk">Printable · ages 1–12</div><h2 style="font-size:92px">150 “I’m bored!”<br>Play Cards</h2><p class="ls">Screen-free play ideas sorted by age and energy, with a talk prompt on every card.</p></div>
-    <div style="position:absolute;left:40px;top:500px;width:330px;height:430px"><svg viewBox="-110 -110 220 300" width="100%" height="100%">${jarSVG({ lab: C.tomato })}</svg></div>
-    ${place(CD('b812', 0), 330, 520, -14, 1.02)}${place(CD('b58', 1), 470, 470, -5, 1.02)}${place(CD('b13', 3), 620, 460, 5, 1.02)}${place(CD('b35', 2), 745, 500, 14, 1.02)}
-    <div style="position:absolute;left:64px;bottom:44px;display:flex;gap:10px"><span class="chip">+ 36 summer & rainy-day cards</span></div>`, C.tSun));
+    <div style="position:absolute;left:40px;top:410px;width:330px;height:430px"><svg viewBox="-110 -110 220 300" width="100%" height="100%">${jarSVG({ lab: C.tomato })}</svg></div>
+    ${place(CD('b812', 0), 330, 440, -14, 1.02)}${place(CD('b58', 1), 470, 390, -5, 1.02)}${place(CD('b13', 3), 620, 380, 5, 1.02)}${place(CD('b35', 2), 745, 420, 14, 1.02)}
+    <div style="position:absolute;left:64px;bottom:44px;display:flex;gap:10px;flex-wrap:wrap;width:640px"><span class="chip">+ 36 summer & rainy-day cards</span><span class="chip">Editable · US Letter + A4</span></div>`, C.tSun));
   // 2 what's inside
-  const inside = [['150', 'play cards, 4 age bands'], ['36', 'summer + rainy-day cards'], ['30', 'blank “your idea” cards'], ['18', 'box dividers'], ['10', 'jar labels, 4 colorways'], ['6', 'card-back designs'], ['1', 'Play Menu choice board'], ['2', 'weekly planners (Mon/Sun)'], ['1', 'Play Jar Star certificate'], ['3', 'page index & checklist']];
+  const inside = [['150', 'play cards, 4 age bands'], ['36', 'summer + rainy-day cards'], ['30', 'blank “your idea” cards'], ['18', 'box dividers'], ['10', 'jar labels, 4 colorways'], ['6', 'card-back designs'], ['1', 'Play Menu choice board'], ['2', 'weekly planners (Mon/Sun)'], ['1', 'Play Jar Star certificate'], ['3', 'pages of card index & checklist']];
   P.push(L(`<div class="lh"><div class="lk">What’s inside</div><h2>Everything for a<br>play jar that works.</h2></div>
     <div style="position:absolute;left:64px;top:300px;width:400px">${inside.map(([n, t]) => `<div style="display:flex;gap:14px;align-items:baseline;padding:8px 0;border-bottom:2px solid #E1E7F1;font-size:20px;font-weight:700"><b style="font-family:Bricolage Grotesque;font-size:30px;color:${C.tomato};width:62px">${n}</b>${t}</div>`).join('')}</div>
     <div class="paper" style="${at(520, 300, -4)};width:230px;height:298px"><img src="${PV(7)}"></div>
@@ -970,29 +970,29 @@ function listingPages() {
     ${place(CD('b35', 16), 90, 290, -3, 1.75)}
     <div style="position:absolute;left:570px;top:320px;width:370px">${marks.map(([h, t], i) => `<div style="display:flex;gap:14px;margin-bottom:22px"><span style="flex:0 0 38px;height:38px;border-radius:50%;background:${C.tomato};color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center">${i + 1}</span><div><div style="font-family:Bricolage Grotesque;font-weight:800;font-size:25px">${h}</div><div style="font-size:18px;font-weight:600">${t}</div></div></div>`).join('')}</div>`, '#FFFFFF'));
   // 4 young ages
-  P.push(L(`<div class="lh"><div class="lk">Sorted by age</div><h2>Ages 1–3 and 3–5</h2><p class="ls">Every 1–3 card uses only things bigger than a toilet-paper tube.</p></div>
-    ${place(CD('b13', 0), 70, 330, -4, 1.12)}${place(CD('b13', 12), 355, 320, 0, 1.12)}${place(CD('b13', 19), 640, 330, 4, 1.12)}
-    ${place(CD('b35', 12), 150, 640, -3, 1.0)}${place(CD('b35', 2), 400, 630, 1, 1.0)}${place(CD('b35', 33), 650, 640, 4, 1.0)}`, C.tGrass));
+  P.push(L(`<div class="lh"><div class="lk">Sorted by age</div><h2>Ages 1–3 and 3–5</h2><p class="ls" style="font-size:19px">Every 1–3 card uses only things bigger than a toilet-paper tube.</p></div>
+    ${place(CD('b13', 0), 70, 250, -4, 1.08)}${place(CD('b13', 12), 355, 240, 0, 1.08)}${place(CD('b13', 19), 640, 250, 4, 1.08)}
+    ${place(CD('b35', 12), 110, 570, -3, 0.95)}${place(CD('b35', 2), 370, 560, 1, 0.95)}${place(CD('b35', 33), 620, 570, 4, 0.95)}`, C.tGrass));
   // 5 older ages
-  P.push(L(`<div class="lh"><div class="lk">Sorted by age</div><h2>Ages 5–8 and 8–12</h2><p class="ls">Bigger projects, games with rules and real-life skills.</p></div>
-    ${place(CD('b58', 5), 70, 330, -4, 1.12)}${place(CD('b58', 25), 355, 320, 0, 1.12)}${place(CD('b58', 13), 640, 330, 4, 1.12)}
-    ${place(CD('b812', 15), 150, 640, -3, 1.0)}${place(CD('b812', 22), 400, 630, 1, 1.0)}${place(CD('b812', 26), 650, 640, 4, 1.0)}`, C.tPlum));
+  P.push(L(`<div class="lh"><div class="lk">Sorted by age</div><h2>Ages 5–8 and 8–12</h2><p class="ls" style="font-size:19px">Bigger projects, games with rules and real-life skills.</p></div>
+    ${place(CD('b58', 5), 70, 250, -4, 1.08)}${place(CD('b58', 25), 355, 240, 0, 1.08)}${place(CD('b58', 13), 640, 250, 4, 1.08)}
+    ${place(CD('b812', 15), 110, 570, -3, 0.95)}${place(CD('b812', 22), 370, 560, 1, 0.95)}${place(CD('b812', 26), 620, 570, 4, 0.95)}`, C.tPlum));
   // 6 seasonal sets
   P.push(L(`<div class="lh"><div class="lk">Bonus sets</div><h2>Summer & rainy-day<br>mini-sets</h2><p class="ls">36 extra cards for sunny afternoons and stuck-inside days.</p></div>
     ${place(BK('summer'), 70, 400, -8, 1.02)}${place(CD('summer', 1), 250, 380, -2, 1.1)}${place(CD('summer', 16), 360, 640, 6, 1.0)}
-    ${place(CD('rainy', 3), 560, 380, 2, 1.1)}${place(BK('rainy'), 760, 420, 9, 1.02)}${place(CD('rainy', 10), 600, 650, -5, 1.0)}`, C.tTomato));
+    ${place(CD('rainy', 3), 540, 380, 2, 1.1)}${place(BK('rainy'), 720, 400, 9, 1.0)}${place(CD('rainy', 10), 600, 650, -5, 1.0)}`, C.tTomato));
   // 7 labels, dividers, colorways
   P.push(L(`<div class="lh"><div class="lk">Jar labels · dividers · card backs</div><h2>Four colorways.<br>One calm system.</h2></div>
     <div class="paper" style="${at(64, 300, -3)};width:300px;height:388px"><img src="${PV(40)}"></div>
     <div class="paper" style="${at(350, 290, 2)};width:300px;height:388px"><img src="${PV(41)}"></div>
     <div class="paper" style="${at(640, 300, 5)};width:300px;height:388px"><img src="${PV(37)}"></div>
-    ${['b13', 'b35', 'b58', 'b812', 'summer', 'rainy'].map((k, i) => place(BK(k), 90 + i * 140, 730, (i - 2.5) * 3, 0.62)).join('')}`, '#FFFFFF'));
+    ${['b13', 'b35', 'b58', 'b812', 'summer', 'rainy'].map((k, i) => place(BK(k), 70 + i * 128, 715, (i - 2.5) * 3, 0.56)).join('')}`, '#FFFFFF'));
   // 8 sizes & formats
   const F = [['US Letter + A4', 'Every page in both sizes, at 100% scale'], ['Fillable editable PDF', 'Type your own cards in free Adobe Acrobat Reader'], ['Canva PNG set', '30 blank cards, backs, labels and dividers at 300 dpi'], ['Double-sided cards file', 'Fronts and backs, ready for duplex printing'], ['Instant download', 'Digital file only. Nothing is shipped.']];
   P.push(L(`<div class="lh"><div class="lk">Sizes & formats</div><h2>Print it your way.</h2></div>
     <div style="position:absolute;left:64px;top:250px;width:470px">${F.map(([h, t], i) => `<div style="background:#fff;border-radius:20px;padding:18px 22px;margin-bottom:14px;border-left:10px solid ${[C.sun, C.grass, C.sky, C.plum, C.tomato][i]}"><div style="font-family:Bricolage Grotesque;font-weight:800;font-size:27px">${h}</div><div style="font-size:18px;font-weight:600">${t}</div></div>`).join('')}</div>
-    <div class="paper" style="${at(600, 270, 4)};width:320px;height:414px"><img src="${PV(27)}"></div>
-    <div class="paper" style="${at(570, 560, -3)};width:320px;height:414px"><img src="${PV(44)}"></div>`));
+    <div class="paper" style="${at(620, 240, 4)};width:290px;height:375px"><img src="${PV(27)}"></div>
+    <div class="paper" style="${at(590, 505, -3)};width:290px;height:375px"><img src="${PV(44)}"></div>`));
   // 9 how to use
   const S = [['Print', 'On cardstock, at actual size'], ['Cut & laminate', 'Round the corners, add velcro if you like'], ['Fill the jar', 'Or a recipe box with the dividers'], ['Pull, play, talk', 'Use the talk prompt, then follow their lead']];
   P.push(L(`<div class="lh"><div class="lk">How to use</div><h2>From “I’m bored!”<br>to “Again!”</h2></div>

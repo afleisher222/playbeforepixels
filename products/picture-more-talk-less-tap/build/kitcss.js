@@ -10,7 +10,7 @@ body { -webkit-print-color-adjust: exact; print-color-adjust: exact; font-family
 .page:last-child { break-after: auto; page-break-after: auto }
 .body { flex: 1; min-height: 0; display: flex; flex-direction: column }
 .foot { height: 22px; flex: none; margin-top: 8px; border-top: 1.5px solid ${C.wash}; padding-top: 5px; display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 8.5px; color: rgba(29,41,64,.72) }
-.foot .fl { display: flex; align-items: center; gap: 8px; font-weight: 700 } .foot .fc { text-align: center; flex: 1 } .foot .fr { font-weight: 800; font-size: 10px; min-width: 16px; text-align: right }
+.foot .fl { display: flex; align-items: center; gap: 8px; font-weight: 700 } .foot .fmid { text-align: center; flex: 1 } .foot .fr { font-weight: 800; font-size: 10px; min-width: 16px; text-align: right }
 .logo { display: block; width: auto }
 p { margin: 0 0 .5em } ul, ol { margin: 0; padding-left: 1.2em }
 .h { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 34px; line-height: 1.04; letter-spacing: -.6px; margin: 0 0 10px }
@@ -45,7 +45,7 @@ h4 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 15px; marg
 .covinside b { display: block; font-family: "Bricolage Grotesque", sans-serif; font-size: 21px; font-weight: 800; color: ${C.tomato}; margin-bottom: 2px }
 
 /* inside */
-.toc { list-style: none; padding: 0; margin: 0 0 16px; font-size: 13.5px }
+.toc { list-style: none; padding: 0; margin: 0 0 16px; font-size: 14px }
 .toc li { display: flex; align-items: baseline; gap: 6px; padding: 5px 0; border-bottom: 1px solid ${C.wash} }
 .toc li i { flex: 1 } .toc li b { font-family: "Bricolage Grotesque", sans-serif; color: ${C.tomato}; min-width: 20px; text-align: right }
 .files { background: ${C.wash}; border-radius: 14px; padding: 12px 16px; font-size: 12.5px; line-height: 1.45 }
@@ -56,7 +56,11 @@ h4 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 15px; marg
 .fwrap { margin-top: auto; padding-top: 14px } .fnote { background: ${C.wash}; border-radius: 14px; padding: 12px 16px; font-size: 13px; line-height: 1.45 }
 
 /* before you start */
-.tip ul { font-size: 12px; line-height: 1.45; margin-bottom: 14px } .tip li { margin-bottom: 5px }
+.tip ul { font-size: 13px; line-height: 1.5; margin-bottom: 16px } .tip li { margin-bottom: 6px }
+.needbox { margin-top: auto; background: ${C.tSun}; border-radius: 16px; padding: 14px 18px }
+.needs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px } .needs div { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700 }
+.week5 { margin-top: 18px } .wk { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px }
+.wk div { background: ${C.wash}; border-radius: 12px; padding: 10px 10px; font-size: 12px; line-height: 1.4 } .wk b { display: block; font-family: "Fredoka", sans-serif; font-size: 16px; color: ${C.tomato}; margin-bottom: 3px }
 .note { background: ${C.wash}; border-radius: 10px; padding: 10px 12px; font-size: 11px; line-height: 1.4 }
 
 /* script */
@@ -66,7 +70,7 @@ h4 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 15px; marg
 .srow { display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: ${C.wash}; border-radius: 14px; padding: 10px 14px 8px 10px }
 .snum { width: 40px; height: 40px; border-radius: 12px; background: ${C.tomato}; color: #fff; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 24px; display: flex; align-items: center; justify-content: center }
 .stxt h4 { font-size: 16px; margin: 1px 0 3px } .stxt h4 small { font-family: "Nunito Sans", sans-serif; font-weight: 700; font-size: 11px; opacity: .65; margin-left: 6px }
-.stxt p { font-size: 12.5px; line-height: 1.4; margin: 0 0 3px } .stxt .say { font-size: 13.5px; font-weight: 800 } .stxt .say b { color: ${C.tomato} }
+.stxt p { font-size: 13px; line-height: 1.42; margin: 0 0 3px } .stxt .say { font-size: 14.5px; font-weight: 800 } .stxt .say b { color: ${C.tomato} }
 .ifbox { margin-top: 12px; border: 2px solid ${C.sun}; border-radius: 14px; padding: 12px 14px }
 .ifs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px } .ifs b { font-size: 12.5px } .ifs p { font-size: 12px; line-height: 1.4; margin: 2px 0 0 }
 
@@ -92,8 +96,8 @@ h4 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 15px; marg
 .grid.names { grid-template-columns: repeat(3, 2.25in); grid-auto-rows: .95in }
 .cell { outline: 1.2px dashed #9AA6BA; outline-offset: -.6px; padding: .085in; position: relative }
 .bcard { height: 100%; border-radius: 18px; display: flex; align-items: center; gap: 10px; padding: 0 18px 0 14px }
-.bglyph { flex: none; width: 118px; display: flex; justify-content: center }
-.btxt { flex: 1 }
+.bglyph { flex: none; width: 104px; display: flex; justify-content: center }
+.btxt { flex: 1; min-width: 0 }
 .blab { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 40px; line-height: 1; letter-spacing: .5px }
 .bkid { font-family: "Fredoka", sans-serif; font-weight: 500; font-size: 16px; line-height: 1.2; margin: 6px 0 16px }
 .bname { border-bottom: 2px solid; font-size: 10px; font-weight: 700; opacity: .9; padding-bottom: 12px; letter-spacing: .5px }
@@ -130,9 +134,9 @@ h4 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 15px; marg
 .tkey .tnote { margin-left: auto; font-weight: 600; font-style: italic; opacity: .75 }
 
 /* star + wobble */
-.starpage { flex: 1; min-height: 0; display: grid; grid-template-rows: 1fr 2.3in; gap: 0 }
-.starcell { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: .2in }
-.starcell svg { flex: 1; min-height: 0 }
+.starpage { flex: 1; min-height: 0; display: grid; grid-template-rows: minmax(0, 1fr) 2.1in; gap: 0 }
+.starcell { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: .2in; min-height: 0; overflow: hidden }
+.starcell svg { flex: 1; min-height: 0; width: 100%; height: auto }
 .starlab { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 28px; margin-top: 4px }
 .wobble { display: flex; align-items: center; justify-content: center }
 .wobin { display: flex; align-items: center; gap: 22px; background: ${C.tTomato}; border-radius: 20px; padding: 18px 30px; width: 100%; height: 100% }
@@ -140,14 +144,14 @@ h4 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 15px; marg
 .wobin p { font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 21px; line-height: 1.25; margin: 8px 0 0 }
 
 /* variations */
-.vars { display: grid; gap: 12px }
-.var { background: ${C.wash}; border-radius: 16px; padding: 14px 16px 12px }
+.vars { display: grid; gap: 16px }
+.var { background: ${C.wash}; border-radius: 16px; padding: 18px 20px 16px }
 .vhead { display: flex; gap: 12px; align-items: center; margin-bottom: 8px }
 .vnum { flex: none; width: 42px; height: 42px; border-radius: 12px; color: #fff; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 24px; display: flex; align-items: center; justify-content: center }
-.vhead h3 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 21px; margin: 0; line-height: 1.05 }
-.vmeta { font-size: 11.5px; margin: 2px 0 0 }
-.var ol { font-size: 13px; line-height: 1.45; padding-left: 1.3em; margin-bottom: 8px } .var li { margin-bottom: 3px }
-.vtips { display: grid; grid-template-columns: 1fr 1fr; gap: 10px } .vtips p { background: #fff; border-radius: 10px; padding: 7px 10px; font-size: 11.5px; line-height: 1.35; margin: 0 }
+.vhead h3 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 24px; margin: 0; line-height: 1.05 }
+.vmeta { font-size: 12.5px; margin: 3px 0 0 }
+.var ol { font-size: 14.5px; line-height: 1.5; padding-left: 1.3em; margin-bottom: 12px } .var li { margin-bottom: 5px }
+.vtips { display: grid; grid-template-columns: 1fr 1fr; gap: 10px } .vtips p { background: #fff; border-radius: 10px; padding: 9px 12px; font-size: 12.5px; line-height: 1.4; margin: 0 }
 .vfoot { margin-top: 14px; background: ${C.tSun}; border-radius: 14px; padding: 12px 16px; font-size: 13px; line-height: 1.45 }
 
 /* family */

@@ -5,10 +5,10 @@ const { C, R, Ci, E, P, L, G, TX } = A;
 // Product name in one place: "Talk Tower" awaits trademark counsel's clearance (listing.json human_todo).
 const NAME = 'Talk Tower';
 const BLOCK = {
-  q: { label: 'ASK', word: 'Ask', col: C.sky, dark: C.sky, ink: '#fff', tint: C.tSky, kid: 'I asked a question.', short: 'a question to a friend' },
-  j: { label: 'COMMENT', word: 'Comment', col: C.sun, dark: C.ink, ink: C.ink, tint: C.tSun, kid: 'I said something back.', short: 'something back to a friend' },
-  i: { label: 'ADD ONE', word: 'Add one', col: C.grass, dark: C.grass, ink: '#fff', tint: C.tGrass, kid: 'I added one more idea.', short: 'more idea to what a friend said' },
-  l: { label: 'LISTEN', word: 'Listen', col: C.plum, dark: C.plum, ink: '#fff', tint: C.tPlum, kid: 'I listened to a friend.', short: 'and show you heard, your way' },
+  q: { label: 'ASK', word: 'Ask', col: C.sky, dark: C.sky, ink: '#fff', tint: C.tSky, kid: 'I asked a question.', fs: 46, short: 'a question to a friend' },
+  j: { label: 'COMMENT', word: 'Comment', col: C.sun, dark: C.ink, ink: C.ink, tint: C.tSun, kid: 'I said something back.', fs: 33, short: 'something back to a friend' },
+  i: { label: 'ADD ONE', word: 'Add one', col: C.grass, dark: C.grass, ink: '#fff', tint: C.tGrass, kid: 'I added one more idea.', fs: 34, short: 'more idea to what a friend said' },
+  l: { label: 'LISTEN', word: 'Listen', col: C.plum, dark: C.plum, ink: '#fff', tint: C.tPlum, kid: 'I listened to a friend.', fs: 39, short: 'and show you heard, your way' },
 };
 function ear(col) {
   return L('M40 46 C34 45 33 38 36 33 C39 28 37 22 40 18 C44 12 56 10 61 18 C65 24 63 30 58 35 C55 38 54 41 54 45 C54 51 47 54 43 50', col, 6.5) + L('M47 30 C47 24 55 23 55 29', col, 5);
@@ -32,7 +32,7 @@ function topicIcon(ic) {
     case 'food': return Ci(-18, 10, 30, C.tomato) + P('M-18 -18 Q-6 -34 8 -26 Q-4 -14 -18 -18Z', C.grass) + L('M-18 -18 L-20 -30', C.ink, 4) + Ci(-28, 2, 6, '#fff', 'fill-opacity=".5"') + G('translate(24 20) scale(.8) rotate(-20)', '<use href="#banana"/>');
     case 'weather': {
       let rays = ''; for (let k = 0; k < 8; k++) { const a = k * Math.PI / 4; rays += L(`M${-12 + 34 * Math.cos(a)} ${-14 + 34 * Math.sin(a)} L${-12 + 44 * Math.cos(a)} ${-14 + 44 * Math.sin(a)}`, C.sun, 6); }
-      return rays + Ci(-12, -14, 26, C.sun) + Ci(6, 24, 18, C.sky) + Ci(28, 14, 24, C.sky) + R(-10, 22, 72, 26, C.sky, 13);
+      return G('translate(-6 0)', rays + Ci(-12, -14, 26, C.sun) + Ci(6, 24, 18, C.sky) + Ci(28, 14, 24, C.sky) + R(-10, 22, 66, 26, C.sky, 13));
     }
     case 'ball': return Ci(0, 0, 48, C.tomato) + L('M-46 -12 Q0 6 46 -12', '#fff', 7) + L('M-40 24 Q0 40 40 24', '#fff', 7) + L('M-6 -47 Q14 0 -6 47', C.sun, 7);
     case 'book': return P('M0 -26 Q-26 -40 -52 -32 V34 Q-26 26 0 40Z', C.sky) + P('M0 -26 Q26 -40 52 -32 V34 Q26 26 0 40Z', C.plum) + P('M-4 -22 Q-24 -32 -44 -28 V26 Q-24 20 -4 32Z', '#fff') + P('M4 -22 Q24 -32 44 -28 V26 Q24 20 4 32Z', '#fff') + L('M-36 -14 Q-24 -18 -12 -12', C.ink, 3) + L('M-36 0 Q-24 -4 -12 2', C.ink, 3) + L('M12 -12 Q24 -18 36 -14', C.ink, 3) + L('M12 2 Q24 -4 36 0', C.ink, 3);

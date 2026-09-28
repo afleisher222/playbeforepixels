@@ -33,6 +33,7 @@ Play-first books, printables and classroom resources for PreK–5 classrooms, ea
 - **Purchase orders:** made out to **AlphaPlay LLC** and emailed to orders@[BUSINESS DOMAIN]. Acknowledged within 2 business days.
 - **Payment terms:** net 30 on approved purchase orders, or prepayment.
 - **Payment methods:** purchasing card or credit card (secure online invoice link), ACH (bank details supplied through your vendor portal or form), or check payable to **AlphaPlay LLC**, mailed to the remit-to address above, with the invoice number in the memo.
+- **Returns and refunds:** as stated on your quote or invoice. Printed items that arrive damaged, defective or wrong are replaced or refunded at no cost. Full policy: [DOMAIN]/[shipping-returns page — confirm path].
 - **Sales tax:** charged where required. Tax-exempt organizations: send your exemption certificate with the PO and tax will be removed.
 - **Documents available on request:** W-9 (sent securely), completed vendor registration forms, certificate of insurance [once in force — FOUNDER CONFIRMS], sole-source letter (direct-only licenses and kits only), accessible (tagged) PDF versions of any digital file.
 

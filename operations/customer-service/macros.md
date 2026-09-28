@@ -4,6 +4,9 @@
 
 **Placeholders:**
 - `{first_name}`, `{order_number}`, `{product}`, `{link}`, `{date}`, `{days}`, `{quote_number}`, `{invoice_number}`, `{license_number}`.
+- Order and payment: `{amount}`, `{status}`, `{tracking_link}`, `{address}`, `{new_address}`, `{country}`, `{code}`, `{email}`, `{masked_email}`, `{STATEMENT_DESCRIPTOR}` (the exact text on card statements, set once at approval).
+- Schools and partners: `{organization}`, `{po_number}`, `{items}`, `{ship_to}`, `{due_date}`, `{invoice_link}`, `{license_type}`, `{scope}`, `{license_link}`, `{store_name}`, `{group}`, `{research_link}`, `{course_or_guide}`.
+- Curly-brace text written as a sentence (for example `{Within [14] days …:}` or `{fix / replacement / refund offer within policy}`) is a choice: keep the matching line, delete the other, and never send the braces. A reply that still contains `{` or `[` is not sent.
 - `{business_address}` = the PO Box in `legal/ENTITY.md`.
 - Bracketed items `[like this]` come from the policies and are filled once, at approval.
 
@@ -46,8 +49,8 @@ AlphaPlay LLC, d/b/a Play Before Pixels
 > Sorry the file is giving you trouble! A few things usually fix it:
 >
 > 1. **Open it on a computer if you can.** Some phones preview PDFs without fully opening them.
-> 2. **Use a free PDF reader**, such as Adobe Acrobat Reader, rather than a browser preview.
-> 3. **If it came as a .zip,** unzip it first (right-click → "Extract all" on Windows, or double-click on a Mac).
+> 2. **Use a free PDF reader app** rather than a browser preview.
+> 3. **If it came as a .zip,** unzip it first. On most computers, right-click the file and choose "Extract all", or simply double-click it.
 >
 > If it still won't open, reply and tell us what device you're using and what you see. We'll send the files another way, or refund you if we can't make it work.
 
@@ -76,7 +79,7 @@ AlphaPlay LLC, d/b/a Play Before Pixels
 >
 > Thanks for checking in on order {order_number}. Each of our books, card decks and shirts is printed just for you by our printing partner, so it takes [X–Y] business days to make before it ships.
 >
-> Your order status: {status}. {tracking_link_or_"We'll email tracking the moment it ships."}
+> Your order status: {status}. {Tracking: {tracking_link} / We'll email tracking the moment it ships.}
 >
 > If more than one item is in your order, they may arrive in separate packages from different print locations.
 
@@ -165,6 +168,8 @@ AlphaPlay LLC, d/b/a Play Before Pixels
 >
 > Thank you for trying the 30-Day Screen Reset. {Within [14] days and no more than [30%] complete:} We've refunded {amount} in full. You'll see it in 5–10 business days.
 > {Outside the window:} Our guarantee covers the first [14] days, so we can't refund this one. But your access stays open for [access period], and you can restart the 30 days whenever it suits your family.
+
+*(EU/UK buyers who did not give the immediate-access consent at checkout have a 14-day statutory right to cancel regardless of lesson progress (`legal/SHIPPING-RETURNS-REFUNDS.md`). Refund them within that window. When in doubt, send it to the founder.)*
 
 ## D. Licenses, schools and organizations
 
@@ -279,18 +284,20 @@ AlphaPlay LLC, d/b/a Play Before Pixels
 >
 > Thank you for writing. We can hear how much you care, and asking questions is exactly the right instinct. We make parent-education materials, and we aren't able to give medical, developmental or speech-language advice about an individual child.
 >
-> The best next step is to share your concerns with your child's pediatrician or health provider. In the US, children under 3 can also be evaluated through your state's early intervention program, which is free. You can contact it directly without a referral. [Outside the US: your health visitor or family doctor.]
+> The best next step is to share your concerns with your child's pediatrician or health provider. In the US, children under 3 can also be evaluated through your state's early intervention program, which is free, and you can contact it yourself. For children 3 and older, you can ask your local public school district for a free evaluation. [Outside the US: your health visitor or family doctor.]
 >
 > In the meantime, our free play ideas are here if they're helpful: {link}. They're about connection and fun, not a treatment. You're doing a good thing by looking into this.
 
-*(Never suggest a cause, a diagnosis or that any product will help a condition. Never use the words "therapy", "treat" or "improve" about a child. If the message describes an emergency or a safety risk, route it to the founder immediately.)*
+*(The early-intervention sentences carry the same `verify_before_publish` check as `seo/articles/08-what-is-virtual-autism.md`: confirm them on the official CDC or US Department of Education page before approving this macro. Never suggest a cause, a diagnosis or that any product will help a condition. Never use the words "therapy", "treat" or "improve" about a child. If the message describes an emergency or a safety risk, route it to the founder immediately.)*
 
 ### 32. "Is this autism?" or questions about "virtual autism"
 > Hi {first_name},
 >
 > Thank you for asking. We know this is a heavy question. "Virtual autism" is a term some clinicians use; it is not a medical diagnosis. Research has found *associations* between early screen time and some developmental measures, but that doesn't mean screens cause autism, and only a qualified professional can evaluate an individual child.
 >
-> Please talk with your pediatrician. In the US, you can also contact your state's free early intervention program directly. Our research page lists the studies we cite, if you'd like to read them: {research_link}.
+> Please talk with your pediatrician. In the US, you can also contact your state's free early intervention program directly (for children under 3), or ask your local public school district about a free evaluation (for children 3 and older). None of this is about blame. Our research page lists the studies we cite, if you'd like to read them: {research_link}.
+
+*(Same early-intervention check as macro 31. Never add a product link to this reply: `brand/BRAND.md`, "Autism searches".)*
 
 ### 33. Permission to post, copy or adapt our materials
 > Hi {first_name},
@@ -329,7 +336,7 @@ AlphaPlay LLC, d/b/a Play Before Pixels
 ### 37. Spanish-language message
 > Hola {first_name}:
 >
-> ¡Gracias por escribirnos! Recibimos tu mensaje y te responderemos en español dentro de 2 días hábiles. [Reviewed Spanish version of the matching macro]
+> ¡Gracias por escribirnos! Recibimos tu mensaje y te responderemos en español en un plazo de 2 días hábiles. [Reviewed Spanish version of the matching macro]
 >
 > Con cariño,
 > El equipo de Play Before Pixels

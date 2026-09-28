@@ -78,12 +78,16 @@ page('inside', 'Inside this kit', () => `
     </div>
   </div>
 </div>
+<div class="week5"><h3 class="h3">A first week with ${NAME}</h3><div class="wk">
+  <div><b>Mon</b>Read the bonus story. Meet the four blocks.</div><div><b>Tue</b>Your first round with the teacher script.</div>
+  <div><b>Wed</b>Pass the Talking Star (variation 1).</div><div><b>Thu</b>Add-One Story Tower (variation 2).</div>
+  <div><b>Fri</b>Count the tower, sign the certificate, send the family page home.</div></div></div>
 <div class="fwrap">${W.one('founder-note') ? `<div class="fnote"><h4>A note from the maker</h4><p>${W.one('founder-note')}</p></div>` :
     founderBox('FOUNDER: “A note from the maker”.', 'Write 2–3 sentences in your own words in WORDS.md, section “founder-note”. This dashed box disappears once filled.')}</div>`);
 function glyphChip(t, s = 40) { return `<span class="chip" style="background:${BLOCK[t].col};width:${s * 1.45}px;height:${s}px">${glyph(t, s * 0.9)}</span>`; }
 
 // ------------------------------------------------------------------ 3 BEFORE YOU START
-page('before', 'Before you start', `
+page('before', 'Before you start', () => `
 <h2 class="h">Before you start</h2>
 <div class="three">
   <section class="tip"><h3 class="h3" style="color:${C.sky}">Printing</h3><ul>
@@ -114,7 +118,13 @@ page('before', 'Before you start', `
   </ul>
   <div class="note">This kit is a set of general classroom play ideas. It is not a program, assessment or screening tool, and it is not professional advice.</div>
   </section>
-</div>`);
+</div>
+<div class="needbox"><h3 class="h3">What you need</h3><div class="needs">
+  <div>${glyphChip('q', 30)}<span>Printed tower blocks (pages ${pageNo('blk-q')}–${pageNo('blk-l')})</span></div>
+  <div>${glyphChip('j', 30)}<span>One set of prompt and topic cards</span></div>
+  <div>${glyphChip('i', 30)}<span>The wall poster and painter’s tape</span></div>
+  <div>${glyphChip('l', 30)}<span>A basket, and the paper Talking Star or a soft toy</span></div></div>
+  <p class="small" style="margin:8px 0 0">Optional: large classroom blocks instead of paper ones, a cloth bag for Mystery Bag Talk, a soft ball for Comment Catch.</p></div>`);
 
 // ------------------------------------------------------------------ 4 TEACHER SCRIPT
 {
@@ -163,8 +173,8 @@ page('before', 'Before you start', `
 for (const t of ['q', 'j', 'i', 'l']) {
   const b = BLOCK[t];
   const cell = `<div class="cell"><div class="bcard" style="background:${b.col};color:${b.ink}">
-    <div class="bglyph">${glyph(t, 112)}</div>
-    <div class="btxt"><div class="blab">${b.label}</div><div class="bkid">${b.kid}</div><div class="bname" style="border-color:${b.ink === '#fff' ? 'rgba(255,255,255,.75)' : 'rgba(29,41,64,.55)'}">name</div></div></div></div>`;
+    <div class="bglyph">${glyph(t, 100)}</div>
+    <div class="btxt"><div class="blab" style="font-size:${b.fs}px">${b.label}</div><div class="bkid">${b.kid}</div><div class="bname" style="border-color:${b.ink === '#fff' ? 'rgba(255,255,255,.75)' : 'rgba(29,41,64,.55)'}">name</div></div></div></div>`;
   page('blk-' + t, `Tower blocks: ${b.label}`, `
 <div class="cardhead"><h2 class="h2">Tower blocks: <span style="color:${b.dark}">${b.label}</span></h2>${cutNote('Print on cardstock. Make as many as you need.')}</div>
 <div class="grid blocks">${cell.repeat(8)}</div>`);
@@ -186,16 +196,16 @@ for (const t of ['q', 'j', 'i', 'l']) {
   page('mat', 'Whose-turn tracker mat', `
 <div class="cardhead"><h2 class="h2">Whose turn?</h2><p class="lead">Stick every name block in <b>Ready for a turn</b>. After a child’s turn, they move their own name across. When every name has moved, the round is done: move them all back and start again.</p></div>
 <div class="mat">${col('Ready for a turn', BLOCK.q.tint, C.sky, 'Everyone starts here.', 'q')}<div class="matarrow">${svg('0 0 60 60', P('M6 22 H34 V8 L56 30 L34 52 V38 H6Z', C.ink))}</div>${col('Had a turn', BLOCK.i.tint, C.grass, 'Move your name here after your turn.', 'i')}</div>
-<p class="tinynote">Tip: laminate this page and use small Velcro dots or painter’s tape on the backs of the name blocks. A child who passes still moves across: listening is a turn too.</p>`);
+<p class="tinynote">Tip: laminate this page and use small Velcro dots or painter’s tape on the backs of the name blocks. A child who passes still moves across: listening is a turn too. The mat holds 8 names, so use one per small group, or overlap the name blocks for a whole class.</p>`);
 }
 
 // ------------------------------------------------------------------ 12 WEEKLY TRACKER
 {
-  const rows = 20;
+  const rows = 22;
   const box = t => `<i style="border-color:${BLOCK[t].col}"></i>`;
   const cell = `<td>${['q', 'j', 'i', 'l'].map(box).join('')}</td>`;
   page('week', 'Weekly turn tracker', `
-<div class="cardhead"><h2 class="h2">Talk Tower turn tracker</h2><p class="lead">Week of ______________ · Color a square when a child adds that kind of block. Use it to make sure <b>everyone</b> gets a turn, never to rank or compare children.</p></div>
+<div class="cardhead"><h2 class="h2">Talk Tower turn tracker</h2><p class="lead">Week of ______________ · Color a square when a child adds that kind of block. Use it to make sure <b>everyone</b> gets a turn, never to rank or compare children. Print two for a bigger class.</p></div>
 <table class="track"><thead><tr><th>Name</th>${['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].map(d => `<th>${d}</th>`).join('')}</tr></thead>
 <tbody>${`<tr><td class="nm"></td>${cell.repeat(5)}</tr>`.repeat(rows)}
 <tr class="tot"><td>Tower height</td>${'<td>____ blocks</td>'.repeat(5)}</tr></tbody></table>
@@ -378,7 +388,7 @@ page('more', 'More from Play Before Pixels', `
 
 // ------------------------------------------------------------------ assemble
 const total = pages.length;
-const foot = (i) => `<footer class="foot"><span class="fl">${LOGO('lockup-horizontal.svg', 15)}<span>playbeforepixels.com</span></span><span class="fc">© 2026 AlphaPlay LLC · Licensed for one classroom, or one site with a site license. Please don’t share or post.</span><span class="fr">${i + 1}</span></footer>`;
+const foot = (i) => `<footer class="foot"><span class="fl">${LOGO('lockup-horizontal.svg', 15)}<span>playbeforepixels.com</span></span><span class="fmid">© 2026 AlphaPlay LLC · Licensed for one classroom, or one site with a site license. Please don’t share or post.</span><span class="fr">${i + 1}</span></footer>`;
 const body = pages.map((p, i) => `<!-- ${p.id}: ${p.title} -->\n<section class="page ${p.cls}" style="background:${p.bg}"><div class="body">${typeof p.body === 'function' ? p.body() : p.body}</div>${foot(i)}</section>`).join('\n');
 const CSS = require('./kitcss.js')(DIM);
 const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${NAME} Classroom Game Kit (${DIM.label}) · Play Before Pixels</title>
