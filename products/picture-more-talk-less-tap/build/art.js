@@ -166,7 +166,7 @@ function talkStar() {
 function bin(withBlocks = true) {
   let s = '';
   if (withBlocks) s += G('translate(-78 -58) rotate(-12)', BLOCKS.q) + G('translate(-10 -72) rotate(8)', BLOCKS.i) + G('translate(20 -40) rotate(-4)', BLOCKS.j);
-  return s + P('M-110 -20 L110 -20 L92 90 Q0 100 -92 90Z', C.tomato) + R(-118, -34, 236, 24, C.tomato, 12) + R(-70, 20, 140, 14, '#F48A6E', 7);
+  return s + P('M-110 -20 L110 -20 L92 90 Q0 100 -92 90Z', C.tomato) + R(-118, -34, 236, 24, C.tomato, 12) + R(-70, 20, 140, 14, C.tTomato, 7);
 }
 function stool() {
   return R(-70, 0, 140, 24, C.grass, 10) + R(-58, 20, 20, 74, C.grass, 6) + R(38, 20, 20, 74, C.grass, 6) + R(-44, 54, 88, 14, C.grass, 5);
@@ -198,7 +198,7 @@ function shelf(w = 260, h = 120) {
   return s;
 }
 function plant() {
-  return P('M-20 -70 Q-60 -110 -44 -150 Q-10 -120 -8 -70Z', C.grass) + P('M4 -70 Q10 -140 40 -160 Q48 -110 18 -70Z', C.grass) + P('M-6 -70 Q-20 -130 0 -176 Q20 -130 8 -70Z', '#27915E') +
+  return P('M-20 -70 Q-60 -110 -44 -150 Q-10 -120 -8 -70Z', C.grass) + P('M4 -70 Q10 -140 40 -160 Q48 -110 18 -70Z', C.grass) + P('M-6 -70 Q-20 -130 0 -176 Q20 -130 8 -70Z', C.grass) +
     P('M-40 -72 L40 -72 L30 0 L-30 0Z', C.tomato) + R(-46, -82, 92, 18, C.tomato, 8);
 }
 function paperFish(col, rot = 0) {
@@ -209,7 +209,7 @@ function banana() {
 }
 function table(w, h = 200) {
   // solid counter-style table: hides legs of children standing behind it
-  return R(14, 16, w - 28, h, C.sky, 10) + R(0, 0, w, 30, C.sky, 14) + R(40, 56, w - 80, 12, C.tSky, 6);
+  return R(14, 16, w - 28, h, C.paper, 10) + R(0, 0, w, 30, C.sky, 14) + R(40, 56, w - 80, 10, C.tSky, 5);
 }
 
 function SYMBOLS() {

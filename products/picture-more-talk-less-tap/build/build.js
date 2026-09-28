@@ -159,7 +159,7 @@ spread({
   label: 'S2', bg: C.tSun,
   art: floor(640, C.tTomato, -12, 840) + R(804, -12, 852, 840, C.paper) +
     teacherAt('point', 140, 740, 1.1, 'laugh') +
-    G('translate(300 690) rotate(90)', U('bin')) +
+    G('translate(300 700)', P('M-110 -70 L40 -104 Q56 -106 56 -90 L56 90 Q56 106 40 104 L-110 70 Q-122 68 -122 56 L-122 -56 Q-122 -68 -110 -70Z', C.tomato) + E(56, 0, 26, 104, C.tomato) + E(56, 0, 16, 90, C.tTomato) + R(-90, -8, 110, 14, C.tTomato, 7)) +
     blk('q', 450, 560, 1, -24) + blk('j', 540, 650, 1, 18) + blk('i', 430, 730, 1, -8) + blk('q', 600, 520, 0.9, 40) +
     A.motion(420, 470, 40, -40, C.ink, 7) + A.motion(530, 450, 40, -70, C.ink, 7) + A.motion(650, 440, 36, -100, C.ink, 7) +
     kidAt('priya', 'sit', 670, 812, 0.9, 'wow', true) +
@@ -290,7 +290,7 @@ spread({
     // right
     teacherAt('sit', 990, 770, 1.15, 'talk') +
     kidAt('sam', 'stand', 1236, 780, 1.15, 'laugh') +
-    E(1430, 784, 80, 10, '#D4E4F7') + tower(1430, 780, ['i'], 1.3) + bursts(1430, 690, 42, C.ink, 5, 24) +
+    E(1430, 784, 80, 10, C.tSky) + tower(1430, 780, ['i'], 1.3) + bursts(1430, 690, 42, C.ink, 5, 24) +
     blk('q', 1540, 640, 0.8, 20) + blk('j', 1560, 740, 0.8, -12),
   texts: [
     T(60, 60, 700, '<p>Blocks everywhere. Room 5 went very, very quiet.</p><p>Then a small voice said something.</p>'),
