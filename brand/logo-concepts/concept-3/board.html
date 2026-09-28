@@ -7,10 +7,10 @@
 --t-tomato:#FDE9E3;--t-sun:#FEF4D8;--t-sky:#E3EEFA;--t-grass:#DFF3E9}
 *{box-sizing:border-box;margin:0}
 body{width:1800px;height:1200px;background:var(--wash);font-family:"Nunito Sans",sans-serif;color:var(--ink);padding:28px 32px;overflow:hidden}
-header{display:flex;align-items:baseline;gap:28px;height:64px}
+header{display:flex;align-items:center;gap:28px;height:64px}
 .eyebrow{font:800 13px/1 "Nunito Sans",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato)}
 h1{font:800 44px/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em}
-header p{margin-left:auto;max-width:720px;font-size:17px;line-height:1.4;text-align:right}
+header p{margin-left:auto;max-width:860px;font-size:16px;line-height:1.4;text-align:right}
 .grid{display:grid;gap:24px}
 .r1{grid-template-columns:580px 1fr 1fr;height:600px}
 .r2{grid-template-columns:486px 372px 470px 1fr;height:436px;margin-top:24px}
@@ -40,7 +40,7 @@ header p{margin-left:auto;max-width:720px;font-size:17px;line-height:1.4;text-al
 <header>
   <span class="eyebrow">Concept 3 · Direction C</span>
   <h1>Face to Face</h1>
-  <p>Two speech marks, one grown-up and one child, turned to face each other. The talk happens in the space between them, and that gap is the pause that gives the child a turn.</p>
+  <p>Two speech marks, a grown-up and a child, turned to face each other and reaching in. The talk lives in the space between them: the gap is the pause that gives the child a turn.</p>
 </header>
 
 <section class="grid r1">
@@ -69,14 +69,19 @@ header p{margin-left:auto;max-width:720px;font-size:17px;line-height:1.4;text-al
     <div class="one"><div style="background:#fff;border:2px solid #E6EAF2"><img src="one-color-black.svg" alt=""></div><div style="background:#111"><img src="one-color-white.svg" alt=""></div></div>
   </div>
 
-  <div class="card" style="background:var(--t-sky)"><span class="lbl">Tee · one-colour print</span>
+  <div class="card" style="background:var(--t-sky)"><span class="lbl">Tee &amp; tote · one-colour print</span>
     <div class="mock">
-      <svg viewBox="0 0 320 340" width="320" height="340">
-        <path d="M112 18 C126 34 194 34 208 18 L270 42 C284 48 292 56 298 70 L316 124 L266 144 L252 110 L252 326 C252 332 248 336 242 336 L78 336 C72 336 68 332 68 326 L68 110 L54 144 L4 124 L22 70 C28 56 36 48 50 42 Z" fill="#F5B820"/>
-        <path d="M112 18 C126 34 194 34 208 18 L200 15 C186 28 134 28 120 15 Z" fill="#E0A612"/>
-        <image href="one-color-black.svg" x="110" y="96" width="100" height="100" preserveAspectRatio="xMidYMin meet" style="filter:none"/>
+      <svg viewBox="0 0 330 340" width="330" height="340">
+        <path d="M118 22 C130 40 190 40 202 22 L262 40 C274 44 282 52 288 64 L312 118 C314 122 312 126 308 128 L270 144 C266 146 262 144 260 140 L250 116 L250 324 C250 330 246 334 240 334 L80 334 C74 334 70 330 70 324 L70 116 L60 140 C58 144 54 146 50 144 L12 128 C8 126 6 122 8 118 L32 64 C38 52 46 44 58 40 Z" fill="#F5B820"/>
+        <path d="M118 22 C130 40 190 40 202 22 L194 19 C182 32 138 32 126 19 Z" fill="#DDA411"/>
+        <image href="one-color-black.svg" x="112" y="84" width="96" height="96" preserveAspectRatio="xMidYMin meet"/>
+        <g transform="translate(222 212)">
+          <path d="M22 26 C22 -6 76 -6 76 26" fill="none" stroke="#141D30" stroke-width="7" stroke-linecap="round"/>
+          <rect x="0" y="22" width="98" height="104" rx="6" fill="#1D2940"/>
+          <image href="mark-white.svg" x="26" y="50" width="46" height="46"/>
+        </g>
       </svg></div>
-    <span class="foot">Ink on sun: a single screen, no colour matching.</span></div>
+    <span class="foot">Tee: black on sun, one screen. Tote: white on ink.</span></div>
 
   <div class="card" style="background:var(--t-grass)"><span class="lbl">Board book · spine &amp; cover corner</span>
     <div class="mock">
@@ -85,13 +90,14 @@ header p{margin-left:auto;max-width:720px;font-size:17px;line-height:1.4;text-al
         <rect x="72" y="18" width="300" height="310" rx="10" fill="#3D86D8"/>
         <rect x="72" y="18" width="8" height="310" fill="#2F74C2"/>
         <image href="mark-white.svg" x="46" y="28" width="24" height="24"/>
-        <text transform="translate(63 72) rotate(90)" font-family="Nunito Sans, sans-serif" font-weight="800" font-size="12.5" letter-spacing="1.2" fill="#fff">PLAY BEFORE PIXELS · HELLO, BALL!</text>
+        <text transform="translate(63 72) rotate(90)" font-family="Nunito Sans, sans-serif" font-weight="800" font-size="11.5" letter-spacing="1" fill="#fff">PLAY BEFORE PIXELS · HELLO, BALL</text>
         <rect x="302" y="30" width="58" height="58" rx="12" fill="#fff"/>
         <image href="mark.svg" x="307" y="35" width="48" height="48"/>
         <text x="104" y="96" font-family="Fredoka, Nunito Sans, sans-serif" font-weight="600" font-size="52" fill="#fff">Hello,</text>
         <text x="104" y="152" font-family="Fredoka, Nunito Sans, sans-serif" font-weight="600" font-size="52" fill="#fff">ball!</text>
-        <circle cx="262" cy="244" r="66" fill="#F5B820"/>
-        <path d="M206 210 C236 232 288 232 318 210 L322 226 C290 250 234 250 202 226 Z" fill="#EE5A36"/>
+        <circle cx="262" cy="244" r="66" fill="#EE5A36"/>
+        <path d="M262 178 A66 66 0 0 1 262 310 A34 66 0 0 0 262 178 Z" fill="#F5B820"/>
+        <path d="M262 178 A66 66 0 0 0 262 310 A34 66 0 0 1 262 178 Z" fill="#fff"/>
       </svg></div>
     <span class="foot">Sample title for mock-up only.</span></div>
 

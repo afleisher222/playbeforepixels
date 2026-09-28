@@ -560,12 +560,12 @@ pages.push(page(-12, PAGE_BG(C.paper) + Ci(408, 570, 200, C.tSun) + cabinet(278,
 const ISBN_BOX = `<div class="isbn" style="left:${60 + 12}px;top:${560 + 12}px"><b>ISBN / barcode</b><span>to be supplied by publisher</span></div>`;
 pages.push(page(-12, PAGE_BG(C.wash) + G('translate(640 760) scale(0.7)', U('dog-lie')) + zzz(700, 640, 0.5, C.sky),
   [{ x: 60, y: 70, w: 600, cls: 'small', html: `<p><b>The Day the Tablet Slept</b></p>
-<p>Text and illustrations © 2026 Play Before Pixels. All rights reserved.</p>
+<p>Text and illustrations © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. All rights reserved.</p>
 <p>No part of this book may be reproduced, stored or transmitted in any form or by any means without written permission from the publisher, except for brief quotations in a review.</p>
 <p>First edition, 2026.</p>
 <p>The illustrations were drawn as flat digital art. The text is set in Fredoka, with Bricolage Grotesque and Nunito Sans.</p>
 <p><b>A note for grown-ups:</b> puddle play, cooking and box-building are best enjoyed with a grown-up close by. The tablet in this story is a made-up character and is not based on any real product.</p>
-<p>Published by Play Before Pixels.</p>` }], ISBN_BOX));
+<p>Published by AlphaPlay LLC, doing business as Play Before Pixels.</p>` }], ISBN_BOX));
 // 5 dedication
 pages.push(page(-12, PAGE_BG(C.tTomato) + rocketWithCrew(408, 700, 0.5, 0, false) + stars([[250, 560, .5, C.sun], [570, 520, .4, C.plum], [600, 640, .3, C.tomato]], C.sun),
   [{ x: 90, y: 150, w: 636, cls: 'ded center', html: `For every grown-up who ever said, “Let’s see what we can make,”<br><br>and every kid who turned a box into a rocket.` }]));
@@ -577,11 +577,11 @@ const qs = [
   ['Ada did lots of things on her day. Which one would you like to try first?', C.sun],
   ['What could a big box turn into at our house?', C.sky],
   ['What should we cook together? What will your job be?', C.grass],
-  ['Can you find Biscuit on every page? What is he doing?', C.plum],
+  ['Point to Biscuit whenever you spot him. What is he doing?', C.plum],
   ['Let’s plan our own “tablet sleeps” day. Pick three things to do!', C.tomato],
 ];
 pages.push(page(-12, PAGE_BG(C.tGrass) + R(-12, -12, 840, 196, C.grass) + G('translate(690 150) scale(0.42) rotate(8)', U('tablet-sleeping')) +
-  block(76, 734, C.tomato, 'c', 0.66, -8) + G('translate(206 780) scale(0.5) rotate(-6)', U('boot')) + G('translate(318 782) scale(0.1) rotate(18)', U('rocket')) + G('translate(440 766) scale(0.62)', U('pancake')) + bookU(540, 728, C.plum, 0.46, 6) + dog(690, 784, 0.32, 'dog-happy'),
+  block(76, 734, C.tomato, 'c', 0.66, -8) + G('translate(206 780) scale(0.5) rotate(-6)', U('boot')) + G('translate(318 782) scale(0.1) rotate(18)', U('rocket')) + G('translate(440 766) scale(0.62)', U('pancake')) + bookU(540, 728, C.plum, 0.46, 6) + dog(700, 792, 0.3, 'dog-happy'),
   [{ x: 48, y: 44, w: 600, cls: 'talk-h', html: `Talk about it` },
    { x: 48, y: 118, w: 560, cls: 'talk-sub', html: `For grown-ups: after reading, try a few of these. Pause, wait, and let your child answer. There are no wrong answers.` }],
   `<ol class="qs" style="left:${48 + 12}px;top:${214 + 12}px">${qs.map(([q, c], i) => `<li><span class="num" style="background:${c}">${i + 1}</span><span>${q}</span></li>`).join('')}</ol>
@@ -694,5 +694,22 @@ html,body{width:1600px;height:1200px;overflow:hidden;background:${C.wash}}
 <div class="tag">A read-aloud about<br>a very sleepy tablet<small>32-page picture book · ages 3–7</small><span class="pill">Play Before Pixels</span></div>
 <div class="open"><div class="rim"></div><div class="sheet"><div class="inner">${spreadSvg('s7')}${txt(s7[1], 0)}${txt(s7[2], 816)}</div></div><div class="gut"></div></div>
 </body></html>`);
+}
+// cover-wrap.html: one-piece paperback cover (back | spine | front) for printers that want a wrap file.
+// SPINE_IN must be recalculated from the printer's own calculator for the final paper and page count.
+if (!GUIDES) {
+  const SPINE_IN = 0.075; const sp = SPINE_IN * 96; const W = 828 * 2 + sp;
+  fs.writeFileSync(path.join(OUT, 'cover-wrap.html'), `<!doctype html><html><head><meta charset="utf-8"><title>Cover wrap</title>
+<link rel="stylesheet" href="../../brand/fonts/fonts.css"><style>${CSS}
+@page { size: ${(W / 96).toFixed(4)}in 8.75in; margin: 0 }
+html,body{width:${W}px;height:840px;overflow:hidden}
+.wrap{position:relative;width:${W}px;height:840px;overflow:hidden}
+.part{position:absolute;top:0;height:840px;overflow:hidden}
+.part .page{position:absolute;top:0}
+</style></head><body>${defs}<div class="wrap">
+<div class="part" style="left:0;width:828px">${pages[31].replace('<section class="page">', '<section class="page" style="left:0">')}</div>
+<div class="part" style="left:828px;width:${sp}px;background:${C.sky}"></div>
+<div class="part" style="left:${828 + sp}px;width:828px">${pages[0].replace('<section class="page">', '<section class="page" style="left:-12px">')}</div>
+</div></body></html>`);
 }
 console.log('pages:', pages.length);
