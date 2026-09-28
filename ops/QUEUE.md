@@ -7,6 +7,8 @@ _(Seeded after the demand check (marketing/DEMAND-CHECK.md) and campaign bible (
 3. Free "3 plays for your child's age" monthly email printable (lead magnet).
 
 ## Ideas under research
+- Professional license for therapists, clinics and early-intervention programs: share printables with the families they serve (per-practice annual license). Language must stay parent-education, never therapy; consider a licensed SLP/OT reviewer credit.
+- "For professionals" page: bulk and licensed materials for SLPs, OTs, pediatric practices and child-care centers.
 
 ## Cut (with reason)
 - Coaching and any live service — founder's instruction.

@@ -16,6 +16,10 @@ Every scheduled run follows this file. It is the operating procedure; CLAUDE.md 
 - Improve one existing product using customer reviews, sales data or new research.
 - Leave clearly marked places for the founder's own creative contribution (human authorship — see BRAND.md).
 
+## Customer panel (every product, every run)
+Before release, every product is reviewed by a simulated panel, each member judging from their own point of view; every issue raised is fixed or answered in writing in the product folder (panel.md):
+new parent · worried parent · grandparent gift-buyer · preschool teacher · K–5 teacher · child-care center director · school principal/district administrator (credibility, PO-friendly, no criticism of schools) · PTA leader/advocate (would they share it?) · speech-language pathologist and occupational therapist (accurate language, no therapy claims, would they give it to a family?) · education/child-development student (clarity, sourcing) · a child aged 6–10 for school-age products (is it fun?) · an autistic adult self-advocate (respect) · a Spanish-speaking parent (cultural fit; translation quality when localized) · a children's librarian (durability, cataloging details, read-aloud quality).
+
 ## 3. Spread the word (every run)
 - Write or refresh 1–2 research-hub or SEO articles (seo/articles/), including translations (Spanish first, then French, Portuguese, German) as the international plan directs.
 - Draft that week's faceless social posts and pins from the campaign bible (marketing/CAMPAIGN-BIBLE.md) into content/queue/.
