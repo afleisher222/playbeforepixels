@@ -245,4 +245,4 @@ When {{CHILD_NAME}} is close enough to feel your voice, reading turns into a con
 There is no right way to read this book. Skip pages. Make up voices. Read the same page ten times. The goal isn’t finishing—it’s the talking along the way. Let your phone rest face-down for a few minutes. Your little one will notice.
 
 ## back blurb (draft)
-A lap for a story. A lap on the bus. A lap for a song, a lap at the park, and a sleepy lap when the moon comes up. In this rhyming read-aloud, your child’s own name is woven into the story, and the grown-ups who love them call them to the best seats in town.
+A lap for a story. A lap on the bus. A lap for a song, a lap at the park, and a sleepy lap when the moon comes up. In this rhyming read-aloud, the grown-ups who love {{CHILD_NAME}} call {{THEM}} by name to the best seats in town.

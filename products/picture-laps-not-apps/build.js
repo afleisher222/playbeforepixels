@@ -470,9 +470,9 @@ const COVER = `<div class="page cover">${svgPage(coverArt())}
 pages.push(COVER);
 
 // I1 Title page
-pages.push(`<div class="page">${svgPage(rect(0, 0, 875, 875, C.paper) + `<ellipse cx="437" cy="740" rx="240" ry="30" fill="${C.kT}"/>` +
-  `<g transform="translate(${437 - 120 * 1.12} ${740 - 298 * 1.12}) scale(1.12)">${U('armchair')}</g>` + U('book', 437 - 60, 740 - 298 * 1.12 + 214 * 1.12 - 49, 0.75) +
-  text(640, 520, 'saved for you', 44, C.tomato, 'Caveat', 700) + `<path d="M606 536 Q566 566 530 600" stroke="${C.tomato}" stroke-width="4" fill="none" stroke-linecap="round"/>`)}
+pages.push(`<div class="page">${svgPage(rect(0, 0, 875, 875, C.paper) + `<ellipse cx="437" cy="650" rx="240" ry="30" fill="${C.kT}"/>` +
+  `<g transform="translate(${437 - 120 * 1.05} ${650 - 298 * 1.05}) scale(1.05)">${U('armchair')}</g>` + U('book', 437 - 60, 650 - 298 * 1.05 + 214 * 1.05 - 49, 0.75) +
+  text(640, 440, 'saved for you', 44, C.tomato, 'Caveat', 700) + `<path d="M606 456 Q570 486 536 516" stroke="${C.tomato}" stroke-width="4" fill="none" stroke-linecap="round"/>`)}
   <div class="tp"><h1>Laps <span>Not</span> Apps</h1>
     <p data-fit="title-tagline" data-min="15">${TAGLINE}</p>
     ${AUTHOR ? `<p class="byline">${fill(AUTHOR)}</p>` : `<p class="byline">A Play Before Pixels read-aloud</p>${slot('Founder: your byline (optional)', 'Type it under <i>## author</i> in WORDS.md, e.g. “Words by …”', 'small')}`}
@@ -616,8 +616,8 @@ pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.paper))}
 </div>`);
 
 // Back cover
-const BACK = `<div class="page back">${svgPage(rect(0, 0, 875, 875, C.sun) + `<circle cx="300" cy="620" r="200" fill="${C.sky}"/>` + rect(0, 770, 875, 105, C.tomato) +
-  lap({ a: 'dad', kid: 'kid-sit-content', cx: 300, fy: 772, s: 0.9, seat: 'armchair' }) +
+const BACK = `<div class="page back">${svgPage(rect(0, 0, 875, 875, C.sun) + `<circle cx="300" cy="600" r="200" fill="${C.sky}"/>` + rect(0, 750, 875, 125, C.tomato) +
+  lap({ a: 'dad', kid: 'kid-sit-content', cx: 300, fy: 752, s: 0.9, seat: 'armchair' }) +
   col('heart', 470, 470, 1.1, C.tomato) + col('star', 70, 480, 0.9, C.paper))}
   <div class="bk">
     <h2>A lap is the best seat in town.</h2>
@@ -719,7 +719,7 @@ body { font-family: "Nunito Sans", sans-serif; color: ${C.ink} }
 .pl-foot .logo { flex: 0 0 1.6in }
 .note p { font-size: 12pt; line-height: 1.5; margin-top: .14in }
 .note p b { color: ${C.tomato} }
-.note h2 { max-width: 6in }
+.note h2 { font-size: 27pt !important; white-space: nowrap }
 .fav { background: #fff; border-radius: .22in; padding: .22in .3in .28in; margin-top: .26in }
 .fav h3 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 16pt; white-space: nowrap }
 .fav h3 .nm { color: ${C.tomato} }
@@ -750,8 +750,8 @@ body { font-family: "Nunito Sans", sans-serif; color: ${C.ink} }
 .series-h { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 12.5pt; margin-bottom: .04in }
 .srow { display: flex; align-items: center; gap: .1in; margin-top: .07in; font-size: 10.5pt; font-weight: 700 }
 .srow i { flex: 0 0 .2in; height: .26in; border-radius: .04in }
-.bk-foot { position: absolute; left: .6in; bottom: .5in; color: #fff }
-.bk-foot .logo { width: 2.1in }
+.bk-foot { position: absolute; left: .6in; bottom: .42in; color: #fff }
+.bk-foot .logo { width: 1.75in }
 .bk-age { margin-top: .06in; font-weight: 700; font-size: 9.5pt; color: #fff }
 .isbn { position: absolute; right: .55in; bottom: .55in; width: 2in; height: 1.2in; background: #fff; border: 1.5px dashed ${C.ink}; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 10pt; color: ${C.ink}; border-radius: 4px }
 `;
@@ -791,7 +791,7 @@ function coverWrap(format, dims) {
   .spine { position: absolute; left: ${PW}in; top: 0; width: ${S}in; height: ${H}in; background: ${C.tomato} }
   .sp-text { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(90deg); white-space: nowrap; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: ${Math.min(14, S * 50)}pt; color: #fff }
   .sp-text .nm { color: ${C.sun} } .sp-text span { font-family: "Fredoka", sans-serif; font-weight: 600 }`;
-  const body = `<div class="wrap">${ext(0, PW, 7.7)}${ext(PW + S, PW, 7.9)}
+  const body = `<div class="wrap">${ext(0, PW, 7.5)}${ext(PW + S, PW, 7.9)}
     ${BACK.replace('class="page back"', `class="page back" style="left:${bx}in"`)}
     ${COVER.replace('class="page cover"', `class="page cover" style="left:${fx}in"`)}
     <div class="spine">${spineText}</div></div>`;
