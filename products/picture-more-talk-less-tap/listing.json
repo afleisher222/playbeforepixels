@@ -1,7 +1,7 @@
 {
   "slug": "picture-more-talk-less-tap",
   "status": "held-pending-counsel",
-  "status_notes": "School-facing product: built now, NOT for sale until employment counsel answers (marketing/DEMAND-CHECK.md; legal/FOR-EMPLOYMENT-COUNSEL.md). The name 'Talk Tower' also needs trademark counsel's clearance before launch (marketing/CAMPAIGN-BIBLE.md, idea 19). Replaces the cut picture book 'More Talk, Less Tap', which now ships only as a bonus read-aloud PDF inside this kit.",
+  "status_notes": "School-facing product: built now, NOT for sale until employment counsel answers (marketing/DEMAND-CHECK.md; legal/FOR-EMPLOYMENT-COUNSEL.md). The name 'Talk Tower' also needs trademark counsel's clearance before launch (marketing/CAMPAIGN-BIBLE.md, idea 19). Replaces the cut picture book 'More Talk, Less Tap', which now ships only as a bonus read-aloud PDF inside this kit. Rebuilt 2026-09-28 with the adopted Maker's Seal logo; site, school, library and PTA license offers removed from every file and from this listing; the ✂ glyph on cut pages is now an inline SVG (no fallback font).",
   "title": "Talk Tower Classroom Game Kit",
   "subtitle": "A turn-taking talk game for circle time: ask, comment, add one",
   "format": "Printable PDF kit (instant digital download), no physical product. The buyer receives 7 plain PDFs (no zip): (1) START HERE.pdf, 1 page: which file to open, three-step start, printing, license; (2) the kit in color, US Letter, 25 pages; (3) the kit in color, A4, 25 pages; (4) the kit ink-saver edition, US Letter, 25 pages (white backgrounds, outline blocks, cards and star children can color in); (5) ink-saver, A4; (6) projectable slides, 16:9, 20 slides; (7) bonus read-aloud story 'More Talk, Less Tap', 32 pages, 8.75 in square. Kit pages: cover; inside this kit + quick start (with a no-cut option) + first-week plan; before you start (printing, ages, inclusion, safety, why it works, three talk lines); one-page teacher script; wall poster; tower-block turn cards (4 pages, 8 each: ASK, COMMENT, ADD ONE, LISTEN); name blocks (12 per page) with a no-cut option; whose-turn tracker mat; weekly turn tracker (22 rows); Talking Star and 'Tower wobble!' sign; prompt cards (ask 9, comment 9, add one 9, topics 9); circle-time variations (6 games, 2 pages, each with a starting age in months, a 2-minute no-setup version and a make-it-easier / make-it-harder pair); family take-home letter and family tower fridge sheet; class certificate; bonus story page; license terms and copyright; More from Play Before Pixels with bonus QR. Every page footer carries the brand, website, copyright, license notice and 'Version 1.0 · September 2026'. Charts are print-and-write (no fillable fields yet).",
@@ -18,26 +18,25 @@
   },
   "ages": "3–7 (preschool to grade 2)",
   "price_usd": 6.99,
-  "price_site_license_usd": 12.99,
   "license_tiers": [
     {
       "tier": "single-classroom",
       "price_usd": 6.99,
-      "covers": "One teacher and the children they teach; unlimited copies for them; projection in class; password-protected class page only."
+      "covers": "One teacher and the children they teach; unlimited copies for them; projection in class; password-protected class page only.",
+      "status": "HELD with the whole product until employment counsel clears school-facing sales (ops/QUEUE.md)"
     },
     {
-      "tier": "site",
-      "price_usd": 12.99,
-      "covers": "All staff at one named school, center or library site; delivered by automated email with a license certificate naming the site."
+      "tier": "site / school / library / PTA",
+      "price_usd": null,
+      "covers": "Not offered. HELD until employment counsel clears organization licenses in writing (ops/QUEUE.md; GROWTH-ENGINE §5c forecasts $0). Removed from the kit, START HERE, the story and this listing on 2026-09-28."
     }
   ],
-  "price_notes": "Prices set by marketing/DEMAND-CHECK.md (section 2, #13): $6.99 single-classroom, $12.99 site license. At or above the $5 TPT floor (rule 10). On TPT a basic seller keeps about 55% minus $0.30 per sale, so $6.99 nets roughly $3.54 and $12.99 roughly $6.84 [VERIFY current TPT payout tiers and whether TPT's own multi-license tool replaces our site tier]. On our own site both tiers are 100% digital, so margin is the price minus payment and platform fees. $12.99 for a whole site is low compared with the per-teacher price; revisit after the first 60 days of sales (DEMAND-CHECK kill/reprice rule). Planned ladder: this kit feeds the Classroom Talk and Play growth bundle ($22–$26) and the Talk Tower Class Cup ($15 classroom / $99 school season). Honest cost per activity: $6.99 / 7 games = about $1.00 per game (single classroom); $12.99 / 7 = about $1.86 per game for a whole site. No 'was' prices or countdowns (honest-pricing rule).",
+  "price_notes": "Prices set by marketing/DEMAND-CHECK.md (section 2, #13): $6.99 single-classroom; the $12.99 site license is HELD and not offered (ops/QUEUE.md). At or above the $5 TPT floor (rule 10). On TPT a basic seller keeps about 55% minus $0.30 per sale, so $6.99 nets roughly $3.54 and $12.99 roughly $6.84 [VERIFY current TPT payout tiers and whether TPT's own multi-license tool replaces our site tier]. On our own site both tiers are 100% digital, so margin is the price minus payment and platform fees. $12.99 for a whole site is low compared with the per-teacher price; revisit after the first 60 days of sales (DEMAND-CHECK kill/reprice rule). Planned ladder: this kit feeds the Classroom Talk and Play growth bundle ($22–$26) and the Talk Tower Class Cup ($15 classroom / $99 school season). Honest cost per activity: $6.99 / 7 games = about $1.00 per game (single classroom); $12.99 / 7 = about $1.86 per game for a whole site. No 'was' prices or countdowns (honest-pricing rule).",
   "price_floor": 3.0,
   "price_floor_basis": "$3.00 net per digital sale (commerce/PRICING.md §2; COMPLIANCE-GATE 18). Every channel's net must stay at or above it, and no repricing or promotion may go below it.",
   "net_per_unit_by_channel": {
     "site_single_gumroad": 4.94,
     "site_single_gumroad_discover_sale": 4.04,
-    "site_license_gumroad": 9.86,
     "etsy_single": 5.53,
     "etsy_single_offsite_ad_sale": 4.48,
     "tpt_single": 3.2
@@ -45,14 +44,13 @@
   "margin_pct_by_channel": {
     "site_single_gumroad": 71,
     "site_single_gumroad_discover_sale": 58,
-    "site_license_gumroad": 76,
     "etsy_single": 79,
     "etsy_single_offsite_ad_sale": 64,
     "tpt_single": 46
   },
   "net_notes": "Estimated net per unit in USD, after fees and a 5% refund allowance (GAPS-ROUND-2 G2-11), rounded to the cent. Every fee is UNVERIFIED: no live check was possible on 2026-09-28 (web search unavailable). Fee model: commerce/PRICING.md §2, which points to commerce/storefront-setup-guide.md; where sources disagree, the more cautious figure is used (business/STRESS-TEST.md 'Needs a live check'). Etsy digital: $0.20 listing + 6.5% transaction + 3% + $0.25 payment processing; an Offsite Ads sale adds 15% (12% once the shop passes $10,000 in 12 months). Own checkout at launch (ops/QUEUE.md): Gumroad as merchant of record, 10% + $0.50, plus 2.9% + $0.30 card processing counted to be safe (the storefront guide says processing is included); a sale that comes through Gumroad Discover costs about 30% instead of 10% + $0.50. Shopify (deferred until about 25 own-site orders a month) would net more: 2.9% + $0.30. Before listing, check each fee on the platform's own fee page or calculator and replace these numbers. TpT basic seller: 55% payout minus $0.30 per resource (UNVERIFIED; the Basic tier's fee is disputed in commerce/storefront-setup-guide.md). At $6.99 the TpT net is only about $0.20 over the floor: a TpT price under $6.60 would break it. Every channel here is HELD until employment counsel clears school-facing sales.",
   "short_description": "7 printable circle-time talk games for ages 3–7: every question, comment and idea adds a block to the class tower. Script, cards, trackers, slides, story.",
-  "long_description": "Talk Tower is a printable circle-time game kit for ages 3–7 (preschool to grade 2), with PDFs and slides. It has seven talk games built around one class tower. Each time a child asks a question, says something back, adds one more idea or shows they listened, a colorful block goes on the tower. Everyone builds one tower together. There are no winners, no points and no blocks taken away.\n\nA one-page teacher script walks you through your first round, word for word. Six more versions follow. Each has a starting age, a 2-minute no-setup version, and ways to make it easier or harder. Prep is about 20 minutes, once, to print and cut. On a busy day, project the slides and play with no cutting at all.\n\nInside: 32 tower-block turn cards, 36 prompt and topic cards, name blocks, a whose-turn mat, a weekly turn tracker, a Talking Star and a 'Tower wobble!' reset sign, two family take-home pages and a class certificate.\n\nSpoken words in any language, signing, pointing, picture cards and communication devices all earn a block, and 'pass' is always OK. Every play follows our published safety rules.\n\nYou get US Letter and A4 PDFs in full color and ink-saver. There is a 20-slide deck to project and a START HERE page. A bonus 32-page story, More Talk, Less Tap, is ready to read aloud. Choose a single-classroom license or a site license for your whole school or center.",
+  "long_description": "Talk Tower is a printable circle-time game kit for ages 3–7 (preschool to grade 2), with PDFs and slides. It has seven talk games built around one class tower. Each time a child asks a question, says something back, adds one more idea or shows they listened, a colorful block goes on the tower. Everyone builds one tower together. There are no winners, no points and no blocks taken away.\n\nA one-page teacher script walks you through your first round, word for word. Six more versions follow. Each has a starting age, a 2-minute no-setup version, and ways to make it easier or harder. Prep is about 20 minutes, once, to print and cut. On a busy day, project the slides and play with no cutting at all.\n\nInside: 32 tower-block turn cards, 36 prompt and topic cards, name blocks, a whose-turn mat, a weekly turn tracker, a Talking Star and a 'Tower wobble!' reset sign, two family take-home pages and a class certificate.\n\nSpoken words in any language, signing, pointing, picture cards and communication devices all earn a block, and 'pass' is always OK. Every play follows our published safety rules.\n\nYou get US Letter and A4 PDFs in full color and ink-saver. There is a 20-slide deck to project and a START HERE page. A bonus 32-page story, More Talk, Less Tap, is ready to read aloud. The license covers one classroom.",
   "bullets": [
     "7 circle-time talk games: the main Talk Tower round plus 6 variations, each with a 2-minute no-setup version and easier and harder options",
     "One-page, word-for-word teacher script; about 20 minutes of prep, once, or play today with the slides and no cutting",
@@ -107,9 +105,9 @@
   },
   "channels": [
     "HELD until employment counsel clears school-facing work; nothing below goes live before that",
-    "Play Before Pixels website shop: instant digital download with single-classroom and site-license tiers; site licenses delivered by automated email with a stamped PDF and license certificate; school purchase orders through the written quote form",
-    "Teachers Pay Teachers (TPT's own license framework and multiple-license pricing apply there; like Etsy, the TPT edition carries no URL or QR code) [VERIFY current seller terms]",
-    "Etsy digital download (single-classroom license only; site licenses sold on our own site). Needs an Etsy edition first: 5 files at most (START HERE + 4 core files) and NO URL or QR code in any file (customer-voice rule 2); not built yet, see human_todo"
+    "Play Before Pixels website shop: instant digital download, single-classroom license only. Site, school, library and PTA licenses, purchase orders and the quote form are HELD (ops/QUEUE.md)",
+    "HELD: Teachers Pay Teachers (TpT is on the counsel hold list, ops/QUEUE.md); the TpT edition would carry no URL or QR code",
+    "Etsy digital download (single-classroom license only). Needs an Etsy edition first: 5 files at most (START HERE + 4 core files) and NO URL or QR code in any file (customer-voice rule 2); not built yet, see human_todo"
   ],
   "amazon_route": "none-with-reason",
   "amazon_route_reason": "A licensed classroom kit (cut-apart cards, projectable slides, per-classroom and per-site licenses) cannot be sold or licensed through a KDP paperback, and the product is school-facing and held. Revisit a KDP activity-book edition of the family take-home pages only after counsel clears it and the PDF sells.",
@@ -127,7 +125,7 @@
     "HUMAN AUTHORSHIP: rewrite the card prompts in WORDS.md in your own words, fill the three empty founder slots ('founder-note' prints on page 2; 'story-author' and 'story-dedication' print in the bonus story as dashed orange boxes until filled), and optionally edit the teacher script and variations text in build/kit.js. Then run node build/build-all.js, commit each version to git, and log the changes in legal/protection/creation-records-log.md.",
     "LICENSE: have an attorney review the license page (kit page 24) against legal/protection/digital-product-license.md (still a DRAFT) and TPT's current license framework, and publish playbeforepixels.com/license before sale (the URL is printed in every footer and on the license page).",
     "BONUS PAGE: build playbeforepixels.com/bonus/picture-more-talk-less-tap (the QR target) with the promised free printable (extra Talk Tower topic cards and 5-minute family talk games) and an email-only sign-up (no child names; birth month/year only). Scan the printed QR on paper to test it.",
-    "DELIVERY AUTOMATION: single-classroom = instant download of the 4 PDFs in downloads/; site license = automated email with buyer-stamped PDFs and a license certificate naming the site [VERIFY the store platform's stamping support]; school purchase orders through the written quote form, emailed invoice and automatic delivery on payment.",
+    "DELIVERY AUTOMATION: single-classroom = instant download of the files in downloads/. Site licenses, license certificates and school purchase orders are HELD until employment counsel clears organization sales (ops/QUEUE.md); none is offered in the files.",
     "SPANISH: have a fluent human translator make Spanish versions of the two family take-home pages (DEMAND-CHECK: English and Spanish family letters). Do not machine-translate for sale.",
     "ETSY / TPT EDITION: before listing on Etsy or TPT, build a marketplace edition with no URL and no QR code on any page (footers, family letter, More page, START HERE, story copyright page and back cover) and, for Etsy, at most 5 files (START HERE + 4 core files, for example color Letter, color A4, ink-saver Letter+A4 combined, slides+story combined). Not built yet.",
     "FILLABLE CHARTS (customer-voice rule 10, not done): the weekly tracker, family tower sheet and certificate are print-and-write only. Add a pre-filled example and fillable fields (week, names, tower heights; class, date, teacher) that work in free Acrobat Reader, then say exactly what is editable in the listing.",
@@ -139,7 +137,7 @@
     "CROSS-LINKS: confirm the three products on the 'More from Play Before Pixels' page (Talk Tower Class Cup, Back-and-Forth Tally, 52 Play & Talk Cards) are live or clearly 'coming soon' at launch, and keep their names in sync with any renames.",
     "STALE REFERENCES ELSEWHERE (not changed by this build): commerce/links.js still has shop_book_more_talk_less_tap, kdp_book_more_talk_less_tap and bookshop_book_more_talk_less_tap entries for the cut library-bound book, and seo/SEO-PLAN.md row 15 (/shop/more-talk-less-tap/) still describes a picture book. Update them to the kit (with the employment-counsel publish gate) or remove them.",
     "BOOK IP: the old hardcover listing is kept in story-bonus/ARCHIVED-book-listing.json. No ISBN is needed for the bonus PDF; buy one only if a print edition ever returns.",
-    "PANEL (Sept 28, 2026) LICENSE QUESTIONS FOR COUNSEL: confirm the license-page additions (single-classroom covers one homeschooling family; a PTA or parent group may buy the site license for its school) and the FAQ answers marked [counsel to confirm]: PTA family events, and library online storytime (private, registration-only, no public recordings).",
+    "PANEL LICENSE QUESTIONS FOR COUNSEL (only once school-facing sales are cleared): whether a single-classroom license may cover one homeschooling family, and whether site, PTA and library licenses may be offered. On 2026-09-28 the site/PTA/library offers were removed from the kit and the FAQ says they are not available yet.",
     "PANEL: the kit's cast has no child who signs or uses a talking device or picture board. When the founder redraws or adds characters, include one in the kit art and the story (never as a lesson; just a child in the circle).",
     "PANEL: K–2 teachers asked which speaking-and-listening standards the games support. Only add a standards line after checking the exact current wording [VERIFY]; never name a school or district."
   ],
@@ -160,23 +158,23 @@
     },
     {
       "q": "How does delivery work?",
-      "a": "Instant download after checkout. Site licenses also arrive by automated email with a license certificate naming the site. Lost your files? Use the download link in your order email."
+      "a": "Instant download after checkout. Lost your files? Use the download link in your order email."
     },
     {
       "q": "Which license do I need?",
-      "a": "Single-classroom ($6.99): one teacher, or one homeschooling family, and the children they teach. Site ($12.99): all staff at one named school, center or library site. Full terms: playbeforepixels.com/license."
+      "a": "The kit comes with a single-classroom license ($6.99): one teacher, or one homeschooling family, and the children they teach. School, library and group licenses are not available yet. Full terms are on kit page 24."
     },
     {
       "q": "Can I buy it as a gift for a teacher?",
-      "a": "Yes. Buy the license the teacher needs and forward the download email; the license belongs to the teacher or site named in it. [VERIFY that the store platform can send the download straight to a gift recipient.]"
+      "a": "Yes. Buy the kit and forward the download email to the teacher; the license belongs to the teacher who uses it."
     },
     {
       "q": "Can our PTA or parent group buy it for the school?",
-      "a": "Yes. A PTA or parent group may buy the site license for its school, and the certificate names the school. Using the kit at a PTA family event is a question for the license page [counsel to confirm]."
+      "a": "Not yet. School, PTA and group licenses are not available yet. A single teacher can buy the kit for their own classroom."
     },
     {
       "q": "Can a library use it at storytime?",
-      "a": "Yes, with a site license naming your library: play and read aloud in person, and copy the family pages for the families you serve. Online storytime only in a private, registration-only session, with no public recordings [counsel to confirm]."
+      "a": "Library licenses are not available yet."
     },
     {
       "q": "Does it work for children who sign, point or use a talking device?",
@@ -192,7 +190,7 @@
     },
     {
       "q": "Refunds?",
-      "a": "Digital downloads follow the shop's published refund policy [link the policy page at launch]."
+      "a": "Digital downloads follow the shop's published refund policy. If a file is broken or not as described, we fix it or refund it."
     },
     {
       "q": "Is it on Amazon or other stores?",

@@ -59,7 +59,7 @@ const frontCss = `
 .fart svg { width: 100%; height: 100% }
 .fbands { position: absolute; left: .62in; bottom: 1.5in; display: flex; flex-direction: column; gap: .1in }
 .fbands span { font-size: 17pt; padding: .07in .18in; border-radius: 99px; text-align: center; width: 1.05in }
-.ffoot { position: absolute; left: 0; right: 0; bottom: 0; height: 1.16in; background: ${C.ink}; display: flex; align-items: center; justify-content: space-between; padding: 0 .62in .1in; gap: .3in }
+.ffoot { position: absolute; left: 0; right: 0; bottom: 0; height: 1.16in; background: ${C.ink}; display: flex; align-items: center; justify-content: space-between; padding: 0 .62in .3in; gap: .3in }
 .ffoot img { height: .5in }
 .ffoot span { color: ${W}; font-size: 9.5pt; font-weight: 700; text-align: right; max-width: 3.3in; line-height: 1.35 }`;
 
@@ -278,7 +278,7 @@ html, body { width: 8.5in }
   ${card(C.tTomato, 'Where to begin', ul([`Read <b>Safety first</b> (page ${T['Safety first']}) and <b>How to use this book</b> (page ${T['How to use this book']}).`, `Turn to your child’s age band: ages 0–1 (page ${T['band-b0']}), 1–2 (page ${T['band-b1']}), 2–3 (page ${T['band-b2']}) or 3–5 (page ${T['band-b3']}).`, `Worn out? Start with <b>Tired-grown-up plays</b> (page ${T['Tired-grown-up plays']}).`]))}
   ${card(C.tPlum, 'Downloading: use a browser, not the app', `<p>${etsy ? 'Open your Etsy Purchases page in a web browser (not the Etsy app) and download each file. On a phone, save each PDF to your files first, then open it in Adobe Acrobat Reader. Your files stay on your Purchases page, so you can download them again at any time.' : 'Open the download link from your order email in a web browser. On a phone, save each PDF to your files first, then open it in Adobe Acrobat Reader. If the link ever stops working, the resend-my-download page below sends you a fresh one.'}</p>`)}
   ${etsy ? '' : `<div class="card" style="border:1.5px solid ${C.ink};display:flex;gap:.2in;align-items:center"><div style="flex:none">${qrSvg(84)}</div><div><div class="display" style="font-size:13.5pt;margin-bottom:.03in">Free bonus and re-downloads</div><p>Scan for your free bonus: <b>${BONUS}</b>. Lost a file? Use the resend-my-download page in the help center at <b>playbeforepixels.com</b>.</p></div></div>`}
-  <p style="font-size:8.6pt;color:#5A6478">License: personal and family use in your own home. Please don’t share or resell the files. Teachers, child-care centers and groups: ${etsy ? 'send us a message through Etsy for a classroom or site license' : 'classroom and site licenses are available through the quote form at playbeforepixels.com'}. Parent education, not medical or professional advice. Every play follows our published safety rules.</p>
+  <p style="font-size:8.6pt;color:#5A6478">License: personal and family use in your own home. Please don’t share or resell the files. Parent education, not medical or professional advice. Every play follows our published safety rules.</p>
   <div class="foot"><span>${COPY}</span><span>${VERSION}</span></div>
 </section>`);
 }

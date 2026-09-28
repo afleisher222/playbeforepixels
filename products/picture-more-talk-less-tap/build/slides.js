@@ -100,7 +100,7 @@ h2 { font-size: 56px; margin-bottom: 26px }
 `;
 const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${NAME} slides (16:9) · Play Before Pixels</title>
 <link rel="stylesheet" href="%BR%fonts/fonts.css"><style>${CSS}</style></head><body>${SYMBOLS()}
-${slides.map((s, i) => `<section class="page" style="background:${s.bg}"><div class="sbody">${s.html}</div><div class="sfoot"><span>${LOGO('lockup-horizontal.svg', 16)}playbeforepixels.com</span><span>© 2026 AlphaPlay LLC · ${NAME} Classroom Game Kit · Licensed for one classroom or one site. Please don’t share or post.</span><span>${VERSION} · ${i + 1}</span></div></section>`).join('\n')}
+${slides.map((s, i) => `<section class="page" style="background:${s.bg}"><div class="sbody">${s.html}</div><div class="sfoot"><span>${LOGO('lockup-horizontal.svg', 16)}playbeforepixels.com</span><span>© 2026 AlphaPlay LLC · ${NAME} Classroom Game Kit · Licensed for one classroom. Please don’t share or post.</span><span>${VERSION} · ${i + 1}</span></div></section>`).join('\n')}
 </body></html>`;
 fs.writeFileSync(path.resolve(__dirname, '../source-slides.html'), html.split('%BR%').join('../../brand/'));
 fs.writeFileSync(path.join(__dirname, 'slides-count.json'), JSON.stringify({ n: slides.length }));

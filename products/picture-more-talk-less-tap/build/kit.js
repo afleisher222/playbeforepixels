@@ -34,7 +34,7 @@ const pageNo = id => pages.findIndex(p => p.id === id) + 1;
 const svg = (vb, inner, style = '') => `<svg viewBox="${vb}" style="${style}" xmlns="http://www.w3.org/2000/svg">${inner}</svg>`;
 const founderBox = (label, hint) => `<div class="fbox"><b>${label}</b> ${hint}</div>`;
 const pill = (t, col, txt = '#fff') => `<span class="pill" style="background:${col};color:${txt}">${t}</span>`;
-const cutNote = (extra = '') => `<p class="cutnote"><span class="scissor">✂</span> Cut on the dashed lines. ${extra} <b class="keep">Grown-up keeps the pieces.</b></p>`;
+const cutNote = (extra = '') => `<p class="cutnote"><svg class="scissor" viewBox="0 0 24 24" width="1.05em" height="1.05em" aria-hidden="true" style="vertical-align:-0.18em"><circle cx="6" cy="6" r="3.2" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="6" cy="18" r="3.2" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M8.6 7.9L21 17M8.6 16.1L21 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg> Cut on the dashed lines. ${extra} <b class="keep">Grown-up keeps the pieces.</b></p>`;
 
 // ------------------------------------------------------------------ 1 COVER
 {
@@ -395,19 +395,19 @@ page('story', 'Bonus read-aloud story', () => `
 // ------------------------------------------------------------------ 24 TERMS + COPYRIGHT
 page('terms', 'License terms and copyright', `
 <h2 class="h">License terms</h2>
-<p class="lead">Thank you for buying an original resource. Your license depends on what you bought:</p>
-<table class="lic"><thead><tr><th></th><th>Single-classroom license<br><span>$6.99</span></th><th>Site license<br><span>$12.99</span></th></tr></thead><tbody>
-<tr><td>Who may use it</td><td>One teacher (or one homeschooling family) and the children they teach</td><td>All staff at one named school, center or library site</td></tr>
-<tr><td>Printing and copies</td><td>Unlimited, for the children in that teacher’s class</td><td>Unlimited, for staff and children at that one site</td></tr>
-<tr><td>Projecting and digital</td><td>Project in class. Post only to a password-protected class page for your own class.</td><td>Project in any room at the site. Post only to the site’s password-protected internal system.</td></tr>
-<tr><td>Not included</td><td>Colleagues, the whole grade, other schools</td><td>Other sites, a whole district, public posting</td></tr>
+<p class="lead">Thank you for buying an original resource. Here is what your license covers:</p>
+<table class="lic"><thead><tr><th></th><th style="border-radius:12px 12px 0 0">Single-classroom license</th></tr></thead><tbody>
+<tr><td>Who may use it</td><td>One teacher (or one homeschooling family) and the children they teach</td></tr>
+<tr><td>Printing and copies</td><td>Unlimited, for the children in that teacher’s class</td></tr>
+<tr><td>Projecting and digital</td><td>Project in class. Post only to a password-protected class page for your own class.</td></tr>
+<tr><td>Not included</td><td>Colleagues, the whole grade, other classes or schools, public posting</td></tr>
 </tbody></table>
-<div class="buybox"><div><b>More than one classroom?</b> Each extra teacher needs their own single-classroom license, or one site license covers a whole school, center or library site. A PTA or parent group may buy the site license for its school.</div><div><b>Paying by purchase order?</b> Use the written quote form on our website. Site licenses arrive by email with a license certificate naming your site.</div></div>
+<div class="buybox"><div><b>More than one classroom?</b> Each teacher needs their own copy.</div><div><b>School, library or group licenses?</b> They are not available yet.</div></div>
 <div class="two tight">
   <div><h4>Under any license, please don’t</h4><ul class="small">
     <li>sell, share, give away or bundle the files or printed copies;</li><li>post or upload them to public or shared websites, drives or marketplaces;</li>
     <li>remove the copyright notice or license stamp;</li><li>use the kit to make a competing product, or to train or prompt AI systems.</li></ul>
-    <p class="small">You <b>may</b> share a link to our shop, or a photo of the game in use showing no more than one page. Full terms and extra licenses: playbeforepixels.com/license</p></div>
+    <p class="small">You <b>may</b> share a link to our shop, or a photo of the game in use showing no more than one page. Full terms: playbeforepixels.com/license</p></div>
   <div><h4>Copyright</h4><p class="small"><b>${NAME} Classroom Game Kit</b> and the bonus story <i>More Talk, Less Tap</i>. First edition 2026 · ${VERSION}.</p>
     <p class="small">© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. All rights reserved. Published by AlphaPlay LLC, doing business as Play Before Pixels · playbeforepixels.com</p>
     <p class="small">General classroom play ideas; not a program, assessment, screening tool or professional advice. Adults supervise all activities. The characters in the story are imaginary.</p></div>
@@ -419,7 +419,7 @@ page('more', 'More from Play Before Pixels', `
 <h2 class="h" style="text-align:center">More from Play Before Pixels</h2>
 <p class="lead" style="text-align:center">Talk, touch and play first, at school and at home.</p>
 <div class="mores">
-  <div class="mo" style="background:${C.tTomato}"><span class="motag" style="background:${C.tomato}">Next for your class</span><h3>${NAME} Class Cup</h3><p>A term-long, whole-school version: every class builds a hallway tower, with milestone banners and certificates. Coming soon.</p></div>
+  <div class="mo" style="background:${C.tTomato}"><span class="motag" style="background:${C.tomato}">For home, 0–5</span><h3>100 Screen-Free Plays</h3><p>100 easy, low-prep plays sorted by age, each with a talk line and a safety note. Paperback or printable PDF.</p></div>
   <div class="mo" style="background:${C.tGrass}"><span class="motag" style="background:${C.grass}">For families</span><h3>Back-and-Forth Tally</h3><p>A free one-page home game that celebrates everyday back-and-forth talk, with a fridge certificate. Coming soon.</p></div>
   <div class="mo" style="background:${C.tSky}"><span class="motag" style="background:${C.sky}">For little siblings, 0–5</span><h3>52 Play &amp; Talk Cards</h3><p>One simple play and one talk tip on every card, for the youngest talkers at home.</p></div>
 </div>
@@ -429,7 +429,7 @@ page('more', 'More from Play Before Pixels', `
 
 // ------------------------------------------------------------------ assemble
 const total = pages.length;
-const DEFFOOT = '© 2026 AlphaPlay LLC · Licensed for one classroom or one site. Please don’t share or post.';
+const DEFFOOT = '© 2026 AlphaPlay LLC · Licensed for one classroom. Please don’t share or post.';
 const foot = (i, txt) => `<footer class="foot"><span class="fl">${LOGO('lockup-horizontal.svg', 15)}<span>playbeforepixels.com</span></span><span class="fmid">${txt || DEFFOOT}</span><span class="fr"><em>${VERSION}</em><b>${i + 1}</b></span></footer>`;
 const body = pages.map((p, i) => `<!-- ${p.id}: ${p.title} -->\n<section class="page ${p.cls}" style="background:${p.bg}"><div class="body">${typeof p.body === 'function' ? p.body() : p.body}</div>${foot(i, p.foot)}</section>`).join('\n');
 const CSS = require('./kitcss.js')(DIM);

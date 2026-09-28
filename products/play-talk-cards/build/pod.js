@@ -90,8 +90,8 @@ function tuck(d, guide) {
       M${X.front} ${y0 - T.D}V${B + T.flap} M${X.front + T.W} ${y0 - T.D}V${B + T.flap} M${X.front} ${y0 + T.H + T.D}V${y0 + T.H} M${X.front + T.W} ${y0 + T.H + T.D}V${y0 + T.H}"/>`);
     g = `<svg class="guide" width="${totalW}" height="${totalH}" viewBox="0 0 ${totalW} ${totalH}"><rect x="${B}" y="${B}" width="${totalW - 2 * B}" height="${totalH - 2 * B}" fill="none" stroke="#00AEEF" stroke-width=".6" stroke-dasharray="2 2"/>
       <g stroke="#FF00FF" stroke-width="1.2" fill="none">${cut.join('')}</g><g stroke="#00AEEF" stroke-width="1" stroke-dasharray="5 3">${fold.join('')}</g>
-      <text x="${X.back + 10}" y="${y0 - 40}" font-size="9" font-family="sans-serif" fill="#FF00FF">POD LATER · GUIDE ONLY · magenta = cut, cyan dashed = fold</text>
-      <text x="${X.back + 10}" y="${y0 - 26}" font-size="9" font-family="sans-serif" fill="#FF00FF">Place the art on your printer’s own tuck-box template [VERIFY sizes]</text></svg>`;
+      <text x="${X.back + 10}" y="${y0 - 40}" font-size="9" font-family="Nunito Sans, sans-serif" fill="#FF00FF">POD LATER · GUIDE ONLY · magenta = cut, cyan dashed = fold</text>
+      <text x="${X.back + 10}" y="${y0 - 26}" font-size="9" font-family="Nunito Sans, sans-serif" fill="#FF00FF">Check every size against your printer’s own tuck-box template before upload</text></svg>`;
   }
   return { html: `<div class="tb" style="width:${totalW}px;height:${totalH}px">${art}${g}</div>`, w: totalW, h: totalH };
 }
@@ -141,8 +141,8 @@ for (const d of DECKS) {
   const picks = d.key === 'A' ? [0, 1, 20, 33, 44, 53] : [0, 1, 18, 30, 45, 53];
   const cells = picks.map(i => `<div class="pc">${d.card(d.deck[i], B)}<i class="trimln"></i><i class="safeln"></i></div>`).join('') + `<div class="pc">${d.back(B)}<i class="trimln"></i><i class="safeln"></i></div>`;
   const ph = path.join(GEN, `pod-${d.key}-proof.html`);
-  fs.writeFileSync(ph, head('proof', `body{margin:0;background:#E9EDF3}${K.CARD_CSS}.wrap{display:flex;flex-wrap:wrap;gap:18px;padding:22px;width:1210px}.pc{position:relative}.trimln{position:absolute;left:${B}px;top:${B}px;width:240px;height:336px;outline:1.2px solid #FF00FF}.safeln{position:absolute;left:${B + 15}px;top:${B + 15}px;width:210px;height:306px;outline:1px dashed #00AEEF}.lg{width:100%;font:700 14px sans-serif;color:#1D2940}`, GEN) +
-    `<div class="wrap"><p class="lg">POD LATER · ${d.name}: magenta = trim (2.5 × 3.5 in), color beyond it = 0.125 in bleed, cyan dashed = 0.16 in safe zone. Check against the chosen printer’s template [VERIFY].</p>${cells}</div></body></html>`);
+  fs.writeFileSync(ph, head('proof', `body{margin:0;background:#E9EDF3}${K.CARD_CSS}.wrap{display:flex;flex-wrap:wrap;gap:18px;padding:22px;width:1210px}.pc{position:relative}.trimln{position:absolute;left:${B}px;top:${B}px;width:240px;height:336px;outline:1.2px solid #FF00FF}.safeln{position:absolute;left:${B + 15}px;top:${B + 15}px;width:210px;height:306px;outline:1px dashed #00AEEF}.lg{width:100%;font:700 14px "Nunito Sans",sans-serif;color:#1D2940}`, GEN) +
+    `<div class="wrap"><p class="lg">POD LATER · ${d.name}: magenta = trim (2.5 × 3.5 in), color beyond it = 0.125 in bleed, cyan dashed = 0.16 in safe zone. Check against the chosen printer’s template before upload.</p>${cells}</div></body></html>`);
   run('png', ph, path.join(OUT, `proof-${d.name}_cards.png`), '1210', '0', '1');
 }
 console.log('POD-later files written to', path.relative(REPO, OUT));

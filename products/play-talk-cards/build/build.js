@@ -211,7 +211,7 @@ function printPage(P, S, n, total) {
       ['Kid picks', 'Let your child choose the card, or ask it.', C.sky],
       ['Family favorites', 'Keep the best ones and ask them again next year.', C.plum],
     ]).map(([a, b, c]) => `<div class="way" style="--c:${c}"><b>${a}</b><p>${b}</p></div>`).join('')}</div>
-    <div class="license"><b>License: PERSONAL.</b> You may print and copy this for your own family only (grandparents and sitters who care for your child count as family). No resale, redistribution, sharing, posting, uploading to shared or public drives or websites, or use to train AI. ${store() ? 'Teaching a class, or running a center or library program? That needs a classroom or site license. Full terms: ' + LICENSE_URL : 'Classroom, center and library use needs a classroom or site license. Full terms are in the shop’s listing and policies.'}<br>${K.COPY} All rights reserved. ${K.VERSION}.</div>
+    <div class="license"><b>License: PERSONAL.</b> You may print and copy this for your own family only (grandparents and sitters who care for your child count as family). No resale, redistribution, sharing, posting, uploading to shared or public drives or websites, or use to train AI. ${store() ? 'Classroom, center and library licenses are not available yet. Full terms: ' + LICENSE_URL : 'Classroom, center and library licenses are not available yet. Full terms are in the shop’s listing and policies.'}<br>${K.COPY} All rights reserved. ${K.VERSION}.</div>
   </div>
   ${foot(P, n, total)}
 </section>`;
@@ -278,7 +278,7 @@ function noCutB(P, S, moments, n, total, part) {
 
 // ---------- extra page A: 52-week tracker ----------
 function trackerPage(P, S, n, total) {
-  const cols = BANDS.map(b => `<div class="tcol" style="--c:${C[b.color]};--t:${K.TINT[b.color]}"><div class="thead">${shapeSvg(b.shape, C[b.color], 16)}<b>${b.ages}</b> ${b.unit === 'yr' ? 'year' : 'years'}</div>${PLAYS[b.key].map((p, i) => `<div class="trow"><i class="box"></i><em>${K.pad2(BANDS.indexOf(b) * 13 + i + 1)}</em><span>${esc(p.t)}</span><i class="heart">♡</i></div>`).join('')}</div>`).join('');
+  const cols = BANDS.map(b => `<div class="tcol" style="--c:${C[b.color]};--t:${K.TINT[b.color]}"><div class="thead">${shapeSvg(b.shape, C[b.color], 16)}<b>${b.ages}</b> ${b.unit === 'yr' ? 'year' : 'years'}</div>${PLAYS[b.key].map((p, i) => `<div class="trow"><i class="box"></i><em>${K.pad2(BANDS.indexOf(b) * 13 + i + 1)}</em><span>${esc(p.t)}</span><i class="heart"><svg viewBox="0 0 24 22" width="14" height="13" aria-hidden="true"><path d="M12 20.5C5.5 15.6 2 12.2 2 7.9 2 4.9 4.3 2.5 7.2 2.5c2 0 3.7 1.1 4.8 2.8 1.1-1.7 2.8-2.8 4.8-2.8 2.9 0 5.2 2.4 5.2 5.4 0 4.3-3.5 7.7-10 12.6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></i></div>`).join('')}</div>`).join('');
   return `<section class="page content">
   <div class="pin">
     <p class="kick dark">For the fridge</p>
@@ -377,7 +377,7 @@ function startHerePage(P, S, qrSvg) {
     <h3 class="h3">Print it right</h3>
     <ul class="tips">${[['Print at “Actual size” (100%).', 'Cards come out at poker size, 2.5 × 3.5 in (63.5 × 88.9 mm). If the edges get cut off, choose “Fit”; the cards print a little smaller.'], ...qs, ['Type-in cards', 'Open the file in free Adobe Acrobat Reader to type on the blank cards (title, needs, play and talk tip). Everything else is print-only.'], ['Downloading on a phone?', store() ? 'Open the download link from your order email in a web browser, save each PDF to Files, then open it in Adobe Acrobat Reader.' : 'Open your Etsy Purchases page in a web browser (not the app), save each PDF to Files, then open it in Adobe Acrobat Reader. Your files stay on your Purchases page to download again any time.']].map(([a, b], i) => `<li>${check([C.tomato, C.sun, C.sky, C.grass, C.plum, C.tomato][i])}<span><b>${a}</b> ${b}</span></li>`).join('')}</ul>
     ${store() ? `<div class="bonus sh" style="--c:${P.color};--t:${P.tint}"><div class="qr">${qrSvg}</div><div><h3>Free bonus and re-downloads</h3><p>Scan for your free companion printables: <b>${P.bonus}</b>. Lost a file? Your link stays in your order email; help is at <b>playbeforepixels.com/help</b>.</p></div></div>` : ''}
-    <div class="license"><b>License: PERSONAL.</b> Print and copy for your own family only. No resale, sharing, posting or uploading. ${store() ? 'Teaching a class, or running a center or library program? That needs a classroom or site license. Full terms: ' + LICENSE_URL : 'Classroom, center and library use needs a classroom or site license. Full terms are in the shop’s listing and policies.'}<br>${K.COPY} All rights reserved. ${K.VERSION}.</div>
+    <div class="license"><b>License: PERSONAL.</b> Print and copy for your own family only. No resale, sharing, posting or uploading. ${store() ? 'Classroom, center and library licenses are not available yet. Full terms: ' + LICENSE_URL : 'Classroom, center and library licenses are not available yet. Full terms are in the shop’s listing and policies.'}<br>${K.COPY} All rights reserved. ${K.VERSION}.</div>
   </div>
   <div class="pfoot"><span>${esc(P.short)} · START HERE · ${K.VERSION}${store() ? ' · <b>playbeforepixels.com</b>' : ''}</span><span>${K.COPY}</span></div>
 </section>`;
@@ -455,7 +455,7 @@ ${K.CARD_CSS}
 .trow .box{flex:none;width:14px;height:14px;border:1.6px solid var(--c);border-radius:3px}
 .trow em{font-style:normal;font-size:9px;font-weight:800;opacity:.55}
 .trow span{flex:1;line-height:1.15}
-.trow .heart{font-style:normal;color:var(--c);font-size:14px;line-height:1}
+.trow .heart{font-style:normal;color:var(--c);font-size:14px;line-height:1;display:inline-flex}
 .trk-foot{margin-top:auto;display:grid;grid-template-columns:auto 1fr;gap:10px 10px;align-items:end;font-size:12px;font-weight:800}
 .trk-foot .ln{display:block;border-bottom:1.3px solid rgba(29,41,64,.35);height:18px}
 /* labels */

@@ -32,12 +32,7 @@
     {
       "tier": "personal",
       "price_usd": 6.5,
-      "covers": "One family: print and copy for your own family's homes, including a second home, grandparents and sitters who care for your child. Sold on Etsy and our site."
-    },
-    {
-      "tier": "group, classroom, library or program",
-      "price_usd": null,
-      "covers": "Not offered. School-, PTA- and centre-facing licenses stay on hold until employment counsel answers in writing (marketing/BRAND-RESPECT-PLAN.md, COMMUNITY-PRODUCTS.md). Until then, each family buys its own copy."
+      "covers": "One family: print and copy for your own family's homes, including a second home, grandparents and sitters who care for your child. Sold on Etsy and our site. A gift passes this license to the family that receives it."
     }
   ],
   "short_description": "A warm first phone agreement you write together, plus a readiness checklist, phone-free zones and 30 phone-free afternoons. Ages 9–12. Fillable, Letter + A4.",
@@ -154,7 +149,7 @@
     },
     {
       "q": "Can I give it as a gift?",
-      "a": "Yes. Buy it and forward the download email, or print the pages for the family. The personal license then belongs to that family. [VERIFY that each store can send a download straight to a gift recipient.]"
+      "a": "Yes. Buy it and forward the download email, or print the pages for the family. The personal license then belongs to that family."
     },
     {
       "q": "Is there a printed or boxed version?",
@@ -165,8 +160,8 @@
       "a": "Yes. The personal license covers your own family's homes, including grandparents and sitters who care for your child."
     },
     {
-      "q": "Can our PTA, class, library or program use it?",
-      "a": "Not with this license: it covers one family. Each family can buy its own copy. Group and program licenses aren't offered yet."
+      "q": "Can a classroom, child-care center, library or PTA use it?",
+      "a": "Not yet. This kit is licensed for one family, so each family buys its own copy. Classroom, child-care, library and group licenses are not available yet."
     },
     {
       "q": "Is there a Spanish version?",
@@ -186,7 +181,7 @@
     },
     {
       "q": "Refunds?",
-      "a": "Digital downloads follow the shop's published refund policy. If a file won't open or print, we fix it or send it again [link the policy page at launch]."
+      "a": "Digital downloads follow the shop's published refund policy, which is linked on every product page and at checkout. If a file won't open or print, we fix it or send it again."
     }
   ],
   "ai_disclosure": {
@@ -205,5 +200,8 @@
     "social_ai_label": "Turn on each platform's AI-generated-content label for posts that use these images or this text (label names UNVERIFIED).",
     "notes": "Answers describe what really happened as of the date above. Platform categories and form wording are from memory (UNVERIFIED): check each form on upload day. Never call any part hand-drawn, handmade or human-written."
   },
-  "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC."
+  "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.",
+  "license_notes": "Personal/family license only. Classroom, site, library, child-care and PTA licenses are HELD until employment counsel clears school-facing sales in writing; they are not offered in any file or listing, and the FAQ says they are 'not available yet'.",
+  "status": "held-until-g1",
+  "status_notes": "HELD: ages 9–12. Built and ready, but not listed until employment counsel's G1 answer allows 5–12 material (ops/QUEUE.md). When G1 clears, change status to ready-pending-accounts."
 }

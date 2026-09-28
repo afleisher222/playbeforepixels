@@ -106,7 +106,7 @@ single({
   texts: [T(60, 190, 696, `
 <p><b>More Talk, Less Tap</b><br>Bonus read-aloud edition, included with the Talk Tower Classroom Game Kit</p>
 <p>Text and illustrations © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. All rights reserved.</p>
-<p>This PDF is licensed with the kit: one classroom (single-classroom license) or one school site (site license). You may print it and project it for the children you teach. Please do not share, post or upload the file. Reading it aloud to your class or family is always welcome. Full terms: playbeforepixels.com/license</p>
+<p>This PDF is licensed with the kit, for one classroom (single-classroom license). You may print it and project it for the children you teach. Please do not share, post or upload the file. Reading it aloud to your class or family is always welcome. Full terms: playbeforepixels.com/license</p>
 <p>This is a work of fiction. Room 5, Ms. Poppy and the children are imaginary and are not based on any real school, teacher or child. The games and notes at the back are general ideas for grown-ups to enjoy with children; they are not a program, assessment or professional advice. Adults supervise all activities. With children under 3 nearby, use only blocks and objects too big to fit through a toilet-paper tube (about 1.25 in / 3.2 cm).</p>
 <p>Published by AlphaPlay LLC, doing business as Play Before Pixels · playbeforepixels.com<br>Free bonus printable: playbeforepixels.com/bonus/picture-more-talk-less-tap</p>
 <p>First edition 2026 · Version 1.0 · September 2026</p>`, 'legal'),

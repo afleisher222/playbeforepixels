@@ -87,10 +87,10 @@
   "bonus_url": "playbeforepixels.com/bonus/picture-tablet-slept",
   "bonus_notes": "The QR code on page 30 and the link on the copyright page both go to https://playbeforepixels.com/bonus/picture-tablet-slept. The page must offer the free Play Day planner and coloring pages and the email sign-up (birth month and year only, never a child's name). It must be live before the first proof is ordered.",
   "channels": [
-    "Amazon KDP paperback (print-on-demand, premium color, 8.5 x 8.5 in)",
-    "IngramSpark case-laminate hardcover (print-on-demand; reaches bookstores, libraries and Bookshop.org). Use your own ISBN.",
-    "playbeforepixels.com shop through a print-on-demand integration, where the printer ships each order (the Play Day bundle lives here)",
-    "Bulk orders for parent groups, libraries and preschools: invoiced by email and printed and shipped straight to the buyer by the printer. Nothing is held in stock."
+    "HELD: Amazon KDP paperback (print-on-demand, premium color, 8.5 x 8.5 in) until the age-grade question is settled (needs a 4+ grade or CPSC guidance; ops/QUEUE.md, business/GROWTH-ENGINE.md §8a). Files are rebuilt and ready.",
+    "HELD: IngramSpark case-laminate hardcover (bookstore and library reach) until employment counsel clears library and school sales in writing (ops/QUEUE.md). It would need its own ISBN.",
+    "playbeforepixels.com shop through a print-on-demand integration, where the printer ships each order (the Play Day bundle lives here), once the hold lifts",
+    "HELD: bulk orders for parent groups, libraries and preschools (organization sales wait for employment counsel; ops/QUEUE.md)"
   ],
   "launch_notes": "Positioning: sell it as a funny bedtime and play-day story, not a screen-time book. Lead with Ada, Biscuit, the box rocket and the refrain in every listing, pin and ad. DEMAND-CHECK.md rates the category Weak and says not to count on this book alone, so its main job is to be the story half of the Play Day bundle. The hardcover file is ready, but per DEMAND-CHECK.md, turn on the IngramSpark hardcover only after the paperback shows sales. Printing costs nothing to hold, but the hardcover needs its own ISBN and a proof.",
   "compliance_notes": "No health or medical claims. The book is a story plus parent-education prompts and claims to treat, prevent or diagnose nothing. It is not presented as written by a speech-language pathologist. No diagnosis or condition terms anywhere in the book, listing or keywords (brand rule on condition searches). No research citations. No trademarked program names: the grown-up tips use plain words (pause and wait, say what you see, repeat and add one word, follow their lead). No real brands, logos, devices, apps, schools or products: the tablet is a generic, unbranded character, and the copyright page says it is not based on any real product. Zero shame, zero preaching: every spread was checked. The tablet is never a villain or a warning. It takes a day off, the story never says screens are bad, and in the morning the tablet is welcomed back ('Wait till I tell you about my day…'). The 'Talk about it' prompts are open prompts with no right answers (days off, favorite parts, boxes, being Biscuit, cooking, and a calm crouch-and-stretch blast-off), not quiz questions or screen rules, and the grown-ups tip ends with 'Talk, sing and read in the language you know best. Every language counts.' (customer-voice rules 15 and 29). Every spread is 40 words or fewer (rule 30). No page asks a child to draw or write in the book (rule 44); the fill-in planner is the free printable. The book-within-the-book is an unnamed 'growly bear' book, not a real title. The copyright page carries 'Version 1.0 · September 2026' (rule 3); bump it on every change to a live file. Customer panel (panel.md, September 2026): the librarian no longer shushes (she welcomes Ada to the sleepy-story corner and waves), Ms. Rosa wears glasses (inclusive cast, rule 35), the grown-up tip adds a fill-in pause before 'do?' and 'A sign, a point or a tap on a talker counts too, and a talker never takes a day off' (rule 28), the sixth prompt is a calm blast-off movement, and the copyright page adds 'Grown-ups handle the stove, and everyone washes hands after cracking eggs.' Child safety: puddle play is shown with Papa, cooking with Papa handling the pan, and the box rocket is made from a big empty box and a marker. The copyright page says puddle play, cooking and box-building are best with a grown-up close by. No balloons, cords or choking-hazard foods appear. The copyright line follows legal/ENTITY.md: '© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.' The final logo from brand/logo/ (unaltered files) is on the front cover, the copyright page, the author-note page, the 'More from Play Before Pixels' page and the back cover, and the back cover carries a 'Read it, then play it' strip with playbeforepixels.com. Print notes: the PDFs are RGB. Chromium embeds the brand fonts as Type 3 fonts. KDP normally accepts both, but IngramSpark prefers PDF/X-1a in CMYK, so run its preflight and convert if it asks [VERIFY]. Check every file against the printer's current template before upload (KDP cover calculator, IngramSpark Cover Template Generator). KDP may print a manufacturing mark on the last page; page 32 keeps its bottom third clear (the 'More from' panel sits in the top two-thirds) [VERIFY]. Interior text sits at least 0.5 in inside the trim (IngramSpark's recommended safety area), and hardcover cover text sits at least 0.25 in inside the board edges. Picture books for ages 3–7 are generally treated as ordinary books under US CPSIA [VERIFY with the printer and CPSC guidance].",
@@ -98,7 +98,7 @@
     "HUMAN AUTHORSHIP (do this first): open WORDS.md and write, in your own words, the dedication (## dedication), 'A note from the author' (## note) and, if you want a credit, your name (## author). Pages 3 and 31 print as dashed 'Founder writes this page' boxes until you do. Then reread every story page aloud and rewrite any line in your own voice: names, jokes, the refrain, the order of events. Run the build commands in files.build_notes, and commit to git after each round so your changes are provable.",
     "READ-ALOUD CHECK: read the whole book aloud three times, once at a tired bedtime pace, and fix any line that trips you. Keep every spread at 40 words or fewer and the refrain word-for-word the same (WORDS.md explains the markup). After any change to a file that is already on sale, bump VERSION in build.js ('Version 1.1 · Month Year') and tell past buyers what changed.",
     "AI DISCLOSURE (honest answer for KDP): KDP asks whether the book has AI-generated text, images or translations. As built, the story text was drafted with AI (Claude) and the illustrations were drawn by AI-written code. Answer YES for AI-generated images, and YES for AI-generated text unless you have rewritten the text yourself. KDP counts AI-drafted text you later edited as AI-generated; only your own writing that you polished with AI counts as 'AI-assisted', which needs no disclosure. Give the same honest answer if IngramSpark or any store asks [VERIFY each platform's current wording]. If you register the copyright, claim only your own words and your selection and arrangement, and exclude the AI-generated material (see legal/protection/PROTECTION-PLAN.md).",
-    "ISBNs: buy your own ISBNs from Bowker (a block of 10 covers this and future books) so AlphaPlay LLC is listed as the publisher. The paperback and hardcover each need their own ISBN. A free KDP ISBN cannot be used at IngramSpark. Paste them into WORDS.md (## isbn-paperback, ## isbn-hardcover) so they print on the copyright page. Let KDP and IngramSpark place the barcode in the labelled 2 x 1.2 in box on the back cover, or place your own there.",
+    "ISBN: the KDP paperback uses Amazon's free KDP ISBN (business/DECISIONS.md, 2026-09-28); nothing to add to the files, and the back-cover barcode area stays blank for KDP. The IngramSpark hardcover (HELD) would need its own ISBN.",
     "KDP paperback: choose premium color, 8.5 x 8.5 in, bleed ON, glossy or matte cover. Upload picture-tablet-slept.pdf and cover-kdp-paperback.pdf. Check the spine width in KDP's cover calculator. If it differs from 0.0751 in, run KDP_SPINE_IN=<value> node build.js and re-render the cover PDF. Use the online previewer and fix every warning.",
     "IngramSpark hardcover (turn on after the paperback sells): set up a case-laminate hardcover, 8.5 x 8.5 in, premium color. Download the template from the Cover Template Generator and compare it with cover-ingramspark-hardcover.pdf (0.625 in wrap, 0.5 in hinges, board = trim - 0.185 in wide and trim + 0.25 in tall). Rebuild with HC_SPINE_IN=<template spine> node build.js and re-render. Run their preflight, and convert to PDF/X-1a CMYK if asked [VERIFY].",
     "Order a printed proof of each edition. Check the color (RGB to CMYK shift, especially the blue cover and the dark space and night spreads), the gutter, the trim, and whether the text reads easily. Confirm the QR code on page 30 scans.",
@@ -107,7 +107,7 @@
     "Add any 'Printed in ___' or printer-required lines, and confirm the book's CPSIA status with the printer [VERIFY].",
     "Before listing (brand kit, customer-voice rule 21): do a written QA pass (spelling, age labels, safety, contrast), order a physical proof from each printer, and personally approve the printed cover and page 1.",
     "Bonus page content: the free planner must be a fill-in version of page 30 (Morning / Afternoon / Bedtime story, with space to draw or write), in Color and Low-ink, US Letter and A4, with the brand URL on every page. Ask only for an email and the child's birth month and year.",
-    "LIBRARY READINESS (from the customer panel): before the paperback's publication date, apply for a free Library of Congress Control Number through the Preassigned Control Number program (PrePub Book Link) and print it on the copyright page [VERIFY eligibility for AlphaPlay LLC]. Libraries and schools mostly buy hardcovers through Ingram, so consider turning on the IngramSpark hardcover sooner if library or school quote requests arrive (a founder call against DEMAND-CHECK.md).",
+    "HELD: library readiness (LCCN/PCN, library orders) waits until employment counsel clears library and school sales in writing (ops/QUEUE.md).",
     "READ-ALOUD PERMISSION (founder decision): pick one saved answer for recorded or online read-aloud requests from teachers and librarians (for example: free permission for non-commercial, one-time school or library read-alouds that show the cover and credit the book, taken down on request). Put it in the saved replies so no one waits on you.",
     "SERIES CAST (from the customer panel): in the next read-aloud, add a child who signs or uses a talker, and a child with a hearing aid or a wheelchair, as everyday characters in the story, not the lesson (customer-voice rule 35). Start a cast bible.",
     "SPANISH (from the customer panel): a bilingual English–Spanish edition is the most-asked-for extra. Consider it only after the English paperback sells; it needs a human translator, not machine translation, and its own ISBN."
@@ -126,7 +126,7 @@
     },
     {
       "q": "Paperback or hardcover?",
-      "a": "The paperback (8.5 x 8.5 in) is printed on demand by Amazon KDP. A case-laminate hardcover printed by IngramSpark may be added later."
+      "a": "The paperback (8.5 x 8.5 in) is printed on demand. A hardcover edition is not available yet."
     },
     {
       "q": "How does delivery work?",
@@ -142,7 +142,7 @@
     },
     {
       "q": "Returns?",
-      "a": "Printing mistakes or damage are replaced by the store you bought from. See playbeforepixels.com for the full refund policy."
+      "a": "Printing mistakes or damage are replaced by the store you bought from, under that store's own return rules."
     },
     {
       "q": "My child talks with a tablet or device (a talker). Is this book a good fit?",
@@ -158,7 +158,7 @@
     },
     {
       "q": "Can we order copies for a class, library or group?",
-      "a": "Yes. Use the quote form at playbeforepixels.com. Copies are printed on demand and shipped straight to you by the printer, with an emailed invoice."
+      "a": "Not yet. Orders and licenses for classes, libraries, schools and groups are not available yet. Anyone can buy single copies from the store that sells the paperback."
     },
     {
       "q": "Is there a Spanish edition?",
@@ -184,5 +184,15 @@
     "social_ai_label": "Turn on each platform's AI-generated-content label for posts that use these images or this text (label names UNVERIFIED).",
     "notes": "Answers describe what really happened as of the date above. Platform categories and form wording are from memory (UNVERIFIED): check each form on upload day. Never call any part hand-drawn, handmade or human-written."
   },
-  "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC."
+  "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.",
+  "status": "held",
+  "status_notes": "HELD from KDP (age hold: needs a 4+ grade or CPSC guidance; GROWTH-ENGINE §8a / ops/QUEUE.md). Rebuilt 2026-09-28 with the adopted Maker's Seal logo (upright top, tomato band). Nothing is published (ops/PAUSE).",
+  "kdp": {
+    "status": "held (age grade / CPSC guidance)",
+    "author": "Play Before Pixels",
+    "isbn": "Amazon's free KDP ISBN when the hold lifts (business/DECISIONS.md); no ISBN printed inside; blank barcode area on the back cover",
+    "interior": "picture-tablet-slept.pdf",
+    "cover": "cover-kdp-paperback.pdf",
+    "expanded_distribution": "off"
+  }
 }

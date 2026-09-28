@@ -71,19 +71,19 @@
     }
   },
   "channels": [
-    "Amazon via KDP paperback (print on demand)",
-    "IngramSpark paperback distribution to bookstores and libraries (print on demand)",
-    "Play Before Pixels website shop linking to the retailer listings (no stock held)",
+    "HELD: Amazon via KDP paperback (print on demand) until the CPSIA 0–3 question is answered (ops/QUEUE.md; business/GROWTH-ENGINE.md §8a). Files are rebuilt and ready.",
+    "HELD: IngramSpark paperback (bookstore and library reach) until employment counsel clears library and school sales in writing (ops/QUEUE.md)",
+    "Play Before Pixels website shop linking to the retailer listing once one is live (no stock held)",
     "LATER, Wave 3: board book sold on the website, Amazon (FBA or seller-fulfilled by the 3PL) and Faire wholesale, only after an offset run is stored and shipped by a fulfillment warehouse and CPSIA paperwork exists"
   ],
   "compliance_notes": "No health or medical claims: this is a parent-education picture book, not a treatment or professional service of any kind, and it claims no outcome for any child. It is not presented as written by a speech-language professional, and no diagnosis or condition is named or targeted in its text, keywords or ads (BRAND.md hard rule 1 and the diagnosis-search rule). Talk strategies are described in plain words, with no trademarked program names. No real brands, logos, schools or products; the tablet on the night-night page is a generic, neutral object. No research citations are used. Hand signs are described as simple signs, not as a sign-language course. The inside pages say that every child talks on their own timeline and point parents to their child's doctor with questions. Safety: no small objects are suggested (blocks, a ball, a cup and a duck toy only; no food choking hazards) and adult reading together is assumed. The paperback has paper pages, so the copyright page says 'Paper pages: read together and keep away from mouths' and the listing says the same (customer-voice rule 20); the 'Add your own words' page is a grown-up keepsake page, not a child mark-making page. Talk tips include 'Talk, sing and read in the language you know best. Every language counts.' (rule 15). Both editions carry 'Version 1.0 · September 2026' on the copyright page (rule 3); bump it and tell past buyers on any file change. Grown-up tip labels and cue chips on sun-yellow pages use ink text for contrast. The board book is a children's product for under-3s: before sale, confirm CPSIA obligations with the printer (permanent tracking label, Children's Product Certificate from third-party testing, or documentation of the ordinary-book exemption if it applies) [VERIFY], and check UK/EU toy-safety rules for board books [VERIFY]. Legal owner: © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. The files are RGB from Chromium. Check each final file against the chosen printer's current template before upload (KDP cover calculator and previewer, IngramSpark cover template generator, and the offset printer's board-book dieline for trim, bleed, board thickness, spine, corner radius and CMYK conversion). Customer panel, September 28, 2026 (see panel.md): the how-to page and word list now say a look, a point, a sign, a sound or a tap on a talking device counts (customer-voice rule 28), and the cast now includes a grandparent in glasses and a toddler with a hearing aid (rule 35). The mockup labels the board book 'coming later' so no one expects to buy it now. Nothing has shipped, so the files stay Version 1.0.",
   "human_todo": [
     "HUMAN AUTHORSHIP (do first): open build/manuscript.json and rewrite the words, cues, tips, page order and the 'note for grown-ups' in your own words. Set founder_rewritten to true on each entry, fill in author_credit, then run build/render-all.sh and commit. Every version stays in git as proof of your own creative changes. PRINT_READY=1 node build/build.js refuses to build until this is done.",
-    "The dashed orange boxes in the files are founder slots (author credit, note to grown-ups, ISBNs, 'Printed in', batch number). Fill each one; none may be printed as-is.",
+    "The byline is 'Play Before Pixels' (manuscript.json author_credit). No founder slots print in the files any more; ISBNs, 'Printed in' and batch lines print only if added to print_lines in manuscript.json.",
     "AI-ASSISTANCE DISCLOSURE: when KDP asks about AI content, answer honestly. The text and the illustrations were drafted with AI assistance (Claude) and then selected, rewritten and arranged by you; say so, and describe what you changed. Use the same honest description anywhere else that asks, and never register AI-generated material as human-authored (see legal/protection/PROTECTION-PLAN.md).",
     "Check each sign cue (more, all done, eat, help, book) against a reputable ASL dictionary and adjust the wording in manuscript.json if needed [VERIFY]",
     "Confirm the series working titles 'Talk-Along Firsts', 'Woof! Moo! Beep!' and 'Yum! Splash! Yawn!' in the originality and trademark check before Book 2 is announced [VERIFY]",
-    "Buy two ISBNs (paperback and board book; US: Bowker) or use KDP's free ISBN for the KDP paperback only. Put the numbers in the copyright slots; leave the barcode box white for KDP and IngramSpark to place the barcode.",
+    "ISBN: use Amazon's free KDP ISBN for the KDP paperback (business/DECISIONS.md, 2026-09-28); nothing to add to the files, and the back-cover barcode area stays blank for KDP. A board book or IngramSpark edition would need its own ISBN later.",
     "The dashed 'ISBN / barcode' label is for proofs only: PRINT_READY=1 builds leave a plain white 2 x 1.2 in area, placed 0.25 in from the spine and bottom trim on the paperback back cover where KDP puts its barcode [VERIFY against the current KDP cover template].",
     "PAPERBACK: in KDP choose 8.5 x 8.5 in, bleed, premium color interior and matte cover. Check that the spine (0.0751 in at 32 pages, premium color on white paper, caliper 0.002347 in/page) matches the KDP cover calculator, adjust CALIPER in build.js if it doesn't, and pass the online previewer [VERIFY]. Repeat with IngramSpark's cover template generator.",
     "Order a printed proof of the paperback. Check color, how readable the tip text is (12.5 px on the 6 in grid, about 13 pt on the paperback), and the gutter margins.",
@@ -92,7 +92,7 @@
     "Before anything ships (customer-voice rule 21): do a written QA pass (spelling, word count 22, age labels, safety lines, contrast), order a physical proof from every printer, and approve the cover and page 1 yourself.",
     "Photograph the printed proofs for store listings next to mockup.png, and add the paperback to the website shop with a 'Next for your child's age' link to next_products",
     "FOUNDER DECISION (customer-voice fix list #2): keep 'ages 0–3, read together' on the paperback cover, or relabel it '18 months and up, for reading together'. The listing already says the paperback has paper pages and is a book to share.",
-    "Libraries: get a Library of Congress PCN/LCCN before publication if you want library orders (the librarian asked), and confirm the BISAC codes in listing.json [VERIFY].",
+    "HELD: library orders (PCN/LCCN, library BISAC choices) wait until employment counsel clears library and school sales in writing (ops/QUEUE.md).",
     "Add a saved reply for read-aloud permission: in-person group reading is welcome; recorded or online read-alouds are answered case by case in writing.",
     "Bonus page: draw the five hand signs (more, all done, eat, help, book) as simple pictures on the fridge sheet, as the teacher and SLP asked; the book describes them in words only.",
     "Books 2 and 3: include a child who signs or uses a talking device in the cast (rule 35). A Spanish or bilingual edition comes only after sales, with a human translator and its own ISBN.",
@@ -143,11 +143,11 @@
     },
     {
       "q": "Can we order copies for a class, child-care center, library or family night?",
-      "a": "Yes. Use the quote form at playbeforepixels.com. Copies are printed on demand and shipped straight to you by the printer, with an emailed invoice."
+      "a": "Not yet. Orders and licenses for classes, child-care centers, libraries and groups are not available yet. Anyone can buy single copies from the store that sells the paperback."
     },
     {
       "q": "Returns?",
-      "a": "Printing mistakes or damage are replaced by the store you bought from. See playbeforepixels.com for the full refund policy."
+      "a": "Printing mistakes or damage are replaced by the store you bought from, under that store's own return rules."
     }
   ],
   "ai_disclosure": {
@@ -162,5 +162,15 @@
     "social_ai_label": "Turn on each platform's AI-generated-content label for posts that use these images or this text (label names UNVERIFIED).",
     "notes": "Answers describe what really happened as of the date above. Platform categories and form wording are from memory (UNVERIFIED): check each form on upload day. Never call any part hand-drawn, handmade or human-written."
   },
-  "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC."
+  "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.",
+  "status": "held",
+  "status_notes": "HELD from KDP (CPSIA 0–3 hold, GROWTH-ENGINE §8a / ops/QUEUE.md). Rebuilt 2026-09-28 with the adopted Maker's Seal logo; files, price and listing are ready so it can go up once the hold lifts and the KDP account exists. Nothing is published (ops/PAUSE).",
+  "kdp": {
+    "status": "held (CPSIA 0–3)",
+    "author": "Play Before Pixels",
+    "isbn": "Amazon's free KDP ISBN when the hold lifts (business/DECISIONS.md); no ISBN printed inside; blank 2 x 1.2 in barcode area on the back cover",
+    "interior": "paperback/up-go-more-talk-along-interior.pdf",
+    "cover": "paperback/up-go-more-talk-along-cover.pdf",
+    "expanded_distribution": "off"
+  }
 }

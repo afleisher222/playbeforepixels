@@ -99,7 +99,7 @@ pg('''<p class="kick">Design 1 · logo tee</p><h2>Front print files</h2>
 <tr><th style="width:30%">Spec</th><th>Value</th></tr>
 <tr><td>Canvas</td><td>4500 × 5400 px, transparent PNG stamped 300 dpi (15 × 18 in). The .svg twin is pure vector (logo paths from the kit).</td></tr>
 <tr><td>Artwork</td><td>Horizontal lockup, the kit's default. Ink about 10.5 in wide × 2.5 in tall, centered left to right.</td></tr>
-<tr><td>Position</td><td>Ink starts about 1.2 in below the top of the print area, so it sits high on the chest. Check it on the partner's mockup: aim for 3–3.5 in below the collar seam [VERIFY on the partner's placement tool].</td></tr>
+<tr><td>Position</td><td>Ink starts about 1.2 in below the top of the print area, so it sits high on the chest. Check it on the partner's mockup: aim for 3–3.5 in below the collar seam (UNVERIFIED: on the partner's placement tool).</td></tr>
 <tr><td>Colors</td><td>Ink #1D2940 · tomato #EE5A36 · paper #FFFFFF. Nothing else.</td></tr>
 <tr><td>Size checks</td><td>Minimum print width for the lockup is 40 mm: this is 267 mm. The gaps around the ball print at about 4.5 mm (floor 1.5 mm).</td></tr>
 <tr><td>Method</td><td>Direct-to-garment (DTG). For embroidery, use the kit's one-color files and its embroidery minimums instead: this file is not for stitching.</td></tr></table>''', 3)
@@ -112,7 +112,7 @@ tiles = ''.join(f'''<div><img src="preview/mockups/tee-{s}.png" style="width:100
 pg(f'''<p class="kick">Design 1 · colorways</p><h2>Four garment colors</h2>
 <p>Light garments take the full-color logo. Navy is the garment closest to ink, so it takes the reverse. Black, grass and plum garments are left out on purpose: the kit allows only white one-color logos on them, and they are off-palette.</p>
 <div class="grid2" style="margin-top:8pt">{tiles}</div>
-<div class="founder" style="margin-top:12pt"><p class="kick">Founder's choice · human authorship</p>
+<div class="founder" style="margin-top:12pt"><p class="kick">Owner's choice (optional) · human authorship</p>
 <p class="small" style="margin:0 0 6pt">Confirm or change the four colors (use the partner's closest named color and check each against a physical sample). Your choices are part of your creative contribution: write them here and commit.</p>
 <div class="grid2"><div class="line"></div><div class="line"></div></div></div>''', 4)
 
@@ -126,7 +126,7 @@ pg('''<p class="kick">Bundle add-on</p><h2>“Laps not apps” tote</h2>
 <tr><td>Canvas</td><td>3600 × 3600 px, transparent PNG at 300 dpi (12 × 12 in), plus vector .svg.</td></tr>
 <tr><td>Artwork</td><td>“Laps not apps” in Bricolage Grotesque 800 with the tomato ball as the period (ORIGINALITY.md C4 keeps it for the tote), about 9 in wide, with the horizontal lockup 4.3 in wide below. Fallback if the slogan search finds a conflict: <code>tote-logo_light|dark</code>, the stacked logo alone.</td></tr>
 <tr><td>Where it appears</td><td>Holiday gift bundle (tee + tote + a digital play kit) and any later gift bundle. Teacher bundles stay on hold with all school-facing work.</td></tr>
-<tr><td>Check</td><td>Tote print areas differ by blank: confirm the partner's area and shrink the canvas if it is smaller than 12 × 12 in [VERIFY].</td></tr></table>
+<tr><td>Check</td><td>Tote print areas differ by blank: confirm the partner's area and shrink the canvas if it is smaller than 12 × 12 in (UNVERIFIED).</td></tr></table>
 <div class="box sun" style="margin-top:14pt"><p class="kick" style="color:#8A6300">Bundle math, the honest way</p>
 <p class="small" style="margin:0">Example: logo tee ($27) + “Laps not apps” tote (+$22) + a digital play kit, sold as one own-site checkout. Price the bundle 10–25% under the sum of its parts and say so in plain words (“$X, or $Y bought separately”). Never show the separate total as a crossed-out price. The print partner ships the tee and tote; the play kit arrives by email.</p></div>''', 5)
 
@@ -137,14 +137,14 @@ pg(f'''<p class="kick">Trademark use</p><h2>Inside-neck label</h2>
 <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8pt">{lab}
 <div style="text-align:center"><div style="background:#243150;border-radius:6pt"><img src="labels/neck-label_M_dark.png" style="width:100%;display:block"></div><p class="cap">M · dark (Navy)</p></div></div>
 <table style="margin-top:6pt"><tr><th style="width:30%">Spec</th><th>Value</th></tr>
-<tr><td>Files</td><td><code>labels/neck-label_SIZE_light|dark</code>, 900 × 900 px (3 × 3 in at 300 dpi), .png + vector .svg [VERIFY against the partner's inside-label template].</td></tr>
+<tr><td>Files</td><td><code>labels/neck-label_SIZE_light|dark</code>, 900 × 900 px (3 × 3 in at 300 dpi), .png + vector .svg (UNVERIFIED: against the partner's inside-label template).</td></tr>
 <tr><td>On every label</td><td>Horizontal lockup · size · ADULT UNISEX · PLAY BEFORE PIXELS™ · AlphaPlay LLC (the business named on the label) · care · fiber and country of origin.</td></tr>
 <tr><td>You fill in</td><td>Fiber content and country of origin come from the blank you choose. Type them into <code>BLANK</code> at the top of <code>build/build.py</code> and run <code>build/render.sh</code>. Until then the labels print a tomato FILL IN box, so they cannot go out by mistake. Check care wording against the blank's spec too.</td></tr>
 <tr><td>ALPHAPLAY</td><td>These tees do not help the ALPHAPLAY filing: its clothing class covers sports pinnies only. Do not add ALPHAPLAY to the tee.</td></tr></table>''', 6)
 
 # 7 hang tag
 pg('''<p class="kick">Optional</p><h2>Hang tag and pack-in card</h2>
-<p>2 × 3.5 in, 0.125 in bleed on every edge, text 0.25 in from the page edge. Use it only if the partner offers branded hang tags or pack-in inserts [VERIFY]; otherwise it doubles as the gift note image on the product page.</p>
+<p>2 × 3.5 in, 0.125 in bleed on every edge, text 0.25 in from the page edge. Use it only if the partner offers branded hang tags or pack-in inserts (UNVERIFIED); otherwise it doubles as the gift note image on the product page.</p>
 <div class="grid3" style="margin-top:8pt;align-items:start">
 <div><img src="preview/hang-tag/p01.png" style="width:100%;border-radius:6pt;box-shadow:0 0 0 1px var(--line)"><p class="cap"><b>Front</b> · on sun: ink P, tomato ball</p></div>
 <div><img src="preview/hang-tag/p02.png" style="width:100%;border-radius:6pt;box-shadow:0 0 0 1px var(--line)"><p class="cap"><b>Back, site edition</b> · QR and short link to the free bonus</p></div>
@@ -168,7 +168,7 @@ pg('''<p class="kick">Design 2 of 3</p><h2>“More talk, less tap” tee</h2>
 <tr><td>Before publishing</td><td>USPTO class 25 search plus Etsy, Amazon and Redbubble searches for the exact phrase (ORIGINALITY.md 4b). Log the result. If a live clothing use turns up, pull this design.</td></tr></table>
 <h3>Slot 3 stays empty on purpose</h3>
 <p class="small" style="margin:0 0 5pt">No other line is kept for a tee. “Play first. The pixels will keep.” is copy only; the tagline never goes on children's items; these are retired: “Pencils before pixels”, “Childhood can't wait. Screens can.”, “Paper first”, “Screen-free and proud of it”, “Ask me what I built today”. To fill slot 3: write the line yourself, run the originality check, have ORIGINALITY.md keep it “for tee”, add it to <code>SLOGANS</code> in build/build.py and run build/render.sh. The build stops on anything else.</p>
-<div class="founder" style="margin-top:6pt"><p class="kick">Founder slot · your layout choices and slogan ideas</p><div class="line"></div><div class="line"></div><div class="line"></div></div>''', 8)
+<div class="founder" style="margin-top:6pt"><p class="kick">Owner's slot (optional) · layout choices and slogan ideas</p><div class="line"></div><div class="line"></div><div class="line"></div></div>''', 8)
 
 # 9 setup
 pg('''<p class="kick">Set up once, then it runs</p><h2>Putting it on sale</h2>
@@ -180,7 +180,7 @@ pg('''<p class="kick">Set up once, then it runs</p><h2>Putting it on sale</h2>
 <li><b>Order one sample per color.</b> Check print, colors, label and fit, wash one five times, and photograph it on a flat surface (faceless: hands at most).</li>
 <li><b>Etsy:</b> list the partner as your production partner, mark the item “Designed by” you, disclose the digital and AI tools used for the art, add the size chart, and upload the seven listing images in order (<code>listing-01…07</code> for the logo tee, <code>slogan-01…07</code> for the slogan tee).</li>
 <li><b>Own site:</b> the same listing, plus the tote bundle and the “Next for you” links (see listing.json).</li>
-<li><b>Amazon Merch on Demand:</b> apply; upload the same 4500 × 5400 files with brand “Play Before Pixels”. Approval and design-slot limits apply [VERIFY current terms].</li>
+<li><b>Amazon Merch on Demand:</b> apply; upload the same 4500 × 5400 files with brand “Play Before Pixels”. Approval and design-slot limits apply (UNVERIFIED: current terms).</li>
 <li><b>Money and tax:</b> give the partner your resale certificate, set the shipping profile, and write the returns line (the partner replaces misprints and damage; you decide on size exchanges).</li></ol>
 <div class="box grass" style="margin-top:10pt"><p class="small" style="margin:0"><b>Runs without you:</b> orders go straight to the partner; tracking and delivery emails are automatic; the FAQ in listing.json answers sizing, care, timing and returns.</p></div>
 <h3>What buyers ask (already answered in listing.json)</h3>
@@ -198,12 +198,12 @@ pg('''<p class="kick">Honest pricing</p><h2>Prices and money</h2>
 <tr><td>“More talk, less tap” tee</td><td>same as the logo tee</td><td class="muted">fill in</td><td class="muted">same target</td></tr>
 <tr><td>Tote (bundle only)</td><td>+$22 in a bundle</td><td class="muted">fill in</td><td class="muted">same target</td></tr>
 <tr><td>Holiday gift bundle</td><td>$59 with a tee</td><td class="muted">tee + deck/print costs</td><td class="muted">planned bundle (DEMAND-CHECK #8)</td></tr></table>
-<p class="small muted" style="margin-top:6pt">Bigger sizes cost the partner more, so they cost more here. Etsy fees are roughly a 6.5% transaction fee, payment processing and a listing fee [VERIFY current rates]. If a tee keeps less than $8, raise the everyday price before launch, never by “discounting” later.</p>
+<p class="small muted" style="margin-top:6pt">Bigger sizes cost the partner more, so they cost more here. Etsy fees are roughly a 6.5% transaction fee, payment processing and a listing fee (UNVERIFIED: current rates). If a tee keeps less than $8, raise the everyday price before launch, never by “discounting” later.</p>
 <div class="grid2" style="margin-top:8pt">
 <div class="box tom"><p class="kick">Never</p><ul class="balls"><li>A crossed-out or “was” price</li><li>A permanent sale or countdown</li><li>“Only 3 left”: print on demand never runs out</li></ul></div>
 <div class="box grass"><p class="kick" style="color:#1F7A4F">Fine</p><ul class="balls"><li>A real launch week that really ends</li><li>Black Friday, if it truly ends</li><li>Bundles 10–25% under the parts</li></ul></div></div>
 <h3>When it sells</h3><ul class="balls">
-<li><b>Late October:</b> list with the holiday gift bundle. Check the partner's holiday order cut-off dates [VERIFY].</li>
+<li><b>Late October:</b> list with the holiday gift bundle. Check the partner's holiday order cut-off dates (UNVERIFIED).</li>
 <li><b>March:</b> spring screen-free week season. Say “spring screen-free week” in plain words; never print or claim the event's name.</li>
 <li><b>Kill rule:</b> fewer than 5 sales in 60 days with the listing fixed → reprice once, then make it bundle-only.</li></ul>''', 10)
 
