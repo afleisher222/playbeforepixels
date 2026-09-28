@@ -76,8 +76,9 @@ const A = {
   shareable_piece: 'The 52-week “Our Play & Talk Year” fridge checklist (page 20) with the small brand lockup, designed to be photographed; sharing is invited, never required.',
   bonus_offer: 'Store edition only (QR on page 21 and START HERE): extra printable cards and one short, age-matched play idea a month by email at playbeforepixels.com/bonus/play-talk-cards; email plus optional child birth month/year, never names.',
   amazon_route: 'none-with-reason: a cut-apart card deck does not work as a KDP paperback (thin pages, cutting destroys the book). On Amazon the same play-and-talk content is carried by the 100 Screen-Free Plays KDP paperback (guide-100-plays); the physical deck goes to POD or FBA-later only after the printable sells (marketing/AMAZON-AND-RETAIL-ROADMAP.md, card decks row).',
-  next_products: ['bored-play-cards', 'toddler-busy-book', 'guide-100-plays'],
+  next_products: ['bored-play-cards-ages-1-5', 'toddler-busy-book', 'guide-100-plays'],
   bonus_url: 'playbeforepixels.com/bonus/play-talk-cards',
+  listing_images_alt: require('./listing-images-alt.json'), // alt text per image, in order (build_packets.py)
   listing_images: ['preview/listing-images/01-hero.png', 'preview/listing-images/02-every-card.png', 'preview/listing-images/03-age-coded.png', 'preview/listing-images/04-print-at-home.png', 'preview/listing-images/05-talk-moves.png', 'preview/listing-images/06-whats-included.png', 'preview/listing-images/07-safety.png', 'preview/listing-images/08-grow-with-it.png'],
   files: {
     store: ['START-HERE.pdf', 'play-talk-cards.pdf', 'play-talk-cards-A4.pdf', 'play-talk-cards-low-ink.pdf', 'play-talk-cards-low-ink-A4.pdf'],
@@ -227,8 +228,8 @@ B.ai_disclosure = {
   };
 A.owner = OWNER; B.owner = OWNER;
 Object.assign(A, common); Object.assign(B, common);
-const OPTIONAL = ['amazon_title', 'status_notes'];
-const order = ['slug', 'title', 'subtitle', 'etsy_title', 'amazon_title', 'format', 'trim', 'pages', 'ages', 'price_usd', 'price_notes', 'price_floor', 'price_floor_basis', 'net_per_unit_by_channel', 'margin_pct_by_channel', 'net_notes', 'short_description', 'long_description', 'bullets', 'keywords', 'etsy_tags', 'seo_title', 'seo_description', 'alt_text', 'editable', 'shareable_piece', 'bonus_offer', 'channels', 'amazon_route', 'language', 'license_tiers', 'faq', 'ai_disclosure', 'compliance_notes', 'human_todo', 'next_products', 'bonus_url', 'listing_images', 'files', 'pod_later', 'owner', 'license_notes', 'status', 'status_notes'];
+const OPTIONAL = ['amazon_title', 'status_notes', 'listing_images_alt'];
+const order = ['slug', 'title', 'subtitle', 'etsy_title', 'amazon_title', 'format', 'trim', 'pages', 'ages', 'price_usd', 'price_notes', 'price_floor', 'price_floor_basis', 'net_per_unit_by_channel', 'margin_pct_by_channel', 'net_notes', 'short_description', 'long_description', 'bullets', 'keywords', 'etsy_tags', 'seo_title', 'seo_description', 'alt_text', 'editable', 'shareable_piece', 'bonus_offer', 'channels', 'amazon_route', 'language', 'license_tiers', 'faq', 'ai_disclosure', 'compliance_notes', 'human_todo', 'next_products', 'bonus_url', 'listing_images', 'listing_images_alt', 'files', 'pod_later', 'owner', 'license_notes', 'status', 'status_notes'];
 const words = s => s.split(/\s+/).filter(Boolean).length;
 for (const [L, dir] of [[A, ROOT], [B, path.join(ROOT, 'talk-along')]]) {
   const errs = [];

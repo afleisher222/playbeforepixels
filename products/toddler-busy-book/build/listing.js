@@ -58,6 +58,8 @@ const L = {
   seo_title: `${N} Toddler Busy Book Activities | Play Before Pixels`,
   seo_description: `${N} printable busy book activities for ages 1–5, sorted by age, with a talk line on every page. ${S.noCut} no-cut pages. Color + Low-ink, Letter + A4.`,
   alt_text: 'Cover of the printable Toddler Busy Book by Play Before Pixels: a navy title on a pale blue page, a smiling toddler and grown-up on a big yellow circle, and four white piece cards showing a duck, a red apple, a purple star and a ball, with age chips for 1–2, 2–3 and 3–5 years.',
+  // alt text for each listing image, in order (read by ops/UPLOAD-PACKETS/build_packets.py)
+  listing_images_alt: require('./listing-images-alt.json'),
   listing_images: [
     'preview/listing-images/listing-01.png — hero: number of activities, pages and pieces (thumbnail)',
     'preview/listing-images/listing-02.png — what’s inside: 8 sample pages and the counts',

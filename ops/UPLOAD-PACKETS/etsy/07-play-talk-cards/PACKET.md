@@ -54,14 +54,14 @@ Paste the whole of `description.txt` (in this folder). It carries no web address
 ## Listing images, in this order (first = thumbnail)
 | # | File | Alt text |
 |---|---|---|
-| 1 | `products/play-talk-cards/preview/listing-images/01-hero.png` | (use the first line of the description) |
-| 2 | `products/play-talk-cards/preview/listing-images/02-every-card.png` | (use the first line of the description) |
-| 3 | `products/play-talk-cards/preview/listing-images/03-age-coded.png` | (use the first line of the description) |
-| 4 | `products/play-talk-cards/preview/listing-images/04-print-at-home.png` | (use the first line of the description) |
-| 5 | `products/play-talk-cards/preview/listing-images/05-talk-moves.png` | (use the first line of the description) |
-| 6 | `products/play-talk-cards/preview/listing-images/06-whats-included.png` | (use the first line of the description) |
-| 7 | `products/play-talk-cards/preview/listing-images/07-safety.png` | (use the first line of the description) |
-| 8 | `products/play-talk-cards/preview/listing-images/08-grow-with-it.png` | (use the first line of the description) |
+| 1 | `products/play-talk-cards/preview/listing-images/01-hero.png` | 52 Play & Talk Cards, a printable card deck for ages 0–5: one play and one talk tip on every card for babies, toddlers and preschoolers. Five fanned cards: Kitchen Drum, Animal Voices, Color Sort and two more. Footer: printable PDF, US Letter and A4, instant download, nothing ships. |
+| 2 | `products/play-talk-cards/preview/listing-images/02-every-card.png` | On every card, a play, a talk tip and a safety note. The Shape Hunt card with six numbered labels: age color and shape, card number, needs, age, prep and mess, the play, the talk tip, and “With a grown-up”. |
+| 3 | `products/play-talk-cards/preview/listing-images/03-age-coded.png` | Age-coded from babies to preschool: four colors and four shapes, 13 plays each. Blue triangle 0–1 (0–12 months), green square 1–2 years, yellow star 2–3 years, red circle 3–5 years, each with a sample card. Ages are a guide, not a rule. |
+| 4 | `products/play-talk-cards/preview/listing-images/04-print-at-home.png` | Print, cut, play: a card sheet of nine poker-size cards with cut lines. Steps: print at actual size on cardstock if you have it, cut, then keep the cards in a box, bag or on a ring. Labels: 2.5 × 3.5 in poker size, US Letter and A4, low-ink version, type-in blank cards. |
+| 5 | `products/play-talk-cards/preview/listing-images/05-talk-moves.png` | Talk while you play: 8 simple talk moves in plain words: pause and wait, say what you see, repeat and add one, offer a choice, follow their lead, sing and gesture, take turns, wonder aloud. One talk tip on every card; nothing to memorize. |
+| 6 | `products/play-talk-cards/preview/listing-images/06-whats-included.png` | What’s inside the instant download: cover and contents, grown-up guide, 8 no-cut play pages, 6 card sheets, type-in blank cards and a 52-week tracker. 54 poker-size cards, a start age, prep, mess and 2-minute version on every play, color and low-ink in US Letter and A4, plus START HERE. |
+| 7 | `products/play-talk-cards/preview/listing-images/07-safety.png` | Simple safety basics on every card: a grown-up plays along within reach; under 3, every object is bigger than a toilet-paper tube opening; water play with a grown-up within arm’s reach; no balloons, long cords or choking-risk foods; check boxes for staples and loose parts. Sample card: Pour and Splash. |
+| 8 | `products/play-talk-cards/preview/listing-images/08-grow-with-it.png` | Grows with your child: four age colors from first peekaboo to preschool pretend play. A 0–1 card, First Book Chat, with an arrow to a 3–5 card, Story Box. Babies and toddlers ages 0–3; preschoolers ages 3–5. One deck from birth to 5, 13 plays for each age. |
 
 ## Digital files to upload (in this order)
 | Slot | Upload as | Size | Source |

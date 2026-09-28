@@ -54,14 +54,14 @@ Paste the whole of `description.txt` (in this folder). It carries no web address
 ## Listing images, in this order (first = thumbnail)
 | # | File | Alt text |
 |---|---|---|
-| 1 | `products/bored-play-cards/preview/listing-images/ages-1-5/listing-01.png` | (use the first line of the description) |
-| 2 | `products/bored-play-cards/preview/listing-images/ages-1-5/listing-02.png` | (use the first line of the description) |
-| 3 | `products/bored-play-cards/preview/listing-images/ages-1-5/listing-03.png` | (use the first line of the description) |
-| 4 | `products/bored-play-cards/preview/listing-images/ages-1-5/listing-04.png` | (use the first line of the description) |
-| 5 | `products/bored-play-cards/preview/listing-images/ages-1-5/listing-05.png` | (use the first line of the description) |
-| 6 | `products/bored-play-cards/preview/listing-images/ages-1-5/listing-06.png` | (use the first line of the description) |
-| 7 | `products/bored-play-cards/preview/listing-images/ages-1-5/listing-07.png` | (use the first line of the description) |
-| 8 | `products/bored-play-cards/preview/listing-images/ages-1-5/listing-08.png` | (use the first line of the description) |
+| 1 | `products/bored-play-cards/preview/listing-images/ages-1-5/listing-01.png` | 76 “I’m Bored!” Play Cards, printable, ages 1–5: screen-free play ideas for toddlers and little kids, sorted by age and energy, with a talk line on every card. A jar marked “I’m bored!” beside fanned cards such as Feelings Freeze, Bubble Chase and Pretend Café. Labels: ages 1–3 and 3–5; color and low-ink, Letter and A4. |
+| 2 | `products/bored-play-cards/preview/listing-images/ages-1-5/listing-02.png` | What’s inside: everything for a play jar that works. 76 play cards in 2 age bands, 14 blank “your idea” cards, 2 grown-up guide pages, 76 easier, harder and 2-minute versions, 20 box dividers, 12 jar labels, 2 card-back designs, 4 Play Menu and planner pages and 1 Play Jar Star certificate. |
+| 3 | `products/bored-play-cards/preview/listing-images/ages-1-5/listing-03.png` | Grown-up guide inside: two-minute setup, three talk lines. The two guide pages, “The grown-up guide” and “Pantry list and tired-grown-up plays”, plus a 2-minute version of every card and “most children love 2–3 of these; that’s normal.” |
+| 4 | `products/bored-play-cards/preview/listing-images/ages-1-5/listing-04.png` | How the cards work: read a card in five seconds. The Feelings Freeze card with six numbered labels: age band and starting age, in color plus a word label; energy level, calm, medium or wiggly; prep, mess and play time; you need and try it; the talk line; and the flags and safety line, with a grown-up and nothing to buy. |
+| 5 | `products/bored-play-cards/preview/listing-images/ages-1-5/listing-05.png` | Sorted by age: ages 1–3 and 3–5. Six cards: three yellow ages 1–3 cards (Pot-and-Spoon Band, Bubble Chase, Teddy Picnic) and three green ages 3–5 cards (Veggie Scrub, Pretend Café, Snack Patterns). Every 1–3 card uses only things too big to fit through a toilet-paper tube. |
+| 6 | `products/bored-play-cards/preview/listing-images/ages-1-5/listing-06.png` | Jar labels, dividers and low-ink files: color or low-ink, same cards. Jar-label and energy-jar pages, box-divider tabs for ages 1–3, 3–5, build and make, pretend, move and outdoors, a low-ink card sheet, and yellow and green card backs. |
+| 7 | `products/bored-play-cards/preview/listing-images/ages-1-5/listing-07.png` | Files, prep and value: print it your way. Notes: 5 plain PDFs, no zip, START HERE plus color and low-ink in US Letter and A4; type-in blanks for cards, labels, dividers, planners and certificate; prep about 15 minutes; 76 plays for $6.50, about 9 cents each; instant download, nothing is shipped. |
+| 8 | `products/bored-play-cards/preview/listing-images/ages-1-5/listing-08.png` | How to download: use a browser, not the app. Four steps: use a web browser on a computer or phone; open Purchases and tap each file; start with file 1, START HERE; lost a file later? It stays in Purchases. Every play follows our published safety rules. For use in your own home. |
 
 ## Digital files to upload (in this order)
 | Slot | Upload as | Size | Source |

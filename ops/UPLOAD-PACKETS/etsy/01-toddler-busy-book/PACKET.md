@@ -54,16 +54,16 @@ Paste the whole of `description.txt` (in this folder). It carries no web address
 ## Listing images, in this order (first = thumbnail)
 | # | File | Alt text |
 |---|---|---|
-| 1 | `products/toddler-busy-book/preview/listing-images/listing-01.png` | (use the first line of the description) |
-| 2 | `products/toddler-busy-book/preview/listing-images/listing-02.png` | (use the first line of the description) |
-| 3 | `products/toddler-busy-book/preview/listing-images/listing-03.png` | (use the first line of the description) |
-| 4 | `products/toddler-busy-book/preview/listing-images/listing-04.png` | (use the first line of the description) |
-| 5 | `products/toddler-busy-book/preview/listing-images/listing-05.png` | (use the first line of the description) |
-| 6 | `products/toddler-busy-book/preview/listing-images/listing-06.png` | (use the first line of the description) |
-| 7 | `products/toddler-busy-book/preview/listing-images/listing-07.png` | (use the first line of the description) |
-| 8 | `products/toddler-busy-book/preview/listing-images/listing-08.png` | (use the first line of the description) |
-| 9 | `products/toddler-busy-book/preview/listing-images/listing-09.png` | (use the first line of the description) |
-| 10 | `products/toddler-busy-book/preview/listing-images/listing-10.png` | (use the first line of the description) |
+| 1 | `products/toddler-busy-book/preview/listing-images/listing-01.png` | Headline “74 Busy Book Activities” for a printable toddler busy book sorted by age, with a “talk while you play” line on every page. A color-sort page and a “First words: ball” page sit between four picture cards: duck, apple, star. Labels: 1–2 years, 2–3 years, 3–5 years. |
+| 2 | `products/toddler-busy-book/preview/listing-images/listing-02.png` | What’s inside: 74 activities on 132 pages. Eight sample pages: First words, Animal sounds, Color sort, Shape match, Pizza shop, Mazes, First, next, last, and Post office. Counts: 74 activities, 49 no-cut pages, 23 piece sheets, 157 pieces all 2 in or bigger. |
+| 3 | `products/toddler-busy-book/preview/listing-images/listing-03.png` | Three age bands that grow with your child: 1–2 years, Little hands, 22 activities; 2–3 years, Busy explorers, 23 activities; 3–5 years, Big thinkers, 29 activities. Each band shows a sample page: a matching page, a dress-for-the-weather page and a maze. |
+| 4 | `products/toddler-busy-book/preview/listing-images/listing-04.png` | First words, big pictures: one word, one big picture and a move to copy together. Two pages, “ball” and “go”, with the talk line “Ball! Big ball. Roll, ball!” |
+| 5 | `products/toddler-busy-book/preview/listing-images/listing-05.png` | Big pieces, straight cuts: a Shadow match page beside its piece sheet of duck, ball, shoe, cup, car and teapot pictures, with duck and cup pieces in front. Each piece sheet sits right after its page, with 12 pieces or fewer. |
+| 6 | `products/toddler-busy-book/preview/listing-images/listing-06.png` | For 3–5 years: mazes, patterns and little stories. A maze page, a “What comes next?” pattern page and a “First, next, last” story page. Labels: 8 mazes, counting 1–6, patterns, first, next, last, rhymes, café and post office. |
+| 7 | `products/toddler-busy-book/preview/listing-images/listing-07.png` | Made for tired grown-ups: a “Lunch for Teddy” page beside six notes: talk while you play, easier and harder, a 2-minute version, prep, mess and needs, a safety note on every activity page, and a two-page grown-up guide. |
+| 8 | `products/toddler-busy-book/preview/listing-images/listing-08.png` | Color or Low-ink, Letter or A4: the same animal-sounds page in color and in black line art, four binder covers in four colors, and notes: 5 PDF files, type-in pages, Monday and Sunday planners, 4 colorways, instant download. |
+| 9 | `products/toddler-busy-book/preview/listing-images/listing-09.png` | Play today, build it over time, in four steps: print (49 no-cut pages ready today), protect (sheet protectors or a laminator, both optional), cut (straight lines, 12 pieces or fewer), play and talk. Below: the assembly and laminating pages. |
+| 10 | `products/toddler-busy-book/preview/listing-images/listing-10.png` | Every play follows our published safety rules: every piece is bigger than a toilet-paper tube (2 in; 2.5 in for 1–2 years); the grown-up keeps the pieces; no velcro dots for under-3s; play together, with no balloons, beads, buttons, coins or strings. Below: the safety page and a piece sheet. |
 
 ## Digital files to upload (in this order)
 | Slot | Upload as | Size | Source |

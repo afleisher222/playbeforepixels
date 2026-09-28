@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Writes products/winter-countdown/listing.json.   python3 build/listing.py"""
+import json
 import os
 import sys
 
@@ -91,6 +92,8 @@ d = {
     "alt_text": ("Cover of the printable “24 Days of Play: Winter Countdown”: a tomato-red 24 badge beside a navy title, a smiling "
                  "grown-up and child beside a snowman on a pale blue winter scene, and a row of play icons such as a bear cave, "
                  "a penguin and a flashlight."),
+    # alt text for each listing image, in order (read by ops/UPLOAD-PACKETS/build_packets.py)
+    "listing_images_alt": json.load(open(os.path.join(HERE, "listing-images-alt.json"), encoding="utf-8")),
     "listing_images": [
         "preview/listing-images/listing-01.png: hero with the number first, cover and card pages (thumbnail)",
         "preview/listing-images/listing-02.png: what's inside, 6 labelled pages",
