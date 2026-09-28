@@ -166,7 +166,7 @@ const P = [
     how: 'You blow the bubbles; your toddler chases, claps and pops them. Wait before each new round so your toddler can ask for more with a look, a sign or a word.',
     talk: '“Big bubble or lots of bubbles?”', move: 'choice',
     safe: 'The grown-up holds the bottle. Bubble mix is not for drinking; rinse eyes with water if it splashes.' },
-  { t: 'Which cup?', age: '12–24 mo', mat: ['2–3 plastic cups', 'a small toy'], prep: 0, mess: 0, where: ['in'], art: 'cups',
+  { t: 'Which cup?', age: '12–24 mo', mat: ['2–3 plastic cups', 'a toy too big for a toilet-paper tube'], prep: 0, mess: 0, where: ['in'], art: 'cups',
     how: 'Hide the toy under one cup while your toddler watches. Ask where it went. Lift the cups together. Later, let your toddler hide it for you to find.',
     talk: '“Where’s duck? Under this one?”', move: 'wait',
     safe: 'The toy must be too big to fit through a toilet-paper tube.' },
@@ -185,7 +185,7 @@ const P = [
   { t: 'Wash the baby doll', age: '18–24 mo', mat: ['a doll or plastic animals', 'a washcloth', 'a shallow tub of water'], prep: 1, mess: 2, where: ['bath', 'kitchen'], art: 'doll',
     how: 'Give the doll a bath together. Name each part as you wash it: tummy, feet, hair. Dry it with a towel and tuck it in.',
     talk: '“Wash her tummy. Now her feet. Wet feet!”', move: 'add',
-    safe: 'An inch or two of water, and stay within arm’s reach. Tip the water out as soon as you finish.' },
+    safe: 'An inch or two of water, and stay within arm’s reach. Every toy too big to fit through a toilet-paper tube. Tip the water out as soon as you finish.' },
   { t: 'Scoop and pour', age: '18–24 mo', mat: ['a big tub', 'rolled oats', 'cups and spoons'], prep: 1, mess: 2, where: ['in', 'kitchen'], art: 'bowl',
     how: 'Pour a few cups of rolled oats into a big tub with cups and spoons. Scoop, pour, fill and empty together. Put a sheet or towel underneath for easy cleanup.',
     talk: '“Scoop… pour! Full. Now empty.”', move: 'add',
@@ -238,7 +238,7 @@ const P = [
     how: 'Crawl around the room and invite your toddler to follow. Then swap: follow them wherever they go, copying their moves and sounds.',
     talk: '“You go first! I’m coming…”', move: 'lead',
     safe: 'Clear the floor and gate the stairs.' },
-  { t: 'Pretend phone call', age: '18–24 mo', mat: ['a block or a toy phone'], prep: 0, mess: 0, where: ['in', 'go'], art: 'phone',
+  { t: 'Pretend phone call', age: '18–24 mo', mat: ['a big block or a toy phone'], prep: 0, mess: 0, where: ['in', 'go'], art: 'phone',
     how: 'Hold a block to your ear: "Ring, ring!" Pretend to talk to Grandma or a teddy, then hand it over. Pause for your toddler’s turn to "talk".',
     talk: '“Ring, ring! Hello? It’s Grandma! Say hi!”', move: 'lead',
     safe: 'Use a block or a toy phone. Keep real phones, remote controls and button batteries out of reach.' },
@@ -259,7 +259,7 @@ const P = [
   { t: 'Toy wash', age: '2–3 yrs', mat: ['a tub of soapy water', 'a sponge', 'plastic toys'], prep: 1, mess: 2, where: ['out', 'kitchen'], art: 'bucket',
     how: 'Set up a toy "wash" outside or on a towel. Your child scrubs plastic toys and cars, rinses them and lines them up to dry in the sun.',
     talk: '“Scrub, scrub! Is it clean or dirty?”', move: 'choice',
-    safe: 'Shallow water, mild soap and a grown-up right there. Tip the water out when you finish.' },
+    safe: 'Shallow water, mild soap and a grown-up right there. Big toys only: nothing that fits through a toilet-paper tube. Tip the water out when you finish.' },
   { t: 'Living-room obstacle course', age: '2–3 yrs', mat: ['cushions', 'a chair', 'painter’s tape'], prep: 1, mess: 0, where: ['in', 'move'], art: 'cushion',
     how: 'Make a short course: climb over cushions, crawl under a chair, walk along a tape line, jump at the end. Do it together, then let your child change the order.',
     talk: '“Over… under… through! What’s next?”', move: 'add',
@@ -280,10 +280,10 @@ const P = [
     how: 'Put a spoon, a sock, a block and a ball in the pillowcase. Your child reaches in, feels one and guesses before pulling it out.',
     talk: '“Is it soft or hard? … What is it?”', move: 'choice',
     safe: 'Nothing sharp, and everything too big to fit through a toilet-paper tube.' },
-  { t: 'Corner shop', age: '2–3 yrs', mat: ['boxes and cans from the cupboard', 'a bag'], prep: 1, mess: 0, where: ['in', 'kitchen'], art: 'bag',
+  { t: 'Corner shop', age: '2–3 yrs', mat: ['boxes and cans from the cupboard', 'a cloth bag or basket'], prep: 1, mess: 0, where: ['in', 'kitchen'], art: 'bag',
     how: 'Line up food boxes and cans on a low shelf. Your child is the shopper with a bag, and you are the shopkeeper. Swap roles next time.',
     talk: '“What do you need today? Pasta or beans?”', move: 'choice',
-    safe: 'Light boxes and small unopened cans only. Keep glass jars away.' },
+    safe: 'Light boxes and small unopened cans only. Keep glass jars away, and use a cloth bag or basket, never a plastic bag.' },
   { t: 'Puddle jumping', age: '2–3 yrs', mat: ['rain boots', 'a raincoat'], prep: 0, mess: 2, where: ['out', 'move'], art: 'boot',
     how: 'After rain, find shallow puddles. Count to three and jump! Try big jumps and little jumps, tiptoe splashes and stomps.',
     talk: '“One, two, three… JUMP! Big splash or little splash?”', move: 'choice',
@@ -315,7 +315,7 @@ const P = [
   { t: 'Count the tower', age: '2–3 yrs', mat: ['blocks or small boxes'], prep: 0, mess: 0, where: ['in'], art: 'blocks',
     how: 'Build a tower together and count each block as it goes on. Guess how tall it will get before it falls. Knock it down and count again.',
     talk: '“One, two, three… how tall?”', move: 'add',
-    safe: 'Light blocks or boxes, so a falling tower can’t hurt anyone.' },
+    safe: 'Light blocks or boxes, so a falling tower can’t hurt anyone. Every block too big to fit through a toilet-paper tube.' },
   { t: 'Hot and cold hunt', age: '2–3 yrs', mat: ['a favorite toy'], prep: 0, mess: 0, where: ['in'], art: 'eye',
     how: 'Hide the toy while your child covers their eyes. Give clues as they search: "warm… warmer… HOT!" Then let your child hide it for you.',
     talk: '“You’re getting warmer… warmer… HOT!”', move: 'see',
@@ -323,7 +323,7 @@ const P = [
   { t: 'Tea party', age: '2–3 yrs', mat: ['cups and a jug', 'teddies'], prep: 0, mess: 1, where: ['in', 'kitchen'], art: 'teapot',
     how: 'Set out cups for everyone, teddies included. Your child pours pretend or cool water and serves. Say "please" and "thank you" in funny teddy voices.',
     talk: '“More tea, Bear? (wait) Yes, please!”', move: 'wait',
-    safe: 'Pretend or cool water only. No hot drinks nearby.' },
+    safe: 'Pretend or cool water only, with you right there. No hot drinks nearby.' },
   { t: 'Photo stories', age: '2–3 yrs', mat: ['printed family photos or an album'], prep: 0, mess: 0, where: ['in', 'bed'], art: 'photo',
     how: 'Look at family photos together. Point to people and ask what they are doing. Tell the short story of each picture and let your child add their part.',
     talk: '“Who’s that? What are they doing?”', move: 'lead',
@@ -358,7 +358,7 @@ const P = [
     how: 'Choose something you can both see and say its color. Your child guesses. Then swap. Add a second clue if needed: "It’s blue and it’s round."',
     talk: '“I spy something… blue!”', move: 'wait',
     safe: 'A perfect waiting game. In the car, your child stays buckled in.' },
-  { t: 'Scavenger hunt', age: '3–5 yrs', mat: ['a picture list you draw', 'a bag'], prep: 1, mess: 0, where: ['out'], art: 'list',
+  { t: 'Scavenger hunt', age: '3–5 yrs', mat: ['a picture list you draw', 'a paper or cloth bag'], prep: 1, mess: 0, where: ['out'], art: 'list',
     how: 'Draw 5 simple things to find: a leaf, a stick, a flower, something round, something rough. Hunt together and check them off.',
     talk: '“What did you find? Tell me about it.”', move: 'lead',
     safe: 'Stay where you can see each other. No berries or mushrooms, nothing in mouths. Wash hands after.' },
@@ -377,7 +377,7 @@ const P = [
   { t: 'Sandwich chef', age: '3–5 yrs', mat: ['bread', 'a spread', 'a butter knife'], prep: 1, mess: 1, where: ['kitchen'], art: 'plate',
     how: 'Your child makes their own sandwich: spread, top and fold. Talk through the steps in order: first, next, last. Cut shapes with a cookie cutter for fun.',
     talk: '“What goes first: bread or spread?”', move: 'choice',
-    safe: 'Blunt butter knife only. The grown-up handles sharp knives, the stove and the oven.' },
+    safe: 'Blunt butter knife only. Check for food allergies and spread thinly. The grown-up handles sharp knives, the stove and the oven.' },
   { t: 'Chalk hopscotch', age: '3–5 yrs', mat: ['sidewalk chalk'], prep: 1, mess: 1, where: ['out', 'move'], art: 'chalk',
     how: 'Draw a simple hopscotch with numbers. Hop on one foot, land on two. Say each number as you hop. Try it backwards!',
     talk: '“Hop on one… land on two!”', move: 'add',
@@ -433,7 +433,7 @@ const P = [
   { t: 'Recycling sort', age: '3–5 yrs', mat: ['clean paper, plastic and cans', '3 boxes'], prep: 1, mess: 0, where: ['in', 'kitchen'], art: 'box',
     how: 'Label three boxes with pictures: paper, plastic, cans. Your child sorts clean recycling into them and explains why each thing goes where it goes.',
     talk: '“Where does this go? How do you know?”', move: 'choice',
-    safe: 'Rinse items first. The grown-up removes lids with sharp edges. No glass.' },
+    safe: 'Rinse items first. Cans with sharp rims and lids stay with the grown-up. No glass.' },
   { t: 'Pouring station', age: '3–5 yrs', mat: ['jugs', 'a funnel', 'cups', 'a tub of water'], prep: 1, mess: 2, where: ['out', 'bath'], art: 'cup',
     how: 'Set up jugs, cups and a funnel over a tub of water. Pour from big to small, fill to the top, fill halfway. Guess how many cups fill the jug.',
     talk: '“Full, half full or empty?”', move: 'choice',
@@ -450,10 +450,10 @@ const P = [
     how: 'Before shopping, draw a picture list together. In the shop, your child finds each item and ticks it off.',
     talk: '“What’s next on our list? Can you see the bananas?”', move: 'see',
     safe: 'In the parking lot, hold hands or keep a hand on the cart.' },
-  { t: 'Dress-up job day', age: '3–5 yrs', mat: ['hats', 'bags', 'old clothes'], prep: 0, mess: 0, where: ['in'], art: 'hat',
+  { t: 'Dress-up job day', age: '3–5 yrs', mat: ['hats', 'handbags or tote bags', 'old clothes'], prep: 0, mess: 0, where: ['in'], art: 'hat',
     how: 'Your child chooses a job: builder, chef, farmer, pilot. Find clothes and tools around the house and spend ten minutes on the job together.',
     talk: '“What’s your job today? What do you need?”', move: 'lead',
-    safe: 'No cords or strings around necks, and no long capes that trip.' },
+    safe: 'No cords or strings around necks, no plastic bags, and no long capes that trip.' },
   { t: 'Sticky-note hunt', age: '3–5 yrs', mat: ['sticky notes', 'a crayon'], prep: 1, mess: 0, where: ['in'], art: 'note-sq',
     how: 'Draw a shape or a color dot on each note and stick them around one room. Your child hunts for them and names each one.',
     talk: '“You found a circle! Where’s the next one?”', move: 'see',
@@ -469,11 +469,17 @@ const P = [
 ];
 
 const GROW = require('./grow.js');
-P.forEach((p, i) => { p.n = i + 1; p.grow = GROW[i]; p.band = BANDS.find(b => p.n >= b.from && p.n <= b.to).key; });
+const MORE = require('./more.js');
+P.forEach((p, i) => {
+  p.n = i + 1; p.grow = GROW[i]; p.band = BANDS.find(b => p.n >= b.from && p.n <= b.to).key;
+  p.easy = MORE.EASY[i]; p.time = MORE.TIME[i]; p.buy = MORE.BUY.has(p.n); p.from = MORE.fromMonths(p.age);
+  if (p.prep === 2 && p.time < 20) throw new Error('Play ' + p.n + ': prep is longer than play (CUSTOMER-VOICE rule 12)');
+});
+if (P.filter(p => !p.buy).length < 70) throw new Error('Fewer than 70% of plays are "Nothing to buy" (CUSTOMER-VOICE rule 13)');
 if (P.length !== 100) throw new Error('Expected 100 plays, got ' + P.length);
 
 const WHERE = {
   in: 'Indoors', out: 'Outdoors', bath: 'Bath time', kitchen: 'Kitchen', go: 'Waiting & car', bed: 'Wind-down', move: 'Big energy',
 };
 
-module.exports = { P, BANDS, MOVES, WHERE };
+module.exports = { P, BANDS, MOVES, WHERE, TIRED: MORE.TIRED };

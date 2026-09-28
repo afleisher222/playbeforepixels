@@ -87,6 +87,8 @@ const UI = [
   `<symbol id="u-pin" viewBox="0 0 24 24"><path d="M12 22S4 14.5 4 9.5A8 8 0 0 1 20 9.5C20 14.5 12 22 12 22Z" fill="currentColor"/><circle cx="12" cy="9.5" r="3" fill="#FFFFFF"/></symbol>`,
   `<symbol id="u-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>`,
   `<symbol id="u-tube" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="7" ry="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 5V19C5 21 19 21 19 19V5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>`,
+  `<symbol id="u-timer" viewBox="0 0 24 24"><path d="M6 2H18V4H17V7.5C17 9.5 15 11 13.6 12C15 13 17 14.5 17 16.5V20H18V22H6V20H7V16.5C7 14.5 9 13 10.4 12C9 11 7 9.5 7 7.5V4H6Z" fill="currentColor"/><path d="M9.2 5H14.8V7.2C14.8 8.4 13.2 9.6 12 10.4C10.8 9.6 9.2 8.4 9.2 7.2Z" fill="#FFFFFF"/><path d="M12 14.2C13.3 15 14.8 16 14.8 17.2V19H9.2V17.2C9.2 16 10.7 15 12 14.2Z" fill="#FFFFFF" fill-opacity=".45"/></symbol>`,
+  `<symbol id="u-home" viewBox="0 0 24 24"><path d="M12 2.5L22 11H19V21.5H14.5V15H9.5V21.5H5V11H2Z" fill="currentColor"/></symbol>`,
 ];
 
 module.exports = { ART, UI, star };

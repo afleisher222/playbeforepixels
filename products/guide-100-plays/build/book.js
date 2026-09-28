@@ -8,14 +8,27 @@ const { ART, UI } = require('./icons.js');
 const { P, BANDS, MOVES, WHERE } = require('./plays.js');
 const X = require('./parts.js');
 const { C } = CH;
-const { OUT, BONUS, COPY, FONTS, W, BC, esc, pad2, qrSvg, SCENES, ico, playCard, ownCard, fld } = X;
+const { OUT, BONUS, COPY, FONTS, W, BC, esc, pad2, qrSvg, SCENES, ico, playCard, ownCard, fld, VERSION, fromLabel } = X;
+const { TIRED } = require('./plays.js');
 
+// bw: grayscale paperback interior · low: low-ink edition (white grounds, line art) · etsy: marketplace edition with no URL or QR code
+// (CUSTOMER-VOICE rules 1–4) · extras: the four bonus planner pages and type-in fields of the digital editions.
+const PB = { pw: 8.25, ph: 10.25, bt: .125, bb: .125, bo: .125, bi: .125, m: { t: .5, b: .55, o: .5, i: .7 } };
+const LT = { pw: 8.5, ph: 11, bt: 0, bb: 0, bo: 0, bi: 0, m: { t: .55, b: .6, o: .6, i: .6 } };
+const A4 = { pw: 8.27, ph: 11.69, bt: 0, bb: 0, bo: 0, bi: 0, m: { t: .6, b: .65, o: .55, i: .55 } };
 const VARIANTS = {
-  print: { file: 'source.html', pw: 8.25, ph: 10.25, bt: .125, bb: .125, bo: .125, bi: .125, m: { t: .5, b: .55, o: .5, i: .7 }, bw: true, extras: false, label: 'Paperback interior, 8 x 10 in trim + 0.125 in bleed (brand spec)' },
-  kdp: { file: 'source-kdp.html', pw: 8.125, ph: 10.25, bt: .125, bb: .125, bo: .125, bi: 0, m: { t: .5, b: .55, o: .5, i: .7 }, bw: true, extras: false, label: 'Paperback interior, KDP 8 x 10 in with bleed = 8.125 x 10.25 in' },
-  letter: { file: 'source-color-letter.html', pw: 8.5, ph: 11, bt: 0, bb: 0, bo: 0, bi: 0, m: { t: .55, b: .6, o: .6, i: .6 }, bw: false, extras: true, label: 'Digital edition, US Letter' },
-  a4: { file: 'source-color-a4.html', pw: 8.27, ph: 11.69, bt: 0, bb: 0, bo: 0, bi: 0, m: { t: .6, b: .65, o: .55, i: .55 }, bw: false, extras: true, label: 'Digital edition, A4' },
+  print: Object.assign({ file: 'source.html', bw: true, extras: false, label: 'Paperback interior, 8 x 10 in trim + 0.125 in bleed (brand spec)' }, PB),
+  kdp: Object.assign({}, PB, { file: 'source-kdp.html', pw: 8.125, bi: 0, bw: true, extras: false, label: 'Paperback interior, KDP 8 x 10 in with bleed = 8.125 x 10.25 in' }),
+  letter: Object.assign({ file: 'source-color-letter.html', bw: false, extras: true, label: 'Digital edition, Color, US Letter' }, LT),
+  a4: Object.assign({ file: 'source-color-a4.html', bw: false, extras: true, label: 'Digital edition, Color, A4' }, A4),
+  'letter-low': Object.assign({ file: 'source-lowink-letter.html', bw: false, low: true, extras: true, label: 'Digital edition, Low-ink, US Letter' }, LT),
+  'a4-low': Object.assign({ file: 'source-lowink-a4.html', bw: false, low: true, extras: true, label: 'Digital edition, Low-ink, A4' }, A4),
+  'etsy-letter': Object.assign({ file: 'source-etsy-color-letter.html', bw: false, etsy: true, extras: true, label: 'Etsy edition, Color, US Letter' }, LT),
+  'etsy-a4': Object.assign({ file: 'source-etsy-color-a4.html', bw: false, etsy: true, extras: true, label: 'Etsy edition, Color, A4' }, A4),
+  'etsy-letter-low': Object.assign({ file: 'source-etsy-lowink-letter.html', bw: false, low: true, etsy: true, extras: true, label: 'Etsy edition, Low-ink, US Letter' }, LT),
+  'etsy-a4-low': Object.assign({ file: 'source-etsy-lowink-a4.html', bw: false, low: true, etsy: true, extras: true, label: 'Etsy edition, Low-ink, A4' }, A4),
 };
+let V = VARIANTS.letter; // the variant being assembled
 
 // ---------------------------------------------------------------- black-and-white conversion (KDP B/W interior)
 function toGray(html) {
@@ -63,24 +76,33 @@ h2 { font-size: 15pt; margin-bottom: .05in }
 .rhead .chip { display: inline-flex; align-items: center; gap: .08in }
 .rhead .chip i { font-style: normal; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 10pt; padding: .02in .12in; border-radius: 99px }
 .plays { flex: 1; display: flex; flex-direction: column; justify-content: space-between }
-.play { flex: 1; padding: .16in 0 .12in; display: flex; flex-direction: column; justify-content: space-evenly; gap: .09in }
+.play { flex: 1; padding: .12in 0 .1in; display: flex; flex-direction: column; justify-content: space-evenly; gap: .07in }
 .play + .play { border-top: 1.5px dashed var(--line) }
-.phead { display: flex; gap: .22in; align-items: center }
+.phead { display: flex; gap: .2in; align-items: center }
 .disc { position: relative; flex: none }
 .disc svg { display: block }
 .badge { position: absolute; left: -.04in; top: -.02in; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 12.5pt; min-width: .44in; height: .44in; border-radius: 99px; display: flex; align-items: center; justify-content: center; border: 2.5px solid #FFFFFF }
 .ptitle { flex: 1; min-width: 0 }
 .kicker { font-size: 8pt; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--soft); display: flex; align-items: center; gap: .1in }
 .agepill { font-size: 8.4pt; letter-spacing: .02em; text-transform: none; color: var(--ink); padding: .015in .1in; border-radius: 99px; font-weight: 800 }
-.play h3 { font-size: 21pt; margin: .03in 0 .08in }
+.play h3 { font-size: 20pt; margin: .03in 0 .07in }
 .meta { display: flex; flex-wrap: wrap; gap: .06in .2in; font-size: 8.9pt; font-weight: 700; margin-bottom: .06in }
 .meta span { display: inline-flex; align-items: center; gap: .05in }
 .meta .ico { width: 1.25em; height: 1.25em }
 .drops { display: inline-flex; gap: 0 } .drops .ico { width: 1.15em; height: 1.15em; color: var(--sky) }
 .need { display: flex; gap: .07in; font-size: 9.8pt; align-items: baseline }
 .need .ico { width: 1.2em; height: 1.2em; align-self: center }
-.how { font-size: 11.2pt; line-height: 1.45 }
+.how { font-size: 10.8pt; line-height: 1.42 }
 .grow { font-size: 10pt; line-height: 1.4; padding-left: .12in; border-left: 3px solid var(--line) }
+.eh { display: grid; grid-template-columns: 1fr 1fr; gap: .22in; font-size: 9.4pt; line-height: 1.36 }
+.eh p { padding-left: .1in; border-left: 3px solid var(--line) }
+.best { letter-spacing: .02em; text-transform: none; font-weight: 700; color: var(--soft) }
+.nbuy { margin-left: auto; flex: none; display: inline-flex; align-items: center; gap: .04in; font-size: 7.8pt; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: .02in .09in; border: 1.3px solid var(--ink); border-radius: 99px; align-self: center }
+.nbuy .ico { width: 1.1em !important; height: 1.1em !important }
+.tired { display: grid; grid-template-columns: 1fr 1fr; gap: .16in .22in; flex: 1 }
+.tcard { border: 1.5px solid var(--line); border-radius: .14in; padding: .12in .15in; display: flex; flex-direction: column; gap: .05in; font-size: 9.4pt; line-height: 1.38 }
+.tcard h3 { font-size: 14pt; margin: 0 }
+.tcard .tline { font-size: 11pt }
 .talk { display: flex; gap: .12in; align-items: center; padding: .1in .16in; border-radius: .14in }
 .talk .ico { color: var(--ink) }
 .tlab { font-size: 7.8pt; font-weight: 800; letter-spacing: .12em; text-transform: uppercase }
@@ -110,6 +132,19 @@ h2 { font-size: 15pt; margin-bottom: .05in }
 .chipn { display: inline-flex; align-items: center; justify-content: center; min-width: .3in; height: .24in; padding: 0 .05in; border-radius: 99px; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 8.6pt; margin: 0 .03in .05in 0 }
 .boxnote { border: 1.5px solid var(--ink); border-radius: .14in; padding: .14in .18in; font-size: 9.2pt }
 .spacer { flex: 1 }
+${v.low ? `
+/* ---- low-ink edition: white grounds, no full-bleed tints, line art to color (CUSTOMER-VOICE rule 1) ---- */
+.bleedbg { display: none }
+.live [style*="background"]:not(svg):not(.qrbox) { background: #FFFFFF !important; box-shadow: inset 0 0 0 1.3px #9AA5B8 }
+.live [style*="color:#FFFFFF"], .live [style*="color: #FFFFFF"] { color: var(--ink) !important }
+.talk, .card, .boxnote, .badge { background: #FFFFFF !important }
+.badge { color: var(--ink) !important; box-shadow: 0 0 0 1.5px var(--ink) }
+.artdefs symbol *, svg.scene *, svg.scene { fill: #FFFFFF !important; stroke: ${C.ink} !important; stroke-width: 1.2px !important; stroke-linejoin: round; vector-effect: non-scaling-stroke }
+.artdefs symbol [fill="${C.ink}"], svg.scene [fill="${C.ink}"] { fill: ${C.ink} !important }
+.artdefs symbol .ck, svg.scene .ck { display: none }
+svg.scene text { fill: ${C.ink} !important; stroke: none !important }
+.drops .ico { color: var(--ink) } .safe .ico { color: var(--ink) }
+` : ''}
 `;
 }
 
@@ -118,6 +153,10 @@ const pages = []; // {kind, html, title?, bg?, noFolio?, band?}
 function pg(o) { pages.push(o); return o; }
 const chipN = n => { const p = P[n - 1]; const b = BC[p.band]; return `<span class="chipn" style="background:${b.t}">${n}</span>`; };
 const playRef = n => `<b>${esc(P[n - 1].t)}</b> ${chipN(n)}`;
+
+// prep budget for page 1 and the listing (CUSTOMER-VOICE rule 8)
+const PREPN = [0, 1, 2].map(k => P.filter(p => p.prep === k).length);
+const PREPLINE = `Prep budget: ${PREPN[0]} plays need no prep, ${PREPN[1]} take about 2 minutes and ${PREPN[2]} take about 10. ${P.filter(p => !p.buy).length} of the 100 need nothing to buy.`;
 
 // ---- front matter
 function titlePage() {
@@ -129,8 +168,10 @@ function titlePage() {
     <div class="display" style="font-size:22pt;margin-top:.1in">for Ages 0–5</div>
     <p style="font-size:12pt;margin-top:.26in;max-width:4.8in">Easy, low-prep play and talk ideas for babies, toddlers and preschoolers, sorted by age</p>
     <div style="display:flex;gap:.12in;margin-top:.3in">${BANDS.map(b => `<span class="display" style="background:${BC[b.key].c};color:${BC[b.key].fg};font-size:13pt;padding:.07in .18in;border-radius:99px">${b.label}</span>`).join('')}</div>
-    <div class="spacer" style="flex:0 0 .9in"></div>
+    <p style="font-size:10.4pt;margin-top:.26in;font-weight:700">${PREPLINE}</p>
+    <div class="spacer" style="flex:0 0 .7in"></div>
     <img src="../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels" style="height:.62in">
+    ${V.etsy ? '' : '<p style="font-size:9.4pt;margin-top:.1in;font-weight:700">playbeforepixels.com</p>'}
   </div>` });
 }
 function copyrightPage() {
@@ -138,25 +179,26 @@ function copyrightPage() {
   <div class="live" style="justify-content:flex-end;font-size:8.6pt;line-height:1.5">
     <p style="font-family:'Bricolage Grotesque';font-weight:800;font-size:12pt">100 Screen-Free Plays for Ages 0–5</p>
     <p>Easy, low-prep play and talk ideas for babies, toddlers and preschoolers, sorted by age</p>
-    <p style="margin-top:.12in">First edition, 2026</p>
+    <p style="margin-top:.12in">First edition, 2026 · ${VERSION}${V.bw ? ' · Black-and-white interior' : V.low ? ' · Low-ink edition' : ' · Full-color edition'}</p>
     <p style="margin-top:.12in;font-weight:800">${COPY}</p>
     <p>All rights reserved. No part of this book may be reproduced or shared without written permission, except short quotations in reviews. Buyers of the PDF edition may print pages for use in their own household.</p>
-    <p style="margin-top:.12in">Published by AlphaPlay LLC, doing business as Play Before Pixels · playbeforepixels.com · Contact: through the form at playbeforepixels.com</p>
+    <p style="margin-top:.12in">Published by AlphaPlay LLC, doing business as Play Before Pixels${V.etsy ? '. Questions? Send us a message through Etsy.' : ' · playbeforepixels.com · Contact: through the form at playbeforepixels.com'}</p>
+    ${V.bw ? `<div style="display:flex;gap:.16in;align-items:center;margin-top:.14in;border:1.5px solid ${C.ink};border-radius:.12in;padding:.1in .14in"><div style="flex:none">${qrSvg(72)}</div><p><b>This paperback has a black-and-white interior.</b> Get the play pages in full color, free: scan the code or visit ${BONUS}. We only ask for an email and your child’s birth month and year.</p></div>` : ''}
     <div style="display:flex;gap:.24in;align-items:flex-end;margin-top:.16in">
       <div style="width:2in;height:1.2in;border:1.5px dashed ${C.ink};display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:8pt;letter-spacing:.08em">ISBN / barcode<br>(founder to add)</div>
-      <div><p><b>ISBN (paperback):</b> ____________________</p><p><b>ISBN (PDF):</b> not required</p></div>
+      <div><p><b>ISBN (paperback):</b> ____________________</p><p><b>ISBN (PDF):</b> not required</p><p><b>Printed book only:</b> the founder adds the ISBN here before upload.</p></div>
     </div>
     <p style="margin-top:.16in"><b>Please read.</b> This book offers play ideas and general parent education. It is not medical, developmental or professional advice, and it does not diagnose, treat or prevent any condition. Every play is meant to be done with a grown-up right there. Ages are a guide: you know your child best, so skip or change any play that does not feel right. Always follow the safety notes and the "Safety first" page.</p>
     <p style="margin-top:.1in">No brands, apps, devices, products, schools or programs are named, reviewed or endorsed in this book. Any object shown is generic.</p>
     <p style="margin-top:.1in">Research sources are listed on the "Sources" page.</p>
-    <p style="margin-top:.1in">Printed on demand.</p>
+    <p style="margin-top:.1in">Every play follows our published safety rules (the "Safety first" page). ${V.bw ? 'Printed on demand.' : 'Print what you need for use in your own home.'}</p>
   </div>` });
 }
 function contentsPage() {
   return pg({ kind: 'contents', html: (num) => {
-    const row = (t, n, col) => `<li style="display:flex;align-items:baseline;gap:.1in;padding:.075in 0;border-bottom:1px solid var(--line)">${col ? `<span class="num" style="background:${col.c};color:${col.fg}">${col.label}</span>` : '<span style="width:.3in"></span>'}<span style="flex:1;font-size:11pt;font-weight:${col ? 800 : 600}">${t}</span><b style="font-family:'Bricolage Grotesque'">${n}</b></li>`;
-    const front = ['A note before you start', 'How to use this book', 'Talk while you play: six easy moves', 'Safety first', 'Why play? Why talk?', 'Quick finder: a play for every moment', 'Set up for easy play'];
-    const back = ['A sample screen-free day', 'Swap it for your age and your energy', 'When screens are on anyway', 'The 100-play tracker', 'Our play week', 'Sources', 'Your free bonus and what’s next'];
+    const row = (t, n, col) => `<li style="display:flex;align-items:baseline;gap:.1in;padding:.058in 0;border-bottom:1px solid var(--line)">${col ? `<span class="num" style="background:${col.c};color:${col.fg}">${col.label}</span>` : '<span style="width:.3in"></span>'}<span style="flex:1;font-size:11pt;font-weight:${col ? 800 : 600}">${t}</span><b style="font-family:'Bricolage Grotesque'">${n}</b></li>`;
+    const front = ['A note before you start', 'How to use this book', 'Talk while you play: six easy moves', 'Safety first', 'Why play? Why talk?', 'Quick finder: a play for every moment', 'Set up for easy play', 'The pantry list'];
+    const back = ['Tired-grown-up plays', 'A sample screen-free day', 'Swap it for your age and your energy', 'When screens are on anyway', 'The 100-play tracker', 'Our play week', 'Sources', BONUST()];
     return `<div class="live"><div class="eyebrow">Inside</div><h1>Contents</h1>
       <ul style="list-style:none">
         ${front.map(t => row(t, num(t))).join('')}
@@ -178,7 +220,7 @@ function notePage() {
     </div>
     <div class="hand" style="font-size:24pt;margin-top:.24in;color:${C.tomato}">Play Before Pixels</div>
     <div class="spacer"></div>
-    <svg viewBox="70 140 460 360" style="width:4.4in;align-self:center">${SCENES.b1()}</svg>
+    <svg class="scene" viewBox="70 140 460 360" style="width:4.4in;align-self:center">${SCENES.b1()}</svg>
   </div>` });
 }
 function howPage() {
@@ -187,19 +229,22 @@ function howPage() {
   return pg({ kind: 'text', title: 'How to use this book', html: `
   <div class="live">
     <div class="eyebrow">The plan</div><h1>How to use this book</h1>
-    <p class="lede">The 100 plays are sorted into four age bands. Start with your child’s band, then look one band either side: children don’t read the labels, and a favorite play can last for years.</p>
-    <div style="display:flex;gap:.12in;margin-bottom:.22in">${BANDS.map(b => `<div class="card" style="flex:1;background:${BC[b.key].t};padding:.12in .14in"><div class="display" style="font-size:20pt">${b.label}</div><div style="font-size:8.6pt;font-weight:700">${b.long}<br>Plays ${b.from}–${b.to}</div></div>`).join('')}</div>
+    <p class="lede" style="margin-bottom:.14in">The 100 plays are sorted into four age bands. Start with your child’s band, then look one band either side: children don’t read the labels, and a favorite play can last for years.</p>
+    <div style="display:flex;gap:.12in;margin-bottom:.16in">${BANDS.map(b => `<div class="card" style="flex:1;background:${BC[b.key].t};padding:.12in .14in"><div class="display" style="font-size:20pt">${b.label}</div><div style="font-size:8.6pt;font-weight:700">${b.long}<br>Plays ${b.from}–${b.to}</div></div>`).join('')}</div>
     <h2>Every play has the same parts</h2>
-    <ul class="list" style="margin-bottom:.16in">
-      ${item(`<span class="num" style="background:${C.tGrass}">21</span>`, 'Number and age', 'The age is a guide, not a rule. Each band has its own color.')}
+    <ul class="list howgrid" style="margin-bottom:.14in;display:grid;grid-template-columns:1fr 1fr;column-gap:.3in">
+      ${item(`<span class="num" style="background:${C.tGrass}">21</span>`, 'Number and starting age', '"From 12 mo" is the youngest age the play suits. "Best for" gives the usual range. You know your child best.')}
       ${item(ico('clock', '', '.3in'), 'Prep time', 'No prep, about 2 minutes, or about 10 minutes of setting up.')}
       ${item(`<span style="width:.3in;display:inline-flex">${drops(1)}</span>`, 'Mess level', 'No drops: no mess. One drop: a little mess. Two drops: messy (lay down a towel).')}
+      ${item(ico('timer', '', '.3in'), 'Play time', 'About 5, about 10, or 20 minutes or more. Many children play longer or shorter, and both are fine.')}
       ${item(ico('pin', '', '.3in'), 'Where', 'Indoors, outdoors, bath time, kitchen, waiting and car, wind-down or big energy.')}
-      ${item(ico('bag', '', '.3in'), 'You need', 'Everyday things from around the house. Many plays need nothing at all.')}
+      ${item(ico('bag', '', '.3in'), 'You need', `Everyday things. ${P.filter(p => !p.buy).length} plays carry the <b>Nothing to buy</b> badge; the pantry list shows what to gather.`)}
+      ${item(`<span class="num" style="background:${C.tSun}">±</span>`, 'Make it easier, make it harder', 'One way to make the play simpler today and one way to stretch it next time.')}
       ${item(ico('talk', '', '.3in'), 'Talk while you play', 'A line to say, tagged with one of six easy talk moves (next page).')}
       ${item(`<span style="color:${C.grass}">${ico('shield', '', '.3in')}</span>`, 'Safety note', 'Read it every time. The full rules are on the "Safety first" page.')}
+      ${item(`<span class="num" style="background:${C.tPlum}">2</span>`, 'Too tired today?', 'Turn to <b>Tired-grown-up plays</b>: 2 minutes, no setup, played from the couch or the floor.')}
     </ul>
-    <div class="boxnote" style="display:flex;gap:.16in;align-items:center"><div class="display" style="font-size:26pt;color:${C.tomato}">3</div><div><b>Three plays a day is a great day.</b> One in the morning, one outside and one to wind down. Tick them off on the 100-play tracker at the back of the book.</div></div>
+    <div class="boxnote" style="display:flex;gap:.16in;align-items:center"><div class="display" style="font-size:26pt;color:${C.tomato}">3</div><div><b>Three plays a day is a great day.</b> One in the morning, one outside and one to wind down. Most children love 2 or 3 of these plays and ask for them again and again; that’s normal. If interest fades, stop, and try another day.</div></div>
   </div>` });
   function drops(l) { return X.drops(l); }
 }
@@ -216,7 +261,8 @@ function movesPage() {
         <p>${MOVES[k].tip}</p>
         <div class="tline" style="font-size:12pt;margin-top:auto">${ex[k]}</div></div>`).join('')}
     </div>
-    <p class="small" style="margin-top:.16in">Any answer counts: a look, a smile, a point, a sound, a sign or a word. If your child doesn’t answer, that’s fine too. Say the word yourself, smile and keep playing.</p>
+    <p class="small" style="margin-top:.14in">Any answer counts: a look, a smile, a point, a sound, a sign, a tap on a talking device or a word. If your child doesn’t answer, that’s fine too. Say the word yourself, smile and keep playing.</p>
+    <p style="margin-top:.08in;font-weight:800;font-size:10pt">Talk, sing and read in the language you know best. Every language counts.</p>
   </div>` });
 }
 function safetyPage() {
@@ -225,7 +271,7 @@ function safetyPage() {
   <div class="live">
     <div class="eyebrow">Every play, every time</div><h1>Safety first</h1>
     <div style="display:flex;gap:.24in;align-items:center;background:${C.tSun};border-radius:.16in;padding:.16in .2in;margin-bottom:.12in">
-      <svg viewBox="0 0 120 150" style="width:.95in;flex:none"><ellipse cx="60" cy="22" rx="34" ry="12" fill="${C.s2}"/><ellipse cx="60" cy="22" rx="24" ry="7" fill="${C.tSun}"/><path d="M26 22V124C26 138 94 138 94 124V22C94 30 26 30 26 22Z" fill="${C.s2}"/><circle cx="60" cy="84" r="14" fill="${C.tomato}"/><path d="M52 76l16 16M68 76L52 92" stroke="${W}" stroke-width="4" stroke-linecap="round"/></svg>
+      <svg class="scene" viewBox="0 0 120 150" style="width:.95in;flex:none"><ellipse cx="60" cy="22" rx="34" ry="12" fill="${C.s2}"/><ellipse cx="60" cy="22" rx="24" ry="7" fill="${C.tSun}"/><path d="M26 22V124C26 138 94 138 94 124V22C94 30 26 30 26 22Z" fill="${C.s2}"/><circle cx="60" cy="84" r="14" fill="${C.tomato}"/><path d="M52 76l16 16M68 76L52 92" stroke="${W}" stroke-width="4" stroke-linecap="round"/></svg>
       <div><h2>The toilet-paper tube test</h2><p style="font-size:10.2pt">For children under 3: if something fits through a toilet-paper tube (about 1.25 in or 3.2 cm across), it is too small to play with. Check toys, lids, food and anything a big sibling leaves out.</p></div>
     </div>
     <ul class="list">
@@ -293,7 +339,7 @@ function setupPage() {
     </div>
     <p class="small" style="margin-top:.14in">For children under 3, every item must pass the toilet-paper tube test. Check the basket often for broken or small pieces.</p>
     <div class="spacer"></div>
-    <div style="display:flex;justify-content:space-between">${['basket', 'blocks', 'ball', 'book', 'cup', 'pot', 'box'].map((a, i) => `<svg viewBox="-60 -60 120 120" style="width:.8in;height:.8in"><circle r="58" fill="${[C.tSun, C.tSky, C.tTomato, C.tGrass, C.tPlum, C.tSky, C.tSun][i]}"/><use href="#a-${a}" transform="scale(.8)"/></svg>`).join('')}</div>
+    <div style="display:flex;justify-content:space-between">${['basket', 'blocks', 'ball', 'book', 'cup', 'pot', 'box'].map((a, i) => `<svg class="scene" viewBox="-60 -60 120 120" style="width:.8in;height:.8in"><circle r="58" fill="${[C.tSun, C.tSky, C.tTomato, C.tGrass, C.tPlum, C.tSky, C.tSun][i]}"/><use href="#a-${a}" transform="scale(.8)"/></svg>`).join('')}</div>
   </div>` });
 }
 
@@ -307,7 +353,7 @@ function bandOpener(b) {
     <div class="display" style="font-size:96pt;line-height:.9">${b.label}</div>
     <div class="display" style="font-size:20pt;margin-top:.06in">${b.long}</div>
     <div class="spacer"></div>
-    <svg viewBox="80 110 440 420" style="width:5in;height:auto">${SCENES[b.key]()}</svg>
+    <svg class="scene" viewBox="80 110 440 420" style="width:5in;height:auto">${SCENES[b.key]()}</svg>
     <div class="spacer"></div>
     <div class="display" style="font-size:22pt;max-width:5in">${esc(b.title)}</div>
     <div class="spacer" style="flex:.4"></div>
@@ -329,8 +375,10 @@ function glancePage(b) {
     </div>
     <h2>In this chapter</h2>
     <div style="columns:2;column-gap:.3in;font-size:9.6pt;margin-top:.06in">
-      ${list.map(p => `<div style="display:flex;gap:.08in;align-items:center;padding:.035in 0;break-inside:avoid;border-bottom:1px solid var(--line)"><span class="chipn" style="background:${col.t};margin:0">${p.n}</span><span style="flex:1">${esc(p.t)}</span><span class="small">${esc(p.age)}</span></div>`).join('')}
+      ${list.map(p => `<div style="display:flex;gap:.08in;align-items:center;padding:.035in 0;break-inside:avoid;border-bottom:1px solid var(--line)"><span class="chipn" style="background:${col.t};margin:0">${p.n}</span><span style="flex:1">${esc(p.t)}</span><span class="small">${fromLabel(p.from).toLowerCase()}</span></div>`).join('')}
     </div>
+    <div class="spacer"></div>
+    <p class="small" style="margin-top:.12in;border-top:1px solid var(--line);padding-top:.08in">Every child grows at their own pace, and ages here are a guide, not a deadline. If you have questions about how your child is growing, moving or talking, ask your child’s doctor.</p>
   </div>` });
 }
 function rhead(b, a, z) {
@@ -407,16 +455,16 @@ function screensPage() {
       ${tip(1, 'Choose slow and simple.', 'Calmer shows with one story at a time are easier to talk about than fast, busy ones.')}
       ${tip(2, 'Background TV off.', 'When nobody is really watching, switch it off. It’s hard to talk and play over it.')}
       ${tip(3, 'Warn, then land.', '"Two more minutes, then Pillow Mountain!" Have the next play ready so the switch feels like a treat.')}
-      ${tip(4, 'Make some screen-free zones.', 'Meals, short car trips, bedrooms and the hour before bed are good places to start.')}
+      ${tip(4, 'Give screens a spot in the day.', 'A regular time, say while dinner cooks, that doesn’t grow or shrink with chores or behavior. Meals and the hour before bed make easy screen-free spots.')}
       ${tip(5, 'Video calls are different.', 'A call with Grandma is a real back-and-forth conversation. Help your child wave, show and tell.')}
-      ${tip(6, 'Park your own phone.', 'A basket by the door during play time helps everyone. Children notice where our eyes go.')}
+      ${tip(6, 'Give phones a spot too.', 'A basket by the door during play time makes it easier for everyone to join in.')}
       ${tip(7, 'Tomorrow is a new day.', 'A show while you shower or cook is ordinary life. Pick one play tomorrow and carry on.')}
     </div>
     <div class="card" style="background:${C.tSky}"><div class="eyebrow" style="color:var(--ink)">What the guidelines say</div>
       <p><b>World Health Organization (2019):</b> sedentary screen time is not recommended for babies under 1 or 1-year-olds; for 2- to 4-year-olds, no more than 1 hour a day, and less is better.</p>
       <p style="margin-top:.06in"><b>American Academy of Pediatrics (2016):</b> for children younger than 18 months, avoid screen media other than video-chatting; for ages 2 to 5, limit screen use to 1 hour a day of high-quality programming, ideally watched together.</p></div>
     <div class="spacer"></div>
-    <svg viewBox="0 0 600 170" style="width:5in;align-self:center"><rect x="40" y="150" width="520" height="14" rx="7" fill="${C.tPlum}"/><rect x="90" y="118" width="170" height="34" rx="17" fill="${C.plum}"/><g transform="translate(175 70) scale(.9) rotate(-8)"><use href="#tablet-sleeping"/></g><text x="228" y="40" font-family="Caveat" font-weight="700" font-size="34" fill="${C.ink}">z z z</text><g transform="translate(420 96) scale(.9)"><use href="#book-open"/></g><g transform="translate(330 118) scale(.55)"><use href="#a-blocks"/></g></svg>
+    <svg class="scene" viewBox="0 0 600 170" style="width:5in;align-self:center"><rect x="40" y="150" width="520" height="14" rx="7" fill="${C.tPlum}"/><rect x="90" y="118" width="170" height="34" rx="17" fill="${C.plum}"/><g transform="translate(175 70) scale(.9) rotate(-8)"><use href="#tablet-sleeping"/></g><text x="228" y="40" font-family="Caveat" font-weight="700" font-size="34" fill="${C.ink}">z z z</text><g transform="translate(420 96) scale(.9)"><use href="#book-open"/></g><g transform="translate(330 118) scale(.55)"><use href="#a-blocks"/></g></svg>
     <p class="small" style="text-align:center;margin-top:.04in">Even the tablet likes a rest. Sometimes.</p>
   </div>` });
 }
@@ -444,7 +492,7 @@ function plannerPage(colorKey = 'tomato', start = 'Monday', extra = false) {
         <span class="display" style="font-size:13pt;align-self:center;color:${colorKey === 'sun' ? C.ink : c}">${d}</span>
         <span style="display:flex;align-items:flex-end;padding-bottom:.06in;padding-right:.1in">${fld(`${id}-${i}-n`)}</span><span style="display:flex;align-items:flex-end;padding-bottom:.06in;padding-right:.14in">${fld(`${id}-${i}-play`)}</span><span style="display:flex">${fld(`${id}-${i}-best`)}</span></div>`).join('')}
     </div>
-    <p class="small" style="margin-top:.1in">Tip: plan three plays a day at most. Leave room for boredom, naps and the unexpected.${extra ? ' Type into the lines in any free PDF reader, or print and write.' : ' A Sunday-start version comes with your free bonus.'}</p>
+    <p class="small" style="margin-top:.1in">Tip: plan three plays a day at most. Leave room for boredom, naps and the unexpected.${extra ? ' Type into the lines in free Adobe Acrobat Reader, or print and write.' : V.extras ? ' More planners, with Monday and Sunday starts, are at the back of this file.' : ' A Sunday-start version comes with your free bonus.'}</p>
   </div>` });
 }
 function sourcesPage() {
@@ -459,10 +507,10 @@ function sourcesPage() {
     <p class="small" style="margin-top:.1in">These sources describe links (associations) found in research and public-health guidance. They are not claims about any single child, and nothing in this book is a treatment or a promise of any result.</p>
     <div class="card" style="background:${C.tGrass};margin-top:.2in">
       <h2>How these plays were chosen</h2>
-      <p>Every play uses everyday things, takes ten minutes or less to set up, and was checked against the rules on the "Safety first" page: a grown-up right there, the toilet-paper tube test for under-3s, no balloons, no long cords or strings, water always supervised and no choking-risk foods. Each one comes with something to say, because the talk is the point.</p>
+      <p>Every play uses everyday things, takes ten minutes or less to set up, and follows the rules on the "Safety first" page: a grown-up right there, the toilet-paper tube test for under-3s, no balloons, no long cords or strings, water always supervised and no choking-risk foods. Each one comes with something to say, because the talk is the point.</p>
     </div>
     <div class="spacer"></div>
-    <svg viewBox="40 250 520 240" style="width:4.2in;align-self:center">${X.sceneCover()}</svg>
+    <svg class="scene" viewBox="40 250 520 240" style="width:4.2in;align-self:center">${X.sceneCover()}</svg>
     <div class="spacer"></div>
     <div class="card" style="background:${C.wash}">
       <h2>About Play Before Pixels</h2>
@@ -488,7 +536,7 @@ function bonusPage() {
       <p class="small" style="margin-top:.08in">We only ask for your email and your child’s birth month and year, never a name. Unsubscribe anytime.</p></div>
     </div>
     <h2 style="margin-top:.32in;margin-bottom:.12in">What’s next from Play Before Pixels</h2>
-    <div class="grid3">${next.map(([t, d, a, bg]) => `<div class="card" style="background:${bg};text-align:center"><svg viewBox="-60 -60 120 120" style="width:1in;height:1in"><circle r="58" fill="#FFFFFF"/><use href="#a-${a}" transform="scale(.8)"/></svg><div class="display" style="font-size:13pt;margin:.06in 0 .04in">${t}</div><p style="font-size:9pt">${d}</p></div>`).join('')}</div>
+    <div class="grid3">${next.map(([t, d, a, bg]) => `<div class="card" style="background:${bg};text-align:center"><svg class="scene" viewBox="-60 -60 120 120" style="width:1in;height:1in"><circle r="58" fill="#FFFFFF"/><use href="#a-${a}" transform="scale(.8)"/></svg><div class="display" style="font-size:13pt;margin:.06in 0 .04in">${t}</div><p style="font-size:9pt">${d}</p></div>`).join('')}</div>
     <div class="spacer"></div>
     <p class="small" style="text-align:center">Find them all at playbeforepixels.com</p>
   </div>` });

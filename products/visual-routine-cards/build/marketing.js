@@ -82,7 +82,7 @@ const stats = [
   [`${N}`, 'picture cards', `${NY} for ages 0–5 (feelings, plan words and screens cards for all ages) and ${NB} big-kid cards for 5–12.`, C.tomato, C.tTomato],
   ['6', 'chart layouts', 'Strips, first–then board, morning, bedtime and Today boards, plus big-kid checklists.', C.sky, C.tSky],
   ['4', 'colorways', 'Rainbow, Soft and Navy, plus Simple in a separate low-ink file.', C.grass, C.tGrass],
-  ['✎', 'fillable', 'Type labels, chart titles, names and jobs in free Adobe Acrobat Reader.', C.plum, C.tPlum],
+  ['Aa', 'fillable', 'Type labels, chart titles, names and jobs in free Adobe Acrobat Reader.', C.plum, C.tPlum],
   ['+', 'extras', 'Second copies of busy cards, blank, word-free and photo-frame cards, storage labels.', '#B98200', C.tSun],
   ['2', 'guide pages', 'Set up in 2 minutes, talk tips, use by age, laminating and safety.', C.ink, C.wash],
 ];
@@ -149,6 +149,7 @@ L.push(`<div class="li" style="background:${C.tTomato}">
   <div style="position:absolute;left:60px;right:60px;top:640px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
     ${[['Fillable fields', 'Card labels, chart titles, names, big-kid jobs and tick boxes.'], ['Word-free + blank', `All ${N} pictures with no words, plus draw-it cards.`], ['Photo cards', 'Glue a photo of your own front door, car seat or grandma.']].map(([h, p]) => `<div style="background:#fff;border-radius:22px;padding:20px 22px"><b style="font-family:'Bricolage Grotesque';font-size:25px;display:block">${h}</b><span style="font-size:17px;line-height:1.4;display:block;margin-top:6px">${p}</span></div>`).join('')}
   </div>
+  <div style="position:absolute;left:60px;right:60px;top:800px;display:flex;justify-content:space-between">${[card(byId('bath-bath-time'), 'rainbow', { blankLabel: true }), card(byId('play-ball'), 'rainbow', { blankLabel: true }), card(byId('outside-park'), 'rainbow', { blankLabel: true }), card({ id: 'p', cat: 'bedtime', art: null, label: '' }, 'rainbow', { photo: true, blankLabel: true }), card({ id: 'b', cat: 'reading', art: null, label: '' }, 'rainbow', { blankArt: true, blankLabel: true })].map(h => `<div style="width:150px;height:150px"><div style="transform:scale(.682);transform-origin:top left">${h}</div></div>`).join('')}</div>
 </div>`);
 // 10 how to download + files and sizes (always last)
 const dl = (starter) => `<div class="li" style="background:#fff">
@@ -189,6 +190,10 @@ LS.push(`<div class="li" style="background:${C.wash}">
 LS.push(`<div class="li" style="background:${C.tPlum}">
   <div style="position:absolute;left:60px;top:52px;width:410px"><div class="k">See what comes next</div><h1 style="font-size:58px;margin-top:8px">Move each card to “all done”</h1><p style="font-size:21px;margin-top:16px;font-weight:700;line-height:1.4">Your child sees the plan, points to it and moves it. You get an easy question: “What's next on your chart?”</p>
   <div style="margin-top:26px;background:#fff;border-radius:20px;padding:18px 20px;font-size:18px;line-height:1.4"><b style="display:block;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#C8431F;margin-bottom:4px">Talk tip on every chart</b>Pause and wait. Point to the next card and let them tell you what comes next.</div></div>
+  <div style="position:absolute;left:60px;top:520px;width:390px;height:330px;border-radius:26px;background:${C.tGrass};border:3px dashed ${C.grass}">
+    <div style="position:absolute;left:0;right:0;top:18px;text-align:center;font-family:Fredoka,sans-serif;font-weight:600;font-size:34px;color:${C.ink}">All done!</div>
+    ${scaled(cd('bath-bath-time'), 22, 100, .76, -6, 'shadow')}${scaled(cd('bedtime-pajamas'), 202, 104, .76, 6, 'shadow')}
+  </div>
   ${scaled(`<div class="paper">${filledChart(bld.chartRoutine('rainbow', 'morning'), ['morning-wake-up', 'morning-potty', 'morning-get-dressed', 'meals-breakfast', 'morning-brush-teeth', 'morning-shoes-on', 'morning-coat-on', 'morning-pack-my-bag', 'screens-play-first'])}</div>`, 500, 80, .6, 2)}
 </div>`);
 LS.push(dl(true));

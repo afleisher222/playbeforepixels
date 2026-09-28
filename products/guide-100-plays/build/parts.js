@@ -18,6 +18,7 @@ const SUB = 'for Ages 0–5';
 const COPY = '© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.';
 const FONTS = '../../brand/fonts/fonts.css';
 const W = '#FFFFFF';
+const VERSION = 'Version 1.0 · September 2026'; // CUSTOMER-VOICE rule 7: bump on every change and tell past buyers
 
 const BC = { // band colors
   b0: { c: C.sky, t: C.tSky, fg: W, name: 'sky' },
@@ -44,7 +45,7 @@ function qrData() {
 }
 function qrSvg(size = 100, fg = C.ink) {
   const { n, d } = qrData();
-  return `<svg viewBox="-2 -2 ${n + 4} ${n + 4}" width="${size}" height="${size}" shape-rendering="crispEdges" role="img" aria-label="QR code to ${BONUS}"><rect x="-2" y="-2" width="${n + 4}" height="${n + 4}" fill="${W}"/><path d="${d}" fill="${fg}"/></svg>`;
+  return `<svg class="qr" viewBox="-2 -2 ${n + 4} ${n + 4}" width="${size}" height="${size}" shape-rendering="crispEdges" role="img" aria-label="QR code to ${BONUS}"><rect x="-2" y="-2" width="${n + 4}" height="${n + 4}" fill="${W}"/><path d="${d}" fill="${fg}"/></svg>`;
 }
 
 // ---------------------------------------------------------------- scenes (600 x 600 viewBox)
@@ -102,35 +103,39 @@ const SCENES = { b0: sceneBaby, b1: sceneBubbles, b2: scenePuddle, b3: sceneRock
 // ---------------------------------------------------------------- small UI pieces
 const ico = (id, cls = '', size = '1em') => `<svg class="ico ${cls}" width="${size}" height="${size}" aria-hidden="true"><use href="#u-${id}"/></svg>`;
 const PREP = ['No prep', '2-min prep', '10-min prep'];
+const TIMEL = { 5: 'Plays about 5 min', 10: 'Plays about 10 min', 20: 'Plays 20+ min' };
+const fromLabel = m => m === 0 ? 'From birth' : `From ${m} mo`;
 const MESS = ['No mess', 'A little mess', 'Messy'];
 function drops(level) {
   return `<span class="drops">${[0, 1].map(i => ico(i < level ? 'drop' : 'drop-o')).join('')}</span>`;
 }
 function artDisc(p, size = 1.45) {
   const b = BC[p.band];
-  return `<div class="disc" style="width:${size}in;height:${size}in"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="${b.t}"/><use href="#a-${p.art}" transform="scale(.82)"/></svg><span class="badge" style="background:${b.c};color:${b.fg}">${pad2(p.n)}</span></div>`;
+  return `<div class="disc" style="width:${size}in;height:${size}in"><svg class="scene" viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="${b.t}"/><use href="#a-${p.art}" transform="scale(.82)"/></svg><span class="badge" style="background:${b.c};color:${b.fg}">${pad2(p.n)}</span></div>`;
 }
 function wherePills(p) { return p.where.filter(w => w !== 'move').slice(0, 2).map(w => WHERE[w]).join(' · ') + (p.where.includes('move') ? ' · Big energy' : ''); }
 
 function playCard(p) {
   const b = BC[p.band]; const m = MOVES[p.move];
   const mat = p.mat.length ? esc(p.mat.join(', ')) : '<i>Nothing but you</i>';
+  const hc = p.band === 'b2' ? C.ink : b.c;
   return `<article class="play" id="play-${p.n}">
     <div class="phead">
       ${artDisc(p)}
       <div class="ptitle">
-        <div class="kicker">Play ${p.n} <span class="agepill" style="background:${b.t}">${esc(p.age)}</span></div>
+        <div class="kicker">Play ${p.n} <span class="agepill" style="background:${b.t}">${fromLabel(p.from)}</span><span class="best">Best for ${esc(p.age)}</span></div>
         <h3>${esc(p.t)}</h3>
         <div class="meta">
           <span>${ico('clock')} ${PREP[p.prep]}</span>
           <span>${drops(p.mess)} ${MESS[p.mess]}</span>
+          <span>${ico('timer')} ${TIMEL[p.time]}</span>
           <span>${ico('pin')} ${wherePills(p)}</span>
         </div>
-        <div class="need">${ico('bag')}<span><b>You need:</b> ${mat}</span></div>
+        <div class="need">${ico('bag')}<span><b>You need:</b> ${mat}</span>${p.buy ? '' : `<span class="nbuy">${ico('home')} Nothing to buy</span>`}</div>
       </div>
     </div>
     <p class="how">${esc(p.how)}</p>
-    <p class="grow"><b style="color:${p.band === 'b2' ? C.ink : b.c}">Grow it:</b> ${esc(p.grow)}</p>
+    <div class="eh"><p><b style="color:${hc}">Make it easier:</b> ${esc(p.easy)}</p><p><b style="color:${hc}">Make it harder:</b> ${esc(p.grow)}</p></div>
     <div class="talk" style="background:${b.t}">${ico('talk', 'big')}<div><div class="tlab">Talk while you play <span>· ${m.name}</span></div><div class="tline">${esc(p.talk)}</div></div></div>
     <div class="safe">${ico('shield')}<span><b>Safety:</b> ${esc(p.safe)}</span></div>
   </article>`;
@@ -147,15 +152,15 @@ function ownCard(id, bandKey) {
       <div class="ptitle">
         <div class="kicker">Our own play <span class="agepill" style="background:${b.t}">age: ${fld(id + '-age', 'inl w1')}</span></div>
         <div class="lineh">${fld(id + '-title', 'big')}</div>
-        <div class="meta"><span>${ico('clock')}</span><span>${ico('check', 'tick')} No prep</span><span>${ico('check', 'tick')} 2 min</span><span>${ico('check', 'tick')} 10 min</span><span style="margin-left:.1in">${drops(0)}</span><span>${ico('check', 'tick')} None</span><span>${ico('check', 'tick')} A little</span><span>${ico('check', 'tick')} Messy</span></div>
+        <div class="meta"><span>${ico('clock')}</span><span>${ico('check', 'tick')} No prep</span><span>${ico('check', 'tick')} 2 min</span><span>${ico('check', 'tick')} 10 min</span><span style="margin-left:.1in">${drops(0)}</span><span>${ico('check', 'tick')} None</span><span>${ico('check', 'tick')} A little</span><span>${ico('check', 'tick')} Messy</span><span style="margin-left:.1in">${ico('timer')}</span><span>${ico('check', 'tick')} 5</span><span>${ico('check', 'tick')} 10</span><span>${ico('check', 'tick')} 20+ min</span></div>
         <div class="need">${ico('bag')}<span><b>You need:</b></span>${fld(id + '-need')}</div>
       </div>
     </div>
     <div class="lines3"><div class="tlab" style="color:#5A6478">How to play</div>${fld(id + '-how', 'multi', 3)}</div>
-    <div class="need"><span><b>Grow it:</b></span>${fld(id + '-grow')}</div>
+    <div class="need"><span><b>Easier:</b></span>${fld(id + '-easy')}<span style="margin-left:.1in"><b>Harder:</b></span>${fld(id + '-grow')}</div>
     <div class="talk" style="background:${b.t}">${ico('talk', 'big')}<div style="flex:1"><div class="tlab">Talk while you play</div>${fld(id + '-talk')}</div></div>
     <div class="safe">${ico('shield')}<span><b>Safety:</b></span>${fld(id + '-safe')}</div>
   </article>`;
 }
 
-module.exports = { OUT, SLUG, BONUS, TITLE, SUB, COPY, FONTS, W, BC, band, esc, pad2, qrSvg, SCENES, sceneCover, ico, PREP, MESS, drops, artDisc, playCard, ownCard, fld, wherePills };
+module.exports = { OUT, SLUG, BONUS, TITLE, SUB, COPY, FONTS, W, BC, band, esc, pad2, qrSvg, SCENES, sceneCover, ico, PREP, MESS, TIMEL, fromLabel, drops, artDisc, playCard, ownCard, fld, wherePills, VERSION };

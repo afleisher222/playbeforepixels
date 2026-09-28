@@ -254,6 +254,7 @@ function noCutA(P, S, b, half, n, total) {
     <p class="nc-safe">${K.shield(C.grass, 14)}<span><b>With a grown-up, every time.</b> ${esc(b.safe)} Card-specific safety notes are on each card.</span></p></div>
     <div class="nc-cols"><span>Play</span><span>How to play</span><span>Tired day · easier · harder</span></div>
     <div class="nc-list">${rows}</div>
+    <p class="small">Start ages are a guide, never a deadline: every child grows at their own pace. Questions about your child’s development? Your child’s doctor is a good place to start.</p>
   </div>
   ${foot(P, n, total)}
 </section>`;
@@ -300,7 +301,7 @@ function labelsPage(P, S, n, total) {
   <div class="pin">
     <p class="kick dark">Cut-out labels</p>
     <h2 class="ptitle">Where the cards live</h2>
-    <p class="lede">Cards get used when they’re already in the room. Split the deck into four piles, cut out these labels, and tape each one to a jar, an envelope or a zip bag.</p>
+    <p class="lede">Cards get used when they’re already in the room. Split the deck into four piles, cut out these labels (a grown-up cuts and keeps the pieces), and tape each one to a jar, an envelope or a zip bag.</p>
     <div class="labels">${labels}</div>
     <h3 class="h3">Our talk-along week</h3>
     <p class="small" style="margin:-4px 0 10px">Check a box each time a card gets asked. Start on any day. Aim for a few checks, not a full grid.</p>

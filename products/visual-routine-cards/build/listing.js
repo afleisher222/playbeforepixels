@@ -1,107 +1,148 @@
-// Writes ../listing.json and ../listing-starter.json from the live card data.
+// Writes ../listing.json and ../listing-starter.json from the live card data and page counts.
+// Checks every length limit in brand/BRAND.md and Etsy's title/tag limits, and fails on banned words.
 const fs = require('fs'); const path = require('path');
 const { CARDS } = require('./cards.js');
 const m = require('./manifest.json');
-const N = CARDS.length, NY = CARDS.filter(c => !c.cat.startsWith('bk-')).length, NB = N - NY;
+const N = CARDS.length, NY = CARDS.filter(c => !c.cat.startsWith('bk-')).length, NB = N - NY, NS = CARDS.filter(c => c.starter).length;
+const D = m.docs;
+const PC = D['full-store-color-letter'].pages, PL = D['full-store-low-letter'].pages, PS = D['starter-store-color-letter'].pages, PSL = D['starter-store-low-letter'].pages;
 const words = s => s.split(/\s+/).filter(Boolean).length;
+// Fees are estimates [VERIFY current Etsy and store fees before launch]: Etsy $0.20 listing + 6.5% transaction + 3% + $0.25 processing (US);
+// own store 2.9% + $0.30 card processing. Digital goods: no unit cost.
+const net = p => ({
+  etsy: { net_after_fees: +(p - 0.20 - p * 0.065 - (p * 0.03 + 0.25)).toFixed(2), margin_pct: Math.round(100 * (p - 0.20 - p * 0.065 - (p * 0.03 + 0.25)) / p) },
+  own_store: { net_after_fees: +(p - (p * 0.029 + 0.30)).toFixed(2), margin_pct: Math.round(100 * (p - (p * 0.029 + 0.30)) / p) },
+});
 const common = {
   bonus_url: 'playbeforepixels.com/bonus/visual-routine-cards',
-  compliance_notes: 'No health, medical, therapy or outcome claims anywhere in the product, listing or keywords; the words autism, ADHD, therapy, speech therapy and SLP are deliberately not used, even though competitors use them (brand/BRAND.md rule 1; marketing/DEMAND-CHECK.md section 4.12). Positioned as parent education: "helps little ones see what comes next." No real brands, apps, devices, schools or companies are named or shown; the tablet is a generic, sleeping tablet (rule 2). Only one citation is used, the allowed WHO 2019 under-5 guideline, worded as in BRAND.md (rule 5). Talk ideas use plain words only, no trademarked program names (rule 6). Child safety (rule 4): every card is 2.2 in / 5.6 cm square (larger than the 1.75 in minimum set for this product and the ~1.25 in toilet-paper-tube rule of thumb) on both Letter and A4; the guide includes an adult-supervision note, a print-at-100% instruction, a printed 2.2 in size-check square, and warnings about velcro dots, laminating scraps and small magnets; no balloons, no cords, no choking-hazard foods pictured (foods shown: banana, cereal, toast, pasta, broccoli, sandwich, crackers). Diverse cast reused from the board book. Copyright line on every page: "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC." The final page states that illustrations and text were created with AI assistance and edited by Play Before Pixels. Digital download only: no inventory, delivered instantly by the marketplace.',
+  bonus_offer: 'Free on the bonus page (email plus optional child birth month/year; never names): seasonal routine cards (holidays, back to school, travel day), one short age-matched play idea a month, and, for own-store buyers of the Complete Set, the Canva-ready PNG set in canva-png/. Linked only from the own-store edition (QR + short link); Etsy files carry no URL or QR.',
+  amazon_route: 'none-with-reason',
+  amazon_route_notes: 'Cut-apart, laminated picture cards with velcro dots do not work as a bound KDP paperback: the cards would have to be cut out of a book, which breaks the under-3 "grown-up keeps the pieces" rule and ruins the binding. The write-in big-kid checklists feed the planned KDP "Play First, Then Screens" checklist journal (products/play-first-family-kit, amazon_route kdp-activity-edition) instead. Revisit a print-on-demand card deck only after this printable sells (DEMAND-CHECK section 4, rule 8), and check it against the chosen printer\'s current template before upload.',
+  price_floor_usd: 3.0,
+  list_price_usd: null,
+  price_history: [],
+  editable: 'Fillable text fields (free Adobe Acrobat Reader, computer or phone) are merged into every Color and Low-ink file: card labels on blank, word-free and photo-frame cards; chart titles and names; the "When every card is done, we:" line; Today board "Who I\'ll see today"; big-kid checklist jobs, week, name and screen spot, plus tick boxes. Colors and pictures: not editable. Typed text shows in a standard font (Helvetica), not the brand fonts.',
+  ai_disclosure: {
+    etsy: 'Answer Etsy\'s creation questions truthfully: designed by Play Before Pixels with AI assistance (layouts, illustrations and draft text generated with Claude Code from the brand\'s own symbol library), then reviewed, edited and selected by the founder. Set the AI flag if Etsy\'s form asks [VERIFY current Etsy wording].',
+    own_store: 'The last page of every file states: "Illustrations and text created with AI assistance and edited by Play Before Pixels."',
+    social: 'Apply the platform\'s AI label to any post that uses these images.',
+  },
+  compliance_notes: 'HARD RULES: no health, medical, therapy or outcome claims anywhere in the files, listings or keywords; the words autism, ADHD, therapy, speech therapy and SLP are not used, even though competitors use them (BRAND rule 1, "Autism searches"; DEMAND-CHECK 4.12). Positioned as parent education: "helps little ones see what comes next." No real brands, apps, devices, schools or companies are named or shown; the tablet is a generic sleeping tablet shown as a neutral object (rule 2). One citation only, the allowed WHO 2019 under-5 guideline (rule 5). Talk ideas in plain words, no trademarked program names (rule 6). CHILD SAFETY (rule 4): every card is 2.2 in / 5.6 cm square and the storage labels are 1.62 in tall, measured in the rendered CSS by build/check.js (build fails under 1.5 in); cut-piece pages print "Grown-up keeps the pieces"; no velcro dots for under-3s (lay-on-top, All done pocket or page-protector route); every chart page prints "Ages 3+: check dots before each play; remove any that lift"; a printed 2.2 in size-check square; adult supervision, magnet, laminating-scrap and blind-cord notes; no balloons, cords, or choking-hazard foods pictured. SCREENS (CUSTOMER-VOICE rule 26): screens have a fixed spot in the day that never grows or shrinks with jobs or behavior; the big-kid checklist line reads "Screens have their own spot in our day: ___. Same spot every day, list or no list."; "What we do next" and "5 more minutes" cards are included. No-guilt wording; no fear words. Listing wording: "Every card follows our published safety rules" (never "safety-checked" or "certified"). HONEST PRICING (BRAND "Honest pricing", gate #18): plain everyday price, no was/compare-at price, no standing sale. CHANNEL EDITIONS (gate #16): Etsy files in etsy-upload/ contain no playbeforepixels.com URL, short link or QR code (build/check.js fails if they do); own-store files carry the website in every footer and the bonus QR. Copyright line and "Version 1.0 · September 2026" on every page. Logo from brand/logo only (wordmark in footers and headers, horizontal lockup on covers). Low-ink files: white backgrounds, no tinted grounds, line art children can color. PDFs are tagged and bookmarked; small accent text uses a darkened tomato (#C8431F) for 4.5:1 contrast. Diverse cast reused from the board book. Digital download only: no inventory.',
 };
 const full = {
   slug: 'visual-routine-cards',
-  title: '200+ Visual Routine Cards for Kids, Editable Morning & Bedtime Chart, Toddler Daily Schedule, First Then Board, Printable PDF',
-  subtitle: `${N} picture cards for ages 0–5 and 5–12, 6 chart layouts, 4 colorways. Helps little ones see what comes next.`,
-  format: `Digital download (5 files): Complete PDF US Letter (${m.letter.full} pages, bookmarked), Complete PDF A4 (${m.a4.full} pages), Editable PDFs Letter + A4 (${m.letter.editable} pages each, typeable form fields, zip), Canva-ready card PNGs (zip), Canva-ready chart PNGs (zip).`,
-  trim: 'US Letter 8.5 x 11 in and A4 210 x 297 mm, 0.5 in margins, no bleed (home printing). Every card is 2.2 x 2.2 in (5.6 cm) on both paper sizes.',
-  pages: m.letter.full,
-  ages: '0–5 and 5–12 (feelings and plan-word cards for all ages)',
+  title: `${N} Visual Routine Cards for Ages 0–12: Morning, Meals, Play and Bedtime Charts`,
+  etsy_title: `${N} Visual Routine Cards, Editable Toddler Daily Schedule, Morning & Bedtime Routine Chart, First Then Board, Kids Checklist PDF`,
+  subtitle: `${N} picture cards for ages 0–5 and 5–12, 6 chart layouts, 4 colorways, fillable PDF. Helps little ones see what comes next.`,
+  format: `Digital download, 5 plain PDFs (no zip): START HERE + Color US Letter (${PC} pages) + Color A4 (${PC} pages) + Low-ink US Letter (${PL} pages) + Low-ink A4 (${PL} pages). Fillable fields for free Adobe Acrobat Reader merged into every Color and Low-ink file; bookmarked; tagged. Own-store bonus: Canva-ready PNGs (canva-png/).`,
+  trim: 'US Letter 8.5 × 11 in and A4 210 × 297 mm, 0.5 in margins, no bleed (home printing). Two chart layouts are landscape pages. Every card is 2.2 × 2.2 in (5.6 cm) on both paper sizes.',
+  pages: PC,
+  pages_breakdown: `Color file, ${PC} pages = 66 card pages (Rainbow, Soft and Navy: 20 picture-card pages + 1 second-copies page + 1 blank-card page each) + 21 word-free and photo-frame card pages + 63 chart pages (per colorway: 11 ready-made layouts and checklists + 10 blank fillable) + 7 guide pages (cover, 2-page grown-up guide, use by age, print guide, laminating and safety, card index) + 2 extras pages (Today markers and All done pocket, storage labels) + 1 thank-you page. Low-ink file, ${PL} pages: the same in the Simple colorway only. Letter and A4 counts are never added together.`,
+  ages: '0–5 and 5–12 (feelings, plan words and the screens cards for all ages)',
   price_usd: 9.50,
-  price_notes: 'List at $9.50 and run a standing 30–40% sale (sells at about $5.70–$6.65; launch sale about $6.50) per marketing/DEMAND-CHECK.md sections 1, 3 and 4. The 60-card Starter Set is a second listing at $4.50 (listing-starter.json), the entry rung of the ladder. Later: include in a Play-First Family Kit bundle at 10–25% off the sum of its parts. Re-check competitor prices on the live Etsy pages before launch [VERIFY].',
-  short_description: `${N} printable picture cards and 6 routine charts for ages 0–12. Editable, US Letter + A4, 4 colorways. Helps little ones see what comes next.`,
-  long_description: `Mornings, meals, bath and bedtime go more smoothly when little ones can see what comes next. This printable set turns your family's everyday rhythm into big, friendly pictures your child can point to, carry and move to "All done."\n\nInside are ${N} picture cards: ${NY} for ages 0–5 (morning, meals, play, outside, reading together, bath, bedtime, helping jobs, out and about, plan words and a feelings check-in) and ${NB} big-kid cards for ages 5–12 (mornings, after school, evenings and family jobs). A "Play first / Screens later" pair uses a plain, generic tablet, with no brands and no apps.\n\nChoose from 6 chart layouts: vertical and horizontal strips, a first–then board, morning and bedtime charts, and a Today board with Monday or Sunday start. Big kids get weekly checklists, pre-filled or blank.\n\nEverything comes in 4 colorways, including an ink-saving white version, in US Letter and A4. Make it yours with blank cards, a typeable PDF for free Adobe Acrobat Reader, and Canva-ready PNGs.\n\nA short parent guide shows how to use the cards at each age, with an easy talk tip on every chart, plus laminating and velcro tips. Every card is 2.2 in (5.6 cm), sized for little hands.\n\nInstant digital download. No physical item ships.`,
+  price_notes: `Everyday price $9.50 (DEMAND-CHECK section 1). Honest value line: ${N} cards, about 4¢ each. Under BRAND.md "Honest pricing" (16 CFR 233.1), which overrides DEMAND-CHECK rule 2, there is NO standing 30–40% sale and no "was" or crossed-out price: the item has never been offered at a higher price. Show $9.50 plainly. Genuine, dated promotions (for example Black Friday) are allowed only after the listing has sold openly at $9.50 for a substantial period; record the dates in price_history. The 60-card Starter Set is a second listing at $4.50 (listing-starter.json), the entry rung of the ladder. Later: include in a Routine Cards + Family Kit pair at 10–25% off the sum of its parts. Re-check competitor prices on the live Etsy pages before launch [VERIFY].`,
+  channel_net: net(9.50),
+  short_description: `${N} printable routine picture cards and 6 charts for ages 0–12. Fillable PDF, Color and Low-ink, US Letter + A4. Helps little ones see what comes next.`,
+  long_description: `Mornings, meals, bath and bedtime flow better when little ones can see what comes next. This printable set turns your family's everyday rhythm into big, friendly pictures your child can point to, carry and move to "All done."\n\nInside are ${N} picture cards: ${NY} for ages 0–5 and all ages (morning, meals, play, outside, reading together, bath, bedtime, helping jobs, out and about, plan words and a feelings check-in) and ${NB} big-kid cards for ages 5–12. A "Play first / Screens later" pair uses a plain, generic tablet, and "What we do next" and "5 more minutes" cards help with the switch.\n\nChoose from 6 chart layouts: vertical and horizontal strips, a first–then board, morning and bedtime charts and a Today board, plus big-kid weekly checklists. Every chart comes ready-made and blank, with Monday or Sunday starts.\n\nMake it yours: type labels, titles and jobs in free Adobe Acrobat Reader, or use the word-free, blank and photo-frame cards. Busy cards come twice. Rainbow, Soft and Navy are in the Color file; Simple line art is in the Low-ink file.\n\nA 2-page grown-up guide covers setup in 2 minutes, easy talk tips and use by age. Every card follows our published safety rules.\n\nInstant digital download. No physical item ships.`,
   bullets: [
-    `${N} picture cards: ${NY} for ages 0–5 plus ${NB} big-kid cards for ages 5–12, including a feelings check-in and a Play first / Screens later pair`,
-    '6 chart layouts: vertical and horizontal strips, first–then board, morning chart, bedtime chart and a Today board (Monday or Sunday start), plus big-kid weekly checklists',
-    '4 colorways (Rainbow, Soft, Navy, ink-saving Simple) in US Letter and A4; every card stays 2.2 in (5.6 cm)',
-    'Make it yours: blank cards, a typeable editable PDF for free Adobe Acrobat Reader, and Canva-ready PNGs of every card and chart',
-    'Parent guide by age with a talk tip on every chart, plus laminating, velcro and safety tips'
+    `${N} cards on ${PC} pages (Color file) = 66 card pages + 21 word-free and photo pages + 63 chart pages + 10 guide and extras pages; about 4¢ a card; about 20 minutes to prep one routine, then reusable`,
+    `${NY} cards for ages 0–5 and all ages, ${NB} big-kid cards for 5–12, second copies of busy cards, plus "Play first / Screens later", "What we do next" and "5 more minutes"`,
+    '6 chart layouts (vertical and horizontal strips, first–then, morning, bedtime, Today board) and big-kid checklists, each ready-made and blank, Monday or Sunday start',
+    'Fillable in free Adobe Acrobat Reader: card labels, chart titles, names and jobs (colors and pictures are not editable); word-free, blank and photo-frame cards too',
+    '4 colorways in a Color file and a Low-ink file, US Letter and A4; cards stay 2.2 in (5.6 cm); grown-up guide, laminating tips and safety notes included'
   ],
   keywords: ['visual routine cards', 'toddler routine chart', 'morning routine chart kids', 'bedtime routine cards', 'daily schedule printable', 'first then board', 'kids checklist printable'],
   etsy_tags: ['visual routine cards', 'toddler routine', 'morning routine', 'bedtime routine', 'daily schedule kids', 'first then board', 'visual schedule', 'kids chore chart', 'routine chart', 'preschool printable', 'toddler printable', 'kids checklist', 'editable chart'],
-  seo_title: '200+ Visual Routine Cards for Kids 0–12 | Play Before Pixels',
-  seo_description: `${N} printable routine cards and 6 charts for toddlers and big kids. Editable, US Letter and A4, 4 colorways. Helps little ones see what comes next.`,
-  alt_text: 'Cover of 200+ Visual Routine Cards: a warm yellow panel with the title in navy and tomato, and five picture cards fanned below, including Brush teeth, Blocks, Sleep, Play first and Screens later.',
+  seo_title: `${N} Visual Routine Cards for Kids 0–12 | Play Before Pixels`,
+  seo_description: `${N} printable routine cards and 6 charts for toddlers and big kids. Fillable PDF, Color and Low-ink, US Letter and A4. Helps little ones see what comes next.`,
+  alt_text: 'Cover of 200+ Visual Routine Cards: a warm yellow panel with the Play Before Pixels logo, the title in navy and tomato, and five picture cards fanned below: Brush teeth, Blocks, Sleep, Play first and Screens later.',
+  listing_images: ['preview/listing-images/01-cover.png', 'preview/listing-images/02-whats-inside.png', 'preview/listing-images/03-grown-up-guide.png', 'preview/listing-images/04-ages-0-5-cards.png', 'preview/listing-images/05-ages-5-12-cards.png', 'preview/listing-images/06-six-chart-layouts.png', 'preview/listing-images/07-play-first-screens-later.png', 'preview/listing-images/08-four-colorways.png', 'preview/listing-images/09-make-it-yours.png', 'preview/listing-images/10-how-to-download.png'],
   channels: [
-    'Etsy (digital download listing; upload the 5 files in etsy_files)',
-    'Play Before Pixels website shop (instant digital download through the storefront in commerce/)',
-    'Later: inside a Play-First Family Kit bundle and the holiday gift bundle (marketing/DEMAND-CHECK.md section 2)',
+    'Etsy (digital download; upload the 5 files in etsy-upload/complete/, which carry no URL or QR code; listing images are rendered from the Etsy edition)',
+    'Play Before Pixels website shop (instant download: START-HERE.pdf and the 4 PDFs in the product root, which carry the website and bonus QR; canva-png/ on the bonus page)',
+    'Later: a Routine Cards + Play-First Family Kit pair and the holiday gift bundle (DEMAND-CHECK section 2)',
     'Not TPT or school channels: school-facing listings are on hold until employment counsel answers (marketing/BLIND-SPOTS.md)'
   ],
-  etsy_files: [
-    'visual-routine-cards.pdf (Complete, US Letter)',
-    'visual-routine-cards-a4.pdf (Complete, A4)',
-    'downloads/visual-routine-cards-editable-pdfs.zip (Editable PDFs, Letter + A4)',
-    'downloads/visual-routine-cards-canva-cards.zip (card PNGs, art-only PNGs, blank frames)',
-    'downloads/visual-routine-cards-canva-charts.zip (chart and checklist backgrounds, Letter + A4)'
-  ],
-  listing_images: ['preview/listing-images/01-cover.png', 'preview/listing-images/02-whats-inside.png', 'preview/listing-images/03-ages-0-5-cards.png', 'preview/listing-images/04-ages-5-12-cards.png', 'preview/listing-images/05-six-chart-layouts.png', 'preview/listing-images/06-in-use-bedtime-chart.png', 'preview/listing-images/07-play-first-screens-later.png', 'preview/listing-images/08-four-colorways.png', 'preview/listing-images/09-editable-make-it-yours.png', 'preview/listing-images/10-how-to-use-sizes-formats.png'],
-  next_products: ['play-first-family-kit', 'im-bored-play-cards', 'toddler-busy-book'],
-  starter_tier: { listing: 'listing-starter.json', price_usd: 4.50, cards: 60 },
+  files: {
+    own_store: ['START-HERE.pdf', `visual-routine-cards.pdf (Color, US Letter, ${PC} pages)`, 'visual-routine-cards-a4.pdf (Color, A4)', `visual-routine-cards-low-ink.pdf (Low-ink, US Letter, ${PL} pages)`, 'visual-routine-cards-low-ink-a4.pdf (Low-ink, A4)', 'canva-png/ (bonus page only)'],
+    etsy_files: ['etsy-upload/complete/1-START-HERE.pdf', 'etsy-upload/complete/2-Color-US-Letter.pdf', 'etsy-upload/complete/3-Color-A4.pdf', 'etsy-upload/complete/4-Low-Ink-US-Letter.pdf', 'etsy-upload/complete/5-Low-Ink-A4.pdf'],
+    source: 'source.html (Color, US Letter, own-store edition). Every file is generated by build/make-all.sh from build/build.js, cards.js, card.js and art.js.',
+  },
+  shareable_piece: 'The finished morning chart or Today board on the fridge: every page footer carries the small Play Before Pixels wordmark (plus the website on own-store files), so a photo of a filled chart shows the brand without extra stickers.',
+  next_products: ['play-first-family-kit', 'bored-play-cards', 'toddler-busy-book'],
+  starter_tier: { listing: 'listing-starter.json', price_usd: 4.50, cards: NS },
   ...common,
   human_todo: [
-    'Rewrite the welcome page text (build/build.js, marked FOUNDER-EDIT) and the talk tips in your own words, and pick or reorder any cards you want changed; commit each draft so your authorship is provable (brand/BRAND.md "Human authorship")',
-    'Build the free bonus at playbeforepixels.com/bonus/visual-routine-cards (seasonal routine cards: holidays, back to school, travel day) with an email form that asks only for birth month and year; the QR code on the last page already points there',
-    'Print one page of cards and one chart on your own printer in both Letter and A4 at 100%, and measure the 2.2 in size-check square on page 6',
-    'Open the editable PDF in Adobe Acrobat Reader on a computer and on a phone, type a label and a checklist job, save, reopen and print',
-    'Import a few PNGs into a free Canva account to confirm the README steps',
-    'Create the Etsy listing: digital item, the 5 files in etsy_files, the 10 listing images in order, the title, 13 etsy_tags and description; set the $9.50 price with a 30–40% sale; recheck competitor prices on the live pages [VERIFY]',
-    'Create the $4.50 Starter Set listing from listing-starter.json and link the two listings to each other',
-    'Log the product in legal/protection/creation-records-log.md'
+    'Human authorship (BRAND.md): rewrite the welcome and grown-up guide text (build/build.js, marked FOUNDER-EDIT) and the talk tips in your own words; pick or reorder any cards; then run bash build/make-all.sh. Commit each draft and log it in legal/protection/creation-records-log.md.',
+    'Build the free bonus page at playbeforepixels.com/bonus/visual-routine-cards (email + optional child birth month/year, never names, privacy link): seasonal routine cards and the canva-png/ set. The QR code in the own-store files already points to https://playbeforepixels.com/bonus/visual-routine-cards.',
+    'Physical proof: print page 6 (size check) and one card page and one landscape chart on your own printer in Letter and A4 at 100%; the dashed square must measure 2.2 in (5.6 cm) and landscape pages must auto-rotate.',
+    'Fillable-field test: open 2-Color-US-Letter.pdf and 4-Low-Ink-US-Letter.pdf in free Adobe Acrobat Reader on a computer AND a phone, type a card label, a chart title and a checklist job, tick a box, save, reopen and print (CUSTOMER-VOICE rule 23).',
+    'Founder proof of the cover and page 1 (15–30 min) and commit your edits (CUSTOMER-VOICE rule 47).',
+    'Create the Etsy listing: digital item; upload the 5 files in etsy-upload/complete/ in order; the 10 listing images in order (the last one is "How to download"); etsy_title, 13 etsy_tags and long_description; set a plain $9.50 price with NO sale or compare-at price; answer the AI/creation questions per ai_disclosure; recheck competitor prices on the live pages [VERIFY]. Put the "use a browser, not the Etsy app" text in the automatic order message too.',
+    'Create the $4.50 Starter Set listing from listing-starter.json and link the two listings to each other.',
+    'Copy the 4 PDFs and START-HERE.pdf in the product root to the website shop.'
   ]
 };
 const starter = {
   slug: 'visual-routine-cards-starter',
-  title: '60 Visual Routine Cards for Toddlers, Morning & Bedtime Routine Chart, First Then Board, Daily Schedule Printable PDF',
-  subtitle: '60 picture cards for ages 0–5 plus 3 charts. Helps little ones see what comes next.',
-  format: `Digital download (2 files): Starter Set PDF, US Letter (${m.letter.starter} pages) and A4 (${m.a4.starter} pages).`,
-  trim: 'US Letter 8.5 x 11 in and A4 210 x 297 mm, 0.5 in margins, no bleed. Every card is 2.2 x 2.2 in (5.6 cm).',
-  pages: m.letter.starter,
+  title: `${NS} Visual Routine Cards for Toddlers: Starter Set with 3 Charts`,
+  etsy_title: `${NS} Visual Routine Cards for Toddlers, Editable Morning & Bedtime Routine Chart, First Then Board, Daily Schedule PDF, Play Before Pixels`,
+  subtitle: `${NS} picture cards for ages 0–5 plus 3 charts, fillable PDF. Helps little ones see what comes next.`,
+  format: `Digital download, 5 plain PDFs (no zip): START HERE + Color US Letter (${PS} pages) + Color A4 (${PS} pages) + Low-ink US Letter (${PSL} pages) + Low-ink A4 (${PSL} pages). Fillable fields for free Adobe Acrobat Reader merged into every file; bookmarked; tagged.`,
+  trim: 'US Letter 8.5 × 11 in and A4 210 × 297 mm, 0.5 in margins, no bleed. The first–then board is a landscape page. Every card is 2.2 × 2.2 in (5.6 cm).',
+  pages: PS,
+  pages_breakdown: `Color file, ${PS} pages = 7 card pages (5 picture-card pages + second copies + blank cards) + 6 word-free and photo-frame pages + 5 chart pages (strip, first–then and morning chart ready-made; strip and morning chart blank fillable) + 5 guide pages (cover, 2-page grown-up guide, print guide, laminating and safety) + 1 thank-you page. Low-ink file: the same ${PSL} pages in the Simple colorway. Letter and A4 counts are never added together.`,
   ages: '0–5',
   price_usd: 4.50,
-  price_notes: 'Entry tier of the routine-cards ladder at $4.50 (marketing/DEMAND-CHECK.md section 1). Keep it undiscounted or run the same sale as the Complete Set; the listing and the PDF both point buyers to the $9.50 Complete Set.',
-  short_description: '60 printable picture cards for ages 0–5, plus a strip, a first–then board and a morning chart. Letter + A4. Helps little ones see what comes next.',
-  long_description: 'A simple place to start. These 60 printable picture cards cover the moments that fill a little one\'s day: waking up, potty, getting dressed, meals, play, outside time, reading together, bath, bedtime, helping jobs, a feelings check-in and plan words like First, Then and Wait. A "Play first / Screens later" pair uses a plain, generic tablet, with no brands and no apps.\n\nUse one card at a time with a baby, two on the first–then board with a toddler, or a morning chart of up to nine steps with a preschooler. Your child points to each picture and moves it to "All done."\n\nYou get the cards in the color-coded Rainbow look and an ink-saving Simple version, plus three charts: a vertical strip, a first–then board and a morning chart. A one-page guide covers how to use the cards by age, easy talk tips, and laminating, velcro and safety tips. Every card is 2.2 in (5.6 cm), sized for little hands, in US Letter and A4.\n\nWant more? The Complete Set has 228 cards for ages 0–12, 6 chart layouts, 4 colorways, editable files and Canva-ready PNGs.\n\nInstant digital download. No physical item ships.',
+  price_notes: `Entry tier of the routine-cards ladder at $4.50 (DEMAND-CHECK section 1). Honest value line: ${NS} cards, about 7.5¢ each. Plain everyday price; never discounted, because any discount would push the Etsy net under the $3.00 digital floor (commerce/PRICING.md). NEEDS FOUNDER: commerce/PRICING.md says "never list a single printable under $5"; this is a ${PS}-page, ${NS}-card set rather than a single page and nets about $${net(4.5).etsy.net_after_fees} on Etsy, so it is kept at $4.50 as DEMAND-CHECK specifies. Confirm, or raise it to $5.`,
+  channel_net: net(4.50),
+  short_description: `${NS} printable routine picture cards for ages 0–5, plus a strip, a first–then board and a morning chart. Fillable PDF, US Letter + A4.`,
+  long_description: `A simple place to start. These ${NS} printable picture cards cover the moments that fill a little one's day: waking up, potty, getting dressed, meals, play, outside time, reading together, bath, bedtime, helping jobs, a feelings check-in and plan words like First, Then and Wait. A "Play first / Screens later" pair uses a plain, generic tablet, with no brands and no apps.\n\nUse one card at a time with a baby, two on the first–then board with a toddler, or a morning chart of up to nine steps with a preschooler. Your child points to each picture and moves it to "All done."\n\nYou get the cards in the color-coded Rainbow look and in a Low-ink file with line art to color, plus second copies of the busiest cards, blank, word-free and photo-frame cards, and three charts, ready-made and blank. Type labels and titles in free Adobe Acrobat Reader. A 2-page grown-up guide covers setup in 2 minutes and easy talk tips. Every card follows our published safety rules.\n\nWant more? The Complete Set has ${N} cards for ages 0–12, 6 chart layouts and 4 colorways.\n\nInstant digital download. No physical item ships.`,
   bullets: [
-    '60 picture cards for ages 0–5: morning, meals, play, outside, reading, bath, bedtime, helping jobs, feelings and plan words',
-    'Includes a Play first / Screens later card pair with a plain, generic tablet',
-    '3 charts: vertical strip, first–then board and a 9-step morning chart',
-    'Rainbow and ink-saving Simple versions, US Letter and A4, every card 2.2 in (5.6 cm)',
-    'One-page guide: use by age, talk tips, laminating, velcro and safety'
+    `${NS} cards on ${PS} pages (Color file) = 7 card pages + 6 word-free and photo pages + 5 chart pages + 6 guide pages; about 7.5¢ a card; about 20 minutes to prep one routine`,
+    'Morning, meals, play, outside, reading, bath, bedtime, helping jobs, feelings and plan words, plus a Play first / Screens later pair with a plain, generic tablet',
+    '3 charts, ready-made and blank: vertical strip, first–then board and a 9-step morning chart',
+    'Fillable in free Adobe Acrobat Reader: card labels, chart titles and names (colors and pictures are not editable); Color and Low-ink files, US Letter and A4',
+    '2-page grown-up guide: setup in 2 minutes, talk tips, laminating, and safety notes; every card 2.2 in (5.6 cm)'
   ],
   keywords: ['toddler routine cards', 'visual routine cards', 'first then board', 'morning routine chart', 'bedtime routine chart', 'toddler daily schedule', 'preschool routine printable'],
   etsy_tags: ['toddler routine', 'visual routine cards', 'first then board', 'morning routine', 'bedtime routine', 'toddler schedule', 'preschool printable', 'routine chart', 'daily schedule kids', 'toddler printable', 'visual schedule', 'potty routine', 'kids routine cards'],
-  seo_title: '60 Visual Routine Cards for Toddlers | Play Before Pixels',
-  seo_description: '60 printable routine cards for toddlers and preschoolers plus a first–then board and morning chart. Letter and A4. Helps little ones see what comes next.',
-  alt_text: 'Cover of the 60 Visual Routine Cards Starter Set: sky-blue panel with the title and a vertical strip chart holding Brush teeth, Get dressed, Shoes on and Play first cards.',
-  channels: ['Etsy (digital download listing)', 'Play Before Pixels website shop (instant digital download)'],
-  etsy_files: ['visual-routine-cards-starter-letter.pdf', 'visual-routine-cards-starter-a4.pdf'],
-  listing_images: ['preview/listing-images/starter/01-starter-cover.png', 'preview/listing-images/starter/02-starter-whats-inside.png', 'preview/listing-images/starter/03-starter-vs-complete.png', 'preview/listing-images/06-in-use-bedtime-chart.png'],
-  next_products: ['visual-routine-cards', 'play-first-family-kit', 'im-bored-play-cards'],
+  seo_title: `${NS} Visual Routine Cards for Toddlers | Play Before Pixels`,
+  seo_description: `${NS} printable routine cards for toddlers plus a first–then board and morning chart. Fillable PDF, US Letter and A4. Helps little ones see what comes next.`,
+  alt_text: 'Cover of the 60 Visual Routine Cards Starter Set: sky-blue panel with the Play Before Pixels logo, the title and a vertical strip chart holding Brush teeth, Get dressed, Shoes on and Play first cards.',
+  listing_images: ['preview/listing-images/starter/01-starter-cover.png', 'preview/listing-images/starter/02-starter-whats-inside.png', 'preview/listing-images/starter/03-starter-grown-up-guide.png', 'preview/listing-images/starter/04-starter-in-use.png', 'preview/listing-images/starter/05-how-to-download.png'],
+  channels: ['Etsy (digital download; the 5 files in etsy-upload/starter/, no URL or QR)', 'Play Before Pixels website shop (instant download: START-HERE-starter.pdf and the 4 starter PDFs in the product root)'],
+  files: {
+    own_store: ['START-HERE-starter.pdf', `visual-routine-cards-starter-letter.pdf (Color, US Letter, ${PS} pages)`, 'visual-routine-cards-starter-a4.pdf (Color, A4)', `visual-routine-cards-starter-low-ink-letter.pdf (Low-ink, US Letter, ${PSL} pages)`, 'visual-routine-cards-starter-low-ink-a4.pdf (Low-ink, A4)'],
+    etsy_files: ['etsy-upload/starter/1-START-HERE.pdf', 'etsy-upload/starter/2-Color-US-Letter.pdf', 'etsy-upload/starter/3-Color-A4.pdf', 'etsy-upload/starter/4-Low-Ink-US-Letter.pdf', 'etsy-upload/starter/5-Low-Ink-A4.pdf'],
+  },
+  shareable_piece: 'The finished morning chart on the fridge, with the small Play Before Pixels wordmark in the footer.',
+  next_products: ['visual-routine-cards', 'play-first-family-kit', 'bored-play-cards'],
   ...common,
+  bonus_offer: 'Own-store edition only (QR + short link): free seasonal routine cards and one short age-matched play idea a month (email plus optional child birth month/year; never names). Etsy files carry no URL or QR.',
   human_todo: [
-    'Create the Etsy listing with the 2 files and the 4 listing images in listing_images',
-    'Link it to the Complete Set listing in the description and the shop section',
-    'Same print and size check as the Complete Set'
+    'NEEDS FOUNDER: confirm the $4.50 price against commerce/PRICING.md "never list a single printable under $5" (see price_notes), or raise it to $5.',
+    'Create the Etsy listing with the 5 files in etsy-upload/starter/ and the 5 listing images in order (the last one is "How to download"); plain price, no sale.',
+    'Link it to the Complete Set listing in the description and the shop section.',
+    'Same print, size-check and Acrobat Reader phone test as the Complete Set.'
   ]
 };
+const BANNED = /autism|autistic|adhd|therapy|therapist|\bslp\b|speech delay|late talker|clinically|cure|heal|reverse|safety-checked|certified|safe for all ages/i;
 for (const [f, o] of [['listing.json', full], ['listing-starter.json', starter]]) {
-  if (o.short_description.length > 160) throw new Error(f + ' short_description ' + o.short_description.length);
-  if (o.seo_title.length > 60) throw new Error(f + ' seo_title ' + o.seo_title.length);
-  if (o.seo_description.length > 155) throw new Error(f + ' seo_description ' + o.seo_description.length);
-  const w = words(o.long_description); if (w < 120 || w > 250) throw new Error(f + ' long_description words ' + w);
-  if (o.title.length > 140) throw new Error(f + ' title ' + o.title.length);
-  o.etsy_tags.forEach(t => { if (t.length > 20) throw new Error('tag too long ' + t); });
+  const errs = [];
+  if (o.short_description.length > 160) errs.push('short_description ' + o.short_description.length);
+  if (o.seo_title.length > 60) errs.push('seo_title ' + o.seo_title.length);
+  if (o.seo_description.length > 155) errs.push('seo_description ' + o.seo_description.length);
+  const w = words(o.long_description); if (w < 120 || w > 250) errs.push('long_description words ' + w);
+  if (o.etsy_title.length > 140) errs.push('etsy_title ' + o.etsy_title.length);
+  if (o.bullets.length !== 5) errs.push('bullets ' + o.bullets.length);
+  if (o.keywords.length !== 7) errs.push('keywords ' + o.keywords.length);
+  if (o.etsy_tags.length !== 13) errs.push('etsy_tags ' + o.etsy_tags.length);
+  o.etsy_tags.forEach(t => { if (t.length > 20) errs.push('tag too long ' + t); });
+  const pub = [o.title, o.etsy_title, o.subtitle, o.short_description, o.long_description, ...o.bullets, ...o.keywords, ...o.etsy_tags, o.seo_title, o.seo_description, o.alt_text].join(' ');
+  if (BANNED.test(pub)) errs.push('banned word: ' + pub.match(BANNED)[0]);
+  if (o.channel_net.etsy.net_after_fees < o.price_floor_usd) errs.push('Etsy net under floor');
+  if (errs.length) throw new Error(f + ': ' + errs.join('; '));
   fs.writeFileSync(path.join(__dirname, '..', f), JSON.stringify(o, null, 2) + '\n');
-  console.log(f, 'ok', 'words', w, 'title', o.title.length);
+  console.log(f, 'ok · words', w, '· etsy_title', o.etsy_title.length, '· short', o.short_description.length, '· seo', o.seo_title.length, o.seo_description.length, '· net', JSON.stringify(o.channel_net));
 }
