@@ -57,6 +57,7 @@ This file lists only gaps that no other file covers yet. Items that are already 
   - **Preferred:** a small approval page on a Cloudflare Worker behind Cloudflare Access, which sends a one-time code to the business email. It records APPROVED or NO in the Worker's own store. The publish step asks the Worker, and the routine's Cloudflare token is scoped to Pages only, so it can't change the Worker or its store.
   - **Alternative:** a commit signed with a key that exists only on her device, checked by fingerprint. Do not rely on GitHub's "Verified" badge alone, because commits created through GitHub's API can also show as Verified. [VERIFY]
   - The routine never edits the APPROVED/NO column.
+  - Until the channel exists, only APPROVED lines the founder commits through the GitHub web editor count, and never a commit made during a routine run.
 
 **G2-04. A review step, a stop button that reaches the platforms, and a backup.**
 - **Why:**
@@ -229,7 +230,7 @@ This file lists only gaps that no other file covers yet. Items that are already 
 - **Fix:**
   - **Founder:** in the **business** mailbox only, set a filter that pushes to her phone only mail from platform domains containing words like suspend, deactivat, action required, dispute, chargeback, copyright, infring, verify or "respond by."
   - **Claude:** adds two rules to ROUTINE.md (done):
-    - (a) Maintenance mode after 21 days with no verified approval.
+    - (a) Maintenance mode after 21 days with no verified approval, counted from the day the approval channel (G2-03) goes live.
     - (b) A weekly cap of 60 minutes on approval requests, ranked by importance, with overflow rolling to the next week.
 
 **G2-21. Comment filters on every social account (about 30 minutes, before the first post).**

@@ -32,7 +32,7 @@ If you've come across the phrase "virtual autism" on social media or in a news s
 
 ## Where the term comes from
 
-"Virtual autism" has been used by some clinicians, mostly in Europe at first, to describe young children who had a lot of screen exposure very early in life and who show some behaviors that can look like autism, such as less eye contact, less interest in people, or delayed talking.
+"Virtual autism" is a term some clinicians use to describe young children who had a lot of screen exposure very early in life and who show some behaviors that can look like autism, such as less eye contact, less interest in people, or delayed talking.
 
 In 2019, a paper by Bruno Harlé in the journal *Trends in Neuroscience and Education* put the term forward as part of a **hypothesis**: that intensive screen exposure in the first years might contribute to autism-like symptoms in some children. A hypothesis is an idea offered for researchers to test. It is not a finding, and the paper did not establish that screens cause autism.
 

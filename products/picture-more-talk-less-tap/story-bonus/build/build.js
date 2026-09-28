@@ -8,6 +8,13 @@ const A = require('./art.js');
 const { C, R, Ci, E, P, L, U, G, SYMBOLS, kid, kidAt, teacher, teacherAt, tower, blk, motion, windowRain, shelf, paperFish, table } = A;
 const OUT = path.resolve(__dirname, '..');
 const GUIDES = process.env.GUIDES === '1';
+// Bonus read-aloud edition (September 2026): the book is cut as a retail title and ships as a bonus PDF
+// inside the Talk Tower Classroom Game Kit. %BR% is replaced with the relative path to /brand at write time.
+const WORDS = require('../../build/words.js');   // founder-editable text lives in ../../WORDS.md
+const QR = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../qr.json'), 'utf8'));
+const qrSvg = (px) => `<svg viewBox="-2 -2 ${QR.n + 4} ${QR.n + 4}" width="${px}" height="${px}" shape-rendering="crispEdges"><rect x="-2" y="-2" width="${QR.n + 4}" height="${QR.n + 4}" fill="#fff"/><path d="${QR.d}" fill="#1D2940"/></svg>`;
+const LOGO = (file, h) => `<img src="%BR%logo/${file}" alt="Play Before Pixels" style="height:${h}px;display:block">`;
+const founderBox = (label, hint) => `<div class="fbox"><b>${label}</b><br>${hint}</div>`;
 
 const pages = [];
 // text item: [x, y, w, html, cls, style]
@@ -55,7 +62,7 @@ single({
     G('translate(196 356)', P('M0 0 h96 a20 20 0 0 1 20 20 v48 a20 20 0 0 1 -20 20 h-54 l-22 22 l2 -22 h-22 a20 20 0 0 1 -20 -20 v-48 a20 20 0 0 1 20 -20Z', C.paper) + A.TX(48, 66, '?', 58, C.sky)) +
     G('translate(360 460)', P('M0 0 h96 a20 20 0 0 1 20 20 v48 a20 20 0 0 1 -20 20 h-22 l2 22 l-22 -22 h-54 a20 20 0 0 1 -20 -20 v-48 a20 20 0 0 1 20 -20Z', C.paper) + A.TX(48, 62, 'ha!', 40, C.ink)),
   texts: [
-    T(52, 48, 400, 'PLAY BEFORE PIXELS', 'coverbrand'),
+    T(52, 44, 400, LOGO('lockup-horizontal-white.svg', 52), ''),
     T(48, 86, 560, 'More Talk,<br>Less Tap', 'covertitle'),
     T(52, 312, 560, 'A Talk Tower story for circle time', 'coversub'),
     T(612, 60, 150, 'Circle-time<br>talk games<br>inside!', 'badge'),
@@ -82,12 +89,13 @@ single({
 // =============================================================== P3 TITLE
 single({
   label: 'title', bg: C.paper,
-  art: tower(408, 640, ['q', 'j', 'i', 'l'], 1.0) + E(408, 650, 190, 20, C.wash) +
-    kidAt('priya', 'cheer', 250, 650, 0.9, 'laugh') + kidAt('sam', 'stand', 566, 650, 0.9, 'smile', true),
+  art: tower(408, 676, ['q', 'j', 'i', 'l'], 0.94) + E(408, 686, 190, 20, C.wash) +
+    kidAt('priya', 'cheer', 250, 686, 0.86, 'laugh') + kidAt('sam', 'stand', 566, 686, 0.86, 'smile', true),
   texts: [
     T(60, 90, 696, 'More Talk, Less Tap', 'title', ''),
     T(60, 196, 696, 'A Talk Tower story for circle time', 'titlesub'),
-    T(60, 700, 696, 'PLAY BEFORE PIXELS', 'imprint'),
+    T(60, 238, 696, WORDS.one('story-author') ? `<div class="byline">${WORDS.one('story-author')}</div>` : founderBox('FOUNDER: your author line', 'Write it in WORDS.md, section “story-author”. This box disappears once filled.'), 'titleslot'),
+    T(318, 722, 180, LOGO('lockup-horizontal.svg', 48), ''),
   ],
 });
 
@@ -96,13 +104,14 @@ single({
   label: 'copyright', bg: C.paper,
   art: blk('q', 90, 120, 0.6, -6) + blk('j', 150, 116, 0.6, 5) + blk('i', 210, 122, 0.6, -3) + blk('l', 270, 118, 0.6, 6),
   texts: [T(60, 190, 696, `
-<p><b>More Talk, Less Tap</b><br>Library and classroom edition</p>
+<p><b>More Talk, Less Tap</b><br>Bonus read-aloud edition, included with the Talk Tower Classroom Game Kit</p>
 <p>Text and illustrations © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. All rights reserved.</p>
-<p>No part of this book may be reproduced, stored or transmitted in any form without written permission from the publisher, except for brief quotations in reviews. Reading this book aloud to a class, library group or family is always welcome.</p>
+<p>This PDF is licensed with the kit: one classroom (single-classroom license) or one school site (site license). You may print it and project it for the children you teach. Please do not share, post or upload the file. Reading it aloud to your class or family is always welcome. Full terms: playbeforepixels.com/license</p>
 <p>This is a work of fiction. Room 5, Ms. Poppy and the children are imaginary and are not based on any real school, teacher or child. The games and notes at the back are general ideas for grown-ups to enjoy with children; they are not a program, assessment or professional advice. Please supervise children during all activities and use large blocks that are too big to swallow.</p>
-<p>Published by AlphaPlay LLC, doing business as Play Before Pixels</p>
+<p>Published by AlphaPlay LLC, doing business as Play Before Pixels · playbeforepixels.com</p>
 <p>First edition 2026</p>`, 'legal'),
-    T(60, 668, 380, 'ISBN (hardcover, library binding)<br><span>to be assigned</span>', 'isbnbox'),
+    T(60, 660, 330, 'ISBN / barcode<br><span>Not needed for this bonus PDF. Add one only if a print edition is ever published.</span>', 'isbnbox', 'height:auto'),
+    T(420, 660, 336, WORDS.one('story-dedication') ? `<div class="dedic">${WORDS.one('story-dedication')}</div>` : founderBox('FOUNDER: your dedication', 'Your own words, in WORDS.md section “story-dedication”.'), ''),
   ],
 });
 
@@ -435,13 +444,15 @@ single({
   art: E(408, 830, 520, 120, C.tSky) +
     tower(160, 790, ['q', 'j', 'i', 'l'], 0.9) +
     kidAt('zara', 'cheer', 300, 790, 0.85, 'laugh') +
-    R(564, 624, 192, 115, C.paper, 4),
+    R(564, 624, 192, 115, C.paper, 4) + R(410, 574, 140, 140, C.paper, 10),
   texts: [
     T(60, 60, 696, 'Room 5 is building a tower out of words.', 'backh'),
     T(60, 190, 696, `<p>Every time someone asks a question, tells a joke or shares an idea out loud, a block goes on the Talk Tower. But what happens when everybody talks at once?</p><p>A warm, funny read-aloud about conversation, taking turns and really listening, with circle-time talk games and a note for educators and families at the back.</p>`, 'backtext'),
-    T(60, 500, 420, 'Ages 3–7 · Library and classroom edition', 'backmeta'),
-    T(566, 660, 188, 'ISBN / barcode', 'isbnlabel'),
-    T(60, 440, 0, 'PLAY BEFORE PIXELS', 'backbrand'),
+    T(60, 500, 420, 'Ages 3–7 · Bonus read-aloud from the Talk Tower Classroom Game Kit', 'backmeta'),
+    T(566, 648, 188, 'ISBN / barcode<br>(print edition only)', 'isbnlabel'),
+    T(420, 584, 120, qrSvg(116), ''),
+    T(376, 708, 200, 'Free bonus:<br>playbeforepixels.com/<br>bonus/picture-more-talk-less-tap', 'qrcap'),
+    T(60, 426, 0, LOGO('lockup-horizontal-white.svg', 46), ''),
   ],
 });
 
@@ -508,17 +519,24 @@ body { -webkit-print-color-adjust: exact; print-color-adjust: exact }
 .backmeta { font-family: "Nunito Sans", sans-serif; font-weight: 800; font-size: 18px; color: ${C.ink}; background: ${C.sun}; padding: 8px 16px; border-radius: 999px; white-space: nowrap; width: auto !important }
 .isbnlabel { font-family: "Nunito Sans", sans-serif; font-weight: 700; font-size: 14px; color: ${C.ink}; text-align: center; opacity: .6 }
 .backbrand { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 20px; letter-spacing: 3px; color: #fff; white-space: nowrap }
+.fbox { border: 2.5px dashed ${C.tomato}; border-radius: 10px; padding: 10px 14px; font-family: "Nunito Sans", sans-serif; font-size: 14px; line-height: 1.35; color: ${C.ink}; background: #fff }
+.fbox b { color: ${C.tomato}; font-weight: 800; letter-spacing: .3px }
+.titleslot { text-align: center } .titleslot .fbox { display: inline-block; max-width: 560px; text-align: left; font-size: 12.5px; padding: 6px 12px }
+.byline { font-family: "Nunito Sans", sans-serif; font-weight: 700; font-size: 24px; color: ${C.ink}; text-align: center }
+.dedic { font-family: "Nunito Sans", sans-serif; font-style: italic; font-size: 17px; line-height: 1.45; color: ${C.ink} }
+.qrcap { font-family: "Nunito Sans", sans-serif; font-weight: 700; font-size: 11.5px; line-height: 1.25; color: #fff; text-align: center }
 .theend { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 64px; color: ${C.tomato}; letter-spacing: -1px }
 `;
 
 const head = (title, extra = '') => `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${title}</title>
-<link rel="stylesheet" href="../../brand/fonts/fonts.css"><style>${CSS}${extra}</style></head>`;
+<link rel="stylesheet" href="%BR%fonts/fonts.css"><style>${CSS}${extra}</style></head>`;
+const withBR = (html, br) => html.split('%BR%').join(br);
 const html = `${head('More Talk, Less Tap — interior (Play Before Pixels)')}<body>${SYMBOLS()}
 ${pages.map(p => `<!-- ${p.label} -->\n${p.html}`).join('\n')}
 </body></html>`;
-fs.writeFileSync(path.join(OUT, 'source.html'), html);
+fs.writeFileSync(path.join(OUT, 'source.html'), withBR(html, '../../../brand/'));
 
 // cover.html: the front cover cropped to trim (8.5 in = 816 px), rendered at 1600 px for the store
 const cover = `${head('More Talk, Less Tap — cover', '.crop{width:816px;height:816px;overflow:hidden;position:relative}.crop .page{position:absolute;left:-12px;top:-12px}')}<body>${SYMBOLS()}<div class="crop">${pages[0].html}</div></body></html>`;
-fs.writeFileSync(path.join(__dirname, 'cover.html'), cover);
+fs.writeFileSync(path.join(__dirname, 'cover.html'), withBR(cover, '../../../../brand/'));
 console.log(pages.length + ' pages');

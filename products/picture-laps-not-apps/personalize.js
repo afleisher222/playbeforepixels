@@ -31,7 +31,8 @@ const LETTER = 'A-Za-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u024F';
 const NAME_RE = new RegExp(`^[${LETTER}](?:[${LETTER}'’.\\- ]*[${LETTER}.])?$`);
 const TEXT_RE = /^[ -~ -ÿĀ-ɏ‘’“”–—…\n]*$/;
 // Words that send an order to the weekly review queue instead of the printer. Extend as needed.
-const REVIEW_WORDS = ['fuck', 'shit', 'bitch', 'cunt', 'nigg', 'fag', 'rape', 'nazi', 'kill', 'dick', 'porn', 'sex'];
+// Whole words only, so real names (Killian, Dickens, Essex) are not flagged.
+const REVIEW_WORDS = /\b(fuck\w*|shit\w*|bitch\w*|cunt\w*|nigg\w*|fags?|faggot\w*|rape\w*|nazi\w*|porn\w*|sex\w*|dick|kill|die|dead|hate)\b/g;
 
 const clean = (s) => String(s == null ? '' : s).normalize('NFC').replace(/[\u0000-\u0009\u000B-\u001F\u007F]/g, ' ').replace(/[ \t]+/g, ' ').trim();
 const oneLine = (s) => clean(s).replace(/\s*\n\s*/g, ' ');
@@ -74,7 +75,7 @@ function normalize(order = {}) {
     if (!TEXT_RE.test(msg)) holds.push('gift_message has characters the book fonts cannot print (emoji and non-Latin scripts)');
   }
   const all = `${child} ${giver} ${msg} ${date}`.toLowerCase();
-  const hit = REVIEW_WORDS.filter((w) => all.includes(w));
+  const hit = [...new Set(all.match(REVIEW_WORDS) || [])];
   if (hit.length) holds.push(`review wording: ${hit.join(', ')}`);
 
   const p = PRONOUNS[pron] || PRONOUNS.they;

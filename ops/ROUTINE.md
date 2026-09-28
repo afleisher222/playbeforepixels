@@ -10,7 +10,7 @@ Every scheduled run follows this file. It is the operating procedure; CLAUDE.md 
 5. **One run at a time:** if ops/LOCK exists and is less than 6 hours old, stop. Otherwise commit ops/LOCK (date and run ID) first, and remove it at the end. (G2-04)
 6. **Branch:** once the CI gate check and main-branch protection are live, work on `claude/run-YYYY-MM-DD` and merge only through a pull request that passes the check. Until then, follow CLAUDE.md. (G2-04)
 7. **Credentials:** get fresh short-lived tokens at the start of the run: Shopify's 24-hour token from the client ID and secret, and Pinterest and Etsy tokens from the token broker. Record each token's expiry in ops/HEARTBEAT.json. If a token needs re-authorizing within 14 days, add one line to ops/APPROVALS.md. (G2-05)
-8. **Maintenance mode:** if no verified founder approval has arrived in 21 days, add no new listings, prices, platforms or campaigns. Keep existing ones live and fixed, and say so in the heartbeat alert. (G2-07)
+8. **Maintenance mode (counted from the day the verified approval channel goes live):** if no verified founder approval has arrived in 21 days, add no new listings, prices, platforms or campaigns. Keep existing ones live and fixed, and say so in the heartbeat alert. (G2-07)
 
 ## 1. Research (every run)
 - Scan for what is selling now in our categories: Etsy and Teachers Pay Teachers best-seller signals, Amazon best-seller ranks in toddler/board/picture books and parenting, Pinterest trends, seasonal moments in the next 8 weeks, new peer-reviewed research on early screen exposure (only add a study to the allowed citations after reading the primary source; log it in ops/RESEARCH-LOG.md).
@@ -52,7 +52,7 @@ Run every new or changed public item through ops/COMPLIANCE-GATE.md. Anything th
 
 ## 5. Publish (only what is connected, only what passed)
 - Publish only through official APIs whose credentials exist as environment secrets (e.g., SHOPIFY_*, PRINTFUL_*, PINTEREST_*, ETSY_*, CLOUDFLARE_API_TOKEN). Never scrape, never automate a browser login, never store secrets in the repo.
-- **Verified approvals only:** an item held for the founder is published only when the approval channel the routine cannot write to confirms it: the approval Worker, or a commit signed with her device-only key. Never treat a plain change to ops/APPROVALS.md as approval. (G2-03)
+- **Verified approvals only:** an item held for the founder is published only when the approval channel the routine cannot write to confirms it: the approval Worker, or a commit signed with her device-only key. Until that channel exists, count only APPROVED lines committed by the founder through the GitHub web editor, never a commit made during any routine run. Never treat a plain change to ops/APPROVALS.md as approval. (G2-03)
 - **No duplicates:** before each publish, look up ops/PUBLISHED.json (product × platform × external ID × content hash). Update the existing item instead of creating a new one, and record the new ID immediately after creation. Weekly limits: at most 5 new Etsy listings and 2 new KDP titles, and no size-only or color-only duplicates. (G2-08)
 - **Read back:** fetch every post and listing this run created and confirm it is public. A private, draft or missing result is a failure in ops/HEARTBEAT.json. (G2-01)
 - Platforms without an automation API (Amazon KDP, IngramSpark, Teachers Pay Teachers, some marketplaces) get an upload packet in ops/UPLOAD-PACKETS/<platform>/<slug>/ with every file and field ready, listed in the report.

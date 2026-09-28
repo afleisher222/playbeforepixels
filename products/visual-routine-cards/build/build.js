@@ -66,7 +66,7 @@ p{margin:0}
 .grid{display:grid;grid-template-columns:repeat(3,2.2in);grid-auto-rows:2.2in;gap:.17in .17in;justify-content:center;align-content:start}
 .page.cards .in{justify-content:flex-start}
 .cardwrap{position:relative;width:2.2in;height:2.2in}
-.cardwrap::after{content:"";position:absolute;inset:-.04in;border:1px dashed #D5DBE5;border-radius:.2in;pointer-events:none}
+.cardwrap::after{content:"";position:absolute;inset:-.045in;border:.6px solid #DCE2EB;border-radius:.21in;pointer-events:none}
 /* ---- guide pages ---- */
 .g-title{font-size:30px;line-height:1.02;margin:6px 0 10px}
 .g-lede{font-size:13px;line-height:1.5;max-width:6.2in}
