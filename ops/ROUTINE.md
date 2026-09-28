@@ -9,6 +9,7 @@ Every scheduled run follows this file. It is the operating procedure; CLAUDE.md 
 
 ## 1. Research (every run)
 - Scan for what is selling now in our categories: Etsy and Teachers Pay Teachers best-seller signals, Amazon best-seller ranks in toddler/board/picture books and parenting, Pinterest trends, seasonal moments in the next 8 weeks, new peer-reviewed research on early screen exposure (only add a study to the allowed citations after reading the primary source; log it in ops/RESEARCH-LOG.md).
+- **Copycat watch (first run of each month):** search Etsy, Amazon, Teachers Pay Teachers, Google Images/Lens results and social platforms for our product titles, distinctive phrases, cover art and listing images. Log matches in ops/COPYCAT-LOG.md with links and dates. For a likely copy of human-authored or licensed material, prepare the platform's IP report and/or a DMCA notice from legal/protection/ templates and add it to ops/APPROVALS.md — never file without the founder's APPROVED line. For AI-generated material that may not be copyrightable, rely on trademark, license terms and platform policies instead (legal/protection/PROTECTION-PLAN.md). Stay ahead by shipping: note any competitor move worth answering in ops/QUEUE.md.
 - Update ops/QUEUE.md: rank product ideas by evidence of demand × margin × fit × effort. Cut ideas with weak evidence.
 
 ## 2. Build (every run)
