@@ -38,7 +38,7 @@ So the plan is **one global website with three "doors" to buy**:
 
 | Door | What sells through it | Countries | Why |
 |---|---|---|---|
-| **A. Own site, digital products** (printables, the digital play guide, classroom pack, "The 30-Day Screen Reset" course) | Checkout run by a **merchant of record** (MoR), which collects and pays VAT/GST worldwide | Every country the MoR supports | EU and UK tax digital sales to consumers **from the first sale**, with no threshold, when the seller is outside those regions (see section 4). An MoR removes that burden. |
+| **A. Own site, digital products** (printables, the digital play guide, workshop kits, "The 30-Day Screen Reset" written course; the classroom pack **only after employment counsel clears it**, section 9) | Checkout run by a **merchant of record** (MoR), which collects and pays VAT/GST worldwide | Every country the MoR supports | EU and UK tax digital sales to consumers **from the first sale**, with no threshold, when the seller is outside those regions (see section 4). An MoR removes that burden. |
 | **B. Marketplaces that print or stock locally** (paperback and hardcover books, later board books, merch) | Amazon (KDP), IngramSpark to retailers worldwide, Bookshop.org, Etsy, Faire wholesale, marketplace-seller print-on-demand (POD) | UK, CA, AU, EU, JP and others | Local printing avoids import duties, slow delivery and surprise fees. The marketplace is usually the seller of record, so it handles VAT and much of the product-safety and packaging paperwork (UNVERIFIED per marketplace; see section 5). |
 | **C. Own site, physical direct-to-consumer (DTC)** | Books, card deck and merch shipped by you or your POD partner | **US only at launch.** Add CA, UK and AU only after section 5's checklist is done | Direct shipping into the EU from a US seller triggers the EU responsible-person rule, packaging take-back (EPR) registrations and import VAT. It is not worth it at low volume. |
 
@@ -213,7 +213,7 @@ Merch slogans ("Laps not apps", "More talk, less tap") **stay in English** on pr
 - The buyer base is mostly US, but teachers in the UK, CA and AU also buy there, and TpT sells globally in USD (UNVERIFIED; [TpT Help](https://help.teacherspayteachers.com/)).
 - Seller payout is about 55% on a Basic account and 80% on a Pro account (about $59.95 per year) (UNVERIFIED). Whether TpT collects EU/UK VAT as the marketplace is **UNVERIFIED**, so confirm before listing.
 - Add "UK/AU spelling version" and "A4" variants. List Spanish classroom resources in TpT's Spanish category once they exist, to reach US dual-language teachers.
-- Flag: the **classroom resource pack** is covered by the employment-counsel flag in section 9. Do not list it anywhere until counsel clears it.
+- Flag: the **classroom resource pack** is covered by the employment-counsel flag in section 9. Do not list it anywhere until counsel clears it. **(added 2026-09-28) Conflict:** `commerce/storefront-setup-guide.md` §13 says to list "the teacher pack" first on Gumroad for buyers outside the US. That contradicts this hold. Reconcile it before any listing goes live, and keep the hold until counsel answers.
 - UK teachers also use UK-based teacher-resource marketplaces (UNVERIFIED). Evaluate after TpT is running.
 
 **Faire (wholesale)**
@@ -284,14 +284,14 @@ A **merchant of record** is legally the seller to the customer. It charges and p
 | Course platforms (Teachable, Thinkific, Podia and similar) | Some act as MoR for EU/UK VAT on their own payment option (UNVERIFIED per platform) | Monthly plan plus fees | No | Consider if the course needs features an MoR store lacks: drip lessons, quizzes, community. |
 
 **Recommendation (for the accountant to confirm):**
-1. **At launch, sell all digital products on the own site through one MoR**: Payhip if it confirms MoR-style VAT handling for the EU and UK, otherwise Lemon Squeezy. Embed its checkout on Cloudflare Pages.
+1. **(corrected 2026-09-28) At launch, sell international digital products through one MoR, and make it the same one the commerce lane uses.** `commerce/storefront-setup-guide.md` §13 picks **Gumroad**, reported to be merchant of record for all sales since Jan 1, 2025, at about 10% + $0.50 (UNVERIFIED). That costs about 5 points more than the alternatives but is one account and one 1099. Use Payhip instead only if it confirms in writing that it handles EU/UK VAT as the seller. Do not run two digital checkouts. Link or embed the checkout from the Cloudflare Pages site.
 2. **Sell physical goods to the US** through a simple US store (Shopify Starter or Basic, or the MoR's physical-goods option), with Maryland and other US state sales tax handled by the US-tax lane.
 3. **Physical goods abroad go through marketplaces**, which collect the VAT as the marketplace in most of these countries.
 4. Revisit Shopify Markets or Managed Markets only once international physical sales pass roughly $1,000 a month.
 
 ### 5.3 Physical goods shipped into other countries (for later, door C)
 
-- **EU:** import VAT is charged on every parcel. The **Import One-Stop Shop (IOSS)** lets a seller charge EU VAT at checkout on parcels worth €150 or less, so the buyer pays no fees at the door. A non-EU seller normally needs an **EU intermediary** for IOSS (UNVERIFIED). The EU has agreed to **remove the €150 customs-duty exemption** and reportedly began charging a flat **€3 per item** customs duty from **July 1, 2026** (UNVERIFIED; [EU Taxation and Customs Union](https://taxation-customs.ec.europa.eu/)). Printed books usually carry 0% duty; apparel carries duty (UNVERIFIED).
+- **EU:** import VAT is charged on every parcel. The **Import One-Stop Shop (IOSS)** lets a seller charge EU VAT at checkout on parcels worth €150 or less, so the buyer pays no fees at the door. A non-EU seller normally needs an **EU intermediary** for IOSS (UNVERIFIED). The EU has agreed to **remove the €150 customs-duty exemption** and reportedly began charging a flat **€3** customs duty from **July 1, 2026**, as a stopgap until the planned EU customs data hub. It is reported to apply per item category in the parcel, not per parcel (UNVERIFIED on both review passes; the Council and Commission sites were blocked; [EU Taxation and Customs Union](https://taxation-customs.ec.europa.eu/)). Printed books usually carry 0% duty; apparel carries duty (UNVERIFIED).
 - **UK:** for parcels worth £135 or less, the **seller** must charge UK VAT at checkout and must therefore be VAT-registered, unless an online marketplace is the seller (UNVERIFIED; [GOV.UK](https://www.gov.uk/)). Printed books are zero-rated (UNVERIFIED).
 - **Canada / Australia:** duties and taxes on low-value parcels, collected from the buyer at the door or by the carrier unless the seller registers (UNVERIFIED).
 - **This is why door C stays US-only at launch.**
@@ -320,7 +320,7 @@ A **merchant of record** is legally the seller to the customer. It charges and p
 
 ### 6.2 EU toy safety: the card deck and possibly the board books
 
-- The EU **Toy Safety Directive 2009/48/EC** covers products "designed or intended, whether or not exclusively, for use in play by children under 14 years of age" (UNVERIFIED). A **new Toy Safety Regulation** was adopted in late 2025. It adds a digital product passport and tighter chemical rules and applies after a multi-year transition (UNVERIFIED; [EU toy safety](https://single-market-economy.ec.europa.eu/sectors/toys/toy-safety_en)).
+- The EU **Toy Safety Directive 2009/48/EC** covers products "designed or intended, whether or not exclusively, for use in play by children under 14 years of age" (UNVERIFIED). A **new Toy Safety Regulation** was adopted in late 2025 (reportedly Regulation (EU) 2025/2509). It adds a digital product passport and tighter chemical rules. It reportedly applies only after a transition of about 4.5 years, so the **Directive still governs sales in 2026** (UNVERIFIED; [EU toy safety](https://single-market-economy.ec.europa.eu/sectors/toys/toy-safety_en)).
 - **Card deck.** If children use it to play, it is probably a **toy** in the EU. That means CE marking, EN 71-1/2/3 testing, technical documentation, a Declaration of Conformity, an EU importer or authorised representative and warnings in each language (UNVERIFIED). Testing typically costs **several hundred to over $1,000 per product** (UNVERIFIED estimate).
   - **Option 1:** do not ship the card deck into the EU or UK until tested.
   - **Option 2:** design and market it as an **adult-facing conversation-prompt deck** ("for parents and educators to use with children"). Even then, toy status depends on the product as a whole, not just the label, so get a compliance opinion (UNVERIFIED).
@@ -355,7 +355,7 @@ A **merchant of record** is legally the seller to the customer. It charges and p
 - The **GDPR applies to a non-EU business** that offers goods or services to people in the EU, for example with EU shipping, euro prices or EU-language pages (Art. 3(2)) (UNVERIFIED; [EDPB](https://www.edpb.europa.eu/)). The UK GDPR has the same rule for the UK.
 - **Art. 27 representative.** A non-EU controller subject to the GDPR must appoint an **EU representative**, and similarly a **UK representative**, unless the processing is *occasional* and low-risk (UNVERIFIED). A continuously running email list is arguably not "occasional". Cost is roughly **€100–€600 per year each** (UNVERIFIED). `legal/PRIVACY-POLICY.md` §7 already flags this for the attorney. **Decide before the first EU/UK-targeted campaign.**
 - **Email consent:** use **double opt-in** for everyone, which is standard practice in Germany and good evidence of consent everywhere. Leave the marketing box unticked. Under the UK's PECR marketing-email rules, a "soft opt-in" for existing customers allows marketing of *similar* products only (UNVERIFIED).
-- **Cookies:** keep analytics cookieless so no consent banner is needed. Cloudflare Web Analytics "does not collect or use your visitors' personal data" ([Cloudflare Web Analytics](https://raw.githubusercontent.com/cloudflare/cloudflare-docs/production/src/content/docs/web-analytics/about.mdx), **[verified 2026-09-27]**). If you add any ad pixel or third-party embed later, use a consent tool first. Cloudflare Zaraz includes a consent-management modal that controls when third-party tools load ([Zaraz consent](https://raw.githubusercontent.com/cloudflare/cloudflare-docs/production/src/content/docs/zaraz/consent-management/index.mdx), **[verified 2026-09-27]**; pricing not stated there).
+- **Cookies:** keep analytics cookieless. Cloudflare Web Analytics "does not collect or use your visitors' personal data" ([Cloudflare Web Analytics](https://raw.githubusercontent.com/cloudflare/cloudflare-docs/production/src/content/docs/web-analytics/about.mdx), **[verified 2026-09-27; re-read 2026-09-28]**). **(corrected 2026-09-28)** Neither that page nor the [Web Analytics FAQ](https://raw.githubusercontent.com/cloudflare/cloudflare-docs/production/src/content/docs/web-analytics/faq.mdx) says anything about cookies or local storage. That the tool is cookieless is UNVERIFIED. "No consent banner needed" is also a legal conclusion under the ePrivacy rules and UK PECR, so the attorney must confirm it. Check in the browser's developer tools that nothing is stored on the device. If you add any ad pixel or third-party embed later, use a consent tool first. Cloudflare Zaraz includes a consent-management modal that controls when third-party tools load ([Zaraz consent](https://raw.githubusercontent.com/cloudflare/cloudflare-docs/production/src/content/docs/zaraz/consent-management/index.mdx), **[verified 2026-09-27]**; pricing not stated there).
 - **US data transfers:** choose email, checkout and course providers certified under the **EU-US Data Privacy Framework** (and the UK Extension), or providers that offer standard contractual clauses (UNVERIFIED; [dataprivacyframework.gov](https://www.dataprivacyframework.gov/)).
 - **Children's data:** the site is for adults. The UK Information Commissioner's **Children's Code** applies to online services "likely to be accessed by children" (UNVERIFIED; [ico.org.uk](https://ico.org.uk/)). Keep the site adult-directed, never invite children to sign up, and keep the existing privacy-policy wording.
 
@@ -373,7 +373,7 @@ A **merchant of record** is legally the seller to the customer. It charges and p
 
   Repeat that sentence in the **order-confirmation email**.
 - **If the waiver is missing**, the buyer can cancel within 14 days and owes nothing for digital content already used (UNVERIFIED).
-- **Services** (coaching, live workshops): withdrawal is lost only once the service is **fully performed**, if the consumer expressly asked it to start within the 14 days and acknowledged the loss. If the consumer cancels partway through, they pay a proportionate amount (UNVERIFIED; Art. 16(a) and Art. 14(3)). Put a matching checkbox on coaching bookings and align it with `legal/COACHING-WORKSHOP-TERMS.md`.
+- **(corrected 2026-09-28) Services:** none are sold. BRAND.md rule 19 bans coaching and live services, so the earlier advice on a coaching checkbox is removed. A downloadable **workshop kit** is digital content and follows the waiver rule above.
 - **Physical POD items:** the "made to the consumer's specifications" exception probably does **not** cover standard sizes and designs (UNVERIFIED). `SHIPPING-RETURNS-REFUNDS.md` already flags this. For EU/UK buyers, allow 14-day returns on merch, or sell merch there only through marketplace-seller POD.
 - **New EU "withdrawal button":** Directive (EU) 2023/2673 added a requirement for an **easy online withdrawal function** for distance contracts concluded through a website, **applicable from June 19, 2026** (UNVERIFIED). If the site sells to EU consumers directly, ask the MoR whether its checkout provides this. If not, add a clearly labelled "Withdraw from contract here" link or form.
 - **An MoR does not remove this.** The MoR is the seller, so it usually runs the withdrawal flow and the waiver. **Confirm the MoR's checkout shows the waiver checkbox** and sends the durable-medium confirmation.
@@ -397,7 +397,7 @@ A **merchant of record** is legally the seller to the customer. It charges and p
 |---|---|---|---|---|---|
 | Printables, digital guide, eBook | ✔ | ✔ via MoR | ✔ | ✔ | ✔ via MoR |
 | Online course | ✔ | ✔ via MoR plus waiver | ✔ | ✔ | ✔ via MoR plus waiver |
-| Coaching / live workshops | ✔ | ✔ (ask accountant about VAT) | ✔ | ✔ | ✔ (ask accountant about VAT on live streaming) |
+| Workshop kits (host-it-yourself, digital) (corrected 2026-09-28; coaching and live workshops removed per BRAND.md rule 19) | ✔ | ✔ via MoR plus waiver | ✔ | ✔ | ✔ via MoR plus waiver |
 | Paperback / hardcover books | ✔ | via Amazon, Bookshop UK and IngramSpark | via Amazon and IngramSpark | via Amazon and IngramSpark | **via marketplaces only** (GPSR contact fields filled in) |
 | Board books | ✔ (US-lane compliance) | later (toy check) | later | later | later (toy classification plus GPSR) |
 | Card deck | ✔ (US-lane children's-product check) | **hold** (toy question) | **hold** (toy question) | **hold** | **hold** (toy question plus GPSR plus EPR) |
@@ -464,7 +464,7 @@ Confirm rates with two or three quotes, for example through the American Transla
 | Item | Est. words | Human ($0.15) | AI + post-edit ($0.07) | Notes |
 |---|---|---|---|---|
 | Website core (home, product pages, about, FAQ, "Buy in your country") | 6,000 | $900 | $420 | Plus translated slugs and alt text |
-| Legal pages (terms, privacy, refunds, coaching, disclaimer) | 8,000 | $1,200 | not recommended | Plus local legal review of $500–$1,500 |
+| Legal pages (terms, privacy, refunds, kit licence, disclaimer) | 8,000 | $1,200 | not recommended | Plus local legal review of $500–$1,500 |
 | 100-activity play guide | 20,000 | $3,000 | $1,400 | Plus about $300–$600 to re-typeset each language |
 | Printable bundle(s) | 5,000 | $750 | $350 | US Letter and A4 versions |
 | Email welcome sequence and product emails | 5,000 | $750 | $350 | |
@@ -487,7 +487,7 @@ Confirm rates with two or three quotes, for example through the American Transla
 The founder is a Maryland public-school employee. Several parts of this plan may touch **outside-employment** and **ownership of teaching-materials** questions. These are **flagged for her own employment counsel to decide**. They were **not researched against her employer's records**, and **no school-system employee should be contacted** about them:
 
 - the **classroom resource pack** and any **translated or localized versions** of it (sections 4.2 and 8), including listing it on TpT or selling it internationally;
-- **workshops or coaching for educators** marketed to international teacher audiences;
+- **educator-facing workshop kits** marketed to international teacher audiences (coaching and live workshops are banned outright by BRAND.md rule 19);
 - recruiting any translator, reviewer or tester from **her school system** (don't; see section 8.1);
 - any wording in foreign-language marketing that refers to her teaching role.
 
@@ -502,7 +502,7 @@ Until counsel answers, the international plan goes ahead with the **parent-facin
 | 1 | Add `lang` attributes; build the English site with a subfolder-ready structure (Astro i18n, `prefixDefaultLocale: false`) and the sitemap `i18n` option | Before launch | $0 | Web |
 | 2 | Cloudflare: turn on IP Geolocation and Crawler Hints; in AI bot policies keep Search and Agent **allowed** | Before launch | $0 | Web |
 | 3 | Google Search Console Domain property plus sitemap; Bing Webmaster Tools import | Before launch | $0 | Founder |
-| 4 | Choose the MoR for digital products (Payhip or Lemon Squeezy); get written confirmation of EU/UK VAT handling, the waiver checkbox, the confirmation email and the withdrawal function | Before the first sale | about 5% of sales plus processing (UNVERIFIED) | Founder plus accountant |
+| 4 | (corrected 2026-09-28) Use the commerce lane's single MoR for digital products (Gumroad; Payhip only if it confirms it handles EU/UK VAT as the seller); get written confirmation of EU/UK VAT handling, the waiver checkbox, the confirmation email and the withdrawal function | Before the first sale | about 5% of sales plus processing (UNVERIFIED) | Founder plus accountant |
 | 5 | "Buy in your country" router page with `where-to-buy.json` and a country selector | Before launch | $0 | Web |
 | 6 | Set hand-picked local list prices in KDP (every marketplace), Etsy and the MoR | Before the first sale | $0 | Founder |
 | 7 | Etsy and TpT: digital listings worldwide (Letter plus A4); physical listings **not shipped to the EU** until item 9 is done | Before the first sale | Etsy and TpT fees | Founder |
@@ -538,6 +538,8 @@ Until counsel answers, the international plan goes ahead with the **parent-facin
 - Astro sitemap i18n (hreflang in sitemap): https://raw.githubusercontent.com/withastro/docs/main/src/content/docs/en/guides/integrations-guide/sitemap.mdx
 - MDN `<link hreflang>`: https://raw.githubusercontent.com/mdn/content/main/files/en-us/web/html/reference/elements/link/index.md
 - EU VAT rates dataset: https://raw.githubusercontent.com/ibericode/vat-rates/master/vat-rates.json
+- (re-read 2026-09-28) Cloudflare Web Analytics FAQ (no statement on cookies): https://raw.githubusercontent.com/cloudflare/cloudflare-docs/production/src/content/docs/web-analytics/faq.mdx
+- (re-read 2026-09-28) Astro i18n routing (no automatic language redirect; no x-default): https://raw.githubusercontent.com/withastro/docs/main/src/content/docs/en/guides/internationalization.mdx
 
 **To confirm (UNVERIFIED this session; blocked or not searchable):**
 - Google: [multi-regional sites](https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites), [localized versions / hreflang](https://developers.google.com/search/docs/specialty/international/localized-versions), [Search Console Help](https://support.google.com/webmasters/), [Merchant Center Help](https://support.google.com/merchants/)

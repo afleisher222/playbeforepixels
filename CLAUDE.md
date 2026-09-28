@@ -3,7 +3,7 @@
 This private repository IS the business. Every Claude Code session and scheduled routine works from here.
 
 ## What it is
-"Play Before Pixels" is a trade name of **AlphaPlay LLC** (11140 Rockville Pike, Suite 100-559, Rockville, MD 20852). A faceless, self-running, product-only business for parents of 0–5s, parents and educators of 5–12s, and parent/teacher groups worldwide: talk-along board books and picture books (print-on-demand), printables, a classroom pack with site licenses, a card deck, host-it-yourself workshop kits, research briefs, POD merch, a written course. No coaching or live services. No inventory.
+"Play Before Pixels" is a trade name of **AlphaPlay LLC** (business mailing address: see `legal/ENTITY.md`). A faceless, self-running, product-only business for parents of 0–5s, parents and educators of 5–12s, and parent/teacher groups worldwide: talk-along board books and picture books (print-on-demand), printables, a classroom pack with site licenses, a card deck, host-it-yourself workshop kits, research briefs, POD merch, a written course. No coaching or live services. No inventory.
 
 ## Binding rules — read before any work
 - `brand/BRAND.md` — hard rules (no health claims; never name/criticize a school, district, company or EdTech product; child safety; allowed citations; faceless; self-running; no inventory), palette, fonts, illustration style, print specs, deliverables.

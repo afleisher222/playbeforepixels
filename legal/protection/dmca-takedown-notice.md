@@ -41,7 +41,7 @@ The following material infringes our copyright and should be removed or disabled
 **3. Contact information** *(element iv)*
 AlphaPlay LLC d/b/a Play Before Pixels
 Attn: Arielle Fleisher, Member
-[BUSINESS MAILING ADDRESS, USPS PMB format, e.g., 11140 Rockville Pike Ste 100 PMB 559, Rockville, MD 20852-3149; confirm with the CMRA]
+[BUSINESS MAILING ADDRESS]
 Email: [BUSINESS EMAIL]  Phone: [BUSINESS PHONE]
 
 **4. Good-faith statement** *(element v)*

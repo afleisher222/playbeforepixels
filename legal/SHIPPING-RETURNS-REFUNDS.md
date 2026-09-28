@@ -71,4 +71,4 @@ Bulk orders, quotes, purchase orders, and group/advocacy kits follow the terms i
 ### 7. How to request a return or refund
 Email [hello@DOMAIN] with your order number, the item, and the reason. We reply within [2] business days.
 
-AlphaPlay LLC, d/b/a Play Before Pixels — 11140 Rockville Pike, Suite 100-559, Rockville, Maryland 20852-3149, USA
+AlphaPlay LLC, d/b/a Play Before Pixels — [BUSINESS MAILING ADDRESS]

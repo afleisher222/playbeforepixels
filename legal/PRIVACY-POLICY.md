@@ -4,7 +4,7 @@
 
 **Last updated:** [DATE]
 
-This Privacy Policy explains how **AlphaPlay LLC, doing business as Play Before Pixels** ("we," "us"), 11140 Rockville Pike, Suite 100-559, Rockville, Maryland 20852-3149, USA, collects, uses and shares personal information when you visit [DOMAIN], join our email list, buy from us, take a course, or attend a coaching session or workshop. Contact: [privacy@DOMAIN].
+This Privacy Policy explains how **AlphaPlay LLC, doing business as Play Before Pixels** ("we," "us"), [BUSINESS MAILING ADDRESS], collects, uses and shares personal information when you visit [DOMAIN], join our email list, buy from us, take a course, or attend a coaching session or workshop. Contact: [privacy@DOMAIN].
 
 **Short version:** we collect as little as we can, we do not sell your personal information, we do not use it for targeted advertising, and we do not collect information from children.
 
@@ -72,4 +72,4 @@ We use reputable providers, encrypted connections (HTTPS), strong passwords and 
 We will post any changes here and update the "Last updated" date. If a change is significant, we will tell email subscribers.
 
 ## 12. Contact
-AlphaPlay LLC, d/b/a Play Before Pixels — 11140 Rockville Pike, Suite 100-559, Rockville, Maryland 20852-3149, USA — [privacy@DOMAIN]
+AlphaPlay LLC, d/b/a Play Before Pixels — [BUSINESS MAILING ADDRESS] — [privacy@DOMAIN]

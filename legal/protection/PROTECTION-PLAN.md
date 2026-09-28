@@ -1,5 +1,7 @@
 # How Arielle and AlphaPlay LLC stay protected
 
+> **Update, September 28, 2026:** the founder no longer uses the 11140 Rockville Pike mailbox. Items below about that mailbox's format (PMB style) are moot. The current address rule is in `legal/ENTITY.md`. The principal-office and resident-agent rules still apply to whatever address is used.
+
 **AlphaPlay LLC (Maryland), d/b/a Play Before Pixels. Founder and sole member: Arielle Fleisher.**
 Prepared September 27, 2026. This is educational guidance to take to a Maryland business/IP attorney and a commercial insurance broker. It is **not legal advice**.
 

@@ -14,7 +14,7 @@
 
 **This Agreement** is made on **[DATE]** between:
 
-**AlphaPlay LLC**, a Maryland limited liability company doing business as Play Before Pixels, [BUSINESS MAILING ADDRESS, USPS PMB format, for example 11140 Rockville Pike Ste 100 PMB 559, Rockville, MD 20852-3149; confirm with the CMRA] (the **"Company"**), and
+**AlphaPlay LLC**, a Maryland limited liability company doing business as Play Before Pixels, [BUSINESS MAILING ADDRESS] (the **"Company"**), and
 
 **[CONTRACTOR LEGAL NAME]**, [an individual / a (state) (entity type)], [ADDRESS], [EMAIL] (the **"Contractor"**).
 

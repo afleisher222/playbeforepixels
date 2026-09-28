@@ -48,4 +48,4 @@ We provide services as an independent business, not as an employee or agent of t
 ## 10. Governing law
 Maryland law governs these terms, subject to any mandatory consumer rights where you live.
 
-Contact: [hello@DOMAIN] · AlphaPlay LLC, d/b/a Play Before Pixels, 11140 Rockville Pike, Suite 100-559, Rockville, Maryland 20852-3149, USA
+Contact: [hello@DOMAIN] · AlphaPlay LLC, d/b/a Play Before Pixels, [BUSINESS MAILING ADDRESS]

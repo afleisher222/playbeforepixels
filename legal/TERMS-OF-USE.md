@@ -4,7 +4,7 @@
 
 **Last updated:** [DATE]
 
-These Terms of Use ("Terms") govern your use of [DOMAIN] and any related pages, downloads, email lists, online courses and events (together, the "Site"). The Site is operated by **AlphaPlay LLC, doing business as Play Before Pixels** ("Play Before Pixels," "we," "us"), 11140 Rockville Pike, Suite 100-559, Rockville, Maryland 20852-3149, USA. Contact: [hello@DOMAIN].
+These Terms of Use ("Terms") govern your use of [DOMAIN] and any related pages, downloads, email lists, online courses and events (together, the "Site"). The Site is operated by **AlphaPlay LLC, doing business as Play Before Pixels** ("Play Before Pixels," "we," "us"), [BUSINESS MAILING ADDRESS]. Contact: [hello@DOMAIN].
 
 By using the Site or buying from us, you agree to these Terms. If you do not agree, please do not use the Site.
 
@@ -60,7 +60,7 @@ We may update these Terms. The "Last updated" date shows the latest version. Cha
 
 ## 15. Contact
 AlphaPlay LLC, d/b/a Play Before Pixels
-11140 Rockville Pike, Suite 100-559, Rockville, Maryland 20852-3149, USA
+[BUSINESS MAILING ADDRESS]
 [hello@DOMAIN]
 
 © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.
