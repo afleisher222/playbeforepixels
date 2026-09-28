@@ -143,6 +143,7 @@ ul.tight li{margin:2px 0}
 .sw{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px;box-shadow:inset 0 0 0 1px rgba(29,41,64,.25)}
 /* field boxes (editable pdf) */
 [data-field]{position:relative}
+span[data-field]{height:20px;vertical-align:bottom}
 .fieldbox{border-bottom:1.5px solid #9AA6BA}
 </style>`;
 }
@@ -188,7 +189,7 @@ const nameLine = (field) => `<span class="name">Name <i${field ? ` data-field="$
 
 function chartStrip(cw, o = {}) { // Layout 1: vertical strips — To do / All done
   const col = (title, sub, c, t, isDone) => `<div class="vstrip" style="${theme(cw, c, t)};width:2.95in;display:flex;flex-direction:column;align-items:center;gap:.06in">
-    <div class="band" style="height:.55in;justify-content:center;padding:0 10px"><div style="text-align:center"><h2 style="font-size:22px"${o.fields ? ` data-field="strip_title_${isDone ? 2 : 1}" data-fsize="18"` : ''}>${o.fields ? '' : title}</h2></div></div>
+    <div class="band" style="height:.55in;justify-content:center;padding:0 10px"><div style="text-align:center"><h2 style="font-size:22px${o.fields ? ';width:2.5in;height:.42in' : ''}"${o.fields ? ` data-field="strip_title_${isDone ? 2 : 1}" data-fsize="20" data-fdefault="${title}" data-fcolor="#FFFFFF"` : ''}>${o.fields ? '' : title}</h2></div></div>
     ${[1, 2, 3, 4].map(n => slot(isDone ? null : n, isDone ? 'done<br>goes here' : 'velcro<br>dot here')).join('')}
   </div>`;
   return page(`<div class="in" style="flex-direction:row;justify-content:center;gap:.35in;align-items:flex-start">
@@ -218,10 +219,10 @@ function chartRoutine(cw, kind, o = {}) { // Layouts 4 + 5: morning and bedtime 
   const bandStyle = m ? '' : (cw === 'rainbow' ? `--hc:${C.ink};--ht:#fff` : '');
   const deco = m ? `<svg viewBox="0 0 120 100" style="width:1.05in;height:.9in;flex:0 0 auto">${A.openCurtains()}</svg>` : `<svg viewBox="0 0 120 100" style="width:1.05in;height:.9in;flex:0 0 auto">${A.sleep()}</svg>`;
   return page(`<div class="in" style="${theme(cw, c, t)};gap:.16in">
-    <div class="band" style="height:1.15in;${bandStyle}">${deco}<div><h2${o.fields ? ` data-field="${kind}_title" data-fsize="22"` : ''}>${o.fields ? '' : (m ? 'Good morning!' : 'Good night!')}</h2><div class="sub">${m ? 'My morning, one picture at a time' : 'My bedtime, one picture at a time'}</div></div>${nameLine(o.fields ? `${kind}_name` : null)}</div>
+    <div class="band" style="height:1.15in;${bandStyle}">${deco}<div><h2${o.fields ? ` style="width:3.1in;height:.45in" data-field="${kind}_title" data-fsize="24" data-falign="0" data-fdefault="${m ? 'Good morning!' : 'Good night!'}" data-fcolor="${m && (cw === 'rainbow' || cw === 'soft' || cw === 'simple') ? C.ink : '#FFFFFF'}"` : ''}>${o.fields ? '' : (m ? 'Good morning!' : 'Good night!')}</h2><div class="sub">${m ? 'My morning, one picture at a time' : 'My bedtime, one picture at a time'}</div></div>${nameLine(o.fields ? `${kind}_name` : null)}</div>
     <div style="display:grid;grid-template-columns:repeat(3,2.3in);gap:.15in .15in">${[1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => slot(n)).join('')}</div>
     <div style="display:flex;gap:.15in;width:100%;align-items:stretch">
-      <div class="tipbar" style="flex:1"><span class="lab">All done</span><span>When every card is done, we: <span class="hand" style="font-size:17px;display:inline-block;min-width:1.4in;border-bottom:1.5px solid #9AA6BA"${o.fields ? ` data-field="${kind}_reward" data-fsize="12"` : ''}>${o.fields ? '' : (m ? 'play blocks!' : 'read one more book')}</span></span></div>
+      <div class="tipbar" style="flex:1"><span class="lab">All done</span><span>When every card is done, we: <span class="hand" style="font-size:17px;display:inline-block;min-width:1.4in;border-bottom:1.5px solid #9AA6BA"${o.fields ? ` data-field="${kind}_reward" data-fsize="12" data-falign="0"` : ''}>${o.fields ? '' : (m ? 'play blocks!' : 'read one more book')}</span></span></div>
     </div>
     ${tipbar(m ? 'morning' : 'bedtime')}
   </div>`, { cls: `chart cw-${cw}-page`, footNote: `Layout ${m ? 4 : 5} · ${m ? 'Morning' : 'Bedtime'} chart: 9 steps · Use only as many steps as your child needs` });
@@ -230,7 +231,7 @@ function chartToday(cw, start, o = {}) { // Layout 6: today board, Monday or Sun
   const days = start === 'mon' ? ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const cols = [['Morning', C.sun, C.tSun], ['Afternoon', C.sky, C.tSky], ['Evening', C.plum, C.tPlum]];
   return page(`<div class="in" style="${theme(cw, C.grass, C.tGrass)};gap:.11in">
-    <div class="band" style="height:.8in"><svg viewBox="0 0 120 100" style="width:.8in;height:.67in;flex:0 0 auto">${A.wToday()}</svg><div><h2${o.fields ? ` data-field="today_title_${start}" data-fsize="22"` : ''}>${o.fields ? '' : 'Today is…'}</h2><div class="sub">Clip or stick the marker on today</div></div>${nameLine(o.fields ? `today_name_${start}` : null)}</div>
+    <div class="band" style="height:.8in"><svg viewBox="0 0 120 100" style="width:.8in;height:.67in;flex:0 0 auto">${A.wToday()}</svg><div><h2${o.fields ? ` style="width:3.1in;height:.45in" data-field="today_title_${start}" data-fsize="24" data-falign="0" data-fdefault="Today is..." data-fcolor="${cw === 'soft' || cw === 'simple' ? C.ink : '#FFFFFF'}"` : ''}>${o.fields ? '' : 'Today is…'}</h2><div class="sub">Clip or stick the marker on today</div></div>${nameLine(o.fields ? `today_name_${start}` : null)}</div>
     <div style="display:flex;gap:.07in;width:100%">${days.map((d, i) => `<div style="flex:1;height:.55in;border-radius:12px;background:${cw === 'simple' ? '#fff' : (i === (start === 'mon' ? 5 : 0) || i === (start === 'mon' ? 6 : 6) ? 'var(--pn)' : C.wash)};border:${cw === 'simple' ? `1.5px solid ${C.ink}` : '0'};display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:Fredoka,sans-serif;font-weight:600;font-size:16px">${d}<span style="width:.16in;height:.16in;border-radius:50%;border:1.5px dashed #9AA6BA;margin-top:3px"></span></div>`).join('')}</div>
     <div style="display:flex;gap:.15in">${cols.map(([l, c, t]) => `<div style="${theme(cw, c, t)};display:flex;flex-direction:column;align-items:center;gap:.08in"><div class="band" style="height:.4in;justify-content:center;padding:0;border-radius:10px"><b style="font-family:Fredoka,sans-serif;font-weight:600;font-size:16px">${l}</b></div>${slot(null)}${slot(null)}</div>`).join('')}</div>
     <div style="${theme(cw, C.tomato, C.tTomato)};display:flex;gap:.15in;width:100%;align-items:stretch">
@@ -257,7 +258,7 @@ function checklist(cw, kind, start, o = {}) { // 5-12 weekly checklists (pre-fil
     return `<tr><td><div class="task">${task}</div></td>${days.map((d, j) => `<td class="dayc"><div class="check"${o.fields ? ` data-field="cl_${kind}_${start}_r${i + 1}_d${j + 1}" data-ftype="check"` : ''}></div></td>`).join('')}</tr>`;
   }).join('');
   return page(`<div class="in" style="${theme(cw, c, t)};gap:.12in">
-    <div class="band" style="height:.95in"><svg viewBox="0 0 120 100" style="width:.95in;height:.8in;flex:0 0 auto">${m ? A.alarm() : A.readInBed()}</svg><div><h2 style="font-size:26px"${o.fields ? ` data-field="cl_${kind}_${start}_title" data-fsize="18"` : ''}>${o.fields ? '' : (m ? 'My morning checklist' : 'After school & evening')}</h2><div class="sub">Ages 5–12 · Week of <span style="display:inline-block;width:1.1in;border-bottom:1.5px solid currentColor;opacity:.7;vertical-align:-2px"${o.fields ? ` data-field="cl_${kind}_${start}_week" data-fsize="10"` : ''}></span></div></div>${nameLine(o.fields ? `cl_${kind}_${start}_name` : null)}</div>
+    <div class="band" style="height:.95in"><svg viewBox="0 0 120 100" style="width:.95in;height:.8in;flex:0 0 auto">${m ? A.alarm() : A.readInBed()}</svg><div><h2 style="font-size:26px">${m ? 'My morning checklist' : 'After school & evening'}</h2><div class="sub">Ages 5–12 · Week of <span style="display:inline-block;width:1.1in;border-bottom:1.5px solid currentColor;opacity:.7;vertical-align:-2px"${o.fields ? ` data-field="cl_${kind}_${start}_week" data-fsize="10"` : ''}></span></div></div>${nameLine(o.fields ? `cl_${kind}_${start}_name` : null)}</div>
     <table class="cl"><tr><th style="text-align:left;padding-left:8px">${o.blank ? 'My jobs (write your own)' : 'My jobs'}</th>${days.map(d => `<th>${d}</th>`).join('')}</tr>${rows}</table>
     <div class="tipbar"><span class="lab">Then</span><span><b>Jobs and play first, screens later.</b> When my list is done, I choose: <span class="hand" style="font-size:16px;display:inline-block;min-width:1.5in;border-bottom:1.5px solid #9AA6BA"${o.fields ? ` data-field="cl_${kind}_${start}_choice" data-fsize="11"` : ''}>${o.fields || o.blank ? '' : 'bike ride, then a show'}</span></span></div>
   </div>`, { cls: `chart cw-${cw}-page`, footNote: `Big-kid ${m ? 'morning' : 'evening'} checklist · ${start === 'mon' ? 'Monday' : 'Sunday'} start · ${o.blank ? 'Blank' : 'Pre-filled'} · Laminate and use a dry-erase marker` });
@@ -525,6 +526,8 @@ function buildStarter(paper) {
       <div class="tile" style="--t:${C.tSun}"><h3>Laminate and velcro</h3><p>Laminate whole sheets in 3–5 mil pouches, then cut leaving a 1/8 in (3 mm) sealed edge and round the corners. Rough (hook) dots go on charts, soft (loop) dots on card backs.</p></div>
       <div class="tile" style="--t:${C.tGrass}"><h3>Want more?</h3><p>The Complete Set has all ${N_ALL} cards, including 58 big-kid cards for ages 5–12, 6 chart layouts, 4 colorways, editable blanks and Canva-ready PNGs.</p></div>
     </div>
+    <div class="tile" style="--t:${C.wash}"><h3 style="margin-bottom:8px">Try this tonight: a four-card bedtime</h3>
+      <div style="display:flex;align-items:center;justify-content:space-between">${['bath-bath-time', 'bedtime-pajamas', 'bedtime-brush-teeth', 'reading-bedtime-story'].map((id, i) => `${i ? `<svg viewBox="-34 -26 68 52" style="width:.34in"><path d="M-30-8H6V-22L32 0 6 22V8H-30Z" fill="${C.tomato}"/></svg>` : ''}<div style="width:1.32in;height:1.32in"><div style="transform:scale(.6);transform-origin:top left">${card(CARDS.find(c => c.id === id), 'rainbow')}</div></div>`).join('')}</div></div>
   </div>`, { footNote: 'How to use' }));
   out.push(...cardPages(S, 'rainbow', { age: 'Ages 0–5' }));
   out.push(...cardPages(S, 'simple', { age: 'Ages 0–5' }));

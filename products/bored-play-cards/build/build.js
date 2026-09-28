@@ -490,7 +490,7 @@ const safetyCss = `<style>
 function tipsPage() {
   const T = [
     ['Print', 'Print at 100% or “actual size,” not “fit to page.” Cardstock (65–110 lb / 176–300 gsm) makes sturdy cards. Pick the US Letter or A4 file to match your paper.'],
-    ['Card backs (optional)', 'Print a sheet of fronts, put it back in the tray and print one backs page on the other side. Test one sheet first. Or use the double-sided file and choose “flip on long edge.”'],
+    ['Card backs (optional)', 'Print a sheet of fronts, put it back in the tray and print one backs page on the other side. Test one sheet first. Or print the double-sided cards file and choose “flip on long edge.”'],
     ['Cut', 'Cut along the light grey lines with a paper trimmer or scissors. The white border around each card hides small wobbles.'],
     ['Laminate', 'Laminating pouches (3–5 mil) make cards last for years and wipe clean. Leave a thin sealed edge around each card, then round the corners with a corner punch or scissors so there are no sharp points.'],
     ['Velcro', 'Stick a hook (scratchy) dot on the back of each card you want to use on the Play Menu, and loop (soft) dots on the board. Store spare dots out of reach: they’re small parts.'],
@@ -501,7 +501,7 @@ function tipsPage() {
     ['Pick one of three', 'Lay out three cards and let your child choose. Choosing is half the fun.'],
     ['Energy check', 'Ask “calm, medium or wiggly?” first, then pull from that energy.'],
     ['Play Menu', 'Velcro four cards onto the menu each morning: calm, wiggly, together and free choice.'],
-    ['Big helper', 'An older child reads a 1–3 card aloud and plays it with a younger one.'],
+    ['Big helper', 'An older child reads a 1–3 card aloud and plays it with a younger one, with a grown-up close by.'],
     ['Season swap', 'Add the summer or rainy-day set when the weather turns.'],
   ];
   const G = [['Start here, card guide, safety', '1–6'], ['Ages 1–3 cards', '7–11'], ['Ages 3–5 cards', '12–16'], ['Ages 5–8 cards', '17–21'], ['Ages 8–12 cards', '22–26'], ['Summer + rainy-day sets', '27–30'], ['Card backs (optional)', '31–36'], ['Box dividers', '37–39'], ['Jar labels', '40–41'], ['Play Menu + weekly planners', '42–44'], ['Card index & checklist', '45–47']];
@@ -777,6 +777,9 @@ function mainPages(duplex) {
   ];
 }
 
+function duplexPages() {
+  return ['b13', 'b35', 'b58', 'b812', 'summer', 'rainy'].flatMap(k => bandSheets(k, true));
+}
 function editablePages() {
   // one sheet of fillable blank cards per colour + fillable menu, planners and a name label
   const intro = contentPage('edintro', 'Editable file', 'Make your own cards', `<p class="lead">This file has fill-in boxes. Open it in free Adobe Acrobat Reader (or another PDF app that supports forms), click a box and type. Save, then print at 100% on cardstock.</p>
@@ -822,12 +825,12 @@ function showcaseDoc() {
 // ---------- write ----------
 SZ = SIZES.letter;
 fs.writeFileSync(path.join(ROOT, 'source.html'), doc('../../brand/fonts/fonts.css', SZ, mainPages(false)));
-fs.writeFileSync(path.join(__dirname, 'duplex-letter.html'), doc('../../../brand/fonts/fonts.css', SZ, mainPages(true)));
+fs.writeFileSync(path.join(__dirname, 'duplex-letter.html'), doc('../../../brand/fonts/fonts.css', SZ, duplexPages()));
 fs.writeFileSync(path.join(__dirname, 'editable-letter.html'), doc('../../../brand/fonts/fonts.css', SZ, editablePages(), edCss));
 fs.writeFileSync(path.join(__dirname, 'cover.html'), doc('../../../brand/fonts/fonts.css', SZ, [coverPage()], '<style>body{width:8.5in}</style>'));
 SZ = SIZES.a4;
 fs.writeFileSync(path.join(__dirname, 'source-a4.html'), doc('../../../brand/fonts/fonts.css', SZ, mainPages(false)));
-fs.writeFileSync(path.join(__dirname, 'duplex-a4.html'), doc('../../../brand/fonts/fonts.css', SZ, mainPages(true)));
+fs.writeFileSync(path.join(__dirname, 'duplex-a4.html'), doc('../../../brand/fonts/fonts.css', SZ, duplexPages()));
 fs.writeFileSync(path.join(__dirname, 'editable-a4.html'), doc('../../../brand/fonts/fonts.css', SZ, editablePages(), edCss));
 SZ = SIZES.letter;
 fs.writeFileSync(path.join(__dirname, 'canva.html'), doc('../../../brand/fonts/fonts.css', SZ, canvaDoc(), '<style>.asset{page-break-after:auto}</style>'));
