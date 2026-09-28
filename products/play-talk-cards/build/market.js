@@ -66,9 +66,9 @@ function imagesA() {
   // age-coded
   const picks = [5, 21, 31, 46];
   out.push(['03-age-coded', `<div class="sq" style="background:#fff">
-    <div class="h"><p class="k" style="color:${C.tomato}">Sorted by age</p><h1>Age-coded from<br>babies to preschool</h1><p>Four colors, four shapes, 13 plays each. Pick your child’s color and go.</p></div>
-    ${picks.map((i, j) => at(cA(i), 52 + j * 232, 430, .86)).join('')}
-    ${BANDS.map((b, j) => `<div class="abs" style="left:${52 + j * 232}px;top:740px;width:206px;text-align:center"><div style="display:inline-flex;align-items:center;gap:8px;font:600 34px Fredoka,sans-serif">${K.shapeSvg(b.shape, C[b.color], 26)}${b.ages}</div><div style="font-size:18px;font-weight:800;margin-top:2px">${b.label}</div><div style="font-size:15px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin-top:4px">13 plays</div></div>`).join('')}
+    <div class="h"><p class="k" style="color:${C.tomato}">Sorted by age</p><h1>Age-coded from<br>babies to preschool</h1><p>Four colors, four shapes, 13 plays each.</p></div>
+    ${picks.map((i, j) => at(cA(i), 52 + j * 232, 350, .86)).join('')}
+    ${BANDS.map((b, j) => `<div class="abs" style="left:${52 + j * 232}px;top:668px;width:206px;text-align:center"><div style="display:inline-flex;align-items:center;gap:8px;font:600 34px Fredoka,sans-serif">${K.shapeSvg(b.shape, C[b.color], 26)}${b.ages}</div><div style="font-size:18px;font-weight:800;margin-top:2px">${b.label}</div><div style="font-size:15px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin-top:4px">13 plays</div></div>`).join('')}
     <div class="band" style="background:${C.wash};color:${C.ink};justify-content:center"><span>Ages are a guide, not a rule. Play any card that fits your child today.</span></div></div>`]);
   out.push(printImage('A', prev(5), C.tSky));
   // talk moves
@@ -103,9 +103,9 @@ function imagesB() {
     ${marks.map(([x, y, n]) => `<span class="abs" style="left:${cx + x * s - 18}px;top:${cy + y * s - 4}px;width:36px;height:36px;border-radius:50%;background:${C.ink};color:#fff;font:600 19px Fredoka,sans-serif;display:flex;align-items:center;justify-content:center;z-index:5;box-shadow:0 0 0 4px #fff">${n}</span>`).join('')}
     <ol class="list abs" style="left:620px;right:56px;top:280px">${notes.map(([a, b], i) => `<li style="display:flex;gap:14px;margin-bottom:34px"><span style="flex:none;width:36px;height:36px;border-radius:50%;background:${C.ink};color:#fff;font:600 19px Fredoka,sans-serif;display:flex;align-items:center;justify-content:center">${i + 1}</span><span><b style="display:block;font-size:22px;font-weight:800">${a}</b><span style="font-size:18px;line-height:1.35">${b}</span></span></li>`).join('')}</ol></div>`]);
   out.push(['03-four-moments', `<div class="sq" style="background:#fff">
-    <div class="h"><p class="k" style="color:${C.tomato}">Organized by moment</p><h1>Four everyday moments,<br>13 cards each</h1><p>The talk happens where you already are. No planning needed.</p></div>
-    ${[7, 20, 33, 42].map((i, j) => at(cB(i), 52 + j * 232, 430, .86)).join('')}
-    ${MOMENTS.map((m, j) => `<div class="abs" style="left:${52 + j * 232}px;top:740px;width:206px;text-align:center"><div style="font:800 30px 'Bricolage Grotesque',sans-serif;color:${C[m.color] === C.sun ? C.ink : C[m.color]}">${m.name}</div><div style="font-size:16px;font-weight:700;margin-top:4px;line-height:1.3">${m.where}</div></div>`).join('')}
+    <div class="h"><p class="k" style="color:${C.tomato}">Organized by moment</p><h1>Four everyday moments,<br>13 cards each</h1><p>The talk happens where you already are.</p></div>
+    ${[7, 20, 33, 42].map((i, j) => at(cB(i), 52 + j * 232, 350, .86)).join('')}
+    ${MOMENTS.map((m, j) => `<div class="abs" style="left:${52 + j * 232}px;top:668px;width:206px;text-align:center"><div style="font:800 30px 'Bricolage Grotesque',sans-serif;color:${C[m.color] === C.sun ? C.ink : C[m.color]}">${m.name}</div><div style="font-size:16px;font-weight:700;margin-top:4px;line-height:1.3">${m.where}</div></div>`).join('')}
     <div class="band" style="background:${C.wash};color:${C.ink};justify-content:center"><span>For ages 5–12 · grown-ups answer too · “pass” is always allowed</span></div></div>`]);
   out.push(printImage('B', prev(5), C.tSun));
   const hcol = [C.tomato, C.sun, C.sky, C.plum, C.grass, C.tomato];

@@ -724,7 +724,7 @@ function certPage(fields) {
     <p class="ctp">for playing <span class="ctm">${[10, 25, 50, 100].map(n => `<i${f('cert_' + n)}></i>${n}`).join(' ')}</span> cards from the “I’m bored!” jar.</p>
     <div class="ctr"><div><span class="kick">Favorite card</span><div class="mline"${f('cert_fav')}></div></div><div><span class="kick">Date</span><div class="mline"${f('cert_date')}></div></div></div>
     <div class="ctq"><div class="ctq1"><span class="kick">Our top three cards</span>${[1, 2, 3].map(i => `<div class="ctli"><b>${i}</b><div class="mline"${f('cert_top' + i)}></div></div>`).join('')}</div>
-    <div class="ctq2">${icon('talk', 'ctqi')}<span class="kick">Best thing we said while we played</span><div class="ctqb"${f('cert_said')}></div></div></div>
+    <div class="ctq2"><span class="kick ctqk">${icon('talk', 'ctqi')}Best thing we said while we played</span><div class="ctqb"${f('cert_said')}></div></div></div>
     <div class="ctb"><span>Pull a card. Play together.</span>${logo('mark', 'lgm')}<span>playbeforepixels.com</span></div>
   </div>`);
 }
@@ -743,9 +743,9 @@ const certCss = `<style>
 .ctq{display:grid;grid-template-columns:1fr 1fr;gap:22px;width:6.3in;margin-top:24px;text-align:left}
 .ctli{display:flex;align-items:flex-end;gap:8px}.ctli b{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-size:16px;color:${C.tomato};padding-bottom:4px}.ctli .mline{flex:1}
 .ctq2{background:${C.tSky};border-radius:16px;padding:12px 14px;position:relative}
-.ctqi{position:absolute;right:12px;top:10px;width:22px;height:22px;color:${C.sky}}
+.ctqk{display:flex;align-items:center;gap:6px}.ctqi{width:16px;height:16px;color:${C.sky};flex:0 0 16px}
 .ctqb{height:1.05in}
-.ctb{margin-top:auto;display:flex;gap:14px;align-items:center;font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+.ctb{margin-top:auto;display:flex;gap:14px;align-items:center;font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#5B667C}
 .lgm{height:.35in;display:block}
 </style>`;
 function faqPage() {

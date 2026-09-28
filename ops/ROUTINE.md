@@ -100,6 +100,11 @@ Run every new or changed public item through ops/COMPLIANCE-GATE.md. Anything th
 - **Prevent problems:** watch platform news daily; update listings before a rule change takes effect; refresh expiring keys early (the founder creates the key; everything else is prepared).
 - **Never cross a guardrail to be proactive:** no spending, no contacting people, no new platforms or terms, and nothing touching her job, her case or her children without her written approval.
 
+## Living business plan (monthly research run; quarterly deep review)
+- **Monthly:** put last month's actual revenue, costs, fees, refunds, traffic, conversion and email growth into business/PlayBeforePixels_Financial_Model.xlsx (Actuals column next to each scenario); re-forecast the next 12 months from the actuals; flag any assumption that was off by more than 25%; check each milestone and gate in business/BUSINESS-PLAN.md and the Target/Walmart playbook; move the next gated step into ops/QUEUE.md when its gate is met.
+- **Quarterly (first monthly run of Jan, Apr, Jul, Oct):** a strategy review workflow — what grew, what stalled, which channel or product to double down on or cut, which innovation-lane ideas become products, whether the next wave (retail, international, school-facing if counsel has cleared it) is ready — then rewrite the plan's one-page summary and log the decisions in business/DECISIONS.md.
+- The founder's report stays money-only: the quarterly review adds one line — "Plan update: <the single most important change>."
+
 ## Founder updates = money (founder's instruction, September 28, 2026 — overrides other report wording)
 Arielle only wants to hear how much money the business is making. Every report she receives follows this format and nothing else:
 - **Daily:** "Yesterday: $X in sales · This month so far: $Y · Profit this month (est.): $Z." Then either "Nothing needs you." or one line per item in ops/APPROVALS.md.

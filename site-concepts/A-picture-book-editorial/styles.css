@@ -491,8 +491,8 @@ button.sc-seg[aria-pressed="true"] .sc-label::after { content: " ✓"; font-size
 .g-main img { width: 100%; height: 100%; object-fit: cover; }
 .g-main.is-page { display: grid; place-items: center; padding: 8%; }
 .g-main.is-page img { width: 100%; height: auto; aspect-ratio: 1; border-radius: 18px; box-shadow: 0 30px 40px -28px rgba(29,41,64,.55); }
-.g-thumbs { display: flex; gap: 10px; margin-top: 12px; overflow-x: auto; padding: 4px 2px 6px; scrollbar-width: thin; }
-.g-thumbs button { flex: none; width: 76px; height: 76px; padding: 0; border: 2px solid transparent; border-radius: 6px; overflow: hidden; background: var(--wash); }
+.g-thumbs { position: relative; display: flex; gap: 10px; margin-top: 12px; overflow-x: auto; padding: 4px 2px 6px; scrollbar-width: thin; }
+.g-thumbs button { position: relative; flex: none; width: 76px; height: 76px; padding: 0; border: 2px solid transparent; border-radius: 6px; overflow: hidden; background: var(--wash); }
 .g-thumbs button[aria-pressed="true"] { border-color: var(--ink); }
 .g-thumbs img { width: 100%; height: 100%; object-fit: cover; }
 .tp { grid-column: 8 / span 5; padding-top: 8px; }
