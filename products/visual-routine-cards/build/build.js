@@ -596,7 +596,7 @@ function startHerePage() {
       <div class="tile" style="--t:${C.wash};display:flex;align-items:center;gap:.18in"><div style="width:1in;height:1in;background:#fff;padding:.06in;border-radius:10px;flex:0 0 auto">${QR}</div><div><h3>Free bonus</h3><p>Scan for free seasonal routine cards${starter ? '' : ' and the Canva-ready PNG set'}: <b>${BONUS}</b>. Lost a file? Help is at <b>${SITE}/help</b>.</p></div></div>
     </div>` : `<div class="tile" style="--t:${C.tSky}"><h3>Downloading: use a browser, not the app</h3><p>The Etsy app can't download files. Open Etsy in a web browser, go to You › Purchases and reviews, and choose Download files. On a phone, save each PDF to Files, then open it in Adobe Acrobat Reader. Your files stay on your Purchases page to download again any time.</p></div>`}
     <div class="safety"><h3>Safety in one line</h3><p>A grown-up stays close and keeps the pieces. Print at full size, use no velcro dots with children under 3, and check dots before each play for older children. Every card follows our published safety rules.</p></div>
-    <p class="note" style="margin-top:auto">License: personal and family use in your own home. Please don't share or resell the files.</p>
+    <p class="note" style="margin-top:auto">License: one family's personal use, including grandparents and sitters. Giving it as a gift? Pass the files on, or print one set for that family. Please don't share or resell the files.</p>
   </div>`, { note: 'Start here' });
 }
 

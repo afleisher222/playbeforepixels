@@ -50,13 +50,13 @@ This is designed for the person the founder once was: a parent on a phone, late 
 | 4 | Questions for the pediatrician | A printable with no email required: Letter, A4 and large print, plus an HTML version | `/research/pediatrician-questions/` |
 | 5 | A free early-intervention evaluation, in general terms | In the US, under 3: the IDEA Part C program; you can usually refer your own child, and the evaluation is free [VERIFY]. Age 3 and up: the local public school district [VERIFY]. Outside the US: a doctor, nurse or health visitor. **Links go only to national directories, never to a state or county program** | `/research/early-intervention/` |
 | 6 | Everyday talk-and-play ideas | The six plain-words moves (pause and wait, say what you see, repeat and add one word, offer a choice, follow their lead, sing and gesture), described as "not a treatment, not a test" | Pillar, "What parents can do" |
-| 7 | An optional free play printable | **One** link, framed as play and family time. It leads to a product-free twin page, `/research/play-printable/` (noindex), which gives a **hub edition** of the PDF (`channel=hub`: the brand URL in the footer, but no "More from" page and no QR code to the bonus page or shop) and a product-free delivery email. After that, readers get the same general newsletter as everyone else. There is **no hub-specific email sequence** | Pillar, FAQ Q22 |
+| 7 | An optional free play printable | **One** link, framed as play and family time. It leads to a product-free twin page, `/research/play-printable/` (noindex), which gives a **hub edition** of the PDF (`channel=hub`: the brand URL in the footer, but no "More from" page and no QR code to the bonus page or shop) and a product-free delivery email. After that, readers get the same general newsletter as everyone else. There is **no hub-specific email sequence**. **The sign-up form says plainly, before anyone signs up, that the newsletter includes our products**, and FAQ Q26 says the same (final wording follows the hub email route, `ops/APPROVALS.md` D3) | FAQ Q23 only. **Not on the pillar** (reader panel and autism content audit H3: the pillar reports that daily parent-child play went with lower autism-checklist scores, so a play printable beside it could read as a claim) |
 
 The journey ends at the pediatrician, not at the shop. There is no exit-intent pop-up, no retargeting and no "you may also like".
 
-**Two gaps to close before launch:**
-- `content/research-hub/index.md` has 206 words before its first section. Move "How we wrote this" below "The short version".
-- Add FAQ question 27 (draft, needs every review): **"Is one particular show or video channel the problem?"** Suggested answer: "The studies we have found measured how much time children spent with screens, and sometimes how they used them (alone or together, background TV), not particular shows. We don't comment on particular shows or channels. If you're worried about your child, talk with your pediatrician." This answers the founder's own late-night question without naming anyone.
+**Two gaps to close before launch (both closed September 28, 2026, by the simulated reader panel, §13):**
+- `content/research-hub/index.md` had 206 words before its first section. "How we wrote this" now sits below "The short version", and the three-step "Worried?" box is the second block (150 words before the first section).
+- FAQ question on particular shows, now **FAQ Q4**, right after "Do screens cause autism?" (draft, needs every review; the old questions 4–26 are now 5–27): **"Is one particular show or video channel the problem?"** Suggested answer: "The studies we have found measured how much time children spent with screens, and sometimes how they used them (alone or together, background TV), not particular shows. We don't comment on particular shows or channels. If you're worried about your child, talk with your pediatrician." This answers the founder's own late-night question without naming anyone.
 
 ---
 
@@ -136,7 +136,7 @@ The journey ends at the pediatrician, not at the shop. There is no exit-intent p
 - a new meta-analysis;
 - a randomized trial;
 - a sibling, genetic or other causal-design study;
-- a change in a guideline (the AAP 2026 statement must be read before FAQ questions 17–18 are published);
+- a change in a guideline (the AAP 2026 statement must be read before FAQ questions 18–19 are published);
 - a retraction of anything the short version relies on.
 
 Each such change needs a draft, a "What changed" note and the full review (a new sensitivity read if the framing changes). Translations are marked "update pending" within 2 weekly cycles (translation-plan rule 8).
@@ -147,7 +147,7 @@ Each such change needs a draft, a "What changed" note and the full review (a new
 
 **The topic is suddenly in the news:** no reactive posts or pages. Check that the pillar still answers the question. A new study behind the news goes through the normal cycle. Anything viral follows COMPLIANCE-GATE line 14.
 
-**Launch order: verify these first.** These are the sources the short version depends on: Zamfir 2018, Harlé 2019, Heffler 2020, Kushima 2022, Melchior 2022, Ophir 2023, Takahashi N 2023, Lin 2025, Cai 2025, Ozyazici 2026, Krijnen 2026, the autismus Deutschland statement, Detroja and Bhatia 2024, WHO 2019, AAP 2016 and AAP 2026. If one cannot be confirmed, **rewrite the short version without it rather than wait.** Verify the rest of the library after that, critical and null studies first.
+**Launch order: verify these first.** Step zero is a Crossref DOI lookup for every 2025–2026 source on the six review pages (the team has not yet confirmed that several of them exist): a DOI that does not resolve, or resolves to a different paper, means the claim is deleted, not kept. Then these, the sources the short version depends on: Zamfir 2018, Harlé 2019, Heffler 2020, Kushima 2022, Melchior 2022, Ophir 2023, Takahashi N 2023, Lin 2025, Cai 2025, Ozyazici 2026, Krijnen 2026, the autismus Deutschland statement, Detroja and Bhatia 2024, WHO 2019, AAP 2016 and AAP 2026. If one cannot be confirmed, **rewrite the short version without it rather than wait.** Verify the rest of the library after that, critical and null studies first.
 
 ---
 
@@ -164,7 +164,7 @@ Each such change needs a draft, a "What changed" note and the full review (a new
 **Format:**
 - Instagram: 1080×1350, 5–8 frames. Pinterest: 1000×1500.
 - **Frame 1 states the fact.** Never open with a fear question such as "Are screens giving your child autism?"
-- **The last frame** carries the short safe sentence, "playbeforepixels.com/research" and "Not medical advice".
+- **The last frame** carries the short safe sentence, "playbeforepixels.com/research" and "Not medical advice". Because comments are off, the caption also says how to send a correction ("Spotted a mistake? Tell us through the contact form at playbeforepixels.com/research"), so critics, including autistic readers, have a way to reply.
 
 **Rules (checked by HF-14):**
 - **Links go only to a hub page.**
@@ -223,7 +223,7 @@ Each such change needs a draft, a "What changed" note and the full review (a new
   - No fear or blame words (HF-10).
 - **Languages:**
   - Foreign terms carry `lang` attributes.
-  - Offer a "¿Prefieres leer en español?" link. Never redirect by browser language.
+  - Offer a "¿Prefieres leer en español?" link **only once the reviewed Spanish page exists**. Never link to a machine translation or to a page that isn't live, and never redirect by browser language.
 
 ---
 
@@ -324,7 +324,7 @@ Each such change needs a draft, a "What changed" note and the full review (a new
 
 ## 11. Fixes needed in existing files (found while writing this)
 
-1. **Printable links** in `content/research-hub/index.md` and `faq.md`, and in `seo/articles/08` and `09`, should point to `/research/play-printable/`. Build that page and the `channel=hub` PDF edition.
+1. **Printable links** in `content/research-hub/index.md` and `faq.md`, and in `seo/articles/08` and `09`, should point to `/research/play-printable/`. Build that page and the `channel=hub` PDF edition. **Done September 28, 2026** for the hub pages: the pillar's link was removed (§2 row 7) and the FAQ's now points to the twin (the articles were done by the autism content audit). The twin page and the hub PDF edition are still to build.
 2. **`seo/articles/08`** duplicates the pillar. Retire it. SEO-PLAN row 40 (title "A Careful Look at the Term") should follow the hub's title.
 3. **The hub has three names:** "The Virtual Autism Project" (CAMPAIGN-BIBLE §4 and the Study Snapshots label), "Research Library" (SEO-PLAN) and "Research Notes" (SOCIAL-HANDLES). DECISION-MEMO says rename. Use one name (§12). **Resolved September 28, 2026:** the founder chose "Play Before Pixels Research Notes" (`legal/ENTITY.md`); marketing/, seo/, business/, legal/ and index.html were aligned by the autism content audit (`ops/TESTS/autism-content-audit.md`). site-concepts/ is still open (fix-later list there). The sub-page `/research/library/` keeps its descriptive title.
 4. **`check_listings.py` `AUTISM_RX`** misses Turkish "otizm" and terms in other scripts (autyzm, аутизм, التوحد, 自闭症, 자폐). Add them before any non-English listing goes live. **Done September 28, 2026** in `check_listings.py` and `check_hub_firewall.py` (autism content audit).

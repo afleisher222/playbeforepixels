@@ -171,7 +171,9 @@ sources:
 INTERNAL (remove at publish):
 - Every source on this page is "secondary-only" as of 2026-09-28. PubMed, PMC, publisher sites, CDC and the AAP were all blocked, and the web-search budget was spent. Nothing here may be published until each cited source has been read (abstract at minimum) and its study page updated. See verification-queue.md.
 - BRAND.md rule 5: sources outside the allowed-citation list carry [VERIFY] on the page. Do not remove a [VERIFY] mark until the source has been read and the claim confirmed.
-- No product links, prices or mascots on this page. The one link below to the free printable is framed as play (BRAND.md "Autism searches"). No founder story on research pages.
+- No product links, prices or mascots on this page. No founder story on research pages.
+- No printable link on this page (reader panel, 2026-09-28; autism content audit H3): the pillar reports Heffler 2020's "daily parent-child play went with lower scores", so a play printable here could read as "our printable lowers autism scores". The one printable invitation lives in the FAQ ("What can we do at home"), pointing to /research/play-printable/.
+- At publish, set the visible "Last reviewed" date and last_reviewed to the day the four review gates pass, not the drafting date.
 - Required before publishing: paid autistic sensitivity read; medical-claims and legal review; a clinician review of "What parents can do".
 -->
 
@@ -179,25 +181,32 @@ INTERNAL (remove at publish):
 
 > "Virtual autism" is a term some clinicians use for autism-like behaviors seen in some young children with heavy early screen exposure. It is not a medical diagnosis. Studies have found links (associations) between early screen time and later outcomes, not proof that screens cause autism, and autism is not a parent's fault. If you're worried about your child, talk with your pediatrician and ask about a free early intervention evaluation.
 
-> **This is not medical advice.**
-> This page explains research in plain language. It cannot tell you whether your child is autistic, has a delay, or is developing as expected. Only a qualified professional who meets your child can help with that. If something about your child's development worries you, you do not need to wait: talk with your pediatrician, and in the US you can ask your state's early intervention program for a free evaluation yourself. [See how to ask](/research/early-intervention/).
+> **Worried? You don't need to wait.**
+> 1. Talk with your pediatrician or family doctor.
+> 2. Ask for a free evaluation. In the US you can ask your state's early intervention program yourself. [How to ask](/research/early-intervention/).
+> 3. Bring [these questions](/research/pediatrician-questions/).
+>
+> **This is not medical advice.** This page explains research. It can't tell you whether your child is autistic, has a delay, or is developing as expected. Only a professional who meets your child can.
 
-**Last reviewed:** September 28, 2026. **How we wrote this:** every claim links to a study page that says exactly what we read. Sources marked **[VERIFY]** are ones we have not yet been able to check against the original paper. Read them as provisional. [Our editorial policy](/research/editorial-policy/) explains how we choose sources, who reviews them, and how to report a mistake.
+**Last reviewed:** September 28, 2026.
 
 ## The short version
 
 - **It is not a diagnosis.** "Virtual autism" is not in the World Health Organization's ICD or the DSM, and even the psychologist who coined it says it is not a medical diagnosis ([Zamfir 2018](/research/studies/zamfir-2018/) [VERIFY]).
 - **Where it comes from.** The evidence that uses the label is case reports, small clinic series without comparison groups, and surveys at one point in time. We have found no randomized trials, and no long-term studies designed to test whether signs change when screens are reduced ([Ozyazici 2026](/research/studies/ozyazici-2026/) [VERIFY]).
 - **Larger studies find links, not causes, and not always the same link.** Some large studies find that more early screen time goes with somewhat higher scores on autism screening checklists ([Heffler 2020](/research/studies/heffler-2020/)), or with higher odds of an autism diagnosis in some groups ([Kushima 2022](/research/studies/kushima-2022/), boys only). Another large study found no simple "more screens, more autism" pattern ([Melchior 2022](/research/studies/melchior-2022-elfe/) [VERIFY]).
-- **But the links may run the other way, or come from something else.** Children with a higher genetic likelihood of autism already watch more as toddlers ([Takahashi N 2023](/research/studies/takahashi-n-2023-genetics/) [VERIFY]). The largest review we have found reported an overall positive link, but it shrank and stopped being statistically significant once the authors corrected for publication bias ([Ophir 2023](/research/studies/ophir-2023-meta-analysis/) [VERIFY]). Two further studies built to get closer to cause found no clear causal signal, though each has important limits: one rests on a debatable statistical assumption, and the other cannot test screen use in infancy ([Lin 2025](/research/studies/lin-2025-lsac/) [VERIFY]; [Cai 2025](/research/studies/cai-2025-mendelian-randomization/) [VERIFY]).
+- **But the links may run the other way, or come from something else.** Children with a higher genetic likelihood of autism already watch more as toddlers ([Takahashi N 2023](/research/studies/takahashi-n-2023-genetics/) [VERIFY]). The largest review we have found reported an overall positive link, but it shrank and stopped being statistically significant once the authors corrected for publication bias ([Ophir 2023](/research/studies/ophir-2023-meta-analysis/) [VERIFY]). Two further studies built to get closer to cause found no clear causal signal, though each has important limits: one rests on a debatable statistical assumption, and the other cannot test screen use in infancy ([Lin 2025](/research/studies/lin-2025-lsac/) [VERIFY]; [Cai 2025](/research/studies/cai-2025-mendelian-randomization/) [VERIFY]). None of this rules out that heavy screen use plays some part for some children. It means that has not been shown.
 - **Researchers, clinicians and autism organizations, including autistic authors, have objected to the term.** They say it risks bringing back the old, false idea that parents cause autism, and that it blurs what autism is ([Krijnen 2026](/research/studies/krijnen-2026-autism/) [VERIFY]; [autismus Deutschland](/research/studies/autismus-deutschland-statement/) [VERIFY]).
 - **What helps right now does not depend on settling the debate.** If you're worried, ask your pediatrician and ask for a free evaluation. Talking, playing and reading together are good for every child, whatever the research eventually shows.
+
+**How we wrote this:** every claim links to a study page that says exactly what we read. Sources marked **[VERIFY]** are ones we have not yet been able to check against the original paper. Read them as provisional. [Our editorial policy](/research/editorial-policy/) explains how we choose sources, who reviews them, and how to report a mistake.
 
 ## A note to autistic readers and their families
 
 If you are autistic, or you love someone who is, parts of this page may be hard to read. Much of the research below treats autism as something to be counted and explained, and the term "virtual autism" has been criticized for the hurt it can cause. Here is where we stand.
 
 - **Autism is a lifelong neurodevelopmental difference, not damage and not a failure.** Autistic children and adults are whole people. Nothing on this page is meant to suggest that an autistic child is a bad outcome, or that autism is something to be prevented or fixed.
+- **Support needs differ.** Some autistic children need a lot of support with communication, daily life, sleep or health. Others need much less. Both are real, and every family's experience deserves respect.
 - **Autism is not caused by parenting.** The old idea that parents cause autism was wrong, and autism organizations and researchers warn that "virtual autism" risks bringing it back ([autismus Deutschland](/research/studies/autismus-deutschland-statement/) [VERIFY]; [Krijnen 2026](/research/studies/krijnen-2026-autism/) [VERIFY]). No study has shown that screens cause autism.
 - **Screens can meet real needs.** An autistic researcher describes how screen use met their own needs for predictability, safety, autonomy and belonging, and argues that research should ask how and why autistic people use media and weigh benefits as well as risks ([van Asselt 2026](/research/studies/van-asselt-2026/) [VERIFY]).
 - **A communication device is a voice, not "screen time".** Tablets and phones used for AAC (augmentative and alternative communication) are communication tools. If your child uses one, keep it within reach.
@@ -226,7 +235,7 @@ It helps to sort the research by **how** it was done, because some designs can a
 
 A few reports describe young children with heavy screen use and autism-like signs whose developmental scores changed after screen time was cut and adult time added ([Heffler 2022](/research/studies/heffler-2022-case-report/), two children [VERIFY]; [an uncontrolled series of 30 children in Pakistan](/research/studies/apims-2023-pakistan/) [VERIFY]; [a very small series in Indonesia](/research/studies/hermawati-2018/) [VERIFY]).
 
-These reports matter because they are where the idea comes from. But they **cannot tell us why** a child changed. None had a comparison group. In each, less screen time came together with more adult attention and, often, professional support, and young children develop quickly anyway. Assessors usually knew what had changed at home.
+These reports matter because they are where the idea comes from. But they **cannot tell us why** a child changed. None had a comparison group. In each, less screen time came together with more adult attention and, often, professional support, and young children develop quickly anyway. Assessors usually knew what had changed at home. And a lower score on an autism checklist is not the same as a child being happier or better off.
 
 ### Surveys at one point in time, and case-control studies
 
@@ -306,13 +315,13 @@ Young children, including autistic children, develop and change quickly. When a 
 ## What parents can do
 
 **1. If something worries you, ask. You don't need to wait.**
-Talk with your pediatrician or family doctor about any concern: how your child talks, plays, responds, moves or connects with you. Bring notes and examples. Our [printable list of questions for your pediatrician](/research/pediatrician-questions/) can help.
+Talk with your pediatrician or family doctor about any concern: how your child talks, plays, responds, moves or connects with you. Bring notes and examples. Our [printable list of questions for your pediatrician](/research/pediatrician-questions/) can help. If your child has stopped using words or skills they used to have, tell your pediatrician soon rather than waiting for the next routine visit [VERIFY wording against CDC "Learn the Signs. Act Early." and AAP guidance; clinician reviewer to confirm].
 
 **2. In the US, you can ask for a free early intervention evaluation yourself.**
 Every US state has an early intervention program for children under 3 under federal law (IDEA Part C). You can usually contact it directly without a doctor's referral, and the evaluation is free [VERIFY against official program pages]. For children 3 and older, contact your local public school district and ask for a free evaluation [VERIFY]. [How to ask, step by step](/research/early-intervention/), with pointers for the UK, Canada and Australia.
 
 **3. You don't have to choose between "screens" and "evaluation".**
-Some families decide to change screen habits while they wait. That's fine. But please don't wait to see whether cutting screens makes a difference before asking for an evaluation. Support is worth having whatever the reasons behind what you're noticing, and an evaluation is how you find out what your child needs.
+Some families decide to change screen habits while they wait. That's fine, and if you notice changes, tell the people evaluating your child: what you see at home is useful to them. But please don't wait to see whether cutting screens makes a difference before asking for an evaluation. Support is worth having whatever the reasons behind what you're noticing, and an evaluation is how you find out what your child needs.
 
 **4. Everyday play and conversation, as ordinary family life.**
 Talking, singing, reading and playing together are good for every child, autistic or not. They are not a treatment, they are not a way to make a child less autistic, and they are not a test you can fail. A few easy ways in:
@@ -320,11 +329,10 @@ Talking, singing, reading and playing together are good for every child, autisti
 - **Pause and wait.** Leave a little gap so your child can take a turn, with a sound, a look, a gesture or a word.
 - **Say what you see.** "Big ball. Rolling. Stop!"
 - **Repeat and add one word.** Child: "Car." You: "Blue car."
-- **Offer a choice.** "Banana or apple?"
+- **Offer a choice.** "Banana or apple?" A point, a reach or a look counts as an answer.
 - **Follow their lead.** Join in with what your child is already interested in, including lining things up, spinning wheels or watching the same thing again. Their interests are a way in, not a problem.
 - **Sing and gesture.** Songs with actions invite turn-taking without pressure.
-
-If you'd like some ideas to play with, our free printable, [Five 5-Minute Plays](/free/five-5-minute-plays/), has quick screen-free games for little ones. It is simply play for family time.
+- **Use your home language.** Talk, sing and read in the language you know best. Every language counts.
 
 **5. What guidelines say about screens for little ones.**
 The World Health Organization recommends no screen time for babies under 1 and no more than 1 hour a day for 2-to-4-year-olds, with plenty of active play ([WHO 2019](/research/studies/who-2019-under-5-guidelines/)). For 1-year-olds, it is recalled as not recommending sedentary screen time at all [VERIFY against the guideline]. These limits are precautionary, not a line past which harm has been shown. The American Academy of Pediatrics published detailed advice for under-5s in 2016 ([AAP 2016](/research/studies/aap-2016-media-and-young-minds/)) and a new policy statement in January 2026 that reportedly replaces its earlier media guidance ([AAP 2026](/research/studies/aap-2026-digital-ecosystems/) [VERIFY]). We will summarize the 2026 advice once we have read it. Research on *how* screens are used suggests that watching together and keeping background TV off may matter as well as total time ([Mallawaarachchi 2024](/research/studies/mallawaarachchi-2024-contexts/) [VERIFY]).

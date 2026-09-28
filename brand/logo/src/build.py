@@ -30,9 +30,11 @@ import json, math, os, re, struct, sys
 # legal/protection/creation-records-log.md (section B), and commit that version on its own.
 # =====================================================================================================
 EDIT_LOG = [
-    ('2026-09-28', 'Claude (AI)', 'Kit v2 generated from concept C with the review panel\'s fixes 3-6 (square '
-     'favicon peg, silhouette dome 200 / neck 70 / bulge 10 / peg 240, favicon dome 187.5 / bulge 6, seal '
-     'minimum 80 px / 16 mm). Band colour and lean left exactly as in concept C for the founder to decide.'),
+    ('2026-09-28', 'Claude (AI)', 'AI-generated baseline: kit v2 from concept C with the review panel\'s fixes 3-6 '
+     '(square tomato favicon peg; TOP dome 165->200, neck 86->70, bulge 22->10, handle_h 210->240; FAV_TOP dome '
+     '125->187.5, bulge 14->6; seal minimum 80 px / 16 mm), ring pairs LA +80 and XE +32 (the letters touched), '
+     'small-cut wordmark (opsz 14, track 30, space 226), stacked lockup. BAND and TILT left as in concept C '
+     '(sun, 8) for the founder to decide.'),
     # ('YYYY-MM-DD', 'founder', 'BAND SUN -> ...: why you chose it'),
     # ('YYYY-MM-DD', 'founder', 'TILT 8 -> ...: why'),
     # ('YYYY-MM-DD', 'founder', 'your own choice, e.g. SEAL cap 96 -> ..., TOP w 430 -> ..., WORD ball_r 94 -> ...'),
@@ -54,6 +56,9 @@ SEAL = dict(
     inner=40,       # clear space between the letters and the top
     track=50,       # extra letter spacing on the ring, in font units (1000 = one em)
     space=250,      # width of the word space in "PLAY BEFORE", font units
+    pairs={'LA': 80, 'XE': 32},  # extra space for single pairs (font units). On the top arc the letters' feet
+                    # converge (L's foot met A's foot) and on the bottom arc their tops do (X met E): each
+                    # pair now keeps the ~10-unit gap the other pairs have, without splitting the words
     dot_r=29,       # radius of the two balls between the words
     top_fill=0.82,  # how much of the free middle the top fills (1.0 = touches the clear space)
     top_dy=0,       # optical nudge of the top (units, + = down)
@@ -108,7 +113,7 @@ LOCKUP = dict(      # horizontal lockup: small seal + one-line wordmark
 STACK = dict(       # stacked lockup: small seal above "Play / Before / Pixels" (tote fronts, sticker sheets)
     disc=2.30,      # small seal diameter, x cap height
     gap=0.42,       # space between the seal and the first line's tallest letter, x cap height
-    leading=930,    # baseline to baseline (font units)
+    leading=990,    # baseline to baseline (font units)
 )
 STICKER = dict(border=46)   # white die-cut border around the seal (units of the 500-radius seal)
 
@@ -338,19 +343,20 @@ class Top:
 
 
 # ============================================================== lettering on a circle
-def arc_text(text, cap, r_base, where, track, space, cx=0.0, cy=0.0, k=1.0, contours=None):
+def arc_text(text, cap, r_base, where, track, space, cx=0.0, cy=0.0, k=1.0, contours=None, pairs=None):
     """top: letters stand on circle r_base, reading clockwise, tops outward.
        bottom: letters hang from circle r_base (their baseline), reading left to right, tops inward.
        Spacing is measured at mid-cap radius, so letters look evenly spaced on the curve.
        Output is baked into final coordinates: centre (cx, cy), scale k."""
     s = cap / CAP
-    g = [(n, (space if n == 'space' else a) + track) for n, a in shape(RING_FONT, text)]
-    total = sum(w for _, w in g) - track
+    sh = shape(RING_FONT, text); pairs = pairs or {}
+    g = [(n, space if n == 'space' else a, pairs.get(n + (sh[i + 1][0] if i + 1 < len(sh) else ''), 0))
+         for i, (n, a) in enumerate(sh)]                   # (glyph, advance, extra space after it)
+    total = sum(a + track + e for _, a, e in g) - track - g[-1][2]
     r_mid = r_base + cap / 2 if where == 'top' else r_base - cap / 2
     T = total * s / r_mid
     out, cum = [], 0.0
-    for n, w in g:
-        adv = w - track
+    for n, adv, extra in g:
         if n != 'space':
             x0, _, x1, _ = ink_box(RING_FONT, n)
             gx = (x0 + x1) / 2                          # centre each letter on its ink
@@ -367,7 +373,7 @@ def arc_text(text, cap, r_base, where, track, space, cx=0.0, cy=0.0, k=1.0, cont
             out.append(glyph(RING_FONT, n, m))
             if contours is not None:
                 contours.append((n, glyph_contours(RING_FONT, n, m)))
-        cum += w
+        cum += adv + track + extra
     return ''.join(out), math.degrees(T)
 
 
@@ -375,8 +381,8 @@ def seal_geometry(cx=0.0, cy=0.0, k=1.0, S=SEAL, T=TOP, letters=None):
     R, cap, edge = S['R'], S['cap'], S['edge']
     r_out = R - edge; r_in = r_out - cap; r_mid = (r_in + r_out) / 2
     top_c, bot_c = [], []
-    d1, T1 = arc_text('PLAY BEFORE', cap, r_in, 'top', S['track'], S['space'], cx, cy, k, top_c)
-    d2, T2 = arc_text('PIXELS', cap, r_out, 'bottom', S['track'], S['space'], cx, cy, k, bot_c)
+    d1, T1 = arc_text('PLAY BEFORE', cap, r_in, 'top', S['track'], S['space'], cx, cy, k, top_c, S.get('pairs'))
+    d2, T2 = arc_text('PIXELS', cap, r_out, 'bottom', S['track'], S['space'], cx, cy, k, bot_c, S.get('pairs'))
     if letters is not None:
         letters += [top_c, bot_c]
     gap_c = math.radians((T1 / 2 + 180 - T2 / 2) / 2)          # each ball sits in the middle of its gap
@@ -640,7 +646,7 @@ def build():
     files['favicon.svg'] = favicon_svg()
     # PNG sources (not for direct use)
     R = SEAL['R']
-    ka = 0.62                                         # app icon: the favicon drawing on ink, inside iOS's rounded mask
+    ka = 0.70                                         # app icon: the favicon drawing on ink, inside iOS's rounded mask
     files['src/tile-apple.svg'] = tile_svg(INK, favicon_body(ka, 500 - ka * 500, 500 - ka * 515.625), 1000)
     files['src/tile-avatar.svg'] = tile_svg(INK, seal_small(SCHEMES['color'], 540, 540, 540, fill=0.66), 1080)
     for n, c in files.items():

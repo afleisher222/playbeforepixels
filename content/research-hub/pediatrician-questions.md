@@ -12,15 +12,17 @@ sources:
   - citation: "Questions written by the editors to help families prepare for a visit. They make no factual claims. Background on screening and early intervention: see /research/early-intervention/ [program facts VERIFY]."
 ---
 
-<!-- INTERNAL (remove at publish): Printable. Two pages max when printed. Must carry the brand URL and copyright line in the footer (BRAND.md). No product links, no "virtual autism" term in the printable itself beyond the one neutral question about screens. Clinician reviewer and autistic sensitivity reader must sign off. -->
+<!-- INTERNAL (remove at publish): Printable. Two pages max when printed. Must carry the brand URL and copyright line in the footer (BRAND.md). No product links, no "virtual autism" term in the printable itself beyond the one neutral question about screens. Clinician reviewer and autistic sensitivity reader must sign off. Reader panel 2026-09-28 added the home-language and interpreter line, the "stopped doing" note, the speech-and-language evaluation, the day-to-day support question and the caregiver question: re-check that it still prints on two pages (Letter and A4) and in the 18 pt large-print edition. Open question for both reviewers: keep "eye contact" in the play question (parents' own words, and part of what clinicians look at) or rephrase it as "looking at me and at what I point to". -->
 
 # Questions to ask your pediatrician
 
-*Print this, circle the questions that matter to you, and bring it to your child's next visit. You don't have to ask them all.*
+*Print this, circle the questions that matter to you, and bring it to your child's next visit. You don't have to ask them all. Start the visit with the worry that matters most to you.*
 
 > **This is not medical advice.** It's a list of questions to help you talk with your child's doctor. Only a professional who meets your child can answer them for your family.
 
 **Child's age:** __________ months  **Date of visit:** __________
+
+**Language(s) we speak at home:** ______________________  *(If you'd like an interpreter, ask the clinic whether one is available.)*
 
 ## Before the visit: my notes
 
@@ -29,6 +31,8 @@ What worries me (what I see, when, how often):
 ______________________________________________________________
 
 ______________________________________________________________
+
+Anything my child used to do but has stopped doing: ______________________
 
 Examples or short videos I can show the doctor: ______________________
 
@@ -51,10 +55,11 @@ What my child is good at and enjoys: ____________________________
 
 ## About evaluation and support
 
-- [ ] Would a **full evaluation** be helpful? Who does it, and how long is the wait?
+- [ ] Would a **full evaluation**, or a **speech and language evaluation**, be helpful? Who does it, and how long is the wait?
 - [ ] *(US, under 3)* Can you help me contact our **early intervention** program, or can I refer my child myself?
 - [ ] *(US, 3 and older)* Should I ask our **public school district** for an evaluation?
 - [ ] *(Outside the US)* What **free local early support** is there, and can I refer myself?
+- [ ] If support is offered, **what would it look like day to day**, and how does it fit my child's comfort and the way they communicate?
 - [ ] While we wait, **what can we do** at home?
 - [ ] Is there **anything I should not wait** on?
 
@@ -68,6 +73,7 @@ What my child is good at and enjoys: ____________________________
 ## About us as a family
 
 - [ ] Where can we find **support and information for our family** while we learn more?
+- [ ] Can a **grandparent or another caregiver** who looks after my child come to visits or talk with you?
 - [ ] If my child is autistic, where can we **learn from autistic adults** and autistic-led groups?
 - [ ] Who should I **call** if things change or I have new worries before the next visit?
 

@@ -23,12 +23,12 @@ module.exports = {
   'Sink Helper': [18, 2, 2, 10, 0, 0, 'Pour from one cup into the tub, together.', 'Fill each cup to a line you point to.', 'Hand them a dry cup and a towel to “wash” beside you.'],
   'Sock Match': [18, 0, 1, 5, 0, 0, 'Find one pair among three socks.', 'Sort into big socks and small socks.', 'Pass socks one by one; they drop them in the basket.'],
   'Animal Parade': [15, 0, 1, 5, 0, 0, 'Stomp like an elephant, together.', 'Add a quiet animal and a loud one.', 'Name an animal from the couch; they act it out.'],
-  'Mirror Faces': [12, 0, 1, 5, 0, 0, 'Just smile, then open your mouth wide.', 'Make a face; they say or sign the feeling.', 'Copy every face they make, right where you sit.'],
+  'Mirror Faces': [12, 0, 1, 5, 0, 0, 'Just smile, then open your mouth wide. Side by side is fine.', 'Make a face; they say or sign the feeling.', 'Copy every face they make, right where you sit.'],
   'Basket Boat': [12, 2, 1, 10, 0, 0, 'Rock the basket gently while you sing.', 'Go “fishing” for soft toys from the boat.', 'Sing a boat song while they sit in the basket beside you.'],
   'Treasure Box': [12, 2, 1, 5, 0, 0, 'Use two things instead of five.', 'Ask “what do we do with it?” and wait.', 'Hand them one big thing at a time from your seat.'],
   'Pillow Mountain': [15, 2, 1, 10, 0, 0, 'One pillow to climb over.', 'Add a cushion “cave” to crawl through.', 'Lie on the rug: you are the mountain they climb.'],
   'Bubble Chase': [12, 0, 1, 5, 0, 1, 'Blow a few slow bubbles low down to pop.', 'They say or sign “more” before each blow.', 'Blow bubbles from the doorstep or the couch.'],
-  'Sock Puppet Hello': [12, 0, 1, 5, 0, 0, 'The puppet just says hi and gives kisses.', 'Your child wears the puppet and talks to you.', 'Puppet on your hand, you on the couch: it asks their name.'],
+  'Sock Friend Hello': [12, 0, 1, 5, 0, 0, 'The sock friend just says hi and waves.', 'Your child wears the sock friend and talks to you.', 'Sock friend on your hand, you on the couch: it asks their name.'],
   'Color Hunt': [24, 0, 1, 5, 0, 0, 'Hold up something red; find one more.', 'Find three things of one color and line them up.', 'From your seat: “Bring me something… blue!”'],
   'Stop-and-Go Dance': [15, 0, 1, 5, 0, 0, 'Hold hands and freeze together.', 'Freeze in a shape: tall, small or wide.', 'Sing and clap from your seat; they freeze when you stop.'],
   'Picture Walk': [12, 0, 1, 5, 0, 0, 'Point to one picture per page.', 'Ask “where is the…?” and wait for a point.', 'Look at one page together on the couch.'],
@@ -52,7 +52,7 @@ module.exports = {
   'Tidy-Up Toss': [15, 0, 1, 5, 0, 0, 'Drop toys in; no tossing.', 'Take one step back after each toss.', 'Hold the basket on your lap; they fill it.'],
   'Hand Shadows': [18, 0, 1, 5, 0, 0, 'Just wiggle one hand shadow.', 'They make a shadow for you to name.', 'Lie back and make shadows on the ceiling.'],
   'Knee Bounce Ride': [12, 0, 1, 5, 0, 0, 'Slow bounces only, then a cuddle.', 'Stop and wait: they say or sign “again.”', 'One rhyme, one bounce, one cuddle.'],
-  'Fill and Dump': [12, 0, 1, 5, 0, 0, 'Use a wide box instead of a bowl.', 'Fill it with only soft things, then only hard.', 'Hand them a bowl and rolled socks at your feet.'],
+  'Fill and Dump': [12, 0, 1, 5, 0, 0, 'Use a wide box instead of a bowl.', 'Fill it with only socks, then only big blocks.', 'Hand them a bowl and rolled socks at your feet.'],
 
   // ---------------- Ages 3–5 ----------------
   'Cushion Fort': [36, 2, 1, 20, 0, 0, 'Drape one sheet over a table.', 'Add a door, a window and a password sign.', 'Blanket over two chairs; you sit outside as the guard.'],

@@ -189,7 +189,7 @@ g. Is there anything else a careful reader would want to know about your indepen
 
 **Scope: 4,359 words**, tagged "Clinician scope" with a blue margin bar in the bundle:
 - IDX: the opening boxes; "What we still don't know"; "What parents can do" (all six parts, including the WHO and AAP guideline paragraph).
-- FAQ: the opening boxes; "If you're worried" (Q11–Q16); "Everyday life with screens" (Q17–Q22).
+- FAQ: the opening boxes; "If you're worried" (Q12–Q17); "Everyday life with screens" (Q18–Q23).
 - GLO: "Words about autism and development"; "Tests and checklists"; "Help and services".
 - PED: the whole printable. EIV: the whole page.
 
@@ -200,7 +200,7 @@ g. Is there anything else a careful reader would want to know about your indepen
 - How the early-intervention and school-evaluation steps are described, compared with how families actually experience them: self-referral, free evaluation, timelines, IFSP, the move at age 3. The routine will already have checked the law and official program pages; the clinician checks the practice.
 - The AAP screening-schedule statement, and the guideline statements as presented.
 - The pediatrician-questions printable: is anything missing that clinicians wish parents would ask? For example, should the pages say plainly that **any loss of words or skills, at any age, is a reason to call the doctor promptly**?
-- FAQ Q11 ("How would a doctor tell autism from difficulties related to heavy screen use?"): is the answer appropriate?
+- FAQ Q12 ("How would a doctor tell autism from difficulties related to heavy screen use?"): is the answer appropriate?
 - The UK, Canada and Australia pointers: flag anything clearly wrong (full checking is not required).
 
 **Not in scope:** how the studies are described, legal wording, any product.
@@ -256,7 +256,7 @@ h. Is there anything else a careful reader would want to know about your indepen
 **What to check**
 - **Health claims:** no express or implied claim that anything treats, prevents, reduces or reverses autism or any condition. Pay particular attention to the case-report wording, "What parents can do", and the one link to the free play printable and email list (it must read as play and family time only, `brand/BRAND.md` "Autism searches"). No implied claim by placement next to anything sold.
 - **Causation language and disclaimers:** "associated with", never "causes"; the "not medical advice" boxes are placed and worded adequately; early-intervention and school-rights content is not legal advice.
-- **Promises the business must keep** (`editorial-policy.md`, FAQ Q25–Q26): "no money, sponsorship or free products from device makers, app makers, EdTech companies or research authors"; no ads or affiliate links; "a person reviews everything else within [5] business days"; and **"Every page is checked by a person against the sources"**. The last one is not how verification is planned (section 9, issue 1): the wording or the process must change before publishing.
+- **Promises the business must keep** (`editorial-policy.md`, FAQ Q26–Q27): "no money, sponsorship or free products from device makers, app makers, EdTech companies or research authors"; no ads or affiliate links; "a person reviews everything else within [5] business days"; and **"Every page is checked by a person against the sources"**. The last one is not how verification is planned (section 9, issue 1): the wording or the process must change before publishing.
 - **Named people and organizations:** researchers, clinicians, authors and organizations named in the history and critique sections are described accurately, fairly and with attribution, with no defamation or false-light risk. No claim about any individual's business or conflict of interest until it is confirmed. Nothing criticizes a school, district, company, show, creator, app or EdTech product (BRAND.md rule 2).
 - **Intellectual property:** short quotations; study titles; screening-instrument names (M-CHAT-R/F, ADOS, CARS, SCQ, ASQ-3) used descriptively.
 - **Privacy:** the printable's optional birth month and year; nothing collects children's data; contact-form statements.
@@ -444,7 +444,7 @@ Signature: ______________________  Date: ____________
 
 **Bundle version ID:** ____________  **Reviewer code:** CL-____  **Credential:** ____________  **License state and number (kept off the website):** ____________
 
-**Scope reviewed:** IDX opening boxes, "What we still don't know" and "What parents can do"; FAQ opening boxes and Q11–Q22; GLO "Words about autism and development", "Tests and checklists" and "Help and services"; PED whole page; EIV whole page.
+**Scope reviewed:** IDX opening boxes, "What we still don't know" and "What parents can do"; FAQ opening boxes and Q12–Q23; GLO "Words about autism and development", "Tests and checklists" and "Help and services"; PED whole page; EIV whole page.
 
 1. I reviewed the sections listed above in the bundle version shown.
 2. My comments are in the attached comment table: ____ must-fix, ____ should-fix, ____ suggestions.

@@ -56,6 +56,8 @@ Plain-language meanings of words you'll meet on our research pages. Where it hel
 
 **Developmental delay.** When a child reaches skills (talking, moving, playing, problem-solving) later than most children the same age. It has many possible reasons and is not the same as autism.
 
+**Loss of skills (regression).** When a child stops using words or skills they used to have. At any age, it is a reason to tell your pediatrician soon rather than waiting for the next routine visit [VERIFY wording against CDC and AAP guidance].
+
 **AAC (augmentative and alternative communication).** Ways to communicate besides speech, including picture boards and speech-generating apps on tablets. An AAC device is a communication tool, not "screen time".
 
 **Conversational turns.** Back-and-forth exchanges between a child and an adult: the child babbles, the adult answers, the child answers again. Counted in home recordings ([Brushe 2024](/research/studies/brushe-2024/)).
@@ -166,6 +168,8 @@ Plain-language meanings of words you'll meet on our research pages. Where it hel
 
 **Health visitor.** In the UK, a specialist nurse who supports families with young children and does routine development reviews [VERIFY].
 
+**Speech-language pathologist (SLP).** A professional who assesses and supports communication: talking, understanding, social communication and AAC. Called a speech and language therapist in the UK and a speech pathologist in Australia [VERIFY titles].
+
 ## About our sources
 
 **[VERIFY].** We have not yet read the original abstract or full text of this source ourselves, so the details are provisional. See our [editorial policy](/research/editorial-policy/).
@@ -175,3 +179,5 @@ Plain-language meanings of words you'll meet on our research pages. Where it hel
 ---
 
 > **This is not medical advice.** These are general explanations of research words. For questions about your own child, talk with your pediatrician or another qualified professional.
+
+Worried? Talk with your pediatrician. Free early intervention evaluations are available for young children. Asking early is a caring step, and it's not your fault. [VERIFY access wording against official program pages at publish.] Outside the US: ask your doctor, nurse or health visitor about free local early support.

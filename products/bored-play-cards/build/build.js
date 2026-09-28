@@ -558,7 +558,7 @@ function anatomyPage() {
     [4, 'Kind of play', 'Eight kinds, each with its own picture and divider.'],
     [5, 'You need', 'Everyday things. Gather them first.'],
     [6, 'Try it', 'One or two short steps. Change anything you like.'],
-    [7, 'Talk', 'One thing to say or ask while you play.'],
+    [7, 'Talk', 'One thing to say or ask while you play, in any language.'],
     [8, 'Who and what', '“With a grown-up” or “Can do alone,” plus “Nothing needed” or “Nothing to buy.”'],
     [9, 'Safety line', 'Read it before you start, every time.'],
   ];
@@ -579,12 +579,12 @@ function anatomyPage() {
 }
 const anatomyCss = `<style>
 .anatomy .ph{margin-bottom:10px}
-.an{display:flex;gap:30px;align-items:flex-start;margin-bottom:6px}
+.an{display:flex;gap:44px;align-items:flex-start;margin-bottom:6px}
 .an-card{flex:0 0 3.25in;height:4.55in;position:relative;margin-left:22px}
 .an-card .scale{position:absolute;left:0;top:0;width:240px;height:336px;transform:scale(1.3);transform-origin:0 0}
 .marked .panel{overflow:visible}.marked .hd{border-radius:10px 10px 0 0}
 .mk{position:absolute;width:15px;height:15px;border-radius:50%;background:${C.tomato};color:#fff;font-weight:800;font-size:9px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px #fff;z-index:3;top:50%;transform:translateY(-50%);left:-30px}
-.mk.m2,.mk.m4{left:auto;right:-30px}
+.mk.m2,.mk.m4{left:auto;right:-9px}
 .mk.m4{top:14px}
 .mk.m5,.mk.m6{top:7px;transform:none}
 .fl .mk,.ft .mk{left:-30px}
@@ -910,7 +910,7 @@ function companionPages() {
     const m = meta(cd);
     return `<div class="cxr"><i class="bx"></i><span class="nn">${String(i + 1).padStart(2, '0')}</span><div class="c1"><b>${esc(cd.t)}</b><span class="c1m">${icon(cd.c, 'i')}${meter(cd.e)}${fromTxt(m[0])}${k === 'summer' || k === 'rainy' ? ` · ages ${cd.a}` : ''}</span></div><div class="c2">${esc(m[6])}</div><div class="c2">${esc(m[7])}</div><div class="c2 c3">${esc(m[8])}</div></div>`;
   };
-  const head = `<div class="cxl">Tick a box when you’ve played a card. ${icon('build')}${icon('pretend')}${icon('move')}${icon('outside')}${icon('words')}${icon('music')}${icon('kitchen')}${icon('games')} = kind of play · bars = energy · No time to cut? Read titles aloud and let your child pick.</div>
+  const head = `<div class="cxl">Tick a box when you’ve played a card. ${icon('build')}${icon('pretend')}${icon('move')}${icon('outside')}${icon('words')}${icon('music')}${icon('kitchen')}${icon('games')} = kind of play · bars = energy · No time to cut? Read titles aloud and let your child pick. Each card’s safety line applies to all its versions.</div>
   <div class="cxr cxth"><span></span><span></span><div class="c1">Card · starting age</div><div class="c2">Make it easier</div><div class="c2">Make it harder</div><div class="c2 c3">2-minute tired-grown-up version</div></div>`;
   return pages.map((grp, pi) => contentPage('index', `Card index &amp; grown-up companion · ${pi + 1} of ${pages.length}`, null,
     head + grp.map(it => it.band ? `<div class="cxh" style="${tvars(TH[it.band])}"><span>${TH[it.band].name}</span><em>${it.n} cards</em></div>` : row(it)).join('')));
@@ -988,8 +988,11 @@ function faqPage(guide) {
     ['Which pages should I print?', `Only what you need. The page guide on page ${guide.tips} lists every section.`],
     ['Color or low-ink?', LOW ? 'You are holding the low-ink file: white backgrounds and line art to color. The color file has the same cards in full color, with type-in blanks.' : 'Both have the same cards. Low-ink uses white backgrounds and line art to color; this color file adds type-in blanks.'],
     ['How do I type on the blanks?', LOW ? 'Use the color file: open it in a free PDF reader that supports fill-in forms (a computer is easiest), click a box and type. In this low-ink file, the blanks are for writing by hand.' : 'Open this file in a free PDF reader that supports fill-in forms (a computer is easiest), click a box and type, then save a copy. You can type text and tick circles; fonts, colors and pictures stay as they are.'],
-    ['Can I print it again, or at a print shop?', 'Yes. Print as many copies as your own household needs, as often as you like, at home or at a print shop.'],
-    ['Can I share it with my class, group or friends?', STORE() ? 'This file is licensed for one household. For groups or classrooms, ask about a license through the contact form at playbeforepixels.com.' : 'This file is licensed for one household. For groups or classrooms, message us through the shop where you bought it.'],
+    ['Can I print it again, or at a print shop?', 'Yes. Print as many copies as your household needs, at home or at a print shop. Grandparents and sitters who care for your child count as your household.'],
+    ['Can a teacher, center or library use it?', STORE() ? 'This file is a personal license for one household. Classrooms, child-care rooms, libraries and groups need a classroom or site license from playbeforepixels.com. Most cards work with 2–6 children at a time.' : 'This file is a personal license for one household. Classrooms, child-care rooms, libraries and groups need a classroom or site license: message us through the shop. Most cards work with 2–6 children at a time.'],
+    ['Can I give it as a gift?', 'Yes. Print and cut the cards, put them in a jar with one of the labels, and give the jar. The family you give it to becomes the household this license covers.'],
+    ['My child dislikes mess or loud noise.', 'Skip those cards, or use the easier version: a spoon instead of hands, a towel on the pot, watching first and joining later. Every child may pass.'],
+    ['Is it in other languages?', 'The cards are in English. Say the talk lines in the language you know best; a sign, a point or a device tap counts as an answer.'],
     ['Is there a screen version?', 'No, and that’s on purpose. The cards are paper so the play happens off-screen.'],
     ['Lost your file?', STORE() ? 'Use the link in your order email, or the re-download page on the START HERE sheet.' : 'Sign in on a web browser (not the shopping app) and open Purchases in your account: your files stay there.'],
   ];
@@ -1023,7 +1026,7 @@ function bonusPage() {
   <div class="bye">${byeArt()}<span class="hand">Happy playing!</span></div>
   <div class="legal">
     <p><b>${COPY}</b> All rights reserved. ${VERSION}.</p>
-    <p>Print permission: you may print this file for your own household as often as you like, at home or at a print shop. Please don’t share, resell or post the file or its pages. ${STORE() ? 'For group, classroom or other licenses, write to us through the contact form at playbeforepixels.com.' : 'For group, classroom or other licenses, message us through the shop.'}</p>
+    <p>Print permission (personal license): you may print this file for your own household as often as you like, at home or at a print shop; grandparents and sitters who care for your child count as your household. Please don’t share, resell or post the file or its pages. Classrooms, child-care centers, libraries and groups need a classroom or site license: ${STORE() ? 'see playbeforepixels.com or write to us through the contact form.' : 'message us through the shop.'}</p>
     <p>These cards are ideas for supervised play at home. They are parent education, not medical, developmental or professional advice, and they don’t replace the judgment of the grown-up in charge. Follow the safety page and every card’s safety line, and skip anything that doesn’t suit your child.</p>
     <p>Play Before Pixels is an independent small business. No brands, products or organizations are named or endorsed in this pack.</p>
   </div>`);
@@ -1068,12 +1071,12 @@ function startHereDoc() {
     <div class="sbx" style="background:${C.tGrass}"><span class="kick">Typing in the blanks</span><p>The <b>color</b> files have type-in boxes on the blank cards, planners, blank labels, blank dividers and certificate. Open the file in a free PDF reader that supports fill-in forms (a computer is easiest), click a box, type, then save a copy.</p><p><b>What you can edit:</b> text boxes and tick circles, yes. Fonts, colors and pictures, no. The low-ink files have the same blanks to write on by hand.</p></div>
   </div>
   <div class="sbx sinside"><span class="kick">Inside every main file · page numbers</span><div class="sig">${GUIDE.letter.list.map(([h, n]) => `<div class="pgr"><span>${h}</span><b>${n}</b></div>`).join('')}</div></div>
-  <div class="sbx sfull"><span class="kick">Print permission and safety</span><p>You may print these files for your own household as often as you like, at home or at a print shop. <b>Print shops:</b> this customer has permission to print copies for their own family’s use. Please don’t share or resell the files.</p><p>Before you play, read the safety page (page ${GUIDE.letter.safety} of each main file). Every play follows our published safety rules, and every card has its own safety line.</p></div>
+  <div class="sbx sfull"><span class="kick">Print permission and safety</span><p>Print these files for your own household (grandparents and sitters count too), at home or at a print shop. <b>Print shops:</b> this customer may print copies for their family. Please don’t share or resell the files. <b>Classrooms, centers and libraries</b> need a separate license.</p><p>Before you play, read the safety page (page ${GUIDE.letter.safety} of each main file). Every play follows our published safety rules, and every card has its own safety line.</p></div>
   </div><footer class="pf"><span class="pfl">${logo('wordmark', 'lgf')}<span>${site('playbeforepixels.com · ')}“I’m Bored” Play Cards · ${VERSION}</span></span><span>${COPY}</span></footer>`);
   return page;
 }
 const shCss = `<style>
-.shp .ph{margin-bottom:8px}.shp .lead{font-size:14px;margin-bottom:14px}
+.shp .ph{margin-bottom:8px}.shp .lead{font-size:14px;margin-bottom:11px}
 .shg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
 .sbx{background:${C.wash};border-radius:16px;padding:12px 16px}
 .sbx p{font-size:11.2px;line-height:1.42;font-weight:600}
@@ -1298,12 +1301,12 @@ function listingPages(G) {
     <div style="position:absolute;left:570px;top:300px;width:380px">${marks.map(([h, t], i) => `<div style="display:flex;gap:14px;margin-bottom:20px"><span style="flex:0 0 38px;height:38px;border-radius:50%;background:${C.ink};color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center">${i + 1}</span><div><div style="font-family:Bricolage Grotesque;font-weight:800;font-size:24px">${h}</div><div style="font-size:18px;font-weight:600">${t}</div></div></div>`).join('')}</div>`, '#FFFFFF'));
   // 5 young ages
   P.push(L(`<div class="lh"><div class="lk">Sorted by age</div><h2>Ages 1–3 and 3–5</h2><p class="ls" style="font-size:19px">Every 1–3 card uses only things too big to fit through a toilet-paper tube.</p></div>
-    ${place(CD('b13', 0), 70, 250, -4, 1.08)}${place(CD('b13', 12), 355, 240, 0, 1.08)}${place(CD('b13', 19), 640, 250, 4, 1.08)}
-    ${place(CD('b35', 12), 110, 570, -3, 0.95)}${place(CD('b35', 2), 370, 560, 1, 0.95)}${place(CD('b35', 33), 620, 570, 4, 0.95)}`, C.tGrass));
+    ${place(CD('b13', 0), 88, 214, -1.5, 0.97)}${place(CD('b13', 12), 382, 210, 0, 0.97)}${place(CD('b13', 19), 676, 214, 1.5, 0.97)}
+    ${place(CD('b35', 12), 88, 560, -1.5, 0.97)}${place(CD('b35', 2), 382, 556, 0, 0.97)}${place(CD('b35', 33), 676, 560, 1.5, 0.97)}`, C.tGrass));
   // 6 older ages
   P.push(L(`<div class="lh"><div class="lk">Sorted by age</div><h2>Ages 5–8 and 8–12</h2><p class="ls" style="font-size:19px">Bigger projects, games with rules and real-life skills.</p></div>
-    ${place(CD('b58', 5), 70, 250, -4, 1.08)}${place(CD('b58', 25), 355, 240, 0, 1.08)}${place(CD('b58', 13), 640, 250, 4, 1.08)}
-    ${place(CD('b812', 15), 110, 570, -3, 0.95)}${place(CD('b812', 22), 370, 560, 1, 0.95)}${place(CD('b812', 26), 620, 570, 4, 0.95)}`, C.tPlum));
+    ${place(CD('b58', 5), 88, 214, -1.5, 0.97)}${place(CD('b58', 25), 382, 210, 0, 0.97)}${place(CD('b58', 13), 676, 214, 1.5, 0.97)}
+    ${place(CD('b812', 15), 88, 560, -1.5, 0.97)}${place(CD('b812', 22), 382, 556, 0, 0.97)}${place(CD('b812', 26), 676, 560, 1.5, 0.97)}`, C.tPlum));
   // 7 seasonal sets
   P.push(L(`<div class="lh"><div class="lk">Bonus sets</div><h2>Summer & rainy-day<br>mini-sets</h2><p class="ls">36 extra cards for sunny afternoons and stuck-inside days.</p></div>
     ${place(BK('summer'), 64, 330, -7, 1.0)}${place(CD('summer', 1), 250, 350, 3, 1.08)}

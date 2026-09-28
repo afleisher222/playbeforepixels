@@ -34,7 +34,7 @@ INTERNAL (remove at publish):
 
 > **This is not medical or legal advice.** Programs and rules differ by state and country and change over time. Always check with your local program. Everything specific on this page is marked [VERIFY] until we have checked it against the official source.
 
-If you're worried about how your child is talking, playing, moving, responding or connecting with you, **you can ask for help now.** You don't need to be sure anything is wrong, you don't need a diagnosis, and you don't need to wait and see. Asking early is a caring step, and it's not your fault.
+If you're worried about how your child is talking, playing, moving, responding or connecting with you, **you can ask for help now.** You don't need to be sure anything is wrong, you don't need a diagnosis, and you don't need to wait and see. Asking early is a caring step, and it's not your fault. Grandparents and other caregivers can start this too.
 
 This applies whether or not screens are part of the story. Support is useful whatever the reasons behind what you're noticing, and an evaluation is how you find out what your child needs.
 
@@ -52,6 +52,9 @@ Every US state runs an **early intervention** program for babies and toddlers fr
 - **If your child qualifies**, the family and the team write an **Individualized Family Service Plan (IFSP)**. Services are often provided at home or in other everyday settings.
 - **Cost of services depends on your state.** Some services are free; some states use sliding fees or insurance. Federal rules say services can't be refused because a family can't pay.
 - **A diagnosis isn't needed** to be evaluated. Eligibility is based on your child's development, and each state sets its own definition of delay.
+- **Grandparents and other caregivers can raise a concern.** Anyone who looks after a child can contact the program. A parent or legal guardian, or someone acting as the child's parent, usually needs to give consent for the evaluation.
+- **You can use your own language.** You can ask for the evaluation and meetings in your family's language, with an interpreter if you need one.
+- **You stay in charge.** You are part of the team. You can ask what any suggested service involves and why, and you can accept some services and decline others.
 
 ### How to ask, step by step
 
@@ -70,7 +73,8 @@ You don't need special words. "I'm worried and I'd like an evaluation" is enough
 ### What to bring or have ready
 
 - Your child's birth date, and any health or hearing and vision check results you have.
-- Notes or short examples of what worries you: what your child does, when, and how often.
+- Notes or short examples of what worries you: what your child does, when, and how often, and anything your child used to do but has stopped doing.
+- If you like, a milestone checklist for your child's age. The CDC's "Learn the Signs. Act Early." program offers free ones, including in Spanish [VERIFY].
 - Any questions (our [printable list of questions for your pediatrician](/research/pediatrician-questions/) may help).
 - If you want it, someone to come with you or join the call.
 
@@ -125,7 +129,7 @@ Ask your doctor, nurse or health visitor about free local early support, and whe
 
 **"What if they say it's autism?"** Then you'll know more about how your child experiences the world, and you can get support that fits them. Autism is not a parent's fault, and your child is the same child they were before the evaluation. Autistic children grow, learn and thrive with understanding and the right help. Good support respects how your child communicates and what they love; it is not about making them seem less autistic. Autistic adults' own writing and autistic-led organizations are good places to learn what autism is like from the inside.
 
-**"We've had a lot of screen time. Will they judge us?"** Nearly every family uses screens. Evaluators are there to understand your child, not to judge you. It's fine to mention screen habits honestly; it helps the team see the whole picture.
+**"We've had a lot of screen time. Will they judge us?"** Nearly every family uses screens. Evaluators are there to understand your child, not to judge you. It's fine to mention screen habits honestly; it helps the team see the whole picture. If you've noticed changes when your screen habits changed, say that too. What you've seen at home is useful information.
 
 ---
 

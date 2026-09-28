@@ -1,6 +1,6 @@
 ---
 title: "Zhang 2023: shared genetics, screen time and outcomes"
-meta_description: "In 4,262 US children aged 9 to 11, shared genetic risk explained part of the link between screen time and attention and internalizing problems. A methods lesson."
+meta_description: "In 4,262 US children aged 9 to 11, shared genetic risk explained part of the link between screen time and attention and internalizing problems."
 slug: "research/studies/zhang-2023-shared-genetic-risk"
 last_reviewed: "2026-09-28"
 review_status: "draft: secondary sources only; not cleared to publish until the source is read (abstract at minimum)"

@@ -195,7 +195,7 @@ sources:
 - [ ] Madigan 2019: every number (sample, direction, effect sizes). Only the title was confirmed.
 - [ ] WHO 2019: whether sedentary screen time is also not recommended at age 1; "less is better" wording; certainty of evidence.
 - [ ] AAP 2016: every recommendation quoted (under 18 months, video chat exception, 18-24 months, 2-5 years).
-- [ ] AAP 2026: read the policy statement and technical report (PMC13139868). If they replace the 2016 guidance, update index.md, faq.md (Q17, Q18) and the study pages, and ask the owner to update BRAND.md rule 5 (this session did not edit BRAND.md).
+- [ ] AAP 2026: read the policy statement and technical report (PMC13139868). If they replace the 2016 guidance, update index.md, faq.md (Q18, Q19) and the study pages, and ask the owner to update BRAND.md rule 5 (this session did not edit BRAND.md).
 - [ ] Detroja 2024, Krijnen 2026, van Asselt 2026, Dhungel 2026: volume/pages, DOIs, and that each argument we attribute is in the text.
 - [ ] Science Media Centre 2020: the Etchells quote and the "yes/no" description of the exposure measure.
 - [ ] psychologiescientifique.org and psihologia.ro: author, date, and the specific arguments.
@@ -212,7 +212,7 @@ sources:
 - [ ] Zhang 2023: the share of each association explained by genetic confounding. Hub wording was softened from "much of" to "part of" until confirmed.
 - [ ] Harlé 2019: the age range and the four-hour threshold attributed to the paper.
 - [ ] Zamfir 2018: where Zamfir said the term is not a medical diagnosis, and whether he runs a private practice built around the concept. Do not describe a conflict of interest until confirmed.
-- [ ] WHO 2019: confirm that sedentary screen time is not recommended for 1-year-olds (now stated with [VERIFY] in index.md and faq.md Q17).
+- [ ] WHO 2019: confirm that sedentary screen time is not recommended for 1-year-olds (now stated with [VERIFY] in index.md and faq.md Q18).
 - [ ] Sadeghi 2021 and the 2019 companion paper: was there a randomized or waiting-list control group? index.md and library.md now call it "the closest" to a trial; correct that if a genuine randomized trial of screen reduction exists.
 - [ ] Montes 2016 and Yamamoto 2023 are now cited in index.md as balancing evidence; confirm the Montes totals (3.21 vs. 3.46 h/day, not significant) and the Yamamoto bidirectional finding and its corrected Key Points.
 - [ ] Heffler 2024 (sensory processing) was moved from "Reports or argues for a link" to "Background" because it did not measure autism. Confirm against the abstract.
@@ -229,11 +229,17 @@ sources:
 - [ ] Definitional statements: "autism is a lifelong neurodevelopmental difference" and "virtual autism is not in the ICD or DSM". Cite WHO ICD-11 and DSM-5-TR (or a national guideline) before publishing.
 - [ ] Instrument descriptions in glossary.md (M-CHAT-R/F, ADOS, CARS, SCQ, ASQ-3).
 - [ ] Reply-time wording ("[5] business days") matches ops/COMPLIANCE-GATE.md item 21 and how the routine actually runs.
+- [ ] Added by the simulated reader panel (2026-09-28), all from memory (UNVERIFIED):
+  - IDEA Part C: evaluations and meetings in the family's native language, with an interpreter (recalled as 34 CFR 303.321(a)(5) and 303.25); parent consent, and the right to accept some services and decline others (recalled as 34 CFR 303.420); who counts as a "parent", including a grandparent or other relative acting as a parent (recalled as 34 CFR 303.27). Used in early-intervention.md key facts and faq.md Q14-Q15.
+  - Loss of skills: the wording "if your child has stopped using words or skills they used to have, tell your pediatrician soon" against CDC "Learn the Signs. Act Early." and AAP guidance. Used in index.md ("What parents can do" 1), faq.md Q13 and glossary.md. The clinician reviewer confirms it (REVIEW-PACK Role B already asks this).
+  - CDC "Learn the Signs. Act Early." milestone checklists, and that they are offered in Spanish (early-intervention.md).
+  - Speech-language pathologist titles: "speech and language therapist" (UK) and "speech pathologist" (Australia) (glossary.md).
+  - faq.md Q4: confirm that no study in the library compared particular shows or channels (some may compare content types such as educational vs. entertainment; if so, reword to "did not compare named shows").
 
 ## Autistic perspectives (added by the respect and inclusion review, 2026-09-28)
 
 - [ ] Search systematically for research by autistic authors and statements from autistic-led organizations on screens, media use and the "virtual autism" label (English, French, German, Romanian, Spanish, Portuguese). Add each with a study page and give it the same care as clinical studies.
-- [ ] Krijnen 2026 and van Asselt 2026: confirm from the paper itself that the author (van Asselt) is autistic and writes from lived experience, as index.md, faq.md (Q23) and both study pages say. If it cannot be confirmed, remove the claim.
+- [ ] Krijnen 2026 and van Asselt 2026: confirm from the paper itself that the author (van Asselt) is autistic and writes from lived experience, as index.md, faq.md (Q24) and both study pages say. If it cannot be confirmed, remove the claim.
 - [ ] Glossary entries "Autistic traits", "'Severity' scores" and "'Risk' and 'likelihood'" are editorial definitions; have the paid autistic sensitivity reader and the clinician reviewer check them.
 
 ## Leads not yet entered (from the fact-check passes)
