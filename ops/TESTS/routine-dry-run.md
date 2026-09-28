@@ -13,7 +13,7 @@ _Done at 02:20 UTC on September 28, 2026 (10:20 p.m. ET on September 27). The dr
   3. **Research cannot reach any research site.** Only the Default environment (Trusted network) exists. From a Trusted-network session, code.claude.com answered, but Etsy, PubMed, the IRS, Crossref, shopify.dev and every developer-docs host returned no response (blocked).
   4. **Once weekly research is switched on, the lock will skip it most Sundays.** The studio starts at 2:47 a.m. and research at 3:52 a.m. A studio run longer than 65 minutes still holds `ops/LOCK`, so research stops.
 - This dry run fixed what was safe to fix in files: 4 missing ops files, a bootstrap guard, and ROUTINE.md clarifications. Details are below.
-- The routine prompts, the schedule and the account settings still need the lead or Arielle.
+- The routine prompts, the schedule and the account settings still need the lead or the founder.
 
 ## What the routines are actually set to (read from the Routines list at 02:20 UTC)
 
@@ -52,7 +52,7 @@ _Done at 02:20 UTC on September 28, 2026 (10:20 p.m. ET on September 27). The dr
 
 | Step | What the run would do | What it would hit | Status |
 |---|---|---|---|
-| Prompt 1 | `add_repo` with push access, clone, register | Works while the repo is public. After it is made private, it works only if the Claude GitHub App is installed on it. Otherwise the run cannot start its work and leaves no heartbeat | **Arielle**: confirm the app is installed *before* switching to private |
+| Prompt 1 | `add_repo` with push access, clone, register | Works while the repo is public. After it is made private, it works only if the Claude GitHub App is installed on it. Otherwise the run cannot start its work and leaves no heartbeat | **The founder**: confirm the app is installed *before* switching to private |
 | 0.1 bootstrap | Clone lands on `main`. Bootstrap fetches and switches to `claude/live` | If the fetch failed, the old script stayed on `main` silently, and a plain `git push` would then update `main` | **Fixed**: bootstrap now prints `ERROR not on claude/live`, and ROUTINE.md step 0.1 says to commit and push nothing in that case. Tested in a scratch repo (4 cases) |
 | 0.1 budget | Studio at most 6 agents | The prompt asks for a research lane, maker, reviewer, customer panel, article, social queue and gate: 7 or more if each is its own agent. Whether a workflow tool exists inside a routine is not confirmed | **Fixed** in ROUTINE.md: the panel counts as one agent, lanes are combined to stay under the cap, and subagents or sequential work are the fallback |
 | 0.2 read | CLAUDE.md, BRAND.md, ENTITY.md, AUTOFIX.md, COMPLIANCE-GATE.md, QUEUE.md, RUNLOG.md | All exist. RUNLOG.md has no entries yet | OK |
@@ -62,7 +62,7 @@ _Done at 02:20 UTC on September 28, 2026 (10:20 p.m. ET on September 27). The dr
 | 0.6 branch | Future: `claude/run-YYYY-MM-DD` plus a pull request | Does not say which branch the pull request merges into (`claude/live` or `main`) | **Lead** decides when the CI check is built |
 | 0.7 credentials | Shopify 24-hour token, token broker | No keys and no broker exist. Also, a Shopify client-secret exchange cannot work through API credentials, which only add headers and never show Claude the key | **Fixed** (skip and record `not connected`). Shopify design is backlog item 2 |
 | 0.8 maintenance | Counted from when the approval channel goes live | Not live yet | N/A |
-| §1 backlog | Top 2 items of `ops/RESEARCH-BACKLOG.md` | **The file did not exist**, and the research sites are blocked on the Default network | **Fixed**: backlog seeded with 13 items. ROUTINE.md says to record "blocked: <host>" and leave the item open. Network is **Arielle's** step |
+| §1 backlog | Top 2 items of `ops/RESEARCH-BACKLOG.md` | **The file did not exist**, and the research sites are blocked on the Default network | **Fixed**: backlog seeded with 13 items. ROUTINE.md says to record "blocked: <host>" and leave the item open. Network is **the founder's** step |
 | §1 tests | `python3 ops/TESTS/check_listings.py` | Runs (read-only). 16 listings, every one with 3 to 8 FAILs; AI disclosure and floor/net fail on all 16 | OK: nothing would pass to publishing anyway |
 | §2 build | "Top of ops/QUEUE.md" (prompt) vs "top item in Next to build" (ROUTINE.md) | The prompt points at LAUNCH FIRST #1, which other workflows are editing now. ROUTINE.md's "Next to build" #0 is a founder decision | **Partly fixed**: ROUTINE.md now skips founder decisions, HELD items and items waiting on another product. **Lead**: align the prompt |
 | §3 article | "Only if fewer than 2 new articles were *published* this week" (prompt) | While PAUSE is on, 0 are ever published, so the studio would write a new article every night: 7 a week, all released together later, which is what Google's scaled-content rule penalizes | **Fixed** in ROUTINE.md: count articles *added* to seo/articles/ in 7 days. **Lead**: align the prompt |
@@ -73,13 +73,13 @@ _Done at 02:20 UTC on September 28, 2026 (10:20 p.m. ET on September 27). The dr
 | §5 monthly close | ROUTINE.md: "first weekly run". Prompt and MONITORING.md: studio's first run of the month | Conflict | **Fixed**: ROUTINE.md now says the studio |
 | §6 commit | Push to `claude/live` | No pull-before-push in ROUTINE.md (the prompt and runbook had it). `ops/runs/YYYY-MM-DD.md` collides when two routines run on the same day | **Fixed**: pull and rebase, no force-push, `ops/runs/YYYY-MM-DD-<routine>.md` |
 | §6 heartbeat | Write `ops/HEARTBEAT.json` | **Missing**, with no format | **Fixed**: template created |
-| §6 report | Prompt: "Today's new product: <name>" | Arielle's instruction in ROUTINE.md: money only, "nothing else"; what was built goes only in RUNLOG | **Lead**: change the stored prompt (text below) |
+| §6 report | Prompt: "Today's new product: <name>" | The founder's instruction in ROUTINE.md: money only, "nothing else"; what was built goes only in RUNLOG | **Lead**: change the stored prompt (text below) |
 
 ## Walk-through: daily check (off; must be fixed before it is switched on)
 
 | Step | Finding |
 |---|---|
-| Prompt 2(b) "carry out items marked APPROVED, archive items marked NO" | Leaves out ROUTINE.md §5: only verified approvals count, never a line written during a routine run, and the APPROVED/NO column is never edited. Arielle's web-editor edits land on `main` while the default branch is `main`, and runs read `claude/live`, so her approvals would not be seen at all. |
+| Prompt 2(b) "carry out items marked APPROVED, archive items marked NO" | Leaves out ROUTINE.md §5: only verified approvals count, never a line written during a routine run, and the APPROVED/NO column is never edited. The founder's web-editor edits land on `main` while the default branch is `main`, and runs read `claude/live`, so her approvals would not be seen at all. |
 | Prompt 2(c) "publish anything scheduled for today in content/queue/" | The folder and its date format do not exist yet. |
 | Prompt order | The PAUSE check is step 3, *after* the publishing step 2(c). ROUTINE.md step 0.3 (read in step 1) covers it, but the prompt should check PAUSE first. |
 | Prompt 2(a) "fix per AUTOFIX (including rollback) and redeploy" | Under PAUSE a redeploy is publishing. **Fixed** in ROUTINE.md: PAUSE covers AUTOFIX; only the FULL-STOP stop steps are allowed. |
@@ -92,7 +92,7 @@ _Done at 02:20 UTC on September 28, 2026 (10:20 p.m. ET on September 27). The dr
 |---|---|
 | Size | The prompt asks for 8 lanes, each with its own verifier, 3 creative agents, a judge panel and a synthesis agent: about 20 agents. The cap in ROUTINE.md is 10. **Fixed** in ROUTINE.md (combine to fit). **Lead**: say so in the prompt too. |
 | Backlog | The prompt does not mention ops/RESEARCH-BACKLOG.md; ROUTINE.md §1 and the runbook do (top 10). The file now exists. |
-| Sunday lock | Research at 3:52 a.m. is skipped whenever the 2:47 a.m. studio is still running. **Lead or Arielle** must pick a schedule (options below). |
+| Sunday lock | Research at 3:52 a.m. is skipped whenever the 2:47 a.m. studio is still running. **Lead or the founder** must pick a schedule (options below). |
 | "Stop if the cap or usage limit is near" | A run cannot see its remaining allowance. **Fixed**: ROUTINE.md maps this to "stop when a tool call reports a limit". |
 | Business plan | business/BUSINESS-PLAN.md exists (2,558 lines). DEMAND-CHECK.md and CAMPAIGN-BIBLE.md exist. |
 | Publishes nothing | Consistent with ROUTINE.md: the research run skips §5. |
@@ -117,33 +117,33 @@ _Done at 02:20 UTC on September 28, 2026 (10:20 p.m. ET on September 27). The dr
 2. **Wrong belief that the platform blocks it.** CLAUDE.md and the runbook say routines can only push to `claude/` branches, so nothing else was guarding `main`. **Fixed** in ROUTINE.md. **Lead**: correct the same sentence in CLAUDE.md ("Commits") and ops/CLOUD-RUNBOOK.md line 38.
 3. **"Interactive sessions also push to `main`" (CLAUDE.md).** A run opened later and continued by hand becomes interactive. That is intended, but scheduled work itself never mirrors. ROUTINE.md step 0.1 and §6 now say "never `main`" explicitly.
 4. **ROUTINE.md step 0.6 (future pull-request flow)** does not name the base branch. **Lead**.
-5. **Optional hard stop:** protect `main` on GitHub. This also blocks the interactive mirror pushes unless they go through pull requests, so it is a trade-off for the lead and Arielle.
+5. **Optional hard stop:** protect `main` on GitHub. This also blocks the interactive mirror pushes unless they go through pull requests, so it is a trade-off for the lead and the founder.
 
 ## Ways a run could publish while `ops/PAUSE` exists
 
-1. **PAUSE created on `main`**, where GitHub's web editor opens by default, was invisible to runs. **Fixed** (bootstrap reports `pause-on-main`; ROUTINE.md 0.3 counts either branch, and "unknown" counts as on). **Arielle**: switching the default branch to `claude/live` removes the problem at its root.
+1. **PAUSE created on `main`**, where GitHub's web editor opens by default, was invisible to runs. **Fixed** (bootstrap reports `pause-on-main`; ROUTINE.md 0.3 counts either branch, and "unknown" counts as on). **The founder**: switching the default branch to `claude/live` removes the problem at its root.
 2. **PAUSE created while a run is working:** the run read it only at the start. **Fixed** (re-check before any publish step).
 3. **AUTOFIX treated as exempt** (re-list, re-publish, redeploy, retry failed posts). **Fixed** (PAUSE covers AUTOFIX; only the FULL-STOP stop steps are allowed).
 4. **Daily-check prompt order** (publishing step before the PAUSE step). **Lead**: move the PAUSE line to the top.
 5. **Things PAUSE cannot reach** (scheduler queues, email automations, ads): ops/FULL-STOP.md now lists the stop step per platform. Nothing is connected yet.
-6. **A run deciding on its own that "Arielle has said go"** and deleting PAUSE. **Fixed**: only her verified approval channel or an interactive session with her counts.
-7. **Upload packets handed to Arielle during PAUSE** (she would be the one publishing). **Fixed**: packets may be prepared but are not offered while PAUSE exists.
-8. **Weak approval proof** (known, G2-03). Until the approval Worker exists, a routine could in principle create a commit through the GitHub API with Arielle's token that looks like a web-editor commit. **Keep PAUSE until the Worker exists.** This is backlog item 6.
+6. **A run deciding on its own that "the founder has said go"** and deleting PAUSE. **Fixed**: only her verified approval channel or an interactive session with her counts.
+7. **Upload packets handed to the founder during PAUSE** (she would be the one publishing). **Fixed**: packets may be prepared but are not offered while PAUSE exists.
+8. **Weak approval proof** (known, G2-03). Until the approval Worker exists, a routine could in principle create a commit through the GitHub API with the founder's token that looks like a web-editor commit. **Keep PAUSE until the Worker exists.** This is backlog item 6.
 
 ## Other conflicts and gaps (not fixed here)
 
 - **Report format.** The studio prompt's "Today's new product: <name>" breaks "Founder updates = money". ROUTINE.md §6 (scorecard, final message) now points to the money format.
 - **One environment for everything vs. G2-02.** "Research and build runs hold no publish keys." API credentials apply to *every* session in an environment. Keeping build runs free of publish keys needs a second environment later, used only by the runs that publish.
 - **Shopify tokens.** A 24-hour token minted from a client secret cannot be stored or minted through API credentials (header only, never visible to Claude). Backlog item 2.
-- **Unassigned weekly jobs.** No routine prompt runs the §5b weekly inbound batch or the §6 weekly `git bundle` backup. The backup also needs write-only storage that Arielle creates.
+- **Unassigned weekly jobs.** No routine prompt runs the §5b weekly inbound batch or the §6 weekly `git bundle` backup. The backup also needs write-only storage that the founder creates.
 - **Platform-news scan.** It belongs to the daily check, which is off until the first store exists, so no one watches platform rule changes before launch.
 - **Clone time.** The full history (930 MB) is cloned every run. A partial clone (`--filter=blob:none`) would cut start-up time. This is optional.
-- **Usage.** A nightly studio of up to 6 agents plus a Sunday run of up to 10 share Arielle's Max allowance. Check claude.ai/settings/usage after the first week, and keep usage credits off (runbook).
+- **Usage.** A nightly studio of up to 6 agents plus a Sunday run of up to 10 share the founder's Max allowance. Check claude.ai/settings/usage after the first week, and keep usage credits off (runbook).
 - **ops/PAUSE line 9** says FULL-STOP.md "is written as part of task #20". It now exists. The sentence is harmless and was left alone: this check does not edit PAUSE.
 
 ## Steps only a person can do
 
-**Arielle (account settings):**
+**The founder (account settings):**
 1. Confirm the Claude GitHub App is installed on `playbeforepixels` (claude.ai/connect-github), **then** make the repository private. The other order stops the routines at `add_repo`.
 2. Switch the GitHub default branch to `claude/live`. The runbook calls this optional; this check recommends doing it, because her PAUSE and APPROVED edits otherwise land on `main`.
 3. Create the "Play Before Pixels" environment: Custom network, paste `ops/cloud/allowed-domains.txt` (now including the tax and developer-docs hosts), and paste `ops/cloud/setup-script.sh`. Point all three routines at it, with Connectors: none.

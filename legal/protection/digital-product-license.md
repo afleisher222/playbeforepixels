@@ -9,7 +9,7 @@
 > - The copyright owner holds the exclusive rights to reproduce and distribute the work (17 U.S.C. §106, https://www.copyright.gov/title17/). Embedded license terms and notices also count as copyright management information. Knowingly removing or altering them to enable or conceal infringement is a separate violation (17 U.S.C. §§1202–1203, https://www.law.cornell.edu/uscode/text/17/1203).
 > - Also embed "© 2026 AlphaPlay LLC. All rights reserved. License: [URL]" in the PDF metadata (Author, Copyright, Keywords). Watermark previews. Use buyer-specific stamping where the platform supports it (availability unverified).
 > - **Teachers Pay Teachers:** TPT's own license framework applies to TPT sales. Use TPT's license options and add these terms only where TPT allows. [Attorney to reconcile Part B with TPT's current seller terms.]
-> - The notice owner should be the actual copyright owner. Until Arielle's assignment to AlphaPlay LLC is signed, ask the attorney whose name goes in the notice.
+> - The notice owner should be the actual copyright owner. Until the founder's assignment to AlphaPlay LLC is signed, ask the attorney whose name goes in the notice.
 
 ---
 

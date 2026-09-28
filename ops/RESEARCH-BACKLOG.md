@@ -1909,7 +1909,7 @@ _**Rules:** a test writes only its own result file. Anything it finds in product
   - **File:** ops/TESTS/home-print-test.md, with photos in ops/TESTS/home-print-photos/.
 
 - [ ] **RB-72 · Founder-time audit against the 60-minute weekly cap** · score 6 (4×3÷2) · gate: none
-  - **Question:** List every step that needs Arielle: LAUNCH-NOW Waves 0–3, each upload packet for a platform with no publishing API, identity and phone checks, proof copies, approvals, the monthly test buy, Etsy messages (RB-67 c) and key renewals (PRE-MORTEM risk 5). Then estimate her minutes a week in the launch month, in month 3 and at steady state.
+  - **Question:** List every step that needs the founder: LAUNCH-NOW Waves 0–3, each upload packet for a platform with no publishing API, identity and phone checks, proof copies, approvals, the monthly test buy, Etsy messages (RB-67 c) and key renewals (PRE-MORTEM risk 5). Then estimate her minutes a week in the launch month, in month 3 and at steady state.
   - **Why it matters:** The plan promises "zero daily tasks and at most 60 minutes of approvals a week" (business/sections/05-operations-risk-milestones.md:47), and the weekly SOP aims for 10. Nobody has added up whether the plan fits inside that. If it does not, the likely failure is PRE-MORTEM risk 5: platforms slide back to upload packets that nobody uploads.
   - **When:** Now.
   - **File:** ops/TESTS/founder-time-audit.md.

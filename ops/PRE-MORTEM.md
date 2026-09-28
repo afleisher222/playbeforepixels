@@ -742,7 +742,7 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
   - `business/GROWTH-ENGINE.md` §2b, Gate A item 3 ("Insurance is bound").
   - `ops/DEADLINES.md` (insurance renewal).
 - **Gap:**
-  - `ops/LAUNCH-NOW.md` Wave 0 step 8 says "get a quote", and the removal test in `ops/PAUSE` leaves insurance out, so Gate A's "bound" is not enforced. The same file's "How Arielle is protected" section says "insurance is in place before the first sale", which contradicts its own step 8.
+  - `ops/LAUNCH-NOW.md` Wave 0 step 8 says "get a quote", and the removal test in `ops/PAUSE` leaves insurance out, so Gate A's "bound" is not enforced. The same file's "How the founder is protected" section says "insurance is in place before the first sale", which contradicts its own step 8.
   - `legal/LEGAL-LAUNCH-CHECKLIST.md` row 14 still asks for quotes that include "professional liability/E&O for coaching and workshops", an offering that has been retired.
   - The broker disclosures are out of date, and there is no record file.
   - The key question has not been asked: does products-completed operations coverage include an injury from following a download's instructions?

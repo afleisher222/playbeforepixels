@@ -65,4 +65,4 @@ Maryland law governs this form. Electronic signatures are valid. I have read thi
 *(Optional, for children old enough to understand)* **Child's agreement:** "It's OK to take my picture for Play Before Pixels." ______________________
 
 **AlphaPlay LLC d/b/a Play Before Pixels**
-By: ______________________ Arielle Fleisher, Member  Date: ________
+By: ______________________ [Member name], Member  Date: ________

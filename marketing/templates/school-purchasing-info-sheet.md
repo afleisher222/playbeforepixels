@@ -70,4 +70,4 @@ AlphaPlay LLC, [BUSINESS MAILING ADDRESS]
 - The sole-source letter covers only direct-only SKUs. Remove any SKU from it the moment it's listed on TPT or elsewhere.
 - Never write "no bid needed". The federal micro-purchase threshold ($15,000; up to $50,000 self-certified) applies only to federal-award purchases.
 - Fill in the W-9 only after the accountant confirms the name and TIN for a single-member LLC.
-- Ignore every solicitation from the excluded employer. Never quote to or accept a PO from it without counsel's written clearance.
+- Ignore every solicitation from any excluded organization. Never quote to or accept a PO from it without counsel's written clearance.

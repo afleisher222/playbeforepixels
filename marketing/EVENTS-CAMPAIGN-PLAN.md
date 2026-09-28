@@ -669,7 +669,7 @@ Watch list, not ranked:
 **Excluded (mandatory exclusions or excluded venues):**
 - NEA's "Read Across America" and anything on March 2 tied to it. National Teacher Day and US teacher-appreciation week (NEA co-run).
 - Anything by or for MCPS, MCEA, MSEA, NEA, or Montgomery County DHHS and its Infants and Toddlers Program.
-- **NAEYC 2026, Washington DC** (DC venue; excluded-employer staff attend).
+- **NAEYC 2026, Washington DC** (DC venue; excluded-organization staff attend).
 - **NAIS 2027, Baltimore** (Maryland venue).
 - **Library of Congress National Book Festival** (DC).
 - **Child Care Aware of America Symposium** (DC area; its CCR&R network includes the county DHHS unit).

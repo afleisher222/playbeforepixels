@@ -26,7 +26,7 @@
 
 ## A. Master works register (one row per product or work)
 
-| Work ID | Title / product | Type (text, art, PDF, video) | Author(s) | Created by Arielle alone? | Freelancer agreement on file? | First draft date | Publication date | Registration deadline (pub + 3 mo) | Copyright application type | Case / Reg. no. | Owner of record (Arielle → assigned to LLC on ____) |
+| Work ID | Title / product | Type (text, art, PDF, video) | Author(s) | Created by the founder alone? | Freelancer agreement on file? | First draft date | Publication date | Registration deadline (pub + 3 mo) | Copyright application type | Case / Reg. no. | Owner of record (the founder → assigned to LLC on ____) |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | W-001 | | | | Y/N | Y/N/NA | | | | Single / Standard / GRUW / GRTX | | |
 | W-002 | | | | | | | | | | | |

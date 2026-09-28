@@ -9,7 +9,7 @@ Each routine starts a fresh cloud session on its schedule. Each run:
 2. runs `bash ops/cloud/bootstrap.sh`, which switches to the working branch `claude/live` and installs the build tools;
 3. follows `ops/ROUTINE.md`;
 4. commits its work to `claude/live`;
-5. ends with Arielle's money report as its last message. Each run appears as its own session in her list at claude.ai/code and on the routine's page at claude.ai/code/routines.
+5. ends with the founder's money report as its last message. Each run appears as its own session in her list at claude.ai/code and on the routine's page at claude.ai/code/routines.
 
 Nothing depends on any session staying open: routines "keep working when your laptop is closed." Her laptop can be closed and her phone off.
 
@@ -21,9 +21,9 @@ The routines store the New York time zone, so these times hold through daylight 
 |---|---|---|---|
 | Daily studio | 2:47 a.m. Monday–Saturday (no Sunday run, so it never collides with research) | One product built or improved, one page improved, posts queued. At most 6 agents | **Paused on Sept 28, 2026** until setup steps 1–5 are done; then switched on, with one watched **Run now** first. Build-only while `ops/PAUSE` exists |
 | Daily check | 6:38 a.m. every day | Short, no workflow: site and store health, approvals, the money update | Off until the first store exists (nothing to check yet) |
-| Weekly research | Sunday 3:52 a.m. | Research lanes, re-ranks the queue, works the top 10 of `ops/RESEARCH-BACKLOG.md`. At most 10 agents | **Off:** Arielle switches it on at claude.ai/code/routines |
+| Weekly research | Sunday 3:52 a.m. | Research lanes, re-ranks the queue, works the top 10 of `ops/RESEARCH-BACKLOG.md`. At most 10 agents | **Off:** the founder switches it on at claude.ai/code/routines |
 
-**Why the heavy runs are at night:** routines use the same Max-plan allowance as Arielle's own Claude use. Running while she sleeps keeps them from competing with her own daytime use; they still count toward the same overall allowance.
+**Why the heavy runs are at night:** routines use the same Max-plan allowance as the founder's own Claude use. Running while she sleeps keeps them from competing with her own daytime use; they still count toward the same overall allowance.
 
 ## Max-plan facts this plan is built on (from the documentation)
 
@@ -36,11 +36,11 @@ The routines store the New York time zone, so these times hold through daylight 
 - **Scheduling limits:**
   - The minimum interval is one hour.
   - A run scheduled exactly on the hour can start several minutes late, which is why all our times are a few minutes past.
-- **"A green status in the run list means the session started and exited without an infrastructure error. It does not mean the task in your prompt succeeded."** So every run writes its result to `ops/RUNLOG.md` and `ops/HEARTBEAT.json`. Once it is switched on, the daily check reads them and puts any failure into Arielle's update as one plain line. Until then, a failure shows only in those files and in the run's own transcript.
+- **"A green status in the run list means the session started and exited without an infrastructure error. It does not mean the task in your prompt succeeded."** So every run writes its result to `ops/RUNLOG.md` and `ops/HEARTBEAT.json`. Once it is switched on, the daily check reads them and puts any failure into the founder's update as one plain line. Until then, a failure shows only in those files and in the run's own transcript.
 - **The GitHub connection must stay connected.** "If your GitHub connection is missing or expired when a run is due, the routine skips runs until you reconnect, for up to 72 hours." Reconnecting within that window lets the routine resume on its own. "After 72 hours without a connection, the routine turns off, and you turn it back on after reconnecting GitHub." A skipped run cannot report anything, and the daily check is skipped too, so the sign is a morning with no new run in her session list. Then she checks claude.ai/code/routines.
 - **Branches.** "Claude pushes its work to branches prefixed with `claude/`, which are always accepted." A push to any other branch is checked first and rejected if the branch is protected on GitHub, someone else has an open pull request from it, or it carries commits authored by someone other than her. So the platform does not block every push to `main`: `ops/ROUTINE.md` step 0.1 is the rule that keeps runs off it. That is why the working branch is `claude/live`. `main` is only a mirror, updated by interactive sessions.
   - Not confirmed yet: the cloud-environments page also says the GitHub proxy's push protection means "`git push` works only against the session's current working branch". Whether a run that switches to `claude/live` can push there is settled by the first scheduled run (`ops/RESEARCH-BACKLOG.md` item 1).
-- **Connectors.** "When you create a routine, all of your currently connected connectors are included by default." And "Claude can use every tool from an included connector, including writes, without asking for permission during a run." **Always remove every connector** (Gmail, Google Drive, Calendar) whenever a routine is created or edited. The business routines must never reach Arielle's personal accounts. On September 28, 2026, all three routines listed no connectors. `ops/ROUTINE.md` step 0.4 also refuses to publish if it detects one.
+- **Connectors.** "When you create a routine, all of your currently connected connectors are included by default." And "Claude can use every tool from an included connector, including writes, without asking for permission during a run." **Always remove every connector** (Gmail, Google Drive, Calendar) whenever a routine is created or edited. The business routines must never reach the founder's personal accounts. On September 28, 2026, all three routines listed no connectors. `ops/ROUTINE.md` step 0.4 also refuses to publish if it detects one.
 - **Keys.** Environment variables are "visible to anyone who uses the environment". On Pro and Max plans, keys go in as **API credentials** instead: "The key never reaches Claude, the commands it runs, or the session's environment variables."
   - For the hosts listed on a credential: "Sessions can reach those hosts even when the environment's network access level wouldn't otherwise allow them", apart from the exceptions below.
   - A credential is never attached to GitHub requests, the Anthropic API, the main public package registries (npm, PyPI and a few others), or requests made by the setup script.
@@ -51,7 +51,7 @@ The routines store the New York time zone, so these times hold through daylight 
   - The cache is rebuilt "when you change the environment's setup script or allowed network hosts, and when the cache reaches its expiry after roughly seven days."
 - **Network.** The Default environment's "Trusted" level allows "package registries, GitHub, cloud SDKs" and the other domains on the docs' default list, but no marketplaces, social platforms or research journals. Requests to other hosts "fail with `403` and `x-deny-reason: host_not_allowed`". GitHub (through its own proxy), connectors, the hosts on API credentials and the Anthropic API do not go through the allowlist.
 
-## Arielle's one-time setup (about 20 minutes, in this order)
+## The founder's one-time setup (about 20 minutes, in this order)
 
 1. **Keep Claude's access before the repository goes private.** Open https://github.com/apps/claude/installations/new (the link the docs give), choose her account, and make sure **Repository access** includes `playbeforepixels`.
    - The docs say a private repository is reachable "only when the Claude GitHub App is installed on the account or organization that owns it and the installation's repository access includes it."
@@ -75,7 +75,7 @@ The routines store the New York time zone, so these times hold through daylight 
    - the lead says its stored prompt is final. `ops/TESTS/routine-dry-run.md` lists prompt changes still to make and a Sunday clash with the studio's `ops/LOCK`.
 7. **Model (her choice):** the routine form has a model selector. Stronger models for the studio and research give the best products. A lighter model for the daily check uses less of her allowance.
 
-Arielle makes steps 1–7 herself: they are settings on her own GitHub and Claude accounts. Everything else is automatic.
+The founder makes steps 1–7 herself: they are settings on her own GitHub and Claude accounts. Everything else is automatic.
 
 ## API credentials (added as each account opens, never pasted in chat)
 
@@ -125,18 +125,18 @@ Checked against `ops/SECRETS.md` on September 28, 2026 (details: `ops/TESTS/netw
 - **Pull-and-rebase before every push,** so runs and interactive sessions never overwrite each other.
 - **`ops/PAUSE`:** while it exists, research and building only, with nothing published, posted or sent. Anyone can create it to stop all publishing at once.
 - **Limit handling:** a run that sees a usage or rate limit saves what is finished, records `limit` and stops, when it still can. The next run continues from the queue.
-- **Failures reach Arielle as one line in her money update,** only when something needs her (a key to renew, an approval, a failed run). A lapsed GitHub connection is the exception: no run happens, so no update arrives. A morning with no new run is the sign to check claude.ai/code/routines.
+- **Failures reach the founder as one line in her money update,** only when something needs her (a key to renew, an approval, a failed run). A lapsed GitHub connection is the exception: no run happens, so no update arrives. A morning with no new run is the sign to check claude.ai/code/routines.
 - **Keep the repository small,** so every clone is quick. The build session saved renders every few minutes, so the history is about 930 MB. From now on:
   - scratch QA renders go in git-ignored `tmp/` or `.qa/` folders;
   - final files are committed once per product version;
   - site images are published as compressed web images.
-  - A one-time slim-down of the old history (moving it to an archive) needs Arielle's OK first, because it rewrites history.
+  - A one-time slim-down of the old history (moving it to an archive) needs the founder's OK first, because it rewrites history.
 - **Emergency stops:**
   - create `ops/PAUSE`, to stop publishing (a run re-checks it right before each publish step);
   - switch the routines off at claude.ai/code/routines, to stop all future runs ("Paused routines keep their configuration but don't run until you re-enable them"). A run already under way is not stopped by the switch, so create `ops/PAUSE` as well;
   - delete an API credential, to cut off one platform immediately (a credential applies "until you delete it").
 
-## What Arielle sees
+## What the founder sees
 
 Only money updates, in the format in `ops/ROUTINE.md` ("Founder updates = money"). She also gets one line when something truly needs her.
 
@@ -149,7 +149,7 @@ This list comes from a completeness check of this runbook, `ops/ROUTINE.md`, `CL
 **Owners:**
 - *Claude now*: the build session fixes it before the routines rely on it.
 - *routine*: every scheduled run does it.
-- *founder once*: one setting Arielle changes.
+- *founder once*: one setting the founder changes.
 - *later task*: planned work that build-only runs don't need yet.
 
 **Already settled:**
@@ -159,14 +159,14 @@ This list comes from a completeness check of this runbook, `ops/ROUTINE.md`, `CL
 - The setup script and the allowlist are tested.
 - Downloading the whole repository took 42 s (measured at 03:00 UTC).
 
-1. **The repository is public, and a few files describe Arielle herself.** At 02:56 UTC GitHub still showed it as public, with 0 forks.
+1. **The repository is public, and a few files describe the founder herself.** At 02:56 UTC GitHub still showed it as public, with 0 forks.
    - `legal/ENTITY.md` (lines 16, 27, 30 and 41) holds her personal email address and notes on what is in her inbox.
    - `legal/FOR-EMPLOYMENT-COUNSEL.md` and `marketing/BLIND-SPOTS.md` (lines 28 and 50) describe her job situation.
    - Every routine push also shows her GitHub user: "commits and pull requests carry your GitHub user".
 
    **Fix:**
    - *Founder once:* setup steps 1 and then 2, tonight.
-   - *Claude now:* trim those lines down to the business fact a run needs (for example "file the USPTO address change"). Add to `CLAUDE.md`: build sessions open Gmail, Drive or Calendar only when Arielle asks in that session, and what they find goes to her in chat, not into the repository.
+   - *Claude now:* trim those lines down to the business fact a run needs (for example "file the USPTO address change"). Add to `CLAUDE.md`: build sessions open Gmail, Drive or Calendar only when the founder asks in that session, and what they find goes to her in chat, not into the repository.
    - *Founder:* decides whether the counsel question list belongs in the business repository at all.
    - *Later task, only with her OK:* remove those lines from the history too, if the repository is ever shared.
 

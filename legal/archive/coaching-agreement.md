@@ -18,7 +18,7 @@
 ## 1. What you are buying
 **Package:** [for example, "Four 50-minute one-to-one video sessions over 8 weeks, plus email check-ins between sessions (replies within 2 business days)"].
 **Fee:** $[AMOUNT], [paid in full at booking / in [N] installments of $___ due ____].
-**Coach:** Arielle Fleisher, acting for AlphaPlay LLC.
+**Coach:** the founder, acting for AlphaPlay LLC.
 
 ## 2. Education and coaching, NOT therapy or medical care
 2.1 Coaching is **parent education**: information about play, routines, screen-time habits and child development drawn from published research, plus practical ideas you may choose to try.
@@ -48,7 +48,7 @@ You are responsible for: your own decisions and for how you use any idea from co
 6.4 Our Privacy Policy explains how we store and protect your data: [LINK].
 
 ## 7. Release and limitation of liability
-7.1 **Release.** To the fullest extent the law allows, you release AlphaPlay LLC and its member, Arielle Fleisher, from claims arising from coaching or from your use of coaching ideas, **except** claims caused by our gross negligence, recklessness or intentional misconduct.
+7.1 **Release.** To the fullest extent the law allows, you release AlphaPlay LLC and its member, from claims arising from coaching or from your use of coaching ideas, **except** claims caused by our gross negligence, recklessness or intentional misconduct.
 7.2 **Cap.** To the fullest extent the law allows, our total liability for any claim relating to this Agreement is limited to **the fees you paid under this Agreement**. We are not liable for indirect, incidental or consequential damages. This cap does not apply to gross negligence, recklessness or intentional misconduct, or where the law does not allow a cap.
 
 ## 8. Recording (optional)
@@ -77,4 +77,4 @@ This is the entire agreement about coaching. If any part is unenforceable, the r
 Printed name: ______________________
 
 **AlphaPlay LLC d/b/a Play Before Pixels**
-By: ______________________ Arielle Fleisher, Member  Date: ________
+By: ______________________ [Member name], Member  Date: ________

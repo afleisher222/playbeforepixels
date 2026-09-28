@@ -80,7 +80,7 @@ Except for breaches of sections 4, 5 or 7, or a party's gross negligence, reckle
 ---
 
 **AlphaPlay LLC d/b/a Play Before Pixels**
-By: ______________________ Arielle Fleisher, Member  Date: ________
+By: ______________________ [Member name], Member  Date: ________
 
 **Contractor:** [NAME]
 Signature: ______________________ Date: ________

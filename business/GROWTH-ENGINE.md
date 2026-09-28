@@ -8,7 +8,7 @@ _AlphaPlay LLC, trading as Play Before Pixels. Internal planning file, not for p
 
 ---
 
-## 1. For Arielle, in five lines
+## 1. For the founder, in five lines
 
 1. **The strategy.** When counsel says yes in writing, sell ages 0–5 printables on Etsy and Gumroad and one grown-up paperback on Amazon. After that, growth comes from bundles, new editions of whatever sells, free Pinterest pins and an opt-in email list, not ads. At today's prices, $150 a month of ads *lowers* median profit by $684 (S: `business/STRESS-TEST.md` §6).
 2. **Your part.** About 4.5 hours of one-time setup over the next two weeks: the counsel email today, then the bank, insurance, domain and one 75-minute account sitting (A). After that, about 10–15 hours of proofs and approvals through January (A).
@@ -593,7 +593,7 @@ Kill rule: fewer than 5 sales in 60 days after the EXP-03 search-copy decision �
 **(1) In §6 "Commit and report", under the "Scorecard additions" bullet, add:**
 
 ```
-  - Growth-engine lines (business/GROWTH-ENGINE.md §3 and §6; never in Arielle's report): orders this month vs the break-even line (65 a month; about 57 while Shopify and bookkeeping software stay deferred); live listings with a sale in the last 30 days, and the share of new listings that sold within 30 days; Etsy organic share of orders, hero-listing conversion, reviews per 100 orders and star average; Pinterest outbound clicks, saves and sign-ups by src tag; net new subscribers by src and opt-in rate per landing page vs the model path (about 110 by Jan 31, 2027; about 690 by Sep 30, 2027); QR and bonus sign-ups per 100 KDP and own-checkout orders (model: 15); average order value, bundle share and contribution per order (baseline $8.73; about $8.27 while own-checkout orders go through Gumroad); paid tests: spend vs cap, ACoS or ROAS, CAC and net ad loss vs the $150 stop; the kill-rule list and the double-down queue; founder minutes requested this week vs 60.
+  - Growth-engine lines (business/GROWTH-ENGINE.md §3 and §6; never in the founder's report): orders this month vs the break-even line (65 a month; about 57 while Shopify and bookkeeping software stay deferred); live listings with a sale in the last 30 days, and the share of new listings that sold within 30 days; Etsy organic share of orders, hero-listing conversion, reviews per 100 orders and star average; Pinterest outbound clicks, saves and sign-ups by src tag; net new subscribers by src and opt-in rate per landing page vs the model path (about 110 by Jan 31, 2027; about 690 by Sep 30, 2027); QR and bonus sign-ups per 100 KDP and own-checkout orders (model: 15); average order value, bundle share and contribution per order (baseline $8.73; about $8.27 while own-checkout orders go through Gumroad); paid tests: spend vs cap, ACoS or ROAS, CAC and net ad loss vs the $150 stop; the kill-rule list and the double-down queue; founder minutes requested this week vs 60.
 ```
 
 **(2) Add a new section after "Be proactive":**

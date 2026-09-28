@@ -206,6 +206,23 @@ Parents may want to hand the screen plan and play ideas to sitters and grandpare
 
 ---
 
+## Simulated panel: required seats (added September 28, 2026)
+
+Source: `marketing/DEMOGRAPHIC-AUDIT.md` (main finding and §3 "Process change"). All 13 existing simulated panels used the same 13 people, and none was a dad, a same-sex couple, a disabled or Deaf parent, a military family, or a rural or low-income family. **Every future `panel.md` includes these six seats in addition to the current 13**, and each seat scores the product like the others (including the "made me feel judged" and "preachy" scores in rule 25, the no-guilt test):
+
+| # | Seat | What this seat checks for |
+|---|---|---|
+| 1 | **A dad who is the main parent** | Copy, art and instructions that assume "mom"; dad shown only as the helper; gendered defaults ("ask your husband"). |
+| 2 | **A two-mom or two-dad family** | "Mom and Dad" wording, family pages and forms with one mother and one father, relationship assumptions in stories. |
+| 3 | **A wheelchair-using or chronically ill parent** | Plays that need getting down on the floor, running, lifting or long standing; a seated or low-energy version exists and is not framed as lesser. |
+| 4 | **A Deaf parent who signs** | Talk prompts that assume spoken voice or hearing; "a sign, a point or a tap counts" carried through; audio-only instructions. |
+| 5 | **A military family** (a parent deployed or often away) | Routines that assume both parents are home; a way to include an away parent; moves and new-base transitions. |
+| 6 | **A rural, low-income family with a budget printer and no yard** | Ink use, page count and paper cost; supplies the family must buy; plays that assume a yard, park, library or store nearby; pricing that feels fair. |
+
+**Also rotate in** (named in the same audit, one per panel where the product touches them): a person of faith (holiday and bedtime content that assumes one tradition or none), and a foster or kinship carer (family pages, "baby photo" or "family history" prompts).
+
+Panel seats are simulated people. Their lines are design input only and are **never** quoted as testimonials or reviews (`ops/TESTIMONIAL-LOG.md` rule 1). When the panel template in `ops/ROUTINE.md` is next edited, add the same six seats there.
+
 ## PRODUCT RULES (numbered; every new product and every revision)
 
 Rules marked (gate) are already in ops/COMPLIANCE-GATE.md and are restated here so the whole set sits in one place.

@@ -4,6 +4,6 @@ While this file exists, every routine researches and builds only. It publishes, 
 
 Why: no store or social account exists yet, the launch gate (task #12) and the automation hardening (task #20) are not finished, and employment counsel has not yet given the OK (legal/LEGAL-LAUNCH-CHECKLIST.md row 1).
 
-Claude deletes this file only when all of the following are true: the Wave 0 accounts and keys exist (ops/LAUNCH-NOW.md), the launch gate passes, and Arielle has said go. Anyone can re-create this file at any time to stop all publishing at once.
+Claude deletes this file only when all of the following are true: the Wave 0 accounts and keys exist (ops/LAUNCH-NOW.md), the launch gate passes, and the founder has said go. Anyone can re-create this file at any time to stop all publishing at once.
 
 No store, social or email API is connected yet, so there is nothing for ops/FULL-STOP.md to switch off. That file is written as part of task #20 (G2-04), before the first key is added.

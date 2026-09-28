@@ -47,7 +47,7 @@ If the founder still wants a separate, non-commercial education account, counsel
 
 Regional platforms (for example LINE in Japan and Xiaohongshu in China) are added only when `ops/INTERNATIONAL.md` opens that region.
 
-## Setup rules (these protect Arielle)
+## Setup rules (these protect the founder)
 
 - **Owned by the business, not by her personally.** Sign up with a business email (for example `hello@playbeforepixels.com` once the domain exists), never a personal email. Never convert a personal profile into the business account.
 - **Two-factor login with an authenticator app** on every account, and store the recovery codes in a password manager.

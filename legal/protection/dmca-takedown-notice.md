@@ -6,7 +6,7 @@
 
 > **Before you send (checklist; delete this box when sending)**
 > - [ ] **Is the copying of protected expression?** Our text, illustrations, layout, photos or video count. A similar **idea**, activity type, method, title, short phrase or slogan does **not**; use a trademark report for names and slogans. Consider **fair use** (commentary, criticism, a short quotation) before sending (17 U.S.C. §107; https://www.copyright.gov/fair-use/).
-> - [ ] **Are we the owner?** Send as **AlphaPlay LLC** once Arielle's written assignment to the LLC is signed. Until then, ask the attorney who should sign. If a freelancer created the work, confirm the freelancer agreement is signed.
+> - [ ] **Are we the owner?** Send as **AlphaPlay LLC** once the founder's written assignment to the LLC is signed. Until then, ask the attorney who should sign. If a freelancer created the work, confirm the freelancer agreement is signed.
 > - [ ] **Evidence saved**: dated screenshots, URLs, seller name, and a side-by-side comparison. Log it in the enforcement spreadsheet.
 > - [ ] **Warning:** a person who **knowingly materially misrepresents** that material is infringing is liable for the resulting damages, costs and attorney's fees (17 U.S.C. §512(f)). When in doubt, ask the attorney first.
 > - [ ] Use the platform's own form if it has one (see `marketplace-ip-report-checklist.md`). Otherwise email this notice to the site's or host's **designated DMCA agent** (look it up in the Copyright Office DMCA Designated Agent Directory, or the site's Terms) and to the **hosting company** (find it with a WHOIS or hosting lookup).
@@ -40,7 +40,7 @@ The following material infringes our copyright and should be removed or disabled
 
 **3. Contact information** *(element iv)*
 AlphaPlay LLC d/b/a Play Before Pixels
-Attn: Arielle Fleisher, Member
+Attn: [Member name], Member
 [BUSINESS MAILING ADDRESS]
 Email: [BUSINESS EMAIL]  Phone: [BUSINESS PHONE]
 
@@ -51,8 +51,8 @@ I have a good faith belief that use of the material in the manner complained of 
 The information in this notification is accurate, and under penalty of perjury, I am authorized to act on behalf of the owner of an exclusive right that is allegedly infringed.
 
 **6. Signature** *(element i)*
-/s/ [Arielle Fleisher]
-Arielle Fleisher, Member, for AlphaPlay LLC
+/s/ [Member name]
+[Member name], Member, for AlphaPlay LLC
 [DATE]
 
 *(Optional)* I also ask that you take appropriate action against repeat infringers under your repeat-infringer policy. This notice does not waive any of AlphaPlay LLC's rights or remedies, all of which are reserved.

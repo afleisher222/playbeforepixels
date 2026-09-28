@@ -1,13 +1,13 @@
-# How Arielle and AlphaPlay LLC stay protected
+# How the founder and AlphaPlay LLC stay protected
 
 > **Update, September 28, 2026:** the founder no longer uses the 11140 Rockville Pike mailbox. Items below about that mailbox's format (PMB style) are moot. The current address rule is in `legal/ENTITY.md`. The principal-office and resident-agent rules still apply to whatever address is used.
 
-**AlphaPlay LLC (Maryland), d/b/a Play Before Pixels. Founder and sole member: Arielle Fleisher.**
+**AlphaPlay LLC (Maryland), d/b/a Play Before Pixels. Sole member: the founder.**
 Prepared September 27, 2026. This is educational guidance to take to a Maryland business/IP attorney and a commercial insurance broker. It is **not legal advice**.
 
 **How to read the labels.** Every rule, fee and procedure below comes from a research pass completed September 27, 2026 and has a source link. Items marked **(unverified)** could not be confirmed on a current primary source, so confirm them before you rely on them or pay. "Typical" price ranges come from secondary sources and are marked **(unverified)**. The research proxy blocked direct fetches of several government and marketplace sites (dat.maryland.gov, mgaleg.maryland.gov, oag.maryland.gov, uspto.gov, copyright.gov, sellercentral, tiktok.com, faire.com and others). Those items were checked against search-result excerpts served from the official domains, so re-open each live page before filing.
 
-**What this plan does not cover.** Arielle's public-school employment is outside its scope. Where the business touches that employment, this plan only lists neutral questions for her employment counsel (see the last section and `../FOR-EMPLOYMENT-COUNSEL.md`).
+**What this plan does not cover.** The founder's public-school employment is outside its scope. Where the business touches that employment, this plan only lists neutral questions for her employment counsel (see the last section and `../FOR-EMPLOYMENT-COUNSEL.md`).
 
 ---
 
@@ -15,11 +15,11 @@ Prepared September 27, 2026. This is educational guidance to take to a Maryland 
 
 | # | Protection | Why it matters | Cost | Deadline / when |
 |---|---|---|---|---|
-| 1 | **Run everything through the LLC.** Use a business bank account and card under the EIN. Sign every contract "AlphaPlay LLC d/b/a Play Before Pixels, By: Arielle Fleisher, Member". Open every marketplace account in the LLC's name. Give no personal guarantees. Register the trade name. | Maryland protects a member from LLC debts "solely by reason of being a member" (§4A-301). Commingling and signing personally invite veil-piercing arguments and personal contract liability. | Bank $0–$15/mo (unverified). Trade name $25 ($50 expedited). | **Now** |
+| 1 | **Run everything through the LLC.** Use a business bank account and card under the EIN. Sign every contract "AlphaPlay LLC d/b/a Play Before Pixels, By: [Member name], Member". Open every marketplace account in the LLC's name. Give no personal guarantees. Register the trade name. | Maryland protects a member from LLC debts "solely by reason of being a member" (§4A-301). Commingling and signing personally invite veil-piercing arguments and personal contract liability. | Bank $0–$15/mo (unverified). Trade name $25 ($50 expedited). | **Now** |
 | 2 | **Keep the LLC in good standing and your home address off public records.** Hire a commercial resident agent. Use a principal office that is **not** the CMRA mailbox. Correct the mailbox format to the PMB style. | Forfeiture weakens the shield and could complicate ALPHAPLAY. SDAT addresses are public. | Annual report $300/yr. Agent change $25 ($50 expedited). Commercial agent about $50–$300/yr (unverified). | Annual report **April 15, 2027**. Agent and address fixes **now**. |
-| 3 | **Get insurance that names Arielle personally.** Four policies: general liability with products-completed operations; professional liability/E&O; media liability; cyber. | The LLC does **not** protect her from torts she personally commits or participates in (*Allen v. Dackman*). Insurance is the backstop. | GL about $542/yr average. E&O about $62/mo average. Cyber about $35–$129/mo. Media (unverified). | GL **before the first sale**. The other three **before launch**. |
+| 3 | **Get insurance that names the founder personally.** Four policies: general liability with products-completed operations; professional liability/E&O; media liability; cyber. | The LLC does **not** protect her from torts she personally commits or participates in (*Allen v. Dackman*). Insurance is the backstop. | GL about $542/yr average. E&O about $62/mo average. Cyber about $35–$129/mo. Media (unverified). | GL **before the first sale**. The other three **before launch**. |
 | 4 | **Use signed contracts before any work or service starts.** Freelancers sign a work-for-hire and IP assignment. Coaching clients, workshop hosts and site buyers get terms with a liability cap. | Without a signed writing, a freelancer keeps the copyright in the art. Liability caps and releases are generally enforceable in Maryland, within limits (*Wolf v. Ford*; *BJ's v. Rosen*). | Templates in this folder. Attorney review about $300–$2,500 per document (unverified). | **Now** for freelancers. **Before launch** for the rest. |
-| 5 | **Put all IP in the LLC's name.** Arielle signs a written IP assignment to AlphaPlay LLC, and the operating agreement is refreshed. | Only the owner can enforce. A copyright transfer must be in writing (17 U.S.C. §204(a)). | About $500–$2,000 attorney (unverified). | **Now**, after employment counsel answers the ownership question (Q2 below). |
+| 5 | **Put all IP in the LLC's name.** The founder signs a written IP assignment to AlphaPlay LLC, and the operating agreement is refreshed. | Only the owner can enforce. A copyright transfer must be in writing (17 U.S.C. §204(a)). | About $500–$2,000 attorney (unverified). | **Now**, after employment counsel answers the ownership question (Q2 below). |
 | 6 | **ALPHAPLAY (SN 99650345): file the Statement of Use or an extension.** | If nothing is filed, the application is abandoned and its priority date is lost. | SOU $150/class. Extension $125/class. | **Due March 8, 2027.** Target filing by **Feb 1, 2027**. |
 | 7 | **File a federal trademark application for PLAY BEFORE PIXELS** in classes 16 and 41 after a clearance search. Use it as a series or house brand. Mark it with ™ now. | This is the main anti-copycat right. It unlocks Meta Brand Rights Protection and likely Amazon Brand Registry, and starts the 6-month foreign priority window. | $350/class, so **$700** for 16 + 41, plus attorney fees. | **Now** (within 90 days) |
 | 8 | **Register copyrights** before publication or within 3 months after it. Aim to file before the new fees take effect. | You cannot sue until the Office registers or refuses the work. Statutory damages and attorney's fees require timely registration. | $45–$85 per filing now. Higher fees likely from about **Nov 12, 2026**. | File pending works **before Nov 11, 2026**. Then within 3 months of each release. |
@@ -29,13 +29,13 @@ Prepared September 27, 2026. This is educational guidance to take to a Maryland 
 **Corrections to earlier files in `../`:**
 1. `ENTITY.md` shows the mailbox as "Suite 100-559". USPS DMM 508 does not allow combining the CMRA suite number and the box number that way. Use PMB format (see Privacy, below).
 2. The notes in `LEGAL-LAUNCH-CHECKLIST.md` say board books are generally ordinary books. The CPSC says the ordinary-book exemption does **not** cover books designed or intended for children 3 and younger (see Content and claims, below).
-3. `LEGAL-LAUNCH-CHECKLIST.md` #23 treats the Single Application as generally unavailable. It is available for a work Arielle alone created and still owns, before she assigns it. See Own your IP, below.
+3. `LEGAL-LAUNCH-CHECKLIST.md` #23 treats the Single Application as generally unavailable. It is available for a work the founder alone created and still owns, before she assigns it. See Own your IP, below.
 
 ---
 
 ## 1. Keep the LLC shield strong
 
-**What the shield does and does not do.** Under Md. Code, Corps. & Ass'ns §4A-301, a member is not personally liable for LLC obligations "solely by reason of being a member." In *Allen v. Dackman*, 413 Md. 132 (2010), Maryland's high court held that a member who personally "commits, inspires or participates in" a tort can be personally liable. Arielle personally writes the books, runs the coaching and teaches the workshops, so her own negligence or defamation can reach her directly. The LLC is the first layer of protection. Insurance (section 2), contracts (section 3) and careful content (section 4) are the other layers.
+**What the shield does and does not do.** Under Md. Code, Corps. & Ass'ns §4A-301, a member is not personally liable for LLC obligations "solely by reason of being a member." In *Allen v. Dackman*, 413 Md. 132 (2010), Maryland's high court held that a member who personally "commits, inspires or participates in" a tort can be personally liable. The founder personally writes the books, runs the coaching and teaches the workshops, so her own negligence or defamation can reach her directly. The LLC is the first layer of protection. Insurance (section 2), contracts (section 3) and careful content (section 4) are the other layers.
 Sources: https://law.justia.com/codes/maryland/corporations-and-associations/title-4a/subtitle-3/section-4a-301/ · https://caselaw.findlaw.com/court/md-court-of-appeals/1522965.html
 
 **Veil piercing.** Maryland pierces the veil only "to prevent fraud or to enforce a paramount equity" (*Hildreth v. Tidewater Equipment Co.*, 378 Md. 724 (2003)). Commingling, missing records and undercapitalization feed the paramount-equity argument. Because she sells worldwide, she could be sued in states with looser tests (not verified state by state).
@@ -48,7 +48,7 @@ Source: https://www.courtlistener.com/opinion/2399227/hildreth-v-tidewater-equip
 - [ ] Use bookkeeping software linked only to the business account. Cost: about $0–$30/mo (unverified).
 - [ ] Keep a records folder with the articles, EIN letter, operating agreement, annual reports, insurance policies, contracts and a simple annual member consent.
 
-**Sign only as the LLC (now, $0).** Use this signature block on every contract, invoice and agreement: *"AlphaPlay LLC d/b/a Play Before Pixels, By: ____ Arielle Fleisher, Member."* Put the LLC's legal name in every contract preamble. Open KDP, IngramSpark, Amazon, Etsy, TpT, TikTok Shop, Meta, Faire, Shopify, payment and ad accounts in the LLC's name with the EIN, never her SSN. Where a platform offers only an "individual" account, ask the attorney whether to migrate it. Decline personal guarantees. §4A-301 does not protect a guarantee because it is her own promise. If a lender or landlord insists, negotiate a dollar cap and a sunset date.
+**Sign only as the LLC (now, $0).** Use this signature block on every contract, invoice and agreement: *"AlphaPlay LLC d/b/a Play Before Pixels, By: ____ [Member name], Member."* Put the LLC's legal name in every contract preamble. Open KDP, IngramSpark, Amazon, Etsy, TpT, TikTok Shop, Meta, Faire, Shopify, payment and ad accounts in the LLC's name with the EIN, never her SSN. Where a platform offers only an "individual" account, ask the attorney whether to migrate it. Decline personal guarantees. §4A-301 does not protect a guarantee because it is her own promise. If a lender or landlord insists, negotiate a dollar cap and a sunset date.
 
 **Trade name (now).** File the SDAT Trade Name Application listing AlphaPlay LLC as owner of "Play Before Pixels". Cost: **$25** ($50 expedited). The registration lasts 5 years from acceptance. Renew online in the last 6 months of the term or SDAT forfeits the name. The renewal fee was not found (unverified); SDAT trade-name help is 410-767-1801 or sdat.tradenamehelp@maryland.gov. A trade name is **not** a trademark and gives no rights against copycats.
 Sources: https://dat.maryland.gov/businesses/documents/fees.pdf · https://dat.maryland.gov/SiteAssets/Pages/sdatforms/Trade%20Name%20Application%20%28Registration%29%20and%20Instructions_0826-A.pdf
@@ -70,7 +70,7 @@ Sources: https://law.justia.com/codes/maryland/corporations-and-associations/tit
 - indemnification and advancement of defense costs for the member, to the extent the LLC is solvent
 - capital contributions
 - a successor or designee if she is incapacitated or dies (coordinate with her estate plan)
-- a separate **written IP assignment** from Arielle to AlphaPlay LLC (see section 6)
+- a separate **written IP assignment** from the founder to AlphaPlay LLC (see section 6)
 
 Cost: about $500–$2,000 (unverified).
 Source: https://law.justia.com/codes/maryland/corporations-and-associations/title-4a/subtitle-4/section-4a-402/
@@ -82,12 +82,12 @@ Sources: https://www.fincen.gov/news/news-releases/fincen-permanently-ends-benef
 
 ## 2. Insurance
 
-Tell the broker every policy must name **both AlphaPlay LLC and Arielle Fleisher (as member)** as insureds. Disclose: children's products for ages 0–3, third-party POD manufacturing, worldwide sales, in-person workshops, online coaching and courses.
+Tell the broker every policy must name **both AlphaPlay LLC and the owner (as member)** as insureds. Disclose: children's products for ages 0–3, third-party POD manufacturing, worldwide sales, in-person workshops, online coaching and courses.
 
 | Policy | Covers | Specs to ask for | Cost (source) | When |
 |---|---|---|---|---|
 | **Commercial general liability** with products-completed operations (or a BOP) | Bodily injury and property damage from books, cards, merch and events. Also some "personal and advertising injury" (check exclusions). | $1M per occurrence / $2M aggregate, **occurrence-based**. Deductible **no more than $10,000**. Insurer rated **A- or better** with global claims handling. Can add Amazon, Faire and TikTok as additional insureds by endorsement. Ask about abuse-and-molestation exclusions or sublimits if children attend events. | About $45/mo ($542/yr) average. Range about $260 to $3,000+/yr. 85% of Insureon customers choose $1M/$2M. Children's products may price higher (unverified). | **Before the first sale** |
-| **Professional liability / E&O** | Claims that coaching, workshop or course advice caused harm. GL excludes these. | Describe the services as "parent education coaching, workshops and online courses; not therapy, medical or speech-language services." Include online delivery and worldwide clients. Confirm it covers Arielle individually. | Consultants average about $62/mo. Range about $400 to $3,750+/yr. | **Before launch** |
+| **Professional liability / E&O** | Claims that coaching, workshop or course advice caused harm. GL excludes these. | Describe the services as "parent education coaching, workshops and online courses; not therapy, medical or speech-language services." Include online delivery and worldwide clients. Confirm it covers the founder individually. | Consultants average about $62/mo. Range about $400 to $3,750+/yr. | **Before launch** |
 | **Media liability / publisher's E&O** | Defamation, copyright and trademark claims, privacy and likeness claims from books, the website, the research hub, social media, the course and merch. | Ask about retentions and prior-acts coverage for titles already published. Document your clearance process (underwriters ask for it). The Authors Guild program was **discontinued at the end of 2022**; check its page for a replacement. | **(unverified)**. The old Guild program ran about $450–$2,500 per book. Secondary sources report $50–$150/mo. | **Before launch** |
 | **Cyber** | Breach response (notice, forensics) and third-party claims. | First-party and third-party coverage. | Small businesses average about $129/mo ($1,552/yr). Consultants about $81/mo. Low-risk micro businesses from about $35/mo. | **Before launch** |
 | **Umbrella** | Judgments above or outside business limits. | Most personal umbrellas exclude business pursuits. Ask her personal-lines agent. A commercial umbrella or excess policy over the GL may be the right fit. | A few hundred dollars/yr for $1M **(unverified)** | Within 90 days |
@@ -203,7 +203,7 @@ Sources: https://pe.usps.com/cpim/ftp/manuals/dmm300/508.pdf · https://www.ftc.
 ## 6. Own your IP
 
 ### 6a. Chain of title (now)
-- **Arielle to AlphaPlay LLC.** A written assignment should list every book, the play guide, printables, teacher pack, card deck, slogan artwork, course materials, research-hub text, domains, social handles and "Play Before Pixels" goodwill, and should cover future works in the series. A copyright transfer is valid only in a signed writing (17 U.S.C. §204(a)). Consider recording it with the Copyright Office. Ask employment counsel Q2 (last section) **before** signing.
+- **The founder to AlphaPlay LLC.** A written assignment should list every book, the play guide, printables, teacher pack, card deck, slogan artwork, course materials, research-hub text, domains, social handles and "Play Before Pixels" goodwill, and should cover future works in the series. A copyright transfer is valid only in a signed writing (17 U.S.C. §204(a)). Consider recording it with the Copyright Office. Ask employment counsel Q2 (last section) **before** signing.
 - **Freelancers to AlphaPlay LLC.** Every freelancer signs an express assignment. A "work made for hire" label alone is not enough: a commissioned work qualifies only if it falls within a statutory category **and** both parties sign a writing.
 - Keep signed PDFs in the company minute book.
 
@@ -249,13 +249,13 @@ Sources: https://www.uspto.gov/sites/default/files/documents/USPTO-fee-schedule_
 
 | Work | Application | Current fee |
 |---|---|---|
-| Unpublished works by Arielle alone, before release | **GRUW**: up to 10 works, same author, author named as claimant; separate applications for literary and visual works. Still usable after assignment. | $85 |
-| A published work Arielle alone wrote, **before** she assigns it | **Single Application** | $45 |
+| Unpublished works by the founder alone, before release | **GRUW**: up to 10 works, same author, author named as claimant; separate applications for literary and visual works. Still usable after assignment. | $85 |
+| A published work the founder alone wrote, **before** she assigns it | **Single Application** | $45 |
 | A book with a hired illustrator, anything already assigned to the LLC, or work made for hire | **Standard Application** | $65 |
 | Research-hub articles (2–50 works of 50–17,500 words each, published online within a 3-month period, same individual author) | **GRTX** | $65 |
 | Course videos | Standard Application (motion picture / audiovisual work) | $65 |
 
-**Order of steps:** option (a) register Arielle-only works with the Single Application, then assign. Option (b) assign first, then the LLC files Standard Applications, plus GRUW or GRTX where eligible. Decide with the attorney.
+**Order of steps:** option (a) register the founder-only works with the Single Application, then assign. Option (b) assign first, then the LLC files Standard Applications, plus GRUW or GRTX where eligible. Decide with the attorney.
 
 **Fee increase is coming.** The final schedule was sent to Congress on July 14, 2026. Congress's review window ends at midnight **Nov 11, 2026**, so new fees could apply from about **Nov 12, 2026**. Proposed: Standard $85 (paper $185), GRUW $130. Special handling is $800 now, proposed $1,100 (final figure unverified). The new Single Application and GRTX fees are unverified. **File anything ready before Nov 11, 2026.**
 
@@ -417,7 +417,7 @@ The full list is in `../FOR-EMPLOYMENT-COUNSEL.md`. The questions where this pla
 2. Does my district employment policy or agreement claim any ownership of, or restrict, materials I create outside work? Should anything be carved out of my IP assignment to AlphaPlay LLC? Could the district claim any books, guides, printables or teacher materials, including anything created on school time or equipment or drawing on classroom work?
 3. May I sell or present to parents, teachers or PTAs in my district, or market to colleagues? Are there limits on paid workshops for parent or teacher groups connected to my employing district or its schools?
 4. May I ever use images, work samples or stories involving students from my employment in my business? (This plan assumes **no** by default.)
-5. Given my pending matter, what should I avoid saying publicly, on business channels, the research hub, in workshops or on social media, about schools, my employer or education policy?
+5. What should I avoid saying publicly, on business channels, the research hub, in workshops or on social media, about schools, my employer or education policy?
 6. Does anything in the business need to be paused, disclosed or reviewed before launch?
 
 ---
@@ -433,7 +433,7 @@ The full list is in `../FOR-EMPLOYMENT-COUNSEL.md`. The questions where this pla
 
 **How to protect the products anyway (in order of strength):**
 1. **Trademark is unaffected.** PLAY BEFORE PIXELS, book-series names and the logo are protected by trademark use and registration regardless of how the products were made. This is the strongest anti-copycat tool and does not depend on authorship. File it first.
-2. **Make Arielle the human author of the parts that matter most.** She rewrites the text of each book in her own words, chooses and arranges the pages, changes compositions, colors and characters, and adds her own material. Keep the before/after files in this repository (git history is dated proof) and log her decisions in `creation-records-log.md`. Her human contributions, selection and arrangement are registrable; the AI-generated remainder is disclaimed.
+2. **Make the founder the human author of the parts that matter most.** She rewrites the text of each book in her own words, chooses and arranges the pages, changes compositions, colors and characters, and adds her own material. Keep the before/after files in this repository (git history is dated proof) and log her decisions in `creation-records-log.md`. Her human contributions, selection and arrangement are registrable; the AI-generated remainder is disclaimed.
 3. **Commission human illustrators for flagship titles** under the work-for-hire and IP-assignment agreement in this folder. Human-drawn art assigned to AlphaPlay LLC is fully protected. Use the AI drafts as the art brief.
 4. **Contract terms still bind buyers.** The digital-product license (personal / single classroom / site license; no resale or redistribution) is enforceable against purchasers as a contract whether or not the content is copyrightable.
 5. **Register only what is human-authored, with AI material disclaimed**, following the Copyright Office's registration guidance for works containing AI-generated material. Let the IP attorney prepare the first registrations.

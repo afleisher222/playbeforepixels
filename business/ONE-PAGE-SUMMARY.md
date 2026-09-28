@@ -1,6 +1,6 @@
 # Play Before Pixels: executive summary
 
-*AlphaPlay LLC (Maryland), trading as Play Before Pixels. Founder and sole member: Arielle Fleisher. Revised expansion plan, September 28, 2026. Internal planning document, not for publication. Every figure is a planning estimate from `business/PlayBeforePixels_Financial_Model.xlsx`, not a forecast of income or a promise of results.*
+*AlphaPlay LLC (Maryland), trading as Play Before Pixels. Sole member: the founder. Revised expansion plan, September 28, 2026. Internal planning document, not for publication. Every figure is a planning estimate from `business/PlayBeforePixels_Financial_Model.xlsx`, not a forecast of income or a promise of results.*
 
 **What.** Play Before Pixels sells age-banded play-and-talk products for families of young children: printables, print-on-demand paperbacks and a written 30-Day Screen Reset course. It is faceless and sells products only, with no coaching, calls or live events. The founder never holds stock, and the brand makes no health claims. Scheduled Claude Code routines run the work; the founder approves and signs.
 

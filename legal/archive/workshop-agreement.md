@@ -18,7 +18,7 @@
 - **Date / time / length:** ____________________
 - **Format:** [ ] In person at: ____________________ [ ] Live online via: ________
 - **Audience:** [ ] Adults only [ ] Adults with children present (ages ____). Expected attendance: ____ (maximum ____)
-- **Presenter:** Arielle Fleisher, for AlphaPlay LLC
+- **Presenter:** the founder, for AlphaPlay LLC
 - **Included materials:** ____________________ (for example, handouts for up to ___ attendees)
 
 ## 2. Fees, deposit and cancellation
@@ -69,7 +69,7 @@ Maryland law governs. [Venue: courts in Montgomery County, Maryland.] This is th
 By: ______________________ Name/Title: ______________ Date: ________
 
 **AlphaPlay LLC d/b/a Play Before Pixels**
-By: ______________________ Arielle Fleisher, Member  Date: ________
+By: ______________________ [Member name], Member  Date: ________
 
 ---
 

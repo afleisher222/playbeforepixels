@@ -1,6 +1,6 @@
 # 1. Vision, market and position
 
-**Play Before Pixels, a trade name of AlphaPlay LLC (Maryland). Founder and owner: Arielle Fleisher.**
+**Play Before Pixels, a trade name of AlphaPlay LLC (Maryland). Owner: the founder.**
 Expansion business plan, section 1 of the set. Status: draft for the founder, September 28, 2026.
 
 **How to read the numbers in this section.** Every figure comes from a file in this repository, and the file is named beside it. Figures marked **[VERIFY]** come from outside that evidence base or were never checked on a live page. Web search was not available for this draft, so confirm them before they appear in anything sent outside the business. Figures marked **(assumption)** are planning inputs chosen for this plan. They are not observations and they are not forecasts. School-facing and group-facing work is on hold until the founder's employment counsel answers (`marketing/BLIND-SPOTS.md` item 1). This section treats that work as a later wave that depends on counsel's answer.

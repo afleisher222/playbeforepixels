@@ -1,6 +1,6 @@
 # 3. Financial model
 
-*Play Before Pixels, a trade name of AlphaPlay LLC (Maryland). Founder and owner: Arielle Fleisher. Section 3 of the expansion business plan. Revised draft for the founder, September 28, 2026. Internal planning file, not for publication.*
+*Play Before Pixels, a trade name of AlphaPlay LLC (Maryland). Owner: the founder. Section 3 of the expansion business plan. Revised draft for the founder, September 28, 2026. Internal planning file, not for publication.*
 
 **The workbook:** `business/PlayBeforePixels_Financial_Model.xlsx`: 9 tabs and about 18,600 live formulas. A full LibreOffice recalculation returns no errors. The generator script is `business/build_financial_model.py`, and it accepts input overrides for sensitivity runs.
 

@@ -9,7 +9,7 @@ This private repository IS the business. Every Claude Code session and scheduled
 - `brand/BRAND.md` — hard rules (no health claims; never name/criticize a school, district, company or EdTech product; child safety; allowed citations; faceless; self-running; no inventory), palette, fonts, illustration style, print specs, deliverables.
 - `legal/ENTITY.md` — legal owner, copyright line, ALPHAPLAY trademark deadline (Statement of Use or extension due **March 8, 2027**).
 - Outreach exclusions (never contact, never list as targets): Montgomery County Public Schools and its staff; MCEA and its affiliates MSEA and NEA; Montgomery County DHHS and its Infants and Toddlers Program. Questions touching the founder's employment go only to `legal/FOR-EMPLOYMENT-COUNSEL.md`.
-- Build sessions open Gmail, Google Drive or Calendar only when Arielle asks in that session. What they find goes to her in chat; only the business fact (never her personal email address, inbox contents or file names) goes into this repository.
+- Build sessions open Gmail, Google Drive or Calendar only when the founder asks in that session. What they find goes to her in chat; only the business fact (never her personal email address, inbox contents or file names) goes into this repository.
 - Never publish anything about the founder's legal matters, her children's details, or her employer. The founder story is anonymous (`content/founder-story.md`) and needs counsel review before publication.
 
 ## Map

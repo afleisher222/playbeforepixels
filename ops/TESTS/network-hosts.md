@@ -2,7 +2,7 @@
 
 **Verdict: the allowlist now covers every host the three routines need to reach, with no wildcards.** `ops/cloud/allowed-domains.txt` went from 70 hosts to 138: 72 added, 4 removed. The API-credential table in `ops/CLOUD-RUNBOOK.md` now lists every key named in `ops/SECRETS.md`. It had no rows for the social scheduler, the uptime monitor, Printify, Gelato or YouTube, and one header was probably wrong (Kit). Several points could not be read from the platforms' own documentation (only code.claude.com was reachable from this session), so they are marked [VERIFY] rather than guessed.
 
-**Arielle's one action:** when she creates the "Play Before Pixels" environment (runbook setup step 4), she pastes the list at the end of this file. If she has already created it, she replaces the list with this one. Everything else below is for Claude.
+**The founder's one action:** when she creates the "Play Before Pixels" environment (runbook setup step 4), she pastes the list at the end of this file. If she has already created it, she replaces the list with this one. Everything else below is for Claude.
 
 ## How the cloud network works (read today at code.claude.com/docs/en/cloud-environments)
 
@@ -90,15 +90,15 @@ All the hosts that were already listed stay. Each one maps to a routine step: th
 About 190 hosts in the repository's text files, and about 75 more in the events-calendar workbook, are not on the list:
 - **Competitors, blogs, news and review sites.** These are research notes in marketing/ and business/. Reading them is not a routine step, and the copycat watch searches the marketplaces themselves.
 - **Secondary legal databases and law-firm pages** (FindLaw, Justia, Cornell LII, CourtListener, law-firm blogs). The eCFR, the Federal Register and the agencies' own sites are the primary sources.
-- **Domain registries and registrars** (Nominet, CIRA, auDA, AFNIC, DENIC, EURid, ICANN). Buying a domain is Arielle's step.
+- **Domain registries and registrars** (Nominet, CIRA, auDA, AFNIC, DENIC, EURid, ICANN). Buying a domain is the founder's step.
 - **Vendors not chosen:**
   - Payhip, Lemon Squeezy and Paddle (the merchant of record is Gumroad);
   - Printify and Gelato (the print partner is Printful). Add `api.printify.com` or the Gelato hosts only if that choice changes;
   - QuickBooks, Link My Books, Wave, Xero and FreshBooks (the bookkeeping feeds run on their own);
   - Calendly, Acuity, Kajabi, Teachable and Podia (no live services; no course platform chosen).
-- **Upload-packet platforms without an API** (Author Central, Seller Central, Brand Registry, Walmart Marketplace). Arielle uploads there herself.
+- **Upload-packet platforms without an API** (Author Central, Seller Central, Brand Registry, Walmart Marketplace). The founder uploads there herself.
 - **Social profile pages** (`www.instagram.com`, `x.com`, `www.threads.com`, `www.linkedin.com`, `www.youtube.com`). Read-back goes through each platform's API, not the public page. YouTube's policies are on `support.google.com`.
-- **About 75 event-organizer sites** in the events calendar: conferences, book fairs, awareness days, and the Region 2 carriers (Royal Mail, Canada Post, Australia Post). If a row's official URL is not on the list, the run writes "blocked: <host>" in that row's notes and keeps the calculated date. Arielle adds the host only when the date decides money, such as a shipping cutoff for a region that is live.
+- **About 75 event-organizer sites** in the events calendar: conferences, book fairs, awareness days, and the Region 2 carriers (Royal Mail, Canada Post, Australia Post). If a row's official URL is not on the list, the run writes "blocked: <host>" in that row's notes and keeps the calculated date. The founder adds the host only when the date decides money, such as a shipping cutoff for a region that is live.
 - **ResearchGate** (3 queue items). It is a repository, not the primary source, and it refuses automated readers. Read those items through their DOI or PubMed record, or delete the claim (the queue's own rule).
 - **Region 5 and single-country government portals** (Brazil, France, Spain, the German packaging register, Australian product safety and eSafety). Add them when `ops/INTERNATIONAL.md` reaches that region.
 - **`telemetry.astro.build` and `sparrow.cloudflare.com`** (build telemetry). A blocked call is harmless. Set `ASTRO_TELEMETRY_DISABLED=1` and `WRANGLER_SEND_METRICS=false` as plain environment variables to silence them.
@@ -125,7 +125,7 @@ Hosts and header names that match both documents and need no mark: Cloudflare `a
 
 ## Other things that affect the routines
 
-- **Media must be public before posting.** Instagram, Facebook and Pinterest take an image or video URL, and Printful takes file URLs. So §5 must deploy the site's media first, then post. `playbeforepixels.com` does not exist until Arielle buys the domain (`ops/LAUNCH-NOW.md` Wave 0, step 5).
+- **Media must be public before posting.** Instagram, Facebook and Pinterest take an image or video URL, and Printful takes file URLs. So §5 must deploy the site's media first, then post. `playbeforepixels.com` does not exist until the founder buys the domain (`ops/LAUNCH-NOW.md` Wave 0, step 5).
 - **The Search Console manual-action status** in `ops/HEARTBEAT.json` may not be available through Google's API [VERIFY]. If it is not, it stays "not connected", and the check is manual.
 - **The weekly `git bundle` backup** (G2-04): R2's hosts are in the defaults, but R2's S3 API signs every request with the secret key, which a header credential cannot do [VERIFY]. So the backup should go through the approval Worker (write-only), not straight to R2.
 - **Link checks must not report blocked hosts as broken.** The site links out to Amazon, Bookshop.org, Etsy, TpT and the social profiles, and most of those hosts are not on the list. The AUTOFIX broken-link check must count a proxy answer of `403 host_not_allowed` as "not checked", never as a broken link to fix.

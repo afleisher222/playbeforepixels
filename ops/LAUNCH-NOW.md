@@ -85,7 +85,7 @@ This replaces the 06:50 UTC version. It was written after the upload packets wer
 
 ---
 
-_Written September 28, 2026, after Arielle asked to "launch everything as soon as possible worldwide" and to have Claude run the social media and marketplaces automatically. The detailed setup steps for each platform are in `commerce/storefront-setup-guide.md`. This file sets the order and says who does each step._
+_Written September 28, 2026, after the founder asked to "launch everything as soon as possible worldwide" and to have Claude run the social media and marketplaces automatically. The detailed setup steps for each platform are in `commerce/storefront-setup-guide.md`. This file sets the order and says who does each step._
 
 ## The honest picture
 
@@ -97,7 +97,7 @@ Claude can build and run nearly everything. A small number of steps legally have
 
 Launching worldwide on day one is possible for **digital products**, through Etsy and a merchant of record (Gumroad): both sell to buyers everywhere, and they handle the sales tax and VAT on digital goods in the regions they cover (confirm each at signup [VERIFY]). Printed books reach most countries in Wave 2, through Amazon's own marketplaces.
 
-## Wave 0: Arielle, once (about 3–4 hours in total, spread over a week)
+## Wave 0: the founder, once (about 3–4 hours in total, spread over a week)
 
 Protection comes first, so do these in this order.
 
@@ -144,7 +144,7 @@ Protection comes first, so do these in this order.
 
 Each platform needs its account and key from Wave 0 first. Where a platform has no posting or listing API, Claude builds a complete upload packet (files, text, prices and keywords) in `ops/UPLOAD-PACKETS/`, and uploading it takes about 10 minutes.
 
-| Platform | Claude runs it automatically | Needed once from Arielle | Limits (UNVERIFIED until re-checked; task #18) |
+| Platform | Claude runs it automatically | Needed once from the founder | Limits (UNVERIFIED until re-checked; task #18) |
 |---|---|---|---|
 | Website | Builds, deploys, fixes, SEO pages and a daily health check | Cloudflare API token | |
 | Shopify | Products, prices, collections, bundles, discounts and channel sync. Orders deliver themselves | Custom-app client ID and secret | |
@@ -172,12 +172,12 @@ Each platform needs its account and key from Wave 0 first. Where a platform has 
   - the multi-page site;
   - the cleanup sweep: renames, honest prices and the AlphaPlay LLC copyright line;
   - the legal gate.
-- **Monday–Saturday, once the founder's setup steps are done (paused on September 28, 2026): the daily studio routine (2:47 a.m. ET, overnight so it does not use Arielle's daytime Claude allowance).** It builds or improves one product and keeps social posts queued.
+- **Monday–Saturday, once the founder's setup steps are done (paused on September 28, 2026): the daily studio routine (2:47 a.m. ET, overnight so it does not use the founder's daytime Claude allowance).** It builds or improves one product and keeps social posts queued.
 - **Every Sunday: the weekly market-research routine (Sunday 3:52 a.m. ET).** It re-ranks what to build next and re-checks facts marked UNVERIFIED.
-  - **Not switched on yet.** On September 28, 2026 the session's permission system blocked Claude from switching it on. Arielle can switch it on herself in the Routines list at claude.ai/code ("Play Before Pixels weekly market research").
-- **Both routines run in build-only mode for now (`ops/PAUSE`).** They build and research every day but publish nothing until the accounts exist, the launch gate passes and Arielle says go. Claude then deletes `ops/PAUSE` and switches on the daily check (6:38 a.m. ET), which watches the stores and sends her the money updates.
+  - **Not switched on yet.** On September 28, 2026 the session's permission system blocked Claude from switching it on. The founder can switch it on herself in the Routines list at claude.ai/code ("Play Before Pixels weekly market research").
+- **Both routines run in build-only mode for now (`ops/PAUSE`).** They build and research every day but publish nothing until the accounts exist, the launch gate passes and the founder says go. Claude then deletes `ops/PAUSE` and switches on the daily check (6:38 a.m. ET), which watches the stores and sends her the money updates.
 
-## How Arielle is protected through all of this
+## How the founder is protected through all of this
 
 - **The seller is AlphaPlay LLC,** never her personally. Every account, receipt and contract is in the LLC's name and uses its EIN.
 - **Her home address is never public:** only the PO Box appears.

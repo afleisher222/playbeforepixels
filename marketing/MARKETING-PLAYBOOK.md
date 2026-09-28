@@ -45,14 +45,14 @@ Keep it as `ops/suppression-list.csv` (private). The routine checks every email 
 - **People:** anyone she knows through work. Never use work email, work contacts, work devices or inside knowledge of procurement.
 - **Opt-outs and bounces:** add them within 10 business days (target: same week) and never remove them.
 - **Paid ads:** exclude Montgomery County, MD from geo-targeting until counsel advises.
-- **Venues:** Maryland and DC venues draw excluded-employer staff (NAIS Thrive 2027 in Baltimore, NAEYC 2026 in DC, any Maryland AEYC or PTA event). No pitching, no lead collection, and under the no-contact rule no attendance.
+- **Venues:** Maryland and DC venues draw excluded-organization staff (NAIS Thrive 2027 in Baltimore, NAEYC 2026 in DC, any Maryland AEYC or PTA event). No pitching, no lead collection, and under the no-contact rule no attendance.
 - **Public pages:** never name the employer on a public page, form or affiliate terms. Screen privately.
 
 ---
 
 ## Segment 1: Schools and districts
 
-Covers public districts (never the excluded employer), private and independent schools, early-learning centers, school libraries, and homeschool co-ops and microschools. US first; the same assets work worldwide.
+Covers public districts (never the excluded school system), private and independent schools, early-learning centers, school libraries, and homeschool co-ops and microschools. US first; the same assets work worldwide.
 
 ### Who buys and why
 | Buyer | How they pay | What they want |
@@ -91,12 +91,12 @@ All school-facing tactics wait for counsel except the book-distribution setup in
 | 5 | **Small-batch cold email** to librarians, counselors, PreK/K-2 leads and wellness coordinators. Build lists by hand from NCES CCD/ElSi, the NCES Private School Survey and public staff directories, using role addresses only. Send 20–40 a day in plain text, 3 touches at most. See `templates/` and the cold-email rules below. | $6–20/mo | 2–3 h/wk (drafted by the routine) | High | Mid-Oct–Nov, Jan–Feb. Pause over winter break, during testing windows and in the first 3 weeks of school |
 | 6 | **TPT storefront** for single-classroom licenses (see Teachers). Keep site and district licenses off TPT so the sole-source letter stays true. | $59.95/yr | 6–8 h | Medium | By late Oct if cleared |
 | 7 | **Classroom Set SKUs** priced for P-cards. Classroom Set (6 hardcovers, the 100 Plays guide and a license) about $199. Grade-Level Set. Early Learning Center Set, once board books exist. Books ship from the printer. Never ship before a PO or payment. | $0 upfront | 4–6 h | Medium | By Nov; push in Dec, Mar–Apr, May–Jun |
-| 8 | **Early-learning centers.** Center License plus classroom sets. At state AEYC conferences use only ads or program inserts; request each prospectus [pricing UNVERIFIED]. **Skip NAEYC Dec 5–8, 2026, DC:** it breaks the no-contact rule and excluded-employer staff will attend. | $0–500 | 3–6 h per placement | Medium | Book 3–4 months ahead |
+| 8 | **Early-learning centers.** Center License plus classroom sets. At state AEYC conferences use only ads or program inserts; request each prospectus [pricing UNVERIFIED]. **Skip NAEYC Dec 5–8, 2026, DC:** it breaks the no-contact rule and excluded-organization staff will attend. | $0–500 | 3–6 h per placement | Medium | Book 3–4 months ahead |
 | 9 | **IBPA cooperative shelf displays** at library conferences. IBPA staff show the book; no one has to staff a booth. ALA 2026 member prices were $199–249 per title (confirmed). Whether IBPA runs displays at AASL 2027 (Oct 14–16, Portland) is unverified, so ask. Add a QR card to /schools. | IBPA about $155/yr + $199–249 per title | 1–2 h per show | Medium | Put the 2027 deadlines on the calendar now |
 | 10 | **Microschools, co-ops and ESA marketplaces.** Apply to the National Microschooling Center's P3 program by email. Offer a Microschool/Co-op License. Each ESA state approves vendors separately. Texas TEFA requires out-of-state vendors to register as a foreign entity (fee UNVERIFIED), so ask the accountant first. | $0 to apply [UNVERIFIED] | 4–8 h | Medium | Late fall 2026 to spring 2027 |
 | 11 | **Independent schools.** Email the lower-school head, librarian and counselor, leading with a Parent Evening Host Kit that the school's own staff present. **Skip NAIS Thrive 2027 (Mar 3–5, Baltimore)** because of the Maryland location and the no-contact rule. | $0 | 1–2 h/wk inside the email batch | Medium | Oct–Nov; April |
 | 12 | **Educator SEO pages plus the research hub.** 8–12 illustrated pages targeting searches such as "screen-free indoor recess games" and "family engagement night ideas PreK", each with a free printable and opt-in. | $0–30/mo | 3–4 h per page | Medium (compounds) | Start now; ranking takes an estimated 3–6 months |
-| 13 | **BidNet Direct free supplier registration.** NIGP class 715 (books) and class 785 (teaching aids; confirm the 5-digit codes). Answer only small quotes. Ignore every excluded-employer solicitation. | $0 | 2 h once + 15 min/wk | Low | Oct 2026 |
+| 13 | **BidNet Direct free supplier registration.** NIGP class 715 (books) and class 785 (teaching aids; confirm the 5-digit codes). Answer only small quotes. Ignore every solicitation from an excluded organization. | $0 | 2 h once + 15 min/wk | Low | Oct 2026 |
 | 14 | **Education-supply catalogs** as a wholesale vendor. Wholesale sheet at 50–60% off. Card deck and board books first. Keep catalog names internal. | $50–200 in samples | 4–6 h | Low (long shot) | Nov 2026–Jan 2027 |
 
 ### Pitfalls
@@ -381,7 +381,7 @@ If a week slips, protect in this order: the suppression check, then the email se
 
 1. **No health or medical claims.** Never write "prevents speech delay", "improves attention", "boosts brain development", "reduces ADHD", "therapy", "cure" or "clinically proven". The founder is **not an SLP**; never imply clinical authorship. Research is cited neutrally, using only the citations in BRAND.md, as associations, never causes, with "not medical advice".
 2. **Never name, rate, compare or criticize** any school, district, company, app or EdTech product. That includes "unlike [app]" lines, and writing "no logins" as a jab. No local angle.
-3. **Never contact, list or target the excluded employer:** Montgomery County Public Schools (MD), its schools, staff, families and PTAs; MCEA, MSEA and NEA; Montgomery County DHHS and its Infants and Toddlers Program. Also never contact her colleagues or anyone she knows through work. Never use work time, devices, email, curriculum or logos. Selling to her employer, its families or colleagues is **a question for her employment counsel**.
+3. **Never contact, list or target the excluded organizations:** Montgomery County Public Schools (MD), its schools, staff, families and PTAs; MCEA, MSEA and NEA; Montgomery County DHHS and its Infants and Toddlers Program. Also never contact her colleagues or anyone she knows through work. Never use work time, devices, email, curriculum or logos. Selling to her employer, its families or colleagues is **a question for her employment counsel**.
 4. **Lawful outreach only.** Every commercial email meets CAN-SPAM (valid postal address, clear opt-out honored within 10 business days, honest headers, identified as promotional). No purchased consumer lists. No texting without prior express written consent. No LinkedIn scraping. No bots filling in contact forms. Check CASL and PECR; no EU cold email.
 5. **Ads follow platform rules.** No health-condition, pregnancy, religion or personal-attribute targeting or copy on Meta, Google or Pinterest. No "Is your child…?" copy. No custom audiences built from lists without consent. No autism keywords anywhere.
 6. **Faceless and no direct contact.** No founder photo, video, voice-on-video, personal profile, calls, interviews, podcasts or live events. Workshops exist only as kits someone else presents.

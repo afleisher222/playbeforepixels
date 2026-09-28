@@ -1,6 +1,6 @@
 # 5. Operations, team, legal summary, risks, KPIs and milestones
 
-*Play Before Pixels, a trade name of AlphaPlay LLC (Maryland). Founder and sole member: Arielle Fleisher. Section 5 of the expansion business plan. Revised draft for the founder, September 28, 2026. Internal planning file, not for publication.*
+*Play Before Pixels, a trade name of AlphaPlay LLC (Maryland). Sole member: the founder. Section 5 of the expansion business plan. Revised draft for the founder, September 28, 2026. Internal planning file, not for publication.*
 
 **How to read this section.** Figures taken from repository files name the file beside them. Anything the business has not observed is marked in one of two ways:
 - **[VERIFY]** marks an outside fact from general knowledge. Web search was not available for this draft. Confirm it on a primary source before money is spent or anything is signed. Where a source file already calls a figure "unverified", this section keeps that label.
@@ -47,7 +47,7 @@ The founder's reports stay money-only: daily sales, month-to-date and estimated 
 The target is zero daily tasks and at most 60 minutes of approvals a week (`ops/ROUTINE.md`, "Founder time cap"). The weekly SOP aims lower, at 10 minutes (`operations/SOPs/weekly.md`).
 
 **What only she can do, by law or by platform rule** (`ops/AUTOFIX.md`, "Never automatic"; `commerce/PAYMENTS.md`):
-1. **Sign.** Contracts (as "AlphaPlay LLC d/b/a Play Before Pixels, By: Arielle Fleisher, Member"), trademark and copyright filings, tax returns, a Children's Product Certificate if counsel says AlphaPlay is the certifier, and 3PL, rep or distributor agreements.
+1. **Sign.** Contracts (as "AlphaPlay LLC d/b/a Play Before Pixels, By: [Member name], Member"), trademark and copyright filings, tax returns, a Children's Product Certificate if counsel says AlphaPlay is the certifier, and 3PL, rep or distributor agreements.
 2. **Verify identity and banking** once per platform, and accept new platform terms.
 3. **Create and renew access keys.** The routine does everything else and warns 14 days ahead.
 4. **Approve** spending, refunds above the automatic limit, dispute submissions, anything the compliance gate marks "needs founder", and every new platform, price or campaign.
@@ -234,7 +234,7 @@ This summary points to the source files and adds nothing new. It is not legal ad
 - **Trade name:** register with SDAT for **$25** ($50 expedited). It lasts 5 years, and the renewal window is the last 6 months. The repository does not record it as filed, and banks may ask for it (`finance/BANKING.md`). A trade name gives no trademark rights.
 - **Good standing:** confirm the LLC's status on the SDAT search. The annual report and personal property return cost **$300** and are due **April 15, 2027** (reminders March 1 and April 1).
 - **Addresses:** a USPS PO Box for everything public, and the home address only where a street address is legally required (ENTITY.md). The principal office and resident agent cannot be a PO Box or a mail-rental address. A commercial resident agent costs about $50–$300 a year (unverified). Marketplace seller-identity fields must never show the home address or a personal phone (G2-23).
-- **Operating agreement:** refresh it with separateness covenants, indemnification, and a successor or designee in case of incapacity (PROTECTION-PLAN §1). Then a written IP assignment from Arielle to the LLC, after employment counsel answers the ownership question.
+- **Operating agreement:** refresh it with separateness covenants, indemnification, and a successor or designee in case of incapacity (PROTECTION-PLAN §1). Then a written IP assignment from the founder to the LLC, after employment counsel answers the ownership question.
 - **Separateness:** one business account, one business card, owner draws recorded as draws, no personal guarantees. BOI reporting is no longer required for U.S. entities (PROTECTION-PLAN §1).
 
 ### Trademarks
@@ -252,7 +252,7 @@ This summary points to the source files and adds nothing new. It is not legal ad
 ### Insurance (none bought yet)
 | Policy | Specification | Cost (PROTECTION-PLAN §2) | When |
 |---|---|---|---|
-| General liability with products-completed operations | $1M per occurrence / $2M aggregate, occurrence-based, deductible $10,000 or less, insurer rated A- or better, global claims handling; names AlphaPlay LLC and Arielle as member | About $542 a year average (range about $260 to $3,000+) | Before the first sale |
+| General liability with products-completed operations | $1M per occurrence / $2M aggregate, occurrence-based, deductible $10,000 or less, insurer rated A- or better, global claims handling; names AlphaPlay LLC and the owner as member | About $542 a year average (range about $260 to $3,000+) | Before the first sale |
 | Media liability / publisher's E&O | Defamation, copyright and trademark claims from books, site, research hub and social posts | Unverified | Before launch |
 | Professional liability / E&O | Written for coaching, which the business no longer offers. Ask the broker whether the written course and research hub still need it, or whether media liability covers them. | About $744 a year average | Decide with the broker |
 | Cyber | Breach response and third-party claims | About $420–$1,552 a year | Before launch |

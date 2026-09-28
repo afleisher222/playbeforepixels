@@ -4,7 +4,7 @@
 1. **Margin check.** Model print-on-demand cost plus shipping for each format. If print books can't carry the payout, offer the full share on digital items and card decks and a smaller share on print books.
 2. **Counsel check on commercial co-venturer registration.** Some states require it when you advertise that a share of sales goes to a charitable organization. Use a written agreement in which **the group sells and AlphaPlay supplies the group**. Have the attorney approve the agreement, stating the exact dollars per item (BLIND-SPOTS item 19).
 
-Never contact the PTAs or council of the excluded employer (MCPS). Hold Montgomery County, MD groups and Maryland PTA state-level channels until counsel clears them.
+Never contact the PTAs or council of the excluded school system (MCPS). Hold Montgomery County, MD groups and Maryland PTA state-level channels until counsel clears them.
 
 ---
 

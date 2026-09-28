@@ -289,7 +289,7 @@ This file lists only gaps that no other file covers yet. Items that are already 
 
 **G2-25. Two neutral questions (before launch).**
 1. "The business will be run by scheduled software under my personal accounts, and each automated action is logged with a timestamp. Is there anything about when those runs are scheduled, or which account they run under, that I should know before setting them up?"
-2. "Public records (USPTO trademark filings, Maryland SDAT records, and marketplace seller-identity disclosures) may connect my name to AlphaPlay LLC and Play Before Pixels. Does that matter for any pending matter, and should anything about how those records are filed or signed be handled differently?"
+2. "Public records (USPTO trademark filings, Maryland SDAT records, and marketplace seller-identity disclosures) may connect my name to AlphaPlay LLC and Play Before Pixels. Does that matter for my employment, and should anything about how those records are filed or signed be handled differently?"
 - Hold any step that depends on the answers until counsel responds.
 
 ---

@@ -15,7 +15,7 @@ Goal: the founder never has to check in. Every scheduled run follows this.
 ## Pause, fix what's safe, and add to ops/APPROVALS.md (founder answers yes/no)
 - Anything involving money going out (ads, new paid tools, refunds above the automatic refund policy).
 - Platform policy warnings, listing removals, account suspensions, legal or IP notices, press inquiries, viral criticism → also create ops/PAUSE.
-- Anything touching her job, her pending matters or her children → create ops/PAUSE immediately.
+- Anything touching her job, her legal matters or her children → create ops/PAUSE immediately.
 - Renewing an expired key (she creates it once; Claude does the rest).
 
 ## Never automatic
