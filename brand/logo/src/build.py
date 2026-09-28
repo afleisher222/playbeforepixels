@@ -180,6 +180,9 @@ def font(wght, opsz):
 
 
 RING_FONT = font(800, 24)            # small optical size: open, sturdy capitals for the ring
+if not os.path.exists(os.path.join(HERE, 'bric800.ttf')):   # Bricolage 800 / opsz 96: not used by the logo, but
+    font(800, 96); os.replace(os.path.join(HERE, 'bric800o96.ttf'), os.path.join(HERE, 'bric800.ttf'))
+    # products/merch-core/build/textpath.py reads it from here, so keep it
 WORD_FONTS = {}
 CAP = 660
 

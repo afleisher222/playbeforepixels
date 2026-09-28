@@ -32,7 +32,7 @@ The research hub is how Play Before Pixels answers a parent who types "virtual a
 
 Rebuild: `node content/research-hub/review/build-bundle.js --pdf` (draft) or `--stage review --pdf` (after verification). The version ID changes whenever any of the six pages changes.
 
-**Current bundle (September 28, 2026):** version `421c24531536`, pre-verification draft, 11,773 words, 4,798 words in clinician scope, 180 `[VERIFY]` marks still open (rebuilt after the simulated reader panel; see `marketing/AWARENESS-ENGINE.md` §13). This build is for scoping and quotes only. Reviewers work on the review version.
+**Current bundle (September 28, 2026):** version `0e756e88c254`, pre-verification draft, 11,942 words, 4,831 words in clinician scope, 184 `[VERIFY]` marks still open (rebuilt after the simulated reader panel; see `marketing/AWARENESS-ENGINE.md` §13). This build is for scoping and quotes only. Reviewers work on the review version.
 
 ---
 
@@ -106,9 +106,9 @@ About **90 minutes in total over six to eight weeks**, inside the weekly approva
 
 | Role | Work | Hours (est.) | Fee range (UNVERIFIED) | Cap |
 |---|---|---|---|---|
-| **A. Autistic sensitivity reader** | Full read of 11,773 words, comment table, sign-off, one re-check | 7–11 | $300–900. Basis: sensitivity-read snapshots of $0.013–0.04 a word (`marketing/BRAND-RESPECT-PLAN.md` §3) and $35–75 an hour | **$900** |
-| **B. Clinician** | 4,798 words in scope (skim the rest for context), comment table, sign-off, one re-check | 4–7 | Pediatric SLP about $50–120 an hour ($250–850); developmental-behavioral pediatrician about $150–300 an hour ($600–2,100) | **$1,500** |
-| **C. Claims and legal** | All six pages (11,773 words), the reviewer contract rider, memo, clearance form, one follow-up | 4–8 | $250–500 an hour ($1,000–4,000), or a flat fee; less as an add-on to the consumer and privacy attorney's policy review | **$2,500** |
+| **A. Autistic sensitivity reader** | Full read of 11,942 words, comment table, sign-off, one re-check | 7–11 | $300–900. Basis: sensitivity-read snapshots of $0.013–0.04 a word (`marketing/BRAND-RESPECT-PLAN.md` §3) and $35–75 an hour | **$900** |
+| **B. Clinician** | 4,831 words in scope (skim the rest for context), comment table, sign-off, one re-check | 4–7 | Pediatric SLP about $50–120 an hour ($250–850); developmental-behavioral pediatrician about $150–300 an hour ($600–2,100) | **$1,500** |
+| **C. Claims and legal** | All six pages (11,942 words), the reviewer contract rider, memo, clearance form, one follow-up | 4–8 | $250–500 an hour ($1,000–4,000), or a flat fee; less as an add-on to the consumer and privacy attorney's policy review | **$2,500** |
 | **Total** | | 15–26 | $1,550–5,000 | **$4,900** |
 
 - Caps are hard: a candidate above the cap is passed over, not negotiated past it. Marketplace fees count inside each cap.
@@ -123,7 +123,7 @@ About **90 minutes in total over six to eight weeks**, inside the weekly approva
 
 ### Role A: Autistic sensitivity reader
 
-**Scope: all six pages.** A full read of 11,773 words. The sections tagged "Sensitivity focus" in the bundle (3,566 words) matter most:
+**Scope: all six pages.** A full read of 11,942 words. The sections tagged "Sensitivity focus" in the bundle (3,658 words) matter most:
 - IDX: opening boxes; "A note to autistic readers and their families"; "What critics say"; "What parents can do".
 - FAQ: "About the term" (especially Q4, "Is one particular show or video channel the problem?", and Q5, "Did I do this?"); Q10 (children who "got better"); Q22 ("My autistic child loves their tablet"); "For autistic readers".
 - GLO: "Words about the debate"; "Words about autism and development" (the editorial definitions of "Autistic traits", "'Severity' scores" and "'Risk' and 'likelihood'").
@@ -187,7 +187,7 @@ g. Is there anything else a careful reader would want to know about your indepen
 
 **Who qualifies:** a board-certified developmental-behavioral pediatrician, or a pediatric speech-language pathologist holding the ASHA Certificate of Clinical Competence and a current US state license, with at least five years' work with children aged 0 to 5 and experience of developmental or autism screening or early intervention. Comfortable with neurodiversity-affirming language. US-licensed, because the early-intervention page describes US programs.
 
-**Scope: 4,798 words**, tagged "Clinician scope" with a blue margin bar in the bundle:
+**Scope: 4,831 words**, tagged "Clinician scope" with a blue margin bar in the bundle:
 - IDX: the opening boxes; "What we still don't know"; "What parents can do" (all six parts, including the WHO and AAP guideline paragraph).
 - FAQ: the opening boxes; "If you're worried" (Q12–Q17); "Everyday life with screens" (Q18–Q23).
 - GLO: "Words about autism and development"; "Tests and checklists"; "Help and services".
@@ -251,7 +251,7 @@ h. Is there anything else a careful reader would want to know about your indepen
 
 **Who qualifies:** a US attorney in good standing, experienced in advertising and health claims (FTC Act §5, the FTC's health-products substantiation guidance, the Endorsement Guides at 16 CFR Part 255), with publisher or media-law (defamation) experience and consumer-privacy basics. **Preferred route:** add this scope to the consumer and privacy attorney's planned flat review of the policy pages (`business/BUSINESS-PLAN.md` §5.4; `legal/LEGAL-LAUNCH-CHECKLIST.md` row 7): one engagement, one conflict check. This is a business matter for the company's own consumer and privacy attorney.
 
-**Scope: all six pages (11,773 words), plus the reviewer contract.**
+**Scope: all six pages (11,942 words), plus the reviewer contract.**
 
 **What to check**
 - **Health claims:** no express or implied claim that anything treats, prevents, reduces or reverses autism or any condition. Pay particular attention to the case-report wording, "What parents can do", and the one link to the free play printable and email list (it must read as play and family time only, `brand/BRAND.md` "Autism searches"). No implied claim by placement next to anything sold.
