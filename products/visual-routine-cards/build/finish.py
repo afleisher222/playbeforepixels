@@ -42,5 +42,5 @@ if a.toc:
     doc.set_toc([[1, t, p] for t, p in toc])
 doc.set_metadata({'title': a.title, 'author': 'Play Before Pixels (AlphaPlay LLC)', 'subject': 'Printable visual routine cards and charts for ages 0-5 and 5-12',
                   'keywords': 'visual routine cards, routine chart, morning routine, bedtime routine, first then board', 'creator': 'Play Before Pixels', 'producer': 'Play Before Pixels'})
-doc.save(a.out, garbage=3, deflate=True)
+doc.save(a.out, garbage=4, deflate=True, use_objstms=1)  # object streams keep the 160-page Color file under the 15 MB rule
 print('saved', a.out, doc.page_count, 'pages')

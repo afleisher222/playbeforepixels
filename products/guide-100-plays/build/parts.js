@@ -148,7 +148,7 @@ function ownCard(id, bandKey) {
   const b = BC[bandKey];
   return `<article class="play own">
     <div class="phead">
-      <div class="disc" style="width:1.45in;height:1.45in"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="58" fill="none" stroke="${b.c}" stroke-width="2.4" stroke-dasharray="6 6"/><text y="6" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="20" fill="${C.ink}">draw it!</text></svg></div>
+      <div class="disc" style="width:1.2in;height:1.2in"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="58" fill="none" stroke="${b.c}" stroke-width="2.4" stroke-dasharray="6 6"/><text y="6" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="20" fill="${C.ink}">draw it!</text></svg></div>
       <div class="ptitle">
         <div class="kicker">Our own play <span class="agepill" style="background:${b.t}">age: ${fld(id + '-age', 'inl w1')}</span></div>
         <div class="lineh">${fld(id + '-title', 'big')}</div>

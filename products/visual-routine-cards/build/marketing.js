@@ -93,7 +93,7 @@ L.push(`<div class="li" style="background:#fff">
 </div>`);
 // 3 grown-up guide
 L.push(`<div class="li" style="background:${C.wash}">
-  <div style="position:absolute;left:60px;top:52px"><div class="k">Grown-up guide inside</div><h1 style="font-size:58px;margin-top:8px">Set up in 2 minutes</h1><p style="font-size:20px;margin-top:10px;font-weight:700;max-width:860px;line-height:1.4">Plain-words guide: what your child is practising, three easy talk tips, what to do if interest fades, and how to use the cards at every age.</p></div>
+  <div style="position:absolute;left:60px;top:52px"><div class="k">Grown-up guide inside</div><h1 style="font-size:58px;margin-top:8px">Set up in 2 minutes</h1><p style="font-size:20px;margin-top:10px;font-weight:700;max-width:860px;line-height:1.4">Plain-words guide: what your child is practicing, three easy talk tips, what to do if interest fades, and how to use the cards at every age.</p></div>
   ${scaled(pageImg(bld.welcomePage(), 400), 70, 300, 1, -2)}
   ${scaled(pageImg(bld.talkPage(), 400), 520, 320, 1, 2)}
 </div>`);
@@ -183,7 +183,7 @@ LS.push(`<div class="li" style="background:#fff">
   <div style="position:absolute;left:60px;right:60px;top:760px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px">${[['60 cards', 'Plus second copies, blank, word-free and photo cards', C.tomato, C.tTomato], ['3 charts', 'Vertical strip, first–then board, morning chart; ready-made and blank', C.sky, C.tSky], ['Fillable', 'Type labels and titles in free Acrobat Reader', C.grass, C.tGrass]].map(([h, p, c, t]) => `<div class="stat" style="--c:${c};--t:${t};padding:18px 20px"><span style="margin:0">${h}</span><p>${p}</p></div>`).join('')}</div>
 </div>`);
 LS.push(`<div class="li" style="background:${C.wash}">
-  <div style="position:absolute;left:60px;top:52px"><div class="k">Grown-up guide inside</div><h1 style="font-size:58px;margin-top:8px">Set up in 2 minutes</h1><p style="font-size:20px;margin-top:10px;font-weight:700;max-width:860px;line-height:1.4">What your child is practising, easy talk tips and a four-card bedtime to try tonight.</p></div>
+  <div style="position:absolute;left:60px;top:52px"><div class="k">Grown-up guide inside</div><h1 style="font-size:58px;margin-top:8px">Set up in 2 minutes</h1><p style="font-size:20px;margin-top:10px;font-weight:700;max-width:860px;line-height:1.4">What your child is practicing, easy talk tips and a four-card bedtime to try tonight.</p></div>
   ${scaled(pageImg(bld.starterHowPage(), 400), 70, 300, 1, -2)}
   ${scaled(pageImg(bld.talkPage(), 400), 520, 320, 1, 2)}
 </div>`);

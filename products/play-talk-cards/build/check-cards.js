@@ -33,7 +33,7 @@ K.setLogoBase(logoRel(GEN));
         const kids = [...body.querySelectorAll('h3,.need,.meta,.play,.talk,.safe,.q,.steps,.key,.ver')];
         kids.forEach(k => {
           const r = k.getBoundingClientRect();
-          if (r.bottom > cr.bottom - 6 || r.right > cr.right - 8) out.push(label + ': ' + k.className + ' too close to edge');
+          if (r.bottom > cr.bottom - 14.5 || r.right > cr.right - 14.5 || r.left < cr.left + 14.5) out.push(label + ': ' + k.className + ' too close to edge');
         });
         const meta = body.querySelector('.meta');
         if (meta && meta.scrollWidth > meta.clientWidth + 1) out.push(label + ': meta row too wide (' + meta.scrollWidth + '>' + meta.clientWidth + ')');
@@ -42,6 +42,8 @@ K.setLogoBase(logoRel(GEN));
           const gap = talk.getBoundingClientRect().top - play.getBoundingClientRect().bottom;
           if (gap < 4) out.push(label + ': play text touches talk tip (gap ' + gap.toFixed(1) + ')');
         }
+        const mob = card.querySelector('.mo b'), num = card.querySelector('.num');
+        if (mob && num) { const rg = document.createRange(); rg.selectNodeContents(mob); const a = rg.getBoundingClientRect(), b = num.getBoundingClientRect(); if (a.right > b.left - 3 && a.top < b.bottom) out.push(label + ': moment name touches the number pill'); }
         const q = body.querySelector('.q'), qw = body.querySelector('.qwrap');
         if (q && qw && q.getBoundingClientRect().height > qw.getBoundingClientRect().height + 1) out.push(label + ': question too tall');
       });

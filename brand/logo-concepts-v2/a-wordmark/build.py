@@ -35,15 +35,15 @@ BALL_GAP    = 86      # air between the top of the i and the bottom of the ball 
 BALL_DX     = 0       # nudge the ball left (-) or right (+) from the centre of the i
 
 # --- stacked version --------------------------------------------------------------------------
-STACK_LEADING = 900   # baseline-to-baseline distance between the three lines
+STACK_LEADING = 980   # baseline-to-baseline distance between the three lines
 STACK_INDENT  = (0, 0, 0)   # left indent of each line (play / before / pixels)
 
 # --- the symbol: the ball held in the air above its line (favicon, avatar, stickers) ----------
 SYM_BALL_R    = 250   # ball radius
 SYM_GAP       = 150   # air between ball and line (same idea as BALL_GAP: the pause)
-SYM_LINE_W    = 460   # line length
-SYM_LINE_H    = 92    # line thickness
-SYM_LINE_RX   = 46    # line end rounding (0 = square ends, SYM_LINE_H/2 = fully round)
+SYM_LINE_W    = 640   # line length
+SYM_LINE_H    = 58    # line thickness
+SYM_LINE_RX   = 29    # line end rounding (0 = square ends, SYM_LINE_H/2 = fully round)
 SYM_PAD       = 0.12  # empty margin around the symbol in its square, as a share of the side
 
 # --- favicon: a separate small cut drawn on the 16 px pixel grid (numbers are in pixels) ------

@@ -128,7 +128,194 @@ SHORT = {  # short column labels for the summary matrix
 #    Key: (slug, check_id, field, exact offending text). Used only while the offending text
 #    is still exactly the same, so a stale proposal can never be shown for edited copy.
 # --------------------------------------------------------------------------------------
-MANUAL_PROPOSALS: dict[tuple[str, str, str, str], str] = {}
+MANUAL_PROPOSALS: dict[tuple[str, str, str, str], str] = {
+    ('board-up-go-more', 'lead_160', 'long_description[:160]', 'Up! Go! More! is a bright, uncluttered first-words book for babies and toddlers, built for laps and back-and-forth. Each of its 22 pages shows one everyday word'):
+        'Up! Go! More! is a 32-page talk-along picture book for ages 0–3, in paperback. It has 22 first words, one per page, each with a sound, sign or move to copy.',
+    ('board-up-go-more', 'price_floor', 'price_floor', '(missing)'):
+        '"price_floor": 3.60  (30% POD margin on the $11.99 paperback, commerce/PRICING.md)',
+    ('board-up-go-more', 'price_floor', 'net_per_unit_by_channel', '(missing)'):
+        '"net_per_unit_by_channel": {"kdp": 3.95, "ingramspark": null}  (KDP from price_notes: 60% of $11.99 minus about $3.24 premium-color print [VERIFY in KDP calculator]; IngramSpark after its print cost and wholesale discount. Keep KDP Expanded Distribution off: at 40% it would net about $1.56, under the floor.)',
+    ('bored-play-cards', 'etsy_title', 'etsy_title', "150 I'm Bored Jar Cards, Screen-Free Activity Cards for Kids 1-12 by Age, Printable Boredom Buster, Summer + Rainy Day, Editable PDF"):
+        "150 I'm Bored Jar Cards for Kids 1-12, Screen-Free Activity Ideas by Age, Printable Boredom Buster, Summer and Rainy Day, Editable PDF",
+    ('bored-play-cards', 'readability', 'long_description', 'You also get 36 bonus cards (18 summer, 18 rainy-day), 30 blank “your idea” cards, card backs in six colors, 18 box dividers, jar labels in four colorways (including calm, medium and wiggly jars), a velcro-ready Play Menu choice board, a weekly play planner with Monday and Sunday starts, a Play Jar Star certificate, a card index and a quick-answers page.'):
+        'You also get 36 bonus cards: 18 for summer and 18 for rainy days. There are 30 blank cards for your own ideas and card backs in six colors. Add 18 box dividers, jar labels, a Play Menu board and a weekly planner. A certificate, a card index and a quick-answers page finish the set.',
+    ('bored-play-cards', 'readability', 'long_description', 'The download includes US Letter and A4 files, a fillable editable PDF for typing your own cards, a double-sided cards file, and a PNG template set for design apps.'):
+        'You get US Letter and A4 files. A fillable PDF lets you type your own cards. There is also a double-sided cards file and a PNG set for design apps.',
+    ('bored-play-cards', 'lead_160', 'long_description[:160]', '“I’m bored!” is where play begins. These 150 printable play cards turn that moment into something to do together, using things you already have: pots, socks, bo'):
+        '150 printable play cards for ages 1–12, sorted by age and energy, in a PDF you print at home. “I’m bored!” is where play begins.',
+    ('course-screen-reset', 'health_claims', 'long_description', 'Fewer screen battles, more play and talk.'):
+        'More play and talk, with screens in a steady spot.',
+    ('course-screen-reset', 'honest_pricing', 'bundle.compare_parts_usd', 'bundle.compare_parts_usd = 54.49 vs bundle price 49.0'):
+        'Rename to "separately_usd": 54.49 and add "price_display_rule": "Show as \'$49, or $54.49 bought separately\'. Never a crossed-out or \'was\' price. Re-check the sum whenever a part\'s price changes."',
+    ('course-screen-reset', 'readability', 'long_description', "Every morning for 30 days you get one short email: a lesson you can read in about three minutes, one easy play made from things you already have, and plain words for one tricky moment, like the show that won't end, 'I'm bored', the hour before dinner, waiting rooms, car rides or 'everyone else gets to'."):
+        "For 30 days, one short email comes each morning. It has a lesson you can read in about three minutes and one easy play. It also gives you plain words for one tricky moment, like a show that won't end, 'I'm bored' or a long car ride.",
+    ('course-screen-reset', 'readability', 'long_description', 'Your 89-page workbook comes in Color and Low-ink, in US Letter and A4, with type-in pages that work in free Adobe Acrobat Reader: planning pages, pre-filled and blank trackers, weekly check-ins, a scripts bank, a family plan and a certificate for Day 30.'):
+        'Your 89-page workbook comes in Color and Low-ink, in US Letter and A4. You can type in it with free Adobe Acrobat Reader. Inside are plans, trackers, weekly check-ins, a bank of scripts, a family plan and a Day 30 certificate.',
+    ('course-screen-reset', 'price_floor', 'price_floor', '(missing)'):
+        '"price_floor": 3.00',
+    ('course-screen-reset', 'price_floor', 'net_per_unit_by_channel', '(missing)'):
+        '"net_per_unit_by_channel": {"site_mor": 23.80, "kdp_paperback": 6.10}  (MoR estimate at 5% + $0.50 and a 5% refund allowance, UNVERIFIED; KDP from price_notes: 60% of $14.99 minus $2.30–$2.90 print [VERIFY]). Bundle: also record the bundle net after the 10% discount.',
+    ('first-phone-plan', 'etsy_title', 'etsy_title', 'First Phone Agreement Kids 9-12, 30 Day Phone-Free Afternoons Challenge, Editable Phone Rules, Readiness Checklist, Printable PDF'):
+        'First Phone Agreement for Kids 9-12, Editable Tween Tech Rules, Readiness Checklist, 30 Day Unplugged Afternoons Challenge, Printable PDF',
+    ('first-phone-plan', 'lead_160', 'long_description[:160]', 'A first phone is a big step toward independence. This printable kit helps you take it together, calmly, with plenty of play along the way. Start with “Are we re'):
+        'A printable first phone kit for kids aged 9–12, in fillable PDFs. Write a warm agreement together. Then use the readiness checklist and 30 phone-free afternoons.',
+    ('guide-100-plays', 'etsy_title', 'etsy_title', '100 Screen-Free Plays for Ages 0-5, Printable Toddler Activity Book PDF, Baby and Preschool Play Ideas by Age, US Letter + A4'):
+        '100 Screen-Free Plays for Ages 0-5, Printable Toddler Activity Book PDF, Baby and Preschool Ideas Sorted by Stage, US Letter + A4',
+    ('guide-100-plays', 'etsy_tags', 'etsy_tags', '(missing)'):
+        '"etsy_tags": ["screen free play", "toddler activities", "baby play ideas", "preschool at home", "toddler activity pdf", "one year old play", "play ideas by age", "rainy day activities", "indoor toddler play", "parent child play", "baby activity book", "low prep activities", "toddler printable"]',
+    ('guide-100-plays', 'brand_schema', '(record)', 'amazon_route'):
+        '"amazon_route": "kdp-paperback"',
+    ('guide-100-plays', 'honest_pricing', 'price_notes', 'PDF: list at $14.99 and run the usual Etsy sale at about 33% off so it sells at $9.99 (DEMAND-CHECK section 4, rule 2); on our own site sell at $9.99 flat.'):
+        'PDF: $9.99 everyday price on Etsy and on our own site, shown plainly. No list price and no standing sale. Use only a real, time-limited promotion (for example launch week), with its start and end dates recorded in listing.json.',
+    ('guide-100-plays', 'readability', 'long_description', "You'll also find a Safety first page, a Quick finder for bath time, rainy days, kitchen time, car rides and wind-down, a sample screen-free day, low-energy plays for tired grown-ups, and friendly, guilt-free ideas for when screens are on anyway."):
+        "You'll also find a Safety first page and a Quick finder for bath time, rainy days, kitchen time and car rides. There is a sample screen-free day and low-energy plays for tired grown-ups. And there are guilt-free ideas for when screens are on anyway.",
+    ('guide-100-plays', 'readability', 'long_description', 'Every play has the same easy parts: what you need, prep and mess icons, where it works best, simple steps, a "Grow it" idea for next time, a "talk while you play" line and a safety note.'):
+        'Every play has the same easy parts. You see what you need, prep and mess icons, and simple steps. Each play also has a "Grow it" idea, a "talk while you play" line and a safety note.',
+    ('guide-100-plays', 'lead_160', 'long_description[:160]', 'A cup, a box, a sock, or nothing at all. 100 Screen-Free Plays gives you a quick play for every age and every moment of an ordinary day, from first smiles to "a'):
+        '100 Screen-Free Plays is a play book for ages 0–5, in paperback or as a printable PDF. A cup, a box, a sock, or nothing at all: each play uses what you have.',
+    ('guide-100-plays', 'price_floor', 'price_floor', '(missing)'):
+        '"price_floor": 3.00  (digital; the KDP paperback must also keep 30% margin, about $5.10 on $16.99)',
+    ('guide-100-plays', 'price_floor', 'net_per_unit_by_channel', '(missing)'):
+        '"net_per_unit_by_channel": {"kdp": 7.89, "etsy_pdf": 8.09, "etsy_pdf_offsite_ad_sale": 6.59, "site_pdf": 8.90}  (KDP from price_notes [VERIFY]; PDF figures are estimates at $9.99 with UNVERIFIED fees and a 5% refund allowance)',
+    ('merch-core-logo-tee', 'etsy_title', 'etsy_title', 'Play Before Pixels Logo Tee, Adult Unisex T-Shirt in 4 Colors, Minimalist Parent Shirt, Gift for Mom or Dad, Print on Demand'):
+        'Play Before Pixels Logo T-Shirt, Adult Unisex Tee in 4 Colors, Minimalist Parent Gift for Mom or Dad, Print on Demand',
+    ('merch-core-logo-tee', 'price_floor', 'price_floor', '(missing)'):
+        '"price_floor": 8.10  (30% POD margin on $27; price_notes already says raise the price if a tee keeps under about $8)',
+    ('merch-core-logo-tee', 'price_floor', 'net_per_unit_by_channel', '(missing)'):
+        '"net_per_unit_by_channel": {"site": null, "etsy": null, "merch_on_demand": null}  (fill with price minus the print partner\'s blank + print + inside label + shipping, minus platform fees; Merch on Demand pays a set royalty per sale [VERIFY])',
+    ('merch-core-tote', 'lead_160', 'long_description[:160]', 'Carry the books, the snacks and the crayons in a tote that says where your priorities are. The Play Before Pixels logo tote carries our stacked logo: the P of P'):
+        'The Play Before Pixels logo tote is a canvas bag for grown-ups, printed to order and sold only inside our gift bundles. Carry the books, the snacks and the crayons.',
+    ('merch-core-tote', 'price_floor', 'price_floor', '(missing)'):
+        '"price_floor": 6.60  (30% POD margin on the $22 add-on value)',
+    ('merch-core-tote', 'price_floor', 'net_per_unit_by_channel', '(missing)'):
+        '"net_per_unit_by_channel": {"site_bundle": null}  (fill with the tote\'s share of the bundle price minus partner cost and payment fees)',
+    ('picture-laps-not-apps', 'no_reply_promise', 'faq[6].a', 'Your name prints exactly as typed, so check the spelling; you can email a correction within 2 hours of ordering.'):
+        "Your name prints exactly as typed, so check the spelling on the preview before you pay. Books go to print automatically, so we can't promise changes after checkout.  (Also drop the '2-hour window for spelling fixes' from faq[4].a unless a self-serve edit link exists: a 2-hour window needs someone reading email within 2 hours, and the business runs a weekly batch.)",
+    ('picture-laps-not-apps', 'readability', 'long_description', 'Their name is woven into six of the rhymes: Dad calls them up to the armchair, Grandma saves them a seat, a big brother gives them a turn to sing “QUACK!”, and a sleepy “Goodnight” comes at the end of the day.'):
+        'Their name is in six of the rhymes. Dad calls them up to the armchair, and Grandma saves them a seat. A big brother gives them a turn to sing “QUACK!” At the end of the day comes a sleepy “Goodnight.”',
+    ('picture-laps-not-apps', 'readability', 'long_description', 'At the back you will find 5 simple lap games with safety notes, a “Books before screens” family reading pledge to sign together, and a keepsake page for your child’s favorite laps.'):
+        'At the back are 5 simple lap games with safety notes. There is a “Books before screens” pledge to sign together and a keepsake page for your child’s favorite laps.',
+    ('picture-laps-not-apps', 'lead_160', 'long_description[:160]', 'Laps Not Apps is a warm, rhyming read-aloud about the best seats in town, made for one child. Their name is woven into six of the rhymes: Dad calls them up to t'):
+        'Laps Not Apps is a personalized picture book for ages 0–5, printed to order in hardcover or softcover. It is a warm, rhyming read-aloud made for one child.',
+    ('picture-laps-not-apps', 'price_floor', 'price_floor', '(missing)'):
+        '"price_floor": 10.50  (30% margin on the $34.99 hardcover; $7.50 on the $24.99 softcover)',
+    ('picture-laps-not-apps', 'price_floor', 'net_per_unit_by_channel', '(missing)'):
+        '"net_per_unit_by_channel": {"site_hardcover": null, "site_softcover": null, "etsy_hardcover": null, "etsy_softcover": null}  (price minus the printer\'s unit + shipping cost minus Shopify or Etsy fees; fill from the printer quote before listing)',
+    ('picture-more-talk-less-tap', 'etsy_tags', 'etsy_tags', '(missing)'):
+        '"etsy_tags": ["circle time game", "turn taking game", "preschool talk game", "morning meeting", "pre-k printable", "kindergarten game", "conversation cards", "listening game", "oral language", "classroom game pdf", "speaking activities", "prek circle time", "screen free class"]',
+    ('picture-more-talk-less-tap', 'health_claims', 'faq[8].a', "The kit treats a talking device as a child's voice, not screen time."):
+        "The kit counts a talking device as a child's voice, not screen time.",
+    ('picture-more-talk-less-tap', 'readability', 'long_description', 'A one-page, word-for-word teacher script walks you through your first round, and six more variations follow, each with a starting age, a 2-minute no-setup version, and a make-it-easier and make-it-harder option.'):
+        'A one-page teacher script walks you through your first round, word for word. Six more versions follow. Each has a starting age, a 2-minute no-setup version, and ways to make it easier or harder.',
+    ('picture-more-talk-less-tap', 'readability', 'long_description', 'You get US Letter and A4 PDFs in full color and ink-saver, a 20-slide deck to project, a START HERE page, and a bonus 32-page read-aloud story, More Talk, Less Tap.'):
+        'You get US Letter and A4 PDFs in full color and ink-saver. There is a 20-slide deck to project and a START HERE page. A bonus 32-page story, More Talk, Less Tap, is ready to read aloud.',
+    ('picture-more-talk-less-tap', 'lead_160', 'long_description[:160]', 'Seven circle-time talk games, built around one class tower. In Talk Tower, each time a child asks a question, says something back, adds one more idea or shows t'):
+        'Talk Tower is a printable circle-time game kit for ages 3–7 (preschool to grade 2), with PDFs and slides. Every question, comment and idea adds a block to the class tower.',
+    ('picture-more-talk-less-tap', 'price_floor', 'price_floor', '(missing)'):
+        '"price_floor": 3.00',
+    ('picture-more-talk-less-tap', 'price_floor', 'net_per_unit_by_channel', '(missing)'):
+        '"net_per_unit_by_channel": {"site_single": 6.14, "site_site_license": 11.97, "etsy_single": 5.53, "tpt_single": 3.20}  (estimates with UNVERIFIED fees and a 5% refund allowance; TpT at $6.99 is only $0.20 over the floor, so a TpT price test below $6.99 would break it)',
+    ('picture-tablet-slept', 'lead_160', 'long_description[:160]', 'Shhh… the tablet is sleeping. So what shall we do? On Saturday morning, Ada zooms downstairs to find the family tablet snoring a teeny-tiny zzz-bip under a purp'):
+        'The Day the Tablet Slept is a funny 32-page picture book for ages 3–7, in paperback. Shhh… the tablet is sleeping. So what shall we do?',
+    ('picture-tablet-slept', 'honest_pricing', 'bundle.compare_at_usd', 'bundle.compare_at_usd = 28.98 vs bundle price 24.99'):
+        'Rename "compare_at_usd" to "separately_usd" (28.98). The display rule is already right; the field name is the risk, because a store sync may map compare_at_* to Shopify\'s compare-at price, which shows a strikethrough.',
+    ('picture-tablet-slept', 'price_floor', 'price_floor', '(missing)'):
+        '"price_floor": 3.60  (30% POD margin on the $11.99 paperback)',
+    ('picture-tablet-slept', 'price_floor', 'net_per_unit_by_channel', '(missing)'):
+        '"net_per_unit_by_channel": {"kdp": 3.95, "ingramspark_hardcover": null, "site_pod": null}  (KDP from price_notes [VERIFY]; keep Expanded Distribution off at $11.99; hardcover after the IngramSpark calculator)',
+    ('play-first-family-kit', 'etsy_title', 'etsy_title', 'Play First Then Screens Family Kit, 10 Printable Tools, Editable Kids Checklist, Chore Chart, Together Tokens, Family Rules, 30 Day Tracker'):
+        'Play First Then Screens Family Kit, 10 Printable Tools, Editable Kids Checklist, Chore Chart, Together Tokens, House Rules, 30 Day Tracker',
+    ('play-first-family-kit', 'kdp_title', 'title + subtitle', 'Play-First Family Kit: 10 Printable Tools for Ages 2–12: Play First, Then Screens: checklists, together tokens, helping jobs, a chore chart, a family play & screen plan and a 30-day tracker. Fillable PDF, US Letter + A4.'):
+        '"amazon_title": "Play First, Then Screens: A 52-Week Family Checklist Journal for Ages 2–12 (Black-and-White Interior)"  (the edition described in amazon_route_notes)',
+    ('play-first-family-kit', 'readability', 'long_description', 'For the whole family, there are 24 together tokens (12 ready-made, 12 make-your-own), six screen-spot cards (5 more minutes, screens go to sleep, what we do next), a family rules poster, a warm three-page Family Play & Screen Plan, a 30-day play tracker with 30 no-buy play ideas, and a certificate to celebrate.'):
+        'The whole family gets 24 together tokens and six screen-spot cards. There is a rules poster and a warm three-page family plan. A 30-day tracker holds 30 play ideas that need nothing to buy. A certificate marks the end.',
+    ('play-first-family-kit', 'readability', 'long_description', 'The Play First, Then Screens checklist comes as a picture version for ages 2–5, a word version for ages 5–12, and a fillable blank, each in 4 colorways with Monday or Sunday starts.'):
+        'The Play First, Then Screens checklist comes in three versions: pictures for ages 2–5, words for ages 5–12, and a fillable blank. Each has 4 colorways and a Monday or Sunday start.',
+    ('play-first-family-kit', 'lead_160', 'long_description[:160]', "Give your day a simple, kind shape: jobs first, then play and time together, then screens at their usual spot. Nothing is taken away; there's just more play to "):
+        'The Play-First Family Kit has 10 printable tools for ages 2–12, in a PDF you can type in: checklists, tokens, a chore chart and a family plan. Jobs first, then play, then screens.',
+    ('play-talk-cards', 'etsy_title', 'etsy_title', '52 Play & Talk Cards for Ages 0-5, Printable Toddler Activity Cards, Baby Play Ideas, Screen-Free Play with Talk Tips, Play Before Pixels'):
+        '52 Play and Talk Cards for Ages 0-5, Printable Toddler and Baby Activities, Screen-Free Ideas with Tips, Play Before Pixels',
+    ('play-talk-cards', 'named_entities', 'etsy_tags[10]', 'busy toddler ideas'):
+        'toddler play ideas',
+    ('play-talk-cards', 'lead_160', 'long_description[:160]', '52 simple plays for babies, toddlers and preschoolers, each on its own card with one talk tip in plain words, like “pause and wait,” “say what you see” or “offe'):
+        '52 printable play cards for ages 0–5, in US Letter and A4 PDFs. Each card has one simple play and one talk tip in plain words, like “pause and wait.”',
+    ('play-talk-cards', 'price_floor', 'price_floor', '(missing)'):
+        '"price_floor": 3.00',
+    ('family-talk-along-cards', 'etsy_title', 'etsy_title', '52 Family Talk-Along Cards, Ages 5-12, Printable Conversation Cards for Dinner, Car, Bath and Bedtime, Kids Questions, Play Before Pixels'):
+        '52 Family Talk-Along Cards, Ages 5-12, Printable Conversation Starters for Dinner, Car, Bath and Bedtime, Kids Questions, Play Before Pixels',
+    ('family-talk-along-cards', 'kdp_title', 'title + subtitle', '52 Family Talk-Along Cards for Ages 5–12: Conversation cards for dinner, the car, bath time and bedtime, with a one-line grown-up tip on each'):
+        '"amazon_title": "Family Talk-Along Journal, Ages 5–12: 52 Questions for Dinner, the Car, Bath Time and Bedtime (Black-and-White Interior)"',
+    ('family-talk-along-cards', 'lead_160', 'long_description[:160]', '52 conversation cards for ages 5–12, sorted by the moments when families actually talk: passing the peas, waiting at a red light, rinsing shampoo, turning off t'):
+        '52 printable talk cards for ages 5–12, in US Letter and A4 PDFs. They are sorted by the times when families talk: dinner, the car, bath and bed.',
+    ('family-talk-along-cards', 'price_floor', 'price_floor', '(missing)'):
+        '"price_floor": 3.00',
+    ('toddler-busy-book', 'etsy_title', 'etsy_title', '74 Toddler Busy Book Printable Activities, Ages 1-5 Busy Binder, Screen-Free Matching, Colors, Shapes, Pretend Play, Mazes, US Letter + A4'):
+        '74 Toddler Busy Book Printable Activities, Ages 1-5 Learning Binder, Screen-Free Matching, Colors, Shapes, Pretend Play, Mazes, Letter + A4',
+    ('toddler-busy-book', 'kdp_title', 'title + subtitle', '74 Toddler Busy Book Activities for Ages 1–5: Matching, sorting, colors, shapes, pretend play, first words and mazes, sorted by age, with a “talk while you play” line on every page'):
+        '"amazon_title": "Toddler Busy Book for Ages 1–5: 49 No-Cut Activities to Point, Name and Play, with a Talk Line on Every Page"',
+    ('toddler-busy-book', 'readability', 'long_description', 'These 74 printable activities are sorted into three age bands (1–2, 2–3 and 3–5 years): first words with art from our talk-along board book, animal sounds, matching, color and shape sorting, shadow match, pretend play (pizza shop, café, post office, dress for the weather), counting, patterns, first-next-last stories, rhymes and eight mazes from easy to tricky.'):
+        'These 74 printable activities come in three age bands: 1–2, 2–3 and 3–5 years. There are first words, animal sounds, matching, and color and shape sorting. Kids can play pizza shop or post office, count, find patterns and try eight mazes.',
+    ('toddler-busy-book', 'readability', 'long_description', 'You also get binder covers in four colors, spine and pouch labels, an assembly guide (binder, laminated or velcro for ages 3–5), laminating tips, a weekly planner with Monday and Sunday starts, make-your-own pages, a certificate and an answer key.'):
+        'You also get binder covers in four colors, plus spine and pouch labels. An assembly guide shows three ways to put it together. A weekly planner, make-your-own pages, a certificate and an answer key are inside too.',
+    ('toddler-busy-book', 'lead_160', 'long_description[:160]', 'A busy book that gives you something to talk about, not just something to keep little hands busy. These 74 printable activities are sorted into three age bands '):
+        '74 printable busy book pages for ages 1–5, in three age bands, as US Letter and A4 PDFs. Every page gives you something to talk about.',
+    ('toddler-busy-book', 'price_floor', 'price_floor', '(missing)'):
+        '"price_floor": 3.00',
+    ('visual-routine-cards-starter', 'etsy_title', 'title', '60 Visual Routine Cards for Toddlers, Morning & Bedtime Routine Chart, First Then Board, Daily Schedule Printable PDF'):
+        "60 Visual Routine Cards for Toddlers, Morning and Bedtime Picture Chart, Daily Schedule Printable PDF  (also drops the 'First Then Board' search term flagged below)",
+    ('visual-routine-cards-starter', 'autism_terms', 'title', '60 Visual Routine Cards for Toddlers, Morning & Bedtime Routine Chart, First Then Board, Daily Schedule Printable PDF'):
+        '60 Visual Routine Cards for Toddlers, Morning and Bedtime Picture Chart, Daily Schedule Printable PDF',
+    ('visual-routine-cards-starter', 'autism_terms', 'etsy_tags[10]', 'visual schedule'):
+        'kids daily routine',
+    ('visual-routine-cards-starter', 'autism_terms', 'etsy_tags[2]', 'first then board'):
+        "toddler picture chart  (or keep 'first then board' if the founder decides it is a general toddler term; record the decision in compliance_notes)",
+    ('visual-routine-cards-starter', 'autism_terms', 'keywords[2]', 'first then board'):
+        'toddler picture schedule  (founder decides, as above)',
+    ('visual-routine-cards-starter', 'honest_pricing', 'price_notes', 'Keep it undiscounted or run the same sale as the Complete Set; the listing and the PDF both point buyers to the $9.50 Complete Set.'):
+        'Everyday price $5.00, shown plainly, with no sale borrowed from the Complete Set. The listing and the PDF both point buyers to the Complete Set.',
+    ('visual-routine-cards-starter', 'honest_pricing', 'price_usd', '4.5'):
+        '"price_usd": 5.00  (estimated Etsy net about $3.83, or $3.08 on an Offsite Ads sale, both over the $3.00 floor; at $4.50 an ad-attributed sale nets about $2.72). Or make the Starter the free email printable instead.',
+    ('visual-routine-cards-starter', 'readability', 'long_description', "These 60 printable picture cards cover the moments that fill a little one's day: waking up, potty, getting dressed, meals, play, outside time, reading together, bath, bedtime, helping jobs, a feelings check-in and plan words like First, Then and Wait."):
+        "These 60 printable picture cards cover a little one's day. There are cards for waking up, potty, getting dressed, meals and play. Others show outside time, reading, bath, bedtime, helping jobs and feelings, plus plan words like First, Then and Wait.",
+    ('visual-routine-cards-starter', 'readability', 'long_description', 'The Complete Set has 228 cards for ages 0–12, 6 chart layouts, 4 colorways, editable files and Canva-ready PNGs.'):
+        'The Complete Set has 228 cards for ages 0–12. It adds 6 charts, 4 color looks, files you can edit and PNGs for Canva.',
+    ('visual-routine-cards-starter', 'lead_160', 'long_description[:160]', "A simple place to start. These 60 printable picture cards cover the moments that fill a little one's day: waking up, potty, getting dressed, meals, play, outsid"):
+        '60 printable picture routine cards for ages 0–5, with three charts, in US Letter and A4 PDFs. A simple place to start.',
+    ('visual-routine-cards-starter', 'brand_schema', '(record)', 'amazon_route'):
+        '"amazon_route": "none-with-reason: cut-and-velcro picture cards do not work as a bound KDP book"',
+    ('visual-routine-cards-starter', 'price_floor', 'price_floor', '(missing)'):
+        '"price_floor": 3.00',
+    ('visual-routine-cards', 'health_claims', 'long_description', 'Mornings, meals, bath and bedtime go more smoothly when little ones can see what comes next.'):
+        'Big, friendly picture cards show little ones what comes next at mornings, meals, bath and bedtime.',
+    ('visual-routine-cards', 'autism_terms', 'title', '200+ Visual Routine Cards for Kids, Editable Morning & Bedtime Chart, Toddler Daily Schedule, First Then Board, Printable PDF'):
+        '200+ Visual Routine Cards for Kids, Editable Morning and Bedtime Chart, Toddler Daily Schedule, Picture Board, Printable PDF',
+    ('visual-routine-cards', 'autism_terms', 'etsy_tags[6]', 'visual schedule'):
+        'big kid checklist',
+    ('visual-routine-cards', 'autism_terms', 'etsy_tags[5]', 'first then board'):
+        'picture cards kids  (or keep, if the founder decides it is a general toddler term)',
+    ('visual-routine-cards', 'autism_terms', 'keywords[5]', 'first then board'):
+        'picture routine cards  (founder decides, as above)',
+    ('visual-routine-cards', 'honest_pricing', 'price_notes', 'List at $9.50 and run a standing 30–40% sale (sells at about $5.70–$6.65; launch sale about $6.50) per marketing/DEMAND-CHECK.md sections 1, 3 and 4.'):
+        'Set one everyday price where buyers actually pay (about $6.50–$6.99 per DEMAND-CHECK), shown plainly. No list price and no standing 30–40% sale. A launch-week price is allowed only with start and end dates recorded in listing.json.',
+    ('visual-routine-cards', 'readability', 'long_description', 'Inside are 228 picture cards: 170 for ages 0–5 (morning, meals, play, outside, reading together, bath, bedtime, helping jobs, out and about, plan words and a feelings check-in) and 58 big-kid cards for ages 5–12 (mornings, after school, evenings and family jobs).'):
+        'There are 228 picture cards inside. 170 are for ages 0–5, from mornings and meals to bath, bed and feelings. 58 big-kid cards for ages 5–12 cover mornings, after school, evenings and jobs.',
+    ('visual-routine-cards', 'readability', 'long_description', 'Choose from 6 chart layouts: vertical and horizontal strips, a first–then board, morning and bedtime charts, and a Today board with Monday or Sunday start.'):
+        'Choose from 6 chart layouts. There are two strips, a first–then board, morning and bedtime charts, and a Today board with a Monday or Sunday start.',
+    ('visual-routine-cards', 'lead_160', 'long_description[:160]', "Mornings, meals, bath and bedtime go more smoothly when little ones can see what comes next. This printable set turns your family's everyday rhythm into big, fr"):
+        '228 printable routine picture cards for ages 0–12, with 6 charts, in US Letter and A4 PDFs. Big, friendly pictures show little ones what comes next.',
+    ('visual-routine-cards', 'brand_schema', '(record)', 'amazon_route'):
+        '"amazon_route": "none-with-reason: cut-and-velcro picture cards do not work as a bound KDP book"',
+    ('visual-routine-cards', 'price_floor', 'price_floor', '(missing)'):
+        '"price_floor": 3.00',
+    ('bored-play-cards', 'price_floor', 'price_floor', '(missing)'):
+        '"price_floor": 3.00',
+    ('first-phone-plan', 'price_floor', 'price_floor', '(missing)'):
+        '"price_floor": 3.00',
+    ('visual-routine-cards-starter', 'autism_terms', 'seo_description', '60 printable routine cards for toddlers and preschoolers plus a first–then board and morning chart. Letter and A4. Helps little ones see what comes next.'):
+        "60 printable routine cards for toddlers and preschoolers plus a two-step picture board and morning chart. Letter and A4. Helps little ones see what comes next.  (only if the founder drops 'first–then board')",
+    ('visual-routine-cards-starter', 'autism_terms', 'short_description', '60 printable picture cards for ages 0–5, plus a strip, a first–then board and a morning chart. Letter + A4. Helps little ones see what comes next.'):
+        "60 printable picture cards for ages 0–5, plus a strip, a two-step picture board and a morning chart. Letter + A4. Helps little ones see what comes next.  (only if the founder drops 'first–then board')",
+}
 
 # --------------------------------------------------------------------------------------
 # 3. Data model
@@ -178,10 +365,15 @@ def norm_ws(s: str) -> str:
 SENT_SPLIT = re.compile(r"(?<=[.!?…])[\"”’')]*\s+|\n+")
 
 
+ABBREV_END = re.compile(r"\b(Mr|Ms|Mrs|Dr|St|vs|e\.g|i\.e|U\.S|approx|No)\.$")
+
+
 def sentence_spans(text: str):
     spans, start = [], 0
     for m in SENT_SPLIT.finditer(text):
         end = m.start()
+        if "\n" not in m.group(0) and ABBREV_END.search(text[max(start, end - 8):end]):
+            continue  # "Ms. Rosa", "e.g. a box": not a sentence end
         if text[start:end].strip():
             spans.append((start, end))
         start = m.end()
@@ -329,7 +521,7 @@ def detect_channels(d: dict):
             continue
         if re.match(r"held\b", low):
             continue
-        state = "later" if re.match(r"(later|optional later|optional)\b", low) else "now"
+        state = "later" if (re.match(r"(later|optional later|optional)\b", low) or re.search(r"\bedition later\b|\blater \(|\(later\)", low)) else "now"
         for n in names(line):
             if n in negated:
                 continue
@@ -337,6 +529,8 @@ def detect_channels(d: dict):
                 chans[n] = state
     route = str(d.get("amazon_route") or "").lower()
     if route.startswith("kdp") and "kdp" not in chans:
+        chans["kdp"] = "later"
+    if chans.get("kdp") == "now" and re.search(r"not built yet", route):
         chans["kdp"] = "later"
     if route.startswith("merch-on-demand") and "mod" not in chans:
         chans["mod"] = "now"
@@ -452,7 +646,7 @@ REPLY_RULES = [
 ]
 
 ANCHOR_TEXT_RULES = [
-    rx(r"\b(was|reg\.?|regularly|originally|compare at|retail value|valued at|worth)\s*:?\s*\$\s?\d"),
+    rx(r"\b(was|reg\.?|regularly|originally|compare at|retail value|valued at|worth)\s*:?\s*\$\s?\d[\d.,]*\d"),
     rx(r"\b\d{1,2}\s?%\s?off\b"), rx(r"\bsave\s+\$?\d"), rx(r"\b(on sale|sale price|limited time|only \d+ left|hurry|selling fast|last chance|ends (soon|tonight|today))\b"),
 ]
 PLAN_ANCHOR_RX = rx(r"\b(usual|standing|permanent|always[- ]on)\b[^.]{0,40}\bsale\b|\blist(ed)? at \$\d[\d.]*\b[^.]{0,80}\b(sale|off)\b|"
@@ -472,7 +666,7 @@ MARKET_LINK_RX = rx(r"playbeforepixels\.com|play before pixels\.com|https?://|\b
 
 HUMAN_MADE_RX = rx(r"\b(hand[- ]drawn|hand[- ]illustrated|handmade|hand[- ]painted|original artwork by|illustrated by|drawn by)\b")
 
-PRODUCT_RX = rx(r"\b(books?|board book|picture book|read-aloud|cards?|deck|printables?|kit|guide|workbook|course|program(me)?|"
+PRODUCT_RX = rx(r"\b(books?|board book|picture book|paperback|hardcover|read-aloud|cards?|deck|printables?|kit|guide|workbook|course|program(me)?|"
                 r"charts?|tee|t-shirt|shirt|tote|planner|tracker|journal|games?|activity book|busy book|poster|checklist|set|bundle|activities|plays)\b")
 AGE_RX = rx(r"\bages?\b[^.]{0,30}?\d{1,2}\s*(?:–|-|to)\s*\d{1,2}|\baged\s+\d{1,2}\s*(?:–|-|to)\s*\d{1,2}|"
             r"\b\d{1,2}\s*(?:–|-|to)\s*\d{1,2}\s*(?:years?|yrs|year-olds|months|mos?)\b|\b(for kids|for children|kids)\s+\d{1,2}\s*(?:–|-|to)\s*\d{1,2}\b|"
@@ -570,7 +764,9 @@ def c_etsy_title(lst: Listing):
     for ch in "%:&+":
         if t.count(ch) > 1:
             fs.append(Finding(k, t, f"'{ch}' used {t.count(ch)} times; Etsy allows it once"))
-    toks = [w.lower().strip("'’") for w in re.findall(r"[A-Za-z][A-Za-z'’-]*", t)]
+    # the brand name is allowed in the title (BRAND.md: "brand name in every listing title/shop name"), so it is not stuffing
+    t_nobrand = re.sub(r"\bPlay Before Pixels\b", " ", t, flags=re.I)
+    toks = [w.lower().strip("'’") for w in re.findall(r"[A-Za-z][A-Za-z'’-]*", t_nobrand)]
     stems = {}
     for w in toks:
         for part in w.split("-"):
@@ -777,7 +973,15 @@ def c_named(lst: Listing):
         fs.append(Finding(path, sent, f"'{m}': {label}", level=sev))
     # excluded organisations are sensitive even in internal notes
     for path, m, sent, label, sev, neg in _scan(internal_texts(lst.data), NAMED_RULES[:1], negation=False):
-        fs.append(Finding(path, sent, f"'{m}': {label} (internal field)", level=WARN))
+        fs.append(Finding(path, sent, f"'{m}': {label} (internal field)",
+                          "Drop the place name from internal notes (for example 'the old commercial mailbox is retired'), "
+                          "so a whole-file CI word check stays clean and no local angle leaks into a published field.", level=WARN))
+    # lowercase tags/keywords can still carry a creator or brand name
+    ci = re.compile(NAMED_RULES[3][0].pattern + r"|\b(lovevery|montessori|ms rachel|busy toddler|big little feelings|good inside|cocomelon|bluey)\b", re.I)
+    for path, t in public_texts(lst.data, ["keywords", "etsy_tags"]):
+        for m in ci.finditer(t):
+            if not NAMED_RULES[3][0].search(t):
+                fs.append(Finding(path, t, f"'{m.group(0)}' reads as a creator, show or brand name in a search field", level=WARN))
     tools = sorted({m.group(0) for _, t in public_texts(lst.data) for m in ALLOWED_NAMES.finditer(t)})
     summ = f"{len([f for f in fs if f.level == FAIL])} fail hit(s)" + (f"; neutral tool/channel names (allowed): {', '.join(tools)}" if tools else "")
     return res("named_entities", worst(fs), summ, _dedupe(fs))
@@ -856,7 +1060,7 @@ def c_pricing(lst: Listing):
                           f"Price at ${IL['single_printable_min']:.2f} or more, or sell it only inside a bundle / as a free lead magnet."))
     if on(lst, "kdp") and "book" in kinds and price is not None and price < IL["kdp_paperback_min"]:
         fs.append(Finding("price_usd", f"{price}", f"KDP paperback under ${IL['kdp_paperback_min']} (PRICING.md s.2)", level=WARN))
-    summ = f"price ${price}" if price is not None else "no price_usd"
+    summ = f"price ${price:.2f}" if price is not None else "no price_usd"
     return res("honest_pricing", worst(fs), summ, _dedupe(fs))
 
 
@@ -886,8 +1090,10 @@ def c_ai(lst: Listing):
         for c in chans:
             options, sev = AI_KEYS[c]
             if not any(all(_filled(ai.get(k)) for k in opt) for opt in options):
-                fs.append(Finding("ai_disclosure", json.dumps(ai, ensure_ascii=False)[:160] + "…", f"no entry for channel '{c}' ({lst.channels[c]})",
-                                  _ai_template(lst, only=c), level=sev))
+                later = lst.channels[c] == "later"
+                fs.append(Finding("ai_disclosure", json.dumps(ai, ensure_ascii=False)[:160] + "…",
+                                  f"no entry for channel '{c}' ({lst.channels[c]})" + (" - planned channel, so WARN until it goes live" if later and sev == FAIL else ""),
+                                  _ai_template(lst, only=c), level=WARN if later else sev))
         if "kdp" in chans and _filled(ai.get("kdp")) and not all(_filled(ai.get(k)) for k in ("kdp_ai_text", "kdp_ai_images", "kdp_ai_translation")):
             if not re.search(r"translat", str(ai.get("kdp")), re.I):
                 fs.append(Finding("ai_disclosure.kdp", str(ai.get("kdp")), "KDP asks separately about AI text, images and translation; translation is not answered (G2-08 names kdp_ai_text / kdp_ai_images / kdp_ai_translation)",
@@ -907,7 +1113,7 @@ def _ai_template(lst: Listing, only=None):
     if (only in (None, "etsy")) and "etsy" in c:
         parts.append('"etsy_attribution": "Designed by Play Before Pixels", "etsy_ai_flag": true')
     if (only in (None, "kdp")) and "kdp" in c:
-        parts.append('"kdp_ai_text": "AI-generated, edited by the founder", "kdp_ai_images": "AI-generated", "kdp_ai_translation": "none"')
+        parts.append('"kdp_ai_text": "AI-generated", "kdp_ai_images": "AI-generated", "kdp_ai_translation": "none"')
     if (only in (None, "tpt")) and "tpt" in c:
         parts.append('"tpt": "AI-assisted design and illustrations; answer TpT\'s AI question truthfully"')
     if (only in (None, "mod")) and "mod" in c:
@@ -915,10 +1121,12 @@ def _ai_template(lst: Listing, only=None):
     if (only in (None, "ingramspark")) and "ingramspark" in c:
         parts.append('"ingramspark": "AI-generated images and draft text disclosed on the title setup"')
     if (only in (None, "site")) and "site" in c:
-        parts.append('"site": "product page line: \'Illustrations are AI-assisted; a person writes or edits every page.\'"')
+        parts.append('"site": "product page line: \'Illustrations and text are made with AI assistance.\' (say \'edited by the founder\' only after she has)"')
     if only in (None, "social"):
         parts.append('"social_ai_label": "apply each platform\'s AI label to posts that use these images"')
-    return '"ai_disclosure": {' + ", ".join(parts) + "}"
+    note = "  (Answers must match what really happened: set etsy_ai_flag from Etsy's current form [UNVERIFIED wording]; " \
+           "add 'edited by the founder' to any answer only after she has rewritten that part.)"
+    return '"ai_disclosure": {' + ", ".join(parts) + "}" + note
 
 
 def est_nets(lst: Listing):
@@ -973,12 +1181,27 @@ def c_price_floor(lst: Listing):
     if est and floor is not None:
         for k, v in est.items():
             if v < floor:
-                fs.append(Finding("(estimate)", f"{k} ≈ ${v:.2f}", f"estimated net below the ${floor:.2f} floor (UNVERIFIED fee model)", level=WARN))
+                fs.append(Finding("(estimate)", f"{k} ≈ ${v:.2f}", f"estimated net below the ${floor:.2f} floor (UNVERIFIED fee model)",
+                                  _min_price_hint(k, floor), level=WARN))
     elif est:
         for k, v in est.items():
             if v < IL["digital_floor"]:
-                fs.append(Finding("(estimate)", f"{k} ≈ ${v:.2f}", f"estimated net below the ${IL['digital_floor']:.2f} digital floor (UNVERIFIED fee model)", level=WARN))
+                fs.append(Finding("(estimate)", f"{k} ≈ ${v:.2f}", f"estimated net below the ${IL['digital_floor']:.2f} digital floor (UNVERIFIED fee model)",
+                                  _min_price_hint(k, IL["digital_floor"]), level=WARN))
     return res("price_floor", worst(fs), (f"floor {floor}" if floor is not None else "no floor") + (f"; est. {est_txt}" if est_txt else ""), fs)
+
+
+def _min_price_hint(channel: str, floor: float) -> str:
+    e, r = FEES["etsy"], FEES["refund_allowance_pct"]
+    if channel.startswith("etsy"):
+        pct = e["transaction_pct"] + e["processing_pct"] + r + (e["offsite_ads_pct"] if "offsite" in channel else 0)
+        p = (floor + e["listing"] + e["processing_fixed"]) / (1 - pct)
+        return (f"Lowest price that still clears ${floor:.2f} on this kind of sale: about ${p:.2f} (UNVERIFIED fees)."
+                + (" Or opt out of Etsy Offsite Ads if the shop is still allowed to [VERIFY]." if "offsite" in channel else ""))
+    if channel == "tpt":
+        t = FEES["tpt"]
+        return f"Lowest TpT price that clears ${floor:.2f}: about ${(floor + t['fixed']) / (t['payout_pct'] - r):.2f} (UNVERIFIED payout)."
+    return ""
 
 
 def c_owner(lst: Listing):
@@ -1274,7 +1497,7 @@ def write_report(path, listings, skipped, missing, root):
         A(f"| {c} | {f} | {v} | {s} | **{st}** |")
     A("| Etsy / site / TpT / merchant of record | Fees used for the estimated nets (listing $0.20; 6.5% transaction; 3% + $0.25 processing; 15% Offsite Ads; Shopify 2.9% + $0.30; MoR 5% + $0.50; TpT basic 55% − $0.30; 5% refund allowance) | – | each platform's fee page | **UNVERIFIED** |")
     for k, c, f, v, s in INTERNAL_LIMITS:
-        A(f"| {c} | {f} | {v} | {s} | repo rule (binding) |")
+        A(f"| {c} | {f} | {v} | {s} | {'task rule' if s.startswith('task') else 'repo rule (binding)'} |")
     A("")
     A("Content rules come from `brand/BRAND.md` (hard rules 1–7, *Autism searches*, *Honest pricing*, *Self-running*, *Customer-voice* 9, 12, 18) and "
       "`ops/COMPLIANCE-GATE.md` lines 1, 2, 4, 8, 10, 11, 15–18, 21. Public fields scanned: " + ", ".join(f"`{k}`" for k in PUBLIC_TOP) +
@@ -1306,6 +1529,10 @@ def write_report(path, listings, skipped, missing, root):
         for r in l.results:
             if r.status == FAIL:
                 counts[r.cid] = counts.get(r.cid, 0) + 1
+    clean = [c for c in ids if all(result_map(l).get(c) is None or result_map(l)[c].status in (PASS, NA) for l in listings)]
+    if clean:
+        A("**Clean on every listing:** " + "; ".join(CHECK_NAMES[c] for c in clean) + ".")
+        A("")
     if counts:
         A("**Failures by check (most common first):** " + "; ".join(f"{CHECK_NAMES[c]}: {n}" for c, n in sorted(counts.items(), key=lambda x: -x[1])) + ".")
         A("")
@@ -1320,8 +1547,8 @@ def write_report(path, listings, skipped, missing, root):
         meta = [f"File: `{l.path}`" + (f" (item {l.index})" if l.index is not None else "")]
         if d.get("status"):
             meta.append(f"Status: `{d.get('status')}`")
-        if d.get("price_usd") is not None:
-            meta.append(f"Price: ${d.get('price_usd')}")
+        if num(d.get("price_usd")) is not None:
+            meta.append(f"Price: ${num(d.get('price_usd')):.2f}")
         meta.append("Channels tested: " + (", ".join(f"{c} ({s})" for c, s in l.channels.items()) or "none"))
         if l.negated:
             meta.append("Excluded by the listing: " + ", ".join(sorted(l.negated)))
@@ -1386,7 +1613,11 @@ NEEDS_LIVE_CHECK_EXTRA = [
     "**Etsy AI disclosure form**: current wording of the creation questions and whether there is a separate AI flag (the family kit's own note also says [VERIFY]). UNVERIFIED.",
     "**KDP AI questions**: that KDP still asks separately about AI text, images and translation (G2-08 says it does; not re-checked here). UNVERIFIED.",
     "**Etsy snippet**: that Etsy/Google show roughly the first 160 characters of the description as the search snippet (the reason for the first-160 rule). UNVERIFIED.",
-    "**Duplicate listings**: whether Etsy treats a starter tier and a complete set with 8+ shared tags as near-duplicates. UNVERIFIED.",
+    "**Duplicate listings**: whether Etsy treats a starter tier and a complete set with 6+ shared tags as near-duplicates. UNVERIFIED.",
+    "**KDP royalty tiers** used in the book proposals: 60% at a list price of $9.99+ (lower below it), 40% for Expanded Distribution. The figures quoted come from each listing's own price_notes [VERIFY]. UNVERIFIED.",
+    "**KDP premium-color print cost** ($1.00 + $0.07 per page, about $3.24 for 32 pages) quoted from price_notes. UNVERIFIED.",
+    "**Etsy Offsite Ads opt-out**: whether a shop under the sales threshold can still opt out (the proposals offer this as an alternative to a higher price). UNVERIFIED.",
+    "**Poison Control number** is treated as an allowed public safety line (it appears in guide-100-plays notes); confirm the number printed in the product is current. UNVERIFIED.",
 ]
 
 

@@ -1,7 +1,7 @@
 // node build/listings.js : writes listing.json for both products and checks BRAND.md limits.
 const fs = require('fs'), path = require('path');
 const ROOT = path.resolve(__dirname, '..');
-const SAFE_LINE = 'Every play follows our published safety rules.';
+const SAFE_LINE = 'Every play follows our published safety rules';
 const common = {
   channels: [
     'Etsy (digital download, delivered instantly by Etsy): upload the 5 files in etsy-upload/ (no URL or QR code inside, per Etsy link rules and BRAND customer-voice rule 2)',
@@ -15,7 +15,7 @@ const common = {
   },
 };
 const compliance = (key) => [
-  'Parent education only: no health, medical or developmental-outcome claims (BRAND.md rule 1); no trademarked program names (talk moves are plain words, rule 6); no diagnosis-related keywords, tags or wording anywhere (autism-search rule); no named schools, companies, apps, devices or competitor brands (TableTopics-style names avoided in tags); no research citations used.',
+  'Parent education only: no health, medical or developmental-outcome claims (BRAND.md rule 1); no trademarked program names (talk moves are plain words, rule 6); no diagnosis-related keywords, tags or wording anywhere (diagnosis-search rule); no named schools, companies, apps, devices or competitor brands; no research citations used.',
   key === 'A'
     ? 'Child safety (rule 4) on every card and every no-cut row: “With a grown-up” on every card; every under-3 object described as bigger than a toilet-paper tube (big toy animals, big toy cars with no loose wheels, jumbo egg-shaped crayons, grown-up socks, rolled sock pairs); water play (Pour and Splash, Toy Bath, Water Painting and the bath-time 2-minute version) always says a grown-up within arm’s reach; no balloons, no cords/strings/hat ties, no choking-risk foods or coins; tissue-box film removed; plain water only for wiping; kitchen hunt keeps knives, stove and cleaners off the list; unbreakable or wall mirror; the grown-up keeps markers and caps and does the cutting (“Grown-up keeps the pieces” on every card sheet).'
     : 'Child safety (rule 4): car cards say a passenger reads and the driver just talks; bath cards say the grown-up stays close; any question can be passed; cut pieces and laminated cards stay with grown-ups around babies and toddlers (“Grown-up keeps the pieces” on every card sheet and the labels page).',
@@ -119,7 +119,7 @@ const todo = (L) => [
   'Human authorship (BRAND.md): rewrite the card text in build/content.js in your own words (plays, talk tips, 2-minute versions, easier/harder, questions), choose and reorder the cards, and adjust colors if you like; commit each draft and log it in legal/protection/creation-records-log.md. Then rebuild (see files.rebuild).',
   'Write the founder’s note on page 3 in your own words (60–90 words) and replace the dashed placeholder box in build/build.js (printPage) before release.',
   `Build the free bonus page at ${L.bonus_url} (email + optional child birth month/year only, no names; links the privacy policy) before listing; the QR code already points there.`,
-  'Publish playbeforepixels.com/license (full license terms), /contact (contact form) and /help (downloads and printing help); all three are printed in the store edition [VERIFY final URLs].',
+  'Publish playbeforepixels.com/license (full license terms), /contact (contact form) and /help (downloads and printing help), all printed in the store edition, plus /safety (the published safety rules the listing refers to: BRAND.md rule 4 in plain words) [VERIFY final URLs].',
   'Print one Letter and one A4 copy on cardstock at 100%: check cut lines, card size (2.5 × 3.5 in), colors, the low-ink file, and the optional backs page flipped on the long edge; confirm the type-in fields work in free Adobe Acrobat Reader. Founder proof of the cover and page 1 (customer-voice rule 21).',
   'Etsy: upload the 5 files in etsy-upload/ as separate PDFs (never a zip), the 8 listing images and the mockup; set the everyday price $7.00 with no compare-at or sale price; answer Etsy’s creation and AI-use questions truthfully (see ai_disclosure) [VERIFY current Etsy policy]. Our site: deliver START-HERE.pdf plus the 4 store-edition PDFs.',
   'Confirm “52 Play & Talk Cards” and “Family Talk-Along Cards” are clear to use as product names (brand/ORIGINALITY.md does not exist yet, so no name audit covers them) [VERIFY with the trademark search routine].',

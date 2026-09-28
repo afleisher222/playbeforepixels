@@ -8,7 +8,7 @@ const COLORWAYS = [
   { id: 'rainbow', name: 'Rainbow', note: 'Color-coded by routine' },
   { id: 'soft', name: 'Soft', note: 'Gentle tinted cards' },
   { id: 'navy', name: 'Navy', note: 'Bold navy frames' },
-  { id: 'simple', name: 'Simple', note: 'White cards, ink-saver' },
+  { id: 'simple', name: 'Simple', note: 'White cards, line art' },
 ];
 
 const DEFS = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${B.SYMBOLS.join('')}${NEW_SYMBOLS.join('')}</defs></svg>`;

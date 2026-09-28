@@ -60,7 +60,7 @@ function imagesA() {
   const notes = [['Age color and shape', 'Find your child’s color at a glance.'], ['Card number', 'All 52 plays are numbered for the tracker.'], ['Needs, age, prep, mess', 'Everyday things, a start age in months, prep and mess at a glance.'], ['The play', 'Short, clear steps, with start age, prep and mess.'], ['Talk tip', 'One plain-words idea for back-and-forth talk.'], ['With a grown-up', 'A safety note built into every single card.']];
   out.push(['02-every-card', `<div class="sq" style="background:${C.wash}">
     <div class="h"><p class="k" style="color:${C.tomato}">On every card</p><h1>A play. A talk tip.<br>A safety note.</h1></div>
-    ${at(K.cardA(D[33], 0), cx, cy, s)}
+    ${at(K.cardA(D[38], 0), cx, cy, s)}
     ${marks.map(([x, y, n]) => `<span class="abs" style="left:${cx + x * s - 18}px;top:${cy + y * s - 4}px;width:36px;height:36px;border-radius:50%;background:${C.ink};color:#fff;font:600 19px Fredoka,sans-serif;display:flex;align-items:center;justify-content:center;z-index:5;box-shadow:0 0 0 4px #fff">${n}</span>`).join('')}
     <ol class="list abs" style="left:620px;right:56px;top:300px">${notes.map(([a, b], i) => `<li style="display:flex;gap:14px;margin-bottom:24px"><span style="flex:none;width:36px;height:36px;border-radius:50%;background:${C.ink};color:#fff;font:600 19px Fredoka,sans-serif;display:flex;align-items:center;justify-content:center">${i + 1}</span><span><b style="display:block;font-size:22px;font-weight:800">${a}</b><span style="font-size:18px;line-height:1.35">${b}</span></span></li>`).join('')}</ol></div>`]);
   // age-coded
@@ -84,7 +84,7 @@ function imagesA() {
     <div class="h"><p class="k" style="color:${C.tomato}">Safety built in</p><h1>Simple safety basics<br>on every card</h1></div>
     <ul class="list abs" style="left:64px;top:320px;width:530px">${['A grown-up plays along and stays within reach, every time.', 'Under 3: every object is bigger than a toilet-paper tube opening.', 'Water play: a grown-up within arm’s reach the whole time.', 'No balloons, no long cords or strings, no choking-risk foods.', 'Check boxes and toys for staples, tape and loose parts.'].map(t => `<li style="display:flex;gap:14px;align-items:flex-start;margin-bottom:30px;font-size:22px;line-height:1.38;font-weight:700">${K.shield(C.grass, 30)}<span>${t}</span></li>`).join('')}</ul>
     ${at(cA(17), 640, 330, 1.2, 5)}
-    <div class="band" style="background:${C.tomato};justify-content:center"><span>Ideas for everyday play, not medical advice. A grown-up is always right there.</span></div></div>`]);
+    <div class="band" style="background:${C.tomato};justify-content:center"><span>Every play follows our published safety rules. Ideas for play, not medical advice.</span></div></div>`]);
   out.push(nextImage('A'));
   return out;
 }
@@ -97,8 +97,8 @@ function imagesB() {
     ${fan([cB(2), cB(15), cB(27), cB(40), cB(49)], 500, 575, 1.2, 160, 9)}
     <div class="band"><span>Printable PDF · US Letter + A4 · Instant download, nothing ships</span><img src="${K.LOGO.lockupWhite}" alt=""></div></div>`]);
   const s = 2.0, cx = 84, cy = 248;
-  const marks = [[-2, 20, 1], [240 - 62, 12, 2], [4, 160, 3], [4, 296, 4]];
-  const notes = [['The moment', 'Dinner, car, bath or bedtime, color-coded.'], ['Card number', '52 questions, 13 for each moment.'], ['The question', 'Big, easy-to-read type. Kids can read it too.'], ['Grown-up tip', 'One line on how to keep the talk going.']];
+  const marks = [[-2, 20, 1], [196, 44, 2], [4, 160, 3], [4, 296, 4]];
+  const notes = [['The moment', 'Dinner, car, bath or bedtime, color-coded.'], ['Age and card number', 'Ages 5–12; 52 questions, 13 for each moment.'], ['The question', 'Big, easy-to-read type. Kids can read it too.'], ['Grown-up tip', 'One line on how to keep the talk going.']];
   out.push(['02-every-card', `<div class="sq" style="background:${C.wash}">
     <div class="h"><p class="k" style="color:${C.tomato}">On every card</p><h1>A good question and<br>a grown-up tip</h1></div>
     ${at(K.cardB(D[5], 0), cx, cy, s)}

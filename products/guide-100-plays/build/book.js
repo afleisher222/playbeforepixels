@@ -100,7 +100,7 @@ h2 { font-size: 15pt; margin-bottom: .05in }
 .nbuy { margin-left: auto; flex: none; display: inline-flex; align-items: center; gap: .04in; font-size: 7.8pt; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: .02in .09in; border: 1.3px solid var(--ink); border-radius: 99px; align-self: center }
 .nbuy .ico { width: 1.1em !important; height: 1.1em !important }
 .tired { display: grid; grid-template-columns: 1fr 1fr; gap: .16in .22in; flex: 1 }
-.tcard { border: 1.5px solid var(--line); border-radius: .14in; padding: .12in .15in; display: flex; flex-direction: column; gap: .05in; font-size: 9.4pt; line-height: 1.38 }
+.tcard { border: 1.5px solid var(--line); border-radius: .14in; padding: .1in .14in; display: flex; flex-direction: column; justify-content: space-between; gap: .04in; font-size: 9.2pt; line-height: 1.34 }
 .tcard h3 { font-size: 14pt; margin: 0 }
 .tcard .tline { font-size: 11pt }
 .talk { display: flex; gap: .12in; align-items: center; padding: .1in .16in; border-radius: .14in }
@@ -114,9 +114,9 @@ h2 { font-size: 15pt; margin-bottom: .05in }
 .field { display: block; border-bottom: 1.2px solid var(--line); height: .3in; flex: 1 }
 .field.big { height: .42in }
 .field.inl { display: inline-block; width: .9in; height: .2in; vertical-align: bottom; border-bottom-color: var(--ink); opacity: .6 }
-.field.multi { height: .9in; background: repeating-linear-gradient(to bottom, transparent 0, transparent calc(.3in - 1.2px), var(--line) calc(.3in - 1.2px), var(--line) .3in) }
+.field.multi { height: .75in; background: repeating-linear-gradient(to bottom, transparent 0, transparent calc(.3in - 1.2px), var(--line) calc(.3in - 1.2px), var(--line) .3in) }
 .own .need, .own .safe { align-items: flex-end }
-.own .meta { gap: .06in .09in } .own .meta .tick { width: 1em; height: 1em }
+.own .meta { gap: .04in .07in; font-size: 8.4pt } .own .meta .tick { width: 1em; height: 1em }
 .own .talk .field { border-bottom-color: rgba(29,41,64,.35) }
 .lineh { display: flex; margin: .02in 0 .08in }
 
@@ -343,6 +343,28 @@ function setupPage() {
   </div>` });
 }
 
+// Pantry list: about 25 household things the plays use (CUSTOMER-VOICE rule 13; rule-4 safe for under-3s)
+function pantryPage() {
+  const groups = [
+    ['Kitchen', C.tSun, ['plastic cups', 'a big bowl or bucket', 'pots with lids', 'a wooden spoon', 'plastic tubs with lids', 'rolled oats', 'paper plates', 'a clean dish towel']],
+    ['Around the house', C.tSky, ['a blanket', 'pillows and sofa cushions', 'washcloths', 'clean socks', 'a pillowcase', 'a laundry basket', 'a flashlight']],
+    ['Recycling', C.tGrass, ['cardboard boxes, big and small', 'an empty tissue box', 'a shoebox', 'big plastic lids', 'paper bags']],
+    ['Paper and toys', C.tPlum, ['paper', 'crayons (chunky for under-3s)', 'board books', 'a soft ball bigger than a fist', 'a teddy or doll']],
+  ];
+  const buy = ['an unbreakable baby mirror', 'clear contact paper', 'bubble solution and a wand', 'painter’s tape', 'chunky sidewalk chalk', 'store-bought play dough']; // what the plays without the badge need
+  const n = groups.reduce((a, g) => a + g[2].length, 0);
+  return pg({ kind: 'text', title: 'The pantry list', html: `
+  <div class="live">
+    <div class="eyebrow">Nothing to buy</div><h1>The pantry list</h1>
+    <p class="lede" style="margin-bottom:.14in">${P.filter(p => !p.buy).length} of the 100 plays carry the <span class="nbuy" style="margin:0 .02in">${ico('home')} Nothing to buy</span> badge. They use only things like these ${n}, which most homes already have. Gather a few into the play basket and you’re ready.</p>
+    <div class="grid2" style="margin-bottom:.14in;gap:.14in .22in">
+      ${groups.map(([h, bg, items]) => `<div class="card" style="background:${bg};padding:.12in .18in"><h2 style="font-size:13pt">${h}</h2><ul style="list-style:none;font-size:10pt;margin-top:.04in">${items.map(t => `<li style="display:flex;gap:.08in;align-items:center;padding:.03in 0;border-bottom:1px solid rgba(29,41,64,.12)"><svg width=".17in" height=".17in" style="flex:none"><use href="#u-check" color="${C.ink}"/></svg>${esc(t)}</li>`).join('')}</ul></div>`).join('')}
+    </div>
+    <div class="boxnote" style="margin-bottom:.14in"><b>For children under 3:</b> everything must pass the toilet-paper tube test. No dried beans, rice, pasta, buttons, coins, bottle caps, marker caps or other small items, and no plastic bags.</div>
+    <div class="card" style="border:1.5px solid var(--line)"><h2>Worth picking up, if you like</h2><p>The other ${P.filter(p => p.buy).length} plays each need one of these ${buy.length} low-cost things: ${buy.map(esc).join(', ')}. None of them is needed to enjoy the rest of the book.</p></div>
+  </div>` });
+}
+
 // ---- bands
 function bandOpener(b) {
   const col = BC[b.key];
@@ -366,16 +388,16 @@ function glancePage(b) {
   return pg({ kind: 'text', band: b.key, html: `
   <div class="live">
     <div class="eyebrow">Ages ${b.label} · ${b.long}</div><h1>This stage at a glance</h1>
-    <div class="grid2" style="margin-bottom:.18in">
+    <div class="grid2" style="margin-bottom:.16in;gap:.14in .28in">
       ${b.glance.map(([t, d], i) => `<div style="display:flex;gap:.12in"><span class="num" style="background:${col.c};color:${col.fg}">${i + 1}</span><div><b style="font-size:11pt">${t}</b><br><span style="font-size:9.8pt">${d}</span></div></div>`).join('')}
     </div>
-    <div style="display:flex;gap:.2in;margin-bottom:.18in">
-      <div class="card" style="flex:1.2;background:${col.t}"><div class="eyebrow" style="color:var(--ink)">Talk move to lean on</div><h2>${MOVES[lean].name}</h2><p>${MOVES[lean].tip}</p></div>
+    <div style="display:flex;gap:.2in;margin-bottom:.14in">
+      <div class="card" style="flex:1.2;background:${col.t};padding:.14in .18in"><div class="eyebrow" style="color:var(--ink)">Talk move to lean on</div><h2>${MOVES[lean].name}</h2><p>${MOVES[lean].tip}</p></div>
       <div class="card" style="flex:1;border:1.5px solid var(--line)"><div class="eyebrow">Play basket</div><p>${b.kit.map(esc).join(' · ')}</p></div>
     </div>
     <h2>In this chapter</h2>
     <div style="columns:2;column-gap:.3in;font-size:9.6pt;margin-top:.06in">
-      ${list.map(p => `<div style="display:flex;gap:.08in;align-items:center;padding:.035in 0;break-inside:avoid;border-bottom:1px solid var(--line)"><span class="chipn" style="background:${col.t};margin:0">${p.n}</span><span style="flex:1">${esc(p.t)}</span><span class="small">${fromLabel(p.from).toLowerCase()}</span></div>`).join('')}
+      ${list.map(p => `<div style="display:flex;gap:.08in;align-items:center;padding:.02in 0;break-inside:avoid;border-bottom:1px solid var(--line)"><span class="chipn" style="background:${col.t};margin:0;height:.22in">${p.n}</span><span style="flex:1">${esc(p.t)}</span><span class="small">${fromLabel(p.from).toLowerCase()}</span></div>`).join('')}
     </div>
     <div class="spacer"></div>
     <p class="small" style="margin-top:.12in;border-top:1px solid var(--line);padding-top:.08in">Every child grows at their own pace, and ages here are a guide, not a deadline. If you have questions about how your child is growing, moving or talking, ask your child’s doctor.</p>
@@ -389,12 +411,35 @@ function playPages(b) {
   const list = P.filter(p => p.band === b.key);
   for (let i = 0; i < list.length; i += 2) {
     const a = list[i], z = list[i + 1];
-    pg({ kind: 'plays', band: b.key, html: `<div class="live">${rhead(b, a.n, z && z.n)}<div class="plays">${playCard(a)}${z ? playCard(z) : ownCard(`own-${b.key}-0`, b.key)}</div></div>` });
+    pg({ kind: 'plays', band: b.key, plays: [a.n, z && z.n].filter(Boolean), html: `<div class="live">${rhead(b, a.n, z && z.n)}<div class="plays">${playCard(a)}${z ? playCard(z) : ownCard(`own-${b.key}-0`, b.key)}</div></div>` });
   }
   pg({ kind: 'plays', band: b.key, html: `<div class="live">${rhead(b, 'your own', '').replace('Plays your own', 'Your own plays')}<div class="plays">${ownCard(`own-${b.key}-1`, b.key)}${ownCard(`own-${b.key}-2`, b.key)}</div></div>` });
 }
 
 // ---- back matter
+// Tired-grown-up plays: 2 minutes, no setup, from the couch or the floor (CUSTOMER-VOICE rule 14)
+function tiredPages() {
+  const card = t => `<div class="tcard">
+    <div class="kicker"><span class="agepill" style="background:${C.tPlum}">${fromLabel(t.from)}</span> 2 min · no setup</div>
+    <h3>${esc(t.t)}</h3>
+    <div><b>You need:</b> ${esc(t.need)}</div>
+    <p>${esc(t.how)}</p>
+    <div class="talk" style="background:${C.tPlum};padding:.07in .12in">${ico('talk', '', '.24in')}<div class="tline">${esc(t.talk)}</div></div>
+    <div class="safe">${ico('shield')}<span><b>Safety:</b> ${esc(t.safe)}</span></div></div>`;
+  pg({ kind: 'text', title: 'Tired-grown-up plays', html: `
+  <div class="live">
+    <div class="eyebrow">2 minutes · no setup · from the couch or the floor</div><h1 style="margin-bottom:.08in">Tired-grown-up plays</h1>
+    <p style="font-size:10.4pt;margin-bottom:.14in">Some days you have nothing left, and that’s normal. These plays count just as much. Sit or lie down, do one, and call it a win.</p>
+    <div class="tired">${TIRED.slice(0, 6).map(card).join('')}</div>
+  </div>` });
+  pg({ kind: 'text', html: `
+  <div class="live">
+    <div class="eyebrow">Tired-grown-up plays, continued</div>
+    <div class="tired" style="margin-top:.06in">${TIRED.slice(6).map(card).join('')}</div>
+    <div class="boxnote" style="margin-top:.14in"><b>Also good from the couch:</b> ${[1, 19, 27, 66, 84, 95].map(n => `${esc(P[n - 1].t)} ${chipN(n)}`).join(' ')}. And every play in the book has a <b>Make it easier</b> line when energy is low.</div>
+  </div>` });
+}
+const BONUST = () => V.etsy ? 'What’s next' : 'Your free bonus and what’s next';
 function sampleDay() {
   const rows = [
     ['7:00', 'Wake up and get dressed', 'Sing along as you go.', [40]],
@@ -425,7 +470,7 @@ function sampleDay() {
   </div>` });
 }
 function swapDay() {
-  const col = (b, rows) => `<div class="card" style="background:${BC[b].t}"><div class="display" style="font-size:16pt;margin-bottom:.06in">${rows.h}</div><ul class="list">${rows.r.map(([t, ns]) => `<li style="display:block"><b>${t}</b>${ns.map(n => `<div style="font-size:9.4pt;display:flex;justify-content:space-between;align-items:center;margin-top:.03in">${esc(P[n - 1].t)} ${chipN(n)}</div>`).join('')}</li>`).join('')}</ul></div>`;
+  const col = (b, rows) => `<div class="card" style="background:${BC[b].t}"><div class="display" style="font-size:16pt;margin-bottom:.04in">${rows.h}</div><ul class="list">${rows.r.map(([t, ns]) => `<li style="display:block;padding:.06in 0;font-size:9.4pt"><b style="font-size:10pt">${t}:</b> ${ns.map(n => `${esc(P[n - 1].t)} ${chipN(n)}`).join(' ')}</li>`).join('')}</ul></div>`;
   return pg({ kind: 'text', title: 'Swap it for your age and your energy', html: `
   <div class="live">
     <div class="eyebrow">Make the day fit</div><h1>Swap it for your age and your energy</h1>
@@ -469,12 +514,12 @@ function screensPage() {
   </div>` });
 }
 function trackerPage() {
-  const col = (from, to) => `<div>${P.slice(from - 1, to).map(p => `<div style="display:flex;align-items:center;gap:.06in;height:.3in;border-bottom:1px solid var(--line);font-size:8.4pt"><svg width=".17in" height=".17in" style="flex:none"><use href="#u-check" color="${C.ink}"/></svg><span class="chipn" style="background:${BC[p.band].t};margin:0;min-width:.28in;height:.2in;font-size:7.8pt">${p.n}</span><span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(p.t)}</span></div>`).join('')}</div>`;
+  const col = (from, to) => `<div style="display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:repeat(${to - from + 1},1fr)">${P.slice(from - 1, to).map(p => `<div style="display:flex;align-items:center;gap:.06in;min-height:0;border-bottom:1px solid var(--line);font-size:8.4pt"><svg width=".17in" height=".17in" style="flex:none"><use href="#u-check" color="${C.ink}"/></svg><span class="chipn" style="background:${BC[p.band].t};margin:0;min-width:.28in;height:.2in;font-size:7.8pt">${p.n}</span><span style="flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(p.t)}</span></div>`).join('')}</div>`;
   return pg({ kind: 'text', title: 'The 100-play tracker', html: `
   <div class="live">
     <div class="eyebrow">Tick them off</div><h1 style="margin-bottom:.06in">The 100-play tracker</h1>
     <p style="font-size:9.8pt;margin-bottom:.12in">Color in a circle each time you try a play. Star your favorites to come back to.</p>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.16in">${col(1, 25)}${col(26, 50)}${col(51, 75)}${col(76, 100)}</div>
+    <div style="flex:1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.16in">${col(1, 25)}${col(26, 50)}${col(51, 75)}${col(76, 100)}</div>
   </div>` });
 }
 function plannerPage(colorKey = 'tomato', start = 'Monday', extra = false) {
@@ -526,17 +571,27 @@ function bonusPage() {
     ['Visual Routine Cards', '200+ picture cards for mornings, meals and bedtime', 'list', C.tSky],
     ['Up! Go! More!', 'A talk-along first-words book for ages 0–3', 'ball', C.tGrass],
   ];
-  return pg({ kind: 'text', title: 'Your free bonus and what’s next', html: `
+  const cards = `<div class="grid3">${next.map(([t, d, a, bg]) => `<div class="card" style="background:${bg};text-align:center"><svg class="scene" viewBox="-60 -60 120 120" style="width:1in;height:1in"><circle r="58" fill="#FFFFFF"/><use href="#a-${a}" transform="scale(.8)"/></svg><div class="display" style="font-size:13pt;margin:.06in 0 .04in">${t}</div><p style="font-size:9pt">${d}</p></div>`).join('')}</div>`;
+  if (V.etsy) return pg({ kind: 'text', title: BONUST(), html: `
+  <div class="live">
+    <div class="eyebrow">Thank you</div><h1>What’s next</h1>
+    <p class="lede">Thank you for playing along. When your child is ready for something new, these are made to go with this book.</p>
+    ${cards}
+    <div class="card" style="background:${C.wash};margin-top:.3in"><h2>Where to find them</h2><p>Look for the Play Before Pixels shop on Etsy. Your files stay in your Etsy account under Purchases, so you can download them again at any time.</p></div>
+    <div class="spacer"></div>
+    <p class="small" style="text-align:center">${COPY}</p>
+  </div>` });
+  return pg({ kind: 'text', title: BONUST(), html: `
   <div class="live">
     <div class="eyebrow">A gift for you</div><h1>Your free bonus</h1>
     <div style="display:flex;gap:.3in;align-items:center;background:${C.tTomato};border-radius:.18in;padding:.24in">
-      <div style="background:#FFFFFF;border-radius:.12in;padding:.08in;flex:none">${qrSvg(150)}</div>
+      <div class="qrbox" style="background:#FFFFFF;border-radius:.12in;padding:.08in;flex:none">${qrSvg(150)}</div>
       <div><p style="font-size:11pt;margin-bottom:.08in">Scan the code or visit</p><p class="display" style="font-size:15pt;margin-bottom:.12in;word-break:break-all">${BONUS}</p>
-      <ul style="font-size:9.8pt;padding-left:.18in"><li>The Sunday-start play week planner</li><li>Printable "play of the day" cards</li><li>Three new plays each month for your child’s age</li></ul>
+      <ul style="font-size:9.8pt;padding-left:.18in"><li>The play pages in full color, to print or keep on your phone</li><li>The Sunday-start play week planner</li><li>Printable "play of the day" cards</li><li>Three new plays each month for your child’s age</li></ul>
       <p class="small" style="margin-top:.08in">We only ask for your email and your child’s birth month and year, never a name. Unsubscribe anytime.</p></div>
     </div>
     <h2 style="margin-top:.32in;margin-bottom:.12in">What’s next from Play Before Pixels</h2>
-    <div class="grid3">${next.map(([t, d, a, bg]) => `<div class="card" style="background:${bg};text-align:center"><svg class="scene" viewBox="-60 -60 120 120" style="width:1in;height:1in"><circle r="58" fill="#FFFFFF"/><use href="#a-${a}" transform="scale(.8)"/></svg><div class="display" style="font-size:13pt;margin:.06in 0 .04in">${t}</div><p style="font-size:9pt">${d}</p></div>`).join('')}</div>
+    ${cards}
     <div class="spacer"></div>
     <p class="small" style="text-align:center">Find them all at playbeforepixels.com</p>
   </div>` });
@@ -548,32 +603,36 @@ function notesPage() {
 }
 
 // ---------------------------------------------------------------- assemble
+let MAP = null; // page map for the listing images (extras.js)
 function assemble(v) {
   pages.length = 0;
-  titlePage(); copyrightPage(); contentsPage(); notePage(); howPage(); movesPage(); safetyPage(); whyPage(); finderPage(); setupPage();
+  V = v;
+  titlePage(); copyrightPage(); contentsPage(); notePage(); howPage(); movesPage(); safetyPage(); whyPage(); finderPage(); setupPage(); pantryPage();
   for (const b of BANDS) {
     if (pages.length % 2 === 1) notesPage(); // opener must land on a right-hand (odd) page
     bandOpener(b); glancePage(b); playPages(b);
   }
   if (pages.length % 2 === 1) notesPage();
-  sampleDay(); swapDay(); screensPage(); trackerPage(); plannerPage('tomato', 'Monday'); sourcesPage(); bonusPage();
+  tiredPages(); sampleDay(); swapDay(); screensPage(); trackerPage(); plannerPage('tomato', 'Monday'); sourcesPage(); bonusPage();
   if (v.extras) { plannerPage('sky', 'Monday', true); plannerPage('grass', 'Sunday', true); plannerPage('plum', 'Sunday', true); plannerPage('sun', 'Monday', true); }
   while (pages.length % 2 === 1 || (!v.extras && pages.length < 80)) notesPage();
   // page numbers for contents
   const index = {};
   pages.forEach((p, i) => { if (p.title && !index[p.title]) index[p.title] = i + 1; });
   const num = t => index[t] || '?';
+  MAP = { titles: index, plays: {}, extras: [], count: pages.length };
+  pages.forEach((p, i) => { (p.plays || []).forEach(n => { MAP.plays[n] = i + 1; }); if (p.extra) MAP.extras.push(i + 1); });
   return pages.map((p, i) => {
     const side = i % 2 === 0 ? 'recto' : 'verso';
     const html = typeof p.html === 'function' ? p.html(num) : p.html;
-    const folio = p.noFolio ? '' : `<div class="folio"><span>100 Screen-Free Plays</span><b>${i + 1}</b></div>`;
+    const folio = p.noFolio ? '' : `<div class="folio"><span>100 Screen-Free Plays · ${VERSION}${v.extras && !v.etsy ? ' · playbeforepixels.com' : ''}</span><b>${i + 1}</b></div>`;
     return `<section class="page ${side} k-${p.kind}" data-page="${i + 1}">${html}${folio}</section>`;
   }).join('\n');
 }
 
 function doc(v) {
   const body = assemble(v);
-  const defs = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${CH.SYMBOLS.join('')}${ART.join('')}${UI.join('')}</defs></svg>`;
+  const defs = `<svg class="artdefs" width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${CH.SYMBOLS.join('')}${ART.join('')}</defs></svg><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${UI.join('')}</defs></svg>`;
   let html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>100 Screen-Free Plays for Ages 0–5 · ${v.label}</title>
 <link rel="stylesheet" href="${FONTS}">
 <style>${css(v)}
@@ -584,16 +643,17 @@ ${defs}
 ${body}
 </body></html>`;
   if (v.bw) html = toGray(html).replace(/lockup-horizontal\.svg/g, 'lockup-horizontal-black.svg');
-  return { html, count: pages.length };
+  return { html, count: pages.length, map: MAP };
 }
 
 if (require.main === module) {
   const only = process.argv[2];
   for (const [k, v] of Object.entries(VARIANTS)) {
     if (only && only !== k) continue;
-    const { html, count } = doc(v);
+    const { html, count, map } = doc(v);
     fs.writeFileSync(path.join(OUT, v.file), html);
+    if (k === 'letter' || k === 'kdp') fs.writeFileSync(path.join(__dirname, `pagemap-${k}.json`), JSON.stringify(map, null, 1));
     console.log(v.file, count, 'pages');
   }
 }
-module.exports = { VARIANTS, doc, toGray };
+module.exports = { VARIANTS, doc, toGray, PREPLINE };
