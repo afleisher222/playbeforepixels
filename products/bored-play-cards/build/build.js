@@ -445,7 +445,7 @@ const agesCss = `<style>
 
 function tubeArt() {
   return `<svg viewBox="0 0 330 120" width="100%" height="100%" aria-hidden="true">
-    <g transform="translate(20,20)"><rect x="0" y="0" width="54" height="86" rx="8" fill="${C.tSun}"/><ellipse cx="27" cy="4" rx="27" ry="8" fill="#E9C77A"/><ellipse cx="27" cy="4" rx="19" ry="4.5" fill="#FFFFFF"/><path d="M4 30 50 20M4 54 50 44M4 78 50 68" stroke="#E9C77A" stroke-width="3" stroke-linecap="round"/></g>
+    <g transform="translate(20,20)"><rect x="0" y="0" width="54" height="86" rx="8" fill="#FFFFFF"/><ellipse cx="27" cy="4" rx="27" ry="8" fill="#E9C77A"/><ellipse cx="27" cy="4" rx="19" ry="4.5" fill="#FFFFFF"/><path d="M4 30 50 20M4 54 50 44M4 78 50 68" stroke="#E9C77A" stroke-width="3" stroke-linecap="round"/></g>
     <g transform="translate(135,62)"><use href="#block-4" transform="scale(.95)"/></g>
     <circle cx="135" cy="22" r="12" fill="${C.grass}"/><path d="M129 22l4 4 7-8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
     <g transform="translate(250,70)"><circle r="9" fill="${C.sky}"/><circle cx="-3" cy="-2" r="1.6" fill="#fff"/><circle cx="3" cy="-2" r="1.6" fill="#fff"/><circle cx="-3" cy="3" r="1.6" fill="#fff"/><circle cx="3" cy="3" r="1.6" fill="#fff"/><rect x="18" y="-6" width="14" height="12" rx="3" fill="${C.plum}"/></g>

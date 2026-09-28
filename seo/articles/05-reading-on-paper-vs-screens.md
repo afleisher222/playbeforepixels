@@ -39,7 +39,7 @@ Their main findings, in plain words:
 - **It doesn't mean screens make kids bad readers.** The studies measured understanding of particular texts, not whether someone becomes a reader.
 - **It doesn't mean every child reads worse on a screen.** These are averages across many people. Some readers do just as well on either.
 - **The review looked at reading comprehension**, meaning understanding and remembering what was read. It didn't look at every possible benefit or drawback of digital reading.
-- **Most studies involved older students and adults**, so be careful applying the findings directly to the youngest readers.
+- **The review is about people reading for themselves.** It doesn't tell us about babies and toddlers listening to a grown-up read, which is a different activity (more on that below).
 
 The honest takeaway is modest but useful: **when understanding really matters, especially with factual material, paper has an edge worth using.**
 
