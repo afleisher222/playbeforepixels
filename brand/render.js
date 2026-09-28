@@ -12,7 +12,7 @@ const path = require('path'); const fs = require('fs');
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: 'networkidle' });
     await page.evaluate(() => document.fonts.ready);
-    const opts = { path: output, printBackground: true, preferCSSPageSize: true };
+    const opts = { path: output, printBackground: true, preferCSSPageSize: true, tagged: true }; // tagged = accessible PDF structure (COMPLIANCE-GATE 20)
     if (a && b) { opts.width = a + 'in'; opts.height = b + 'in'; opts.preferCSSPageSize = false; }
     await page.pdf(opts);
   } else if (mode === 'png') {
