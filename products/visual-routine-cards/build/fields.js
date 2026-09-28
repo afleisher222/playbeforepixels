@@ -15,7 +15,7 @@ const path = require('path'); const fs = require('fs');
       const pg = el.closest('.page'); const pi = pages.indexOf(pg);
       const pr = pg.getBoundingClientRect(), r = el.getBoundingClientRect();
       const k = 0.75; // CSS px (96/in) -> PDF pt (72/in)
-      return { name: el.dataset.field, type: el.dataset.ftype || 'text', size: +(el.dataset.fsize || 0), align: el.dataset.falign === undefined ? 1 : +el.dataset.falign,
+      return { name: el.dataset.field + '_p' + (pi + 1), type: el.dataset.ftype || 'text', size: +(el.dataset.fsize || 0), align: el.dataset.falign === undefined ? 1 : +el.dataset.falign,
         def: el.dataset.fdefault || '', color: el.dataset.fcolor || '#1D2940', page: pi,
         x0: (r.left - pr.left) * k, y0: (r.top - pr.top) * k, x1: (r.right - pr.left) * k, y1: (r.bottom - pr.top) * k };
     });

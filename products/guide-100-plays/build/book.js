@@ -177,7 +177,7 @@ function notePage() {
     </div>
     <div class="hand" style="font-size:24pt;margin-top:.24in;color:${C.tomato}">Play Before Pixels</div>
     <div class="spacer"></div>
-    <svg viewBox="0 0 600 330" style="width:4.2in;align-self:center"><g transform="translate(0 -250)">${SCENES.b1()}</g></svg>
+    <svg viewBox="70 140 460 360" style="width:4.4in;align-self:center">${SCENES.b1()}</svg>
   </div>` });
 }
 function howPage() {
@@ -291,6 +291,8 @@ function setupPage() {
       ${BANDS.map(b => `<div><div class="display" style="background:${BC[b.key].c};color:${BC[b.key].fg};border-radius:.1in;padding:.05in .1in;font-size:12pt;margin-bottom:.06in">Ages ${b.label}</div><ul style="list-style:none;font-size:9pt;line-height:1.35">${b.kit.map(k => `<li style="padding:.04in 0;border-bottom:1px solid var(--line)">${esc(k)}</li>`).join('')}</ul></div>`).join('')}
     </div>
     <p class="small" style="margin-top:.14in">For children under 3, every item must pass the toilet-paper tube test. Check the basket often for broken or small pieces.</p>
+    <div class="spacer"></div>
+    <div style="display:flex;justify-content:space-between">${['basket', 'blocks', 'ball', 'book', 'cup', 'pot', 'box'].map((a, i) => `<svg viewBox="-60 -60 120 120" style="width:.8in;height:.8in"><circle r="58" fill="${[C.tSun, C.tSky, C.tTomato, C.tGrass, C.tPlum, C.tSky, C.tSun][i]}"/><use href="#a-${a}" transform="scale(.8)"/></svg>`).join('')}</div>
   </div>` });
 }
 
@@ -374,7 +376,7 @@ function sampleDay() {
   </div>` });
 }
 function swapDay() {
-  const col = (b, rows) => `<div class="card" style="background:${BC[b].t}"><div class="display" style="font-size:16pt;margin-bottom:.06in">${rows.h}</div><ul class="list">${rows.r.map(([t, ns]) => `<li style="display:block"><b>${t}</b><br>${ns.map(n => `<span style="font-size:9.2pt">${esc(P[n - 1].t)}</span> ${chipN(n)}`).join(' ')}</li>`).join('')}</ul></div>`;
+  const col = (b, rows) => `<div class="card" style="background:${BC[b].t}"><div class="display" style="font-size:16pt;margin-bottom:.06in">${rows.h}</div><ul class="list">${rows.r.map(([t, ns]) => `<li style="display:block"><b>${t}</b>${ns.map(n => `<div style="font-size:9.4pt;display:flex;justify-content:space-between;align-items:center;margin-top:.03in">${esc(P[n - 1].t)} ${chipN(n)}</div>`).join('')}</li>`).join('')}</ul></div>`;
   return pg({ kind: 'text', title: 'Swap it for your age and your energy', html: `
   <div class="live">
     <div class="eyebrow">Make the day fit</div><h1>Swap it for your age and your energy</h1>

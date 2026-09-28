@@ -31,7 +31,7 @@ img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
 p { margin: 0 0 1em; text-wrap: pretty; }
 h1, h2, h3, h4 { margin: 0; font-family: var(--f-display); font-weight: 800; letter-spacing: -.03em; text-wrap: balance; }
-ul { margin: 0; padding: 0; list-style: none; }
+ul, ol.timeline { margin: 0; padding: 0; list-style: none; }
 button, input, select, textarea { font: inherit; color: inherit; }
 button { cursor: pointer; }
 figure { margin: 0; }
@@ -469,8 +469,8 @@ button.sc-seg[aria-pressed="true"] .sc-label::after { content: " ✓"; font-size
 .clear:hover { color: var(--tomato); }
 .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px 24px; padding: 40px 0 0; }
 .grid .tile--lead { grid-column: span 2; }
-.grid .tile--lead .tile-img { aspect-ratio: 8 / 5; }
-.grid .tile--lead .tile-img img { object-position: 50% 42%; }
+.grid .tile--lead .tile-img { aspect-ratio: 1.645; }
+.grid .tile--lead .tile-img img { object-position: 50% 22%; }
 .grid .tile--lead .tile-title { font-size: 34px; }
 .interlude { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 24px 48px; padding: 30px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
 .interlude p { margin: 0; }
@@ -542,7 +542,7 @@ button.sc-seg[aria-pressed="true"] .sc-label::after { content: " ✓"; font-size
 .wordtip { display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: center; margin-top: 24px; padding: 20px; background: #fff; border: 1px solid var(--rule-2); border-radius: 12px; }
 .wordtip img { border-radius: 12px; }
 .wordtip .label { margin-bottom: 8px; }
-.wordtip p.label { font-size: 11.5px; }
+.wordtip p.label, .brief p.label, .r-read-first p.label { font-size: 11.5px; line-height: 1.35; color: var(--ink-2); flex: none; }
 .wordtip p { margin: 0; font-size: 18px; line-height: 1.5; max-width: 34em; }
 .wordtip b { font-weight: 800; }
 

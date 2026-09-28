@@ -176,8 +176,8 @@ function blankB(b = 0) {
     <div class="sp-head sm"><span class="sp-kick">Make it yours</span><h3>Your own question</h3></div>
     <span class="num">+</span>
     <div class="body bl-body">
-      <p class="bl-lab">Our question</p><i class="ln"></i><i class="ln"></i><i class="ln"></i><i class="ln"></i>
-      <div class="talk bl-talk"><span class="tl">${speech(C.ink, 13)}Grown-up tip</span><i class="ln"></i><i class="ln"></i></div>
+      <p class="bl-lab">Our question</p><i class="ln"></i><i class="ln"></i><i class="ln"></i><i class="ln"></i><i class="ln"></i><i class="ln"></i>
+      <div class="talk bl-talk"><span class="tl">${speech(C.ink, 13)}Grown-up tip</span><i class="ln"></i><i class="ln"></i><i class="ln"></i></div>
       <p class="bl-age">For: <span>Dinner</span><span>Car</span><span>Bath</span><span>Bedtime</span></p>
     </div>
   </div>

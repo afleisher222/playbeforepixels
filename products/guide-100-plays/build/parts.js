@@ -8,6 +8,7 @@ const CH = require('./chars.js');
 const { ART, UI } = require('./icons.js');
 const { P, BANDS, MOVES, WHERE } = require('./plays.js');
 const { C, KIDS, ADULTS, kid, adult, aim, aimKid, aimAdult, adultHand, kidHand, use, F } = CH;
+Object.assign(C, { s1: '#F4CFAE', s2: '#E0AC80', s3: '#C08457', s4: '#8D5A3B' }); // skin tones, also used for cardboard
 
 const OUT = path.join(__dirname, '..');
 const SLUG = 'guide-100-plays';
@@ -85,7 +86,7 @@ function sceneRocket() { // 3–5: box rocket countdown
     <path d="M-34 ${F}L0 ${F + 30}L34 ${F}Z" fill="${C.sun}"/></g>`;
   const g = Object.assign({}, ADULTS.G5, { x: 450, y: F - 51 * 1.08, s: 1.08, flip: true, legs: 'kneel', aL: 16, aR: -150, face: 'laugh' });
   const stars = [[120, 190, 1], [360, 150, .7], [520, 210, .8], [330, 250, .5]].map(([x, y, s]) => `<path d="M0-12L3.5-3.5 12 0 3.5 3.5 0 12-3.5 3.5-12 0-3.5-3.5Z" fill="${C.sun}" transform="translate(${x} ${y}) scale(${s * 1.6})"/>`).join('');
-  const nums = `<text x="486" y="236" font-family="Bricolage Grotesque" font-weight="800" font-size="46" fill="${C.ink}">3·2·1</text>`;
+  const nums = `<text x="440" y="176" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="40" fill="${C.ink}">3, 2, 1…</text>`;
   return `<circle cx="300" cy="318" r="160" fill="${C.tomato}"/>` + stars + kid(k) + box + adult(g) + nums;
 }
 function sceneCover() { // cover: tower of blocks, ball, grown-up and child

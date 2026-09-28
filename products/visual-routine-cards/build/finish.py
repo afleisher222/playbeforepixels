@@ -32,10 +32,10 @@ if a.fields:
             w.border_width = 0
             w.field_value = f['def']
             w.text_maxlen = 0
-        page.add_widget(w)
+        wa = page.add_widget(w)
         if f['type'] != 'check':
-            doc.xref_set_key(w.xref, 'Q', str(f['align']))
-            w.update()
+            doc.xref_set_key(wa.xref, 'Q', str(f['align']))
+            wa.update()
     print(len(fields), 'fields added')
 if a.toc:
     toc = json.load(open(a.toc))
