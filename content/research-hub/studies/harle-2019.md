@@ -40,7 +40,7 @@ sources:
 
 ## In plain language
 
-French child psychiatrist Bruno Harlé argued that intensive early screen exposure, more than about four hours a day, might play a part in autism-like signs in some possibly vulnerable children under 6. He proposed the label "virtual autism". The paper brings together published case descriptions and clinical reports and makes an argument from them. It does not collect new data. It carried the term from Zamfir's paper into an indexed neuroscience and education journal.
+French child psychiatrist Bruno Harlé argued that intensive early screen exposure, more than about four hours a day, might play a part in autism-like signs in some possibly vulnerable children under 6 [VERIFY the age and the four-hour figure]. He proposed the label "virtual autism". The paper brings together published case descriptions and clinical reports and makes an argument from them. It does not collect new data. It carried the term from Zamfir's paper into an indexed neuroscience and education journal.
 
 ## Who was studied
 
@@ -78,6 +78,7 @@ Link: [https://doi.org/10.1016/j.tine.2019.100119](https://doi.org/10.1016/j.tin
 **Editor’s notes**
 
 - On our allowed-citation list. We describe it as proposing, not showing, a causal role.
+- The paper's title calls intensive early screen exposure "a causal factor". That is the author's claim, quoted in the citation. A hypothesis paper built from case descriptions cannot establish it.
 
 ## Related pages
 

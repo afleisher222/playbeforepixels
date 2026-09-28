@@ -40,7 +40,7 @@ sources:
 
 ## In plain language
 
-Romanian psychologist Marius Teodor Zamfir looked back at the case histories of young children newly diagnosed with autism at two private centres in Romania between 2012 and 2017. According to their parents' recollection, many of these children had spent more than four hours a day in front of screens before age 3. He argued that this picture resembled childhood autism and called it "autism virtual". The paper appeared in a literary-studies journal, not a medical or psychology journal. The children it describes already had autism diagnoses. The author himself has said that the term is not a medical diagnosis.
+Romanian psychologist Marius Teodor Zamfir looked back at the case histories of young children newly diagnosed with autism at two private centres in Romania between 2012 and 2017. According to their parents' recollection, many of these children had spent more than four hours a day in front of screens before age 3. He argued that this picture resembled childhood autism and called it "autism virtual". The paper appeared in a literary-studies journal, not a medical or psychology journal. The children it describes already had autism diagnoses. Secondary sources report that the author himself has said the term is not a medical diagnosis [VERIFY where he said this].
 
 ## Who was studied
 
@@ -57,7 +57,7 @@ Children newly diagnosed with autism at two private centres in Romania (describe
 - Screen exposure came from parents' memories recorded in case histories.
 - No blinding and no standardized diagnostic re-assessment is described. There was no adjustment for other differences between families.
 - Both groups were children already diagnosed with autism. There was no group of children without autism to compare against.
-- The author also runs a private practice built around the concept [VERIFY]. Readers should know about that conflict of interest.
+- Secondary sources say the author runs a private practice built around the concept [VERIFY]. If that is confirmed, it is a conflict of interest readers should know about.
 - A Romanian psychology website called the study an essay lacking scientific rigor. See our page on that critique.
 - Putting the children's autism down to missing experience at home places the cause in family life. The study did not test this, and autism organizations warn that explanations like it revive the false idea that parenting causes autism (see our autismus Deutschland page).
 

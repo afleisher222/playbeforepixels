@@ -7,8 +7,10 @@
 ```
 Shopify order (line-item fields)  ─┐
                                     ├─> every 15 min: scheduled job (GitHub Actions in this repo)
-Etsy order (variations + text box) ─┘        1. fetch paid, unshipped Laps Not Apps orders
-                                              2. turn each into order.json  (personalize.js checks it)
+Etsy order (variations + text box) ─┘        1. fetch paid, unshipped Laps Not Apps orders placed at least 2 hours ago
+                                                 (the spelling-fix window promised in section 6)
+                                              2. turn each into order.json with "channel": "shopify" or "etsy"
+                                                 (personalize.js checks it; etsy = Etsy edition, no URL or QR)
                                               3. node build.js --order order.json --out orders/<id> --cover-w --cover-h --spine
                                               4. node render-order.js orders/<id>   → interior.pdf + cover.pdf, fit check
                                               5. upload both PDFs to private storage → 7-day signed URLs
@@ -36,6 +38,8 @@ Product codes to confirm in Lulu's product builder or pricing calculator [VERIFY
 
 ## 3. Store setup (one time, by the founder)
 
+**Etsy edition (automatic).** Every order the job fetches from Etsy is written with `"channel": "etsy"`. `build.js` then leaves out playbeforepixels.com and the bonus QR code (copyright page, last page, back cover) and prints "You will find more Play Before Pixels books and printables in the same shop" instead (BRAND.md customer-voice rule 2). Test it with `orders/examples/order-long-name.json`, which is an Etsy order.
+
 **Shopify (own site, easiest to automate).** Add fields to the product page as line-item properties: `Child's first name` (required, max 14), `From` (optional, max 32), `Pronouns` (she/her, he/him, they/them), `Look` (1–4, show `picker.png`), `Gift message` (optional, max 180), `Occasion or date` (optional, max 32). Format = a variant (Softcover $24.99 / Hardcover $34.99). Add a required checkbox: "I checked the spelling. The name prints exactly as typed." [VERIFY that the theme supports these fields without a paid app.]
 
 **Etsy.** Variations: Format and Look (Etsy allows two variation types [VERIFY]). Personalization box with this exact instruction, so it can be read by the script:
@@ -59,11 +63,13 @@ Anything the script cannot read goes to the review queue. The review drafts a wr
 6. Shopify: confirm line-item properties arrive in the Admin API order data.
 7. Confirm that CPSIA's ordinary-book exemption applies (paper, ink, binding only) and, before UK/EU sales, the GPSR responsible-person details.
 8. Test the review queue: a name in another script, an emoji, a 15-letter name and a flagged word must each stop before the printer.
+9. Check an Etsy-channel proof: no URL and no QR code anywhere in the book or on the cover.
+10. Every interior carries `Version 1.0 · September 2026` on the copyright page (build.js `VERSION`). Bump it with any change to words or art, and tell past buyers.
 
 ## 6. Customer promises (for the FAQ and order emails)
 - Personalized books are made to order and cannot be returned for change of mind; misprints and damage are reprinted free (the printer's policy [VERIFY]).
 - Printing plus shipping time from the printer [VERIFY], shown on the product page before checkout.
-- The name prints exactly as typed. Orders are sent to the printer in batches; a spelling fix is possible only before the next batch [decide the batch window, e.g. 2 hours].
+- The name prints exactly as typed (straight quotes become curly ones). The job waits 2 hours after payment before building an order, so a buyer can email a spelling fix within 2 hours; after that the book is already with the printer. Say this on the product page and in the order confirmation.
 - Privacy: the child's name is used only to print the book. It is never added to the email list or marketing. Order files are deleted 30 days after delivery [VERIFY the retention period with counsel].
 
 ## 7. Try it locally

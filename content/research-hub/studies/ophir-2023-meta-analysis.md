@@ -40,7 +40,7 @@ sources:
 
 ## In plain language
 
-Researchers in Israel pooled 46 observational studies (5 following children over time, 41 at one time point) with 562,131 participants. Overall, more screen time went with higher odds of autism, most strongly in studies of general screen use in children. Studies of social media showed the opposite direction. There was significant publication bias, meaning studies with positive findings were more likely to be published. After a standard correction for that bias, the overall association became much smaller and was no longer statistically significant. The authors concluded that the proclaimed screen-autism association is "not sufficiently supported".
+Researchers in Israel pooled 46 observational studies (5 following children over time, 41 at one time point) with 562,131 participants. Overall, more screen time went with higher odds of autism, most strongly in studies of general screen use in children. Studies of social media found the opposite direction: autistic participants tended to use social media less. There was significant publication bias, meaning studies with positive findings were more likely to be published. After a standard correction for that bias, the overall association became much smaller and was no longer statistically significant. The authors concluded that the proclaimed screen-autism association is "not sufficiently supported".
 
 ## Who was studied
 
@@ -48,8 +48,8 @@ Researchers in Israel pooled 46 observational studies (5 following children over
 
 ## What was found
 
-- Pooled estimate: log odds ratio 0.54 (95% CI 0.34-0.74); in studies of children, 0.98 (0.66-1.29).
-- Social-media studies: log odds ratio -1.24 (-1.51 to -0.96), the opposite direction.
+- Pooled estimate: log odds ratio 0.54 (95% CI 0.34-0.74), an odds ratio of about 1.7 (our conversion); in studies of children, 0.98 (0.66-1.29), an odds ratio of about 2.7.
+- Social-media studies: log odds ratio -1.24 (-1.51 to -0.96), an odds ratio of about 0.3: the opposite direction.
 - Significant publication bias (Egger z = 2.15, P = .03).
 - After trim-and-fill correction, the overall association was substantially smaller and not statistically significant (corrected figure [VERIFY]).
 
@@ -64,6 +64,7 @@ Researchers in Israel pooled 46 observational studies (5 following children over
 ## What it does NOT show
 
 - That screens have no effect. A non-significant corrected estimate means the evidence is weak, not that an effect has been ruled out.
+- That the published studies found nothing. Before correction they did show a positive association; the correction suggests that association is overstated in the published record.
 - That screens contribute to autism.
 
 ## Full citation

@@ -40,7 +40,7 @@ sources:
 
 ## In plain language
 
-US researchers used data from 2,152 children followed from birth in the National Children's Study. They looked at social activities, such as parent-child play, and at screen viewing in the first 18 months. Then they looked at scores on an autism screening checklist (the M-CHAT-R) at age 2. Watching TV or videos at 12 months went with slightly higher checklist scores. It did not go with screening "at risk" for autism. Daily parent-child play went with lower checklist scores. No child was assessed for an autism diagnosis.
+US researchers used data from 2,152 children followed from birth in the National Children's Study. They looked at social activities, such as parent-child play, and at screen viewing in the first 18 months. Then they looked at scores on an autism screening checklist (the M-CHAT; version [VERIFY]) at age 2. Watching TV or videos at 12 months went with slightly higher checklist scores. It did not go with screening "at risk" for autism. Daily parent-child play went with lower checklist scores. No child was assessed for an autism diagnosis.
 
 ## Who was studied
 
@@ -55,6 +55,7 @@ US researchers used data from 2,152 children followed from birth in the National
 ## Limitations
 
 - Observational, so it cannot show cause and effect.
+- The screen association is small, and its confidence interval runs from almost no difference (0.1%) to about 8%.
 - The screen measure was a parent report. According to UK expert commentary it was a single yes/no item at 12 months [VERIFY against the methods], with no information on what was watched or who was watching.
 - The outcome was a screening-checklist score, not a diagnosis.
 - Other family differences (confounding) and early child differences prompting more viewing (reverse causation) are both possible.

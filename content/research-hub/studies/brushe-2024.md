@@ -38,7 +38,7 @@ sources:
 
 ## In plain language
 
-Australian families recorded full days of home audio over their child's second and third years [VERIFY design details]. At 36 months, more screen time was associated with 1,139 fewer adult words, 843 fewer child vocalizations and 194 fewer back-and-forth conversational turns per day. How these daily totals were calculated from the per-minute results should be checked in the paper [VERIFY]. It is a study of everyday talk at home, not of autism or of language test results.
+Australian families recorded full days of home audio over their child's second and third years [VERIFY design details]. At 36 months, children's screen time was associated with fewer adult words, fewer child vocalizations and fewer back-and-forth conversational turns. As we understand it, the study reports these results per minute of screen time, and the daily figures (1,139 fewer adult words, 843 fewer child vocalizations and 194 fewer conversational turns a day) are those per-minute estimates scaled up to the sample's average daily screen time at 36 months. Reviewer recall, not yet checked against the paper: about 6.6 fewer adult words, 4.9 fewer child vocalizations and 1.1 fewer turns per minute, at an average of about 172 minutes of screen time a day [VERIFY all]. So the daily figures compare a typical amount of screen time with none; they are not counts measured in any one family. It is a study of everyday talk at home, not of autism or of language test results.
 
 ## Who was studied
 
@@ -46,7 +46,7 @@ About 220 South Australian families with recordings at 12, 18, 24, 30 and 36 mon
 
 ## What was found
 
-- At 36 months: 1,139 fewer adult words, 843 fewer child vocalizations and 194 fewer conversational turns per day associated with more screen time.
+- At 36 months, screen time was associated with fewer adult words, child vocalizations and conversational turns. Scaled to the sample's average daily screen time, that is about 1,139 fewer adult words, 843 fewer child vocalizations and 194 fewer conversational turns a day [VERIFY how the daily totals were derived].
 
 ## Limitations
 
@@ -54,6 +54,7 @@ About 220 South Australian families with recordings at 12, 18, 24, 30 and 36 mon
 - The recorder detects audible electronic sound, including background TV, but misses silent screens and cannot tell who was watching [VERIFY].
 - A modest, relatively advantaged sample [VERIFY].
 - Measures quantity of talk, not quality.
+- The daily totals are model-based estimates for an average amount of screen time, not differences observed in individual families.
 
 ## What it does NOT show
 

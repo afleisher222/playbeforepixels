@@ -40,7 +40,7 @@ sources:
 
 ## In plain language
 
-Japanese researchers followed 84,030 mothers and children. Parents reported their child's daily screen time at age 1 and, by age 3, whether a doctor had diagnosed autism. In boys, longer screen time at age 1 was associated with higher odds of an autism diagnosis by age 3. In girls it was not. The odds were highest in the 2-to-4-hour group, not in the 4-hours-plus group, so the pattern does not rise steadily with more screen time.
+Japanese researchers followed 84,030 mothers and children. Parents reported their child's daily screen time at age 1 and, by age 3, whether a doctor had diagnosed autism. In boys, longer screen time at age 1 was associated with higher odds of an autism diagnosis by age 3. In girls it was not. In boys the odds were higher in each group from 1 hour a day upward. The estimates for 2 to 4 hours and for 4 hours or more were similar, and their confidence intervals overlap widely, so the study cannot tell whether the odds keep rising above about 2 hours a day.
 
 ## Who was studied
 
@@ -56,6 +56,7 @@ Japanese researchers followed 84,030 mothers and children. Parents reported thei
 - Observational.
 - Both screen time and diagnosis were reported by parents [VERIFY how diagnosis was ascertained].
 - Screen time was measured once, at one age.
+- Autism was recorded only up to age 3. Many autistic children are identified later, so the study sees only some of them.
 - Autistic children were a small share of the cohort, which is why the confidence intervals are wide.
 - Screen use at age 1 could reflect early signs of autism, or family circumstances, rather than a cause.
 - A published letter argued that when screens are used (for example before sleep) may matter more than total time (see Lin YH 2022).
@@ -64,7 +65,7 @@ Japanese researchers followed 84,030 mothers and children. Parents reported thei
 
 - That screen time at age 1 produces autism.
 - Why the link appeared only in boys.
-- That the odds rise steadily with more screen time. They did not.
+- Whether the odds keep rising above about 2 hours a day. The two highest groups had similar estimates with wide, overlapping confidence intervals.
 
 ## Full citation
 

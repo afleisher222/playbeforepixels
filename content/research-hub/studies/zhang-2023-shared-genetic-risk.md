@@ -1,6 +1,6 @@
 ---
 title: "Zhang 2023: shared genetics, screen time and outcomes"
-meta_description: "In 4,262 US children aged 9 to 11, shared genetic risk explained much of the link between screen time and attention problems. A methods lesson."
+meta_description: "In 4,262 US children aged 9 to 11, shared genetic risk explained part of the link between screen time and attention and internalizing problems. A methods lesson."
 slug: "research/studies/zhang-2023-shared-genetic-risk"
 last_reviewed: "2026-09-28"
 review_status: "draft: secondary sources only; not cleared to publish until the source is read (abstract at minimum)"
@@ -38,7 +38,7 @@ sources:
 
 ## In plain language
 
-Researchers used the US Adolescent Brain Cognitive Development Study to ask how much of the link between screen time and children's psychiatric problems reflects shared genetic risk. Among 4,262 children aged 9 to 11 of European ancestry, genetic confounding accounted for much of the association with attention problems and part of the association with internalizing problems such as anxiety.
+Researchers used the US Adolescent Brain Cognitive Development Study to ask how much of the link between screen time and children's psychiatric problems reflects shared genetic risk. Among 4,262 children aged 9 to 11 of European ancestry, genetic confounding accounted for a substantial part of the association with attention problems and a smaller part of the association with internalizing problems such as anxiety [VERIFY the proportions against the paper].
 
 ## Who was studied
 
@@ -46,7 +46,7 @@ Researchers used the US Adolescent Brain Cognitive Development Study to ask how 
 
 ## What was found
 
-- Much of the screen-attention association and part of the screen-internalizing association reflected shared genetic risk.
+- Part of the screen-attention association and part of the screen-internalizing association reflected shared genetic risk (proportions [VERIFY]).
 
 ## Limitations
 

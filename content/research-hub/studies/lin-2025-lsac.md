@@ -54,6 +54,7 @@ Researchers used the Longitudinal Study of Australian Children. Parents reported
 ## Limitations
 
 - A short research letter with brief methods.
+- The standard analysis adjusted for only a few factors (sex, maternal education and family income), so its positive result may also reflect confounding.
 - The instrumental-variable method assumes family income and maternal education affect autism diagnosis only through screen time. That is doubtful, because both can affect access to assessment directly. The authors note possible residual confounding.
 - With about 145 autistic children, the second analysis has limited precision. A non-significant result means the evidence for a causal effect is weak. It does not prove there is no effect.
 - It looks at diagnosed autism, not the short-lived autism-like picture that "virtual autism" claims describe.

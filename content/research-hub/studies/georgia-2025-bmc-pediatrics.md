@@ -40,7 +40,7 @@ sources:
 
 ## In plain language
 
-Researchers at three paediatric clinics in Tbilisi, Georgia, studied 646 children aged 16 to 30 months in 2024. High-risk autism screening scores were about three times as common among children first exposed to screens before 6 months (12.24% vs. 4.33%). Average daily screen time was only weakly related to the score, explaining about 2.3% of the variation. The authors suggest that timing may matter more than duration, and call for prospective studies that account for other factors.
+Researchers at three paediatric clinics in Tbilisi, Georgia, studied 646 children aged 16 to 30 months in 2024. High-risk autism screening scores were nearly three times as common among children first exposed to screens before 6 months (12.24% vs. 4.33%). Average daily screen time was only weakly related to the score, explaining about 2.3% of the variation. The authors suggest that timing may matter more than duration, and call for prospective studies that account for other factors.
 
 ## Who was studied
 

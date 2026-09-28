@@ -48,11 +48,13 @@ Japanese researchers followed 7,097 mothers and children. Parents reported scree
 
 - A dose-response association between screen time at 1 and communication and problem-solving delays at 2 and 4.
 - Largest associations at 4 or more hours a day (odds ratios [VERIFY]).
+- Reviewer recall, not yet checked against the paper: at age 2, associations were also reported for fine-motor and personal-social skills, but not at age 4, and gross-motor skills showed no association [VERIFY before quoting].
 
 ## Limitations
 
 - Observational; screen time reported once by parents, with no content or co-viewing data.
 - The ASQ-3 is a screener, not a diagnosis.
+- The comparison group is reported to be children with under 1 hour a day, not children with no screen time [VERIFY].
 - Unmeasured family factors are possible. Later correspondence raised genetic confounding (see the 2024 letter).
 
 ## What it does NOT show

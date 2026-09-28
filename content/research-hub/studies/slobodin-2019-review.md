@@ -56,7 +56,7 @@ Studies of screen use in autistic children and adolescents.
 
 - Narrative synthesis, no pooled estimate.
 - Mostly cross-sectional inputs.
-- A co-author (Heffler) is the main proponent of a screen-exposure model of autism.
+- A co-author (Heffler) proposed a screen-exposure model of autism (Heffler and Oestreicher 2016), so readers should know the authors' theoretical position.
 
 ## What it does NOT show
 

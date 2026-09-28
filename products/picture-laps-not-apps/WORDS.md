@@ -27,7 +27,7 @@ Rules that keep every order readable:
   - Never follow {{THEY}} with a verb that changes ("she runs" / "they run"). Use
     "can", "will", "did" or the past tense after it, or use {{THEM}} / {{THEIR}}.
   - Names can be 1 to 14 letters. Long names shrink the line to fit, down to a limit.
-  - No health or medical claims. No product, app or brand names. No "autism" anywhere.
+  - No health or medical claims. No product, app or brand names. No diagnosis or condition words anywhere.
 
 A new line in this file is a new line on the page. Notes inside these arrow
 brackets never print.
