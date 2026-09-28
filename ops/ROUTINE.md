@@ -1,6 +1,6 @@
 # The Play Before Pixels studio — how the scheduled routines run the business
 
-> **Schedule (September 28, 2026):** daily check 6:38 a.m. ET; daily studio 9:47 a.m. ET (one product per day; Monday and first-of-month extras); weekly market research on Sundays at 1:52 p.m. ET (living business plan on the first Sunday of each month; quarterly review in Jan/Apr/Jul/Oct). See ops/MONITORING.md.
+> **Schedule (September 28, 2026):** daily check 6:38 a.m. ET; daily studio 2:47 a.m. ET (one product per day; Monday and first-of-month extras); weekly market research on Sundays at 3:52 a.m. ET (living business plan on the first Sunday of each month; quarterly review in Jan/Apr/Jul/Oct). See ops/MONITORING.md and ops/CLOUD-RUNBOOK.md.
 
 
 Every scheduled run follows this file. It is the operating procedure; CLAUDE.md and brand/BRAND.md are the rules.

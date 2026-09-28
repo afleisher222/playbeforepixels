@@ -1,0 +1,60 @@
+# Paste the lines below (without these comment lines) into: environment menu → Edit → Network access → Custom → Allowed domains.
+# Also tick "Also include default list of common package managers".
+# Hosts that carry an API credential do not need to be listed (the credential lets them through), but listing them is harmless.
+# --- selling and publishing (APIs and seller pages) ---
+*.myshopify.com
+shopify.dev
+www.shopify.com
+openapi.etsy.com
+www.etsy.com
+api.gumroad.com
+gumroad.com
+api.printful.com
+www.printful.com
+api.pinterest.com
+www.pinterest.com
+trends.pinterest.com
+graph.facebook.com
+www.facebook.com
+open.tiktokapis.com
+www.tiktok.com
+api.cloudflare.com
+connect.mailerlite.com
+api.kit.com
+bsky.social
+public.api.bsky.app
+kdp.amazon.com
+www.amazon.com
+www.teacherspayteachers.com
+www.ingramspark.com
+www.faire.com
+trends.google.com
+# --- research (primary sources only) ---
+pubmed.ncbi.nlm.nih.gov
+pmc.ncbi.nlm.nih.gov
+www.ncbi.nlm.nih.gov
+eutils.ncbi.nlm.nih.gov
+api.crossref.org
+doi.org
+europepmc.org
+www.ebi.ac.uk
+api.openalex.org
+api.semanticscholar.org
+jamanetwork.com
+www.aap.org
+publications.aap.org
+www.cdc.gov
+www.who.int
+# --- law, tax and trademark (official sites) ---
+www.ftc.gov
+www.ecfr.gov
+www.federalregister.gov
+www.uspto.gov
+tsdr.uspto.gov
+tmsearch.uspto.gov
+www.copyright.gov
+www.cpsc.gov
+egov.maryland.gov
+www.marylandtaxes.gov
+eur-lex.europa.eu
+www.gov.uk

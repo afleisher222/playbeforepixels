@@ -4,3 +4,7 @@ node_modules/
 **/build/dbg/
 **/build/etsy-preview/
 **/build/html/
+# Scratch renders for visual QA: rebuildable, never committed (keeps every routine's clone small)
+tmp/
+.qa/
+**/qa-scratch/
