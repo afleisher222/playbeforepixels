@@ -45,6 +45,7 @@ Run every new or changed public item through ops/COMPLIANCE-GATE.md. Anything th
 - The final message of the run is a short plain-language report for the founder: what's new, what sold (if sales data is connected), what needs her (approvals, uploads), and nothing else.
 
 ## Never
+- No direct contact: never offer or schedule a call, meeting, interview, podcast or live event for the founder; never publish a phone number. Written channels only.
 - Never contact, list, target or mention Montgomery County Public Schools or its staff; MCEA, MSEA or NEA; Montgomery County DHHS or its Infants and Toddlers Program.
 - Never write about the founder's legal matters, her employer, or her children; never publish the founder story without her confirmation that counsel reviewed it.
 - Never make or imply a health claim; never name or criticize a school, district, company, show, creator, app or EdTech product.
