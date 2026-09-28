@@ -569,7 +569,7 @@ def preview_html(files):
         <div class="lab">One colour<span>black</span></div></div>
       <div class="card" style="left:670px;top:466px;width:420px;height:494px;background:{PAPER};align-items:flex-end;padding-bottom:62px;box-sizing:border-box;gap:14px">
         {spines}
-        <div class="lab">Board-book spines<span>symbol 0.5 in tall, actual size</span></div></div>
+        <div class="lab">Book spines<span>symbol 0.5 in tall, actual size</span></div></div>
       <div class="card" style="left:1120px;top:466px;width:440px;height:494px;background:{SKY_T}">
         <svg width="300" height="400" viewBox="0 0 300 400" style="margin-top:-30px">
           <path d="M92 118 C92 30 208 30 208 118" fill="none" stroke="{SUN_T}" stroke-width="20" stroke-linecap="round"/>

@@ -1,0 +1,1 @@
+{ "name": "visual-routine-cards-build", "private": true, "dependencies": { "qrcode": "^1.5.4" } }

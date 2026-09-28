@@ -14,10 +14,10 @@ Families of young children, and the groups that serve them, should be able to fi
 Getting there takes three stages, and the order matters.
 
 1. **Online proof (months 0–12).** A focused line of printables and print-on-demand books sells on our own site, Etsy and Amazon (KDP). It builds a sales history, honest reviews and an owned email list.
-2. **Series and physical formats (months 6–24).** The winners become series, bundles, paperbacks, print-on-demand card decks and, funded by a pre-sale, a true board book. The board book is stored and shipped by a fulfillment warehouse (3PL) or by Amazon (FBA), never by the founder.
-3. **Retail (after a 12-month record).** Bookstores and libraries through IngramSpark first. Then online big-box marketplaces: Walmart Marketplace by application, and Target Plus, which is invitation-only [VERIFY]. Then a pitch to chain buyers, made only with sell-through data, review counts and a line a buyer can shelve (`marketing/AMAZON-AND-RETAIL-ROADMAP.md` §B).
+2. **Series and physical formats (year 2 onward, gated).** The winners become series, bundles, paperbacks and print-on-demand card decks. A true offset-printed board book comes only when its gate is met (section 3.10 rule 4): the print-on-demand paperback proves demand, and retained earnings, not a customer pre-sale, pay for the run. A fulfillment warehouse (3PL) or Amazon (FBA) stores and ships it, never the founder.
+3. **Retail (conditional on volume, not on a date).** Passive availability comes first. The IngramSpark paperbacks can be ordered by bookstores and libraries, and may appear on target.com and walmart.com through wholesaler feeds without a pitch [VERIFY]. Walmart Marketplace (by application) and wholesale follow once there are three physical products whose landed cost meets each channel's cost rule. Target Plus is invitation-only [VERIFY], so it is an outcome, not a task. A pitch to chain buyers, made through a distributor or rep, comes only with the unit volumes in section 4.9 (`marketing/AMAZON-AND-RETAIL-ROADMAP.md` §B).
 
-The roadmap calls these "milestones, not promises". This plan treats them the same way. Getting into Target is the long-range goal that decides what we build first. It is not a date.
+The roadmap calls these "milestones, not promises", and this plan treats them the same way. Getting into Target is the long-range goal that decides what we build first. It is not a date. On the plan's own Expected numbers, a store shelf is not reachable within the 36-month horizon, and realistically not before 2030 (section 4.9).
 
 ## 1.2 Mission
 

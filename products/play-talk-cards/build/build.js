@@ -347,6 +347,40 @@ function nextPage(P, S, n, total, qrSvg) {
 </section>`;
 }
 
+// ---------- START HERE (file 1, one page) ----------
+function fileList(P) {
+  const b = P.pdfBase;
+  return store()
+    ? [['START-HERE.pdf', 'This page: what each file is and how to print.'], [`${b}.pdf`, 'Color, US Letter.'], [`${b}-A4.pdf`, 'Color, A4.'], [`${b}-low-ink.pdf`, 'Low-ink, US Letter: white backgrounds, saves ink.'], [`${b}-low-ink-A4.pdf`, 'Low-ink, A4.']]
+    : [['1-START-HERE.pdf', 'This page: what each file is and how to print.'], ['2-Color-US-Letter.pdf', 'Color, US Letter.'], ['3-Color-A4.pdf', 'Color, A4.'], ['4-Low-Ink-US-Letter.pdf', 'Low-ink, US Letter: white backgrounds, saves ink.'], ['5-Low-Ink-A4.pdf', 'Low-ink, A4.']];
+}
+function startHerePage(P, S, qrSvg) {
+  const N = pageCount(P);
+  const map = P.key === 'A'
+    ? [['1', 'Cover'], ['2', 'Grown-up guide'], ['3', 'Printing and safety'], ['4–7', 'No-cut play pages'], ['8–13', 'Card sheets'], ['14', 'Card backs (optional)'], ['15', 'Type-in blank cards'], ['16', '52-week fridge checklist'], ['17', 'What’s next']]
+    : [['1', 'Cover'], ['2', 'Grown-up guide'], ['3', 'Printing and safety'], ['4–5', 'No-cut question pages'], ['6–11', 'Card sheets'], ['12', 'Card backs (optional)'], ['13', 'Type-in blank cards'], ['14', 'Moment labels + week check'], ['15', 'What’s next']];
+  const qs = P.key === 'A'
+    ? [['Short on time?', 'Print pages 4–7 only and play today. Cut the cards later.'], ['Which pages to print?', 'Pages 8–13 are the 54 cards. Page 14 (backs) and page 15 (blank cards) are optional.'], ['Paper', 'Cardstock (65–110 lb / 176–300 gsm) feels like a real deck. Plain paper works too.']]
+    : [['Short on time?', 'Print pages 4–5 only and ask a question tonight. Cut the cards later.'], ['Which pages to print?', 'Pages 6–11 are the 54 cards. Page 12 (backs) and page 13 (blank cards) are optional.'], ['Paper', 'Cardstock (65–110 lb / 176–300 gsm) feels like a real deck. Plain paper works too.']];
+  return `<section class="page content starthere">
+  <div class="pin">
+    <p class="kick dark">File 1 · Start here</p>
+    <h2 class="ptitle">${esc(P.title)}</h2>
+    <p class="lede">Thank you! Here is what each file holds and how to print it. <b>Prep: about 20 minutes to print and cut, once.</b> Or start today with the no-cut pages.</p>
+    <div class="two">
+      <div><h3 class="h3">Your ${store() ? '5 files' : '5 files'}</h3><ul class="files">${fileList(P).map(([f, d]) => `<li><b>${f}</b><span>${d}</span></li>`).join('')}</ul>
+      <p class="small">Every file has the same ${N} pages. Pick <b>one</b> file: Letter or A4, color or low-ink.</p></div>
+      <div><h3 class="h3">What’s on each page</h3><div class="pmap">${map.map(([a, b]) => `<div><em>${a}</em><span>${b}</span></div>`).join('')}</div></div>
+    </div>
+    <h3 class="h3">Print it right</h3>
+    <ul class="tips">${[['Print at “Actual size” (100%).', 'Cards come out at poker size, 2.5 × 3.5 in (63.5 × 88.9 mm). If the edges get cut off, choose “Fit”; the cards print a little smaller.'], ...qs, ['Type-in cards', 'Open the file in free Adobe Acrobat Reader to type on the blank cards (title, needs, play and talk tip). Everything else is print-only.'], ['Downloading on a phone?', store() ? 'Open the download link from your order email in a web browser, save each PDF to Files, then open it in Adobe Acrobat Reader.' : 'Open your Etsy Purchases page in a web browser (not the app), save each PDF to Files, then open it in Adobe Acrobat Reader. Your files stay on your Purchases page to download again any time.']].map(([a, b], i) => `<li>${check([C.tomato, C.sun, C.sky, C.grass, C.plum, C.tomato][i])}<span><b>${a}</b> ${b}</span></li>`).join('')}</ul>
+    ${store() ? `<div class="bonus sh" style="--c:${P.color};--t:${P.tint}"><div class="qr">${qrSvg}</div><div><h3>Free bonus and re-downloads</h3><p>Scan for your free companion printables: <b>${P.bonus}</b>. Lost a file? Your link stays in your order email; help is at <b>playbeforepixels.com/help</b>.</p></div></div>` : ''}
+    <div class="license"><b>License: PERSONAL.</b> Print and copy for your own family only. No resale, sharing, posting or uploading. ${store() ? 'Full terms: ' + LICENSE_URL : 'Full terms are in the shop’s listing and policies.'}<br>${K.COPY} All rights reserved. ${K.VERSION}.</div>
+  </div>
+  <div class="pfoot"><span>${esc(P.short)} · START HERE · ${K.VERSION}</span><span>${store() ? '<b>playbeforepixels.com</b> · ' : ''}${K.COPY}</span></div>
+</section>`;
+}
+
 // ---------- CSS ----------
 function pageCss(S) {
   return `
@@ -363,7 +397,7 @@ ${K.CARD_CSS}
 .cutmarks{position:absolute;left:0;top:0;pointer-events:none}
 .sidenote{position:absolute;top:0;height:${Math.max(18, S.gx - 14)}px;display:flex;align-items:center;justify-content:center;font-size:7.5px;font-weight:700;letter-spacing:.02em;color:${C.ink};opacity:.7;white-space:nowrap}
 .sidenote.l{left:0;transform-origin:0 0;transform:translate(${Math.max(4, S.gx / 2 - 9)}px,${S.H}px) rotate(-90deg)}
-.sheetfoot{position:absolute;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;opacity:.7;white-space:nowrap}
+.sheetfoot{position:absolute;display:flex;align-items:center;justify-content:center;font-size:6.6px;font-weight:700;opacity:.7;white-space:nowrap}
 .sidenote.r{left:${S.W}px;transform-origin:0 0;transform:translate(-${Math.max(4, S.gx / 2 - 9)}px,0) rotate(90deg)}
 /* content pages */
 .pin{position:absolute;left:48px;right:48px;top:48px;bottom:56px;display:flex;flex-direction:column}
@@ -409,7 +443,7 @@ ${K.CARD_CSS}
 .way b{font-weight:800;font-size:13px}
 .way p{margin:3px 0 0;font-size:11.5px;line-height:1.38}
 .license{margin-top:auto;font-size:10px;line-height:1.5;background:${C.wash};border-radius:12px;padding:10px 14px}
-.pfoot{position:absolute;left:48px;right:48px;bottom:22px;display:flex;justify-content:space-between;font-size:8px;font-weight:700;opacity:.6}
+.pfoot{position:absolute;left:48px;right:48px;bottom:22px;display:flex;justify-content:space-between;gap:16px;font-size:7.6px;font-weight:700;opacity:.65;white-space:nowrap}
 /* tracker */
 .tracker{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .tcol{background:var(--t);border-radius:14px;padding:10px 10px 8px}
@@ -455,6 +489,60 @@ ${K.CARD_CSS}
 .colophon p{margin:6px 0 0;font-size:10px;line-height:1.5}
 .lockup{height:34px;width:auto;display:block}
 .lockup.sm{height:26px}
+/* additions: prep line, why band, no-cut pages, share mark, start here */
+.prepline{margin:-8px 0 14px;font-size:12.5px;line-height:1.4;background:#fff;border-radius:12px;padding:8px 12px}
+.whyband{margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.whyband>div{background:${C.tSun};border-radius:14px;padding:11px 13px;font-size:11px;line-height:1.42}
+.whyband.b>div{background:${C.tSky}}
+.whyband b{font-weight:800}
+.ptitle.sm{font-size:30px;display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.lede.sm{font-size:13px;margin:0 0 12px}
+.nc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:8px}
+.nc-safe{margin:0;max-width:330px;display:flex;gap:6px;align-items:flex-start;font-size:10px;line-height:1.35;background:${C.tGrass};border-radius:10px;padding:7px 10px}
+.nc-safe svg{flex:none;margin-top:1px}
+.nc-cols{display:grid;grid-template-columns:168px 1fr 250px;gap:12px;padding:0 10px 3px;font-size:8.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.6}
+.nc-list{display:flex;flex-direction:column;gap:4px;flex:1;justify-content:space-between}
+.nc-row{display:grid;grid-template-columns:168px 1fr 250px;gap:12px;background:var(--t);border-left:5px solid var(--c);border-radius:9px;padding:5px 10px 5px 8px;font-size:9.4px;line-height:1.3}
+.nc-a em{font-style:normal;font-weight:800;font-size:8.5px;opacity:.6;margin-right:4px}
+.nc-a b{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:12px}
+.nc-m{display:block;font-size:8px;font-weight:800;opacity:.75;margin-top:1px}
+.nc-m i{font-style:normal;color:${C.grass}}
+.nc-n{display:block;font-size:8.6px;font-weight:700;margin-top:1px}
+.nc-n i,.nc-c i{font-style:normal;font-weight:800;font-size:7.4px;letter-spacing:.1em;text-transform:uppercase;opacity:.65;margin-right:3px}
+.nc-k{display:block;font-weight:800;margin-top:1px}
+.nc-c p{margin:0}
+.ncq{margin-bottom:12px;border-radius:14px;background:var(--t);border-left:7px solid var(--c);padding:9px 14px 8px}
+.ncq-h{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.ncq-h b{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:19px}
+.ncq-h span{font-size:10.5px;font-weight:700;opacity:.8;margin-left:6px}
+.ncq ol{margin:0;padding:0;list-style:none;columns:2;column-gap:18px}
+.ncq li{display:flex;gap:6px;break-inside:avoid;font-size:10.2px;line-height:1.3;margin-bottom:4.5px}
+.ncq li em{font-style:normal;font-weight:800;font-size:8.5px;opacity:.55;margin-top:1px}
+.ncq li b{font-weight:800}
+.ncq li i{opacity:.8}
+.sharemark{display:flex;align-items:center;gap:10px;justify-content:flex-end;margin-top:10px;font-size:10px;font-weight:800;opacity:.8}
+.sharemark img{height:22px;width:auto}
+.files{list-style:none;margin:0;padding:0}
+.files li{display:flex;flex-direction:column;background:${C.wash};border-radius:10px;padding:7px 12px;margin-bottom:6px;font-size:11.5px;line-height:1.35}
+.files b{font-weight:800;font-size:12.5px}
+.pmap{display:grid;grid-template-columns:1fr;gap:4px}
+.pmap div{display:flex;gap:10px;align-items:baseline;font-size:12px;border-bottom:1px solid ${C.wash};padding:3px 0}
+.pmap em{font-style:normal;font-weight:800;min-width:44px;color:${C.tomato}}
+.bonus.sh{margin:6px 0 14px;padding:12px 18px}
+.bonus.sh .qr{width:104px;height:104px;padding:8px}
+.bonus.sh h3{font-size:18px}
+/* low-ink pages: white grounds, outlines instead of fills */
+.ink .cover,.ink .cover .panel{background:#fff!important}
+.ink .cover .panel{border-bottom:3px solid ${C.ink}}
+.ink .n52{background:#fff;color:${C.ink};border:3px solid ${C.ink}}
+.ink .tile,.ink .prepline{border:1.5px solid #B9C1D0}
+.ink .ak,.ink .tcol,.ink .mv,.ink .way,.ink .safetybox,.ink .license,.ink .bonus,.ink .nx,.ink .whyband>div,.ink .nc-row,.ink .nc-safe,.ink .ncq,.ink .files li,.ink .lab-top{background:#fff!important;border:1.5px solid var(--c,#B9C1D0)}
+.ink .safetybox,.ink .license,.ink .whyband>div,.ink .nc-safe,.ink .files li,.ink .mv,.ink .way{border-color:#B9C1D0}
+.ink .nc-row,.ink .ak,.ink .nx,.ink .ncq{border-left:5px solid var(--c)}
+.ink .lab-top{color:${C.ink}!important}
+.ink .week td{background:#fff;border:1.2px solid #D5DBE6}
+.ink .week td.wm{background:#fff;color:${C.ink};border:2px solid var(--c)}
+.ink .review svg use{fill:none;stroke:${C.tomato};stroke-width:4}
 /* cover */
 .cover{background:${C.wash}}
 .cover .panel{position:absolute;left:0;top:0;right:0;background:var(--panel)}
@@ -478,8 +566,9 @@ ${K.CARD_CSS}
 .inside ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 22px}
 .inside li{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;line-height:1.35;font-weight:600}
 .inside li svg{flex:none;margin-top:1px}
-.cv-foot{position:absolute;left:56px;right:56px;bottom:30px;display:flex;align-items:center;justify-content:space-between;font-size:8.5px;font-weight:700}
-.cv-foot span{opacity:.65}
+.cv-foot{position:absolute;left:56px;right:56px;bottom:26px;display:flex;align-items:center;justify-content:space-between;font-size:8.5px;font-weight:700}
+.cv-foot span{opacity:.7;text-align:right;line-height:1.45}
+.cv-foot span b{font-size:11px;opacity:1}
 `;
 }
 
