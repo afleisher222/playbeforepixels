@@ -151,3 +151,17 @@ Tip: if a rename is still a real possibility, spend about $10.50 to hold the bes
   - [url-forwarding/index.mdx](https://raw.githubusercontent.com/cloudflare/cloudflare-docs/production/src/content/docs/rules/url-forwarding/index.mdx) (Bulk Redirects on the Free plan)
 - **Not reachable from this environment, so still to confirm:** the [Cloudflare TLD policies and price list](https://www.cloudflare.com/tld-policies/), every registry's residency page (Nominet, CIRA, auDA, DENIC, AFNIC, dominios.es, .IE, DNC/InternetNZ, EURid), and the live content of the registered sites above. Every price and every residency rule in this file is **UNVERIFIED** until checked.
 - **Registration signals:** raw DNS NS queries to 8.8.8.8 on 2026-09-27, re-run on 2026-09-28 for the MUST and SHOULD names, the taken slogan domains, `virtualautism.org`, `virtualautismproject.org`, `tinkerlark.com` and the `.books`/`.book`/`.kids` TLDs, with identical results. This is not RDAP or WHOIS, and **availability must be confirmed by the founder at Cloudflare checkout.**
+
+---
+
+## Addendum (September 28, 2026): "virtual autism" domains
+
+DNS check from the session (A-record lookup only; a name with no website can still be registered, so availability is confirmed only at Cloudflare checkout):
+- **Taken:** virtualautism.com, virtualautism.org (used by the documentary *A Stone Unturned*), virtual-autism.com, virtualautismsupport.com.
+- **No website found (possibly available):** virtualautismproject, virtualautismawareness, virtualautismadvocacy, virtualautismresearch, virtualautismhelp, virtualautismfacts, virtualautismguide, thevirtualautismproject, aboutvirtualautism, understandingvirtualautism, virtualautisminfo — in .com/.org/.net/.co/.info.
+
+**Recommendation (founder decides):**
+- Only if the research hub keeps the name "The Virtual Autism Project": buy virtualautismproject.com, virtualautismproject.org, thevirtualautismproject.com and virtualautismresearch.com (≈ $40–50/yr at cost), each 301-redirecting to playbeforepixels.com/research.
+- Do **not** register the film's name in other endings (virtualautism.net/.co/.info): it can look like trading on another organization's name (bad-faith/UDRP risk) and would damage a hoped-for partnership.
+- Do not attempt to buy every variant (~70 names, $700–1,000+/yr): domains create no rights in the phrase.
+- Counsel review of the hub's name is still recommended (legal/DECISION-MEMO.json, needs_a_lawyer).

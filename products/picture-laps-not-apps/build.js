@@ -20,7 +20,7 @@ function face(cx, cy, r, mood, skin, cheeks = true) {
   for (const sx of [-1, 1]) {
     const x = cx + sx * ex;
     if (closed) s += `<path d="M${f(x - er * 1.45)} ${f(ey - er * 0.1)} Q${f(x)} ${f(ey + er * 1.6)} ${f(x + er * 1.45)} ${f(ey - er * 0.1)}" stroke="${lineC}" stroke-width="${f(er * 0.8)}" fill="none" stroke-linecap="round"/>`;
-    else s += `<circle cx="${f(x)}" cy="${f(ey)}" r="${f(er)}" fill="${C.ink}"/><circle cx="${f(x + er * 0.36)}" cy="${f(ey - er * 0.36)}" r="${f(er * 0.38)}" fill="${C.paper}"/>`;
+    else s += (skin === SK.s6 ? `<circle cx="${f(x)}" cy="${f(ey)}" r="${f(er * 1.5)}" fill="${C.paper}"/>` : '') + `<circle cx="${f(x)}" cy="${f(ey)}" r="${f(er)}" fill="${C.ink}"/><circle cx="${f(x + er * 0.36)}" cy="${f(ey - er * 0.36)}" r="${f(er * 0.38)}" fill="${C.paper}"/>`;
   }
   if (cheeks) for (const sx of [-1, 1]) s += `<circle cx="${f(cx + sx * r * 0.6)}" cy="${f(cy + r * 0.38)}" r="${f(r * 0.15)}" fill="${C.tomato}" opacity="${dark ? 0.5 : 0.3}"/>`;
   const my = cy + r * 0.42;
@@ -119,7 +119,7 @@ function adultArms(p, kind) {
     case 'rest': return arm('M65 178 L76 204') + arm('M175 178 L164 204') + hand(80, 208) + hand(160, 208);
     case 'book': return arm('M65 178 Q66 200 80 198') + arm('M175 178 Q174 200 160 198') + hand(84, 196) + hand(156, 196);
     case 'lift': return arm('M65 178 Q66 160 90 158') + arm('M175 178 Q174 160 150 158') + hand(94, 157) + hand(146, 157);
-    case 'torch': return arm('M65 178 Q70 212 102 208') + hand(104, 207) + arm('M175 178 Q206 160 200 128') + hand(199, 124);
+    case 'torch': return arm('M65 178 L76 204') + hand(80, 208) + arm('M175 178 Q206 160 200 128') + hand(199, 124);
   }
   return '';
 }
@@ -158,8 +158,8 @@ const P = {
   dad: { skin: SK.s5, hc: H.black, hs: 'short', shirt: C.grass, pants: C.ink, shoes: C.tomato, beard: true },
   gma: { skin: SK.s3, hc: C.wash, hs: 'bun', shirt: C.plum, pants: C.ink, shoes: C.tomato, glasses: true, cheeks: true },
   theo: { skin: SK.s4, hc: H.black, hs: 'short', shirt: C.tomato, pants: C.sky, shoes: C.paper, seat: 'floor', cheeks: true },
-  jo: { skin: SK.s1, hc: H.auburn, hs: 'long', shirt: C.sky, pants: C.ink, shoes: C.ink, seat: 'floor', cheeks: true },
-  bea: { skin: SK.s6, hc: C.sun, hs: 'wrap', shirt: C.plum, pants: C.ink, shoes: C.ink, seat: 'floor', earrings: true },
+  jo: { skin: SK.s1, hc: H.auburn, hs: 'long', shirt: C.sky, pants: C.plum, shoes: C.tomato, seat: 'floor', cheeks: true },
+  bea: { skin: SK.s6, hc: C.sun, hs: 'wrap', shirt: C.plum, pants: C.sky, shoes: C.sun, seat: 'floor', earrings: true },
 };
 
 /* ---------------------------------------------------------------- symbols */
@@ -172,14 +172,14 @@ for (const k of ['dad', 'gma', 'theo', 'jo', 'bea']) for (const a of ['hug', 're
 defA('dad', 'dad'); defA('dad-sing', 'dad', { mood: 'sing' });
 defA('gma', 'gma'); defA('gma-open', 'gma', { mood: 'open' });
 defA('theo', 'theo'); defA('theo-sing', 'theo', { mood: 'sing' });
-defA('jo', 'jo'); defA('bea', 'bea', { mood: 'open' });
+defA('jo', 'jo'); defA('bea', 'bea');
 defK('kid-sit', 'kid'); defK('kid-sit-point', 'kid', { arms: 'point', mood: 'open' }); defK('kid-sit-hold', 'kid', { arms: 'hold' });
 defK('kid-sit-laugh', 'kid', { arms: 'hold', mood: 'open' }); defK('kid-sit-sing', 'kid', { arms: 'clap', mood: 'sing' });
 defK('kid-sit-clap', 'kid', { arms: 'clap', mood: 'open' }); defK('kid-sit-content', 'kid', { mood: 'content' });
 defK('kid-stand', 'kid', { pose: 'stand', arms: 'up', mood: 'open' }); defK('kid-stand-point', 'kid', { pose: 'stand', arms: 'pointL', mood: 'o' });
 defK('kidpj-stand', 'kidpj', { pose: 'stand' }); defK('kidpj-yawn', 'kidpj', { pose: 'stand', mood: 'yawn', arms: 'up' });
 defK('kidpj-sleep', 'kidpj', { mood: 'sleep' });
-defK('ada-sit', 'ada', { arms: 'hold' }); defK('baby-up', 'baby', { arms: 'up', mood: 'open' });
+defK('ada-sit', 'ada', { arms: 'hold' }); defK('baby-up', 'baby', { arms: 'up' });
 
 // props in adult coordinates (240 x 300)
 sym('armchair', 240, 300, `<rect x="22" y="80" width="196" height="160" rx="46" fill="${C.tomato}"/><rect x="0" y="158" width="58" height="106" rx="26" fill="${C.tomato}"/><rect x="182" y="158" width="58" height="106" rx="26" fill="${C.tomato}"/><rect x="44" y="212" width="152" height="52" rx="14" fill="${C.tT}"/><rect x="30" y="262" width="14" height="36" rx="5" fill="${C.ink}"/><rect x="196" y="262" width="14" height="36" rx="5" fill="${C.ink}"/>`);
@@ -189,8 +189,8 @@ function wheel(cx, cy) {
     `<circle cx="${cx}" cy="${cy}" r="11" fill="${C.ink}"/>`;
 }
 sym('wheelchair', 240, 300, `<rect x="60" y="74" width="11" height="140" rx="5" fill="${C.ink}"/><rect x="169" y="74" width="11" height="140" rx="5" fill="${C.ink}"/><rect x="53" y="66" width="25" height="16" rx="8" fill="${C.tomato}"/><rect x="162" y="66" width="25" height="16" rx="8" fill="${C.tomato}"/><rect x="64" y="96" width="112" height="114" rx="14" fill="${C.ink}"/><rect x="48" y="208" width="144" height="24" rx="10" fill="${C.ink}"/>${wheel(38, 252)}${wheel(202, 252)}<rect x="64" y="226" width="9" height="72" fill="${C.ink}"/><rect x="167" y="226" width="9" height="72" fill="${C.ink}"/><rect x="66" y="292" width="108" height="10" rx="5" fill="${C.ink}"/><circle cx="69" cy="307" r="10" fill="${C.ink}"/><circle cx="171" cy="307" r="10" fill="${C.ink}"/>`);
-sym('rocker', 240, 300, `<rect x="42" y="36" width="156" height="206" rx="44" fill="${C.tomato}"/><rect x="30" y="208" width="180" height="44" rx="14" fill="${C.tT}"/><rect x="48" y="250" width="13" height="52" fill="${C.tomato}"/><rect x="179" y="250" width="13" height="52" fill="${C.tomato}"/><path d="M6 290 Q120 330 234 290" stroke="${C.tomato}" stroke-width="13" fill="none" stroke-linecap="round"/>`);
-sym('busseat', 240, 300, `<rect x="12" y="108" width="216" height="132" rx="30" fill="${C.sky}"/><rect x="6" y="208" width="228" height="48" rx="18" fill="${C.kT}"/><rect x="110" y="256" width="20" height="44" fill="${C.ink}"/><rect x="70" y="292" width="100" height="10" rx="5" fill="${C.ink}"/>`);
+sym('rocker', 240, 300, `<rect x="42" y="36" width="156" height="206" rx="44" fill="${C.tomato}"/><rect x="30" y="204" width="180" height="30" rx="14" fill="${C.tT}"/><rect x="48" y="250" width="13" height="52" fill="${C.tomato}"/><rect x="179" y="250" width="13" height="52" fill="${C.tomato}"/><path d="M6 290 Q120 330 234 290" stroke="${C.tomato}" stroke-width="13" fill="none" stroke-linecap="round"/>`);
+sym('busseat', 240, 300, `<rect x="12" y="108" width="216" height="132" rx="30" fill="${C.sky}"/><rect x="6" y="204" width="228" height="30" rx="14" fill="${C.kT}"/><rect x="110" y="256" width="20" height="44" fill="${C.ink}"/><rect x="70" y="292" width="100" height="10" rx="5" fill="${C.ink}"/>`);
 sym('bench', 240, 300, `<rect x="-26" y="112" width="12" height="130" fill="${C.ink}"/><rect x="254" y="112" width="12" height="130" fill="${C.ink}"/><rect x="-50" y="120" width="340" height="28" rx="12" fill="${C.grass}"/><rect x="-50" y="160" width="340" height="28" rx="12" fill="${C.grass}"/><rect x="-56" y="212" width="352" height="28" rx="12" fill="${C.grass}"/><rect x="-36" y="238" width="14" height="62" rx="4" fill="${C.ink}"/><rect x="262" y="238" width="14" height="62" rx="4" fill="${C.ink}"/>`);
 
 // animals & objects
@@ -214,13 +214,13 @@ for (const [id, w, h] of [['armchair', 240, 300], ['wheelchair', 240, 300], ['ro
 const col = (id, x, y, s, c) => U(id, x, y, s, `color:${c}`);
 
 // contact (floor) line of each seat type in adult units
-const CONTACT = { armchair: 298, wheelchair: 318, rocker: 312, busseat: 302, bench: 300, floor: 254 };
+const CONTACT = { couch: 296, armchair: 298, wheelchair: 318, rocker: 312, busseat: 302, bench: 300, floor: 254 };
 // A grown-up lap group. cx = centre x, fy = floor y in scene units.
 function lap({ a, kid, cx, fy, s = 1.5, seat = 'floor', arms = 'hug', ks = 0.88, kdy = 0, front = '', behind = '' }) {
   const base = a.split('-')[0];
   const x = cx - 120 * s, y = fy - CONTACT[seat] * s;
   const kx = 120 - 60 * ks, ky = 206 - 124 * ks + kdy;
-  return `<g transform="translate(${f(x)} ${f(y)}) scale(${s})">${behind}${seat !== 'floor' ? U(seat) : ''}${U(a)}${kid ? `<g transform="translate(${f(kx)} ${f(ky)}) scale(${ks})">${U(kid)}</g>` : ''}${front}${arms ? U(`${base}-${arms}`) : ''}</g>`;
+  return `<g transform="translate(${f(x)} ${f(y)}) scale(${s})">${behind}${SIZE[seat] ? U(seat) : ''}${U(a)}${kid ? `<g transform="translate(${f(kx)} ${f(ky)}) scale(${ks})">${U(kid)}</g>` : ''}${front}${arms ? U(`${base}-${arms}`) : ''}</g>`;
 }
 const standKid = (id, cx, fy, s) => U(id, cx - 60 * s, fy - 188 * s, s);
 const rect = (x, y, w, h, fill, rx = 0) => `<rect x="${f(x)}" y="${f(y)}" width="${f(w)}" height="${f(h)}"${rx ? ` rx="${rx}"` : ''} fill="${fill}"/>`;
@@ -243,7 +243,7 @@ SPREADS.push(() => rect(0, 0, 1750, 875, C.kT) + rect(0, 735, 1750, 140, C.sun) 
   `<ellipse cx="560" cy="800" rx="240" ry="42" fill="${C.tomato}"/>` + standKid('kidpj-stand', 560, 800, 2.05) +
   text(760, 720, 'pad, pad, pad…', 38, C.ink, 'Caveat', 700) +
   // right
-  rect(1500, 300, 176, 150, C.paper, 12) + rect(1514, 314, 148, 122, C.gT, 6) + `<path d="M1514 436 L1570 360 L1610 410 L1632 386 L1662 436Z" fill="${C.grass}"/><circle cx="1628" cy="344" r="14" fill="${C.sun}"/>` +
+  rect(1500, 350, 176, 150, C.paper, 12) + rect(1514, 364, 148, 122, C.gT, 6) + `<path d="M1514 486 L1570 410 L1610 460 L1632 436 L1662 486Z" fill="${C.grass}"/><circle cx="1628" cy="394" r="14" fill="${C.sun}"/>` +
   lap({ a: 'dad', cx: 1225, fy: 805, s: 1.5, seat: 'armchair', arms: 'rest' }) +
   `<rect x="1580" y="600" width="20" height="200" fill="${C.grass}"/><ellipse cx="1590" cy="802" rx="56" ry="11" fill="${C.grass}"/><ellipse cx="1590" cy="600" rx="104" ry="26" fill="${C.grass}"/>` +
   U('phone-down', 1506, 584, 0.9) + U('mug', 1612, 548, 1));
@@ -274,7 +274,7 @@ SPREADS.push(() => rect(0, 0, 1750, 875, C.sT) + `<circle cx="440" cy="590" r="2
   `<ellipse cx="1470" cy="690" rx="54" ry="34" fill="${C.plum}"/><circle cx="1420" cy="662" r="26" fill="${C.plum}"/><circle cx="1402" cy="640" r="14" fill="${C.pT}"/><circle cx="1414" cy="664" r="4" fill="${C.ink}"/><path d="M1524 700 Q1560 700 1556 668" stroke="${C.plum}" stroke-width="7" fill="none" stroke-linecap="round"/>` +
   `<path d="M1644 690 L1644 776 L1560 776Z" fill="${C.wash}"/></g>` +
   `<path d="M1680 900 L1600 760" stroke="${C.sun}" stroke-width="78" stroke-linecap="round"/><circle cx="1592" cy="748" r="40" fill="${SK.s4}"/>` +
-  bubble(1380, 322, 250, 84, 1560, 420, 'Again!', 50, C.ink, C.paper));
+  bubble(1400, 338, 240, 80, 1560, 430, 'Again!', 48, C.ink, C.paper));
 
 // 4 Bus
 SPREADS.push(() => {
@@ -283,28 +283,28 @@ SPREADS.push(() => {
     windowFrame(80, 300, 720, 250, C.kT, C.paper, city(100) + rect(80, 520, 720, 40, C.wash) + rect(120, 330, 90, 8, C.paper, 4) + rect(560, 350, 120, 8, C.paper, 4), false, 'w4a') +
     lap({ a: 'dad', kid: 'kid-sit-point', cx: 430, fy: 815, s: 1.5, seat: 'busseat' }) +
     rect(806, 250, 18, 625, C.sun, 9) +
-    windowFrame(950, 300, 720, 450, C.kT, C.paper,
-      `<circle cx="1590" cy="380" r="46" fill="${C.sun}"/>` + col('cloud', 1000, 350, 0.8, C.paper) + rect(950, 610, 720, 140, C.gT) + rect(950, 600, 720, 24, C.wash) +
+    windowFrame(950, 340, 720, 420, C.kT, C.paper,
+      `<circle cx="1590" cy="420" r="46" fill="${C.sun}"/>` + col('cloud', 1000, 390, 0.8, C.paper) + rect(950, 610, 720, 140, C.gT) + rect(950, 600, 720, 24, C.wash) +
       U('tree', 1440, 290, 1.0) + U('dog', 1170, 470, 1.1) + text(1470, 470, '', 10, C.ink), false, 'w4b');
 });
 
 // 5 Brother's lap — song
-SPREADS.push(() => rect(0, 0, 1750, 875, C.gT) + rect(0, 730, 1750, 145, C.kT) + `<ellipse cx="470" cy="785" rx="370" ry="62" fill="${C.sun}"/>` +
-  lap({ a: 'theo-sing', kid: 'kid-sit-sing', cx: 470, fy: 790, s: 1.6, ks: 0.8 }) +
+SPREADS.push(() => rect(0, 0, 1750, 875, C.gT) + rect(0, 730, 1750, 145, C.kT) + `<ellipse cx="470" cy="792" rx="390" ry="62" fill="${C.sun}"/>` +
+  lap({ a: 'theo-sing', kid: 'kid-sit-sing', cx: 470, fy: 800, s: 1.8, ks: 0.8 }) +
   col('note', 150, 400, 1.3, C.tomato) + col('note', 740, 360, 1.1, C.sky) + col('note', 720, 520, 1.4, C.plum) +
   text(1312, 500, 'QUACK!', 150, C.tomato) +
   rect(930, 660, 790, 58, C.sky, 29) +
   [0, 1, 2, 3, 4].map(i => U('duck', 970 + i * 146, 580, 1.2)).join(''));
 
 // 6 Clap / tap / boop — and a sleepy drum
-SPREADS.push(() => rect(0, 0, 1750, 875, C.tT) + `<circle cx="440" cy="560" r="250" fill="${C.sun}"/>` + rect(875, 745, 875, 130, C.sT) +
+SPREADS.push(() => rect(0, 0, 1750, 875, C.tT) + `<circle cx="440" cy="560" r="250" fill="${C.sky}"/>` + rect(875, 745, 875, 130, C.sT) +
   U('kid-sit-clap', 440 - 60 * 4.2, 505 - 42 * 4.2, 4.2) +
   `<g stroke="${C.ink}" stroke-width="7" stroke-linecap="round"><path d="M340 700 L310 690 M338 730 L306 736 M540 700 L570 690 M542 730 L574 736"/></g>` +
-  text(150, 420, 'clap!', 64, C.tomato, 'Caveat', 700) + text(740, 420, 'tap!', 64, C.sky, 'Caveat', 700) + text(740, 740, 'boop!', 64, C.plum, 'Caveat', 700) +
+  text(150, 420, 'clap!', 64, C.tomato, 'Caveat', 700) + text(740, 420, 'tap!', 64, C.grass, 'Caveat', 700) + text(740, 740, 'boop!', 64, C.plum, 'Caveat', 700) +
   `<ellipse cx="1310" cy="790" rx="360" ry="58" fill="${C.sun}"/>` +
-  lap({ a: 'theo-sing', kid: 'kid-sit-content', cx: 1310, fy: 792, s: 1.6, ks: 0.8 }) +
-  `<g fill="none" stroke="${C.sky}" stroke-width="9" stroke-linecap="round"><path d="M1560 560 q22 40 0 80"/><path d="M1596 540 q34 60 0 120"/><path d="M1060 560 q-22 40 0 80"/><path d="M1024 540 q-34 60 0 120"/></g>` +
-  text(1628, 470, 'hmm…', 52, C.ink, 'Caveat', 700));
+  lap({ a: 'theo-sing', kid: 'kid-sit-content', cx: 1310, fy: 800, s: 1.8, ks: 0.8 }) +
+  `<g fill="none" stroke="${C.sky}" stroke-width="9" stroke-linecap="round"><path d="M1580 560 q22 40 0 80"/><path d="M1616 540 q34 60 0 120"/><path d="M1040 560 q-22 40 0 80"/><path d="M1004 540 q-34 60 0 120"/></g>` +
+  text(1630, 480, 'hmm…', 52, C.ink, 'Caveat', 700));
 
 // 7 Park — two moms
 SPREADS.push(() => rect(0, 0, 1750, 875, C.kT) + `<ellipse cx="1300" cy="640" rx="620" ry="110" fill="${C.gT}"/>` + rect(0, 620, 1750, 255, C.grass) +
@@ -312,8 +312,8 @@ SPREADS.push(() => rect(0, 0, 1750, 875, C.kT) + `<ellipse cx="1300" cy="640" rx
   rect(160, 700, 620, 118, C.sun, 16) + [0, 1, 2, 3, 4, 5, 6].map(i => rect(196 + i * 84, 700, 30, 118, C.sT)).join('') +
   lap({ a: 'jo', kid: 'ada-sit', cx: 470, fy: 772, s: 1.55, ks: 0.85, front: U('book', 76, 168, 0.55) , arms: 'book'}) +
   rect(980, 700, 620, 118, C.tomato, 16) + [0, 1, 2, 3, 4, 5, 6].map(i => rect(1016 + i * 84, 700, 30, 118, C.tT)).join('') +
-  lap({ a: 'bea', kid: 'baby-up', cx: 1290, fy: 772, s: 1.55, ks: 0.72, kdy: -34, arms: 'lift' }) +
-  `<g fill="none" stroke="${C.ink}" stroke-width="6" stroke-linecap="round"><path d="M1236 470 q-14 -10 -28 0 M1344 470 q14 -10 28 0 M1226 440 q-16 -14 -34 -4 M1354 440 q16 -14 34 -4"/></g>` +
+  lap({ a: 'bea', kid: 'baby-up', cx: 1290, fy: 772, s: 1.55, ks: 0.66, kdy: -8, arms: 'lift' }) +
+  `<g fill="none" stroke="${C.ink}" stroke-width="6" stroke-linecap="round"><path d="M1170 560 q-16 20 0 40 M1146 548 q-22 32 0 64 M1410 560 q16 20 0 40 M1434 548 q22 32 0 64"/></g>` +
   text(1520, 470, 'Whee!', 66, C.tomato, 'Caveat', 700));
 
 // 8 Park bench and ducks
@@ -322,7 +322,7 @@ SPREADS.push(() => rect(0, 0, 1750, 875, C.kT) + rect(0, 630, 1750, 245, C.gT) +
   lap({ a: 'dad', kid: 'kid-sit-point', cx: 430, fy: 800, s: 1.45, seat: 'bench' }) +
   `<ellipse cx="1230" cy="752" rx="340" ry="74" fill="${C.sky}"/>` +
   `<g stroke="${C.paper}" stroke-width="6" stroke-linecap="round"><path d="M930 712 L978 712 M944 732 L984 732"/></g>` +
-  U('duck-w', 990, 680, 1.0) + U('duck-w', 1110, 684, 1.0) + U('duck-w', 1230, 680, 1.0) + U('duck-w', 1360, 660, 1.3) + U('duck-w', 1400, 626, 0.5) +
+  U('duck-w', 990, 680, 1.0) + U('duck-w', 1110, 684, 1.0) + U('duck-w', 1230, 680, 1.0) + U('duck-w', 1360, 660, 1.3) + U('duck-w', 1398, 664, 0.5) +
   rect(1450, 662, 250, 40, C.sun, 10) +
   lap({ a: 'jo', kid: 'ada-sit', cx: 1575, fy: 686, s: 0.72, ks: 0.85, front: U('book', 76, 168, 0.55), arms: 'book' }));
 
@@ -330,32 +330,34 @@ SPREADS.push(() => rect(0, 0, 1750, 875, C.kT) + rect(0, 630, 1750, 245, C.gT) +
 SPREADS.push(() => rect(0, 0, 875, 875, C.pT) + rect(0, 755, 875, 120, C.plum) + rect(875, 0, 875, 875, C.sT) + rect(875, 755, 875, 120, C.sun) +
   lap({ a: 'gma', cx: 300, fy: 812, s: 1.35, seat: 'wheelchair', front: U('cat', 66, 148, 0.78) }) +
   standKid('kid-stand-point', 690, 812, 1.85) + text(790, 470, '!', 90, C.tomato) +
-  lap({ a: 'gma', kid: 'kid-sit', cx: 1300, fy: 812, s: 1.5, seat: 'wheelchair', front: U('cat', 82, 176, 0.54) }) +
+  lap({ a: 'gma', kid: 'kid-sit', cx: 1300, fy: 812, s: 1.5, seat: 'wheelchair', front: U('cat', 74, 184, 0.64) }) +
   (() => {
     const L = (x1, y1, x2, y2) => `<path d="M${x1} ${y1} Q${(x1 + x2) / 2} ${Math.min(y1, y2) - 30} ${x2} ${y2}" stroke="${C.ink}" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="${x2}" cy="${y2}" r="7" fill="${C.ink}"/>`;
     return text(1020, 470, 'one kid', 50, C.tomato, 'Caveat', 700) + L(1060, 486, 1238, 522) +
-      text(1600, 560, 'one cat', 50, C.tomato, 'Caveat', 700) + L(1560, 574, 1360, 612) +
+      text(1610, 560, 'one cat', 50, C.tomato, 'Caveat', 700) + L(1570, 574, 1345, 638) +
       text(1000, 650, 'one lap', 50, C.tomato, 'Caveat', 700) + L(1040, 664, 1170, 660) +
-      text(1600, 720, 'one chair', 50, C.tomato, 'Caveat', 700) + L(1560, 732, 1470, 718);
+      text(1612, 690, 'one chair', 46, C.tomato, 'Caveat', 700) + L(1590, 704, 1500, 736);
   })());
 
 // 10 Blanket fort
 SPREADS.push(() => {
   const drops = [[100, 110], [150, 200], [80, 270], [720, 90], [790, 180], [740, 260], [960, 120], [1010, 230], [1640, 110], [1690, 210], [1620, 280]].map(([x, y]) => col('drop', x, y, 1.2, C.sky)).join('');
-  const scal = Array.from({ length: 25 }, (_, i) => `<circle cx="${80 + i * 60}" cy="372" r="30" fill="${C.sun}"/>`).join('');
+  const scal = Array.from({ length: 25 }, (_, i) => `<circle cx="${80 + i * 60}" cy="402" r="28" fill="${C.sun}"/>`).join('');
+  const gx = 1455, gs = 1.25, gy = 810 - 318 * gs; // grandma group origin
+  const hx = gx - 120 * gs + 174 * gs, hy = gy + 70 * gs; // right push-handle grip
+  const tx = 1080 - 120 * 1.3 + 199 * 1.3, ty = 790 - 254 * 1.3 + 124 * 1.3; // Theo's raised hand
   return rect(0, 0, 1750, 875, C.wash) + drops +
-    `<path d="M60 330 L1560 330 L1560 760 L60 760Z" fill="${C.sT}"/>` + rect(0, 760, 1750, 115, C.pT) +
-    // couch
-    rect(110, 500, 660, 200, C.plum, 44) + rect(84, 600, 90, 180, C.plum, 36) + rect(706, 600, 90, 180, C.plum, 36) + rect(160, 640, 560, 90, C.pT, 18) +
-    lap({ a: 'dad', kid: 'kid-sit-hold', cx: 440, fy: 800, s: 1.4, seat: 'armchair', arms: 'book', front: U('book', 70, 166, 0.62), behind: '' }).replace('<use href="#armchair" width="240" height="300" transform="translate(0 0) scale(1)"/>', '') +
-    lap({ a: 'theo', cx: 1080, fy: 790, s: 1.3, arms: 'torch', kid: null }) +
-    `<path d="M1343 470 L1300 330 L1420 330Z" fill="${C.paper}"/>` + rect(1326, 452, 30, 44, C.sky, 8) +
-    lap({ a: 'gma', cx: 1450, fy: 810, s: 1.35, seat: 'wheelchair', arms: 'rest' }) +
-    // sheet
-    `<path d="M40 300 L1540 300 L1560 400 L60 400Z" fill="${C.sun}"/>` + scal +
-    Array.from({ length: 13 }, (_, i) => rect(90 + i * 118, 300, 40, 90, C.tomato)).join('') +
-    `<path d="M1540 300 L1560 300 L1560 400 L1540 400 Z" fill="${C.sun}"/><path d="M1530 300 Q1560 330 1540 400 Q1545 440 1550 470" stroke="${C.sun}" stroke-width="30" fill="none" stroke-linecap="round"/><circle cx="1548" cy="470" r="16" fill="${C.tomato}"/>` +
-    `<path d="M40 300 Q30 500 60 560 L110 560 Q90 480 110 400Z" fill="${C.sun}"/>`;
+    `<path d="M60 360 L1560 360 L1560 760 L60 760Z" fill="${C.sT}"/>` + rect(0, 760, 1750, 115, C.pT) +
+    rect(110, 520, 660, 190, C.plum, 44) + rect(84, 610, 90, 170, C.plum, 36) + rect(706, 610, 90, 170, C.plum, 36) + rect(160, 650, 560, 80, C.pT, 18) +
+    lap({ a: 'dad', kid: 'kid-sit-hold', cx: 440, fy: 800, s: 1.3, seat: 'couch', arms: 'book', front: U('book', 70, 166, 0.62) }) +
+    `<path d="M${f(tx)} ${f(ty - 30)} L${f(tx - 110)} 420 L${f(tx + 60)} 420Z" fill="${C.paper}"/>` +
+    lap({ a: 'theo', cx: 1080, fy: 790, s: 1.3, arms: 'torch' }) +
+    `<rect x="${f(tx - 13)}" y="${f(ty - 40)}" width="26" height="40" rx="7" fill="${C.sky}"/>` +
+    lap({ a: 'gma', cx: gx, fy: 810, s: gs, seat: 'wheelchair', arms: 'rest' }) +
+    `<path d="M40 330 L1540 330 L1556 420 L60 420Z" fill="${C.sun}"/>` + scal +
+    Array.from({ length: 13 }, (_, i) => rect(90 + i * 118, 330, 40, 88, C.tomato)).join('') +
+    `<path d="M1530 330 Q1580 360 ${f(hx)} ${f(hy)}" stroke="${C.sun}" stroke-width="30" fill="none" stroke-linecap="round"/><circle cx="${f(hx)}" cy="${f(hy)}" r="17" fill="${C.tomato}"/>` +
+    `<path d="M40 330 Q24 520 60 600 L112 600 Q92 500 112 420Z" fill="${C.sun}"/>`;
 });
 
 // 11 Night — sleepy lap
