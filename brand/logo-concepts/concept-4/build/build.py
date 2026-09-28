@@ -21,7 +21,7 @@ FONT = os.path.join(HERE, '..', '..', '..', 'fonts', 'bricolage-a24454f0.woff2')
 INK, PAPER, WASH = '#1D2940', '#FFFFFF', '#F3F6FB'
 TOMATO, SUN, SKY, GRASS, PLUM = '#EE5A36', '#F5B820', '#3D86D8', '#2FA36B', '#8A5CC7'
 
-COL = dict(body=TOMATO, mouth=INK, cuff=SUN, eye=INK)   # chosen palette (see board for rationale)
+COL = dict(body=TOMATO, mouth=INK, tongue='#FDE9E3', cuff=SUN, eye=INK, yarn=SUN)   # chosen palette (see board for rationale)
 
 def f(v):
     s = ('%.2f' % v).rstrip('0').rstrip('.')
@@ -99,18 +99,26 @@ def poly_d(poly, ox=0, oy=0, s=1.0):
 # One even-width tube of sock (that's what makes it a sock, not a head), rising from the cuff,
 # bent over at the knuckles, ending in a rounded two-lipped mouth. Felt mouth insert inside.
 BODY_KEYS = [
-    (50, 184), (49, 150), (48, 112), (50, 78), (60, 50), (80, 30), (108, 20), (138, 22),
-    (163, 34), (181, 52), (190, 68),                       # knuckles over to the upper lip
-    (192, 78), (185, 84),                                  # round upper lip tip
-    (166, 85), (147, 88), (130, 96),                       # upper jaw underside -> hinge
-    (142, 110), (160, 119), (176, 125),                    # lower jaw top (thumb), dropped open
-    (181, 133), (172, 139),                                # round lower lip tip
-    (150, 139), (128, 136), (114, 143), (109, 158),        # chin -> front of wrist (no deep undercut)
-    (108, 172), (109, 184),
+    (50, 184), (49, 150), (48, 112), (50, 78), (60, 50), (80, 31), (108, 22), (138, 24),
+    (162, 34), (178, 48), (186, 62),                       # knuckles over to the upper lip
+    (189, 73), (184, 81), (173, 83),                       # blunt, round sock-toe upper lip
+    (156, 85), (141, 90), (129, 100),                      # upper jaw underside -> hinge
+    (140, 113), (156, 120), (171, 123),                    # lower jaw top (thumb), dropped open
+    (183, 127), (185, 137), (174, 143),                    # blunt round lower lip (as full as the top one)
+    (152, 143), (130, 139), (116, 145), (110, 159),        # chin -> front of wrist
+    (109, 172), (109, 184),
 ]
-HINGE = (130, 96)
-MOUTH_KEYS = [(130, 96), (148, 90.5), (168, 87.5), (186, 86), (188, 100), (183, 123), (170, 122), (152, 114)]
-TILT = -9          # the whole puppet leans in, mid-sentence
+HINGE = (129, 100)
+MOUTH_KEYS = [(126, 101), (134, 92), (154, 86), (175, 83), (184, 92), (186, 110), (180, 126), (162, 121), (141, 112)]
+TONGUE_KEYS = [(142, 111), (154, 106), (168, 106), (178, 111), (176, 121), (160, 119)]
+TILT = -8          # the whole puppet leans in, mid-sentence
+FIT = (1.0, 0, 0)
+USE_YARN = False
+YARN = [  # three loops of yarn hair, hand-cut
+    [(93, 30), (89, 18), (92, 8), (100, 6)],
+    [(104, 27), (104, 15), (110, 6), (118, 6)],
+    [(115, 28), (120, 19), (128, 15), (134, 17)],
+]
 
 def puppet(simple=False, speck=True):
     """Return dict of shapely geometries in the 200 box: body, mouth, cuff, eye, holes, specks."""
@@ -126,6 +134,9 @@ def puppet(simple=False, speck=True):
     mouth = mouth.difference(body.buffer(2.2 if not simple else 3.5))
     # keep only the biggest piece (the insert), drop slivers
     if hasattr(mouth, 'geoms'): mouth = max(mouth.geoms, key=lambda g: g.area)
+    tongue = Polygon(catmull(TONGUE_KEYS, closed=True, n=10)).buffer(0).intersection(mouth.buffer(-2.4 if not simple else -3))
+    if not simple:
+        tongue = Polygon(scissor(list(tongue.exterior.coords)[:-1], seed=17, amp=0.35, step=5)).buffer(0)
     # ribbed cuff, a touch wider than the wrist
     cuff = Polygon([(49, 188), (80, 186.5), (110, 187.5), (111, 204), (80, 205.5), (48, 204)]).buffer(2.5).buffer(-2.5)
     if not simple:
@@ -140,8 +151,27 @@ def puppet(simple=False, speck=True):
     specks = None
     if speck and not simple:
         specks = unary_union([Point(x, y).buffer(r, 10) for x, y, r in [(56, 150, 1.1), (61, 120, 0.8), (97, 160, 0.9)]])
-    g = dict(body=body, mouth=mouth, cuff=cuff, eye=eye, holes=holes, specks=specks)
-    return {k: (affinity.rotate(v, TILT, origin=(106, 108)) if v is not None else None) for k, v in g.items()}
+    from shapely.geometry import LineString
+    yw = 4.6 if not simple else 7
+    yarn = unary_union([LineString(catmull(s, closed=False, n=8)).buffer(yw, cap_style=1, join_style=1) for s in YARN])
+    yarn = yarn.difference(body.buffer(2.0 if not simple else 3.2))
+    if not simple:
+        yarn = unary_union([Polygon(scissor(list(p.exterior.coords)[:-1], seed=13 + i, amp=0.4, step=5)).buffer(0)
+                            for i, p in enumerate(getattr(yarn, 'geoms', [yarn]))])
+    g = dict(body=body, mouth=mouth.difference(tongue.buffer(0.01)), tongue=tongue, cuff=cuff, eye=eye, holes=holes, specks=specks, yarn=yarn if USE_YARN else None)
+    g = {k: (affinity.rotate(v, TILT, origin=(106, 108)) if v is not None else None) for k, v in g.items()}
+    # fit into the 200 box (same transform for every size cut, taken from the reference geometry)
+    s, dx, dy = FIT
+    return {k: (affinity.translate(affinity.scale(v, s, s, origin=(0, 0)), dx, dy) if v is not None else None) for k, v in g.items()}
+
+def _fit():
+    global FIT
+    FIT = (1.0, 0, 0)
+    P = puppet()
+    x0, y0, x1, y1 = unary_union([v for v in P.values() if v is not None]).bounds
+    s = 196 / max(x1 - x0, y1 - y0)
+    FIT = (s, 100 - s * (x0 + x1) / 2, 100 - s * (y0 + y1) / 2)
+_fit()
 
 def mark_group(ox=0, oy=0, s=1.0, mode='color', simple=False, speck=True, cols=None):
     """SVG <g> content for the puppet. mode: 'color' | 'mono' (single fill; knockouts are real holes)."""
@@ -153,10 +183,12 @@ def mark_group(ox=0, oy=0, s=1.0, mode='color', simple=False, speck=True, cols=N
         return (f'<path fill="{C["body"]}" d="{poly_d(body.difference(P["eye"].buffer(0)), ox, oy, s)}"/>'
                 f'<path fill="{C["mouth"]}" d="{poly_d(P["mouth"], ox, oy, s)}"/>'
                 f'<path fill="{C["cuff"]}" d="{poly_d(P["cuff"], ox, oy, s)}"/>'
-                f'<path fill="{C["eye"]}" d="{poly_d(eye, ox, oy, s)}"/>')
+                f'<path fill="{C["tongue"]}" d="{poly_d(P["tongue"], ox, oy, s)}"/>'
+                + (f'<path fill="{C["yarn"]}" d="{poly_d(P["yarn"], ox, oy, s)}"/>' if P["yarn"] is not None else '')
+                + f'<path fill="{C["eye"]}" d="{poly_d(eye, ox, oy, s)}"/>')
     # one colour: everything one ink; the eye is cut free by a ring of paper so it still reads
     ring_w = 3.4 if not simple else 4.2
-    shape = unary_union([P['body'], P['cuff']]).difference(P['eye'].buffer(ring_w))
+    shape = unary_union([g for g in (P['body'], P['cuff'], P['yarn'], P['tongue']) if g is not None]).difference(P['eye'].buffer(ring_w))
     eye = P['eye'].difference(P['holes']) if not simple else P['eye']
     shape = unary_union([shape, eye])
     return f'<path d="{poly_d(shape, ox, oy, s)}"/>'
