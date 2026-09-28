@@ -1,0 +1,1 @@
+{ "name": "bored-play-cards-build", "private": true, "description": "Build helpers for the I'm Bored Play Cards printable", "dependencies": { "pdf-lib": "^1.17.1", "qrcode": "^1.5.4" } }
