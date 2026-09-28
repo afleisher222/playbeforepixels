@@ -5,7 +5,7 @@ Written September 28, 2026. **Nothing is uploaded or published.** `ops/PAUSE` st
 Every packet is generated from the product records, so it never drifts from them:
 
 ```
-python3 ops/UPLOAD-PACKETS/build_packets.py      # rewrite every packet and run 503 checks → CHECKS.md (0 FAIL, 3 WARN today)
+python3 ops/UPLOAD-PACKETS/build_packets.py      # rewrite every packet and run 504 checks → CHECKS.md (0 FAIL, 3 WARN today)
 python3 ops/UPLOAD-PACKETS/stage.py etsy 02      # at upload time: assemble one upload outside git, build its ZIPs, re-check
 python3 ops/UPLOAD-PACKETS/stage.py --all        # dry run of the whole launch (all OK on Sep 28)
 bash marketing/pins/build/make.sh                # rebuild and check the 60 pins
