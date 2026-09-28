@@ -1,51 +1,73 @@
 {
   "slug": "board-up-go-more",
   "title": "Up! Go! More!",
-  "subtitle": "14 first words to say, sign and play together",
-  "format": "Board book (full color, rounded corners recommended). Print file: 18 PDF pages = front cover, inside front cover (how-to note), 14 one-word interior pages, inside back cover (daily-routine word guide), back cover.",
-  "trim": "6 x 6 in trim; 6.25 x 6.25 in with 0.125 in bleed on every edge; text and faces kept inside a 0.375 in safe zone",
-  "pages": 18,
-  "ages": "0–3",
-  "price_usd": 14.99,
-  "price_notes": "Suggested retail $14.99 for the founder's own shop and Etsy (small-run board books cost more per unit than paperbacks). Test a $12.99 launch price or a $24.99 two-book gift bundle once a second board book exists. Set the final price only after getting a real per-unit quote from a board-book printer plus shipping; aim for a landed cost at or below 40% of retail [VERIFY with printer quotes]. Wholesale (Faire or indie shops) is typically 50% of retail, about $7.50.",
-  "short_description": "A bold first-words board book for ages 0–3: 14 everyday words, big friendly pictures, and a simple Grown-up corner tip on every page.",
-  "long_description": "Up! Go! More! is a sturdy first-words board book made for laps, not screens. Each page shows one everyday word a toddler actually uses (hi, up, down, go, stop, ball, uh-oh, more, all done, shoe, bye-bye, book, hug and night-night), set in huge, rounded letters beside one big, bright picture of a child and a grown-up acting it out.\n\nAt the bottom of every page, a short Grown-up corner gives you one easy way to turn reading into a back-and-forth chat: pause and wait, add one word, use a gesture, offer a choice, sing it, or follow your child's lead. There's no script to learn and nothing to get right. Pick any idea, skip any idea.\n\nThe inside front cover explains how to read the book together in five plain steps, and the inside back cover shows where these words live in your day, from mealtime to bedtime, so the talking keeps going after the book closes.\n\nThe diverse cast of toddlers, parents and grandparents appears throughout, drawn in a clean, flat, high-contrast style that little eyes can take in at a glance. A warm, practical gift for baby showers, first birthdays and anyone who loves a toddler.",
+  "subtitle": "22 First Words to Say, Sign and Act Out: A Talk-Along Book for Ages 0–3",
+  "series": "Talk-Along Firsts, Book 1 (Book 2: sounds & animals; Book 3: routines & feelings)",
+  "format": "One source, two editions. (A) Talk-along PAPERBACK, print on demand, sells now with no inventory: 32-page full-color interior + separate cover wrap. (B) BOARD BOOK, 26-page file (front cover, inside front cover, 22 word pages, inside back cover, back cover) for a future offset print run held by a fulfillment warehouse (Wave 3).",
+  "trim": "Paperback: 8.5 x 8.5 in trim; interior 8.625 x 8.75 in (0.125 in bleed on top, bottom and outside edge, none at the gutter); cover wrap 17.3221 x 8.75 in with a 0.0721 in spine. Board book: 6 x 6 in trim, 6.25 x 6.25 in with 0.125 in bleed on every edge. Text and faces sit at least 0.375 in inside the trim on both editions.",
+  "pages": 32,
+  "ages": "0–3 (paperback: paper pages, read together with a grown-up)",
+  "price_usd": 11.99,
+  "price_notes": "Paperback $11.99 at launch (KDP and IngramSpark). At 60% KDP royalty minus an estimated $3.24 print cost (premium color, 32 pages, $1.00 + $0.07/page), about $3.95 per copy [VERIFY in the KDP pricing calculator; standard color may be cheaper if offered for this trim]. Board book $12.99 (DEMAND-CHECK section 4, rule 9) and a Talk-Along Firsts 3-pack at $29.99 marked 'save', only when books 2 and 3 exist and the landed unit cost from the offset quote is at or below 35–40% of retail [VERIFY quotes]. Wholesale is typically 50% of retail and applies to the board book only, once it is stocked at a 3PL.",
+  "short_description": "22 first words, one per page, each with a sound, sign or move to copy and a grown-up tip. A talk-along book for ages 0–3.",
+  "long_description": "Up! Go! More! is a bright, uncluttered first-words book for babies and toddlers, built for laps, not screens. Each of its 22 pages shows one everyday word a little one really uses, from hi and peekaboo to eat, help, more, all done and night-night. The word is set in huge rounded letters above one big, friendly picture.\n\nEvery page also gives you two small things to do together. A Say it, Sign it or Act it cue offers one sound, simple hand sign or move to copy, like tapping fingertips for more or hiding your eyes for peekaboo. A short grown-up tip turns reading into a back-and-forth chat: pause and wait, add one word, offer a choice, copy each other, or follow your child's lead. There is no script and nothing to get right. Pick any tip and skip any tip.\n\nThe front pages explain how to read together in four plain steps. The back pages show where the words live in your day, from mealtime to bedtime, and include a keepsake word list, pages to add your family's own words, and a free printable bonus for grown-ups.\n\nUp! Go! More! is Book 1 of the Talk-Along Firsts series. Next come sounds and animals, then routines and feelings.",
   "bullets": [
-    "14 real first words, one per page: hi, up, down, go, stop, ball, uh-oh, more, all done, shoe, bye-bye, book, hug, night-night",
-    "Huge rounded lettering and one big, uncluttered picture per page, easy for babies and toddlers to take in",
-    "A Grown-up corner on every page with one simple talk idea: wait, add a word, gesture, offer a choice, sing it, follow their lead",
-    "Inclusive cast of toddlers, parents and grandparents, drawn in a bold, modern flat style",
-    "Inside covers include a 5-step how-to-read note and a guide to using the words at mealtime, playtime and bedtime"
+    "22 real first words, one per page: hi, peekaboo, up, down, go, stop, ball, in, open, wow, uh-oh, help, clap, shoe, eat, cup, more, all done, bye-bye, book, hug, night-night",
+    "A Say it, Sign it or Act it cue on every page: one sound, simple hand sign or move for you and your little one to copy together",
+    "A grown-up tip on every page with one easy talk idea: wait, add a word, offer a choice, copy each other, follow their lead",
+    "Huge rounded letters and one big, bold, uncluttered picture per page, with an inclusive cast of toddlers, parents and grandparents",
+    "Extras for families: a how-to-read page, a words-through-your-day guide, a keepsake word list, add-your-own-words pages and a free printable bonus"
   ],
   "keywords": [
-    "first words board book",
-    "toddler first words book",
-    "baby board book 0-3",
-    "learn to talk toddler book",
-    "baby sign and say words",
-    "screen-free toddler gift",
-    "interactive read aloud baby book"
+    "first words book for toddlers",
+    "talk-along book ages 0-3",
+    "baby first words ages 0-3",
+    "say sign and act first words",
+    "interactive read aloud baby book",
+    "toddler word book with grown-up tips",
+    "screen-free baby gift book"
   ],
-  "seo_title": "Up! Go! More! First Words Board Book for Ages 0–3",
-  "seo_description": "A bold first-words board book: 14 everyday toddler words, big friendly pictures, and a simple Grown-up corner talk tip on every page. Ages 0–3.",
-  "alt_text": "Cover of the board book Up! Go! More! with big navy title letters on a sunny yellow background and a smiling toddler with arms raised beside a striped ball.",
+  "seo_title": "Up! Go! More! 22 First Words Talk-Along Book, Ages 0–3",
+  "seo_description": "A talk-along first-words book for ages 0–3: 22 words, one per page, each with a sound, sign or move to copy and a grown-up tip on every page.",
+  "alt_text": "Cover of Up! Go! More!, Talk-Along Firsts Book 1: big navy title on sunny yellow, a '22 first words to say, sign and act out' label, a round 'A grown-up tip on every page' badge, and a laughing toddler with arms raised beside a striped ball.",
+  "bonus_url": "https://playbeforepixels.com/bonus/board-up-go-more",
+  "next_products": [
+    "board-woof-moo-beep",
+    "printable-first-words-cards",
+    "bundle-talk-along-firsts-3pack"
+  ],
+  "editions": {
+    "paperback_talk_along": {
+      "status": "Ready for founder review, then upload (print on demand, no inventory)",
+      "files": ["paperback/up-go-more-talk-along-interior.pdf", "paperback/up-go-more-talk-along-cover.pdf", "paperback/source.html", "paperback/cover-wrap.html", "paperback/preview/"],
+      "page_plan": "p1 title · p2 copyright · p3 note for grown-ups (founder writes) · p4 how to read · p5–26 the 22 word pages · p27 keep the words going · p28 our word list · p29 add your own words · p30 free bonus QR · p31 collect the series · p32 the end",
+      "printers": "KDP paperback (8.5 x 8.5 in is a KDP trim) and IngramSpark paperback for bookstores and libraries. Board books are not offered by KDP; IngramSpark's square 8.5 x 8.5 case-laminate hardcover suits 32-page picture books and could be added later from the same interior."
+    },
+    "board_book": {
+      "status": "Print file ready; not for sale until an offset run is stocked at a 3PL (Wave 3)",
+      "files": ["board-up-go-more.pdf", "source.html", "preview/"],
+      "page_plan": "front cover · inside front cover (how to read, belongs-to line) · 22 word pages · inside back cover (words through your day + copyright) · back cover (series strip, QR bonus, ISBN box)"
+    }
+  },
   "channels": [
-    "Play Before Pixels website shop (printed copies, direct shipping)",
-    "Etsy (printed copies; gift-bundle listings)",
-    "Amazon via a seller listing with your own ISBN, stocked from a board-book printer (KDP and IngramSpark print-on-demand do not currently offer board books [VERIFY current offerings])",
-    "Faire and direct wholesale to independent toy stores, bookstores and baby boutiques",
-    "Bulk orders for parent groups, PTAs, early-childhood programs and baby-shower gift bundles",
-    "Local markets, library friends' sales and pop-up events"
+    "Amazon via KDP paperback (print on demand)",
+    "IngramSpark paperback distribution to bookstores and libraries (print on demand)",
+    "Play Before Pixels website shop linking to the retailer listings (no stock held)",
+    "LATER, Wave 3: board book sold on the website, Amazon (FBA or seller-fulfilled by the 3PL) and Faire wholesale, only after an offset run is stored and shipped by a fulfillment warehouse and CPSIA paperwork exists"
   ],
-  "compliance_notes": "No health or medical claims: the book is parent education, not a clinical service, and does not claim to treat, prevent or diagnose anything. Not presented as written by a speech-language pathologist. No trademarked program names; talk strategies are described in plain words. No real brands, logos, schools or products; the tablet on the bedtime page is a generic, neutral object. No research citations are used. Safety: the book is intended for 0–3, so the printed product must have no detachable parts and should use rounded corners and non-toxic inks. As a US children's product, confirm CPSIA requirements with the printer before sale: permanent tracking information on the product, and a Children's Product Certificate based on the correct third-party testing, or documentation of the 'ordinary book' exemption if it applies [VERIFY with the printer and CPSC guidance]. For UK/EU sales, confirm whether toy-safety rules apply to board books for under-3s [VERIFY]. The print PDF is RGB; the final file must be checked against the chosen printer's current template (for example a specialty board-book printer, or KDP, IngramSpark or Lulu if they add board books) for trim, bleed, board thickness, spine, corner radius and CMYK conversion before upload.",
+  "compliance_notes": "No health or medical claims: this is a parent-education picture book, not a clinical service or 'speech therapy', and it claims no outcome for any child. It is not presented as written by a speech-language pathologist, and it does not use or target autism or any diagnosis in text, keywords or ads. Talk strategies are described in plain words, with no trademarked program names. No real brands, logos, schools or products; the tablet on the night-night page is a generic, neutral object. No research citations are used. Hand signs are described as simple signs, not as a sign-language course. The inside pages say that every child talks on their own timeline and point parents to their child's doctor with questions. Safety: no small objects are suggested (blocks, a ball, a cup and a duck toy only; no food choking hazards) and adult reading together is assumed. The paperback has paper pages, so the listing says 'read together'. The board book is a children's product for under-3s: before sale, confirm CPSIA obligations with the printer (permanent tracking label, Children's Product Certificate from third-party testing, or documentation of the ordinary-book exemption if it applies) [VERIFY], and check UK/EU toy-safety rules for board books [VERIFY]. Legal owner: © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. The files are RGB from Chromium. Check each final file against the chosen printer's current template before upload (KDP cover calculator and previewer, IngramSpark cover template generator, and the offset printer's board-book dieline for trim, bleed, board thickness, spine, corner radius and CMYK conversion).",
   "human_todo": [
-    "Buy an ISBN (US: Bowker) and generate the barcode, then place it in the labelled ISBN / barcode box on the back cover",
-    "Choose a board-book printer, get quotes, and download their current template; adjust trim, bleed, spine and corner radius and convert to CMYK if they require it",
-    "Order and review a physical proof: color, board thickness, corner rounding and readability of the Grown-up corner text (13 px, about 9.75 pt)",
-    "Confirm CPSIA obligations with the printer: tracking label, Children's Product Certificate or ordinary-book exemption [VERIFY]",
-    "Add 'Printed in ___' and any printer-required legal or manufacturing lines to the back or inside back cover",
-    "Decide on an author or illustrator credit line, if any (currently credited to Play Before Pixels only)",
-    "Set the final retail price after the unit-cost quote, then photograph the printed proof for store listings alongside mockup.png",
-    "Register copyright (optional) and add the book to your website shop, Etsy and wholesale channels"
+    "HUMAN AUTHORSHIP (do first): open build/manuscript.json and rewrite the words, cues, tips, page order and the 'note for grown-ups' in your own words. Set founder_rewritten to true on each entry, fill in author_credit, then run build/render-all.sh and commit. Every version stays in git as proof of your own creative changes. PRINT_READY=1 node build/build.js refuses to build until this is done.",
+    "The dashed orange boxes in the files are founder slots (author credit, note to grown-ups, ISBNs, 'Printed in', batch number). Fill each one; none may be printed as-is.",
+    "AI-ASSISTANCE DISCLOSURE: when KDP asks about AI content, answer honestly. The text and the illustrations were drafted with AI assistance (Claude) and then selected, rewritten and arranged by you; say so, and describe what you changed. Use the same honest description anywhere else that asks, and never register AI-generated material as human-authored (see legal/protection/PROTECTION-PLAN.md).",
+    "Check each sign cue (more, all done, eat, help, book) against a reputable ASL dictionary and adjust the wording in manuscript.json if needed [VERIFY]",
+    "Confirm the series working titles 'Talk-Along Firsts', 'Woof! Moo! Beep!' and 'Yum! Splash! Yawn!' in the originality and trademark check before Book 2 is announced [VERIFY]",
+    "Buy two ISBNs (paperback and board book; US: Bowker) or use KDP's free ISBN for the KDP paperback only. Put the numbers in the copyright slots; leave the barcode box white for KDP and IngramSpark to place the barcode.",
+    "Before uploading, remove the dashed 'ISBN / barcode' label from the cover wrap, since KDP expects a blank area [VERIFY current KDP cover rules]",
+    "PAPERBACK: in KDP choose 8.5 x 8.5 in, bleed, color interior and matte cover. Check that the spine (0.0721 in at 32 pages on white paper) matches the KDP cover calculator, adjust CALIPER in build.js if it doesn't, and pass the online previewer [VERIFY]. Repeat with IngramSpark's cover template generator.",
+    "Order a printed proof of the paperback. Check color, how readable the tip text is (12.5 px on the 6 in grid, about 13 pt on the paperback), and the gutter margins.",
+    "Set up the bonus page at playbeforepixels.com/bonus/board-up-go-more before the book goes live. It should deliver the printable word cards and the one-page say/sign/act fridge sheet the book promises, and ask for birth month and year only. Scan the printed QR code to test it.",
+    "BOARD BOOK (Wave 3, not now): get an offset printer quote for 6 x 6 in board books with rounded corners (26-page file; confirm the minimum run, board caliper and dieline), and a quote from a fulfillment warehouse (3PL) to receive, store and ship the run. The founder never stores or ships stock. Price at $12.99 only if landed cost is at or below 35–40% of retail. Complete CPSIA testing and the Children's Product Certificate, then add 'Printed in' and batch/tracking info.",
+    "Photograph the printed proofs for store listings next to mockup.png, and add the paperback to the website shop with a 'Next for your child's age' link to next_products"
   ]
 }

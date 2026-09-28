@@ -507,17 +507,20 @@ function sectionOpener(key, title, sub, count) {
   return `${TH[key].name} · ${title}${count ? ` · ${count}` : ''}`;
 }
 
-// dividers: 2.5in wide, 3.5in body + 0.45in tab
+// dividers: 2.4in wide, 3.5in body + 0.45in tab, drawn as one SVG shape with a single cut line
 function divider(d, idx) {
-  const tabPos = [0.12, 0.72, 1.32][idx % 3];
+  const W = 230.4, H = 379.2, T = 43.2, tw = 104, r = 14, rt = 11;
+  const a = [14, (W - tw) / 2, W - tw - 14][idx % 3];
+  const shape = `M0 ${T + r}Q0 ${T} ${r} ${T}H${a}V${rt}Q${a} 0 ${a + rt} 0H${a + tw - rt}Q${a + tw} 0 ${a + tw} ${rt}V${T}H${W - r}Q${W} ${T} ${W} ${T + r}V${H - r}Q${W} ${H} ${W - r} ${H}H${r}Q0 ${H} 0 ${H - r}Z`;
   return `<div class="dv" style="--m:${d.m};--t:${d.t};--on:${d.on}">
-    <div class="dtab" style="left:${tabPos}in">${d.tab}</div>
-    <div class="dbody"><span class="dic">${icon(d.ic)}</span><h3>${d.h}</h3><p>${d.p}</p></div>
+    <svg class="dsvg" viewBox="-2 -2 ${W + 4} ${H + 4}" aria-hidden="true"><path d="${shape}" fill="${d.m}"/><rect x="7" y="${T + 7}" width="${W - 14}" height="${H - T - 14}" rx="${r - 5}" fill="${d.t}"/><path d="${shape}" fill="none" stroke="#B7C1D3" stroke-width=".8" stroke-dasharray="3 3" transform="translate(0 0)"/></svg>
+    <div class="dtab" style="left:${a / 96}in;width:${tw / 96}in">${d.tab}</div>
+    <div class="dbody">${d.num ? `<span class="dic dnum">${d.num}</span>` : `<span class="dic">${icon(d.ic)}</span>`}<h3>${d.h}</h3><p>${d.p}</p></div>
   </div>`;
 }
 function dividerPages() {
   const D = [
-    ...BANDS.map(b => ({ m: TH[b.key].m, t: TH[b.key].t, on: TH[b.key].on, tab: b.label.replace('Ages ', 'Ages '), ic: 'star', h: b.label, p: `${CARDS[b.key].length} cards` })),
+    ...BANDS.map(b => ({ m: TH[b.key].m, t: TH[b.key].t, on: TH[b.key].on, tab: b.label, num: b.ages, h: b.label, p: `${CARDS[b.key].length} play cards` })),
     ...Object.entries(CATS).map(([k, v], i) => ({ m: C.ink, t: C.wash, on: '#FFFFFF', tab: v.short, ic: k, h: v.name, p: 'Kind of play' })),
     { m: C.tomato, t: C.tTomato, on: '#FFFFFF', tab: 'Summer', ic: 'sun', h: 'Summer', p: '18 cards' },
     { m: C.ink, t: C.wash, on: '#FFFFFF', tab: 'Rainy day', ic: 'rain', h: 'Rainy day', p: '18 cards' },
@@ -526,21 +529,23 @@ function dividerPages() {
     { m: C.sky, t: C.tSky, on: '#FFFFFF', tab: 'Save for later', ic: 'later', h: 'Save for later', p: 'Not today, maybe next time' },
     { m: C.plum, t: C.tPlum, on: '#FFFFFF', tab: 'Our ideas', ic: 'pen', h: 'Our own ideas', p: 'Cards we made up ourselves' },
   ];
-  const x0 = (SZ.w - 7.5) / 2, H = 3.95, y0 = (SZ.h - 2 * H) / 2 + 0.2;
+  const gx = 0.14, gy = 0.35, H = 3.95, x0 = (SZ.w - (3 * 2.4 + 2 * gx)) / 2, y0 = (SZ.h - (2 * H + gy)) / 2 + 0.15;
   return chunk(D, 6).map((grp, pi) => {
-    const cells = grp.map((d, i) => `<div class="dcell" style="left:${x0 + (i % 3) * 2.5}in;top:${y0 + Math.floor(i / 3) * H}in">${divider(d, pi * 6 + i)}</div>`).join('');
+    const cells = grp.map((d, i) => `<div class="dcell" style="left:${x0 + (i % 3) * (2.4 + gx)}in;top:${y0 + Math.floor(i / 3) * (H + gy)}in">${divider(d, pi * 6 + i)}</div>`).join('');
     return pg('divs', `<div class="dhd"><span class="brand">Play Before Pixels</span><span class="pe">Box dividers · cut around the tab · ${pi + 1} of 3</span></div>${cells}`);
   });
 }
 const dividerCss = `<style>
 .divs .dhd{position:absolute;left:.5in;right:.5in;top:.45in;display:flex;justify-content:space-between;align-items:center}
-.dcell{position:absolute;width:2.5in;height:3.95in}
-.dv{position:relative;width:2.5in;height:3.95in}
-.dtab{position:absolute;top:0;width:1.06in;height:.5in;background:var(--m);color:var(--on);border-radius:12px 12px 0 0;display:flex;align-items:flex-start;justify-content:center;padding-top:7px;font-weight:800;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;outline:.6px dashed #C9D2E0;outline-offset:1px}
-.dbody{position:absolute;left:0;right:0;top:.45in;bottom:0;background:var(--t);border:6px solid var(--m);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 16px;outline:.6px dashed #C9D2E0;outline-offset:1px}
-.dic{width:62px;height:62px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--m);margin-bottom:12px}
+.dcell{position:absolute;width:2.4in;height:3.95in}
+.dv{position:relative;width:2.4in;height:3.95in}
+.dsvg{position:absolute;left:-2px;top:-2px;width:calc(2.4in + 4px);height:calc(3.95in + 4px);overflow:visible}
+.dtab{position:absolute;top:0;height:.45in;color:var(--on);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
+.dbody{position:absolute;left:0;right:0;top:.45in;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 16px}
+.dic{width:66px;height:66px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--m);margin-bottom:12px}
 .dv[style*="--m:${C.sun}"] .dic{color:#C98F00}
 .dic .i{width:34px;height:34px}
+.dnum{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:22px;letter-spacing:-.02em;color:var(--ink)!important}
 .dbody h3{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:25px;line-height:1.02;letter-spacing:-.02em}
 .dbody p{font-size:11.5px;font-weight:700;margin-top:6px;opacity:.75}
 </style>`;
@@ -552,7 +557,8 @@ function labelPages() {
     <span class="rld">${[0, 1, 2, 3, 4].map(j => `<i style="background:${[C.sun, C.grass, C.sky, C.plum, C.tomato][j]}"></i>`).join('')}</span></div></div>`;
   const p1 = contentPage('labels', 'Jar labels · 1 of 2', 'Round jar labels', `<p class="lead">Four colorways. Cut on the dashed circle and stick to the jar with clear tape or glue dots. Label size: 3.4 in / 8.6 cm.</p>
     <div class="rgrid">${ways.map(round).join('')}</div>`);
-  const wide = (m, on, t, name) => `<div class="wlab" style="--m:${m};--on:${on};--t:${t}"><div class="wl1"><span class="wlt">I’m bored!</span><span class="wls">${name}</span></div><div class="wl2">${icon('talk')}<span>Pull a card · Play together · Talk about it</span></div></div>`;
+  const mini = [[C.sun, -14, 0], [C.grass, -5, 1], [C.sky, 5, 2], [C.tomato, 14, 3]].map(([c, r, i]) => `<g transform="translate(${60 + i * 58},${92 + Math.abs(i - 1.5) * 10}) rotate(${r})"><rect x="-34" y="-50" width="68" height="96" rx="9" fill="#fff"/><rect x="-34" y="-50" width="68" height="20" rx="9" fill="${c}"/><rect x="-34" y="-38" width="68" height="8" fill="${c}"/><rect x="-25" y="-20" width="40" height="7" rx="3.5" fill="${C.ink}" opacity=".5"/><rect x="-25" y="-7" width="50" height="4.5" rx="2.25" fill="${C.ink}" opacity=".2"/><rect x="-25" y="2" width="44" height="4.5" rx="2.25" fill="${C.ink}" opacity=".2"/><rect x="-25" y="18" width="50" height="16" rx="6" fill="${c}" opacity=".25"/></g>`).join('');
+  const wide = (m, on, t, name) => `<div class="wlab" style="--m:${m};--on:${on};--t:${t}"><div class="wl1"><span class="wlt">I’m bored!</span><span class="wls">${name}</span></div><div class="wl2">${icon('talk')}<span>Pull a card · Play together · Talk about it</span></div><svg class="wlart" viewBox="0 0 290 180" aria-hidden="true">${mini}</svg></div>`;
   const small = (h, e, m, t) => `<div class="slab" style="--m:${m};--t:${t}"><span class="en">${e ? meter(e) : icon('heart', 'mt')}${h}</span><b>${e ? `${h} jar` : 'Done & loved'}</b><p>${e === 'c' ? 'Quiet, sit-down play' : e === 'm' ? 'Up-and-about play' : e === 'w' ? 'Big-body play' : 'Cards we loved go here'}</p></div>`;
   const p2 = contentPage('labels', 'Jar labels · 2 of 2', 'Wrap labels & energy jars', `<p class="lead">Use one big jar, or split the cards into three energy jars so your child can choose the mood first.</p>
     <div class="wgrid2">${wide(C.ink, '#FFFFFF', C.wash, 'Play cards for our family')}${wide(C.plum, '#FFFFFF', C.tPlum, 'Screen-free play ideas')}</div>
@@ -573,12 +579,13 @@ const labelCss = `<style>
 .wlab{height:2.0in;border-radius:18px;background:var(--m);color:var(--on);outline:.8px dashed #B7C1D3;outline-offset:3px;display:flex;flex-direction:column;justify-content:center;padding:0 .4in;position:relative;overflow:hidden}
 .wlt{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:66px;letter-spacing:-.04em;line-height:.9;display:block}
 .wls{font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;display:block;margin-top:6px}
+.wlart{position:absolute;right:.25in;top:50%;transform:translateY(-50%);width:2.9in;height:1.8in}
 .wl2{display:flex;align-items:center;gap:8px;margin-top:14px;font-weight:700;font-size:13px}
 .wl2 .i{width:20px;height:20px}
 .sgrid{display:grid;grid-template-columns:1fr 1fr;gap:.25in}
 .slab{height:1.45in;border-radius:16px;background:var(--t);border:5px solid var(--m);outline:.8px dashed #B7C1D3;outline-offset:3px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:0 .3in}
 .slab .en{display:inline-flex;align-items:center;gap:5px;background:#fff;border-radius:20px;height:22px;padding:0 10px 0 7px;font-weight:800;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
-.slab .mt{width:16px;height:12px;display:block;color:${C.tomato}}
+.slab .mt{width:16px;height:12px;display:block;color:var(--m)}
 .slab b{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:28px;letter-spacing:-.02em;margin-top:6px}
 .slab p{font-size:12px;font-weight:700;opacity:.75}
 </style>`;

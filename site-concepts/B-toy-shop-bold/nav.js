@@ -42,7 +42,7 @@
       g: 'var(--sun)', mock: { k: 'pb', src: 'tablet-slept-cover.png' },
       formats: [{ id: 'pb', label: 'Paperback', price: 11.99, note: '32 pages · 8.5 × 8.5 in' }, { id: 'hc', label: 'Hardcover', price: 17.99, note: '32 pages · 8.5 × 8.5 in' }],
       blurb: 'The family tablet takes a nap, nightcap and all. So Ada builds, splashes, blasts off and bakes. Ends with a Talk about it page for grown-ups.',
-      bullets: ['12 full-bleed spreads', 'Talk about it questions at the back', 'Printed to order'], tags: 'picture book read aloud story bedtime' },
+      bullets: ['12 full-bleed spreads', 'Talk about it questions at the back', 'Paperback or hardcover'], tags: 'picture book read aloud story bedtime' },
     { id: 'first-library', title: 'The First Library', sub: 'Board book, read-aloud and printables in one gift', type: 'gift-sets', bands: ['1-3', '3-5'], ages: '1–5',
       g: 'var(--grass)', badge: 'Save $6.99', mock: { k: 'set' },
       formats: [{ id: 'set', label: 'Gift set', price: 29.99, was: 36.98, note: 'Up! Go! More! + The Day the Tablet Slept (paperback) + Talk & Play Printables' }],
@@ -77,7 +77,7 @@
       g: 'var(--plum)', mock: { k: 'cards' },
       formats: [{ id: 'deck', label: 'Card deck', price: 18.99, note: '52 poker-size cards in a tuck box' }],
       blurb: 'Silly questions, would-you-rathers and “tell me about” prompts sorted into four colours by age, so everyone at the table gets a turn.',
-      bullets: ['52 cards in four age colours', 'Poker size, fits a glovebox', 'Printed to order'], tags: 'cards deck conversation game questions' },
+      bullets: ['52 cards in four age colours', 'Poker size, fits a glovebox', 'Tuck box included'], tags: 'cards deck conversation game questions' },
     { id: 'classroom-pack', title: 'PreK–5 Classroom Pack', sub: 'Talk-rich routines, paper activities and family letters', type: 'classroom', bands: ['3-5', '5-8', '8-12'], ages: 'PreK–5',
       g: 'var(--sky)', badge: 'Site license', mock: { k: 'pack' },
       formats: [{ id: 'room', label: 'One classroom', price: 19, note: 'One teacher, one classroom', digital: true }, { id: 'site', label: 'Whole-school site license', price: 39, note: 'Every teacher in one school building', digital: true }],
@@ -243,7 +243,7 @@
       '<div class="mega mega--shop" id="mm-shop" data-mega>' +
         '<div class="mega-in"><div><h2>Shop by age</h2><div class="mega-ages">' + bandLinks('mega-age') + '</div></div>' +
         '<div><h2>Shop by type</h2><ul class="mega-types">' + typeLinks() + '</ul><p class="mega-all"><a class="arrow-link" href="shop.html">Shop all ' + PBP.catalog.length + ' products <span aria-hidden="true">→</span></a></p>' +
-        '<p class="mega-note">Printables arrive by email a minute after checkout. Books, cards and merch are printed when you order.</p></div>' +
+        '<p class="mega-note">Printables arrive by email a minute after checkout. Books, cards and merch ship from our print partners.</p></div>' +
         '<a class="mega-feat" href="shop.html#p=first-library" data-qv="first-library"><div class="stage">' + PBP.mock(fl) + '</div><div><p class="label">Gift set · ages 1–5</p><h3>The First Library</h3><p class="num"><span data-usd="29.99">$29.99</span> <s class="muted" data-usd="36.98">$36.98</s></p></div></a></div></div>' +
       '<div class="mega mega--sm" id="mm-books" data-mega><div class="mega-in"><div><h2>Books by format</h2><ul class="mega-list">' + BOOKS_LIST + '</ul></div>' +
         '<div><h2>Our books</h2><ul class="mega-list">' + li('product.html', 'Up! Go! More!', 'Board book · 0–3') + li('shop.html#p=tablet-slept', 'The Day the Tablet Slept', 'Picture book · 3–7', ' data-qv="tablet-slept"') + li('shop.html#p=plays-100', '100 Plays Before Pixels', 'Guide · 0–5', ' data-qv="plays-100"') + '</ul></div>' +
@@ -260,7 +260,7 @@
       if (n.href) return '<li><a class="pnav-top" href="' + n.href + '"' + (cur ? ' aria-current="page"' : '') + '>' + n.label + '</a></li>';
       return '<li><button class="pnav-top' + (cur ? ' is-current' : '') + '" type="button" aria-expanded="false" aria-controls="mm-' + n.id + '" data-mega-btn>' + n.label + ICON.car + '</button></li>';
     }).join('');
-    return '<div class="util on-dark"><div class="wrap"><p><span>Printables arrive by email a minute after checkout</span><span>Books printed to order, shipped worldwide</span><span>Schools can pay by purchase order</span></p>' +
+    return '<div class="util on-dark"><div class="wrap"><p><span>Printables arrive by email a minute after checkout</span><span>Books shipped worldwide by our print partners</span><span>Schools can pay by purchase order</span></p>' +
       '<div class="util-r"><a href="about.html#contact">Help &amp; contact</a><label><span class="vh">Currency</span>' + curSelect('cur-util') + '</label></div></div></div>' +
       '<header class="hdr" id="hdr"><div class="wrap hdr-in">' +
       '<button class="ibtn menu-btn" type="button" aria-expanded="false" aria-controls="mnav" data-open="mnav">' + ICON.menu + '<span class="vh">Menu</span></button>' +
@@ -456,7 +456,7 @@
         '<button class="rm" type="button" data-rm="' + i + '">Remove<span class="vh"> ' + esc(p.title) + '</span></button></div><p class="lp num" data-usd="' + (f.price * l.qty).toFixed(2) + '">' + PBP.money(f.price * l.qty) + '</p></li>';
     }).join('') + '</ul>';
     ft.innerHTML = '<div class="cart-sub"><span style="font-weight:800">Subtotal</span><strong class="num" data-usd="' + sub.toFixed(2) + '">' + PBP.money(sub) + '</strong></div>' +
-      '<p class="small">' + (digitalOnly ? 'Everything here is digital: it arrives by email a minute after checkout.' : 'Printed items are made to order; shipping and any tax are calculated at checkout. Digital items arrive by email right away.') + '</p>' +
+      '<p class="small">' + (digitalOnly ? 'Everything here is digital: it arrives by email a minute after checkout.' : 'Printed items ship from our print partners; shipping and any tax are shown at checkout. Digital items arrive by email right away.') + '</p>' +
       '<button class="btn btn--block" type="button" data-checkout>Check out <span class="arr" aria-hidden="true">→</span></button>' +
       '<p class="cart-msg" data-checkout-msg hidden role="status">Design concept: in the live shop this button opens secure checkout with cards, wallets and, for schools, purchase orders.</p>';
   }
@@ -522,7 +522,7 @@
       '<fieldset class="fopts"><legend class="vh">Format</legend>' + fmts + '</fieldset>' +
       '<ul class="bul">' + p.bullets.map(function (b) { return '<li>' + esc(b) + '</li>'; }).join('') + '</ul>' +
       '<button class="btn btn--block" type="submit">Add to cart <span class="arr" aria-hidden="true">→</span></button>' +
-      '<p class="small muted">' + (p.formats[0].digital ? 'Delivered by email as a PDF right after checkout.' : 'Printed to order and shipped by our print partner. 30-day returns on books and cards.') + ' <a class="tlink" href="shop.html#type=' + p.type + '">More ' + esc(PBP.typeLabel(p.type).toLowerCase()) + '</a></p></form></div>';
+      '<p class="small muted">' + (p.formats[0].digital ? 'Delivered by email as a PDF right after checkout.' : 'Shipped by our print partners, worldwide. 30-day returns on books and cards.') + ' <a class="tlink" href="shop.html#type=' + p.type + '">More ' + esc(PBP.typeLabel(p.type).toLowerCase()) + '</a></p></form></div>';
     $('[data-qv-form]', body).addEventListener('submit', function (e) {
       e.preventDefault(); var f = e.target.querySelector('input[name=qvf]:checked').value;
       var o = opener; PBP.close(true); PBP.addToCart(p.id, f, 1, o);

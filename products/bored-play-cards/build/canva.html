@@ -186,13 +186,15 @@ h1,h2,h3,p{margin:0}
 </style>
 <style>
 .divs .dhd{position:absolute;left:.5in;right:.5in;top:.45in;display:flex;justify-content:space-between;align-items:center}
-.dcell{position:absolute;width:2.5in;height:3.95in}
-.dv{position:relative;width:2.5in;height:3.95in}
-.dtab{position:absolute;top:0;width:1.06in;height:.5in;background:var(--m);color:var(--on);border-radius:12px 12px 0 0;display:flex;align-items:flex-start;justify-content:center;padding-top:7px;font-weight:800;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;outline:.6px dashed #C9D2E0;outline-offset:1px}
-.dbody{position:absolute;left:0;right:0;top:.45in;bottom:0;background:var(--t);border:6px solid var(--m);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 16px;outline:.6px dashed #C9D2E0;outline-offset:1px}
-.dic{width:62px;height:62px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--m);margin-bottom:12px}
+.dcell{position:absolute;width:2.4in;height:3.95in}
+.dv{position:relative;width:2.4in;height:3.95in}
+.dsvg{position:absolute;left:-2px;top:-2px;width:calc(2.4in + 4px);height:calc(3.95in + 4px);overflow:visible}
+.dtab{position:absolute;top:0;height:.45in;color:var(--on);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
+.dbody{position:absolute;left:0;right:0;top:.45in;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 16px}
+.dic{width:66px;height:66px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--m);margin-bottom:12px}
 .dv[style*="--m:#F5B820"] .dic{color:#C98F00}
 .dic .i{width:34px;height:34px}
+.dnum{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:22px;letter-spacing:-.02em;color:var(--ink)!important}
 .dbody h3{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:25px;line-height:1.02;letter-spacing:-.02em}
 .dbody p{font-size:11.5px;font-weight:700;margin-top:6px;opacity:.75}
 </style>
@@ -210,12 +212,13 @@ h1,h2,h3,p{margin:0}
 .wlab{height:2.0in;border-radius:18px;background:var(--m);color:var(--on);outline:.8px dashed #B7C1D3;outline-offset:3px;display:flex;flex-direction:column;justify-content:center;padding:0 .4in;position:relative;overflow:hidden}
 .wlt{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:66px;letter-spacing:-.04em;line-height:.9;display:block}
 .wls{font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;display:block;margin-top:6px}
+.wlart{position:absolute;right:.25in;top:50%;transform:translateY(-50%);width:2.9in;height:1.8in}
 .wl2{display:flex;align-items:center;gap:8px;margin-top:14px;font-weight:700;font-size:13px}
 .wl2 .i{width:20px;height:20px}
 .sgrid{display:grid;grid-template-columns:1fr 1fr;gap:.25in}
 .slab{height:1.45in;border-radius:16px;background:var(--t);border:5px solid var(--m);outline:.8px dashed #B7C1D3;outline-offset:3px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:0 .3in}
 .slab .en{display:inline-flex;align-items:center;gap:5px;background:#fff;border-radius:20px;height:22px;padding:0 10px 0 7px;font-weight:800;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
-.slab .mt{width:16px;height:12px;display:block;color:#EE5A36}
+.slab .mt{width:16px;height:12px;display:block;color:var(--m)}
 .slab b{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:28px;letter-spacing:-.02em;margin-top:6px}
 .slab p{font-size:12px;font-weight:700;opacity:.75}
 </style>

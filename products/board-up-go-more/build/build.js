@@ -445,7 +445,7 @@ WORDS.forEach(p => {
 const WORDNUM = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty', 'twenty-one', 'twenty-two', 'twenty-three', 'twenty-four'];
 const QR = JSON.parse(fs.readFileSync(path.join(__dirname, 'qr.json'), 'utf8'));
 const BONUS = 'playbeforepixels.com/bonus/board-up-go-more';
-const qrSvg = (px) => `<svg class="qr" viewBox="-2 -2 ${QR.n + 4} ${QR.n + 4}" width="${px}" height="${px}" shape-rendering="crispEdges" aria-label="QR code to ${BONUS}"><rect x="-2" y="-2" width="${QR.n + 4}" height="${QR.n + 4}" fill="#FFFFFF"/><path d="${QR.d}" fill="${C.ink}"/></svg>`;
+const qrSvg = (px) => `<svg class="qr" viewBox="-4 -4 ${QR.n + 8} ${QR.n + 8}" width="${px}" height="${px}" shape-rendering="crispEdges" aria-label="QR code to ${BONUS}"><rect x="-4" y="-4" width="${QR.n + 8}" height="${QR.n + 8}" fill="#FFFFFF"/><path d="${QR.d}" fill="${C.ink}"/></svg>`;
 
 // ---------- shared bits ----------
 const defs = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${SYMBOLS.join('\n')}</defs></svg>`;

@@ -60,6 +60,7 @@ ul, ol { margin: 0; padding: 0; }
 /* focus: one visible system everywhere */
 :focus { outline: none; }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+[tabindex="-1"]:focus, [tabindex="-1"]:focus-visible { outline: none; }
 .on-dark { --focus: var(--sun); }
 .on-sun { --focus: var(--ink); }
 

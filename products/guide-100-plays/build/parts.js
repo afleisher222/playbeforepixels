@@ -1,12 +1,5 @@
-// Build script for "100 Screen-Free Plays for Ages 0–5" (Play Before Pixels · AlphaPlay LLC).
-//   node build.js   -> writes, in the product folder:
-//     source.html                 print interior, 8 x 10 in trim, 8.25 x 10.25 in with bleed (brand spec), black-and-white
-//     source-kdp.html             same, KDP interior size 8.125 x 10.25 in (bleed on outside edge only), black-and-white
-//     source-color-letter.html    full-color digital edition, US Letter, no bleed (+ printable extras)
-//     source-color-a4.html        full-color digital edition, A4, no bleed (+ printable extras)
-//     build/cover.html, build/cover-wrap.html, build/mockup.html, build/listing-*.html
-// All art is flat inline SVG from shared <symbol>s (chars.js = the brand's character system, icons.js = objects).
-const fs = require('fs');
+// Shared parts for "100 Screen-Free Plays for Ages 0–5" (Play Before Pixels · AlphaPlay LLC): QR, scenes, play cards.
+// Used by book.js (interiors) and extras.js (cover, wrap, mockup, listing images).
 const path = require('path');
 const QR = require(path.join(__dirname, '../../bored-play-cards/build/node_modules/qrcode'));
 const CH = require('./chars.js');

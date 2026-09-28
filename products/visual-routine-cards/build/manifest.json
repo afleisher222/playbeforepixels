@@ -1,0 +1,156 @@
+{
+  "cards": 228,
+  "young": 170,
+  "big": 58,
+  "starter": 60,
+  "letter": {
+    "full": 137,
+    "starter": 16,
+    "editable": 68,
+    "bookmarks": [
+      [
+        "Cover",
+        1
+      ],
+      [
+        "Welcome",
+        2
+      ],
+      [
+        "Use them by age",
+        3
+      ],
+      [
+        "Talk while you use them",
+        4
+      ],
+      [
+        "Print guide",
+        5
+      ],
+      [
+        "Laminate, stick and store",
+        6
+      ],
+      [
+        "Card index",
+        7
+      ],
+      [
+        "Cards · Rainbow",
+        8
+      ],
+      [
+        "Cards · Soft",
+        29
+      ],
+      [
+        "Cards · Navy",
+        50
+      ],
+      [
+        "Cards · Simple",
+        71
+      ],
+      [
+        "Charts · Rainbow",
+        92
+      ],
+      [
+        "Charts · Soft",
+        103
+      ],
+      [
+        "Charts · Navy",
+        114
+      ],
+      [
+        "Charts · Simple",
+        125
+      ],
+      [
+        "Extras",
+        136
+      ],
+      [
+        "Free bonus",
+        137
+      ]
+    ]
+  },
+  "a4": {
+    "full": 137,
+    "starter": 16,
+    "editable": 68,
+    "bookmarks": [
+      [
+        "Cover",
+        1
+      ],
+      [
+        "Welcome",
+        2
+      ],
+      [
+        "Use them by age",
+        3
+      ],
+      [
+        "Talk while you use them",
+        4
+      ],
+      [
+        "Print guide",
+        5
+      ],
+      [
+        "Laminate, stick and store",
+        6
+      ],
+      [
+        "Card index",
+        7
+      ],
+      [
+        "Cards · Rainbow",
+        8
+      ],
+      [
+        "Cards · Soft",
+        29
+      ],
+      [
+        "Cards · Navy",
+        50
+      ],
+      [
+        "Cards · Simple",
+        71
+      ],
+      [
+        "Charts · Rainbow",
+        92
+      ],
+      [
+        "Charts · Soft",
+        103
+      ],
+      [
+        "Charts · Navy",
+        114
+      ],
+      [
+        "Charts · Simple",
+        125
+      ],
+      [
+        "Extras",
+        136
+      ],
+      [
+        "Free bonus",
+        137
+      ]
+    ]
+  }
+}
