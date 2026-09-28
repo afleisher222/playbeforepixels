@@ -54,6 +54,7 @@ Please check your address. If a package is returned because of an incorrect addr
 - Because digital files can be kept once downloaded, digital products are generally **non-refundable once the download link has been accessed.**
 - We will always fix or refund if a file is corrupted, incomplete, materially different from its description, or you were charged twice.
 - For customers in the EU, UK and other places with a statutory cancellation right: at checkout we ask you to agree to immediate delivery and acknowledge that you lose your right to cancel once the download starts. If you did not give that consent, you may cancel within 14 days.
+- [ATTORNEY: the same 14-day statutory right applies to the online course and to physical stock items for EU/UK consumers. The "30% completed" condition in section 4 cannot cut down the statutory right unless the buyer gave the immediate-access consent and acknowledgment. From June 19, 2026 (Directive (EU) 2023/2673, new Art. 11a), sites selling directly to EU consumers must also offer an online "withdraw from contract" function. Confirm both, or sell to EU/UK buyers through a merchant of record or marketplace that handles them. UNVERIFIED.]
 
 ### 4. Online course — "The 30-Day Screen Reset"
 - **[14]-day guarantee:** If you are not satisfied, email us within [14] days of purchase for a full refund, as long as you have completed no more than [30%] of the lessons. [Choose terms and keep them consistent with the sales page.]

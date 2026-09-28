@@ -7,7 +7,7 @@
 **Plain answer: if you buy through some links on this site, we may earn a commission, at no extra cost to you.**
 
 ## Affiliate links
-Play Before Pixels (a trade name of AlphaPlay LLC) participates in affiliate programs, which means we may earn a commission when you buy through certain links. These may include [Bookshop.org], [Amazon Associates] and [other programs]. **As an Amazon Associate, we earn from qualifying purchases.** [Keep this exact sentence only if enrolled in Amazon Associates; the program agreement requires it.]
+Play Before Pixels (a trade name of AlphaPlay LLC) participates in affiliate programs, which means we may earn a commission when you buy through certain links. These may include [Bookshop.org], [Amazon Associates] and [other programs]. **As an Amazon Associate I earn from qualifying purchases.** [Keep this sentence only if enrolled in Amazon Associates. The Operating Agreement gives this exact wording, so do not change it to "we" unless Amazon's current agreement allows it. UNVERIFIED: check the current Associates Program Operating Agreement.]
 
 Where an affiliate link appears, we label it at the point of the link (for example, "affiliate link" or "we earn a commission if you buy") — not only on this page. In emails, videos, podcasts and social posts we disclose affiliate links in the post or at the start of the video/audio, in plain words, not only in a bio or hashtag.
 
