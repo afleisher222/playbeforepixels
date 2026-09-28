@@ -67,7 +67,7 @@ Researchers have followed large groups of children to see how early screen habit
 
 ### What this does not mean
 
-These are **associations**. They show that two things tend to go together, not that screens caused the difference. Families with more screen time may differ in many other ways too, and the studies describe groups, not your child. A show during a hard afternoon isn't going to undo your child's development. The best way to read the research is simple: **back-and-forth time with a grown-up is precious, and screens tend to crowd it out.**
+These are **associations**. They show that two things tend to go together, not that screens caused the difference. Families with more screen time may differ in many other ways too, and the studies describe groups, not your child. The studies describe patterns over months and years, not one show on a hard afternoon. The most useful way to read them is simple: **back-and-forth time with a grown-up is precious, and in these studies more screen time went with less of it.**
 
 ## How to use this in real life
 

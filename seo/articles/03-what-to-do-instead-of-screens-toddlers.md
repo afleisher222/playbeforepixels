@@ -20,16 +20,16 @@ last_reviewed: 2026-09-28
 
 # What to do instead of screens with a toddler
 
-Here's the honest truth about toddlers and screens: most of us don't reach for the phone because we think it's a great idea. We reach for it because we need four minutes to drain the pasta, finish a call or survive a line at the pharmacy.
+Most of us don't hand a toddler the phone because we think it's a great idea. We reach for it because we need four minutes to drain the pasta, finish a call or survive a line at the pharmacy.
 
 So this list is organized by **those moments**, the real reasons screens come out, with swaps that actually work for 1- to 3-year-olds. None needs a trip to the store.
 
-> **Safety for this age:** an adult is always nearby. Nothing smaller than a toilet-paper tube's opening (about 1¼ in / 3.2 cm). No balloons. No cords or long strings. Stay within arm's reach during water play. No whole grapes, nuts, popcorn or hard candy.
+> **Safety for this age:** an adult is always nearby. Nothing small enough to fit through a toilet-paper tube. No balloons. No cords or long strings. Stay within arm's reach during water play. No whole grapes, nuts, popcorn or hard candy.
 
 ## When you're cooking
 
 1. **The toddler cupboard.** One low cupboard of plastic bowls, lids, wooden spoons and a colander. Rotate what's in it weekly so it stays interesting.
-2. **"Wash" the vegetables.** Seat your toddler at a small tub of water with a sturdy whole vegetable, like a potato or a carrot, and a cloth. Keep the tub within arm's reach and empty it straight away.
+2. **"Wash" the vegetables.** Seat your toddler at a small tub of water with a large whole potato and a cloth. Skip carrots and anything else a toddler could bite a piece off. Keep the tub within arm's reach and empty it straight away.
 3. **Narrate like a cooking show.** "Now I'm stirring. Stir, stir, stir! Now it's bubbling!" Your toddler's job is to say "Stir!" back.
 4. **Kitchen band.** A pot and a wooden spoon. Loud, yes. Also joyful.
 5. **Sort the containers.** Big ones here, small ones there. Nest them. Stack them. Knock them down.
@@ -68,7 +68,7 @@ So this list is organized by **those moments**, the real reasons screens come ou
 
 ## The idea behind all 25
 
-Notice what these have in common: **a grown-up nearby, a bit of talking, and your toddler doing something with their hands or body.** That's no accident.
+Notice what these have in common: **a grown-up nearby, a bit of talking, and your toddler doing something with their hands or body.**
 
 The American Academy of Pediatrics' 2016 statement "Media and Young Minds" recommends avoiding screen media other than video chatting for children under 18 months, and limiting screen time for older toddlers and preschoolers. It also puts a lot of weight on hands-on play and talking together. The World Health Organization's 2019 guideline for children under 5 recommends plenty of active play and suggests reading and storytelling with a caregiver when children are sitting still.
 
@@ -82,7 +82,7 @@ It doesn't mean a screen during a long car ride or a sick day is a failure. Fami
 
 - **Set it up before you need it.** Put the cooking basket out *before* you start cooking.
 - **Start with your hardest moment.** If dinner prep is the pinch point, begin there.
-- **Expect some protest at first.** It usually fades within a few days once the new routine is familiar.
+- **Expect some protest at first.** It often eases as the new routine becomes familiar.
 
 ## When to talk to your pediatrician
 

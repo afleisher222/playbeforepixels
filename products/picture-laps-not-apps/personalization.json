@@ -1,0 +1,154 @@
+{
+  "slug": "picture-laps-not-apps",
+  "purpose": "Variable map for the personalized edition. Every order supplies these fields; build.js fills them into WORDS.md and the art. Code source of truth: personalize.js (limits, looks, pronouns, checks). Keep this file and personalize.js in step.",
+  "order_fields": {
+    "child_name": {
+      "variable": "{{CHILD_NAME}}",
+      "required": true,
+      "max_chars": 14,
+      "allowed": "Latin letters incl. accents (A–Z, À–ɏ), spaces, hyphens, apostrophes, periods. Other scripts and emoji go to the review queue (the fonts cannot print them).",
+      "casing": "Kept as typed (McKenzie, DeShawn). ALL CAPS or all lower-case is converted to Title Case.",
+      "printed_on": [
+        "front cover (tagline pill)",
+        "title page",
+        "dedication page (large)",
+        "6 rhymes: s1 right, s2 left, s5 right, s9 right, s11 right, s12 right",
+        "family reading pledge (intro, a promise, the child's mark line)",
+        "How to use page (note + '<name>'s favorite laps')",
+        "back cover blurb",
+        "hardcover spine (when the spine is 0.25 in or wider)"
+      ],
+      "store_label": "Child's first name (up to 14 letters)"
+    },
+    "giver_name": {
+      "variable": "{{GIVER_NAME}}",
+      "required": false,
+      "max_chars": 32,
+      "printed_on": [
+        "dedication page: With love from ..."
+      ],
+      "if_empty": "the With love from line is left out",
+      "store_label": "Who is it from? (e.g. Aunt Lily)"
+    },
+    "pronouns": {
+      "variables": {
+        "{{THEY}}": "she / he / they",
+        "{{THEM}}": "her / him / them",
+        "{{THEIR}}": "her / his / their"
+      },
+      "required": true,
+      "options": [
+        "she",
+        "he",
+        "they"
+      ],
+      "default": "they",
+      "printed_on": [
+        "pledge promise (so {{THEY}} can take a turn)",
+        "How to use note ({{THEIR}} turn)",
+        "back cover blurb (call {{THEM}} by name)"
+      ],
+      "rule": "The rhymes never use a pronoun, so verbs always agree and the meter never changes. After {{THEY}} use only can/will/did or past tense.",
+      "store_label": "Pronouns: she/her, he/him or they/them"
+    },
+    "look": {
+      "variable": "LOOK (art, not text)",
+      "required": true,
+      "options": {
+        "1": {
+          "desc": "Brown skin, black hair in two puffs",
+          "skin": "#8D5A3B",
+          "hair": "#2B1D16",
+          "hair_style": "puffs"
+        },
+        "2": {
+          "desc": "Light skin, short blond hair",
+          "skin": "#F4CFAE",
+          "hair": "#E3B04B",
+          "hair_style": "crop"
+        },
+        "3": {
+          "desc": "Tan skin, brown bob",
+          "skin": "#C08457",
+          "hair": "#5A3825",
+          "hair_style": "bob"
+        },
+        "4": {
+          "desc": "Deep brown skin, black hair in a bun",
+          "skin": "#5C3A26",
+          "hair": "#2B1D16",
+          "hair_style": "bun"
+        }
+      },
+      "changes": "the story's child on every page, the cover and the dedication (skin and hair only; clothes and the family cast stay the same)",
+      "picker_image": "picker.png",
+      "store_label": "Choose a look (1–4, see picture)"
+    },
+    "format": {
+      "required": true,
+      "options": {
+        "hardcover": {
+          "price_usd": 34.99
+        },
+        "softcover": {
+          "price_usd": 24.99
+        }
+      },
+      "changes": "which cover-wrap file and printer product is used; the interior is identical"
+    },
+    "gift_message": {
+      "variable": "{{GIFT_MESSAGE}}",
+      "required": false,
+      "max_chars": 180,
+      "max_lines": 4,
+      "printed_on": [
+        "dedication page"
+      ],
+      "if_empty": "the founder's default dedication from WORDS.md (## default dedication) is printed",
+      "store_label": "Gift message (optional, up to 180 characters)"
+    },
+    "gift_date": {
+      "variable": "{{GIFT_DATE}}",
+      "required": false,
+      "max_chars": 32,
+      "printed_on": [
+        "dedication page, small line"
+      ],
+      "store_label": "Occasion or date (optional, e.g. Baby shower, May 2027)"
+    }
+  },
+  "derived_variables": {
+    "{{FRIEND}}": "The park friend in spread 7. \"Ada\"; becomes \"Nell\" when the child is named Ada, so a child never meets a friend with their own name."
+  },
+  "fit_rules": "Every line holding a variable shrinks to fit (story lines down to 19.5 pt from 27 pt; dedication name down to 22.5 pt). render-order.js stops the order (exit 5) if anything still does not fit, and a person looks at it in the weekly check.",
+  "review_queue_triggers": [
+    "name over 14 characters",
+    "characters the fonts cannot print (non-Latin scripts, emoji)",
+    "giver, message or date over the limit",
+    "message over 4 lines",
+    "review wording list in personalize.js (profanity and a few sensitive words)",
+    "any fit failure in render-order.js"
+  ],
+  "human_authorship_gate": "build.js --order refuses to build while any WORDS.md heading still ends in (draft) or ## author note is empty. The founder rewrites or approves each section in her own words, then removes (draft).",
+  "privacy": "Child names are used only to print the order. They are not added to the email list or any marketing, not committed to git (orders/ is git-ignored except examples/), and order folders are deleted 30 days after delivery [VERIFY retention period with counsel].",
+  "sample_order": {
+    "order_id": "SAMPLE-0001",
+    "channel": "shopify",
+    "format": "hardcover",
+    "child_name": "Maya",
+    "giver_name": "Aunt Lily",
+    "pronouns": "she",
+    "look": 1,
+    "gift_message": "May every day bring you a lap, a story and a song.\nWe love you to the moon and back.",
+    "gift_date": "Baby shower · October 2026"
+  },
+  "example_orders": [
+    "orders/examples/order-sample.json",
+    "orders/examples/order-long-name.json"
+  ],
+  "commands": {
+    "sample": "node build.js",
+    "template": "node build.js --template",
+    "order": "node build.js --order <order.json> --out <dir> --cover-w <in> --cover-h <in> --spine <in>  then  node render-order.js <dir>"
+  }
+}

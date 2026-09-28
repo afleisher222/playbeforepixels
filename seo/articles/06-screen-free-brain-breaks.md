@@ -27,7 +27,7 @@ A brain break doesn't need a video, a projector or a login. All it needs is **yo
 ## How to run a great brain break
 
 1. **Signal it.** Use the same chime, clap or phrase every time: "Brain break in three, two, one…"
-2. **Model it.** Do the move yourself first. Students copy you far more readily than they follow instructions.
+2. **Model it.** Do the move yourself first. Most students copy a move more easily than they follow spoken instructions.
 3. **Keep it short.** One to three minutes. Stop while it's still fun.
 4. **Close it.** End with a calm cue, such as three slow breaths or "hands on desks," so everyone returns ready to learn.
 
@@ -78,7 +78,7 @@ A brain break doesn't need a video, a projector or a login. All it needs is **yo
 
 ## Why screen-free?
 
-Video brain breaks are popular and can be fun. A screen-free break adds something different: **students move with each other and with you**, not with a character on a screen. There's no loading time, no volume fiddling, no ads to skip, and it works in a power cut or on a field trip.
+Video brain breaks are popular and can be fun. A screen-free break adds something different: **students move with each other and with you**, not with a character on a screen. There's no loading time, no volume fiddling, no ads to skip, and it works during a power outage or on a field trip.
 
 For early childhood rooms, the World Health Organization's 2019 guideline for children under 5 recommends plenty of active play through the day and limiting sedentary screen time. For the wider picture, UNESCO's 2023 *Global Education Monitoring Report* on technology in education argues for using technology in classrooms where it clearly improves learning. Neither source is about brain breaks specifically. They simply support choosing the low-tech option when it works just as well.
 

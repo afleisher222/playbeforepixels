@@ -150,13 +150,12 @@ const L = (name, bg, body, dark) => write(`listing-${name}.html`, htmlDoc('Listi
 
 function listings() {
   // 1 hero
-  L('01-hero', C.tTomato, `
-    <img src="../cover.png" class="pg" style="position:absolute;left:150px;top:150px;width:1000px;border-radius:8px 14px 14px 8px">
-    <div style="position:absolute;left:1240px;top:200px;right:110px">
-      <div class="h" style="font-size:230px;color:${C.tomato};line-height:.8">100</div>
-      <div class="h" style="font-size:84px;margin-top:20px">plays for<br>ages 0–5</div>
+  L('01-hero', C.wash, `
+    <img src="../cover.png" class="pg" style="position:absolute;left:120px;top:190px;width:1110px;border-radius:8px 14px 14px 8px">
+    <div style="position:absolute;left:1310px;top:230px;right:100px">
+      <div class="h" style="font-size:88px;line-height:1.02">Play and talk ideas, sorted by age</div>
       <div style="display:flex;flex-direction:column;gap:22px;margin-top:70px">
-        ${['Sorted by age', 'Low prep, everyday things', 'Talk line on every play', 'Safety note on every play'].map((t, i) => `<div style="display:flex;gap:18px;align-items:center;font-size:42px;font-weight:800"><span style="width:26px;height:26px;border-radius:99px;background:${[C.sky, C.grass, C.sun, C.tomato][i]};flex:none"></span>${t}</div>`).join('')}
+        ${['Sorted by age', 'Low prep, everyday things', 'Talk line on every play', 'Safety note on every play'].map((t, i) => `<div style="display:flex;gap:18px;align-items:center;font-size:40px;font-weight:800"><span style="width:26px;height:26px;border-radius:99px;background:${[C.sky, C.grass, C.sun, C.tomato][i]};flex:none"></span>${t}</div>`).join('')}
       </div>
       <div style="margin-top:80px;display:flex;flex-direction:column;gap:18px">
         <span class="tag" style="background:${C.ink};color:${W};text-align:center">Paperback 8 × 10 in</span>
@@ -165,20 +164,21 @@ function listings() {
     </div>`);
   // 2 anatomy of a play: close-up of play 21 (page 27) with callouts aligned to page rows (page px at 96 dpi, page width 816)
   const sc = 1.446, top = 100, Y = py => Math.round(300 + (py - top) * sc);
-  const co = (n, t, py, c) => `<div class="co" style="left:110px;top:${Y(py) - 40}px;height:80px;font-size:36px"><i style="background:${c}">${n}</i>${t}</div><div style="position:absolute;left:640px;width:120px;top:${Y(py)}px;border-top:4px dotted ${c}"></div>`;
+  const co = (n, t, py, c) => `<div class="co" style="left:110px;top:${Y(py) - 40}px;height:80px;font-size:34px"><i style="background:${c}">${n}</i>${t}</div><div style="position:absolute;left:690px;width:70px;top:${Y(py)}px;border-top:5px dotted ${c}"></div>`;
   L('02-every-play', C.wash, `
     <div class="h" style="font-size:96px">Every play, the same easy parts</div>
     <div class="pg" style="position:absolute;left:760px;top:300px;width:1130px;height:${Y(520) - 300}px;overflow:hidden;border-radius:16px">
-      <img src="${HI}/p27.png" style="position:absolute;left:${-60 * sc}px;top:${-top * sc}px;width:${816 * sc}px"></div>
+      <img src="${HI}/p27.png" style="position:absolute;left:${-34 * sc}px;top:${-top * sc}px;width:${816 * sc}px"></div>
     ${co(1, 'Age &amp; number', 138, C.grass)}
-    ${co(2, 'Prep, mess &amp; what you need', 214, C.sky)}
+    ${co(2, 'Prep, mess, you need', 214, C.sky)}
     ${co(3, 'Easy steps', 291, C.plum)}
     ${co(4, '"Grow it" idea', 358, C.sun)}
     ${co(5, 'Talk while you play', 424, C.tomato)}
     ${co(6, 'Safety note', 486, C.grass)}
-    <div style="position:absolute;left:120px;right:120px;top:1260px;display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center">
+    <div style="position:absolute;left:120px;right:120px;top:1100px;display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center">
       ${[['100', 'plays'], ['4', 'age bands'], ['6', 'easy talk moves'], ['0', 'special toys']].map(([a, b], i) => `<div style="background:${W};border-radius:30px;padding:40px 20px"><div class="h" style="font-size:150px;color:${[C.tomato, C.sky, C.grass, C.plum][i]}">${a}</div><div style="font-size:40px;font-weight:800;margin-top:10px">${b}</div></div>`).join('')}
-    </div>`);
+    </div>
+    <div style="position:absolute;left:120px;right:120px;top:1500px;font-size:44px;line-height:1.45;text-align:center;font-weight:600">Two plays on every page, each with its own illustration.<br>Big, clear type you can read at a glance while you play.</div>`);
   // 3 age bands
   L('03-four-age-bands', W, `
     <div class="h" style="font-size:100px">Sorted by age, from birth to 5</div>

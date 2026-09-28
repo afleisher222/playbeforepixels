@@ -79,7 +79,7 @@ Please talk to your child's doctor if anything about your child's development wo
 
 ## Something good for every family
 
-Whatever the research eventually shows, time spent talking, playing and reading together is good for every child and every grown-up. If you'd like some easy ideas for that kind of time, our free **Five 5-Minute Plays** printable has five quick games for babies to preschoolers, with a talk tip on each. It's play and family time, not a treatment or therapy for anything. [Download it free](/free/five-5-minute-plays/).
+Whatever the research eventually shows, time spent talking, playing and reading together is time well spent for any family. If you'd like some easy ideas for that kind of time, our free **Five 5-Minute Plays** printable has five quick games for babies to preschoolers, with a talk tip on each. It's play and family time, not a treatment or therapy for anything. [Download it free](/free/five-5-minute-plays/).
 
 You can also read our plain-language [study summaries](/research/studies/) to see each study's details for yourself.
 

@@ -22,11 +22,11 @@ last_reviewed: 2026-09-28
 
 "Okay, time to turn it off." Cue the wailing, the bargaining, the tablet clutched to the chest. If screen-off time is the hardest five minutes of your day, you are in very large company.
 
-Here's the reassuring part: **the meltdown usually isn't about the screen.** It's about the *transition*, being pulled out of something absorbing with no warning and nothing appealing next. Transitions are hard for young children in general. Screens just make the contrast sharper. Fix the transition, and most of the drama shrinks.
+Here's the reassuring part: **the meltdown often isn't only about the screen.** It's also about the *transition*, being pulled out of something absorbing with no warning and nothing appealing next. Transitions are hard for young children in general. Screens just make the contrast sharper. Make the transition easier, and there's often less drama.
 
 ## Why it's so hard to stop
 
-- **Shows and games are built without natural endings.** One episode rolls into the next, and one level unlocks another. There's no built-in "done."
+- **Many shows and games have no natural ending.** One episode can roll into the next, and one level unlocks another. There's no built-in "done."
 - **Young children live in the moment.** "In five minutes" means very little to a 3-year-old.
 - **What comes next often looks boring by comparison.** Bath time can't compete with a bright, fast-moving screen.
 - **Tired, hungry kids have less patience.** Screen time often falls at the end of the day, exactly when everyone's reserves are low.
@@ -47,7 +47,7 @@ None of this means your child is "addicted" or that you've done something wrong.
 
 ### At the moment of switching off
 7. **Get close and connect.** Crouch down, touch a shoulder, and wait until your child looks up before you speak. Shouting from across the room rarely works.
-8. **Let them press the button.** Children who turn the screen off themselves often protest less.
+8. **Let them press the button.** Some children protest less when they get to switch it off themselves.
 9. **Name the feeling, then hold the line.** "You're sad it's over. You really wanted another one. It's done for today. Let's go to the bath." Calm, kind and brief.
 10. **Go straight to the next thing.** Pick your child up and walk to the bath, or put the puzzle in their hands. The gap between "screen off" and "something else" is where meltdowns grow.
 
@@ -65,7 +65,7 @@ None of this means your child is "addicted" or that you've done something wrong.
 It will, sometimes. That's okay.
 
 - **Stay calm and stay near.** You don't have to fix the feeling, just ride it out with them.
-- **Don't give the screen back to stop the crying.** It teaches that crying reopens the deal. The AAP also cautions against using media as the only way to calm a child (Media and Young Minds, 2016).
+- **Don't give the screen back to stop the crying.** It can teach that crying reopens the deal. The AAP also cautions against using media as the only way to calm a child (Media and Young Minds, 2016).
 - **Talk later, not during.** When everyone's calm: "That was hard. What would help next time? A warning? Choosing the next thing?"
 - **Look at the timing.** If meltdowns cluster at 5 p.m., the issue may be hunger or tiredness. Try moving screen time earlier, or adding a snack first.
 
@@ -79,7 +79,7 @@ It will, sometimes. That's okay.
 
 ## What this does not mean
 
-Big feelings at screen-off time are common and usually improve with a predictable routine. They don't by themselves mean something is wrong with your child.
+Big feelings at screen-off time are common, and a predictable routine often makes them easier to handle. They don't by themselves mean something is wrong with your child.
 
 ## When to talk to your pediatrician
 

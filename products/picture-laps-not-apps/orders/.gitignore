@@ -1,0 +1,5 @@
+# Real customer orders contain children's names: never commit them.
+*
+!.gitignore
+!examples/
+!examples/**

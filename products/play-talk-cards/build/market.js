@@ -96,7 +96,7 @@ function imagesB() {
     ${fan([cB(2), cB(15), cB(27), cB(40), cB(49)], 500, 575, 1.2, 160, 9)}
     <div class="band"><span>Printable PDF · US Letter + A4 · Instant download, nothing ships</span><img src="${K.LOGO.lockupWhite}" alt=""></div></div>`]);
   const s = 2.0, cx = 84, cy = 248;
-  const marks = [[18, 16, 1], [240 - 62, 12, 2], [4, 160, 3], [4, 296, 4]];
+  const marks = [[-2, 20, 1], [240 - 62, 12, 2], [4, 160, 3], [4, 296, 4]];
   const notes = [['The moment', 'Dinner, car, bath or bedtime, color-coded.'], ['Card number', '52 questions, 13 for each moment.'], ['The question', 'Big, easy-to-read type. Kids can read it too.'], ['Grown-up tip', 'One line on how to keep the talk going.']];
   out.push(['02-every-card', `<div class="sq" style="background:${C.wash}">
     <div class="h"><p class="k" style="color:${C.tomato}">On every card</p><h1>A good question and<br>a grown-up tip</h1></div>
@@ -117,12 +117,13 @@ function imagesB() {
     ['54 poker-size cards (52 questions + how-to + blank)', 'Card backs · cut lines · type-in blank cards', '4 PDFs: US Letter + A4, full color + ink-saver']));
   out.push(['07-real-life', `<div class="sq" style="background:${C.wash}">
     <div class="h"><p class="k" style="color:${C.tomato}">Made for real life</p><h1>Keep them where<br>the talking happens</h1></div>
-    <div class="abs" style="left:64px;right:64px;top:300px;display:grid;grid-template-columns:1fr 1fr;gap:18px">${[
+    <div class="abs" style="left:64px;right:64px;top:330px;display:grid;grid-template-columns:1fr 1fr;gap:22px">${[
       ['dinner', 'A jar on the table', 'One card per meal. Everyone answers, grown-ups first.'],
       ['car', 'The glove box', 'A passenger reads; the driver just talks. Great for traffic.'],
       ['bath', 'A zip bag by the sink', 'Stay with your child. Warm water, calm voices, gentle questions.'],
       ['bedtime', 'The nightstand', 'Three good things, a brave moment, a dream to pick.'],
-    ].map(([k, a, b]) => { const m = MOMENTS.find(x => x.key === k); return `<div style="background:#fff;border-radius:22px;padding:22px;border-top:10px solid ${C[m.color]}"><div style="display:flex;align-items:center;gap:14px"><span style="width:84px;height:84px;border-radius:50%;background:${K.TINT[m.color]};display:flex;align-items:center;justify-content:center"><svg viewBox="-58 -58 116 116" width="66" height="66">${ICONS[m.icon]()}</svg></span><b style="font:800 26px 'Bricolage Grotesque',sans-serif">${a}</b></div><p style="margin:12px 0 0;font-size:19px;line-height:1.4;font-weight:600">${b}</p></div>`; }).join('')}</div></div>`]);
+    ].map(([k, a, b]) => { const m = MOMENTS.find(x => x.key === k); return `<div style="background:#fff;border-radius:22px;padding:22px;border-top:10px solid ${C[m.color]}"><div style="display:flex;align-items:center;gap:14px"><span style="width:84px;height:84px;border-radius:50%;background:${K.TINT[m.color]};display:flex;align-items:center;justify-content:center"><svg viewBox="-58 -58 116 116" width="66" height="66">${ICONS[m.icon]()}</svg></span><b style="font:800 26px 'Bricolage Grotesque',sans-serif">${a}</b></div><p style="margin:12px 0 0;font-size:19px;line-height:1.4;font-weight:600">${b}</p></div>`; }).join('')}</div>
+    <div class="band" style="background:${C.ink};justify-content:center"><span>Anyone can say “pass.” It’s a conversation, not a quiz.</span></div></div>`]);
   out.push(nextImage('B'));
   return out;
 }

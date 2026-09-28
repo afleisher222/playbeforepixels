@@ -22,7 +22,7 @@ last_reviewed: 2026-09-28
 
 If you've ever tried to read a board book to a 14-month-old, you know how it goes. They grab the book, turn three pages at once, chew the corner and wander off to find a shoe. That's not a failed story time. **That's what reading with a toddler looks like.**
 
-The secret is to stop thinking of it as "reading the book" and start thinking of it as **having a conversation about the book.** You don't need to get to the end or read every word. What matters is the back-and-forth.
+It helps to stop thinking of it as "reading the book" and start thinking of it as **having a conversation about the book.** You don't need to get to the end or read every word. What matters is the back-and-forth.
 
 ## Why the back-and-forth matters
 
@@ -56,7 +56,7 @@ You don't need special training. These six moves work with any book.
 - [ ] **Keep books where hands can reach them.** A low basket in the living room, one in the car, one in the diaper bag.
 - [ ] **Choose sturdy board books** that can survive chewing and dropping.
 - [ ] **Read at the same time each day**, before nap or bed, so it becomes a cue.
-- [ ] **Short counts.** Two minutes of real back-and-forth beats twenty minutes of reading at your child.
+- [ ] **Short is fine.** Two minutes of real back-and-forth is worth more than a long read where only you do the talking.
 - [ ] **Read it again.** Toddlers love repetition. The fifth time through is when they start filling in words.
 - [ ] **Put your phone in another room.** It makes pausing and waiting much easier.
 - [ ] **Invite everyone.** Grandparents, older siblings and babysitters can all use the six moves.
@@ -67,10 +67,10 @@ You don't need special training. These six moves work with any book.
 No. Let them move. Read while they play nearby, read in the bath, or read just one page. Many toddlers listen more than you'd think while they wander.
 
 **Should I read every word?**
-Not at all. For babies and young toddlers, talking about the pictures is often better than reading the text. The words on the page are a starting point.
+Not at all. For babies and young toddlers, talking about the pictures often works better than reading the text. The words on the page are a starting point.
 
 **What if my child always wants the same book?**
-Wonderful. Repetition helps children learn, and they love knowing what comes next. Try changing one thing each time, like a new question or a silly voice.
+Wonderful. Children love knowing what comes next, and each repeat is another chance for them to fill in a word. Try changing one thing each time, like a new question or a silly voice.
 
 **Are e-books or read-aloud apps the same?**
 The AAP recommends avoiding screen media other than video chatting for children under 18 months. For toddlers, a printed book on your lap keeps the focus on you and the conversation.

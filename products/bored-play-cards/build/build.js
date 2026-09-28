@@ -896,16 +896,6 @@ function canvaDoc() {
   return pages;
 }
 
-// Showcase: individual cards for mockups and listing images
-const SHOW = [['b13', 3], ['b13', 12], ['b13', 0], ['b35', 2], ['b35', 16], ['b35', 12], ['b58', 1], ['b58', 5], ['b58', 25], ['b812', 0], ['b812', 15], ['b812', 22], ['summer', 1], ['summer', 13], ['rainy', 1], ['rainy', 3]];
-function showcaseDoc() {
-  const items = SHOW.map(([k, i]) => ({ name: `${k}-${String(i + 1).padStart(2, '0')}`, html: card((CARDS[k] || MINI[k].cards)[i], k, i + 1) }));
-  ['b13', 'b35', 'b58', 'b812', 'summer', 'rainy'].forEach(k => items.push({ name: `back-${k}`, html: cardBack(k) }));
-  items.push({ name: 'blank-b58', html: blankCard('b58') });
-  fs.writeFileSync(path.join(__dirname, 'showcase-manifest.json'), JSON.stringify(items.map(i => i.name)));
-  return items.map(it => `<section class="page asset" style="width:2.5in;height:3.5in">${it.html}</section>`);
-}
-
 // ---------- write ----------
 SZ = SIZES.letter; BASE = '../../';
 fs.writeFileSync(path.join(ROOT, 'source.html'), doc('../../brand/fonts/fonts.css', SZ, mainPages(false)));
@@ -919,8 +909,105 @@ fs.writeFileSync(path.join(__dirname, 'duplex-a4.html'), doc('../../../brand/fon
 fs.writeFileSync(path.join(__dirname, 'editable-a4.html'), doc('../../../brand/fonts/fonts.css', SZ, editablePages(), edCss));
 SZ = SIZES.letter;
 fs.writeFileSync(path.join(__dirname, 'canva.html'), doc('../../../brand/fonts/fonts.css', SZ, canvaDoc(), '<style>.asset{page-break-after:auto}</style>'));
-fs.writeFileSync(path.join(__dirname, 'showcase.html'), doc('../../../brand/fonts/fonts.css', SZ, showcaseDoc(), '<style>body{background:transparent}.asset{background:transparent}.asset .card{background:#fff;border-radius:14px}</style>'));
 
 const counts = Object.fromEntries(Object.entries(CARDS).map(([k, v]) => [k, v.length]));
 console.log('cards', counts, 'summer', MINI.summer.cards.length, 'rainy', MINI.rainy.cards.length, 'pages', mainPages(false).length);
-module.exports = { card, cardBack, blankCard, TH, ICONS, SYMBOLS, css, SIZES };
+
+
+// ---------- store images: mockup (1600x1200) and Etsy listing images (2000x2000 = 1000px pages at 2x) ----------
+const PV = n => `../preview/p${String(n).padStart(2, '0')}.png`;
+const CD = (k, i, extra = '') => `<div class="mc ${extra}">${card((CARDS[k] || MINI[k].cards)[i], k, i + 1)}</div>`;
+const BK = (k, extra = '') => `<div class="mc ${extra}">${cardBack(k)}</div>`;
+const mkCss = `<style>
+.mc{width:2.5in;height:3.5in;position:absolute}
+.mc .card{padding:0}.mc .panel{box-shadow:0 10px 24px rgba(29,41,64,.16)}
+.paper{position:absolute;background:#fff;box-shadow:0 14px 34px rgba(29,41,64,.16)}
+.paper img{width:100%;height:100%;display:block}
+.L{width:1000px;height:1000px;position:relative;overflow:hidden;background:${C.wash};font-family:"Nunito Sans",sans-serif;color:${C.ink}}
+.L .lh{position:absolute;left:64px;top:56px;right:64px}
+.L .lk{font-weight:800;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:${C.tomato}}
+.L h2{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:64px;line-height:.98;letter-spacing:-.035em;margin:8px 0 0}
+.L .ls{font-size:22px;font-weight:600;line-height:1.4;margin-top:12px;max-width:760px}
+.L .lg1{position:absolute;right:64px;bottom:48px;height:34px}
+.L .chip{display:inline-flex;align-items:center;gap:8px;border-radius:40px;padding:10px 20px;font-weight:800;font-size:19px;background:#fff}
+.blob{position:absolute;border-radius:50%}
+</style>`;
+function mockupPage() {
+  return `<section class="page mock" style="width:1600px;height:1200px;background:${C.wash};position:relative;overflow:hidden">
+    <div class="blob" style="width:1000px;height:1000px;left:-200px;top:-120px;background:${C.tSun}"></div>
+    <div class="blob" style="width:640px;height:640px;right:-140px;top:-200px;background:${C.tSky}"></div>
+    <div style="position:absolute;left:0;right:0;bottom:0;height:300px;background:#E9EEF6"></div>
+    <div class="paper" style="left:760px;top:170px;width:560px;height:725px;transform:rotate(6deg)"><img src="${PV(12)}"></div>
+    <div style="position:absolute;left:120px;top:250px;width:560px;height:700px"><svg viewBox="-110 -110 220 300" width="100%" height="100%">${jarSVG({ lab: C.tomato })}</svg></div>
+    <div style="position:absolute;left:170px;top:915px;width:470px;height:50px;border-radius:50%;background:rgba(29,41,64,.16);filter:blur(16px)"></div>
+    ${place(BK('b812'), 1330, 250, 16, 0.95)}
+    ${place(CD('b35', 16), 640, 590, -10, 1.12)}
+    ${place(CD('b13', 3), 945, 560, -1, 1.12)}
+    ${place(CD('b58', 1), 1245, 580, 8, 1.12)}
+  </section>`;
+}
+function L(inner, bg = C.wash) { return `<section class="page L" style="background:${bg}">${inner}${logo('lockup-horizontal', 'lg1')}</section>`; }
+const at = (x, y, r = 0, sc = 1) => `left:${x}px;top:${y}px;transform:rotate(${r}deg) scale(${sc});transform-origin:0 0`;
+const place = (html, x, y, r, sc) => html.replace(/class="mc ?[^"]*"/, `class="mc" style="${at(x, y, r, sc)}"`);
+function listingPages() {
+  const P = [];
+  // 1 hero
+  P.push(L(`<div class="lh"><div class="lk">Printable · ages 1–12</div><h2 style="font-size:92px">150 “I’m bored!”<br>Play Cards</h2><p class="ls">Screen-free play ideas sorted by age and energy, with a talk prompt on every card.</p></div>
+    <div style="position:absolute;left:40px;top:500px;width:330px;height:430px"><svg viewBox="-110 -110 220 300" width="100%" height="100%">${jarSVG({ lab: C.tomato })}</svg></div>
+    ${place(CD('b812', 0), 330, 520, -14, 1.02)}${place(CD('b58', 1), 470, 470, -5, 1.02)}${place(CD('b13', 3), 620, 460, 5, 1.02)}${place(CD('b35', 2), 745, 500, 14, 1.02)}
+    <div style="position:absolute;left:64px;bottom:44px;display:flex;gap:10px"><span class="chip">+ 36 summer & rainy-day cards</span></div>`, C.tSun));
+  // 2 what's inside
+  const inside = [['150', 'play cards, 4 age bands'], ['36', 'summer + rainy-day cards'], ['30', 'blank “your idea” cards'], ['18', 'box dividers'], ['10', 'jar labels, 4 colorways'], ['6', 'card-back designs'], ['1', 'Play Menu choice board'], ['2', 'weekly planners (Mon/Sun)'], ['1', 'Play Jar Star certificate'], ['3', 'page index & checklist']];
+  P.push(L(`<div class="lh"><div class="lk">What’s inside</div><h2>Everything for a<br>play jar that works.</h2></div>
+    <div style="position:absolute;left:64px;top:300px;width:400px">${inside.map(([n, t]) => `<div style="display:flex;gap:14px;align-items:baseline;padding:8px 0;border-bottom:2px solid #E1E7F1;font-size:20px;font-weight:700"><b style="font-family:Bricolage Grotesque;font-size:30px;color:${C.tomato};width:62px">${n}</b>${t}</div>`).join('')}</div>
+    <div class="paper" style="${at(520, 300, -4)};width:230px;height:298px"><img src="${PV(7)}"></div>
+    <div class="paper" style="${at(730, 290, 5)};width:230px;height:298px"><img src="${PV(37)}"></div>
+    <div class="paper" style="${at(510, 600, 3)};width:230px;height:298px"><img src="${PV(40)}"></div>
+    <div class="paper" style="${at(735, 610, -4)};width:230px;height:298px"><img src="${PV(42)}"></div>`));
+  // 3 anatomy
+  const marks = [['Age band color', 'Find your child’s cards at a glance'], ['Energy level', 'Calm, medium or wiggly'], ['You need', 'Everyday things only'], ['Try it', 'One or two short steps'], ['Talk prompt', 'One thing to say while you play'], ['Safety line', 'On every single card']];
+  P.push(L(`<div class="lh"><div class="lk">How the cards work</div><h2>Read a card in<br>five seconds.</h2></div>
+    ${place(CD('b35', 16), 90, 290, -3, 1.75)}
+    <div style="position:absolute;left:570px;top:320px;width:370px">${marks.map(([h, t], i) => `<div style="display:flex;gap:14px;margin-bottom:22px"><span style="flex:0 0 38px;height:38px;border-radius:50%;background:${C.tomato};color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center">${i + 1}</span><div><div style="font-family:Bricolage Grotesque;font-weight:800;font-size:25px">${h}</div><div style="font-size:18px;font-weight:600">${t}</div></div></div>`).join('')}</div>`, '#FFFFFF'));
+  // 4 young ages
+  P.push(L(`<div class="lh"><div class="lk">Sorted by age</div><h2>Ages 1–3 and 3–5</h2><p class="ls">Every 1–3 card uses only things bigger than a toilet-paper tube.</p></div>
+    ${place(CD('b13', 0), 70, 330, -4, 1.12)}${place(CD('b13', 12), 355, 320, 0, 1.12)}${place(CD('b13', 19), 640, 330, 4, 1.12)}
+    ${place(CD('b35', 12), 150, 640, -3, 1.0)}${place(CD('b35', 2), 400, 630, 1, 1.0)}${place(CD('b35', 33), 650, 640, 4, 1.0)}`, C.tGrass));
+  // 5 older ages
+  P.push(L(`<div class="lh"><div class="lk">Sorted by age</div><h2>Ages 5–8 and 8–12</h2><p class="ls">Bigger projects, games with rules and real-life skills.</p></div>
+    ${place(CD('b58', 5), 70, 330, -4, 1.12)}${place(CD('b58', 25), 355, 320, 0, 1.12)}${place(CD('b58', 13), 640, 330, 4, 1.12)}
+    ${place(CD('b812', 15), 150, 640, -3, 1.0)}${place(CD('b812', 22), 400, 630, 1, 1.0)}${place(CD('b812', 26), 650, 640, 4, 1.0)}`, C.tPlum));
+  // 6 seasonal sets
+  P.push(L(`<div class="lh"><div class="lk">Bonus sets</div><h2>Summer & rainy-day<br>mini-sets</h2><p class="ls">36 extra cards for sunny afternoons and stuck-inside days.</p></div>
+    ${place(BK('summer'), 70, 400, -8, 1.02)}${place(CD('summer', 1), 250, 380, -2, 1.1)}${place(CD('summer', 16), 360, 640, 6, 1.0)}
+    ${place(CD('rainy', 3), 560, 380, 2, 1.1)}${place(BK('rainy'), 760, 420, 9, 1.02)}${place(CD('rainy', 10), 600, 650, -5, 1.0)}`, C.tTomato));
+  // 7 labels, dividers, colorways
+  P.push(L(`<div class="lh"><div class="lk">Jar labels · dividers · card backs</div><h2>Four colorways.<br>One calm system.</h2></div>
+    <div class="paper" style="${at(64, 300, -3)};width:300px;height:388px"><img src="${PV(40)}"></div>
+    <div class="paper" style="${at(350, 290, 2)};width:300px;height:388px"><img src="${PV(41)}"></div>
+    <div class="paper" style="${at(640, 300, 5)};width:300px;height:388px"><img src="${PV(37)}"></div>
+    ${['b13', 'b35', 'b58', 'b812', 'summer', 'rainy'].map((k, i) => place(BK(k), 90 + i * 140, 730, (i - 2.5) * 3, 0.62)).join('')}`, '#FFFFFF'));
+  // 8 sizes & formats
+  const F = [['US Letter + A4', 'Every page in both sizes, at 100% scale'], ['Fillable editable PDF', 'Type your own cards in free Adobe Acrobat Reader'], ['Canva PNG set', '30 blank cards, backs, labels and dividers at 300 dpi'], ['Double-sided cards file', 'Fronts and backs, ready for duplex printing'], ['Instant download', 'Digital file only. Nothing is shipped.']];
+  P.push(L(`<div class="lh"><div class="lk">Sizes & formats</div><h2>Print it your way.</h2></div>
+    <div style="position:absolute;left:64px;top:250px;width:470px">${F.map(([h, t], i) => `<div style="background:#fff;border-radius:20px;padding:18px 22px;margin-bottom:14px;border-left:10px solid ${[C.sun, C.grass, C.sky, C.plum, C.tomato][i]}"><div style="font-family:Bricolage Grotesque;font-weight:800;font-size:27px">${h}</div><div style="font-size:18px;font-weight:600">${t}</div></div>`).join('')}</div>
+    <div class="paper" style="${at(600, 270, 4)};width:320px;height:414px"><img src="${PV(27)}"></div>
+    <div class="paper" style="${at(570, 560, -3)};width:320px;height:414px"><img src="${PV(44)}"></div>`));
+  // 9 how to use
+  const S = [['Print', 'On cardstock, at actual size'], ['Cut & laminate', 'Round the corners, add velcro if you like'], ['Fill the jar', 'Or a recipe box with the dividers'], ['Pull, play, talk', 'Use the talk prompt, then follow their lead']];
+  P.push(L(`<div class="lh"><div class="lk">How to use</div><h2>From “I’m bored!”<br>to “Again!”</h2></div>
+    <div style="position:absolute;left:64px;top:300px;width:420px">${S.map(([h, t], i) => `<div style="display:flex;gap:16px;margin-bottom:26px"><span style="flex:0 0 52px;height:52px;border-radius:50%;background:${[C.sun, C.grass, C.sky, C.plum][i]};color:${i ? '#fff' : C.ink};font-family:Bricolage Grotesque;font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center">${i + 1}</span><div><div style="font-family:Bricolage Grotesque;font-weight:800;font-size:28px">${h}</div><div style="font-size:19px;font-weight:600">${t}</div></div></div>`).join('')}</div>
+    <div class="paper" style="${at(540, 280, 3)};width:400px;height:518px"><img src="${PV(42)}"></div>
+    ${place(CD('b35', 0), 600, 350, -2, 0.62)}${place(CD('b13', 16), 772, 352, 2, 0.62)}`, C.tSky));
+  // 10 safety + talk
+  P.push(L(`<div class="lh"><div class="lk">Made with care</div><h2>Safety line and talk<br>prompt on every card.</h2></div>
+    <div style="position:absolute;left:64px;top:300px;width:560px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      ${[['Grown-up nearby', 'Every card assumes adult supervision.'], ['Under-3s', 'Nothing small enough to fit through a toilet-paper tube.'], ['No balloons', 'None of the cards use them.'], ['Water and food', 'Arm’s-reach water rules. No choking-hazard foods.']].map(([h, t]) => `<div style="background:#fff;border-radius:20px;padding:18px 20px"><div style="font-family:Bricolage Grotesque;font-weight:800;font-size:24px">${h}</div><div style="font-size:17px;font-weight:600;line-height:1.35">${t}</div></div>`).join('')}
+    </div>
+    <div style="position:absolute;left:64px;top:640px;width:560px;height:200px;background:${C.tSun};border-radius:24px;padding:14px 20px"><svg viewBox="0 0 330 120" width="100%" height="100%">${tubeArt().replace(/^<svg[^>]*>|<\/svg>$/g, '')}</svg></div>
+    ${place(CD('b13', 5), 680, 330, 4, 1.1)}`, C.tGrass));
+  return P;
+}
+BASE = '../../../';
+fs.writeFileSync(path.join(__dirname, 'mockup.html'), doc('../../../brand/fonts/fonts.css', SZ, [mockupPage()], mkCss + '<style>body{width:1600px}</style>'));
+fs.writeFileSync(path.join(__dirname, 'listing.html'), doc('../../../brand/fonts/fonts.css', SZ, listingPages(), mkCss));

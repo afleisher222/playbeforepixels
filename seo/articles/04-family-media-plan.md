@@ -31,7 +31,7 @@ The American Academy of Pediatrics recommends that families make a family media 
 
 A written plan helps because:
 
-- **It's predictable.** Kids handle limits better when they know them ahead of time.
+- **It's predictable.** Many kids handle limits better when they know them ahead of time.
 - **It's fair.** Everyone, grown-ups included, follows the same basic rules.
 - **It moves the "no" off you.** "What does our plan say?" lands differently from "Because I said so."
 
@@ -41,10 +41,10 @@ Keep it to 15 minutes, with snacks. Explain that you're making a plan together, 
 
 - What do you love doing on screens?
 - What do you love doing *without* screens?
-- When do screens cause arguments or bad moods in our house?
+- When do we argue about screens in our house?
 - What would you like more time for?
 
-Write down the answers. Kids who help write the rules are more likely to follow them.
+Write down the answers. When kids help write the rules, the rules feel like theirs too.
 
 ## Step 2: Choose screen-free times
 
@@ -62,7 +62,7 @@ Pick a few times of day that are always screen-free, for everyone. Common choice
 - [ ] The dinner table
 - [ ] The bathroom
 
-A family charging station is one of the simplest, most effective habits you can build. When the phone sleeps in the kitchen, bedtime gets easier.
+A family charging station is one of the simplest habits to set up. When the phone sleeps in the kitchen, there's one less thing to negotiate at bedtime.
 
 ## Step 4: Decide how much, and what kind
 
@@ -102,7 +102,7 @@ A plan that's all limits feels like a punishment. Add the good stuff:
 
 ## Step 7: Put grown-ups in the plan too
 
-Kids notice when adults are on their phones at dinner. Include a few grown-up commitments ("Phones in the basket during meals, including ours") and your plan will feel fair, and it will work better.
+Kids notice when adults are on their phones at dinner. Include a few grown-up commitments ("Phones in the basket during meals, including ours") and the plan will feel fairer to everyone.
 
 ## Step 8: Write it, sign it, post it
 

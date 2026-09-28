@@ -62,7 +62,7 @@ For young children, reading is also about something bigger than comprehension: *
 |---|---|---|
 | 0–2 | Board books your baby can hold, chew-test and flip | Lots of pointing and naming together |
 | 3–5 | A nightly read-aloud from a printed picture book | Time to pause, ask questions and look at pictures |
-| 6–8 | Printed early readers and library books for practice | Fewer distractions while decoding new words |
+| 6–8 | Printed early readers and library books for practice | Nothing to tap or swipe while working out new words |
 | 9–12 | Paper for textbooks, nonfiction and study; a screen is fine for a quick look-up | Matches the "informational text" advantage in the research |
 
 **A home checklist:**
@@ -89,6 +89,8 @@ UNESCO's 2023 *Global Education Monitoring Report*, "Technology in education: A 
 - **Family link.** Send home a simple "paper reading" log instead of a login.
 
 **Talking with families:** when parents ask, share the research neutrally: "A large review found readers understood informational text a little better on paper, especially under time pressure, so we use paper for close reading." Keep the focus on what helps learning, never on any particular product or program.
+
+**Ready-to-print routines:** the **PreK–5 Screen-Free Classroom Pack** includes paper-first reading routines, talk cards and a family take-home sheet, with single-classroom and whole-school site licenses. [See the Classroom Pack](/schools/classroom-pack/).
 <!-- /GATE -->
 
 ## Quick answers

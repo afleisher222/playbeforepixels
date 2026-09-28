@@ -35,7 +35,7 @@ The key measures were:
 
 **What they found:** at 36 months, children with more screen time heard and made less talk. On average, screen time was linked with **1,139 fewer adult words, 843 fewer child vocalizations and 194 fewer conversational turns per day** (Brushe et al., 2024).
 
-That's a lot of little conversations. It fits with something parents already sense: when a screen is on, even in the background, grown-ups and children tend to talk to each other less.
+That's a lot of little conversations. The study can't show that screens caused the difference, but it's one reason many families switch the TV off when no one is watching.
 
 ## Other large studies
 

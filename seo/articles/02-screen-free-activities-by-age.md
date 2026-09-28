@@ -24,7 +24,7 @@ The best screen-free activities aren't elaborate. They use what you already have
 
 Below you'll find ideas sorted by age, each with a **talk tip** (how to turn the play into conversation) and a **safety note**. Pick one that fits today. You don't need to do them all.
 
-> **Safety first, every time.** An adult supervises every activity. For children under 3, nothing smaller than a toilet-paper tube's opening (about 1¼ inches / 3.2 cm): if it fits through, it's a choking risk. No balloons for children under 8. No cords or strings long enough to go around a neck. Stay within arm's reach during any water play. Skip choking-risk foods for toddlers, such as whole grapes, nuts, popcorn and hard candy.
+> **Safety first, every time.** An adult supervises every activity. For children under 3, nothing small enough to fit through a toilet-paper tube: if it fits, it's a choking risk. No balloons for children under 8. No cords or strings long enough to go around a neck. Stay within arm's reach during any water play. Skip choking-risk foods for toddlers, such as whole grapes, nuts, popcorn and hard candy.
 
 ## Babies: 0 to 12 months
 
@@ -66,7 +66,7 @@ Pretend play takes off. Preschoolers can follow two- and three-step games and lo
 | Nature hunt | Find something rough, smooth, green, tiny, bigger than your hand. | "How does it feel? What else feels like that?" |
 | Freeze dance | You sing or play music; everyone freezes when it stops. | Name the freeze pose: "You're a statue of a… flamingo!" |
 
-**Safety note:** an adult puts down and picks up tape pieces. If under-3s are around, keep small craft pieces out of reach.
+**Safety note:** an adult puts down and picks up tape pieces. If under-3s are around, keep small craft pieces out of reach. On the nature hunt, look and touch but don't taste: no berries, mushrooms or leaves in mouths, and wash hands afterward.
 
 ## Ages 5 to 8
 
@@ -80,7 +80,7 @@ School-age kids want challenge, rules and a chance to win. They also still love 
 | Paper airplane contest | Fold three designs and test which goes farthest. | "What do you think made that one fly farther?" |
 | Comic strip | Fold paper into four boxes and draw a story. | "What happens next? What does the character say?" |
 
-**Safety note:** an adult handles the stove, oven and sharp knives.
+**Safety note:** an adult handles the stove, oven and sharp knives. Fly paper airplanes away from people's faces.
 
 ## Ages 9 to 12
 
@@ -94,7 +94,7 @@ Older kids want independence and real responsibility. Offer choices, not orders.
 | Start a collection or a notebook | Rocks, leaves, sketches, a reading log, a weather journal. | Let them show you and tell you what's new. |
 | Neighborhood map | Draw a map of the block or a favorite park from memory, then check it on a walk. | "What did you remember that I forgot?" |
 
-**Safety note:** agree on boundaries and check-in times for any outdoor independence.
+**Safety note:** an adult supervises tools such as hammers and glue guns, and helps at the stove. Agree on boundaries and check-in times for any outdoor independence.
 
 ## Why play like this is worth a few minutes
 
