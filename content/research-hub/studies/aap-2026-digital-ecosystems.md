@@ -25,7 +25,7 @@ sources:
 
 # American Academy of Pediatrics (2026): "Digital Ecosystems, Children, and Adolescents" policy statement
 
-> **[VERIFY] Not yet checked against the original.** We have not yet been able to read this source's abstract or full text. Everything on this page comes from search-engine summaries of the publisher, PubMed or PMC pages, checked against each other. Treat it as provisional. Items marked [VERIFY] are the ones we are least sure of.
+> **[VERIFY] Not yet checked against the original.** We have not yet been able to read this source's abstract or full text. Everything on this page comes from search-engine summaries of the publisher, PubMed or PMC pages, checked against each other. Please read it as provisional. Items marked [VERIFY] are the ones we are least sure of.
 
 | | |
 |---|---|

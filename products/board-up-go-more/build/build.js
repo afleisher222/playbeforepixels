@@ -527,7 +527,7 @@ const routinesPage = (withLegal) => ({
   cls: 'inner routines-pg', html: `
   <div class="in">
     <h2 class="ptitle">Keep the words going</h2>
-    <p class="lede">These words live all through your day. Use them again and again, in the same moments.</p>
+    <p class="lede">Use these words again and again, in the same moments each day.</p>
     <div class="routines">${MS.routines.map(([t, ws, c]) => `<div class="rt" style="--c:${C[c]};--t:${C['t' + c[0].toUpperCase() + c.slice(1)]}"><span class="rtl">${t}</span><span class="chips">${ws.map(w => `<em>${w}</em>`).join('')}</span></div>`).join('')}</div>
     <p class="note">No screen needed. Just you, your voice, and a little time to wait.</p>
     ${withLegal ? `<div class="legal">
@@ -623,7 +623,7 @@ const ownWordsPage = () => ({
   <div class="in">
     <h2 class="ptitle">Add your own words</h2>
     <p class="lede">Your child’s first words may be different from the ones in this book. Grown-ups, add the words that matter in your home: names, pets, a favorite food.</p>
-    <div class="frames">${[C.tomato, C.sun, C.sky, C.grass].map(c => `<div class="fr" style="--c:${c}"><span class="fi">Grown-up: add a photo or a quick sketch</span><span class="fl">Word:</span></div>`).join('')}</div>
+    <div class="frames">${[C.tomato, C.sun, C.sky, C.grass].map(c => `<div class="fr" style="--c:${c}"><span class="fi">Grown-up: add a photo or sketch</span><span class="fl">Word:</span></div>`).join('')}</div>
   </div>`
 });
 const bonusPage = () => ({
@@ -837,7 +837,8 @@ function build() {
   const spinePx = spineIn * IN, trimPx = 8.5 * IN;
   const wrapW = BLEED + trimPx + spinePx + trimPx + BLEED, wrapH = 8.75 * IN;
   const wrapCss = `@page{size:${(wrapW / IN).toFixed(4)}in 8.75in;margin:0}.wrap{width:${wrapW}px;height:${wrapH}px;position:relative;overflow:hidden;background:${C.ink}}
-    .half{position:absolute;top:0;height:${wrapH}px;overflow:hidden}.half>.pg{position:absolute;top:0;transform:scale(${PB_SCALE});transform-origin:0 0}`;
+    .half{position:absolute;top:0;height:${wrapH}px;overflow:hidden}.half>.pg{position:absolute;top:0;transform:scale(${PB_SCALE});transform-origin:0 0}
+    .wrap .isbn{width:${2 * IN / PB_SCALE}px;height:${1.2 * IN / PB_SCALE}px;right:${(BLEED + IN / 4) / PB_SCALE}px;bottom:${(BLEED + IN / 4) / PB_SCALE}px;padding:0 6px}.wrap .isbn span{font-size:9px}.wrap .isbn small{font-size:7px} /* KDP barcode area: 2 x 1.2 in, 0.25 in from spine and bottom trim [VERIFY] */`;
   const wrapBody = `<section class="page wrap">
     <div class="half" style="left:0;width:${BLEED + trimPx}px"><div class="pg ${back(R1).cls}" style="left:0">${back(R1).html}</div></div>
     <div class="half" style="left:${BLEED + trimPx + spinePx}px;width:${trimPx + BLEED}px"><div class="pg ${cover(R1).cls}" style="left:${-BLEED}px">${cover(R1).html}</div></div>

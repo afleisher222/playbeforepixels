@@ -23,9 +23,9 @@ sources:
     what_we_read: "secondary-only"
 ---
 
-# Sundarimaa et al. (2025): screen time and autism screening results in Singapore toddlers
+# Sundarimaa et al. (2025): screen time and autism screening scores in Singapore toddlers
 
-> **[VERIFY] Not yet checked against the original.** We have not yet been able to read this source's abstract or full text. Everything on this page comes from search-engine summaries of the publisher, PubMed or PMC pages, checked against each other. Treat it as provisional. Items marked [VERIFY] are the ones we are least sure of.
+> **[VERIFY] Not yet checked against the original.** We have not yet been able to read this source's abstract or full text. Everything on this page comes from search-engine summaries of the publisher, PubMed or PMC pages, checked against each other. Please read it as provisional. Items marked [VERIFY] are the ones we are least sure of.
 
 > “Virtual autism” is a term some clinicians use for autism-like behaviors seen in some young children with heavy early screen exposure; it is not a medical diagnosis. Studies show links, not proof of cause.
 

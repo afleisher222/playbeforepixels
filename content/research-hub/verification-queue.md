@@ -13,7 +13,7 @@ sources:
 
 **Status on 2026-09-28:** every source in the hub is **secondary-only**. PubMed, PMC, Crossref, doi.org, publisher sites, CDC, ed.gov, NHS and the AAP were blocked by the network proxy, and the session web-search budget (200/200) was spent. No page may be published until its sources are read (abstract at minimum).
 
-**How to clear an item:** open the PubMed record or DOI; read the abstract (full text where available); correct the study page (numbers, authors, DOI/PMID, design, stance); change `what_we_read` in its front matter and the "What we read" section to `abstract` or `full-text`; remove [VERIFY] marks only for claims you confirmed; log the source in ops/RESEARCH-LOG.md; then regenerate `_data/library.json` and `library.md`. If a claim cannot be confirmed, delete it rather than keep it.
+**How to clear an item:** open the PubMed record or DOI; read the abstract (full text where available); correct the study page (numbers, authors, DOI/PMID, design, stance); change `what_we_read` in its front matter and the "What we read" section to `abstract` or `full-text`; remove [VERIFY] marks only for claims you confirmed; log the source in ops/RESEARCH-LOG.md; then update that source's row in `_data/library.json` and `library.md` (stance, one-line finding, citation status). If a claim cannot be confirmed, delete it rather than keep it.
 
 ## Priority 1: allowed-citation list (still unread in this review)
 

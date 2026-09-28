@@ -26,6 +26,7 @@ symbol{overflow:visible}
 .tip{margin:7px 0 0;padding-top:7px;border-top:1.5px solid #F3F6FB;font-size:12.5px;line-height:1.32;font-weight:600;color:var(--ink)}
 .tip .lab{font-weight:800;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin-right:3px}
 .tip strong{font-weight:800}
+.card.lt .chip{color:var(--ink)}.card.lt .chip svg{color:rgba(255,255,255,.55)}.card.lt .tip .lab{color:var(--ink)}
 /* cover */
 .spill{position:absolute;left:48px;top:48px;display:inline-flex;align-items:center;gap:0;border-radius:99px;background:#1D2940;color:#fff;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;overflow:hidden}
 .spill b{padding:5px 9px 5px 12px}
@@ -58,7 +59,7 @@ symbol{overflow:visible}
 .c3 span{font-size:11.5px;line-height:1.25;color:var(--ink);margin-top:3px}
 .steps{list-style:none;margin:0;padding:0;counter-reset:s}
 .steps li{position:relative;padding-left:40px;margin:0 0 10px;font-size:13.5px;line-height:1.36;counter-increment:s;min-height:28px}
-.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:27px;height:27px;border-radius:50%;background:var(--c);color:#fff;font-family:"Fredoka",sans-serif;font-weight:600;font-size:15px;display:flex;align-items:center;justify-content:center}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:27px;height:27px;border-radius:50%;background:var(--c);color:var(--n,#fff);font-family:"Fredoka",sans-serif;font-weight:600;font-size:15px;display:flex;align-items:center;justify-content:center}
 .steps b{font-weight:800}
 .strip{display:block;width:100%;height:auto;margin:auto 0 0}.strip+.note{margin-top:14px}
 .belongs{margin:12px 0 0;display:flex;align-items:flex-end;gap:10px;font-family:"Caveat",cursive;font-weight:700;font-size:21px}
@@ -94,6 +95,7 @@ symbol{overflow:visible}
 .bonus small{display:block;margin-top:3px;font-size:9px;opacity:.75}
 .isbn{position:absolute;right:48px;bottom:48px;width:192px;height:115px;background:#fff;border:1.5px dashed #9AA3B5;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#1D2940;padding:0 12px}
 .isbn span{font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.isbn.final{border:0;border-radius:0}
 .isbn small{font-size:9px;opacity:.7;margin-top:4px;line-height:1.3}
 /* paperback extras */
 .title-pg .spill{position:static;margin:26px 0 22px}
@@ -190,7 +192,7 @@ symbol{overflow:visible}
 <symbol id="spark" overflow="visible"><path d="M0-12C1.5-3 3-1.5 12 0C3 1.5 1.5 3 0 12C-1.5 3-3 1.5-12 0C-3-1.5-1.5-3 0-12Z" fill="#FFFFFF"/></symbol>
 <symbol id="speech" overflow="visible"><path d="M-8-7H8A5 5 0 0 1 13-2V3A5 5 0 0 1 8 8H0L-6 12.5V8H-8A5 5 0 0 1-13 3V-2A5 5 0 0 1-8-7Z" fill="#FFFFFF"/></symbol></defs></svg>
 <section class="page pg cover">
-  <svg class="art" viewBox="0 0 600 600" preserveAspectRatio="none" role="img" aria-label="A toddler with arms up, laughing"><rect x="0" y="0" width="600" height="600" fill="#F5B820"/><circle cx="420" cy="380" r="146" fill="#FFFFFF"/><rect x="-10" y="470" width="620" height="140" fill="#1D2940"/><g style="--sk:#8D5A3B;--hr:#2B1D16;--sh:#EE5A36;--pa:#3D86D8;--so:#1D2940;--hw:#F5B820" transform="translate(420,427.88) scale(1.56,1.56)"><use href="#t-leg" transform="translate(-8,-4) rotate(3)" /><use href="#t-leg" transform="translate(8,-4) rotate(-3)" /><use href="#t-body" transform="" /><use href="#t-arm" transform="translate(-14,-38) rotate(128)" /><use href="#t-arm" transform="translate(14,-38) rotate(-128)" /><g transform="translate(0,-69) rotate(0)"><use href="#t-head" transform="" /><use href="#face-laugh" transform="" /><use href="#h-puffs" transform="" /></g></g><use href="#ball" transform="translate(522,440) scale(.6) rotate(14)" /></svg>
+  <svg class="art" viewBox="0 0 600 600" preserveAspectRatio="none" role="img" aria-label="A toddler with arms up, laughing"><rect x="0" y="0" width="600" height="600" fill="#F5B820"/><circle cx="420" cy="380" r="146" fill="#FFFFFF"/><rect x="-10" y="470" width="620" height="140" fill="#1D2940"/><g style="--sk:#8D5A3B;--hr:#2B1D16;--sh:#EE5A36;--pa:#3D86D8;--so:#1D2940;--hw:#F5B820" transform="translate(420,427.88) scale(1.56,1.56)"><use href="#t-leg" transform="translate(-8,-4) rotate(3)" /><use href="#t-leg" transform="translate(8,-4) rotate(-3)" /><use href="#t-body" transform="" /><use href="#t-arm" transform="translate(-14,-38) rotate(128)" /><use href="#t-arm" transform="translate(14,-38) rotate(-128)" /><g transform="translate(0,-69) rotate(0)"><use href="#t-head" transform="" /><use href="#face-laugh" transform="" /><use href="#h-puffs" transform="" /></g></g><use href="#ball" transform="translate(503,432) scale(.56) rotate(14)" /></svg>
   <span class="spill"><b>Talk-Along Firsts</b><i>Book 1</i></span>
   <h1 class="ctitle"><span>Up<i>!</i></span><span>Go<i>!</i></span><span>More<i>!</i></span></h1>
   <div class="count"><b>22</b><span>first words to say, sign and act out</span></div>

@@ -22,5 +22,7 @@ def snap(f, w):
         if len(new) == len(old): b = b.replace(bx, bx.replace(old, new, 1))
     open(f, 'wb').write(b)
 snap('paperback/up-go-more-talk-along-interior.pdf', '621')
+w_in = float(re.search(r'@page\{size:([\d.]+)in', open('paperback/cover-wrap.html').read()).group(1))
+snap('paperback/up-go-more-talk-along-cover.pdf', ('%.5f' % (w_in * 72)).rstrip('0').rstrip('.'))
 PY
 echo done

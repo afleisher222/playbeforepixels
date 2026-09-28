@@ -170,7 +170,7 @@ INTERNAL (remove at publish):
 > **This is not medical advice.**
 > This page explains research in plain language. It cannot tell you whether your child is autistic, has a delay, or is developing as expected. Only a qualified professional who meets your child can help with that. If something about your child's development worries you, you do not need to wait: talk with your pediatrician, and in the US you can ask your state's early intervention program for a free evaluation yourself. [See how to ask](/research/early-intervention/).
 
-**Last reviewed:** September 28, 2026. **How we wrote this:** every claim links to a study page that says exactly what we read. Sources marked **[VERIFY]** are ones we have not yet been able to check against the original paper. Treat them as provisional. [Our editorial policy](/research/editorial-policy/) explains how we choose sources, who reviews them, and how to report a mistake.
+**Last reviewed:** September 28, 2026. **How we wrote this:** every claim links to a study page that says exactly what we read. Sources marked **[VERIFY]** are ones we have not yet been able to check against the original paper. Read them as provisional. [Our editorial policy](/research/editorial-policy/) explains how we choose sources, who reviews them, and how to report a mistake.
 
 ## The short version
 
