@@ -69,7 +69,7 @@ L.push(`<div class="L" style="background:#fff">
 // 3 age bands
 L.push(`<div class="L" style="background:${C.wash}">
   <div style="position:absolute;left:56px;top:50px"><div class="kick" style="color:${C.grass}">Organized by age</div><h1 style="font-size:64px;margin-top:8px">Three age bands that grow with your child</h1></div>
-  <div style="position:absolute;left:56px;right:56px;top:260px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px">${[['b1', 'same-toys'], ['b2', 'weather'], ['b3', 'maze6']].map(([b, id]) => { const B = BANDS[b]; return `<div class="tile" style="background:${B.t};padding:16px"><span class="bchip" style="background:${B.c};color:${B.on};font-size:19px;padding:8px 16px">${B.label}</span><h3 style="margin-top:10px">${B.name}</h3><p style="font-size:15.5px">${B.blurb}</p><div class="pg" style="position:relative;width:100%;height:${258 * 11 / 8.5}px;margin-top:12px"><img src="${pv(A[id])}"></div><p style="margin-top:10px;font-weight:800">${S.byBand[b]} activities</p></div>`; }).join('')}</div>
+  <div style="position:absolute;left:56px;right:56px;top:260px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px">${[['b1', 'same-toys'], ['b2', 'weather'], ['b3', 'maze6']].map(([b, id]) => { const B = BANDS[b]; return `<div class="tile" style="background:${B.t};padding:16px"><span class="bchip" style="background:${B.c};color:${B.on};font-size:19px;padding:8px 16px">${B.label}</span><h3 style="margin-top:10px">${B.name}</h3><p style="font-size:15.5px;min-height:63px">${B.blurb}</p><div class="pg" style="position:relative;width:100%;height:${258 * 11 / 8.5}px;margin-top:12px"><img src="${pv(A[id])}"></div><p style="margin-top:10px;font-weight:800">${S.byBand[b]} activities</p></div>`; }).join('')}</div>
 </div>`);
 // 4 first words
 L.push(`<div class="L" style="background:${C.tSun}">
@@ -79,21 +79,21 @@ L.push(`<div class="L" style="background:${C.tSun}">
 </div>`);
 // 5 matching + pieces
 L.push(`<div class="L" style="background:${C.tGrass}">
-  <div style="position:absolute;left:56px;top:50px;right:56px"><div class="kick" style="color:${C.grass}">Matching · sorting · pretend play</div><h1 style="font-size:60px;margin-top:8px">Big pieces, straight cuts</h1><p style="font-size:22px;font-weight:700;margin-top:10px">Each piece sheet sits right after its page. 12 straight cuts or fewer.</p></div>
+  <div style="position:absolute;left:56px;top:50px;right:56px"><div class="kick" style="color:${C.grass}">Matching · sorting · pretend play</div><h1 style="font-size:60px;margin-top:8px">Big pieces, straight cuts</h1><p style="font-size:22px;font-weight:700;margin-top:10px">Each piece sheet sits right after its page. Straight cuts, 12 pieces or fewer.</p></div>
   ${page(A['shadows'], 70, 300, 390, -3)}${page(SH['shadows'], 520, 300, 390, 3)}
   ${pieceCard('w-duck', 'duck', 200, 176, -9, 330, 740)}${pieceCard('w-cup', 'cup', 190, 168, 7, 560, 770)}
 </div>`);
 // 6 3-5 thinking
 L.push(`<div class="L" style="background:${C.tTomato}">
   <div style="position:absolute;left:56px;top:50px;right:56px"><div class="kick" style="color:${C.tomato}">For 3–5 years</div><h1 style="font-size:60px;margin-top:8px">Mazes, patterns and little stories</h1><p style="font-size:22px;font-weight:700;margin-top:10px">8 mazes from easy to tricky, plus counting, rhymes and sequencing.</p></div>
-  ${page(A['maze2'], 40, 270, 320, -6)}${page(A['patterns1'], 340, 250, 320, 0)}${page(A['seq1'], 640, 270, 320, 6)}
+  ${page(A['maze2'], 16, 262, 390, -6)}${page(A['patterns1'], 305, 240, 390, 0)}${page(A['seq1'], 594, 262, 390, 6)}
   <div style="position:absolute;left:56px;right:56px;bottom:44px;display:flex;gap:10px;flex-wrap:wrap">${['8 mazes', 'Counting 1–6', 'Patterns', 'First, next, last', 'Rhymes', 'Café & post office'].map(t => `<span class="bchip" style="font-size:19px;padding:10px 16px">${t}</span>`).join('')}</div>
 </div>`);
 // 7 how a page works
 L.push(`<div class="L" style="background:#fff">
   <div style="position:absolute;left:56px;top:50px"><div class="kick" style="color:${C.sky}">Every page, the same calm system</div><h1 style="font-size:60px;margin-top:8px">Made for tired grown-ups</h1></div>
-  ${page(A['teddy'], 56, 200, 470, 0)}
-  <div style="position:absolute;left:570px;right:50px;top:210px;display:flex;flex-direction:column;gap:14px">${[[C.tSky, 'Talk while you play', 'One line to say out loud on every page.'], [C.tSun, 'Easier & harder', 'One page grows with your child.'], [C.tGrass, '2-minute version', 'For days with nothing left in the tank.'], [C.tPlum, 'Prep · mess · needs', 'Honest prep time. Most pages: zero.'], [C.tTomato, 'Safety note', 'Supervision note on every activity page.']].map(([t, h, p]) => `<div class="tile" style="background:${t};padding:14px 18px"><h3 style="font-size:24px">${h}</h3><p>${p}</p></div>`).join('')}</div>
+  ${page(A['teddy'], 50, 190, 510, 0)}
+  <div style="position:absolute;left:600px;right:50px;top:196px;display:flex;flex-direction:column;gap:14px">${[[C.tSky, 'Talk while you play', 'One line to say out loud on every page.'], [C.tSun, 'Easier & harder', 'One page grows with your child.'], [C.tGrass, '2-minute version', 'For days with nothing left in the tank.'], [C.tPlum, 'Prep · mess · needs', 'Honest prep time. Most pages: zero.'], [C.tTomato, 'Safety note', 'Supervision note on every activity page.'], [C.wash, 'Grown-up guide', 'Two pages: the why, a 2-minute setup and three talk lines.']].map(([t, h, p]) => `<div class="tile" style="background:${t};padding:14px 18px"><h3 style="font-size:24px">${h}</h3><p>${p}</p></div>`).join('')}</div>
 </div>`);
 // 8 sizes & formats
 L.push(`<div class="L" style="background:${C.wash}">
@@ -106,7 +106,7 @@ L.push(`<div class="L" style="background:${C.wash}">
 // 9 how to use
 L.push(`<div class="L" style="background:#fff">
   <div style="position:absolute;left:56px;top:50px;right:56px"><div class="kick" style="color:${C.grass}">How to use</div><h1 style="font-size:60px;margin-top:8px">Play today, build it over time</h1></div>
-  <div style="position:absolute;left:56px;right:56px;top:210px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px">${[['1', 'Print', 'Start with a no-cut page: ' + S.noCut + ' are ready today.', C.tSky, 'b-printer'], ['2', 'Protect', 'Sheet protectors or a laminator. Both optional.', C.tSun, 'b-laminator'], ['3', 'Cut', 'Straight lines only, 12 cuts or fewer per sheet.', C.tTomato, 'b-scissors'], ['4', 'Play & talk', 'Say the talk line, then pause for their turn.', C.tGrass, 'w-duck']].map(([n, h, p, t, id]) => `<div class="tile" style="background:${t};text-align:center"><div class="big" style="font-size:40px">${n}</div><svg width="120" height="110" viewBox="-60 -55 120 110"><use href="#${id}"/></svg><h3>${h}</h3><p style="font-size:16px">${p}</p></div>`).join('')}</div>
+  <div style="position:absolute;left:56px;right:56px;top:210px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px">${[['1', 'Print', 'Start with a no-cut page: ' + S.noCut + ' are ready today.', C.tSky, 'b-printer'], ['2', 'Protect', 'Sheet protectors or a laminator. Both optional.', C.tSun, 'b-laminator'], ['3', 'Cut', 'Straight lines only, 12 pieces or fewer per sheet.', C.tTomato, 'b-scissors'], ['4', 'Play & talk', 'Say the talk line, then pause for their turn.', C.tGrass, 'w-duck']].map(([n, h, p, t, id]) => `<div class="tile" style="background:${t};text-align:center"><div class="big" style="font-size:40px">${n}</div><svg width="120" height="110" viewBox="-60 -55 120 110"><use href="#${id}"/></svg><h3>${h}</h3><p style="font-size:16px">${p}</p></div>`).join('')}</div>
   ${page(A['x-build'], 110, 610, 300, -3)}${page(A['x-lam'], 560, 600, 300, 3)}
 </div>`);
 // 10 safety

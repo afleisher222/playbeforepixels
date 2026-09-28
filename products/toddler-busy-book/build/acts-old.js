@@ -73,7 +73,7 @@ b3.push({
 b3.push({
   id: 'garden', band: 'b3', from: 40, cat: 'Counting', title: 'Count in the garden',
   how: '<b>Look and count.</b> Pick a picture from the strip at the bottom, then count how many are in the garden.',
-  talk: ['Say what you see', '“Let’s count the bees. One, two, three… four bees!”'], easier: 'Count the trees and the sun first: small numbers.', harder: 'Count everything with wings. Birds and bees and ladybugs!', tired: 'Count the trees. Done.',
+  talk: ['Say what you see', '“Let’s count the ladybugs. One, two, three, four… five ladybugs!”'], easier: 'Count the trees and the sun first: small numbers.', harder: 'Count everything with wings: birds and ladybugs!', tired: 'Count the trees. Done.',
   prep: '0 min', mess: 'None', needs: 'Just this page', cut: false,
   board: () => {
     const g = 300;
@@ -169,7 +169,7 @@ b3.push({
 b3.push({
   id: 'spot', band: 'b3', from: 44, cat: 'Look & find', title: 'Spot 4 differences',
   how: '<b>Look top, then bottom.</b> The two pictures look the same, but four things changed. Point to each one you find.',
-  talk: ['Say what you see', '“The flower was red… now it’s purple! That’s one!”'], easier: 'Give a hint: “Look at the sky.”', harder: 'Tell what’s different in words, without pointing.', tired: 'Find one difference. Done.',
+  talk: ['Say what you see', '“The flower was red… now it’s purple! That’s one!”'], easier: 'Give a hint: “Look at the sky.”', harder: 'Tell what’s different in words, then point to check.', tired: 'Find one difference. Done.',
   prep: '0 min', mess: 'None', needs: 'Just this page', cut: false,
   board: () => {
     const scene = (y, v) => `<g transform="translate(0,${y})">${tint(0, 0, W, 246, 20, '#FFFFFF')}<svg x="0" y="0" width="${W}" height="246" viewBox="0 0 ${W} 246" overflow="hidden">${rr(0, 170, W, 76, 0, C.tGrass, 'class="tint"')}${U('w-sun', 600, 50, 0.45)}${v ? '' : U('b-cloud', 380, 44, 0.55, `style="--cl:${C.tSky}"`)}${U('b-tree', 110, 130, 1.25)}${v ? '' : U('b-bird', 150, 70, 0.4)}${U('b-pond', 380, 196, 1.5)}${U('w-duck', 390, 176, 0.4)}${U('b-flower', 560, 170, 0.62, v ? `style="--pt:${C.plum}"` : '')}${U('w-ball', 250, 206, v ? 0.3 : 0.22)}</svg></g>`;
@@ -236,7 +236,7 @@ b3.push({
 b3.push(mazeAct(MAZES[6], 6));
 
 // ---------------- words & rhymes ----------------
-const rhymes = [['w-cat', 'cat', 'b-sunhat', 'hat'], ['w-moon', 'moon', 'a-spoon', 'spoon'], ['b-bee', 'bee', 'b-tree', 'tree'], ['a-car', 'car', 'w-star', 'star'], ['b-fish', 'fish', 'a-plate', 'dish'], ['b-frog', 'frog', 'b-log', 'log']];
+const rhymes = [['w-cat', 'cat', 'b-sunhat', 'hat'], ['w-moon', 'moon', 'b-spoon', 'spoon'], ['b-bee', 'bee', 'b-tree', 'tree'], ['a-car', 'car', 'w-star', 'star'], ['b-fish', 'fish', 'b-dish', 'dish'], ['b-frog', 'frog', 'b-log', 'log']];
 b3.push({
   id: 'rhyme', band: 'b3', from: 42, cat: 'Rhymes', title: 'Rhyme time',
   how: '<b>Listen for the rhyme.</b> Say both words slowly: “cat… hat.” They sound alike at the end. Find each picture’s rhyming friend.',
@@ -253,7 +253,7 @@ b3.push({
   talk: ['Offer a choice', '“Toothbrush: kitchen or bathroom? (wait) Bathroom!”'], easier: 'Two rooms only: kitchen and bedroom.', harder: 'Walk to the real rooms and find one thing in each.', tired: 'Put one card in the right room.',
   prep: '10 min', mess: 'None', needs: 'Scissors, cardstock', cut: true, cols: 3,
   board: () => rooms.map(([n, id, t], i) => `<g transform="translate(${i * 228},0)">${tint(0, 0, 216, H, 20, t)}${U(id, 108, 90, 0.9)}${T(108, 176, n, 24)}${rr(20, 200, 176, 296, 16, '#FFFFFF', 'class="tint" opacity=".7"')}</g>`).join(''),
-  pieces: [P('a-teapot', 'teapot', { s: 1.2 }), P('b-toothbrush', 'toothbrush'), P('b-teddy', 'teddy'), P('a-pot', 'pot', { s: 1.05 }), P('a-towel', 'towel', { s: 1.2 }), P('b-lamp', 'lamp'), P('a-spoon', 'spoon', { s: 1.1 }), P('a-bubbles', 'bubbles', { s: 1.2 }), P('b-pjs', 'pajamas')],
+  pieces: [P('a-teapot', 'teapot', { s: 1.2 }), P('b-toothbrush', 'toothbrush'), P('b-teddy', 'teddy'), P('a-pot', 'pot', { s: 1.05 }), P('a-towel', 'towel', { s: 1.2 }), P('b-lamp', 'lamp'), P('b-spoon', 'spoon', { s: 1.1 }), P('a-bubbles', 'bubbles', { s: 1.2 }), P('b-pjs', 'pajamas')],
   answer: 'Kitchen: teapot, pot, spoon · Bathroom: toothbrush, towel, bubbles · Bedroom: teddy, lamp, pajamas',
 });
 b3.push({

@@ -4,7 +4,7 @@
 
 ## Summary
 
-Play Before Pixels is a sound business on a small scale, but it will not be a fast one. Its products keep most of each sale: 80–93% of the price of a printable, and about $4–$8 of each paperback. On the lean-path costs it needs about **65 orders a month, roughly two a day**, to cover every fixed cost. It starts with no reviews and no traffic, though, and it cannot take money until Gate A is met (bank account, counsel's go-ahead, insurance). I ran 10,000 simulated futures for October 2026 to September 2027, all with no ad budget. In the middle outcome (the median, P50), the business sells about **$6,300** in that year and makes an **operating loss of about $3,300**. After the one-time legal and IP setup costs, the loss is about **$10,000**. One future in ten sells more than $19,800 and makes more than $6,300 of operating profit. One in ten sells less than about $2,000. The plan's Expected case sits at about the 74th percentile: roughly one future in four does better. Calendar 2026 is a setup year. Its median sales are under $100, and its 90th percentile (P90) is about $570. **Reaching $1,000,000 by December 31 would take about 86,600 orders, about 1,400 a day from November 1. That is roughly 1,700 times the P90**, so it is not a realistic goal for 2026. That is no judgement on the products. Every successful shop in the demand check took years to build its sales. Realistic 2026–27 goals are these: the first sale, the first 100 orders (median: April 2027) and the two-orders-a-day break-even pace (median: June 2027). The things that raise the median most are in the founder's hands. The biggest is holding every cost to the lowest written quote, which also keeps the cash hole under the $12,000 placeholder cap in almost every future (without it, 41% of futures pass the cap). The others are cutting about $100 a month of fixed cost, lifting traffic and conversion with steady publishing and better listings, and meeting Gate A early enough to sell in November. At the ad prices assumed here, paid ads lose money on every launch product.
+Play Before Pixels is a sound business on a small scale, but it will not be a fast one. Its products keep most of each sale: 80–93% of the price of a printable sold on Etsy or the own site (about 73–78% through Gumroad once its card fee is counted), and about $3–$8 of each paperback. On the lean-path costs it needs about **65 orders a month, roughly two a day**, to cover every fixed cost. It starts with no reviews and no traffic, though, and it cannot take money until Gate A is met (bank account, counsel's go-ahead, insurance). I ran 10,000 simulated futures for October 2026 to September 2027, all with no ad budget. In the middle outcome (the median, P50), the business sells about **$6,300** in that year and makes an **operating loss of about $3,300**. After the one-time legal and IP setup costs, the loss is about **$10,000**. About one future in ten sells more than $19,800 and makes more than $6,300 of operating profit (the two top tenths overlap in 91% of cases). One in ten sells less than about $2,000. The plan's Expected case sits at about the 74th percentile: roughly one future in four does better. Calendar 2026 is a setup year. Its median sales are under $100, and its 90th percentile (P90) is about $570. **Reaching $1,000,000 by December 31 would take about 86,600 orders, about 1,400 a day from November 1. That is roughly 1,700 times the P90**, so it is not a realistic goal for 2026. That is no judgement on the products. The strongest shops in the demand check show lifetime shop totals (2,189 and 10.4k sales), not one season's sales; the demand check does not say how long they took. Realistic 2026–27 goals are these: the first sale, the first 100 orders (median: April 2027) and the two-orders-a-day break-even pace (median: June 2027). The things that raise the median most are in the founder's hands. The biggest is holding every cost to the lean-path figure, which also keeps the cash hole under the $12,000 placeholder cap in almost every future (with the cost drift this test assumes, 41% of futures pass the cap). That lever is only partly in the founder's hands: no written quotes exist yet, and the lean insurance figures are web averages and floors, not quotes. Insurance alone at its mid-point would lift the break-even line from 65 to about 84 orders a month. The headline odds also rest on the test's central traffic assumption (section 3). The others are cutting about $100 a month of fixed cost, lifting traffic and conversion with steady publishing and better listings, and meeting Gate A early enough to sell in November. At the ad prices assumed here, paid ads lose money on every launch product.
 
 **Labels used throughout.** **SOURCE (file)** = the number comes from that repository file. **ASSUMPTION** = a planning input chosen for this test. **UNVERIFIED** = a platform rule or price that nobody has checked on the live page. The proxy blocked web search in this session, so every UNVERIFIED item is listed in "Needs a live check" at the end.
 
@@ -12,8 +12,8 @@ Play Before Pixels is a sound business on a small scale, but it will not be a fa
 
 | Measure | Value | Label |
 |---|---|---|
-| Fixed costs per month, lean path, annual bills spread over 12 | $567 | SOURCE `PlayBeforePixels_Financial_Model.xlsx` (Monthly Operating Costs) |
-| Contribution per order, blended, at month 12 | $8.73 | Derived from the workbook's Unit Economics and mix weights |
+| Fixed costs per month, lean path, annual bills spread over 12 | $567 | Derived from `PlayBeforePixels_Financial_Model.xlsx` (Monthly Operating Costs, year-2 items; the workbook itself shows $398 a month plus annual bills in the month they fall due) |
+| Contribution per order, blended, at month 12 | $8.73 | Derived from the workbook's Unit Economics and mix weights (the workbook's own Break-even tab gives $8.75 for Expected, month 12) |
 | Break-even pace, lean path | 65 orders a month (2.1 a day) | Derived |
 | Break-even pace, mid-point costs | 122 orders a month (4.0 a day) | Derived |
 | Median (P50) 12-month sales / operating profit, Oct 2026 – Sep 2027 | $6,284 / ($3,311) | Monte Carlo |
@@ -57,29 +57,29 @@ Play Before Pixels is a sound business on a small scale, but it will not be a fa
 
 | Product | Channel | Price | Net, workbook | Net, corrected | What differs |
 |---|---|---|---|---|---|
-| *100 Screen-Free Plays* paperback (82 pp., B/W, 8 × 10) | KDP | $16.99 | $7.89 (46%) | $7.35 | Large-trim print $2.84, not $2.30 (UNVERIFIED) |
+| *100 Screen-Free Plays* paperback (86 pp. per its listing.json on Sep 28, B/W, 8 × 10; still inside the 24–108-page flat fee) | KDP | $16.99 | $7.89 (46%) | $7.35 | Large-trim print $2.84, not $2.30 (UNVERIFIED) |
 | *The Day the Tablet Slept* paperback (32 pp., colour) | KDP | $11.99 | $3.95 (33%) | $3.63 | Large-trim colour print $3.56, not $3.24 (UNVERIFIED) |
 | *Up! Go! More!* paperback (32 pp., colour) | KDP | $11.99 | $3.95 (33%) | $3.63 | Same |
 | *100 Screen-Free Plays* paperback | IngramSpark, 40% | $16.99 | $7.89 | $7.04 | Access fee plus large-trim print (UNVERIFIED) |
 | *Up! Go! More!* paperback | IngramSpark, 40% | $11.99 | $3.95 | $2.97 | Colour print about $4.00 plus access fee (UNVERIFIED) |
-| 30-Day Screen Reset | Workbook: Shopify. listing.json: merchant of record | $27.00 | $24.57 (91%) | $21.37 | The course is sold through the merchant of record (SOURCE `products/course-screen-reset/listing.json`; `operations/AUTOMATION-MAP.md` 3G), which costs 12.9% + $0.80 |
-| 30-Day Screen Reset bundle | Same | $49.00 | $44.83 (91%) | $39.43 | Same |
+| 30-Day Screen Reset | Workbook: Shopify. listing.json: merchant of record | $27.00 | $24.57 (91%) | $21.37 if the MoR is Gumroad; $23.80 at about 5% + $0.50 | The course is sold through one merchant of record (SOURCE `products/course-screen-reset/listing.json`; `operations/AUTOMATION-MAP.md` 3G). The MoR is not chosen yet: the automation map lists Lemon Squeezy, Gumroad or Payhip. Gumroad costs 12.9% + $0.80. The listing's own estimate is about 5% + $0.50 (UNVERIFIED), which nets $23.80 |
+| 30-Day Screen Reset bundle | Same | $49.00 | $44.83 (91%) | $39.43 (Gumroad) to about $43.60 | Same |
 
 **What this shows:**
-- **Digital products carry the business.** They keep $5–$11 of a $6.50–$12 sale. A colour paperback keeps about $3.60–$3.95.
+- **Digital products carry the business.** They keep about $4.70–$11 of a $6.50–$12 sale. A colour paperback keeps about $3.00–$3.95 (IngramSpark's corrected figure is $2.97).
 - **Etsy keeps about 10 points less of the price than the own site.** It also supplies most of the traffic, so channel mix matters more than a fee change: a 20% rise in every fee moves 12-month profit by only about $400 (section 2).
 - **A $6.50 card set on Etsy nets $5.21.** It takes about 109 of them a month to cover the fixed costs (section 5).
 
 **Record conflicts to fix.** Each one changes a number the plan relies on.
-1. **Routine-card price.** The workbook uses $6.50; `products/visual-routine-cards/listing.json` says $9.50. One of them is wrong. At $9.50 the Etsy net is $7.82 rather than $5.21, if buyers still convert.
-2. **Course channel.** The workbook sells the Reset on Shopify ($24.57 net). Its listing.json routes it through the merchant of record ($21.37 net).
+1. **Routine-card price.** The workbook uses $6.50; `products/visual-routine-cards/listing.json` says $9.50. One of them is wrong. The listing explains the gap: $6.50 was the planned 30–40%-off launch price in `marketing/DEMAND-CHECK.md`, and BRAND.md's honest-pricing rule now forbids a standing sale, so $9.50 is the current intent. At $9.50 the Etsy net is $7.82 rather than $5.21, if buyers still convert. The listing also adds a 60-card starter set at $4.50 (`listing-starter.json`, about $3.47 net on Etsy) that the workbook does not carry.
+2. **Course channel.** The workbook sells the Reset on Shopify ($24.57 net). Its listing.json routes it through a merchant of record that is not chosen yet: $21.37 net on Gumroad, or about $23.80 at the listing's own 5% + $0.50 estimate.
 3. **Gumroad card fee.** The workbook leaves out the 2.9% + $0.30 card-processing fee, which lowers each international sale by $0.49–$0.65.
 4. **KDP trim size.** The 8 × 10 and 8.5 × 8.5 books are probably large trim, which lowers the royalty by $0.32–$0.54 a copy (UNVERIFIED).
 5. **IngramSpark colour print cost.** The KDP proxy ($3.24) is below `REVENUE-PLAN.md`'s $3.50–$4.50.
 6. **Email platform.** The workbook costs it at $0 for all of year 1. On Expected, the list passes 250 subscribers around April 2027. That is the free-tier limit the repo gives for Klaviyo and, per `marketing/MARKETING-PLAYBOOK.md`, now for MailerLite as well (UNVERIFIED). Budget about $20 a month from then.
 7. **Ads in the Expected case.** The workbook's Expected case carries $150 a month of ads and gives them no sales credit. This test removes them, as the task requires, which adds $1,350 to year-1 operating profit.
 
-Together, fixes 2–5 cut the base-case 12-month profit by about $145 ("fee set" in section 2). They are small, but they should be fixed in the workbook (`business/build_financial_model.py`).
+Together, fixes 2–5 cut the base-case 12-month profit by about $145 ("fee set" in section 2). That figure uses the Gumroad case for the course, so it is the upper end. They are small, but they should be fixed in the workbook (`business/build_financial_model.py`).
 
 ---
 
@@ -159,7 +159,7 @@ By September 2027 this adds up to about 7,500 visitors a month. The base case is
 - **Each month of launch slip costs about $1,300–$1,600 of year-1 profit.** A later start gives up the November–January peak.
 - **Fees, refunds and repeat rate matter little in year 1.** The repeat rate matters later, once there is a customer base to come back.
 - **Paid ads lose money at these assumptions.** At a $0.75 click (ASSUMPTION, UNVERIFIED), no launch product earns back its click cost on the first sale. $300 a month of Amazon Ads adds about $3,650 of sales and removes about $1,200 of profit.
-- **The playbook's ad rule is looser than break-even.** It allows a cost per customer of up to 1.5× first-order gross margin (`marketing/MARKETING-PLAYBOOK.md`). At this repeat rate, a customer does not come back often enough to repay that. Hold ads until the break-even line is met, as section 3.10 of the plan already says, and cut any ad set whose cost per sale is above the contribution per order.
+- **The playbook's ad rule is looser than break-even.** It allows a cost per customer of up to 1.5× first-order gross margin (`marketing/MARKETING-PLAYBOOK.md`). At this repeat rate, a customer does not come back often enough to repay that. The plan already holds its Pinterest and Meta tests until the break-even line is met (`business/sections/03-financial-model.md` §3.4, "Paid advertising"). Its Expected case still runs $150 a month of Amazon Ads from January 2027, before that line. Apply the same break-even rule to Amazon Ads, and cut any ad set whose cost per sale is above the contribution per order.
 
 ---
 
@@ -179,7 +179,7 @@ By September 2027 this adds up to about 7,500 visitors a month. The base case is
 | Platform-fee multiplier | Triangular 0.95 / 1.00 / 1.20 | Fees rise more often than they fall |
 | Fee set | Corrected (section 1) in every run | More likely to be right than the workbook figures |
 | Months to full visibility | Triangular 4 / 6 / 10 | Workbook uses 6 |
-| New products per month; catalog cap | Triangular 0.4 / 0.75 / 1.0; triangular 10 / 15 / 20 | Workbook Conservative-to-Strong range |
+| New products per month; catalog cap | Triangular 0.4 / 0.75 / 1.0; triangular 10 / 15 / 20 | A little wider at the low end than the workbook's Conservative-to-Strong range (0.5–1.0 a month; cap 12–20) |
 | Cost position inside each quoted range | Triangular 0 / 0.1 / 0.5 | Lean-path figures are the low end of ranges, and no written quotes exist yet |
 | Paid ads | $0 | Per the task |
 
@@ -246,6 +246,7 @@ Median 12-month sales by channel: Etsy $2,493, own site $1,525, KDP $1,271, Gumr
 - **Year 1 loses money in about three futures out of four.** By month 12, though, two futures in three are selling at the break-even pace, and September 2027 on its own is profitable. The loss comes from the ramp, and the business improves month by month.
 - **The plan's Expected case is an upside case.** It sits at about the 74th percentile. The plan already budgets cash on Conservative, which is close to this median ($6,284 here against Conservative's $5,849). That choice is right.
 - **The funding need is the real risk.** The workbook's Expected founder capital, on the lean path, is $7,715. At the cost drift simulated here, the median cash hole is about $11,300, and 41% of futures pass the $12,000 placeholder cap. With every cost held at the lean quote, the median hole falls to about $7,600 and almost no future passes the cap (section 6). The founder should set the real cap before any money is spent (`business/sections/03-financial-model.md` §3.12, decision 1).
+- **The headline odds rest on one chosen number: the traction median of 0.60×.** With the same seed and everything else unchanged, a median of 0.40× gives P50 sales of $4,189, a P50 operating result of ($4,733), a 14% chance of a year-1 profit and 54% of futures past the cap. A median of 1.00× (Expected as the middle case) gives $10,473, ($390), 48% and 27%. So "three futures in four lose money in year 1" holds only if a new shop's traffic centres near the Conservative case. The first 60–90 days of real Etsy and Shopify statistics should replace this number (section 9).
 - **This may still be optimistic.** It assumes the listings are built, pass the compliance gate and stay live. It also assumes no account suspension, no copycat price war and no seasonal miss. *UNVERIFIED base rate:* as far as I recall from Etsy's public filings, the average Etsy seller sells roughly $1,500–$2,000 a year, and the median seller much less. The median Etsy figure here ($2,493 in year 1) is above that average.
 
 ---
@@ -311,6 +312,9 @@ $1,000,000 a year is a multi-year question. It would need about 8.5 times the pl
 | All fixed costs, lean, plus $150 a month of ads | $717 | 82 | 2.7 |
 | The six named costs, mid-point | $584 | 67 | 2.2 |
 | All fixed costs, mid-point | $1,061 | 122 | 4.0 |
+| All fixed costs, lean, but insurance at its mid-point (+$149 a month, $164 with contingency) | $732 | 84 | 2.8 |
+
+The insurance row matters because insurance is 27% of the lean fixed costs, and its lean figures are not quotes. `legal/protection/PROTECTION-PLAN.md` gives GL as an *average* of about $542 a year (range about $260 to $3,000+, and children's products may price higher), cyber as a "from about $35 a month" floor and media liability as unverified. The broker quote is therefore the single number most likely to move the break-even line.
 
 **Units needed if only one product sold** (all fixed costs, lean path):
 
@@ -324,7 +328,7 @@ $1,000,000 a year is a multi-year question. It would need about 8.5 times the pl
 | Visual routine cards, Etsy ($6.50) | $5.21 | 109 | 3.6 |
 | 32-page colour paperback, KDP ($11.99) | $3.95 | 144 | 4.7 |
 
-This agrees with the plan's scorecard line of about 65 orders a month (`business/sections/03-financial-model.md` §3.7). The plan reaches it from $398 a month plus $150 of ads. This test reaches it from the full $567 a month with annual bills spread over the year and no ads. **The line is reachable:** the median future crosses it in June 2027. **At mid-point costs it almost doubles**, to 122 orders a month, and the median future does not sustain that within the first year.
+This agrees with the plan's scorecard line of about 65 orders a month (`business/sections/03-financial-model.md` §3.7). The plan reaches it from $398 a month plus $150 of ads. This test reaches it from the full $567 a month with annual bills spread over the year and no ads. **The line is reachable:** the median future crosses it in June 2027. **At mid-point costs it almost doubles**, to 122 orders a month, and the median future does not sustain that within the first year. (The plan's "about 100 at mid-point" is on its own basis: year-1 monthly costs of $736 plus $150 of ads, with annual bills left out.)
 
 ---
 

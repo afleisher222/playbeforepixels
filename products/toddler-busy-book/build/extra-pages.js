@@ -99,7 +99,7 @@ const startHerePage = {
     const sheets = ctx.acts.filter(a => a.pieces).length;
     const pieces = ctx.acts.reduce((t, a) => t + (a.pieces ? a.pieces.length : 0), 0);
     const pick = { b1: ['w-ball', 'moo', 'peekhouse'], b2: ['colorhunt', 'road', 'count123'], b3: ['maze1', 'rocket', 'odd'] };
-    return pageWrap('', `${textHead('Start here', 'Play today in four steps', `Prep time: <b>0 minutes</b> for ${nc} pages (print and play). <b>5–10 minutes</b> for pages with pieces: 12 straight cuts or fewer per sheet. No page takes longer to prep than it plays.`)}
+    return pageWrap('', `${textHead('Start here', 'Play today in four steps', `Prep time: <b>0 minutes</b> for ${nc} pages (print and play). <b>5–10 minutes</b> for pages with pieces: straight cuts only, 12 pieces or fewer per sheet. No page takes longer to prep than it plays.`)}
       <div style="display:flex;flex-direction:column;gap:14px;margin-top:20px">
         <div class="step"><span class="num">1</span><div><h3>Find your child’s age band</h3><p>Pages are sorted by age. Ages are starting points, not deadlines: move up or down whenever you like.</p>
           <div class="pillrow" style="margin-top:8px">${['b1', 'b2', 'b3'].map(b => { const [a, z] = bandRange(ctx, b); return `<span class="chip" style="background:${BANDS[b].t}"><i style="background:${BANDS[b].c}"></i>${BANDS[b].label} · pages ${a}–${z}</span>`; }).join('')}</div></div></div>
@@ -134,7 +134,11 @@ const guide1 = {
         <div><div class="lab" style="color:${C.tomato}">Pause and wait</div><p class="disp" style="font-size:17px;margin:3px 0">“Ready, set… (wait)”</p><p>Count to five in your head. Give your child room to take a turn.</p></div>
         <div><div class="lab" style="color:${C.tomato}">Add one word</div><p class="disp" style="font-size:17px;margin:3px 0">“Duck.” → “Yellow duck!”</p><p>Repeat what your child says and add one word.</p></div>
       </div></div>
-    <div class="card t-plum" style="margin-top:14px"><h3>Every turn counts</h3><p>Talk, sing and read in the language you know best. A sign, a point, a look, a sound or a device tap all count as a turn. There’s no right answer on any page: if your child calls the frog a “duck,” say “A green frog! Ribbit!” and keep playing.</p></div>`, ctx, pn),
+    <div class="card t-plum" style="margin-top:14px"><h3>Every turn counts</h3><p>Talk, sing and read in the language you know best. A sign, a point, a look, a sound or a device tap all count as a turn. There’s no right answer on any page: if your child calls the frog a “duck,” say “A green frog! Ribbit!” and keep playing.</p></div>
+    <div class="cols2" style="margin-top:14px">
+      <div class="card t-sky"><h3>Every way of playing counts</h3><p>Lining pieces up, playing the same page again and again, moving around, humming, or playing side by side instead of face to face: it’s all play. Eye contact is never needed. If your child says no or walks away, stop and try another day.</p></div>
+      <div class="card t-sun"><h3>Big kids can help</h3><p>Brothers, sisters and cousins about 6 and up make great helpers: they can read the talk line out loud, run the café or deliver the mail. A grown-up stays right there and keeps the pieces.</p></div>
+    </div>`, ctx, pn),
 };
 const guide2 = {
   id: 'guide2', html: (ctx, pn) => pageWrap('', `${textHead('Grown-up guide · 2 of 2', 'How the book works')}
@@ -178,7 +182,10 @@ const safety = {
       <div class="card"><h3>Pretend food only</h3><p>The food pages are pictures. No real food is part of any activity, and none of the pictured foods are small, hard or round snacks.</p></div>
       <div class="card"><h3>Nothing else to add</h3><p>No balloons, beads, buttons, coins, strings or cords are used or needed anywhere in this book.</p></div>
     </div>
-    <div class="card t-plum" style="margin-top:14px"><p><b>Real toys?</b> A few pages suggest a real toy (a ball, a toy car, a box). For under-3s, any real toy must pass the tube test and have no small parts that come off. If you’re ever unsure, leave it out: the page works without it.</p></div>`, ctx, pn),
+    <div class="cols2" style="margin-top:14px">
+      <div class="card t-plum"><p><b>Real toys?</b> A few pages suggest a real toy (a ball, a toy car, a box). For under-3s, any real toy must pass the tube test and have no small parts that come off. If you’re ever unsure, leave it out: the page works without it.</p></div>
+      <div class="card t-tomato"><p><b>Grown-up tools.</b> Scissors, the paper trimmer and the laminator (it gets hot) are for grown-ups. Plastic zip pouches, sheet protectors and laminating scraps stay out of reach: plastic isn’t a toy.</p></div>
+    </div>`, ctx, pn),
 };
 
 // ---------------- 7. build it ----------------
@@ -232,7 +239,7 @@ const finder2 = { id: 'find2', html: (ctx, pn) => pageWrap('', `${textHead('Page
 const copyright = {
   id: 'copy', html: (ctx, pn) => pageWrap('', `${textHead('The small print', 'License, copyright and version')}
     <div class="cols2" style="margin-top:16px">
-      <div class="card"><h3>Your license</h3><p>Thank you for buying this book. It’s licensed for use in <b>your own home</b>: print as many copies as your family needs. Please don’t share, resell, post or upload the files.<span class="site-only"> Child-care and classroom licenses: playbeforepixels.com/licenses.</span></p></div>
+      <div class="card"><h3>Your license</h3><p>Thank you for buying this book. It’s licensed for use in <b>your own home</b>: print as many copies as your family needs. Please don’t share, resell, post or upload the files.<span class="site-only"> Child-care, classroom and library licenses: playbeforepixels.com/licenses.</span></p></div>
       <div class="card"><h3>Parent education</h3><p>This book is parent education and play ideas. It is not medical, developmental or professional advice and doesn’t diagnose, treat or prevent anything. Every play follows our published safety rules (page ${ctx.actPage['x-safety']}); a grown-up is always part of play.</p></div>
     </div>
     <div class="card t-sky" style="margin-top:14px"><h3>Copyright</h3><p>${COPYRIGHT} All rights reserved. The characters and art belong to the Play Before Pixels family of products, including the Up! Go! More! talk-along board book.</p><p style="margin-top:6px"><b>${VERSION}.</b> If we improve this file, we’ll tell past buyers what changed; we never swap a file quietly.</p></div>
@@ -293,7 +300,7 @@ const GRANDPA = { skin: '#F4CFAE', hair: '#F3F6FB', hs: 'short' };
 const people = [['Mama', 'G5'], ['Dada', 'G1'], ['Grandma', 'G4'], ['Grandpa', GRANDPA], ['me!', 'C'], ['our dog', 'dog']];
 const peoplePage = (filled) => ({
   id: filled ? 'own1' : 'own2', html: (ctx, pn) => pageWrap('', `${header('b1', 'Make your own · first words', `<span class="tag">${ui('u-nocut')}${filled ? 'Example' : 'Fillable'}</span>`)}
-    <div class="tt"><h1>My people</h1><p class="how"><b>${filled ? 'Tape a photo in each frame.' : 'Type the names, print, then tape in photos.'}</b> ${filled ? 'Photos of family and friends are some of the best first words there are.' : 'Use any names your family uses: Mom, Ima, Abuela, Nonno, Auntie, our cat…'}</p></div>
+    <div class="tt"><h1>My people</h1><p class="how"><b>${filled ? 'Tape a photo in each frame.' : 'Type the names, print, then tape in photos.'}</b> ${filled ? 'Photos of the people your child loves make great first words. Every family is different: type your own names on the next page.' : 'Use any names your family uses: Mom, Ima, Abuela, Nonno, Auntie, our cat…'}</p></div>
     <div class="play" style="height:640px"><div style="position:absolute;left:24px;top:24px;display:grid;grid-template-columns:repeat(3,200px);gap:24px 24px">${people.map(([n, k]) => `<div style="height:280px;background:#fff;border-radius:18px;padding:12px;display:flex;flex-direction:column;gap:10px"><div style="flex:1;border:2px dashed #C9D1DE;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;color:#9AA6BC;font-size:11px;font-weight:800">${filled ? `<svg width="120" height="120" viewBox="-60 -60 120 120">${k === 'dog' ? U('w-dog', 0, 6, 0.95) : `<g transform="translate(0,6)">${head(k, 0, 0, 1.7, 'smile')}</g>`}</svg>` : ''}photo here</div><div data-field="person" class="kid" style="height:36px;font-size:26px;text-align:center;line-height:36px">${filled ? n : ''}</div></div>`).join('')}</div></div>
     <div class="gu" style="top:772px"><div class="talk">${ui('u-talk')}<div><span class="lab">Talk while you play <i>· Say what you see</i></span><q>“Who’s that? It’s Grandma! Hi, Grandma! (wave)”</q></div></div>
     <div class="safe">${ui('u-shield')}<span><b>Play together.</b> Photos stay taped flat under the lamination or sheet protector. No pins, clips or loose photo corners for under-3s.</span></div></div>`, ctx, pn, 'b1'),
@@ -331,7 +338,7 @@ const planPage = (sunday, filled, k) => ({
     const ex = { Monday: ['same-toys', '“Ball! Same ball!”'], Tuesday: ['moo', '“The cow says… moo!”'], Wednesday: ['w-up', '“Up… up… UP!”'], Thursday: ['same-toys', 'Again! Favorites repeat.'], Friday: ['peekhouse', '“Where’s dog? Peekaboo!”'], Saturday: ['drum', '“Boom! Boom!”'], Sunday: ['teddy', '“Toast for Teddy? Yum!”'] };
     const cell = (d, i) => filled ? (i === 0 ? `${ctx.acts.find(a => a.id === ex[d][0]).title.replace(/^First words: /, '')} · p.${ctx.actPage[ex[d][0]]}` : ex[d][1]) : '';
     return pageWrap('', `${header('b1', 'Weekly planner', `<span class="tag">${sunday ? 'Sunday start' : 'Monday start'} · ${filled ? 'example' : 'fillable'}</span>`)}
-    <div class="tt"><h1>This week’s busy book</h1><p class="how">${filled ? 'An example week for a 1–2-year-old: three or four pages, lots of repeats.' : 'Pick 3–5 pages for the week. Repeats are great. Type in before printing, or write by hand.'}</p></div>
+    <div class="tt"><h1>This week’s busy book</h1><p class="how">${filled ? 'An example week for a 1–2-year-old: one page a day, with a favorite on repeat.' : 'Pick 3–5 pages for the week. Repeats are great. Type in before printing, or write by hand.'}</p></div>
     <table class="plan" style="position:absolute;top:112px;left:0;right:0"><tr><th></th><th>Page to play</th><th>Talk line to try</th><th>Played?</th></tr>${days.map(d => `<tr><td>${d}</td><td><span class="fl" data-field="plan_page">${cell(d, 0)}</span></td><td><span class="fl" data-field="plan_talk">${cell(d, 1)}</span></td><td><span class="tick"></span></td></tr>`).join('')}</table>
     <div class="card t-grass" style="position:absolute;left:0;right:0;bottom:36px;display:flex;gap:14px;align-items:center"><div><h3>Rotate, don’t rush</h3><p>Keep this week’s pages in the binder and the rest on a shelf. Next week, swap two pages and keep the favorites.</p></div><div style="flex:none;width:250px"><div class="lab">Our favorite page this week</div><div data-field="plan_fav" class="field" style="height:30px;margin-top:4px">${filled ? `<span class="kid" style="font-size:17px">Same, same! Toys</span>` : ''}</div></div></div>`, ctx, pn, 'b1');
   },
@@ -368,7 +375,7 @@ const faq = {
   id: 'faq', html: (ctx, pn) => pageWrap('', `${textHead('Quick answers', 'Questions, answered')}
     <div class="qa" style="margin-top:14px">${[
       ['What ages is it for?', `About 12 months to 5 years, in three bands (1–2, 2–3, 3–5). Every page shows its starting age in months. Move up or down freely.`],
-      ['Do I have to cut everything?', `No. ${count(ctx, a => !a.cut && !a.usesPiecesOf)} activities need no cutting at all. Cut piece sheets when you have ten minutes; each has 12 straight cuts or fewer.`],
+      ['Do I have to cut everything?', `No. ${count(ctx, a => !a.cut && !a.usesPiecesOf)} activities need no cutting at all. Cut piece sheets when you have ten minutes; each has straight cuts only and 12 pieces or fewer.`],
       ['Are the pieces safe for my toddler?', 'Every piece is 2 in (5.1 cm) or bigger, bigger than a toilet-paper tube. A grown-up plays along, keeps the pieces and checks them each time. No velcro dots for under-3s.'],
       ['Which file should I print?', 'US Letter or A4 to match your paper. Color for bright pages; Low-ink for white pages with colorable line art. Print at 100% / actual size.'],
       ['Can I type into the pages?', 'Yes: the make-your-own pages, binder covers, labels, planner and certificate have type-in boxes that work in free PDF readers. Type, save, then print.'],
@@ -376,8 +383,10 @@ const faq = {
       ['Is anything shipped?', 'No, it’s a digital download. You print at home or at a print shop, as many copies as your own family needs.'],
       ['My child only wants one page. Is that OK?', 'Completely. Most children love two or three pages and repeat them. Try that page’s “harder” line when it feels easy.'],
       ['Is this a lesson plan or a program?', 'No. It’s play for families: pages to talk about together, with no tests or scores. It isn’t medical or professional advice. Questions about development go to your pediatrician.'],
-      ['Can I use it with a group or class?', 'This copy is for your own home. <span class="site-only">Child-care and classroom licenses are at playbeforepixels.com/licenses.</span><span class="etsy-only">For a child-care or classroom license, send us a message through the shop.</span>'],
+      ['Can I use it with a group or class?', 'This copy is for your own home. <span class="site-only">Child-care, classroom and library licenses are at playbeforepixels.com/licenses.</span><span class="etsy-only">For a child-care, classroom or library license, send us a message through the shop.</span>'],
       ['Can I share it with a friend?', 'Please share a photo of your busy book, not the files. If a friend would like a copy, they can buy their own; it keeps new pages coming.'],
+      ['Is it only in English?', 'The printed words are in English. Say every word, talk line and rhyme in the language you know best; any language works. Type your family’s own words on the make-your-own pages (p.' + ctx.actPage['x-own2'] + '–' + ctx.actPage['x-own3'] + ').'],
+      ['Can I give it as a gift?', 'Yes. Print it, slip the pages into a binder with a cover in their favorite color and give it ready to play. Please give the printed book, not the files.'],
       ['A file won’t open on my phone', '<span class="site-only">Download on a computer or tablet if you can. Help with downloads and printing: playbeforepixels.com/help.</span><span class="etsy-only">Etsy downloads work best in a web browser on a computer or tablet (the app can’t download files). Send us a message through the shop if you’re stuck.</span>'],
     ].map(([q, a]) => `<div><h4>${q}</h4><p>${a}</p></div>`).join('')}</div>`, ctx, pn),
 };
@@ -408,7 +417,7 @@ function startHere(ctx) {
   const files = `<section class="page band-n"><div class="live">${textHead('START HERE', 'What’s in your download', `${ctx.etsy ? 'Five files' : 'Your files'}. Open this one first, then print from the file that matches your paper. Page numbers in this guide point to the main book.`)}
     <table class="tbl" style="margin-top:16px;font-size:12px">${rows.map(([n, f, d]) => `<tr><td class="pg">${n}</td><td><b>${f}</b></td><td>${d}</td></tr>`).join('')}</table>
     <div class="card t-sun" style="margin-top:16px"><h3>Type-in pages</h3><p>In every main file, the binder covers, spine and pouch labels, make-your-own pages, weekly planners and certificate have type-in boxes. Open the file in a free PDF reader, type, save, then print.</p></div>
-    <div class="card t-sky" style="margin-top:12px"><h3>Prep time</h3><p><b>0 minutes</b> for ${count(ctx, a => !a.cut && !a.usesPiecesOf)} pages. <b>5–10 minutes</b> for pages with pieces (12 straight cuts or fewer per sheet).</p></div>
+    <div class="card t-sky" style="margin-top:12px"><h3>Prep time</h3><p><b>0 minutes</b> for ${count(ctx, a => !a.cut && !a.usesPiecesOf)} pages. <b>5–10 minutes</b> for pages with pieces (straight cuts only, 12 pieces or fewer per sheet).</p></div>
     ${footer(ctx, 2)}</div></section>`;
   return pages.map((p, i) => i === 1 ? files + p.html(ctx, i + 2) : p.html(ctx, i + 1 + (i > 1 ? 1 : 0))).join('\n');
 }

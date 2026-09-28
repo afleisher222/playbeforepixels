@@ -239,14 +239,14 @@ b2.push({
   board: () => `<circle cx="336" cy="258" r="252" fill="${C.s2}"/><circle cx="336" cy="258" r="228" fill="${C.tomato}"/><path d="M336 50C420 46 520 100 540 180C556 250 530 330 470 400C420 456 330 470 250 440C170 410 120 340 126 250C130 150 230 54 336 50Z" fill="${C.sun}"/>` + [[250, 150, 40], [420, 190, 34], [300, 330, 46], [440, 360, 30], [200, 300, 26]].map(([x, y, r]) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${C.tSun}"/>`).join('') + [[-140, -60], [120, -90], [60, 110], [-90, 120], [150, 60], [-10, -160]].map(([x, y]) => `<circle cx="${336 + x}" cy="${258 + y}" r="14" fill="${C.tomato}" opacity=".45"/>`).join('') + bubble(570, 40, 'Order up!'),
   pieces: [P('b-slice-tomato', 'tomato'), P('b-slice-tomato', 'tomato'), P('b-slice-tomato', 'tomato'), P('b-pepper', 'pepper'), P('b-pepper', 'pepper'), P('b-mushroom', 'mushroom'), P('b-mushroom', 'mushroom'), P('b-cheese', 'cheese'), P('b-cheese', 'cheese')],
 });
-const feel = [['A', 'laugh', 'silly'], ['B', 'sad', 'sad'], ['C', 'oh', 'surprised'], ['D', 'sleep', 'sleepy'], ['E', 'smile', 'happy'], ['A', 'joy', 'calm']];
+const feel = [['A', 'laugh', 'silly'], ['B', 'sad', 'sad'], ['C', 'oh', 'surprised'], ['D', 'sleep', 'sleepy'], ['E', 'smile', 'happy'], ['A', 'mad', 'mad']];
 b2.push({
   id: 'feelings', band: 'b2', from: 30, cat: 'Feelings', title: 'Same feeling',
   how: '<b>Match faces that feel the same.</b> Look at a card face. Make that face together, then find the friend who feels the same.',
-  talk: ['Say what you see', '“She looks sleepy. Yawn! Who else is sleepy?”'], easier: 'Happy and sad only.', harder: 'Ask “What made him sad, do you think?”', tired: 'Make a silly face at each other. Done.',
+  talk: ['Say what you see', '“She looks sleepy. Yawn! Who else is sleepy?”'], easier: 'Happy and sad only. Read the word on the card as you point: faces can be hard to read.', harder: 'Ask “What made him sad, do you think?”', tired: 'Make a silly face at each other. Done.',
   prep: '10 min', mess: 'None', needs: 'Scissors, cardstock', cut: true, cols: 3,
   board: () => gridPos(6, 3, CELL, 12, 36).map(([x, y], i) => slot(x, y, CELL, head(feel[i][0], CELL.w / 2, CELL.h / 2 - 8, 2.1, feel[i][1]) + T(CELL.w / 2, CELL.h - 16, feel[i][2], 17, { c: '#5B6780' }))).join(''),
-  pieces: [['E', 'laugh'], ['C', 'sad'], ['D', 'oh'], ['A', 'sleep'], ['B', 'smile'], ['C', 'joy']].map(([k, f], i) => ({ raw: (w, h) => head(k, w / 2, h / 2 - 6, 2.0, f), word: feel[i][2], tint: C.wash })),
+  pieces: [['E', 'laugh'], ['C', 'sad'], ['D', 'oh'], ['A', 'sleep'], ['B', 'smile'], ['C', 'mad']].map(([k, f], i) => ({ raw: (w, h) => head(k, w / 2, h / 2 - 6, 2.0, f), word: feel[i][2], tint: C.wash })),
 });
 b2.push({
   id: 'inonunder', band: 'b2', from: 30, cat: 'First words', title: 'In, on, under',

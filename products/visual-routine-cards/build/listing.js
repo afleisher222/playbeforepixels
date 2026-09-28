@@ -162,7 +162,7 @@ const starter = {
   ...common,
   faq: common.faq.map(f => f.q === 'What ages is it for?' ? { q: f.q, a: 'Birth to 5. The guide shows ways to use the cards from one card at a time (0–12 months) to a nine-step morning chart. Ages are a guide, never a deadline. Big-kid cards for 5–12 are in the Complete Set.' }
     : f.q === 'Does it work for children who sign, point or use a talking device?' ? { q: f.q, a: 'Yes. A sign, a point, a tap on a card or a device, even a "no", counts as communicating. Every card comes word-free too, and the Complete Set adds More, Stop, My turn, Break and Help cards.' }
-    : f.q === 'Which file do I print?' ? f : f),
+    : f.q === 'What can I type?' ? { q: f.q, a: 'Card labels on blank, word-free and photo-frame cards, and chart titles and names, in free Adobe Acrobat Reader on a computer or phone. Accents work (á, ñ, ü). Colors and pictures cannot be changed.' } : f),
   bonus_offer: 'Own-store edition only (QR + short link): free seasonal routine cards and one short age-matched play idea a month (email plus optional child birth month/year; never names). Etsy files carry no URL or QR.',
   human_todo: [
     'NEEDS FOUNDER: confirm the $4.50 price against commerce/PRICING.md "never list a single printable under $5" (see price_notes), or raise it to $5.',

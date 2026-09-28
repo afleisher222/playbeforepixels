@@ -228,7 +228,7 @@ function blankCardPage(cw) {
     const cat = cw === 'rainbow' ? ['morning', 'meals', 'play', 'reading'][Math.floor(i / 3)] : 'words';
     cells.push(`<div class="cardwrap">${card({ id: 'blank', cat, art: null, label: '' }, cw, { blankArt: true, blankLabel: true, field: `blank_${i + 1}` })}</div>`);
   }
-  return page(`<div class="in">${header(`<span class="chip age">All ages</span>Blank cards: draw it or glue a photo, then write or type the word`, cw)}<div class="grid">${cells.join('')}</div></div>`, { cls: 'cards', note: `${CUT} · Type labels in free Adobe Acrobat Reader` });
+  return page(`<div class="in">${header(`<span class="chip age">All ages</span>Blank cards: draw it or glue a photo, then write or type the word`, cw)}<div class="grid">${cells.join('')}</div></div>`, { cls: 'cards', note: 'Cut on the gray lines · Grown-up keeps the pieces · 2.2 in / 5.6 cm cards · Type labels in free Acrobat Reader' });
 }
 function secondCopiesPage(cw, ids = SECOND) {
   const cells = ids.map(id => `<div class="cardwrap">${card(byId(id), cw)}</div>`);

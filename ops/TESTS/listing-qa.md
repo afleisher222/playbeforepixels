@@ -3,6 +3,8 @@
 Generated 2026-09-28 by `ops/TESTS/check_listings.py`. Re-run: `python3 ops/TESTS/check_listings.py --report ops/TESTS/listing-qa.md`.
 The script only reads product files. Proposed replacement lines are suggestions for the product owner to apply; nothing here was edited in `products/`.
 
+> **Snapshot note (added by the verifier):** this report describes the listing files as committed in `c2c0d5c` (2026-09-28 02:16 UTC). By 03:20 UTC, 11 of the 15 files had changed, and `merch-core` held a third record. Every hand correction in sections 1–5 is marked *(verifier)*. See **6. Verification** at the end for what was re-checked, what changed, and the state of the files at 03:20. A plain re-run of the script overwrites these corrections unless the script gets the same fixes.
+
 Legend: **PASS** · **FAIL** (blocks publishing that item, per ROUTINE.md) · **WARN** (a person decides) · **–** (does not apply to this listing's channels).
 
 ## 1. Limits and rules used
@@ -26,7 +28,7 @@ Platform numbers come from memory; web search was not available in this session,
 | Amazon Merch on Demand | Product title | 60 | Merch on Demand upload form | **UNVERIFIED** |
 | Amazon Merch on Demand | Each of 2 feature bullets | 256 | Merch on Demand upload form | **UNVERIFIED** |
 | Amazon Merch on Demand | Product description | 2000 | Merch on Demand upload form | **UNVERIFIED** |
-| Etsy / site / TpT / merchant of record | Fees used for the estimated nets (listing $0.20; 6.5% transaction; 3% + $0.25 processing; 15% Offsite Ads; Shopify 2.9% + $0.30; MoR 5% + $0.50; TpT basic 55% − $0.30; 5% refund allowance) | – | each platform's fee page | **UNVERIFIED** |
+| Etsy / site / TpT / merchant of record | Fees used for the estimated nets (listing $0.20; 6.5% transaction; 3% + $0.25 processing; 15% Offsite Ads; Shopify 2.9% + $0.30; MoR 5% + $0.50 *(verifier: the low end of the range. The commerce plan's merchant of record is Gumroad at 10% + $0.50, per commerce/storefront-setup-guide.md §13 and business/BUSINESS-PLAN.md `mor_pct`)*; TpT basic 55% − $0.30; 5% refund allowance) | – | each platform's fee page | **UNVERIFIED** |
 | BRAND.md schema | short_description | 160 | brand/BRAND.md 'Deliverables per product' | repo rule (binding) |
 | BRAND.md schema | seo_title | 60 | brand/BRAND.md | repo rule (binding) |
 | BRAND.md schema | seo_description | 155 | brand/BRAND.md | repo rule (binding) |
@@ -45,7 +47,13 @@ Content rules come from `brand/BRAND.md` (hard rules 1–7, *Autism searches*, *
 
 ## 2. Summary
 
-16 listing records in 15 files. **16 of 16 have at least one FAIL** (71 failing checks in total).
+16 listing records in 15 files. **16 of 16 have at least one FAIL** (70 failing checks in total; the script printed 71, and the verifier moved the tote's first-160 result to WARN).
+
+*(verifier)* How to read the FAIL counts:
+- **Etsy title (9):** all nine come from the repeated-word rule alone. No title is over 140 characters, and none repeats % : & +. Etsy would accept every one of these titles. The repeated-word rule is Etsy guidance (UNVERIFIED), not a form limit, so treat these as a house rule, not a platform rejection.
+- **Owner line (3):** a record-keeping gap only. bored-play-cards, play-first-family-kit and toddler-busy-book do not store the line in `listing.json`, but their build files print the AlphaPlay LLC copyright line (checked in `build/` at `c2c0d5c`). Gate 8 is met in the product itself.
+- Every listing still has at least one FAIL on a binding repo rule (gate 18 price floor and net), so the headline stands.
+
 Skipped as archived: `products/picture-more-talk-less-tap/story-bonus/ARCHIVED-book-listing.json`.
 
 | Listing | Etsy title | Etsy tags | KDP title | KDP kw | KDP desc | Shopify SEO | TpT | MoD | Schema | Health | Names | Autism | Pricing | AI discl. | Floor/net | Owner | Address | Reply time | Coaching | Mkt links | FK≤7 | First 160 | FAIL | WARN |
@@ -56,7 +64,7 @@ Skipped as archived: `products/picture-more-talk-less-tap/story-bonus/ARCHIVED-b
 | [`first-phone-plan`](#l-first-phone-plan) | FAIL | PASS | PASS | PASS | PASS | PASS | – | – | PASS | PASS | PASS | WARN | PASS | FAIL | FAIL | PASS | PASS | PASS | PASS | PASS | PASS | FAIL | 4 | 1 |
 | [`guide-100-plays`](#l-guide-100-plays) | FAIL | FAIL | PASS | PASS | PASS | PASS | – | – | FAIL | PASS | PASS | PASS | FAIL | FAIL | FAIL | PASS | PASS | PASS | PASS | PASS | FAIL | FAIL | 8 | 0 |
 | [`merch-core-logo-tee`](#l-merch-core-logo-tee-0) | FAIL | PASS | – | – | – | PASS | – | PASS | PASS | PASS | PASS | PASS | PASS | FAIL | FAIL | PASS | PASS | PASS | PASS | PASS | PASS | PASS | 3 | 0 |
-| [`merch-core-tote`](#l-merch-core-tote-1) | – | – | – | – | – | PASS | – | – | PASS | PASS | PASS | PASS | PASS | FAIL | FAIL | PASS | PASS | PASS | PASS | – | PASS | FAIL | 3 | 0 |
+| [`merch-core-tote`](#l-merch-core-tote-1) | – | – | – | – | – | PASS | – | – | PASS | PASS | PASS | PASS | PASS | FAIL | FAIL | PASS | PASS | PASS | PASS | – | PASS | WARN | 2 | 1 |
 | [`picture-laps-not-apps`](#l-picture-laps-not-apps) | PASS | PASS | – | – | – | PASS | – | – | PASS | PASS | WARN | PASS | PASS | FAIL | FAIL | PASS | PASS | WARN | PASS | PASS | FAIL | FAIL | 4 | 2 |
 | [`picture-more-talk-less-tap`](#l-picture-more-talk-less-tap) | PASS | FAIL | – | – | – | PASS | PASS | – | PASS | WARN | PASS | PASS | PASS | FAIL | FAIL | PASS | PASS | PASS | PASS | PASS | FAIL | FAIL | 5 | 1 |
 | [`picture-tablet-slept`](#l-picture-tablet-slept) | – | – | PASS | PASS | PASS | PASS | – | – | PASS | PASS | PASS | PASS | WARN | FAIL | FAIL | PASS | PASS | PASS | PASS | – | PASS | FAIL | 3 | 1 |
@@ -67,9 +75,9 @@ Skipped as archived: `products/picture-more-talk-less-tap/story-bonus/ARCHIVED-b
 | [`visual-routine-cards-starter`](#l-visual-routine-cards-starter) | FAIL | PASS | – | – | – | PASS | – | – | FAIL | PASS | PASS | WARN | FAIL | FAIL | FAIL | PASS | PASS | PASS | PASS | PASS | WARN | FAIL | 6 | 2 |
 | [`visual-routine-cards`](#l-visual-routine-cards) | PASS | PASS | – | – | – | PASS | – | – | FAIL | WARN | PASS | WARN | FAIL | FAIL | FAIL | PASS | PASS | PASS | PASS | PASS | FAIL | FAIL | 6 | 2 |
 
-**Clean on every listing:** KDP keywords: 7 boxes, each ≤50; KDP description ≤4000; Shopify SEO title ≤70, meta ≤160; TpT title ≤80; Merch on Demand title ≤60, bullets ≤256, description ≤2000; No home address, phone number or personal email; No coaching / calls / podcast / live service; Etsy/TpT copy: no URL, QR or other-store pointer (gate 16).
+**Clean on every listing:** KDP keywords: 7 boxes, each ≤50; KDP description ≤4000; Shopify SEO title ≤70, meta ≤160; TpT title ≤80; Merch on Demand title ≤60, bullets ≤256, description ≤2000; No home address, phone number or personal email; No coaching / calls / podcast / live service; Etsy/TpT copy: no URL, QR or other-store pointer (gate 16). *(verifier: the gate 16 check does not scan `faq`. The merch-core-logo-tee FAQ names playbeforepixels.com, and the picture-more-talk-less-tap FAQ says "Full terms: playbeforepixels.com/license". Both listings have Etsy or TpT channels. See 6. Verification.)*
 
-**Failures by check (most common first):** price_floor + net_per_unit_by_channel present and met: 16; First 160 chars say what it is, the age range and the format: 14; ai_disclosure filled for every channel; no 'human-made' claim: 13; Etsy title: ≤140, no repeated words, % : & + once: 9; Readability: FK grade ≤7: 8; AlphaPlay LLC owner line: 3; BRAND.md listing.json schema and limits: 3; Honest pricing (16 CFR 233.1) + PRICING.md rules: 3; Etsy tags: exactly 13, each ≤20: 2.
+**Failures by check (most common first):** price_floor + net_per_unit_by_channel present and met: 16; First 160 chars say what it is, the age range and the format: 13 *(verifier: 14 in the script output; the adult tote is now WARN)*; ai_disclosure filled for every channel; no 'human-made' claim: 13; Etsy title: ≤140, no repeated words, % : & + once: 9; Readability: FK grade ≤7: 8; AlphaPlay LLC owner line: 3; BRAND.md listing.json schema and limits: 3; Honest pricing (16 CFR 233.1) + PRICING.md rules: 3; Etsy tags: exactly 13, each ≤20: 2.
 
 ## 3. Per listing
 
@@ -290,7 +298,7 @@ File: `products/course-screen-reset/listing.json` · Price: $27.00 · Channels t
 | No autism / diagnosis terms or targeting | **WARN** | 0 public hit(s) |
 | Honest pricing (16 CFR 233.1) + PRICING.md rules | **WARN** | price $27.00 |
 | ai_disclosure filled for every channel; no 'human-made' claim | **FAIL** | channels: site(now), kdp(now), social(now) |
-| price_floor + net_per_unit_by_channel present and met | **FAIL** | no floor; est. site_mor ≈ $23.80 |
+| price_floor + net_per_unit_by_channel present and met | **FAIL** | no floor; est. site_mor ≈ $23.80 at 5% + $0.50 *(verifier: ≈ $22.45 at the plan's Gumroad rate of 10% + $0.50)* |
 | AlphaPlay LLC owner line | **PASS** | found in compliance_notes |
 | No home address, phone number or personal email | **PASS** | 0 hit(s) in all fields |
 | No reply-time promise | **PASS** | 0 hit(s) |
@@ -351,7 +359,7 @@ File: `products/course-screen-reset/listing.json` · Price: $27.00 · Channels t
 
   > "price_floor": 3.00
 
-- **FAIL · price_floor + net_per_unit_by_channel present and met** · field `net_per_unit_by_channel` · no per-channel net (gate 18; G2-11); estimate: site_mor ≈ $23.80
+- **FAIL · price_floor + net_per_unit_by_channel present and met** · field `net_per_unit_by_channel` · no per-channel net (gate 18; G2-11); estimate: site_mor ≈ $23.80 *(verifier: ≈ $22.45 at Gumroad's 10% + $0.50)*
 
   Offending text:
 
@@ -360,6 +368,8 @@ File: `products/course-screen-reset/listing.json` · Price: $27.00 · Channels t
   Proposed replacement:
 
   > "net_per_unit_by_channel": {"site_mor": 23.80, "kdp_paperback": 6.10}  (MoR estimate at 5% + $0.50 and a 5% refund allowance, UNVERIFIED; KDP from price_notes: 60% of $14.99 minus $2.30–$2.90 print [VERIFY]). Bundle: also record the bundle net after the 10% discount.
+
+  *(verifier)* The commerce plan uses Gumroad at 10% + $0.50 (commerce/storefront-setup-guide.md §13; BUSINESS-PLAN `mor_pct` 0.10). At that rate, `site_mor` ≈ **22.45** and the $49 bundle ≈ **41.15**, not 23.80 and 43.60. Use 22.45 unless a 5% + $0.50 provider is chosen. Both figures clear the $3.00 floor, so the result does not change.
 
 - **FAIL · Readability: FK grade ≤7** · field `long_description` · sentence grade 21.8, 56 words (whole description grade 8.8)
 
@@ -490,7 +500,7 @@ File: `products/guide-100-plays/listing.json` · Price: $16.99 · Channels teste
 | Shopify SEO title ≤70, meta ≤160 | **PASS** | title 55 / meta 145 chars |
 | TpT title ≤80 | **–** | not on TpT |
 | Merch on Demand title ≤60, bullets ≤256, description ≤2000 | **–** | not on Merch on Demand |
-| BRAND.md listing.json schema and limits | **FAIL** | 1 required field(s) missing; long_description 252 words |
+| BRAND.md listing.json schema and limits | **FAIL** | 1 required field(s) missing; long_description 252 words *(verifier: 246 by a normal word count; the script splits "0–1", "100-play" and "A4" in two)* |
 | No health / developmental-outcome / safety / fear claims | **PASS** | 0 hit(s) in public fields |
 | No named school, district, company, show, creator, device or EdTech | **PASS** | 0 fail hit(s) |
 | No autism / diagnosis terms or targeting | **PASS** | 0 public hit(s) |
@@ -537,7 +547,7 @@ File: `products/guide-100-plays/listing.json` · Price: $16.99 · Channels teste
 
   > "amazon_route": "kdp-paperback"
 
-- **WARN · BRAND.md listing.json schema and limits** · field `long_description` · BRAND.md asks for 120–250 words
+- **~~WARN~~ withdrawn by the verifier · BRAND.md listing.json schema and limits** · field `long_description` · BRAND.md asks for 120–250 words. A normal word count (words split at spaces) gives 246, within the limit. The 252 comes from the script counting "0–1, 1–2, 2–3, 3–5", "100-play" and "A4" as two words each. No change needed.
 
   Offending text:
 
@@ -719,7 +729,7 @@ File: `products/merch-core/listing.json` (item 1) · Status: `bundle-add-on-only
 | No coaching / calls / podcast / live service | **PASS** | 0 hit(s) |
 | Etsy/TpT copy: no URL, QR or other-store pointer (gate 16) | **–** | no Etsy/TpT channel |
 | Readability: FK grade ≤7 | **PASS** | long_description FK 6.0; all parent-facing text FK 5.6 |
-| First 160 chars say what it is, the age range and the format | **FAIL** | missing age; short_description lacks one or more |
+| First 160 chars say what it is, the age range and the format | **WARN** | missing age; short_description lacks one or more *(verifier: FAIL→WARN. An adult canvas tote has no child age range, and it is sold only inside bundles.)* |
 
 **Failures and warnings, with the exact text and a proposed replacement**
 
@@ -753,7 +763,7 @@ File: `products/merch-core/listing.json` (item 1) · Status: `bundle-add-on-only
 
   > "net_per_unit_by_channel": {"site_bundle": null}  (fill with the tote's share of the bundle price minus partner cost and payment fees)
 
-- **FAIL · First 160 chars say what it is, the age range and the format** · field `long_description[:160]` · missing: age
+- **WARN · First 160 chars say what it is, the age range and the format** · field `long_description[:160]` · missing: age *(verifier: FAIL→WARN. The age-range rule does not fit an adult accessory; the logo tee passed only because its copy says "grown-ups". Adding "for grown-ups" is still a good edit.)*
 
   Offending text:
 
@@ -1552,7 +1562,9 @@ File: `products/toddler-busy-book/listing.json` · Price: $11.99 · Channels tes
 
   Proposed replacement:
 
-  > 74 printable busy book pages for ages 1–5, in three age bands, as US Letter and A4 PDFs. Every page gives you something to talk about.
+  > 74 printable busy book activities for ages 1–5, in three age bands, as US Letter and A4 PDFs. Every activity gives you something to talk about.
+
+  *(verifier: the proposal said "74 … pages". The product has 74 activities on 132 pages, and CUSTOMER-VOICE rule 19 says to lead with the number of activities, not pages.)*
 
 
 ### visual-routine-cards-starter
@@ -1966,7 +1978,7 @@ Every item below came from memory and was used as a test threshold or in an esti
 - [ ] **Amazon Merch on Demand: Product description = 2000** (Merch on Demand upload form). UNVERIFIED.
 - [ ] **Etsy fees** used for the net estimates: $0.20 listing, 6.5% transaction, 3% + $0.25 payment processing (US), 15% Offsite Ads on ad-attributed sales. UNVERIFIED.
 - [ ] **Shopify Payments** 2.9% + $0.30 (Basic plan, US card) and whether a digital-delivery app adds a fee. UNVERIFIED.
-- [ ] **Merchant of record** 5% + $0.50 for the course. UNVERIFIED (depends on the provider chosen).
+- [ ] **Merchant of record** 5% + $0.50 for the course. UNVERIFIED (depends on the provider chosen). *(verifier: the repo's own plan is Gumroad at 10% + $0.50 (storefront-setup-guide §13); Lemon Squeezy and Paddle are about 5% + $0.50 (legal/international-plan.md). RESEARCH-BACKLOG RB-18 already tracks this conflict.)*
 - [ ] **TpT basic seller** payout 55% and $0.30 transaction fee. UNVERIFIED.
 - [ ] **Shopify meta description**: whether the admin counter is 160 or 320 characters (the 160 used here is Google's usual display length). UNVERIFIED.
 - [ ] **Etsy tag characters**: which punctuation Etsy accepts in tags (the check allows letters, numbers, spaces, apostrophes, & and -). UNVERIFIED.
@@ -1979,3 +1991,53 @@ Every item below came from memory and was used as a test threshold or in an esti
 - [ ] **KDP premium-color print cost** ($1.00 + $0.07 per page, about $3.24 for 32 pages) quoted from price_notes. UNVERIFIED.
 - [ ] **Etsy Offsite Ads opt-out**: whether a shop under the sales threshold can still opt out (the proposals offer this as an alternative to a higher price). UNVERIFIED.
 - [ ] **Poison Control number** is treated as an allowed public safety line (it appears in guide-100-plays notes); confirm the number printed in the product is current. UNVERIFIED.
+- [ ] *(verifier)* **Etsy repeated words**: whether Etsy rejects a title that repeats a word, or only ranks it lower. From memory, it is title guidance, not a form limit. This decides whether the 9 Etsy-title FAILs block anything. UNVERIFIED.
+- [ ] *(verifier)* **Etsy listing FAQ**: whether an Etsy listing has its own FAQ field or only a shop-level FAQ. From memory, only the shop has one. This decides whether a listing's `faq` (which names playbeforepixels.com and Amazon in several files) can ever reach Etsy. UNVERIFIED.
+
+## 6. Verification
+
+An adversarial re-check on 2026-09-28. I wrote an independent checker from scratch (scratchpad only, no code imported from `check_listings.py`) and ran it against the listing files **as committed in `c2c0d5c` at 02:16 UTC**. That commit also holds this report, and the report is unchanged since then, so these are the files the report actually tested. I then ran the same checks on a copy of the files taken at 03:20 UTC.
+
+### Re-checked against the files the report tested (02:16)
+
+| # | Check | Report says | Re-computed | Verdict |
+|---|---|---|---|---|
+| 1 | Records scanned | 16 records in 15 files, 1 archived file skipped | 16 / 15 / 1 | Confirmed |
+| 2 | Etsy title | 9 FAIL | 9 FAIL, every one from a repeated word only (cards, phone, play/age, shirt, family, play/talk/cards, cards, busy, routine). None is over 140 characters or repeats % : & + | Confirmed; the severity is **overstated** (see 2. Summary) |
+| 3 | Etsy tags | 2 FAIL (guide-100-plays and picture-more-talk-less-tap have no `etsy_tags`) | Same. All the others have exactly 13 tags of 20 characters or fewer. The two proposed tag sets have 13 each, all 20 or fewer | Confirmed |
+| 4 | Tag overlap | The two routine-card tiers share 10 of 13 tags | 10 of 13, the same 10 tags | Confirmed |
+| 5 | BRAND.md schema | 3 FAIL (`amazon_route` missing in guide-100-plays and both routine-card files) | Key absent in all 3. Every other length limit passes: short ≤160, seo_title ≤60, seo_description ≤155, 5 bullets, 7 keywords | Confirmed; the 252-word WARN is **withdrawn** (246 words) |
+| 6 | ai_disclosure | 13 FAIL (field absent), 3 WARN (free text instead of G2-08 keys) | 13 absent. play-first-family-kit, play-talk-cards and family-talk-along-cards use free-text `etsy`/`kdp`/`site`/`social` keys | Confirmed |
+| 7 | Price floor and net | 16 FAIL; 11 estimated nets | No record had `net_per_unit_by_channel`. All 11 estimates re-derived to the cent from the stated fee model (e.g. $6.50 → Etsy $5.11, $4.13 with Offsite Ads, site $5.69; $4.50 → Offsite Ads $2.72, under the floor; lowest clearing price $4.89) | Confirmed, except the course: **corrected** to about $22.45 at the plan's 10% + $0.50 merchant-of-record fee |
+| 8 | Owner line | 3 FAIL | No "AlphaPlay" string anywhere in those 3 records | Confirmed as a record check; **overstated** as a gate 8 breach, because the build files print the line |
+| 9 | Readability (FK) | 8 FAIL | With a different syllable heuristic, the same 8 are above 7.5. My grades run 0.3–0.5 lower. visual-routine-cards-starter scores 6.7 (report: WARN at 7.1) | Confirmed; the starter's WARN is within the heuristic's noise |
+| 10 | First 160 characters | 14 FAIL | 14 by the rule as written. The tote cannot state a child age range: it is an adult bag sold only in bundles | **Corrected** to 13 FAIL + 1 WARN. board-up-go-more and play-talk-cards do name age groups ("babies and toddlers") but still lack a format word, so they stay FAIL |
+| 11 | Honest pricing | 3 FAIL | guide-100-plays: "the usual Etsy sale at about 33% off". visual-routine-cards: "standing 30–40% sale". Starter: $4.50 is under the $5 rule. Bundle sums check out ($27 + $11 + $9.99 + $6.50 = $54.49, 10.1% off; $11.99 + $16.99 = $28.98, 13.8% off, both within 10–25%) | Confirmed |
+| 12 | KDP and Shopify lengths | All PASS; figures listed | Every SEO title and meta length matches to the character (e.g. 54/141, 59/150, 57/154). play-first-family-kit's title plus subtitle is 220 characters, which is WARN because the channel is "later" | Confirmed |
+| 13 | Address, phone, email; health words | PASS | No personal contact details, only the Poison Control line. The only banned-word hits are benign (shipping "damage", "money-back guarantee", "treats a talking device as") | Confirmed |
+| 14 | Proposed replacements | – | All proposed Etsy titles are 140 characters or fewer with no repeats. Every proposed first-160 line includes what, age and format | One wrong: the toddler-busy-book line said "74 … pages". **Corrected** to activities |
+
+### Changed in this file
+1. Tote first-160: FAIL → WARN. The totals change to 70 FAILs (was 71), and first-160 to 13 FAILs (was 14).
+2. The guide-100-plays 252-word WARN is withdrawn.
+3. Course net: about $22.45 at the plan's merchant-of-record fee, and $41.15 for the bundle. The fee row in section 1 and the *Needs a live check* line are annotated to match.
+4. The toddler-busy-book proposed lead now says activities, not pages.
+5. The summary notes that the Etsy-title and owner-line FAILs are overstated, and names the `faq` gap.
+6. Added the snapshot note at the top and two *Needs a live check* items.
+
+### Missed or understated by the report
+- **The gate 16 check skips `faq`.** At 02:16, the merch-core-logo-tee FAQ named playbeforepixels.com (Etsy channel), and the picture-more-talk-less-tap FAQ said "Full terms: playbeforepixels.com/license" (Etsy and TpT channels; the item is held). At 03:20, 11 Etsy/TpT listings name "our site", Amazon or playbeforepixels.com in their FAQ. BRAND.md makes the FAQ a site product-page feature, so this matters only if an Etsy or TpT description is ever built from `faq`. Keep a separate marketplace FAQ, or make sure the publisher never copies `faq`.
+- **Two binding files name the net field differently.** commerce/PRICING.md §2 asks for `net_after_fees` and `margin_pct` on each channel. Gate 18 and G2-11 ask for `price_floor` and `net_per_unit_by_channel`. The routine-card files now follow PRICING.md (`price_floor_usd` plus `channel_net.*.net_after_fees`/`margin_pct`) and still fail the checker. Pick one name and fix the other file through APPROVALS.
+- **A founder-location trace.** `products/picture-laps-not-apps/listing.json` `compliance_notes` still names the "old Rockville Pike mailbox". The report lists this as WARN (internal field), but BRAND.md bans any local angle, so remove it through the build path.
+- **The merchant-of-record estimate spread into a product file.** `products/course-screen-reset/listing.json` now stores `site_mor` 23.8 and `bundle_site_mor` 43.6 from this report's 5% model (see Changed item 3).
+
+### State of the files at 03:20 UTC (not merged into sections 2–4)
+A re-run of the current script on the 03:20 copy (JSON output in scratchpad only) finds 17 records. **15 of 17 have at least one FAIL**, 62 FAILs in total. My independent checker agrees on the items below.
+- **Now clean:** bored-play-cards and course-screen-reset (0 FAIL). guide-100-plays and visual-routine-cards gained `amazon_route` and dropped the standing-sale wording.
+- **New record:** `merch-core-more-talk-tee` (4 FAIL). Its Etsy tags share 7 of 13 with the logo tee.
+- **New problems:**
+  - visual-routine-cards and the starter no longer contain the AlphaPlay owner line in `listing.json`.
+  - The guide-100-plays `etsy_title` now uses "+" twice ("Color + Low-Ink, Letter + A4"). That breaks the once-only special-character rule (UNVERIFIED), a harder failure than word repetition.
+  - The visual-routine-cards Etsy title now repeats "routine".
+  - That set now has 235 cards, so the proposed lead above ("228") is out of date.
+- **Unchanged:** the starter is still $4.50. At that price an Offsite Ads sale nets about $2.72, under the $3.00 floor.

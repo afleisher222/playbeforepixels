@@ -44,9 +44,14 @@ function adultAt(a, x, floor, s, o = {}) { return BB.adult(Object.assign({}, BB.
 function head(k, x, y, s, face = 'smile') {
   const K = typeof k === 'object' ? k : (BB.KIDS[k] || BB.ADULTS[k]);
   const hb = K.hs === 'bob' ? '<use href="#hb-bob"/>' : K.hs === 'long' ? '<use href="#hb-long"/>' : '';
+  // sad: brows lift at the middle, a tear, a frown. mad: brows dip at the middle, a flat tight mouth.
+  // (the old sad face had brows dipping at the middle, which reads as angry)
+  const eyes = `<circle cx="-8.5" cy="-1" r="3.9" fill="#FFFFFF"/><circle cx="-8.5" cy="-0.3" r="3.1" fill="${C.ink}"/><circle cx="8.5" cy="-1" r="3.9" fill="#FFFFFF"/><circle cx="8.5" cy="-0.3" r="3.1" fill="${C.ink}"/><circle class="ck" cx="-14.5" cy="7.5" r="4.3"/><circle class="ck" cx="14.5" cy="7.5" r="4.3"/>`;
   const faceSvg = face === 'sad'
-    ? `<circle cx="-8.5" cy="-1" r="3.9" fill="#FFFFFF"/><circle cx="-8.5" cy="-0.3" r="3.1" fill="${C.ink}"/><circle cx="8.5" cy="-1" r="3.9" fill="#FFFFFF"/><circle cx="8.5" cy="-0.3" r="3.1" fill="${C.ink}"/><path d="M-14-9L-5-7M14-9L5-7" stroke="${C.ink}" stroke-width="2.2" stroke-linecap="round"/><circle class="ck" cx="-14.5" cy="7.5" r="4.3"/><circle class="ck" cx="14.5" cy="7.5" r="4.3"/><path d="M-6 12.5Q0 7.5 6 12.5" stroke="${C.ink}" stroke-width="2.7" fill="none" stroke-linecap="round"/>`
-    : `<use href="#face-${face}"/>`;
+    ? `${eyes}<path d="M-13.5-7.5L-5-10.5M13.5-7.5L5-10.5" stroke="${C.ink}" stroke-width="2.2" stroke-linecap="round"/><path d="M-6 13Q0 7.5 6 13" stroke="${C.ink}" stroke-width="2.7" fill="none" stroke-linecap="round"/><path d="M-9.5 4.5C-7 8.5-7 11-9.5 11C-12 11-12 8.5-9.5 4.5Z" fill="${C.sky}"/>`
+    : face === 'mad'
+      ? `${eyes}<path d="M-14-10.5L-4.5-6M14-10.5L4.5-6" stroke="${C.ink}" stroke-width="2.6" stroke-linecap="round"/><path d="M-6 12Q0 9.5 6 12" stroke="${C.ink}" stroke-width="2.7" fill="none" stroke-linecap="round"/>`
+      : `<use href="#face-${face}"/>`;
   return `<g style="--sk:${K.skin};--hr:${K.hair};--hw:${K.hw || C.sun}" transform="translate(${x},${y}) scale(${s})">${hb}<use href="#t-head"/>${faceSvg}${K.hs === 'none' ? '' : `<use href="#h-${K.hs}"/>`}</g>`;
 }
 

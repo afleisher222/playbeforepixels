@@ -20,17 +20,17 @@ starter-store-color-letter.html ok cut pieces 153, smallest 2.200 in
 starter-store-low-a4.html ok cut pieces 153, smallest 2.200 in
 starter-store-low-letter.html ok cut pieces 153, smallest 2.200 in
 556 fields
-556 fields
 556 fields added
+556 fields
+saved ../visual-routine-cards-low-ink.pdf 74 pages
 556 fields added
 1170 fields
 saved ../visual-routine-cards-low-ink-a4.pdf 74 pages
-saved ../visual-routine-cards-low-ink.pdf 74 pages
 1170 fields
 1170 fields added
 1170 fields added
-saved ../visual-routine-cards-a4.pdf 160 pages
 saved ../visual-routine-cards.pdf 160 pages
+saved ../visual-routine-cards-a4.pdf 160 pages
 0 fields
 0 fields added
 saved ../START-HERE.pdf 1 pages
@@ -49,9 +49,9 @@ saved ../etsy-upload/complete/1-START-HERE.pdf 1 pages
 86 fields
 86 fields
 86 fields added
-saved ../visual-routine-cards-starter-a4.pdf 24 pages
 86 fields added
 saved ../visual-routine-cards-starter-letter.pdf 24 pages
+saved ../visual-routine-cards-starter-a4.pdf 24 pages
 556 fields
 556 fields added
 saved ../etsy-upload/complete/5-Low-Ink-A4.pdf 74 pages
@@ -59,56 +59,56 @@ saved ../etsy-upload/complete/5-Low-Ink-A4.pdf 74 pages
 0 fields added
 saved ../START-HERE-starter.pdf 1 pages
 86 fields
-86 fields added
 86 fields
+86 fields added
+saved ../visual-routine-cards-starter-low-ink-a4.pdf 24 pages
+86 fields
+86 fields added
 saved ../etsy-upload/starter/2-Color-US-Letter.pdf 24 pages
-86 fields
-86 fields added
 86 fields added
 saved ../visual-routine-cards-starter-low-ink-letter.pdf 24 pages
-saved ../visual-routine-cards-starter-low-ink-a4.pdf 24 pages
 0 fields
 0 fields added
 saved ../etsy-upload/starter/1-START-HERE.pdf 1 pages
 86 fields
-86 fields
-86 fields added
 86 fields added
 86 fields
+86 fields
+saved ../etsy-upload/starter/3-Color-A4.pdf 24 pages
+86 fields added
+86 fields added
 saved ../etsy-upload/starter/4-Low-Ink-US-Letter.pdf 24 pages
 saved ../etsy-upload/starter/5-Low-Ink-A4.pdf 24 pages
-86 fields added
-saved ../etsy-upload/starter/3-Color-A4.pdf 24 pages
--rw-r--r-- 1 root root   210270 Sep 28 03:09 ../START-HERE-starter.pdf
--rw-r--r-- 1 root root   215418 Sep 28 03:08 ../START-HERE.pdf
--rw-r--r-- 1 root root 14740556 Sep 28 03:08 ../visual-routine-cards-a4.pdf
--rw-r--r-- 1 root root 10172689 Sep 28 03:08 ../visual-routine-cards-low-ink-a4.pdf
--rw-r--r-- 1 root root 10161597 Sep 28 03:08 ../visual-routine-cards-low-ink.pdf
--rw-r--r-- 1 root root  2510758 Sep 28 03:08 ../visual-routine-cards-starter-a4.pdf
--rw-r--r-- 1 root root  2517731 Sep 28 03:08 ../visual-routine-cards-starter-letter.pdf
--rw-r--r-- 1 root root  3217461 Sep 28 03:09 ../visual-routine-cards-starter-low-ink-a4.pdf
--rw-r--r-- 1 root root  3214699 Sep 28 03:09 ../visual-routine-cards-starter-low-ink-letter.pdf
--rw-r--r-- 1 root root 14758796 Sep 28 03:08 ../visual-routine-cards.pdf
+-rw-r--r-- 1 root root   212309 Sep 28 03:27 ../START-HERE-starter.pdf
+-rw-r--r-- 1 root root   217478 Sep 28 03:27 ../START-HERE.pdf
+-rw-r--r-- 1 root root 14578954 Sep 28 03:27 ../visual-routine-cards-a4.pdf
+-rw-r--r-- 1 root root 10096988 Sep 28 03:27 ../visual-routine-cards-low-ink-a4.pdf
+-rw-r--r-- 1 root root 10085118 Sep 28 03:27 ../visual-routine-cards-low-ink.pdf
+-rw-r--r-- 1 root root  2485998 Sep 28 03:27 ../visual-routine-cards-starter-a4.pdf
+-rw-r--r-- 1 root root  2492857 Sep 28 03:27 ../visual-routine-cards-starter-letter.pdf
+-rw-r--r-- 1 root root  3193342 Sep 28 03:27 ../visual-routine-cards-starter-low-ink-a4.pdf
+-rw-r--r-- 1 root root  3190520 Sep 28 03:27 ../visual-routine-cards-starter-low-ink-letter.pdf
+-rw-r--r-- 1 root root 14594977 Sep 28 03:27 ../visual-routine-cards.pdf
 
 ../etsy-upload/complete/:
-total 48804
-drwxr-xr-x 2 root root     4096 Sep 28 03:08 .
+total 48340
+drwxr-xr-x 2 root root     4096 Sep 28 03:27 .
 drwxr-xr-x 4 root root     4096 Sep 28 02:03 ..
--rw-r--r-- 1 root root   198848 Sep 28 03:08 1-START-HERE.pdf
--rw-r--r-- 1 root root 14726977 Sep 28 03:08 2-Color-US-Letter.pdf
--rw-r--r-- 1 root root 14708906 Sep 28 03:08 3-Color-A4.pdf
--rw-r--r-- 1 root root 10154515 Sep 28 03:08 4-Low-Ink-US-Letter.pdf
--rw-r--r-- 1 root root 10165676 Sep 28 03:09 5-Low-Ink-A4.pdf
+-rw-r--r-- 1 root root   200868 Sep 28 03:27 1-START-HERE.pdf
+-rw-r--r-- 1 root root 14563511 Sep 28 03:27 2-Color-US-Letter.pdf
+-rw-r--r-- 1 root root 14546977 Sep 28 03:27 3-Color-A4.pdf
+-rw-r--r-- 1 root root 10078203 Sep 28 03:27 4-Low-Ink-US-Letter.pdf
+-rw-r--r-- 1 root root 10090048 Sep 28 03:27 5-Low-Ink-A4.pdf
 
 ../etsy-upload/starter/:
-total 11396
-drwxr-xr-x 2 root root    4096 Sep 28 03:09 .
+total 11308
+drwxr-xr-x 2 root root    4096 Sep 28 03:27 .
 drwxr-xr-x 4 root root    4096 Sep 28 02:03 ..
--rw-r--r-- 1 root root  195273 Sep 28 03:09 1-START-HERE.pdf
--rw-r--r-- 1 root root 2511367 Sep 28 03:09 2-Color-US-Letter.pdf
--rw-r--r-- 1 root root 2504377 Sep 28 03:09 3-Color-A4.pdf
--rw-r--r-- 1 root root 3219016 Sep 28 03:09 4-Low-Ink-US-Letter.pdf
--rw-r--r-- 1 root root 3221751 Sep 28 03:09 5-Low-Ink-A4.pdf
+-rw-r--r-- 1 root root  197284 Sep 28 03:27 1-START-HERE.pdf
+-rw-r--r-- 1 root root 2486497 Sep 28 03:27 2-Color-US-Letter.pdf
+-rw-r--r-- 1 root root 2479624 Sep 28 03:27 3-Color-A4.pdf
+-rw-r--r-- 1 root root 3194926 Sep 28 03:27 4-Low-Ink-US-Letter.pdf
+-rw-r--r-- 1 root root 3197669 Sep 28 03:27 5-Low-Ink-A4.pdf
 160 pages
 74 pages
 24 pages
@@ -120,46 +120,47 @@ exported to /home/user/playbeforepixels/products/visual-routine-cards/canva-png
 listing.json ok · words 227 · etsy_title 128 · short 151 · seo 59 154 · net {"etsy":{"net_after_fees":8.15,"margin_pct":86},"own_store":{"net_after_fees":8.92,"margin_pct":94}}
 listing-starter.json ok · words 194 · etsy_title 136 · short 132 · seo 57 153 · net {"etsy":{"net_after_fees":3.62,"margin_pct":81},"own_store":{"net_after_fees":4.07,"margin_pct":90}}
 ..:
-total 64032
-drwxr-xr-x  6 root root     4096 Sep 28 03:11 .
+total 63496
+drwxr-xr-x  6 root root     4096 Sep 28 03:29 .
 drwxr-xr-x 15 root root     4096 Sep 28 01:34 ..
 -rw-r--r--  1 root root      132 Sep 28 02:02 .gitignore
--rw-r--r--  1 root root   210270 Sep 28 03:09 START-HERE-starter.pdf
--rw-r--r--  1 root root   215418 Sep 28 03:08 START-HERE.pdf
+-rw-r--r--  1 root root   212309 Sep 28 03:27 START-HERE-starter.pdf
+-rw-r--r--  1 root root   217478 Sep 28 03:27 START-HERE.pdf
 drwxr-xr-x  5 root root     4096 Sep 28 03:07 build
-drwxr-xr-x  7 root root     4096 Sep 28 03:12 canva-png
--rw-r--r--  1 root root   230473 Sep 28 03:11 cover.png
+drwxr-xr-x  7 root root     4096 Sep 28 03:31 canva-png
+-rw-r--r--  1 root root   230473 Sep 28 03:29 cover.png
 drwxr-xr-x  4 root root     4096 Sep 28 02:03 etsy-upload
--rw-r--r--  1 root root    15712 Sep 28 03:12 listing-starter.json
--rw-r--r--  1 root root    21091 Sep 28 03:12 listing.json
--rw-r--r--  1 root root   440221 Sep 28 03:11 mockup.png
-drwxr-xr-x  7 root root     4096 Sep 28 03:11 preview
--rw-r--r--  1 root root  3085099 Sep 28 03:07 source.html
--rw-r--r--  1 root root 14740556 Sep 28 03:08 visual-routine-cards-a4.pdf
--rw-r--r--  1 root root 10172689 Sep 28 03:08 visual-routine-cards-low-ink-a4.pdf
--rw-r--r--  1 root root 10161597 Sep 28 03:08 visual-routine-cards-low-ink.pdf
--rw-r--r--  1 root root  2510758 Sep 28 03:08 visual-routine-cards-starter-a4.pdf
--rw-r--r--  1 root root  2517731 Sep 28 03:08 visual-routine-cards-starter-letter.pdf
--rw-r--r--  1 root root  3217461 Sep 28 03:09 visual-routine-cards-starter-low-ink-a4.pdf
--rw-r--r--  1 root root  3214699 Sep 28 03:09 visual-routine-cards-starter-low-ink-letter.pdf
--rw-r--r--  1 root root 14758796 Sep 28 03:08 visual-routine-cards.pdf
+-rw-r--r--  1 root root    15712 Sep 28 03:31 listing-starter.json
+-rw-r--r--  1 root root    21091 Sep 28 03:31 listing.json
+-rw-r--r--  1 root root   440221 Sep 28 03:29 mockup.png
+-rw-r--r--  1 root root    12361 Sep 28 03:14 panel.md
+drwxr-xr-x  7 root root     4096 Sep 28 03:29 preview
+-rw-r--r--  1 root root  3086756 Sep 28 03:26 source.html
+-rw-r--r--  1 root root 14578954 Sep 28 03:27 visual-routine-cards-a4.pdf
+-rw-r--r--  1 root root 10096988 Sep 28 03:27 visual-routine-cards-low-ink-a4.pdf
+-rw-r--r--  1 root root 10085118 Sep 28 03:27 visual-routine-cards-low-ink.pdf
+-rw-r--r--  1 root root  2485998 Sep 28 03:27 visual-routine-cards-starter-a4.pdf
+-rw-r--r--  1 root root  2492857 Sep 28 03:27 visual-routine-cards-starter-letter.pdf
+-rw-r--r--  1 root root  3193342 Sep 28 03:27 visual-routine-cards-starter-low-ink-a4.pdf
+-rw-r--r--  1 root root  3190520 Sep 28 03:27 visual-routine-cards-starter-low-ink-letter.pdf
+-rw-r--r--  1 root root 14594977 Sep 28 03:27 visual-routine-cards.pdf
 
 ../etsy-upload/complete:
-total 48804
-drwxr-xr-x 2 root root     4096 Sep 28 03:08 .
+total 48340
+drwxr-xr-x 2 root root     4096 Sep 28 03:27 .
 drwxr-xr-x 4 root root     4096 Sep 28 02:03 ..
--rw-r--r-- 1 root root   198848 Sep 28 03:08 1-START-HERE.pdf
--rw-r--r-- 1 root root 14726977 Sep 28 03:08 2-Color-US-Letter.pdf
--rw-r--r-- 1 root root 14708906 Sep 28 03:08 3-Color-A4.pdf
--rw-r--r-- 1 root root 10154515 Sep 28 03:08 4-Low-Ink-US-Letter.pdf
--rw-r--r-- 1 root root 10165676 Sep 28 03:09 5-Low-Ink-A4.pdf
+-rw-r--r-- 1 root root   200868 Sep 28 03:27 1-START-HERE.pdf
+-rw-r--r-- 1 root root 14563511 Sep 28 03:27 2-Color-US-Letter.pdf
+-rw-r--r-- 1 root root 14546977 Sep 28 03:27 3-Color-A4.pdf
+-rw-r--r-- 1 root root 10078203 Sep 28 03:27 4-Low-Ink-US-Letter.pdf
+-rw-r--r-- 1 root root 10090048 Sep 28 03:27 5-Low-Ink-A4.pdf
 
 ../etsy-upload/starter:
-total 11396
-drwxr-xr-x 2 root root    4096 Sep 28 03:09 .
+total 11308
+drwxr-xr-x 2 root root    4096 Sep 28 03:27 .
 drwxr-xr-x 4 root root    4096 Sep 28 02:03 ..
--rw-r--r-- 1 root root  195273 Sep 28 03:09 1-START-HERE.pdf
--rw-r--r-- 1 root root 2511367 Sep 28 03:09 2-Color-US-Letter.pdf
--rw-r--r-- 1 root root 2504377 Sep 28 03:09 3-Color-A4.pdf
--rw-r--r-- 1 root root 3219016 Sep 28 03:09 4-Low-Ink-US-Letter.pdf
--rw-r--r-- 1 root root 3221751 Sep 28 03:09 5-Low-Ink-A4.pdf
+-rw-r--r-- 1 root root  197284 Sep 28 03:27 1-START-HERE.pdf
+-rw-r--r-- 1 root root 2486497 Sep 28 03:27 2-Color-US-Letter.pdf
+-rw-r--r-- 1 root root 2479624 Sep 28 03:27 3-Color-A4.pdf
+-rw-r--r-- 1 root root 3194926 Sep 28 03:27 4-Low-Ink-US-Letter.pdf
+-rw-r--r-- 1 root root 3197669 Sep 28 03:27 5-Low-Ink-A4.pdf

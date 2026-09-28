@@ -70,11 +70,20 @@ Every file was rebuilt with `bash build/make-all.sh` after the edits below.
 | No alt text for individual listing images | Librarian | `listing_images_alt` added to both listings (10 + 5 descriptions). | `build/listing.js` |
 | Long description and bullets didn't mention the new cards | QA | Both now name More, Stop, My turn, Break (and Quiet ears in the bullet). The listing notes that typed labels work in any language with accents, and that you can start with just 2 pages. The description is 227 words (limit 120–250). | `build/listing.js` |
 
-**Checks after the rebuild:**
+**Checks after the final rebuild:**
 - `node build/check.js` is clean on all 20 HTML sources: no overflow, no clipped labels, nothing in the footer zone, smallest cut piece 1.62 in, and no URL or QR code in any Etsy file.
-- `listing.js` length and banned-word checks pass.
-- File sizes: Color Letter 14.8 MB (under the 15 MB rule; there is still little room), Low-ink 10.2 MB, Starter 2.5 MB.
-- I re-viewed Color pages 5, 22, 95, 96 and 98, Low-ink page 22, START HERE (shop edition), the mockup, and listing images 1, 8 and Starter 4.
+- `listing.js` length and banned-word checks pass. The long description is 227 words.
+- A PyMuPDF pass over all 20 PDFs confirmed:
+  - page counts are 160, 74 and 24;
+  - fillable fields are 1,170 (Color), 556 (Low-ink) and 86 (Starter);
+  - no playbeforepixels.com in any Etsy file;
+  - no "200+" or "Help, please" anywhere;
+  - titles read "235 Visual Routine Cards".
+- File sizes: Color 14.6 MB (under the 15 MB rule, with little room), Low-ink 10.1 MB, Starter 2.5 MB (Color) and 3.2 MB (Low-ink).
+- I re-viewed:
+  - Color pages 5, 22, 29, 95, 96 and 98, and Low-ink page 22;
+  - START HERE (shop edition);
+  - the cover, the mockup, and listing images 1, 8 and Starter 4.
 
 ## Heard but not changed (and why)
 
@@ -86,4 +95,8 @@ Every file was rebuilt with `bash build/make-all.sh` after the edits below.
 
 ## Note on the logo
 
-A separate session was rebuilding the brand logo kit (`brand/logo/`, logo v2) while this panel ran. The build takes the logo from `brand/logo/` every time it runs, so the product always uses the supplied files. After the kit settles, run `bash build/make-all.sh` once more so that every PDF, the cover, the mockup and the listing images carry the same logo. BRAND.md's Logo section should be updated by that session to match.
+A separate session rebuilt the brand logo kit (`brand/logo/`, logo v2: a round top mark and a new wordmark) while this panel ran. The build takes the logo from `brand/logo/` every time it runs. So I waited until the kit had been quiet for 3 minutes, then rebuilt everything. Every PDF, the cover, the mockup and all listing images now carry the same, current kit.
+
+The new wordmark is wider, and it pushed the A4 blank-card footer over its width. I shortened that footer note, and the checker is clean again.
+
+The BRAND.md "Logo" section still describes the old mark ("The Return", a P with a ball). The logo session should update it. I didn't edit BRAND.md.
