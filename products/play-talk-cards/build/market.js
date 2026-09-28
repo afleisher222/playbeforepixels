@@ -75,7 +75,8 @@ function imagesA() {
   const mcol = [C.tomato, C.sun, C.sky, C.grass, C.plum, C.tomato, C.sun, C.sky];
   out.push(['05-talk-moves', `<div class="sq" style="background:${C.tGrass}">
     <div class="h"><p class="k" style="color:${C.grass}">Talk while you play</p><h1>8 simple talk moves,<br>in plain words</h1></div>
-    <div class="abs" style="left:64px;right:64px;top:300px;display:grid;grid-template-columns:1fr 1fr;gap:16px">${Object.values(MOVES).map((m, i) => `<div style="background:#fff;border-radius:20px;padding:18px 22px;display:flex;gap:14px;align-items:flex-start">${speech(mcol[i], 40)}<div><b style="font-size:23px;font-weight:800">${m.name}</b><p style="margin:4px 0 0;font-size:17px;line-height:1.35">${m.how}</p></div></div>`).join('')}</div></div>`]);
+    <div class="abs" style="left:64px;right:64px;top:300px;display:grid;grid-template-columns:1fr 1fr;gap:16px">${Object.values(MOVES).map((m, i) => `<div style="background:#fff;border-radius:20px;padding:18px 22px;display:flex;gap:14px;align-items:flex-start">${speech(mcol[i], 40)}<div><b style="font-size:23px;font-weight:800">${m.name}</b><p style="margin:4px 0 0;font-size:17px;line-height:1.35">${m.how}</p></div></div>`).join('')}</div>
+    <div class="band" style="background:${C.grass};justify-content:center"><span>One talk tip on every card. No scripts, nothing to memorize.</span></div></div>`]);
   out.push(includedImage('A', [[1, 'Cover and contents'], [2, 'Grown-up guide'], [4, '6 card sheets'], [11, 'Make-your-own cards'], [12, '52-week tracker'], [13, 'Free bonus + what’s next']], C.wash,
     ['54 poker-size cards (52 plays + how-to + blank)', 'Card backs · cut lines · type-in blank cards', '4 PDFs: US Letter + A4, full color + ink-saver']));
   // safety
@@ -112,7 +113,8 @@ function imagesB() {
   const hcol = [C.tomato, C.sun, C.sky, C.plum, C.grass, C.tomato];
   out.push(['05-talk-habits', `<div class="sq" style="background:${C.tPlum}">
     <div class="h"><p class="k" style="color:${C.plum}">Grown-up guide inside</p><h1>6 easy talk-along<br>habits</h1></div>
-    <div class="abs" style="left:64px;right:64px;top:300px;display:grid;grid-template-columns:1fr 1fr;gap:18px">${HABITS.map((h, i) => `<div style="background:#fff;border-radius:20px;padding:22px 24px;display:flex;gap:14px;align-items:flex-start">${speech(hcol[i], 40)}<div><b style="font-size:24px;font-weight:800">${h.name}</b><p style="margin:4px 0 0;font-size:18px;line-height:1.35">${h.how}</p></div></div>`).join('')}</div></div>`]);
+    <div class="abs" style="left:64px;right:64px;top:300px;display:grid;grid-template-columns:1fr 1fr;gap:18px">${HABITS.map((h, i) => `<div style="background:#fff;border-radius:20px;padding:22px 24px;display:flex;gap:14px;align-items:flex-start">${speech(hcol[i], 40)}<div><b style="font-size:24px;font-weight:800">${h.name}</b><p style="margin:4px 0 0;font-size:18px;line-height:1.35">${h.how}</p></div></div>`).join('')}</div>
+    <div class="band" style="background:${C.plum};justify-content:center"><span>A one-line grown-up tip on every card, too.</span></div></div>`]);
   out.push(includedImage('B', [[1, 'Cover and contents'], [2, 'Grown-up guide'], [4, '6 card sheets'], [11, 'Make-your-own cards'], [12, 'Labels + weekly check'], [13, 'Free bonus + what’s next']], C.wash,
     ['54 poker-size cards (52 questions + how-to + blank)', 'Card backs · cut lines · type-in blank cards', '4 PDFs: US Letter + A4, full color + ink-saver']));
   out.push(['07-real-life', `<div class="sq" style="background:${C.wash}">

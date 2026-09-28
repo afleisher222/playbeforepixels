@@ -14,6 +14,7 @@ citations: ["WHO 2019", "AAP 2016", "Madigan 2019", "Takahashi 2023", "Brushe 20
 verify_before_publish:
   - "Confirm each full paper or report title in Sources against the journal or publisher page. Author, journal, year, volume and pages come from the verified list in brand/BRAND.md rule 5; the titles were written from memory. Add verified DOI links at the same time."
   - "Revisión por hablante nativo de español (neutro) antes de publicar."
+  - "Confirm /es/gratis/cinco-juegos-de-5-minutos/ is live before publishing. If it isn't, link /free/five-5-minute-plays/ and label it '(en inglés por ahora)' so the page has no broken link."
 publish_gate: none
 status: draft
 last_reviewed: 2026-09-28
@@ -21,7 +22,7 @@ last_reviewed: 2026-09-28
 
 # Tiempo de pantalla por edad, de 0 a 5 años
 
-Si alguna vez te has preguntado si estás "haciendo bien" lo de las pantallas, no estás sola ni solo. Casi todas las familias con niños pequeños han prestado el celular para aguantar una fila, una llamada o la preparación de la cena. Esta guía no busca que nadie se sienta mal. Reúne en un solo lugar las dos recomendaciones más citadas, en palabras sencillas, para que puedas tomar decisiones que funcionen para tu familia.
+Si alguna vez te has preguntado si estás "haciendo bien" lo de las pantallas, no estás sola ni solo. Casi todas las familias con niños pequeños han recurrido al celular para sobrellevar una fila, una llamada o la preparación de la cena. Esta guía no busca que nadie se sienta mal. Reúne en un solo lugar las dos recomendaciones más citadas, en palabras sencillas, para que puedas tomar decisiones que funcionen para tu familia.
 
 ## La respuesta corta
 
@@ -33,7 +34,7 @@ Si alguna vez te has preguntado si estás "haciendo bien" lo de las pantallas, n
 
 | Edad | Organización Mundial de la Salud (OMS, 2019) | Academia Americana de Pediatría (AAP, 2016) |
 |---|---|---|
-| Menos de 12 meses | Nada de tiempo frente a pantallas | Evitar medios digitales, salvo videollamadas (hasta los 18 meses) |
+| Menos de 12 meses | No se recomienda tiempo frente a pantallas | Evitar medios digitales, salvo videollamadas (hasta los 18 meses) |
 | 12 a 17 meses | Al año de edad, no se recomienda tiempo sedentario frente a pantallas | Evitar medios digitales, salvo videollamadas |
 | 18 a 23 meses | (igual que arriba, hasta los 2 años) | Si se introducen, elegir programas de calidad y verlos con el niño; evitar que los use solo |
 | 2 años | No más de 1 hora al día de tiempo sedentario frente a pantallas; menos es mejor | Máximo 1 hora al día de programas de calidad, vistos juntos |
@@ -58,21 +59,21 @@ Las dos guías coinciden más de lo que difieren: muy poco o nada de pantallas p
 
 Varios estudios han seguido a grandes grupos de niños para ver cómo se relacionan los hábitos de pantalla con su desarrollo posterior:
 
-- Un estudio en Canadá con más de 2.000 niños encontró que **más tiempo de pantalla a los 2 y 3 años se asociaba con puntuaciones más bajas en una prueba de detección del desarrollo** uno o dos años después (Madigan et al., 2019).
-- Un estudio en Japón con 7.097 niños encontró que **más tiempo de pantalla al año de edad se asociaba con retrasos en la comunicación y en la resolución de problemas a los 2 y 4 años**, y la relación era más fuerte cuanto más tiempo de pantalla había (Takahashi et al., 2023).
-- Un estudio en Australia que grabó el audio de la vida diaria en casa encontró que, a los 36 meses, **más tiempo de pantalla iba de la mano con menos conversación**: en promedio, 1.139 palabras menos de los adultos, 843 vocalizaciones menos del niño y 194 turnos de conversación menos al día (Brushe et al., 2024).
+- Un estudio en Canadá con más de 2000 niños encontró que **más tiempo de pantalla a los 2 y 3 años se asociaba con puntuaciones más bajas en una prueba de detección del desarrollo** uno o dos años después (Madigan et al., 2019).
+- Un estudio en Japón con 7097 niños encontró que **más tiempo de pantalla al año de edad se asociaba con retrasos en la comunicación y en la resolución de problemas a los 2 y 4 años**, y la relación era más fuerte cuanto más tiempo de pantalla había (Takahashi et al., 2023).
+- Un estudio en Australia que grabó el audio de la vida diaria en casa encontró que, a los 36 meses, **más tiempo de pantalla iba de la mano con menos conversación**: en promedio, 1139 palabras menos de los adultos, 843 vocalizaciones menos del niño y 194 turnos de conversación menos al día (Brushe et al., 2024).
 
 ### Lo que esto no significa
 
-Son **asociaciones**: muestran que dos cosas suelen ir juntas, no que las pantallas causen la diferencia. Las familias con más pantallas pueden ser distintas en muchos otros aspectos, y los estudios describen grupos, no a tu hijo o hija. Un programa en una tarde difícil no va a deshacer nada. La lectura más útil es sencilla: **el tiempo de ida y vuelta con un adulto es valioso, y las pantallas tienden a quitarle espacio.**
+Son **asociaciones**: muestran que dos cosas suelen ir juntas, no que las pantallas causen la diferencia. Las familias con más pantallas pueden ser distintas en muchos otros aspectos, y los estudios describen grupos, no a tu hijo o hija. Los estudios describen patrones a lo largo de meses y años, no un programa en una tarde difícil. La lectura más útil es sencilla: **las charlas de ida y vuelta con un adulto son valiosas, y en estos estudios más tiempo de pantalla iba de la mano con menos charla.**
 
 ## Cómo aplicarlo en la vida real
 
-1. **Primero observa.** Durante tres días normales, anota cuándo aparecen las pantallas. Casi siempre se concentran en dos o tres momentos: la cena, el auto o la mañana.
+1. **Primero observa.** Durante tres días normales, anota cuándo aparecen las pantallas. En muchas familias se concentran en dos o tres momentos: la cena, el auto o la mañana.
 2. **Elige un solo momento para cambiar.** No todos. El más fácil.
 3. **Ten un reemplazo listo.** Una canasta con ollas y cucharas de madera para la hora de cocinar, una canción para el auto, un libro de cartón en la pañalera.
 4. **Que la pantalla sea algo "juntos".** Cuando la usen, siéntense juntos, hagan pausas y conversen.
-5. **Cuida los extremos del día.** Comidas sin pantallas y una hora sin pantallas antes de dormir son dos hábitos que menciona la AAP y que muchas familias logran mantener.
+5. **Protege las comidas y la hora de dormir.** Comidas sin pantallas y una hora sin pantallas antes de dormir son dos hábitos que menciona la AAP y que muchas familias logran mantener.
 
 ## Lista rápida: pantallas con sentido, de 0 a 5 años
 
@@ -105,4 +106,4 @@ O empieza gratis con **Cinco juegos de 5 minutos**, cinco juegos rápidos con un
 - Takahashi I, et al. Screen time at age 1 year and communication and problem-solving developmental delay at 2 and 4 years. *JAMA Pediatrics.* 2023;177(10):1039–1046.
 - Brushe ME, et al. Screen time and parent-child talk when children are aged 12 to 36 months. *JAMA Pediatrics.* 2024;178(4):369–375.
 
-*Escrito y revisado por el equipo editorial de Play Before Pixels. Consulta nuestra [política editorial](/editorial-policy/). Información educativa general, no consejo médico. [Aviso](/disclaimer/).*
+*Escrito y revisado por el equipo editorial de Play Before Pixels. Consulta nuestra [política editorial](/editorial-policy/). Información educativa general, no consejo médico. [Aviso legal](/disclaimer/).*

@@ -14,6 +14,7 @@ citations: ["AAP 2016", "WHO 2019", "Brushe 2024"]
 verify_before_publish:
   - "Confirm each full paper or report title in Sources against the journal or publisher page. Author, journal, year, volume and pages come from the verified list in brand/BRAND.md rule 5; the titles were written from memory. Add verified DOI links at the same time."
   - "Revisión por hablante nativo de español (neutro) antes de publicar."
+  - "Confirm /es/gratis/cinco-juegos-de-5-minutos/ is live before publishing. If it isn't, link /free/five-5-minute-plays/ and label it '(en inglés por ahora)' so the page has no broken link."
 publish_gate: none
 status: draft
 last_reviewed: 2026-09-28
@@ -25,19 +26,19 @@ Seamos honestos: casi nunca sacamos el celular porque pensemos que es la mejor i
 
 Por eso esta lista está organizada según **esos momentos**, las razones reales por las que aparecen las pantallas, con ideas que funcionan con niños de 1 a 5 años. Ninguna requiere comprar nada.
 
-> **Seguridad ante todo:** siempre hay un adulto cerca. Para menores de 3 años, nada más pequeño que la abertura de un tubo de papel higiénico (unos 3,2 cm): si cabe por el tubo, es un riesgo de asfixia. Nada de globos para menores de 8 años. Nada de cuerdas o cordones largos. En cualquier juego con agua, quédate al alcance del brazo. Evita alimentos con riesgo de asfixia para niños pequeños, como uvas enteras, frutos secos, palomitas y caramelos duros.
+> **Seguridad ante todo:** siempre hay un adulto cerca. Para menores de 3 años, nada tan pequeño que quepa por un tubo de papel higiénico: si cabe, hay riesgo de asfixia. Nada de globos para menores de 8 años. Nada de cuerdas o cordones largos. En cualquier juego con agua, quédate al alcance del brazo. Evita alimentos con riesgo de asfixia para niños pequeños, como uvas enteras, frutos secos, palomitas y caramelos duros.
 
 ## Mientras cocinas
 
 1. **El cajón del peque.** Un cajón o gabinete bajo con recipientes de plástico, tapas, cucharas de madera y un colador. Cambia lo que hay dentro cada semana.
-2. **"Lavar" las verduras.** Un recipiente con un poco de agua, una papa o zanahoria entera y un trapito. Quédate al alcance del brazo y vacía el agua al terminar.
+2. **"Lavar" las verduras.** Un recipiente con un poco de agua, una papa grande entera y un trapito. Evita las zanahorias o cualquier verdura de la que pueda arrancar un pedazo con los dientes. Quédate al alcance del brazo y vacía el agua al terminar.
 3. **Narra como en un programa de cocina.** "¡Ahora revuelvo! Revuelve, revuelve… ¡ya burbujea!". Su trabajo es repetir "¡Revuelve!".
 4. **Banda de cocina.** Una olla y una cuchara de madera. Ruidoso, sí. También muy alegre.
 5. **Ordenar recipientes.** Los grandes aquí, los pequeños allá. Meterlos unos dentro de otros, apilarlos y tirarlos.
 
 ## Mientras estás al teléfono o respondiendo mensajes
 
-6. **La canasta "solo cuando estoy ocupada".** Una canasta con cosas que solo aparecen durante las llamadas: un libro de cartón, un rompecabezas de piezas grandes, un peluche. La novedad te da tiempo.
+6. **La canasta "solo para llamadas".** Una canasta con cosas que solo aparecen durante las llamadas: un libro de cartón, un rompecabezas de piezas grandes, un peluche. La novedad te da tiempo.
 7. **Rincón de garabatos.** Pega una hoja grande en la mesa o el piso y ofrece un crayón grueso (a partir de los 2 años, contigo cerca). Guarda el crayón al terminar.
 8. **Buzón.** Haz una ranura en la tapa de una caja de zapatos. Tu peque "echa cartas": naipes viejos o tapas grandes que no quepan por un tubo de papel higiénico.
 9. **Ayudante de ropa.** Echar calcetines al cesto o sacar ropa de la secadora.
@@ -69,21 +70,21 @@ Por eso esta lista está organizada según **esos momentos**, las razones reales
 
 ## La idea detrás de las 25
 
-Todas tienen algo en común: **un adulto cerca, un poco de conversación y el niño haciendo algo con las manos o el cuerpo.** No es casualidad.
+Todas tienen algo en común: **un adulto cerca, un poco de conversación y el niño haciendo algo con las manos o el cuerpo.**
 
 La Academia Americana de Pediatría (AAP), en su declaración "Media and Young Minds" de 2016, recomienda evitar los medios digitales, salvo las videollamadas, antes de los 18 meses, y limitar las pantallas en los niños un poco mayores. También da mucho valor al juego con las manos y a conversar juntos. La guía de 2019 de la Organización Mundial de la Salud (OMS) para menores de 5 años recomienda mucho juego activo y anima a leer y contar cuentos con un adulto cuando los niños están sentados.
 
-Un estudio australiano que grabó el audio de la vida diaria en casa encontró que, a los 36 meses, más tiempo de pantalla iba de la mano con menos conversación: en promedio, 1.139 palabras menos de los adultos, 843 vocalizaciones menos del niño y 194 turnos de conversación menos al día (Brushe et al., 2024). Es una **asociación**, no una prueba de que las pantallas causen menos conversación. Pero recuerda que esas pequeñas charlas del día a día suman.
+Un estudio australiano que grabó el audio de la vida diaria en casa encontró que, a los 36 meses, más tiempo de pantalla iba de la mano con menos conversación: en promedio, 1139 palabras menos de los adultos, 843 vocalizaciones menos del niño y 194 turnos de conversación menos al día (Brushe et al., 2024). Es una **asociación**, no una prueba de que las pantallas causen menos conversación. Aun así, es un buen recordatorio de que esas pequeñas charlas del día a día suman.
 
 ## Lo que esto no significa
 
-No significa que una pantalla en un viaje largo o un día de enfermedad sea un fracaso. Todas las familias tienen días difíciles. La meta es tener **una o dos ideas listas** para los momentos que se repiten a diario, para que la pantalla sea una herramienta ocasional y no la respuesta automática.
+No significa que una pantalla en un viaje largo o un día en que alguien está enfermo sea un fracaso. Todas las familias tienen días difíciles. La meta es tener **una o dos ideas listas** para los momentos que se repiten a diario, para que la pantalla sea una herramienta ocasional y no la respuesta automática.
 
 ## Tres consejos para que funcione
 
 - **Prepáralo antes de necesitarlo.** Saca la canasta de cocina *antes* de empezar a cocinar.
 - **Empieza por tu momento más difícil.** Si la cena es el punto crítico, empieza ahí.
-- **Espera algo de protesta al principio.** Suele pasar en pocos días, cuando la nueva rutina ya es conocida.
+- **Cuenta con algunas protestas al principio.** Suelen disminuir a medida que la nueva rutina se vuelve conocida.
 
 ## Cuándo hablar con el pediatra
 
@@ -103,4 +104,4 @@ O empieza gratis con **Cinco juegos de 5 minutos**. [Descargar gratis](/es/grati
 - World Health Organization. *Guidelines on physical activity, sedentary behaviour and sleep for children under 5 years of age.* Ginebra: OMS; 2019.
 - Brushe ME, et al. Screen time and parent-child talk when children are aged 12 to 36 months. *JAMA Pediatrics.* 2024;178(4):369–375.
 
-*Escrito y revisado por el equipo editorial de Play Before Pixels. Consulta nuestra [política editorial](/editorial-policy/). Información educativa general, no consejo médico. [Aviso](/disclaimer/).*
+*Escrito y revisado por el equipo editorial de Play Before Pixels. Consulta nuestra [política editorial](/editorial-policy/). Información educativa general, no consejo médico. [Aviso legal](/disclaimer/).*
