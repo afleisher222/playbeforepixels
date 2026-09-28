@@ -392,10 +392,10 @@ scenes.help = () => {
 scenes.clap = () => {
   const k = Object.assign({}, KIDS.A, { x: 206, y: F - 27 * 1.6, s: 1.6, face: 'laugh', aL: aim(11, 16), aR: aim(-11, 16) });
   const g = Object.assign({}, ADULTS.G4, { x: 420, y: F - 14 * 1.2, s: 1.2, flip: true, legs: 'cross', face: 'laugh', aL: aim(18, 40), aR: aim(-18, 40) });
-  const mk = (cx, cy, sp) => [-125, -90, -55, 55, 90, 125].map(a => `<rect x="${cx - 3.5}" y="${cy - sp - 15}" width="7" height="15" rx="3.5" fill="${C.plum}" transform="rotate(${a} ${cx} ${cy})"/>`).join('');
+  const mk = (cx, cy, sp) => [-110, -70, 70, 110].map(a => `<rect x="${cx - 3.5}" y="${cy - sp - 15}" width="7" height="15" rx="3.5" fill="${C.plum}" transform="rotate(${a} ${cx} ${cy})"/>`).join('');
   const kh = [206, F - 27 * 1.6 - 14.6 * 1.6];
   const gh = [420, F - 14 * 1.2 - 33.5 * 1.2];
-  return bg(C.tPlum) + circle(300, 318, 150, '#FFFFFF') + adult(g) + kid(k) + mk(kh[0], kh[1], 26) + mk(gh[0], gh[1], 30);
+  return bg(C.tPlum) + circle(300, 318, 150, '#FFFFFF') + adult(g) + kid(k) + mk(kh[0], kh[1], 40) + mk(gh[0], gh[1], 44);
 };
 
 scenes.eat = () => {
@@ -458,6 +458,7 @@ const CUE_LABEL = { say: 'Say it', sign: 'Sign it', act: 'Act it' };
 const slot = (label) => `<span class="slot">${label}</span>`;
 const seriesPill = (dark) => `<span class="spill${dark ? ' dk' : ''}"><b>${MS.series}</b><i>Book ${MS.series_number}</i></span>`;
 const logo = (rel, variant = 'reverse', h = 34) => `<img class="logo" style="height:${h}px" src="${rel}brand/logo/lockup-horizontal${variant ? '-' + variant : ''}.svg" alt="Play Before Pixels">`;
+const VERSION = 'Version 1.0 · September 2026';
 const COPYRIGHT = '© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.';
 const authorLine = () => MS.author_credit ? `<span>${MS.author_credit}</span>` : slot(MS.author_credit_placeholder);
 
@@ -474,7 +475,7 @@ function wordPage(p) {
     cls: `word-page${p.dark ? ' dark' : ''}`, html: `
   <svg class="art" viewBox="0 0 600 600" preserveAspectRatio="none" role="img" aria-label="${p.w}">${wordArt(p)}</svg>
   <h2 class="word" style="font-size:${p.fs}px">${p.w}</h2>
-  <div class="card" style="--acc:${p.acc}">
+  <div class="card${p.acc === C.sun ? ' lt' : ''}" style="--acc:${p.acc}">
     <div class="cue"><span class="chip">${ICON[type]}${CUE_LABEL[type]}</span><span class="cue-tx">${cue}</span></div>
     <p class="tip"><span class="lab">Grown-up tip</span> <strong>${p.tip[0]}</strong> ${p.tip[1]}</p>
   </div>`
@@ -484,7 +485,7 @@ function wordPage(p) {
 // ---------- cover ----------
 function coverArt() {
   const k = Object.assign({}, KIDS.A, { x: 420, y: 470 - 27 * 1.56, s: 1.56, aL: 128, aR: -128, face: 'laugh' });
-  const ball = use('ball', 'translate(522,440) scale(.6) rotate(14)');
+  const ball = use('ball', 'translate(503,432) scale(.56) rotate(14)');
   return bg(C.sun) + circle(420, 380, 146, '#FFFFFF') + `<rect x="-10" y="470" width="620" height="140" fill="${C.ink}"/>` + kid(k) + ball;
 }
 const cover = (rel) => ({
@@ -505,7 +506,7 @@ const howTo = (belongs) => ({
     <div class="cues3">${['say', 'sign', 'act'].map((t, i) => `<div class="c3" style="--acc:${[C.tomato, C.grass, C.plum][i]}">${ICON[t]}<b>${CUE_LABEL[t]}</b><span>${MS.cue_types[t]}</span></div>`).join('')}</div>
     <ol class="steps">
       <li style="--c:${C.tomato}"><b>Go slow.</b> One word per page. Say it, point to the picture, then pause.</li>
-      <li style="--c:${C.sun}"><b>Wait for a turn.</b> Count to five in your head. A look, a point or a sound is your child’s turn.</li>
+      <li style="--c:${C.sun};--n:${C.ink}"><b>Wait for a turn.</b> Count to five in your head. A look, a point or a sound is your child’s turn.</li>
       <li style="--c:${C.sky}"><b>Copy each other.</b> Try the say it, sign it or act it idea. Then copy whatever your child does back.</li>
       <li style="--c:${C.grass}"><b>Pick any tip, skip any tip.</b> It’s their book: skip ahead, go back, or stay on one page.</li>
     </ol>
@@ -516,7 +517,7 @@ const howTo = (belongs) => ({
       <circle cx="356" cy="48" r="44" fill="${C.tGrass}"/><g style="--bc:${C.grass}" transform="translate(356,48) scale(.9)">${use('book-closed')}</g>
       <circle cx="458" cy="48" r="44" fill="${C.tPlum}"/><g transform="translate(458,54) scale(.7)">${use('cup')}</g>
     </svg>
-    <p class="note">Every child talks on their own timeline. If you have questions about your child’s speech or development, your child’s doctor is a good place to start.</p>
+    <p class="note">Every child talks on their own timeline. If you have questions about your child’s speech or development, your child’s doctor is a good place to start. Talk, sing and read in the language you know best.</p>
     ${belongs ? '<p class="belongs"><span>This book belongs to</span><i></i></p>' : ''}
   </div>`
 });
@@ -531,7 +532,7 @@ const routinesPage = (withLegal) => ({
     <p class="note">No screen needed. Just you, your voice, and a little time to wait.</p>
     ${withLegal ? `<div class="legal">
       <p><b>Up! Go! More!</b> · ${MS.series}, Book ${MS.series_number} · Board book edition · ${authorLine()}</p>
-      <p>${COPYRIGHT} All rights reserved. First edition.</p>
+      <p>${COPYRIGHT} All rights reserved. First edition · ${VERSION}.</p>
       <p>ISBN ${slot('board-book ISBN')} · Printed in ${slot('country')} · Batch ${slot('tracking no.')} · playbeforepixels.com</p>
     </div>` : ''}
   </div>`
@@ -564,7 +565,7 @@ const back = (rel) => ({
     ${logo(rel, 'reverse', 26)}
     <div class="bonus">${qrSvg(62)}<span><b>Free grown-up bonus</b>playbeforepixels.com/<br>bonus/board-up-go-more<small>Ages 0–3 · Read together</small></span></div>
   </div>
-  <div class="isbn"><span>ISBN / barcode</span><small>Leave white. Printer or ISBN agency supplies this.</small></div>`
+  <div class="isbn${PRINT_READY ? ' final' : ''}">${PRINT_READY ? '' : '<span>ISBN / barcode</span><small>Leave white. Printer or ISBN agency supplies this.</small>'}</div>`
 });
 
 // ---------- paperback-only pages ----------
@@ -586,7 +587,8 @@ const copyrightPage = () => ({
     <p>${authorLine()}</p>
     <p>${COPYRIGHT}<br>All rights reserved. No part of this book may be copied or shared in any form without written permission, except short quotes in reviews.</p>
     <p>This book is for reading together. It shares everyday play and talk ideas for families. It is not medical or developmental advice; for questions about your child, talk with your child’s doctor.</p>
-    <p>ISBN ${slot('paperback ISBN')}<br>First edition, 2026</p>
+    <p>Read together, and keep this paper book away from mouths.</p>
+    <p>ISBN ${slot('paperback ISBN')}<br>First edition · ${VERSION}</p>
     <p>playbeforepixels.com</p>
   </div>`
 });
@@ -620,8 +622,8 @@ const ownWordsPage = () => ({
   cls: 'inner own-pg', html: `
   <div class="in">
     <h2 class="ptitle">Add your own words</h2>
-    <p class="lede">Your child’s first words may be different from the ones in this book. Add the words that matter in your home: names, pets, a favorite food.</p>
-    <div class="frames">${[C.tomato, C.sun, C.sky, C.grass].map(c => `<div class="fr" style="--c:${c}"><span class="fi">Draw it or add a photo</span><span class="fl">Word:</span></div>`).join('')}</div>
+    <p class="lede">Your child’s first words may be different from the ones in this book. Grown-ups, add the words that matter in your home: names, pets, a favorite food.</p>
+    <div class="frames">${[C.tomato, C.sun, C.sky, C.grass].map(c => `<div class="fr" style="--c:${c}"><span class="fi">Grown-up: add a photo or a quick sketch</span><span class="fl">Word:</span></div>`).join('')}</div>
   </div>`
 });
 const bonusPage = () => ({
@@ -675,6 +677,7 @@ symbol{overflow:visible}
 .tip{margin:7px 0 0;padding-top:7px;border-top:1.5px solid ${C.wash};font-size:12.5px;line-height:1.32;font-weight:600;color:var(--ink)}
 .tip .lab{font-weight:800;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin-right:3px}
 .tip strong{font-weight:800}
+.card.lt .chip{color:var(--ink)}.card.lt .chip svg{color:rgba(255,255,255,.55)}.card.lt .tip .lab{color:var(--ink)}
 /* cover */
 .spill{position:absolute;left:48px;top:48px;display:inline-flex;align-items:center;gap:0;border-radius:99px;background:${C.ink};color:#fff;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;overflow:hidden}
 .spill b{padding:5px 9px 5px 12px}
@@ -707,7 +710,7 @@ symbol{overflow:visible}
 .c3 span{font-size:11.5px;line-height:1.25;color:var(--ink);margin-top:3px}
 .steps{list-style:none;margin:0;padding:0;counter-reset:s}
 .steps li{position:relative;padding-left:40px;margin:0 0 10px;font-size:13.5px;line-height:1.36;counter-increment:s;min-height:28px}
-.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:27px;height:27px;border-radius:50%;background:var(--c);color:#fff;font-family:"Fredoka",sans-serif;font-weight:600;font-size:15px;display:flex;align-items:center;justify-content:center}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:27px;height:27px;border-radius:50%;background:var(--c);color:var(--n,#fff);font-family:"Fredoka",sans-serif;font-weight:600;font-size:15px;display:flex;align-items:center;justify-content:center}
 .steps b{font-weight:800}
 .strip{display:block;width:100%;height:auto;margin:auto 0 0}.strip+.note{margin-top:14px}
 .belongs{margin:12px 0 0;display:flex;align-items:flex-end;gap:10px;font-family:"Caveat",cursive;font-weight:700;font-size:21px}
@@ -743,6 +746,7 @@ symbol{overflow:visible}
 .bonus small{display:block;margin-top:3px;font-size:9px;opacity:.75}
 .isbn{position:absolute;right:48px;bottom:48px;width:192px;height:115px;background:#fff;border:1.5px dashed #9AA3B5;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:${C.ink};padding:0 12px}
 .isbn span{font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.isbn.final{border:0;border-radius:0}
 .isbn small{font-size:9px;opacity:.7;margin-top:4px;line-height:1.3}
 /* paperback extras */
 .title-pg .spill{position:static;margin:26px 0 22px}
@@ -828,7 +832,7 @@ function build() {
   fs.writeFileSync(path.join(PB, 'preview-trim.html'), htmlDoc('preview', R1, pbTrimCss, pbPages.map((p, i) => `<section class="page pbp"><div class="pg ${p.cls}" style="position:absolute;top:-12px;left:-12px;transform:scale(${PB_SCALE});transform-origin:0 0">${p.html}</div></section>`).join('\n')));
 
   // cover wrap: back | spine | front. Spine width = pages x paper caliper [VERIFY with the KDP / IngramSpark cover calculator]
-  const CALIPER = 0.002252; // KDP white paper, standard colour, in per page [VERIFY]
+  const CALIPER = 0.002347; // KDP premium colour on white paper, in per page (standard colour needs 72+ pages) [VERIFY]
   const spineIn = +(pbPages.length * CALIPER).toFixed(4);
   const spinePx = spineIn * IN, trimPx = 8.5 * IN;
   const wrapW = BLEED + trimPx + spinePx + trimPx + BLEED, wrapH = 8.75 * IN;

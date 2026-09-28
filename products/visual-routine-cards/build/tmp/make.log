@@ -21,3 +21,30 @@ listing images 10 starter 3
 10 pages
 3 pages
 1 pages
+exported to /home/user/playbeforepixels/products/visual-routine-cards/build/tmp/canva
+..:
+total 41616
+drwxr-xr-x  5 root root     4096 Sep 28 01:08 .
+drwxr-xr-x 10 root root     4096 Sep 28 00:35 ..
+drwxr-xr-x  3 root root     4096 Sep 28 01:08 build
+-rw-r--r--  1 root root   210304 Sep 28 01:09 cover.png
+drwxr-xr-x  2 root root     4096 Sep 28 01:11 downloads
+-rw-r--r--  1 root root     6040 Sep 28 01:08 listing-starter.json
+-rw-r--r--  1 root root     8950 Sep 28 01:08 listing.json
+-rw-r--r--  1 root root   424628 Sep 28 01:09 mockup.png
+drwxr-xr-x  5 root root     4096 Sep 28 01:09 preview
+-rw-r--r--  1 root root  1287583 Sep 28 01:08 source.html
+-rw-r--r--  1 root root 12260308 Sep 28 01:08 visual-routine-cards-a4.pdf
+-rw-r--r--  1 root root  6075216 Sep 28 01:08 visual-routine-cards-editable-a4.pdf
+-rw-r--r--  1 root root  6068742 Sep 28 01:08 visual-routine-cards-editable-letter.pdf
+-rw-r--r--  1 root root  1977542 Sep 28 01:08 visual-routine-cards-starter-a4.pdf
+-rw-r--r--  1 root root  1979437 Sep 28 01:08 visual-routine-cards-starter-letter.pdf
+-rw-r--r--  1 root root 12270852 Sep 28 01:08 visual-routine-cards.pdf
+
+../downloads:
+total 27632
+drwxr-xr-x 2 root root     4096 Sep 28 01:11 .
+drwxr-xr-x 5 root root     4096 Sep 28 01:08 ..
+-rw-r--r-- 1 root root 10235573 Sep 28 01:11 visual-routine-cards-canva-cards.zip
+-rw-r--r-- 1 root root  8802074 Sep 28 01:11 visual-routine-cards-canva-charts.zip
+-rw-r--r-- 1 root root  9244680 Sep 28 01:11 visual-routine-cards-editable-pdfs.zip
