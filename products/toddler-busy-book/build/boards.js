@@ -42,12 +42,12 @@ function kidAt(k, x, floor, s, o = {}) { return BB.kid(Object.assign({}, BB.KIDS
 function adultAt(a, x, floor, s, o = {}) { return BB.adult(Object.assign({}, BB.ADULTS[a], { x, y: floor - 81 * s, s }, o)); }
 // a big friendly head (for feelings and "where's your nose?")
 function head(k, x, y, s, face = 'smile') {
-  const K = BB.KIDS[k];
+  const K = BB.KIDS[k] || BB.ADULTS[k];
   const hb = K.hs === 'bob' ? '<use href="#hb-bob"/>' : K.hs === 'long' ? '<use href="#hb-long"/>' : '';
   const faceSvg = face === 'sad'
     ? `<circle cx="-8.5" cy="-1" r="3.9" fill="#FFFFFF"/><circle cx="-8.5" cy="-0.3" r="3.1" fill="${C.ink}"/><circle cx="8.5" cy="-1" r="3.9" fill="#FFFFFF"/><circle cx="8.5" cy="-0.3" r="3.1" fill="${C.ink}"/><path d="M-14-9L-5-7M14-9L5-7" stroke="${C.ink}" stroke-width="2.2" stroke-linecap="round"/><circle class="ck" cx="-14.5" cy="7.5" r="4.3"/><circle class="ck" cx="14.5" cy="7.5" r="4.3"/><path d="M-6 12.5Q0 7.5 6 12.5" stroke="${C.ink}" stroke-width="2.7" fill="none" stroke-linecap="round"/>`
     : `<use href="#face-${face}"/>`;
-  return `<g style="--sk:${K.skin};--hr:${K.hair};--hw:${C.sun}" transform="translate(${x},${y}) scale(${s})">${hb}<use href="#t-head"/>${faceSvg}${K.hs === 'none' ? '' : `<use href="#h-${K.hs}"/>`}</g>`;
+  return `<g style="--sk:${K.skin};--hr:${K.hair};--hw:${K.hw || C.sun}" transform="translate(${x},${y}) scale(${s})">${hb}<use href="#t-head"/>${faceSvg}${K.hs === 'none' ? '' : `<use href="#h-${K.hs}"/>`}</g>`;
 }
 
 module.exports = { W, H, T, U, rr, tint, slot, SIL, silDefs, gridPos, kidAt, adultAt, head, CELL, BIG, C, BB };

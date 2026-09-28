@@ -43,7 +43,7 @@ function render(opts) {
     return s.f.html(ctx, pn);
   }).join('\n');
   const title = `Toddler Busy Book — ${opts.lowink ? 'Low-ink' : 'Color'} — ${opts.size === 'a4' ? 'A4' : 'US Letter'}${opts.etsy ? ' — Etsy edition' : ''}`;
-  return { html: htmlDoc({ title, rel: opts.rel, size: opts.size, lowink: opts.lowink, etsy: opts.etsy, body, extraDefs: defs.all() + silDefs() }), ctx, seq };
+  return { html: htmlDoc({ title, rel: opts.rel, size: opts.size, lowink: opts.lowink, etsy: opts.etsy, body, extraCss: extra.EXTRA_CSS, extraDefs: defs.all() + silDefs() }), ctx, seq };
 }
 
 function main() {
@@ -63,7 +63,7 @@ function main() {
   // START HERE (short guide file, Letter + A4 readable) for both editions
   for (const etsy of [false, true]) for (const size of ['letter', 'a4']) {
     const { ctx } = plan(); Object.assign(ctx, { etsy, size, rel: '../../../../' });
-    fs.writeFileSync(path.join(out, `start-here-${etsy ? 'etsy' : 'site'}-${size}.html`), htmlDoc({ title: 'START HERE — Toddler Busy Book', rel: '../../../../', size, etsy, body: extra.startHere(ctx), extraDefs: defs.all() + silDefs() }));
+    fs.writeFileSync(path.join(out, `start-here-${etsy ? 'etsy' : 'site'}-${size}.html`), htmlDoc({ title: 'START HERE — Toddler Busy Book', rel: '../../../../', size, etsy, body: extra.startHere(ctx), extraCss: extra.EXTRA_CSS, extraDefs: defs.all() + silDefs() }));
   }
   const stats = {
     pages: info.seq.length,

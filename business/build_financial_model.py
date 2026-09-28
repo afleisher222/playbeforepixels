@@ -1280,12 +1280,12 @@ r += 1
 sec(wb_, r, 1, 5, "How many (volume at break-even)"); r += 1
 def at_month(s, key, mcell):
     return f"=IF(ISNUMBER({mcell}),INDEX({fref(s,key)},1,{mcell}),\"-\")"
-be_row("cum_orders_be", "Cumulative orders by the sustained break-even month",
-       lambda s: at_month(s, "cum_orders", f"{'BCD'[s]}{BE['sust_m']}"), NUM0)
-be_row("cum_units_be", "Cumulative items sold by the sustained break-even month",
-       lambda s: at_month(s, "cum_units", f"{'BCD'[s]}{BE['sust_m']}"), NUM0)
-be_row("orders_be", "Orders in the sustained break-even month",
-       lambda s: at_month(s, "orders", f"{'BCD'[s]}{BE['sust_m']}"), NUM0)
+be_row("cum_orders_be", "Cumulative orders by the headline break-even month",
+       lambda s: at_month(s, "cum_orders", f"{'BCD'[s]}{BE['t12_m']}"), NUM0)
+be_row("cum_units_be", "Cumulative items sold by the headline break-even month",
+       lambda s: at_month(s, "cum_units", f"{'BCD'[s]}{BE['t12_m']}"), NUM0)
+be_row("orders_be", "Orders in the headline break-even month",
+       lambda s: at_month(s, "orders", f"{'BCD'[s]}{BE['t12_m']}"), NUM0)
 r += 1
 sec(wb_, r, 1, 5, "Orders needed each month to cover fixed costs (operating costs + wave fixed costs + ads)"); r += 1
 for mm in (6, 12, 24, 36):
@@ -1311,7 +1311,7 @@ for pid in ("ETSY_routine", "ETSY_bored", "ETSY_family", "ETSY_busy", "SITE_fami
     put(wb_, f"E{r}", f"Unit Economics row {ur}", font=F_NOTE)
     r += 1
 r += 1
-sec(wb_, r, 1, 5, "Retail wave self-funding check (Faire, Walmart Marketplace, Target Plus)"); r += 1
+sec(wb_, r, 1, 5, "Retail wave self-funding check (Faire and Walmart Marketplace; Target Plus is weight 0 until invited)"); r += 1
 put(wb_, f"A{r}", "Retail monthly fixed costs once live (Retail Readiness Costs, section C)")
 put(wb_, f"B{r}", f"={RR['C']}", fmt=CUR0); rC = r; r += 1
 put(wb_, f"A{r}", "Blended net per retail unit (Unit Economics channel blend)")
@@ -1326,7 +1326,7 @@ for pid in ("RT_faire", "RT_wmt", "RT_tgt"):
     ur = UE_ROW[pid]
     put(wb_, f"A{r}", f"=\"Net per unit: \"&{q('Unit Economics')}!C{ur}")
     put(wb_, f"B{r}", f"={q('Unit Economics')}!M{ur}", fmt=CUR2); r += 1
-put(wb_, f"A{r}", "Wholesale at half of a $12.99 retail price leaves little after commission, landed cost and handling. A series, a 3-pack and a lower landed cost from a larger run change this.", font=F_NOTE)
+put(wb_, f"A{r}", "Wholesale at half of a $12.99 retail price loses money at a 1,000-copy landed cost. Retail needs several physical SKUs, a larger run and a lower landed cost before it can pay its own way.", font=F_NOTE)
 wb_.column_dimensions["A"].width = 70
 for c in "BCD":
     wb_.column_dimensions[c].width = 18
@@ -1369,14 +1369,22 @@ d_row("inv", "Inventory purchases over 36 months (board-book print runs)", lambd
 d_row("cum36", "Cumulative net result after one-time costs, month 36", lambda s: f"={q(FS)}!{mc(36)}{FR[s]['cumnet']}", CUR0, "", bold=True)
 r += 1
 sec(wd, r, 1, 5, "Cash and break-even"); r += 1
-d_row("peak", "Peak funding need (lowest operating balance)", lambda s: f"={q('Break-even')}!{'BCD'[s]}{BE['peak']}", CUR0, "Cash Flow (includes payout delays)", bold=True)
-d_row("peakm", "   ...in month", lambda s: dt(f"{q('Break-even')}!{'BCD'[s]}{BE['peak_m']}"), DATEF)
-d_row("be", "Sustained operating break-even", lambda s: f"={q('Break-even')}!{'BCD'[s]}{BE['sust_d']}", DATEF, "Break-even tab", bold=True)
-d_row("pay", "Cash payback (operating balance stays >= 0)", lambda s: f"={q('Break-even')}!{'BCD'[s]}{BE['cash_d']}", DATEF)
+d_row("be", "Break-even: trailing-12-month result >= 0 from", lambda s: f"={q('Break-even')}!{'BCD'[s]}{BE['t12_d']}", DATEF, "Headline measure (Break-even tab)", bold=True)
+d_row("first", "First month with a monthly operating result >= 0", lambda s: f"={q('Break-even')}!{'BCD'[s]}{BE['first_d']}", DATEF)
+d_row("peak", "Founder capital needed through month 36 (funding need)", lambda s: f"={q('Break-even')}!{'BCD'[s]}{BE['peak']}", CUR0, "Cash Flow: cumulative founder capital", bold=True)
+d_row("need12", "   ...of which by Sep 2027 (month 12)", lambda s: f"={q('Break-even')}!{'BCD'[s]}{BE['need12']}", CUR0)
+d_row("pay", "Self-funding from (no founder capital after this month)", lambda s: f"={q('Break-even')}!{'BCD'[s]}{BE['cash_d']}", DATEF)
+d_row("capm", "Household-money cap passed in (placeholder cap)", lambda s: f"={q('Break-even')}!{'BCD'[s]}{BE['cap_d']}", DATEF, "Hard stop and re-forecast")
 d_row("cash36", "Total cash at month 36 (operating + tax reserve)", lambda s: f"={q('Cash Flow')}!{mc(36)}{CFR[s]['total']}", CUR0)
 d_row("gap36", "Operating balance vs 3-month reserve target, month 36", lambda s: f"={q('Cash Flow')}!{mc(36)}{CFR[s]['gap']}", CUR0, "ops/ROUTINE.md reserve target")
 r += 1
-sec(wd, r, 1, 5, "Volume and mix"); r += 1
+sec(wd, r, 1, 5, "Volume, anchors and mix"); r += 1
+d_row("anchor", "Digital units per product per month at full ramp (site + Etsy + MoR)",
+      lambda s: f"={A['SITE_cvr'][s]}*{A['SITE_items'][s]}+{A['ETSY_cvr'][s]}*{A['ETSY_items'][s]}+{A['MOR_cvr'][s]}*{A['MOR_items'][s]}", NUM1,
+      "Section 1.5 anchors: floor 2.5, Low 10, Base 30, breakout 75")
+d_row("orders1", "Orders, year 1", lambda s: fy(s, "orders", 1), NUM0)
+d_row("orders3", "Orders, year 3", lambda s: fy(s, "orders", 3), NUM0)
+d_row("etsy3", "   ...of which Etsy orders, year 3", lambda s: fy(s, "ETSY_orders", 3), NUM0, "Compare: strongest routine-card shop, 2,189 lifetime sales (DEMAND-CHECK)")
 d_row("orders36", "Orders in month 36", lambda s: f"={q(FS)}!{mc(36)}{FR[s]['orders']}", NUM0)
 d_row("aov", "Average gross sale per order, year 3", lambda s: f"=IF({q(FS)}!{YC[3]}{FR[s]['orders']}=0,0,{q(FS)}!{YC[3]}{FR[s]['gross']}/{q(FS)}!{YC[3]}{FR[s]['orders']})", CUR2)
 d_row("list36", "Email subscribers at month 36", lambda s: f"={q(FS)}!{mc(36)}{FR[s]['email_end']}", NUM0)
@@ -1384,22 +1392,23 @@ d_row("digshare", "Share of 36-month contribution from digital (site, Etsy, MoR,
       lambda s: f"=IF({q(FS)}!{YC['T']}{FR[s]['contrib']}=0,0,({q(FS)}!{YC['T']}{FR[s]['SITE_contrib']}+{q(FS)}!{YC['T']}{FR[s]['ETSY_contrib']}+{q(FS)}!{YC['T']}{FR[s]['MOR_contrib']}+{q(FS)}!{YC['T']}{FR[s]['COURSE_contrib']})/{q(FS)}!{YC['T']}{FR[s]['contrib']})", PCT1)
 d_row("bookshare", "Share from print-on-demand books (KDP, IngramSpark)",
       lambda s: f"=IF({q(FS)}!{YC['T']}{FR[s]['contrib']}=0,0,({q(FS)}!{YC['T']}{FR[s]['KDP_contrib']}+{q(FS)}!{YC['T']}{FR[s]['INGRAM_contrib']})/{q(FS)}!{YC['T']}{FR[s]['contrib']})", PCT1)
-d_row("bbshare", "Share from the board book (Wave 3)",
+d_row("bbshare", "Share from the board book (gated option; 0 in base)",
       lambda s: f"=IF({q(FS)}!{YC['T']}{FR[s]['contrib']}=0,0,{q(FS)}!{YC['T']}{FR[s]['BOARD_contrib']}/{q(FS)}!{YC['T']}{FR[s]['contrib']})", PCT1)
-d_row("schshare", "Share from the school/group wave (held for counsel)",
+d_row("schshare", "Share from the school/group wave (overlay only; 0 in base)",
       lambda s: f"=IF({q(FS)}!{YC['T']}{FR[s]['contrib']}=0,0,{q(FS)}!{YC['T']}{FR[s]['SCHOOL_contrib']}/{q(FS)}!{YC['T']}{FR[s]['contrib']})", PCT1)
-d_row("rtshare", "Share from retail and wholesale (Faire, Walmart, Target Plus)",
+d_row("rtshare", "Share from retail and wholesale (0 in base)",
       lambda s: f"=IF({q(FS)}!{YC['T']}{FR[s]['contrib']}=0,0,{q(FS)}!{YC['T']}{FR[s]['RETAIL_contrib']}/{q(FS)}!{YC['T']}{FR[s]['contrib']})", PCT1)
-d_row("presale", "Board-book pre-sale copies before the print month", lambda s: f"={q(FS)}!$B${FR[s]['presale']}", NUM0, "Wave 3 pre-sale (Feb-Apr 2027)")
-d_row("need", "   ...copies needed to fund the first run (go / no-go line)", lambda s: f"={q(FS)}!$B${FR[s]['need']}", NUM0, "Below this line, delay the print run and keep the POD paperback")
+d_row("presale", "Board-book pre-sale copies (only if the board book is switched on)", lambda s: f"={q(FS)}!$B${FR[s]['presale']}", NUM0, "Gated option")
+d_row("need", "   ...go line: copies needed to fund the planned run", lambda s: f"={q(FS)}!$B${FR[s]['need']}", NUM0, "Below this line: refund, keep the POD paperback")
+d_row("go", "   ...go (1) / no-go (0)", lambda s: f"={q(FS)}!$B${FR[s]['go']}", "0")
 d_row("onhand", "Board-book copies at the 3PL, month 36", lambda s: f"={q(FS)}!{mc(36)}{FR[s]['onhand']}", NUM0, "Cash tied up in stock")
 r += 1
 put(wd, f"A{r}", "How to use", bold=True); r += 1
-for t in ["1. Edit blue cells only. Yellow cells on Assumptions are the levers that move results most (traffic, conversion, include flags, IngramSpark discount, owner contribution).",
-          "2. The cost position on Assumptions (0 = every cost at the low end of its range, 1 = high end) tests cost risk in one step.",
-          "3. School-facing products stay off in Conservative and start only when employment counsel clears them. Retail (including Target Plus) starts only after a 12-month record.",
+for t in ["1. Edit blue cells only. Yellow cells on Assumptions are the levers that move results most (first-sale month, sales per product, include flags, IngramSpark discount, cost position).",
+          "2. Base plan = lean path: cost position 0 (low-end quotes) and every GATED one-time item at Include = 0. Set the cost position to 0.5 to see mid-point costs.",
+          "3. The school wave, the board book and retail are OFF in every scenario. Switch an include flag to 1 to see it as an overlay; school only if counsel clears it in writing.",
           "4. Every [VERIFY] figure must be checked on the live page or a written quote before money is committed.",
-          "5. Replace the traffic and conversion guesses with the first 90 days of real data from the Friday scorecard."]:
+          "5. Replace the sales-per-product and units-per-title guesses with the first 90 days of real data from the Friday scorecard."]:
     put(wd, f"A{r}", t, font=F_NOTE); r += 1
 for c, w in zip("ABCDE", [62, 16, 16, 16, 44]):
     wd.column_dimensions[c].width = w

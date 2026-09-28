@@ -18,17 +18,17 @@ EDIT_LOG = [
 
 # The symbol. Units: the floor is y = 0, the middle of the gap between the two figures is x = 0.
 SYMBOL = dict(
-    CHANNEL=196,        # width of the gap between the two flat fronts; the ball sits in it
-    A_BODY=330,         # grown-up: radius of the quarter-circle body (rounded back, flat front)
-    C_BODY=222,         # child: radius of the quarter-circle body
+    CHANNEL=208,        # width of the gap between the two flat fronts; the ball sits in it
+    A_BODY=336,         # grown-up: radius of the quarter-circle body (rounded back, flat front)
+    C_BODY=224,         # child: radius of the quarter-circle body (2/3 of the grown-up's)
     A_HEAD=128,         # grown-up head radius
-    C_HEAD=96,          # child head radius (a toddler's head is big for its body)
+    C_HEAD=96,          # child head radius, 3/4 of the grown-up's (a toddler's head is big for its body)
     A_BACK=46,          # how far the grown-up's head centre sits behind its front edge (smaller = leaning further in)
     C_BACK=36,          # same for the child
     A_NECK=24,          # clear gap between grown-up head and body
     C_NECK=22,          # clear gap between child head and body
-    BALL=68,            # ball radius
-    EYE_A=19,           # grown-up eye radius (one eye: the figures are in profile)
+    BALL=72,            # ball radius, 3/4 of the child's head
+    EYE_A=20,           # grown-up eye radius (one eye: the figures are in profile)
     EYE_C=15,           # child eye radius
     EYE_X=0.42,         # eye position: share of the head radius toward the other figure (they face each other)...
     EYE_Y=0.10,         # ...and share of the head radius downward (looking down at the ball)
@@ -42,8 +42,8 @@ FONT = dict(wght=800, opsz=30)          # Bricolage Grotesque instance used for 
 WORD = dict(TRACK=-6, SPACE=-40,         # letter spacing and word-space adjustment (font units, cap height = 660)
             KERN={('P', 'l'): -6, ('a', 'y'): -8, ('B', 'e'): -4, ('P', 'i'): 4, ('l', 's'): 0},
             Y_TAIL=0.80)                 # the y of "Play": keep this share of its descender (1 = the font's own tail)
-LOCKUP = dict(SYM_H=1.52,               # symbol height as a multiple of the cap height
-              GAP=0.46,                  # clear air between symbol and name, as a multiple of the cap height
+LOCKUP = dict(SYM_H=1.70,               # symbol height as a multiple of the cap height
+              GAP=0.50,                  # clear air between symbol and name, as a multiple of the cap height
               DROP=0.0)                  # how far the symbol's floor sits below the text baseline (x cap height)
 
 # ======================================================================================================== palette
@@ -333,16 +333,16 @@ def stacked(scheme='color', k=SYMBOL):
     """symbol above the name set in two lines, centred"""
     g = symbol_geometry(k); x0, y0, x1, y1 = g['bbox']
     _, w1 = words('Play Before', 0, 0); _, w2 = words('Pixels', 0, 0)
-    sym_w = 1.0 * w1                               # symbol as wide as the first line
+    sym_w = 0.80 * w1                              # symbol a little narrower than the first line
     s = sym_w / (x1 - x0); sym_h = (y1 - y0) * s
     W = max(w1, w2, sym_w)
     floor_y = sym_h
     body = symbol_group((W - sym_w) / 2 - x0 * s, floor_y, s, scheme, k)
-    b1 = floor_y + 0.62 * CAP + CAP; b2 = b1 + 1.02 * 1000 * 0.86
+    b1 = floor_y + 0.52 * CAP + 716; b2 = b1 + 930    # 716 = ascender of l; 930 = baseline to baseline
     d1, _ = words('Play Before', (W - w1) / 2, b1); d2, _ = words('Pixels', (W - w2) / 2, b2)
     color = SCHEMES[scheme][3]
     body += f'<path class="t" fill="{color}" d="{d1}{d2}"/>'
-    return body, 0.0, 0.0, W, b2 + 40, s * 2 * k['BALL']
+    return body, 0.0, 0.0, W, b2 + 20, s * 2 * k['BALL']
 
 
 # ======================================================================================================== test + preview pages
@@ -351,7 +351,7 @@ def vbox(svgtext):
 
 
 def page(body, bg='#FFFFFF', w=None, h=None, extra=''):
-    fonts = os.path.relpath(os.path.join(FONTS, 'fonts.css'), HERE)
+    fonts = os.path.relpath(os.path.join(FONTS, 'fonts.css'), os.path.join(HERE, 'tests'))
     return (f'<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="{fonts}">'
             f'<style>html,body{{margin:0;padding:0;background:{bg}}} img{{display:block}} {extra}</style></head>'
             f'<body>{body}</body></html>\n')
@@ -367,8 +367,9 @@ def write_tests(files):
     jobs.append(dict(file='tests/large.html', out='test-large.png', w=512, h=512))
     # 2. test-logo: the primary logo, 1600 px wide, on white
     x, y, w, h = vbox(files['primary-logo.svg'])
-    H = round(1600 * h / w)
-    put('logo.html', page(f'<img src="../primary-logo.svg" style="width:1600px;height:{H}px">'))
+    LW = 1440; LH = LW * h / w; H = round(LH + 160)
+    put('logo.html', page(f'<div style="width:1600px;height:{H}px;display:flex;align-items:center;justify-content:center">'
+                          f'<img src="../primary-logo.svg" style="width:{LW}px;height:{LH:.1f}px"></div>'))
     jobs.append(dict(file='tests/logo.html', out='test-logo.png', w=1600, h=H))
     # 3. favicon rasters at true size, light and dark tabs
     for mode, bg in (('light', '#FFFFFF'), ('dark', '#202124')):
@@ -415,13 +416,14 @@ def preview_html(files):
     sx, sy, sw, sh = vbox(files['symbol.svg'])
     sym_w_at = spine_h * sw / sh
     spines = ''
-    for i, (col, title, fg) in enumerate(((SUN, 'Up! Go! More!', INK), (SKY, 'Woof! Moo! Beep!', PAPER), (TOMATO, 'Yum! Splash! Yawn!', PAPER))):
+    for col, title, fg in ((SUN, 'Up! Go! More!', INK), (SKY, 'Woof! Moo! Beep!', PAPER), (TOMATO, 'Yum! Splash! Yawn!', PAPER)):
         sym = 'symbol.svg' if fg == INK else 'symbol-white.svg'
-        spines += (f'<div style="width:84px;height:430px;background:{col};border-radius:4px;position:relative;box-shadow:inset -6px 0 0 rgba(0,0,0,.06)">'
-                   f'<div style="position:absolute;left:50%;top:26px;transform:translateX(-50%) rotate(90deg);transform-origin:center;'
-                   f'white-space:nowrap;font:800 24px/1 Bricolage Grotesque;color:{fg};width:0;display:flex;justify-content:center">'
-                   f'<span style="display:block;transform:translateY(120px)">{title}</span></div>'
-                   f'<img src="../{sym}" style="position:absolute;left:50%;bottom:16px;transform:translateX(-50%);height:{spine_h}px;width:{sym_w_at:.1f}px"></div>')
+        spines += (f'<div style="width:84px;height:430px;background:{col};border-radius:3px;position:relative;'
+                   f'box-shadow:inset -5px 0 0 rgba(0,0,0,.07)">'
+                   f'<div style="position:absolute;left:0;right:0;top:22px;height:300px;writing-mode:vertical-rl;'
+                   f'display:flex;align-items:center;font:800 22px/1 Bricolage Grotesque;letter-spacing:-.01em;color:{fg}">{title}</div>'
+                   f'<img src="../{sym}" style="position:absolute;left:50%;bottom:18px;transform:translateX(-50%);'
+                   f'height:{spine_h}px;width:{sym_w_at:.1f}px"></div>')
     body = f'''
     <div class="board">
       <div class="head">Play Before Pixels<span>Logo concept v2-B, "Floor Time": a grown-up and a child on the floor, one ball between them</span></div>
