@@ -290,6 +290,13 @@ const coverCss = `<style>
 .cv-extra{position:absolute;left:.57in;right:.55in;bottom:.55in;font-size:12.5px;font-weight:600}
 </style>`;
 
+function welcomeArt() {
+  const W = 400, H = 190, F = 176;
+  const k = Object.assign({}, KIDS.B, { x: 250, y: F - 27 * 1.05, s: 1.05, aL: 150, aR: -150, face: 'laugh' });
+  const g = Object.assign({}, ADULTS.G1, { x: 110, y: F - 51 * 0.85, s: 0.85, legs: 'kneel', aL: 20, aR: -70, face: 'laugh' });
+  const blocks = `<use href="#block-1" transform="translate(330,${F - 20}) scale(.72)"/><use href="#block-3" transform="translate(372,${F - 20}) scale(.72)"/><use href="#block-2" transform="translate(351,${F - 61}) scale(.72)"/>`;
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" height="100%" aria-hidden="true"><circle cx="220" cy="118" r="70" fill="${C.tSun}"/><rect x="20" y="${F}" width="370" height="6" rx="3" fill="${C.ink}" opacity=".08"/>${adult(g)}${kid(k)}${blocks}</svg>`;
+}
 function welcomePage() {
   const inside = [
     ['150', 'play cards in 4 age bands: 1–3, 3–5, 5–8, 8–12'],
@@ -310,6 +317,7 @@ function welcomePage() {
       <div class="whyi"><span class="wn" style="background:${C.tGrass};color:${C.grass}">${icon('star')}</span><div><h4>Sorted by age and energy</h4><p>Choose your child’s age band, then ask one question: calm, medium or wiggly? Matching the mood makes a “yes” much more likely.</p></div></div>
       <div class="whyi"><span class="wn" style="background:${C.tTomato};color:${C.tomato}">${icon('safe')}</span><div><h4>Safety on every card</h4><p>Each card carries its own safety line, and every card for ages 1–3 uses only things bigger than a toilet-paper tube.</p></div></div>
       <div class="whyi"><span class="wn" style="background:${C.tSun};color:#C98F00">${icon('kitchen')}</span><div><h4>Made from everyday things</h4><p>Pots, socks, boxes, paper, a walk outside. No shopping list, no batteries, no screens.</p></div></div>
+      <div class="wart">${welcomeArt()}</div>
     </div>
     <div class="inside"><span class="kick">What’s inside</span>
       ${inside.map(([n, t]) => `<div class="in"><b>${n}</b><span>${t}</span></div>`).join('')}
@@ -328,6 +336,7 @@ const welcomeCss = `<style>
 .wn .i{width:21px;height:21px}
 .whyi h4,.st h4{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:16px;margin:0 0 2px;letter-spacing:-.01em}
 .whyi p{font-size:12.2px;line-height:1.45;font-weight:600}
+.wart{height:1.75in;margin-top:4px}
 .inside{background:${C.wash};border-radius:18px;padding:16px 18px}
 .in{display:flex;gap:10px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E1E7F1;font-size:12px;font-weight:600;line-height:1.3}
 .in b{flex:0 0 30px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:19px;color:${C.tomato}}
@@ -555,14 +564,14 @@ const labelCss = `<style>
 .rl1{font-size:40px}.rl2{font-size:58px}
 .rl3{font-weight:800;font-size:12px;margin-top:9px}
 .rld{display:flex;gap:5px;margin-top:10px}.rld i{width:12px;height:12px;border-radius:50%;outline:2px solid #fff}
-.wgrid2{display:flex;flex-direction:column;gap:.25in;margin:8px 0 .3in}
-.wlab{height:2.3in;border-radius:18px;background:var(--m);color:var(--on);outline:.8px dashed #B7C1D3;outline-offset:3px;display:flex;flex-direction:column;justify-content:center;padding:0 .4in;position:relative;overflow:hidden}
+.wgrid2{display:flex;flex-direction:column;gap:.22in;margin:6px 0 .25in}
+.wlab{height:2.0in;border-radius:18px;background:var(--m);color:var(--on);outline:.8px dashed #B7C1D3;outline-offset:3px;display:flex;flex-direction:column;justify-content:center;padding:0 .4in;position:relative;overflow:hidden}
 .wlt{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:66px;letter-spacing:-.04em;line-height:.9;display:block}
 .wls{font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;display:block;margin-top:6px}
 .wl2{display:flex;align-items:center;gap:8px;margin-top:14px;font-weight:700;font-size:13px}
 .wl2 .i{width:20px;height:20px}
 .sgrid{display:grid;grid-template-columns:1fr 1fr;gap:.25in}
-.slab{height:1.6in;border-radius:16px;background:var(--t);border:5px solid var(--m);outline:.8px dashed #B7C1D3;outline-offset:3px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:0 .3in}
+.slab{height:1.45in;border-radius:16px;background:var(--t);border:5px solid var(--m);outline:.8px dashed #B7C1D3;outline-offset:3px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:0 .3in}
 .slab .en{display:inline-flex;align-items:center;gap:5px;background:#fff;border-radius:20px;height:22px;padding:0 10px 0 7px;font-weight:800;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
 .slab .mt{width:16px;height:12px;display:block;color:${C.tomato}}
 .slab b{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:28px;letter-spacing:-.02em;margin-top:6px}
