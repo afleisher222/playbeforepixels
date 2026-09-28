@@ -773,8 +773,8 @@ const faqCss = `<style>
 </style>`;
 function bonusPage() {
   const next = [
-    ['Play-First Family Kit', 'A “play first, then screens” checklist, tokens, a helping-jobs page and a family play plan.', C.tTomato],
-    ['Visual Routine Cards', 'Picture cards for mornings, bedtime and the moments in between, ages 0–12.', C.tSky],
+    ['52 Play & Talk Cards', 'For ages 0–5: one simple play and one talk tip on every card.', C.tSun],
+    ['Visual Routine Cards', 'Picture cards for mornings, bedtime and the moments in between.', C.tSky],
     ['100 Screen-Free Plays', 'Our activity book: 100 plays sorted by age, each with a talk line and a safety note.', C.tGrass],
   ];
   return contentPage('bonus', 'Your free bonus', 'One more thing:<br>a free bonus.', `

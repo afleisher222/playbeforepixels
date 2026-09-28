@@ -169,3 +169,45 @@ window.PBP_PAGES = [
   { title: 'Terms of sale', url: 'info.html#terms', kind: 'Legal', text: 'terms conditions sale' },
   { title: 'Accessibility', url: 'info.html#accessibility', kind: 'Legal', text: 'accessibility large print screen reader' }
 ];
+
+/* ---------- Shared renderers (used by _tools/build.js at build time and nav.js in the browser) ---------- */
+(function (w) {
+  var esc = function (s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); };
+  var bandColor = function (k) { var b = w.PBP_BANDS.filter(function (x) { return x.key === k; })[0]; return b ? b.color : 'sky'; };
+  var TEE = '<svg viewBox="0 0 400 350" aria-hidden="true"><path d="M128 18c20 16 44 24 72 24s52-8 72-24l96 44-34 86-40-16v200H106V132l-40 16-34-86z" fill="#1D2940"/><path d="M128 18c20 16 44 24 72 24s52-8 72-24l-8-4c-18 13-38 19-64 19s-46-6-64-19z" fill="#2B3957"/><path d="M106 132l-4-40M294 132l4-40" stroke="#2B3957" stroke-width="3" fill="none"/></svg>';
+  var TOTE = '<svg viewBox="0 0 360 420" aria-hidden="true"><path d="M118 168c0-112 124-112 124 0" fill="none" stroke="#2F74C2" stroke-width="16" stroke-linecap="round"/><path d="M40 150h280l-10 262H50z" fill="#3D86D8"/><path d="M40 150h280v14H40z" fill="#2F74C2"/></svg>';
+  function img(src, alt, cls) { return '<img src="' + src + '" alt="' + esc(alt || '') + '" loading="lazy" decoding="async"' + (cls ? ' class="' + cls + '"' : '') + '>'; }
+  w.PBP_mock = function (p, opt) {
+    opt = opt || {}; var a = opt.decorative ? '' : p.alt;
+    switch (p.mock) {
+      case 'board': return '<div class="obj m-board"><div class="edge"></div><div class="face">' + img(p.img, a) + '</div></div>';
+      case 'book': return '<div class="obj m-book"><div class="edge"></div><div class="face">' + img(p.img, a) + '</div></div>';
+      case 'guide': return '<div class="obj m-book m-guide"><div class="edge"></div><div class="face">' + img(p.img, a) + '</div></div>';
+      case 'sheet': return '<div class="obj m-sheet"><div class="under"></div><div class="face">' + img(p.img, a) + '</div></div>';
+      case 'stack': return '<div class="obj m-stack" role="img" aria-label="' + esc(a) + '">' + p.imgs.map(function (s) { return '<div class="face">' + img(s, '') + '</div>'; }).join('') + '</div>';
+      case 'deck': return '<div class="obj m-deck" role="img" aria-label="' + esc(a) + '"><div class="box">' + img(p.img, '') + '</div><span class="card"></span><span class="card"></span></div>';
+      case 'folder': return '<div class="obj m-folder" role="img" aria-label="' + esc(a) + '"><div class="sheet"><b>Speaker script</b><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="sheet"><b>Take-home handout</b><i></i><i></i><i></i><i></i><i></i></div><div class="pocket"><b>Talk, Touch, Play</b><span>Parent night kit</span></div></div>';
+      case 'workbook': var d = ''; for (var i = 0; i < 30; i++) d += '<i' + (i < 9 ? ' class="done"' : '') + '></i>'; return '<div class="obj m-workbook" role="img" aria-label="' + esc(a) + '"><small>Written course · Workbook</small><b>30-Day Screen Reset</b><div class="days">' + d + '</div></div>';
+      case 'tee': return '<div class="obj m-tee" role="img" aria-label="' + esc(a) + '">' + TEE + img(p.img, '', 'print') + '</div>';
+      case 'tote': return '<div class="obj m-tote" role="img" aria-label="' + esc(a) + '">' + TOTE + img(p.img, '', 'print') + '</div>';
+    }
+    return '';
+  };
+  w.PBP_minPrice = function (p) { return Math.min.apply(null, p.formats.map(function (f) { return f.price; })); };
+  w.PBP_href = function (p) { return p.url || ('shop.html#item=' + p.id); };
+  w.PBP_card = function (p, opt) {
+    opt = opt || {};
+    var min = w.PBP_minPrice(p), multi = p.formats.length > 1;
+    var dots = p.ages.map(function (k) { return '<i class="dot-' + bandColor(k) + '"></i>'; }).join('');
+    var quick = p.formats.length === 1 && !p.url
+      ? '<button class="quick-add" type="button" data-add="' + p.id + '" data-format="' + p.formats[0].id + '">Add<span class="visually-hidden"> ' + esc(p.title) + ' to cart</span></button>'
+      : '<span class="ages">' + (dots ? '<span class="age-dots" aria-hidden="true">' + dots + '</span>' : '') + ' ' + esc(p.ageText) + '</span>';
+    return '<li class="p-card" data-id="' + p.id + '" data-type="' + p.type + '" data-ages="' + p.ages.join(' ') + '" data-price="' + min + '">' +
+      '<div class="surface g-' + p.ground + '"><span class="stamp stamp--ink">' + esc(p.stamp) + '</span>' + w.PBP_mock(p, { decorative: true }) + '</div>' +
+      '<h3><a href="' + w.PBP_href(p) + '"' + (p.url ? '' : ' data-quick="' + p.id + '"') + '>' + esc(p.title) + '</a></h3>' +
+      '<p class="line">' + esc(p.line) + '</p>' +
+      '<div class="foot"><span class="price">' + (multi ? '<small>from </small>' : '') + '<span data-usd="' + min + '">$' + min.toFixed(2) + '</span></span>' + quick + '</div>' +
+      '</li>';
+  };
+  w.PBP_esc = esc; w.PBP_bandColor = bandColor;
+})(typeof window !== 'undefined' ? window : globalThis);

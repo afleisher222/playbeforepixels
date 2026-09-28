@@ -160,7 +160,8 @@ function cardPages(list, cw, { age, title }) {
     const fillCat = g[g.length - 1].cat;
     for (let i = g.length; i < perPage; i++) cells.push(`<div class="cardwrap">${card({ id: 'blank', cat: fillCat, art: null, label: '' }, cw, { blankArt: true, blankLabel: true })}</div>`);
     const secLabel = cats.length ? cats.join(' · ') : 'Blank cards';
-    pages.push(page(`<div class="in"><div class="ph"><span class="sec"><span class="chip age">${age}</span>${esc(secLabel)}</span><span class="sec"><span class="chip">${cwName(cw)}</span>${wordmark()}</span></div><div class="grid">${cells.join('')}</div></div>`, { cls: 'cards' }));
+    const ageChip = g.filter(c => c.art).every(c => CAT[c.cat].age === 'all ages') ? 'All ages' : age;
+    pages.push(page(`<div class="in"><div class="ph"><span class="sec"><span class="chip age">${ageChip}</span>${esc(secLabel)}</span><span class="sec"><span class="chip">${cwName(cw)}</span>${wordmark()}</span></div><div class="grid">${cells.join('')}</div></div>`, { cls: 'cards' }));
   });
   return pages;
 }

@@ -33,3 +33,4 @@ Mark each item PASS / FAIL / NEEDS FOUNDER. One FAIL blocks publication.
     - No public promise of a reply faster than the weekly batch. Use the approved wording: "an instant automatic reply; a person reviews everything else within [5] business days."
     - No coaching, call or live-service wording in any policy or page. (G2-19)
 22. Reviews: terms, emails and review requests never restrict or penalize honest negative reviews (Consumer Review Fairness Act) and never offer anything for changing a review. Etsy review replies follow ROUTINE.md §5b. (G2-20)
+16. Pricing: follows commerce/PRICING.md — no digital sale nets under $3.00, no POD sale under 30% margin, KDP paperbacks at $9.99+ unless print cost prevents it, no single printable under $5, no fake former prices.

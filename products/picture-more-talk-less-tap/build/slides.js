@@ -70,7 +70,7 @@ h2 { font-size: 56px; margin-bottom: 26px }
 .title .sub { font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 34px; margin: 0 0 30px }
 .title .tr { height: 100% }
 .moves { display: flex; gap: 12px; flex-wrap: wrap }
-.moves span { display: inline-flex; align-items: center; gap: 6px; padding: 8px 20px 8px 12px; border-radius: 16px; font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 28px }
+.moves span { display: inline-flex; align-items: center; gap: 5px; padding: 7px 16px 7px 10px; border-radius: 16px; font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 24px }
 .moves.small span { font-size: 26px }
 .legend { flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px }
 .lg { border-radius: 26px; padding: 28px 18px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center }

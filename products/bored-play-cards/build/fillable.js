@@ -3,7 +3,7 @@
 // The PDF is first rendered with brand/render.js; this script measures every [data-field]
 // element in the same HTML (96 px = 1 in) and places an AcroForm field on top of it (pdf-lib).
 const { chromium } = require('/opt/node22/lib/node_modules/playwright');
-const { PDFDocument, rgb, StandardFonts, drawEllipse } = require('pdf-lib');
+const { PDFDocument, rgb, StandardFonts, drawEllipse, TextAlignment } = require('pdf-lib');
 const fs = require('fs'); const path = require('path');
 (async () => {
   const [html, pdfIn, pdfOut] = process.argv.slice(2);
@@ -39,10 +39,11 @@ const fs = require('fs'); const path = require('path');
         cb.updateAppearances(() => ({ normal: { on: dot, off: [] }, down: { on: dot, off: [] } }));
       } else {
         const tf = form.createTextField(id);
-        const multi = !['title', 'menu_day'].includes(f.name) && !/_week$|_players$/.test(f.name);
+        const multi = !['title', 'menu_day', 'cert_name', 'cert_fav', 'cert_date'].includes(f.name) && !/_week$|_players$|^cert_top/.test(f.name);
         if (multi) tf.enableMultiline();
         tf.addToPage(pg, { ...box, textColor: ink, font, backgroundColor: undefined, borderColor: undefined });
-        tf.setFontSize(f.name === 'title' ? 11 : multi ? (f.name.startsWith('wk_') ? 10 : 8.5) : 11);
+        tf.setFontSize(f.name === 'cert_name' ? 22 : f.name === 'cert_said' ? 12 : f.name === 'title' ? 11 : multi ? (f.name.startsWith('wk_') ? 10 : 8.5) : 11);
+        if (f.name === 'cert_name') tf.setAlignment(TextAlignment.Center);
       }
       n++;
     });

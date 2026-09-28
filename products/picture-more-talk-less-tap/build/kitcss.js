@@ -34,7 +34,7 @@ h4 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 15px; marg
 .cov { display: flex; flex-direction: column; height: 100% }
 .covtop { display: flex; align-items: center; justify-content: space-between }
 .covkick { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 2.5px; text-transform: uppercase; color: ${C.tomato} }
-.covtitle { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 104px; line-height: .95; letter-spacing: -3px; margin: 34px 0 6px; color: ${C.ink} }
+.covtitle { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 104px; line-height: .95; letter-spacing: -1.5px; margin: 34px 0 6px; color: ${C.ink} }
 .covsub { font-size: 22px; font-weight: 800; margin: 0 0 16px }
 .covwords { display: flex; gap: 10px; margin: 0 }
 .covwords span { display: inline-flex; align-items: center; gap: 4px; padding: 6px 18px 6px 10px; border-radius: 14px; font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 25px }
