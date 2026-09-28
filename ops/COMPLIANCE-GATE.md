@@ -16,3 +16,4 @@ Mark each item PASS / FAIL / NEEDS FOUNDER. One FAIL blocks publication.
 12. Faceless and self-running: nothing requires the founder on camera, live, or doing daily work; no coaching.
 13. Tone: warm, no shame, no fear-selling, respectful to autistic people; readable (contrast, alt text).
 14. Anything viral, press-related, legal, or touching her job, case or children → create ops/PAUSE and write to ops/APPROVALS.md.
+15. Autism targeting: no product, listing, ad, keyword, hashtag or email targets autism searches or mentions autism; research-hub pages link only to the free play printable/email list, framed as play (BRAND.md "Autism searches").

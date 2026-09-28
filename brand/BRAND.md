@@ -99,3 +99,8 @@ AI-generated material is not copyrightable in the U.S. For every product, leave 
 - Every product includes a QR code and short link to a free companion bonus that joins the email list (no child names collected; birth month/year only).
 - Series and stages are designed as sets (matching spines, numbered stage kits, card-deck expansions) so customers want the whole collection.
 - The site shows "Next for your child's age" on every product page and in every order email; bundles are offered at a fair discount; a give-$5/get-$5 referral program runs through the store platform.
+
+## Autism searches (binding)
+- Never target people searching for "autism" (or any diagnosis) with product ads, product listings, keywords, hashtags or emails. No autism keywords on any product, listing or ad — anywhere, in any language.
+- "Virtual autism" and "screen time and autism" questions are answered only by the research hub's honest educational pages (associations, not causation; not a diagnosis; talk to your pediatrician; free early intervention). Those pages may invite readers to the free play printable and email list, framed as play and family time — never as help for autism.
+- Never imply any product helps, prevents, treats or relates to autism or any developmental condition.

@@ -508,7 +508,7 @@ pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.paper))}
     ${GAMES.slice(0, 3).map((g, i) => gameCard(g, i + 1)).join('')}
   </div>
 </div>`);
-pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.paper))}
+pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.paper) + rect(110, 790, 655, 34, C.sky, 17) + [0, 1, 2, 3, 4].map(i => U('duck', 150 + i * 118, 722, 0.95)).join(''))}
   <div class="mat">
     ${GAMES.slice(3).map((g, i) => gameCard(g, i + 4)).join('')}
     <div class="safety">
@@ -525,7 +525,9 @@ pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.paper))}
 </div>`);
 
 // Note + keepsake
-pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.kT) + col('heart', 760, 90, 1.2, C.tomato))}
+pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.kT) + col('heart', 760, 90, 1.2, C.tomato) + rect(0, 812, 875, 63, C.sun) +
+  lap({ a: 'dad', kid: 'kid-sit', cx: 150, fy: 830, s: 0.6, seat: 'armchair' }) + lap({ a: 'jo', kid: 'ada-sit', cx: 345, fy: 826, s: 0.62, ks: 0.85, arms: 'book', front: U('book', 76, 168, 0.55) }) +
+  lap({ a: 'bea', kid: 'baby-up', cx: 535, fy: 826, s: 0.62, ks: 0.66, kdy: -8, arms: 'lift' }) + lap({ a: 'gma', kid: 'kid-sit-hold', cx: 730, fy: 836, s: 0.56, seat: 'wheelchair', arms: 'book', front: U('book', 70, 166, 0.62) }))}
   <div class="mat note">
     <div class="kicker">A note for grown-ups</div>
     <h2>A lap is a small place with a big job.</h2>
@@ -542,7 +544,9 @@ pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.kT) + col(
 </div>`);
 
 // Back cover
-pages.push(`<div class="page back">${svgPage(rect(0, 0, 875, 875, C.sun) + rect(0, 790, 875, 85, C.tomato) + [0, 1, 2, 3, 4].map(i => U('duck', 90 + i * 110, 560, 0.9)).join('') + rect(70, 628, 590, 30, C.sky, 15))}
+pages.push(`<div class="page back">${svgPage(rect(0, 0, 875, 875, C.sun) + `<circle cx="300" cy="640" r="200" fill="${C.sky}"/>` + rect(0, 770, 875, 105, C.tomato) +
+  lap({ a: 'dad', kid: 'kid-sit-content', cx: 300, fy: 790, s: 0.9, seat: 'armchair' }) +
+  rect(560, 700, 150, 30, C.plum, 6) + rect(572, 670, 128, 30, C.paper, 6) + rect(556, 640, 140, 30, C.sky, 6) + U('mug', 604, 592, 0.95) + col('heart', 640, 470, 1.1, C.tomato))}
   <div class="bk">
     <h2>A lap is the best seat in town.</h2>
     <p>A lap for a story. A lap on the bus. A lap for a song, a lap at the park, and a sleepy lap when the moon comes up. <i>Laps Not Apps</i> is a warm, rhyming read-aloud that celebrates the grown-ups, big kids and cozy places that hold our littlest listeners close.</p>
@@ -598,16 +602,16 @@ body { font-family: "Nunito Sans", sans-serif; color: ${C.ink} }
 .mat { position: absolute; left: .7in; right: .7in; top: .66in; bottom: .6in }
 .kicker { font-family: "Caveat", cursive; font-weight: 700; font-size: 22pt; color: ${C.tomato}; line-height: 1 }
 .mat h2 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 30pt; line-height: 1.02; letter-spacing: -.01em; margin-top: .04in }
-.lede { font-size: 11.5pt; line-height: 1.45; margin: .12in 0 .16in }
-.game { display: flex; gap: .18in; border-radius: .2in; padding: .17in .22in; margin-bottom: .13in }
+.lede { font-size: 12.5pt; line-height: 1.45; margin: .12in 0 .2in }
+.game { display: flex; gap: .2in; border-radius: .2in; padding: .2in .26in; margin-bottom: .16in }
 .gnum { flex: 0 0 .56in; height: .56in; border-radius: 50%; color: #fff; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 22pt; display: flex; align-items: center; justify-content: center }
-.game h3 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 16pt; line-height: 1.1 }
+.game h3 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 18pt; line-height: 1.1 }
 .gage { font-family: "Caveat", cursive; font-weight: 700; font-size: 14pt; color: ${C.ink}; opacity: .8; line-height: 1.1 }
-.game p { font-size: 10.8pt; line-height: 1.4; margin-top: .04in }
+.game p { font-size: 11.8pt; line-height: 1.42; margin-top: .05in }
 .game .gsafe b { color: ${C.tomato} }
 .safety { border: 3px solid ${C.ink}; border-radius: .2in; padding: .18in .24in; margin-top: .06in }
 .safety h3 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 15pt }
-.safety ul { margin: .06in 0 0 .2in; font-size: 10.4pt; line-height: 1.4 }
+.safety ul { margin: .06in 0 0 .2in; font-size: 11pt; line-height: 1.4 }
 .safety li { margin-top: .03in }
 .note p { font-size: 12pt; line-height: 1.5; margin-top: .14in }
 .note h2 { max-width: 6in }
@@ -620,7 +624,7 @@ body { font-family: "Nunito Sans", sans-serif; color: ${C.ink} }
 .bk h2 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 34pt; line-height: 1; letter-spacing: -.01em }
 .bk p { margin-top: .16in; font-size: 12.5pt; line-height: 1.45 }
 .bk ul { margin: .12in 0 0 .22in; font-size: 11.5pt; line-height: 1.45; font-weight: 700 }
-.bk-foot { position: absolute; left: .7in; bottom: .56in; color: #fff }
+.bk-foot { position: absolute; left: .7in; bottom: .6in; color: #fff }
 .bk-age { margin-top: .05in; font-weight: 700; font-size: 10.5pt; color: #fff }
 .isbn { position: absolute; right: .55in; bottom: .55in; width: 2in; height: 1.2in; background: #fff; border: 1.5px dashed ${C.ink}; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 10pt; color: ${C.ink}; border-radius: 4px }
 `;
