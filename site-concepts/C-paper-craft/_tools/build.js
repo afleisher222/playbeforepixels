@@ -246,6 +246,8 @@ function page(src) {
   s = s.replace(/\{\{AGETABS\}\}/g, ageTabs);
   s = s.replace(/\{\{COUNT:([\w-]+)\}\}/g, (_, k) => String(bandCount(k)));
   s = s.replace(/\{\{I:(\w+)\}\}/g, (_, k) => I[k]);
+  s = s.replace(/\{\{WORDS_JSON\}\}/g, () => { const m = JSON.parse(fs.readFileSync(path.join(ROOT, '../../products/board-up-go-more/build/manuscript.json'), 'utf8')); return JSON.stringify(m.words.map(w => ({ w: w.w, cue: w.cue, tip: w.tip }))).replace(/</g, '\\u003c'); });
+  s = s.replace(/\{\{WORDBTNS\}\}/g, () => { const m = JSON.parse(fs.readFileSync(path.join(ROOT, '../../products/board-up-go-more/build/manuscript.json'), 'utf8')); return m.words.map((w, i) => `<li><button type="button" class="wbtn" data-word="${i}" aria-pressed="${i === 2}" aria-controls="word-out">${esc(w.w)}</button></li>`).join(''); });
   const out = `<!doctype html>
 <html lang="en">
 <head>

@@ -792,9 +792,6 @@ ul, ol { margin: 0; padding: 0; }
 .wordstrip span::after { content: ""; position: absolute; right: -5px; top: 50%; width: 10px; height: 10px; border-radius: 50%; margin-top: -5px; background: var(--c, var(--tomato)); }
 .wordstrip span:nth-child(5n+2)::after { --c: var(--sun); } .wordstrip span:nth-child(5n+3)::after { --c: var(--sky); }
 .wordstrip span:nth-child(5n+4)::after { --c: var(--grass); } .wordstrip span:nth-child(5n+5)::after { --c: var(--plum); }
-@media (prefers-reduced-motion: no-preference) {
-  .wordstrip:hover .wordstrip-in { animation-play-state: paused; }
-}
 
 /* cutting mat */
 .mat {

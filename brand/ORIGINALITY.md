@@ -282,3 +282,8 @@ Search the repo for each old name with `grep -rIl --exclude-dir=.git -i "<old na
 - `legal/domain-portfolio.md` (rows 17 and 23 and the slogan rows);
 - `ops/QUEUE.md` line 82;
 - `business/sections/02-products-channels.md` §2.10, decision 3 (now decided).
+
+
+## Founder decisions (Sept 28, 2026)
+- A3 research hub: RENAME accepted → "Play Before Pixels Research Notes" (/research).
+- A2 ALPHAPLAY: alphaplaygames.com appears to be the founder's (Squarespace, Feb 12, 2026); alphaplaykids.com probably not. Keep ALPHAPLAY for the spelling-game line; don't use alphaplaykids.com. See legal/ENTITY.md.

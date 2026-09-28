@@ -240,9 +240,10 @@ pause and wait, so {{THEY}} can take a turn to talk
 reach for a book, a song or a lap before a screen
 
 ## grown-up note (draft)
-<!-- Two short paragraphs for the grown-ups (the "How to use this book" page). -->
+<!-- Three short paragraphs for the grown-ups (the "How to use this book" page). Keep the language line (BRAND.md customer-voice rule 15). -->
 When {{CHILD_NAME}} is close enough to feel your voice, reading turns into a conversation. You say something, you pause, and you wait for {{THEIR}} turn—a look, a point, a sound, a word. Every spread has a **Lap talk** idea to help that back-and-forth along.
 There is no right way to read this book. Skip pages. Make up voices. Read the same page ten times. The goal isn’t finishing—it’s the talking along the way. Let your phone rest face-down for a few minutes. Your little one will notice.
+Talk, sing and read in the language you know best. A point, a sign or a sound counts too.
 
 ## back blurb (draft)
 A lap for a story. A lap on the bus. A lap for a song, a lap at the park, and a sleepy lap when the moon comes up. In this rhyming read-aloud, the grown-ups who love {{CHILD_NAME}} call {{THEM}} by name to the best seats in town.

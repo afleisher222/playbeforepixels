@@ -16,6 +16,10 @@ const ORDER = MODE === 'order' ? JSON.parse(fs.readFileSync(ARGS.order, 'utf8'))
 const NZ = PZ.normalize(ORDER);
 if (!NZ.ok) { console.error('ORDER ERROR (cannot build): ' + NZ.errors.join('; ')); process.exit(2); }
 const LOOK = PZ.LOOKS[NZ.look];
+// Etsy edition: no URL and no QR code anywhere in the book (BRAND.md customer-voice rule 2; Etsy's no-off-site-links rule).
+const ETSY = String(ORDER.channel || '').trim().toLowerCase() === 'etsy';
+// Every POD interior carries a version line (BRAND.md customer-voice rule 3). Bump it whenever the words or art change.
+const VERSION = 'Version 1.0 · September 2026';
 
 const C = { ink: '#1D2940', paper: '#FFFFFF', wash: '#F3F6FB', tomato: '#EE5A36', sun: '#F5B820', sky: '#3D86D8', grass: '#2FA36B', plum: '#8A5CC7',
   tT: '#FDE9E3', sT: '#FEF4D8', kT: '#E3EEFA', gT: '#DFF3E9', pT: '#EFE6FA' };
@@ -259,7 +263,7 @@ const SPREADS = [];
 SPREADS.push(() => rect(0, 0, 1750, 875, C.kT) + rect(0, 735, 1750, 140, C.sun) +
   windowFrame(90, 300, 270, 300, C.sT, C.paper, `<circle cx="180" cy="540" r="78" fill="${C.sun}"/>${col('cloud', 220, 360, 0.7, C.paper)}`, true, 'w1') +
   `<ellipse cx="560" cy="800" rx="240" ry="42" fill="${C.tomato}"/>` + standKid('kidpj-stand', 560, 800, 2.05) +
-  text(760, 720, 'pad, pad, pad…', 38, C.ink, 'Caveat', 700) +
+  text(724, 720, 'pad, pad, pad…', 36, C.ink, 'Caveat', 700) +
   // right
   rect(1500, 350, 176, 150, C.paper, 12) + rect(1514, 364, 148, 122, C.gT, 6) + `<path d="M1514 486 L1570 410 L1610 460 L1632 436 L1662 486Z" fill="${C.grass}"/><circle cx="1628" cy="394" r="14" fill="${C.sun}"/>` +
   lap({ a: 'dad', cx: 1225, fy: 805, s: 1.5, seat: 'armchair', arms: 'rest' }) +
@@ -338,9 +342,10 @@ SPREADS.push(() => rect(0, 0, 1750, 875, C.kT) + `<ellipse cx="1300" cy="640" rx
 SPREADS.push(() => rect(0, 0, 1750, 875, C.kT) + rect(0, 630, 1750, 245, C.gT) + `<circle cx="60" cy="640" r="80" fill="${C.grass}"/><circle cx="150" cy="656" r="56" fill="${C.grass}"/>` +
   `<circle cx="1650" cy="400" r="58" fill="${C.sun}"/>` +
   lap({ a: 'dad', kid: 'kid-sit-point', cx: 430, fy: 800, s: 1.45, seat: 'bench' }) +
-  `<ellipse cx="1230" cy="752" rx="340" ry="74" fill="${C.sky}"/>` +
-  `<g stroke="${C.paper}" stroke-width="6" stroke-linecap="round"><path d="M930 712 L978 712 M944 732 L984 732"/></g>` +
-  U('duck-w', 990, 680, 1.0) + U('duck-w', 1110, 684, 1.0) + U('duck-w', 1230, 680, 1.0) + U('duck-w', 1360, 660, 1.3) + U('duck-w', 1398, 664, 0.5) +
+  `<ellipse cx="1170" cy="752" rx="260" ry="74" fill="${C.sky}"/>` +
+  `<g stroke="${C.paper}" stroke-width="6" stroke-linecap="round"><path d="M960 712 L1004 712 M972 732 L1010 732"/></g>` +
+  // exactly three ducks: the rhyme counts "one, two, three", and the last one (speed lines) is fast
+  U('duck-w', 1016, 680, 1.0) + U('duck-w', 1136, 684, 1.0) + U('duck-w', 1256, 680, 1.0) +
   rect(1450, 662, 250, 40, C.sun, 10) +
   lap({ a: 'jo', kid: 'ada-sit', cx: 1575, fy: 686, s: 0.72, ks: 0.85, front: U('book', 76, 168, 0.55), arms: 'book' }));
 
@@ -382,7 +387,7 @@ SPREADS.push(() => {
 SPREADS.push(() => rect(0, 0, 1750, 875, C.ink) + rect(0, 760, 1750, 115, C.plum) + `<ellipse cx="560" cy="800" rx="260" ry="40" fill="${C.sun}"/><ellipse cx="1300" cy="800" rx="330" ry="46" fill="${C.sun}"/>` +
   rect(100, 300, 70, 440, C.tomato, 20) + rect(530, 300, 70, 440, C.tomato, 20) +
   windowFrame(160, 320, 380, 380, C.sky, C.wash, col('moon', 340, 360, 1.3, C.sun) + [[220, 380], [290, 470], [210, 600], [450, 610], [360, 540]].map(([x, y], i) => col('star', x, y, 0.5 + (i % 2) * 0.3, C.sun)).join(''), true, 'w11') +
-  standKid('kidpj-yawn', 690, 812, 1.8) + text(800, 470, 'yawn…', 44, C.sT, 'Caveat', 700) +
+  standKid('kidpj-yawn', 690, 812, 1.8) + text(752, 452, 'yawn…', 40, C.sT, 'Caveat', 700) +
   lap({ a: 'dad-sing', kid: 'kidpj-sleep', cx: 1300, fy: 805, s: 1.48, seat: 'rocker' }) +
   col('note', 1530, 420, 1.0, C.sun) + col('note', 1590, 360, 0.8, C.sun) +
   [[1000, 330], [1660, 520], [960, 560], [1690, 300]].map(([x, y]) => col('star', x, y, 0.6, C.sun)).join(''));
@@ -435,7 +440,8 @@ if (MODE === 'order' && !ARGS['allow-drafts']) {
 const escH = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const VARS = MODE === 'template' ? Object.fromEntries(Object.keys(NZ.vars).map(k => [k, `{{${k}}}`])) : NZ.vars;
 function fill(str) {
-  return escH(str).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\{\{(\w+)\}\}/g, (m, k) => {
+  // U+2060 (word joiner) before an em dash stops a line from starting with "—"
+  return escH(str).replace(/(\S)—/g, '$1\u2060—').replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\{\{(\w+)\}\}/g, (m, k) => {
     if (!(k in VARS)) throw new Error(`Unknown variable {{${k}}} in WORDS.md`);
     const v = escH(VARS[k]).replace(/\n/g, '<br>');
     if (MODE === 'template') return `<span class="tok${k === 'CHILD_NAME' ? ' nm' : ''}">${v}</span>`;
@@ -489,10 +495,10 @@ pages.push(`<div class="page">${svgPage(rect(0, 0, 875, 875, C.paper))}
     <p>Personalized edition. Each copy is printed on demand for one reader.</p>
     <p>© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.</p>
     <p>All rights reserved. No part of this book may be reproduced, stored or shared in any form without written permission from the publisher, except for brief quotations in reviews.</p>
-    <p>Published by AlphaPlay LLC, doing business as Play Before Pixels<br>11140 Rockville Pike, Suite 100-559, Rockville, MD 20852-3149<br>playbeforepixels.com</p>
-    <p>First edition 2026</p>
+    <p>Published by AlphaPlay LLC, doing business as Play Before Pixels${ETSY ? '' : '<br>playbeforepixels.com'}</p>
+    <p>First edition 2026 · ${VERSION}</p>
     <div class="isbn-inline">ISBN: <span class="box">ISBN — to be supplied</span></div>
-    <p>The lap games in this book are for play and connection, always with an adult close by. This book is general parent education. It is not medical or developmental advice.</p>
+    <p>Read together, and keep books away from mouths. The lap games in this book are for play and connection, always with an adult close by. This book is general parent education. It is not medical or developmental advice.</p>
     <p>Illustrations are flat vector art. Text is set in Fredoka and Nunito Sans, with titles in Bricolage Grotesque.</p>
     <div class="printbox">Printer / manufacturing lines — to be supplied</div>
   </div>
@@ -606,13 +612,13 @@ pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.paper))}
     <h2 class="mf">More from Play Before Pixels</h2>
     <p class="mf-sub">Next for your little one’s age</p>
     <div class="tiles">${NEXT.map(([t, d, c, bg]) => `<div class="tile" style="background:${bg}"><i style="background:${c}"></i><b>${t}</b><span>${d}</span></div>`).join('')}</div>
-    <div class="bonus">
+    ${ETSY ? '' : `<div class="bonus">
       <div class="qr">${qrSvg(120)}</div>
       <div><div class="bonus-k">Free for grown-ups</div>
         <p>A printable lap-reading tracker and 5 more lap games.</p>
         <p class="url">${BONUS}</p>
         <p class="fine">We ask only for an email and your child’s birth month and year—never a name.</p></div>
-    </div>
+    </div>`}
     <div class="last-logo logo">${LOGO('lockup-horizontal.svg')}</div>
   </div>
 </div>`);
@@ -630,12 +636,12 @@ const BACK = `<div class="page back">${svgPage(rect(0, 0, 875, 875, C.sun) + `<c
       <li>Dedication, family reading pledge and keepsake pages</li>
     </ul>
   </div>
-  <div class="series"><div class="series-h">Collect the read-alouds</div>
+  <div class="series"><div class="series-h">Collect the books</div>
     <div class="srow"><i style="background:${C.tomato}"></i>Laps Not Apps</div>
     <div class="srow"><i style="background:${C.sky}"></i>The Day the Tablet Slept</div>
-    <div class="srow"><i style="background:${C.grass}"></i>More Talk, Less Tap</div>
+    <div class="srow"><i style="background:${C.grass}"></i>Up! Go! More!</div>
   </div>
-  <div class="bk-foot"><div class="logo">${LOGO('lockup-horizontal-white.svg')}</div><div class="bk-age">Ages 2–6 · Personalized keepsake · playbeforepixels.com</div></div>
+  <div class="bk-foot"><div class="logo">${LOGO('lockup-horizontal-white.svg')}</div><div class="bk-age">Ages 2–6 · Personalized keepsake${ETSY ? '' : ' · playbeforepixels.com'}</div></div>
   <div class="isbn">ISBN / barcode</div>
 </div>`;
 pages.push(BACK);
@@ -753,8 +759,8 @@ body { font-family: "Nunito Sans", sans-serif; color: ${C.ink} }
 .series-h { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 12.5pt; margin-bottom: .04in }
 .srow { display: flex; align-items: center; gap: .1in; margin-top: .07in; font-size: 10.5pt; font-weight: 700 }
 .srow i { flex: 0 0 .2in; height: .26in; border-radius: .04in }
-.bk-foot { position: absolute; left: .6in; bottom: .42in; color: #fff }
-.bk-foot .logo { width: 1.75in }
+.bk-foot { position: absolute; left: .6in; bottom: .56in; color: #fff } /* text stays inside the 0.5 in (bleed + safe) margin */
+.bk-foot .logo { width: 1.5in }
 .bk-age { margin-top: .06in; font-weight: 700; font-size: 9.5pt; color: #fff }
 .isbn { position: absolute; right: .55in; bottom: .55in; width: 2in; height: 1.2in; background: #fff; border: 1.5px dashed ${C.ink}; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 10pt; color: ${C.ink}; border-radius: 4px }
 `;
@@ -814,7 +820,7 @@ if (MODE === 'order') {
   const dims = { ...WRAP_DEFAULTS[NZ.format], ...(ARGS['cover-w'] ? { w: +ARGS['cover-w'] } : {}), ...(ARGS['cover-h'] ? { h: +ARGS['cover-h'] } : {}), ...(ARGS.spine ? { spine: +ARGS.spine } : {}) };
   fs.writeFileSync(path.join(out, 'interior.html'), doc('Laps Not Apps interior', interior.join('\n')));
   fs.writeFileSync(path.join(out, 'cover-wrap.html'), coverWrap(NZ.format, dims));
-  fs.writeFileSync(path.join(out, 'check.json'), JSON.stringify({ order_id: ORDER.order_id || null, format: NZ.format, look: NZ.look, pronouns: NZ.pronouns, vars: NZ.vars, holds: NZ.holds, drafts_left: DRAFTS, cover_dims_in: dims, dims_are_placeholders: !(ARGS['cover-w'] || ARGS.spine), interior_pages: interior.length }, null, 2));
+  fs.writeFileSync(path.join(out, 'check.json'), JSON.stringify({ order_id: ORDER.order_id || null, format: NZ.format, look: NZ.look, pronouns: NZ.pronouns, vars: NZ.vars, holds: NZ.holds, drafts_left: DRAFTS, channel: ORDER.channel || null, etsy_edition_no_url: ETSY, version: VERSION, cover_dims_in: dims, dims_are_placeholders: !(ARGS['cover-w'] || ARGS.spine), interior_pages: interior.length }, null, 2));
   console.log(`order ${ORDER.order_id}: ${interior.length} interior pages → ${out}${NZ.holds.length ? '\nHOLD for review: ' + NZ.holds.join('; ') : ''}`);
   process.exit(NZ.holds.length ? 4 : 0);
 }

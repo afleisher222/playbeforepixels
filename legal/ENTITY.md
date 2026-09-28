@@ -35,3 +35,13 @@
 - **Pinnies: never manufactured.** No pinnie inventory exists; none will be held by the founder.
 - **Plan:** put ALPHAPLAY into genuine use with no-inventory goods — "ALPHAPLAY Spelling Games, from Play Before Pixels": printable spelling games (class 9 downloadable printable course materials; class 16 printed instruction sheets only if a printed version ships) and, if demand supports it, a print-on-demand spelling card game (class 28). On sale well before the March 8, 2027 deadline; keep dated sales records and specimens.
 - **Attorney decides:** file the Statement of Use only for classes genuinely in use; delete unused goods (pinnies — class 25; game software and online games — class 9/41) or carry them by extension (≈$125 per class per extension [VERIFY current fee]). Never claim use for goods not actually sold.
+
+## Existing accounts found in Gmail (read-only check, September 28, 2026)
+- **alphaplaygames.com — owned by the founder (very likely):** purchased through **Squarespace Domains on Feb 12, 2026** (purchase-verification email that day; a Squarespace WHOIS contact message for alphaplaygames.com on Feb 19). A **Google Workspace** account was set up for alphaplaygames.com (hello@alphaplaygames.com receives USPTO mail). Confirm in the Squarespace Domains dashboard; turn on auto-renew and registrar lock.
+- **alphaplaykids.com — probably NOT owned:** Google Workspace invoices reference only a temporary Google domain ("alphaplaykids.com.c-0250xzny.appstempdomain.goog"), which usually means the real domain was never purchased or connected. The live alphaplaykids.com site may belong to someone else. Founder to confirm in her registrar accounts; if not hers, do not use that name or those addresses.
+- **Existing Shopify store "AlphaPlay"** (billing emails: $1.03 on Mar 6 and Apr 5, 2026; **$40.17 on May 5, 2026**). It can become the sales hub (rename the storefront/brand to Play Before Pixels with AlphaPlay LLC as the legal entity) instead of opening a new store. Founder to check whether it is currently on a paid plan and whether charges continue.
+- **Google Workspace** subscription billing seen from March 2026 — check whether it is still being charged; it can provide the business email for Play Before Pixels once the new domain is added, or be cancelled to save money.
+
+## Decisions recorded September 28, 2026
+- **Research hub name:** "Play Before Pixels Research Notes" at playbeforepixels.com/research (replaces "The Virtual Autism Project"; founder's choice). The term "virtual autism" is explained thoroughly there with the safe framing.
+- **ALPHAPLAY spelling-game line name:** keep ALPHAPLAY if the founder confirms she holds alphaplaygames.com (very likely); alphaplaykids.com is not needed. Per brand/ORIGINALITY.md A2.
