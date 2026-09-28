@@ -27,6 +27,22 @@ _(Seeded after the demand check (marketing/DEMAND-CHECK.md) and campaign bible (
 - Monthly stage-based printable play kit subscription (digital, auto-delivered): each month a kit of plays, a talk-along mini-book and a parent 'why it matters' guide matched to the child's age in months — recurring revenue, no inventory. Needs subscription-law compliance (clear terms, easy online cancellation).
 - Professional license for therapists, clinics and early-intervention programs: share printables with the families they serve (per-practice annual license). Language must stay parent-education, never therapy; consider a licensed SLP/OT reviewer credit.
 - "For professionals" page: bulk and licensed materials for SLPs, OTs, pediatric practices and child-care centers.
+- **From customer-voice research (Sept 28, 2026; marketing/CUSTOMER-VOICE.md and BRAND-RESPECT-PLAN.md). Every price and demand claim is VERIFY.**
+  - Screen rhythm chart ("screens have a spot in our day"), with a 5-minute wrap-up card and a "What we do next" card. Screens are never earned. Fold it into the Play-First Family Kit (launch #3) rather than listing it separately.
+  - Caregiver card: 2 fillable pages ("Our screen rhythm" and "10 no-prep plays that work with our child"), with full safety notes and no child-name field. A free add-in to the routine cards and the Sitter Kit, promoted as "send one to Grandma" for the holidays. Track bonus downloads before any standalone, bundle-only listing (the $5 price floor applies).
+  - Start-small sampler: a 5-play printable whose price is credited toward a bundle by a store discount code.
+  - Setup-kit page on the website (supplies, with Amazon Associates links and the disclosure). Website only; never linked from inside a PDF as an affiliate link.
+  - Big-piece, velcro-free under-3 edition of the toddler busy book (launch #4): pieces 1.5 in or larger, pocket strips or lay-on-top boards.
+  - "Your language" blank editions of talk printables (families write in the words), after the Spanish editions.
+  - Stage-by-stage "things many children do / what to try / words to say" fridge charts, for the written course and the 100 Plays guide. Never organized around late talkers.
+  - Free Community Licence ($0, one site) for Title I schools, Head Start sites and licensed family child-care homes, with an automatic hold for excluded organizations. HELD pending counsel.
+  - Annual book gift to early-literacy and child-care programs, chosen by written application. Never tied to sales. Needs the CPA's answer first (about $700–1,000 a year).
+  - Play Testers email panel (20–40 families a month, paid in free products). Anonymized counts only in git.
+  - Send-Home Talk & Read Pack: 36 weekly half-page family cards in English and Spanish, as a group licence. Build it only if teachers ask for more than the free take-home insert. HELD pending counsel.
+  - Unplugged Family Night: a free planner as the lead-in, plus a paid Station Pack and take-home cards for PTOs (volunteer-read script, English and Spanish, ages 0–5 and 5–12). HELD pending counsel.
+  - Center Family-Engagement Licence: 12 monthly one-page family handouts in English and Spanish that "support family-communication goals" (never "QRIS-compliant"). HELD pending counsel.
+  - Classroom talk-stems set (desk strips, poster, bookmarks), with a matching family version using the same words. Never "Accountable Talk". HELD pending counsel.
+  - Spring Unplugged Week: Family Play & Talk Pack, a rename of DEMAND-CHECK #10 (the event's name is never our brand), plus a PTO station plan. Build in February and market January to April.
 
 ### COMMUNITY EDITIONS — verify demand in monthly research before building
 _(Founder request, Sept 28, 2026: products for every age group and community that would be profitable. Full specs, safety notes, holds and the cut list are in marketing/COMMUNITY-PRODUCTS.md. Numbers match that file. Every price and demand claim is VERIFY. Nothing here jumps ahead of the launch five, and every edition of a launch product waits for the final English files. Low-priority items stay in that file only.)_

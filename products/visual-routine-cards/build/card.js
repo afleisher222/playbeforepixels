@@ -46,17 +46,16 @@ symbol{overflow:visible}
 .card .lab{position:absolute;left:0;right:0;bottom:0;height:.52in;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 .1in .02in;font-family:"Fredoka","Nunito Sans",sans-serif;font-weight:600;line-height:1.02;letter-spacing:.005em}
 .card .lab.blank::after{content:"";position:absolute;left:.26in;right:.26in;bottom:.15in;border-bottom:1.5px solid currentColor;opacity:.35}
 .card .disc{fill:var(--t)}
-.cw-rainbow{border:.075in solid var(--c)}
-.cw-rainbow .art{left:0;right:0;top:0;width:100%}
+.cw-rainbow{border:.075in solid var(--c);background:var(--c)}
+.cw-rainbow .art,.cw-navy .art{left:0;right:0;top:0;width:100%;height:1.6in;background:#fff;border-radius:.095in .095in 0 0}
 .cw-rainbow .lab{background:var(--c);color:var(--on);height:.47in}
-.cw-rainbow .lab.blank{background:#fff;color:${C.ink}}
+.cw-rainbow .lab.blank{background:#fff;color:${C.ink};border-radius:0 0 .095in .095in}
 .cw-soft{background:var(--t)}
 .cw-soft .disc{fill:#fff}
 .cw-soft .lab{color:${C.ink}}
-.cw-navy{border:.075in solid ${C.ink}}
-.cw-navy .art{left:0;right:0;top:0;width:100%}
+.cw-navy{border:.075in solid ${C.ink};background:${C.ink}}
 .cw-navy .lab{background:${C.ink};color:#fff;height:.47in}
-.cw-navy .lab.blank{background:#fff;color:${C.ink}}
+.cw-navy .lab.blank{background:#fff;color:${C.ink};border-radius:0 0 .095in .095in}
 .cw-simple{border:.02in solid ${C.ink}}
 .cw-simple .disc{fill:none}
 .cw-simple .lab{color:${C.ink}}

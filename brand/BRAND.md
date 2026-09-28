@@ -135,3 +135,27 @@ Every listing.json includes `amazon_route` (kdp-paperback · kdp-activity-editio
 
 ## Honest pricing (binding — overrides DEMAND-CHECK rule 2)
 Never show a "was" or crossed-out price unless the product was genuinely and openly offered at that price for a substantial period first (FTC 16 CFR 233.1). No permanent "sales", no fake countdowns, no fake scarcity. Real, time-limited promotions (e.g., a launch week, Black Friday) are fine when they truly end. Set everyday prices at the level buyers expect instead. See ops/GAPS-ROUND-2.md.
+
+## Customer-voice product rules
+_Added September 28, 2026, from buyer reviews. Full wording, sources and the per-product fix list are in marketing/CUSTOMER-VOICE.md. These sit under the hard rules; if one ever conflicts with a hard rule, the hard rule wins._
+1. Every printable ships a Color file and a Low-ink file (white background, colorable line art), each in US Letter and A4. Plain PDFs of 15 MB or less, never a zip.
+2. File 1 is "START HERE.pdf". Etsy listings fit in 5 files (START HERE + 4 core files). Etsy and TpT editions carry no URL or QR code.
+3. Every PDF and POD interior has a "Version x.y · Month Year" footer. Tell past buyers about updates; never swap a file quietly.
+4. Show the prep time in the listing and on page 1. Every play has icons for materials, prep, mess and play time. No play takes longer to prep than it plays.
+5. Cutting uses a straight-line grid with 12 pieces or fewer per page, and no-cut pages are included for same-day play.
+6. At least 70% of plays in a play collection need nothing to buy. Every activity has a 2-minute, no-setup "tired grown-up" version.
+7. Every play has a starting age in months and a "Make it easier / Make it harder" pair.
+8. Cut-piece pages print "Grown-up keeps the pieces". Under-3 versions have pieces 1.5 in or larger and no loose velcro dots. Velcro pages say "Check dots before each play".
+9. Listings say "Every play follows our published safety rules". Never "safety-checked", "certified" or "safe for all ages".
+10. Charts ship pre-filled, blank, and as fillable PDFs that work in free Acrobat Reader. The listing says exactly what can be edited.
+11. Routine sets are complete on the first download: two copies of high-use cards, blank and photo-frame cards, and a word-free version.
+12. No-guilt test: add talk and play, never take away. No fear words (rewiring, damage, addiction, toxic, zombie). Panel "judged" and "preachy" scores must be 2 or lower (out of 5).
+13. Screens have a fixed spot in the day. They never grow or shrink with chores or behavior, and tokens never convert into screen minutes.
+14. Every printable and deck includes a 1–2 page Grown-up guide: 2-minute setup, plain-words "why", three talk lines, and "most children love 2–3 of these".
+15. Talk tips say "Talk, sing and read in the language you know best". A sign, a point or a device tap counts as communicating.
+16. Story text never lectures. Teaching lives in a separate grown-up band. A device may be funny or sleepy, never evil.
+17. Cards have a big picture icon, an age color plus a word label (never color alone), "With a grown-up" and "Needs" flags, and a talk line. Decks have no trivia or quiz cards.
+18. Stage charts never set age deadlines. Never use "late talker", "speech delay" or "catch up". Every stage page carries the pediatrician line.
+19. Listings lead with the number of activities, not pages. Say so when an interior is black and white. Show an honest cost per activity. Never promise play durations.
+20. Toddler books have no flaps or glued parts. Paper editions say "read together and keep away from mouths". Kid mark-making pages in KDP books are single-sided.
+21. Before anything ships: a written QA pass (spelling, object counts, age labels, safety, contrast), a physical proof from every printer, and a founder proof of the cover and page 1.
