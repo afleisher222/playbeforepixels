@@ -67,7 +67,8 @@ What my child is good at and enjoys: ____________________________
 
 ## About us as a family
 
-- [ ] Where can we find **support for parents** while we go through this?
+- [ ] Where can we find **support and information for our family** while we learn more?
+- [ ] If my child is autistic, where can we **learn from autistic adults** and autistic-led groups?
 - [ ] Who should I **call** if things change or I have new worries before the next visit?
 
 ## After the visit

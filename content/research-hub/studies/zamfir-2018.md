@@ -44,7 +44,7 @@ Romanian psychologist Marius Teodor Zamfir looked back at the case histories of 
 
 ## Who was studied
 
-Children newly diagnosed with autism at two private rehabilitation centres in Romania, 2012 to 2017. Secondary summaries report that 83 of 110 newly diagnosed children had a parent-reported history of more than 4 hours a day of screens from birth to age 3, and that 62 children were followed with developmental or IQ measures during their support programme. The comparison was between a heavy-screen group and diagnosed children without that history. [VERIFY every number]
+Children newly diagnosed with autism at two private centres in Romania (described in summaries as rehabilitation centres), 2012 to 2017. Secondary summaries report that 83 of 110 newly diagnosed children had a parent-reported history of more than 4 hours a day of screens from birth to age 3, and that 62 children were followed with developmental or IQ measures during their support programme. The comparison was between a heavy-screen group and diagnosed children without that history. [VERIFY every number]
 
 ## What was found
 
@@ -59,6 +59,7 @@ Children newly diagnosed with autism at two private rehabilitation centres in Ro
 - Both groups were children already diagnosed with autism. There was no group of children without autism to compare against.
 - The author also runs a private practice built around the concept [VERIFY]. Readers should know about that conflict of interest.
 - A Romanian psychology website called the study an essay lacking scientific rigor. See our page on that critique.
+- Putting the children's autism down to missing experience at home places the cause in family life. The study did not test this, and autism organizations warn that explanations like it revive the false idea that parenting causes autism (see our autismus Deutschland page).
 
 ## What it does NOT show
 

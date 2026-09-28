@@ -1,0 +1,116 @@
+[
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/print/tee-logo_light.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/print/tee-logo_light.png",
+  "w": 4500,
+  "h": 5400
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/print/tee-logo_dark.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/print/tee-logo_dark.png",
+  "w": 4500,
+  "h": 5400
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/print/tote-logo_light.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/print/tote-logo_light.png",
+  "w": 3600,
+  "h": 3600
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/print/tote-logo_dark.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/print/tote-logo_dark.png",
+  "w": 3600,
+  "h": 3600
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_XS_light.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_XS_light.png",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_XS_dark.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_XS_dark.png",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_S_light.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_S_light.png",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_S_dark.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_S_dark.png",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_M_light.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_M_light.png",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_M_dark.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_M_dark.png",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_L_light.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_L_light.png",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_L_dark.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_L_dark.png",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_XL_light.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_XL_light.png",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_XL_dark.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_XL_dark.png",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_2XL_light.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_2XL_light.png",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_2XL_dark.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_2XL_dark.png",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_3XL_light.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_3XL_light.png",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_3XL_dark.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/labels/neck-label_3XL_dark.png",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/slogan-slot/slogan-tee-TEMPLATE.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/slogan-slot/slogan-tee-TEMPLATE.png",
+  "w": 1500,
+  "h": 1800
+ }
+]

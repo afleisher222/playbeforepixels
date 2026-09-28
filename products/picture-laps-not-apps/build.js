@@ -612,7 +612,8 @@ pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.paper))}
     <h2 class="mf">More from Play Before Pixels</h2>
     <p class="mf-sub">Next for your little one’s age</p>
     <div class="tiles">${NEXT.map(([t, d, c, bg]) => `<div class="tile" style="background:${bg}"><i style="background:${c}"></i><b>${t}</b><span>${d}</span></div>`).join('')}</div>
-    ${ETSY ? '' : `<div class="bonus">
+    ${ETSY ? `<div class="bonus etsy"><div><div class="bonus-k">Loved this book?</div>
+        <p>You will find more Play Before Pixels books and printables in the same shop.</p></div></div>` : `<div class="bonus">
       <div class="qr">${qrSvg(120)}</div>
       <div><div class="bonus-k">Free for grown-ups</div>
         <p>A printable lap-reading tracker and 5 more lap games.</p>
@@ -692,7 +693,7 @@ body { font-family: "Nunito Sans", sans-serif; color: ${C.ink} }
 .ded2 { position: absolute; top: .78in; left: .7in; right: .7in; text-align: center }
 .ded-for { font-family: "Caveat", cursive; font-weight: 700; font-size: 34pt; color: ${C.tomato}; line-height: 1 }
 .ded-name { font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 600; font-size: 62pt; line-height: 1.05; white-space: nowrap }
-.ded-msg { margin: .16in auto 0; max-width: 6.2in; font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 500; font-size: 19pt; line-height: 1.32; overflow-wrap: anywhere }
+.ded-msg { margin: .16in auto 0; max-width: 6.2in; text-wrap: balance; font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 500; font-size: 19pt; line-height: 1.32; overflow-wrap: anywhere }
 .ded-msg .nm { font-weight: 600 }
 .ded-from { margin-top: .2in; font-family: "Caveat", cursive; font-weight: 700; font-size: 24pt; line-height: 1 }
 .ded-giver { font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 600; font-size: 22pt; color: ${C.tomato}; white-space: nowrap }
@@ -797,7 +798,7 @@ function coverWrap(format, dims) {
   const css = `@page { size: ${Wt}in ${H}in; margin: 0 } html, body { width: ${Wt}in; height: ${H}in; overflow: hidden }
   .wrap { position: relative; width: ${Wt}in; height: ${H}in; overflow: hidden; background: ${C.sun} }
   .panel { position: absolute; top: 0; width: ${PW}in; height: ${H}in; overflow: hidden }
-  .wrap .page { position: absolute; top: ${py}in; break-after: auto; page-break-after: auto }
+  .wrap .page { position: absolute; top: ${py}in; break-after: auto; page-break-after: auto; background: transparent } /* no white hairline where the page meets the wrap extension */
   .spine { position: absolute; left: ${PW}in; top: 0; width: ${S}in; height: ${H}in; background: ${C.tomato} }
   .sp-text { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(90deg); white-space: nowrap; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: ${Math.min(14, S * 50)}pt; color: #fff }
   .sp-text .nm { color: ${C.sun} } .sp-text span { font-family: "Fredoka", sans-serif; font-weight: 600 }`;

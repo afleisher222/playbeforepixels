@@ -55,6 +55,7 @@ Young children with autistic traits and heavy screen time, Iran. Sample size [VE
 - Small sample; design and control conditions unconfirmed.
 - More parent-child interaction and less screen time happened together, so their effects cannot be separated.
 - Outcome raters were probably not blinded [VERIFY].
+- Lower autism-trait scores are not a measure of a child's well-being, and a lower score is not in itself a sign that a child is better off.
 
 ## What it does NOT show
 

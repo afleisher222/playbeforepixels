@@ -56,6 +56,8 @@ Clinicians in Islamabad followed 30 children under 10 (average age about 4) who 
 - Re-assessment was not blinded.
 - Small sample; authors not confirmed.
 - The authors' causal conclusion does not follow from an uncontrolled design.
+- The outcome was where each child fell on an autism assessment. It did not measure the children's well-being, comfort or everyday communication, and a score outside "the autism range" is not the same as a child being better off.
+- "Reversible" is the authors' word. Autism is a lifelong difference, and this design cannot show that any child stopped being autistic.
 
 ## What it does NOT show
 

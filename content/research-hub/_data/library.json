@@ -724,8 +724,8 @@
     },
     {
       "slug": "sadeghi-2023-severity",
-      "title": "Sadeghi et al. (2023): screen time and autism severity in 68 autistic toddlers",
-      "short_title": "Sadeghi 2023: screen time and autism severity in toddlers",
+      "title": "Sadeghi et al. (2023): screen time and autism \"severity\" scores in 68 autistic toddlers",
+      "short_title": "Sadeghi 2023: screen time and autism \"severity\" scores in toddlers",
       "year": "2023",
       "type": "Cross-sectional (clinical sample)",
       "stance": "supports-association",
@@ -733,7 +733,7 @@
       "topic": "screens-and-autism",
       "topic_label": "Screens and autism measures",
       "country": "Iran",
-      "one_line": "Among autistic toddlers, more screen time appeared to go with higher severity scores.",
+      "one_line": "Among autistic toddlers, more screen time appeared to go with higher \"severity\" scores (the study's term for how many autistic traits were rated).",
       "citation_status": "VERIFY",
       "what_we_read": "secondary-only",
       "url": "/research/studies/sadeghi-2023-severity/"

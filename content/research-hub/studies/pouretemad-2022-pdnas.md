@@ -56,6 +56,7 @@ Iranian researchers compared three groups of 15 young children: children with so
 - Cross-sectional.
 - Group membership was defined partly by screen exposure, which makes the comparison circular.
 - Coins another label that uses the word "autism". PDNAS is not a recognized diagnosis.
+- The name itself, "digital nannying", implies that parents handing over care to devices is the cause. The study did not test that, and the framing echoes the parent blame that autism organizations warn against (see our autismus Deutschland page).
 
 ## What it does NOT show
 

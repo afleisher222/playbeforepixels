@@ -3,7 +3,7 @@
   "title": "Laps Not Apps",
   "subtitle": "A personalized keepsake read-aloud with your child’s name in six rhymes",
   "series": "Play Before Pixels read-alouds",
-  "format": "Personalized full-color picture book, printed on demand one copy at a time: hardcover (casewrap) or softcover (perfect bound). 32 interior pages: title page (child’s name), copyright page (ISBN box), personalized dedication (name, gift message, giver, occasion), 24 story pages (12 rhyming spreads, the child’s name in 6 of them, a “Lap talk” tip for grown-ups on every spread), 2 pages of lap games with safety notes, “Books before screens” family reading pledge, How to use page with “<name>’s favorite laps” keepsake, and a last page with the author note, More from Play Before Pixels and the bonus QR code. Front and back covers carry the child’s name.",
+  "format": "Personalized full-color picture book, printed on demand one copy at a time: hardcover (casewrap) or softcover (perfect bound). 32 interior pages: title page (child’s name), copyright page (ISBN box), personalized dedication (name, gift message, giver, occasion), 24 story pages (12 rhyming spreads, the child’s name in 6 of them, a “Lap talk” tip for grown-ups on every spread), 2 pages of lap games with safety notes, “Books before screens” family reading pledge, How to use page with “<name>’s favorite laps” keepsake, and a last page with the author note, More from Play Before Pixels and the bonus QR code (the Etsy edition prints no URL or QR code). Front and back covers carry the child’s name.",
   "personalization": {
     "variables": "personalization.json (variable map) · personalize.js (checks and limits) · WORDS.md (every word, with {{CHILD_NAME}}, {{GIVER_NAME}}, {{THEY}}/{{THEM}}/{{THEIR}})",
     "fields": [
@@ -58,7 +58,7 @@
   "alt_text_picker": "Four versions of the story’s child, arms up and smiling, labelled Look 1 to Look 4: brown skin with two black puffs, light skin with short blond hair, tan skin with a brown bob, and deep brown skin with a black bun.",
   "channels": [
     "Play Before Pixels website shop (Shopify): personalization fields on the product page; orders printed through the Lulu Print API by the scheduled job in ORDER-TO-PRINT.md [VERIFY]",
-    "Etsy personalized-gift listing (variations: format and look; personalization box for name, from and pronouns), fulfilled by the same job; list the printer as production partner [VERIFY Etsy rules]",
+    "Etsy personalized-gift listing (variations: format and look; personalization box for name, from and pronouns), fulfilled by the same job; list the printer as production partner [VERIFY Etsy rules]. Orders with channel \"etsy\" build the Etsy edition automatically: no playbeforepixels.com URL and no QR code anywhere in the book or cover (BRAND.md customer-voice rule 2); the last page says more books are in the same shop.",
     "Cross-sell from the “Bring a Book instead of a card” shower inserts and bookplates (same buyer)",
     "Not on Amazon or bookstores: each copy is unique, so IngramSpark and KDP distribution do not apply"
   ],
@@ -69,9 +69,9 @@
     "guide-100-plays"
   ],
   "bonus_url": "https://playbeforepixels.com/bonus/picture-laps-not-apps",
-  "bonus_offer": "Free printable lap-reading tracker and 5 more lap games (email + child’s birth month/year only; never a name). The QR code and short link are on the last interior page.",
+  "bonus_offer": "Free printable lap-reading tracker and 5 more lap games (email + child’s birth month/year only; never a name). The QR code and short link are on the last interior page of the own-site edition only (never in the Etsy edition).",
   "shareable_piece": "The “Books before screens” family reading pledge (interior page 30), signed and photographed, with the Play Before Pixels logo; optional hashtag #PlayBeforePixels.",
-  "compliance_notes": "No health or medical claims: the book is a story plus parent education and claims to treat, prevent or diagnose nothing. No autism or diagnosis wording anywhere (book, keywords, listing). Not presented as written by a speech-language pathologist or clinician. Talk strategies use plain words only, with no trademarked program names. No real brands, apps or products; the only screen is a generic phone resting face-down. No research citations. Child safety: every lap game has adult supervision and a safety line; the safety box covers the small-parts rule for under-3s (toilet-paper-tube test, about 1.25 in / 3.2 cm), no balloons, no cords, car seats (never a lap in a car), safe sleep, and stopping when the child says no. Copyright page: “© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.” with the business mailbox, not a home address. Logo from brand/logo (horizontal lockup; one-colour white on the tomato band). Customer text is HTML-escaped, length-limited and checked for printable characters; anything unusual stops before printing and goes to the weekly review. Privacy: the child’s name is used only to print; it is not added to marketing, not committed to git, and order files are deleted after delivery [VERIFY retention with counsel]. Personalized items: state the no-change-of-mind-returns policy and misprint reprints before checkout [VERIFY the printer’s policy]. The final files must be checked against the chosen printer’s current template (Lulu, Gelato or other) before upload: trim, bleed, minimum page count, cover dimensions and spine, and CMYK/PDF-X if required. CPSIA: confirm the ordinary-book exemption applies; UK/EU: GPSR responsible person before selling there [VERIFY].",
+  "compliance_notes": "No health or medical claims: the book is a story plus parent education and claims to treat, prevent or diagnose nothing. No autism or diagnosis wording anywhere (book, keywords, listing). Not presented as written by a speech-language pathologist or clinician. Talk strategies use plain words only, with no trademarked program names. No real brands, apps or products; the only screen is a generic phone resting face-down. No research citations. Child safety: every lap game has adult supervision and a safety line; the safety box covers the small-parts rule for under-3s (toilet-paper-tube test, about 1.25 in / 3.2 cm), no balloons, no cords, car seats (never a lap in a car), safe sleep, and stopping when the child says no. Copyright page: “© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.”, the website (own-site edition only), “First edition 2026 · Version 1.0 · September 2026”, and “Read together, and keep books away from mouths.” No street address is printed: the old Rockville Pike mailbox is retired and the founder’s home address must never appear (legal/ENTITY.md). If a printer or EU/UK GPSR needs a postal address, use the USPS PO Box once it exists [VERIFY]. Logo from brand/logo (horizontal lockup; one-colour white on the tomato band). Customer text is HTML-escaped, length-limited and checked for printable characters; anything unusual stops before printing and goes to the weekly review. Privacy: the child’s name is used only to print; it is not added to marketing, not committed to git, and order files are deleted after delivery [VERIFY retention with counsel]. Personalized items: state the no-change-of-mind-returns policy and misprint reprints before checkout [VERIFY the printer’s policy]. The final files must be checked against the chosen printer’s current template (Lulu, Gelato or other) before upload: trim, bleed, minimum page count, cover dimensions and spine, and CMYK/PDF-X if required. CPSIA: confirm the ordinary-book exemption applies; UK/EU: GPSR responsible person before selling there [VERIFY]. Etsy edition: no URL and no QR code (customer-voice rule 2); the build switches automatically on channel \"etsy\". Customer text is typeset with curly quotes and apostrophes.",
   "human_todo": [
     "AI-assistance disclosure (be honest wherever asked): the story text, tips, illustrations and layout were drafted with AI assistance (Claude) and are being rewritten and selected by the founder. KDP is not used for this book, but if any platform (Etsy, a printer, an award or a copyright filing) asks about AI-generated content, answer yes for the illustrations and for any text she has not rewritten. Never describe AI-generated material as human-authored in a copyright filing.",
     "Human authorship (required before real orders): open WORDS.md, rewrite or approve each section in your own words, and delete “(draft)” from its heading. Write “## author note” (40–80 words, your own voice) and, if you like, your byline under “## author”. Real orders will not build until this is done. Commit each round so the changes are provable.",
@@ -79,10 +79,29 @@
     "Pick the printer (Lulu Print API recommended; Gelato as a backup would need a metric re-size) and open a sandbox account. Get the product codes for 8.5 x 8.5 in full-color casewrap and perfect bound, and the unit cost plus shipping. Confirm the 35–40% cost rule or adjust the price (see price_notes).",
     "Order three physical proofs (sample, long name softcover, Look 4 hardcover) and check color, the name on dark pages, the gutter and the spine.",
     "ISBN: optional for a book sold only in your own shop and Etsy [VERIFY]. If you want one, buy one ISBN per format (Bowker) and place the barcode in the “ISBN / barcode” box on the back cover and the ISBN box on the copyright page; otherwise remove both boxes before launch (a Claude Code session can do this). Fill or remove the “Printer / manufacturing lines” box.",
+    "The last page of every copy advertises the “Bring a Book” shower inserts (next_products). Build and list printable-bring-a-book-shower-inserts before the first real order ships, or ask a Claude Code session to swap that tile for a product that is live.",
+    "Etsy: use marketplace_title and the 13 etsy_tags (each 20 characters or fewer; the 7 keywords are too long for Etsy tags).",
     "Set up the store fields (Shopify line-item properties; Etsy variations and personalization box, exact format in ORDER-TO-PRINT.md), upload cover.png, picker.png, mockup.png and preview pages 4, 6, 26, 31.",
     "Add the API keys as GitHub Actions secrets and approve switching on the scheduled order job after the sandbox test passes (a Claude Code session builds the job from ORDER-TO-PRINT.md).",
     "Build the bonus page playbeforepixels.com/bonus/picture-laps-not-apps (lap-reading tracker + 5 more lap games; email and birth month/year only).",
     "Have counsel confirm: how long order data (children’s names, addresses) may be kept, the returns wording for personalized items, CPSIA status, and GPSR before UK/EU sales.",
     "Optional: register the copyright with the US Copyright Office in AlphaPlay LLC’s name after your rewrite, disclaiming the AI-generated parts as the Office requires."
+  ],
+  "version": "1.0 · September 2026 (printed on the copyright page; bump it in build.js VERSION whenever words or art change, and tell past buyers)",
+  "marketplace_title": "Personalized Name Book for Kids, Laps Not Apps by Play Before Pixels, Baby Shower and First Birthday Keepsake",
+  "etsy_tags": [
+    "personalized book",
+    "name book",
+    "custom baby book",
+    "baby shower gift",
+    "first birthday gift",
+    "kids book with name",
+    "personalized gift",
+    "grandchild gift",
+    "keepsake book",
+    "read aloud book",
+    "toddler book",
+    "new baby gift",
+    "bedtime story book"
   ]
 }

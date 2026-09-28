@@ -115,6 +115,15 @@
         "dedication page, small line"
       ],
       "store_label": "Occasion or date (optional, e.g. Baby shower, May 2027)"
+    },
+    "channel": {
+      "required": true,
+      "options": [
+        "shopify",
+        "etsy"
+      ],
+      "changes": "etsy builds the Etsy edition: no playbeforepixels.com URL and no QR code on the copyright page, last page or back cover (BRAND.md customer-voice rule 2). The last page instead says more books are in the same shop.",
+      "store_label": "(set by the order job, not the buyer)"
     }
   },
   "derived_variables": {
@@ -150,5 +159,6 @@
     "sample": "node build.js",
     "template": "node build.js --template",
     "order": "node build.js --order <order.json> --out <dir> --cover-w <in> --cover-h <in> --spine <in>  then  node render-order.js <dir>"
-  }
+  },
+  "typesetting": "Straight quotes and apostrophes in the name, giver, message and date are printed as curly ones (can't → can’t, \"Hi\" → “Hi”). A line never starts with an em dash."
 }

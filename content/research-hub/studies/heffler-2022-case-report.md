@@ -40,7 +40,7 @@ sources:
 
 ## In plain language
 
-The lead author of the 2016 model and 2020 study describes two young autistic children with high early screen exposure. When screen time was reduced and replaced with parent-child social time, both children's developmental trajectories changed markedly. When screen time rose again, the authors report that the children lost ground, and that things changed again when it was reduced.
+The lead author of the 2016 model and 2020 study describes two young autistic children with high early screen exposure. When screen time was reduced and replaced with parent-child social time, both children's developmental trajectories changed markedly. When screen time rose again, the authors report that the children's assessment scores moved back, and that they changed again when it was reduced.
 
 ## Who was studied
 
@@ -57,6 +57,7 @@ Two young autistic children in the USA.
 - Autistic children's development changes over time anyway.
 - The lead author is the main proponent of the hypothesis.
 - Whether the diagnoses were kept later is not confirmed.
+- The report tracks scores on autism and developmental measures. Those scores are not the same as a child's well-being, and a lower autism score is not in itself a sign that a child is better off.
 
 ## What it does NOT show
 

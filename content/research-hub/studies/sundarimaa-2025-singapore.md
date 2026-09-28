@@ -44,7 +44,7 @@ Researchers in Singapore looked at 5,336 toddlers aged 17 to 24 months at routin
 
 ## Who was studied
 
-5,336 typically developing children aged 17 to 24 months, multi-ethnic, Singapore.
+5,336 children aged 17 to 24 months, described by the researchers as typically developing; multi-ethnic, Singapore.
 
 ## What was found
 

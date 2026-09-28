@@ -63,7 +63,7 @@ US researchers used data from 2,152 children followed from birth in the National
 ## What it does NOT show
 
 - That screen viewing raises the chance of autism. It found no link with screening "at risk".
-- That play prevents autism. The play finding is also an association with checklist scores.
+- That play changes whether a child is autistic. The play finding is also an association with checklist scores, and play is good for every child, autistic or not.
 
 ## Full citation
 

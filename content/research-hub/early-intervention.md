@@ -36,7 +36,7 @@ INTERNAL (remove at publish):
 
 If you're worried about how your child is talking, playing, moving, responding or connecting with you, **you can ask for help now.** You don't need to be sure anything is wrong, you don't need a diagnosis, and you don't need to wait and see. Asking early is a caring step, and it's not your fault.
 
-This applies whether or not screens are part of the story. Early support is useful whatever the reason for a child's difficulties, and an evaluation is how you find out what your child needs.
+This applies whether or not screens are part of the story. Support is useful whatever the reasons behind what you're noticing, and an evaluation is how you find out what your child needs.
 
 ## In the United States: children under 3
 
@@ -121,9 +121,9 @@ Ask your doctor, nurse or health visitor about free local early support, and whe
 
 ## Common worries
 
-**"What if I'm overreacting?"** Evaluators would much rather see a child who turns out to be fine than miss a child who needs support. Asking is never wrong.
+**"What if I'm overreacting?"** Evaluators would much rather see a child who turns out not to need extra support than miss a child who would benefit from it. Asking is never wrong.
 
-**"What if they say it's autism?"** Then you'll know more about how your child experiences the world, and you can get support that fits them. Autism is not a parent's fault, and autistic children grow, learn and thrive with understanding and the right help.
+**"What if they say it's autism?"** Then you'll know more about how your child experiences the world, and you can get support that fits them. Autism is not a parent's fault, and your child is the same child they were before the evaluation. Autistic children grow, learn and thrive with understanding and the right help. Good support respects how your child communicates and what they love; it is not about making them seem less autistic. Autistic adults' own writing and autistic-led organizations are good places to learn what autism is like from the inside.
 
 **"We've had a lot of screen time. Will they judge us?"** Nearly every family uses screens. Evaluators are there to understand your child, not to judge you. It's fine to mention screen habits honestly; it helps the team see the whole picture.
 

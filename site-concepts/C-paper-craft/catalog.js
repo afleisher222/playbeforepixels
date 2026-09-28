@@ -176,7 +176,7 @@ window.PBP_PAGES = [
   var bandColor = function (k) { var b = w.PBP_BANDS.filter(function (x) { return x.key === k; })[0]; return b ? b.color : 'sky'; };
   var TEE = '<svg viewBox="0 0 400 350" aria-hidden="true"><path d="M128 18c20 16 44 24 72 24s52-8 72-24l96 44-34 86-40-16v200H106V132l-40 16-34-86z" fill="#1D2940"/><path d="M128 18c20 16 44 24 72 24s52-8 72-24l-8-4c-18 13-38 19-64 19s-46-6-64-19z" fill="#2B3957"/><path d="M106 132l-4-40M294 132l4-40" stroke="#2B3957" stroke-width="3" fill="none"/></svg>';
   var TOTE = '<svg viewBox="0 0 360 420" aria-hidden="true"><path d="M118 168c0-112 124-112 124 0" fill="none" stroke="#2F74C2" stroke-width="16" stroke-linecap="round"/><path d="M40 150h280l-10 262H50z" fill="#3D86D8"/><path d="M40 150h280v14H40z" fill="#2F74C2"/></svg>';
-  function img(src, alt, cls) { return '<img src="' + src + '" alt="' + esc(alt || '') + '" decoding="async"' + (cls ? ' class="' + cls + '"' : '') + '>'; }
+  function img(src, alt, cls) { return '<img src="' + src + '" alt="' + esc(alt || '') + '"' + (cls ? ' class="' + cls + '"' : '') + '>'; }
   w.PBP_mock = function (p, opt) {
     opt = opt || {}; var a = opt.decorative ? '' : p.alt;
     switch (p.mock) {

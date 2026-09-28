@@ -1,6 +1,6 @@
 ---
-title: "Sadeghi 2023: screen time and autism severity in toddlers"
-meta_description: "An Iranian study of 68 autistic toddlers found more screen time went with higher severity scores. Why that can't show which came first."
+title: "Sadeghi 2023: screen time and autism 'severity' scores in toddlers"
+meta_description: "An Iranian study of 68 autistic toddlers found more screen time went with higher 'severity' scores. Why that can't show which came first."
 slug: "research/studies/sadeghi-2023-severity"
 last_reviewed: "2026-09-28"
 review_status: "draft: secondary sources only; not cleared to publish until the source is read (abstract at minimum)"
@@ -23,7 +23,7 @@ sources:
     what_we_read: "secondary-only"
 ---
 
-# Sadeghi et al. (2023): screen time and autism severity in 68 autistic toddlers
+# Sadeghi et al. (2023): screen time and autism "severity" scores in 68 autistic toddlers
 
 > **[VERIFY] Not yet checked against the original.** We have not yet been able to read this source's abstract or full text. Everything on this page comes from search-engine summaries of the publisher, PubMed or PMC pages, checked against each other. Please read it as provisional. Items marked [VERIFY] are the ones we are least sure of.
 
@@ -40,7 +40,7 @@ sources:
 
 ## In plain language
 
-Iranian researchers studied 68 autistic toddlers (average age 27 months; 22% girls). Parents completed autism and repetitive-behavior questionnaires and a lifestyle checklist, and rated foreground and background media and daily social interaction. More screen time appeared to go with higher autism severity scores.
+Iranian researchers studied 68 autistic toddlers (average age 27 months; 22% girls). Parents completed autism and repetitive-behavior questionnaires and a lifestyle checklist, and rated foreground and background media and daily social interaction. More screen time appeared to go with higher autism "severity" scores (the study's term).
 
 ## Who was studied
 
@@ -48,12 +48,13 @@ Iranian researchers studied 68 autistic toddlers (average age 27 months; 22% gir
 
 ## What was found
 
-- More screen time associated with higher severity scores (effect sizes [VERIFY]).
+- More screen time associated with higher "severity" scores (effect sizes [VERIFY]).
 
 ## Limitations
 
 - Small and cross-sectional; parent report.
 - Among children already diagnosed, more pronounced autistic traits could lead to more screen use.
+- "Severity" is the study's word. Scales like these rate how many autistic traits were observed and how strongly. They do not measure a child's well-being, comfort or happiness.
 - The same group proposed "Post-Digital Nannying Autism Syndrome" (see Pouretemad 2022), so readers should know the authors' theoretical position.
 
 ## What it does NOT show

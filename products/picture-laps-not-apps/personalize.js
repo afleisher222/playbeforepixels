@@ -36,6 +36,8 @@ const REVIEW_WORDS = /\b(fuck\w*|shit\w*|bitch\w*|cunt\w*|nigg\w*|fags?|faggot\w
 
 const clean = (s) => String(s == null ? '' : s).normalize('NFC').replace(/[\u0000-\u0009\u000B-\u001F\u007F]/g, ' ').replace(/[ \t]+/g, ' ').trim();
 const oneLine = (s) => clean(s).replace(/\s*\n\s*/g, ' ');
+// Typeset the buyer's straight quotes as curly ones (We can't → We can’t; "Maya" → “Maya”).
+const smart = (s) => s.replace(/(^|[\s(\[{—–-])'/g, '$1‘').replace(/'/g, '’').replace(/(^|[\s(\[{—–-])"/g, '$1“').replace(/"/g, '”');
 function nameCase(s) {
   // Keep the buyer's capitals (McKenzie, DeShawn, Anne-Marie) unless they typed all-lower or ALL-CAPS.
   if (s !== s.toLowerCase() && s !== s.toUpperCase()) return s;
@@ -80,7 +82,7 @@ function normalize(order = {}) {
 
   const p = PRONOUNS[pron] || PRONOUNS.they;
   const vars = {
-    CHILD_NAME: child, GIVER_NAME: giver, GIFT_MESSAGE: msg, GIFT_DATE: date,
+    CHILD_NAME: smart(child), GIVER_NAME: smart(giver), GIFT_MESSAGE: smart(msg), GIFT_DATE: smart(date),
     THEY: p.THEY, THEM: p.THEM, THEIR: p.THEIR, FRIEND: FRIEND(child || 'x'),
   };
   return { ok: errors.length === 0, errors, holds, vars, look: LOOKS[look] ? look : 1, format: FORMATS.includes(format) ? format : 'hardcover', pronouns: pron };

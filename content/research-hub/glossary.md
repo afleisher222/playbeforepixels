@@ -36,15 +36,21 @@ Plain-language meanings of words you'll meet on our research pages. Where it hel
 
 **"Screen-induced developmental deviation."** A research term proposed by clinicians in Nepal. Note that "screen-induced" assumes a cause that has not been shown ([Dhungel 2026](/research/studies/dhungel-2026/) [VERIFY]).
 
-**Parent blame.** The old, false idea that autism is produced by how parents raise a child. Autism organizations and researchers warn that "virtual autism" risks reviving it ([autismus Deutschland](/research/studies/autismus-deutschland-statement/) [VERIFY]).
+**Parent blame.** The old, false idea that autism is produced by how parents raise a child. Labels that put the cause in a family's home life, such as "digital nannying", can carry the same message even when they are about screens. Autism organizations and researchers warn that "virtual autism" risks reviving it ([autismus Deutschland](/research/studies/autismus-deutschland-statement/) [VERIFY]).
 
 ## Words about autism and development
 
-**Autism (autism spectrum disorder, ASD).** A lifelong neurodevelopmental difference that affects how a person communicates, relates to others and experiences the world, diagnosed by qualified clinicians using established criteria [VERIFY definition against WHO ICD-11 or DSM-5-TR wording]. "ASD" is the clinical term used in most studies.
+**Autism (autism spectrum disorder, ASD).** A lifelong neurodevelopmental difference that affects how a person communicates, relates to others and experiences the world, diagnosed by qualified clinicians using established criteria [VERIFY definition against WHO ICD-11 or DSM-5-TR wording]. "ASD" is the clinical term used in most studies. We say plain "autism" and use "ASD" only when quoting a study, because "disorder" frames a way of being as an illness.
 
 **Autistic.** Many autistic people prefer identity-first language ("autistic child") because they see autism as part of who they are. Others prefer "child with autism". We mostly use identity-first language and respect each person's choice.
 
 **Autism-like behaviors / "autism-like symptoms".** Behaviors that resemble some features of autism, usually measured with a checklist. Having some of them does not mean a child is autistic.
+
+**Autistic traits.** Ways of communicating, playing, moving or sensing that are common in autistic people, such as intense interests, repetitive movements or a preference for sameness. Many studies call these "symptoms". We say "traits" or "signs", because they are part of how a person experiences the world, not signs of illness.
+
+**"Severity" scores.** Some checklists and assessments give a "severity" score: roughly, how many autistic traits were observed, and how strongly, on that tool. We use the word only in quotation marks. A higher score is not a measure of a child's well-being, happiness or worth, and a lower score after some change does not mean a child is better off.
+
+**"Risk" and "likelihood".** Studies and screening tools often talk about "risk of autism" or a "high-risk" screening score. In research, "risk" just means the chance of an outcome. Because autism is a difference and not a danger, we prefer "likelihood" (for example, "increased likelihood of autism"), a word some autism researchers also use ([Hill 2020](/research/studies/hill-2020/) [VERIFY]). When a study or tool uses "risk", we quote it.
 
 **Neurodiversity / neurodiversity-affirming.** The idea that brains naturally differ, and an approach that respects autistic and other neurodivergent ways of being rather than trying to make people "normal" ([van Asselt 2026](/research/studies/van-asselt-2026/) [VERIFY]).
 
@@ -62,7 +68,7 @@ Plain-language meanings of words you'll meet on our research pages. Where it hel
 
 **Screening vs. diagnosis.** A **screening** tool is a short questionnaire that flags children who may need a closer look. A **diagnosis** comes from a full assessment by a qualified clinician. Most studies on our hub use screening tools, not diagnoses.
 
-**M-CHAT-R/F (Modified Checklist for Autism in Toddlers, Revised with Follow-Up).** A parent questionnaire used to screen toddlers for signs that suggest a fuller autism assessment [VERIFY]. A positive result is not a diagnosis ([Sundarimaa 2025](/research/studies/sundarimaa-2025-singapore/) [VERIFY]).
+**M-CHAT-R/F (Modified Checklist for Autism in Toddlers, Revised with Follow-Up).** A parent questionnaire used to screen toddlers for signs that suggest a fuller autism assessment [VERIFY]. Its results are grouped as low, medium or high "risk" (see "Risk" and "likelihood" above). A positive result is not a diagnosis ([Sundarimaa 2025](/research/studies/sundarimaa-2025-singapore/) [VERIFY]).
 
 **ADOS (Autism Diagnostic Observation Schedule).** A structured, play-based assessment used by trained clinicians as part of an autism evaluation [VERIFY].
 

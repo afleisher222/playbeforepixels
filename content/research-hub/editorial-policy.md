@@ -58,8 +58,12 @@ We sell play products. A site that sells things has a reason to make screens sou
 
 - We describe autistic people with respect. We mostly use identity-first language ("autistic child"), which many autistic people prefer, and we honour individuals' and communities' own preferences. In translation we follow each language community's norms, checked with autistic reviewers.
 - We never use words like "epidemic", "fight", "battle", "suffer", "cure" or "recover from autism".
+- We never describe autism as damage, as an outcome to be prevented, reduced or reversed, or an autistic child as a worse outcome. When a study uses words such as "symptoms", "severity", "risk", "impairment" or "reversible", we put them in quotation marks, attribute them, and explain what was actually measured.
+- A lower score on an autism checklist is never described as a child "getting better". We say what score changed.
+- We don't describe parents' screen use as the cause of a child's autism, and we point out when a label (such as "digital nannying") implies it.
 - Communication devices (AAC) are communication tools, not "screen time".
-- Parents of autistic children are welcome here, and so are autistic readers.
+- We look for, and include with equal care, research and commentary by autistic authors and statements from autistic-led organizations, not only clinical studies about autistic people.
+- Parents of autistic children are welcome here, and so are autistic readers, including autistic parents. Our main guide includes [a note to autistic readers and their families](/research/virtual-autism/#a-note-to-autistic-readers-and-their-families).
 
 ## Review before publishing
 

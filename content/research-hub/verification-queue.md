@@ -214,6 +214,12 @@ sources:
 - [ ] Instrument descriptions in glossary.md (M-CHAT-R/F, ADOS, CARS, SCQ, ASQ-3).
 - [ ] Reply-time wording ("[5] business days") matches ops/COMPLIANCE-GATE.md item 21 and how the routine actually runs.
 
+## Autistic perspectives (added by the respect and inclusion review, 2026-09-28)
+
+- [ ] Search systematically for research by autistic authors and statements from autistic-led organizations on screens, media use and the "virtual autism" label (English, French, German, Romanian, Spanish, Portuguese). Add each with a study page and give it the same care as clinical studies.
+- [ ] Krijnen 2026 and van Asselt 2026: confirm from the paper itself that the author (van Asselt) is autistic and writes from lived experience, as index.md, faq.md (Q23) and both study pages say. If it cannot be confirmed, remove the claim.
+- [ ] Glossary entries "Autistic traits", "'Severity' scores" and "'Risk' and 'likelihood'" are editorial definitions; have the paid autistic sensitivity reader and the clinician reviewer check them.
+
 ## Leads not yet entered (from the fact-check passes)
 
 See the "Leads we have seen but not yet added" section of library.md, plus the language, video-deficit, guideline and intervention re-verify queue in the literature lane notes (Christakis 2009; Zimmerman 2007/2009; Tomopoulos 2010; Schmidt 2009 Project Viva; Przybylski & Weinstein 2019; Stiglic & Viner 2019; Taylor, Monaghan & Westermann 2018; Strouse & Samson 2021; Kuhl 2003; DeLoache 2010; Ferjan Ramirez 2020; Canada and Australia 24-hour guidelines 2017; CPS 2017; SCREENS trial 2022; Schmidt-Persson 2024; and others). Null and balancing studies first.

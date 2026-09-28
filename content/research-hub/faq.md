@@ -46,7 +46,7 @@ Researchers have not ruled out that screens play some part for some children. Th
 
 ### 4. My child watched a lot of TV as a baby and is now autistic. Did I do this?
 
-No. Autism is not a parent's fault. Researchers and autism organizations have warned that the "virtual autism" idea risks reviving the old, false belief that autism comes from parenting ([autismus Deutschland](/research/studies/autismus-deutschland-statement/) [VERIFY]; [Krijnen 2026](/research/studies/krijnen-2026-autism/) [VERIFY]). Many autistic children are drawn to screens early, and parents of a child who is harder to settle often lean on them more. That is a normal response, not a cause. Your child is the same child you love, and what matters now is getting them the support they need.
+No. Autism is not a parent's fault. Researchers and autism organizations have warned that the "virtual autism" idea risks reviving the old, false belief that autism comes from parenting ([autismus Deutschland](/research/studies/autismus-deutschland-statement/) [VERIFY]; [Krijnen 2026](/research/studies/krijnen-2026-autism/) [VERIFY]). Many autistic children are drawn to screens early, and parents of a child who is harder to settle often lean on them more. That is a normal response, not a cause. Your child is the same child you love, and what matters now is understanding how they experience the world and what helps them thrive.
 
 ### 5. Where does the idea come from?
 
@@ -64,11 +64,13 @@ Studies measure different things (a yes/no TV question vs. hours a day; a screen
 
 ### 8. What is "reverse causation", and why does it matter here?
 
-It means the arrow may point the other way. Instead of screens leading to autism-like signs, early autistic traits may lead to more screen time: a baby who finds screens especially soothing or predictable, or a family who uses screens more with a child who is harder to engage. Genetic research supports this possibility ([Takahashi N 2023](/research/studies/takahashi-n-2023-genetics/) [VERIFY]). See [why a link is not proof of cause](/research/virtual-autism/#why-a-link-is-not-proof-of-cause).
+It means the arrow may point the other way. Instead of screens leading to autism-like signs, early autistic traits may lead to more screen time: a baby who finds screens especially soothing or predictable, or a family who, understandably, uses screens more with a child who connects with people in different ways. Genetic research supports this possibility ([Takahashi N 2023](/research/studies/takahashi-n-2023-genetics/) [VERIFY]). See [why a link is not proof of cause](/research/virtual-autism/#why-a-link-is-not-proof-of-cause).
 
 ### 9. What about the stories of children who "got better" when screens were taken away?
 
-Those reports are real experiences, and we understand why they give families hope. But they can't tell us *why* a child changed. In every published report we found, less screen time came with more adult attention and often professional support, there was no comparison group, and young children change quickly as they grow ([Heffler 2022](/research/studies/heffler-2022-case-report/) [VERIFY]; [Pakistan 2023](/research/studies/apims-2023-pakistan/) [VERIFY]). No randomized trial has tested this ([Ozyazici 2026](/research/studies/ozyazici-2026/) [VERIFY]).
+Those reports are real experiences, and we understand why they stand out to families. But they can't tell us *why* a child changed. In every published report we found, less screen time came with more adult attention and often professional support, there was no comparison group, and young children change quickly as they grow ([Heffler 2022](/research/studies/heffler-2022-case-report/) [VERIFY]; [Pakistan 2023](/research/studies/apims-2023-pakistan/) [VERIFY]). No randomized trial has tested this ([Ozyazici 2026](/research/studies/ozyazici-2026/) [VERIFY]).
+
+It also helps to know what these reports measured: scores on autism checklists or assessments. A lower score is not the same as a child being happier or better off, and support for an autistic child is about their communication, comfort and well-being, not about making them seem less autistic.
 
 ### 10. What does the research say about screens and talking?
 
@@ -126,17 +128,23 @@ That depends on your child, and it's a good question for the professionals who k
 
 Talk, sing, read and play together as part of ordinary family life. Not as a treatment, and not as a test. Pause and wait for your child's turn, say what you see, repeat what they say and add one word, offer choices, follow their lead, and sing songs with actions. If you'd like ideas, our free printable, [Five 5-Minute Plays](/free/five-5-minute-plays/), has quick screen-free games for little ones, just for fun and family time.
 
+## For autistic readers
+
+### 23. I'm autistic, or my child is. How should I read this research?
+
+With care, and knowing where we stand. Autism is a lifelong difference, not damage and not something a family did. Much of this research uses clinical words such as "disorder", "symptoms", "severity" and "risk"; we quote them to describe what a study measured, not to describe autistic people ([glossary](/research/glossary/)). Some of the strongest critiques of the "virtual autism" idea come from autism researchers, including autistic authors ([Krijnen 2026](/research/studies/krijnen-2026-autism/) [VERIFY]; [van Asselt 2026](/research/studies/van-asselt-2026/) [VERIFY]). See [a note to autistic readers and their families](/research/virtual-autism/#a-note-to-autistic-readers-and-their-families). If something on our pages is hurtful or wrong, please tell us.
+
 ## About this site
 
-### 23. Why do some sources say [VERIFY]?
+### 24. Why do some sources say [VERIFY]?
 
 It means we have not yet been able to read that source's original abstract or full text ourselves, so the details are provisional. We would rather show you that than pretend to certainty. Each study page has a "What we read" section. See our [editorial policy](/research/editorial-policy/).
 
-### 24. You sell play products. Why should I trust this?
+### 25. You sell play products. Why should I trust this?
 
 You're right to ask. Play Before Pixels is a trade name of AlphaPlay LLC, and we sell books and printables about play. That is a conflict of interest, so we have rules: our research pages never link to products, never mention prices, and never suggest that anything we sell helps with autism or any condition. We include critical and null research with the same care as supportive research. We are not clinicians. Read our [editorial policy](/research/editorial-policy/) and judge for yourself.
 
-### 25. I found a mistake. How do I tell you?
+### 26. I found a mistake. How do I tell you?
 
 Please use our contact form. You'll get an instant automatic reply, and a person reviews everything else within [5] business days. If we change a page because of a correction, we note the change and the date on that page. See [corrections](/research/editorial-policy/#corrections).
 

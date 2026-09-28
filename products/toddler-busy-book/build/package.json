@@ -1,0 +1,1 @@
+{ "name": "toddler-busy-book-build", "private": true, "description": "Build helpers for the Toddler Busy Book printable", "dependencies": { "pdf-lib": "^1.17.1", "qrcode": "^1.5.4" } }
