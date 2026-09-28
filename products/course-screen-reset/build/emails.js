@@ -12,7 +12,7 @@ const SITE = 'playbeforepixels.com';
 const C = { ink: '#1D2940', wash: '#F3F6FB', tomato: '#EE5A36', sun: '#F5B820', sky: '#3D86D8', grass: '#2FA36B', plum: '#8A5CC7', tSun: '#FEF4D8', tSky: '#E3EEFA', tGrass: '#DFF3E9', tTomato: '#FDE9E3', tPlum: '#EFE6FA' };
 const WCOL = { sky: [C.sky, C.tSky], grass: [C.grass, C.tGrass], sun: ['#B98500', C.tSun], tomato: [C.tomato, C.tTomato], plum: [C.plum, C.tPlum] };
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-const SIGN = K.FOUNDER.signoff || 'The Play Before Pixels team';
+const SIGN = K.NOTES.signoff || 'The Play Before Pixels team';
 // "Share with a friend" slot (BRAND.md): a public, reward-free link to the free starter. No referral program exists, so no
 // email may promise a reward (business/GROWTH-ENGINE.md §4 "Referral"; COMPLIANCE-GATE 10 and 18).
 const SHARE = K.SHARE_URL;
@@ -23,7 +23,7 @@ const weekOf = d => K.WEEKS.find(w => d >= w.from && d <= w.to);
 const pre90 = s => s.length <= 90 ? s : s.slice(0, 88).replace(/[\s,;:]+\S*$/, '') + '…';
 
 // Merge tags the email platform fills (see sequence.json). No child names are ever collected.
-const TAG = { unsub: '{{unsubscribe_link}}', pause: '{{pause_or_change_time_link}}', wb: '{{workbook_download_link}}', fb: '{{feedback_form_link}}', buy: '{{program_checkout_link}}', bundle: '{{bundle_checkout_link}}', starter: '{{starter_download_link}}', addr: '[BUSINESS MAILING ADDRESS]' };
+const TAG = { unsub: '{{unsubscribe_link}}', pause: '{{pause_or_change_time_link}}', wb: '{{workbook_download_link}}', fb: '{{feedback_form_link}}', buy: '{{program_checkout_link}}', bundle: '{{bundle_checkout_link}}', starter: '{{starter_download_link}}', addr: '{{business_mailing_address}}' };
 
 const NEXT = [ // next-product recommendation per week (BRAND.md: every email recommends a next product)
   { t: 'Play-First Family Kit', s: 'A screen-rhythm chart, a family play plan and helping-jobs pages to put this week on the fridge.', u: SITE + '/shop/play-first-family-kit' },
@@ -75,26 +75,26 @@ const mdFoot = next => `\n---\n${next ? `**Next for your family:** ${next.t}. ${
 
 // ================================================================ PAID PROGRAM
 const program = [];
-const founderSlot = (field, words) => K.FOUNDER[field] ? { html: P(K.FOUNDER[field]), md: K.FOUNDER[field] + '\n\n' } :
-  { html: box('#FFFFFF', `<b style="color:${C.tomato}">[FOUNDER WRITES THIS: ${words}. Add it to FOUNDER.${field} in build/content.js. Do not send this email until this box is gone.]</b>`, C.tomato), md: `**[FOUNDER WRITES THIS: ${words}. Add it to FOUNDER.${field} in build/content.js.]**\n\n` };
+// Finished brand-voice notes from content.js NOTES (no placeholders: the build stops if one is empty).
+const noteSlot = field => { const t = K.NOTES[field]; if (!t) throw new Error('NOTES.' + field + ' is empty'); return { html: P(t), md: t + '\n\n' }; };
 
 // Day 0: welcome (immediately after purchase)
 {
-  const fs0 = founderSlot('welcomeNote', 'a 60–120 word welcome in your own voice');
+  const fs0 = noteSlot('welcome');
   const body = H('Welcome to ' + K.TITLE, C.tomato) + fs0.html +
-    P('Here’s how the next 30 days work. Every morning you’ll get one short lesson (about three minutes to read), one easy play and a few plain words for a tricky moment. Nothing to watch, nothing to join, no perfect days required.') +
+    P('Here’s how the next 30 days work. Every day you’ll get one short lesson (about three minutes to read), one easy play and a few plain words for a tricky moment. Nothing to watch, nothing to join, no perfect days required.') +
     box(C.tSky, `<b>Your workbook is ready.</b> Download it here: <a href="${TAG.wb}" style="color:${C.ink}">your ${esc(K.TITLE)} workbook</a>. Start with “START HERE”. You’ll find Color and Low-ink editions in US Letter and A4, and you can type into the planning pages in free Adobe Acrobat Reader.`) +
-    P('Before tomorrow, do just one thing: fill a basket with five to eight things your child can play with, all things you already have. Day 1 arrives tomorrow morning.') +
-    P('If you miss a day, nothing breaks. Every lesson stays in your inbox and in the workbook. You can pause or change the send time from the link at the bottom of any email.') +
-    box(C.tGrass, `<b>Our guarantee:</b> if the program isn’t right for your family, reply to this email within ${R.days} days of purchase for a full refund, as long as you’ve completed no more than ${R.maxDone} of the lessons. The full terms are in our <a href="https://${SITE}/shipping-returns/" style="color:${C.ink}">refund policy</a>.`);
-  const md = `# Welcome to ${K.TITLE}\n\n${fs0.md}Here’s how the next 30 days work. Every morning you’ll get one short lesson (about three minutes to read), one easy play and a few plain words for a tricky moment. Nothing to watch, nothing to join, no perfect days required.\n\n**Your workbook is ready:** ${TAG.wb} Start with “START HERE”. Color and Low-ink editions in US Letter and A4; type into the planning pages in free Adobe Acrobat Reader.\n\nBefore tomorrow, do just one thing: fill a basket with five to eight things your child can play with, all things you already have. Day 1 arrives tomorrow morning.\n\nIf you miss a day, nothing breaks. Every lesson stays in your inbox and in the workbook.\n\n**Our guarantee:** if the program isn’t right for your family, reply to this email within ${R.days} days of purchase for a full refund, as long as you’ve completed no more than ${R.maxDone} of the lessons. Full terms: https://${SITE}/shipping-returns/\n`;
+    P('Before tomorrow, do just one thing: fill a basket with five to eight things your child can play with, all things you already have. Day 1 arrives tomorrow.') +
+    P('If you miss a day, nothing breaks. Every lesson stays in your inbox and in the workbook.') +
+    box(C.tGrass, `<b>Our guarantee:</b> if the program isn’t right for your family, ${R.terms} (replying to this email works). ${R.after}. ${R.files}. The full terms are in our <a href="https://${SITE}/shipping-returns/" style="color:${C.ink}">refund policy</a>.`);
+  const md = `# Welcome to ${K.TITLE}\n\n${fs0.md}Here’s how the next 30 days work. Every day you’ll get one short lesson (about three minutes to read), one easy play and a few plain words for a tricky moment. Nothing to watch, nothing to join, no perfect days required.\n\n**Your workbook is ready:** ${TAG.wb} Start with “START HERE”. Color and Low-ink editions in US Letter and A4; type into the planning pages in free Adobe Acrobat Reader.\n\nBefore tomorrow, do just one thing: fill a basket with five to eight things your child can play with, all things you already have. Day 1 arrives tomorrow.\n\nIf you miss a day, nothing breaks. Every lesson stays in your inbox and in the workbook.\n\n**Our guarantee:** if the program isn’t right for your family, ${R.terms} (replying to this email works). ${R.after}. ${R.files}. Full terms: https://${SITE}/shipping-returns/\n`;
   program.push({ id: 'day-00-welcome', send: 'immediately after purchase', subject: 'Welcome! Your workbook is inside', preheader: 'One small thing to do before Day 1 arrives tomorrow.', body, md, next: null });
 }
 
 for (const d of K.DAYS) {
   const w = weekOf(d.d), [col, tint] = WCOL[w.color];
   const next = NEXT[w.n - 1];
-  const d30 = d.d === 30 ? founderSlot('day30Note', 'a 40–80 word goodbye note in your own voice') : null;
+  const d30 = d.d === 30 ? noteSlot('day30') : null;
   const body = `<p style="margin:0 0 6px;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:${col}">Day ${d.d} of 30 · ${esc(w.title)}</p>` +
     H(d.title) + box(tint, `<b>${esc(d.idea)}</b>`, col) +
     d.lesson.map(P).join('') + (d30 ? d30.html : '') +
@@ -150,7 +150,7 @@ const funnel = [
     paras: ['Young children learn to communicate by doing it, with a person who answers back. Those little back-and-forth exchanges happen in ordinary moments: breakfast, bath time, the floor with blocks.', 'A 2024 study in JAMA Pediatrics recorded the sounds of family life at home and found that toddlers with more screen time heard fewer words from adults and had fewer back-and-forth exchanges (Brushe and colleagues, 2024). That’s a link, not proof that screens cause anything. But it points to something simple and hopeful: talk and play happen when we’re together, with time to answer.', 'Five moves to try this week: pause and wait (count to five in your head), say what you see, repeat and add one word, offer a choice, and follow their lead. Talk, sing and read in the language you know best. A sign, a point or a tap on a device counts as communicating.', 'If you ever have questions about your child’s development, talk with your pediatrician.'],
     play: 15 },
   { id: 'f6-peek', send: 'day 6', subject: 'What a whole month of this looks like', pre: 'A peek inside 30 Days of Back-and-Forth.',
-    paras: ['You’re nearly through your seven days. By now you may have noticed when the asking happens and which play your child wants again.', 'If you’d like to keep going, 30 Days of Back-and-Forth is the full program: 30 short daily lessons by email, 30 easy plays with versions for little ones and big kids, plain words for 30 tricky moments, and a designed workbook with trackers, a family plan and a certificate.', 'It covers what the starter doesn’t: mornings, the hour before dinner, big feelings when screens end, waiting rooms, car rides, grown-up phones, big kids who say “everyone else gets to”, siblings, grandparents and sick days.', 'It’s written, not filmed. No videos, no calls, no coaching. You do it at your own pace.'],
+    paras: ['You’re nearly through your seven days. By now you may have noticed when the asking happens and which play your child wants again.', 'If you’d like to keep going, 30 Days of Back-and-Forth is the full program: 30 short daily lessons by email, 30 easy plays with versions for toddlers and preschoolers, plain words for 30 tricky moments, and a designed workbook with trackers, a family plan and a certificate.', 'It covers what the starter doesn’t: mornings, the hour before dinner, big feelings when screens end, waiting rooms, car rides, grown-up phones, “that’s not fair!”, siblings, grandparents and sick days.', 'It’s written, not filmed. No videos, no calls, no coaching. You do it at your own pace.'],
     play: 12, offer: true },
   { id: 'f7-invite', send: 'day 7', subject: 'Keep going: 30 Days of Back-and-Forth', pre: `$27, with a ${R.short}.`,
     paras: ['Your seven days are done. Thank you for spending them with us.', 'If you’d like the whole month, 30 Days of Back-and-Forth is $27. You get 30 daily lessons by email, 30 plays, 30 scripts for tricky moments and the full workbook (Color and Low-ink, Letter and A4, fillable in free Acrobat Reader).', 'Or choose the 30 Days of Back-and-Forth Bundle for $49: the program plus the Play-First Family Kit, the 100 Screen-Free Plays printable guide and the 150 “I’m Bored” Play Cards. Bought separately, those come to $54.49.', `Either way, there’s a guarantee: if it isn’t right for your family, ${R.terms}.`, 'And if now isn’t the time, that’s fine. You’ll keep getting our free monthly play email, and the starter is yours to keep.'],
@@ -185,9 +185,42 @@ function write(dir, list, meta) {
     fs.writeFileSync(path.join(D, e.id + '.md'), `---\nsubject: "${e.subject.replace(/"/g, '\\"')}"\npreheader: "${e.preheader.replace(/"/g, '\\"')}"\nsend: "${e.send}"\n---\n\n${e.md}${mdFoot(e.next)}`);
   }
   fs.writeFileSync(path.join(D, 'sequence.json'), JSON.stringify(Object.assign(meta, {
-    merge_tags: { '{{logo_url}}': 'hosted PNG of brand/logo/png/lockup-horizontal-2400.png (upload once to the email platform)', '{{unsubscribe_link}}': 'platform unsubscribe', '{{pause_or_change_time_link}}': 'subscriber preferences page', '{{workbook_download_link}}': 'expiring download link for the workbook files', '{{feedback_form_link}}': 'one-question form (which play did your child go back to?)', '{{program_checkout_link}}': 'checkout for the $27 program', '{{bundle_checkout_link}}': 'checkout for the $49 bundle', '{{starter_download_link}}': 'the free starter PDF', '[BUSINESS MAILING ADDRESS]': 'the USPS PO Box from legal/ENTITY.md (CAN-SPAM); founder enters it once in the platform footer' },
+    merge_tags: { '{{logo_url}}': 'hosted PNG of brand/logo/png/lockup-horizontal-2400.png (upload once to the email platform)', '{{unsubscribe_link}}': 'platform unsubscribe', '{{pause_or_change_time_link}}': 'subscriber preferences page', '{{workbook_download_link}}': 'expiring download link for the workbook files', '{{feedback_form_link}}': 'one-question form (which play did your child go back to?)', '{{program_checkout_link}}': 'checkout for the $27 program', '{{bundle_checkout_link}}': 'checkout for the $49 bundle', '{{starter_download_link}}': 'the free starter PDF', '{{business_mailing_address}}': 'the public business mailing address from legal/ENTITY.md (a USPS PO Box; CAN-SPAM). Most platforms insert it from the account settings: map this tag to that field, or to the platform footer' },
     emails: list.map(e => ({ file: e.id, send: e.send, subject: e.subject, preheader: e.preheader })) }), null, 2));
   console.log(dir, list.length, 'emails');
 }
-write('emails', program, { sequence: '30 Days of Back-and-Forth (paid program)', trigger: 'purchase of the program or the bundle (tag: 30days-buyer)', rules: ['Send daily lessons at 7:00 in the subscriber’s time zone; the subscriber can pause or change the time.', 'Stop the free funnel (funnel/) for anyone who buys.', 'Never collect or merge a child’s name. Birth month and year only, and only on the free sign-up.', 'The welcome email must not send while it still shows a FOUNDER WRITES THIS box (make.sh --final checks this).'] });
+// ---------------------------------------------------------------- Gumroad edition (Markdown to paste into Gumroad Workflows)
+// Gumroad Workflows send each email a set number of days after purchase (or after a free sign-up) and add their own
+// unsubscribe footer; they have no per-subscriber send time, no pause link and no custom merge tags (all UNVERIFIED).
+// So this edition drops the pause and unsubscribe links, and turns every merge tag except the mailing address into a
+// fixed link. See emails/LOADING.md.
+const GUM = {
+  '{{workbook_download_link}}': 'https://app.gumroad.com/library',
+  '{{starter_download_link}}': 'https://app.gumroad.com/library',
+  '{{program_checkout_link}}': 'https://' + SITE + '/30-days',
+  '{{bundle_checkout_link}}': 'https://' + SITE + '/30-days#bundle',
+  '{{feedback_form_link}}': 'https://' + SITE + '/30-days/feedback',
+};
+const delayOf = send => { const m = /day (\d+)/.exec(send); return m ? Number(m[1]) : 0; };
+function writeGumroad(dir, list, trigger) {
+  const D = path.join(OUT, dir, 'gumroad'); fs.mkdirSync(D, { recursive: true });
+  for (const f of fs.readdirSync(D)) if (f.endsWith('.md')) fs.unlinkSync(path.join(D, f));
+  const rows = [];
+  list.forEach((e, i) => {
+    let md = e.md + mdFoot(e.next);
+    md = md.replace(`[Pause or change the send time](${TAG.pause}) · [Unsubscribe](${TAG.unsub})\n`, '');
+    for (const [k, v] of Object.entries(GUM)) md = md.split(k).join(v);
+    if (/\{\{(?!business_mailing_address)[a-z_]+\}\}/.test(md)) throw new Error('unmapped merge tag in gumroad/' + e.id);
+    const delay = delayOf(e.send);
+    const n = String(i + 1).padStart(2, '0');
+    fs.writeFileSync(path.join(D, `${n}-${e.id}.md`), `---\nsubject: "${e.subject.replace(/"/g, '\\"')}"\npreheader: "${e.preheader.replace(/"/g, '\\"')}"\nsend_after: "${delay} day(s) after ${trigger}"\n---\n\n${md}`);
+    rows.push({ order: i + 1, file: `${n}-${e.id}.md`, delay_days: delay, subject: e.subject });
+  });
+  fs.writeFileSync(path.join(D, 'workflow.json'), JSON.stringify({ platform: 'Gumroad Workflows (UNVERIFIED feature names)', trigger, note: 'Paste each file into one workflow email, in order, with its delay. Replace {{business_mailing_address}} once, in every file, with the public mailing address from legal/ENTITY.md. Emails with the same delay go out together.', emails: rows }, null, 2));
+  console.log(dir + '/gumroad', rows.length, 'emails');
+}
+
+write('emails', program, { sequence: '30 Days of Back-and-Forth (paid program)', trigger: 'purchase of the program or the bundle (tag: 30days-buyer)', rules: ['Send daily lessons at 7:00 in the subscriber’s time zone; the subscriber can pause or change the time.', 'Stop the free funnel (funnel/) for anyone who buys.', 'Never collect or merge a child’s name. Birth month and year only, and only on the free sign-up.', 'Every email is finished text: no founder input is needed before loading (make.sh --final checks that no placeholder remains).'] });
 write('funnel', funnelOut, { sequence: '7 Days of Play First (free lead magnet)', trigger: 'sign-up at playbeforepixels.com/30-days/start (email + child birth month/year only; double opt-in)', rules: ['One email a day for 7 days, 7:00 local time.', 'Stop the sequence as soon as the subscriber buys; move them to the program sequence.', 'No countdown timers, no fake deadlines, no “price goes up” claims. Launch-week pricing only if it is genuine and truly ends.', 'After day 7, subscribers join the monthly play email (about 70% help, 30% product).'] });
+writeGumroad('emails', program, 'purchase of 30 Days of Back-and-Forth or its bundle');
+writeGumroad('funnel', funnelOut, 'the free 7 Days of Play First sign-up ($0 product)');

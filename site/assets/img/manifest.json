@@ -1,222 +1,6 @@
 {
  "_README": "Written by site/tools/images.py. Real pixel sizes of every site picture.",
  "files": {
-  "board-up-go-more-cover-1e4a112f3e-1300.webp": [
-   1300,
-   1300
-  ],
-  "board-up-go-more-cover-1e4a112f3e-160.webp": [
-   160,
-   160
-  ],
-  "board-up-go-more-cover-1e4a112f3e-240.webp": [
-   240,
-   240
-  ],
-  "board-up-go-more-cover-1e4a112f3e-360.webp": [
-   360,
-   360
-  ],
-  "board-up-go-more-cover-1e4a112f3e-480.webp": [
-   480,
-   480
-  ],
-  "board-up-go-more-cover-1e4a112f3e-720.webp": [
-   720,
-   720
-  ],
-  "board-up-go-more-cover-1e4a112f3e-900.webp": [
-   900,
-   900
-  ],
-  "board-up-go-more-mockup-80a9abc341-1100.webp": [
-   1100,
-   825
-  ],
-  "board-up-go-more-mockup-80a9abc341-160.webp": [
-   160,
-   120
-  ],
-  "board-up-go-more-mockup-80a9abc341-1600.webp": [
-   1600,
-   1200
-  ],
-  "board-up-go-more-mockup-80a9abc341-640.webp": [
-   640,
-   480
-  ],
-  "board-up-go-more-mockup-80a9abc341-og.jpg": [
-   1200,
-   630
-  ],
-  "board-up-go-more-p02-22a37acb75-1300.webp": [
-   1200,
-   1200
-  ],
-  "board-up-go-more-p02-22a37acb75-160.webp": [
-   160,
-   160
-  ],
-  "board-up-go-more-p02-22a37acb75-480.webp": [
-   480,
-   480
-  ],
-  "board-up-go-more-p02-22a37acb75-900.webp": [
-   900,
-   900
-  ],
-  "board-up-go-more-p03-877c013698-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p04-885105c194-1000.webp": [
-   1000,
-   1000
-  ],
-  "board-up-go-more-p04-885105c194-1400.webp": [
-   1200,
-   1200
-  ],
-  "board-up-go-more-p04-885105c194-160.webp": [
-   160,
-   160
-  ],
-  "board-up-go-more-p04-885105c194-480.webp": [
-   480,
-   480
-  ],
-  "board-up-go-more-p04-885105c194-600.webp": [
-   600,
-   600
-  ],
-  "board-up-go-more-p04-885105c194-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p05-23d0213afa-1000.webp": [
-   1000,
-   1000
-  ],
-  "board-up-go-more-p05-23d0213afa-1400.webp": [
-   1200,
-   1200
-  ],
-  "board-up-go-more-p05-23d0213afa-480.webp": [
-   480,
-   480
-  ],
-  "board-up-go-more-p05-23d0213afa-600.webp": [
-   600,
-   600
-  ],
-  "board-up-go-more-p05-23d0213afa-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p06-a993807b1e-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p07-edeaac223e-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p08-989bcc716d-160.webp": [
-   160,
-   160
-  ],
-  "board-up-go-more-p08-989bcc716d-480.webp": [
-   480,
-   480
-  ],
-  "board-up-go-more-p08-989bcc716d-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p09-3023ae2553-480.webp": [
-   480,
-   480
-  ],
-  "board-up-go-more-p09-3023ae2553-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p10-736b38ec0f-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p11-8badfe39a4-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p12-7926f8ff86-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p13-2248c0a402-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p14-8b843467e8-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p15-8d2e261a6c-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p16-09f71dbbcf-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p17-f5034226e7-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p18-6d30641906-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p19-f0451230d7-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p20-35feea71d3-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p21-aed965ecab-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p22-203190f8ef-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p23-a47c56684a-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p24-1fb86b38bb-800.webp": [
-   800,
-   800
-  ],
-  "board-up-go-more-p25-6c6038a865-1300.webp": [
-   1200,
-   1200
-  ],
-  "board-up-go-more-p25-6c6038a865-160.webp": [
-   160,
-   160
-  ],
-  "board-up-go-more-p25-6c6038a865-480.webp": [
-   480,
-   480
-  ],
-  "board-up-go-more-p25-6c6038a865-900.webp": [
-   900,
-   900
-  ],
   "bored-play-cards-bored-play-cards-ages-1-5-p1-a88b10f1d1-p1-1300.webp": [
    1300,
    1683
@@ -301,91 +85,91 @@
    900,
    1165
   ],
-  "course-screen-reset-starter-p01-357cb74013-360.webp": [
+  "course-screen-reset-starter-p01-11dfd8f7e3-360.webp": [
    360,
    466
   ],
-  "course-screen-reset-starter-p01-357cb74013-400.webp": [
+  "course-screen-reset-starter-p01-11dfd8f7e3-400.webp": [
    400,
    518
   ],
-  "course-screen-reset-starter-p01-357cb74013-480.webp": [
+  "course-screen-reset-starter-p01-11dfd8f7e3-480.webp": [
    480,
    621
   ],
-  "course-screen-reset-starter-p01-357cb74013-720.webp": [
+  "course-screen-reset-starter-p01-11dfd8f7e3-720.webp": [
    720,
    932
   ],
-  "course-screen-reset-starter-p01-357cb74013-800.webp": [
+  "course-screen-reset-starter-p01-11dfd8f7e3-800.webp": [
    800,
    1035
   ],
-  "course-screen-reset-starter-p01-357cb74013-960.webp": [
+  "course-screen-reset-starter-p01-11dfd8f7e3-960.webp": [
    816,
    1056
   ],
-  "course-screen-reset-starter-p01-357cb74013-og.jpg": [
+  "course-screen-reset-starter-p01-11dfd8f7e3-og.jpg": [
    1200,
    630
   ],
-  "course-screen-reset-starter-p02-fd0792da42-400.webp": [
+  "course-screen-reset-starter-p02-61cfb5c016-400.webp": [
    400,
    518
   ],
-  "course-screen-reset-starter-p02-fd0792da42-800.webp": [
+  "course-screen-reset-starter-p02-61cfb5c016-800.webp": [
    800,
    1035
   ],
-  "course-screen-reset-starter-p03-9fc5966b20-400.webp": [
+  "course-screen-reset-starter-p03-0506325931-400.webp": [
    400,
    518
   ],
-  "course-screen-reset-starter-p03-9fc5966b20-800.webp": [
+  "course-screen-reset-starter-p03-0506325931-800.webp": [
    800,
    1035
   ],
-  "gift-reveal-coupons-cover-2a89681717-1300.webp": [
+  "gift-reveal-coupons-cover-ab3dfdc6d5-1300.webp": [
    1236,
    1600
   ],
-  "gift-reveal-coupons-cover-2a89681717-160.webp": [
+  "gift-reveal-coupons-cover-ab3dfdc6d5-160.webp": [
    160,
    207
   ],
-  "gift-reveal-coupons-cover-2a89681717-360.webp": [
+  "gift-reveal-coupons-cover-ab3dfdc6d5-360.webp": [
    360,
    466
   ],
-  "gift-reveal-coupons-cover-2a89681717-480.webp": [
+  "gift-reveal-coupons-cover-ab3dfdc6d5-480.webp": [
    480,
    621
   ],
-  "gift-reveal-coupons-cover-2a89681717-720.webp": [
+  "gift-reveal-coupons-cover-ab3dfdc6d5-720.webp": [
    720,
    932
   ],
-  "gift-reveal-coupons-cover-2a89681717-900.webp": [
+  "gift-reveal-coupons-cover-ab3dfdc6d5-900.webp": [
    900,
    1165
   ],
-  "gift-reveal-coupons-mockup-688466d71d-1100.webp": [
+  "gift-reveal-coupons-mockup-0d33bfa47d-1100.webp": [
    1100,
    825
   ],
-  "gift-reveal-coupons-mockup-688466d71d-160.webp": [
+  "gift-reveal-coupons-mockup-0d33bfa47d-160.webp": [
    160,
    120
   ],
-  "gift-reveal-coupons-mockup-688466d71d-1600.webp": [
+  "gift-reveal-coupons-mockup-0d33bfa47d-1600.webp": [
    1600,
    1200
   ],
-  "gift-reveal-coupons-mockup-688466d71d-640.webp": [
+  "gift-reveal-coupons-mockup-0d33bfa47d-640.webp": [
    640,
    480
   ],
-  "gift-reveal-coupons-mockup-688466d71d-og.jpg": [
+  "gift-reveal-coupons-mockup-0d33bfa47d-og.jpg": [
    1200,
    630
   ],
@@ -421,59 +205,59 @@
    900,
    1165
   ],
-  "guide-100-plays-cover-47c7c1b593-1300.webp": [
+  "guide-100-plays-cover-d1b96dd010-1300.webp": [
    1280,
    1600
   ],
-  "guide-100-plays-cover-47c7c1b593-160.webp": [
+  "guide-100-plays-cover-d1b96dd010-160.webp": [
    160,
    200
   ],
-  "guide-100-plays-cover-47c7c1b593-240.webp": [
+  "guide-100-plays-cover-d1b96dd010-240.webp": [
    240,
    300
   ],
-  "guide-100-plays-cover-47c7c1b593-300.webp": [
+  "guide-100-plays-cover-d1b96dd010-300.webp": [
    300,
    375
   ],
-  "guide-100-plays-cover-47c7c1b593-360.webp": [
+  "guide-100-plays-cover-d1b96dd010-360.webp": [
    360,
    450
   ],
-  "guide-100-plays-cover-47c7c1b593-480.webp": [
+  "guide-100-plays-cover-d1b96dd010-480.webp": [
    480,
    600
   ],
-  "guide-100-plays-cover-47c7c1b593-600.webp": [
+  "guide-100-plays-cover-d1b96dd010-600.webp": [
    600,
    750
   ],
-  "guide-100-plays-cover-47c7c1b593-720.webp": [
+  "guide-100-plays-cover-d1b96dd010-720.webp": [
    720,
    900
   ],
-  "guide-100-plays-cover-47c7c1b593-900.webp": [
+  "guide-100-plays-cover-d1b96dd010-900.webp": [
    900,
    1125
   ],
-  "guide-100-plays-mockup-730c278ced-1100.webp": [
+  "guide-100-plays-mockup-c98094fd9e-1100.webp": [
    1100,
    825
   ],
-  "guide-100-plays-mockup-730c278ced-160.webp": [
+  "guide-100-plays-mockup-c98094fd9e-160.webp": [
    160,
    120
   ],
-  "guide-100-plays-mockup-730c278ced-1600.webp": [
+  "guide-100-plays-mockup-c98094fd9e-1600.webp": [
    1600,
    1200
   ],
-  "guide-100-plays-mockup-730c278ced-640.webp": [
+  "guide-100-plays-mockup-c98094fd9e-640.webp": [
    640,
    480
   ],
-  "guide-100-plays-mockup-730c278ced-og.jpg": [
+  "guide-100-plays-mockup-c98094fd9e-og.jpg": [
    1200,
    630
   ],
@@ -525,7 +309,15 @@
    816,
    1056
   ],
+  "guide-100-plays-p15-1956c841d2-1000.webp": [
+   816,
+   1056
+  ],
   "guide-100-plays-p15-1956c841d2-1300.webp": [
+   816,
+   1056
+  ],
+  "guide-100-plays-p15-1956c841d2-1400.webp": [
    816,
    1056
   ],
@@ -537,73 +329,113 @@
    480,
    621
   ],
+  "guide-100-plays-p15-1956c841d2-600.webp": [
+   600,
+   776
+  ],
   "guide-100-plays-p15-1956c841d2-900.webp": [
    816,
    1056
   ],
-  "picture-laps-not-apps-cover-239330d009-1300.webp": [
+  "guide-100-plays-p16-d626686a0a-1000.webp": [
+   816,
+   1056
+  ],
+  "guide-100-plays-p16-d626686a0a-1400.webp": [
+   816,
+   1056
+  ],
+  "guide-100-plays-p16-d626686a0a-600.webp": [
+   600,
+   776
+  ],
+  "picture-laps-not-apps-cover-2429f0cacf-1300.webp": [
    1300,
    1300
   ],
-  "picture-laps-not-apps-cover-239330d009-160.webp": [
+  "picture-laps-not-apps-cover-2429f0cacf-160.webp": [
    160,
    160
   ],
-  "picture-laps-not-apps-cover-239330d009-240.webp": [
+  "picture-laps-not-apps-cover-2429f0cacf-240.webp": [
    240,
    240
   ],
-  "picture-laps-not-apps-cover-239330d009-360.webp": [
+  "picture-laps-not-apps-cover-2429f0cacf-360.webp": [
    360,
    360
   ],
-  "picture-laps-not-apps-cover-239330d009-480.webp": [
+  "picture-laps-not-apps-cover-2429f0cacf-480.webp": [
    480,
    480
   ],
-  "picture-laps-not-apps-cover-239330d009-720.webp": [
+  "picture-laps-not-apps-cover-2429f0cacf-720.webp": [
    720,
    720
   ],
-  "picture-laps-not-apps-cover-239330d009-900.webp": [
+  "picture-laps-not-apps-cover-2429f0cacf-900.webp": [
    900,
    900
   ],
-  "picture-laps-not-apps-mockup-5a3299972c-1100.webp": [
+  "picture-laps-not-apps-mockup-bd41bb57cd-1100.webp": [
    1100,
    825
   ],
-  "picture-laps-not-apps-mockup-5a3299972c-160.webp": [
+  "picture-laps-not-apps-mockup-bd41bb57cd-160.webp": [
    160,
    120
   ],
-  "picture-laps-not-apps-mockup-5a3299972c-1600.webp": [
+  "picture-laps-not-apps-mockup-bd41bb57cd-1600.webp": [
    1600,
    1200
   ],
-  "picture-laps-not-apps-mockup-5a3299972c-640.webp": [
+  "picture-laps-not-apps-mockup-bd41bb57cd-640.webp": [
    640,
    480
   ],
-  "picture-laps-not-apps-mockup-5a3299972c-og.jpg": [
+  "picture-laps-not-apps-mockup-bd41bb57cd-og.jpg": [
    1200,
    630
+  ],
+  "picture-laps-not-apps-p06-977a22368b-1100.webp": [
+   840,
+   840
   ],
   "picture-laps-not-apps-p06-977a22368b-160.webp": [
    160,
    160
   ],
+  "picture-laps-not-apps-p06-977a22368b-1600.webp": [
+   840,
+   840
+  ],
   "picture-laps-not-apps-p06-977a22368b-480.webp": [
    480,
    480
+  ],
+  "picture-laps-not-apps-p06-977a22368b-720.webp": [
+   720,
+   720
   ],
   "picture-laps-not-apps-p06-977a22368b-800.webp": [
    800,
    800
   ],
+  "picture-laps-not-apps-p07-475f3f1b25-1100.webp": [
+   840,
+   840
+  ],
+  "picture-laps-not-apps-p07-475f3f1b25-1600.webp": [
+   840,
+   840
+  ],
   "picture-laps-not-apps-p07-475f3f1b25-480.webp": [
    480,
    480
+  ],
+  "picture-laps-not-apps-p07-475f3f1b25-720.webp": [
+   720,
+   720
   ],
   "picture-laps-not-apps-p07-475f3f1b25-800.webp": [
    800,
@@ -629,181 +461,37 @@
    800,
    800
   ],
-  "picture-laps-not-apps-p31-d76a14488c-1300.webp": [
+  "picture-laps-not-apps-p31-f493867b20-1300.webp": [
    840,
    840
   ],
-  "picture-laps-not-apps-p31-d76a14488c-160.webp": [
+  "picture-laps-not-apps-p31-f493867b20-160.webp": [
    160,
    160
   ],
-  "picture-laps-not-apps-p31-d76a14488c-480.webp": [
+  "picture-laps-not-apps-p31-f493867b20-480.webp": [
    480,
    480
   ],
-  "picture-laps-not-apps-p31-d76a14488c-900.webp": [
+  "picture-laps-not-apps-p31-f493867b20-900.webp": [
    840,
    840
   ],
-  "picture-laps-not-apps-picker-ba3212f657-1100.webp": [
+  "picture-laps-not-apps-picker-f9bf6d2acc-1100.webp": [
    1100,
    825
   ],
-  "picture-laps-not-apps-picker-ba3212f657-160.webp": [
+  "picture-laps-not-apps-picker-f9bf6d2acc-160.webp": [
    160,
    120
   ],
-  "picture-laps-not-apps-picker-ba3212f657-1600.webp": [
+  "picture-laps-not-apps-picker-f9bf6d2acc-1600.webp": [
    1600,
    1200
   ],
-  "picture-laps-not-apps-picker-ba3212f657-640.webp": [
+  "picture-laps-not-apps-picker-f9bf6d2acc-640.webp": [
    640,
    480
-  ],
-  "picture-tablet-slept-cover-20c8087e68-1300.webp": [
-   1300,
-   1300
-  ],
-  "picture-tablet-slept-cover-20c8087e68-160.webp": [
-   160,
-   160
-  ],
-  "picture-tablet-slept-cover-20c8087e68-240.webp": [
-   240,
-   240
-  ],
-  "picture-tablet-slept-cover-20c8087e68-360.webp": [
-   360,
-   360
-  ],
-  "picture-tablet-slept-cover-20c8087e68-480.webp": [
-   480,
-   480
-  ],
-  "picture-tablet-slept-cover-20c8087e68-720.webp": [
-   720,
-   720
-  ],
-  "picture-tablet-slept-cover-20c8087e68-900.webp": [
-   900,
-   900
-  ],
-  "picture-tablet-slept-mockup-47f50090c2-1100.webp": [
-   1100,
-   825
-  ],
-  "picture-tablet-slept-mockup-47f50090c2-160.webp": [
-   160,
-   120
-  ],
-  "picture-tablet-slept-mockup-47f50090c2-1600.webp": [
-   1600,
-   1200
-  ],
-  "picture-tablet-slept-mockup-47f50090c2-640.webp": [
-   640,
-   480
-  ],
-  "picture-tablet-slept-mockup-47f50090c2-og.jpg": [
-   1200,
-   630
-  ],
-  "picture-tablet-slept-p06-9b93a0ed60-160.webp": [
-   160,
-   162
-  ],
-  "picture-tablet-slept-p06-9b93a0ed60-480.webp": [
-   480,
-   487
-  ],
-  "picture-tablet-slept-p06-9b93a0ed60-800.webp": [
-   800,
-   812
-  ],
-  "picture-tablet-slept-p07-a5b497109b-480.webp": [
-   480,
-   487
-  ],
-  "picture-tablet-slept-p07-a5b497109b-800.webp": [
-   800,
-   812
-  ],
-  "picture-tablet-slept-p16-d4995989cc-1100.webp": [
-   828,
-   840
-  ],
-  "picture-tablet-slept-p16-d4995989cc-160.webp": [
-   160,
-   162
-  ],
-  "picture-tablet-slept-p16-d4995989cc-1600.webp": [
-   828,
-   840
-  ],
-  "picture-tablet-slept-p16-d4995989cc-480.webp": [
-   480,
-   487
-  ],
-  "picture-tablet-slept-p16-d4995989cc-720.webp": [
-   720,
-   730
-  ],
-  "picture-tablet-slept-p16-d4995989cc-800.webp": [
-   800,
-   812
-  ],
-  "picture-tablet-slept-p17-cfb37f3288-1100.webp": [
-   828,
-   840
-  ],
-  "picture-tablet-slept-p17-cfb37f3288-1600.webp": [
-   828,
-   840
-  ],
-  "picture-tablet-slept-p17-cfb37f3288-480.webp": [
-   480,
-   487
-  ],
-  "picture-tablet-slept-p17-cfb37f3288-720.webp": [
-   720,
-   730
-  ],
-  "picture-tablet-slept-p17-cfb37f3288-800.webp": [
-   800,
-   812
-  ],
-  "picture-tablet-slept-p29-194535470d-1300.webp": [
-   828,
-   840
-  ],
-  "picture-tablet-slept-p29-194535470d-160.webp": [
-   160,
-   162
-  ],
-  "picture-tablet-slept-p29-194535470d-480.webp": [
-   480,
-   487
-  ],
-  "picture-tablet-slept-p29-194535470d-900.webp": [
-   828,
-   840
-  ],
-  "picture-tablet-slept-p30-4dfe1c91bc-1300.webp": [
-   828,
-   840
-  ],
-  "picture-tablet-slept-p30-4dfe1c91bc-160.webp": [
-   160,
-   162
-  ],
-  "picture-tablet-slept-p30-4dfe1c91bc-480.webp": [
-   480,
-   487
-  ],
-  "picture-tablet-slept-p30-4dfe1c91bc-900.webp": [
-   828,
-   840
   ],
   "play-first-family-kit-play-first-family-kit-ages-p1-b886ae542e-p1-1300.webp": [
    1300,
@@ -889,63 +577,63 @@
    900,
    1165
   ],
-  "play-talk-cards-cover-85a4549258-1300.webp": [
+  "play-talk-cards-cover-158d80242e-1300.webp": [
    1236,
    1600
   ],
-  "play-talk-cards-cover-85a4549258-160.webp": [
+  "play-talk-cards-cover-158d80242e-160.webp": [
    160,
    207
   ],
-  "play-talk-cards-cover-85a4549258-300.webp": [
+  "play-talk-cards-cover-158d80242e-300.webp": [
    300,
    388
   ],
-  "play-talk-cards-cover-85a4549258-360.webp": [
+  "play-talk-cards-cover-158d80242e-360.webp": [
    360,
    466
   ],
-  "play-talk-cards-cover-85a4549258-400.webp": [
+  "play-talk-cards-cover-158d80242e-400.webp": [
    400,
    518
   ],
-  "play-talk-cards-cover-85a4549258-480.webp": [
+  "play-talk-cards-cover-158d80242e-480.webp": [
    480,
    621
   ],
-  "play-talk-cards-cover-85a4549258-600.webp": [
+  "play-talk-cards-cover-158d80242e-600.webp": [
    600,
    777
   ],
-  "play-talk-cards-cover-85a4549258-720.webp": [
+  "play-talk-cards-cover-158d80242e-720.webp": [
    720,
    932
   ],
-  "play-talk-cards-cover-85a4549258-800.webp": [
+  "play-talk-cards-cover-158d80242e-800.webp": [
    800,
    1036
   ],
-  "play-talk-cards-cover-85a4549258-900.webp": [
+  "play-talk-cards-cover-158d80242e-900.webp": [
    900,
    1165
   ],
-  "play-talk-cards-mockup-eda53f8873-1100.webp": [
+  "play-talk-cards-mockup-789dc8118f-1100.webp": [
    1100,
    825
   ],
-  "play-talk-cards-mockup-eda53f8873-160.webp": [
+  "play-talk-cards-mockup-789dc8118f-160.webp": [
    160,
    120
   ],
-  "play-talk-cards-mockup-eda53f8873-1600.webp": [
+  "play-talk-cards-mockup-789dc8118f-1600.webp": [
    1600,
    1200
   ],
-  "play-talk-cards-mockup-eda53f8873-640.webp": [
+  "play-talk-cards-mockup-789dc8118f-640.webp": [
    640,
    480
   ],
-  "play-talk-cards-mockup-eda53f8873-og.jpg": [
+  "play-talk-cards-mockup-789dc8118f-og.jpg": [
    1200,
    630
   ],
@@ -981,19 +669,19 @@
    900,
    1165
   ],
-  "play-talk-cards-p20-8a700ca26c-1300.webp": [
+  "play-talk-cards-p20-7babaa5585-1300.webp": [
    1224,
    1584
   ],
-  "play-talk-cards-p20-8a700ca26c-160.webp": [
+  "play-talk-cards-p20-7babaa5585-160.webp": [
    160,
    207
   ],
-  "play-talk-cards-p20-8a700ca26c-480.webp": [
+  "play-talk-cards-p20-7babaa5585-480.webp": [
    480,
    621
   ],
-  "play-talk-cards-p20-8a700ca26c-900.webp": [
+  "play-talk-cards-p20-7babaa5585-900.webp": [
    900,
    1165
   ],
@@ -1177,79 +865,79 @@
    900,
    1165
   ],
-  "visual-routine-cards-visual-routine-cards-letter-p1-a2fded8acc-p1-1300.webp": [
+  "visual-routine-cards-visual-routine-cards-letter-p1-697f35bfeb-p1-1300.webp": [
    1300,
    1683
   ],
-  "visual-routine-cards-visual-routine-cards-letter-p1-a2fded8acc-p1-160.webp": [
+  "visual-routine-cards-visual-routine-cards-letter-p1-697f35bfeb-p1-160.webp": [
    160,
    207
   ],
-  "visual-routine-cards-visual-routine-cards-letter-p1-a2fded8acc-p1-360.webp": [
+  "visual-routine-cards-visual-routine-cards-letter-p1-697f35bfeb-p1-360.webp": [
    360,
    466
   ],
-  "visual-routine-cards-visual-routine-cards-letter-p1-a2fded8acc-p1-480.webp": [
+  "visual-routine-cards-visual-routine-cards-letter-p1-697f35bfeb-p1-480.webp": [
    480,
    621
   ],
-  "visual-routine-cards-visual-routine-cards-letter-p1-a2fded8acc-p1-720.webp": [
+  "visual-routine-cards-visual-routine-cards-letter-p1-697f35bfeb-p1-720.webp": [
    720,
    932
   ],
-  "visual-routine-cards-visual-routine-cards-letter-p1-a2fded8acc-p1-900.webp": [
+  "visual-routine-cards-visual-routine-cards-letter-p1-697f35bfeb-p1-900.webp": [
    900,
    1165
   ],
-  "visual-routine-cards-visual-routine-cards-letter-p1-a2fded8acc-p1-og.jpg": [
+  "visual-routine-cards-visual-routine-cards-letter-p1-697f35bfeb-p1-og.jpg": [
    1200,
    630
   ],
-  "visual-routine-cards-visual-routine-cards-letter-p2-a2fded8acc-p2-1300.webp": [
+  "visual-routine-cards-visual-routine-cards-letter-p2-697f35bfeb-p2-1300.webp": [
    1300,
    1683
   ],
-  "visual-routine-cards-visual-routine-cards-letter-p2-a2fded8acc-p2-160.webp": [
+  "visual-routine-cards-visual-routine-cards-letter-p2-697f35bfeb-p2-160.webp": [
    160,
    207
   ],
-  "visual-routine-cards-visual-routine-cards-letter-p2-a2fded8acc-p2-480.webp": [
+  "visual-routine-cards-visual-routine-cards-letter-p2-697f35bfeb-p2-480.webp": [
    480,
    621
   ],
-  "visual-routine-cards-visual-routine-cards-letter-p2-a2fded8acc-p2-900.webp": [
+  "visual-routine-cards-visual-routine-cards-letter-p2-697f35bfeb-p2-900.webp": [
    900,
    1165
   ],
-  "visual-routine-cards-visual-routine-cards-letter-p20-a2fded8acc-p20-1300.webp": [
+  "visual-routine-cards-visual-routine-cards-letter-p20-697f35bfeb-p20-1300.webp": [
    1300,
    1005
   ],
-  "visual-routine-cards-visual-routine-cards-letter-p20-a2fded8acc-p20-160.webp": [
+  "visual-routine-cards-visual-routine-cards-letter-p20-697f35bfeb-p20-160.webp": [
    160,
    124
   ],
-  "visual-routine-cards-visual-routine-cards-letter-p20-a2fded8acc-p20-480.webp": [
+  "visual-routine-cards-visual-routine-cards-letter-p20-697f35bfeb-p20-480.webp": [
    480,
    371
   ],
-  "visual-routine-cards-visual-routine-cards-letter-p20-a2fded8acc-p20-900.webp": [
+  "visual-routine-cards-visual-routine-cards-letter-p20-697f35bfeb-p20-900.webp": [
    900,
    696
   ],
-  "visual-routine-cards-visual-routine-cards-letter-p6-a2fded8acc-p6-1300.webp": [
+  "visual-routine-cards-visual-routine-cards-letter-p6-697f35bfeb-p6-1300.webp": [
    1300,
    1683
   ],
-  "visual-routine-cards-visual-routine-cards-letter-p6-a2fded8acc-p6-160.webp": [
+  "visual-routine-cards-visual-routine-cards-letter-p6-697f35bfeb-p6-160.webp": [
    160,
    207
   ],
-  "visual-routine-cards-visual-routine-cards-letter-p6-a2fded8acc-p6-480.webp": [
+  "visual-routine-cards-visual-routine-cards-letter-p6-697f35bfeb-p6-480.webp": [
    480,
    621
   ],
-  "visual-routine-cards-visual-routine-cards-letter-p6-a2fded8acc-p6-900.webp": [
+  "visual-routine-cards-visual-routine-cards-letter-p6-697f35bfeb-p6-900.webp": [
    900,
    1165
   ],
@@ -1321,19 +1009,19 @@
    900,
    1165
   ],
-  "winter-countdown-p03-dce81b223b-1300.webp": [
+  "winter-countdown-p03-f9e2915ed6-1300.webp": [
    1224,
    1584
   ],
-  "winter-countdown-p03-dce81b223b-160.webp": [
+  "winter-countdown-p03-f9e2915ed6-160.webp": [
    160,
    207
   ],
-  "winter-countdown-p03-dce81b223b-480.webp": [
+  "winter-countdown-p03-f9e2915ed6-480.webp": [
    480,
    621
   ],
-  "winter-countdown-p03-dce81b223b-900.webp": [
+  "winter-countdown-p03-f9e2915ed6-900.webp": [
    900,
    1165
   ]

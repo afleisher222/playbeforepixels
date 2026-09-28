@@ -6,7 +6,7 @@ const fs = require('fs');
 const { start } = require('./serve');
 const pw = (() => { for (const m of ['playwright', '/opt/node22/lib/node_modules/playwright']) { try { return require(m); } catch (e) {} } throw new Error('Playwright not found'); })();
 
-const PAGES = ['/shop/visual-routine-cards/', '/shop/bored-play-cards/', '/', '/shop/', '/shop/ages/1-3/', '/shop/bundles/', '/shop/board-up-go-more/', '/shop/toddler-busy-book/', '/30-days/', '/free/', '/about/', '/help/', '/contact/', '/licenses/', '/privacy/', '/research/', '/bonus/board-up-go-more/', '/404.html', '/search/?q=print'];
+const PAGES = ['/shop/visual-routine-cards/', '/shop/bored-play-cards/', '/', '/shop/', '/shop/ages/1-3/', '/shop/bundles/', '/shop/guide-100-plays/', '/shop/picture-laps-not-apps/', '/shop/toddler-busy-book/', '/30-days/', '/free/', '/about/', '/help/', '/contact/', '/licenses/', '/privacy/', '/research/', '/bonus/board-up-go-more/', '/404.html', '/search/?q=print'];
 const name = p => (p === '/' ? 'home' : p.replace(/^\/|\/$/g, '').replace(/[/?=.]+/g, '-'));
 
 (async () => {

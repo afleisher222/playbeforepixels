@@ -31,7 +31,7 @@ Put a few objects in a basket, each one standing for a song: a duck for a duck s
 **Talk while you play (Sing and gesture):** “A star! Twinkle, twinkle, little… (wait) …star!”
 
 - **Make it easier:** Just two objects and two songs, sung again and again.
-- **Make it harder:** Big kids make up new verses or a song about the family dog.
+- **Make it harder:** Preschoolers make up new verses or a song about the family dog.
 - **Tired-grown-up version (2 minutes):** Hum a lullaby with your child on your lap.
 - **Safety:** For under-3s, every object must be too big to fit through a toilet-paper tube. Paper stars stay with grown-ups.
 
@@ -55,4 +55,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

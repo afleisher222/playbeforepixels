@@ -33,7 +33,7 @@ When screen time ends, let your child switch the device off and “tuck it in”
 **Talk while you play (Sing and gesture):** “Night-night, tablet. See you tomorrow! Now… let’s go PLAY!”
 
 - **Make it easier:** Your toddler helps you lay the towel on top and waves bye-bye.
-- **Make it harder:** A big kid is the “keeper” who puts the device to bed and picks the next play.
+- **Make it harder:** A preschooler is the “keeper” who puts the device to bed and picks the next play.
 - **Tired-grown-up version (2 minutes):** Just say, “Night-night, tablet,” and hold out your hand.
 - **Safety:** Switch the device off first and never cover a device while it is charging. Grown-ups handle chargers and cords, and keep them out of reach of young children.
 
@@ -57,4 +57,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

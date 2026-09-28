@@ -8,8 +8,8 @@ const path = require('path');
 const P = require('./parts.js');
 const { C, W, K, esc, pad2, WC, weekOf, wc, qrSvg, ico, drops, ageLabel, artDisc, fld, sceneCover, WEEK_SCENES, sceneSvg, playCard, scriptBox, COPY, SITE, BONUS } = P;
 
-// Paperback ISBN, printed as plain text on the copyright page only once it exists (KDP free ISBN or an owned one;
-// the copyright-page line is optional on KDP, UNVERIFIED). Leave '' until then. See ../founder-notes.md.
+// Paperback ISBN: KDP editions use Amazon's free KDP ISBN (business/DECISIONS.md, Sept 28, 2026). KDP assigns and prints it;
+// an ISBN line on the copyright page is optional (UNVERIFIED). Leave '' unless you want to print it.
 const ISBN_PAPERBACK = '';
 
 const VARIANTS = {
@@ -73,7 +73,7 @@ function doc(V) {
     page(`<div class="titlep">
         ${LOCKUP}
         <p class="cv-sub">${esc(K.SUB)}</p>
-        <p class="tp-tag">30 short lessons, 30 easy plays and plain words for tricky moments, for families with children aged 1 to 12</p>
+        <p class="tp-tag">30 short lessons, 30 easy plays and plain words for tricky moments, for families with children aged 1 to 5</p>
         <div class="tp-scene">${sceneSvg(sceneCover, '', '20 150 560 360')}</div>
         <div class="tp-gift"><div><span>A gift for</span><i></i></div><div><span>With love from</span><i></i></div></div>
         <div class="cv-logo"><img src="${LOGO}" alt="Play Before Pixels"></div>
@@ -116,7 +116,7 @@ function doc(V) {
         <h3>How this book works</h3>
         <ol class="steps">
           <li><b>One short lesson a day, for 30 days.</b> Each takes about three minutes to read.</li>
-          <li><b>One easy play a day</b>, with a version for little ones, a version for big kids and a two-minute version for tired days.</li>
+          <li><b>One easy play a day</b>, with a version for toddlers, a version for preschoolers and a two-minute version for tired days.</li>
           <li><b>Plain words for a tricky moment</b> every day, and a bank of extra scripts at the back.</li>
           <li><b>Write in it.</b> The planning pages, tracker, daily notes and check-ins are yours to fill in.</li>
         </ol>
@@ -144,13 +144,13 @@ function doc(V) {
       <div class="hd">${artDisc('hand', C.tTomato, .95)}<b>Say</b><span>plain words for one tricky moment</span></div>
     </div>
     <div class="promise">
-      <div><b>What this is</b>Parent education about everyday play and talk, for families with children aged about 1 to 12.</div>
+      <div><b>What this is</b>Parent education about everyday play and talk, for families with children aged about 1 to 5.</div>
       <div><b>What this isn’t</b>Treatment, diagnosis or advice about any one child. If you have questions about your child’s development, talk with your pediatrician.</div>
     </div>`, { run: 'Start here' });
 
   // Note + map
-  // Optional welcome in the founder's own words (template: ../founder-notes.md). Nothing prints until it is written.
-  const note = K.FOUNDER.welcomeNote ? `<p class="fnote">${esc(K.FOUNDER.welcomeNote)}</p>` : '';
+  // Welcome note in the brand's voice (content.js NOTES.welcome; finished text, nothing to fill in).
+  const note = K.NOTES.welcome ? `<p class="fnote">${esc(K.NOTES.welcome)}</p>` : '';
   page(`${H(note ? 'A note before you start' : 'Before you start', 'Your month at a glance')}
     ${note}
     <div class="map">${K.WEEKS.map(w => { const c = WC[w.color]; return `<div class="mapw" style="border-color:${c.c}">
@@ -190,7 +190,7 @@ function doc(V) {
         <ul class="safelist">${K.SAFETY.map(s => `<li>${esc(s)}</li>`).join('')}</ul>
         <p class="small">You know your child best. Skip or change any play that doesn’t suit your child, your home or your day.</p>
         <h3>Ages</h3>
-        <p>Every play shows a starting age (“From 18 months”), a way to make it easier and a way to make it harder for big kids. Every week has boxes for toddlers and preschoolers, school-age kids, and siblings and twins.</p>
+        <p>Every play shows a starting age (“From 18 months”), a way to make it easier and a way to make it harder for preschoolers. Every week has boxes for toddlers, preschoolers, and siblings and twins.</p>
         ${V.book ? '' : PEDI}
       </div>
       <div>
@@ -262,8 +262,8 @@ function doc(V) {
       </div>
       <div class="wkdays">${days.map(d => `<div class="wkd"><span class="wkn" style="background:${c.c};color:${c.fg}">${d.d}</span><div><b>${esc(d.title)}</b><span>${esc(d.play.t)}</span></div></div>`).join('')}</div>
       <div class="bands">
-        <div class="band"><h4>${ico('sprout')} Toddlers and preschoolers</h4><p>${esc(cap(w.little))}</p></div>
-        <div class="band"><h4>${ico('bolt')} School-age kids</h4><p>${esc(cap(w.bigk))}</p></div>
+        <div class="band"><h4>${ico('sprout')} Toddlers</h4><p>${esc(cap(w.little))}</p></div>
+        <div class="band"><h4>${ico('bolt')} Preschoolers</h4><p>${esc(cap(w.pre))}</p></div>
         <div class="band"><h4>${ico('people')} Siblings and twins</h4><p>${esc(cap(w.siblings))}</p></div>
       </div>
       ${w.n === 5 ? `<div class="wk5"><h4>${ico('check')} Your one-page plan will have five parts</h4><ol><li>Your screen spot: when, where, what and how it ends</li><li>Your two or three favorite plays, plus one new one</li><li>Your words for tricky moments</li><li>Your phone parking spot and one phone-free window</li><li>Your tough-day plan</li></ol><p class="small">Then print the certificate, let your child decorate it and put it on the fridge.</p></div>` : ''}
@@ -717,6 +717,7 @@ ${V.low ? `
 ${V.low && !V.gray ? `
 .artdefs symbol *,.chardefs symbol *,svg.scene *,.art svg *,.cstars svg *{fill:#fff!important;stroke:${C.ink}!important;stroke-width:2.2px!important;stroke-linejoin:round}
 .art .ground{stroke-width:1.5px!important}
+svg.scene text,.art svg text,.cstars svg text,.artdefs symbol text,.chardefs symbol text{fill:${C.ink}!important;stroke:none!important}
 ` : ''}
 `;
   let html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${esc(K.TITLE)} — ${V.book ? 'Paperback interior' : 'Workbook'}</title>

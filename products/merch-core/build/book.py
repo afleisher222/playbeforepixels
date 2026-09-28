@@ -48,7 +48,7 @@ ul.checks li.done:before{background:var(--grass);border-color:var(--grass)}
 .panel{border-radius:10pt;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
 .checker{background-color:#fff;background-image:linear-gradient(45deg,#EEF1F6 25%,transparent 25%),linear-gradient(-45deg,#EEF1F6 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#EEF1F6 75%),linear-gradient(-45deg,transparent 75%,#EEF1F6 75%);background-size:14px 14px;background-position:0 0,0 7px,7px -7px,-7px 0}
 .cap{font-size:8.3pt;color:var(--muted);margin-top:4pt;line-height:1.35}
-code{font-family:ui-monospace,Menlo,monospace;font-size:8.3pt;background:var(--wash);padding:0 3pt;border-radius:3pt}
+code{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:8.3pt;background:var(--wash);padding:0 3pt;border-radius:3pt}
 """
 
 pages = []
@@ -205,7 +205,7 @@ pg('''<p class="kick">Honest pricing</p><h2>Prices and money</h2>
 <h3>When it sells</h3><ul class="balls">
 <li><b>Late October:</b> list with the holiday gift bundle. Check the partner's holiday order cut-off dates (UNVERIFIED).</li>
 <li><b>March:</b> spring screen-free week season. Say “spring screen-free week” in plain words; never print or claim the event's name.</li>
-<li><b>Kill rule:</b> fewer than 5 sales in 60 days with the listing fixed → reprice once, then make it bundle-only.</li></ul>''', 10)
+<li><b>Kill rule:</b> fewer than 5 sales in 60 days with the listing fixed: reprice once, then make it bundle-only.</li></ul>''', 10)
 
 # 11 QA
 pg('''<p class="kick">Before anything ships</p><h2>Checks and launch list</h2>

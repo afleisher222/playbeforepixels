@@ -18,7 +18,7 @@ Pocket plays need nothing but you: I spy, finger puppets, clapping games, “Wha
 
 A few things make waiting easier. Feed hungry children first (a snack in your bag solves a lot). Tell your child what will happen: “We’ll wait, then the doctor will look in your ears.” And lower your expectations: wriggly is normal.
 
-Big kids can bring a notebook and pencil for waiting. Tic-tac-toe, drawing games and word games travel anywhere.
+Preschoolers can bring a small notebook and a chunky crayon for waiting. Drawing games travel anywhere.
 
 **Today’s one small step:** Pick three pocket plays to keep in your back pocket. Write them on your phone’s lock screen or a card in your bag.
 
@@ -31,7 +31,7 @@ Say “I spy with my little eye something that is… blue!” and let your child
 **Talk while you play (Pause and wait):** “I spy something… blue! (wait) Yes, the door!”
 
 - **Make it easier:** Point and name: “I see a blue door. Can you see it?”
-- **Make it harder:** Big kids use first letters, shapes or “something that’s used for…” clues.
+- **Make it harder:** Preschoolers use colors, shapes or “something that’s used for…” clues.
 - **Tired-grown-up version (2 minutes):** Count the red things you can see, together.
 - **Safety:** Keep children seated or holding hands in busy public places.
 
@@ -55,4 +55,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

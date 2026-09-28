@@ -161,8 +161,16 @@ for (const n of used) copy(path.join(SITE, 'assets/img', n), path.join(DIST, 'as
 // ---------- redirects (printed URLs must keep working) ----------
 const redirects = C.redirects.map(([a, b]) => [a, b]);
 redirects.push(['/free/7-days-of-play-first', '/free/'], ['/free/7-days-of-play-first/', '/free/']);
-for (const p of D.hidden) if (!out.has(`/shop/${p.slug}/`)) { /* held products get no page */ }
-const redirLines = ['# Written by site/build.js. Printed and emailed URLs that must keep working (ops/TESTS/printed-urls.md).', ...redirects.map(([a, b]) => `${a} ${b} 301`)];
+// Held products get no page. Their old or printed /shop/<slug> URLs go, temporarily (302), to their
+// shelf so an email or a printed page never lands on a 404 and nothing held is offered for sale.
+for (const h of D.hidden) {
+  const from = `/shop/${h.slug}/`;
+  if (out.has(from) || redirects.some(([a]) => a === from)) continue;
+  const types = (C.products[h.slug] || {}).types || [];
+  const to = /^bundle-/.test(h.slug) ? '/shop/bundles/' : types.includes('books') ? '/shop/books/' : types.includes('printables') ? '/shop/printables/' : '/shop/';
+  redirects.push([from.slice(0, -1), to, 302], [from, to, 302]);
+}
+const redirLines = ['# Written by site/build.js. Printed and emailed URLs that must keep working (ops/TESTS/printed-urls.md).', ...redirects.map(([a, b, code]) => `${a} ${b} ${code || 301}`)];
 fs.writeFileSync(path.join(DIST, '_redirects'), redirLines.join('\n') + '\n');
 // Static fallback pages for hosts without _redirects (and for the local QA server).
 for (const [from, to] of redirects) {

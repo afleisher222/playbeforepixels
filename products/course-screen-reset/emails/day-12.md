@@ -31,7 +31,7 @@ Pick a color together and go looking for it outside: a red car, a red door, a re
 **Talk while you play (Repeat and add one):** “Red! A red car. Red car going fast!”
 
 - **Make it easier:** Just find one color and point together.
-- **Make it harder:** Big kids hunt for shapes, letters or something for every color of the rainbow.
+- **Make it harder:** Preschoolers hunt for shapes or something for every color of the rainbow.
 - **Tired-grown-up version (2 minutes):** Sit on the step and spot colors going past.
 - **Safety:** Hold hands near roads. Check that nothing found outside goes into mouths, and dress for the weather.
 
@@ -55,4 +55,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

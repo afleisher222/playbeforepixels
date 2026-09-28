@@ -12,7 +12,7 @@ send: "day 3, 7:00 local time"
 
 Here is the single biggest change in this program: give screens a steady spot in your day.
 
-A steady spot means screens happen at roughly the same time each day, in the same place, and end the same way. For example: “Shows are after nap, on the couch, for two episodes, and then we go outside.” Or for a big kid: “Screen time is 4:30 to 5:15, in the living room, and ends when the kitchen timer rings.”
+A steady spot means screens happen at roughly the same time each day, in the same place, and end the same way. For example: “Shows are after nap, on the couch, for two episodes, and then we go outside.” Or: “Our show is at 4:30, in the living room, and ends when the kitchen timer rings.”
 
 Why this works: when children know when screens come, they stop asking all day. The spot becomes like lunch. It isn’t a prize, and it isn’t a threat.
 
@@ -33,7 +33,7 @@ Play a song and dance together. When you stop the music, everyone freezes. Hold 
 **Talk while you play (Pause and wait):** “Ready… set… (wait) GO!”
 
 - **Make it easier:** Hold your toddler and sway, then freeze together.
-- **Make it harder:** Big kids control the music, or freeze in a shape you call out: tall, tiny, wobbly.
+- **Make it harder:** Preschoolers control the music, or freeze in a shape you call out: tall, tiny, wobbly.
 - **Tired-grown-up version (2 minutes):** Sit on the floor and do stop-and-go clapping.
 - **Safety:** Clear a space away from sharp furniture corners and stairs.
 
@@ -57,4 +57,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

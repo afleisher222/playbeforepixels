@@ -1,0 +1,49 @@
+{
+  "platform": "Gumroad Workflows (UNVERIFIED feature names)",
+  "trigger": "the free 7 Days of Play First sign-up ($0 product)",
+  "note": "Paste each file into one workflow email, in order, with its delay. Replace {{business_mailing_address}} once, in every file, with the public mailing address from legal/ENTITY.md. Emails with the same delay go out together.",
+  "emails": [
+    {
+      "order": 1,
+      "file": "01-f1-welcome.md",
+      "delay_days": 0,
+      "subject": "Your 7 Days of Play First starter is here"
+    },
+    {
+      "order": 2,
+      "file": "02-f2-screen-spot.md",
+      "delay_days": 2,
+      "subject": "The one change that makes the rest easier"
+    },
+    {
+      "order": 3,
+      "file": "03-f3-ending.md",
+      "delay_days": 3,
+      "subject": "What to say when the show ends"
+    },
+    {
+      "order": 4,
+      "file": "04-f4-bored.md",
+      "delay_days": 4,
+      "subject": "“I’m bored” is a starting line"
+    },
+    {
+      "order": 5,
+      "file": "05-f5-talk.md",
+      "delay_days": 5,
+      "subject": "Five small talk moves (and the research, in plain words)"
+    },
+    {
+      "order": 6,
+      "file": "06-f6-peek.md",
+      "delay_days": 6,
+      "subject": "What a whole month of this looks like"
+    },
+    {
+      "order": 7,
+      "file": "07-f7-invite.md",
+      "delay_days": 7,
+      "subject": "Keep going: 30 Days of Back-and-Forth"
+    }
+  ]
+}

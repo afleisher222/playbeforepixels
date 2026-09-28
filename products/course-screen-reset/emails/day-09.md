@@ -31,7 +31,7 @@ Put a big empty box on the floor and say nothing about it. If your child wanders
 **Talk while you play (Follow their lead):** “Where is your car going? … To the zoo! Can I come?”
 
 - **Make it easier:** For toddlers, open both ends to make a tunnel and crawl through.
-- **Make it harder:** Big kids make a shop, a robot costume or a car ramp from boxes and tape.
+- **Make it harder:** Preschoolers make a shop, a robot costume or a car ramp from boxes and tape, with a grown-up doing any cutting.
 - **Tired-grown-up version (2 minutes):** Put the box down, say “I wonder…” and see what happens.
 - **Safety:** Take off staples and packing tape first. Grown-ups do any cutting.
 
@@ -55,4 +55,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

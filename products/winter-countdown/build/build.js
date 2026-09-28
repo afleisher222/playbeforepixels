@@ -161,7 +161,7 @@ function guide2(ctx) {
       <div class="anat-card">${card(ctx, PLAYS[2])}</div>
       <ol class="anat-key">
         <li><b>Day number and name.</b> Use them in order or not.</li>
-        <li><b>Age label.</b> Color, shape and words: <span class="nowrap">${ageChip('2+')}</span> or <span class="nowrap">${ageChip('3+')}</span>. The card also shows a starting age in months.</li>
+        <li><b>Age label.</b> Color, shape and words, from the play’s own starting age: <span class="nowrap">${ageChip('2+')},</span> <span class="nowrap">${ageChip(K.ageFrom(30))} or</span> <span class="nowrap">${ageChip('3+')}.</span></li>
         <li><b>Prep, mess and time.</b> Play times are rough; stop whenever your child is done.</li>
         <li><b>Nothing to buy.</b> ${NOBUY} of the 24 plays use only things most homes have.</li>
         <li><b>Easier, harder and 2-minute versions.</b> Tired? The 2-minute version still counts.</li>

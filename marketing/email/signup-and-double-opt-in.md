@@ -4,14 +4,16 @@ Used on every `playbeforepixels.com/bonus/<slug>` page, the free-printable page 
 
 ## Form
 **Heading:** Five 5-Minute Plays, free
-**Line:** Five little plays for ages 0–5 with things you already have. Plus one email a month with 3 plays for your child's age.
+**Line:** Five little plays for ages 0–5 with things you already have. Then five short welcome emails over ten days, and after that one email a month with 3 plays for your child's age.
 
 - Email address _(required)_
 - Your child's birth month and year _(optional; two dropdowns: month, year)_. Helper text: "So we can send plays for their age. We never ask for a name."
 - ☐ I am the parent or guardian and 18 or older. _(required, unticked)_
 
 **Button:** Send me the plays
-**Under the button:** We'll email you a link to confirm. One email a month, unsubscribe any time. [Privacy policy]({{privacy_link}})
+**Under the button:** We'll email you a link to confirm. By confirming, you agree to get emails from Play Before Pixels (AlphaPlay LLC): five welcome emails over ten days, then one a month, with plays and now and then one of our printables. Unsubscribe any time with one click. We use your birth month and year only to match plays to your child's age. [Privacy policy]({{privacy_link}})
+
+_Consent record (GDPR/UK GDPR, wording UNVERIFIED until the privacy policy is reviewed): the platform stores the form wording shown, the time of sign-up and the time of the confirm click. The sign-up box is never pre-ticked, and checkout never adds anyone to the list without the separate unticked box._
 
 ## Thank-you page (after submitting)
 **Almost there: check your inbox.**

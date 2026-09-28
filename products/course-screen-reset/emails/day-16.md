@@ -18,7 +18,7 @@ You aren’t asking for anything back. You’re giving your child the words for 
 
 Keep your sentences short, a little longer than your child’s own. If your child uses single words, use two or three. If they use short sentences, add a little more.
 
-Big kids enjoy this too, in a different way: “You’ve been working on that drawing a long time. You added a door.” It tells them you’re paying attention.
+Preschoolers enjoy this too, in a different way: “You’ve been working on that drawing a long time. You added a door.” It tells them you’re paying attention.
 
 **Today’s one small step:** For five minutes, narrate your child’s play without asking a single question.
 
@@ -31,7 +31,7 @@ Sit beside your child while they build or play. Describe what they do, like a fr
 **Talk while you play (Say what you see):** “Another block… and another… it’s so tall! Crash!”
 
 - **Make it easier:** Use single words: “Up. Up. Crash!”
-- **Make it harder:** Big kids commentate your building, or you both commentate a “match” between teddies.
+- **Make it harder:** Preschoolers commentate your building, or you both commentate a race between teddies.
 - **Tired-grown-up version (2 minutes):** Commentate from the couch: “And she’s walking to the basket…”
 - **Safety:** For under-3s, blocks and cups must be too big to fit through a toilet-paper tube.
 
@@ -55,4 +55,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

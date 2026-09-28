@@ -27,7 +27,7 @@ Drape a blanket over a table or two chairs to make a hideout. Bring in a flashli
 **Talk while you play (Follow their lead):** “Knock, knock! Can I come in? … What’s the password?”
 
 - **Make it easier:** Just drape the blanket over your knees and play peekaboo inside.
-- **Make it harder:** Big kids design a den with a sign, a door flap and a secret knock.
+- **Make it harder:** Preschoolers add a sign, a door flap and a secret knock.
 - **Tired-grown-up version (2 minutes):** Lie under the blanket together and read one book with a flashlight.
 - **Safety:** Use a light blanket, keep faces uncovered and stay nearby. No cords or strings tied to the den. Use a flashlight whose battery cover screws shut.
 
@@ -49,4 +49,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

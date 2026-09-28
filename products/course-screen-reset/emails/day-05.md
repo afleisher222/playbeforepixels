@@ -10,13 +10,13 @@ send: "day 5, 7:00 local time"
 
 **Ten minutes of full attention when you first see each other often makes the rest of the day easier.**
 
-The moment you pick your child up from child care, school or a sitter, or the moment you walk in from work, is a powerful one. Children have saved up a whole day of things to show and feel.
+The moment you pick your child up from child care, preschool or a sitter, or the moment you walk in from work, is a powerful one. Children have saved up a whole day of things to show and feel.
 
 Many families reach for a screen right then, because everyone is tired. Today, try giving the first ten minutes to each other instead, before bags, dinner or phones.
 
 It doesn’t have to be a game. Sit on the floor. Have a snack together. Let your child show you something, or climb on you, or say nothing at all. Put your own phone somewhere else for those ten minutes.
 
-For big kids, don’t fire questions (“How was school?” often gets “Fine”). Try sitting nearby with a snack and saying something about your own day. Big kids tend to talk sideways: in the car, over food, while doing something with their hands.
+For preschoolers, don’t fire questions (“What did you do today?” often gets “Nothing”). Try sitting nearby with a snack and saying something about your own day. Many children talk more side by side: in the car, over food, while doing something with their hands.
 
 Ten minutes of connection often makes the next hour calmer. It fills a cup that a screen can’t.
 
@@ -31,7 +31,7 @@ Over a snack, share three small things from your own day: one funny, one surpris
 **Talk while you play (Follow their lead):** “A dog in a raincoat walked past my window! (wait)”
 
 - **Make it easier:** For toddlers, show three things instead: “Look, a leaf I found for you.”
-- **Make it harder:** Big kids play “two true things and one pretend”; you guess which is pretend.
+- **Make it harder:** Preschoolers play “silly or true?”: you say something about your day, and they guess whether it’s silly or true.
 - **Tired-grown-up version (2 minutes):** Lie on the floor together and say one thing each.
 - **Safety:** Check for food allergies first. Seat children upright for snacks and choose toddler-safe foods.
 
@@ -55,4 +55,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

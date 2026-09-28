@@ -76,7 +76,10 @@ function signup(ctx, o = {}) {
   const id = o.id || 'su';
   const action = ctx.env.emailFormAction;
   const hosted = ctx.links.newsletter_form;
-  const years = []; for (let y = 2026; y >= 2014; y--) years.push(y);
+  // Birth years cover only the ages the site sells to (0–5 while the ages 5–12 gate is closed).
+  const thisYear = new Date().getUTCFullYear();
+  const oldest = thisYear - (ctx.gates.ages5to12.open ? 12 : 5);
+  const years = []; for (let y = thisYear; y >= oldest; y--) years.push(y);
   const live = !!action;
   const tone = o.tone || 'ink';
   const intro = o.intro ? `<p class="su-intro">${o.intro}</p>` : '';

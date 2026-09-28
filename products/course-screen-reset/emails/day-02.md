@@ -35,7 +35,7 @@ Sit down at the table together, no phones nearby. Say what’s happening in shor
 **Talk while you play (Say what you see):** “Pour the milk… pour… stop! Crunch, crunch.”
 
 - **Make it easier:** Use single words: “Pour.” “More?” “Yum.”
-- **Make it harder:** Big kids narrate you, like a cooking show host. Then swap.
+- **Make it harder:** Preschoolers narrate you, like a cooking show host. Then swap.
 - **Tired-grown-up version (2 minutes):** Name three foods on the plate and let your child name one.
 - **Safety:** Check for food allergies first. Seat children upright while eating. Cut food small for under-4s; no whole grapes, nuts, popcorn or hard candy.
 
@@ -59,4 +59,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

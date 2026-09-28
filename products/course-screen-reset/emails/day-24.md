@@ -35,7 +35,7 @@ Put your phone in its parking spot. Lie on the floor or grass side by side and l
 **Talk while you play (Say what you see):** “I see a cloud like a… dog! A big fluffy dog. (wait)”
 
 - **Make it easier:** Lie together and point at the light, the fan, the window.
-- **Make it harder:** Big kids find constellations or invent them and give them names.
+- **Make it harder:** Preschoolers find shapes in the clouds or invent star pictures and give them names.
 - **Tired-grown-up version (2 minutes):** Lie still and listen: what sounds can you hear?
 - **Safety:** Lie on a clean, flat surface. Outside, check the ground first and never look straight at the sun.
 
@@ -59,4 +59,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

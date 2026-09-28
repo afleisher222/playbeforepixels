@@ -143,7 +143,7 @@ module.exports = function product(ctx, p) {
     <ul class="assure">${assure.map(a => `<li>${esc(a)}</li>`).join('')}</ul>
   </div>`;
 
-  const long = p.long.map((para, i) => `<p${i === 0 ? ' class="dropcap"' : ''}>${esc(typo(para))}</p>`).join('');
+  const long = p.long.map((para, i) => `<p${i === 0 && /^[A-Za-z]/.test(para) ? ' class="dropcap"' : ''}>${esc(typo(para))}</p>`).join('');
   const inside = `<section class="section about-p" aria-labelledby="about-h">
   <div class="wrap about-grid">
     <div class="about-copy">
@@ -171,7 +171,7 @@ module.exports = function product(ctx, p) {
       <p class="eyebrow">Details</p>
       <h2 class="h2" id="det-h">The small print, in plain words.</h2>
       <dl class="colophon-table">${rows.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}
-        ${p.isbn ? '<div><dt>ISBN</dt><dd><span class="isbn-box">ISBN / barcode · assigned at release</span></dd></div>' : ''}
+        ${p.isbn ? '<div><dt>ISBN</dt><dd>Given when the printed book is released</dd></div>' : ''}
       </dl>
     </div>
     <div>

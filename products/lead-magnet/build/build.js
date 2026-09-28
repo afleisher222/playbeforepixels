@@ -17,7 +17,7 @@ const PLAYS = [
     talk: '“Where’s… (wait) there you are!”', move: 'Pause and wait',
     ladder: [['0-1', 'Hide your own face. Babies love the surprise.'], ['1-2', 'Hide a toy under the blanket; your child pulls it off.'], ['2-3', 'Your child hides under it; you look everywhere else first.'], ['3-5', 'Hide-and-seek in one room. You count to 10 out loud.']],
     tired: 'Hide your face behind your hands three times.',
-    safe: 'Blanket play is for awake time with you. Take the blanket away before any baby sleeps.' },
+    safe: 'Blanket play is for awake time with you. Take the blanket away before any baby sleeps. Hide only in open spots, never in cupboards, boxes or appliances.' },
   { t: 'Pots-and-Spoons Band', why: 'Loud and quiet, stop and go: copying each other is a conversation without words.', art: 'pot', c: 'plum', needs: 'A pot or plastic bowl, a wooden spoon',
     how: ['Turn a pot upside down.', 'Tap it loud, then soft.', 'Take turns: you play, then your child copies, then swap.'],
     talk: '“Loud! … (whisper) quiet.”', move: 'Sing and gesture',
@@ -136,7 +136,7 @@ function last(ctx) {
     <h3 class="sub">What comes next in your inbox</h3>
     <div class="g2">
       <div class="box li-white"><h4>${mi('heart', 14, D.tomato)} Once a month: 3 plays for your child’s age</h4><p>If you gave us your child’s birth month and year, each email matches their age. If not, you get plays for every age. Nothing else is needed.</p></div>
-      <div class="box li-white"><h4>${mi('safe', 14, D.grass)} Our privacy promise</h4><p>We never ask for a child’s name, photo or birthday, only an optional birth month and year. We never sell or share your email. Every email has a one-click unsubscribe.</p></div>
+      <div class="box li-white"><h4>${mi('safe', 14, D.grass)} Our privacy promise</h4><p>We never ask for a child’s name, photo or full birth date, only an optional birth month and year. We never sell your email or share it with anyone except the service that sends our emails. Every email has a one-click unsubscribe.</p></div>
     </div>
     <h3 class="sub">More from Play Before Pixels</h3>
     <div class="nexts">

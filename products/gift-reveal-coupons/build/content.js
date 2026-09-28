@@ -76,7 +76,7 @@ COUPONS.forEach((p, i) => {
   p.n = i + 1;
   for (const k of ['t', 'art', 'needs', 'how', 'talk', 'easy', 'hard', 'two', 'safe']) if (!p[k]) throw new Error(`Coupon ${p.n}: missing ${k}`);
   if (p.from < 12 || p.from > 60) throw new Error(`Coupon ${p.n}: starting age outside 1–5`);
-  p.age = p.from >= 36 ? '3+' : p.from >= 24 ? '2+' : '1+';
+  p.age = require('../../bundle-gift-1-5/build/shared/kit.js').ageFrom(p.from);
 });
 const NOBUY = COUPONS.filter(p => !p.buy).length;
 if (NOBUY / COUPONS.length < 0.7) throw new Error('Fewer than 70% of coupons need nothing to buy (CUSTOMER-VOICE rule 6)');

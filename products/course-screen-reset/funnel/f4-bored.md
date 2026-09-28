@@ -23,7 +23,7 @@ Cover the basket with a towel. Pull out one thing at a time, slowly, with a big 
 **Talk while you play (Pause and wait):** “What’s in here? … (wait) … A spoon! Bang, bang.”
 
 - **Make it easier:** Put just three things under the towel.
-- **Make it harder:** Big kids feel inside a bag without looking and describe it for you to guess.
+- **Make it harder:** Preschoolers feel inside a bag without looking and describe it for you to guess.
 - **Tired-grown-up version (2 minutes):** Pull out one thing and ask, “What could this be?” Go with any answer.
 - **Safety:** For under-3s, everything in the basket must be too big to fit through a toilet-paper tube. No cords or strings.
 
@@ -44,4 +44,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

@@ -20,7 +20,7 @@ When you follow a child’s lead, you are talking about exactly what they are in
 
 Get down to their level, face to face if you can. Copy what they do. Say what you see. Pause and wait. You’re using all this week’s moves at once.
 
-Big kids love this too. Let them teach you a game they made up, the rules of a sport or how to draw their favorite character.
+Preschoolers love this too. Let them teach you a game they made up or how to draw their favorite animal.
 
 **Today’s one small step:** Give your child ten minutes to lead the play. Copy, comment and wait.
 
@@ -33,7 +33,7 @@ Tell your child, “You’re the boss for ten minutes. What should we play?” T
 **Talk while you play (Follow their lead):** “You put teddy in bed. Night-night, teddy. Shhh.”
 
 - **Make it easier:** Copy your baby or toddler’s sounds and actions. They’ll often do it again to see you copy.
-- **Make it harder:** Big kids teach you a game with their own rules. You follow them exactly.
+- **Make it harder:** Preschoolers teach you a game with their own rules. You follow them exactly.
 - **Tired-grown-up version (2 minutes):** Say, “Show me what you’re doing,” and watch with interest.
 - **Safety:** Stay close, and redirect gently if the play turns unsafe: “Climbing is for the floor cushions.”
 
@@ -57,4 +57,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

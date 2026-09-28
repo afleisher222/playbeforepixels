@@ -1,43 +1,40 @@
-# 30 Days of Back-and-Forth: founder notes (optional)
+# 30 Days of Back-and-Forth: optional founder notes
 
-The workbook, the KDP paperback, the cover and the sales page no longer print any placeholder (ops/TESTS/print-fixes.md, 2026-09-28). This file keeps the slots you can fill later, and where each one goes. Write in your own words: your writing is the human-authored part of the program (brand/BRAND.md, "Human authorship"), and git keeps every version.
+**Nothing in this file is required.** The program is finished and self-running without it (business/DECISIONS.md, Sept 28, 2026: "keep the course, as long as I don't have to do anything"). Every email, the workbook, the paperback and the sales page already carry finished text written as the brand ("we"), from `NOTES` in `build/content.js`. The build never prints a placeholder, and `sh build/make.sh --final` stops if one ever appears.
+
+These slots exist only in case you ever want to add something personal. If you do, write in your own words; your writing becomes the human-authored part of the program (brand/BRAND.md, "Human authorship"), and git keeps every version.
 
 For every note: no children's names, no employer, no legal matters, no health, speech or development results, and nothing that suggests clinical credentials.
 
-All text slots live in `build/content.js`, in the `FOUNDER` object. After editing, run `sh build/make.sh` (or `sh build/make.sh --final` before anything goes live).
+## How to use a slot
+Replace the matching `NOTES` text in `build/content.js` with your own, then run `sh build/make.sh --final`. To go back, restore the brand text from git.
 
-## 1. Welcome note (workbook p3, paperback p4)
-
-- **Prints:** on the "Your month at a glance" page, above the map, in all four workbook PDFs (`downloads/2`–`5`), `course-screen-reset.pdf` and the KDP interior. While it is empty, the page prints only the map and its kicker reads "Before you start".
-- **Type it in:** `FOUNDER.welcomeNote`, 60–120 words.
-- **Also used by:** the welcome email (`emails/`), which still shows a "FOUNDER WRITES THIS" box until this is filled. `make.sh --final` refuses to finish while that box remains, so the emails cannot go out with it.
-- Prompts: Why did you make this program? What does an ordinary good day of play and talk look like? What do you want a parent to know on day 1?
+## Slot 1. Welcome note (optional)
+- **Replaces:** `NOTES.welcome` (60–120 words).
+- **Prints:** the welcome email (`emails/day-00-welcome.*`) and the "A note before you start" page of the workbook and paperback.
+- **Current brand text** starts: "We made this program for ordinary days…"
+- Prompts: Why does this program exist? What does an ordinary good day of play and talk look like? What should a parent know on day 1?
 
 ```
 _______________________________________________
 _______________________________________________
+```
+
+## Slot 2. Day 30 goodbye (optional)
+- **Replaces:** `NOTES.day30` (40–80 words). Prints only in the Day 30 email.
+- **Current brand text** starts: "Thirty days ago you started by noticing one ordinary day…"
+
+```
 _______________________________________________
 ```
 
-## 2. Day 30 goodbye (email only)
+## Slot 3. Sales page note (optional)
+- **Replaces:** `NOTES.sales`, now `'skip'` (no section prints). 40–80 words if you ever add one.
 
-- `FOUNDER.day30Note`, 40–80 words. It prints only in the Day 30 email; the email gate above applies.
+## Slot 4. Email sign-off (optional)
+- **Replaces:** `NOTES.signoff`, now "The Play Before Pixels team".
 
-## 3. Sales page note (optional)
-
-- **Prints:** a "A note from us" section on `sales-page.html`. Nothing prints while it is empty (or set to `'skip'`).
-- **Type it in:** `FOUNDER.salesNote`, 40–80 words. No reviews here until after the founding beta, with written permission, and never about speech, development or behavior results.
-
-## 4. Email sign-off
-
-- `FOUNDER.signoff`. Empty means "The Play Before Pixels team".
-
-## 5. Paperback ISBN (copyright page)
-
-- **Prints:** p2 of `paperback/course-screen-reset-kdp-interior.pdf`, as a plain line "ISBN 978-…". Nothing prints while it is empty.
-- **Type it in:** `build/workbook.js`, `const ISBN_PAPERBACK = '';` near the top.
-- The line is optional on KDP (UNVERIFIED). Settle the ISBN route first (owned vs KDP free; see ops/PRE-MORTEM.md).
-
-## 6. Barcode area (back cover)
-
-- `paperback/course-screen-reset-kdp-cover.pdf` keeps a plain white 2 × 1.2 in area at the lower right of the back cover, with no label or outline. KDP prints its own barcode there (UNVERIFIED: check the position against KDP's cover template before upload).
+## Not needed from you
+- **Paperback ISBN:** KDP editions use Amazon's free KDP ISBN (business/DECISIONS.md). KDP assigns it; nothing to type in. An ISBN line on the copyright page is optional (`ISBN_PAPERBACK` in `build/workbook.js`, left empty).
+- **Barcode area:** the back cover keeps a plain white 2 × 1.2 in area at the lower right; KDP prints its own barcode there (UNVERIFIED: check the position against KDP's cover template before upload).
+- **Beta or outreach:** none. There is no founding beta and no direct outreach to families; the program sells only through its listing, the free starter's email sequence and the site.

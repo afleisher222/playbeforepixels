@@ -503,3 +503,8 @@ svg.arr { display: inline-block; width: 1em; height: .64em; flex: none; align-se
   .ruler .scale::before { height: 10px; }
   .ruler .band-l span small { display: inline; margin-left: 6px; }
 }
+
+/* Review fix: on phones the copyright line stacks under the lockup instead of squeezing beside it. */
+@media (max-width: 560px) {
+  .f-base .brandline { flex-direction: column; align-items: flex-start; gap: 10px; }
+}

@@ -25,7 +25,7 @@ const coverInner = (pad = 0) => `<div class="cv" style="padding:${60 + pad}px ${
   <div class="sub">${esc(K.SUB)}</div>
   <div class="scene">${sceneSvg(sceneCover, '', '20 150 560 360')}</div>
   <div class="strip"><span><b>30</b> short lessons</span><span><b>30</b> easy plays</span><span><b>30</b> plain-word scripts</span></div>
-  <div class="ages">For families with children aged 1 to 12</div>
+  <div class="ages">For families with children aged 1 to 5</div>
   <div class="logo"><img src="${LOGO}" alt="Play Before Pixels"></div>
 </div>`;
 const coverCss = `.cv{width:100%;height:100%;background:${C.tSun};display:flex;flex-direction:column;align-items:center;text-align:center}
@@ -55,7 +55,7 @@ write('cover.html', base(768, 960, coverCss) + coverInner());
       <li><b>38 scripts</b> for tricky moments, plus trackers, planning pages and a family plan</li>
       <li><b>No banning.</b> Screens get a steady spot in the day and are never a reward or a punishment</li>
     </ul>
-    <p class="note">For families with children aged 1 to 12. Black-and-white interior. Parent education, not medical advice.</p>
+    <p class="note">For families with children aged 1 to 5. Black-and-white interior. Parent education, not medical advice.</p>
     <div class="series"><b>Free bonus inside:</b> color trackers, a certificate to print and a monthly play email at ${BONUS}</div>
     <div class="series"><b>Collect the Play Before Pixels shelf</b><span>100 Screen-Free Plays · The Day the Tablet Slept · Up! Go! More!</span></div>
     <div class="bot"><div><img src="${LOGO}" alt="Play Before Pixels"><div class="site">${SITE}</div></div><div class="isbn" aria-hidden="true"></div></div>
@@ -102,7 +102,7 @@ write('cover.html', base(768, 960, coverCss) + coverInner());
   write('start-here.html', base(816, 1056, css) + `<section class="page">
     <div class="top"><div class="kick">${esc(K.TITLE)}</div><img src="${LOGO}" alt="Play Before Pixels"></div>
     <h1>Start here</h1>
-    <p class="lead">Thank you for joining. Your first lesson arrives by email tomorrow morning. This page tells you what’s in your download and how to print it. Setup takes about two minutes.</p>
+    <p class="lead">Thank you for joining. Your first lesson arrives by email tomorrow. This page tells you what’s in your download and how to print it. Setup takes about two minutes.</p>
     <table><tr><th>File</th><th>What it is</th></tr>${files.map(([a, b]) => `<tr><td><b>${a}</b></td><td>${b}</td></tr>`).join('')}</table>
     <h3>Your 2-minute setup</h3>
     <ul><li>Open the workbook that matches your paper (US Letter or A4). Print pages 6–10: the planning pages and the tracker.</li><li>Fill a play basket with 5–8 things you already have (workbook page 8).</li><li>Choose a phone parking spot for your own phone.</li></ul>
@@ -110,7 +110,7 @@ write('cover.html', base(768, 960, coverCss) + coverInner());
     <ul><li>Print at “Actual size” or 100%. Ordinary printer paper is fine; card stock is nice for the tracker and certificate.</li><li>To save ink, print the Low-ink edition. Your child can color the line drawings.</li><li>Any copy shop can print it. Laminate the tracker and use a dry-erase marker to reuse it.</li><li>On a phone or tablet, open the PDF in the free Adobe Acrobat Reader app to type into it.</li></ul>
     <h3>What you can type into</h3>
     <p>In free Acrobat Reader: the planning pages, the blank tracker, the daily notes, the check-ins, your family plan, the certificate and the blank play pages. Lessons, plays and the pre-filled tracker are fixed text. Save a copy to keep your notes.</p>
-    <div class="box"><b>Emails:</b> one lesson each morning for 30 days. Pause or change the time from the link in any email. Missed one? Nothing breaks: every lesson is also in the workbook. <b>Guarantee:</b> not right for your family? Email us within ${K.REFUND.days} days of purchase for a full refund, as long as you’ve completed no more than ${K.REFUND.maxDone} of the lessons.</div>
+    <div class="box"><b>Emails:</b> one lesson a day for 30 days. Missed one? Nothing breaks: every lesson is also in the workbook. <b>Guarantee:</b> not right for your family? ${K.REFUND.terms[0].toUpperCase() + K.REFUND.terms.slice(1)}. ${K.REFUND.after}.</div>
     <div class="foot"><span>${COPY} For the purchasing household; please share the link, not the file.</span><span>${SITE} · ${K.VERSION}</span></div>
   </section>`);
 }
@@ -182,7 +182,7 @@ for (const [key, w, h] of [['letter', 8.5, 11], ['a4', 8.27, 11.69]]) {
     <div class="book sh"><img src="../cover.png"></div>
     <div class="pg p1 sh"><img src="${PV(22)}"></div><div class="pg p2 sh"><img src="${PV(23)}"></div>
     <div class="phone sh"><div class="scr"><img src="dbg/email-shot.png"></div></div>
-    <div class="tag">30 lessons by email + a printable workbook<small>Written program · no videos, calls or coaching · paperback on Amazon</small></div></div>`);
+    <div class="tag">30 lessons by email + a printable workbook<small>Written program · no videos, calls or coaching · go at your own pace</small></div></div>`);
 }
 
 // ---------------------------------------------------------------- listing images (2000 x 2000)
@@ -214,7 +214,7 @@ L(2, 'whats-inside', `<div class="k">What’s inside</div><h1>Everything for<br>
 
 L(3, 'how-it-works', `<div class="k">How it works</div><h1>One small step<br>a day</h1>
   <div style="display:flex;gap:40px;margin-top:70px">
-  ${[['book', C.tSky, 'Read', 'A short lesson lands in your inbox each morning.'], ['ball', C.tGrass, 'Play', 'One easy play with things you already have.'], ['hand', C.tTomato, 'Say', 'Plain words for one tricky moment.']].map(([a, t, h, s]) => `<div style="flex:1;background:#fff;border-radius:40px;padding:50px;text-align:center">${artDisc(a, t, 3.2, 'margin:0 auto')}<div class="bric" style="font-size:78px;margin:26px 0 10px">${h}</div><div style="font-size:38px;line-height:1.35">${s}</div></div>`).join('')}
+  ${[['book', C.tSky, 'Read', 'A short lesson lands in your inbox each day.'], ['ball', C.tGrass, 'Play', 'One easy play with things you already have.'], ['hand', C.tTomato, 'Say', 'Plain words for one tricky moment.']].map(([a, t, h, s]) => `<div style="flex:1;background:#fff;border-radius:40px;padding:50px;text-align:center">${artDisc(a, t, 3.2, 'margin:0 auto')}<div class="bric" style="font-size:78px;margin:26px 0 10px">${h}</div><div style="font-size:38px;line-height:1.35">${s}</div></div>`).join('')}
   </div>
   <div style="margin-top:70px;display:flex;flex-wrap:wrap"><span class="pill">No videos</span><span class="pill">No calls or coaching</span><span class="pill">Go at your own pace</span><span class="pill">Nothing to buy</span></div>${SC(1, 'right:110px;bottom:60px;width:620px;height:528px')}`, C.tSky);
 
@@ -228,9 +228,9 @@ L(5, 'trackers-and-plans', `<div class="k">Trackers and planning pages</div><h1>
   <div class="pg sh" style="left:1260px;top:660px;width:620px;height:802px;transform:rotate(5deg)"><img src="${PV(82)}"></div>
   <p class="lead" style="position:absolute;left:130px;top:1560px;width:1740px;font-size:38px">Our ordinary day · Our screen spot · Play basket · 30-day tracker · weekly check-ins · family plan · certificate to put on the fridge</p>`, C.tGrass);
 
-L(6, 'ages-and-safety', `<div class="k">Ages 1 to 12</div><h1>One plan for<br>the whole family</h1>
+L(6, 'ages-and-safety', `<div class="k">Ages 1 to 5</div><h1>One plan for<br>the whole family</h1>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:40px;font-size:38px;line-height:1.35">
-  ${[['sprout', 'A starting age on every play', 'From 6 months to big kids, with an easier and a harder version.'], ['people', 'Siblings and twins', 'Boxes for toddlers, school-age kids and mixed ages every week.'], ['bolt', 'Tired-grown-up versions', 'Every play has a 2-minute, no-setup version.'], ['shield', 'Every play follows our published safety rules', 'A grown-up is always there. Tube test for under-3s. No balloons for under-8s.']].map(([i, t, s]) => `<div style="background:#fff;border-radius:36px;padding:44px"><div style="font-size:80px;color:${C.tomato}">${ico(i)}</div><div class="bric" style="font-size:50px;margin:10px 0">${t}</div>${s}</div>`).join('')}
+  ${[['sprout', 'A starting age on every play', 'Starting ages from 6 months to 4 years, with an easier and a harder version.'], ['people', 'Siblings and twins', 'Boxes for toddlers, preschoolers and mixed ages every week.'], ['bolt', 'Tired-grown-up versions', 'Every play has a 2-minute, no-setup version.'], ['shield', 'Every play follows our published safety rules', 'A grown-up is always there. Tube test for under-3s. No balloons for under-8s.']].map(([i, t, s]) => `<div style="background:#fff;border-radius:36px;padding:44px"><div style="font-size:80px;color:${C.tomato}">${ico(i)}</div><div class="bric" style="font-size:50px;margin:10px 0">${t}</div>${s}</div>`).join('')}
   </div>
   <p style="font-size:32px;margin-top:40px;color:#3A4660;max-width:1080px">Parent education, not medical advice. Every child grows on their own timeline; for questions about development, talk with your pediatrician.</p>${SC(4, 'right:110px;bottom:40px;width:520px;height:443px')}`, C.tSun);
 
@@ -268,9 +268,9 @@ L(8, 'guarantee-and-bundle', `<div class="k">Simple pricing</div><h1>$27, or $49
   const faq = K.FAQ.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('');
   write('sales-page.html', base(1280, 800, css) + `
 <section class="hero"><div class="wrap"><div>
-  <div class="k">A written program for families with children aged 1 to 12</div>
+  <div class="k">A written program for families with children aged 1 to 5</div>
   <h1 style="font-size:60px;white-space:nowrap">30 Days of<br>Back-and-Forth</h1>
-  <p class="lead">More play and talk, with screens in a steady spot. One short lesson, one easy play and plain words for one tricky moment, every morning for 30 days.</p>
+  <p class="lead">More play and talk, with screens in a steady spot. One short lesson, one easy play and plain words for one tricky moment, every day for 30 days.</p>
   <p><a class="btn" href="{{program_checkout_link}}">Start the 30 days · $27</a><a class="quiet" href="#inside">See what’s inside</a></p>
   <p style="font-size:15px;color:#3A4660">${K.REFUND.short} (<a href="#guarantee" style="color:#3A4660">terms</a>) · no videos, calls or coaching · nothing to buy</p>
 </div><div><img src="../mockup.png" alt="30 Days of Back-and-Forth cover, two workbook pages and a phone showing a lesson email"></div></div></section>
@@ -278,8 +278,8 @@ L(8, 'guarantee-and-bundle', `<div class="k">Simple pricing</div><h1>$27, or $49
 <section><div class="wrap">
   <div class="k">How it works</div><h2>Three minutes to read. One play to try.</h2>
   <div class="g3">
-    <div class="card"><h3>Read</h3><p>A short lesson arrives each morning. Each one is under 300 words and ends with one small step.</p></div>
-    <div class="card"><h3>Play</h3><p>One easy play with things you already have, with a version for little ones, big kids and tired grown-ups.</p></div>
+    <div class="card"><h3>Read</h3><p>A short lesson arrives each day. Each one is under 300 words and ends with one small step.</p></div>
+    <div class="card"><h3>Play</h3><p>One easy play with things you already have, with a version for toddlers, preschoolers and tired grown-ups.</p></div>
     <div class="card"><h3>Say</h3><p>Plain words for one tricky moment: the show that won’t end, “I’m bored”, the hour before dinner.</p></div>
   </div>
   <p style="margin-top:22px">We don’t ban anything. Screens get a steady spot in the day, the same time and the same ending, and they’re never a prize or a punishment. The rest of the day fills up with ordinary play.</p>
@@ -301,7 +301,7 @@ L(8, 'guarantee-and-bundle', `<div class="k">Simple pricing</div><h1>$27, or $49
 </div></section>
 
 <section><div class="wrap two">
-  <div><div class="k">It covers</div><h2>The moments that are actually hard</h2><p>Ending screen time kindly. Mornings. The hour before dinner. Big feelings. Waiting rooms and car rides. Grown-up phones. Big kids who say “everyone else gets to”. Siblings and twins. Grandparents and sitters. Sick days and travel days.</p></div>
+  <div><div class="k">It covers</div><h2>The moments that are actually hard</h2><p>Ending screen time kindly. Mornings. The hour before dinner. Big feelings. Waiting rooms and car rides. Grown-up phones. “That’s not fair!” Siblings and twins. Grandparents and sitters. Sick days and travel days.</p></div>
   <div><div class="k">Is it for us?</div><h2>Good fit if…</h2><p>You want calmer days without banning screens. You like reading more than watching videos. You want ideas that use what you already have.</p><p><b>Not a fit if</b> you’re looking for treatment, a diagnosis or personal advice about your child. It’s parent education. For questions about development, talk with your pediatrician.</p></div>
 </div></section>
 
@@ -311,13 +311,13 @@ L(8, 'guarantee-and-bundle', `<div class="k">Simple pricing</div><h1>$27, or $49
     <div class="price"><h3>The program</h3><div class="pp">$27</div><p>30 lessons by email, the full workbook, scripts bank and certificate.</p><a class="btn" href="{{program_checkout_link}}">Start the 30 days</a></div>
     <div class="price b"><h3>The 30 Days of Back-and-Forth Bundle</h3><div class="pp">$49</div><p>The program plus the Play-First Family Kit, 100 Screen-Free Plays (printable) and 150 “I’m Bored” Play Cards. $54.49 if bought separately.</p><a class="quiet" style="margin:0" href="{{bundle_checkout_link}}">Choose the bundle <svg viewBox="0 0 24 24" width=".9em" height=".9em" style="vertical-align:-.1em" aria-hidden="true"><path d="M3 12h16M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
   </div>
-  <p style="margin-top:18px;font-size:16px">Prefer paper? The whole program is also a black-and-white paperback on Amazon.</p>
+  <p style="margin-top:18px;font-size:16px">Prefer paper? Print the workbook at home in color or low-ink, in US Letter or A4.</p>
 </div></section>
 
-<section class="guar" id="guarantee"><div class="wrap"><div class="k">Our guarantee</div><h2>${K.REFUND.days} days, full refund</h2><p class="lead">If the program isn’t right for your family, ${K.REFUND.terms}. The full terms are in our <a href="/shipping-returns/" style="color:${C.ink}">refund policy</a>.</p></div></section>
+<section class="guar" id="guarantee"><div class="wrap"><div class="k">Our guarantee</div><h2>${K.REFUND.days} days, full refund</h2><p class="lead">If the program isn’t right for your family, ${K.REFUND.terms}. ${K.REFUND.after}. ${K.REFUND.files}. The full terms are in our <a href="/shipping-returns/" style="color:${C.ink}">refund policy</a>.</p></div></section>
 
 <section><div class="wrap">
-  ${K.FOUNDER.salesNote && K.FOUNDER.salesNote !== 'skip' ? `<div class="k">A note from us</div><p class="lead">${esc(K.FOUNDER.salesNote)}</p>` : ''}
+  ${K.NOTES.sales && K.NOTES.sales !== 'skip' ? `<div class="k">A note from us</div><p class="lead">${esc(K.NOTES.sales)}</p>` : ''}
 </div></section>
 
 <section class="faq" style="padding-top:20px"><div class="wrap"><div class="k">Questions</div><h2>Questions parents ask</h2>${faq}</div></section>

@@ -31,7 +31,7 @@ Lie down on the floor and pretend to be a sleeping lion. Your child tiptoes clos
 **Talk while you play (Pause and wait):** “Shhh… the lion is sleeping… (wait) … ROAR!”
 
 - **Make it easier:** Pretend to snore and let your toddler wake you with a pat.
-- **Make it harder:** Big kids play “statues”: you open your eyes and anyone moving has to freeze.
+- **Make it harder:** Preschoolers play “statues”: you open your eyes and anyone moving has to freeze.
 - **Tired-grown-up version (2 minutes):** Just lie there and snore. That’s the whole play.
 - **Safety:** Play on a soft rug away from furniture edges. Keep the roar soft, tickle only if your child enjoys it, and stop the moment your child says or shows stop.
 
@@ -55,4 +55,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

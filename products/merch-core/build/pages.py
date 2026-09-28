@@ -166,21 +166,21 @@ for i, (slug, name, hexc, tone) in enumerate(GARMENTS):
 lst['listing-02'] = ('Colors', f'''<div style="position:absolute;inset:0;background:var(--wash)"></div>
 <div class="pad" style="top:120px"><div class="kick">4 colors</div><h2 class="disp" style="margin-top:24px">Pick your color</h2></div>
 {tiles}
-<p class="small pad" style="top:1832px;margin:0">Light colors print the ink logo. Navy prints the white logo. The ball is tomato on every color.</p>''')
+<p class="small pad" style="top:1832px;margin:0">Light colors print the ink logo. Navy prints the white logo.</p>''')
 
 step3 = ''.join(f'''<div class="lay" style="left:{130+i*590}px;top:1300px;width:560px;height:430px;background:#2A3752;border-radius:36px;padding:56px 50px;color:#fff">
-<svg width="200" height="60" viewBox="0 0 200 60"><rect x="0" y="4" width="16" height="52" rx="3" fill="#fff"/>{ball}</svg>
+<div style="width:60px;height:8px;border-radius:4px;background:{c}"></div>
 <div class="disp" style="font-size:78px;margin-top:34px">{h}</div>
-<div style="font-size:44px;line-height:1.35;margin-top:14px;color:#C9D2E0">{t}</div></div>''' for i, (ball, h, t) in enumerate([
-    ('<circle cx="60" cy="30" r="22" fill="#EE5A36"/><path d="M92 30H150" stroke="#EE5A36" stroke-width="6" stroke-dasharray="10 9"/>', 'Serve', 'A grown-up says something.'),
-    ('<circle cx="120" cy="30" r="22" fill="#EE5A36"/><path d="M34 30H86" stroke="#C9D2E0" stroke-width="6" stroke-dasharray="4 10"/>', 'Pause', 'The gap gives a child a turn.'),
-    ('<circle cx="176" cy="30" r="22" fill="#EE5A36"/><path d="M150 30H40" stroke="#F5B820" stroke-width="6" stroke-dasharray="10 9"/>', 'Return', 'The child answers.')]))
+<div style="font-size:44px;line-height:1.35;margin-top:14px;color:#C9D2E0">{t}</div></div>''' for i, (c, h, t) in enumerate([
+    ('#3D86D8', 'A seal', 'Like the stamp on a good wooden toy.'),
+    ('#EE5A36', 'A top', 'One of the oldest toys there is.'),
+    ('#F5B820', 'Play first', 'It needs nothing but a hand.')]))
 lst['listing-03'] = ('The idea', f'''<div style="position:absolute;inset:0;background:var(--ink)"></div>
 <div class="pad" style="top:120px;color:#fff"><div class="kick" style="color:var(--sun)">The idea behind the logo</div>
-<h2 class="disp" style="margin-top:28px;font-size:132px">The ball comes back.</h2></div>
+<h2 class="disp" style="margin-top:28px;font-size:132px">Play comes first.</h2></div>
 <div class="lay" style="left:130px;top:520px;width:1040px">
-<p class="sub" style="color:#fff;font-size:56px">Our mark is the P of Play. A ball comes back to close it, like the serve and return of talk and play: a grown-up says something, and a child answers.</p>
-<p class="sub" style="color:#C9D2E0;margin-top:40px;font-size:50px">The small gap before the ball is the pause that gives the child a turn.</p></div>
+<p class="sub" style="color:#fff;font-size:56px">Our logo is a maker’s seal, like the stamp pressed into the bottom of a good wooden toy.</p>
+<p class="sub" style="color:#C9D2E0;margin-top:40px;font-size:50px">In the middle is a spinning top. It is one of the oldest toys there is, and it needs nothing but a child’s hand.</p></div>
 <img src="{B}../../brand/logo/mark-reverse.svg" style="position:absolute;left:1340px;top:470px;width:470px">
 {step3}
 <img class="brand" src="{LOGO(B, '-reverse')}">''')
@@ -317,7 +317,7 @@ HT_CSS = """.page{width:2.25in;height:3.75in;position:relative;overflow:hidden;p
 """
 front = f'''<div class="page" style="background:var(--sun)"><div class="safe" style="display:flex;flex-direction:column;align-items:center">
 <div style="width:.2in;height:.2in;border-radius:50%;border:1px dashed rgba(29,41,64,.35);margin-top:.02in"></div>
-<img src="../../brand/logo/lockup-stacked.svg" style="width:1.55in;margin-top:.62in">
+<img src="../../brand/logo/lockup-stacked.svg" style="width:1.05in;margin-top:.4in">
 <div style="position:absolute;bottom:.02in;text-align:center;width:100%">
 <div class="kick" style="font-size:6.2pt;color:var(--ink)">Adult unisex tee</div>
 <div class="t" style="margin-top:2pt;font-weight:700">Play Before Pixels™</div></div></div></div>'''
@@ -329,8 +329,8 @@ def back(site):
            '''<div class="t" style="margin-top:.12in"><b>Care:</b> machine wash cold, inside out. Tumble dry low. Don’t iron the print.</div>''')
     return f'''<div class="page" style="background:#fff"><div class="safe">
 <div style="width:.2in;height:.2in;border-radius:50%;border:1px dashed rgba(29,41,64,.35);margin:.02in auto 0"></div>
-<div class="disp" style="font-size:13pt;line-height:1.02;margin-top:.1in">The ball<br>comes back.</div>
-<div class="t" style="margin-top:.07in">Our mark is the P of Play. A ball comes back to close it, like the serve and return of talk and play. The small gap is the pause that gives a child a turn.</div>
+<div class="disp" style="font-size:13pt;line-height:1.02;margin-top:.1in">Play comes<br>first.</div>
+<div class="t" style="margin-top:.07in">Our logo is a maker’s seal, like the stamp on a good wooden toy. The spinning top in the middle is one of the oldest toys there is. It needs nothing but a child’s hand.</div>
 {mid}
 <div style="position:absolute;bottom:0;left:0;right:0">
 <div class="t" style="font-size:5.4pt;color:var(--muted)">Printed on demand for you.<br>© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.<br>{VERSION} · {'site' if site else 'marketplace'} edition</div></div></div></div>'''

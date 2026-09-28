@@ -18,7 +18,7 @@ This does two things. It tells your child “I heard you”, which makes them wa
 
 If your child says a word in a way that isn’t quite right, don’t correct them. Just say it back the right way, warmly: “Nana!” “Yes, banana. A yellow banana.” They hear the model without feeling wrong.
 
-For big kids, it becomes “tell me more”: “You had a weird day. What was the weirdest part?”
+For preschoolers, it becomes “tell me more”: “You went down the big slide? What happened at the bottom?”
 
 Talk in the language you know best. The richest talk is the talk that feels natural to you.
 
@@ -33,7 +33,7 @@ Look at a picture together. Your child says one thing about it, you repeat it an
 **Talk while you play (Repeat and add one):** “Cat.” “A sleepy cat!” “Sleepy cat in a hat!”
 
 - **Make it easier:** Name one picture and add one word: “Dog.” “Big dog.”
-- **Make it harder:** Big kids build a story chain, one sentence each, with a twist every third turn.
+- **Make it harder:** Preschoolers build a story with you, one sentence each, and add a silly twist.
 - **Tired-grown-up version (2 minutes):** Say one word each about the picture and stop there.
 - **Safety:** Use sturdy board books with young children; paper pages can tear into mouth-sized bits.
 
@@ -57,4 +57,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

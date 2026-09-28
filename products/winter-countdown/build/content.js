@@ -196,7 +196,7 @@ const HEAD = ['sky', 'plum', 'grass', 'sky', 'tomato', 'plum'];
 // BANNED scans the play text a child hears or a grown-up follows (not the safety lines, which name hazards on purpose).
 PLAYS.forEach((p, i) => {
   p.n = i + 1;
-  p.age = p.from >= 36 ? '3+' : '2+';
+  p.age = require('../../bundle-gift-1-5/build/shared/kit.js').ageFrom(p.from);
   for (const k of ['t', 'art', 'needs', 'how', 'talk', 'move', 'easy', 'hard', 'two', 'safe']) if (!p[k]) throw new Error(`Day ${p.n}: missing ${k}`);
   if (!MOVES[p.move]) throw new Error(`Day ${p.n}: unknown talk move ${p.move}`);
   if (p.prep > p.time) throw new Error(`Day ${p.n}: prep is longer than play (CUSTOMER-VOICE rule 12)`);
@@ -205,7 +205,7 @@ PLAYS.forEach((p, i) => {
 if (PLAYS.length !== 24) throw new Error('Expected 24 plays, got ' + PLAYS.length);
 const NOBUY = PLAYS.filter(p => !p.buy).length;
 if (NOBUY / PLAYS.length < 0.7) throw new Error('Fewer than 70% of plays need nothing to buy (CUSTOMER-VOICE rule 13)');
-const BANNED = /\b(christmas|xmas|santa|advent|hanukkah|chanukah|kwanzaa|solstice|yule|nativity|elf|elves|reindeer|church|prayer|candles?|balloons?|marshmallows?|popcorn|grapes?|nuts|hard candy|scarf|scarves|gifts?|presents?)\b/i;
+const BANNED = /\b(christmas|xmas|santa|advent|hanukkah|chanukah|kwanzaa|solstice|yule|nativity|elf|elves|reindeer|church|prayer|candles?|balloons?|cords?|strings?|ribbons?|yarn|twine|ropes?|tinsel|marshmallows?|popcorn|grapes?|nuts|hard candy|scarf|scarves|gifts?|presents?)\b/i;
 for (const p of PLAYS) {
   const txt = [p.t, p.needs, p.how, p.talk, p.easy, p.hard, p.two].join(' ');
   const m = txt.match(BANNED);

@@ -10,7 +10,7 @@ send: "day 23, 7:00 local time"
 
 **Cars, buses and trains are some of the best places to talk, because nobody has to look at anybody.**
 
-The car (or bus, or train) is one of the best talking places in family life. Everyone is side by side, nobody has to make eye contact, and there’s always something going past the window. Big kids especially tend to open up in the car.
+The car (or bus, or train) is one of the best talking places in family life. Everyone is side by side, nobody has to make eye contact, and there’s always something going past the window.
 
 Try a few quiet minutes with no screens and see what happens. Start with a game: count cows, spot yellow cars, sing a song with a silly ending, tell a story one sentence each.
 
@@ -31,7 +31,7 @@ Pick someone or something you pass: a dog, a truck, a person with an umbrella. M
 **Talk while you play (Repeat and add one):** “That truck is going to… the moon! With a cargo of… cheese!”
 
 - **Make it easier:** Name what goes by: “Bus! Big bus. Bye, bus!”
-- **Make it harder:** Big kids keep a travel tally of things they spot and turn it into a chart at home.
+- **Make it harder:** Preschoolers keep a travel tally of red cars or dogs with marks on paper, and count them at home.
 - **Tired-grown-up version (2 minutes):** Sing one song together and look out the window.
 - **Safety:** Everyone stays buckled in their car seat or seat belt. Grown-up drivers keep their eyes on the road; play is for passengers.
 
@@ -55,4 +55,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

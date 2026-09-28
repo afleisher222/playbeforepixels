@@ -31,7 +31,7 @@ Help your child ask a grandparent or older friend three questions: What did you 
 **Talk while you play (Repeat and add one):** “Grandpa played with a box too! What did he make?”
 
 - **Make it easier:** Look at an old family photo and name the people and things in it.
-- **Make it harder:** Big kids write a letter back with their own answers and mail it.
+- **Make it harder:** Preschoolers draw a picture letter back and help mail it.
 - **Tired-grown-up version (2 minutes):** Ask one question on a short call and draw the answer.
 - **Safety:** No cords or strings near young children. Grown-ups hold phones on speaker for little ones.
 
@@ -55,4 +55,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

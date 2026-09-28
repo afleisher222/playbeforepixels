@@ -33,7 +33,7 @@ Walk slowly through your home or down the street together. Stop wherever your ch
 **Talk while you play (Say what you see):** “You’re looking at the truck. Big truck. Beep, beep!”
 
 - **Make it easier:** Carry your child and stop at just three things.
-- **Make it harder:** Big kids lead the walk and describe things you have to guess: “It’s round and it ticks.”
+- **Make it harder:** Preschoolers lead the walk and describe something for you to guess: “It’s round and it’s red.”
 - **Tired-grown-up version (2 minutes):** Sit by a window for two minutes and name what goes by.
 - **Safety:** Hold hands near roads and driveways. Keep little fingers away from outlets and anything hot.
 
@@ -57,4 +57,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

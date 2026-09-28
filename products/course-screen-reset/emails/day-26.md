@@ -12,7 +12,7 @@ send: "day 26, 7:00 local time"
 
 If you have more than one child, the plan has to work for everyone at once. Here are some ideas that help.
 
-Keep one shared screen spot. Separate spots for each child are hard to keep up with and invite arguments. If an older child has homework on a device, that is school time, not the screen spot, and can happen at a different table.
+Keep one shared screen spot. Separate spots for each child are hard to keep up with and invite arguments.
 
 Give roles, not just turns. In a pretend restaurant, one child is the chef, one is the waiter, one is the customer. In a block game, one builds and one decorates. Roles let different ages play together without constant competition.
 
@@ -20,7 +20,7 @@ Protect a little one-on-one time. Even five minutes alone with each child, doing
 
 Twins and close-in-age siblings often need their own basket or their own “first pick”. Take turns being first.
 
-And let older children help younger ones, if they want to. Being the expert makes big kids proud.
+And let an older sibling help a younger one, if they want to. Being the expert makes children proud.
 
 **Today’s one small step:** Try one play today where each child has a different role.
 
@@ -33,7 +33,7 @@ Turn the table into a restaurant. Give each child a role: chef, waiter, customer
 **Talk while you play (Follow their lead):** “Welcome! What would you like today? … Pancakes? Coming right up!”
 
 - **Make it easier:** Toddlers are customers who choose between two foods.
-- **Make it harder:** Big kids write a menu with prices and add up the bill.
+- **Make it harder:** Preschoolers draw a menu and count out pretend money for the bill.
 - **Tired-grown-up version (2 minutes):** Be the customer who is “very, very hungry” and just order things.
 - **Safety:** Pretend cooking only; the stove stays off. Real snacks are toddler-safe foods; check for food allergies first.
 
@@ -57,4 +57,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

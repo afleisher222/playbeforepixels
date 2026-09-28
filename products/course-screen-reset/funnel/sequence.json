@@ -16,7 +16,7 @@
     "{{program_checkout_link}}": "checkout for the $27 program",
     "{{bundle_checkout_link}}": "checkout for the $49 bundle",
     "{{starter_download_link}}": "the free starter PDF",
-    "[BUSINESS MAILING ADDRESS]": "the USPS PO Box from legal/ENTITY.md (CAN-SPAM); founder enters it once in the platform footer"
+    "{{business_mailing_address}}": "the public business mailing address from legal/ENTITY.md (a USPS PO Box; CAN-SPAM). Most platforms insert it from the account settings: map this tag to that field, or to the platform footer"
   },
   "emails": [
     {

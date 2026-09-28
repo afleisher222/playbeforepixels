@@ -1,5 +1,5 @@
 {
- "built": "2026-09-28T13:42:08.029Z",
+ "built": "2026-09-28T14:28:59.516Z",
  "preview": false,
  "pages": [
   "/",
@@ -39,14 +39,12 @@
   "/shop/ages/0-1/",
   "/shop/ages/1-3/",
   "/shop/ages/3-5/",
-  "/shop/board-up-go-more/",
   "/shop/books/",
   "/shop/bored-play-cards/",
   "/shop/bundles/",
   "/shop/gift-reveal-coupons/",
   "/shop/guide-100-plays/",
   "/shop/picture-laps-not-apps/",
-  "/shop/picture-tablet-slept/",
   "/shop/play-first-family-kit/",
   "/shop/play-talk-cards/",
   "/shop/printables/",
@@ -57,10 +55,14 @@
   "/terms/",
   "/thank-you/"
  ],
- "indexable": 33,
- "redirects": 17,
+ "indexable": 31,
+ "redirects": 35,
  "printedChecked": 32,
  "hidden": [
+  {
+   "slug": "board-up-go-more",
+   "why": "listing status: held"
+  },
   {
    "slug": "bored-play-cards",
    "why": "replaced on the site by its ages 0–5 listing"
@@ -83,15 +85,19 @@
   },
   {
    "slug": "merch-core-more-talk-tee",
-   "why": "listing status: files-ready"
+   "why": "not described in site/config.json yet (add it to show it)"
   },
   {
    "slug": "merch-core-tote",
-   "why": "listing status: bundle-add-on-only"
+   "why": "not described in site/config.json yet (add it to show it)"
   },
   {
    "slug": "picture-more-talk-less-tap",
    "why": "listing status: held-pending-counsel"
+  },
+  {
+   "slug": "picture-tablet-slept",
+   "why": "listing status: held"
   },
   {
    "slug": "play-first-family-kit",
@@ -102,5 +108,8 @@
    "why": "Full ages 0–12 edition: held until counsel's G1 answer (listing status held-until-g1). The site shows the 0–5 edition (visual-routine-cards-0-5)."
   }
  ],
- "warnings": []
+ "warnings": [
+  "merch-core-more-talk-tee: new listing has no site/config.json entry, so it is not shown",
+  "merch-core-tote: new listing has no site/config.json entry, so it is not shown"
+ ]
 }

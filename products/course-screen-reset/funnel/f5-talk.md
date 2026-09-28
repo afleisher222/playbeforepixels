@@ -25,7 +25,7 @@ Lean a book on a cushion to make a ramp. Hold the car at the top and say “Read
 **Talk while you play (Pause and wait):** “Ready… set… (wait) GO!”
 
 - **Make it easier:** Roll a ball back and forth, pausing before each push.
-- **Make it harder:** Big kids build a longer ramp and measure how far each car rolls.
+- **Make it harder:** Preschoolers build a longer ramp and mark where each car stops with a sock.
 - **Tired-grown-up version (2 minutes):** Play “ready, set, go” with tickles on the couch.
 - **Safety:** For under-3s, toy cars and balls must be too big to fit through a toilet-paper tube.
 
@@ -46,4 +46,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

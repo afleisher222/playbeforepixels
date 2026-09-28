@@ -1,0 +1,217 @@
+{
+  "platform": "Gumroad Workflows (UNVERIFIED feature names)",
+  "trigger": "purchase of 30 Days of Back-and-Forth or its bundle",
+  "note": "Paste each file into one workflow email, in order, with its delay. Replace {{business_mailing_address}} once, in every file, with the public mailing address from legal/ENTITY.md. Emails with the same delay go out together.",
+  "emails": [
+    {
+      "order": 1,
+      "file": "01-day-00-welcome.md",
+      "delay_days": 0,
+      "subject": "Welcome! Your workbook is inside"
+    },
+    {
+      "order": 2,
+      "file": "02-day-01.md",
+      "delay_days": 1,
+      "subject": "Day 1: Start with one ordinary day"
+    },
+    {
+      "order": 3,
+      "file": "03-day-02.md",
+      "delay_days": 2,
+      "subject": "Day 2: Why talk and play come first"
+    },
+    {
+      "order": 4,
+      "file": "04-day-03.md",
+      "delay_days": 3,
+      "subject": "Day 3: Give screens a steady spot"
+    },
+    {
+      "order": 5,
+      "file": "05-day-04.md",
+      "delay_days": 4,
+      "subject": "Day 4: Build a play basket"
+    },
+    {
+      "order": 6,
+      "file": "06-day-05.md",
+      "delay_days": 5,
+      "subject": "Day 5: The first ten minutes"
+    },
+    {
+      "order": 7,
+      "file": "07-day-06.md",
+      "delay_days": 6,
+      "subject": "Day 6: A kind ending for screen time"
+    },
+    {
+      "order": 8,
+      "file": "08-day-07.md",
+      "delay_days": 7,
+      "subject": "Day 7: Week 1: keep what worked"
+    },
+    {
+      "order": 9,
+      "file": "09-day-08.md",
+      "delay_days": 8,
+      "subject": "Day 8: Play first, screens in their spot"
+    },
+    {
+      "order": 10,
+      "file": "10-day-09.md",
+      "delay_days": 9,
+      "subject": "Day 9: Boredom is where play starts"
+    },
+    {
+      "order": 11,
+      "file": "11-day-10.md",
+      "delay_days": 10,
+      "subject": "Day 10: Kitchen time is play time"
+    },
+    {
+      "order": 12,
+      "file": "12-day-11.md",
+      "delay_days": 11,
+      "subject": "Day 11: Mornings without the scramble"
+    },
+    {
+      "order": 13,
+      "file": "13-day-12.md",
+      "delay_days": 12,
+      "subject": "Day 12: Outside counts"
+    },
+    {
+      "order": 14,
+      "file": "14-day-13.md",
+      "delay_days": 13,
+      "subject": "Day 13: Big feelings when screens end"
+    },
+    {
+      "order": 15,
+      "file": "15-day-14.md",
+      "delay_days": 14,
+      "subject": "Day 14: Tired days count too"
+    },
+    {
+      "order": 16,
+      "file": "16-day-15.md",
+      "delay_days": 15,
+      "subject": "Day 15: Pause and wait"
+    },
+    {
+      "order": 17,
+      "file": "17-day-16.md",
+      "delay_days": 16,
+      "subject": "Day 16: Say what you see"
+    },
+    {
+      "order": 18,
+      "file": "18-day-17.md",
+      "delay_days": 17,
+      "subject": "Day 17: Repeat and add one"
+    },
+    {
+      "order": 19,
+      "file": "19-day-18.md",
+      "delay_days": 18,
+      "subject": "Day 18: Offer a choice"
+    },
+    {
+      "order": 20,
+      "file": "20-day-19.md",
+      "delay_days": 19,
+      "subject": "Day 19: Follow their lead"
+    },
+    {
+      "order": 21,
+      "file": "21-day-20.md",
+      "delay_days": 20,
+      "subject": "Day 20: Sing, gesture and your own language"
+    },
+    {
+      "order": 22,
+      "file": "22-day-21.md",
+      "delay_days": 21,
+      "subject": "Day 21: Books, paper and pages"
+    },
+    {
+      "order": 23,
+      "file": "23-day-22.md",
+      "delay_days": 22,
+      "subject": "Day 22: Waiting without a screen"
+    },
+    {
+      "order": 24,
+      "file": "24-day-23.md",
+      "delay_days": 23,
+      "subject": "Day 23: Car rides and travel"
+    },
+    {
+      "order": 25,
+      "file": "25-day-24.md",
+      "delay_days": 24,
+      "subject": "Day 24: Grown-up phones"
+    },
+    {
+      "order": 26,
+      "file": "26-day-25.md",
+      "delay_days": 25,
+      "subject": "Day 25: Fairness and turns"
+    },
+    {
+      "order": 27,
+      "file": "27-day-26.md",
+      "delay_days": 26,
+      "subject": "Day 26: Siblings, twins and mixed ages"
+    },
+    {
+      "order": 28,
+      "file": "28-day-27.md",
+      "delay_days": 27,
+      "subject": "Day 27: Grandparents, sitters and other homes"
+    },
+    {
+      "order": 29,
+      "file": "29-day-28.md",
+      "delay_days": 28,
+      "subject": "Day 28: Tough days, sick days, travel days"
+    },
+    {
+      "order": 30,
+      "file": "30-day-29.md",
+      "delay_days": 29,
+      "subject": "Day 29: Look back: what did they ask for again?"
+    },
+    {
+      "order": 31,
+      "file": "31-day-30.md",
+      "delay_days": 30,
+      "subject": "Day 30: Your family’s plan"
+    },
+    {
+      "order": 32,
+      "file": "32-checkin-day-03.md",
+      "delay_days": 3,
+      "subject": "How are the first three days going?"
+    },
+    {
+      "order": 33,
+      "file": "33-checkin-day-10.md",
+      "delay_days": 10,
+      "subject": "Day 10: what’s working?"
+    },
+    {
+      "order": 34,
+      "file": "34-checkin-day-30.md",
+      "delay_days": 30,
+      "subject": "You finished! One question for you"
+    },
+    {
+      "order": 35,
+      "file": "35-day-31-whats-next.md",
+      "delay_days": 31,
+      "subject": "What’s next after your 30 days"
+    }
+  ]
+}

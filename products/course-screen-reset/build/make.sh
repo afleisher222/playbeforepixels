@@ -1,6 +1,6 @@
 #!/bin/sh
 # Rebuild every file for 30 Days of Back-and-Forth (folder slug course-screen-reset kept). Run from anywhere: sh products/course-screen-reset/build/make.sh [--final]
-# --final refuses to finish while any FOUNDER WRITES THIS placeholder is still in the emails or workbook.
+# --final refuses to finish if any placeholder ([FILL IN, [VERIFY, PLACEHOLDER) is left in the emails, funnel, workbook or sales page.
 set -e
 B="$(cd "$(dirname "$0")" && pwd)"; D="$(dirname "$B")"; R="$D/../../brand/render.js"
 cd "$B"
@@ -44,6 +44,6 @@ node "$R" png build/sales-page.html preview/sales-page.png 1280 0 1
 cp build/sales-page.html sales-page.html && sed -i 's#\.\./\.\./\.\./brand#../../brand#g; s#\.\./mockup.png#mockup.png#; s#\.\./preview/#preview/#g' sales-page.html
 ls -la downloads paperback/*.pdf
 if [ "$1" = "--final" ]; then
-  if grep -rl "FOUNDER WRITES THIS" emails source*.html paperback/source-kdp.html sales-page.html >/dev/null 2>&1; then echo "STOP: founder placeholders remain:"; grep -rl "FOUNDER WRITES THIS" emails source*.html paperback/source-kdp.html sales-page.html; exit 1; fi
+  if grep -rlE "FOUNDER WRITES THIS|\[FILL IN|PLACEHOLDER|\[VERIFY" emails funnel source*.html paperback/source-kdp.html sales-page.html >/dev/null 2>&1; then echo "STOP: placeholders remain:"; grep -rlE "FOUNDER WRITES THIS|\[FILL IN|PLACEHOLDER|\[VERIFY" emails funnel source*.html paperback/source-kdp.html sales-page.html; exit 1; fi
 fi
 echo done

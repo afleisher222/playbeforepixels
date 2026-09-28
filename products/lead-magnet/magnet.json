@@ -23,7 +23,7 @@
  "delivery": "Only by the email platform, as the link in the welcome email (marketing/email/welcome/01-welcome.md), sent after the double opt-in confirmation. Hosted on the email platform or the site, never on a marketplace.",
  "signup_rules": [
   "Adults only: a required, unticked box 'I am the parent or guardian and 18 or older' (business/GROWTH-ENGINE.md §2c; CAMPAIGN-BIBLE COPPA note)",
-  "Fields: email (required); child's birth month and year (optional, two dropdowns); nothing else. Never a child's name, photo or full birthday",
+  "Fields: email (required); child's birth month and year (optional, two dropdowns); nothing else. Never a child's name, photo or full birth date",
   "Double opt-in: nothing is sent until the confirm link is clicked (copy in marketing/email/signup-and-double-opt-in.md)",
   "Privacy policy linked beside the button; CAN-SPAM footer with the business mailing address; one-click unsubscribe",
   "Sign-ups tagged by source (src=bonus-<slug>, src=pin, src=site). Sign-ups from research-hub pages (src=hub) get no product email (BRAND search-targeting rules; founder decision D10)",

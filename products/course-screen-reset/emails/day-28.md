@@ -33,7 +33,7 @@ Set up a tray your child can use on the couch or in bed: paper, crayons, a book,
 **Talk while you play (Say what you see):** “You drew a big circle. A big round sun. A cozy sun!”
 
 - **Make it easier:** One book and one teddy on the tray.
-- **Make it harder:** Big kids write a “sick day newspaper” with the family’s news.
+- **Make it harder:** Preschoolers draw a “sick day newspaper” with the family’s news while you write the words.
 - **Tired-grown-up version (2 minutes):** Put the tray down and rest nearby.
 - **Safety:** For under-3s, everything on the tray must be too big to fit through a toilet-paper tube. Follow your pediatrician’s advice when your child is ill.
 
@@ -57,4 +57,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

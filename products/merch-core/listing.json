@@ -1,9 +1,10 @@
 [
   {
     "slug": "merch-core-logo-tee",
-    "status": "ready-to-set-up (design 1 of max 3; design 2 is merch-core-more-talk-tee; slot 3 is empty on purpose because brand/ORIGINALITY.md keeps no other line for a tee)",
+    "status": "ready-pending-accounts",
+    "status_notes": "Design 1 of at most 3; slot 3 stays empty until brand/ORIGINALITY.md keeps another tee line. Waits for the print-partner account, its quote (replace the estimated nets) and the fiber/origin line on the neck labels.",
     "title": "Play Before Pixels Logo Tee",
-    "subtitle": "Adult unisex tee with our serve-and-return logo, in 4 colors",
+    "subtitle": "Adult unisex tee with our spinning-top logo, in 4 colors",
     "etsy_title": "Play Before Pixels Logo T-Shirt, Adult Unisex Tee in 4 Colors, Minimalist Parent Gift for Mom or Dad, Print on Demand",
     "format": "Adult unisex short-sleeve tee, direct-to-garment (DTG) front print, printed inside-neck label. Print on demand: the print partner prints and ships each order.",
     "trim": "Front print file 4500 x 5400 px (15 x 18 in at 300 dpi), transparent PNG + vector SVG; ink about 10.5 x 2.5 in. Inside-neck label 900 x 900 px (3 x 3 in).",
@@ -47,7 +48,7 @@
       "2XL": 29,
       "3XL": 31
     },
-    "price_notes": "Everyday price $27 (DEMAND-CHECK.md: adult tees $19.99-$29.99 est., our price $27). 2XL $29 and 3XL $31 because the partner charges more for larger blanks. BRAND.md Honest pricing overrides DEMAND-CHECK rule 2: no 'was' or crossed-out price, no permanent sale, no countdowns, no 'only X left' (print on demand never runs out). Only genuine, time-limited promotions that really end. Margin rule: fill in the partner's cost with inside label and shipping; if a tee keeps less than about $8 after Etsy fees (roughly 6.5% transaction + payment processing + $0.20 listing [VERIFY current rates]), raise the everyday price before launch. Kill rule: fewer than 5 sales in 60 days with the listing fixed -> reprice once, then bundle-only. Main bundle idea: Holiday gift bundle $59 with a tee (DEMAND-CHECK section 2, #8); it is not in the adopted plan, which lists only the $29 and $45 digital bundles (ops/QUEUE.md).",
+    "price_notes": "Everyday price $27 (DEMAND-CHECK.md: adult tees $19.99-$29.99 est., our price $27). 2XL $29 and 3XL $31 because the partner charges more for larger blanks. BRAND.md Honest pricing overrides DEMAND-CHECK rule 2: no 'was' or crossed-out price, no permanent sale, no countdowns, no 'only X left' (print on demand never runs out). Only genuine, time-limited promotions that really end. Margin rule: fill in the partner's cost with inside label and shipping; if a tee keeps less than about $8 after Etsy fees (roughly 6.5% transaction + payment processing + $0.20 listing (UNVERIFIED rates)), raise the everyday price before launch. Kill rule: fewer than 5 sales in 60 days with the listing fixed -> reprice once, then bundle-only. Main bundle idea: Holiday gift bundle $59 with a tee (DEMAND-CHECK section 2, #8); it is not in the adopted plan, which lists only the $29 and $45 digital bundles (ops/QUEUE.md).",
     "price_floor": 8.1,
     "price_floor_basis": "30% margin on a print-on-demand sale (commerce/PRICING.md §2): 0.30 × $27 = $8.10 (2XL $8.70, 3XL $9.30).",
     "max_partner_cost_usd_by_channel": {
@@ -56,23 +57,21 @@
       "site": 16.46
     },
     "net_per_unit_by_channel": {
-      "etsy": null,
-      "etsy_offsite_ad_sale": null,
-      "site": null,
+      "etsy": 9.23,
+      "site": 11.48,
       "merch_on_demand": null
     },
     "margin_pct_by_channel": {
-      "etsy": null,
-      "etsy_offsite_ad_sale": null,
-      "site": null,
+      "etsy": 34,
+      "site": 43,
       "merch_on_demand": null
     },
-    "net_notes": "Printed-to-order items: the partner's price (blank or book + printing + label + shipping, if shipping is free to the buyer) is not quoted yet, so the nets are null and this listing does not pass COMPLIANCE-GATE 18 until the quote fills them in. max_partner_cost_usd_by_channel is the most the partner can charge per unit for the sale to keep the 30% margin floor, from the same UNVERIFIED fees: Etsy $0.20 listing + 6.5% transaction + 3% + $0.25 processing (Etsy charges the percentages on item + shipping), 15% more on an Offsite Ads sale; own site through Shopify Payments 2.9% + $0.30 (Shopify is deferred; a POD partner's own storefront may cost differently); a 5% refund allowance throughout. merch_on_demand: Amazon pays a royalty it sets, with no partner cost; fill it from Amazon's royalty table for a $27 list price (UNVERIFIED). Read the Offsite Ads case closely: at $27 with free shipping, an ad-driven Etsy sale leaves room for only about $10.48 of partner cost.",
-    "short_description": "Our serve-and-return logo on a soft-colored adult unisex tee. 4 colors, XS-3XL, printed when you order. Grown-up sizes only.",
-    "long_description": "The Play Before Pixels logo tee is for the grown-ups who sit on the floor, build the tower and wait for the answer.\n\nOur mark is the P of Play. A ball comes back to close it, like the serve and return of talk and play: a grown-up says something, and a child answers. The small gap before the ball is the pause that gives the child a turn. It sits high on the chest, about 10.5 inches wide, in ink with a tomato-red ball, or in white with the same ball on navy.\n\nChoose White, Natural, Mustard or Navy in adult unisex sizes XS to 3XL. Your size and care details are printed inside the neck.\n\nEach tee is printed when you order it by our print partner and shipped to you with tracking, so allow a few extra days before it ships. Nothing sits in a warehouse.\n\nWe make grown-up sizes only. We don't make kids' clothing.\n\nCare: machine wash cold, inside out; tumble dry low; don't iron the print.\n\nLooking for a gift? It pairs well with our picture book The Day the Tablet Slept and our 150 \"I'm bored!\" Play Cards, sold separately.",
+    "net_notes": "ESTIMATES (UNVERIFIED): no print-partner quote exists yet. Assumed partner cost: $12.95 for a printed XS–XL tee with inside label ($14.95 2XL, $16.95 3XL) plus $4.75 standard shipping, which the buyer pays at the partner's rate. Fees: Etsy $0.20 listing + 6.5% transaction + 3% + $0.25 processing on item + shipping; own site 2.9% + $0.30; a 5% refund allowance. Etsy Offsite Ads stay off (GROWTH-ENGINE launch plan): an ad-driven sale would net only about $4.47, under price_floor, so no etsy_offsite_ad_sale net is listed. merch_on_demand is null: Amazon pays a royalty it sets; fill it from Amazon's royalty table for a $27 list price. Rule: when the real quote arrives, replace these figures. If the partner charges more than max_partner_cost_usd_by_channel, raise the everyday price before launch (never a 'was' price).",
+    "short_description": "Our spinning-top logo on a soft-colored adult unisex tee. 4 colors, XS-3XL, printed when you order. Grown-up sizes only.",
+    "long_description": "The Play Before Pixels logo tee is for the grown-ups who sit on the floor, build the tower and wait for the answer.\n\nOur logo is a maker's seal, like the stamp pressed into the bottom of a good wooden toy. In the middle is a spinning top: one of the oldest toys there is, and it needs nothing but a hand. It sits high on the chest, about 10.5 inches wide, in ink on light colors or in white on navy.\n\nChoose White, Natural, Mustard or Navy in adult unisex sizes XS to 3XL. Your size and care details are printed inside the neck.\n\nEach tee is printed when you order it by our print partner and shipped to you with tracking, so allow a few extra days before it ships. Nothing sits in a warehouse.\n\nWe make grown-up sizes only. We don't make kids' clothing.\n\nCare: machine wash cold, inside out; tumble dry low; don't iron the print.\n\nLooking for a gift? It pairs well with our picture book The Day the Tablet Slept and our 150 \"I'm bored!\" Play Cards, sold separately.",
     "bullets": [
-      "Our serve-and-return logo: the ball comes back to close the P, like a grown-up and a child taking turns",
-      "4 colors: White, Natural and Mustard with the ink logo; Navy with the white logo; a tomato-red ball on every one",
+      "Our logo: a spinning top in a round maker's seal, beside our name with a tomato-red dot on the i",
+      "4 colors: White, Natural and Mustard with the ink logo; Navy with the white logo",
       "Adult unisex sizes XS to 3XL, with size and care printed inside the neck",
       "Printed when you order by our print partner, then shipped with tracking",
       "Grown-up sizes only; pairs with our picture book and play cards as a gift"
@@ -102,12 +101,12 @@
       "navy logo tee"
     ],
     "seo_title": "Play Before Pixels Logo Tee | Adult Unisex T-Shirt",
-    "seo_description": "Our serve-and-return logo on an adult unisex tee in White, Natural, Mustard or Navy, sizes XS-3XL. Printed when you order and shipped with tracking.",
-    "alt_text": "A white adult t-shirt laid flat on a pale cream background. High on the chest is the Play Before Pixels logo: a dark navy letter P whose open bowl is closed by a small tomato-red ball, beside the words Play Before Pixels, with the same red ball dotting the i. A striped toy ball and a red toy block sit beside the shirt.",
+    "seo_description": "Our spinning-top logo on an adult unisex tee in White, Natural, Mustard or Navy, sizes XS-3XL. Printed when you order and shipped with tracking.",
+    "alt_text": "A white adult t-shirt laid flat on a pale cream background. High on the chest is the Play Before Pixels logo: a small navy circle holding a sky-blue spinning top with a tomato-red band, beside the words Play Before Pixels, with a tomato-red dot on the i. A striped toy ball and a red toy block sit beside the shirt.",
     "listing_images": [
       "preview/listing-images/listing-01.png - hero: white tee flat-lay, title, 4 colors, printed when you order (thumbnail)",
       "preview/listing-images/listing-02.png - the 4 colors, with which logo prints on each",
-      "preview/listing-images/listing-03.png - the idea behind the logo: serve, pause, return",
+      "preview/listing-images/listing-03.png - the idea behind the logo: a maker's seal with a spinning top",
       "preview/listing-images/listing-04.png - details: printed neck label, sizes, print on demand, care, grown-up sizes only",
       "preview/listing-images/listing-05.png - size guide: how to measure (the numeric chart comes from the chosen blank and goes in the listing's size chart)",
       "preview/listing-images/listing-06.png - how your tee gets to you in 3 steps",
@@ -160,11 +159,11 @@
       },
       {
         "q": "Can I send it as a gift?",
-        "a": "Yes. Enter their address at checkout and it ships straight to them. Whether you can add a gift note or leave prices off the packing slip depends on our print partner [VERIFY with the chosen partner]. Not sure of their size? Measure a tee they already wear against the size chart."
+        "a": "Yes. Enter their address at checkout and it ships straight to them. A gift note and a packing slip without prices are added only if our print partner offers them at checkout. Not sure of their size? Measure a tee they already wear against the size chart."
       },
       {
-        "q": "Can our school, center, library or parent group order shirts together?",
-        "a": "Yes. Each tee is printed to order, so a group can pick any mix of sizes and colors. For 10 or more, ask through the contact form for a written quote and one invoice [founder to confirm any group price]. We don't add school, team or event names."
+        "q": "Can a school, center, library or parent group order shirts together?",
+        "a": "Not yet: group orders, quotes and invoices are not available yet. Anyone can order their own tee in any size and color, and each one is printed to order."
       },
       {
         "q": "What if it arrives damaged or misprinted?",
@@ -218,11 +217,22 @@
       "social_ai_label": "Turn on each platform's AI-generated-content label for posts that use these images or this text (label names UNVERIFIED).",
       "notes": "Answers describe what really happened as of the date above. Platform categories and form wording are from memory (UNVERIFIED): check each form on upload day. Never call any part hand-drawn, handmade or human-written."
     },
-    "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC."
+    "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.",
+    "net_by_size_estimate": {
+      "2XL": {
+        "etsy": 8.94,
+        "site": 11.32
+      },
+      "3XL": {
+        "etsy": 8.65,
+        "site": 11.16
+      }
+    }
   },
   {
     "slug": "merch-core-more-talk-tee",
-    "status": "files-ready; publish only after the slogan search (design 2 of max 3). brand/ORIGINALITY.md C3 keeps 'More talk, less tap' for a tee (KEEP-BUT-DON'T-TRADEMARK), after a USPTO class 25, Etsy and Amazon check.",
+    "status": "ready-pending-accounts",
+    "status_notes": "Files ready. Publish only after the 'More talk, less tap' slogan search (USPTO class 25, Etsy and Amazon); brand/ORIGINALITY.md C3 keeps it for a tee (KEEP-BUT-DON'T-TRADEMARK). Design 2 of at most 3.",
     "title": "More Talk, Less Tap Tee by Play Before Pixels",
     "subtitle": "Adult unisex tee with our two-line reminder to add one more back-and-forth, in 4 colors",
     "etsy_title": "More Talk Less Tap Tee by Play Before Pixels, Adult Unisex T-Shirt in 4 Colors, Parent Gift for Mom or Dad, Print on Demand",
@@ -268,7 +278,7 @@
       "2XL": 29,
       "3XL": 31
     },
-    "price_notes": "Everyday price $27, the same as the logo tee (DEMAND-CHECK.md: adult slogan tees $19.99-$29.99 est., our price $27); 2XL $29 and 3XL $31 because larger blanks cost the partner more. BRAND.md Honest pricing: no 'was' or crossed-out price, no permanent sale, no countdowns, no 'only X left'. Keep about $8+ per tee after Etsy fees [VERIFY current rates], or raise the everyday price before launch. Kill rule: fewer than 5 sales in 60 days with the listing fixed -> reprice once, then bundle-only (it can replace the logo tee in the $59 Holiday gift bundle).",
+    "price_notes": "Everyday price $27, the same as the logo tee (DEMAND-CHECK.md: adult slogan tees $19.99-$29.99 est., our price $27); 2XL $29 and 3XL $31 because larger blanks cost the partner more. BRAND.md Honest pricing: no 'was' or crossed-out price, no permanent sale, no countdowns, no 'only X left'. Keep about $8+ per tee after Etsy fees (UNVERIFIED rates), or raise the everyday price before launch. Kill rule: fewer than 5 sales in 60 days with the listing fixed -> reprice once, then bundle-only (it can replace the logo tee in the $59 Holiday gift bundle).",
     "price_floor": 8.1,
     "price_floor_basis": "30% margin on a print-on-demand sale (commerce/PRICING.md §2): 0.30 × $27 = $8.10 (2XL $8.70, 3XL $9.30).",
     "max_partner_cost_usd_by_channel": {
@@ -277,18 +287,16 @@
       "site": 16.46
     },
     "net_per_unit_by_channel": {
-      "etsy": null,
-      "etsy_offsite_ad_sale": null,
-      "site": null,
+      "etsy": 9.23,
+      "site": 11.48,
       "merch_on_demand": null
     },
     "margin_pct_by_channel": {
-      "etsy": null,
-      "etsy_offsite_ad_sale": null,
-      "site": null,
+      "etsy": 34,
+      "site": 43,
       "merch_on_demand": null
     },
-    "net_notes": "Printed-to-order items: the partner's price (blank or book + printing + label + shipping, if shipping is free to the buyer) is not quoted yet, so the nets are null and this listing does not pass COMPLIANCE-GATE 18 until the quote fills them in. max_partner_cost_usd_by_channel is the most the partner can charge per unit for the sale to keep the 30% margin floor, from the same UNVERIFIED fees: Etsy $0.20 listing + 6.5% transaction + 3% + $0.25 processing (Etsy charges the percentages on item + shipping), 15% more on an Offsite Ads sale; own site through Shopify Payments 2.9% + $0.30 (Shopify is deferred; a POD partner's own storefront may cost differently); a 5% refund allowance throughout. merch_on_demand: Amazon pays a royalty it sets, with no partner cost; fill it from Amazon's royalty table for a $27 list price (UNVERIFIED). Read the Offsite Ads case closely: at $27 with free shipping, an ad-driven Etsy sale leaves room for only about $10.48 of partner cost.",
+    "net_notes": "ESTIMATES (UNVERIFIED): no print-partner quote exists yet. Assumed partner cost: $12.95 for a printed XS–XL tee with inside label ($14.95 2XL, $16.95 3XL) plus $4.75 standard shipping, which the buyer pays at the partner's rate. Fees: Etsy $0.20 listing + 6.5% transaction + 3% + $0.25 processing on item + shipping; own site 2.9% + $0.30; a 5% refund allowance. Etsy Offsite Ads stay off (GROWTH-ENGINE launch plan): an ad-driven sale would net only about $4.47, under price_floor, so no etsy_offsite_ad_sale net is listed. merch_on_demand is null: Amazon pays a royalty it sets; fill it from Amazon's royalty table for a $27 list price. Rule: when the real quote arrives, replace these figures. If the partner charges more than max_partner_cost_usd_by_channel, raise the everyday price before launch (never a 'was' price).",
     "short_description": "\"More talk, less tap.\" in bold type with our tomato-red ball as the period. Adult unisex tee, 4 colors, XS-3XL, printed when you order.",
     "long_description": "This adult unisex tee says \"More talk, less tap.\" It is printed to order for grown-ups, in 4 colors and sizes XS to 3XL. It's a small reminder we wrote for ourselves, printed where we'd see it.\n\nIt's about adding, not taking away. One more back-and-forth in the day: a question in the car, a song at the sink, a story at bedtime. It isn't a rule and it isn't a judgment. Every family's day looks different. And a tap on a talking device is talk too.\n\nThe two lines are set in our bold display type, about 11 inches wide, with our tomato-red ball as the period and the Play Before Pixels logo underneath. Choose White, Natural or Mustard with ink type, or Navy with white type, in adult unisex sizes XS to 3XL. Your size and care details are printed inside the neck.\n\nEach tee is printed when you order it by our print partner and shipped to you with tracking, so allow a few extra days before it ships. Nothing sits in a warehouse.\n\nWe make grown-up sizes only. We don't make kids' clothing.\n\nCare: machine wash cold, inside out; tumble dry low; don't iron the print.\n\nLooking for a gift? It pairs well with our picture book The Day the Tablet Slept and our 150 \"I'm bored!\" Play Cards, sold separately.",
     "bullets": [
@@ -387,11 +395,11 @@
       },
       {
         "q": "Can I send it as a gift?",
-        "a": "Yes. Enter their address at checkout and it ships straight to them. Whether you can add a gift note or leave prices off the packing slip depends on our print partner [VERIFY with the chosen partner]. Not sure of their size? Measure a tee they already wear against the size chart."
+        "a": "Yes. Enter their address at checkout and it ships straight to them. A gift note and a packing slip without prices are added only if our print partner offers them at checkout. Not sure of their size? Measure a tee they already wear against the size chart."
       },
       {
-        "q": "Can our school, center, library or parent group order shirts together?",
-        "a": "Yes. Each tee is printed to order, so a group can pick any mix of sizes and colors. For 10 or more, ask through the contact form for a written quote and one invoice [founder to confirm any group price]. We don't add school, team or event names."
+        "q": "Can a school, center, library or parent group order shirts together?",
+        "a": "Not yet: group orders, quotes and invoices are not available yet. Anyone can order their own tee in any size and color, and each one is printed to order."
       },
       {
         "q": "What if it arrives damaged or misprinted?",
@@ -428,11 +436,22 @@
       "social_ai_label": "Turn on each platform's AI-generated-content label for posts that use these images or this text (label names UNVERIFIED).",
       "notes": "Answers describe what really happened as of the date above. Platform categories and form wording are from memory (UNVERIFIED): check each form on upload day. Never call any part hand-drawn, handmade or human-written."
     },
-    "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC."
+    "owner": "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.",
+    "net_by_size_estimate": {
+      "2XL": {
+        "etsy": 8.94,
+        "site": 11.32
+      },
+      "3XL": {
+        "etsy": 8.65,
+        "site": 11.16
+      }
+    }
   },
   {
     "slug": "merch-core-tote",
-    "status": "bundle-add-on-only (never listed on its own, per DEMAND-CHECK.md). Print only after the 'Laps not apps' slogan search; logo-only fallback files are ready.",
+    "status": "ready-pending-accounts",
+    "status_notes": "Bundle add-on only, never listed on its own (DEMAND-CHECK.md). Print the slogan version only after the 'Laps not apps' search; logo-only fallback files are ready.",
     "title": "Laps Not Apps Tote by Play Before Pixels",
     "subtitle": "Canvas tote with our \"Laps not apps.\" line and logo, available only inside gift bundles",
     "format": "Canvas tote bag, one-side print, print on demand. Sold only as an add-on inside own-site bundles.",
@@ -460,12 +479,12 @@
       "site_bundle_share": 13.36
     },
     "net_per_unit_by_channel": {
-      "site_bundle_share": null
+      "site_bundle_share": 7.46
     },
     "margin_pct_by_channel": {
-      "site_bundle_share": null
+      "site_bundle_share": 34
     },
-    "net_notes": "Printed-to-order items: the partner's price (blank or book + printing + label + shipping, if shipping is free to the buyer) is not quoted yet, so the nets are null and this listing does not pass COMPLIANCE-GATE 18 until the quote fills them in. max_partner_cost_usd_by_channel is the most the partner can charge per unit for the sale to keep the 30% margin floor, from the same UNVERIFIED fees: Etsy $0.20 listing + 6.5% transaction + 3% + $0.25 processing (Etsy charges the percentages on item + shipping), 15% more on an Offsite Ads sale; own site through Shopify Payments 2.9% + $0.30 (Shopify is deferred; a POD partner's own storefront may cost differently); a 5% refund allowance throughout. The tote is sold only inside bundles, so its net is its share of the bundle price minus the partner's cost and payment fees, figured here on its $22 add-on value.",
+    "net_notes": "ESTIMATE (UNVERIFIED): no print-partner quote exists yet. Assumed partner cost $12.50 for a printed natural canvas tote; shipping travels with the bundle and is charged to the buyer. Fees: own site 2.9% + $0.30 and a 5% refund allowance, on the tote's $22 share of the bundle. If the real quote is above max_partner_cost_usd_by_channel ($13.36), raise the tote's add-on value before setting bundle prices.",
     "short_description": "\"Laps not apps.\" with our tomato-red ball as the period, on a canvas tote for grown-ups. Natural or black. Only inside gift bundles on playbeforepixels.com.",
     "long_description": "The Laps Not Apps tote is a canvas bag for grown-ups, printed to order and sold only inside our gift bundles. Take it on the library run, to the park and everywhere in between. It carries a line we like to keep in mind: laps not apps.\n\nIt's a reminder about the best seat in the house for a story, not a rule. It isn't about the talking apps some children use; those are a child's voice. The two lines are set in our bold display type, about 9 inches wide on one side, with our tomato-red ball as the period and the Play Before Pixels logo underneath.\n\nChoose natural canvas with ink type or black with white type.\n\nYou'll find it inside our gift bundles on playbeforepixels.com, alongside our tees and digital play kits. Each tote is printed when you order it by our print partner and shipped with tracking, so allow a few extra days.\n\nMade for grown-ups: it's a carry-all bag, not a toy. Keep bags and their handles out of reach of babies and young children.",
     "bullets": [
@@ -515,7 +534,7 @@
       },
       {
         "q": "How big is the bag?",
-        "a": "The bag size comes from our print partner's canvas tote and is listed on the bundle page [FILL IN from the chosen blank]. The print is about 9 inches wide, on one side."
+        "a": "The exact bag size is shown on the bundle page, because it comes from our print partner's canvas tote. The print is about 9 inches wide, on one side."
       },
       {
         "q": "How long does it take?",

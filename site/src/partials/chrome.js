@@ -5,7 +5,9 @@
 const { esc, money } = require('../lib/util');
 const { I, mock, bandOf } = require('./bits');
 
-function jsonld(obj) { return `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, '\\u003c')}</script>`; }
+// Image tokens (\u0001IMGn\u0001, swapped for real URLs at the end of the build) must survive
+// JSON.stringify, which would otherwise escape the control character and hide them from the swap.
+function jsonld(obj) { return `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, '\\u003c').replace(/\\u0001/g, '\u0001')}</script>`; }
 
 function head(ctx, pg) {
   const S = ctx.cfg.site;

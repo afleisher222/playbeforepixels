@@ -2,21 +2,21 @@
 
 URL: playbeforepixels.com/30-days (not /reset: brand/ORIGINALITY.md A4 retired "The 30-Day Screen Reset" and the /reset path) · Designed version: `sales-page.html` (preview: `preview/sales-page.png`).
 Calm-site rules: one primary button per screen, secondary links are quiet text, no pop-ups, no timers, no badges.
-FOUNDER: rewrite any line in your own voice; keep the guarantee wording identical to `legal/SHIPPING-RETURNS-REFUNDS.md` Part B §4 and the FAQ. The designed page and every email take the numbers from `REFUND` in `build/content.js`; change the policy first, then that one line. (14 or 30 days for the course is a founder decision pending in `ops/APPROVALS.md`.)
+Finished copy, written as the brand ("we"); nothing here needs the founder. Keep the guarantee wording identical to `legal/SHIPPING-RETURNS-REFUNDS.md` Part B §4 and the FAQ. The designed page and every email take the numbers from `REFUND` in `build/content.js`; change the policy first, then that one line. (14 or 30 days for the course is a founder decision pending in `ops/APPROVALS.md`.)
 
 ---
 
 ## 1. Hero
-**Kicker:** A written program for families with children aged 1 to 12
+**Kicker:** A written program for families with children aged 1 to 5
 **Headline:** 30 Days of Back-and-Forth
-**Subhead:** More play and talk, with screens in a steady spot. One short lesson, one easy play and plain words for one tricky moment, every morning for 30 days.
+**Subhead:** More play and talk, with screens in a steady spot. One short lesson, one easy play and plain words for one tricky moment, every day for 30 days.
 **Primary button:** Start the 30 days · $27
 **Quiet link:** See what’s inside
 **Small print:** 14-day money-back guarantee (terms) · no videos, calls or coaching · nothing to buy
 
 ## 2. How it works — “Three minutes to read. One play to try.”
-- **Read.** A short lesson arrives each morning. Each one is under 300 words and ends with one small step.
-- **Play.** One easy play with things you already have, with a version for little ones, big kids and tired grown-ups. 22 of the 30 plays need no prep; the rest take about 2 minutes.
+- **Read.** A short lesson arrives each day. Each one is under 300 words and ends with one small step.
+- **Play.** One easy play with things you already have, with a version for toddlers, preschoolers and tired grown-ups. 22 of the 30 plays need no prep; the rest take about 2 minutes.
 - **Say.** Plain words for one tricky moment: the show that won’t end, “I’m bored”, the hour before dinner.
 
 We don’t ban anything. Screens get a steady spot in the day, the same time and the same ending, and they’re never a prize or a punishment. The rest of the day fills up with ordinary play.
@@ -34,7 +34,7 @@ We don’t ban anything. Screens get a steady spot in the day, the same time and
 (Images: Day 6 lesson page and play page.)
 
 ## 4. It covers / Is it for us?
-**The moments that are actually hard:** Ending screen time kindly. Mornings. The hour before dinner. Big feelings. Waiting rooms and car rides. Grown-up phones. Big kids who say “everyone else gets to”. Siblings and twins. Grandparents and sitters. Sick days and travel days.
+**The moments that are actually hard:** Ending screen time kindly. Mornings. The hour before dinner. Big feelings. Waiting rooms and car rides. Grown-up phones. “That’s not fair!” Siblings and twins. Grandparents and sitters. Sick days and travel days.
 
 **Good fit if…** you want calmer days without banning screens, you like reading more than watching videos, and you want ideas that use what you already have.
 **Not a fit if** you’re looking for treatment, a diagnosis or personal advice about your child. It’s parent education. For questions about development, talk with your pediatrician.
@@ -43,14 +43,13 @@ We don’t ban anything. Screens get a steady spot in the day, the same time and
 - **The program — $27.** 30 lessons by email, the full workbook, scripts bank and certificate. About 90¢ a day. [Start the 30 days]
 - **The 30 Days of Back-and-Forth Bundle — $49.** The program plus the Play-First Family Kit, 100 Screen-Free Plays (printable) and 150 “I’m Bored” Play Cards. $54.49 if bought separately. [Choose the bundle →] (quiet link)
 
-Prefer paper? The whole program is also a black-and-white paperback on Amazon.
+Prefer paper? Print the workbook at home in color or low-ink, in US Letter or A4.
 
 ## 6. Guarantee — “14 days, full refund”
-If the program isn’t right for your family, email us within 14 days of purchase for a full refund, as long as you’ve completed no more than 30% of the lessons. The full terms are in our refund policy (link: /shipping-returns/).
+If the program isn’t right for your family, email us within 14 days of purchase for a full refund, as long as you’ve completed no more than 30% of the lessons. After that, course fees are non-refundable, but you keep every lesson email and the workbook files. If a file won’t open or print, or you were charged twice, we fix it or refund it. The full terms are in our refund policy (link: /shipping-returns/).
 
-## 7. Founder note (optional)
-A short note in your own words in `FOUNDER.salesNote` (build/content.js), or set it to `'skip'` to leave the section out. Until then the designed page prints nothing in its place (`founder-notes.md` §3); `make.sh --final` still refuses to finish while the welcome and day-30 email placeholders remain. No names, photos or credentials needed.
-Reviews appear here only after the founding beta, with written permission, and only about the family’s experience — never about speech, development or behavior results (BLIND-SPOTS #14).
+## 7. Reviews
+None yet. Reviews appear here only from real buyers, collected by the automatic review request from our own store, with written permission, and only about the family's experience, never about speech, development or behavior results (BLIND-SPOTS #14). There is no sales-page founder note (`NOTES.sales` is `'skip'`).
 
 ## 8. FAQ (accordion)
 Same questions and answers as `build/content.js` → `FAQ` (rendered automatically into the designed page, the workbook and the help center).
@@ -61,6 +60,6 @@ Same questions and answers as `build/content.js` → `FAQ` (rendered automatical
 ---
 
 ### Honest-pricing notes (BRAND.md, binding)
-- No “was” price, no crossed-out price, no countdown, no “only X spots”. Founding-beta or launch-week prices only if they genuinely end on the date stated.
+- No “was” price, no crossed-out price, no countdown, no “only X spots”. Launch-week prices only if they genuinely end on the date stated.
 - Show the bundle only as “$49, or $54.49 bought separately”, and only while each part really sells at its listed price ($27 + $11 + $9.99 + $6.50 = $54.49, about 10% off). Never map the $54.49 to a store “compare-at” field (that prints a strikethrough). Re-check the sum whenever a part’s price changes.
-- A bundle of only the program and the Family Kit would total $38, so $49 for those two alone would cost more than buying them separately — which is why the bundle includes the two printables. If the founder prefers a two-item bundle, price it at $34.
+- A bundle of only the program and the Family Kit would total $38, so $49 for those two alone would cost more than buying them separately — which is why the bundle includes the two printables. A two-item bundle, if ever wanted, would be priced at $34.

@@ -14,7 +14,7 @@ Mornings are the other big screen moment. A show can buy you twenty minutes to g
 
 If you’d like calmer mornings with less screen help, the trick is a morning order that happens the same way every day: wake up, toilet, dress, breakfast, teeth, shoes, go. When the order doesn’t change, children start doing parts of it without being asked.
 
-Picture cards help young children see what comes next. Big kids can make their own checklist. Keep it short: five or six steps.
+Picture cards help young children see what comes next. Preschoolers can help draw their own picture checklist. Keep it short: five or six steps.
 
 Then build play into the gaps instead of rushing through them. Race the toast to the table, sing a song while shoes go on, make up a silly name for every sock. Play gets things done because children would rather join a game than follow an order.
 
@@ -31,7 +31,7 @@ While socks and shoes go on, sing a made-up song to any tune you know: “This i
 **Talk while you play (Sing and gesture):** “This is the way we put on… (wait) …SOCKS!”
 
 - **Make it easier:** Put one sock on your own hand as a puppet who “helps”.
-- **Make it harder:** Big kids race a song: can shoes be on before the chorus ends?
+- **Make it harder:** Preschoolers race a song: can shoes be on before the chorus ends?
 - **Tired-grown-up version (2 minutes):** Hum the tune and point to each foot: “One… two.”
 - **Safety:** Sit down to put on socks and shoes, away from stairs.
 
@@ -55,4 +55,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

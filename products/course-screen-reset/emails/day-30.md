@@ -30,7 +30,7 @@ Look at the plan again in a month and adjust. Families change, children grow, an
 
 Thank you for letting us be part of your month.
 
-**[FOUNDER WRITES THIS: a 40–80 word goodbye note in your own voice. Add it to FOUNDER.day30Note in build/content.js.]**
+Thirty days ago you started by noticing one ordinary day. Since then you’ve made room for play, waited for answers and found words for hard moments. That’s real work, and it counts even on the days that didn’t go to plan. Keep the plays your child asked for again. They’re your family’s plan now. Thank you for spending this month with us.
 
 **Today’s one small step:** Write your one-page family plan. Print and decorate the certificate.
 
@@ -43,7 +43,7 @@ Celebrate with a parade around your home: bang pots, wear hats, sing your family
 **Talk while you play (Sing and gesture):** “Left, right, bang, bang! Who leads next?”
 
 - **Make it easier:** Carry your toddler and bang a spoon together.
-- **Make it harder:** Big kids write a family “anthem” and conduct the band.
+- **Make it harder:** Preschoolers make up a family song and conduct the band.
 - **Tired-grown-up version (2 minutes):** March your fingers across the table and hum.
 - **Safety:** March on a clear floor, away from stairs, and keep the noise kind to little ears.
 
@@ -67,4 +67,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

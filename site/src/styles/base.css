@@ -1130,7 +1130,7 @@ main:focus { outline: none; }                      /* skip-link target: focus mo
   .shop-head { padding-bottom: 14px; }
   .shop-title { margin-top: 10px; gap: 10px; }
   .shop-title .h1 { font-size: 34px; }
-  .shop-title .lede { font-size: 16px; line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .shop-title .lede { font-size: 16px; line-height: 1.45; }
   .filter-row { gap: 8px; padding: 10px 0 10px; }
   .shop-grid-wrap { padding-top: 20px; }
 }

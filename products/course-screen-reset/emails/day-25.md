@@ -1,47 +1,47 @@
 ---
-subject: "Day 25: Big kids and fairness"
-preheader: "School-age children care about fairness and friends. Listening first makes the family…"
+subject: "Day 25: Fairness and turns"
+preheader: "Young children care a lot about fairness. Listening first makes the family plan feel…"
 send: "day 25, 7:00 local time"
 ---
 
 *Day 25 of 30 · Make it stick*
 
-# Big kids and fairness
+# Fairness and turns
 
-**School-age children care about fairness and friends. Listening first makes the family plan feel like theirs.**
+**Young children care a lot about fairness. Listening first makes the family plan feel like theirs.**
 
-If you have a school-age child, you have probably heard it: “Everyone else gets to!” It might even be true.
+Sooner or later you’ll hear it: “That’s not fair!” or “But she got a turn!” Even very young children care a lot about fairness and about what other children have.
 
-Big kids care deeply about fairness and about fitting in with friends. Those are healthy things to care about. So today is about listening first.
+Those are healthy things to care about. So today is about listening first.
 
-Sit down together at a calm time, not in the middle of an argument, and ask: “What do you love about your screen time? What would you miss? What else would you like to do more of?” Then really listen. You might learn something.
+At a calm time, not in the middle of a meltdown, ask: “What do you love about your show? What else would you like to do more of?” Then really listen. A point, a picture or one word is a full answer.
 
-Then explain your family’s plan plainly and without fear stories: “In our family, screens have a set time, and the rest of the day is for other things we care about.” You can agree it isn’t the same as every family. Families are different.
+Then explain your family’s plan plainly and without fear stories: “In our family, shows have a set time, and the rest of the day is for other things we love.” You can agree that other families do it differently. Families are different.
 
-Give big kids a real say in the details: which shows, which day is movie night, how the ending works. Children tend to follow plans they helped write.
+Give your preschooler a real say in the small details: which show, which day is movie night, who presses the off button. Children tend to follow plans they helped make.
 
-And keep inviting them into things that feel grown-up: cooking dinner, planning a day trip, building something real.
+And keep inviting them into things that feel grown-up: stirring the soup, choosing the park, carrying the library books.
 
-**Today’s one small step:** Have a calm, listening talk with your big kid about the family plan.
+**Today’s one small step:** Have a calm, listening talk with your child about the family plan.
 
 ## Today’s play: Paper game night
 
-*From 4 years · No prep · No mess · Longer play · You need: paper, pencils*
+*From 4 years · No prep · No mess · Longer play · You need: paper, crayons*
 
-Play paper games at the table: tic-tac-toe, dots and boxes, word guessing, drawing relay. Let your big kid teach the rules to the family and be the referee.
+Play simple paper games at the table: a drawing relay, color-the-boxes or “draw what I say”. Let your preschooler pick the game and choose who goes next.
 
-**Talk while you play (Follow their lead):** “Your move. Show me your best trick.”
+**Talk while you play (Follow their lead):** “Your turn. Show me your best trick.”
 
-- **Make it easier:** Younger children scribble, color the boxes or pick who goes next.
-- **Make it harder:** Big kids invent a brand-new paper game and write the rulebook.
-- **Tired-grown-up version (2 minutes):** Play three quick rounds of tic-tac-toe and call it a night.
-- **Safety:** Keep pencils and small pieces away from under-3s playing alongside.
+- **Make it easier:** Toddlers scribble, color the boxes or pick who goes next.
+- **Make it harder:** Preschoolers invent a brand-new paper game and tell you the rules.
+- **Tired-grown-up version (2 minutes):** Play three quick rounds of “draw what I say” and call it a night.
+- **Safety:** Keep crayon pieces, pen caps and anything small away from under-3s playing alongside.
 
 ## Plain words for: “Everyone else gets to!”
 
-> “It might be true that lots of kids do. In our family, screens have a set time.”
+> “It might be true that lots of kids do. In our family, shows have a set time.”
 >
-> “I want to hear what matters to you. Let’s talk about it at dinner.”
+> “I want to hear what you think. Let’s talk about it at dinner.”
 
 Agree with what’s true, hold your plan and promise a real conversation later.
 
@@ -57,4 +57,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

@@ -14,7 +14,7 @@ The hour before dinner is the time many families lean on screens most. You’re 
 
 But if you’d like another option on some days, try this: bring your child into the kitchen with you.
 
-Children love real jobs. Toddlers can wash vegetables in a bowl of water, tear lettuce, stir cold things and put spoons on the table. Preschoolers can pour, mash and sort. Big kids can measure, read the recipe, crack eggs and set the table.
+Children love real jobs. Toddlers can wash vegetables in a bowl of water, tear lettuce, stir cold things and put spoons on the table. Preschoolers can pour, mash, sort, count spoons and help set the table.
 
 It will be slower and messier. It will also be full of talk: pour, stir, hot, cold, more, stop. Kitchen helping is some of the richest talk time in the day, and children feel proud of the result.
 
@@ -31,9 +31,9 @@ Set a bowl of cool water and some whole vegetables on a towel at a low table. Yo
 **Talk while you play (Say what you see):** “Scrub, scrub, carrot! Now it’s clean. Next one!”
 
 - **Make it easier:** Just one big potato and a cup for pouring. If wet hands bother your child, a scrub brush is fine.
-- **Make it harder:** Big kids peel, measure and follow a simple recipe card with you at their side.
+- **Make it harder:** Preschoolers measure, pour and follow a picture recipe card with you at their side.
 - **Tired-grown-up version (2 minutes):** Let your child put the spoons and napkins on the table.
-- **Safety:** Water play is always supervised. Use big vegetables like potatoes or cucumbers, not cherry tomatoes, baby carrots or other small round pieces. Knives, peelers, the stove and hot pans stay with grown-ups; big kids use them only with you beside them.
+- **Safety:** Water play is always supervised. Use big vegetables like potatoes or cucumbers, not cherry tomatoes, baby carrots or other small round pieces. Knives, peelers, the stove and hot pans stay with grown-ups.
 
 ## Plain words for: When you need 20 minutes to cook
 
@@ -55,4 +55,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

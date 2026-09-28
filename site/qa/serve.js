@@ -12,7 +12,7 @@ const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 
 function redirects() {
   const f = path.join(DIST, '_redirects');
   if (!fs.existsSync(f)) return new Map();
-  return new Map(fs.readFileSync(f, 'utf8').split('\n').filter(l => l && !l.startsWith('#')).map(l => l.split(/\s+/)).map(([a, b]) => [a, b]));
+  return new Map(fs.readFileSync(f, 'utf8').split('\n').filter(l => l && !l.startsWith('#')).map(l => l.split(/\s+/)).map(([a, b, c]) => [a, { to: b, code: +c || 301 }]));
 }
 
 function start(port = 0) {
@@ -20,7 +20,7 @@ function start(port = 0) {
   const server = http.createServer((req, res) => {
     const u = new URL(req.url, 'http://x');
     let p = decodeURIComponent(u.pathname);
-    if (R.has(p)) { res.writeHead(301, { Location: R.get(p) }); return res.end(); }
+    if (R.has(p)) { res.writeHead(R.get(p).code, { Location: R.get(p).to }); return res.end(); }
     let f = path.join(DIST, p);
     if (!f.startsWith(DIST)) { res.writeHead(403); return res.end(); }
     if (fs.existsSync(f) && fs.statSync(f).isDirectory()) {

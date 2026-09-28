@@ -104,6 +104,17 @@ function shape(kind, color, px = 12) {
   }[kind];
   return `<svg class="shape" viewBox="0 0 16 16" width="${px}" height="${px}" aria-hidden="true">${s}</svg>`;
 }
+// Exact starting age: the chip's word always matches the play's own start age in months
+// (a 30-month play never reads "from 2 yrs"); color and shape come from its band.
+function ageFrom(months) {
+  const key = 'm' + months;
+  if (!AGES[key]) {
+    const band = months >= 36 ? '3+' : months >= 24 ? '2+' : '1+';
+    const word = months % 12 === 0 ? `from ${months / 12} yr${months === 12 ? '' : 's'}` : `from ${months} mo`;
+    AGES[key] = Object.assign({}, AGES[band], { word, long: word[0].toUpperCase() + word.slice(1) });
+  }
+  return key;
+}
 const ageChip = (key, cls = '') => {
   const a = AGES[key];
   return `<span class="chip ${cls}" style="--c:${a.c};--t:${a.t};--d:${a.d}">${shape(a.shape, a.c)}<b>${a.word}</b></span>`;
@@ -198,4 +209,4 @@ function context(o) {
   return Object.assign({ W: S.W, H: S.H, sizeName: S.name, version: 'Version 1.0 · September 2026' }, o);
 }
 
-module.exports = { ROOT, C, D, SIZES, OWNER, SITE, esc, rel, logo, qr, bonusUrl, icon, ICONS, mi, MI, AGES, shape, ageChip, field, css, footer, doc, context, CHARS };
+module.exports = { ROOT, C, D, SIZES, OWNER, SITE, esc, rel, logo, qr, bonusUrl, icon, ICONS, mi, MI, AGES, shape, ageFrom, ageChip, field, css, footer, doc, context, CHARS };

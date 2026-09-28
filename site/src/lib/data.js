@@ -173,8 +173,16 @@ function load(opts = {}) {
     if (b.price >= separately) errors.push(`bundle ${b.id}: ${money(b.price)} is not below the parts (${money(separately)})`);
     const k = (b.buy || []).find(x => links[x]);
     const bands = config.bands.filter(band => parts.some(x => x.p.bands.includes(band.key))).map(x => x.key);
-    const lo = Math.min(...parts.map(x => x.p.range ? x.p.range[0] : 99));
-    const hi = Math.max(...parts.map(x => x.p.range ? x.p.range[1] : 0));
+    let lo = Math.min(...parts.map(x => x.p.range ? x.p.range[0] : 99));
+    let hi = Math.max(...parts.map(x => x.p.range ? x.p.range[1] : 0));
+    // A bundle with its own listing shows that listing's ages and must carry its price.
+    const BL = b.listing && listings.find(l => l.slug === b.listing);
+    if (b.listing && !BL) warnings.push(`bundle ${b.id}: listing ${b.listing} not found`);
+    if (BL) {
+      const r = ageRange(BL.ages);
+      if (r) [lo, hi] = r;
+      if (typeof BL.price_usd === 'number' && Math.abs(BL.price_usd - b.price) > 0.001) errors.push(`bundle ${b.id}: ${money(b.price)} is not the listing price ${money(BL.price_usd)} in ${BL._file}`);
+    }
     const freeParts = (b.free || []).map(([slug, fmt]) => { const p = bySlug[slug]; const fm = p && p.formats.find(x => x.id === fmt); return p && fm ? { p, f: fm } : null; }).filter(Boolean);
     bundles.push({
       ...b, parts, freeParts, separately, bands, ageText: `${lo}–${hi}`,

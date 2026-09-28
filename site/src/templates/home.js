@@ -8,29 +8,43 @@ const seo = require('../lib/seo');
 
 module.exports = function home(ctx) {
   const C = ctx.cfg;
-  const [heroSlug, pa, pb, wa, wb] = C.home.heroPages;
-  const hp = ctx.bySlug[heroSlug];
+  // First hero candidate whose product is shown wins (a held product drops out, never shown for sale).
+  const H = C.home.heroes.find(h => ctx.bySlug[h.slug]);
+  if (!H) throw new Error('site/config.json home.heroes: no candidate product is shown');
+  const hp = ctx.bySlug[H.slug];
+  const [pa, pb] = H.pages;
   const W = ctx.words || [];
   const maxAge = Math.max(...ctx.products.map(p => p.range ? p.range[1] : 0));
-  const heroFmt = hp.priced[0];
+  const heroFmt = (H.format && hp.priced.find(f => f.id === H.format)) || hp.priced[0];
 
   const pageImg = (src, alt, eager) => ctx.img.pic({ src: `products/${hp.dir}/${src}`, widths: [600, 1000, 1400], sizes: '(max-width: 1060px) 50vw, 32vw', alt, eager, priority: eager });
-  const w1 = W[wa] || {}, w2 = W[wb] || {};
-  const tip = (w, n) => w.tip ? `<p class="tip"><span class="tip-k">Page ${n} · “${esc(w.w)}”</span><b>${esc(w.tip[0])}</b> ${esc(w.tip[1])}</p>` : '';
   const pn = s => +(/p(\d+)/.exec(s) || [0, 0])[1];
+  let tips, alts;
+  if (H.tips) {
+    tips = H.tips.map(([k, b, t]) => `<p class="tip"><span class="tip-k">${esc(k)}</span><b>${esc(b)}</b> ${esc(t)}</p>`).join('');
+    alts = H.alts.map(a => `${a} From ${hp.name}.`);
+  } else {
+    const w1 = W[H.words[0]] || {}, w2 = W[H.words[1]] || {};
+    const tip = (w, n) => w.tip ? `<p class="tip"><span class="tip-k">Page ${n} · “${esc(w.w)}”</span><b>${esc(w.tip[0])}</b> ${esc(w.tip[1])}</p>` : '';
+    tips = tip(w1, pn(pa)) + tip(w2, pn(pb));
+    alts = [`The page for “${w1.w || ''}” in ${hp.name}`, `The page for “${w2.w || ''}” in ${hp.name}`];
+  }
+  const eyebrow = H.eyebrow ? esc(H.eyebrow) : `Talk-along books &amp; paper play · ages 0–${maxAge}`;
+  const h1 = H.h1 || 'One word<br>for them.<br><span class="hl">One tip</span><br>for you.';
+  const lede = H.lede ? esc(H.lede) : 'Books and printables where every page gives your child something to say, and gives you one small way to keep the talk going.';
 
   const hero = `<section class="hero" aria-labelledby="hero-h">
   <div class="wrap hero-grid">
     <div class="hero-title">
-      <p class="eyebrow">Talk-along books &amp; paper play · ages 0–${maxAge}</p>
-      <h1 class="display" id="hero-h">One word<br>for them.<br><span class="hl">One tip</span><br>for you.</h1>
-      <p class="lede">Books and printables where every page gives your child something to say, and gives you one small way to keep the talk going.</p>
+      <p class="eyebrow">${eyebrow}</p>
+      <h1 class="display" id="hero-h">${h1}</h1>
+      <p class="lede">${lede}</p>
       <div class="hero-cta"><a class="btn" href="/shop/">Shop by age ${I.arr}</a><a class="link" href="${hp.url}">See inside ${esc(hp.name)}</a></div>
     </div>
     <figure class="hero-spread">
-      <div class="spread-wrap"><div class="spread crop">${pageImg(pa, `The page for “${w1.w || ''}” in ${hp.name}`, true)}${pageImg(pb, `The page for “${w2.w || ''}” in ${hp.name}`, true)}</div></div>
+      <div class="spread-wrap"><div class="spread crop">${pageImg(pa, alts[0], true)}${pageImg(pb, alts[1], true)}</div></div>
       <figcaption>
-        <div class="tips">${tip(w1, pn(pa))}${tip(w2, pn(pb))}</div>
+        <div class="tips">${tips}</div>
         <p class="spec-strip"><b>${esc(hp.name)}</b><span>${esc(heroFmt.label)}</span><span>${esc(heroFmt.detail.split(' · ')[0])}</span><span>Ages ${esc(hp.ageText)}</span><span class="num">${money(heroFmt.price)}</span><span class="${hp.available ? 'ok' : 'soon-inline'}">${hp.available ? 'In stock' : 'Available soon'}</span></p>
       </figcaption>
     </figure>
@@ -48,7 +62,7 @@ module.exports = function home(ctx) {
     <ol class="ruler">
       ${C.bands.map((b, i) => {
         const n = ctx.countBand(b.key);
-        const p = ctx.bySlug[C.home.rulerShelf[b.key]];
+        const p = [].concat(C.home.rulerShelf[b.key] || []).map(s => ctx.bySlug[s]).find(Boolean) || ctx.products.find(q => q.bands.includes(b.key) && q.types.includes('books')) || ctx.products.find(q => q.bands.includes(b.key));
         const obj = p && n ? `<span class="shelf-obj">${mock(ctx, p, { sizes: '160px', widths: [240, 480] })}</span>` : '<span class="shelf-obj shelf-obj--empty"></span>';
         const inner = `${obj}<span class="scale" style="--ticks:${minor[b.key] || 4}"><span class="num0">${b.lo}</span>${i === C.bands.length - 1 ? `<span class="end">${b.hi}</span>` : ''}</span>
           <span class="band-l"><b>${b.label}<small> ${b.unit}</small></b><span>${b.name}<small>${n ? `${n} to choose from` : 'coming later'}</small></span></span>`;
@@ -60,8 +74,10 @@ module.exports = function home(ctx) {
 </section>`;
 
   // ---- 3. Full-width picture-book band ----
-  const [bandSlug, ba, bb] = C.home.bandPages;
-  const bp = ctx.bySlug[bandSlug];
+  const BC = C.home.bandCandidates.find(b => ctx.bySlug[b.slug]);
+  if (!BC) throw new Error('site/config.json home.bandCandidates: no candidate product is shown');
+  const bp = ctx.bySlug[BC.slug];
+  const [ba, bb] = BC.pages;
   const bandFmt = bp.priced[0];
   const bImg = (src, alt) => ctx.img.pic({ src: `products/${bp.dir}/${src}`, widths: [720, 1100, 1600], sizes: '50vw', alt });
   const band = `<section class="book-band on-ink" aria-labelledby="band-h">
@@ -69,12 +85,12 @@ module.exports = function home(ctx) {
     <div class="band-pages">${bImg(ba, '')}${bImg(bb, '')}</div>
     <figcaption class="wrap band-cap">
       <div class="museum">
-        <p class="eyebrow">Read-aloud · ages ${esc(bp.ageText)}</p>
+        <p class="eyebrow">${esc(BC.eyebrow)} · ages ${esc(bp.ageText)}</p>
         <h2 class="h2" id="band-h">${esc(bp.name)}</h2>
-        <p class="m-quote">“Shhh… the tablet is sleeping. So what shall we do?”</p>
+        <p class="m-quote">${esc(BC.quote)}</p>
       </div>
       <dl class="museum-label">
-        <div><dt>Pages</dt><dd>16–17 of 32</dd></div>
+        <div><dt>${esc(BC.label[0])}</dt><dd>${esc(BC.label[1])}</dd></div>
         <div><dt>Edition</dt><dd>${esc(bandFmt.label)}, ${esc(bandFmt.detail.split(' · ')[0])}</dd></div>
         <div><dt>Price</dt><dd class="num">${money(bandFmt.price)}${bp.available ? '' : ' · available soon'}</dd></div>
       </dl>

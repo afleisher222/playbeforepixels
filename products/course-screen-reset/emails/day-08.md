@@ -18,7 +18,7 @@ Please hear this clearly: this is about the order of the day, not about earning.
 
 Why this helps: children often play with more energy and focus before a screen than right after one. And a play that’s already going sometimes carries right through the screen spot, because your child is too busy to notice the time.
 
-Keep it short and easy. A few minutes counts. You’re building a rhythm, not a school timetable.
+Keep it short and easy. A few minutes counts. You’re building a rhythm, not a timetable.
 
 **Today’s one small step:** Put a short play right before today’s screen spot. Keep the spot the same either way.
 
@@ -31,7 +31,7 @@ Roll socks into balls. Put the basket a few steps away and take turns throwing. 
 **Talk while you play (Repeat and add one):** “Throw! … In! Two in! Big throw!”
 
 - **Make it easier:** Put the basket right in front of your toddler and drop the socks in.
-- **Make it harder:** Big kids invent scoring rules: bounce shots, backwards shots, trick shots.
+- **Make it harder:** Preschoolers invent the rules: bounce shots, backwards shots, trick shots.
 - **Tired-grown-up version (2 minutes):** Sit on the couch and toss socks into the basket from where you are.
 - **Safety:** Roll each pair into one big ball; single small items stay away from under-3s.
 
@@ -55,4 +55,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

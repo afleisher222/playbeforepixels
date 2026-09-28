@@ -20,7 +20,7 @@ Keep choices small and real. Both options should be fine with you. “Do you wan
 
 Hold things up where your child can see both. Say the last option with a little lift in your voice. Then wait, patiently.
 
-For big kids, choices sound like: “Do you want to do homework before snack or after?” or “Should Saturday be park day or pancake day?”
+For preschoolers, choices can be bigger: “Park or library after lunch?” or “Should Saturday be pancake day or waffle day?”
 
 **Today’s one small step:** Offer at least five real two-way choices today, and wait for each answer.
 
@@ -33,7 +33,7 @@ Hide a toy under one of two upside-down cups while your child watches. Ask “Th
 **Talk while you play (Offer a choice):** “Where’s the duck? This one… or that one? (wait)”
 
 - **Make it easier:** Use one cup: “Where did it go?” and lift together.
-- **Make it harder:** Big kids use three cups and shuffle them for you to guess.
+- **Make it harder:** Preschoolers use three cups and shuffle them for you to guess.
 - **Tired-grown-up version (2 minutes):** Hold out two closed hands with something in one: “This one or that one?”
 - **Safety:** The hidden toy must be too big to fit through a toilet-paper tube for under-3s.
 
@@ -57,4 +57,4 @@ The Play Before Pixels team
 _This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
 
 [Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
-Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
+Play Before Pixels, a trade name of AlphaPlay LLC · {{business_mailing_address}} · © 2026 AlphaPlay LLC. Version 1.0 · September 2026
