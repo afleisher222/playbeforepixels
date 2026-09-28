@@ -1,4 +1,4 @@
-// Builds every interior edition of "The 30-Day Screen Reset" from content.js:
+// Builds every interior edition of "30 Days of Back-and-Forth" from content.js:
 //   workbook (instant download): Color and Low-ink, each in US Letter and A4, with type-in fields
 //   paperback (Amazon KDP): 8 x 10 in trim, black-and-white interior, bleed on top, bottom and outside edge
 //   etsy: Color Letter with no URL or QR (marketplace rule, CUSTOMER-VOICE #2)
@@ -46,26 +46,28 @@ function doc(V) {
       pad = { t: b + m, b: b + .5, l: recto ? g : b + m, r: recto ? b + m : g };
     } else pad = { t: V.m, b: .5, l: V.m, r: V.m };
     const footer = o.nofoot ? '' : `<footer class="foot" style="left:${pad.l}in;right:${pad.r}in;bottom:${(V.book ? V.bleed : 0) + .28}in">
-      <span class="fl">${V.url ? `<img src="${MARK}" alt="" class="fmark">` : ''}<b>The 30-Day Screen Reset</b>${o.run ? ' · ' + esc(o.run) : ''}</span>
+      <span class="fl">${V.url ? `<img src="${MARK}" alt="" class="fmark">` : ''}<b>${esc(K.TITLE)}</b>${o.run ? ' · ' + esc(o.run) : ''}</span>
       <span class="fr">${V.url ? SITE + ' · ' : 'Play Before Pixels · '}${K.VERSION}<b class="pn">${n}</b></span></footer>`;
     pages.push(`<section class="page ${o.cls || ''}" style="${o.bg && !V.low ? `background:${o.bg};` : ''}">
       <div class="inner" style="padding:${pad.t}in ${pad.r}in ${pad.b + .35}in ${pad.l}in">${body}</div>${footer}</section>`);
   }
+  const LOCKUP = `<div class="cv-top"><div class="cv-num">30</div><div class="cv-t">Days<br>of</div></div><div class="cv-bf">Back-and-Forth</div>`;
+  const NOPREP = K.DAYS.filter(d => d.play.prep === 0).length;
   const H = (kicker, title, color = C.ink, deep = C.ink) => `<header class="ph"><div class="kick" style="color:${deep}">${kicker}</div><h1 style="color:${color}">${title}</h1></header>`;
 
   // ================================================================= FRONT MATTER
   if (!V.book) {
     page(`<div class="cover">
-        <div class="cv-top"><div class="cv-num">30</div><div class="cv-t">Day<br>Screen<br>Reset</div></div>
+        ${LOCKUP}
         <p class="cv-sub">${esc(K.SUB)}</p>
         <div class="cv-scene">${sceneSvg(sceneCover, '', '20 150 560 360')}</div>
         <p class="cv-tag">${esc(K.TAGLINE)}</p>
-        <p class="cv-ed">Workbook &amp; trackers · ${V.low ? 'Low-ink edition' : 'Color edition'} · ${V.w === 8.5 ? 'US Letter' : 'A4'}</p>
+        <p class="cv-ed">Workbook &amp; trackers · ${V.low ? 'Low-ink edition' : 'Color edition'} · ${V.w === 8.5 ? 'US Letter' : 'A4'} · ${NOPREP} of 30 plays need no prep; the rest take about 2 minutes</p>
         <div class="cv-logo">${V.url ? `<img src="${LOGO}" alt="Play Before Pixels">` : '<span class="wm">Play Before Pixels</span>'}</div>
       </div>`, { nofoot: true, cls: 'cvpage', bg: C.tSun });
   } else {
     page(`<div class="titlep">
-        <div class="cv-top"><div class="cv-num">30</div><div class="cv-t">Day<br>Screen<br>Reset</div></div>
+        ${LOCKUP}
         <p class="cv-sub">${esc(K.SUB)}</p>
         <p class="tp-tag">30 short lessons, 30 easy plays and plain words for tricky moments, for families with children aged 1 to 12</p>
         <div class="tp-scene">${sceneSvg(sceneCover, '', '20 150 560 360')}</div>
@@ -82,7 +84,7 @@ function doc(V) {
         <ol class="steps">
           <li><b>One email a morning, for 30 days.</b> Each has a short lesson (about 3 minutes to read), one easy play and plain words for a tricky moment.</li>
           <li><b>This workbook holds the same 30 days</b>, plus trackers, planning pages, a scripts bank and a certificate. Use it on paper or type into it.</li>
-          <li><b>Go at your own pace.</b> Miss a day? Nothing breaks. Pick up where you are. Many families take longer than 30 days.</li>
+          <li><b>Go at your own pace.</b> Miss a day? Nothing breaks. Pick up where you are. It’s fine to take longer than 30 days.</li>
         </ol>
         <h3>Your 2-minute setup</h3>
         <ul class="ticks">
@@ -312,7 +314,7 @@ function doc(V) {
       <div class="cawd">This certificate is awarded to</div>
       <div class="cname">${F('cert-name', 'cn')}</div>
       <div class="cawd">for finishing</div>
-      <div class="ct">The 30-Day<br>Screen Reset</div>
+      <div class="ct">30 Days of<br>Back-and-Forth</div>
       <p class="cp">30 days of more play, more talk and a steady spot for screens.</p>
       <div class="cfav"><b>Our favorite play:</b>${F('cert-fav')}</div>
       <div class="cdate"><b>Date:</b>${F('cert-date', 'short')}</div>
@@ -327,7 +329,13 @@ function doc(V) {
     for (const d of K.DAYS.filter(x => x.d >= w.from && x.d <= w.to)) {
       lessonPage(d); playPage(d);
       if (d.d === 28) toughPage();
-      if (d.d === 30) { planPage(); certPage(); }
+      if (d.d === 30) {
+        planPage();
+        // Paperback: the certificate is a page children decorate, so it gets a recto of its own with a blank back (CUSTOMER-VOICE rule 20).
+        if (V.book && (pageNo + 1) % 2 === 0) page('<div class="blankp">This page is left blank on purpose.</div>', { nofoot: true });
+        certPage();
+        if (V.book) page('<div class="blankp">The back of the certificate is left blank so your child can decorate the front.</div>', { nofoot: true });
+      }
     }
     if (w.n <= 4) checkin(w.n);
   }
@@ -344,12 +352,12 @@ function doc(V) {
   // Blank play page
   const own = i => `<article class="play own">
     <div class="phead">
-      <div class="disc" style="width:1.1in;height:1.1in"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="57" fill="none" stroke="${C.grass}" stroke-width="2.4" stroke-dasharray="6 6"/><text y="6" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="22" fill="${C.ink}">draw it!</text></svg></div>
+      <div class="disc" style="width:.85in;height:.85in"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="57" fill="none" stroke="${C.grass}" stroke-width="2.4" stroke-dasharray="6 6"/><text y="6" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="22" fill="${C.ink}">draw it!</text></svg></div>
       <div class="ptitle"><div class="kicker">Our own play</div>${F('own' + i + '-title', 'big')}
         <div class="meta"><span>${ico('sprout')} From ${F('own' + i + '-age', 'inl')}</span><span>${ico('clock')} Prep ${F('own' + i + '-prep', 'inl')}</span><span>${drops(1)} Mess ${F('own' + i + '-mess', 'inl')}</span></div>
         <div class="need">${ico('bag')}<b>You need:</b>${F('own' + i + '-need')}</div></div>
     </div>
-    <div class="ownl"><b>How to play</b>${F('own' + i + '-how', 'multi', 3)}</div>
+    <div class="ownl"><b>How to play</b>${F('own' + i + '-how', 'multi', 2)}</div>
     <div class="ownl"><b>Talk while you play</b>${F('own' + i + '-talk')}</div>
     <div class="ownl two"><div><b>Easier</b>${F('own' + i + '-easy')}</div><div><b>Harder</b>${F('own' + i + '-hard')}</div></div>
     <div class="ownl"><b>${ico('shield')} Safety</b>${F('own' + i + '-safe')}</div>
@@ -397,7 +405,7 @@ function doc(V) {
   }
   function copyrightBody(book) {
     return `<div class="copy">
-      <p><b>The 30-Day Screen Reset</b><br>A play-first plan for families</p>
+      <p><b>${esc(K.TITLE)}</b><br>${esc(K.SUB)}</p>
       <p>${COPY}<br>All rights reserved. No part of this book may be reproduced without written permission, except short quotations in reviews.</p>
       <p>${K.VERSION}. Printed on demand.</p>
       <p>Published by AlphaPlay LLC, doing business as Play Before Pixels.<br>${SITE}</p>
@@ -453,7 +461,9 @@ b{font-weight:800}
 .cover,.titlep{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center}
 .cv-top{display:flex;align-items:center;gap:.18in;margin-top:.1in}
 .cv-num{font-weight:800;font-size:150pt;line-height:.8;color:${C.tomato};letter-spacing:-.04em}
-.cv-t{font-weight:800;font-size:40pt;line-height:.92;text-align:left;color:${C.ink}}
+.cv-t{font-weight:800;font-size:46pt;line-height:.92;text-align:left;color:${C.ink}}
+.cv-bf{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:50pt;line-height:1;letter-spacing:-.01em;color:${C.ink};white-space:nowrap;margin-top:.1in}
+.blankp{margin:auto;font-size:8pt;color:#8A93A6;text-align:center}
 .cv-sub{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:19pt;margin-top:.22in}
 .cv-scene{width:6.2in;height:4in;margin-top:.25in}
 .cv-scene svg{width:100%;height:100%}
@@ -643,7 +653,7 @@ ${V.book ? ".tcn{font-size:12pt!important}.tck{font-size:6.6pt!important}.field.
 .fpr b{font-family:"Bricolage Grotesque",sans-serif;font-size:11pt}
 .sign{margin-top:auto;display:grid;grid-template-columns:auto 1fr auto 1.4in;gap:.1in;align-items:end;font-weight:700}
 .sign .field{margin:0}
-.certpage .inner{padding:.5in!important}
+${V.book ? `.certpage .inner{padding-top:${V.bleed + .42}in!important;padding-bottom:${V.bleed + .62}in!important}` : '.certpage .inner{padding:.5in .5in .7in!important}'}
 .cert{flex:1;border:6px solid ${C.sun};border-radius:26px;display:flex;flex-direction:column;align-items:center;text-align:center;padding:.3in .4in .2in;outline:2px solid ${C.sun};outline-offset:-14px}
 .cstars{display:flex;gap:.12in;align-items:center;margin-bottom:.1in}
 .cstars svg{display:block}
@@ -665,9 +675,12 @@ ${V.book ? ".tcn{font-size:12pt!important}.tck{font-size:6.6pt!important}.field.
 .sb b span{font-weight:700;font-size:7.5pt;color:#4A5570;flex:none}
 .sb p{font-family:"Fredoka","Nunito Sans",sans-serif;font-size:9.4pt;margin:0 0 .02in;line-height:1.3}
 /* own play */
-.own{border:1.3px solid #C9D2E1;border-radius:14px;padding:.14in .18in;margin-bottom:.16in}
+.own{border:1.3px solid #C9D2E1;border-radius:14px;padding:.1in .16in;margin-bottom:.12in}
+.own .phead{margin-bottom:0}
+.own .field:not(.multi):not(.inl){min-height:.26in}
+.own .field.multi{height:calc(var(--l,3) * .28in);background:repeating-linear-gradient(to bottom,transparent 0,transparent calc(.28in - 1.3px),#9AA6BC calc(.28in - 1.3px),#9AA6BC .28in)}
 .own .ptitle .field.big{margin-top:.02in}
-.ownl{margin-top:.06in;font-size:9.5pt}
+.ownl{margin-top:.03in;font-size:9.5pt}
 .ownl.two{display:grid;grid-template-columns:1fr 1fr;gap:.2in}
 /* faq */
 .faq{columns:2;column-gap:.3in}
@@ -698,7 +711,7 @@ ${V.low && !V.gray ? `
 .art .ground{stroke-width:1.5px!important}
 ` : ''}
 `;
-  let html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>The 30-Day Screen Reset — ${V.book ? 'Paperback interior' : 'Workbook'}</title>
+  let html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${esc(K.TITLE)} — ${V.book ? 'Paperback interior' : 'Workbook'}</title>
 <link rel="stylesheet" href="${FONTS}"><style>${css}</style></head><body>
 ${P.defs().replace('<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>' + P.CH.SYMBOLS.join(''), '<svg width="0" height="0" style="position:absolute" aria-hidden="true" class="chardefs"><defs>' + P.CH.SYMBOLS.join('') + '</defs></svg><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>')}
 ${pages.join('\n')}

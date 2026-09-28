@@ -64,19 +64,28 @@ Claude can do none of steps 1–7 itself: they are account settings that only th
 
 ## API credentials (added as each account opens, never pasted in chat)
 
-Each one goes in as: environment → **API credentials** → **Add credential** → the host(s) in the table → the header in the table.
+Each one goes in as: environment → **API credentials** → **Add credential** → the host(s) in the table → the header in the table. In the form, **Bearer** means the header name `Authorization` with the prefix `Bearer`; for a header that takes the bare key, change the name and clear the prefix. A credential is attached only to the exact hosts listed on it (a leading `*.` would match every subdomain; do not use one).
 
-| Platform | Allowed websites (host) | Header |
-|---|---|---|
-| Cloudflare (website) | `api.cloudflare.com` | `Authorization: Bearer …` |
-| Shopify | `<store>.myshopify.com` | `X-Shopify-Access-Token` (no prefix). Shopify's current app-token rules are an open research item in `ops/RESEARCH-BACKLOG.md` |
-| Etsy | `openapi.etsy.com` | `x-api-key` plus OAuth. OAuth tokens expire; the token-refresh design is task #20 (G2-05) |
-| Pinterest | `api.pinterest.com` | `Authorization: Bearer …` (OAuth; refresh design as above) |
-| Meta (Instagram and Facebook) | `graph.facebook.com` | `Authorization: Bearer …` |
-| TikTok | `open.tiktokapis.com` | `Authorization: Bearer …` |
-| Gumroad | `api.gumroad.com` | `Authorization: Bearer …` |
-| Printful | `api.printful.com` | `Authorization: Bearer …` |
-| Email platform | `connect.mailerlite.com` or `api.kit.com` | `Authorization: Bearer …` |
+Checked against `ops/SECRETS.md` on September 28, 2026 (details: `ops/TESTS/network-hosts.md`). Anything marked [VERIFY] could not be read from the platform's own documentation yet; `ops/RESEARCH-BACKLOG.md` items 2–5, 7, 8 and 11 cover it.
+
+| Platform | Name in `ops/SECRETS.md` | Allowed websites (host) | Header | Notes |
+|---|---|---|---|---|
+| Cloudflare (website) | `CLOUDFLARE_API_TOKEN` | `api.cloudflare.com` | `Authorization: Bearer …` | `CLOUDFLARE_ACCOUNT_ID` is not secret: add it as a plain environment variable. Wrangler reads the token from an environment variable, and a Pages direct upload sends its own short upload token to the same host, so whether a wrangler deploy works when only the proxy holds the key is [VERIFY] on the first deploy. Fallback that needs no key in the run: connect the Pages project to this GitHub repository so a push deploys |
+| Shopify | `SHOPIFY_ADMIN_TOKEN` (`SHOPIFY_STORE_DOMAIN` is a plain variable) | `<store>.myshopify.com`, the exact host, no wildcard | `X-Shopify-Access-Token` (no prefix) | Header name is the Admin API's. [VERIFY] which token a new store app can get: round-2 gap G2-05 reports that Dev Dashboard apps get 24-hour tokens from a client ID and secret, and that exchange sends the secret in the request body, which a stored credential cannot do. Then the token broker supplies the token, and the exact store host also goes into `ops/cloud/allowed-domains.txt` (backlog item 2) |
+| Etsy | `ETSY_API_KEY`, `ETSY_ACCESS_TOKEN` | `openapi.etsy.com` | `x-api-key` (no prefix), and the OAuth token as `Authorization: Bearer …` | Store only `x-api-key` as the credential. Its value format (the keystring alone, or keystring and shared secret joined by a colon) is [VERIFY]. OAuth access tokens are short-lived ([VERIFY] lifetime), so the run gets one from the token broker and sends it itself (G2-05, backlog item 3) |
+| Pinterest | `PINTEREST_ACCESS_TOKEN` | `api.pinterest.com` (apps on trial access may be limited to `api-sandbox.pinterest.com` [VERIFY]) | `Authorization: Bearer …` | Access tokens reported to last 30 days [VERIFY]: the token broker, or a monthly re-add (backlog item 4) |
+| Meta (Instagram and Facebook) | not in `ops/SECRETS.md` yet [VERIFY: a direct Meta key, or posting through `SOCIAL_SCHEDULER_TOKEN`] | `graph.facebook.com`, plus `rupload.facebook.com` for Reels uploads [VERIFY] | `Authorization: Bearer …` [VERIFY: Meta's examples pass `access_token` as a parameter] | Use a token that does not expire (system-user or Page token) [VERIFY]. Images and videos are posted from a public URL, so the site must be deployed first |
+| TikTok | not in `ops/SECRETS.md` yet [VERIFY, as for Meta] | `open.tiktokapis.com` | `Authorization: Bearer …` | Access tokens reported to last 24 hours [VERIFY]: the token broker. File uploads go to the `upload_url` TikTok returns, reported to be on `open-upload.tiktokapis.com` [VERIFY]; that host is on the allowlist and needs no credential |
+| YouTube | not in `ops/SECRETS.md` yet [VERIFY, as for Meta] | `youtube.googleapis.com` or `www.googleapis.com` [VERIFY] | `Authorization: Bearer …` | Google access tokens last about 1 hour [VERIFY]: the token broker. The hosts are already reachable through the default list. Never put two credentials on the same Google host |
+| Gumroad | `GUMROAD_ACCESS_TOKEN` | `api.gumroad.com` | `Authorization: Bearer …` [VERIFY: Gumroad's examples pass `access_token` as a parameter] | Backlog item 8 |
+| Printful | `PRINTFUL_API_TOKEN` | `api.printful.com` | `Authorization: Bearer …` | A store-level private token needs nothing else. An account-level token also needs `X-PF-Store-Id` on store endpoints [VERIFY] |
+| Printify (only if chosen instead of Printful) | `PRINTIFY_API_TOKEN` | `api.printify.com` [VERIFY] | `Authorization: Bearer …` [VERIFY] | Add `api.printify.com` to the allowlist only if chosen |
+| Gelato (only if chosen instead of Printful) | `GELATO_API_KEY` | its API hosts on `gelatoapis.com` [VERIFY the exact names] | `X-API-KEY` (no prefix) [VERIFY] | As above |
+| Email platform: MailerLite | `EMAIL_PLATFORM_API_KEY` | `connect.mailerlite.com` | `Authorization: Bearer …` | |
+| Email platform: Kit | `EMAIL_PLATFORM_API_KEY` | `api.kit.com` | `X-Kit-Api-Key` (no prefix) for a v4 API key [VERIFY]; `Authorization: Bearer …` is for OAuth tokens | |
+| Social scheduler | `SOCIAL_SCHEDULER_TOKEN` | the chosen service's API host, for example `api.ayrshare.com` [VERIFY: service not chosen, backlog item 11] | `Authorization: Bearer …` [VERIFY] | |
+| Uptime monitor | `UPTIME_API_KEY` | the monitor's API host, for example `api.uptimerobot.com` [VERIFY] | [VERIFY] | If the monitor's API takes the key in the request body instead of a header, a stored credential cannot supply it: use a read-only key as a plain environment variable |
+| Token broker and approval Worker (G2-03, G2-05; not built yet) | name it when built | the Worker's own host [VERIFY when built] | `Authorization: Bearer …` | The Worker keeps the refresh tokens and hands each run short-lived tokens |
 
 `ops/SECRETS.md` lists what each key lets Claude do. Give every key the smallest permissions that do the job, and delete a credential to switch that platform's automation off.
 

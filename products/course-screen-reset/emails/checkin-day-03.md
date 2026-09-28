@@ -8,7 +8,7 @@ send: "day 3, 16:00 local time"
 
 Three days in. How’s it going?
 
-If the screen spot has caused some protests, that’s normal. Most families find the asking settles once the spot stays the same for a week or two. Keep the words the same every day and let the routine do the work.
+If the screen spot has caused some protests, that’s normal. The asking often settles once the spot has stayed the same for a week or two. Keep the words the same every day and let the routine do the work.
 
 If a day went sideways, just pick up with tomorrow’s lesson. Nothing breaks.
 

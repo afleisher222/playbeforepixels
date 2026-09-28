@@ -1,15 +1,18 @@
-"I'm Bored" Play Cards - PNG template set (300 dpi)
-Play Before Pixels · playbeforepixels.com
+"I'm Bored" Play Cards - PNG template set (300 dpi), a bonus for design apps
+Play Before Pixels · playbeforepixels.com · Version 1.0 · September 2026
 
-WHAT'S HERE (30 files)
-- blank-card-*.png   Blank card fronts with soft boxes to type into (one per age band + summer + rainy day)
-- lined-card-*.png   The same cards with writing lines, for handwriting
-- card-back-*.png    Card backs in six colors
-- round-label-blank-*.png, wrap-label-blank-*.png   Blank jar labels in four brand colors
-- divider-blank-*.png   Blank box dividers with tabs
+The easiest way to make your own cards is the color PDF: its blank cards, labels, dividers,
+planners and certificate have type-in boxes. These PNGs are an extra for people who prefer a design app.
+
+WHAT'S HERE (24 files)
+- blank-card-*.png          Blank card fronts with soft boxes to type into (ages 1-3, 3-5, 5-8, 8-12, summer, rainy day)
+- card-back-*.png           Card backs in six colors
+- round-label-blank-*.png   Blank round jar labels in four brand colors (3.4 x 3.4 in)
+- wrap-label-blank-*.png    Blank wrap labels (7.5 x 1.85 in)
+- divider-blank-*.png       Blank box dividers with tabs (2.4 x 3.95 in)
 
 HOW TO USE IN A DESIGN APP
-1. Create a custom-size design: cards 2.5 x 3.5 in; round labels 3.4 x 3.4 in; wrap labels 7.5 x 2 in; dividers 2.4 x 3.95 in.
+1. Create a custom-size design: cards 2.5 x 3.5 in; round labels 3.4 x 3.4 in; wrap labels 7.5 x 1.85 in; dividers 2.4 x 3.95 in.
 2. Upload or place the PNG so it fills the design exactly.
 3. Add text boxes on top. Keep text inside the white panel, at least 0.15 in from the edge.
 4. Export as a print-quality PDF and print at 100% (actual size) on cardstock.
@@ -18,6 +21,7 @@ SAFETY
 Cards you write follow the same rules as the printed pack: see the safety page in the main PDF
 (adult supervision; for children under 3, nothing small enough to fit through a toilet-paper tube;
 no balloons for under-8s; no long cords or strings; water play always supervised; no choking-hazard foods).
+Grown-up keeps the cut pieces.
 
 LICENSE
 (c) 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.

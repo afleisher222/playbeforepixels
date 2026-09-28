@@ -1,6 +1,6 @@
 ---
 subject: "Day 1: Start with one ordinary day"
-preheader: "Before you change anything, notice when screens show up in your day and when play already "
+preheader: "Before you change anything, notice when screens show up in your day and when play…"
 send: "day 1, 7:00 local time"
 ---
 
@@ -20,7 +20,7 @@ Then notice the good parts. When did your child play without being asked? When d
 
 Write it down on the “Our ordinary day” page in your workbook, or on the back of an envelope. You’re drawing a map, not grading yourself.
 
-Most families find two or three “screen moments” that carry most of the load: the morning rush, the hour before dinner, the car. Those are the places this program will help most.
+Many families have two or three “screen moments” that carry most of the load: the morning rush, the hour before dinner, the car. Those are the places this program will help most.
 
 **Today’s one small step:** Fill in “Our ordinary day”. Circle the two moments when a screen helps you most.
 
@@ -48,7 +48,7 @@ Name the wish, keep it short and point to something to do. No lecture needed.
 Today’s pages in your workbook: Day 1. {{workbook_download_link}}
 
 ---
-**Next for your family:** Play-First Family Kit. A screen-rhythm chart, a family play plan and helping-jobs pages to put this week on the fridge. https://playbeforepixels.com/shop/printables-family-kit
+**Next for your family:** Play-First Family Kit. A screen-rhythm chart, a family play plan and helping-jobs pages to put this week on the fridge. https://playbeforepixels.com/shop/play-first-family-kit
 
 **Share with a friend:** give $5, get $5. {{referral_link}}
 

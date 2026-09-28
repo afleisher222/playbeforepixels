@@ -61,9 +61,9 @@ imgs.push(`<section class="L" style="--bg:var(--tS)">${brandRow()}
   </div></section>`);
 // 2 · what's inside
 const inside = [['homeAddress', 'Are we ready?', '16-point checklist, no score'], ['numbersCard', '10 practice missions', 'Before the first phone'], ['kindWords', 'The agreement', '18 kid + 8 grown-up promises'], ['phonePark', 'Phone-free zones', '7 zones, grown-ups too'], ['phoneBed', 'Phone-free times', 'School days + weekends'], ['chargeSpot', '8 zone signs', 'Cut and post'], ['planner', 'Fridge-door tech plan', 'Example + fillable'], ['outsideTime', '30 afternoons', 'Tracker, 30 ideas, certificate'], ['checkIn', 'Monthly check-in', '5 questions, 3 months'], ['swatches', '3 colorways + low-ink', 'Tomato, Sky, Plum']];
-imgs.push(`<section class="L" style="--bg:var(--wash)"><div class="ey">What’s inside</div><div class="h" style="font-size:58px">10 tools, <span class="n">${NP} pages</span></div>
+imgs.push(`<section class="L" style="--bg:var(--wash)"><div class="ey">What’s inside</div><div class="h" style="font-size:58px">40 activities, <span class="n">10 tools</span></div>
   <div class="grid" style="grid-template-columns:1fr 1fr;flex:1">${inside.map(([a, t, s]) => `<div class="tile">${art(a, 'var(--wash)')}<div><b>${t}</b><span>${s}</span></div></div>`).join('')}</div>
-  <div class="foot">Instant digital download · nothing is shipped · personal and family use</div></section>`);
+  <div class="foot">30 afternoon ideas + 10 practice missions · ${NP} pages in color · instant digital download, nothing is shipped</div></section>`);
 // 3 · grown-up guide
 imgs.push(`<section class="L" style="--bg:var(--tK)"><div class="ey">A 2-page grown-up guide</div><div class="h" style="font-size:56px">Set up in 2 minutes.<br>Talk it through together.</div>
   <div class="stage">
@@ -114,17 +114,18 @@ imgs.push(`<section class="L" style="--bg:var(--tK)"><div class="ey">One page fo
 // 9 · colorways + low-ink
 imgs.push(`<section class="L" style="--bg:#fff"><div class="ey">Pick your colors</div><div class="h" style="font-size:58px">3 colorways + a low-ink file</div>
   <div class="stage">
-    ${sheet(M.agree, '--w:300px;left:-10px;top:60px;transform:rotate(-4deg)')}
-    ${sheet(M.agree_sky, '--w:300px;left:200px;top:30px;transform:rotate(-1deg)')}
-    ${sheet(M.agree_plum, '--w:300px;left:410px;top:45px;transform:rotate(2deg)')}
-    ${sheet(ML.agree, '--w:300px;left:590px;top:70px;transform:rotate(5deg)', true)}
+    ${sheet(M.agree, '--w:365px;left:-20px;top:70px;transform:rotate(-4deg)')}
+    ${sheet(M.agree_sky, '--w:365px;left:165px;top:30px;transform:rotate(-1deg)')}
+    ${sheet(M.agree_plum, '--w:365px;left:350px;top:50px;transform:rotate(2deg)')}
+    ${sheet(ML.agree, '--w:365px;left:520px;top:80px;transform:rotate(5deg)', true)}
   </div>
   <div class="pills"><span class="pill" style="background:var(--tT)"><i></i>Tomato</span><span class="pill" style="background:var(--tK)"><i style="--c:var(--sky)"></i>Sky</span><span class="pill" style="background:var(--tP)"><i style="--c:var(--plum)"></i>Plum</span><span class="pill" style="background:var(--wash)"><i style="--c:#fff;border:2px solid var(--ink)"></i>Low-ink line art</span></div></section>`);
 // 10 · formats + how it works
-const steps = [['1', 'Download', '5 PDF files, instantly. Open them in a web browser, not the app.', 'askDownload'], ['2', 'Print or type', 'US Letter or A4. Fill in on screen or by hand.', 'planner'], ['3', 'Sit down together', 'About 30 minutes, snacks recommended.', 'checkIn'], ['4', 'Post it', 'Fridge-door plan up, phones to the charging spot, afternoons on.', 'phonePark']];
-imgs.push(`<section class="L" style="--bg:var(--wash)"><div class="ey">How it works</div><div class="h" style="font-size:58px">Ready in 5 minutes.<br><span class="n">No cutting needed.</span></div>
-  <div class="grid" style="grid-template-columns:repeat(4,1fr);flex:1">${steps.map(([n, t, s, a]) => `<div class="tile" style="flex-direction:column;align-items:flex-start;justify-content:flex-start;padding:22px 18px;gap:12px"><div style="width:100%;height:150px">${art(a, 'var(--wash)').replace('class="art"', 'class="art" style="width:100%;height:100%"')}</div><div style="width:56px;height:56px;border-radius:50%;background:var(--tomato);color:#fff;font-family:Fredoka,sans-serif;font-weight:600;font-size:30px;display:flex;align-items:center;justify-content:center;flex:0 0 auto">${n}</div><div><b style="font-size:25px;margin-bottom:6px">${t}</b><span style="font-size:18px;color:var(--ink);font-weight:600;line-height:1.35;display:block">${s}</span></div></div>`).join('')}</div>
-  <div class="grid" style="grid-template-columns:repeat(3,1fr)">${[['START HERE', '+ Color and Low-ink'], ['US Letter + A4', `${NP} pages in color`], ['Fillable PDF', 'Pre-filled and blank']].map(([a, b]) => `<div class="tile" style="flex-direction:column;align-items:flex-start;gap:4px"><b>${a}</b><span>${b}</span></div>`).join('')}</div>
+const steps = [['1', 'Download', '5 PDF files, instantly, from your Purchases page.', 'askDownload'], ['2', 'Print or type', 'US Letter or A4. Fill in on screen or by hand.', 'planner'], ['3', 'Sit down together', 'About 30 minutes, snacks recommended.', 'checkIn'], ['4', 'Post it', 'Fridge-door plan up, phones to the charging spot, afternoons on.', 'phonePark']];
+imgs.push(`<section class="L" style="--bg:var(--wash)"><div class="ey">How to download · ready in 5 minutes</div><div class="h" style="font-size:58px">Use a web browser,<br><span class="n">not the app.</span></div>
+  <div class="tile" style="background:var(--tS);padding:20px 24px;gap:18px"><div style="width:110px;height:92px;flex:0 0 auto">${art('askDownload', '#fff').replace('class="art"', 'class="art" style="width:100%;height:100%"')}</div><div><b style="font-size:24px;margin-bottom:6px">Open your Purchases page in a web browser and tap each file.</b><span style="font-size:18px;color:var(--ink);font-weight:600;line-height:1.35;display:block">On a phone, save each PDF to your files first, then open it in a PDF reader. Your files stay there to download again anytime.</span></div></div>
+  <div class="grid" style="grid-template-columns:repeat(4,1fr);flex:1">${steps.map(([n, t, s, a]) => `<div class="tile" style="flex-direction:column;align-items:flex-start;justify-content:flex-start;padding:22px 18px;gap:12px"><div style="width:100%;height:120px">${art(a, 'var(--wash)').replace('class="art"', 'class="art" style="width:100%;height:100%"')}</div><div style="width:56px;height:56px;border-radius:50%;background:var(--tomato);color:#fff;font-family:Fredoka,sans-serif;font-weight:600;font-size:30px;display:flex;align-items:center;justify-content:center;flex:0 0 auto">${n}</div><div><b style="font-size:25px;margin-bottom:6px">${t}</b><span style="font-size:18px;color:var(--ink);font-weight:600;line-height:1.35;display:block">${s}</span></div></div>`).join('')}</div>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr)">${[['START HERE', '+ Color and Low-ink'], ['US Letter + A4', `${NP} pages in color, no cutting needed`], ['Fillable PDF', 'Pre-filled and blank']].map(([a, b]) => `<div class="tile" style="flex-direction:column;align-items:flex-start;gap:4px"><b>${a}</b><span>${b}</span></div>`).join('')}</div>
   <div class="foot">Digital download: nothing is shipped. Parent education, not medical or professional advice. Never names an app, phone brand or company.</div></section>`);
 
 fs.writeFileSync(path.join(__dirname, 'listing.html'), head('First Phone Agreement Kit · listing images') + imgs.join('\n') + '</body></html>');

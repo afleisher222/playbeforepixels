@@ -274,18 +274,18 @@ h1,h2,h3,h4,p{margin:0}
 .ti{display:flex;align-items:flex-start;justify-content:space-between;gap:5px;padding:5px 7px 2px 8px;position:relative}
 .tt{flex:1;min-width:0}
 .cat{font-weight:800;font-size:7px;letter-spacing:.11em;text-transform:uppercase;opacity:.75;margin-bottom:1px}
-.ti h3{font-family:"Fredoka","Nunito Sans",sans-serif;font-weight:600;font-size:17.5px;line-height:1.02;letter-spacing:-.005em}
+.ti h3{font-family:"Fredoka","Nunito Sans",sans-serif;font-weight:600;font-size:18px;line-height:1.02;letter-spacing:-.005em}
 .ci{flex:0 0 32px;width:32px;height:32px;border-radius:50%;background:var(--t);display:flex;align-items:center;justify-content:center;color:var(--m)}
 .card[style*="--m:${C.sun}"] .ci,.card[style*="--m:${C.sun}"] .talk .ti2{color:#A87700}
 .ci .i{width:20px;height:20px;display:block}
 .bd{padding:2px 8px 0;display:flex;flex-direction:column;gap:4px;position:relative;z-index:1}
 .row{position:relative}
 .row b,.talk b{display:block;font-weight:800;font-size:7px;letter-spacing:.11em;text-transform:uppercase;opacity:.75;margin-bottom:0}
-.row p{font-size:10.6px;line-height:1.26;font-weight:600}
+.row p{font-size:11px;line-height:1.26;font-weight:600}
 .talk{background:var(--t);border-radius:8px;padding:4px 7px 4px 5px;display:flex;gap:4px;align-items:flex-start;margin-top:1px;position:relative}
 .talk>div{flex:1;min-width:0}
 .talk .ti2{flex:0 0 13px;width:13px;height:13px;color:var(--m);margin-top:1px}
-.talk p{font-size:10.6px;line-height:1.22;font-weight:800}
+.talk p{font-size:11px;line-height:1.22;font-weight:800}
 .sp{flex:1;min-height:0}
 .fl{display:flex;align-items:center;gap:3px;padding:0 5px 3px 6px;position:relative}
 .fg{display:inline-flex;align-items:center;gap:2px;height:13px;padding:0 4px 0 3px;border-radius:10px;font-size:6.4px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap}
@@ -364,6 +364,7 @@ body.low .wlab,body.low .slab{border:3px solid var(--m)}
 body.low .rl{outline:.8px dashed #9AA5B8;outline-offset:3px;border:3px solid var(--m)}
 body.low .rli{border-color:#9AA5B8!important}
 body.low .back .panel{border-color:var(--m)}
+body.low .fan .panel,body.low .mc .panel{background-color:#fff!important}
 </style>`;
 
 // ---------- pages ----------
@@ -380,6 +381,7 @@ function coverPage() {
   <div class="cv-fan">${fanHtml}</div>
   <div class="cv-chips">${chips.map((c, i) => `<span class="pill" style="background:${[C.tSun, C.tGrass, C.tSky, C.tPlum][i]}">${c}</span>`).join('')}</div>
   <div class="cv-extra"><span><b>Prep:</b> about 30 min to print and cut every card with a paper trimmer, then use them again and again. No time? Print one sheet, or point and pick from the card index with no cutting.</span></div>
+  <div class="cv-ft">${VERSION} · ${COPY}</div>
   `);
 }
 const coverCss = `<style>
@@ -396,7 +398,8 @@ const coverCss = `<style>
 .fan{position:absolute;top:0;left:${'calc(50% - 1.25in)'};width:2.5in;height:3.5in;transform-origin:50% 175%}
 .fan .card{padding:0}.fan .panel{box-shadow:0 8px 18px rgba(29,41,64,.13)}
 .cv-chips{position:absolute;left:.55in;right:.55in;bottom:1.18in;display:flex;flex-wrap:wrap;gap:8px}
-.cv-extra{position:absolute;left:.57in;right:.55in;bottom:.5in;font-size:12px;line-height:1.45;font-weight:600;background:#fff;border-radius:14px;padding:9px 14px}
+.cv-ft{position:absolute;left:.57in;right:.55in;bottom:.3in;font-size:7.3px;font-weight:700;color:var(--mut)}
+.cv-extra{position:absolute;left:.57in;right:.55in;bottom:.52in;font-size:12px;line-height:1.45;font-weight:600;background:#fff;border-radius:14px;padding:9px 14px}
 </style>`;
 
 function welcomeArt() {
@@ -1057,31 +1060,36 @@ function startHereDoc() {
       <p class="ssm"><b>US Letter</b> is for the USA and Canada. <b>A4</b> is for most other countries.</p></div>
     <div class="sbx" style="background:${C.tSky}"><span class="kick">Downloading</span><p><b>Use a web browser, not the shopping app.</b> Apps often can’t save files. On a computer or in your phone’s browser, tap each file to save it.</p>
       <p>${STORE() ? '<b>Lost a file?</b> Use the link in your order email, or scan the code below for the re-download page.' : '<b>Lost a file?</b> Sign in on a web browser and open Purchases in your account. Your files stay there.'}</p>
+      ${STORE() ? '' : '<p><b>On a phone?</b> After you tap a file, open it from your Downloads folder. To type in the blanks, a computer is easiest.</p><p><b>File won’t open?</b> Try a free PDF reader, then download it again from Purchases.</p>'}
       ${STORE() ? `<div class="sqr"><div>${QR_HELP}<span>Re-download and help<br>${HELP}</span></div><div>${QR_BONUS}<span>Free bonus mini-set<br>${BONUS}</span></div></div>` : ''}</div>
   </div>
   <div class="shg">
     <div class="sbx" style="background:${C.tSun}"><span class="kick">Print settings</span><p>Print at <b>100% / actual size</b>, not “fit to page.” Use cardstock (65–110 lb / 176–300 gsm) for the cards. Print only what you need: the page guide is on page ${GUIDE.letter.tips} of each main file. Double-sided backs are optional; the steps are on the same page.</p><p><b>Prep:</b> about 30 minutes to print and cut every card with a paper trimmer, then use them again and again. No time? Print one sheet today.</p></div>
     <div class="sbx" style="background:${C.tGrass}"><span class="kick">Typing in the blanks</span><p>The <b>color</b> files have type-in boxes on the blank cards, planners, blank labels, blank dividers and certificate. Open the file in a free PDF reader that supports fill-in forms (a computer is easiest), click a box, type, then save a copy.</p><p><b>What you can edit:</b> text boxes and tick circles, yes. Fonts, colors and pictures, no. The low-ink files have the same blanks to write on by hand.</p></div>
   </div>
+  <div class="sbx sinside"><span class="kick">Inside every main file · page numbers</span><div class="sig">${GUIDE.letter.list.map(([h, n]) => `<div class="pgr"><span>${h}</span><b>${n}</b></div>`).join('')}</div></div>
   <div class="sbx sfull"><span class="kick">Print permission and safety</span><p>You may print these files for your own household as often as you like, at home or at a print shop. <b>Print shops:</b> this customer has permission to print copies for their own family’s use. Please don’t share or resell the files.</p><p>Before you play, read the safety page (page ${GUIDE.letter.safety} of each main file). Every play follows our published safety rules, and every card has its own safety line.</p></div>
   </div><footer class="pf"><span class="pfl">${logo('wordmark', 'lgf')}<span>${site('playbeforepixels.com · ')}“I’m Bored” Play Cards · ${VERSION}</span></span><span>${COPY}</span></footer>`);
   return page;
 }
 const shCss = `<style>
 .shp .ph{margin-bottom:8px}.shp .lead{font-size:14px;margin-bottom:14px}
-.shg{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.shg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
 .sbx{background:${C.wash};border-radius:16px;padding:12px 16px}
-.sbx p{font-size:11.6px;line-height:1.45;font-weight:600}
+.sbx p{font-size:11.2px;line-height:1.42;font-weight:600}
 .sbx p+p{margin-top:6px}
-.sfr{display:flex;gap:9px;align-items:flex-start;padding:4px 0;border-bottom:1px solid #E1E7F1}
+.sfr{display:flex;gap:9px;align-items:center;padding:3px 0;border-bottom:1px solid #E1E7F1}
 .snum{flex:0 0 22px;height:22px;border-radius:50%;background:${C.ink};color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px}
-.sfr b{display:block;font-size:11.6px;font-weight:800}.sfr span{font-size:11px;font-weight:600}
+.sfr b{display:block;font-size:11.2px;font-weight:800}.sfr span{font-size:10.6px;font-weight:600}
 .ssm{margin-top:6px}
 .sqr{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
 .sqr>div{background:#fff;border-radius:12px;padding:8px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
 .sqr .qr{width:1.05in;height:1.05in;display:block}
 .sqr span{font-size:8px;font-weight:800;line-height:1.3;word-break:break-all}
 .sfull{margin-top:auto}
+.sinside .sig{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 18px}
+.sinside{margin-bottom:12px}.sinside .pgr{display:flex;justify-content:space-between;gap:6px;font-size:9.4px;font-weight:700;padding:1.5px 0;border-bottom:1px solid #E1E7F1}
+.sinside .pgr b{white-space:nowrap}
 </style>`;
 
 // ---------- assemble ----------
@@ -1150,7 +1158,7 @@ function mainPages() {
   const LABEL = { tips: 'Print, cut, laminate & store' };
   for (const s of secs) if (s.show) G.push([LABEL[s.name] || s.name, s.from === s.to ? String(s.from) : `${s.from}–${s.to}`]);
   secs.find(s => s.name === 'tips').pages = [tipsPage(G)];
-  Object.assign(g, { at });
+  Object.assign(g, { at, list: G });
   return { pages: secs.flatMap(s => s.pages), g };
 }
 function buildMain() {
@@ -1318,7 +1326,8 @@ function listingPages(G) {
   // 10 how to download (rule 5: always the last image)
   const S = [['Use a web browser', 'On a computer or your phone’s browser. The shopping app often can’t save files.'], ['Open Purchases', 'Sign in, open your account’s Purchases page and tap each file.'], ['Start with file 1', 'START HERE says which file to print and how.'], ['Lost a file later?', 'It stays in Purchases. Download it again any time.']];
   P.push(L(`<div class="lh"><div class="lk">How to download</div><h2>Use a browser,<br>not the app.</h2></div>
-    <div style="position:absolute;left:64px;top:300px;width:600px">${S.map(([h, t], i) => `<div style="display:flex;gap:16px;margin-bottom:26px"><span style="flex:0 0 52px;height:52px;border-radius:50%;background:${[C.sun, C.grass, C.sky, C.plum][i]};color:${i ? '#fff' : C.ink};font-family:Bricolage Grotesque;font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center">${i + 1}</span><div><div style="font-family:Bricolage Grotesque;font-weight:800;font-size:28px">${h}</div><div style="font-size:19px;font-weight:600;line-height:1.35">${t}</div></div></div>`).join('')}</div>
+    <div class="paper" style="${at(610, 300, 4)};width:320px;height:414px"><img src="prev-etsy-start/p01.png"></div>
+    <div style="position:absolute;left:64px;top:300px;width:520px">${S.map(([h, t], i) => `<div style="display:flex;gap:16px;margin-bottom:26px"><span style="flex:0 0 52px;height:52px;border-radius:50%;background:${[C.sun, C.grass, C.sky, C.plum][i]};color:${i ? '#fff' : C.ink};font-family:Bricolage Grotesque;font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center">${i + 1}</span><div><div style="font-family:Bricolage Grotesque;font-weight:800;font-size:28px">${h}</div><div style="font-size:19px;font-weight:600;line-height:1.35">${t}</div></div></div>`).join('')}</div>
     <div style="position:absolute;left:64px;bottom:120px;right:64px;background:#fff;border-radius:20px;padding:16px 22px;font-size:19px;font-weight:700">Every play follows our published safety rules. For use in your own home.</div>`, C.tSun));
   return P;
 }

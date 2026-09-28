@@ -1,6 +1,6 @@
 ---
 subject: "Day 23: Car rides and travel"
-preheader: "Cars, buses and trains are some of the best places to talk, because nobody has to look at "
+preheader: "Cars, buses and trains are some of the best places to talk, because nobody has to look…"
 send: "day 23, 7:00 local time"
 ---
 
@@ -46,7 +46,7 @@ Turn time into something a child can picture: songs, cars, stops.
 Today’s pages in your workbook: Day 23. {{workbook_download_link}}
 
 ---
-**Next for your family:** The Day the Tablet Slept. A funny bedtime read-aloud for ages 3–7 about a box rocket, a dog named Biscuit and one very sleepy tablet. https://playbeforepixels.com/shop/picture-tablet-slept
+**Next for your family:** The Day the Tablet Slept. A funny bedtime read-aloud for ages 3–7 about a box rocket, the family dog and one very sleepy tablet. https://playbeforepixels.com/shop/picture-tablet-slept
 
 **Share with a friend:** give $5, get $5. {{referral_link}}
 

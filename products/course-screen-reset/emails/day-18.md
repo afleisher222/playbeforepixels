@@ -1,6 +1,6 @@
 ---
 subject: "Day 18: Offer a choice"
-preheader: "Holding up two options and waiting gives even very young children a clear way to take a tu"
+preheader: "Holding up two options and waiting gives even very young children a clear way to take a…"
 send: "day 18, 7:00 local time"
 ---
 

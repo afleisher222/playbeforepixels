@@ -1,6 +1,6 @@
 ---
 subject: "Day 30: Your family’s plan"
-preheader: "Write a short, kind plan you can keep: your screen spot, your favorite plays and your word"
+preheader: "Write a short, kind plan you can keep: your screen spot, your favorite plays and your…"
 send: "day 30, 7:00 local time"
 ---
 
@@ -26,7 +26,7 @@ Our tough-day plan.
 
 Then celebrate. Print the certificate, let your child decorate it and put it somewhere everyone can see.
 
-Look at the plan again in a month and adjust. Families change, children grow, and the plan should grow with them. The Reset isn’t a finish line; it’s a rhythm you now know how to find.
+Look at the plan again in a month and adjust. Families change, children grow, and the plan should grow with them. This month isn’t a finish line; it’s a rhythm you now know how to find.
 
 Thank you for letting us be part of your month.
 

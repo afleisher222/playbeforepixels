@@ -4,7 +4,7 @@ preheader: "One small thing to do before Day 1 arrives tomorrow."
 send: "immediately after purchase"
 ---
 
-# Welcome to the 30-Day Screen Reset
+# Welcome to 30 Days of Back-and-Forth
 
 **[FOUNDER WRITES THIS: a 60–120 word welcome in your own voice. Add it to FOUNDER.welcomeNote in build/content.js.]**
 

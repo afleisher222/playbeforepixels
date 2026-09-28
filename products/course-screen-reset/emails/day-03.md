@@ -1,6 +1,6 @@
 ---
 subject: "Day 3: Give screens a steady spot"
-preheader: "A screen spot that happens at the same time, in the same place, with the same ending, cuts"
+preheader: "A screen spot that happens at the same time, in the same place, with the same ending…"
 send: "day 3, 7:00 local time"
 ---
 
@@ -48,7 +48,7 @@ Say it before the first day, when nobody is upset. Repeat it the same way each t
 Today’s pages in your workbook: Day 3. {{workbook_download_link}}
 
 ---
-**Next for your family:** Play-First Family Kit. A screen-rhythm chart, a family play plan and helping-jobs pages to put this week on the fridge. https://playbeforepixels.com/shop/printables-family-kit
+**Next for your family:** Play-First Family Kit. A screen-rhythm chart, a family play plan and helping-jobs pages to put this week on the fridge. https://playbeforepixels.com/shop/play-first-family-kit
 
 **Share with a friend:** give $5, get $5. {{referral_link}}
 

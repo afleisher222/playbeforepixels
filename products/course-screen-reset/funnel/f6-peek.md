@@ -1,6 +1,6 @@
 ---
 subject: "What a whole month of this looks like"
-preheader: "A peek inside the 30-Day Screen Reset."
+preheader: "A peek inside 30 Days of Back-and-Forth."
 send: "day 6"
 ---
 
@@ -8,9 +8,9 @@ send: "day 6"
 
 # What a whole month of this looks like
 
-You’re nearly through your seven days. Many families tell us the first week is enough to feel a difference in the asking and in the evenings.
+You’re nearly through your seven days. By now you may have noticed when the asking happens and which play your child wants again.
 
-If you’d like to keep going, the 30-Day Screen Reset is the full program: 30 short daily lessons by email, 30 easy plays with versions for little ones and big kids, plain words for 30 tricky moments, and a designed workbook with trackers, a family plan and a certificate.
+If you’d like to keep going, 30 Days of Back-and-Forth is the full program: 30 short daily lessons by email, 30 easy plays with versions for little ones and big kids, plain words for 30 tricky moments, and a designed workbook with trackers, a family plan and a certificate.
 
 It covers what the starter doesn’t: mornings, the hour before dinner, big feelings when screens end, waiting rooms, car rides, grown-up phones, big kids who say “everyone else gets to”, siblings, grandparents and sick days.
 
@@ -35,7 +35,7 @@ Pick a color together and go looking for it outside: a red car, a red door, a re
 >
 > “You can bring your teddy. Teddy wants to see the clouds.”
 
-**[Start the 30-Day Screen Reset · $27]({{program_checkout_link}})**
+**[Start 30 Days of Back-and-Forth · $27]({{program_checkout_link}})**
 
 30-day money-back guarantee. Written program; no videos, calls or coaching.
 

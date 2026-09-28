@@ -95,6 +95,7 @@ const ART = [
   sym('s-diamond', Pa('M0-48L38 0 0 48-38 0Z', 'var(--sf,' + C.sun + ')', `stroke="var(--sf,${C.sun})" stroke-width="6" stroke-linejoin="round"`)),
   // ---------- UI bits used on pages ----------
   sym('scissors', Ci(-22, 18, 11, 'none', `stroke="${I}" stroke-width="6"`) + Ci(22, 18, 11, 'none', `stroke="${I}" stroke-width="6"`) + Pa('M-14 8L20-44 26-40-6 12Z', I) + Pa('M14 8L-20-44-26-40 6 12Z', I)),
+  sym('printer', R(-34, -44, 68, 40, W) + R(-24, -34, 36, 5, C.tSky, 2) + R(-24, -24, 48, 5, C.tSky, 2) + R(-46, -12, 92, 42, C.plum, 12) + R(-30, 20, 60, 26, W) + R(-22, 28, 30, 4, C.tSky, 2) + Ci(32, 2, 5, C.sun)),
   sym('laminator', R(-46, -10, 92, 34, C.sky, 10) + R(-38, -24, 76, 18, W) + R(-38, -24, 76, 5, C.tSky) + R(-30, 2, 20, 6, W, 3, 'opacity=".5"') + Ci(34, 6, 4, C.sun)),
   sym('velcro', Ci(-18, 0, 18, W) + Ci(-18, 0, 12, C.tSky) + Ci(18, 0, 18, W) + Ci(18, 0, 12, C.tSun) + [[-24, -4], [-14, 4], [-20, 6], [-12, -6]].map(([x, y]) => Ci(x, y, 2, C.sky)).join('') + [[12, -4], [22, 4], [16, 6], [24, -6]].map(([x, y]) => Ci(x, y, 2, C.s3)).join('')),
   sym('binder', R(-38, -46, 76, 92, C.plum, 8) + R(-24, -46, 62, 92, C.tPlum, 8) + [-26, 0, 26].map(y => R(-44, y - 5, 18, 10, I, 5)).join('') + R(-8, -26, 38, 24, W, 5)),

@@ -115,8 +115,8 @@ const stages = {
   seed: soil + `<ellipse cx="0" cy="30" rx="7" ry="5" fill="${C.s5}"/>` + [-20, 0, 20].map((x, i) => `<path d="M${x} ${-40 + i * 6}c4 6 4 10 0 10s-4-4 0-10z" fill="${C.sky}"/>`).join(''),
   sprout: soil + `<rect x="-3" y="-6" width="6" height="40" rx="3" fill="${C.grass}"/><path d="M0-4C-10-22-30-22-34-14-24-4-10-2 0-4Z" fill="${C.grass}"/><path d="M0-12C10-30 30-30 34-22 24-12 10-10 0-12Z" fill="${C.grass}"/>`,
   bloom: soil + `<g transform="translate(0,-12) scale(.95)"><use href="#b-flower"/></g>`,
-  snow1: `<ellipse cx="0" cy="40" rx="48" ry="8" fill="${C.tSky}"/><circle cx="0" cy="18" r="24" fill="#FFFFFF"/><circle cx="0" cy="18" r="24" fill="none" stroke="${C.tSky}" stroke-width="3"/>`,
-  snow2: `<ellipse cx="0" cy="40" rx="48" ry="8" fill="${C.tSky}"/><circle cx="0" cy="18" r="24" fill="#FFFFFF" stroke="${C.tSky}" stroke-width="3"/><circle cx="0" cy="-20" r="17" fill="#FFFFFF" stroke="${C.tSky}" stroke-width="3"/>`,
+  snow1: `<ellipse cx="0" cy="40" rx="48" ry="8" fill="${C.tSky}"/><circle cx="0" cy="18" r="24" fill="#FFFFFF" stroke="${C.sky}" stroke-width="3"/>`,
+  snow2: `<ellipse cx="0" cy="40" rx="48" ry="8" fill="${C.tSky}"/><circle cx="0" cy="18" r="24" fill="#FFFFFF" stroke="${C.sky}" stroke-width="3"/><circle cx="0" cy="-20" r="17" fill="#FFFFFF" stroke="${C.sky}" stroke-width="3"/>`,
   snow3: `<ellipse cx="0" cy="40" rx="48" ry="8" fill="${C.tSky}"/><g transform="translate(0,-4) scale(.9)"><use href="#b-snowman"/></g>`,
   pz1: `<circle r="42" fill="${C.s2}"/><circle r="34" fill="${C.tSun}"/>`,
   pz2: `<circle r="42" fill="${C.s2}"/><circle r="34" fill="${C.tomato}"/>`,
@@ -244,6 +244,7 @@ b3.push({
   prep: '10 min', mess: 'None', needs: 'Scissors, cardstock', cut: true, cols: 3,
   board: () => gridPos(6, 3, CELL, 12, 36).map(([x, y], i) => slot(x, y, CELL, `<g transform="translate(20,20)">${rr(0, 0, 80, 80, 16, C.wash, 'class="tint"')}${U(rhymes[i][0], 40, 40, 0.58)}</g>` + T(150, 60, rhymes[i][1], 26, { w: 700 }) + T(CELL.w / 2, CELL.h - 36, 'rhymes with…', 15, { c: '#9AA6BC' }))).join(''),
   pieces: [3, 5, 0, 4, 1, 2].map(i => P(rhymes[i][2], rhymes[i][3], { s: rhymes[i][2] === 'w-star' ? 0.95 : 1.1 })),
+  answer: 'cat–hat · moon–spoon · bee–tree · car–star · fish–dish · frog–log',
 });
 const rooms = [['kitchen', 'b-fridge', C.tSun], ['bathroom', 'b-bath', C.tSky], ['bedroom', 'b-bed', C.tPlum]];
 b3.push({
@@ -252,7 +253,8 @@ b3.push({
   talk: ['Offer a choice', '“Toothbrush: kitchen or bathroom? (wait) Bathroom!”'], easier: 'Two rooms only: kitchen and bedroom.', harder: 'Walk to the real rooms and find one thing in each.', tired: 'Put one card in the right room.',
   prep: '10 min', mess: 'None', needs: 'Scissors, cardstock', cut: true, cols: 3,
   board: () => rooms.map(([n, id, t], i) => `<g transform="translate(${i * 228},0)">${tint(0, 0, 216, H, 20, t)}${U(id, 108, 90, 0.9)}${T(108, 176, n, 24)}${rr(20, 200, 176, 296, 16, '#FFFFFF', 'class="tint" opacity=".7"')}</g>`).join(''),
-  pieces: [P('a-teapot', 'teapot', { s: 1.2 }), P('b-toothbrush', 'toothbrush'), P('b-teddy', 'teddy'), P('a-pot', 'pot', { s: 1.2 }), P('a-towel', 'towel', { s: 1.2 }), P('b-lamp', 'lamp'), P('a-spoon', 'spoon', { s: 1.1 }), P('a-bubbles', 'bubbles', { s: 1.2 }), P('b-pjs', 'pajamas')],
+  pieces: [P('a-teapot', 'teapot', { s: 1.2 }), P('b-toothbrush', 'toothbrush'), P('b-teddy', 'teddy'), P('a-pot', 'pot', { s: 1.05 }), P('a-towel', 'towel', { s: 1.2 }), P('b-lamp', 'lamp'), P('a-spoon', 'spoon', { s: 1.1 }), P('a-bubbles', 'bubbles', { s: 1.2 }), P('b-pjs', 'pajamas')],
+  answer: 'Kitchen: teapot, pot, spoon · Bathroom: toothbrush, towel, bubbles · Bedroom: teddy, lamp, pajamas',
 });
 b3.push({
   id: 'feelstory', band: 'b3', from: 36, cat: 'Feelings', title: 'How do they feel?',

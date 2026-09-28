@@ -1,6 +1,6 @@
 ---
 subject: "Day 19: Follow their lead"
-preheader: "When the child chooses the play and the grown-up joins in, children often talk and play mo"
+preheader: "When the child chooses the play and the grown-up joins in, children often talk and play…"
 send: "day 19, 7:00 local time"
 ---
 

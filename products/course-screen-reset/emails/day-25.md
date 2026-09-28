@@ -1,6 +1,6 @@
 ---
 subject: "Day 25: Big kids and fairness"
-preheader: "School-age children care about fairness and friends. Listening first makes the family plan"
+preheader: "School-age children care about fairness and friends. Listening first makes the family…"
 send: "day 25, 7:00 local time"
 ---
 
@@ -48,7 +48,7 @@ Agree with what’s true, hold your plan and promise a real conversation later.
 Today’s pages in your workbook: Day 25. {{workbook_download_link}}
 
 ---
-**Next for your family:** The Day the Tablet Slept. A funny bedtime read-aloud for ages 3–7 about a box rocket, a dog named Biscuit and one very sleepy tablet. https://playbeforepixels.com/shop/picture-tablet-slept
+**Next for your family:** The Day the Tablet Slept. A funny bedtime read-aloud for ages 3–7 about a box rocket, the family dog and one very sleepy tablet. https://playbeforepixels.com/shop/picture-tablet-slept
 
 **Share with a friend:** give $5, get $5. {{referral_link}}
 

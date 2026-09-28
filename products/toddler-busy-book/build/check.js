@@ -25,8 +25,12 @@ const BANNED = /\b(therapy|therapist|autism|autistic|adhd|speech delay|late talk
       const gu = live.querySelector('.gu'), ft = live.querySelector('.ft');
       if (gu && ft) { const last = [...gu.children].pop().getBoundingClientRect(); if (last.bottom > ft.getBoundingClientRect().top - 2) out.push({ page: n, guOverlapsFooter: Math.round(last.bottom - ft.getBoundingClientRect().top) }); }
       if (pg.dataset.act) { if (!live.querySelector('.talk q')) out.push({ page: n, missing: 'talk line' }); if (!/Play together/.test(live.querySelector('.safe')?.textContent || '')) out.push({ page: n, missing: 'supervision note' }); }
+      const how = live.querySelector('.tt'), play = live.querySelector('.play');
+      if (how && play && how.getBoundingClientRect().bottom > play.getBoundingClientRect().top - 6) out.push({ page: n, titleTouchesPlay: Math.round(how.getBoundingClientRect().bottom - play.getBoundingClientRect().top) });
+      // every piece's art must stay inside its own cut cell (nothing crosses a cut line)
+      live.querySelectorAll('svg.pieces').forEach(sv => { const cw = +sv.dataset.cellW, ch = +sv.dataset.cellH; [...sv.children].filter(g => g.tagName === 'g' && g.getAttribute('transform') && !g.querySelector('[clip-path]')).forEach((g, k) => { const b = g.getBBox(); if (b.x < -1 || b.y < -1 || b.x + b.width > cw + 1 || b.y + b.height > ch + 1) out.push({ page: n, pieceArtCrossesCut: k + 1, bbox: [b.x, b.y, b.width, b.height].map(Math.round) }); }); });
       const keep = live.querySelector('.keep'), grid = live.querySelector('.grid');
-      if (keep && grid && grid.getBoundingClientRect().bottom - 10 > keep.getBoundingClientRect().top) out.push({ page: n, gridOverlapsKeep: true });
+      if (keep && grid && grid.getBoundingClientRect().bottom - 10 > keep.getBoundingClientRect().top - 4) out.push({ page: n, gridOverlapsKeep: true });
     });
     const pieces = [...document.querySelectorAll('svg.pieces')].map(s => Math.min(+s.dataset.cellW, +s.dataset.cellH) / 96);
     return { out, pages: document.querySelectorAll('.page').length, minPieceIn: Math.min(...pieces), sheets: pieces.length, text: document.body.innerText };

@@ -56,8 +56,8 @@ function sheetPage(a, ctx, pn) {
   const cell = a.cell === 'big' ? BIG : CELL;
   const cols = a.cols || (a.cell === 'big' ? 2 : 3);
   const g = pieceGrid(a.pieces, cell, cols, 'p.' + ctx.usedBy[a.id].join('+'));
-  const minIn = (Math.min(cell.w, cell.h) / 96).toFixed(2).replace(/0$/, '');
-  const cm = (Math.min(cell.w, cell.h) / 96 * 2.54).toFixed(1);
+  const minIn = String(+(Math.min(cell.w, cell.h) / 96).toFixed(2));
+  const cm = (Math.round(Math.min(cell.w, cell.h) / 96 * 25.4) / 10).toFixed(1);
   const forWhat = a.piecesFor ? `${a.piecesFor} (pages ${ctx.usedBy[a.id].join(' and ')})` : `page ${ctx.actPage[a.id]}: ${a.title}`;
   const velcro = a.band === 'b3' ? 'Velcro is optional: <b>check dots before each play</b>; throw away any piece whose dot lifts.' : '<b>No velcro dots for under-3s:</b> lay pieces on top. Throw away torn or peeling pieces.';
   return `<section class="page band-${a.band} sheet" data-sheet="${a.id}"><div class="live">

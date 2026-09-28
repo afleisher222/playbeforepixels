@@ -1,4 +1,4 @@
-// The 30-Day Screen Reset: a written program by Play Before Pixels (AlphaPlay LLC).
+// 30 Days of Back-and-Forth (was “The 30-Day Screen Reset”, retired in brand/ORIGINALITY.md A4): a written program by Play Before Pixels (AlphaPlay LLC).
 // ONE source for everything: the 30 lesson emails, the workbook (Letter, A4, color, low-ink), the KDP paperback,
 // the sales page and the funnel. Edit here, then run build/make.sh.
 //
@@ -20,12 +20,13 @@ const FOUNDER = {
   // print a clearly marked placeholder that the build refuses to ship (see make.sh --final).
   welcomeNote: '',   // 60–120 words: why you made this program, in your voice (no children's names, no employer, no legal matters)
   day30Note: '',     // 40–80 words: your goodbye note for Day 30
+  salesNote: '',    // optional 40–80 words for the sales page; set to 'skip' to leave that section out
   signoff: '',       // how you sign emails, e.g. "Warmly, the Play Before Pixels team" or a first name you choose
 };
 
 const VERSION = 'Version 1.0 · September 2026';
-const TITLE = 'The 30-Day Screen Reset';
-const SUB = 'A play-first plan for families';
+const TITLE = '30 Days of Back-and-Forth';
+const SUB = 'A play-first screen-time plan for families';
 const TAGLINE = '30 short lessons · 30 easy plays · plain words for tricky moments';
 
 // Six plain-word talk moves (no program names).
@@ -86,7 +87,7 @@ const DAYS = [
       'Today, just notice. Pick one ordinary day, today or yesterday, and walk through it in your head. When did a screen come on? Who turned it on, and why? Maybe you needed to cook, make a call, or just breathe for ten minutes. Those are real reasons. There is nothing to feel bad about here.',
       'Then notice the good parts. When did your child play without being asked? When did you laugh together? Where in the house does play happen most?',
       'Write it down on the “Our ordinary day” page in your workbook, or on the back of an envelope. You’re drawing a map, not grading yourself.',
-      'Most families find two or three “screen moments” that carry most of the load: the morning rush, the hour before dinner, the car. Those are the places this program will help most.',
+      'Many families have two or three “screen moments” that carry most of the load: the morning rush, the hour before dinner, the car. Those are the places this program will help most.',
     ],
     step: 'Fill in “Our ordinary day”. Circle the two moments when a screen helps you most.',
     play: { t: 'Say-what-you-see walk', art: 'eye', from: 12, mat: [], prep: 0, mess: 0, time: 0, move: 'see',
@@ -143,7 +144,7 @@ const DAYS = [
     idea: 'Play starts more easily when a few good things are within reach. Fewer choices usually means more play.',
     lesson: [
       'Children often reach for a screen because it’s the easiest “yes” in the room. Today we make play just as easy.',
-      'Find a basket, box or bag. Fill it with five to eight things you already have. Mix the kinds of play: something to build with (blocks, cups, boxes), something to pretend with (a teddy, pots, a hat), something to make with (paper, crayons), something to move with (a soft ball, a scarf), and something to look at together (two or three books).',
+      'Find a basket, box or bag. Fill it with five to eight things you already have. Mix the kinds of play: something to build with (blocks, cups, boxes), something to pretend with (a teddy, pots, a hat), something to make with (paper, crayons), something to move with (a soft ball, a cushion to jump on), and something to look at together (two or three books).',
       'Put the basket where your child can reach it, near where you usually are. Children like to play near their grown-ups.',
       'Now the secret: keep the rest of the toys out of sight for now. When everything is out, children often flit from thing to thing. When there are fewer choices, they tend to settle and play longer. Every week, swap a few things in and out, and it feels new.',
       'You don’t need to buy anything. A clean sock, a wooden spoon and an empty tissue box are all play.',
@@ -182,10 +183,10 @@ const DAYS = [
     lesson: [
       'If screens end in tears at your house, you are not alone. Stopping something fun is hard for anyone, and it’s especially hard for young children, whose brakes are still developing.',
       'Here is a three-part ending you can use every day.',
-      'First, a warning. Five minutes before the end, sit next to your child and say, “Two more minutes, then the tablet goes to sleep.” Touching their shoulder or looking at the screen with them helps the warning land.',
+      'First, a warning. Two minutes before the end, sit next to your child and say, “Two more minutes, then the tablet goes to sleep.” Touching their shoulder or looking at the screen with them helps the warning land.',
       'Second, a clear ending. Use something outside of you: the end of an episode, a kitchen timer, a song. Then the timer is the bad guy, not you. Some families “tuck the tablet in” to a drawer or basket and say goodnight to it.',
       'Third, a landing. Have the next thing ready and say it out loud: “Now we go outside and find the moon.” Children move more easily toward something than away from something.',
-      'Expect some protest, especially this week. You don’t need to argue or explain again. Stay close, stay calm and keep the ending the same every day. Most families find the ending gets easier within a week or two.',
+      'Expect some protest, especially this week. You don’t need to argue or explain again. Stay close, stay calm and keep the ending the same every day. The ending often gets easier once it has stayed the same for a week or two.',
     ],
     step: 'Use the warning, the clear ending and the landing at today’s screen spot.',
     play: { t: 'Tuck in the tablet', art: 'moon', from: 18, mat: ['a small blanket or dish towel', 'a basket or drawer'], prep: 0, mess: 0, time: 0, move: 'sing',
@@ -194,7 +195,7 @@ const DAYS = [
       easier: 'Your toddler helps you lay the towel on top and waves bye-bye.',
       harder: 'A big kid is the “keeper” who puts the device to bed and picks the next play.',
       tired: 'Just say, “Night-night, tablet,” and hold out your hand.',
-      safe: 'Grown-ups handle chargers and cords, and keep them out of reach of young children.' },
+      safe: 'Switch the device off first and never cover a device while it is charging. Grown-ups handle chargers and cords, and keep them out of reach of young children.' },
     script: { moment: 'When the screen spot ends', lines: ['“Two more minutes, then the tablet goes to sleep.”', '“Time’s up. Night-night, tablet. Now we go outside.”'], why: 'Same words every day. The routine does the work so you don’t have to win an argument.' } },
 
   { d: 7, title: 'Week 1: keep what worked', art: 'star',
@@ -203,7 +204,7 @@ const DAYS = [
       'One week done. Let’s look back kindly.',
       'Open your tracker. Don’t count what you missed; look for what helped. Did the steady screen spot cut down the asking? Did the play basket get used? Did the first ten minutes change the evening?',
       'Pick the one thing that helped most and keep doing it. If something didn’t work, change it. Maybe the screen spot is at the wrong time of day. Maybe the basket needs different things. Adjusting is the program working, not failing.',
-      'Some days this week probably went sideways. Someone got sick, work ran late, or you were just done. On those days, a screen may have filled more of the day. That’s okay. Tomorrow the spot is back where it lives. No catching up, no making up for it.',
+      'Some days this week probably went sideways. Someone got sick, work ran late, or you were just done. On those days, a screen may have filled more of the day. That’s okay. Tomorrow the spot is back where it lives. No making up for it, and no extra rules.',
       'One more thing: notice what your child asked for again. A song, a play, a place in the house. Children tell us what they love by asking for it again and again. That list is gold. Write it down.',
     ],
     step: 'Fill in the Week 1 check-in. Write down one thing to keep and one thing to change.',
@@ -213,7 +214,7 @@ const DAYS = [
       easier: 'Just drape the blanket over your knees and play peekaboo inside.',
       harder: 'Big kids design a den with a sign, a door flap and a secret knock.',
       tired: 'Lie under the blanket together and read one book with a flashlight.',
-      safe: 'Use a light blanket, keep faces uncovered and stay nearby. No cords or strings tied to the den.' },
+      safe: 'Use a light blanket, keep faces uncovered and stay nearby. No cords or strings tied to the den. Use a flashlight whose battery cover screws shut.' },
     script: { moment: 'When a day doesn’t go to plan (words for yourself)', lines: ['“Today was a lot. Tomorrow the plan is still here.”', '“I don’t need a perfect day. I need a next step.”'], why: 'Kindness to yourself is part of the program. Guilt tends to make the next day harder, not easier.' } },
 
   // ============================== WEEK 2: Play comes first
@@ -241,7 +242,7 @@ const DAYS = [
     lesson: [
       'Many of us feel we have to fix a bored child immediately. Today, try something different: let boredom sit for a few minutes.',
       'Boredom is uncomfortable, and children will tell you so, loudly. But it’s also the feeling right before an idea. Children who have a few minutes with nothing scheduled often start humming, building, arranging, pretending. The first few minutes are the hardest.',
-      'You can help without taking over. Keep simple, open-ended things around: boxes, paper, tape, cushions, pots, scarves, a basket of odds and ends. Things that can be anything tend to hold attention longer than things that do one thing.',
+      'You can help without taking over. Keep simple, open-ended things around: boxes, paper, tape, cushions, pots, blankets, a basket of big odds and ends. Things that can be anything tend to hold attention longer than things that do one thing.',
       'Then step back a little. Stay nearby, doing something of your own: folding laundry, cooking, reading. Children like company while they play, even if you’re not playing.',
       'If your child is truly stuck, offer one small starter (“I wonder what this box could be?”) and walk away again. The idea is theirs to finish.',
     ],
@@ -250,7 +251,7 @@ const DAYS = [
       how: 'Put a big empty box on the floor and say nothing about it. If your child wanders over, ask “What could this be?” It might become a car, a house, a boat or a rocket. Draw on it, climb in it, follow their idea.',
       talk: '“Where is your car going? … To the zoo! Can I come?”',
       easier: 'For toddlers, open both ends to make a tunnel and crawl through.',
-      harder: 'Big kids make a shop, a robot costume or a marble run from boxes and tape.',
+      harder: 'Big kids make a shop, a robot costume or a car ramp from boxes and tape.',
       tired: 'Put the box down, say “I wonder…” and see what happens.',
       safe: 'Take off staples and packing tape first. Grown-ups do any cutting.' },
     script: { moment: '“There’s nothing to do!”', lines: ['“I hear you. Bored is a tricky feeling.”', '“I’m going to fold laundry. You’re welcome to help or find something in the basket.”'], why: 'Empathy plus a small nudge. You’re not the entertainment; you’re nearby.' } },
@@ -265,13 +266,13 @@ const DAYS = [
       'Set up a safe spot: a sturdy step with a grown-up close by, or a low table with a bowl of water and a few things to wash. Keep them well away from the stove, knives and hot pans.',
     ],
     step: 'Invite your child to help with one small cooking job today.',
-    play: { t: 'Veggie wash station', art: 'bowl', from: 18, mat: ['a big bowl of cool water', 'a few whole vegetables', 'a towel'], prep: 1, mess: 2, time: 1, move: 'see',
+    play: { t: 'Veggie wash station', art: 'bowl', from: 18, mat: ['a big bowl of cool water', 'a few big whole vegetables', 'a towel'], prep: 1, mess: 2, time: 1, move: 'see',
       how: 'Set a bowl of cool water and some whole vegetables on a towel at a low table. Your child scrubs, splashes and dries each one. Name what they’re doing and each vegetable as it goes.',
       talk: '“Scrub, scrub, carrot! Now it’s clean. Next?”',
       easier: 'Just one big potato and a cup for pouring.',
       harder: 'Big kids peel, measure and follow a simple recipe card with you at their side.',
       tired: 'Let your child put the spoons and napkins on the table.',
-      safe: 'Water play is always supervised. Knives, peelers, the stove and hot pans stay with grown-ups; big kids use them only with you beside them.' },
+      safe: 'Water play is always supervised. Use big vegetables like potatoes or cucumbers, not cherry tomatoes, baby carrots or other small round pieces. Knives, peelers, the stove and hot pans stay with grown-ups; big kids use them only with you beside them.' },
     script: { moment: 'When you need 20 minutes to cook', lines: ['“I’m making dinner. You can stir here, or play with the basket by my feet.”', '“I can talk while I cook. Tell me about your tower.”'], why: 'Two choices, both near you. Talking while you work counts as connection.' } },
 
   { d: 11, title: 'Mornings without the scramble', art: 'sun',
@@ -361,7 +362,7 @@ const DAYS = [
       'So: say something, then stop. Count to five slowly in your head. Look at your child with an expectant, friendly face, like you’re waiting for the punchline. Often, something comes: a look, a point, a sound, a word.',
       'Whatever comes, answer it as if it were the best thing anyone has said all day. That’s a turn. That’s conversation.',
       'The pause works in songs too: “Twinkle, twinkle, little…” then wait. Or in games: “Ready, set…” and wait for your child to say or sign “Go!”',
-      'It feels strange at first. Keep going. Many parents say this is the move that surprised them most.',
+      'It feels strange at first. Keep going. It may turn out to be the move that surprises you most.',
     ],
     step: 'Use a five-second pause at least three times today.',
     play: { t: 'Ready, set… go!', art: 'car', from: 12, mat: ['a toy car or a ball', 'a book or board for a ramp'], prep: 0, mess: 0, time: 0, move: 'wait',
@@ -574,7 +575,7 @@ const DAYS = [
   { d: 26, title: 'Siblings, twins and mixed ages', art: 'house',
     idea: 'One family rhythm, with roles for each child, works better than separate plans for everyone.',
     lesson: [
-      'If you have more than one child, the Reset has to work for everyone at once. Here are some ideas that help.',
+      'If you have more than one child, the plan has to work for everyone at once. Here are some ideas that help.',
       'Keep one shared screen spot. Separate spots for each child are hard to keep up with and invite arguments. If an older child has homework on a device, that is school time, not the screen spot, and can happen at a different table.',
       'Give roles, not just turns. In a pretend restaurant, one child is the chef, one is the waiter, one is the customer. In a block game, one builds and one decorates. Roles let different ages play together without constant competition.',
       'Protect a little one-on-one time. Even five minutes alone with each child, doing what they choose, makes shared time easier.',
@@ -637,7 +638,7 @@ const DAYS = [
       'Nearly there. Today, look back over the month.',
       'Open your tracker and your check-ins. Circle every play your child asked for again. Most children love two or three plays far more than the rest, and they return to them over and over. Those are your family’s favorites, and they’re the heart of your plan.',
       'Then look at the tricky moments. Which ones got easier? The end of screen time? The morning scramble? The hour before dinner? Which words from the scripts did you actually use?',
-      'And look at yourself. What surprised you? Many parents say it’s how much talking happens once there’s a little more room for it. Some say it’s how little their child minded, once the screen spot was steady.',
+      'And look at yourself. What surprised you? Maybe it was how much talking happened once there was a little more room for it. Maybe it was how little your child minded, once the screen spot was steady.',
       'Whatever you notice, write it down. You’ll use it tomorrow.',
       'Every child talks, plays and grows on their own timeline. If you have questions about your child’s development, talk with your pediatrician.',
     ],
@@ -662,7 +663,7 @@ const DAYS = [
       'Our phone parking spot and our one phone-free window.',
       'Our tough-day plan.',
       'Then celebrate. Print the certificate, let your child decorate it and put it somewhere everyone can see.',
-      'Look at the plan again in a month and adjust. Families change, children grow, and the plan should grow with them. The Reset isn’t a finish line; it’s a rhythm you now know how to find.',
+      'Look at the plan again in a month and adjust. Families change, children grow, and the plan should grow with them. This month isn’t a finish line; it’s a rhythm you now know how to find.',
       'Thank you for letting us be part of your month.',
     ],
     step: 'Write your one-page family plan. Print and decorate the certificate.',
@@ -693,9 +694,9 @@ const FAQ = [
   ['What exactly do I get?', 'Thirty short daily lessons by email (each takes about three minutes to read), one easy play a day, plain words for tricky moments, a designed workbook with trackers (US Letter and A4, color and low-ink, fillable in free Acrobat Reader), a bank of extra scripts and a certificate to celebrate.'],
   ['Is there any video, coaching or calls?', 'No. It’s a written program you do at your own pace. There are no videos to watch, no calls and no live sessions. We don’t offer personal replies or advice about individual children.'],
   ['What ages is it for?', 'Families with children from about 1 to 12. Every play has a starting age, an easier version for little ones and a harder version for big kids, and every week has boxes for toddlers, school-age kids and siblings.'],
-  ['What if I miss a day?', 'Nothing breaks. Each lesson waits in your inbox and in the workbook. Pick up wherever you are. Many families take longer than 30 days.'],
+  ['What if I miss a day?', 'Nothing breaks. Each lesson waits in your inbox and in the workbook. Pick up wherever you are. It’s fine to take longer than 30 days.'],
   ['Do we have to give up screens?', 'No. The program adds play and talk and gives screens a steady spot in the day. Screens are never used as a reward or a punishment.'],
-  ['Will this fix my child’s speech or behavior?', 'It isn’t designed to treat or fix anything. It’s parent education about everyday play and talk. If you have questions about your child’s development, talk with your pediatrician.'],
+  ['Will this change how my child talks or behaves?', 'It isn’t designed to treat or change anything about your child. It’s parent education about everyday play and talk. If you have questions about your child’s development, talk with your pediatrician.'],
   ['Do I need to buy anything?', 'No. Every play uses things most homes already have: socks, boxes, pots, books, paper.'],
   ['What is the guarantee?', 'If the program isn’t right for your family, email us within 30 days of purchase for a full refund. No questions asked, and you don’t need to have finished anything.'],
   ['How is it delivered?', 'Right after checkout you get a welcome email with your workbook download. Then one lesson arrives each morning for 30 days. You can change the send time or pause from the link in any email.'],

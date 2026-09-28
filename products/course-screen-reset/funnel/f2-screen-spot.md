@@ -14,7 +14,7 @@ A steady spot means screens happen at roughly the same time, in the same place, 
 
 One promise matters: the spot is never a prize and never a punishment. It doesn’t grow when chores are done or shrink after a hard morning. It just stays put, like lunch.
 
-Fill in the screen-spot plan on page 2 of your starter, and tell your child about it tonight, when nobody is upset.
+Fill in the screen-spot plan on page 1 of your starter, and tell your child about it tonight, when nobody is upset.
 
 ## Today’s play: Stop and go dance
 

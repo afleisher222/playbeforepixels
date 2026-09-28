@@ -1,6 +1,6 @@
 ---
 subject: "Day 5: The first ten minutes"
-preheader: "Ten minutes of full attention when you first see each other often makes the rest of the da"
+preheader: "Ten minutes of full attention when you first see each other often makes the rest of the…"
 send: "day 5, 7:00 local time"
 ---
 
@@ -46,7 +46,7 @@ Lead with warmth, not questions. The stories often come later.
 Today’s pages in your workbook: Day 5. {{workbook_download_link}}
 
 ---
-**Next for your family:** Play-First Family Kit. A screen-rhythm chart, a family play plan and helping-jobs pages to put this week on the fridge. https://playbeforepixels.com/shop/printables-family-kit
+**Next for your family:** Play-First Family Kit. A screen-rhythm chart, a family play plan and helping-jobs pages to put this week on the fridge. https://playbeforepixels.com/shop/play-first-family-kit
 
 **Share with a friend:** give $5, get $5. {{referral_link}}
 

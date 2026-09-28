@@ -1,6 +1,6 @@
 {
   "sequence": "7 Days of Play First (free lead magnet)",
-  "trigger": "sign-up at playbeforepixels.com/reset/start (email + child birth month/year only; double opt-in)",
+  "trigger": "sign-up at playbeforepixels.com/30-days/start (email + child birth month/year only; double opt-in)",
   "rules": [
     "One email a day for 7 days, 7:00 local time.",
     "Stop the sequence as soon as the subscriber buys; move them to the program sequence.",
@@ -54,12 +54,12 @@
       "file": "f6-peek",
       "send": "day 6",
       "subject": "What a whole month of this looks like",
-      "preheader": "A peek inside the 30-Day Screen Reset."
+      "preheader": "A peek inside 30 Days of Back-and-Forth."
     },
     {
       "file": "f7-invite",
       "send": "day 7",
-      "subject": "Keep going: the 30-Day Screen Reset",
+      "subject": "Keep going: 30 Days of Back-and-Forth",
       "preheader": "$27, with a 30-day money-back guarantee."
     }
   ]

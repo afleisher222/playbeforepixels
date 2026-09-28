@@ -1,5 +1,5 @@
 #!/bin/sh
-# Rebuild every file for The 30-Day Screen Reset. Run from anywhere: sh products/course-screen-reset/build/make.sh [--final]
+# Rebuild every file for 30 Days of Back-and-Forth (folder slug course-screen-reset kept). Run from anywhere: sh products/course-screen-reset/build/make.sh [--final]
 # --final refuses to finish while any FOUNDER WRITES THIS placeholder is still in the emails or workbook.
 set -e
 B="$(cd "$(dirname "$0")" && pwd)"; D="$(dirname "$B")"; R="$D/../../brand/render.js"
@@ -7,10 +7,10 @@ cd "$B" && node workbook.js && node emails.js
 cd "$D"
 mkdir -p downloads paperback build/dbg preview/listing-images
 # ---- workbook PDFs (type-in fields added by fields.js)
-node "$R" pdf source.html build/_cl.pdf && node build/fields.js source.html build/_cl.pdf "downloads/2. Workbook - Color - US Letter.pdf" "The 30-Day Screen Reset: Workbook (Color, US Letter)"
-node "$R" pdf source-lowink-letter.html build/_ll.pdf && node build/fields.js source-lowink-letter.html build/_ll.pdf "downloads/3. Workbook - Low-ink - US Letter.pdf" "The 30-Day Screen Reset: Workbook (Low-ink, US Letter)"
-node "$R" pdf source-color-a4.html build/_ca.pdf && node build/fields.js source-color-a4.html build/_ca.pdf "downloads/4. Workbook - Color - A4.pdf" "The 30-Day Screen Reset: Workbook (Color, A4)"
-node "$R" pdf source-lowink-a4.html build/_la.pdf && node build/fields.js source-lowink-a4.html build/_la.pdf "downloads/5. Workbook - Low-ink - A4.pdf" "The 30-Day Screen Reset: Workbook (Low-ink, A4)"
+node "$R" pdf source.html build/_cl.pdf && node build/fields.js source.html build/_cl.pdf "downloads/2. Workbook - Color - US Letter.pdf" "30 Days of Back-and-Forth: Workbook (Color, US Letter)"
+node "$R" pdf source-lowink-letter.html build/_ll.pdf && node build/fields.js source-lowink-letter.html build/_ll.pdf "downloads/3. Workbook - Low-ink - US Letter.pdf" "30 Days of Back-and-Forth: Workbook (Low-ink, US Letter)"
+node "$R" pdf source-color-a4.html build/_ca.pdf && node build/fields.js source-color-a4.html build/_ca.pdf "downloads/4. Workbook - Color - A4.pdf" "30 Days of Back-and-Forth: Workbook (Color, A4)"
+node "$R" pdf source-lowink-a4.html build/_la.pdf && node build/fields.js source-lowink-a4.html build/_la.pdf "downloads/5. Workbook - Low-ink - A4.pdf" "30 Days of Back-and-Forth: Workbook (Low-ink, A4)"
 cp "downloads/2. Workbook - Color - US Letter.pdf" course-screen-reset.pdf
 rm -f build/_*.pdf
 # ---- Etsy edition (no URL or QR) kept in build/etsy until a marketplace listing is chosen

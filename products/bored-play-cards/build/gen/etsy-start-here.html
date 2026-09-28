@@ -28,18 +28,18 @@ h1,h2,h3,h4,p{margin:0}
 .ti{display:flex;align-items:flex-start;justify-content:space-between;gap:5px;padding:5px 7px 2px 8px;position:relative}
 .tt{flex:1;min-width:0}
 .cat{font-weight:800;font-size:7px;letter-spacing:.11em;text-transform:uppercase;opacity:.75;margin-bottom:1px}
-.ti h3{font-family:"Fredoka","Nunito Sans",sans-serif;font-weight:600;font-size:17.5px;line-height:1.02;letter-spacing:-.005em}
+.ti h3{font-family:"Fredoka","Nunito Sans",sans-serif;font-weight:600;font-size:18px;line-height:1.02;letter-spacing:-.005em}
 .ci{flex:0 0 32px;width:32px;height:32px;border-radius:50%;background:var(--t);display:flex;align-items:center;justify-content:center;color:var(--m)}
 .card[style*="--m:#F5B820"] .ci,.card[style*="--m:#F5B820"] .talk .ti2{color:#A87700}
 .ci .i{width:20px;height:20px;display:block}
 .bd{padding:2px 8px 0;display:flex;flex-direction:column;gap:4px;position:relative;z-index:1}
 .row{position:relative}
 .row b,.talk b{display:block;font-weight:800;font-size:7px;letter-spacing:.11em;text-transform:uppercase;opacity:.75;margin-bottom:0}
-.row p{font-size:10.6px;line-height:1.26;font-weight:600}
+.row p{font-size:11px;line-height:1.26;font-weight:600}
 .talk{background:var(--t);border-radius:8px;padding:4px 7px 4px 5px;display:flex;gap:4px;align-items:flex-start;margin-top:1px;position:relative}
 .talk>div{flex:1;min-width:0}
 .talk .ti2{flex:0 0 13px;width:13px;height:13px;color:var(--m);margin-top:1px}
-.talk p{font-size:10.6px;line-height:1.22;font-weight:800}
+.talk p{font-size:11px;line-height:1.22;font-weight:800}
 .sp{flex:1;min-height:0}
 .fl{display:flex;align-items:center;gap:3px;padding:0 5px 3px 6px;position:relative}
 .fg{display:inline-flex;align-items:center;gap:2px;height:13px;padding:0 4px 0 3px;border-radius:10px;font-size:6.4px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap}
@@ -142,7 +142,8 @@ h1,h2,h3,h4,p{margin:0}
 .fan{position:absolute;top:0;left:calc(50% - 1.25in);width:2.5in;height:3.5in;transform-origin:50% 175%}
 .fan .card{padding:0}.fan .panel{box-shadow:0 8px 18px rgba(29,41,64,.13)}
 .cv-chips{position:absolute;left:.55in;right:.55in;bottom:1.18in;display:flex;flex-wrap:wrap;gap:8px}
-.cv-extra{position:absolute;left:.57in;right:.55in;bottom:.5in;font-size:12px;line-height:1.45;font-weight:600;background:#fff;border-radius:14px;padding:9px 14px}
+.cv-ft{position:absolute;left:.57in;right:.55in;bottom:.3in;font-size:7.3px;font-weight:700;color:var(--mut)}
+.cv-extra{position:absolute;left:.57in;right:.55in;bottom:.52in;font-size:12px;line-height:1.45;font-weight:600;background:#fff;border-radius:14px;padding:9px 14px}
 </style>
 <style>
 .welcome .lead{margin-bottom:16px}
@@ -382,19 +383,22 @@ h1,h2,h3,h4,p{margin:0}
 </style>
 <style>
 .shp .ph{margin-bottom:8px}.shp .lead{font-size:14px;margin-bottom:14px}
-.shg{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.shg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
 .sbx{background:#F3F6FB;border-radius:16px;padding:12px 16px}
-.sbx p{font-size:11.6px;line-height:1.45;font-weight:600}
+.sbx p{font-size:11.2px;line-height:1.42;font-weight:600}
 .sbx p+p{margin-top:6px}
-.sfr{display:flex;gap:9px;align-items:flex-start;padding:4px 0;border-bottom:1px solid #E1E7F1}
+.sfr{display:flex;gap:9px;align-items:center;padding:3px 0;border-bottom:1px solid #E1E7F1}
 .snum{flex:0 0 22px;height:22px;border-radius:50%;background:#1D2940;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px}
-.sfr b{display:block;font-size:11.6px;font-weight:800}.sfr span{font-size:11px;font-weight:600}
+.sfr b{display:block;font-size:11.2px;font-weight:800}.sfr span{font-size:10.6px;font-weight:600}
 .ssm{margin-top:6px}
 .sqr{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
 .sqr>div{background:#fff;border-radius:12px;padding:8px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
 .sqr .qr{width:1.05in;height:1.05in;display:block}
 .sqr span{font-size:8px;font-weight:800;line-height:1.3;word-break:break-all}
 .sfull{margin-top:auto}
+.sinside .sig{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 18px}
+.sinside{margin-bottom:12px}.sinside .pgr{display:flex;justify-content:space-between;gap:6px;font-size:9.4px;font-weight:700;padding:1.5px 0;border-bottom:1px solid #E1E7F1}
+.sinside .pgr b{white-space:nowrap}
 </style>
 
 
@@ -479,12 +483,14 @@ h1,h2,h3,h4,p{margin:0}
       <p class="ssm"><b>US Letter</b> is for the USA and Canada. <b>A4</b> is for most other countries.</p></div>
     <div class="sbx" style="background:#E3EEFA"><span class="kick">Downloading</span><p><b>Use a web browser, not the shopping app.</b> Apps often can’t save files. On a computer or in your phone’s browser, tap each file to save it.</p>
       <p><b>Lost a file?</b> Sign in on a web browser and open Purchases in your account. Your files stay there.</p>
+      <p><b>On a phone?</b> After you tap a file, open it from your Downloads folder. To type in the blanks, a computer is easiest.</p><p><b>File won’t open?</b> Try a free PDF reader, then download it again from Purchases.</p>
       </div>
   </div>
   <div class="shg">
     <div class="sbx" style="background:#FEF4D8"><span class="kick">Print settings</span><p>Print at <b>100% / actual size</b>, not “fit to page.” Use cardstock (65–110 lb / 176–300 gsm) for the cards. Print only what you need: the page guide is on page 8 of each main file. Double-sided backs are optional; the steps are on the same page.</p><p><b>Prep:</b> about 30 minutes to print and cut every card with a paper trimmer, then use them again and again. No time? Print one sheet today.</p></div>
     <div class="sbx" style="background:#DFF3E9"><span class="kick">Typing in the blanks</span><p>The <b>color</b> files have type-in boxes on the blank cards, planners, blank labels, blank dividers and certificate. Open the file in a free PDF reader that supports fill-in forms (a computer is easiest), click a box, type, then save a copy.</p><p><b>What you can edit:</b> text boxes and tick circles, yes. Fonts, colors and pictures, no. The low-ink files have the same blanks to write on by hand.</p></div>
   </div>
+  <div class="sbx sinside"><span class="kick">Inside every main file · page numbers</span><div class="sig"><div class="pgr"><span>Start here</span><b>2</b></div><div class="pgr"><span>Grown-up guide & pantry list</span><b>3–4</b></div><div class="pgr"><span>How to read a card · play at every age</span><b>5–6</b></div><div class="pgr"><span>Safety rules</span><b>7</b></div><div class="pgr"><span>Print, cut, laminate & store</span><b>8</b></div><div class="pgr"><span>Ages 1–3 cards</span><b>9–13</b></div><div class="pgr"><span>Ages 3–5 cards</span><b>14–18</b></div><div class="pgr"><span>Ages 5–8 cards</span><b>19–23</b></div><div class="pgr"><span>Ages 8–12 cards</span><b>24–28</b></div><div class="pgr"><span>Summer + rainy-day sets, seasonal blanks</span><b>29–33</b></div><div class="pgr"><span>Card backs (optional)</span><b>34–39</b></div><div class="pgr"><span>Card index & grown-up companion</span><b>40–47</b></div><div class="pgr"><span>Box dividers</span><b>48–51</b></div><div class="pgr"><span>Jar labels</span><b>52–53</b></div><div class="pgr"><span>Play Menu + weekly planners</span><b>54–57</b></div><div class="pgr"><span>Play Jar Star certificate</span><b>58</b></div><div class="pgr"><span>Quick answers</span><b>59</b></div><div class="pgr"><span>More from us · license</span><b>60</b></div></div></div>
   <div class="sbx sfull"><span class="kick">Print permission and safety</span><p>You may print these files for your own household as often as you like, at home or at a print shop. <b>Print shops:</b> this customer has permission to print copies for their own family’s use. Please don’t share or resell the files.</p><p>Before you play, read the safety page (page 7 of each main file). Every play follows our published safety rules, and every card has its own safety line.</p></div>
   </div><footer class="pf"><span class="pfl"><img class="lgf" src="../../../../brand/logo/wordmark.svg" alt="Play Before Pixels"><span>“I’m Bored” Play Cards · Version 1.0 · September 2026</span></span><span>© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.</span></footer></section>
 </body></html>

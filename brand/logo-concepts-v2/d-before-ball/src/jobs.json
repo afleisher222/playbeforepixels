@@ -1,0 +1,40 @@
+[
+ {
+  "src": "tests/test-large.html",
+  "out": "test-large.png",
+  "w": 512,
+  "h": 512
+ },
+ {
+  "src": "tests/test-logo.html",
+  "out": "test-logo.png",
+  "w": 1600,
+  "h": 1515
+ },
+ {
+  "src": "tests/fav.html",
+  "out": "tests/favicon-16.png",
+  "w": 16,
+  "h": 16,
+  "transparent": true
+ },
+ {
+  "src": "tests/fav.html",
+  "out": "tests/favicon-32.png",
+  "w": 32,
+  "h": 32,
+  "transparent": true
+ },
+ {
+  "src": "tests/test-small.html",
+  "out": "test-small.png",
+  "w": 640,
+  "h": 360
+ },
+ {
+  "src": "tests/preview-sheet.html",
+  "out": "preview-sheet.png",
+  "w": 1600,
+  "h": 1000
+ }
+]

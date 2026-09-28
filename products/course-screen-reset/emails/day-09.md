@@ -14,7 +14,7 @@ Many of us feel we have to fix a bored child immediately. Today, try something d
 
 Boredom is uncomfortable, and children will tell you so, loudly. But it’s also the feeling right before an idea. Children who have a few minutes with nothing scheduled often start humming, building, arranging, pretending. The first few minutes are the hardest.
 
-You can help without taking over. Keep simple, open-ended things around: boxes, paper, tape, cushions, pots, scarves, a basket of odds and ends. Things that can be anything tend to hold attention longer than things that do one thing.
+You can help without taking over. Keep simple, open-ended things around: boxes, paper, tape, cushions, pots, blankets, a basket of big odds and ends. Things that can be anything tend to hold attention longer than things that do one thing.
 
 Then step back a little. Stay nearby, doing something of your own: folding laundry, cooking, reading. Children like company while they play, even if you’re not playing.
 
@@ -31,7 +31,7 @@ Put a big empty box on the floor and say nothing about it. If your child wanders
 **Talk while you play (Follow their lead):** “Where is your car going? … To the zoo! Can I come?”
 
 - **Make it easier:** For toddlers, open both ends to make a tunnel and crawl through.
-- **Make it harder:** Big kids make a shop, a robot costume or a marble run from boxes and tape.
+- **Make it harder:** Big kids make a shop, a robot costume or a car ramp from boxes and tape.
 - **Tired-grown-up version (2 minutes):** Put the box down, say “I wonder…” and see what happens.
 - **Safety:** Take off staples and packing tape first. Grown-ups do any cutting.
 

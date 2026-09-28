@@ -1,75 +1,155 @@
 # Paste the lines below (without these comment lines) into: environment menu → Edit → Network access → Custom → Allowed domains.
-# Also tick "Also include default list of common package managers".
-# Hosts that carry an API credential do not need to be listed (the credential lets them through), but listing them is harmless.
-# --- selling and publishing (APIs and seller pages) ---
-*.myshopify.com
-shopify.dev
-www.shopify.com
-openapi.etsy.com
-www.etsy.com
-api.gumroad.com
-gumroad.com
-api.printful.com
-www.printful.com
-api.pinterest.com
-www.pinterest.com
-trends.pinterest.com
-graph.facebook.com
-www.facebook.com
-open.tiktokapis.com
-www.tiktok.com
+# Also tick "Also include default list of common package managers". That default list already covers GitHub (including raw.githubusercontent.com), npm (the product builds install pdf-lib and qrcode), PyPI (the setup script), Ubuntu apt, *.googleapis.com (YouTube Data, Search Console and Merchant APIs, Google sign-in), *.r2.cloudflarestorage.com, fonts.googleapis.com, fonts.gstatic.com, code.claude.com, docs.claude.com and claude.ai, so none of those is repeated here.
+# One host per line. There are no "*." wildcards on purpose: every line is one named site the routines need (least privilege).
+# A host on an API credential is reachable without being listed. The API hosts below stay listed anyway, because Etsy, Pinterest, TikTok and (Dev Dashboard) Shopify tokens are short-lived: the run gets a fresh token (ops/ROUTINE.md step 0.7) and sends it itself.
+# Editing this list rebuilds the setup-script cache on the next session (about 10 seconds). Every host, its reason and what was left out on purpose: ops/TESTS/network-hosts.md.
+# --- build tools (only used if the cloud image ever loses Playwright; ops/cloud/setup-script.sh step 4) ---
+cdn.playwright.dev
+playwright.download.prss.microsoft.com
+# --- the website: deploy target and the daily health check ---
 api.cloudflare.com
+developers.cloudflare.com
+playbeforepixels.com
+www.playbeforepixels.com
+shop.playbeforepixels.com
+# --- selling and publishing: platform APIs ---
+# Shopify: when the store exists, add its exact host (<store>.myshopify.com) here. Never a *.myshopify.com wildcard.
+openapi.etsy.com
+api.pinterest.com
+graph.facebook.com
+open.tiktokapis.com
+open-upload.tiktokapis.com
+api.gumroad.com
+api.printful.com
 connect.mailerlite.com
 api.kit.com
-bsky.social
-public.api.bsky.app
+# --- stay-current scan: official seller, policy and developer pages (ops/ROUTINE.md "Daily stay-current scan"; ops/RESEARCH-BACKLOG.md) ---
 kdp.amazon.com
+www.kdpcommunity.com
+merch.amazon.com
 www.amazon.com
-www.teacherspayteachers.com
 www.ingramspark.com
+www.etsy.com
+help.etsy.com
+community.etsy.com
+developers.etsy.com
+www.teacherspayteachers.com
+help.teacherspayteachers.com
+sellerblog.teacherspayteachers.com
+www.shopify.com
+help.shopify.com
+shopify.dev
+changelog.shopify.com
+gumroad.com
+app.gumroad.com
+www.pinterest.com
+help.pinterest.com
+policy.pinterest.com
+business.pinterest.com
+developers.pinterest.com
+www.facebook.com
+transparency.meta.com
+help.instagram.com
+developers.facebook.com
+www.tiktok.com
+seller-us.tiktok.com
+developers.tiktok.com
+support.google.com
+developers.google.com
+www.mailerlite.com
+developers.mailerlite.com
+help.kit.com
+developers.kit.com
+www.printful.com
+help.printful.com
+developers.printful.com
 www.faire.com
+support.claude.com
+docs.github.com
+# --- market research: what is selling now (ops/ROUTINE.md section 1) ---
+trends.pinterest.com
 trends.google.com
-# --- research (primary sources only) ---
+# --- research: indexes and open APIs first (abstract at minimum; content/research-hub/verification-queue.md) ---
 pubmed.ncbi.nlm.nih.gov
 pmc.ncbi.nlm.nih.gov
 www.ncbi.nlm.nih.gov
 eutils.ncbi.nlm.nih.gov
-api.crossref.org
-doi.org
 europepmc.org
 www.ebi.ac.uk
+api.crossref.org
+doi.org
 api.openalex.org
 api.semanticscholar.org
-jamanetwork.com
+# --- research: official bodies behind the allowed citations and the early-intervention page ---
+www.who.int
+iris.who.int
 www.aap.org
 publications.aap.org
+www.healthychildren.org
+www.unesco.org
+unesdoc.unesco.org
 www.cdc.gov
-www.who.int
-# --- law, tax and trademark (official sites) ---
+sites.ed.gov
+ectacenter.org
+www.nhs.uk
+# --- research: publisher pages that the DOIs in the verification queue resolve to, and the queue's other "Check:" pages ---
+jamanetwork.com
+linkinghub.elsevier.com
+www.sciencedirect.com
+link.springer.com
+journals.sagepub.com
+onlinelibrary.wiley.com
+www.tandfonline.com
+www.mdpi.com
+journals.lww.com
+bmcpediatr.biomedcentral.com
+bmcpublichealth.biomedcentral.com
+www.frontiersin.org
+journals.plos.org
+www.degruyterbrill.com
+www.thieme-connect.de
+psycnet.apa.org
+www.cairn.info
+shs.cairn.info
+dergipark.org.tr
+www.jnma.com.np
+psihologia.ro
+psychologiescientifique.org
+healthcare-bulletin.co.uk
+afpa.org
+www.autismus.de
+www.sciencemediacentre.org
+# --- law, tax and trademark: United States and Maryland (official sites only) ---
 www.ftc.gov
 www.ecfr.gov
 www.federalregister.gov
 www.uspto.gov
 tsdr.uspto.gov
 tmsearch.uspto.gov
+tmep.uspto.gov
 www.copyright.gov
 www.cpsc.gov
-egov.maryland.gov
-www.marylandtaxes.gov
-eur-lex.europa.eu
-www.gov.uk
 www.irs.gov
+egov.maryland.gov
 dat.maryland.gov
+www.marylandtaxes.gov
+mgaleg.maryland.gov
+oag.ca.gov
+# --- law and tax for the worldwide plan (ops/INTERNATIONAL.md regions 2-4; official sites only) ---
+www.gov.uk
+www.legislation.gov.uk
+ico.org.uk
+www.canada.ca
+competition-bureau.canada.ca
+crtc.gc.ca
+www.ato.gov.au
+www.ird.govt.nz
+eur-lex.europa.eu
 taxation-customs.ec.europa.eu
-# --- platform developer docs and help pages (ops/RESEARCH-BACKLOG.md; the runbook's quarterly re-check) ---
-code.claude.com
-docs.github.com
-help.etsy.com
-developers.etsy.com
-developers.pinterest.com
-developers.tiktok.com
-developers.google.com
-developers.facebook.com
-help.shopify.com
-www.mailerlite.com
-developers.kit.com
+single-market-economy.ec.europa.eu
+www.edpb.europa.eu
+# --- events calendar: official pages for the near-term, high-fit rows still marked Confirmed = N ---
+www.usps.com
+screenfree.org
+www.litworld.org
+www.naeyc.org

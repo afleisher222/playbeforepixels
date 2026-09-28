@@ -15,3 +15,9 @@ The founder adds each key once in the cloud environment's settings (environment 
 | EMAIL_PLATFORM_API_KEY | email list (MailerLite/Kit) | add products to emails and send approved campaigns |
 
 Platforms with no automation API (Amazon KDP, IngramSpark, Teachers Pay Teachers, and any marketplace that forbids automated listing) get ready-to-upload packets in ops/UPLOAD-PACKETS/ instead.
+
+**Hosts and header names** for each key are in ops/CLOUD-RUNBOOK.md ("API credentials"). Open points from the check on September 28, 2026 (ops/TESTS/network-hosts.md):
+- CLOUDFLARE_ACCOUNT_ID and SHOPIFY_STORE_DOMAIN are identifiers, not secrets: they go in as plain environment variables.
+- SHOPIFY_ADMIN_TOKEN may be out of date: new Shopify apps are reported to use a client ID and secret that give 24-hour tokens (ops/GAPS-ROUND-2.md G2-05) [VERIFY, ops/RESEARCH-BACKLOG.md item 2].
+- ETSY_ACCESS_TOKEN, PINTEREST_ACCESS_TOKEN and any TikTok or YouTube token expire, so they come from the token broker (G2-05), not from a stored credential [VERIFY lifetimes].
+- Not listed above yet [VERIFY which are needed]: direct Meta, TikTok and YouTube keys (unless SOCIAL_SCHEDULER_TOKEN covers those networks), the token broker's own key, and SUPPORT_MAILBOX_* and MOR_API_KEY from operations/AUTOMATION-MAP.md.

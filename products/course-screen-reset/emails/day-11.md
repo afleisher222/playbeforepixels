@@ -1,6 +1,6 @@
 ---
 subject: "Day 11: Mornings without the scramble"
-preheader: "A short, repeatable morning order, with play in the gaps, often needs less screen help to "
+preheader: "A short, repeatable morning order, with play in the gaps, often needs less screen help…"
 send: "day 11, 7:00 local time"
 ---
 

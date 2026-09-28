@@ -1,4 +1,4 @@
-// Shared parts for "The 30-Day Screen Reset" (Play Before Pixels · AlphaPlay LLC): QR, scenes, icons, cards.
+// Shared parts for "30 Days of Back-and-Forth" (was "The 30-Day Screen Reset"; Play Before Pixels · AlphaPlay LLC): QR, scenes, icons, cards.
 // Cast and object art are the same symbols as 100 Screen-Free Plays and Up! Go! More! (chars.js, icons.js).
 const path = require('path');
 const fs = require('fs');

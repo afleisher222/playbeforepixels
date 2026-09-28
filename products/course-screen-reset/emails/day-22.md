@@ -1,6 +1,6 @@
 ---
 subject: "Day 22: Waiting without a screen"
-preheader: "A few pocket plays that need nothing at all turn waiting rooms, lines and restaurants into"
+preheader: "A few pocket plays that need nothing at all turn waiting rooms, lines and restaurants…"
 send: "day 22, 7:00 local time"
 ---
 
@@ -46,7 +46,7 @@ A clear, friendly no plus a choice. If you do decide to hand over the phone, tha
 Today’s pages in your workbook: Day 22. {{workbook_download_link}}
 
 ---
-**Next for your family:** The Day the Tablet Slept. A funny bedtime read-aloud for ages 3–7 about a box rocket, a dog named Biscuit and one very sleepy tablet. https://playbeforepixels.com/shop/picture-tablet-slept
+**Next for your family:** The Day the Tablet Slept. A funny bedtime read-aloud for ages 3–7 about a box rocket, the family dog and one very sleepy tablet. https://playbeforepixels.com/shop/picture-tablet-slept
 
 **Share with a friend:** give $5, get $5. {{referral_link}}
 

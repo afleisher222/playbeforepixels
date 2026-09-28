@@ -68,9 +68,9 @@ b,strong{font-weight:800}
 .tag{display:inline-flex;align-items:center;gap:5px;height:22px;padding:0 9px;border-radius:11px;background:var(--wash);color:var(--ink);font-size:10.5px;font-weight:800;white-space:nowrap}
 .tag .ui{width:13px;height:13px;color:var(--bc)}
 /* title block */
-.tt{position:absolute;left:0;right:0;top:40px}
+.tt{position:absolute;left:0;right:0;top:36px}
 .tt h1{font-size:33px}
-.tt .how{margin-top:7px;font-size:13px;line-height:1.35;color:var(--ink);max-width:680px}
+.tt .how{margin-top:5px;font-size:13px;line-height:1.35;color:var(--ink);max-width:680px}
 .tt .how b{color:var(--ink)}
 /* play panel */
 .play{position:absolute;left:0;top:118px;width:${PANEL.w}px;height:${PANEL.h}px;border-radius:22px;background:var(--bt);overflow:hidden}

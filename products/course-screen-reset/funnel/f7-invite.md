@@ -1,18 +1,18 @@
 ---
-subject: "Keep going: the 30-Day Screen Reset"
+subject: "Keep going: 30 Days of Back-and-Forth"
 preheader: "$27, with a 30-day money-back guarantee."
 send: "day 7"
 ---
 
 *7 Days of Play First · Day 7*
 
-# Keep going: the 30-Day Screen Reset
+# Keep going: 30 Days of Back-and-Forth
 
 Your seven days are done. Thank you for spending them with us.
 
-If you’d like the whole month, the 30-Day Screen Reset is $27. You get 30 daily lessons by email, 30 plays, 30 scripts for tricky moments and the full workbook (Color and Low-ink, Letter and A4, fillable in free Acrobat Reader).
+If you’d like the whole month, 30 Days of Back-and-Forth is $27. You get 30 daily lessons by email, 30 plays, 30 scripts for tricky moments and the full workbook (Color and Low-ink, Letter and A4, fillable in free Acrobat Reader).
 
-Or choose the Screen Reset Bundle for $49: the program plus the Play-First Family Kit, the 100 Screen-Free Plays printable guide and the 150 “I’m Bored” Play Cards. Bought separately, those come to $54.49.
+Or choose the 30 Days of Back-and-Forth Bundle for $49: the program plus the Play-First Family Kit, the 100 Screen-Free Plays printable guide and the 150 “I’m Bored” Play Cards. Bought separately, those come to $54.49.
 
 Either way, there’s a simple guarantee: if it isn’t right for your family, email us within 30 days of purchase for a full refund. No questions asked.
 
@@ -29,7 +29,7 @@ Drape a blanket over a table or two chairs to make a hideout. Bring in a flashli
 - **Make it easier:** Just drape the blanket over your knees and play peekaboo inside.
 - **Make it harder:** Big kids design a den with a sign, a door flap and a secret knock.
 - **Tired-grown-up version (2 minutes):** Lie under the blanket together and read one book with a flashlight.
-- **Safety:** Use a light blanket, keep faces uncovered and stay nearby. No cords or strings tied to the den.
+- **Safety:** Use a light blanket, keep faces uncovered and stay nearby. No cords or strings tied to the den. Use a flashlight whose battery cover screws shut.
 
 ## Plain words for: When a day doesn’t go to plan (words for yourself)
 
@@ -37,7 +37,7 @@ Drape a blanket over a table or two chairs to make a hideout. Bring in a flashli
 >
 > “I don’t need a perfect day. I need a next step.”
 
-**[Start the 30-Day Screen Reset · $27]({{program_checkout_link}})** · [Or get the Screen Reset Bundle · $49]({{bundle_checkout_link}})
+**[Start 30 Days of Back-and-Forth · $27]({{program_checkout_link}})** · [Or get the bundle · $49]({{bundle_checkout_link}})
 
 30-day money-back guarantee. Written program; no videos, calls or coaching.
 

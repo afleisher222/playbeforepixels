@@ -33,7 +33,7 @@ function wordAct(w, band) {
   const t = WORDTEXT[w];
   return {
     id: 'w-' + w.replace(/\s/g, ''), band, from: t.from, cat: 'First words', kind: 'word', word: m, title: `First words: “${w}”`,
-    how: `<b>Point, say, do.</b> Point to the picture, say the word, then do it together: ${m.cue[1].replace(/!$/, '')}.`,
+    how: `<b>Point, say, do.</b> Point to the picture and say the word. Then do it together. ${m.cue[1]}${/[!?.…]$/.test(m.cue[1]) ? '' : '.'}`,
     talk: t.talk, easier: t.easier, harder: t.harder, tired: t.tired, prep: '0 min', mess: 'None', needs: 'Just this page', cut: false,
     safety: 'Pages are for pointing and patting, not mouthing: hold the page for your child.',
   };
@@ -245,8 +245,8 @@ b2.push({
   how: '<b>Match faces that feel the same.</b> Look at a card face. Make that face together, then find the friend who feels the same.',
   talk: ['Say what you see', '“She looks sleepy. Yawn! Who else is sleepy?”'], easier: 'Happy and sad only.', harder: 'Ask “What made him sad, do you think?”', tired: 'Make a silly face at each other. Done.',
   prep: '10 min', mess: 'None', needs: 'Scissors, cardstock', cut: true, cols: 3,
-  board: () => gridPos(6, 3, CELL, 12, 36).map(([x, y], i) => slot(x, y, CELL, head(feel[i][0], CELL.w / 2, CELL.h / 2 - 12, 2.6, feel[i][1]) + T(CELL.w / 2, CELL.h - 16, feel[i][2], 17, { c: '#5B6780' }))).join(''),
-  pieces: [['E', 'laugh'], ['C', 'sad'], ['D', 'oh'], ['A', 'sleep'], ['B', 'smile'], ['C', 'joy']].map(([k, f], i) => ({ raw: (w, h) => head(k, w / 2, h / 2 - 12, 2.6, f), word: feel[i][2], tint: C.wash })),
+  board: () => gridPos(6, 3, CELL, 12, 36).map(([x, y], i) => slot(x, y, CELL, head(feel[i][0], CELL.w / 2, CELL.h / 2 - 8, 2.1, feel[i][1]) + T(CELL.w / 2, CELL.h - 16, feel[i][2], 17, { c: '#5B6780' }))).join(''),
+  pieces: [['E', 'laugh'], ['C', 'sad'], ['D', 'oh'], ['A', 'sleep'], ['B', 'smile'], ['C', 'joy']].map(([k, f], i) => ({ raw: (w, h) => head(k, w / 2, h / 2 - 6, 2.0, f), word: feel[i][2], tint: C.wash })),
 });
 b2.push({
   id: 'inonunder', band: 'b2', from: 30, cat: 'First words', title: 'In, on, under',
@@ -256,7 +256,7 @@ b2.push({
   board: () => {
     const tile = (x, inner, word) => `<g transform="translate(${x},0)">${tint(0, 0, 208, H, 22, '#FFFFFF')}${inner}${T(104, H - 34, word, 34)}</g>`;
     const table = `${rr(20, 200, 168, 18, 9, C.s3)}${rr(34, 214, 14, 170, 7, C.s3)}${rr(160, 214, 14, 170, 7, C.s3)}`;
-    return tile(0, U('w-cat', 108, 240, 1.25) + U('a-box', 104, 320, 1.55), 'in') + tile(232, U('a-box', 104, 330, 1.55) + U('w-cat', 108, 212, 1.25), 'on') + tile(464, table + U('w-cat', 104, 340, 1.1), 'under');
+    return tile(0, U('w-cat', 108, 240, 1.25) + U('a-box', 104, 320, 1.55), 'in') + tile(232, U('a-box', 104, 330, 1.55) + U('w-cat', 108, 228, 1.25), 'on') + tile(464, table + U('w-cat', 104, 340, 1.1), 'under');
   },
 });
 b2.push(wordAct('open', 'b2'), wordAct('help', 'b2'));
@@ -268,6 +268,7 @@ b2.push({
   prep: '10 min', mess: 'None', needs: 'Scissors, cardstock', cut: true, cols: 3,
   board: () => gridPos(6, 3, CELL, 12, 36).map(([x, y], i) => slot(x, y, CELL, U(homes[i][0], CELL.w / 2, CELL.h / 2 - 4, homes[i][0] === 'b-pond' ? 1.45 : 1.35), { fill: C.wash })).join(''),
   pieces: homes.map(h => P(h[1], h[2], { s: h[3] * 1.1, tint: '#FFFFFF' })),
+  answer: 'dog: doghouse · fish: fishbowl · bird: nest · bee: hive · duck: pond · teddy: bed',
 });
 b2.push({
   id: 'opposites', band: 'b2', from: 30, cat: 'Big & little', title: 'Opposites',
@@ -276,10 +277,10 @@ b2.push({
   prep: '0 min', mess: 'None', needs: 'Just this page', cut: false,
   board: () => {
     const pair = (x, y, a, b, la, lb, ta, tb) => `<g transform="translate(${x},${y})">${tint(0, 0, 162, 246, 20, ta)}<g transform="translate(162,0)">${tint(0, 0, 162, 246, 20, tb)}</g>${a}${b}${T(81, 226, la, 22)}${T(243, 226, lb, 22)}</g>`;
-    const shut = `<g transform="translate(243,108)"><path d="M-10-60L10-60 16 30H-16Z" fill="${C.tomato}"/>${rr(-2.5, -72, 5, 14, C.ink, 2.5)}<path d="M0 30V52C0 62 14 62 14 52" stroke="${C.ink}" stroke-width="5" fill="none" stroke-linecap="round"/></g>`;
-    return pair(0, 0, U('w-sun', 81, 104, 0.95), U('w-moon', 243, 104, 0.9) + U('w-star', 290, 50, 0.22) + U('w-star', 200, 60, 0.16), 'day', 'night', C.tSun, C.tPlum) +
+    const shut = `<g transform="translate(243,108)"><path d="M-10-60L10-60 16 30H-16Z" fill="${C.tomato}"/>${rr(-2.5, -72, 5, 14, 2.5, C.ink)}<path d="M0 30V52C0 62 14 62 14 52" stroke="${C.ink}" stroke-width="5" fill="none" stroke-linecap="round"/></g>`;
+    return pair(0, 0, U('w-sun', 81, 104, 0.95), U('w-moon', 243, 104, 0.9) + U('w-star', 290, 50, 0.22) + U('w-star', 200, 60, 0.16), 'day', 'night', '#FFFFFF', C.tPlum) +
       pair(348, 0, U('w-sun', 60, 80, 0.55) + U('b-sunhat', 90, 150, 0.9), U('b-snowman', 243, 116, 1.35), 'hot', 'cold', C.tTomato, C.tSky) +
-      pair(0, 270, U('b-bird', 81, 70, 0.8) + U('b-cloud', 60, 150, 0.5, 'style="--cl:#FFFFFF"'), U('b-bird', 243, 170, 0.8) + rr(162, 196, 162, 10, 0, C.grass), 'up', 'down', C.tSky, C.tGrass) +
+      pair(0, 270, U('b-bird', 81, 70, 0.8) + U('b-cloud', 60, 150, 0.5, 'style="--cl:#FFFFFF"'), U('b-bird', 243, 148, 0.8) + rr(162, 172, 162, 10, 0, C.grass), 'up', 'down', C.tSky, C.tGrass) +
       pair(348, 270, U('b-umbrella', 81, 110, 1.2), shut, 'open', 'shut', C.tTomato, C.tTomato);
   },
 });

@@ -1,6 +1,6 @@
 ---
 subject: "Day 24: Grown-up phones"
-preheader: "Children notice our screens too. A phone parking spot and a few spoken habits help the who"
+preheader: "Children notice our screens too. A phone parking spot and a few spoken habits help the…"
 send: "day 24, 7:00 local time"
 ---
 
@@ -50,7 +50,7 @@ Naming what you’re doing and coming back is the habit children copy.
 Today’s pages in your workbook: Day 24. {{workbook_download_link}}
 
 ---
-**Next for your family:** The Day the Tablet Slept. A funny bedtime read-aloud for ages 3–7 about a box rocket, a dog named Biscuit and one very sleepy tablet. https://playbeforepixels.com/shop/picture-tablet-slept
+**Next for your family:** The Day the Tablet Slept. A funny bedtime read-aloud for ages 3–7 about a box rocket, the family dog and one very sleepy tablet. https://playbeforepixels.com/shop/picture-tablet-slept
 
 **Share with a friend:** give $5, get $5. {{referral_link}}
 

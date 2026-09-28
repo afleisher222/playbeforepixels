@@ -1,6 +1,6 @@
 {
-  "sequence": "The 30-Day Screen Reset (paid program)",
-  "trigger": "purchase of the program or the bundle (tag: reset-buyer)",
+  "sequence": "30 Days of Back-and-Forth (paid program)",
+  "trigger": "purchase of the program or the bundle (tag: 30days-buyer)",
   "rules": [
     "Send daily lessons at 7:00 in the subscriber’s time zone; the subscriber can pause or change the time.",
     "Stop the free funnel (funnel/) for anyone who buys.",
@@ -30,7 +30,7 @@
       "file": "day-01",
       "send": "day 1, 7:00 local time",
       "subject": "Day 1: Start with one ordinary day",
-      "preheader": "Before you change anything, notice when screens show up in your day and when play already "
+      "preheader": "Before you change anything, notice when screens show up in your day and when play…"
     },
     {
       "file": "day-02",
@@ -42,25 +42,25 @@
       "file": "day-03",
       "send": "day 3, 7:00 local time",
       "subject": "Day 3: Give screens a steady spot",
-      "preheader": "A screen spot that happens at the same time, in the same place, with the same ending, cuts"
+      "preheader": "A screen spot that happens at the same time, in the same place, with the same ending…"
     },
     {
       "file": "day-04",
       "send": "day 4, 7:00 local time",
       "subject": "Day 4: Build a play basket",
-      "preheader": "Play starts more easily when a few good things are within reach. Fewer choices usually mea"
+      "preheader": "Play starts more easily when a few good things are within reach. Fewer choices usually…"
     },
     {
       "file": "day-05",
       "send": "day 5, 7:00 local time",
       "subject": "Day 5: The first ten minutes",
-      "preheader": "Ten minutes of full attention when you first see each other often makes the rest of the da"
+      "preheader": "Ten minutes of full attention when you first see each other often makes the rest of the…"
     },
     {
       "file": "day-06",
       "send": "day 6, 7:00 local time",
       "subject": "Day 6: A kind ending for screen time",
-      "preheader": "Most screen trouble happens at the end. A warning, a clear ending and a landing activity m"
+      "preheader": "Most screen trouble happens at the end. A warning, a clear ending and a landing…"
     },
     {
       "file": "day-07",
@@ -84,13 +84,13 @@
       "file": "day-10",
       "send": "day 10, 7:00 local time",
       "subject": "Day 10: Kitchen time is play time",
-      "preheader": "The hour before dinner is hard for everyone. Letting children help often works better than"
+      "preheader": "The hour before dinner is hard for everyone. Letting children help often works better…"
     },
     {
       "file": "day-11",
       "send": "day 11, 7:00 local time",
       "subject": "Day 11: Mornings without the scramble",
-      "preheader": "A short, repeatable morning order, with play in the gaps, often needs less screen help to "
+      "preheader": "A short, repeatable morning order, with play in the gaps, often needs less screen help…"
     },
     {
       "file": "day-12",
@@ -102,13 +102,13 @@
       "file": "day-13",
       "send": "day 13, 7:00 local time",
       "subject": "Day 13: Big feelings when screens end",
-      "preheader": "When a child melts down as screen time ends, stay close, name the feeling and keep the end"
+      "preheader": "When a child melts down as screen time ends, stay close, name the feeling and keep the…"
     },
     {
       "file": "day-14",
       "send": "day 14, 7:00 local time",
       "subject": "Day 14: Tired days count too",
-      "preheader": "Low-energy play is still play. Every play in this program has a two-minute version for day"
+      "preheader": "Low-energy play is still play. Every play in this program has a two-minute version for…"
     },
     {
       "file": "day-15",
@@ -132,13 +132,13 @@
       "file": "day-18",
       "send": "day 18, 7:00 local time",
       "subject": "Day 18: Offer a choice",
-      "preheader": "Holding up two options and waiting gives even very young children a clear way to take a tu"
+      "preheader": "Holding up two options and waiting gives even very young children a clear way to take a…"
     },
     {
       "file": "day-19",
       "send": "day 19, 7:00 local time",
       "subject": "Day 19: Follow their lead",
-      "preheader": "When the child chooses the play and the grown-up joins in, children often talk and play mo"
+      "preheader": "When the child chooses the play and the grown-up joins in, children often talk and play…"
     },
     {
       "file": "day-20",
@@ -156,31 +156,31 @@
       "file": "day-22",
       "send": "day 22, 7:00 local time",
       "subject": "Day 22: Waiting without a screen",
-      "preheader": "A few pocket plays that need nothing at all turn waiting rooms, lines and restaurants into"
+      "preheader": "A few pocket plays that need nothing at all turn waiting rooms, lines and restaurants…"
     },
     {
       "file": "day-23",
       "send": "day 23, 7:00 local time",
       "subject": "Day 23: Car rides and travel",
-      "preheader": "Cars, buses and trains are some of the best places to talk, because nobody has to look at "
+      "preheader": "Cars, buses and trains are some of the best places to talk, because nobody has to look…"
     },
     {
       "file": "day-24",
       "send": "day 24, 7:00 local time",
       "subject": "Day 24: Grown-up phones",
-      "preheader": "Children notice our screens too. A phone parking spot and a few spoken habits help the who"
+      "preheader": "Children notice our screens too. A phone parking spot and a few spoken habits help the…"
     },
     {
       "file": "day-25",
       "send": "day 25, 7:00 local time",
       "subject": "Day 25: Big kids and fairness",
-      "preheader": "School-age children care about fairness and friends. Listening first makes the family plan"
+      "preheader": "School-age children care about fairness and friends. Listening first makes the family…"
     },
     {
       "file": "day-26",
       "send": "day 26, 7:00 local time",
       "subject": "Day 26: Siblings, twins and mixed ages",
-      "preheader": "One family rhythm, with roles for each child, works better than separate plans for everyon"
+      "preheader": "One family rhythm, with roles for each child, works better than separate plans for…"
     },
     {
       "file": "day-27",
@@ -192,7 +192,7 @@
       "file": "day-28",
       "send": "day 28, 7:00 local time",
       "subject": "Day 28: Tough days, sick days, travel days",
-      "preheader": "A planned change for a hard day is fine. Say it out loud, and go back to your usual rhythm"
+      "preheader": "A planned change for a hard day is fine. Say it out loud, and go back to your usual…"
     },
     {
       "file": "day-29",
@@ -204,7 +204,7 @@
       "file": "day-30",
       "send": "day 30, 7:00 local time",
       "subject": "Day 30: Your family’s plan",
-      "preheader": "Write a short, kind plan you can keep: your screen spot, your favorite plays and your word"
+      "preheader": "Write a short, kind plan you can keep: your screen spot, your favorite plays and your…"
     },
     {
       "file": "checkin-day-03",
@@ -227,7 +227,7 @@
     {
       "file": "day-31-whats-next",
       "send": "day 31, 7:00 local time",
-      "subject": "What’s next after the Reset",
+      "subject": "What’s next after your 30 days",
       "preheader": "Two easy ways to keep the rhythm going."
     }
   ]

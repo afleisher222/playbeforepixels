@@ -16,7 +16,7 @@ Open your tracker and your check-ins. Circle every play your child asked for aga
 
 Then look at the tricky moments. Which ones got easier? The end of screen time? The morning scramble? The hour before dinner? Which words from the scripts did you actually use?
 
-And look at yourself. What surprised you? Many parents say it’s how much talking happens once there’s a little more room for it. Some say it’s how little their child minded, once the screen spot was steady.
+And look at yourself. What surprised you? Maybe it was how much talking happened once there was a little more room for it. Maybe it was how little your child minded, once the screen spot was steady.
 
 Whatever you notice, write it down. You’ll use it tomorrow.
 

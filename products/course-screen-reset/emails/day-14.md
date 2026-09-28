@@ -1,6 +1,6 @@
 ---
 subject: "Day 14: Tired days count too"
-preheader: "Low-energy play is still play. Every play in this program has a two-minute version for day"
+preheader: "Low-energy play is still play. Every play in this program has a two-minute version for…"
 send: "day 14, 7:00 local time"
 ---
 

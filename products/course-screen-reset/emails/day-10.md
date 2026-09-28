@@ -1,6 +1,6 @@
 ---
 subject: "Day 10: Kitchen time is play time"
-preheader: "The hour before dinner is hard for everyone. Letting children help often works better than"
+preheader: "The hour before dinner is hard for everyone. Letting children help often works better…"
 send: "day 10, 7:00 local time"
 ---
 
@@ -24,7 +24,7 @@ Set up a safe spot: a sturdy step with a grown-up close by, or a low table with 
 
 ## Today’s play: Veggie wash station
 
-*From 18 months · 2-min prep · Messy · Short play · You need: a big bowl of cool water, a few whole vegetables, a towel*
+*From 18 months · 2-min prep · Messy · Short play · You need: a big bowl of cool water, a few big whole vegetables, a towel*
 
 Set a bowl of cool water and some whole vegetables on a towel at a low table. Your child scrubs, splashes and dries each one. Name what they’re doing and each vegetable as it goes.
 
@@ -33,7 +33,7 @@ Set a bowl of cool water and some whole vegetables on a towel at a low table. Yo
 - **Make it easier:** Just one big potato and a cup for pouring.
 - **Make it harder:** Big kids peel, measure and follow a simple recipe card with you at their side.
 - **Tired-grown-up version (2 minutes):** Let your child put the spoons and napkins on the table.
-- **Safety:** Water play is always supervised. Knives, peelers, the stove and hot pans stay with grown-ups; big kids use them only with you beside them.
+- **Safety:** Water play is always supervised. Use big vegetables like potatoes or cucumbers, not cherry tomatoes, baby carrots or other small round pieces. Knives, peelers, the stove and hot pans stay with grown-ups; big kids use them only with you beside them.
 
 ## Plain words for: When you need 20 minutes to cook
 

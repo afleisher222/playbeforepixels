@@ -1,6 +1,6 @@
 ---
 subject: "Day 13: Big feelings when screens end"
-preheader: "When a child melts down as screen time ends, stay close, name the feeling and keep the end"
+preheader: "When a child melts down as screen time ends, stay close, name the feeling and keep the…"
 send: "day 13, 7:00 local time"
 ---
 

@@ -1,8 +1,16 @@
-# Python tools the build, test and finance scripts use. Installed by ops/cloud/bootstrap.sh.
-fonttools==4.66.0
-uharfbuzz==0.56.2
-brotli==1.2.0
-pymupdf==1.28.2
-numpy==2.4.6
-openpyxl==3.1.5
-pillow==12.3.0
+# Python tools used by the repository's scripts. None of them ship with the cloud image.
+# Installed by ops/cloud/setup-script.sh (cached) and, as a fallback, by ops/cloud/bootstrap.sh.
+# Keep these pins identical to the PY list in ops/cloud/setup-script.sh (ops/TESTS/deps-and-paths.md).
+
+# Build, test and finance scripts
+fonttools==4.66.0      # brand/logo, brand/logo-concepts*, products/merch-core (fontTools)
+uharfbuzz==0.56.2      # text shaping for logo and merch outlines
+brotli==1.2.0          # fontTools reads the brand .woff2 files through it
+pymupdf==1.28.2        # finish.py (3 products), picture-tablet-slept/fix-pdf-size.py, ops/TESTS/unchanged_renders.py
+numpy==2.4.6           # ops/TESTS/unchanged_renders.py
+openpyxl==3.1.5        # business/build_financial_model.py
+pillow==12.3.0         # ops/TESTS/unchanged_renders.py
+
+# Archived logo concepts only (brand/logo-concepts/concept-3, -4 and -5); small wheels, kept so every committed script runs
+shapely==2.1.2
+skia-pathops==0.9.2    # imported as `pathops`

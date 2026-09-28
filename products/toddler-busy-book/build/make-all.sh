@@ -7,8 +7,8 @@ cd "$(dirname "$0")/.."
 R=../../brand/render.js
 TMP=$(mktemp -d)
 node build/build.js
-for f in build/html/site-*.html build/html/etsy-*.html; do node build/check.js "$f" > "$TMP/check.json" || { echo "QA failed: $f"; cat "$TMP/check.json"; exit 1; }; done
-echo "QA passed on all 8 editions"
+for f in build/html/site-*.html build/html/etsy-*.html build/html/start-here-*.html; do node build/check.js "$f" > "$TMP/check.json" || { echo "QA failed: $f"; cat "$TMP/check.json"; exit 1; }; done
+echo "QA passed on all 8 editions and 4 START HERE files"
 pdf() { node $R pdf "build/html/$1.html" "$TMP/$1.pdf" && node build/fillable.js "build/html/$1.html" "$TMP/$1.pdf" "$2"; }
 # website edition (QR + short link on the last page)
 pdf site-color-letter  toddler-busy-book.pdf

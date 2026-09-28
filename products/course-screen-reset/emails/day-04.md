@@ -1,6 +1,6 @@
 ---
 subject: "Day 4: Build a play basket"
-preheader: "Play starts more easily when a few good things are within reach. Fewer choices usually mea"
+preheader: "Play starts more easily when a few good things are within reach. Fewer choices usually…"
 send: "day 4, 7:00 local time"
 ---
 
@@ -12,7 +12,7 @@ send: "day 4, 7:00 local time"
 
 Children often reach for a screen because it’s the easiest “yes” in the room. Today we make play just as easy.
 
-Find a basket, box or bag. Fill it with five to eight things you already have. Mix the kinds of play: something to build with (blocks, cups, boxes), something to pretend with (a teddy, pots, a hat), something to make with (paper, crayons), something to move with (a soft ball, a scarf), and something to look at together (two or three books).
+Find a basket, box or bag. Fill it with five to eight things you already have. Mix the kinds of play: something to build with (blocks, cups, boxes), something to pretend with (a teddy, pots, a hat), something to make with (paper, crayons), something to move with (a soft ball, a cushion to jump on), and something to look at together (two or three books).
 
 Put the basket where your child can reach it, near where you usually are. Children like to play near their grown-ups.
 
@@ -46,7 +46,7 @@ You don’t have to fix boredom. Point to what’s possible and give it a little
 Today’s pages in your workbook: Day 4. {{workbook_download_link}}
 
 ---
-**Next for your family:** Play-First Family Kit. A screen-rhythm chart, a family play plan and helping-jobs pages to put this week on the fridge. https://playbeforepixels.com/shop/printables-family-kit
+**Next for your family:** Play-First Family Kit. A screen-rhythm chart, a family play plan and helping-jobs pages to put this week on the fridge. https://playbeforepixels.com/shop/play-first-family-kit
 
 **Share with a friend:** give $5, get $5. {{referral_link}}
 

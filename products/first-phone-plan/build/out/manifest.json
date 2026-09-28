@@ -1,6 +1,6 @@
 {
  "kit-store-color-letter": {
-  "pages": 37,
+  "pages": 38,
   "toc": [
    [
     "Cover",
@@ -80,19 +80,19 @@
    ],
    [
     "Monthly check-in",
-    24
-   ],
-   [
-    "Certificate",
     25
    ],
    [
-    "Colorways: Sky and Plum",
+    "Certificate",
     26
    ],
    [
+    "Colorways: Sky and Plum",
+    27
+   ],
+   [
     "More from Play Before Pixels + free bonus",
-    37
+    38
    ]
   ],
   "P": {
@@ -119,24 +119,25 @@
    "trackerB": 21,
    "ideas": 22,
    "ideas2": 23,
-   "checkin": 24,
-   "cert": 25,
-   "colors": 26,
-   "agree_sky": 27,
-   "agree2_sky": 28,
-   "planB_sky": 29,
-   "tracker_sky": 30,
-   "cert_sky": 31,
-   "agree_plum": 32,
-   "agree2_plum": 33,
-   "planB_plum": 34,
-   "tracker_plum": 35,
-   "cert_plum": 36,
-   "more": 37
+   "ideas3": 24,
+   "checkin": 25,
+   "cert": 26,
+   "colors": 27,
+   "agree_sky": 28,
+   "agree2_sky": 29,
+   "planB_sky": 30,
+   "tracker_sky": 31,
+   "cert_sky": 32,
+   "agree_plum": 33,
+   "agree2_plum": 34,
+   "planB_plum": 35,
+   "tracker_plum": 36,
+   "cert_plum": 37,
+   "more": 38
   }
  },
  "kit-store-color-a4": {
-  "pages": 37,
+  "pages": 38,
   "toc": [
    [
     "Cover",
@@ -216,19 +217,19 @@
    ],
    [
     "Monthly check-in",
-    24
-   ],
-   [
-    "Certificate",
     25
    ],
    [
-    "Colorways: Sky and Plum",
+    "Certificate",
     26
    ],
    [
+    "Colorways: Sky and Plum",
+    27
+   ],
+   [
     "More from Play Before Pixels + free bonus",
-    37
+    38
    ]
   ],
   "P": {
@@ -255,24 +256,25 @@
    "trackerB": 21,
    "ideas": 22,
    "ideas2": 23,
-   "checkin": 24,
-   "cert": 25,
-   "colors": 26,
-   "agree_sky": 27,
-   "agree2_sky": 28,
-   "planB_sky": 29,
-   "tracker_sky": 30,
-   "cert_sky": 31,
-   "agree_plum": 32,
-   "agree2_plum": 33,
-   "planB_plum": 34,
-   "tracker_plum": 35,
-   "cert_plum": 36,
-   "more": 37
+   "ideas3": 24,
+   "checkin": 25,
+   "cert": 26,
+   "colors": 27,
+   "agree_sky": 28,
+   "agree2_sky": 29,
+   "planB_sky": 30,
+   "tracker_sky": 31,
+   "cert_sky": 32,
+   "agree_plum": 33,
+   "agree2_plum": 34,
+   "planB_plum": 35,
+   "tracker_plum": 36,
+   "cert_plum": 37,
+   "more": 38
   }
  },
  "kit-store-low-letter": {
-  "pages": 26,
+  "pages": 27,
   "toc": [
    [
     "Cover",
@@ -352,15 +354,15 @@
    ],
    [
     "Monthly check-in",
-    24
-   ],
-   [
-    "Certificate",
     25
    ],
    [
-    "More from Play Before Pixels + free bonus",
+    "Certificate",
     26
+   ],
+   [
+    "More from Play Before Pixels + free bonus",
+    27
    ]
   ],
   "P": {
@@ -387,13 +389,14 @@
    "trackerB": 21,
    "ideas": 22,
    "ideas2": 23,
-   "checkin": 24,
-   "cert": 25,
-   "more": 26
+   "ideas3": 24,
+   "checkin": 25,
+   "cert": 26,
+   "more": 27
   }
  },
  "kit-store-low-a4": {
-  "pages": 26,
+  "pages": 27,
   "toc": [
    [
     "Cover",
@@ -473,15 +476,15 @@
    ],
    [
     "Monthly check-in",
-    24
+    25
    ],
    [
     "Certificate",
-    25
+    26
    ],
    [
     "More from Play Before Pixels + free bonus",
-    26
+    27
    ]
   ],
   "P": {
@@ -508,13 +511,14 @@
    "trackerB": 21,
    "ideas": 22,
    "ideas2": 23,
-   "checkin": 24,
-   "cert": 25,
-   "more": 26
+   "ideas3": 24,
+   "checkin": 25,
+   "cert": 26,
+   "more": 27
   }
  },
  "kit-etsy-color-letter": {
-  "pages": 37,
+  "pages": 38,
   "toc": [
    [
     "Cover",
@@ -594,19 +598,19 @@
    ],
    [
     "Monthly check-in",
-    24
-   ],
-   [
-    "Certificate",
     25
    ],
    [
-    "Colorways: Sky and Plum",
+    "Certificate",
     26
    ],
    [
+    "Colorways: Sky and Plum",
+    27
+   ],
+   [
     "More from Play Before Pixels",
-    37
+    38
    ]
   ],
   "P": {
@@ -633,24 +637,25 @@
    "trackerB": 21,
    "ideas": 22,
    "ideas2": 23,
-   "checkin": 24,
-   "cert": 25,
-   "colors": 26,
-   "agree_sky": 27,
-   "agree2_sky": 28,
-   "planB_sky": 29,
-   "tracker_sky": 30,
-   "cert_sky": 31,
-   "agree_plum": 32,
-   "agree2_plum": 33,
-   "planB_plum": 34,
-   "tracker_plum": 35,
-   "cert_plum": 36,
-   "more": 37
+   "ideas3": 24,
+   "checkin": 25,
+   "cert": 26,
+   "colors": 27,
+   "agree_sky": 28,
+   "agree2_sky": 29,
+   "planB_sky": 30,
+   "tracker_sky": 31,
+   "cert_sky": 32,
+   "agree_plum": 33,
+   "agree2_plum": 34,
+   "planB_plum": 35,
+   "tracker_plum": 36,
+   "cert_plum": 37,
+   "more": 38
   }
  },
  "kit-etsy-color-a4": {
-  "pages": 37,
+  "pages": 38,
   "toc": [
    [
     "Cover",
@@ -730,19 +735,19 @@
    ],
    [
     "Monthly check-in",
-    24
+    25
    ],
    [
     "Certificate",
-    25
+    26
    ],
    [
     "Colorways: Sky and Plum",
-    26
+    27
    ],
    [
     "More from Play Before Pixels",
-    37
+    38
    ]
   ],
   "P": {
@@ -769,24 +774,25 @@
    "trackerB": 21,
    "ideas": 22,
    "ideas2": 23,
-   "checkin": 24,
-   "cert": 25,
-   "colors": 26,
-   "agree_sky": 27,
-   "agree2_sky": 28,
-   "planB_sky": 29,
-   "tracker_sky": 30,
-   "cert_sky": 31,
-   "agree_plum": 32,
-   "agree2_plum": 33,
-   "planB_plum": 34,
-   "tracker_plum": 35,
-   "cert_plum": 36,
-   "more": 37
+   "ideas3": 24,
+   "checkin": 25,
+   "cert": 26,
+   "colors": 27,
+   "agree_sky": 28,
+   "agree2_sky": 29,
+   "planB_sky": 30,
+   "tracker_sky": 31,
+   "cert_sky": 32,
+   "agree_plum": 33,
+   "agree2_plum": 34,
+   "planB_plum": 35,
+   "tracker_plum": 36,
+   "cert_plum": 37,
+   "more": 38
   }
  },
  "kit-etsy-low-letter": {
-  "pages": 26,
+  "pages": 27,
   "toc": [
    [
     "Cover",
@@ -866,15 +872,15 @@
    ],
    [
     "Monthly check-in",
-    24
-   ],
-   [
-    "Certificate",
     25
    ],
    [
-    "More from Play Before Pixels",
+    "Certificate",
     26
+   ],
+   [
+    "More from Play Before Pixels",
+    27
    ]
   ],
   "P": {
@@ -901,13 +907,14 @@
    "trackerB": 21,
    "ideas": 22,
    "ideas2": 23,
-   "checkin": 24,
-   "cert": 25,
-   "more": 26
+   "ideas3": 24,
+   "checkin": 25,
+   "cert": 26,
+   "more": 27
   }
  },
  "kit-etsy-low-a4": {
-  "pages": 26,
+  "pages": 27,
   "toc": [
    [
     "Cover",
@@ -987,15 +994,15 @@
    ],
    [
     "Monthly check-in",
-    24
-   ],
-   [
-    "Certificate",
     25
    ],
    [
-    "More from Play Before Pixels",
+    "Certificate",
     26
+   ],
+   [
+    "More from Play Before Pixels",
+    27
    ]
   ],
   "P": {
@@ -1022,9 +1029,10 @@
    "trackerB": 21,
    "ideas": 22,
    "ideas2": 23,
-   "checkin": 24,
-   "cert": 25,
-   "more": 26
+   "ideas3": 24,
+   "checkin": 25,
+   "cert": 26,
+   "more": 27
   }
  }
 }

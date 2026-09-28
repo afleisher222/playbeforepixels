@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>The 30-Day Screen Reset — Workbook</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>30 Days of Back-and-Forth — Workbook</title>
 <link rel="stylesheet" href="../../brand/fonts/fonts.css"><style>
 @page { size: 8.5in 11in; margin: 0 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -42,7 +42,9 @@ b{font-weight:800}
 .cover,.titlep{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center}
 .cv-top{display:flex;align-items:center;gap:.18in;margin-top:.1in}
 .cv-num{font-weight:800;font-size:150pt;line-height:.8;color:#EE5A36;letter-spacing:-.04em}
-.cv-t{font-weight:800;font-size:40pt;line-height:.92;text-align:left;color:#1D2940}
+.cv-t{font-weight:800;font-size:46pt;line-height:.92;text-align:left;color:#1D2940}
+.cv-bf{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:50pt;line-height:1;letter-spacing:-.01em;color:#1D2940;white-space:nowrap;margin-top:.1in}
+.blankp{margin:auto;font-size:8pt;color:#8A93A6;text-align:center}
 .cv-sub{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:19pt;margin-top:.22in}
 .cv-scene{width:6.2in;height:4in;margin-top:.25in}
 .cv-scene svg{width:100%;height:100%}
@@ -232,7 +234,7 @@ b{font-weight:800}
 .fpr b{font-family:"Bricolage Grotesque",sans-serif;font-size:11pt}
 .sign{margin-top:auto;display:grid;grid-template-columns:auto 1fr auto 1.4in;gap:.1in;align-items:end;font-weight:700}
 .sign .field{margin:0}
-.certpage .inner{padding:.5in!important}
+.certpage .inner{padding:.5in .5in .7in!important}
 .cert{flex:1;border:6px solid #F5B820;border-radius:26px;display:flex;flex-direction:column;align-items:center;text-align:center;padding:.3in .4in .2in;outline:2px solid #F5B820;outline-offset:-14px}
 .cstars{display:flex;gap:.12in;align-items:center;margin-bottom:.1in}
 .cstars svg{display:block}
@@ -254,9 +256,12 @@ b{font-weight:800}
 .sb b span{font-weight:700;font-size:7.5pt;color:#4A5570;flex:none}
 .sb p{font-family:"Fredoka","Nunito Sans",sans-serif;font-size:9.4pt;margin:0 0 .02in;line-height:1.3}
 /* own play */
-.own{border:1.3px solid #C9D2E1;border-radius:14px;padding:.14in .18in;margin-bottom:.16in}
+.own{border:1.3px solid #C9D2E1;border-radius:14px;padding:.1in .16in;margin-bottom:.12in}
+.own .phead{margin-bottom:0}
+.own .field:not(.multi):not(.inl){min-height:.26in}
+.own .field.multi{height:calc(var(--l,3) * .28in);background:repeating-linear-gradient(to bottom,transparent 0,transparent calc(.28in - 1.3px),#9AA6BC calc(.28in - 1.3px),#9AA6BC .28in)}
 .own .ptitle .field.big{margin-top:.02in}
-.ownl{margin-top:.06in;font-size:9.5pt}
+.ownl{margin-top:.03in;font-size:9.5pt}
 .ownl.two{display:grid;grid-template-columns:1fr 1fr;gap:.2in}
 /* faq */
 .faq{columns:2;column-gap:.3in}
@@ -291,11 +296,11 @@ b{font-weight:800}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" class="artdefs"><defs><symbol id="a-face" overflow="visible"><circle cx="-40" cy="4" r="9" fill="#E0AC80" /><circle cx="40" cy="4" r="9" fill="#E0AC80" /><circle cx="0" cy="0" r="40" fill="#E0AC80" /><path d="M-40-2C-42-40 42-40 40-2C34-22 14-28 0-22C-14-28-34-22-40-2Z" fill="#2B1D16" /><circle cx="-12" cy="2" r="4.5" fill="#1D2940" /><circle cx="12" cy="2" r="4.5" fill="#1D2940" /><circle cx="-10.5" cy="0.5" r="1.4" fill="#FFFFFF" /><circle cx="13.5" cy="0.5" r="1.4" fill="#FFFFFF" /><circle cx="-22" cy="14" r="6" fill="#EE5A36" fill-opacity=".35"/><circle cx="22" cy="14" r="6" fill="#EE5A36" fill-opacity=".35"/><path d="M-10 16Q0 25 10 16" fill="none" stroke="#1D2940" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="a-mirror" overflow="visible"><rect x="-7" y="22" width="14" height="30" rx="7" fill="#8A5CC7" /><ellipse cx="0" cy="-8" rx="34" ry="40" fill="#8A5CC7" /><ellipse cx="0" cy="-8" rx="26" ry="32" fill="#E3EEFA" /><path d="M-12-22L-2-32M-14-8L6-28" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="a-heart" overflow="visible"><path d="M0 40C-8 32-46 10-46-14C-46-32-34-42-21-42C-11-42-4-36 0-28C4-36 11-42 21-42C34-42 46-32 46-14C46 10 8 32 0 40Z" fill="#EE5A36" /></symbol><symbol id="a-puppet" overflow="visible"><rect x="-52" y="-26" width="18" height="60" rx="8" fill="#E3EEFA" /><path d="M-40-22H10C34-22 48-6 48 8C48 22 36 32 20 32H-40Z" fill="#3D86D8" /><circle cx="16" cy="-6" r="6" fill="#FFFFFF" /><circle cx="17" cy="-5" r="3.4" fill="#1D2940" /><path d="M24 14Q38 12 48 10Q46 24 30 24Z" fill="#EE5A36" /><rect x="-40" y="-4" width="40" height="6" rx="3" fill="#FFFFFF" fill-opacity=".45"/></symbol><symbol id="a-note" overflow="visible"><ellipse cx="-22" cy="30" rx="14" ry="10" fill="#8A5CC7" transform="rotate(-20 -22 30)"/><ellipse cx="26" cy="20" rx="14" ry="10" fill="#8A5CC7" transform="rotate(-20 26 20)"/><rect x="-12" y="-36" width="8" height="66" rx="0" fill="#8A5CC7" /><rect x="36" y="-46" width="8" height="66" rx="0" fill="#8A5CC7" /><path d="M-12-36L44-46V-30L-12-20Z" fill="#8A5CC7" /></symbol><symbol id="a-rattle" overflow="visible"><rect x="-5" y="4" width="10" height="40" rx="5" fill="#2FA36B" /><circle cx="0" cy="44" r="9" fill="#2FA36B" /><circle cx="0" cy="-18" r="28" fill="#F5B820" /><circle cx="-10" cy="-26" r="6" fill="#FFFFFF" fill-opacity=".7"/><circle cx="10" cy="-12" r="4" fill="#FFFFFF" fill-opacity=".7"/></symbol><symbol id="a-towel" overflow="visible"><rect x="-38" y="-34" width="76" height="70" rx="8" fill="#3D86D8" /><rect x="-38" y="14" width="76" height="8" rx="0" fill="#FFFFFF" fill-opacity=".6"/><rect x="-38" y="24" width="76" height="4" rx="0" fill="#FFFFFF" fill-opacity=".6"/><rect x="-38" y="-34" width="76" height="12" rx="8" fill="#E3EEFA" /></symbol><symbol id="a-cup" overflow="visible"><path d="M-24-30H24L19 34C18.5 39 16 41 11 41H-11C-16 41-18.5 39-19 34Z" fill="#3D86D8" /><rect x="-28" y="-42" width="56" height="16" rx="8" fill="#F5B820" /><rect x="-7" y="-56" width="14" height="18" rx="7" fill="#F5B820" /></symbol><symbol id="a-ball" overflow="visible"><circle cx="0" cy="0" r="44" fill="#F5B820" /><path d="M0 0L0-44A44 44 0 0 1 38.1 22Z" fill="#EE5A36" /><path d="M0 0L-38.1 22A44 44 0 0 1-38.1-22Z" fill="#3D86D8" /><circle cx="0" cy="0" r="9" fill="#FFFFFF" /></symbol><symbol id="a-box" overflow="visible"><path d="M-40-10H40V40H-40Z" fill="#E0AC80" /><path d="M-40-10L-50-28H-6L0-10Z" fill="#C08457" /><path d="M40-10L50-28H6L0-10Z" fill="#C08457" /><rect x="-12" y="4" width="24" height="8" rx="3" fill="#C08457" /></symbol><symbol id="a-pot" overflow="visible"><rect x="-38" y="-14" width="76" height="46" rx="12" fill="#3D86D8" /><rect x="-44" y="-22" width="88" height="12" rx="6" fill="#1D2940" /><rect x="-54" y="-8" width="18" height="10" rx="5" fill="#1D2940" /><rect x="36" y="-8" width="18" height="10" rx="5" fill="#1D2940" /><g transform="rotate(30)"><rect x="-4" y="-62" width="8" height="40" rx="4" fill="#C08457" /><ellipse cx="0" cy="-66" rx="9" ry="13" fill="#C08457" /></g></symbol><symbol id="a-bucket" overflow="visible"><path d="M-30-24Q0-64 30-24" fill="none" stroke="#1D2940" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M-36-24H36L28 40H-28Z" fill="#2FA36B" /><rect x="-38" y="-30" width="76" height="12" rx="6" fill="#DFF3E9" /></symbol><symbol id="a-cups" overflow="visible"><path d="M-18 8H18L14 44H-14Z" fill="#EE5A36" /><path d="M-15-24H15L12 8H-12Z" fill="#F5B820" /><path d="M-12-50H12L9.5-24H-9.5Z" fill="#3D86D8" /></symbol><symbol id="a-hand" overflow="visible"><g transform="rotate(-12)"><rect x="-22" y="-10" width="44" height="44" rx="18" fill="#E0AC80" /><rect x="-22" y="-38" width="10" height="36" rx="5" fill="#E0AC80" /><rect x="-9" y="-46" width="10" height="42" rx="5" fill="#E0AC80" /><rect x="4" y="-42" width="10" height="38" rx="5" fill="#E0AC80" /><rect x="17" y="-30" width="9" height="28" rx="4.5" fill="#E0AC80" /><rect x="18" y="6" width="26" height="11" rx="5.5" fill="#E0AC80" transform="rotate(-40 20 10)"/></g><path d="M-44-30Q-52-14-44 2" fill="none" stroke="#3D86D8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M40-44Q52-30 46-12" fill="none" stroke="#3D86D8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="a-leaf" overflow="visible"><path d="M-36 36C-44-10-10-44 40-40C44 8 12 42-36 36Z" fill="#2FA36B" /><path d="M-36 36L22-22M-8 8L-8-14M8-8L22-4" fill="none" stroke="#DFF3E9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="a-cushion" overflow="visible"><rect x="-44" y="-28" width="88" height="56" rx="22" fill="#8A5CC7" /><path d="M-26-10Q0-2 26-10M-26 10Q0 2 26 10" fill="none" stroke="#EFE6FA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="a-light" overflow="visible"><circle cx="0" cy="-10" r="28" fill="#F5B820" /><rect x="-13" y="14" width="26" height="20" rx="4" fill="#F5B820" /><rect x="-12" y="32" width="24" height="12" rx="5" fill="#1D2940" /><path d="M0-52V-60M-34-40L-40-46M34-40L40-46M-44-10H-52M44-10H52" fill="none" stroke="#F5B820" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="a-book" overflow="visible"><rect x="-34" y="-44" width="68" height="88" rx="8" fill="#EE5A36" /><rect x="-34" y="-44" width="12" height="88" rx="4" fill="#1D2940" fill-opacity=".22"/><circle cx="6" cy="-6" r="16" fill="#FFFFFF" /><circle cx="6" cy="-6" r="7" fill="#F5B820" /></symbol><symbol id="a-basket" overflow="visible"><path d="M-46-20H46L38 40H-38Z" fill="#F5B820" /><rect x="-50" y="-26" width="100" height="12" rx="6" fill="#EE5A36" /><rect x="-28" y="-4" width="8" height="32" rx="4" fill="#FFFFFF" fill-opacity=".55"/><rect x="-12" y="-4" width="8" height="32" rx="4" fill="#FFFFFF" fill-opacity=".55"/><rect x="4" y="-4" width="8" height="32" rx="4" fill="#FFFFFF" fill-opacity=".55"/><rect x="20" y="-4" width="8" height="32" rx="4" fill="#FFFFFF" fill-opacity=".55"/></symbol><symbol id="a-tape" overflow="visible"><circle cx="0" cy="0" r="38" fill="#3D86D8" /><circle cx="0" cy="0" r="18" fill="#FFFFFF" /><path d="M30 22L56 34L50 44L24 32Z" fill="#E3EEFA" /></symbol><symbol id="a-sock" overflow="visible"><path d="M-14-46H18V10L34 22C44 30 38 46 26 44L-6 38C-16 36-14 26-14 18Z" fill="#EE5A36" /><rect x="-14" y="-46" width="32" height="12" rx="0" fill="#F5B820" /><rect x="-14" y="-26" width="32" height="6" rx="0" fill="#FFFFFF" fill-opacity=".6"/></symbol><symbol id="a-brush" overflow="visible"><g transform="rotate(35)"><rect x="-5" y="-10" width="10" height="58" rx="5" fill="#C08457" /><rect x="-8" y="-22" width="16" height="14" rx="3" fill="#1D2940" /><path d="M-8-22C-10-40-2-50 0-54C2-50 10-40 8-22Z" fill="#3D86D8" /></g><path d="M-40 30Q-30 24-20 30T0 30" fill="none" stroke="#3D86D8" stroke-width="6" stroke-linecap="round"/></symbol><symbol id="a-bubbles" overflow="visible"><circle cx="-14" cy="6" r="26" fill="#E3EEFA" /><circle cx="-14" cy="6" r="20" fill="#FFFFFF" /><path d="M-26 0A12 12 0 0 1-18-8" fill="none" stroke="#3D86D8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="26" cy="-20" r="16" fill="#E3EEFA" /><circle cx="26" cy="-20" r="11" fill="#FFFFFF" /><circle cx="24" cy="30" r="10" fill="#E3EEFA" /><circle cx="24" cy="30" r="6" fill="#FFFFFF" /></symbol><symbol id="a-duck" overflow="visible"><ellipse cx="0" cy="12" rx="38" ry="24" fill="#F5B820" /><path d="M22 0C36-2 42 8 44 16C34 14 26 14 22 10Z" fill="#F5B820" /><circle cx="-16" cy="-16" r="20" fill="#F5B820" /><path d="M-34-18C-48-18-50-10-45-7C-40-4-35-7-32-10Z" fill="#EE5A36" /><circle cx="-19" cy="-20" r="3.4" fill="#1D2940" /></symbol><symbol id="a-car" overflow="visible"><path d="M-46 10V-4C-46-14-40-18-30-18L-20-36H18L32-18H38C46-18 50-12 50-4V10C50 16 46 20 40 20H-40C-44 20-46 16-46 10Z" fill="#EE5A36" /><path d="M-14-30H-2V-18H-22Z" fill="#E3EEFA" /><path d="M4-30H14L24-18H4Z" fill="#E3EEFA" /><circle cx="-26" cy="20" r="12" fill="#1D2940" /><circle cx="-26" cy="20" r="4" fill="#FFFFFF" /><circle cx="28" cy="20" r="12" fill="#1D2940" /><circle cx="28" cy="20" r="4" fill="#FFFFFF" /></symbol><symbol id="a-doll" overflow="visible"><circle cx="0" cy="-26" r="20" fill="#C08457" /><path d="M-20-28C-22-50 22-50 20-28C14-40-14-40-20-28Z" fill="#2B1D16" /><circle cx="-7" cy="-24" r="3" fill="#1D2940" /><circle cx="7" cy="-24" r="3" fill="#1D2940" /><circle cx="-5.5" cy="-25.5" r="1.4" fill="#FFFFFF" /><circle cx="8.5" cy="-25.5" r="1.4" fill="#FFFFFF" /><path d="M-5-16Q0-12 5-16" fill="none" stroke="#1D2940" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="-20" y="-6" width="40" height="46" rx="16" fill="#8A5CC7" /><rect x="-30" y="0" width="12" height="26" rx="6" fill="#C08457" /><rect x="18" y="0" width="12" height="26" rx="6" fill="#C08457" /></symbol><symbol id="a-bowl" overflow="visible"><path d="M-46-4H46C46 26 26 40 0 40C-26 40-46 26-46-4Z" fill="#EE5A36" /><ellipse cx="0" cy="-4" rx="46" ry="10" fill="#FDE9E3" /><g transform="rotate(-30)"><rect x="-4" y="-62" width="8" height="44" rx="4" fill="#C08457" /><ellipse cx="0" cy="-66" rx="9" ry="12" fill="#C08457" /></g><ellipse cx="-14" cy="-6" rx="8" ry="3" fill="#F5B820" /><ellipse cx="14" cy="-6" rx="10" ry="3" fill="#F5B820" /></symbol><symbol id="a-ramp" overflow="visible"><path d="M-50 40L50 40L50 0Z" fill="#8A5CC7" /><g transform="translate(26 -16) scale(.3)"><circle cx="0" cy="0" r="44" fill="#F5B820" /><path d="M0 0L0-44A44 44 0 0 1 38.1 22Z" fill="#EE5A36" /><path d="M0 0L-38.1 22A44 44 0 0 1-38.1-22Z" fill="#3D86D8" /><circle cx="0" cy="0" r="9" fill="#FFFFFF" /></g><rect x="-54" y="40" width="108" height="6" rx="3" fill="#1D2940" /></symbol><symbol id="a-plane" overflow="visible"><path d="M-48 4L48-34L-8 20Z" fill="#3D86D8" /><path d="M-8 20L48-34L10 40Z" fill="#E3EEFA" /><path d="M-8 20L0 8L10 40Z" fill="#1D2940" fill-opacity=".25"/></symbol><symbol id="a-plate" overflow="visible"><ellipse cx="0" cy="16" rx="48" ry="18" fill="#E3EEFA" /><ellipse cx="0" cy="14" rx="34" ry="11" fill="#FFFFFF" /><rect x="-26" y="-10" width="52" height="12" rx="6" fill="#E0AC80" /><rect x="-28" y="-18" width="56" height="8" rx="4" fill="#2FA36B" /><rect x="-26" y="-34" width="52" height="16" rx="8" fill="#E0AC80" /></symbol><symbol id="a-door" overflow="visible"><rect x="-28" y="-48" width="56" height="94" rx="6" fill="#2FA36B" /><rect x="-20" y="-40" width="40" height="34" rx="4" fill="#FFFFFF" fill-opacity=".35"/><rect x="-20" y="0" width="40" height="38" rx="4" fill="#FFFFFF" fill-opacity=".35"/><circle cx="16" cy="4" r="5" fill="#F5B820" /><path d="M36-30Q44-20 36-10M44-38Q56-20 44-2" fill="none" stroke="#EE5A36" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="a-feet" overflow="visible"><g transform="translate(-18 6) rotate(-10)"><ellipse cx="0" cy="6" rx="13" ry="22" fill="#C08457" /><circle cx="-9" cy="-22" r="4.5" fill="#C08457" /><circle cx="-1" cy="-25" r="4.5" fill="#C08457" /><circle cx="7" cy="-23" r="4" fill="#C08457" /><circle cx="13" cy="-18" r="3.5" fill="#C08457" /></g><g transform="translate(20 -8) rotate(10)"><ellipse cx="0" cy="6" rx="13" ry="22" fill="#C08457" /><circle cx="9" cy="-22" r="4.5" fill="#C08457" /><circle cx="1" cy="-25" r="4.5" fill="#C08457" /><circle cx="-7" cy="-23" r="4" fill="#C08457" /><circle cx="-13" cy="-18" r="3.5" fill="#C08457" /></g></symbol><symbol id="a-phone" overflow="visible"><rect x="-38" y="-4" width="76" height="42" rx="14" fill="#EE5A36" /><circle cx="0" cy="16" r="13" fill="#FFFFFF" /><circle cx="0" cy="16" r="5" fill="#EE5A36" /><rect x="-46" y="-26" width="92" height="18" rx="9" fill="#1D2940" /><rect x="-50" y="-30" width="24" height="22" rx="9" fill="#1D2940" /><rect x="26" y="-30" width="24" height="22" rx="9" fill="#1D2940" /></symbol><symbol id="a-house" overflow="visible"><path d="M-40-6L0-44L40-6Z" fill="#EE5A36" /><rect x="-34" y="-8" width="68" height="52" rx="0" fill="#E0AC80" /><rect x="-10" y="12" width="20" height="32" rx="3" fill="#3D86D8" /><rect x="14" y="2" width="14" height="14" rx="2" fill="#FFFFFF" /></symbol><symbol id="a-blocks" overflow="visible"><g transform="translate(-22 20) scale(.72)"><rect x="-28" y="-28" width="56" height="56" rx="9" fill="#EE5A36" /><circle cx="0" cy="0" r="13" fill="#FFFFFF" /></g><g transform="translate(22 20) scale(.72)"><rect x="-28" y="-28" width="56" height="56" rx="9" fill="#3D86D8" /><path d="M0-14L14 11H-14Z" fill="#FFFFFF" /></g><g transform="translate(0 -22) scale(.72)"><rect x="-28" y="-28" width="56" height="56" rx="9" fill="#2FA36B" /><rect x="-12" y="-12" width="24" height="24" rx="4" fill="#FFFFFF" /></g></symbol><symbol id="a-torch" overflow="visible"><path d="M-6-8L-44-50L4-58Z" fill="#F5B820" fill-opacity=".5"/><g transform="rotate(45)"><rect x="-10" y="0" width="20" height="52" rx="6" fill="#8A5CC7" /><path d="M-16 2H16L12-14H-12Z" fill="#8A5CC7" /><rect x="-12" y="-18" width="24" height="6" rx="3" fill="#F5B820" /><rect x="-4" y="16" width="8" height="10" rx="3" fill="#FFFFFF" fill-opacity=".6"/></g></symbol><symbol id="a-bag" overflow="visible"><path d="M-36-20H36L32 42H-32Z" fill="#2FA36B" /><path d="M-18-20V-30C-18-50 18-50 18-30V-20" fill="none" stroke="#1D2940" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="0" cy="12" r="10" fill="#DFF3E9" /></symbol><symbol id="a-boot" overflow="visible"><path d="M-24-46H12V-2L38 6C48 9 50 24 40 28H-24Z" fill="#F5B820" /><rect x="-30" y="-50" width="46" height="12" rx="6" fill="#F5B820" /><rect x="-26" y="26" width="70" height="10" rx="5" fill="#1D2940" /><circle cx="28" cy="44" r="5" fill="#3D86D8" /><circle cx="-40" cy="20" r="6" fill="#3D86D8" /></symbol><symbol id="a-chalk" overflow="visible"><g transform="rotate(-20)"><rect x="-40" y="-10" width="60" height="18" rx="9" fill="#3D86D8" /></g><g transform="rotate(15)"><rect x="-20" y="14" width="56" height="18" rx="9" fill="#EE5A36" /></g><path d="M-40 40Q-20 30 0 42T40 38" fill="none" stroke="#F5B820" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="a-moon" overflow="visible"><path d="M8-44A44 44 0 1 0 44 8A34 34 0 1 1 8-44Z" fill="#F5B820" /><path d="M0.0 -10.0L2.4 -3.2L9.5 -3.1L3.8 1.2L5.9 8.1L0.0 4.0L-5.9 8.1L-3.8 1.2L-9.5 -3.1L-2.4 -3.2Z" transform="translate(32 -30)" fill="#F5B820"/></symbol><symbol id="a-shoe" overflow="visible"><g transform="scale(.9)"><path d="M-46 8V-14C-46-26-38-30-28-30H-14C-6-30-2-24 2-18L10-8C14-4 20-2 30 0L40 2C48 4 50 10 50 16V18H-46Z" fill="#3D86D8"/><rect x="-50" y="14" width="104" height="14" rx="7" fill="#E3EEFA"/><rect x="-18" y="-24" width="12" height="30" rx="5" fill="#F5B820" transform="rotate(28 -12 -9)"/><rect x="-4" y="-16" width="12" height="28" rx="5" fill="#F5B820" transform="rotate(28 2 -2)"/></g></symbol><symbol id="a-eye" overflow="visible"><circle cx="-8" cy="-8" r="32" fill="#8A5CC7" /><circle cx="-8" cy="-8" r="22" fill="#E3EEFA" /><g transform="rotate(-45 -8 -8)"><rect x="-16" y="22" width="16" height="40" rx="7" fill="#8A5CC7" /></g><path d="M-20-18A14 14 0 0 1-8-24" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="a-teapot" overflow="visible"><ellipse cx="0" cy="8" rx="34" ry="28" fill="#3D86D8" /><rect x="-20" y="-26" width="40" height="8" rx="4" fill="#3D86D8" /><circle cx="0" cy="-30" r="6" fill="#F5B820" /><path d="M30 0L52-18L50-10L36 14Z" fill="#3D86D8" /><path d="M-32-4C-52-4-52 24-30 22" fill="none" stroke="#3D86D8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><rect x="-30" y="30" width="60" height="8" rx="4" fill="#1D2940" fill-opacity=".2"/></symbol><symbol id="a-photo" overflow="visible"><g transform="rotate(-6)"><rect x="-40" y="-40" width="80" height="86" rx="0" fill="#FFFFFF" /><rect x="-40" y="-40" width="80" height="86" rx="4" fill="#1D2940" fill-opacity=".08"/><rect x="-32" y="-32" width="64" height="56" rx="0" fill="#E3EEFA" /><path d="M-32 24L-8-4L8 12L18 2L32 16V24Z" fill="#2FA36B" /><circle cx="16" cy="-16" r="8" fill="#F5B820" /></g></symbol><symbol id="a-wheel" overflow="visible"><circle cx="0" cy="0" r="44" fill="#1D2940" /><circle cx="0" cy="0" r="32" fill="#FFFFFF" /><rect x="-32" y="-5" width="64" height="10" rx="0" fill="#1D2940" /><rect x="-5" y="0" width="10" height="32" rx="0" fill="#1D2940" /><circle cx="0" cy="0" r="12" fill="#EE5A36" /></symbol><symbol id="a-crayon" overflow="visible"><g transform="rotate(-35)"><rect x="-12" y="-40" width="24" height="76" rx="4" fill="#EE5A36" /><path d="M-12-40L0-62L12-40Z" fill="#E0AC80" /><path d="M-5-54L0-62L5-54Z" fill="#EE5A36" /><rect x="-12" y="-20" width="24" height="8" rx="0" fill="#1D2940" fill-opacity=".25"/><rect x="-12" y="16" width="24" height="8" rx="0" fill="#1D2940" fill-opacity=".25"/></g></symbol><symbol id="a-stairs" overflow="visible"><path d="M-46 44V20H-22V-4H2V-28H26V-52H46V44Z" fill="#2FA36B" /><path d="M-46 20H-22V26H-46ZM-22-4H2V2H-22ZM2-28H26V-22H2Z" fill="#DFF3E9" /></symbol><symbol id="a-star" overflow="visible"><path d="M0.0 -46.0L11.8 -16.2L43.7 -14.2L19.0 6.2L27.0 37.2L0.0 20.0L-27.0 37.2L-19.0 6.2L-43.7 -14.2L-11.8 -16.2Z" fill="#F5B820"/></symbol><symbol id="a-rocket" overflow="visible"><path d="M-18 30V-14C-18-34 0-52 0-52C0-52 18-34 18-14V30Z" fill="#E0AC80" /><circle cx="0" cy="-10" r="9" fill="#E3EEFA" /><path d="M-18 6L-36 36H-18Z" fill="#EE5A36" /><path d="M18 6L36 36H18Z" fill="#EE5A36" /><path d="M-10 30L0 52L10 30Z" fill="#F5B820" /><path d="M-12-36C-8-44 0-52 0-52C0-52 8-44 12-36Z" fill="#8A5CC7" /></symbol><symbol id="a-tent" overflow="visible"><path d="M-50 40L0-44L50 40Z" fill="#EE5A36" /><path d="M0-44L22 40H-22Z" fill="#FDE9E3" /><path d="M0-10L12 40H-12Z" fill="#1D2940" fill-opacity=".85"/><rect x="-56" y="40" width="112" height="6" rx="3" fill="#1D2940" /></symbol><symbol id="a-list" overflow="visible"><rect x="-32" y="-40" width="64" height="86" rx="6" fill="#E0AC80" /><rect x="-26" y="-30" width="52" height="70" rx="3" fill="#FFFFFF" /><rect x="-12" y="-48" width="24" height="14" rx="4" fill="#1D2940" /><path d="M-18 -16l5 5 8-9" fill="none" stroke="#2FA36B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="0" y="-19" width="20" height="6" rx="3" fill="#E3EEFA" /><path d="M-18 0l5 5 8-9" fill="none" stroke="#2FA36B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="0" y="-3" width="20" height="6" rx="3" fill="#E3EEFA" /><path d="M-18 16l5 5 8-9" fill="none" stroke="#2FA36B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="0" y="13" width="20" height="6" rx="3" fill="#E3EEFA" /></symbol><symbol id="a-dough" overflow="visible"><circle cx="-20" cy="18" r="24" fill="#8A5CC7" /><g transform="rotate(-20)"><rect x="-44" y="-34" width="88" height="22" rx="11" fill="#E0AC80" /><rect x="-60" y="-28" width="18" height="10" rx="5" fill="#C08457" /><rect x="42" y="-28" width="18" height="10" rx="5" fill="#C08457" /></g><circle cx="26" cy="26" r="14" fill="#2FA36B" /></symbol><symbol id="a-mail" overflow="visible"><rect x="-44" y="-28" width="88" height="60" rx="6" fill="#3D86D8" /><path d="M-44-24L0 8L44-24" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round"/><rect x="22" y="-22" width="14" height="16" rx="2" fill="#EE5A36" /></symbol><symbol id="a-sun" overflow="visible"><rect x="-5" y="-52" width="10" height="16" rx="5" fill="#F5B820" transform="rotate(0)"/><rect x="-5" y="-52" width="10" height="16" rx="5" fill="#F5B820" transform="rotate(45)"/><rect x="-5" y="-52" width="10" height="16" rx="5" fill="#F5B820" transform="rotate(90)"/><rect x="-5" y="-52" width="10" height="16" rx="5" fill="#F5B820" transform="rotate(135)"/><rect x="-5" y="-52" width="10" height="16" rx="5" fill="#F5B820" transform="rotate(180)"/><rect x="-5" y="-52" width="10" height="16" rx="5" fill="#F5B820" transform="rotate(225)"/><rect x="-5" y="-52" width="10" height="16" rx="5" fill="#F5B820" transform="rotate(270)"/><rect x="-5" y="-52" width="10" height="16" rx="5" fill="#F5B820" transform="rotate(315)"/><circle cx="0" cy="0" r="30" fill="#F5B820" /></symbol><symbol id="a-spoon" overflow="visible"><ellipse cx="0" cy="36" rx="40" ry="14" fill="#8A5CC7" /><rect x="-5" y="-50" width="10" height="84" rx="5" fill="#C08457" /><ellipse cx="0" cy="-52" rx="12" ry="8" fill="#C08457" /><rect x="-13" y="22" width="26" height="12" rx="3" fill="#F5B820" /><rect x="-13" y="8" width="26" height="12" rx="3" fill="#EE5A36" /><rect x="-13" y="-6" width="26" height="12" rx="3" fill="#F5B820" /><rect x="-13" y="-20" width="26" height="12" rx="3" fill="#EE5A36" /></symbol><symbol id="a-spade" overflow="visible"><g transform="rotate(30)"><rect x="-5" y="4" width="10" height="42" rx="5" fill="#C08457" /><rect x="-10" y="40" width="20" height="10" rx="5" fill="#1D2940" /><path d="M-18 4H18V-24C18-40 0-52 0-52C0-52-18-40-18-24Z" fill="#3D86D8" /></g><ellipse cx="-28" cy="40" rx="20" ry="8" fill="#8D5A3B" /></symbol><symbol id="a-hat" overflow="visible"><path d="M-36 12C-36-26-18-40 0-40C18-40 36-26 36 12Z" fill="#F5B820" /><rect x="-50" y="8" width="100" height="14" rx="7" fill="#F5B820" /><rect x="-6" y="-40" width="12" height="50" rx="6" fill="#EE5A36" fill-opacity=".5"/></symbol><symbol id="a-note-sq" overflow="visible"><g transform="rotate(-8)"><rect x="-42" y="-40" width="50" height="50" rx="3" fill="#F5B820" /><circle cx="-17" cy="-15" r="10" fill="#EE5A36" /></g><g transform="rotate(6)"><rect x="-6" y="-8" width="50" height="50" rx="3" fill="#DFF3E9" /><rect x="-6" y="-8" width="50" height="50" rx="3" fill="#2FA36B" fill-opacity=".55"/><path d="M19 4L32 28H6Z" fill="#FFFFFF" /></g></symbol></defs></svg>
 <section class="page cvpage" style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="cover">
-        <div class="cv-top"><div class="cv-num">30</div><div class="cv-t">Day<br>Screen<br>Reset</div></div>
-        <p class="cv-sub">A play-first plan for families</p>
+        <div class="cv-top"><div class="cv-num">30</div><div class="cv-t">Days<br>of</div></div><div class="cv-bf">Back-and-Forth</div>
+        <p class="cv-sub">A play-first screen-time plan for families</p>
         <div class="cv-scene"><svg class="scene " viewBox="20 150 560 360" width="100%" height="100%"><ellipse cx="300" cy="480" rx="280" ry="26" fill="#F5B820" fill-opacity=".35"/><circle cx="300" cy="318" r="170" fill="#FFFFFF"/><g style="--sk:#3E271B;--hr:#2B1D16;--sh:#2FA36B;--pa:#1D2940;--so:#EE5A36;--hw:#F5B820" transform="translate(438,416.88) scale(-1.12,1.12)"><g transform="translate(-12,-4) rotate(0)"><use href="#g-thigh" transform="" /><g transform="translate(0,40) rotate(90)"><use href="#g-shin-k" transform="" /></g></g><g transform="translate(12,-4) rotate(0)"><use href="#g-thigh" transform="" /><g transform="translate(0,40) rotate(90)"><use href="#g-shin-k" transform="" /></g></g><use href="#g-neck" transform="" /><use href="#g-body" transform="" /><use href="#g-arm" transform="translate(-22,-80) rotate(12)" /><use href="#g-arm" transform="translate(22,-80) rotate(-86.8)" /><g transform="translate(0,-126) scale(.92) rotate(0)"><use href="#t-head" transform="" /><use href="#beard" transform="" /><use href="#face-laugh" transform="" /><use href="#h-short" transform="" /></g></g><use href="#block-3" transform="translate(330,446)" /><use href="#block-1" transform="translate(330,390)" /><use href="#block-4" transform="translate(334,334) rotate(7)" /><g style="--sk:#C08457;--hr:#5A3825;--sh:#3D86D8;--pa:#1D2940;--so:#2FA36B;--hw:#F5B820" transform="translate(222,432.15) scale(1.55,1.55)"><use href="#t-leg" transform="translate(-8,-4) rotate(3)" /><use href="#t-leg" transform="translate(8,-4) rotate(-3)" /><use href="#t-body" transform="" /><use href="#t-arm" transform="translate(-14,-38) rotate(150)" /><use href="#t-arm" transform="translate(14,-38) rotate(-150)" /><g transform="translate(0,-69) rotate(0)"><use href="#t-head" transform="" /><use href="#face-laugh" transform="" /><use href="#h-curly" transform="" /></g><g transform="translate(0,-69)"><use href="#glasses"/></g></g><g transform="translate(96 474)"><path d="M-62-58H62L52 0H-52Z" fill="#C08457"/><rect x="-66" y="-66" width="132" height="14" rx="7" fill="#8D5A3B"/><path d="M-40-40H40M-44-24H44" stroke="#E0AC80" stroke-width="5" stroke-linecap="round"/></g><use href="#ball" transform="translate(70,388) scale(.46)" /><use href="#block-2" transform="translate(118,390) rotate(-12) scale(.62)" /><g transform="translate(520 474)"><g transform="translate(0,-74) scale(.66)"><use href="#tablet-sleeping"/></g><path d="M-48-50C-20-60 20-60 48-50V-34H-48Z" fill="#EFE6FA"/><path d="M-44-38H44L38 0H-38Z" fill="#8A5CC7"/><text x="-20" y="-130" font-family="Caveat" font-weight="700" font-size="34" fill="#1D2940">z z z</text></g></svg></div>
         <p class="cv-tag">30 short lessons · 30 easy plays · plain words for tricky moments</p>
-        <p class="cv-ed">Workbook &amp; trackers · Low-ink edition · US Letter</p>
+        <p class="cv-ed">Workbook &amp; trackers · Low-ink edition · US Letter · 22 of 30 plays need no prep; the rest take about 2 minutes</p>
         <div class="cv-logo"><img src="../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"></div>
       </div></div></section>
 <section class="page " style="">
@@ -308,7 +313,7 @@ b{font-weight:800}
         <ol class="steps">
           <li><b>One email a morning, for 30 days.</b> Each has a short lesson (about 3 minutes to read), one easy play and plain words for a tricky moment.</li>
           <li><b>This workbook holds the same 30 days</b>, plus trackers, planning pages, a scripts bank and a certificate. Use it on paper or type into it.</li>
-          <li><b>Go at your own pace.</b> Miss a day? Nothing breaks. Pick up where you are. Many families take longer than 30 days.</li>
+          <li><b>Go at your own pace.</b> Miss a day? Nothing breaks. Pick up where you are. It’s fine to take longer than 30 days.</li>
         </ol>
         <h3>Your 2-minute setup</h3>
         <ul class="ticks">
@@ -340,7 +345,7 @@ b{font-weight:800}
       <div><b>What this is</b>Parent education about everyday play and talk, for families with children aged about 1 to 12.</div>
       <div><b>What this isn’t</b>Treatment, diagnosis or advice about any one child. If you have questions about your child’s development, talk with your pediatrician.</div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Start here</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Start here</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">2</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><header class="ph"><div class="kick" style="color:#1D2940">A note before you start</div><h1 style="color:#1D2940">Your month at a glance</h1></header>
@@ -361,7 +366,7 @@ b{font-weight:800}
       <div class="mapk" style="background:#8A5CC7;color:#FFFFFF">Days 29–30</div>
       <div class="mapt">Your family’s plan</div>
       <ol start="29"><li><span class="dn">29</span>Look back: what did they ask for again?</li><li><span class="dn">30</span>Your family’s plan</li></ol></div></div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Contents</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Contents</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">3</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><header class="ph"><div class="kick" style="color:#1D2940">Grown-up guide</div><h1 style="color:#1D2940">The why, in plain words</h1></header>
@@ -385,7 +390,7 @@ b{font-weight:800}
       </div>
     </div>
     <div class="turns"><h3>What counts as a turn?</h3><div class="trow"><div class="tt"><div class="disc art" style="width:0.8in;height:0.8in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-eye" transform="scale(.8)"/></svg></div><span>A look</span></div><div class="tt"><div class="disc art" style="width:0.8in;height:0.8in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-hand" transform="scale(.8)"/></svg></div><span>A point or a sign</span></div><div class="tt"><div class="disc art" style="width:0.8in;height:0.8in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-note" transform="scale(.8)"/></svg></div><span>A sound or a song</span></div><div class="tt"><div class="disc art" style="width:0.8in;height:0.8in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-heart" transform="scale(.8)"/></svg></div><span>A smile</span></div><div class="tt"><div class="disc art" style="width:0.8in;height:0.8in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-book" transform="scale(.8)"/></svg></div><span>A word</span></div><div class="tt"><div class="disc art" style="width:0.8in;height:0.8in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-phone" transform="scale(.8)"/></svg></div><span>A tap on a talking device</span></div></div><p class="small">Every one of these is communicating. Answer it as if it were the best thing anyone has said all day.</p></div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Grown-up guide</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Grown-up guide</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">4</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><header class="ph"><div class="kick" style="color:#1D2940">Before you play</div><h1 style="color:#1D2940">Safety, ages and how to read a play</h1></header>
@@ -410,7 +415,7 @@ b{font-weight:800}
       </div>
     </div>
     <div class="tube"><svg viewBox="0 0 24 24" width="64" height="64" class="tubei"><use href="#u-tube"/></svg><div><h3>The tube test for under-3s</h3><p>Try to push the object through an empty toilet-paper tube. If it fits, it’s too small for a child under 3. Keep it out of the play basket and out of reach.</p></div></div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Safety and ages</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Safety and ages</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">5</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><header class="ph"><div class="kick" style="color:#1D2940">Day 1 · planning page</div><h1 style="color:#3D86D8">Our ordinary day</h1></header>
@@ -420,7 +425,7 @@ b{font-weight:800}
       <div class="dr"><div class="disc art" style="width:0.62in;height:0.62in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-sun" transform="scale(.8)"/></svg></div><b>Wake-up and breakfast</b><span class="field cell" data-name="od-0-what" data-lines="2"></span><span class="field cell" data-name="od-0-screen" data-lines="2"></span><span class="field cell" data-name="od-0-play" data-lines="2"></span></div><div class="dr"><div class="disc art" style="width:0.62in;height:0.62in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-leaf" transform="scale(.8)"/></svg></div><b>Morning</b><span class="field cell" data-name="od-1-what" data-lines="2"></span><span class="field cell" data-name="od-1-screen" data-lines="2"></span><span class="field cell" data-name="od-1-play" data-lines="2"></span></div><div class="dr"><div class="disc art" style="width:0.62in;height:0.62in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-bowl" transform="scale(.8)"/></svg></div><b>Midday and lunch</b><span class="field cell" data-name="od-2-what" data-lines="2"></span><span class="field cell" data-name="od-2-screen" data-lines="2"></span><span class="field cell" data-name="od-2-play" data-lines="2"></span></div><div class="dr"><div class="disc art" style="width:0.62in;height:0.62in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-ball" transform="scale(.8)"/></svg></div><b>Afternoon</b><span class="field cell" data-name="od-3-what" data-lines="2"></span><span class="field cell" data-name="od-3-screen" data-lines="2"></span><span class="field cell" data-name="od-3-play" data-lines="2"></span></div><div class="dr"><div class="disc art" style="width:0.62in;height:0.62in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-pot" transform="scale(.8)"/></svg></div><b>Before dinner</b><span class="field cell" data-name="od-4-what" data-lines="2"></span><span class="field cell" data-name="od-4-screen" data-lines="2"></span><span class="field cell" data-name="od-4-play" data-lines="2"></span></div><div class="dr"><div class="disc art" style="width:0.62in;height:0.62in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-moon" transform="scale(.8)"/></svg></div><b>Evening and bedtime</b><span class="field cell" data-name="od-5-what" data-lines="2"></span><span class="field cell" data-name="od-5-screen" data-lines="2"></span><span class="field cell" data-name="od-5-play" data-lines="2"></span></div>
     </div>
     <div class="circleit"><b>Circle the two moments when a screen helps you most.</b> Those are the moments this program will help with first. <span class="fl2">Our two moments:</span><span class="field " data-name="od-two" data-lines="1"></span></div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Planning</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Planning</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">6</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><header class="ph"><div class="kick" style="color:#1D2940">Day 3 · planning page</div><h1 style="color:#3D86D8">Our screen spot</h1></header>
@@ -432,7 +437,7 @@ b{font-weight:800}
     <div class="never"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-shield"/></svg><span><b>Our promise:</b> screens are never a prize and never a punishment. No earning minutes, no losing minutes. The spot is just part of the day, like lunch.</span></div>
     <div class="ending"><div class="en"><span class="enn">1</span><b>A warning</b>“Two more minutes, then the tablet goes to sleep.”</div><div class="en"><span class="enn">2</span><b>A clear ending</b>The episode ends or the timer rings. “Night-night, tablet.”</div><div class="en"><span class="enn">3</span><b>A landing</b>“Now we go outside and find the moon.”</div></div>
     <div class="spotsay"><b>Tell your child:</b> “Here’s our new plan. Shows are after nap, on the couch. Two shows, then outside. Every day.”</div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Planning</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Planning</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">7</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><header class="ph"><div class="kick" style="color:#1D2940">Day 4 · planning page</div><h1 style="color:#3D86D8">Our play basket</h1></header>
@@ -440,7 +445,7 @@ b{font-weight:800}
     <div class="basket"><div class="bk"><div class="disc art" style="width:0.78in;height:0.78in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-blocks" transform="scale(.8)"/></svg></div><div><b>Something to build with</b><span class="eg">e.g. blocks, cups, boxes, tubes</span><span class="field multi" data-name="bk-0" data-lines="2"></span></div></div><div class="bk"><div class="disc art" style="width:0.78in;height:0.78in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-hat" transform="scale(.8)"/></svg></div><div><b>Something to pretend with</b><span class="eg">e.g. a teddy, pots, a hat, a toy phone</span><span class="field multi" data-name="bk-1" data-lines="2"></span></div></div><div class="bk"><div class="disc art" style="width:0.78in;height:0.78in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-crayon" transform="scale(.8)"/></svg></div><div><b>Something to make with</b><span class="eg">e.g. paper, crayons, tape</span><span class="field multi" data-name="bk-2" data-lines="2"></span></div></div><div class="bk"><div class="disc art" style="width:0.78in;height:0.78in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-ball" transform="scale(.8)"/></svg></div><div><b>Something to move with</b><span class="eg">e.g. a soft ball, a scarf, cushions</span><span class="field multi" data-name="bk-3" data-lines="2"></span></div></div><div class="bk"><div class="disc art" style="width:0.78in;height:0.78in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-book" transform="scale(.8)"/></svg></div><div><b>Something to look at together</b><span class="eg">e.g. 2–3 books or family photos</span><span class="field multi" data-name="bk-4" data-lines="2"></span></div></div><div class="bk"><div class="disc art" style="width:0.78in;height:0.78in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-note" transform="scale(.8)"/></svg></div><div><b>Something that makes a sound</b><span class="eg">e.g. a pot and spoon, a shaker bottle glued shut</span><span class="field multi" data-name="bk-5" data-lines="2"></span></div></div></div>
     <div class="swap"><b>Swap list</b> (things to rotate in next week)<span class="field multi" data-name="bk-swap" data-lines="4"></span></div>
     <p class="small safeline"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-shield"/></svg> For children under 3, everything in the basket must be too big to fit through a toilet-paper tube. No cords, strings or balloons.</p></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Planning</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Planning</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">8</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><header class="ph"><div class="kick" style="color:#1D2940">Tracker · pre-filled</div><h1 style="color:#EE5A36">30 days of play</h1></header>
@@ -537,7 +542,7 @@ b{font-weight:800}
       <div class="tcp">Family play parade</div>
       <div class="tck"><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> again!</span></div></div></div>
       <p class="small nog">No scores, no streaks to break. A blank square just means life happened.</p></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Tracker</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Tracker</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">9</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><header class="ph"><div class="kick" style="color:#1D2940">Tracker · blank</div><h1 style="color:#EE5A36">Our own 30 days</h1></header>
@@ -634,7 +639,7 @@ b{font-weight:800}
       <div class="tcp"><span class="field tcf" data-name="tr-30" data-lines="1"></span></div>
       <div class="tck"><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> again!</span></div></div></div>
       <p class="small nog">No scores, no streaks to break. A blank square just means life happened.</p></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Tracker</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Tracker</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">10</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="wk">
@@ -652,7 +657,7 @@ b{font-weight:800}
       <div class="wkscripts"><h4><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-quote"/></svg> Plain words you’ll use this week</h4>
         <div class="wks"><b>When your child asks for a screen right now</b><span>“You want the tablet. It’s not tablet time right now.”</span></div><div class="wks"><b>When someone asks why things are changing</b><span>“We’re trying something new this month: more play together.”</span></div><div class="wks"><b>Telling your child about the screen spot</b><span>“Here’s our new plan. Shows are after nap, on the couch. Two shows, then outside.”</span></div><div class="wks"><b>When your child says “I’m bored”</b><span>“Bored is okay. Something good usually comes next.”</span></div><div class="wks"><b>Right after pickup</b><span>“I missed you. I’m so glad to see you.”</span></div><div class="wks"><b>When the screen spot ends</b><span>“Two more minutes, then the tablet goes to sleep.”</span></div><div class="wks"><b>When a day doesn’t go to plan (words for yourself)</b><span>“Today was a lot. Tomorrow the plan is still here.”</span></div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Week 1</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Week 1</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">11</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -662,7 +667,7 @@ b{font-weight:800}
         <div class="disc art" style="width:1.05in;height:1.05in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-eye" transform="scale(.8)"/></svg></div>
       </div>
       <p class="idea" style="border-color:#3D86D8">Before you change anything, notice when screens show up in your day and when play already happens.</p>
-      <div class="ltext"><p>Welcome. For the next 30 days you’ll get one short lesson, one easy play and a few plain words for a tricky moment. That’s it. No videos to watch, no calls to join, no perfect days required.</p><p>This program doesn’t ban anything. We’re going to add: more play, more talk, more time face to face. As play grows, screens usually settle into a smaller, steadier place on their own.</p><p>Today, just notice. Pick one ordinary day, today or yesterday, and walk through it in your head. When did a screen come on? Who turned it on, and why? Maybe you needed to cook, make a call, or just breathe for ten minutes. Those are real reasons. There is nothing to feel bad about here.</p><p>Then notice the good parts. When did your child play without being asked? When did you laugh together? Where in the house does play happen most?</p><p>Write it down on the “Our ordinary day” page in your workbook, or on the back of an envelope. You’re drawing a map, not grading yourself.</p><p>Most families find two or three “screen moments” that carry most of the load: the morning rush, the hour before dinner, the car. Those are the places this program will help most.</p></div>
+      <div class="ltext"><p>Welcome. For the next 30 days you’ll get one short lesson, one easy play and a few plain words for a tricky moment. That’s it. No videos to watch, no calls to join, no perfect days required.</p><p>This program doesn’t ban anything. We’re going to add: more play, more talk, more time face to face. As play grows, screens usually settle into a smaller, steadier place on their own.</p><p>Today, just notice. Pick one ordinary day, today or yesterday, and walk through it in your head. When did a screen come on? Who turned it on, and why? Maybe you needed to cook, make a call, or just breathe for ten minutes. Those are real reasons. There is nothing to feel bad about here.</p><p>Then notice the good parts. When did your child play without being asked? When did you laugh together? Where in the house does play happen most?</p><p>Write it down on the “Our ordinary day” page in your workbook, or on the back of an envelope. You’re drawing a map, not grading yourself.</p><p>Many families have two or three “screen moments” that carry most of the load: the morning rush, the hour before dinner, the car. Those are the places this program will help most.</p></div>
       <div class="script" style="border-color:#3D86D8">
     <div class="slab" style="color:#2A6BB5"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-quote"/></svg> Plain words for: When your child asks for a screen right now</div>
     <p class="sline">“You want the tablet. It’s not tablet time right now.”</p><p class="sline">“Let’s look out the window and see who’s outside.”</p>
@@ -670,7 +675,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Fill in “Our ordinary day”. Circle the two moments when a screen helps you most.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 1</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 1</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">12</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -702,7 +707,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d1-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 1</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 1</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">13</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -720,7 +725,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Have breakfast or a snack together today and try the play below.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 2</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 2</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">14</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -752,7 +757,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d2-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 2</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 2</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">15</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -770,7 +775,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Fill in “Our screen spot”: when, where, what and how it ends. Tell your child tonight.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 3</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 3</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">16</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -802,7 +807,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d3-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 3</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 3</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">17</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -812,7 +817,7 @@ b{font-weight:800}
         <div class="disc art" style="width:1.05in;height:1.05in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-basket" transform="scale(.8)"/></svg></div>
       </div>
       <p class="idea" style="border-color:#3D86D8">Play starts more easily when a few good things are within reach. Fewer choices usually means more play.</p>
-      <div class="ltext"><p>Children often reach for a screen because it’s the easiest “yes” in the room. Today we make play just as easy.</p><p>Find a basket, box or bag. Fill it with five to eight things you already have. Mix the kinds of play: something to build with (blocks, cups, boxes), something to pretend with (a teddy, pots, a hat), something to make with (paper, crayons), something to move with (a soft ball, a scarf), and something to look at together (two or three books).</p><p>Put the basket where your child can reach it, near where you usually are. Children like to play near their grown-ups.</p><p>Now the secret: keep the rest of the toys out of sight for now. When everything is out, children often flit from thing to thing. When there are fewer choices, they tend to settle and play longer. Every week, swap a few things in and out, and it feels new.</p><p>You don’t need to buy anything. A clean sock, a wooden spoon and an empty tissue box are all play.</p></div>
+      <div class="ltext"><p>Children often reach for a screen because it’s the easiest “yes” in the room. Today we make play just as easy.</p><p>Find a basket, box or bag. Fill it with five to eight things you already have. Mix the kinds of play: something to build with (blocks, cups, boxes), something to pretend with (a teddy, pots, a hat), something to make with (paper, crayons), something to move with (a soft ball, a cushion to jump on), and something to look at together (two or three books).</p><p>Put the basket where your child can reach it, near where you usually are. Children like to play near their grown-ups.</p><p>Now the secret: keep the rest of the toys out of sight for now. When everything is out, children often flit from thing to thing. When there are fewer choices, they tend to settle and play longer. Every week, swap a few things in and out, and it feels new.</p><p>You don’t need to buy anything. A clean sock, a wooden spoon and an empty tissue box are all play.</p></div>
       <div class="script" style="border-color:#3D86D8">
     <div class="slab" style="color:#2A6BB5"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-quote"/></svg> Plain words for: When your child says “I’m bored”</div>
     <p class="sline">“Bored is okay. Something good usually comes next.”</p><p class="sline">“The basket is right there. I’ll be in the kitchen if you want to show me.”</p>
@@ -820,7 +825,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Fill a play basket with 5–8 things. Put it where your child can reach it.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 4</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 4</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">18</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -852,7 +857,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d4-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 4</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 4</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">19</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -870,7 +875,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Give the first ten minutes after you reunite to your child. Phone in a bag or drawer.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 5</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 5</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">20</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -902,7 +907,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d5-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 5</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 5</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">21</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -912,7 +917,7 @@ b{font-weight:800}
         <div class="disc art" style="width:1.05in;height:1.05in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-moon" transform="scale(.8)"/></svg></div>
       </div>
       <p class="idea" style="border-color:#3D86D8">Most screen trouble happens at the end. A warning, a clear ending and a landing activity make it smoother.</p>
-      <div class="ltext"><p>If screens end in tears at your house, you are not alone. Stopping something fun is hard for anyone, and it’s especially hard for young children, whose brakes are still developing.</p><p>Here is a three-part ending you can use every day.</p><p>First, a warning. Five minutes before the end, sit next to your child and say, “Two more minutes, then the tablet goes to sleep.” Touching their shoulder or looking at the screen with them helps the warning land.</p><p>Second, a clear ending. Use something outside of you: the end of an episode, a kitchen timer, a song. Then the timer is the bad guy, not you. Some families “tuck the tablet in” to a drawer or basket and say goodnight to it.</p><p>Third, a landing. Have the next thing ready and say it out loud: “Now we go outside and find the moon.” Children move more easily toward something than away from something.</p><p>Expect some protest, especially this week. You don’t need to argue or explain again. Stay close, stay calm and keep the ending the same every day. Most families find the ending gets easier within a week or two.</p></div>
+      <div class="ltext"><p>If screens end in tears at your house, you are not alone. Stopping something fun is hard for anyone, and it’s especially hard for young children, whose brakes are still developing.</p><p>Here is a three-part ending you can use every day.</p><p>First, a warning. Two minutes before the end, sit next to your child and say, “Two more minutes, then the tablet goes to sleep.” Touching their shoulder or looking at the screen with them helps the warning land.</p><p>Second, a clear ending. Use something outside of you: the end of an episode, a kitchen timer, a song. Then the timer is the bad guy, not you. Some families “tuck the tablet in” to a drawer or basket and say goodnight to it.</p><p>Third, a landing. Have the next thing ready and say it out loud: “Now we go outside and find the moon.” Children move more easily toward something than away from something.</p><p>Expect some protest, especially this week. You don’t need to argue or explain again. Stay close, stay calm and keep the ending the same every day. The ending often gets easier once it has stayed the same for a week or two.</p></div>
       <div class="script" style="border-color:#3D86D8">
     <div class="slab" style="color:#2A6BB5"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-quote"/></svg> Plain words for: When the screen spot ends</div>
     <p class="sline">“Two more minutes, then the tablet goes to sleep.”</p><p class="sline">“Time’s up. Night-night, tablet. Now we go outside.”</p>
@@ -920,7 +925,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Use the warning, the clear ending and the landing at today’s screen spot.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 6</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 6</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">22</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -945,14 +950,14 @@ b{font-weight:800}
       <div><b>Make it harder</b>A big kid is the “keeper” who puts the device to bed and picks the next play.</div>
     </div>
     <div class="tired"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-bolt"/></svg><span><b>Tired-grown-up version (2 minutes, no setup):</b> Just say, “Night-night, tablet,” and hold out your hand.</span></div>
-    <div class="safe"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-shield"/></svg><span><b>Safety:</b> Grown-ups handle chargers and cords, and keep them out of reach of young children.</span></div>
+    <div class="safe"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-shield"/></svg><span><b>Safety:</b> Switch the device off first and never cover a device while it is charging. Grown-ups handle chargers and cords, and keep them out of reach of young children.</span></div>
   </article>
       <div class="movetip" style="border-color:#3D86D8"><b style="color:#2A6BB5">Today’s talk move: Sing and gesture.</b> Songs, rhythm and hand moves make words easy to join. Repeat the same ones often.</div>
       <div class="notes">
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d6-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 6</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 6</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">23</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -962,7 +967,7 @@ b{font-weight:800}
         <div class="disc art" style="width:1.05in;height:1.05in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-star" transform="scale(.8)"/></svg></div>
       </div>
       <p class="idea" style="border-color:#3D86D8">Look back at your first week, keep the one thing that helped most and let go of the rest.</p>
-      <div class="ltext"><p>One week done. Let’s look back kindly.</p><p>Open your tracker. Don’t count what you missed; look for what helped. Did the steady screen spot cut down the asking? Did the play basket get used? Did the first ten minutes change the evening?</p><p>Pick the one thing that helped most and keep doing it. If something didn’t work, change it. Maybe the screen spot is at the wrong time of day. Maybe the basket needs different things. Adjusting is the program working, not failing.</p><p>Some days this week probably went sideways. Someone got sick, work ran late, or you were just done. On those days, a screen may have filled more of the day. That’s okay. Tomorrow the spot is back where it lives. No catching up, no making up for it.</p><p>One more thing: notice what your child asked for again. A song, a play, a place in the house. Children tell us what they love by asking for it again and again. That list is gold. Write it down.</p></div>
+      <div class="ltext"><p>One week done. Let’s look back kindly.</p><p>Open your tracker. Don’t count what you missed; look for what helped. Did the steady screen spot cut down the asking? Did the play basket get used? Did the first ten minutes change the evening?</p><p>Pick the one thing that helped most and keep doing it. If something didn’t work, change it. Maybe the screen spot is at the wrong time of day. Maybe the basket needs different things. Adjusting is the program working, not failing.</p><p>Some days this week probably went sideways. Someone got sick, work ran late, or you were just done. On those days, a screen may have filled more of the day. That’s okay. Tomorrow the spot is back where it lives. No making up for it, and no extra rules.</p><p>One more thing: notice what your child asked for again. A song, a play, a place in the house. Children tell us what they love by asking for it again and again. That list is gold. Write it down.</p></div>
       <div class="script" style="border-color:#3D86D8">
     <div class="slab" style="color:#2A6BB5"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-quote"/></svg> Plain words for: When a day doesn’t go to plan (words for yourself)</div>
     <p class="sline">“Today was a lot. Tomorrow the plan is still here.”</p><p class="sline">“I don’t need a perfect day. I need a next step.”</p>
@@ -970,7 +975,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Fill in the Week 1 check-in. Write down one thing to keep and one thing to change.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 7</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 7</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">24</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -995,21 +1000,21 @@ b{font-weight:800}
       <div><b>Make it harder</b>Big kids design a den with a sign, a door flap and a secret knock.</div>
     </div>
     <div class="tired"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-bolt"/></svg><span><b>Tired-grown-up version (2 minutes, no setup):</b> Lie under the blanket together and read one book with a flashlight.</span></div>
-    <div class="safe"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-shield"/></svg><span><b>Safety:</b> Use a light blanket, keep faces uncovered and stay nearby. No cords or strings tied to the den.</span></div>
+    <div class="safe"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-shield"/></svg><span><b>Safety:</b> Use a light blanket, keep faces uncovered and stay nearby. No cords or strings tied to the den. Use a flashlight whose battery cover screws shut.</span></div>
   </article>
       <div class="movetip" style="border-color:#3D86D8"><b style="color:#2A6BB5">Today’s talk move: Follow their lead.</b> Let your child choose what to do and how. Join in and copy them.</div>
       <div class="notes">
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d7-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 7</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 7</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">25</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><header class="ph"><div class="kick" style="color:#2A6BB5">Week 1 check-in</div><h1 style="color:#2A6BB5">Look back kindly</h1></header>
       <p class="lead s">Look for what helped, not what you missed. Adjusting the plan is the program working.</p>
       <div class="ci"><div class="ciq" style="border-color:#3D86D8"><b>What helped most this week?</b><span class="field multi" data-name="ci1-0" data-lines="6"></span></div><div class="ciq" style="border-color:#3D86D8"><b>What would we change?</b><span class="field multi" data-name="ci1-1" data-lines="6"></span></div><div class="ciq" style="border-color:#3D86D8"><b>What did our child ask for again?</b><span class="field multi" data-name="ci1-2" data-lines="6"></span></div><div class="ciq" style="border-color:#3D86D8"><b>One thing we’ll keep doing</b><span class="field multi" data-name="ci1-3" data-lines="6"></span></div></div>
       <div class="ciself"><div class="disc art" style="width:0.7in;height:0.7in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#E3EEFA" class="ground"/><use href="#a-heart" transform="scale(.8)"/></svg></div><p><b>Words for yourself:</b> “I don’t need a perfect week. I need a next step.”</p></div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Week 1 check-in</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Week 1 check-in</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">26</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="wk">
@@ -1032,7 +1037,7 @@ b{font-weight:800}
       <div class="wkscripts"><h4><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-quote"/></svg> Plain words you’ll use this week</h4>
         <div class="wks"><b>“Can I have screens after this?”</b><span>“Yes. Screens are after nap, like always.”</span></div><div class="wks"><b>“There’s nothing to do!”</b><span>“I hear you. Bored is a tricky feeling.”</span></div><div class="wks"><b>When you need 20 minutes to cook</b><span>“I’m making dinner. You can stir here, or play with the basket by my feet.”</span></div><div class="wks"><b>When getting dressed turns into a standoff</b><span>“Do you want the red socks or the stripy socks?”</span></div><div class="wks"><b>“I don’t want to go outside”</b><span>“Just five minutes, to check what the sky is doing.”</span></div><div class="wks"><b>A meltdown when the screen turns off</b><span>“You’re so mad. It’s hard when a show ends.”</span></div><div class="wks"><b>When you’re too tired to play (words for your child)</b><span>“I’m very tired today. Let’s do a lying-down play.”</span></div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Week 2</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Week 2</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">27</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -1050,7 +1055,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Put a short play right before today’s screen spot. Keep the spot the same either way.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 8</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 8</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">28</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -1082,7 +1087,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d8-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 8</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 8</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">29</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -1092,7 +1097,7 @@ b{font-weight:800}
         <div class="disc art" style="width:1.05in;height:1.05in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#DFF3E9" class="ground"/><use href="#a-box" transform="scale(.8)"/></svg></div>
       </div>
       <p class="idea" style="border-color:#2FA36B">A little boredom is normal and often turns into play if grown-ups don’t rush to fill it.</p>
-      <div class="ltext"><p>Many of us feel we have to fix a bored child immediately. Today, try something different: let boredom sit for a few minutes.</p><p>Boredom is uncomfortable, and children will tell you so, loudly. But it’s also the feeling right before an idea. Children who have a few minutes with nothing scheduled often start humming, building, arranging, pretending. The first few minutes are the hardest.</p><p>You can help without taking over. Keep simple, open-ended things around: boxes, paper, tape, cushions, pots, scarves, a basket of odds and ends. Things that can be anything tend to hold attention longer than things that do one thing.</p><p>Then step back a little. Stay nearby, doing something of your own: folding laundry, cooking, reading. Children like company while they play, even if you’re not playing.</p><p>If your child is truly stuck, offer one small starter (“I wonder what this box could be?”) and walk away again. The idea is theirs to finish.</p></div>
+      <div class="ltext"><p>Many of us feel we have to fix a bored child immediately. Today, try something different: let boredom sit for a few minutes.</p><p>Boredom is uncomfortable, and children will tell you so, loudly. But it’s also the feeling right before an idea. Children who have a few minutes with nothing scheduled often start humming, building, arranging, pretending. The first few minutes are the hardest.</p><p>You can help without taking over. Keep simple, open-ended things around: boxes, paper, tape, cushions, pots, blankets, a basket of big odds and ends. Things that can be anything tend to hold attention longer than things that do one thing.</p><p>Then step back a little. Stay nearby, doing something of your own: folding laundry, cooking, reading. Children like company while they play, even if you’re not playing.</p><p>If your child is truly stuck, offer one small starter (“I wonder what this box could be?”) and walk away again. The idea is theirs to finish.</p></div>
       <div class="script" style="border-color:#2FA36B">
     <div class="slab" style="color:#237F53"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-quote"/></svg> Plain words for: “There’s nothing to do!”</div>
     <p class="sline">“I hear you. Bored is a tricky feeling.”</p><p class="sline">“I’m going to fold laundry. You’re welcome to help or find something in the basket.”</p>
@@ -1100,7 +1105,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Next time you hear “I’m bored”, wait five minutes before offering anything.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 9</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 9</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">30</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -1122,7 +1127,7 @@ b{font-weight:800}
     <div class="talk" style="background:#DFF3E9"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-talk"/></svg><div><div class="tlab">Talk while you play <span>· Follow their lead</span></div><div class="tline">“Where is your car going? … To the zoo! Can I come?”</div></div></div>
     <div class="ez">
       <div><b>Make it easier</b>For toddlers, open both ends to make a tunnel and crawl through.</div>
-      <div><b>Make it harder</b>Big kids make a shop, a robot costume or a marble run from boxes and tape.</div>
+      <div><b>Make it harder</b>Big kids make a shop, a robot costume or a car ramp from boxes and tape.</div>
     </div>
     <div class="tired"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-bolt"/></svg><span><b>Tired-grown-up version (2 minutes, no setup):</b> Put the box down, say “I wonder…” and see what happens.</span></div>
     <div class="safe"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-shield"/></svg><span><b>Safety:</b> Take off staples and packing tape first. Grown-ups do any cutting.</span></div>
@@ -1132,7 +1137,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d9-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 9</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 9</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">31</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -1150,7 +1155,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Invite your child to help with one small cooking job today.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 10</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 10</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">32</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -1165,7 +1170,7 @@ b{font-weight:800}
     <span><span class="drops"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-drop"/></svg><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-drop"/></svg></span> Messy</span>
     <span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-hour"/></svg> Short play</span>
   </div>
-        <div class="need"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-bag"/></svg><span><b>You need:</b> a big bowl of cool water, a few whole vegetables, a towel</span></div>
+        <div class="need"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-bag"/></svg><span><b>You need:</b> a big bowl of cool water, a few big whole vegetables, a towel</span></div>
       </div>
     </div>
     <p class="how">Set a bowl of cool water and some whole vegetables on a towel at a low table. Your child scrubs, splashes and dries each one. Name what they’re doing and each vegetable as it goes.</p>
@@ -1175,14 +1180,14 @@ b{font-weight:800}
       <div><b>Make it harder</b>Big kids peel, measure and follow a simple recipe card with you at their side.</div>
     </div>
     <div class="tired"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-bolt"/></svg><span><b>Tired-grown-up version (2 minutes, no setup):</b> Let your child put the spoons and napkins on the table.</span></div>
-    <div class="safe"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-shield"/></svg><span><b>Safety:</b> Water play is always supervised. Knives, peelers, the stove and hot pans stay with grown-ups; big kids use them only with you beside them.</span></div>
+    <div class="safe"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-shield"/></svg><span><b>Safety:</b> Water play is always supervised. Use big vegetables like potatoes or cucumbers, not cherry tomatoes, baby carrots or other small round pieces. Knives, peelers, the stove and hot pans stay with grown-ups; big kids use them only with you beside them.</span></div>
   </article>
       <div class="movetip" style="border-color:#2FA36B"><b style="color:#237F53">Today’s talk move: Say what you see.</b> Put words to what your child is doing, right as it happens. No questions needed.</div>
       <div class="notes">
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d10-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 10</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 10</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">33</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -1200,7 +1205,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Write your morning order on one line. Tape it where your child can see it.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 11</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 11</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">34</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -1232,7 +1237,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d11-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 11</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 11</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">35</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -1250,7 +1255,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Spend at least five minutes outside with your child today, whatever the weather.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 12</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 12</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">36</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -1282,7 +1287,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d12-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 12</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 12</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">37</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -1300,7 +1305,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Practice today’s script out loud once, so the words are ready when you need them.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 13</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 13</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">38</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -1332,7 +1337,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d13-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 13</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 13</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">39</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -1350,7 +1355,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Fill in the Week 2 check-in. Try one lying-down play.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 14</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 14</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">40</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -1382,14 +1387,14 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d14-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 14</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 14</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">41</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><header class="ph"><div class="kick" style="color:#237F53">Week 2 check-in</div><h1 style="color:#237F53">Look back kindly</h1></header>
       <p class="lead s">Look for what helped, not what you missed. Adjusting the plan is the program working.</p>
       <div class="ci"><div class="ciq" style="border-color:#2FA36B"><b>What helped most this week?</b><span class="field multi" data-name="ci2-0" data-lines="6"></span></div><div class="ciq" style="border-color:#2FA36B"><b>What would we change?</b><span class="field multi" data-name="ci2-1" data-lines="6"></span></div><div class="ciq" style="border-color:#2FA36B"><b>What did our child ask for again?</b><span class="field multi" data-name="ci2-2" data-lines="6"></span></div><div class="ciq" style="border-color:#2FA36B"><b>One thing we’ll keep doing</b><span class="field multi" data-name="ci2-3" data-lines="6"></span></div></div>
       <div class="ciself"><div class="disc art" style="width:0.7in;height:0.7in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#DFF3E9" class="ground"/><use href="#a-heart" transform="scale(.8)"/></svg></div><p><b>Words for yourself:</b> “I don’t need a perfect week. I need a next step.”</p></div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Week 2 check-in</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Week 2 check-in</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">42</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="wk">
@@ -1407,7 +1412,7 @@ b{font-weight:800}
       <div class="wkscripts"><h4><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-quote"/></svg> Plain words you’ll use this week</h4>
         <div class="wks"><b>When your child doesn’t answer</b><span>(Wait. Smile. Count to five in your head.)</span></div><div class="wks"><b>Instead of quizzing</b><span>Instead of “What color is that?” try “You picked the red one.”</span></div><div class="wks"><b>Instead of correcting</b><span>Child: “Doggy go.” You: “Yes! The doggy’s going. Going home.”</span></div><div class="wks"><b>When your child wants both</b><span>“You want both! Pick one now. The other one is for after lunch.”</span></div><div class="wks"><b>When their play seems “wrong”</b><span>(Instead of fixing it) “The cars are on the table! They’re having a party?”</span></div><div class="wks"><b>When you feel silly singing</b><span>(To yourself) “My child doesn’t need a good singer. They need me.”</span></div><div class="wks"><b>When they want the same book again (and again)</b><span>“Again? Yes! This is a good one.”</span></div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Week 3</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Week 3</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">43</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -1417,7 +1422,7 @@ b{font-weight:800}
         <div class="disc art" style="width:1.05in;height:1.05in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#FEF4D8" class="ground"/><use href="#a-hand" transform="scale(.8)"/></svg></div>
       </div>
       <p class="idea" style="border-color:#F5B820">Leaving a real pause after you speak gives children time to take their turn.</p>
-      <div class="ltext"><p>This week, one simple talk move each day. They all fit into the play you’re already doing.</p><p>Today: pause and wait.</p><p>Grown-ups talk fast and fill silences, especially when we’re busy. But children, especially young ones, often need a few seconds to get a word, a sound or a gesture ready. If we jump in too soon, we take their turn without meaning to.</p><p>So: say something, then stop. Count to five slowly in your head. Look at your child with an expectant, friendly face, like you’re waiting for the punchline. Often, something comes: a look, a point, a sound, a word.</p><p>Whatever comes, answer it as if it were the best thing anyone has said all day. That’s a turn. That’s conversation.</p><p>The pause works in songs too: “Twinkle, twinkle, little…” then wait. Or in games: “Ready, set…” and wait for your child to say or sign “Go!”</p><p>It feels strange at first. Keep going. Many parents say this is the move that surprised them most.</p></div>
+      <div class="ltext"><p>This week, one simple talk move each day. They all fit into the play you’re already doing.</p><p>Today: pause and wait.</p><p>Grown-ups talk fast and fill silences, especially when we’re busy. But children, especially young ones, often need a few seconds to get a word, a sound or a gesture ready. If we jump in too soon, we take their turn without meaning to.</p><p>So: say something, then stop. Count to five slowly in your head. Look at your child with an expectant, friendly face, like you’re waiting for the punchline. Often, something comes: a look, a point, a sound, a word.</p><p>Whatever comes, answer it as if it were the best thing anyone has said all day. That’s a turn. That’s conversation.</p><p>The pause works in songs too: “Twinkle, twinkle, little…” then wait. Or in games: “Ready, set…” and wait for your child to say or sign “Go!”</p><p>It feels strange at first. Keep going. It may turn out to be the move that surprises you most.</p></div>
       <div class="script" style="border-color:#F5B820">
     <div class="slab" style="color:#B98500"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-quote"/></svg> Plain words for: When your child doesn’t answer</div>
     <p class="sline">(Wait. Smile. Count to five in your head.)</p><p class="sline">“You’re thinking. I’ll wait.” Then answer any look, point or sound.</p>
@@ -1425,7 +1430,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Use a five-second pause at least three times today.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 15</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 15</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">44</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -1457,7 +1462,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d15-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 15</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 15</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">45</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -1475,7 +1480,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>For five minutes, narrate your child’s play without asking a single question.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 16</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 16</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">46</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -1507,7 +1512,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d16-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 16</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 16</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">47</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -1525,7 +1530,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Every time your child says or shows something today, try to add one word.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 17</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 17</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">48</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -1557,7 +1562,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d17-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 17</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 17</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">49</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -1575,7 +1580,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Offer at least five real two-way choices today, and wait for each answer.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 18</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 18</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">50</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -1607,7 +1612,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d18-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 18</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 18</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">51</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -1625,7 +1630,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Give your child ten minutes to lead the play. Copy, comment and wait.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 19</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 19</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">52</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -1657,7 +1662,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d19-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 19</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 19</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">53</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -1675,7 +1680,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Choose two family songs. Sing each at least twice today.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 20</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 20</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">54</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -1707,7 +1712,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d20-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 20</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 20</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">55</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -1725,7 +1730,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Share one book in the way your child likes. Fill in the Week 3 check-in.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 21</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 21</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">56</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -1757,14 +1762,14 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d21-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 21</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 21</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">57</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><header class="ph"><div class="kick" style="color:#B98500">Week 3 check-in</div><h1 style="color:#B98500">Look back kindly</h1></header>
       <p class="lead s">Look for what helped, not what you missed. Adjusting the plan is the program working.</p>
       <div class="ci"><div class="ciq" style="border-color:#F5B820"><b>What helped most this week?</b><span class="field multi" data-name="ci3-0" data-lines="6"></span></div><div class="ciq" style="border-color:#F5B820"><b>What would we change?</b><span class="field multi" data-name="ci3-1" data-lines="6"></span></div><div class="ciq" style="border-color:#F5B820"><b>What did our child ask for again?</b><span class="field multi" data-name="ci3-2" data-lines="6"></span></div><div class="ciq" style="border-color:#F5B820"><b>One thing we’ll keep doing</b><span class="field multi" data-name="ci3-3" data-lines="6"></span></div></div>
       <div class="ciself"><div class="disc art" style="width:0.7in;height:0.7in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#FEF4D8" class="ground"/><use href="#a-heart" transform="scale(.8)"/></svg></div><p><b>Words for yourself:</b> “I don’t need a perfect week. I need a next step.”</p></div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Week 3 check-in</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Week 3 check-in</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">58</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="wk">
@@ -1782,7 +1787,7 @@ b{font-weight:800}
       <div class="wkscripts"><h4><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-quote"/></svg> Plain words you’ll use this week</h4>
         <div class="wks"><b>“Can I have your phone?” while waiting</b><span>“My phone is staying in my bag. Let’s play I spy until the food comes.”</span></div><div class="wks"><b>“Are we there yet?”</b><span>“Not yet. Let’s count ten red cars, then I’ll tell you how far.”</span></div><div class="wks"><b>When your child sees you on your phone</b><span>“I’m checking the weather for tomorrow. Done! Phone’s going in its spot.”</span></div><div class="wks"><b>“Everyone else gets to!”</b><span>“It might be true that lots of kids do. In our family, screens have a set time.”</span></div><div class="wks"><b>When siblings fight over whose turn it is</b><span>“Two kids, one truck. That’s hard. Timer turns: you first, then you.”</span></div><div class="wks"><b>Talking to a grandparent or sitter</b><span>“We’re trying more play at home. Here are three things she loves right now.”</span></div><div class="wks"><b>On a sick or travel day</b><span>“You’re sick today, so it’s a cozy movie day. Tomorrow we go back to our usual plan.”</span></div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Week 4</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Week 4</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">59</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -1800,7 +1805,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Pick three pocket plays to keep in your back pocket. Write them on your phone’s lock screen or a card in your bag.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 22</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 22</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">60</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -1832,7 +1837,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d22-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 22</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 22</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">61</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -1850,7 +1855,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Try the first ten minutes of your next ride without a screen, with a game or a song.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 23</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 23</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">62</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -1882,7 +1887,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d23-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 23</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 23</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">63</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -1900,7 +1905,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Choose a phone parking spot and one phone-free window every day.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 24</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 24</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">64</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -1932,7 +1937,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d24-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 24</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 24</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">65</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -1950,7 +1955,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Have a calm, listening talk with your big kid about the family plan.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 25</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 25</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">66</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -1982,7 +1987,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d25-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 25</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 25</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">67</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -1992,7 +1997,7 @@ b{font-weight:800}
         <div class="disc art" style="width:1.05in;height:1.05in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#FDE9E3" class="ground"/><use href="#a-house" transform="scale(.8)"/></svg></div>
       </div>
       <p class="idea" style="border-color:#EE5A36">One family rhythm, with roles for each child, works better than separate plans for everyone.</p>
-      <div class="ltext"><p>If you have more than one child, the Reset has to work for everyone at once. Here are some ideas that help.</p><p>Keep one shared screen spot. Separate spots for each child are hard to keep up with and invite arguments. If an older child has homework on a device, that is school time, not the screen spot, and can happen at a different table.</p><p>Give roles, not just turns. In a pretend restaurant, one child is the chef, one is the waiter, one is the customer. In a block game, one builds and one decorates. Roles let different ages play together without constant competition.</p><p>Protect a little one-on-one time. Even five minutes alone with each child, doing what they choose, makes shared time easier.</p><p>Twins and close-in-age siblings often need their own basket or their own “first pick”. Take turns being first.</p><p>And let older children help younger ones, if they want to. Being the expert makes big kids proud.</p></div>
+      <div class="ltext"><p>If you have more than one child, the plan has to work for everyone at once. Here are some ideas that help.</p><p>Keep one shared screen spot. Separate spots for each child are hard to keep up with and invite arguments. If an older child has homework on a device, that is school time, not the screen spot, and can happen at a different table.</p><p>Give roles, not just turns. In a pretend restaurant, one child is the chef, one is the waiter, one is the customer. In a block game, one builds and one decorates. Roles let different ages play together without constant competition.</p><p>Protect a little one-on-one time. Even five minutes alone with each child, doing what they choose, makes shared time easier.</p><p>Twins and close-in-age siblings often need their own basket or their own “first pick”. Take turns being first.</p><p>And let older children help younger ones, if they want to. Being the expert makes big kids proud.</p></div>
       <div class="script" style="border-color:#EE5A36">
     <div class="slab" style="color:#C8421F"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-quote"/></svg> Plain words for: When siblings fight over whose turn it is</div>
     <p class="sline">“Two kids, one truck. That’s hard. Timer turns: you first, then you.”</p><p class="sline">“While you wait, you can be the driver’s helper.”</p>
@@ -2000,7 +2005,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Try one play today where each child has a different role.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 26</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 26</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">68</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -2032,7 +2037,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d26-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 26</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 26</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">69</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -2050,7 +2055,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Share a short list of your child’s favorite plays with another caregiver.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 27</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 27</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">70</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -2082,7 +2087,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d27-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 27</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 27</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">71</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -2100,7 +2105,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Write your “tough day plan” in the workbook: what a cozy day looks like, and the words for going back.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 28</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 28</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">72</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -2132,21 +2137,21 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d28-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 28</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 28</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">73</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><header class="ph"><div class="kick" style="color:#1D2940">Day 28 · planning page</div><h1 style="color:#EE5A36">Our tough-day plan</h1></header>
       <p class="lead s">A planned change for a hard day is fine. Say it out loud, and go back to your usual rhythm the next day. No making up for it.</p>
       <div class="ci"><div class="ciq" style="border-color:#EE5A36"><b>What a cozy day looks like at our house</b><span class="field multi" data-name="td-cozy" data-lines="5"></span></div><div class="ciq" style="border-color:#EE5A36"><b>Our quiet plays for sick or tired days</b><span class="field multi" data-name="td-plays" data-lines="5"></span></div><div class="ciq" style="border-color:#EE5A36"><b>What we’ll say about the change</b><span class="field multi" data-name="td-say" data-lines="5"></span></div><div class="ciq" style="border-color:#EE5A36"><b>How we go back tomorrow</b><span class="field multi" data-name="td-back" data-lines="5"></span></div></div>
       <div class="spotsay"><b>Example:</b> “You’re sick today, so it’s a cozy movie day on the couch together. Tomorrow we go back to our usual plan.”</div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Planning</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Planning</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">74</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><header class="ph"><div class="kick" style="color:#C8421F">Week 4 check-in</div><h1 style="color:#C8421F">Look back kindly</h1></header>
       <p class="lead s">Look for what helped, not what you missed. Adjusting the plan is the program working.</p>
       <div class="ci"><div class="ciq" style="border-color:#EE5A36"><b>What helped most this week?</b><span class="field multi" data-name="ci4-0" data-lines="6"></span></div><div class="ciq" style="border-color:#EE5A36"><b>What would we change?</b><span class="field multi" data-name="ci4-1" data-lines="6"></span></div><div class="ciq" style="border-color:#EE5A36"><b>What did our child ask for again?</b><span class="field multi" data-name="ci4-2" data-lines="6"></span></div><div class="ciq" style="border-color:#EE5A36"><b>One thing we’ll keep doing</b><span class="field multi" data-name="ci4-3" data-lines="6"></span></div></div>
       <div class="ciself"><div class="disc art" style="width:0.7in;height:0.7in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#FDE9E3" class="ground"/><use href="#a-heart" transform="scale(.8)"/></svg></div><p><b>Words for yourself:</b> “I don’t need a perfect week. I need a next step.”</p></div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Week 4 check-in</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Week 4 check-in</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">75</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="wk">
@@ -2164,7 +2169,7 @@ b{font-weight:800}
       <div class="wkscripts"><h4><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-quote"/></svg> Plain words you’ll use this week</h4>
         <div class="wks"><b>Asking your child what they liked</b><span>“What was the most fun thing we played this month?”</span></div><div class="wks"><b>Explaining the family plan going forward</b><span>“This is our family’s plan. Screens after nap, and lots of play.”</span></div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Days 29–30</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Days 29–30</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">76</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -2174,7 +2179,7 @@ b{font-weight:800}
         <div class="disc art" style="width:1.05in;height:1.05in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#EFE6FA" class="ground"/><use href="#a-photo" transform="scale(.8)"/></svg></div>
       </div>
       <p class="idea" style="border-color:#8A5CC7">The plays your child asked for again are your family’s real plan. Write them down.</p>
-      <div class="ltext"><p>Nearly there. Today, look back over the month.</p><p>Open your tracker and your check-ins. Circle every play your child asked for again. Most children love two or three plays far more than the rest, and they return to them over and over. Those are your family’s favorites, and they’re the heart of your plan.</p><p>Then look at the tricky moments. Which ones got easier? The end of screen time? The morning scramble? The hour before dinner? Which words from the scripts did you actually use?</p><p>And look at yourself. What surprised you? Many parents say it’s how much talking happens once there’s a little more room for it. Some say it’s how little their child minded, once the screen spot was steady.</p><p>Whatever you notice, write it down. You’ll use it tomorrow.</p><p>Every child talks, plays and grows on their own timeline. If you have questions about your child’s development, talk with your pediatrician.</p></div>
+      <div class="ltext"><p>Nearly there. Today, look back over the month.</p><p>Open your tracker and your check-ins. Circle every play your child asked for again. Most children love two or three plays far more than the rest, and they return to them over and over. Those are your family’s favorites, and they’re the heart of your plan.</p><p>Then look at the tricky moments. Which ones got easier? The end of screen time? The morning scramble? The hour before dinner? Which words from the scripts did you actually use?</p><p>And look at yourself. What surprised you? Maybe it was how much talking happened once there was a little more room for it. Maybe it was how little your child minded, once the screen spot was steady.</p><p>Whatever you notice, write it down. You’ll use it tomorrow.</p><p>Every child talks, plays and grows on their own timeline. If you have questions about your child’s development, talk with your pediatrician.</p></div>
       <div class="script" style="border-color:#8A5CC7">
     <div class="slab" style="color:#6D43A6"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-quote"/></svg> Plain words for: Asking your child what they liked</div>
     <p class="sline">“What was the most fun thing we played this month?”</p><p class="sline">“What should we play more of?”</p>
@@ -2182,7 +2187,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Circle your child’s top three plays and your three most useful scripts.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 29</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 29</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">77</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -2214,7 +2219,7 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d29-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 29</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 29</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">78</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="lesson">
@@ -2224,7 +2229,7 @@ b{font-weight:800}
         <div class="disc art" style="width:1.05in;height:1.05in;"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="#EFE6FA" class="ground"/><use href="#a-list" transform="scale(.8)"/></svg></div>
       </div>
       <p class="idea" style="border-color:#8A5CC7">Write a short, kind plan you can keep: your screen spot, your favorite plays and your words for tricky moments.</p>
-      <div class="ltext"><p>Day 30. You did it: thirty days of adding play and talk to real family life.</p><p>Today, write your family’s plan on one page. Keep it short enough to stick on the fridge.</p><p>Our screen spot: when, where, what and how it ends.</p><p>Our favorite plays: the two or three your child keeps asking for, plus one new one to try next month.</p><p>Our words for tricky moments: the lines that worked for the end of screen time, for waiting, and for “I’m bored”.</p><p>Our phone parking spot and our one phone-free window.</p><p>Our tough-day plan.</p><p>Then celebrate. Print the certificate, let your child decorate it and put it somewhere everyone can see.</p><p>Look at the plan again in a month and adjust. Families change, children grow, and the plan should grow with them. The Reset isn’t a finish line; it’s a rhythm you now know how to find.</p><p>Thank you for letting us be part of your month.</p></div>
+      <div class="ltext"><p>Day 30. You did it: thirty days of adding play and talk to real family life.</p><p>Today, write your family’s plan on one page. Keep it short enough to stick on the fridge.</p><p>Our screen spot: when, where, what and how it ends.</p><p>Our favorite plays: the two or three your child keeps asking for, plus one new one to try next month.</p><p>Our words for tricky moments: the lines that worked for the end of screen time, for waiting, and for “I’m bored”.</p><p>Our phone parking spot and our one phone-free window.</p><p>Our tough-day plan.</p><p>Then celebrate. Print the certificate, let your child decorate it and put it somewhere everyone can see.</p><p>Look at the plan again in a month and adjust. Families change, children grow, and the plan should grow with them. This month isn’t a finish line; it’s a rhythm you now know how to find.</p><p>Thank you for letting us be part of your month.</p></div>
       <div class="script" style="border-color:#8A5CC7">
     <div class="slab" style="color:#6D43A6"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-quote"/></svg> Plain words for: Explaining the family plan going forward</div>
     <p class="sline">“This is our family’s plan. Screens after nap, and lots of play.”</p><p class="sline">“We’ll look at it again next month and change what we need to.”</p>
@@ -2232,7 +2237,7 @@ b{font-weight:800}
   </div>
       <div class="step" style="background:#FFFFFF"><svg class="ico big" width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg><div><div class="tlab">Today’s one small step</div>Write your one-page family plan. Print and decorate the certificate.</div></div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 30</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 30</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">79</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><article class="play">
@@ -2264,14 +2269,14 @@ b{font-weight:800}
         <div class="nh"><b>Today’s notes</b><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> We played</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-check"/></svg> Screen spot kept</span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-star"/></svg> Asked for it again</span></div>
         <div class="nl"><span>What happened? What did your child say, show or do?</span><span class="field multi" data-name="d30-notes" data-lines="4"></span></div>
       </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Day 30</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Day 30</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">80</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><header class="ph"><div class="kick" style="color:#1D2940">Day 30</div><h1 style="color:#8A5CC7">Our family’s plan</h1></header>
       <p class="lead s">Short enough for the fridge. Look at it again in a month and change what you need to.</p>
       <div class="fplan"><div class="fpr"><b>Our screen spot (when, where, what, how it ends)</b><span class="field multi" data-name="fp-spot" data-lines="3"></span></div><div class="fpr"><b>Our favorite plays (and one new one to try)</b><span class="field multi" data-name="fp-plays" data-lines="4"></span></div><div class="fpr"><b>Our words for tricky moments</b><span class="field multi" data-name="fp-words" data-lines="4"></span></div><div class="fpr"><b>Our phone parking spot and phone-free window</b><span class="field multi" data-name="fp-phone" data-lines="2"></span></div><div class="fpr"><b>Our tough-day plan</b><span class="field multi" data-name="fp-tough" data-lines="3"></span></div></div>
       <div class="sign"><span>Signed by everyone in our family</span><span class="field " data-name="fp-sign" data-lines="1"></span><span class="date">Date</span><span class="field short" data-name="fp-date" data-lines="1"></span></div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Your plan</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Your plan</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">81</b></span></footer></section>
 <section class="page certpage" style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><div class="cert">
@@ -2279,7 +2284,7 @@ b{font-weight:800}
       <div class="cawd">This certificate is awarded to</div>
       <div class="cname"><span class="field cn" data-name="cert-name" data-lines="1"></span></div>
       <div class="cawd">for finishing</div>
-      <div class="ct">The 30-Day<br>Screen Reset</div>
+      <div class="ct">30 Days of<br>Back-and-Forth</div>
       <p class="cp">30 days of more play, more talk and a steady spot for screens.</p>
       <div class="cfav"><b>Our favorite play:</b><span class="field " data-name="cert-fav" data-lines="1"></span></div>
       <div class="cdate"><b>Date:</b><span class="field short" data-name="cert-date" data-lines="1"></span></div>
@@ -2287,57 +2292,57 @@ b{font-weight:800}
       <div class="clogo"><img src="../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span>playbeforepixels.com</span></div>
       <p class="cshare">Put it on the fridge. If you share a photo, we’d love to see it: #PlayBeforePixels. Please leave out your child’s name and face.</p>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Celebrate</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Celebrate</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">82</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><header class="ph"><div class="kick" style="color:#1D2940">Scripts bank</div><h1 style="color:#2FA36B">Plain words for tricky moments</h1></header>
       <p class="lead s">Every script from the 30 days, plus extras, in one place. Cut out the ones you need and stick them where the tricky moment happens.</p>
       <div class="sbank"><div class="sb"><b>When your child asks for a screen right now <span>Day 1</span></b><p>“You want the tablet. It’s not tablet time right now.”</p><p>“Let’s look out the window and see who’s outside.”</p></div><div class="sb"><b>When someone asks why things are changing <span>Day 2</span></b><p>“We’re trying something new this month: more play together.”</p><p>“Screens aren’t going away. They’re getting a regular spot in our day.”</p></div><div class="sb"><b>Telling your child about the screen spot <span>Day 3</span></b><p>“Here’s our new plan. Shows are after nap, on the couch. Two shows, then outside.”</p><p>“Every day. Same time, same place.”</p></div><div class="sb"><b>When your child says “I’m bored” <span>Day 4</span></b><p>“Bored is okay. Something good usually comes next.”</p><p>“The basket is right there. I’ll be in the kitchen if you want to show me.”</p></div><div class="sb"><b>Right after pickup <span>Day 5</span></b><p>“I missed you. I’m so glad to see you.”</p><p>“Snack first. Then you can show me anything you like.”</p></div><div class="sb"><b>When the screen spot ends <span>Day 6</span></b><p>“Two more minutes, then the tablet goes to sleep.”</p><p>“Time’s up. Night-night, tablet. Now we go outside.”</p></div><div class="sb"><b>When a day doesn’t go to plan (words for yourself) <span>Day 7</span></b><p>“Today was a lot. Tomorrow the plan is still here.”</p><p>“I don’t need a perfect day. I need a next step.”</p></div><div class="sb"><b>“Can I have screens after this?” <span>Day 8</span></b><p>“Yes. Screens are after nap, like always.”</p><p>“Right now it’s play time. Your throw!”</p></div><div class="sb"><b>“There’s nothing to do!” <span>Day 9</span></b><p>“I hear you. Bored is a tricky feeling.”</p><p>“I’m going to fold laundry. You’re welcome to help or find something in the basket.”</p></div><div class="sb"><b>When you need 20 minutes to cook <span>Day 10</span></b><p>“I’m making dinner. You can stir here, or play with the basket by my feet.”</p><p>“I can talk while I cook. Tell me about your tower.”</p></div><div class="sb"><b>When getting dressed turns into a standoff <span>Day 11</span></b><p>“Do you want the red socks or the stripy socks?”</p><p>“You do the first sock, I’ll do the second. Ready?”</p></div><div class="sb"><b>“I don’t want to go outside” <span>Day 12</span></b><p>“Just five minutes, to check what the sky is doing.”</p><p>“You can bring your teddy. Teddy wants to see the clouds.”</p></div><div class="sb"><b>A meltdown when the screen turns off <span>Day 13</span></b><p>“You’re so mad. It’s hard when a show ends.”</p><p>“I’m right here. The tablet will be back tomorrow after nap.”</p></div></div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Scripts bank</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Scripts bank</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">83</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><header class="ph"><div class="kick" style="color:#1D2940">Scripts bank (continued)</div><h1 style="color:#2FA36B">More plain words</h1></header>
       
       <div class="sbank"><div class="sb"><b>When you’re too tired to play (words for your child) <span>Day 14</span></b><p>“I’m very tired today. Let’s do a lying-down play.”</p><p>“You be the doctor. Check my knees!”</p></div><div class="sb"><b>When your child doesn’t answer <span>Day 15</span></b><p>(Wait. Smile. Count to five in your head.)</p><p>“You’re thinking. I’ll wait.” Then answer any look, point or sound.</p></div><div class="sb"><b>Instead of quizzing <span>Day 16</span></b><p>Instead of “What color is that?” try “You picked the red one.”</p><p>Instead of “What’s this?” try “A spoon. You’re banging the spoon.”</p></div><div class="sb"><b>Instead of correcting <span>Day 17</span></b><p>Child: “Doggy go.” You: “Yes! The doggy’s going. Going home.”</p><p>Child: “I goed.” You: “You went! You went down the big slide.”</p></div><div class="sb"><b>When your child wants both <span>Day 18</span></b><p>“You want both! Pick one now. The other one is for after lunch.”</p><p>“You choose, or I’ll choose. Which?”</p></div><div class="sb"><b>When their play seems “wrong” <span>Day 19</span></b><p>(Instead of fixing it) “The cars are on the table! They’re having a party?”</p><p>“Show me how it works.”</p></div><div class="sb"><b>When you feel silly singing <span>Day 20</span></b><p>(To yourself) “My child doesn’t need a good singer. They need me.”</p><p>“I don’t know all the words. Let’s make them up!”</p></div><div class="sb"><b>When they want the same book again (and again) <span>Day 21</span></b><p>“Again? Yes! This is a good one.”</p><p>“This time, you say the last word.”</p></div><div class="sb"><b>“Can I have your phone?” while waiting <span>Day 22</span></b><p>“My phone is staying in my bag. Let’s play I spy until the food comes.”</p><p>“You can pick: I spy or napkin drawing?”</p></div><div class="sb"><b>“Are we there yet?” <span>Day 23</span></b><p>“Not yet. Let’s count ten red cars, then I’ll tell you how far.”</p><p>“About two songs long. Which song first?”</p></div><div class="sb"><b>When your child sees you on your phone <span>Day 24</span></b><p>“I’m checking the weather for tomorrow. Done! Phone’s going in its spot.”</p><p>“Give me one minute to finish this message, then I’m all yours.”</p></div><div class="sb"><b>“Everyone else gets to!” <span>Day 25</span></b><p>“It might be true that lots of kids do. In our family, screens have a set time.”</p><p>“I want to hear what matters to you. Let’s talk about it at dinner.”</p></div><div class="sb"><b>When siblings fight over whose turn it is <span>Day 26</span></b><p>“Two kids, one truck. That’s hard. Timer turns: you first, then you.”</p><p>“While you wait, you can be the driver’s helper.”</p></div></div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Scripts bank</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Scripts bank</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">84</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><header class="ph"><div class="kick" style="color:#1D2940">Scripts bank (continued)</div><h1 style="color:#2FA36B">More plain words</h1></header>
       
       <div class="sbank"><div class="sb"><b>Talking to a grandparent or sitter <span>Day 27</span></b><p>“We’re trying more play at home. Here are three things she loves right now.”</p><p>“When shows finish, we say ‘Night-night, tablet’. It helps if it sounds the same.”</p></div><div class="sb"><b>On a sick or travel day <span>Day 28</span></b><p>“You’re sick today, so it’s a cozy movie day. Tomorrow we go back to our usual plan.”</p><p>“Long flight today! Shows after the first snack.”</p></div><div class="sb"><b>Asking your child what they liked <span>Day 29</span></b><p>“What was the most fun thing we played this month?”</p><p>“What should we play more of?”</p></div><div class="sb"><b>Explaining the family plan going forward <span>Day 30</span></b><p>“This is our family’s plan. Screens after nap, and lots of play.”</p><p>“We’ll look at it again next month and change what we need to.”</p></div><div class="sb"><b>“Just five more minutes!”</b><p>“You want more. It’s hard to stop. Two more minutes, then night-night, tablet.”</p></div><div class="sb"><b>Your child grabs the device</b><p>“I won’t let you grab. The tablet is asleep. You can hold my hand or hold teddy.”</p></div><div class="sb"><b>A friend’s house has different rules</b><p>“Different homes have different plans. At home, screens are after nap.”</p></div><div class="sb"><b>Your child asks why grown-ups get phones</b><p>“Good question. I use mine for work and bills. I’m trying to park it more, too.”</p></div><div class="sb"><b>Screen time was a lifesaver today (to yourself)</b><p>“That helped us today. Tomorrow the spot is back where it lives.”</p></div><div class="sb"><b>A visitor offers your child their phone</b><p>“That’s kind! We’re doing more play right now. Want to see her block tower?”</p></div><div class="sb"><b>Homework needs a device (big kids)</b><p>“Homework is school time, not screen time. It happens at the table, and then we close it.”</p></div><div class="sb"><b>Your child is upset they missed the screen spot</b><p>“You’re sad we were out at show time. Tomorrow the spot is back. Want a story now?”</p></div></div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Scripts bank</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Scripts bank</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">85</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><header class="ph"><div class="kick" style="color:#1D2940">Blank pages</div><h1 style="color:#2FA36B">Our own plays</h1></header><article class="play own">
     <div class="phead">
-      <div class="disc" style="width:1.1in;height:1.1in"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="57" fill="none" stroke="#2FA36B" stroke-width="2.4" stroke-dasharray="6 6"/><text y="6" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="22" fill="#1D2940">draw it!</text></svg></div>
+      <div class="disc" style="width:.85in;height:.85in"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="57" fill="none" stroke="#2FA36B" stroke-width="2.4" stroke-dasharray="6 6"/><text y="6" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="22" fill="#1D2940">draw it!</text></svg></div>
       <div class="ptitle"><div class="kicker">Our own play</div><span class="field big" data-name="own1-title" data-lines="1"></span>
         <div class="meta"><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-sprout"/></svg> From <span class="field inl" data-name="own1-age" data-lines="1"></span></span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-clock"/></svg> Prep <span class="field inl" data-name="own1-prep" data-lines="1"></span></span><span><span class="drops"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-drop"/></svg><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-drop-o"/></svg></span> Mess <span class="field inl" data-name="own1-mess" data-lines="1"></span></span></div>
         <div class="need"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-bag"/></svg><b>You need:</b><span class="field " data-name="own1-need" data-lines="1"></span></div></div>
     </div>
-    <div class="ownl"><b>How to play</b><span class="field multi" data-name="own1-how" data-lines="3"></span></div>
+    <div class="ownl"><b>How to play</b><span class="field multi" data-name="own1-how" data-lines="2"></span></div>
     <div class="ownl"><b>Talk while you play</b><span class="field " data-name="own1-talk" data-lines="1"></span></div>
     <div class="ownl two"><div><b>Easier</b><span class="field " data-name="own1-easy" data-lines="1"></span></div><div><b>Harder</b><span class="field " data-name="own1-hard" data-lines="1"></span></div></div>
     <div class="ownl"><b><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-shield"/></svg> Safety</b><span class="field " data-name="own1-safe" data-lines="1"></span></div>
   </article><article class="play own">
     <div class="phead">
-      <div class="disc" style="width:1.1in;height:1.1in"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="57" fill="none" stroke="#2FA36B" stroke-width="2.4" stroke-dasharray="6 6"/><text y="6" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="22" fill="#1D2940">draw it!</text></svg></div>
+      <div class="disc" style="width:.85in;height:.85in"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="57" fill="none" stroke="#2FA36B" stroke-width="2.4" stroke-dasharray="6 6"/><text y="6" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="22" fill="#1D2940">draw it!</text></svg></div>
       <div class="ptitle"><div class="kicker">Our own play</div><span class="field big" data-name="own2-title" data-lines="1"></span>
         <div class="meta"><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-sprout"/></svg> From <span class="field inl" data-name="own2-age" data-lines="1"></span></span><span><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-clock"/></svg> Prep <span class="field inl" data-name="own2-prep" data-lines="1"></span></span><span><span class="drops"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-drop"/></svg><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-drop-o"/></svg></span> Mess <span class="field inl" data-name="own2-mess" data-lines="1"></span></span></div>
         <div class="need"><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-bag"/></svg><b>You need:</b><span class="field " data-name="own2-need" data-lines="1"></span></div></div>
     </div>
-    <div class="ownl"><b>How to play</b><span class="field multi" data-name="own2-how" data-lines="3"></span></div>
+    <div class="ownl"><b>How to play</b><span class="field multi" data-name="own2-how" data-lines="2"></span></div>
     <div class="ownl"><b>Talk while you play</b><span class="field " data-name="own2-talk" data-lines="1"></span></div>
     <div class="ownl two"><div><b>Easier</b><span class="field " data-name="own2-easy" data-lines="1"></span></div><div><b>Harder</b><span class="field " data-name="own2-hard" data-lines="1"></span></div></div>
     <div class="ownl"><b><svg class="ico " width="1em" height="1em" aria-hidden="true"><use href="#u-shield"/></svg> Safety</b><span class="field " data-name="own2-safe" data-lines="1"></span></div>
   </article></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Blank pages</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Blank pages</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">86</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><header class="ph"><div class="kick" style="color:#1D2940">Questions</div><h1 style="color:#1D2940">Questions parents ask</h1></header>
-      <div class="faq"><div class="fq"><b>What exactly do I get?</b><p>Thirty short daily lessons by email (each takes about three minutes to read), one easy play a day, plain words for tricky moments, a designed workbook with trackers (US Letter and A4, color and low-ink, fillable in free Acrobat Reader), a bank of extra scripts and a certificate to celebrate.</p></div><div class="fq"><b>Is there any video, coaching or calls?</b><p>No. It’s a written program you do at your own pace. There are no videos to watch, no calls and no live sessions. We don’t offer personal replies or advice about individual children.</p></div><div class="fq"><b>What ages is it for?</b><p>Families with children from about 1 to 12. Every play has a starting age, an easier version for little ones and a harder version for big kids, and every week has boxes for toddlers, school-age kids and siblings.</p></div><div class="fq"><b>What if I miss a day?</b><p>Nothing breaks. Each lesson waits in your inbox and in the workbook. Pick up wherever you are. Many families take longer than 30 days.</p></div><div class="fq"><b>Do we have to give up screens?</b><p>No. The program adds play and talk and gives screens a steady spot in the day. Screens are never used as a reward or a punishment.</p></div><div class="fq"><b>Will this fix my child’s speech or behavior?</b><p>It isn’t designed to treat or fix anything. It’s parent education about everyday play and talk. If you have questions about your child’s development, talk with your pediatrician.</p></div><div class="fq"><b>Do I need to buy anything?</b><p>No. Every play uses things most homes already have: socks, boxes, pots, books, paper.</p></div><div class="fq"><b>What is the guarantee?</b><p>If the program isn’t right for your family, email us within 30 days of purchase for a full refund. No questions asked, and you don’t need to have finished anything.</p></div><div class="fq"><b>How is it delivered?</b><p>Right after checkout you get a welcome email with your workbook download. Then one lesson arrives each morning for 30 days. You can change the send time or pause from the link in any email.</p></div><div class="fq"><b>Can I share it with my co-parent or a grandparent?</b><p>Yes, anyone in your household can use it. Forward the emails to your co-parent. For other families, please share the link instead of the files.</p></div><div class="fq"><b>Is there a print version?</b><p>Yes. The whole program is also a black-and-white paperback on Amazon, printed on demand. The color workbook comes with the online program.</p></div></div>
+      <div class="faq"><div class="fq"><b>What exactly do I get?</b><p>Thirty short daily lessons by email (each takes about three minutes to read), one easy play a day, plain words for tricky moments, a designed workbook with trackers (US Letter and A4, color and low-ink, fillable in free Acrobat Reader), a bank of extra scripts and a certificate to celebrate.</p></div><div class="fq"><b>Is there any video, coaching or calls?</b><p>No. It’s a written program you do at your own pace. There are no videos to watch, no calls and no live sessions. We don’t offer personal replies or advice about individual children.</p></div><div class="fq"><b>What ages is it for?</b><p>Families with children from about 1 to 12. Every play has a starting age, an easier version for little ones and a harder version for big kids, and every week has boxes for toddlers, school-age kids and siblings.</p></div><div class="fq"><b>What if I miss a day?</b><p>Nothing breaks. Each lesson waits in your inbox and in the workbook. Pick up wherever you are. It’s fine to take longer than 30 days.</p></div><div class="fq"><b>Do we have to give up screens?</b><p>No. The program adds play and talk and gives screens a steady spot in the day. Screens are never used as a reward or a punishment.</p></div><div class="fq"><b>Will this change how my child talks or behaves?</b><p>It isn’t designed to treat or change anything about your child. It’s parent education about everyday play and talk. If you have questions about your child’s development, talk with your pediatrician.</p></div><div class="fq"><b>Do I need to buy anything?</b><p>No. Every play uses things most homes already have: socks, boxes, pots, books, paper.</p></div><div class="fq"><b>What is the guarantee?</b><p>If the program isn’t right for your family, email us within 30 days of purchase for a full refund. No questions asked, and you don’t need to have finished anything.</p></div><div class="fq"><b>How is it delivered?</b><p>Right after checkout you get a welcome email with your workbook download. Then one lesson arrives each morning for 30 days. You can change the send time or pause from the link in any email.</p></div><div class="fq"><b>Can I share it with my co-parent or a grandparent?</b><p>Yes, anyone in your household can use it. Forward the emails to your co-parent. For other families, please share the link instead of the files.</p></div><div class="fq"><b>Is there a print version?</b><p>Yes. The whole program is also a black-and-white paperback on Amazon, printed on demand. The color workbook comes with the online program.</p></div></div>
       <p class="small">More answers live in the help center at playbeforepixels.com/help. We don’t offer personal replies or advice about individual children.</p></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Questions</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Questions</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">87</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><header class="ph"><div class="kick" style="color:#1D2940">Sources</div><h1 style="color:#1D2940">Where the research lines come from</h1></header>
@@ -2352,7 +2357,7 @@ b{font-weight:800}
       <div><b>Plain-words talk moves</b>The six talk moves in this program are described in everyday words. They are not taken from, or endorsed by, any named program.</div>
       <div><b>Not medical advice</b>This program is parent education. It does not diagnose, treat or prevent any condition. For questions about your child’s health or development, talk with your pediatrician.</div>
     </div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · Sources</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · Sources</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">88</b></span></footer></section>
 <section class="page " style="">
       <div class="inner" style="padding:0.55in 0.55in 0.85in 0.55in"><header class="ph"><div class="kick" style="color:#1D2940">What’s next</div><h1 style="color:#EE5A36">More from Play Before Pixels</h1></header>
@@ -2364,6 +2369,6 @@ b{font-weight:800}
       <p class="small">Share with a friend: when a friend buys with your link, you each get $5 off. Your link is in every email.</p></div>
     </div>
     <div class="copymini"><b>© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.</b> Version 1.0 · September 2026. For use by the purchasing household. Please share the link, not the file. Every play follows our published safety rules; a grown-up is always there. This program is parent education and is not medical advice.</div></div><footer class="foot" style="left:0.55in;right:0.55in;bottom:0.28in">
-      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>The 30-Day Screen Reset</b> · What’s next</span>
+      <span class="fl"><img src="../../brand/logo/mark-small.svg" alt="" class="fmark"><b>30 Days of Back-and-Forth</b> · What’s next</span>
       <span class="fr">playbeforepixels.com · Version 1.0 · September 2026<b class="pn">89</b></span></footer></section>
 </body></html>

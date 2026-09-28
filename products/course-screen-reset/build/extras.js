@@ -20,8 +20,9 @@ const write = (f, s) => { fs.writeFileSync(path.join(B, f), s + '</body></html>'
 
 // ---------------------------------------------------------------- cover (8 x 10 ratio; store image + KDP front)
 const coverInner = (pad = 0) => `<div class="cv" style="padding:${60 + pad}px ${56 + pad}px ${48 + pad}px">
-  <div class="top"><div class="n">30</div><div class="t">Day<br>Screen<br>Reset</div></div>
-  <div class="sub">A play-first plan for families</div>
+  <div class="top"><div class="n">30</div><div class="t">Days<br>of</div></div>
+  <div class="bf">Back-and-Forth</div>
+  <div class="sub">${esc(K.SUB)}</div>
   <div class="scene">${sceneSvg(sceneCover, '', '20 150 560 360')}</div>
   <div class="strip"><span><b>30</b> short lessons</span><span><b>30</b> easy plays</span><span><b>30</b> plain-word scripts</span></div>
   <div class="ages">For families with children aged 1 to 12</div>
@@ -29,9 +30,10 @@ const coverInner = (pad = 0) => `<div class="cv" style="padding:${60 + pad}px ${
 </div>`;
 const coverCss = `.cv{width:100%;height:100%;background:${C.tSun};display:flex;flex-direction:column;align-items:center;text-align:center}
 .top{display:flex;align-items:center;gap:22px}.n{font-family:"Bricolage Grotesque";font-weight:800;font-size:236px;line-height:.8;color:${C.tomato};letter-spacing:-.04em}
-.t{font-family:"Bricolage Grotesque";font-weight:800;font-size:64px;line-height:.92;text-align:left}
-.sub{font-family:"Bricolage Grotesque";font-weight:700;font-size:31px;margin-top:26px}
-.scene{width:640px;height:412px;margin-top:10px}.scene svg{width:100%;height:100%}
+.t{font-family:"Bricolage Grotesque";font-weight:800;font-size:74px;line-height:.92;text-align:left}
+.bf{font-family:"Bricolage Grotesque";font-weight:800;font-size:80px;line-height:1;letter-spacing:-.01em;white-space:nowrap;margin-top:10px}
+.sub{font-family:"Bricolage Grotesque";font-weight:700;font-size:29px;margin-top:18px}
+.scene{width:600px;height:386px;margin-top:6px}.scene svg{width:100%;height:100%}
 .strip{display:flex;gap:12px;margin-top:4px}.strip span{background:#fff;border-radius:99px;padding:8px 16px;font-weight:700;font-size:18px}.strip b{font-family:"Bricolage Grotesque";color:${C.tomato};font-size:21px}
 .ages{font-size:17px;font-weight:700;margin-top:14px;color:#3A4660}
 .logo{margin-top:auto}.logo img{height:62px}`;
@@ -45,7 +47,7 @@ write('cover.html', base(768, 960, coverCss) + coverInner());
   const Wd = +(bleed * 2 + tw * 2 + spine).toFixed(4), Hd = th + bleed * 2;
   const DPI = 96, px = v => Math.round(v * DPI);
   const back = `<div class="back">
-    <h2>Fewer screen battles. More play and talk.</h2>
+    <h2>More play and talk, with screens in a steady spot.</h2>
     <p class="bl">A gentle, practical 30-day plan for busy families. Each day brings one short lesson, one easy play with things you already have, and plain words for a tricky moment: the show that won’t end, “I’m bored”, the hour before dinner, waiting rooms, car rides and “everyone else gets to”.</p>
     <ul>
       <li><b>30 lessons</b> you can read in about three minutes</li>
@@ -54,7 +56,8 @@ write('cover.html', base(768, 960, coverCss) + coverInner());
       <li><b>No banning.</b> Screens get a steady spot in the day and are never a reward or a punishment</li>
     </ul>
     <p class="note">For families with children aged 1 to 12. Black-and-white interior. Parent education, not medical advice.</p>
-    <div class="series"><b>More from Play Before Pixels</b><span>100 Screen-Free Plays · The Day the Tablet Slept · Up! Go! More!</span></div>
+    <div class="series"><b>Free bonus inside:</b> color trackers, a certificate to print and a monthly play email at ${BONUS}</div>
+    <div class="series"><b>Collect the Play Before Pixels shelf</b><span>100 Screen-Free Plays · The Day the Tablet Slept · Up! Go! More!</span></div>
     <div class="bot"><div><img src="${LOGO}" alt="Play Before Pixels"><div class="site">${SITE}</div></div><div class="isbn">ISBN / barcode<br><small>KDP places the barcode here</small></div></div>
   </div>`;
   const css = `@page{size:${Wd}in ${Hd}in;margin:0}html,body{width:${Wd}in;height:${Hd}in}
@@ -97,7 +100,7 @@ write('cover.html', base(768, 960, coverCss) + coverInner());
     ['5. Workbook - Low-ink - A4.pdf', 'Low-ink, A4.'],
   ];
   write('start-here.html', base(816, 1056, css) + `<section class="page">
-    <div class="top"><div class="kick">The 30-Day Screen Reset</div><img src="${LOGO}" alt="Play Before Pixels"></div>
+    <div class="top"><div class="kick">${esc(K.TITLE)}</div><img src="${LOGO}" alt="Play Before Pixels"></div>
     <h1>Start here</h1>
     <p class="lead">Thank you for joining. Your first lesson arrives by email tomorrow morning. This page tells you what’s in your download and how to print it. Setup takes about two minutes.</p>
     <table><tr><th>File</th><th>What it is</th></tr>${files.map(([a, b]) => `<tr><td><b>${a}</b></td><td>${b}</td></tr>`).join('')}</table>
@@ -129,7 +132,7 @@ for (const [key, w, h] of [['letter', 8.5, 11], ['a4', 8.27, 11.69]]) {
   .box{background:${C.tSky};border-radius:12px;padding:.12in .16in;font-size:10pt;margin-top:.12in}
   .moves5{margin-top:.2in;background:${C.tGrass};border-radius:14px;padding:.16in .2in}.moves5 ol{padding-left:.22in;margin:.08in 0}.moves5 li{font-size:10.3pt;line-height:1.45;margin-bottom:.04in}
   .cta{margin-top:auto;display:flex;gap:.2in;align-items:center;background:${C.tSun};border-radius:14px;padding:.16in}.cta p{font-size:10pt}`;
-  const foot = n => `<div class="foot"><span><img src="${MARK}" style="height:.14in;vertical-align:-.03in"> 7 Days of Play First · free starter from The 30-Day Screen Reset</span><span>${SITE} · ${K.VERSION} · ${n}</span></div>`;
+  const foot = n => `<div class="foot"><span><img src="${MARK}" style="height:.14in;vertical-align:-.03in"> 7 Days of Play First · free starter from ${esc(K.TITLE)}</span><span>${SITE} · ${K.VERSION} · ${n}</span></div>`;
   write(`starter-${key}.html`, base(816, 1056, css) + `
   <section class="page">
     <div class="hero"><div><div class="kick">Free starter</div><h1>7 Days of<br>Play First</h1><p class="lead">Seven easy plays, a screen-spot plan and a tracker. Nothing to buy, nothing to ban.</p><img src="${LOGO}" style="height:.46in"></div><div class="sc">${sceneSvg(sceneCover, '', '20 150 560 360')}</div></div>
@@ -152,7 +155,7 @@ for (const [key, w, h] of [['letter', 8.5, 11], ['a4', 8.27, 11.69]]) {
     <div class="moves5"><b class="bric" style="font-size:14pt">Five small talk moves to try this week</b>
       <ol>${['pause and wait', 'say what you see', 'repeat and add one', 'offer a choice', 'follow their lead'].map(k => { const m = Object.values(K.MOVES).find(x => x.name.toLowerCase() === k); return `<li><b>${esc(m.name)}.</b> ${esc(m.tip)}</li>`; }).join('')}</ol>
       <p style="font-size:9.5pt;color:#4A5570">Talk, sing and read in the language you know best. A sign, a point or a tap on a device counts as communicating.</p></div>
-    <div class="cta"><div><img src="${MARK}" style="height:.9in"></div><div><b class="bric" style="font-size:14pt">Want the whole month?</b><p>The 30-Day Screen Reset: 30 short lessons by email, 30 plays, plain words for 30 tricky moments and a full workbook. $27, with a 30-day money-back guarantee. Written program; no videos, calls or coaching.</p><p><b>${SITE}/reset</b></p></div></div>
+    <div class="cta"><div><img src="${MARK}" style="height:.9in"></div><div><b class="bric" style="font-size:14pt">Want the whole month?</b><p>${esc(K.TITLE)}: 30 short lessons by email, 30 plays, plain words for 30 tricky moments and a full workbook. $27, with a 30-day money-back guarantee. Written program; no videos, calls or coaching.</p><p><b>${SITE}/30-days</b></p></div></div>
     ${foot(3)}
   </section>`);
 }
@@ -191,7 +194,7 @@ h1{font-size:118px;line-height:1;margin:18px 0 28px;letter-spacing:-.01em}h1 em{
 .ico{width:1em;height:1em}`) + `<div class="L">${body}<img class="brand" src="${LOGO}" alt="Play Before Pixels"></div>`);
 
 L(1, 'hero', `<div class="k">Written program · email + workbook</div>
-  <h1>The <em>30</em>-Day<br>Screen Reset</h1>
+  <h1><em>30</em> Days of<br>Back-and-Forth</h1>
   <p class="lead">30 short lessons · 30 easy plays · plain words for tricky moments</p>
   <div class="pg sh" style="left:130px;top:780px;width:760px;height:950px;border-radius:6px 14px 14px 6px;overflow:hidden"><img src="../cover.png" style="height:100%"></div>
   <div class="pg sh" style="left:960px;top:760px;width:560px;height:725px;transform:rotate(4deg)"><img src="${PV(23)}"></div>
@@ -228,7 +231,7 @@ L(6, 'ages-and-safety', `<div class="k">Ages 1 to 12</div><h1>One plan for<br>th
 
 L(7, 'screens-have-a-spot', `<div class="k">No banning, no bribes</div><h1>Screens get a<br><em>steady spot</em></h1>
   <p class="lead">Same time, same place, same ending, every day. Never a prize and never a punishment. The rest of the day fills up with easy play and talk.</p>
-  <div style="position:absolute;left:130px;right:130px;top:900px;display:flex;gap:40px">
+  <div style="position:absolute;left:130px;right:130px;top:720px;display:flex;gap:40px">
   ${[['1', 'A warning', '“Two more minutes, then the tablet goes to sleep.”'], ['2', 'A clear ending', 'The episode ends or the timer rings. “Night-night, tablet.”'], ['3', 'A landing', '“Now we go outside and find the moon.”']].map(([n, t, s]) => `<div style="flex:1;background:#fff;border-radius:40px;padding:50px"><div class="bric" style="width:110px;height:110px;border-radius:50%;background:${C.sky};color:#fff;display:flex;align-items:center;justify-content:center;font-size:64px">${n}</div><div class="bric" style="font-size:62px;margin:24px 0 12px">${t}</div><div style="font-family:Fredoka;font-size:42px;line-height:1.3">${s}</div></div>`).join('')}
   </div>${SC(3, 'right:110px;bottom:50px;width:560px;height:477px')}`, C.tPlum);
 
@@ -237,7 +240,7 @@ L(8, 'guarantee-and-bundle', `<div class="k">Simple pricing</div><h1>$27, or $49
   <div style="background:#fff;border-radius:40px;padding:56px"><div class="bric" style="font-size:60px">The program</div><div class="bric" style="font-size:150px;color:${C.tomato};line-height:1.1">$27</div><div style="font-size:36px;line-height:1.45">30 lessons by email<br>Workbook: Color + Low-ink, Letter + A4<br>Type-in pages<br>Scripts bank and certificate</div></div>
   <div style="background:#fff;border-radius:40px;padding:56px;border:10px solid ${C.sun}"><div class="bric" style="font-size:60px">The bundle</div><div class="bric" style="font-size:150px;color:${C.tomato};line-height:1.1">$49</div><div style="font-size:36px;line-height:1.45">The program, plus:<br>Play-First Family Kit<br>100 Screen-Free Plays (printable)<br>150 “I’m Bored” Play Cards<br><span style="color:#3A4660">$54.49 if bought separately</span></div></div>
   </div>
-  <div style="margin-top:50px;background:${C.tGrass};border-radius:40px;padding:44px 56px;font-size:40px;line-height:1.4"><b class="bric" style="font-size:52px">30-day money-back guarantee.</b><br>Not right for your family? Email us within 30 days of purchase for a full refund. No questions asked.</div>`, '#FFFFFF');
+  <div style="margin-top:50px;background:${C.tGrass};border-radius:40px;padding:44px 56px;font-size:40px;line-height:1.4"><b class="bric" style="font-size:52px">30-day money-back guarantee.</b><br>Not right for your family? Email us within 30 days of purchase for a full refund. No questions asked.</div>${SC(4, 'right:110px;bottom:40px;width:470px;height:400px')}`, '#FFFFFF');
 
 // ---------------------------------------------------------------- sales page (designed HTML; copy mirrored in sales-page.md)
 {
@@ -261,11 +264,11 @@ L(8, 'guarantee-and-bundle', `<div class="k">Simple pricing</div><h1>$27, or $49
   write('sales-page.html', base(1280, 800, css) + `
 <section class="hero"><div class="wrap"><div>
   <div class="k">A written program for families with children aged 1 to 12</div>
-  <h1>The 30-Day Screen Reset</h1>
-  <p class="lead">Fewer screen battles, more play and talk. One short lesson, one easy play and plain words for one tricky moment, every morning for 30 days.</p>
-  <p><a class="btn" href="{{program_checkout_link}}">Start the Reset · $27</a><a class="quiet" href="#inside">See what’s inside</a></p>
+  <h1 style="font-size:60px;white-space:nowrap">30 Days of<br>Back-and-Forth</h1>
+  <p class="lead">More play and talk, with screens in a steady spot. One short lesson, one easy play and plain words for one tricky moment, every morning for 30 days.</p>
+  <p><a class="btn" href="{{program_checkout_link}}">Start the 30 days · $27</a><a class="quiet" href="#inside">See what’s inside</a></p>
   <p style="font-size:15px;color:#3A4660">30-day money-back guarantee · no videos, calls or coaching · nothing to buy</p>
-</div><div><img src="../mockup.png" alt="The 30-Day Screen Reset paperback, two workbook pages and a phone showing a lesson email"></div></div></section>
+</div><div><img src="../mockup.png" alt="30 Days of Back-and-Forth cover, two workbook pages and a phone showing a lesson email"></div></div></section>
 
 <section><div class="wrap">
   <div class="k">How it works</div><h2>Three minutes to read. One play to try.</h2>
@@ -300,16 +303,16 @@ L(8, 'guarantee-and-bundle', `<div class="k">Simple pricing</div><h1>$27, or $49
 <section style="background:${C.tSky}"><div class="wrap">
   <div class="k">Pricing</div><h2>Pick one</h2>
   <div class="two">
-    <div class="price"><h3>The program</h3><div class="pp">$27</div><p>30 lessons by email, the full workbook, scripts bank and certificate.</p><a class="btn" href="{{program_checkout_link}}">Start the Reset</a></div>
-    <div class="price b"><h3>The Screen Reset Bundle</h3><div class="pp">$49</div><p>The program plus the Play-First Family Kit, 100 Screen-Free Plays (printable) and 150 “I’m Bored” Play Cards. $54.49 if bought separately.</p><a class="quiet" style="margin:0" href="{{bundle_checkout_link}}">Choose the bundle →</a></div>
+    <div class="price"><h3>The program</h3><div class="pp">$27</div><p>30 lessons by email, the full workbook, scripts bank and certificate.</p><a class="btn" href="{{program_checkout_link}}">Start the 30 days</a></div>
+    <div class="price b"><h3>The 30 Days of Back-and-Forth Bundle</h3><div class="pp">$49</div><p>The program plus the Play-First Family Kit, 100 Screen-Free Plays (printable) and 150 “I’m Bored” Play Cards. $54.49 if bought separately.</p><a class="quiet" style="margin:0" href="{{bundle_checkout_link}}">Choose the bundle →</a></div>
   </div>
   <p style="margin-top:18px;font-size:16px">Prefer paper? The whole program is also a black-and-white paperback on Amazon.</p>
 </div></section>
 
-<section class="guar"><div class="wrap"><div class="k">Our guarantee</div><h2>30 days, full refund, no questions</h2><p class="lead">If the Reset isn’t right for your family, email us within 30 days of purchase for a full refund. You don’t need to have finished anything, and you don’t need to explain.</p></div></section>
+<section class="guar"><div class="wrap"><div class="k">Our guarantee</div><h2>30 days, full refund, no questions</h2><p class="lead">If the program isn’t right for your family, email us within 30 days of purchase for a full refund. You don’t need to have finished anything, and you don’t need to explain.</p></div></section>
 
 <section><div class="wrap">
-  <div class="founder"><b style="color:${C.tomato}">FOUNDER WRITES THIS (optional):</b> a short note in your own words about why you made the Reset. No names, photos or credentials needed. Reviews go here only after the founding beta, with written permission, and never about speech, development or behavior results.</div>
+  ${K.FOUNDER.salesNote === 'skip' ? '' : K.FOUNDER.salesNote ? `<div class="k">A note from us</div><p class="lead">${esc(K.FOUNDER.salesNote)}</p>` : `<div class="founder"><b style="color:${C.tomato}">FOUNDER WRITES THIS (optional):</b> a short note in your own words about why you made this program. Put it in FOUNDER.salesNote in build/content.js, or set it to 'skip' to leave this section out. No names, photos or credentials needed. Reviews go here only after the founding beta, with written permission, and never about speech, development or behavior results.</div>`}
 </div></section>
 
 <section class="faq" style="padding-top:20px"><div class="wrap"><div class="k">Questions</div><h2>Questions parents ask</h2>${faq}</div></section>

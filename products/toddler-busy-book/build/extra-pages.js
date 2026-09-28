@@ -66,10 +66,10 @@ function coverArt() {
     <circle cx="360" cy="300" r="230" fill="${C.sun}"/>
     ${adultAt('G2', 470, 520, 1.55, { legs: 'kneel', y: 520 - 51 * 1.55, flip: true, aL: 12, aR: -60, face: 'laugh' })}
     ${kidAt('A', 300, 520, 2.1, { aL: 20, aR: -110, face: 'laugh' })}
-    <g transform="translate(96,150) rotate(-10)"><rect x="-80" y="-68" width="160" height="136" rx="16" fill="#FFFFFF"/><use href="#w-duck" transform="translate(0,-8) scale(.9)"/><text x="0" y="56" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="600" font-size="18" fill="${C.ink}">duck</text></g>
-    <g transform="translate(610,140) rotate(9)"><rect x="-78" y="-66" width="156" height="132" rx="16" fill="#FFFFFF"/><use href="#b-apple" transform="translate(0,-8) scale(.78)"/><text x="0" y="54" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="600" font-size="18" fill="${C.ink}">red</text></g>
-    <g transform="translate(96,420) rotate(6)"><rect x="-78" y="-66" width="156" height="132" rx="16" fill="#FFFFFF"/><use href="#b-s-star" transform="translate(0,-6) scale(.78)" style="--sf:${C.plum}"/></g>
-    <g transform="translate(618,420) rotate(-7)"><rect x="-78" y="-66" width="156" height="132" rx="16" fill="#FFFFFF"/><use href="#w-ball" transform="translate(0,-4) scale(.9)"/></g>
+    <g transform="translate(104,150) rotate(-10)"><rect x="-80" y="-68" width="160" height="136" rx="16" fill="#FFFFFF"/><use href="#w-duck" transform="translate(0,-8) scale(.9)"/><text x="0" y="56" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="600" font-size="18" fill="${C.ink}">duck</text></g>
+    <g transform="translate(596,140) rotate(9)"><rect x="-78" y="-66" width="156" height="132" rx="16" fill="#FFFFFF"/><use href="#b-apple" transform="translate(0,-8) scale(.78)"/><text x="0" y="54" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="600" font-size="18" fill="${C.ink}">red</text></g>
+    <g transform="translate(102,420) rotate(6)"><rect x="-78" y="-66" width="156" height="132" rx="16" fill="#FFFFFF"/><use href="#b-s-star" transform="translate(0,-6) scale(.78)" style="--sf:${C.plum}"/></g>
+    <g transform="translate(598,420) rotate(-7)"><rect x="-78" y="-66" width="156" height="132" rx="16" fill="#FFFFFF"/><use href="#w-ball" transform="translate(0,-4) scale(.9)"/></g>
   </svg>`;
 }
 const cover = {
@@ -99,7 +99,7 @@ const startHerePage = {
     const sheets = ctx.acts.filter(a => a.pieces).length;
     const pieces = ctx.acts.reduce((t, a) => t + (a.pieces ? a.pieces.length : 0), 0);
     const pick = { b1: ['w-ball', 'moo', 'peekhouse'], b2: ['colorhunt', 'road', 'count123'], b3: ['maze1', 'rocket', 'odd'] };
-    return pageWrap('', `${textHead('Start here', 'Play today in three steps', `Prep time: <b>0 minutes</b> for ${nc} pages (print and play). <b>5–10 minutes</b> for pages with pieces: 12 straight cuts or fewer per sheet. No page takes longer to prep than it plays.`)}
+    return pageWrap('', `${textHead('Start here', 'Play today in four steps', `Prep time: <b>0 minutes</b> for ${nc} pages (print and play). <b>5–10 minutes</b> for pages with pieces: 12 straight cuts or fewer per sheet. No page takes longer to prep than it plays.`)}
       <div style="display:flex;flex-direction:column;gap:14px;margin-top:20px">
         <div class="step"><span class="num">1</span><div><h3>Find your child’s age band</h3><p>Pages are sorted by age. Ages are starting points, not deadlines: move up or down whenever you like.</p>
           <div class="pillrow" style="margin-top:8px">${['b1', 'b2', 'b3'].map(b => { const [a, z] = bandRange(ctx, b); return `<span class="chip" style="background:${BANDS[b].t}"><i style="background:${BANDS[b].c}"></i>${BANDS[b].label} · pages ${a}–${z}</span>`; }).join('')}</div></div></div>
@@ -113,7 +113,11 @@ const startHerePage = {
         <div class="stat"><b>${sheets}</b><span>piece sheets · ${pieces} pieces, all 2 in or bigger</span></div>
         <div class="stat"><b>${ctx.pages}</b><span>pages in all, US Letter and A4</span></div>
       </div>
-      <div class="card t-sky" style="margin-top:14px"><p><b>Inside too:</b> binder covers in 4 colors, spine and pouch labels, a weekly busy-book planner (Monday and Sunday starts, pre-filled and blank), make-your-own pages you can type into, a Busy Book Star certificate, an answer key and quick answers. <b>Color and Low-ink files</b> are included: Low-ink prints on white with colorable line art.</p></div>`, ctx, pn);
+      <div class="card t-sky" style="margin-top:14px"><p><b>Inside too:</b> binder covers in 4 colors, spine and pouch labels, a weekly busy-book planner (Monday and Sunday starts, pre-filled and blank), make-your-own pages you can type into, a Busy Book Star certificate, an answer key and quick answers. <b>Color and Low-ink files</b> are included: Low-ink prints on white with colorable line art.</p></div>
+      <div class="cols2" style="margin-top:14px">
+        <div class="card"><h3>What you need today</h3><ul><li>A printer and plain paper or cardstock</li><li>A grown-up and a child, side by side</li><li>That’s it for the ${nc} no-cut pages</li></ul></div>
+        <div class="card"><h3>Nice to have later</h3><ul><li>Scissors or a paper trimmer (straight cuts only)</li><li>Sheet protectors or a laminator, a binder and zip pouches</li><li>Velcro dots, for the 3–5 pages only</li></ul></div>
+      </div>`, ctx, pn);
   },
 };
 
@@ -149,12 +153,12 @@ const howToRead = {
   id: 'read', html: (ctx, pn) => {
     const a = ctx.acts.find(x => x.id === 'same-toys');
     const mini = activityPage(a, ctx, ctx.actPage[a.id]).replace('<section class="page', '<div class="mini').replace(/<\/section>$/, '</div>');
-    const s = 0.62;
+    const s = 0.6, mx = 34, gx = mx + 696 * s + 6;
     const pts = [[20, 30, 'Age band and starting age', 'A color and a word label, so you never rely on color alone.'], [560, 30, 'Cut or no-cut', 'No-cut pages are ready today. Cut pages point to their piece sheet.'], [20, 100, 'Title and how to play', 'One or two sentences. That’s all the instructions you need.'], [340, 400, 'The play area', 'Big, calm pictures for your child to point at, pat and place pieces on.'], [20, 740, 'Talk while you play', 'One line to say out loud, and the talk move it uses.'], [20, 810, 'Easier, harder, tired version', 'Three ways to play the same page, including a 2-minute one.'], [20, 880, 'Prep, mess, needs, safety', 'Honest prep time, what you need and the safety note for this page.']];
     return pageWrap('', `${textHead('How to read a page', 'Every page works the same way')}
-      <div style="position:absolute;left:0;top:92px;width:${696 * s}px;height:${960 * s}px;border-radius:14px;box-shadow:0 0 0 1.5px #D5DCE8;overflow:hidden"><div style="transform:scale(${s});transform-origin:0 0">${mini}</div>
-        ${pts.map(([x, y], i) => `<span class="callout" style="left:${x * s - 4}px;top:${y * s - 6}px">${i + 1}</span>`).join('')}</div>
-      <ul class="legend" style="position:absolute;left:${696 * s + 22}px;right:0;top:100px">${pts.map(([, , h, t], i) => `<li><span class="num">${i + 1}</span><span><b>${h}.</b> ${t}</span></li>`).join('')}</ul>
+      <div style="position:absolute;left:${mx}px;top:92px;width:${696 * s}px;height:${960 * s}px;border-radius:14px;box-shadow:0 0 0 1.5px #D5DCE8;overflow:hidden"><div style="transform:scale(${s});transform-origin:0 0">${mini}</div></div>
+      ${pts.map(([x, y], i) => `<span class="callout" style="left:${x > 300 && y < 60 ? gx : 2}px;top:${92 + y * s - 8}px">${i + 1}</span>`).join('')}
+      <ul class="legend" style="position:absolute;left:${gx + 36}px;right:0;top:100px">${pts.map(([, , h, t], i) => `<li><span class="num">${i + 1}</span><span><b>${h}.</b> ${t}</span></li>`).join('')}</ul>
       <div class="card t-sun" style="position:absolute;left:0;right:0;bottom:40px"><p><b>Piece sheets</b> come right after their activity page. Each piece shows the page it belongs to in its corner (for example “p.${ctx.actPage[a.id]}”), so strays always find their way home.</p></div>`, ctx, pn);
   },
 };
@@ -163,11 +167,11 @@ const howToRead = {
 const safety = {
   id: 'safety', html: (ctx, pn) => pageWrap('', `${textHead('Safety first', 'Our play safety rules', 'Every page in this book follows these rules. Please read them once before you start.')}
     <div style="display:grid;grid-template-columns:1.05fr 1fr;gap:16px;margin-top:18px">
-      <div class="card t-grass" style="display:flex;gap:14px;align-items:center"><svg width="110" height="160" viewBox="-40 -60 80 120" style="flex:none"><use href="#b-tube" transform="scale(1.2)"/></svg><div><h3>The toilet-paper-tube test</h3><p>For children under 3, nothing small enough to fit through a toilet-paper tube (about 1.25 in / 3.2 cm across). <b>Every cut piece in this book is 2 in (5.1 cm) or bigger</b> on its shortest side, and the pieces for 1–2 years are 2.5 in (6.3 cm) or bigger.</p></div></div>
+      <div class="card t-grass" style="display:flex;gap:14px;align-items:center"><svg width="110" height="160" viewBox="-40 -60 80 120" style="flex:none"><use href="#b-tube" transform="scale(1.2)"/></svg><div><h3>The toilet-paper-tube test</h3><p>For children under 3, nothing small enough to fit through a toilet-paper tube (about 1.25 in / 3.2 cm across). <b>Every cut piece in this book is 2 in (5.1 cm) or bigger</b> on its shortest side, and the pieces for 1–2 years are 2.5 in (6.4 cm) or bigger.</p></div></div>
       <div class="card t-sun"><h3>Grown-up keeps the pieces</h3><p>Count pieces out and back in. Store them in a pouch or envelope that the grown-up keeps. Throw away any piece that tears, bends, gets wet or peels.</p></div>
     </div>
     <div class="cols3" style="margin-top:14px">
-      <div class="card"><h3>Always together</h3><p>Every activity is played with a grown-up right there. Paper and pieces are for hands, not mouths.</p></div>
+      <div class="card"><h3>Always together</h3><p>Every activity is played with a grown-up right there. Read together and keep paper and pieces away from mouths.</p></div>
       <div class="card"><h3>Velcro rules</h3><p><b>No loose velcro dots for under-3s:</b> for 1–2 and 2–3 pages, lay pieces on top. For 3–5 pages velcro is optional: <b>check dots before each play</b> and keep pieces away from younger children.</p></div>
       <div class="card"><h3>Laminated edges</h3><p>Leave a small border when you cut laminated pieces and round the corners so edges stay soft.</p></div>
       <div class="card"><h3>Crayons and pens</h3><p>Dry-erase crayons are for the 3–5 pages, with a grown-up. The grown-up keeps caps, which are small.</p></div>
@@ -221,7 +225,7 @@ function finderCols(ctx, bands) {
   const rows = bandRows(bands[0]); const half = Math.ceil(rows.length / 2);
   return `<div class="finder"><div>${rows.slice(0, half).join('')}</div><div style="padding-top:26px">${rows.slice(half).join('')}</div></div>`;
 }
-const finder1 = { id: 'find1', html: (ctx, pn) => pageWrap('', `${textHead('Page finder · 1 of 2', 'Every activity, by age')}<p class="small" style="margin:4px 0 10px">Tick the pages you’ve played. Stars go on the favorites.</p>${finderCols(ctx, ['b1', 'b2'])}`, ctx, pn) };
+const finder1 = { id: 'find1', html: (ctx, pn) => pageWrap('', `${textHead('Page finder · 1 of 2', 'Every activity, by age')}<p class="small" style="margin:4px 0 10px">Tick the pages you’ve played. Draw a star by the favorites.</p>${finderCols(ctx, ['b1', 'b2'])}`, ctx, pn) };
 const finder2 = { id: 'find2', html: (ctx, pn) => pageWrap('', `${textHead('Page finder · 2 of 2', 'Every activity, by age')}<div style="margin-top:12px">${finderCols(ctx, ['b3'])}</div>
   <table class="tbl" style="margin-top:16px"><tr class="bh"><td colspan="3">Also inside</td></tr>${[['Binder covers (4 colors), spine and pouch labels', ctx.actPage['x-cov1'] + '–' + ctx.actPage['x-pouch']], ['Make your own pages (fillable)', ctx.actPage['x-own1'] + '–' + ctx.actPage['x-own5']], ['Weekly busy-book planner (Monday and Sunday starts)', ctx.actPage['x-plan1'] + '–' + ctx.actPage['x-plan4']], ['Busy Book Star certificate', ctx.actPage['x-cert']], ['Answer key', ctx.actPage['x-answers']], ['Quick answers', ctx.actPage['x-faq']]].map(([t, p]) => `<tr><td class="pg" style="width:60px">${p}</td><td colspan="2"><b>${t}</b></td></tr>`).join('')}</table>`, ctx, pn) };
 
@@ -243,9 +247,9 @@ const coverPage = (i) => ({
     const art = [['w-duck', 'b-apple', 'w-ball'], ['b-fish', 'w-star', 'a-car'], ['b-frog', 'a-leaf', 'b-bus'], ['b-teddy', 'w-moon', 'b-s-heart']][i];
     return `<section class="page band-n"><div class="live">
       <div class="cover-bg" style="background:${c}"></div>
-      <div style="position:absolute;left:40px;top:40px;right:40px;display:flex;justify-content:space-between;align-items:center"><img src="${ctx.rel}brand/logo/lockup-horizontal-reverse.svg" style="height:34px"><span class="chip">Binder cover · ${name}</span></div>
+      <div style="position:absolute;left:40px;top:40px;right:40px;display:flex;justify-content:space-between;align-items:center"><img src="${ctx.rel}brand/logo/lockup-horizontal-white.svg" style="height:34px" alt="Play Before Pixels"><span class="chip">Binder cover · ${name}</span></div>
       <div style="position:absolute;left:40px;right:40px;top:150px;text-align:center;color:#fff"><div class="hand" style="font-size:40px">my</div><h1 style="font-size:92px;color:#fff">Busy Book</h1></div>
-      <svg class="board" style="position:absolute;left:48px;top:370px" width="600" height="300" viewBox="0 0 600 300">${art.map((id, k) => `<circle cx="${110 + k * 190}" cy="150" r="96" fill="${t}"/>` + `<use href="#${id}" transform="translate(${110 + k * 190},150) scale(1.3)" ${id === 'b-s-heart' ? `style="--sf:${C.tomato}"` : ''}/>`).join('')}</svg>
+      <svg class="board" style="position:absolute;left:48px;top:370px" width="600" height="300" viewBox="0 0 600 300">${art.map((id, k) => `<circle cx="${110 + k * 190}" cy="150" r="86" fill="${t}"/>` + `<use href="#${id}" transform="translate(${110 + k * 190},150) scale(1.15)" ${id === 'b-s-heart' ? `style="--sf:${C.tomato}"` : ''}/>`).join('')}</svg>
       <div style="position:absolute;left:90px;right:90px;top:720px;background:#fff;border-radius:22px;padding:18px 24px"><div class="lab">This busy book belongs to</div><div data-field="cover_name" class="kid" style="height:54px;font-size:36px;border-bottom:2px dashed #C9D1DE;margin-top:4px"></div><div class="small" style="margin-top:6px">Type a name here before printing, or write it by hand.</div></div>
       <div style="position:absolute;left:0;right:0;bottom:28px;text-align:center;color:#fff;font-size:10px;font-weight:700;opacity:.85">Slide into a clear-view binder · ${VERSION}</div>
     </div></section>`;
@@ -285,7 +289,8 @@ function divider(band, list) {
 }
 
 // ---------------- back matter ----------------
-const people = [['Mama', 'A'], ['Dada', 'G1'], ['Grandma', 'G4'], ['Grandpa', 'G3'], ['me!', 'C'], ['our dog', 'dog']];
+const GRANDPA = { skin: '#F4CFAE', hair: '#F3F6FB', hs: 'short' };
+const people = [['Mama', 'G5'], ['Dada', 'G1'], ['Grandma', 'G4'], ['Grandpa', GRANDPA], ['me!', 'C'], ['our dog', 'dog']];
 const peoplePage = (filled) => ({
   id: filled ? 'own1' : 'own2', html: (ctx, pn) => pageWrap('', `${header('b1', 'Make your own · first words', `<span class="tag">${ui('u-nocut')}${filled ? 'Example' : 'Fillable'}</span>`)}
     <div class="tt"><h1>My people</h1><p class="how"><b>${filled ? 'Tape a photo in each frame.' : 'Type the names, print, then tape in photos.'}</b> ${filled ? 'Photos of family and friends are some of the best first words there are.' : 'Use any names your family uses: Mom, Ima, Abuela, Nonno, Auntie, our cat…'}</p></div>
@@ -371,6 +376,8 @@ const faq = {
       ['Is anything shipped?', 'No, it’s a digital download. You print at home or at a print shop, as many copies as your own family needs.'],
       ['My child only wants one page. Is that OK?', 'Completely. Most children love two or three pages and repeat them. Try that page’s “harder” line when it feels easy.'],
       ['Is this a lesson plan or a program?', 'No. It’s play for families: pages to talk about together, with no tests or scores. It isn’t medical or professional advice. Questions about development go to your pediatrician.'],
+      ['Can I use it with a group or class?', 'This copy is for your own home. <span class="site-only">Child-care and classroom licenses are at playbeforepixels.com/licenses.</span><span class="etsy-only">For a child-care or classroom license, send us a message through the shop.</span>'],
+      ['Can I share it with a friend?', 'Please share a photo of your busy book, not the files. If a friend would like a copy, they can buy their own; it keeps new pages coming.'],
       ['A file won’t open on my phone', '<span class="site-only">Download on a computer or tablet if you can. Help with downloads and printing: playbeforepixels.com/help.</span><span class="etsy-only">Etsy downloads work best in a web browser on a computer or tablet (the app can’t download files). Send us a message through the shop if you’re stuck.</span>'],
     ].map(([q, a]) => `<div><h4>${q}</h4><p>${a}</p></div>`).join('')}</div>`, ctx, pn),
 };
@@ -382,7 +389,7 @@ const moreFrom = {
 const bonus = {
   id: 'bonus', html: (ctx, pn) => pageWrap('', `<div class="site-only">${textHead('Your free bonus', 'One more thing: a free bonus', 'Get a free companion printable, <b>Busy Book Extras</b> (seasonal pages for the same age bands), plus a short monthly “play at this age” email.')}
     <div style="display:flex;gap:28px;align-items:center;margin-top:26px"><div style="background:#fff;border-radius:18px;padding:14px;box-shadow:0 0 0 2px #D5DCE8">${qrSvg(230)}</div>
-      <div style="flex:1;min-width:0"><div class="lab">Scan, or type the short link</div><p class="disp" style="font-size:19px;margin-top:6px;overflow-wrap:anywhere">${BONUS}</p><p style="font-size:12.5px;line-height:1.45;margin-top:10px">We only ask for an email and your child’s birth month and year, so the ideas fit their age. We never ask for your child’s name. Unsubscribe any time.</p></div></div></div>
+      <div style="flex:1;min-width:0"><div class="lab">Scan, or type the short link</div><p class="disp" style="font-size:19px;margin-top:6px;line-height:1.25">${BONUS.replace(/^(.*\/)([^/]+)$/, '<span style="white-space:nowrap">$1</span><br><span style="white-space:nowrap">$2</span>')}</p><p style="font-size:12.5px;line-height:1.45;margin-top:10px">We only ask for an email and your child’s birth month and year, so the ideas fit their age. We never ask for your child’s name. Unsubscribe any time.</p></div></div></div>
     <div class="etsy-only">${textHead('Thank you', 'Thank you for playing with us', 'We hope a few of these pages become favorites. If they do, a review in the shop helps other families find us.')}</div>
     <div class="card t-sun" style="margin-top:26px"><h3>Share the fun</h3><p>Snap a photo of your busy book or the Busy Book Star certificate and share it with friends and family. Sharing is always optional; please don’t share the files themselves.</p></div>
     <div style="position:absolute;left:0;right:0;bottom:60px;display:flex;justify-content:center"><img src="${ctx.rel}brand/logo/lockup-stacked.svg" style="height:120px"></div>`, ctx, pn),
@@ -395,8 +402,11 @@ const back = [peoplePage(true), peoplePage(false), wordsPage, blankBoard, blankP
 // START HERE file: a short standalone guide (Etsy file 1)
 function startHere(ctx) {
   const pages = [cover, startHerePage, guide1, safety, buildIt, printing, faq];
-  const files = `<section class="page band-n"><div class="live">${textHead('START HERE', 'What’s in your download', 'Five files. Open this one first, then print from the file that matches your paper.')}
-    <table class="tbl" style="margin-top:16px;font-size:12px">${[['1', 'START HERE.pdf', 'This guide: quick start, grown-up guide, safety, assembly, printing and quick answers.'], ['2', 'Color · US Letter', `All ${ctx.pages} pages in color, 8.5 × 11 in.`], ['3', 'Color · A4', `All ${ctx.pages} pages in color, 210 × 297 mm.`], ['4', 'Low-ink · US Letter', 'White pages with colorable line art. Same pages, same piece sizes.'], ['5', 'Low-ink · A4', 'White pages with colorable line art, A4.']].map(([n, f, d]) => `<tr><td class="pg">${n}</td><td><b>${f}</b></td><td>${d}</td></tr>`).join('')}</table>
+  const rows = ctx.etsy
+    ? [['1', 'START HERE.pdf', 'This guide: quick start, grown-up guide, safety, assembly, printing and quick answers.'], ['2', 'Color · US Letter', `All ${ctx.pages} pages in color, 8.5 × 11 in.`], ['3', 'Color · A4', `All ${ctx.pages} pages in color, 210 × 297 mm.`], ['4', 'Low-ink · US Letter', 'White pages with colorable line art. Same pages, same piece sizes.'], ['5', 'Low-ink · A4', 'White pages with colorable line art, A4.']]
+    : [['1', 'START HERE (US Letter or A4)', 'This guide: quick start, grown-up guide, safety, assembly, printing and quick answers.'], ['2', 'toddler-busy-book.pdf', `All ${ctx.pages} pages in color, US Letter 8.5 × 11 in.`], ['3', 'toddler-busy-book-A4.pdf', `All ${ctx.pages} pages in color, A4 210 × 297 mm.`], ['4', 'toddler-busy-book-low-ink-Letter.pdf', 'White pages with colorable line art, US Letter. Same pages, same piece sizes.'], ['5', 'toddler-busy-book-low-ink-A4.pdf', 'White pages with colorable line art, A4.'], ['6', 'PNG templates (zip)', '18 blank covers, cards, boards, labels and a certificate at 300 dpi for design apps. Optional.']];
+  const files = `<section class="page band-n"><div class="live">${textHead('START HERE', 'What’s in your download', `${ctx.etsy ? 'Five files' : 'Your files'}. Open this one first, then print from the file that matches your paper. Page numbers in this guide point to the main book.`)}
+    <table class="tbl" style="margin-top:16px;font-size:12px">${rows.map(([n, f, d]) => `<tr><td class="pg">${n}</td><td><b>${f}</b></td><td>${d}</td></tr>`).join('')}</table>
     <div class="card t-sun" style="margin-top:16px"><h3>Type-in pages</h3><p>In every main file, the binder covers, spine and pouch labels, make-your-own pages, weekly planners and certificate have type-in boxes. Open the file in a free PDF reader, type, save, then print.</p></div>
     <div class="card t-sky" style="margin-top:12px"><h3>Prep time</h3><p><b>0 minutes</b> for ${count(ctx, a => !a.cut && !a.usesPiecesOf)} pages. <b>5–10 minutes</b> for pages with pieces (12 straight cuts or fewer per sheet).</p></div>
     ${footer(ctx, 2)}</div></section>`;

@@ -22,7 +22,7 @@ Whatever comes, answer it as if it were the best thing anyone has said all day. 
 
 The pause works in songs too: “Twinkle, twinkle, little…” then wait. Or in games: “Ready, set…” and wait for your child to say or sign “Go!”
 
-It feels strange at first. Keep going. Many parents say this is the move that surprised them most.
+It feels strange at first. Keep going. It may turn out to be the move that surprises you most.
 
 **Today’s one small step:** Use a five-second pause at least three times today.
 

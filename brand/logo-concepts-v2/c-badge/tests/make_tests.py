@@ -105,7 +105,7 @@ label{{position:absolute;left:22px;bottom:16px;font-size:13px;font-weight:700;le
   font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;box-shadow:inset 0 -5px 0 rgba(29,41,64,.07),inset 0 5px 0 rgba(255,255,255,.5)}}
 .e .spine:nth-child(2){{margin-left:10px}}
 .f{{left:848px;top:524px;width:704px;height:432px;background:{SKY_T};gap:56px}}
-.tote{{position:relative;width:300px;height:424px;margin-top:0}}
+.tote{{position:relative;width:300px;height:424px;transform:scale(.84);margin:-34px -24px -34px 0}}
 .stitch{{display:flex;flex-direction:column;align-items:center;gap:10px;width:150px;text-align:center;font-size:13px;font-weight:700}} .stitch span{{opacity:.7}}'''
 p = page('preview-sheet.html', body, 1600, 1000, css)
 jobs.append(dict(html=p, png=os.path.join(D, 'preview-sheet.png'), w=1600, h=1000))

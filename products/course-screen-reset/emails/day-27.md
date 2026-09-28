@@ -46,7 +46,7 @@ Invite, don’t instruct. Ideas and shared words travel better than rules.
 Today’s pages in your workbook: Day 27. {{workbook_download_link}}
 
 ---
-**Next for your family:** The Day the Tablet Slept. A funny bedtime read-aloud for ages 3–7 about a box rocket, a dog named Biscuit and one very sleepy tablet. https://playbeforepixels.com/shop/picture-tablet-slept
+**Next for your family:** The Day the Tablet Slept. A funny bedtime read-aloud for ages 3–7 about a box rocket, the family dog and one very sleepy tablet. https://playbeforepixels.com/shop/picture-tablet-slept
 
 **Share with a friend:** give $5, get $5. {{referral_link}}
 

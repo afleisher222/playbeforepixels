@@ -99,7 +99,7 @@ module.exports = {
   'Paper Plane Contest': [60, 0, 1, 10, 1, 0, 'Fold one simple plane together.', 'Add a target to land on.', 'Fold one plane from the couch; they test it.'],
   'Backyard Games Day': [60, 10, 1, 20, 0, 1, 'Two events only.', 'Keep scores and build a winners’ stand.', 'One race to the fence and back.'],
   'Invent a Board Game': [72, 10, 1, 20, 1, 0, 'A 15-square path with one special square.', 'Add challenge cards to draw.', 'Play one quick round of a game they made.'],
-  'Four-Box Comic': [60, 0, 1, 20, 1, 0, 'Two boxes: before and after.', 'Add speech bubbles and a title.', 'Tell a four-part story out loud.'],
+  'Four-Box Comic': [60, 0, 1, 20, 1, 0, 'Two boxes: before and after.', 'Add talk bubbles and a title.', 'Tell a four-part story out loud.'],
   'Kitchen Fizz': [60, 2, 3, 10, 0, 0, 'One spoon of soda, one splash of vinegar.', 'Measure: does more soda make more fizz?', 'Watch one fizz together at the sink.'],
   'Restaurant Night': [60, 10, 2, 20, 0, 0, 'Serve one snack on a plate.', 'Add prices and add up the bill.', 'Order from the couch; they serve you.'],
   'Chalk Maze': [60, 2, 2, 20, 0, 1, 'A short path with one dead end.', 'Draw it as a spiral with two exits.', 'Draw a maze on paper instead.'],

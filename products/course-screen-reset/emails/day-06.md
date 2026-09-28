@@ -1,6 +1,6 @@
 ---
 subject: "Day 6: A kind ending for screen time"
-preheader: "Most screen trouble happens at the end. A warning, a clear ending and a landing activity m"
+preheader: "Most screen trouble happens at the end. A warning, a clear ending and a landing…"
 send: "day 6, 7:00 local time"
 ---
 
@@ -14,13 +14,13 @@ If screens end in tears at your house, you are not alone. Stopping something fun
 
 Here is a three-part ending you can use every day.
 
-First, a warning. Five minutes before the end, sit next to your child and say, “Two more minutes, then the tablet goes to sleep.” Touching their shoulder or looking at the screen with them helps the warning land.
+First, a warning. Two minutes before the end, sit next to your child and say, “Two more minutes, then the tablet goes to sleep.” Touching their shoulder or looking at the screen with them helps the warning land.
 
 Second, a clear ending. Use something outside of you: the end of an episode, a kitchen timer, a song. Then the timer is the bad guy, not you. Some families “tuck the tablet in” to a drawer or basket and say goodnight to it.
 
 Third, a landing. Have the next thing ready and say it out loud: “Now we go outside and find the moon.” Children move more easily toward something than away from something.
 
-Expect some protest, especially this week. You don’t need to argue or explain again. Stay close, stay calm and keep the ending the same every day. Most families find the ending gets easier within a week or two.
+Expect some protest, especially this week. You don’t need to argue or explain again. Stay close, stay calm and keep the ending the same every day. The ending often gets easier once it has stayed the same for a week or two.
 
 **Today’s one small step:** Use the warning, the clear ending and the landing at today’s screen spot.
 
@@ -35,7 +35,7 @@ When screen time ends, let your child switch the device off and “tuck it in”
 - **Make it easier:** Your toddler helps you lay the towel on top and waves bye-bye.
 - **Make it harder:** A big kid is the “keeper” who puts the device to bed and picks the next play.
 - **Tired-grown-up version (2 minutes):** Just say, “Night-night, tablet,” and hold out your hand.
-- **Safety:** Grown-ups handle chargers and cords, and keep them out of reach of young children.
+- **Safety:** Switch the device off first and never cover a device while it is charging. Grown-ups handle chargers and cords, and keep them out of reach of young children.
 
 ## Plain words for: When the screen spot ends
 
@@ -48,7 +48,7 @@ Same words every day. The routine does the work so you don’t have to win an ar
 Today’s pages in your workbook: Day 6. {{workbook_download_link}}
 
 ---
-**Next for your family:** Play-First Family Kit. A screen-rhythm chart, a family play plan and helping-jobs pages to put this week on the fridge. https://playbeforepixels.com/shop/printables-family-kit
+**Next for your family:** Play-First Family Kit. A screen-rhythm chart, a family play plan and helping-jobs pages to put this week on the fridge. https://playbeforepixels.com/shop/play-first-family-kit
 
 **Share with a friend:** give $5, get $5. {{referral_link}}
 

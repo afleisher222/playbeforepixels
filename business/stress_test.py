@@ -425,7 +425,6 @@ def steady_state_fixed(OPEX, cost_pos, contin, year=2):
     for item, cat, low, high, freq, start, end, inc in OPEX:
         if not inc:
             continue
-        mo_active = (start <= 12 * (year - 1) + 6 <= end) or (year == 1 and start <= 12 and end >= 6)
         if year == 2 and not (start <= 18 <= end):
             continue
         if year == 1 and not (start <= 9 <= end):
@@ -802,7 +801,7 @@ def main(argv=None):
     # ---------------- 3. Monte Carlo
     rng = np.random.default_rng(a.seed)
     D = draw_mc(rng, a.runs, base, mc)
-    r = simulate(D, W)
+    r = simulate(D, W, keep_monthly=True)
     P(f"\n## 3. Monte Carlo ({a.runs:,} runs, no ad budget)\n")
     rows = []
     for lab, k in (("Gross sales, Oct 2026 - Sep 2027", "rev_y1"), ("Operating profit, Oct 2026 - Sep 2027", "op_y1"),
@@ -860,6 +859,23 @@ def main(argv=None):
         ("Calendar-2026 gross sales of $1,000,000 or more", (r["rev_cy26"] >= 1e6).mean()),
     ]
     P("\n" + table(["Probability", "Share of runs"], [(p_[0], f"{p_[1]*100:.1f}%") for p_ in probs]))
+    # when does the median future reach the break-even pace and its first 100 orders?
+    om = r["monthly"]["orders"]
+    hit = om >= be_orders
+    first_be = np.where(hit.any(1), hit.argmax(1), T)
+    cum = np.cumsum(om, axis=1)
+    first_100 = np.where((cum >= 100).any(1), (cum >= 100).argmax(1), T)
+    def mname(q, arr):
+        i = int(np.percentile(arr, q, method="lower"))
+        return MONTH_NAMES[i] if i < T else "after Dec 2027"
+    P("\nMilestones (month reached, across runs):\n")
+    P(table(["Milestone", "P25 (faster futures)", "P50", "P75 (slower futures)", "Not reached by Dec 2027"],
+            [(f"Monthly orders first reach the break-even pace ({be_orders:.0f})", mname(25, first_be), mname(50, first_be),
+              mname(75, first_be), f"{(first_be >= T).mean()*100:.0f}%"),
+             ("Cumulative orders pass 100", mname(25, first_100), mname(50, first_100), mname(75, first_100),
+              f"{(first_100 >= T).mean()*100:.0f}%")]))
+    out["milestones"] = {"first_be_p50": mname(50, first_be), "first_100_p50": mname(50, first_100),
+                         "never_be": float((first_be >= T).mean())}
     out["mc"] = {k: {"p10": pct(r[k], 10), "p50": pct(r[k], 50), "p90": pct(r[k], 90), "mean": float(r[k].mean())}
                  for k in ("rev_y1", "op_y1", "net_y1", "orders_y1", "rev_cy26", "op_cy26", "net_cy26",
                            "orders_cy26", "visitors_m12", "orders_m12", "visitors_cy26", "op_m12", "peak_loss",

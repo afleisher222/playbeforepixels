@@ -13,7 +13,8 @@ for v in store-color-letter store-color-a4 store-low-letter store-low-a4 etsy-co
   node render-pdf.js out/kit-$v.html tmp/$v.pdf
   node fields.js out/kit-$v.html tmp/$v.fields.json
   node -e "const m=require('./out/manifest.json')['kit-$v'];require('fs').writeFileSync('tmp/$v.toc.json',JSON.stringify(m.toc))"
-  python3 finish.py tmp/$v.pdf tmp/$v.final.pdf --fields tmp/$v.fields.json --toc tmp/$v.toc.json --title "First Phone Agreement Kit ($v)"
+  case $v in *color*) ink="Color";; *) ink="Low-ink";; esac; case $v in *a4) sz="A4";; *) sz="US Letter";; esac
+  python3 finish.py tmp/$v.pdf tmp/$v.final.pdf --fields tmp/$v.fields.json --toc tmp/$v.toc.json --title "First Phone Agreement Kit · $ink · $sz"
 done
 for e in store etsy; do node render-pdf.js out/start-here-$e.html tmp/start-$e.pdf; python3 finish.py tmp/start-$e.pdf "tmp/START HERE-$e.pdf" --title "START HERE: First Phone Agreement Kit"; done
 cd ..

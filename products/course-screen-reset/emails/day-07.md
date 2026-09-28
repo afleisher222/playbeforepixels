@@ -16,7 +16,7 @@ Open your tracker. Don’t count what you missed; look for what helped. Did the 
 
 Pick the one thing that helped most and keep doing it. If something didn’t work, change it. Maybe the screen spot is at the wrong time of day. Maybe the basket needs different things. Adjusting is the program working, not failing.
 
-Some days this week probably went sideways. Someone got sick, work ran late, or you were just done. On those days, a screen may have filled more of the day. That’s okay. Tomorrow the spot is back where it lives. No catching up, no making up for it.
+Some days this week probably went sideways. Someone got sick, work ran late, or you were just done. On those days, a screen may have filled more of the day. That’s okay. Tomorrow the spot is back where it lives. No making up for it, and no extra rules.
 
 One more thing: notice what your child asked for again. A song, a play, a place in the house. Children tell us what they love by asking for it again and again. That list is gold. Write it down.
 
@@ -33,7 +33,7 @@ Drape a blanket over a table or two chairs to make a hideout. Bring in a flashli
 - **Make it easier:** Just drape the blanket over your knees and play peekaboo inside.
 - **Make it harder:** Big kids design a den with a sign, a door flap and a secret knock.
 - **Tired-grown-up version (2 minutes):** Lie under the blanket together and read one book with a flashlight.
-- **Safety:** Use a light blanket, keep faces uncovered and stay nearby. No cords or strings tied to the den.
+- **Safety:** Use a light blanket, keep faces uncovered and stay nearby. No cords or strings tied to the den. Use a flashlight whose battery cover screws shut.
 
 ## Plain words for: When a day doesn’t go to plan (words for yourself)
 
@@ -46,7 +46,7 @@ Kindness to yourself is part of the program. Guilt tends to make the next day ha
 Today’s pages in your workbook: Day 7. {{workbook_download_link}}
 
 ---
-**Next for your family:** Play-First Family Kit. A screen-rhythm chart, a family play plan and helping-jobs pages to put this week on the fridge. https://playbeforepixels.com/shop/printables-family-kit
+**Next for your family:** Play-First Family Kit. A screen-rhythm chart, a family play plan and helping-jobs pages to put this week on the fridge. https://playbeforepixels.com/shop/play-first-family-kit
 
 **Share with a friend:** give $5, get $5. {{referral_link}}
 
