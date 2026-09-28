@@ -259,7 +259,7 @@ for name, (title, body) in lst.items():
 write('cover.html', page('Play Before Pixels logo tee', f'''<div style="position:absolute;inset:0;background:var(--t-sun)"></div>
 <div class="pad" style="top:110px"><div class="kick">Adult unisex tee · XS–3XL</div>
 <h1 class="disp" style="margin-top:24px">Play Before Pixels<br>logo tee</h1></div>
-<div class="lay shadow" style="left:330px;top:500px;width:1060px">{tee('#FFFFFF', 'light', '')}</div>
+<div class="lay shadow" style="left:270px;top:500px;width:1060px">{tee('#FFFFFF', 'light', '')}</div>
 <svg style="position:absolute;left:0;top:0" width="1600" height="1600">{ball_sym(1400, 620, 56, 20)}{block(1340, 740, 1.3, 1, -10)}</svg>''',
     '', L_CSS.replace('2000px', '1600px').replace('150px;line-height', '124px;line-height')))
 
@@ -277,7 +277,7 @@ front = f'''<div class="page" style="background:var(--sun)"><div class="safe" st
 
 
 def back(site):
-    mid = (f'''<div style="display:flex;gap:.08in;align-items:center;margin-top:.12in">{qr_svg(52)}
+    mid = (f'''<div style="display:flex;gap:.08in;align-items:center;margin-top:.12in">{qr_svg(68)}
 <div class="t" style="font-size:6.2pt"><b>Free play ideas</b> for your family:<br>playbeforepixels.com/<br>bonus/merch-core</div></div>''' if site else
            '''<div class="t" style="margin-top:.12in"><b>Care:</b> machine wash cold, inside out. Tumble dry low. Don’t iron the print.</div>''')
     return f'''<div class="page" style="background:#fff"><div class="safe">
@@ -286,7 +286,7 @@ def back(site):
 <div class="t" style="margin-top:.07in">Our mark is the P of Play. A ball comes back to close it, like the serve and return of talk and play. The small gap is the pause that gives a child a turn.</div>
 {mid}
 <div style="position:absolute;bottom:0;left:0;right:0">
-<div class="t" style="font-size:5.4pt;color:var(--muted)">Printed on demand for you.<br>Play Before Pixels™ is a trade name of AlphaPlay LLC. © 2026 AlphaPlay LLC.<br>{VERSION} · {'site' if site else 'marketplace'} edition</div></div></div></div>'''
+<div class="t" style="font-size:5.4pt;color:var(--muted)">Printed on demand for you.<br>© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.<br>{VERSION} · {'site' if site else 'marketplace'} edition</div></div></div></div>'''
 
 
 write('hang-tag.html', page('Hang tag and pack-in card', front + back(True) + back(False), '', HT_CSS, '2.25in 3.75in'))

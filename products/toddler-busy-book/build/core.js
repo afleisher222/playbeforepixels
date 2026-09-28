@@ -50,6 +50,9 @@ h1,h2,h3,.disp{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-w
 .kid{font-family:"Fredoka","Nunito Sans",sans-serif;font-weight:600}
 .hand{font-family:"Caveat","Nunito Sans",cursive;font-weight:700}
 svg{display:block}
+.sk{fill:var(--sk)}.hr{fill:var(--hr)}.sh{fill:var(--sh)}.pa{fill:var(--pa)}.so{fill:var(--so)}.hw{fill:var(--hw)}.ck{fill:${C.tomato};opacity:.28}
+body.lowink .ck{display:none}
+body.lowink .sildefs :is(path,rect,circle,ellipse){fill:#E6EAF1!important;stroke:#8A96AD!important;stroke-width:1.2px;vector-effect:non-scaling-stroke}
 .ui{width:14px;height:14px;display:inline-block;vertical-align:-2px;flex:none}
 b,strong{font-weight:800}
 .band-b1{--bc:var(--grass);--bt:var(--t-grass);--bon:#FFFFFF}
@@ -174,11 +177,11 @@ function pieceGrid(pieces, cell, cols, ref) {
 }
 
 // ---------- html doc ----------
-function htmlDoc({ title, rel, size, lowink, etsy, body, extraCss = '' }) {
+function htmlDoc({ title, rel, size, lowink, etsy, body, extraCss = '', extraDefs = '' }) {
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${title}</title>
 <link rel="stylesheet" href="${rel}brand/fonts/fonts.css">
 <style>${css(size)}${extraCss}</style></head>
-<body class="${lowink ? 'lowink' : 'color'} ${etsy ? 'etsy' : 'site'}">${ARTDEFS}${UIDEFS}
+<body class="${lowink ? 'lowink' : 'color'} ${etsy ? 'etsy' : 'site'}">${ARTDEFS}${UIDEFS}<svg class="sildefs" width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${extraDefs}</defs></svg>
 ${body}
 </body></html>`;
 }

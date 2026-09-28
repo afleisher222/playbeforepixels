@@ -34,7 +34,7 @@ function doc(V) {
   const MARK = up + '../../brand/logo/mark-small' + (V.gray ? '-black' : '') + '.svg';
   let pageNo = 0;
   const pages = [];
-  const F = (name, cls = '', lines = 1) => V.fill ? fld(name, cls, lines) : `<span class="field ${cls}"></span>`;
+  const F = (name, cls = '', lines = 1) => V.fill ? fld(name, cls, lines) : `<span class="field ${cls}" data-lines="${lines}"></span>`;
 
   // ---------- page shell
   function page(body, o = {}) {
@@ -170,7 +170,8 @@ function doc(V) {
         <div class="moves">${Object.values(K.MOVES).map((m, i) => `<div class="move"><span class="mn">${i + 1}</span><div><b>${esc(m.name)}</b>${esc(m.tip)}</div></div>`).join('')}</div>
         <div class="love"><b>Good to know:</b> most children love 2–3 of these plays far more than the rest and ask for them again and again. That’s the program working. Repeat the favorites.</div>
       </div>
-    </div>`, { run: 'Grown-up guide' });
+    </div>
+    <div class="turns"><h3>What counts as a turn?</h3><div class="trow">${[['eye', 'A look'], ['hand', 'A point or a sign'], ['note', 'A sound or a song'], ['heart', 'A smile'], ['book', 'A word'], ['phone', 'A tap on a talking device']].map(([a, t]) => `<div class="tt">${artDisc(a, C.tSky, .8)}<span>${t}</span></div>`).join('')}</div><p class="small">Every one of these is communicating. Answer it as if it were the best thing anyone has said all day.</p></div>`, { run: 'Grown-up guide' });
 
   // Safety + icon key
   page(`${H('Before you play', 'Safety, ages and how to read a play')}
@@ -193,13 +194,14 @@ function doc(V) {
         <div class="keyrow">${ico('talk', 'k')}<div><b>Talk while you play</b>One talk line to try, and the talk move it uses.</div></div>
         <div class="keyrow">${ico('bolt', 'k')}<div><b>Tired-grown-up version</b>Two minutes, no setup, for days when you’re running on empty.</div></div>
       </div>
-    </div>`, { run: 'Safety and ages' });
+    </div>
+    <div class="tube"><svg viewBox="0 0 24 24" width="64" height="64" class="tubei"><use href="#u-tube"/></svg><div><h3>The tube test for under-3s</h3><p>Try to push the object through an empty toilet-paper tube. If it fits, it’s too small for a child under 3. Keep it out of the play basket and out of reach.</p></div></div>`, { run: 'Safety and ages' });
 
   // Planning pages
   const slots = [['Wake-up and breakfast', 'sun'], ['Morning', 'leaf'], ['Midday and lunch', 'bowl'], ['Afternoon', 'ball'], ['Before dinner', 'pot'], ['Evening and bedtime', 'moon']];
   page(`${H('Day 1 · planning page', 'Our ordinary day', C.sky, C.ink)}
     <p class="lead s">Walk through one ordinary day. Where do screens show up, and why? Where does play already happen? You’re drawing a map, not grading yourself.</p>
-    <div class="dayrows">
+    <div class="dayrows" style="--ch:${V.book ? .72 : .86}in">
       <div class="drh"><span></span><span>What usually happens</span><span>Screens? Why?</span><span>Play or talk already?</span></div>
       ${slots.map(([t, a], i) => `<div class="dr">${artDisc(a, C.tSky, .62)}<b>${t}</b>${F('od-' + i + '-what', 'cell', 2)}${F('od-' + i + '-screen', 'cell', 2)}${F('od-' + i + '-play', 'cell', 2)}</div>`).join('')}
     </div>
@@ -209,11 +211,12 @@ function doc(V) {
   const spotRows = [['When', 'when'], ['Where', 'where'], ['What', 'what'], ['How it ends', 'end'], ['What comes next (the landing)', 'land']];
   page(`${H('Day 3 · planning page', 'Our screen spot', C.sky, C.ink)}
     <p class="lead s">A steady spot: the same time, the same place, the same ending, every day. It doesn’t grow when chores are done and doesn’t shrink after a hard morning. It simply stays put.</p>
-    <div class="spot">
+    <div class="spot" style="--ch:${V.book ? .5 : .56}in">
       <div class="spotcol ex"><div class="spoth">Example</div>${spotRows.map(([l, k]) => `<div class="sr"><b>${l}</b><span>${esc(ex[k])}</span></div>`).join('')}</div>
       <div class="spotcol"><div class="spoth">Ours</div>${spotRows.map(([l, k]) => `<div class="sr"><b>${l}</b>${F('spot-' + k, 'cell', 2)}</div>`).join('')}</div>
     </div>
     <div class="never">${ico('shield')}<span><b>Our promise:</b> screens are never a prize and never a punishment. No earning minutes, no losing minutes. The spot is just part of the day, like lunch.</span></div>
+    <div class="ending"><div class="en"><span class="enn">1</span><b>A warning</b>“Two more minutes, then the tablet goes to sleep.”</div><div class="en"><span class="enn">2</span><b>A clear ending</b>The episode ends or the timer rings. “Night-night, tablet.”</div><div class="en"><span class="enn">3</span><b>A landing</b>“Now we go outside and find the moon.”</div></div>
     <div class="spotsay"><b>Tell your child:</b> “Here’s our new plan. Shows are after nap, on the couch. Two shows, then outside. Every day.”</div>`, { run: 'Planning' });
 
   const basket = [['Something to build with', 'blocks, cups, boxes, tubes', 'blocks'], ['Something to pretend with', 'a teddy, pots, a hat, a toy phone', 'hat'], ['Something to make with', 'paper, crayons, tape', 'crayon'], ['Something to move with', 'a soft ball, a scarf, cushions', 'ball'], ['Something to look at together', '2–3 books or family photos', 'book'], ['Something that makes a sound', 'a pot and spoon, a shaker bottle glued shut', 'note']];
@@ -238,21 +241,23 @@ function doc(V) {
   page(tracker(false), { run: 'Tracker' });
 
   // ================================================================= THE 30 DAYS
+  const cap = t => { const x = t.replace(/^[^:]+:\s*/, ''); return x.charAt(0).toUpperCase() + x.slice(1); };
   function weekPage(w) {
     const c = WC[w.color];
     const days = K.DAYS.filter(d => d.d >= w.from && d.d <= w.to);
     page(`<div class="wk">
       <div class="wkhead" style="background:${V.low ? W : c.t}">
-        <div class="wkt"><div class="wkk" style="color:${c.deep}">${w.n < 5 ? 'Week ' + w.n : 'Days 29–30'} · Days ${w.from}–${w.to}</div><h1>${esc(w.title)}</h1><p>${esc(w.big)}</p></div>
-        <div class="wksc">${sceneSvg(WEEK_SCENES[w.n - 1])}</div>
+        <div class="wkt"><div class="wkk" style="color:${c.deep}">${w.n < 5 ? 'Week ' + w.n : 'Days 29–30'} · Days ${w.from}–${w.to}</div><h1>${esc(w.title)}</h1><p>${esc(w.big)}</p><p class="wkkeep"><b>On one line:</b> ${esc(w.keep)}</p></div>
+        <div class="wksc">${sceneSvg(WEEK_SCENES[w.n - 1], '', '90 150 420 380')}</div>
       </div>
       <div class="wkdays">${days.map(d => `<div class="wkd"><span class="wkn" style="background:${c.c};color:${c.fg}">${d.d}</span><div><b>${esc(d.title)}</b><span>${esc(d.play.t)}</span></div></div>`).join('')}</div>
       <div class="bands">
-        <div class="band"><h4>${ico('sprout')} Toddlers and preschoolers</h4><p>${esc(w.little.replace(/^[^:]+:\s*/, ''))}</p></div>
-        <div class="band"><h4>${ico('bolt')} School-age kids</h4><p>${esc(w.bigk.replace(/^[^:]+:\s*/, ''))}</p></div>
-        <div class="band"><h4>${ico('hand')} Siblings, twins and mixed ages</h4><p>${esc(w.siblings.replace(/^[^:]+:\s*/, ''))}</p></div>
+        <div class="band"><h4>${ico('sprout')} Toddlers and preschoolers</h4><p>${esc(cap(w.little))}</p></div>
+        <div class="band"><h4>${ico('bolt')} School-age kids</h4><p>${esc(cap(w.bigk))}</p></div>
+        <div class="band"><h4>${ico('people')} Siblings and twins</h4><p>${esc(cap(w.siblings))}</p></div>
       </div>
-      <div class="keep" style="border-color:${c.c}"><b>This week on one line:</b> ${esc(w.keep)}</div>
+      <div class="wkscripts"><h4>${ico('quote')} Plain words you’ll use this week</h4>
+        ${days.map(d => `<div class="wks"><b>${esc(d.script.moment)}</b><span>${esc(d.script.lines[0])}</span></div>`).join('')}</div>
     </div>`, { run: w.n < 5 ? 'Week ' + w.n : 'Days 29–30' });
   }
   function lessonPage(d) {
@@ -265,16 +270,17 @@ function doc(V) {
       </div>
       <p class="idea" style="border-color:${w.c}">${esc(d.idea)}</p>
       <div class="ltext">${d.lesson.map(p => `<p>${esc(p)}</p>`).join('')}</div>
+      ${scriptBox(d)}
       <div class="step" style="background:${V.low ? W : w.t}">${ico('check', 'big')}<div><div class="tlab">Today’s one small step</div>${esc(d.step)}</div></div>
     </div>`, { run: 'Day ' + d.d });
   }
   function playPage(d) {
-    const w = wc(d.d);
+    const w = wc(d.d), m = K.MOVES[d.play.move];
     page(`${playCard(d)}
-      ${scriptBox(d)}
+      <div class="movetip" style="border-color:${w.c}"><b style="color:${w.deep}">Today’s talk move: ${esc(m.name)}.</b> ${esc(m.tip)}</div>
       <div class="notes">
         <div class="nh"><b>Today’s notes</b><span>${ico('check')} We played</span><span>${ico('check')} Screen spot kept</span><span>${ico('star')} Asked for it again</span></div>
-        <div class="nl"><span>What happened? What did your child say, show or do?</span>${F('d' + d.d + '-notes', 'multi', 3)}</div>
+        <div class="nl"><span>What happened? What did your child say, show or do?</span>${F('d' + d.d + '-notes', 'multi', V.book ? 3 : 4)}</div>
       </div>`, { run: 'Day ' + d.d });
   }
   function checkin(n) {
@@ -282,14 +288,14 @@ function doc(V) {
     const qs = ['What helped most this week?', 'What would we change?', 'What did our child ask for again?', 'One thing we’ll keep doing'];
     page(`${H('Week ' + n + ' check-in', 'Look back kindly', c.deep, c.deep)}
       <p class="lead s">Look for what helped, not what you missed. Adjusting the plan is the program working.</p>
-      <div class="ci">${qs.map((q, i) => `<div class="ciq" style="border-color:${c.c}"><b>${q}</b>${F('ci' + n + '-' + i, 'multi', 3)}</div>`).join('')}</div>
+      <div class="ci">${qs.map((q, i) => `<div class="ciq" style="border-color:${c.c}"><b>${q}</b>${F('ci' + n + '-' + i, 'multi', 6)}</div>`).join('')}</div>
       <div class="ciself">${artDisc('heart', c.t, .7)}<p><b>Words for yourself:</b> “I don’t need a perfect week. I need a next step.”</p></div>`, { run: 'Week ' + n + ' check-in' });
   }
   function toughPage() {
     const rows = [['What a cozy day looks like at our house', 'td-cozy'], ['Our quiet plays for sick or tired days', 'td-plays'], ['What we’ll say about the change', 'td-say'], ['How we go back tomorrow', 'td-back']];
     page(`${H('Day 28 · planning page', 'Our tough-day plan', C.tomato)}
       <p class="lead s">A planned change for a hard day is fine. Say it out loud, and go back to your usual rhythm the next day. No making up for it.</p>
-      <div class="ci">${rows.map(([q, k]) => `<div class="ciq" style="border-color:${C.tomato}"><b>${q}</b>${F(k, 'multi', 3)}</div>`).join('')}</div>
+      <div class="ci">${rows.map(([q, k]) => `<div class="ciq" style="border-color:${C.tomato}"><b>${q}</b>${F(k, 'multi', 5)}</div>`).join('')}</div>
       <div class="spotsay"><b>Example:</b> “You’re sick today, so it’s a cozy movie day on the couch together. Tomorrow we go back to our usual plan.”</div>`, { run: 'Planning' });
   }
   function planPage() {
@@ -302,14 +308,14 @@ function doc(V) {
   function certPage() {
     page(`<div class="cert">
       <div class="cstars">${[0, 1, 2, 3, 4].map(i => `<svg viewBox="-50 -50 100 100" width="${i === 2 ? 70 : 44}"><use href="#a-star"/></svg>`).join('')}</div>
-      <div class="ck">This certificate is awarded to</div>
+      <div class="cawd">This certificate is awarded to</div>
       <div class="cname">${F('cert-name', 'cn')}</div>
-      <div class="ck">for finishing</div>
+      <div class="cawd">for finishing</div>
       <div class="ct">The 30-Day<br>Screen Reset</div>
       <p class="cp">30 days of more play, more talk and a steady spot for screens.</p>
       <div class="cfav"><b>Our favorite play:</b>${F('cert-fav')}</div>
       <div class="cdate"><b>Date:</b>${F('cert-date', 'short')}</div>
-      <div class="cscene">${sceneSvg(WEEK_SCENES[4])}</div>
+      <div class="cscene">${sceneSvg(WEEK_SCENES[4], '', '70 120 470 380')}</div>
       <div class="clogo">${V.url ? `<img src="${LOGO}" alt="Play Before Pixels"><span>${SITE}</span>` : '<span class="wm">Play Before Pixels</span>'}</div>
       <p class="cshare">Put it on the fridge. If you share a photo, we’d love to see it: #PlayBeforePixels. Please leave out your child’s name and face.</p>
     </div>`, { run: 'Celebrate', cls: 'certpage' });
@@ -327,8 +333,8 @@ function doc(V) {
 
   // ================================================================= BACK MATTER
   const allScripts = K.DAYS.map(d => ({ moment: d.script.moment, lines: d.script.lines, day: d.d })).concat(K.SCRIPT_BANK);
-  const half = Math.ceil(allScripts.length / 2);
-  [allScripts.slice(0, half), allScripts.slice(half)].forEach((list, i) => {
+  const per = Math.ceil(allScripts.length / 3);
+  [0, 1, 2].map(i => allScripts.slice(i * per, (i + 1) * per)).forEach((list, i) => {
     page(`${H('Scripts bank' + (i ? ' (continued)' : ''), i ? 'More plain words' : 'Plain words for tricky moments', C.grass)}
       ${i ? '' : '<p class="lead s">Every script from the 30 days, plus extras, in one place. Cut out the ones you need and stick them where the tricky moment happens.</p>'}
       <div class="sbank">${list.map(s => `<div class="sb"><b>${esc(s.moment)}${s.day ? ` <span>Day ${s.day}</span>` : ''}</b>${s.lines.map(l => `<p>${esc(l)}</p>`).join('')}</div>`).join('')}</div>`, { run: 'Scripts bank' });
@@ -436,8 +442,8 @@ b{font-weight:800}
 /* fields */
 .field{display:block;border-bottom:1.3px solid #9AA6BC;min-height:.3in;margin-top:.04in}
 .field.multi{min-height:auto;height:calc(var(--l,3) * .3in);background:repeating-linear-gradient(to bottom,transparent 0,transparent calc(.3in - 1.3px),#9AA6BC calc(.3in - 1.3px),#9AA6BC .3in);border-bottom:0}
-.field.multi[data-lines="2"]{--l:2}.field.multi[data-lines="3"]{--l:3}
-.field.cell{min-height:auto;height:.5in;border:1.3px solid #C9D2E1;border-radius:6px;background:#fff;margin:0}
+.field.multi[data-lines="2"]{--l:2}.field.multi[data-lines="3"]{--l:3}.field.multi[data-lines="4"]{--l:4}.field.multi[data-lines="5"]{--l:5}.field.multi[data-lines="6"]{--l:6}
+.field.cell{min-height:auto;height:var(--ch,.5in);border:1.3px solid #C9D2E1;border-radius:6px;background:#fff;margin:0}
 .field.inl{display:inline-block;width:.8in;min-height:.2in;margin:0 0 0 .04in;vertical-align:-.05in}
 .field.short{display:inline-block;width:1.5in}
 .field.big{min-height:.36in}
@@ -485,13 +491,13 @@ b{font-weight:800}
 .founder-slot b{display:block;color:${C.tomato};letter-spacing:.06em;margin-bottom:.04in}
 .fnote{font-size:11.5pt;font-style:italic;margin-bottom:.16in}
 .map{display:grid;grid-template-columns:1fr 1fr;gap:.14in;flex:1;align-content:start}
-.mapw{border:2px solid;border-radius:14px;padding:.1in .14in .06in;overflow:hidden}
+.mapw{border:2px solid;border-radius:14px;padding:.14in .16in .1in;overflow:hidden}
 .mapw:last-child{grid-column:span 2}
 .mapk{display:inline-block;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:9pt;border-radius:99px;padding:.02in .12in;margin-bottom:.04in}
-.mapt{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:12pt;margin-bottom:.04in}
-.mapw ol{list-style:none;font-size:9pt}
+.mapt{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:14pt;margin-bottom:.06in}
+.mapw ol{list-style:none;font-size:10pt}
 .mapw:last-child ol{display:flex;gap:.3in}
-.mapw li{display:flex;gap:.07in;margin-bottom:.02in}
+.mapw li{display:flex;gap:.07in;margin-bottom:.045in}
 .dn{font-weight:800;width:.2in;text-align:right;flex:none}
 /* guide */
 .talklines{list-style:none}
@@ -545,13 +551,14 @@ b{font-weight:800}
 .nog{margin-top:.08in}
 /* week opener */
 .wk{flex:1;display:flex;flex-direction:column}
-.wkhead{display:flex;border-radius:18px;padding:.22in .24in;gap:.12in;align-items:center;margin-bottom:.16in}
+.wkhead{display:flex;border-radius:18px;padding:.18in .22in;gap:.12in;align-items:center;margin-bottom:.14in}
 .wkt{flex:1}
 .wkt h1{font-size:30pt}
-.wkt p{font-size:11.5pt;margin-top:.08in}
+.wkt p{font-size:11pt;margin-top:.08in}
+.wkkeep{font-size:9.8pt!important;border-top:1.5px solid rgba(29,41,64,.15);padding-top:.06in}
 .wkk{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:10pt;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.05in}
-.wksc{width:2.8in;height:2.8in;flex:none}
-.wkdays{display:grid;grid-template-columns:1fr 1fr;gap:.08in .2in;margin-bottom:.16in}
+.wksc{width:2.3in;height:2.1in;flex:none}
+.wkdays{display:grid;grid-template-columns:1fr 1fr;gap:.06in .2in;margin-bottom:.14in}
 .wkd{display:flex;gap:.1in;align-items:center}
 .wkd b{display:block;font-size:10pt;line-height:1.2}
 .wkd span:not(.wkn){font-size:8.8pt;color:#4A5570}
@@ -566,7 +573,7 @@ b{font-weight:800}
 .ltitle{flex:1}
 .ltitle h1{font-size:25pt}
 .idea{font-size:13pt;font-weight:700;line-height:1.35;border-left:5px solid;padding:.02in 0 .02in .14in;margin-bottom:.16in}
-.ltext{font-size:11.2pt;line-height:1.55}
+.ltext{font-size:${V.book ? 10.6 : 11.6}pt;line-height:1.52}
 .ltext p{margin-bottom:.1in}
 .step{margin-top:auto;display:flex;gap:.12in;align-items:flex-start;border-radius:12px;padding:.13in .16in;font-size:11pt}
 .step .tlab,.talk .tlab{font-weight:800;font-size:8.5pt;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.02in}
@@ -581,7 +588,7 @@ b{font-weight:800}
 .need{display:flex;gap:.06in;font-size:9.5pt;align-items:baseline}
 .need .ico{flex:none}
 .need .field{flex:1}
-.how{font-size:10.8pt;line-height:1.5;margin-bottom:.1in}
+.how{font-size:${V.book ? 10.6 : 11.4}pt;line-height:1.5;margin-bottom:.1in}
 .talk{display:flex;gap:.12in;align-items:center;border-radius:12px;padding:.1in .16in;margin-bottom:.1in}
 .tlab span{font-weight:600;text-transform:none;letter-spacing:0;color:#4A5570;font-family:"Nunito Sans",sans-serif}
 .tline{font-family:"Fredoka","Nunito Sans",sans-serif;font-weight:600;font-size:13pt}
@@ -595,13 +602,32 @@ b{font-weight:800}
 .slab{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:10.5pt;display:flex;gap:.06in;align-items:center;margin-bottom:.04in}
 .sline{font-family:"Fredoka","Nunito Sans",sans-serif;font-weight:500;font-size:11.5pt;margin-bottom:.03in}
 .swhy{font-size:9pt;color:#4A5570;margin:0}
-.notes{margin-top:auto;border:1.3px dashed #9AA6BC;border-radius:12px;padding:.1in .14in}
+.notes{flex:1;display:flex;flex-direction:column;min-height:1.4in;border:1.3px dashed #9AA6BC;border-radius:12px;padding:.1in .14in}
+.nl{flex:1;display:flex;flex-direction:column}
+.notes .field.multi{height:auto;flex:1}
 .nh{display:flex;gap:.2in;align-items:center;font-size:9pt;margin-bottom:.02in}
 .nh b{font-family:"Bricolage Grotesque",sans-serif;font-size:11pt;margin-right:auto}
 .nh span{display:inline-flex;gap:.04in;align-items:center}
 .nl>span{font-size:8.8pt;color:#4A5570}
+/* extras */
+.movetip{border-left:5px solid;background:${C.wash};border-radius:0 12px 12px 0;padding:.1in .16in;font-size:9.8pt;margin:.06in 0 .12in}
+.wkscripts{background:${C.wash};border-radius:12px;padding:.1in .14in;margin-top:auto}
+.wks{display:grid;grid-template-columns:2.7in 1fr;gap:.12in;font-size:8.8pt;line-height:1.3;padding:.03in 0;border-top:1px solid #DCE3EE}
+.wks:first-of-type{border-top:0}
+.wks span{font-family:"Fredoka","Nunito Sans",sans-serif}
+.ending{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.12in;margin-bottom:.12in}
+.en{border:1.3px solid #C9D2E1;border-radius:12px;padding:.1in .12in;font-size:9.5pt}
+.en b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:11pt}
+.enn{display:inline-flex;width:.26in;height:.26in;border-radius:50%;background:${C.sky};color:#fff;font-weight:800;align-items:center;justify-content:center;margin-bottom:.04in}
+.turns{margin-top:auto;border-top:1.5px solid #DCE3EE;padding-top:.06in}
+.trow{display:flex;justify-content:space-between;margin:.06in 0}
+.tt{display:flex;flex-direction:column;align-items:center;text-align:center;width:1.05in;font-weight:700;font-size:9pt;gap:.05in}
+.tube{margin-top:auto;display:flex;gap:.2in;align-items:center;background:${C.tSun};border-radius:14px;padding:.16in .2in}
+.tubei{flex:none;color:${C.ink}}
+.tube h3{margin-top:0}
+.tube p{margin:0}
 /* check-ins */
-.ci{display:grid;grid-template-columns:1fr 1fr;gap:.18in;flex:1;align-content:start}
+.ci{display:grid;grid-template-columns:1fr 1fr;gap:.24in .24in;align-content:start;margin-bottom:.2in}
 .ciq{border-top:4px solid;padding-top:.08in}
 .ciq b{font-family:"Bricolage Grotesque",sans-serif;font-size:11.5pt}
 .ciself{display:flex;gap:.14in;align-items:center;margin-top:auto;background:${C.wash};border-radius:12px;padding:.12in}
@@ -615,14 +641,14 @@ b{font-weight:800}
 .cert{flex:1;border:6px solid ${C.sun};border-radius:26px;display:flex;flex-direction:column;align-items:center;text-align:center;padding:.3in .4in .2in;outline:2px solid ${C.sun};outline-offset:-14px}
 .cstars{display:flex;gap:.12in;align-items:center;margin-bottom:.1in}
 .cstars svg{display:block}
-.ck{font-size:12pt;font-weight:700;color:#4A5570}
+.cawd{font-size:12pt;font-weight:700;color:#4A5570}
 .cname{width:5in;margin:.04in 0 .12in}
 .field.cn{min-height:.5in;border-bottom-width:2px}
 .ct{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:36pt;line-height:1;color:${C.tomato};margin:.06in 0 .1in}
 .cp{font-size:12pt;max-width:4.8in}
 .cfav,.cdate{display:flex;gap:.08in;align-items:flex-end;width:4.6in;text-align:left;margin-top:.06in}
 .cfav .field,.cdate .field{flex:1;margin:0}
-.cscene{width:2.6in;height:2.3in;margin-top:.04in}
+.cscene{width:3.4in;height:2.75in;margin-top:.1in}
 .clogo{display:flex;flex-direction:column;align-items:center;gap:.02in;font-size:9pt;font-weight:700;margin-top:auto}
 .clogo img{height:.46in}
 .cshare{font-size:8pt;color:#4A5570;margin:.06in 0 0}

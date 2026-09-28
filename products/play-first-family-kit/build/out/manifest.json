@@ -1,0 +1,1130 @@
+{
+ "kit-store-color-letter": {
+  "pages": 51,
+  "toc": [
+   [
+    "Cover",
+    1
+   ],
+   [
+    "What’s inside",
+    2
+   ],
+   [
+    "Grown-up guide",
+    3
+   ],
+   [
+    "Printing, laminating, velcro and safety",
+    5
+   ],
+   [
+    "Checklist, ages 2–5 (pre-filled)",
+    6
+   ],
+   [
+    "Checklist, ages 5–12 (pre-filled)",
+    14
+   ],
+   [
+    "Checklist, make-it-yours (fillable)",
+    22
+   ],
+   [
+    "Play-First Board",
+    30
+   ],
+   [
+    "Little helping jobs, ages 2–5",
+    31
+   ],
+   [
+    "Helping jobs (fillable)",
+    33
+   ],
+   [
+    "Family jobs chart, ages 5–12",
+    35
+   ],
+   [
+    "Family jobs chart (fillable)",
+    37
+   ],
+   [
+    "Together tokens",
+    39
+   ],
+   [
+    "Make-your-own tokens (fillable)",
+    40
+   ],
+   [
+    "Screen-spot cards",
+    41
+   ],
+   [
+    "Family Play Rules poster",
+    42
+   ],
+   [
+    "Family Play Rules (fillable)",
+    43
+   ],
+   [
+    "Our Family Play & Screen Plan",
+    44
+   ],
+   [
+    "30 Days of Play First",
+    47
+   ],
+   [
+    "30-day tracker (fillable)",
+    48
+   ],
+   [
+    "Certificate",
+    49
+   ],
+   [
+    "More from Play Before Pixels",
+    50
+   ],
+   [
+    "Free bonus",
+    51
+   ]
+  ],
+  "P": {
+   "cover": 1,
+   "inside": 2,
+   "guide1": 3,
+   "guide2": 4,
+   "tips": 5,
+   "cl25": 6,
+   "cl25tomatosun": 7,
+   "cl25skymon": 8,
+   "cl25skysun": 9,
+   "cl25grassmon": 10,
+   "cl25grasssun": 11,
+   "cl25plummon": 12,
+   "cl25plumsun": 13,
+   "cl512": 14,
+   "cl512tomatosun": 15,
+   "cl512skymon": 16,
+   "cl512skysun": 17,
+   "cl512grassmon": 18,
+   "cl512grasssun": 19,
+   "cl512plummon": 20,
+   "cl512plumsun": 21,
+   "clBlank": 22,
+   "clBlanktomatosun": 23,
+   "clBlankskymon": 24,
+   "clBlankskysun": 25,
+   "clBlankgrassmon": 26,
+   "clBlankgrasssun": 27,
+   "clBlankplummon": 28,
+   "clBlankplumsun": 29,
+   "board": 30,
+   "help": 31,
+   "helpSun": 32,
+   "helpB": 33,
+   "helpEnd": 34,
+   "chores": 35,
+   "choresSun": 36,
+   "choresB": 37,
+   "choresEnd": 38,
+   "tokens": 39,
+   "tokensB": 40,
+   "cards": 41,
+   "poster": 42,
+   "posterB": 43,
+   "plan": 44,
+   "plan2": 45,
+   "plan3": 46,
+   "tracker": 47,
+   "trackerB": 48,
+   "cert": 49,
+   "more": 50,
+   "bonus": 51
+  }
+ },
+ "kit-store-color-a4": {
+  "pages": 51,
+  "toc": [
+   [
+    "Cover",
+    1
+   ],
+   [
+    "What’s inside",
+    2
+   ],
+   [
+    "Grown-up guide",
+    3
+   ],
+   [
+    "Printing, laminating, velcro and safety",
+    5
+   ],
+   [
+    "Checklist, ages 2–5 (pre-filled)",
+    6
+   ],
+   [
+    "Checklist, ages 5–12 (pre-filled)",
+    14
+   ],
+   [
+    "Checklist, make-it-yours (fillable)",
+    22
+   ],
+   [
+    "Play-First Board",
+    30
+   ],
+   [
+    "Little helping jobs, ages 2–5",
+    31
+   ],
+   [
+    "Helping jobs (fillable)",
+    33
+   ],
+   [
+    "Family jobs chart, ages 5–12",
+    35
+   ],
+   [
+    "Family jobs chart (fillable)",
+    37
+   ],
+   [
+    "Together tokens",
+    39
+   ],
+   [
+    "Make-your-own tokens (fillable)",
+    40
+   ],
+   [
+    "Screen-spot cards",
+    41
+   ],
+   [
+    "Family Play Rules poster",
+    42
+   ],
+   [
+    "Family Play Rules (fillable)",
+    43
+   ],
+   [
+    "Our Family Play & Screen Plan",
+    44
+   ],
+   [
+    "30 Days of Play First",
+    47
+   ],
+   [
+    "30-day tracker (fillable)",
+    48
+   ],
+   [
+    "Certificate",
+    49
+   ],
+   [
+    "More from Play Before Pixels",
+    50
+   ],
+   [
+    "Free bonus",
+    51
+   ]
+  ],
+  "P": {
+   "cover": 1,
+   "inside": 2,
+   "guide1": 3,
+   "guide2": 4,
+   "tips": 5,
+   "cl25": 6,
+   "cl25tomatosun": 7,
+   "cl25skymon": 8,
+   "cl25skysun": 9,
+   "cl25grassmon": 10,
+   "cl25grasssun": 11,
+   "cl25plummon": 12,
+   "cl25plumsun": 13,
+   "cl512": 14,
+   "cl512tomatosun": 15,
+   "cl512skymon": 16,
+   "cl512skysun": 17,
+   "cl512grassmon": 18,
+   "cl512grasssun": 19,
+   "cl512plummon": 20,
+   "cl512plumsun": 21,
+   "clBlank": 22,
+   "clBlanktomatosun": 23,
+   "clBlankskymon": 24,
+   "clBlankskysun": 25,
+   "clBlankgrassmon": 26,
+   "clBlankgrasssun": 27,
+   "clBlankplummon": 28,
+   "clBlankplumsun": 29,
+   "board": 30,
+   "help": 31,
+   "helpSun": 32,
+   "helpB": 33,
+   "helpEnd": 34,
+   "chores": 35,
+   "choresSun": 36,
+   "choresB": 37,
+   "choresEnd": 38,
+   "tokens": 39,
+   "tokensB": 40,
+   "cards": 41,
+   "poster": 42,
+   "posterB": 43,
+   "plan": 44,
+   "plan2": 45,
+   "plan3": 46,
+   "tracker": 47,
+   "trackerB": 48,
+   "cert": 49,
+   "more": 50,
+   "bonus": 51
+  }
+ },
+ "kit-store-low-letter": {
+  "pages": 33,
+  "toc": [
+   [
+    "Cover",
+    1
+   ],
+   [
+    "What’s inside",
+    2
+   ],
+   [
+    "Grown-up guide",
+    3
+   ],
+   [
+    "Printing, laminating, velcro and safety",
+    5
+   ],
+   [
+    "Checklist, ages 2–5 (pre-filled)",
+    6
+   ],
+   [
+    "Checklist, ages 5–12 (pre-filled)",
+    8
+   ],
+   [
+    "Checklist, make-it-yours (fillable)",
+    10
+   ],
+   [
+    "Play-First Board",
+    12
+   ],
+   [
+    "Little helping jobs, ages 2–5",
+    13
+   ],
+   [
+    "Helping jobs (fillable)",
+    15
+   ],
+   [
+    "Family jobs chart, ages 5–12",
+    17
+   ],
+   [
+    "Family jobs chart (fillable)",
+    19
+   ],
+   [
+    "Together tokens",
+    21
+   ],
+   [
+    "Make-your-own tokens (fillable)",
+    22
+   ],
+   [
+    "Screen-spot cards",
+    23
+   ],
+   [
+    "Family Play Rules poster",
+    24
+   ],
+   [
+    "Family Play Rules (fillable)",
+    25
+   ],
+   [
+    "Our Family Play & Screen Plan",
+    26
+   ],
+   [
+    "30 Days of Play First",
+    29
+   ],
+   [
+    "30-day tracker (fillable)",
+    30
+   ],
+   [
+    "Certificate",
+    31
+   ],
+   [
+    "More from Play Before Pixels",
+    32
+   ],
+   [
+    "Free bonus",
+    33
+   ]
+  ],
+  "P": {
+   "cover": 1,
+   "inside": 2,
+   "guide1": 3,
+   "guide2": 4,
+   "tips": 5,
+   "cl25": 6,
+   "cl25nullsun": 7,
+   "cl512": 8,
+   "cl512nullsun": 9,
+   "clBlank": 10,
+   "clBlanknullsun": 11,
+   "board": 12,
+   "help": 13,
+   "helpSun": 14,
+   "helpB": 15,
+   "helpEnd": 16,
+   "chores": 17,
+   "choresSun": 18,
+   "choresB": 19,
+   "choresEnd": 20,
+   "tokens": 21,
+   "tokensB": 22,
+   "cards": 23,
+   "poster": 24,
+   "posterB": 25,
+   "plan": 26,
+   "plan2": 27,
+   "plan3": 28,
+   "tracker": 29,
+   "trackerB": 30,
+   "cert": 31,
+   "more": 32,
+   "bonus": 33
+  }
+ },
+ "kit-store-low-a4": {
+  "pages": 33,
+  "toc": [
+   [
+    "Cover",
+    1
+   ],
+   [
+    "What’s inside",
+    2
+   ],
+   [
+    "Grown-up guide",
+    3
+   ],
+   [
+    "Printing, laminating, velcro and safety",
+    5
+   ],
+   [
+    "Checklist, ages 2–5 (pre-filled)",
+    6
+   ],
+   [
+    "Checklist, ages 5–12 (pre-filled)",
+    8
+   ],
+   [
+    "Checklist, make-it-yours (fillable)",
+    10
+   ],
+   [
+    "Play-First Board",
+    12
+   ],
+   [
+    "Little helping jobs, ages 2–5",
+    13
+   ],
+   [
+    "Helping jobs (fillable)",
+    15
+   ],
+   [
+    "Family jobs chart, ages 5–12",
+    17
+   ],
+   [
+    "Family jobs chart (fillable)",
+    19
+   ],
+   [
+    "Together tokens",
+    21
+   ],
+   [
+    "Make-your-own tokens (fillable)",
+    22
+   ],
+   [
+    "Screen-spot cards",
+    23
+   ],
+   [
+    "Family Play Rules poster",
+    24
+   ],
+   [
+    "Family Play Rules (fillable)",
+    25
+   ],
+   [
+    "Our Family Play & Screen Plan",
+    26
+   ],
+   [
+    "30 Days of Play First",
+    29
+   ],
+   [
+    "30-day tracker (fillable)",
+    30
+   ],
+   [
+    "Certificate",
+    31
+   ],
+   [
+    "More from Play Before Pixels",
+    32
+   ],
+   [
+    "Free bonus",
+    33
+   ]
+  ],
+  "P": {
+   "cover": 1,
+   "inside": 2,
+   "guide1": 3,
+   "guide2": 4,
+   "tips": 5,
+   "cl25": 6,
+   "cl25nullsun": 7,
+   "cl512": 8,
+   "cl512nullsun": 9,
+   "clBlank": 10,
+   "clBlanknullsun": 11,
+   "board": 12,
+   "help": 13,
+   "helpSun": 14,
+   "helpB": 15,
+   "helpEnd": 16,
+   "chores": 17,
+   "choresSun": 18,
+   "choresB": 19,
+   "choresEnd": 20,
+   "tokens": 21,
+   "tokensB": 22,
+   "cards": 23,
+   "poster": 24,
+   "posterB": 25,
+   "plan": 26,
+   "plan2": 27,
+   "plan3": 28,
+   "tracker": 29,
+   "trackerB": 30,
+   "cert": 31,
+   "more": 32,
+   "bonus": 33
+  }
+ },
+ "kit-etsy-color-letter": {
+  "pages": 51,
+  "toc": [
+   [
+    "Cover",
+    1
+   ],
+   [
+    "What’s inside",
+    2
+   ],
+   [
+    "Grown-up guide",
+    3
+   ],
+   [
+    "Printing, laminating, velcro and safety",
+    5
+   ],
+   [
+    "Checklist, ages 2–5 (pre-filled)",
+    6
+   ],
+   [
+    "Checklist, ages 5–12 (pre-filled)",
+    14
+   ],
+   [
+    "Checklist, make-it-yours (fillable)",
+    22
+   ],
+   [
+    "Play-First Board",
+    30
+   ],
+   [
+    "Little helping jobs, ages 2–5",
+    31
+   ],
+   [
+    "Helping jobs (fillable)",
+    33
+   ],
+   [
+    "Family jobs chart, ages 5–12",
+    35
+   ],
+   [
+    "Family jobs chart (fillable)",
+    37
+   ],
+   [
+    "Together tokens",
+    39
+   ],
+   [
+    "Make-your-own tokens (fillable)",
+    40
+   ],
+   [
+    "Screen-spot cards",
+    41
+   ],
+   [
+    "Family Play Rules poster",
+    42
+   ],
+   [
+    "Family Play Rules (fillable)",
+    43
+   ],
+   [
+    "Our Family Play & Screen Plan",
+    44
+   ],
+   [
+    "30 Days of Play First",
+    47
+   ],
+   [
+    "30-day tracker (fillable)",
+    48
+   ],
+   [
+    "Certificate",
+    49
+   ],
+   [
+    "More from Play Before Pixels",
+    50
+   ],
+   [
+    "Thank you",
+    51
+   ]
+  ],
+  "P": {
+   "cover": 1,
+   "inside": 2,
+   "guide1": 3,
+   "guide2": 4,
+   "tips": 5,
+   "cl25": 6,
+   "cl25tomatosun": 7,
+   "cl25skymon": 8,
+   "cl25skysun": 9,
+   "cl25grassmon": 10,
+   "cl25grasssun": 11,
+   "cl25plummon": 12,
+   "cl25plumsun": 13,
+   "cl512": 14,
+   "cl512tomatosun": 15,
+   "cl512skymon": 16,
+   "cl512skysun": 17,
+   "cl512grassmon": 18,
+   "cl512grasssun": 19,
+   "cl512plummon": 20,
+   "cl512plumsun": 21,
+   "clBlank": 22,
+   "clBlanktomatosun": 23,
+   "clBlankskymon": 24,
+   "clBlankskysun": 25,
+   "clBlankgrassmon": 26,
+   "clBlankgrasssun": 27,
+   "clBlankplummon": 28,
+   "clBlankplumsun": 29,
+   "board": 30,
+   "help": 31,
+   "helpSun": 32,
+   "helpB": 33,
+   "helpEnd": 34,
+   "chores": 35,
+   "choresSun": 36,
+   "choresB": 37,
+   "choresEnd": 38,
+   "tokens": 39,
+   "tokensB": 40,
+   "cards": 41,
+   "poster": 42,
+   "posterB": 43,
+   "plan": 44,
+   "plan2": 45,
+   "plan3": 46,
+   "tracker": 47,
+   "trackerB": 48,
+   "cert": 49,
+   "more": 50,
+   "thanks": 51
+  }
+ },
+ "kit-etsy-color-a4": {
+  "pages": 51,
+  "toc": [
+   [
+    "Cover",
+    1
+   ],
+   [
+    "What’s inside",
+    2
+   ],
+   [
+    "Grown-up guide",
+    3
+   ],
+   [
+    "Printing, laminating, velcro and safety",
+    5
+   ],
+   [
+    "Checklist, ages 2–5 (pre-filled)",
+    6
+   ],
+   [
+    "Checklist, ages 5–12 (pre-filled)",
+    14
+   ],
+   [
+    "Checklist, make-it-yours (fillable)",
+    22
+   ],
+   [
+    "Play-First Board",
+    30
+   ],
+   [
+    "Little helping jobs, ages 2–5",
+    31
+   ],
+   [
+    "Helping jobs (fillable)",
+    33
+   ],
+   [
+    "Family jobs chart, ages 5–12",
+    35
+   ],
+   [
+    "Family jobs chart (fillable)",
+    37
+   ],
+   [
+    "Together tokens",
+    39
+   ],
+   [
+    "Make-your-own tokens (fillable)",
+    40
+   ],
+   [
+    "Screen-spot cards",
+    41
+   ],
+   [
+    "Family Play Rules poster",
+    42
+   ],
+   [
+    "Family Play Rules (fillable)",
+    43
+   ],
+   [
+    "Our Family Play & Screen Plan",
+    44
+   ],
+   [
+    "30 Days of Play First",
+    47
+   ],
+   [
+    "30-day tracker (fillable)",
+    48
+   ],
+   [
+    "Certificate",
+    49
+   ],
+   [
+    "More from Play Before Pixels",
+    50
+   ],
+   [
+    "Thank you",
+    51
+   ]
+  ],
+  "P": {
+   "cover": 1,
+   "inside": 2,
+   "guide1": 3,
+   "guide2": 4,
+   "tips": 5,
+   "cl25": 6,
+   "cl25tomatosun": 7,
+   "cl25skymon": 8,
+   "cl25skysun": 9,
+   "cl25grassmon": 10,
+   "cl25grasssun": 11,
+   "cl25plummon": 12,
+   "cl25plumsun": 13,
+   "cl512": 14,
+   "cl512tomatosun": 15,
+   "cl512skymon": 16,
+   "cl512skysun": 17,
+   "cl512grassmon": 18,
+   "cl512grasssun": 19,
+   "cl512plummon": 20,
+   "cl512plumsun": 21,
+   "clBlank": 22,
+   "clBlanktomatosun": 23,
+   "clBlankskymon": 24,
+   "clBlankskysun": 25,
+   "clBlankgrassmon": 26,
+   "clBlankgrasssun": 27,
+   "clBlankplummon": 28,
+   "clBlankplumsun": 29,
+   "board": 30,
+   "help": 31,
+   "helpSun": 32,
+   "helpB": 33,
+   "helpEnd": 34,
+   "chores": 35,
+   "choresSun": 36,
+   "choresB": 37,
+   "choresEnd": 38,
+   "tokens": 39,
+   "tokensB": 40,
+   "cards": 41,
+   "poster": 42,
+   "posterB": 43,
+   "plan": 44,
+   "plan2": 45,
+   "plan3": 46,
+   "tracker": 47,
+   "trackerB": 48,
+   "cert": 49,
+   "more": 50,
+   "thanks": 51
+  }
+ },
+ "kit-etsy-low-letter": {
+  "pages": 33,
+  "toc": [
+   [
+    "Cover",
+    1
+   ],
+   [
+    "What’s inside",
+    2
+   ],
+   [
+    "Grown-up guide",
+    3
+   ],
+   [
+    "Printing, laminating, velcro and safety",
+    5
+   ],
+   [
+    "Checklist, ages 2–5 (pre-filled)",
+    6
+   ],
+   [
+    "Checklist, ages 5–12 (pre-filled)",
+    8
+   ],
+   [
+    "Checklist, make-it-yours (fillable)",
+    10
+   ],
+   [
+    "Play-First Board",
+    12
+   ],
+   [
+    "Little helping jobs, ages 2–5",
+    13
+   ],
+   [
+    "Helping jobs (fillable)",
+    15
+   ],
+   [
+    "Family jobs chart, ages 5–12",
+    17
+   ],
+   [
+    "Family jobs chart (fillable)",
+    19
+   ],
+   [
+    "Together tokens",
+    21
+   ],
+   [
+    "Make-your-own tokens (fillable)",
+    22
+   ],
+   [
+    "Screen-spot cards",
+    23
+   ],
+   [
+    "Family Play Rules poster",
+    24
+   ],
+   [
+    "Family Play Rules (fillable)",
+    25
+   ],
+   [
+    "Our Family Play & Screen Plan",
+    26
+   ],
+   [
+    "30 Days of Play First",
+    29
+   ],
+   [
+    "30-day tracker (fillable)",
+    30
+   ],
+   [
+    "Certificate",
+    31
+   ],
+   [
+    "More from Play Before Pixels",
+    32
+   ],
+   [
+    "Thank you",
+    33
+   ]
+  ],
+  "P": {
+   "cover": 1,
+   "inside": 2,
+   "guide1": 3,
+   "guide2": 4,
+   "tips": 5,
+   "cl25": 6,
+   "cl25nullsun": 7,
+   "cl512": 8,
+   "cl512nullsun": 9,
+   "clBlank": 10,
+   "clBlanknullsun": 11,
+   "board": 12,
+   "help": 13,
+   "helpSun": 14,
+   "helpB": 15,
+   "helpEnd": 16,
+   "chores": 17,
+   "choresSun": 18,
+   "choresB": 19,
+   "choresEnd": 20,
+   "tokens": 21,
+   "tokensB": 22,
+   "cards": 23,
+   "poster": 24,
+   "posterB": 25,
+   "plan": 26,
+   "plan2": 27,
+   "plan3": 28,
+   "tracker": 29,
+   "trackerB": 30,
+   "cert": 31,
+   "more": 32,
+   "thanks": 33
+  }
+ },
+ "kit-etsy-low-a4": {
+  "pages": 33,
+  "toc": [
+   [
+    "Cover",
+    1
+   ],
+   [
+    "What’s inside",
+    2
+   ],
+   [
+    "Grown-up guide",
+    3
+   ],
+   [
+    "Printing, laminating, velcro and safety",
+    5
+   ],
+   [
+    "Checklist, ages 2–5 (pre-filled)",
+    6
+   ],
+   [
+    "Checklist, ages 5–12 (pre-filled)",
+    8
+   ],
+   [
+    "Checklist, make-it-yours (fillable)",
+    10
+   ],
+   [
+    "Play-First Board",
+    12
+   ],
+   [
+    "Little helping jobs, ages 2–5",
+    13
+   ],
+   [
+    "Helping jobs (fillable)",
+    15
+   ],
+   [
+    "Family jobs chart, ages 5–12",
+    17
+   ],
+   [
+    "Family jobs chart (fillable)",
+    19
+   ],
+   [
+    "Together tokens",
+    21
+   ],
+   [
+    "Make-your-own tokens (fillable)",
+    22
+   ],
+   [
+    "Screen-spot cards",
+    23
+   ],
+   [
+    "Family Play Rules poster",
+    24
+   ],
+   [
+    "Family Play Rules (fillable)",
+    25
+   ],
+   [
+    "Our Family Play & Screen Plan",
+    26
+   ],
+   [
+    "30 Days of Play First",
+    29
+   ],
+   [
+    "30-day tracker (fillable)",
+    30
+   ],
+   [
+    "Certificate",
+    31
+   ],
+   [
+    "More from Play Before Pixels",
+    32
+   ],
+   [
+    "Thank you",
+    33
+   ]
+  ],
+  "P": {
+   "cover": 1,
+   "inside": 2,
+   "guide1": 3,
+   "guide2": 4,
+   "tips": 5,
+   "cl25": 6,
+   "cl25nullsun": 7,
+   "cl512": 8,
+   "cl512nullsun": 9,
+   "clBlank": 10,
+   "clBlanknullsun": 11,
+   "board": 12,
+   "help": 13,
+   "helpSun": 14,
+   "helpB": 15,
+   "helpEnd": 16,
+   "chores": 17,
+   "choresSun": 18,
+   "choresB": 19,
+   "choresEnd": 20,
+   "tokens": 21,
+   "tokensB": 22,
+   "cards": 23,
+   "poster": 24,
+   "posterB": 25,
+   "plan": 26,
+   "plan2": 27,
+   "plan3": 28,
+   "tracker": 29,
+   "trackerB": 30,
+   "cert": 31,
+   "more": 32,
+   "thanks": 33
+  }
+ }
+}

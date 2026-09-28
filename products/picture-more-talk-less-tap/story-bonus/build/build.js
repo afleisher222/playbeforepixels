@@ -368,7 +368,7 @@ spread({
 // =============================================================== P28 NOTE
 single({
   label: 'note', bg: C.wash,
-  art: blk('q', 590, 752, 0.62, -8) + blk('j', 660, 748, 0.62, 10) + blk('l', 730, 752, 0.62, -4),
+  art: blk('q', 590, 780, 0.62, -8) + blk('j', 660, 776, 0.62, 10) + blk('l', 730, 780, 0.62, -4),
   texts: [
     T(60, 56, 696, 'A note for educators and families', 'h2'),
     T(60, 130, 696, `
@@ -382,7 +382,7 @@ single({
 <li><b>Follow their lead.</b> Talk about what the child already cares about.</li>
 <li><b>Count listening too.</b> A follow-up question such as “What happened next?” shows real listening.</li>
 </ul>
-<p>Every way of talking counts, from words and signs to pointing and a tap on a talking device, in whatever language your family knows best. And when the tower falls? That is part of it. Build it again, one turn at a time.</p>`, 'note'),
+<p>Every way of talking counts: words, signs, pointing or a tap on a talking device, in the language you know best. And when the tower falls? Build it again, one turn at a time.</p>`, 'note'),
   ],
 });
 

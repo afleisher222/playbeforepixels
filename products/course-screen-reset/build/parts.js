@@ -53,6 +53,7 @@ const EXTRA = [
   `<symbol id="u-sprout" viewBox="0 0 24 24"><path d="M11 22V12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M11 13C11 8 7.5 5 2.5 5C2.5 10 6 13 11 13Z" fill="currentColor"/><path d="M12 11C12 6 15.5 2.5 21.5 2.5C21.5 8 18 11 12 11Z" fill="currentColor"/></symbol>`,
   `<symbol id="u-bolt" viewBox="0 0 24 24"><path d="M13.5 1.5L4 13.5H11L10 22.5L20 10H13Z" fill="currentColor"/></symbol>`,
   `<symbol id="u-star" viewBox="0 0 24 24"><path d="M12 2L14.9 8.3 21.8 9 16.6 13.6 18.1 20.4 12 16.9 5.9 20.4 7.4 13.6 2.2 9 9.1 8.3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>`,
+  `<symbol id="u-people" viewBox="0 0 24 24"><circle cx="8" cy="6.5" r="3.5" fill="currentColor"/><circle cx="17" cy="9" r="2.8" fill="currentColor"/><path d="M1.5 21C1.5 15 4.5 12 8 12S14.5 15 14.5 21Z" fill="currentColor"/><path d="M15.5 21C15.5 17.5 14.8 15.4 13.8 14.2C14.8 13.2 15.9 12.9 17 12.9C20 12.9 22.5 15.4 22.5 21Z" fill="currentColor"/></symbol>`,
   `<symbol id="u-quote" viewBox="0 0 24 24"><path d="M3 13C3 8 5.5 5 9.5 4L10.3 6C8 6.8 6.8 8.4 6.6 10.5H10V19H3ZM13 13C13 8 15.5 5 19.5 4L20.3 6C18 6.8 16.8 8.4 16.6 10.5H20V19H13Z" fill="currentColor"/></symbol>`,
 ];
 
@@ -79,8 +80,8 @@ function sceneCover() { // grown-up and child on the floor with a play basket; t
   const basket = `<g transform="translate(96 ${F})"><path d="M-62-58H62L52 0H-52Z" fill="${C.s3}"/><rect x="-66" y="-66" width="132" height="14" rx="7" fill="${C.s4}"/><path d="M-40-40H40M-44-24H44" stroke="${C.s2}" stroke-width="5" stroke-linecap="round"/></g>`;
   const inBasket = use('ball', `translate(70,${F - 86}) scale(.46)`) + use('block-2', `translate(118,${F - 84}) rotate(-12) scale(.62)`);
   const blocks = use('block-3', `translate(330,${F - 28})`) + use('block-1', `translate(330,${F - 84})`) + use('block-4', `translate(334,${F - 140}) rotate(7)`);
-  const nap = `<g transform="translate(520 ${F})"><path d="M-44-34H44L38 0H-38Z" fill="${C.plum}"/><g transform="translate(0,-66) rotate(90) scale(.62)"><use href="#tablet-sleeping"/></g><path d="M-46-40H46V-26H-46Z" fill="${C.tPlum}" rx="6"/><text x="30" y="-120" font-family="Caveat" font-weight="700" font-size="34" fill="${C.ink}">z z</text></g>`;
-  const ground = `<ellipse cx="300" cy="${F + 6}" rx="280" ry="26" fill="${C.sky}" fill-opacity=".25"/><circle cx="300" cy="318" r="170" fill="${W}"/>`;
+  const nap = `<g transform="translate(520 ${F})"><g transform="translate(0,-74) scale(.66)"><use href="#tablet-sleeping"/></g><path d="M-48-50C-20-60 20-60 48-50V-34H-48Z" fill="${C.tPlum}"/><path d="M-44-38H44L38 0H-38Z" fill="${C.plum}"/><text x="18" y="-128" font-family="Caveat" font-weight="700" font-size="34" fill="${C.ink}">z z z</text></g>`;
+  const ground = `<ellipse cx="300" cy="${F + 6}" rx="280" ry="26" fill="${C.sun}" fill-opacity=".35"/><circle cx="300" cy="318" r="170" fill="${W}"/>`;
   return ground + adult(g) + blocks + kid(k) + basket + inBasket + nap;
 }
 function sceneWeek1() { // floor time: baby/toddler and grown-up, cups tumbling

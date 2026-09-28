@@ -89,6 +89,7 @@ Each platform needs its account and key from Wave 0 first. Where a platform has 
   - the legal gate.
 - **Every day from September 28, 2026: the daily studio routine (9:47 a.m. ET).** It builds or improves one product and keeps social posts queued.
 - **Every Sunday: the weekly market-research routine (1:52 p.m. ET).** It re-ranks what to build next and re-checks facts marked UNVERIFIED.
+  - **Not switched on yet.** On September 28, 2026 the session's permission system blocked Claude from switching it on. Arielle can switch it on herself in the Routines list at claude.ai/code ("Play Before Pixels weekly market research").
 - **Both routines run in build-only mode for now (`ops/PAUSE`).** They build and research every day but publish nothing until the accounts exist, the launch gate passes and Arielle says go. Claude then deletes `ops/PAUSE` and switches on the daily check (6:38 a.m. ET), which watches the stores and sends her the money updates.
 
 ## How Arielle is protected through all of this
