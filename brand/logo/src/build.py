@@ -100,8 +100,9 @@ def hull(ox, oy, s, k, cut=None):
 def circles(balls): return ''.join(f'<circle cx="{f(x)}" cy="{f(y)}" r="{f(r)}"/>' for x, y, r in balls)
 
 def svg(x0, y0, w, h, ink_d, balls, ink, acc, title, bg=None, sticker=0, extra_style=''):
+    k = 1000 / max(w, h)          # nominal display size: longest side 1000 px (scales freely; it is vector)
     parts = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{f(x0)} {f(y0)} {f(w)} {f(h)}" '
-             f'width="{f(w)}" height="{f(h)}" role="img" aria-label="{title}"><title>{title}</title>']
+             f'width="{round(w*k)}" height="{round(h*k)}" role="img" aria-label="{title}"><title>{title}</title>']
     if extra_style: parts.append(f'<style>{extra_style}</style>')
     if bg: parts.append(f'<rect x="{f(x0)}" y="{f(y0)}" width="{f(w)}" height="{f(h)}" fill="{bg}"/>')
     if sticker:   # die-cut white sticker: one simple outline (stem block + bowl disc + ball), k units outside the ink
