@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Play Before Pixels: Pinterest pins</title>
+<link rel="stylesheet" href="../../../brand/fonts/fonts.css">
+<style>
+:root{--ink:#1D2940;--tomatoD:#C4401F}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff;font-family:"Nunito Sans",sans-serif;color:var(--ink)}
+.pin{width:1000px;height:1500px;position:relative;overflow:hidden;background:var(--bg);display:flex;flex-direction:column;padding:78px 72px 56px;margin:0 0 20px}
+.band{position:absolute;left:0;top:0;right:0;height:18px;background:var(--ac)}
+.kick{font:800 28px/1.2 "Nunito Sans",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--tomatoD)}
+h1{text-wrap:balance;font:800 104px/1.0 "Bricolage Grotesque","Nunito Sans",sans-serif;letter-spacing:-.02em;margin-top:18px}
+h1.long{font-size:86px}
+.sub{text-wrap:balance;font:600 38px/1.28 "Nunito Sans",sans-serif;margin-top:22px;max-width:840px}
+.art{flex:1;position:relative;margin:34px 0 26px;min-height:0}
+.shot{background:#fff;border-radius:14px;box-shadow:0 26px 60px rgba(29,41,64,.20),0 2px 6px rgba(29,41,64,.10)}
+.hero{display:flex;align-items:center;justify-content:center}
+.hero .shot{max-height:100%;max-width:74%;transform:rotate(-2.5deg)}
+.one{display:flex;align-items:center;justify-content:center}
+.one .shot{max-height:100%;max-width:82%}
+.fan .shot{position:absolute;height:92%;top:4%}
+.fan.n2 .s0{left:0;transform:rotate(-4deg);z-index:1}
+.fan.n2 .s1{right:0;transform:rotate(3.5deg);top:7%;z-index:2}
+.fan.n3 .s0{left:-10px;height:78%;top:2%;transform:rotate(-6deg);z-index:1}
+.fan.n3 .s1{left:50%;height:80%;top:10%;transform:translateX(-50%) rotate(1deg);z-index:3}
+.fan.n3 .s2{right:-10px;height:78%;top:18%;transform:rotate(6deg);z-index:2}
+.grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:24px}
+.grid .cell{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 14px 34px rgba(29,41,64,.16)}
+.grid img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.quote{display:flex;flex-direction:column;gap:30px}
+.bubble{background:#fff;border-radius:34px;padding:52px 54px 44px;position:relative;box-shadow:0 14px 34px rgba(29,41,64,.12)}
+.bubble:after{content:"";position:absolute;left:90px;bottom:-34px;border:18px solid transparent;border-top:18px solid #fff;border-left:18px solid #fff}
+.q{text-wrap:balance;font:800 76px/1.08 "Bricolage Grotesque","Nunito Sans",sans-serif;letter-spacing:-.01em}
+.qby{font:700 28px/1.2 "Nunito Sans",sans-serif;color:var(--tomatoD);margin-top:22px;text-transform:uppercase;letter-spacing:.1em}
+.quote .peek{flex:1;min-height:0;width:auto;max-width:78%;align-self:center;object-fit:contain;margin-top:24px}
+.t-quote .sub{margin:0 0 20px}
+.list{display:flex;flex-direction:column}
+.list ol{list-style:none;display:flex;flex-direction:column;justify-content:center;gap:20px;flex:1;min-height:0}
+.list li{display:flex;align-items:center;gap:26px;background:#fff;border-radius:22px;padding:24px 28px;box-shadow:0 6px 18px rgba(29,41,64,.08)}
+.num{flex:none;width:68px;height:68px;border-radius:50%;background:var(--ink);color:#fff;font:800 36px/68px "Bricolage Grotesque",sans-serif;text-align:center}
+.li-t{display:flex;flex-direction:column}
+.li-t b{font:800 46px/1.1 "Nunito Sans",sans-serif}
+.li-t em{font:600 31px/1.25 "Nunito Sans",sans-serif;font-style:normal;color:#4A5670;margin-top:4px}
+.list ol.n6{gap:16px}.list ol.n6 li{padding:16px 26px}.list ol.n6 .li-t b{font-size:42px}.list ol.n6 .li-t em{font-size:28px}
+.list ol.n8{gap:12px}.list ol.n8 li{padding:12px 24px;gap:22px}.list ol.n8 .li-t{flex-direction:row;align-items:baseline;gap:14px;flex-wrap:wrap}
+.list ol.n8 .li-t b{font-size:38px}.list ol.n8 .li-t em{font-size:27px;margin:0}.list ol.n8 .num{width:54px;height:54px;line-height:54px;font-size:28px}
+.thumbrow{display:flex;align-items:center;gap:24px;margin-top:24px;flex:none}
+.thumb{height:150px;border-radius:10px;box-shadow:0 10px 24px rgba(29,41,64,.18);background:#fff}
+.thumbrow span{font:800 32px/1.2 "Nunito Sans",sans-serif}
+.art{overflow:visible}
+.chips{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.chips span{background:#fff;border-radius:999px;padding:12px 26px;font:800 30px/1.1 "Nunito Sans",sans-serif;box-shadow:0 4px 12px rgba(29,41,64,.08)}
+.freeline{font:800 30px/1.2 "Nunito Sans",sans-serif;background:var(--ink);color:#fff;border-radius:16px;padding:16px 24px;margin-bottom:24px;align-self:flex-start}
+footer{display:flex;align-items:center;justify-content:space-between;border-top:3px solid rgba(29,41,64,.12);padding-top:26px}
+.lockup{height:62px;width:auto}
+.url{font:800 28px/1 "Nunito Sans",sans-serif;letter-spacing:.02em}
+</style></head><body>
+<section class="pin t-hero" id="free-01" style="--bg:#DFF3E9;--ac:#2FA36B">
+  <div class="band"></div>
+  <header><p class="kick">Free printable · Ages 0–5</p><h1 class="">Five 5-Minute Plays</h1><p class="sub">Five little plays with things you already have, from birth to five.</p></header>
+  <div class="art hero"><img class="shot" src="../../../products/lead-magnet/preview/p01.png" alt=""></div>
+  
+  <div class="chips"><span>0 things to buy</span><span>0 min prep</span><span>Free with email sign-up</span></div><p class="freeline">Free with email sign-up · grown-ups only</p>
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-hero" id="busy-01" style="--bg:#E3EEFA;--ac:#3D86D8">
+  <div class="band"></div>
+  <header><p class="kick">Printable · Ages 1–5 · Letter + A4</p><h1 class="long">74 Toddler Busy Book Activities</h1><p class="sub">Sorted by age, with a “talk while you play” line on every page.</p></header>
+  <div class="art hero"><img class="shot" src="../../../products/toddler-busy-book/cover.png" alt=""></div>
+  
+  <div class="chips"><span>1–2 years</span><span>2–3 years</span><span>3–5 years</span></div>
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-hero" id="gift-01" style="--bg:#FDE9E3;--ac:#EE5A36">
+  <div class="band"></div>
+  <header><p class="kick">Instant download · Ages 1–5</p><h1 class="long">A gift of play for ages 1–5</h1><p class="sub">4 printable play sets and a book of play coupons.</p></header>
+  <div class="art hero"><img class="shot" src="../../../products/bundle-gift-1-5/preview/p01.png" alt=""></div>
+  
+  <div class="chips"><span>Nothing ships</span><span>Color + low-ink</span><span>Letter + A4</span></div>
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-hero" id="routine-01" style="--bg:#FEF4D8;--ac:#F5B820">
+  <div class="band"></div>
+  <header><p class="kick">Printable · Ages 0–5 · Letter + A4</p><h1 class="">177 Visual Routine Cards</h1><p class="sub">Picture cards for mornings, meals, play and bedtime.</p></header>
+  <div class="art hero"><img class="shot" src="../../../products/visual-routine-cards/preview/ages-0-5/p01.png" alt=""></div>
+  
+  <div class="chips"><span>Editable charts</span><span>4 colorways</span><span>Low-ink too</span></div>
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-hero" id="plays-01" style="--bg:#FDE9E3;--ac:#EE5A36">
+  <div class="band"></div>
+  <header><p class="kick">Printable PDF · Ages 0–5</p><h1 class="">100 Screen-Free Plays</h1><p class="sub">Sorted by age from birth. 89 need nothing to buy.</p></header>
+  <div class="art hero"><img class="shot" src="../../../products/guide-100-plays/cover.png" alt=""></div>
+  
+  <div class="chips"><span>0–1</span><span>1–2</span><span>2–3</span><span>3–5</span></div>
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-hero" id="bored-01" style="--bg:#FEF4D8;--ac:#F5B820">
+  <div class="band"></div>
+  <header><p class="kick">Printable · Ages 1–5</p><h1 class="">76 “I’m Bored” Play Cards</h1><p class="sub">Pull a card, play together, talk about it.</p></header>
+  <div class="art hero"><img class="shot" src="../../../products/bored-play-cards/preview/ages-1-5/p01.png" alt=""></div>
+  
+  <div class="chips"><span>Ages 1–3</span><span>Ages 3–5</span><span>Jar labels</span></div>
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-list" id="free-02" style="--bg:#FEF4D8;--ac:#F5B820">
+  <div class="band"></div>
+  <header><p class="kick">Free printable · Ages 0–5</p><h1 class="long">5 plays with things you already have</h1></header>
+  <div class="art list"><ol class="n5"><li><span class="num">1</span><span class="li-t"><b>Peekaboo Blanket</b><em>a small blanket or towel</em></span></li><li><span class="num">2</span><span class="li-t"><b>Pots-and-Spoons Band</b><em>a pot and a wooden spoon</em></span></li><li><span class="num">3</span><span class="li-t"><b>Cup Tower Crash</b><em>3–6 plastic cups</em></span></li><li><span class="num">4</span><span class="li-t"><b>Window Walk</b><em>a window</em></span></li><li><span class="num">5</span><span class="li-t"><b>Sock Friend Says Hello</b><em>a clean sock</em></span></li></ol>
+    <div class="thumbrow"><img class="thumb" src="../../../products/lead-magnet/preview/p01.png" alt=""><span>All five in the free printable</span></div></div>
+  
+  <p class="freeline">Free with email sign-up · grown-ups only</p>
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-grid" id="busy-02" style="--bg:#DFF3E9;--ac:#2FA36B">
+  <div class="band"></div>
+  <header><p class="kick">Toddler busy book · Printable</p><h1 class="long">49 no-cut pages to play today</h1><p class="sub">First words, animal sounds, colors and pretend play.</p></header>
+  <div class="art grid"><div class="cell"><img src="../../../products/toddler-busy-book/preview/p21.png" alt=""></div><div class="cell"><img src="../../../products/toddler-busy-book/preview/p25.png" alt=""></div><div class="cell"><img src="../../../products/toddler-busy-book/preview/p38.png" alt=""></div><div class="cell"><img src="../../../products/toddler-busy-book/preview/p43.png" alt=""></div></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="gift-02" style="--bg:#FEF4D8;--ac:#F5B820">
+  <div class="band"></div>
+  <header><p class="kick">Instant gift · Print, fold, give</p><h1 class="">Print it, fold it, give it</h1><p class="sub">A fold card and two “Surprise! Inside is…” reveal cards.</p></header>
+  <div class="art fan n2"><img class="shot s0" src="../../../products/bundle-gift-1-5/preview/p03.png" alt=""><img class="shot s1" src="../../../products/bundle-gift-1-5/preview/p04.png" alt=""></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="routine-02" style="--bg:#E3EEFA;--ac:#3D86D8">
+  <div class="band"></div>
+  <header><p class="kick">Routine cards · Mornings</p><h1 class="">Morning routine cards</h1><p class="sub">Wake up, get dressed, breakfast, shoes on.</p></header>
+  <div class="art fan n2"><img class="shot s0" src="../../../products/visual-routine-cards/preview/ages-0-5/p08.png" alt=""><img class="shot s1" src="../../../products/visual-routine-cards/preview/ages-0-5/p84.png" alt=""></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-list" id="plays-02" style="--bg:#E3EEFA;--ac:#3D86D8">
+  <div class="band"></div>
+  <header><p class="kick">100 Screen-Free Plays · Bath time</p><h1 class="">5 bath-time plays</h1></header>
+  <div class="art list"><ol class="n5"><li><span class="num">1</span><span class="li-t"><b>Pour and splash</b><em>from 6 months</em></span></li><li><span class="num">2</span><span class="li-t"><b>This is the way…</b><em>from 1 year</em></span></li><li><span class="num">3</span><span class="li-t"><b>Wash the baby doll</b><em>from 18 months</em></span></li><li><span class="num">4</span><span class="li-t"><b>Float or sink?</b><em>from 2 years</em></span></li><li><span class="num">5</span><span class="li-t"><b>Pouring station</b><em>from 3 years</em></span></li></ol>
+    <div class="thumbrow"><img class="thumb" src="../../../products/guide-100-plays/cover.png" alt=""><span>From 100 Screen-Free Plays</span></div></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-list" id="bored-02" style="--bg:#DFF3E9;--ac:#2FA36B">
+  <div class="band"></div>
+  <header><p class="kick">“I’m bored” cards · Ages 1–3</p><h1 class="long">8 plays for when a toddler is bored</h1></header>
+  <div class="art list"><ol class="n8"><li><span class="num">1</span><span class="li-t"><b>Pot-and-Spoon Band</b><em>music</em></span></li><li><span class="num">2</span><span class="li-t"><b>Box Car Ride</b><em>pretend</em></span></li><li><span class="num">3</span><span class="li-t"><b>Tower and Crash</b><em>build</em></span></li><li><span class="num">4</span><span class="li-t"><b>Pillow Mountain</b><em>move</em></span></li><li><span class="num">5</span><span class="li-t"><b>Bubble Chase</b><em>outdoors</em></span></li><li><span class="num">6</span><span class="li-t"><b>Teddy Picnic</b><em>pretend</em></span></li><li><span class="num">7</span><span class="li-t"><b>Stop-and-Go Dance</b><em>music</em></span></li><li><span class="num">8</span><span class="li-t"><b>Fill and Dump</b><em>build</em></span></li></ol>
+    <div class="thumbrow"><img class="thumb" src="../../../products/bored-play-cards/preview/ages-1-5/p01.png" alt=""><span>38 cards for ages 1–3</span></div></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="free-03" style="--bg:#E3EEFA;--ac:#3D86D8">
+  <div class="band"></div>
+  <header><p class="kick">Free printable · Ages 0–5</p><h1 class="">One play, four ages</h1><p class="sub">Every play has an idea for 0–1, 1–2, 2–3 and 3–5 years.</p></header>
+  <div class="art fan n2"><img class="shot s0" src="../../../products/lead-magnet/preview/p03.png" alt=""><img class="shot s1" src="../../../products/lead-magnet/preview/p04.png" alt=""></div>
+  
+  <p class="freeline">Free with email sign-up · grown-ups only</p>
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-quote" id="busy-03" style="--bg:#FEF4D8;--ac:#F5B820">
+  <div class="band"></div>
+  <header><p class="kick">Toddler busy book · Talk while you play</p></header>
+  <div class="art quote"><div class="bubble"><p class="q">“Ball! Big ball. Roll, ball!”</p><p class="qby">First words: ball</p></div><img class="shot peek" src="../../../products/toddler-busy-book/preview/p21.png" alt=""></div>
+  <p class="sub">Repeat and add one word. Every page has a talk line like this.</p>
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-grid" id="gift-03" style="--bg:#F3F6FB;--ac:#1D2940">
+  <div class="band"></div>
+  <header><p class="kick">Instant gift · What’s inside</p><h1 class="long">Four play sets in one download</h1><p class="sub">Busy book · family kit · “I’m bored” cards · play &amp; talk cards</p></header>
+  <div class="art grid"><div class="cell"><img src="../../../products/toddler-busy-book/cover.png" alt=""></div><div class="cell"><img src="../../../products/play-first-family-kit/preview/ages-2-5/p01.png" alt=""></div><div class="cell"><img src="../../../products/bored-play-cards/preview/ages-1-5/p01.png" alt=""></div><div class="cell"><img src="../../../products/play-talk-cards/preview/p01.png" alt=""></div></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="routine-03" style="--bg:#EFE6FA;--ac:#8A5CC7">
+  <div class="band"></div>
+  <header><p class="kick">Routine cards · Bedtime</p><h1 class="">Bedtime routine cards</h1><p class="sub">Bath, pajamas, books, lullaby, lights off.</p></header>
+  <div class="art fan n2"><img class="shot s0" src="../../../products/visual-routine-cards/preview/ages-0-5/p15.png" alt=""><img class="shot s1" src="../../../products/visual-routine-cards/preview/ages-0-5/p16.png" alt=""></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-list" id="plays-03" style="--bg:#FEF4D8;--ac:#F5B820">
+  <div class="band"></div>
+  <header><p class="kick">100 Screen-Free Plays · Kitchen</p><h1 class="long">Kitchen plays for little helpers</h1></header>
+  <div class="art list"><ol class="n5"><li><span class="num">1</span><span class="li-t"><b>Kitchen dance party</b><em>from birth</em></span></li><li><span class="num">2</span><span class="li-t"><b>Kitchen band</b><em>from 6 months</em></span></li><li><span class="num">3</span><span class="li-t"><b>Pots and lids</b><em>from 18 months</em></span></li><li><span class="num">4</span><span class="li-t"><b>Soup kitchen</b><em>from 2 years</em></span></li><li><span class="num">5</span><span class="li-t"><b>Salad helper</b><em>from 2 years</em></span></li></ol>
+    <div class="thumbrow"><img class="thumb" src="../../../products/guide-100-plays/cover.png" alt=""><span>From 100 Screen-Free Plays</span></div></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-list" id="bored-03" style="--bg:#FDE9E3;--ac:#EE5A36">
+  <div class="band"></div>
+  <header><p class="kick">“I’m bored” cards · Ages 3–5</p><h1 class="long">8 indoor plays for 3–5-year-olds</h1></header>
+  <div class="art list"><ol class="n8"><li><span class="num">1</span><span class="li-t"><b>Cushion Fort</b><em>build</em></span></li><li><span class="num">2</span><span class="li-t"><b>The Floor Is Lava</b><em>move</em></span></li><li><span class="num">3</span><span class="li-t"><b>Pretend Café</b><em>pretend</em></span></li><li><span class="num">4</span><span class="li-t"><b>Tape Road</b><em>build</em></span></li><li><span class="num">5</span><span class="li-t"><b>Story in a Bag</b><em>words</em></span></li><li><span class="num">6</span><span class="li-t"><b>Toy Vet</b><em>pretend</em></span></li><li><span class="num">7</span><span class="li-t"><b>Sink or Float</b><em>games</em></span></li><li><span class="num">8</span><span class="li-t"><b>Kitchen Band</b><em>music</em></span></li></ol>
+    <div class="thumbrow"><img class="thumb" src="../../../products/bored-play-cards/preview/ages-1-5/p01.png" alt=""><span>38 cards for ages 3–5</span></div></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-hero" id="kit-01" style="--bg:#EFE6FA;--ac:#8A5CC7">
+  <div class="band"></div>
+  <header><p class="kick">Printable · Ages 2–5</p><h1 class="">Play-First Family Kit</h1><p class="sub">9 printable tools for a calm day: jobs, play together, then screens at their spot.</p></header>
+  <div class="art hero"><img class="shot" src="../../../products/play-first-family-kit/preview/ages-2-5/p01.png" alt=""></div>
+  
+  <div class="chips"><span>Picture checklist</span><span>Helping jobs</span><span>Family play rules</span></div>
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-hero" id="talk-01" style="--bg:#FEF4D8;--ac:#F5B820">
+  <div class="band"></div>
+  <header><p class="kick">Printable cards · Ages 0–5</p><h1 class="">52 Play &amp; Talk Cards</h1><p class="sub">One play and one talk tip on every card, one for each week.</p></header>
+  <div class="art hero"><img class="shot" src="../../../products/play-talk-cards/preview/p01.png" alt=""></div>
+  
+  <div class="chips"><span>0–1</span><span>1–2</span><span>2–3</span><span>3–5</span></div>
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-hero" id="starter-01" style="--bg:#F3F6FB;--ac:#1D2940">
+  <div class="band"></div>
+  <header><p class="kick">Printable · Starter set</p><h1 class="long">60 Routine Cards to start with</h1><p class="sub">The everyday moments, plus 3 charts.</p></header>
+  <div class="art hero"><img class="shot" src="../../../products/visual-routine-cards/preview/starter/p01.png" alt=""></div>
+  
+  <div class="chips"><span>Morning</span><span>Play</span><span>Bedtime</span></div>
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="kit-02" style="--bg:#E3EEFA;--ac:#3D86D8">
+  <div class="band"></div>
+  <header><p class="kick">Family kit · Picture checklist</p><h1 class="long">A picture checklist for the day</h1><p class="sub">Get dressed, tidy toys, play together. Screens keep their own spot.</p></header>
+  <div class="art fan n2"><img class="shot s0" src="../../../products/play-first-family-kit/preview/ages-2-5/p06.png" alt=""><img class="shot s1" src="../../../products/play-first-family-kit/preview/ages-2-5/p22.png" alt=""></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-list" id="talk-02" style="--bg:#E3EEFA;--ac:#3D86D8">
+  <div class="band"></div>
+  <header><p class="kick">Play &amp; talk cards · Talk moves</p><h1 class="long">6 easy ways to talk while you play</h1></header>
+  <div class="art list"><ol class="n6"><li><span class="num">1</span><span class="li-t"><b>Pause and wait</b><em>a look, a sound or a point is a turn</em></span></li><li><span class="num">2</span><span class="li-t"><b>Say what you see</b><em>short, clear words</em></span></li><li><span class="num">3</span><span class="li-t"><b>Repeat and add one</b><em>“ball” becomes “big ball”</em></span></li><li><span class="num">4</span><span class="li-t"><b>Offer a choice</b><em>pointing is a real answer</em></span></li><li><span class="num">5</span><span class="li-t"><b>Follow their lead</b><em>play what they choose</em></span></li><li><span class="num">6</span><span class="li-t"><b>Sing and gesture</b><em>a tune, a clap or a sign</em></span></li></ol>
+    <div class="thumbrow"><img class="thumb" src="../../../products/play-talk-cards/preview/p01.png" alt=""><span>On the 52 Play &amp; Talk Cards</span></div></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="starter-02" style="--bg:#FEF4D8;--ac:#F5B820">
+  <div class="band"></div>
+  <header><p class="kick">Starter set · Mornings</p><h1 class="">A simple morning chart</h1><p class="sub">Wake up, potty, get dressed, shoes on.</p></header>
+  <div class="art fan n2"><img class="shot s0" src="../../../products/visual-routine-cards/preview/starter/p06.png" alt=""><img class="shot s1" src="../../../products/visual-routine-cards/preview/starter/p21.png" alt=""></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="kit-03" style="--bg:#DFF3E9;--ac:#2FA36B">
+  <div class="band"></div>
+  <header><p class="kick">Family kit · Ages 2–5</p><h1 class="">Little helping jobs</h1><p class="sub">Feed the pet, water plants, match socks, wipe a spill.</p></header>
+  <div class="art fan n2"><img class="shot s0" src="../../../products/play-first-family-kit/preview/ages-2-5/p24.png" alt=""><img class="shot s1" src="../../../products/play-first-family-kit/preview/ages-2-5/p25.png" alt=""></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-list" id="talk-03" style="--bg:#DFF3E9;--ac:#2FA36B">
+  <div class="band"></div>
+  <header><p class="kick">Play &amp; talk cards · Ages 0–1</p><h1 class="long">Baby play ideas for the first year</h1></header>
+  <div class="art list"><ol class="n6"><li><span class="num">1</span><span class="li-t"><b>Copy Cat Faces</b><em>from birth</em></span></li><li><span class="num">2</span><span class="li-t"><b>Rock and Stop</b><em>from birth</em></span></li><li><span class="num">3</span><span class="li-t"><b>Peekaboo Cloth</b><em>from 4 months</em></span></li><li><span class="num">4</span><span class="li-t"><b>Kitchen Drum</b><em>from 6 months</em></span></li><li><span class="num">5</span><span class="li-t"><b>Bubble Watch</b><em>from 6 months</em></span></li><li><span class="num">6</span><span class="li-t"><b>Roll It Back</b><em>from 7 months</em></span></li></ol>
+    <div class="thumbrow"><img class="thumb" src="../../../products/play-talk-cards/preview/p01.png" alt=""><span>From 52 Play &amp; Talk Cards</span></div></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="starter-03" style="--bg:#EFE6FA;--ac:#8A5CC7">
+  <div class="band"></div>
+  <header><p class="kick">Starter set · Bedtime</p><h1 class="">Bedtime in pictures</h1><p class="sub">Bath, pajamas, brush teeth, books, lights off.</p></header>
+  <div class="art fan n2"><img class="shot s0" src="../../../products/visual-routine-cards/preview/starter/p09.png" alt=""><img class="shot s1" src="../../../products/visual-routine-cards/preview/starter/p08.png" alt=""></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-quote" id="free-04" style="--bg:#FEF4D8;--ac:#F5B820">
+  <div class="band"></div>
+  <header><p class="kick">Free printable · Talk while you play</p></header>
+  <div class="art quote"><div class="bubble"><p class="q">“Hello! (wait) What’s your name?”</p><p class="qby">Sock Friend Says Hello</p></div><img class="shot peek" src="../../../products/lead-magnet/preview/p07.png" alt=""></div>
+  <p class="sub">Pause and wait. A look, a sound or a word counts as a turn.</p>
+  <p class="freeline">Free with email sign-up · grown-ups only</p>
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="busy-04" style="--bg:#FDE9E3;--ac:#EE5A36">
+  <div class="band"></div>
+  <header><p class="kick">Toddler busy book · Pretend play</p><h1 class="">Pretend play pages</h1><p class="sub">Lunch for Teddy, dress for the weather and a pizza shop.</p></header>
+  <div class="art fan n3"><img class="shot s0" src="../../../products/toddler-busy-book/preview/p34.png" alt=""><img class="shot s1" src="../../../products/toddler-busy-book/preview/p61.png" alt=""><img class="shot s2" src="../../../products/toddler-busy-book/preview/p63.png" alt=""></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-list" id="gift-04" style="--bg:#EFE6FA;--ac:#8A5CC7">
+  <div class="band"></div>
+  <header><p class="kick">Instant gift · Ages 1–5</p><h1 class="long">One download, a year of play ideas</h1></header>
+  <div class="art list"><ol class="n5"><li><span class="num">1</span><span class="li-t"><b>74 busy book activities</b><em>ages 1–5, in three age bands</em></span></li><li><span class="num">2</span><span class="li-t"><b>76 “I’m bored” play cards</b><em>ages 1–3 and 3–5</em></span></li><li><span class="num">3</span><span class="li-t"><b>52 play &amp; talk cards</b><em>one for every week of the year</em></span></li><li><span class="num">4</span><span class="li-t"><b>Family kit pages</b><em>ages 2–5: checklists, jobs and plans</em></span></li><li><span class="num">5</span><span class="li-t"><b>16 play coupons</b><em>free inside, to do together</em></span></li></ol>
+    <div class="thumbrow"><img class="thumb" src="../../../products/bundle-gift-1-5/preview/p01.png" alt=""><span>Ages 1–5 Instant Gift Bundle</span></div></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-hero" id="winter-01" style="--bg:#E3EEFA;--ac:#3D86D8">
+  <div class="band"></div>
+  <header><p class="kick">Printable · Ages 2–5 · Winter</p><h1 class="long">24 Days of Play: Winter Countdown</h1><p class="sub">One cozy play a day, with things you already have.</p></header>
+  <div class="art hero"><img class="shot" src="../../../products/winter-countdown/preview/p01.png" alt=""></div>
+  
+  <div class="chips"><span>24 plays</span><span>Low prep</span><span>Letter + A4</span></div>
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-grid" id="routine-04" style="--bg:#DFF3E9;--ac:#2FA36B">
+  <div class="band"></div>
+  <header><p class="kick">Routine cards · Charts</p><h1 class="">Charts for your day</h1><p class="sub">Day planners, morning and bedtime charts, steps and an all-done pocket.</p></header>
+  <div class="art grid"><div class="cell"><img src="../../../products/visual-routine-cards/preview/ages-0-5/p81.png" alt=""></div><div class="cell"><img src="../../../products/visual-routine-cards/preview/ages-0-5/p84.png" alt=""></div><div class="cell"><img src="../../../products/visual-routine-cards/preview/ages-0-5/p92.png" alt=""></div><div class="cell"><img src="../../../products/visual-routine-cards/preview/ages-0-5/p114.png" alt=""></div></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-list" id="plays-04" style="--bg:#EFE6FA;--ac:#8A5CC7">
+  <div class="band"></div>
+  <header><p class="kick">100 Screen-Free Plays · Tired days</p><h1 class="long">Couch plays for tired grown-ups</h1></header>
+  <div class="art list"><ol class="n5"><li><span class="num">1</span><span class="li-t"><b>Chest chat</b><em>from birth</em></span></li><li><span class="num">2</span><span class="li-t"><b>Couch peekaboo</b><em>from 4 months</em></span></li><li><span class="num">3</span><span class="li-t"><b>Pat-a-cake</b><em>from 6 months</em></span></li><li><span class="num">4</span><span class="li-t"><b>I’m a mountain</b><em>from 1 year</em></span></li><li><span class="num">5</span><span class="li-t"><b>Ceiling story</b><em>from 3 years</em></span></li></ol>
+    <div class="thumbrow"><img class="thumb" src="../../../products/guide-100-plays/cover.png" alt=""><span>12 tired-grown-up plays inside</span></div></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-list" id="winter-02" style="--bg:#F3F6FB;--ac:#1D2940">
+  <div class="band"></div>
+  <header><p class="kick">Winter countdown · Indoors</p><h1 class="long">Cozy winter plays for indoors</h1></header>
+  <div class="art list"><ol class="n6"><li><span class="num">1</span><span class="li-t"><b>Paper Snowball Toss</b><em>from 2 years</em></span></li><li><span class="num">2</span><span class="li-t"><b>Penguin Waddle</b><em>from 2 years</em></span></li><li><span class="num">3</span><span class="li-t"><b>Pretend Cocoa Café</b><em>from 2 years</em></span></li><li><span class="num">4</span><span class="li-t"><b>Foggy Window Drawing</b><em>from 30 months</em></span></li><li><span class="num">5</span><span class="li-t"><b>Flashlight Shadow Show</b><em>from 30 months</em></span></li><li><span class="num">6</span><span class="li-t"><b>Cozy Book Nest</b><em>from 2 years</em></span></li></ol>
+    <div class="thumbrow"><img class="thumb" src="../../../products/winter-countdown/preview/p01.png" alt=""><span>From 24 Days of Play</span></div></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="bored-04" style="--bg:#E3EEFA;--ac:#3D86D8">
+  <div class="band"></div>
+  <header><p class="kick">“I’m bored” cards · Make the jar</p><h1 class="">Make an “I’m bored” jar</h1><p class="sub">Round jar labels, wrap labels and card backs.</p></header>
+  <div class="art fan n2"><img class="shot s0" src="../../../products/bored-play-cards/preview/ages-1-5/p28.png" alt=""><img class="shot s1" src="../../../products/bored-play-cards/preview/ages-1-5/p19.png" alt=""></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="kit-04" style="--bg:#FEF4D8;--ac:#F5B820">
+  <div class="band"></div>
+  <header><p class="kick">Family kit · Poster</p><h1 class="">Our Family Play Rules</h1><p class="sub">A filled-in poster, plus a blank one to write your own.</p></header>
+  <div class="art fan n2"><img class="shot s0" src="../../../products/play-first-family-kit/preview/ages-2-5/p30.png" alt=""><img class="shot s1" src="../../../products/play-first-family-kit/preview/ages-2-5/p31.png" alt=""></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="winter-03" style="--bg:#EFE6FA;--ac:#8A5CC7">
+  <div class="band"></div>
+  <header><p class="kick">Winter countdown · How it works</p><h1 class="long">Tape a tag on each envelope</h1><p class="sub">Open one a day, then color in the countdown board.</p></header>
+  <div class="art fan n2"><img class="shot s0" src="../../../products/winter-countdown/preview/p21.png" alt=""><img class="shot s1" src="../../../products/winter-countdown/preview/p06.png" alt=""></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-quote" id="talk-04" style="--bg:#EFE6FA;--ac:#8A5CC7">
+  <div class="band"></div>
+  <header><p class="kick">Play &amp; talk cards · From 4 months</p></header>
+  <div class="art quote"><div class="bubble"><p class="q">“Pause before ‘boo’.”</p><p class="qby">Peekaboo Cloth</p></div><img class="shot peek" src="../../../products/play-talk-cards/preview/p04.png" alt=""></div>
+  <p class="sub">A kick, a grin or a squeal is your baby’s turn.</p>
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="free-05" style="--bg:#EFE6FA;--ac:#8A5CC7">
+  <div class="band"></div>
+  <header><p class="kick">Free printable · Ages 0–5</p><h1 class="">Pots-and-Spoons Band</h1><p class="sub">Loud, quiet, stop and go. Then swap who leads.</p></header>
+  <div class="art one"><img class="shot" src="../../../products/lead-magnet/preview/p04.png" alt=""></div>
+  
+  <p class="freeline">Free with email sign-up · grown-ups only</p>
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-grid" id="winter-04" style="--bg:#DFF3E9;--ac:#2FA36B">
+  <div class="band"></div>
+  <header><p class="kick">Winter countdown · 24 plays</p><h1 class="">24 low-prep winter plays</h1><p class="sub">A talk line, easier and harder ideas and a 2-minute version.</p></header>
+  <div class="art grid"><div class="cell"><img src="../../../products/winter-countdown/preview/p09.png" alt=""></div><div class="cell"><img src="../../../products/winter-countdown/preview/p10.png" alt=""></div><div class="cell"><img src="../../../products/winter-countdown/preview/p11.png" alt=""></div><div class="cell"><img src="../../../products/winter-countdown/preview/p12.png" alt=""></div></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-grid" id="busy-05" style="--bg:#F3F6FB;--ac:#1D2940">
+  <div class="band"></div>
+  <header><p class="kick">Toddler busy book · Make it yours</p><h1 class="">Binder covers in 4 colors</h1><p class="sub">Type in a name, add the spine and pouch labels.</p></header>
+  <div class="art grid"><div class="cell"><img src="../../../products/toddler-busy-book/preview/p13.png" alt=""></div><div class="cell"><img src="../../../products/toddler-busy-book/preview/p14.png" alt=""></div><div class="cell"><img src="../../../products/toddler-busy-book/preview/p15.png" alt=""></div><div class="cell"><img src="../../../products/toddler-busy-book/preview/p16.png" alt=""></div></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="gift-05" style="--bg:#DFF3E9;--ac:#2FA36B">
+  <div class="band"></div>
+  <header><p class="kick">Gift idea · Grandparents &amp; friends</p><h1 class="">Far away? Send play.</h1><p class="sub">Buy the download, send it on. The family prints what they need.</p></header>
+  <div class="art fan n2"><img class="shot s0" src="../../../products/gift-reveal-coupons/preview/p01.png" alt=""><img class="shot s1" src="../../../products/bundle-gift-1-5/preview/p02.png" alt=""></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="routine-05" style="--bg:#FEF4D8;--ac:#F5B820">
+  <div class="band"></div>
+  <header><p class="kick">Routine cards · Feelings</p><h1 class="">Picture cards for feelings</h1><p class="sub">Happy, sad, tired, calm, proud: point and name it together.</p></header>
+  <div class="art fan n2"><img class="shot s0" src="../../../products/visual-routine-cards/preview/ages-0-5/p18.png" alt=""><img class="shot s1" src="../../../products/visual-routine-cards/preview/ages-0-5/p19.png" alt=""></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-list" id="plays-05" style="--bg:#DFF3E9;--ac:#2FA36B">
+  <div class="band"></div>
+  <header><p class="kick">100 Screen-Free Plays · Waiting &amp; car</p><h1 class="long">Plays for waiting rooms and car rides</h1></header>
+  <div class="art list"><ol class="n5"><li><span class="num">1</span><span class="li-t"><b>Row, row, stop!</b><em>from 6 months</em></span></li><li><span class="num">2</span><span class="li-t"><b>Animal sounds</b><em>from 1 year</em></span></li><li><span class="num">3</span><span class="li-t"><b>Pretend phone call</b><em>from 18 months</em></span></li><li><span class="num">4</span><span class="li-t"><b>Finish the rhyme</b><em>from 2 years</em></span></li><li><span class="num">5</span><span class="li-t"><b>I spy colors</b><em>from 3 years</em></span></li></ol>
+    <div class="thumbrow"><img class="thumb" src="../../../products/guide-100-plays/cover.png" alt=""><span>From 100 Screen-Free Plays</span></div></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-grid" id="bored-05" style="--bg:#F3F6FB;--ac:#1D2940">
+  <div class="band"></div>
+  <header><p class="kick">“I’m bored” cards · Inside</p><h1 class="">A talk line on every card</h1><p class="sub">What you need, how to play, a safety line.</p></header>
+  <div class="art grid"><div class="cell"><img src="../../../products/bored-play-cards/preview/ages-1-5/p09.png" alt=""></div><div class="cell"><img src="../../../products/bored-play-cards/preview/ages-1-5/p10.png" alt=""></div><div class="cell"><img src="../../../products/bored-play-cards/preview/ages-1-5/p14.png" alt=""></div><div class="cell"><img src="../../../products/bored-play-cards/preview/ages-1-5/p15.png" alt=""></div></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="kit-05" style="--bg:#FDE9E3;--ac:#EE5A36">
+  <div class="band"></div>
+  <header><p class="kick">Family kit · 30 days</p><h1 class="">30 Days of Play First</h1><p class="sub">One easy play a day, with a tracker to color in.</p></header>
+  <div class="art fan n2"><img class="shot s0" src="../../../products/play-first-family-kit/preview/ages-2-5/p35.png" alt=""><img class="shot s1" src="../../../products/play-first-family-kit/preview/ages-2-5/p36.png" alt=""></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-grid" id="talk-05" style="--bg:#F3F6FB;--ac:#1D2940">
+  <div class="band"></div>
+  <header><p class="kick">Play &amp; talk cards · Print, cut, keep</p><h1 class="">One card a week, all year</h1><p class="sub">Four age bands, each with a color and a word label.</p></header>
+  <div class="art grid"><div class="cell"><img src="../../../products/play-talk-cards/preview/p12.png" alt=""></div><div class="cell"><img src="../../../products/play-talk-cards/preview/p13.png" alt=""></div><div class="cell"><img src="../../../products/play-talk-cards/preview/p14.png" alt=""></div><div class="cell"><img src="../../../products/play-talk-cards/preview/p15.png" alt=""></div></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="winter-05" style="--bg:#FEF4D8;--ac:#F5B820">
+  <div class="band"></div>
+  <header><p class="kick">Winter countdown · Keepsake</p><h1 class="long">We played our way through winter!</h1><p class="sub">A certificate to fill in at the end.</p></header>
+  <div class="art one"><img class="shot" src="../../../products/winter-countdown/preview/p23.png" alt=""></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="free-06" style="--bg:#E3EEFA;--ac:#3D86D8">
+  <div class="band"></div>
+  <header><p class="kick">Free printable · From birth</p><h1 class="">Peekaboo Blanket</h1><p class="sub">Things that go away and come back are thrilling for little ones.</p></header>
+  <div class="art one"><img class="shot" src="../../../products/lead-magnet/preview/p03.png" alt=""></div>
+  
+  <p class="freeline">Free with email sign-up · grown-ups only</p>
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="busy-06" style="--bg:#EFE6FA;--ac:#8A5CC7">
+  <div class="band"></div>
+  <header><p class="kick">Toddler busy book · Ages 3–5</p><h1 class="long">Mazes, patterns and first-next-last</h1><p class="sub">Bigger thinking games for ages 3–5, easy to tricky.</p></header>
+  <div class="art fan n3"><img class="shot s0" src="../../../products/toddler-busy-book/preview/p81.png" alt=""><img class="shot s1" src="../../../products/toddler-busy-book/preview/p87.png" alt=""><img class="shot s2" src="../../../products/toddler-busy-book/preview/p90.png" alt=""></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-list" id="routine-06" style="--bg:#F3F6FB;--ac:#1D2940">
+  <div class="band"></div>
+  <header><p class="kick">Routine cards · How to start</p><h1 class="long">A picture schedule in 4 steps</h1></header>
+  <div class="art list"><ol class="n4"><li><span class="num">1</span><span class="li-t"><b>Print only the cards you use today</b><em>start with just a few</em></span></li><li><span class="num">2</span><span class="li-t"><b>Laminate or slip into a pocket</b><em>or use cardstock</em></span></li><li><span class="num">3</span><span class="li-t"><b>Put them on a chart in order</b><em>morning, day or bedtime</em></span></li><li><span class="num">4</span><span class="li-t"><b>Point, say it, then move it</b><em>to the “All done” pocket</em></span></li></ol>
+    <div class="thumbrow"><img class="thumb" src="../../../products/visual-routine-cards/preview/ages-0-5/p01.png" alt=""><span>177 Visual Routine Cards</span></div></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="plays-06" style="--bg:#E3EEFA;--ac:#3D86D8">
+  <div class="band"></div>
+  <header><p class="kick">100 Screen-Free Plays · By age</p><h1 class="">Four age bands, from birth</h1><p class="sub">Each chapter opens with a stage-at-a-glance page and a play-basket list.</p></header>
+  <div class="art fan n3"><img class="shot s0" src="../../../products/guide-100-plays/preview/p13.png" alt=""><img class="shot s1" src="../../../products/guide-100-plays/preview/p27.png" alt=""><img class="shot s2" src="../../../products/guide-100-plays/preview/p15.png" alt=""></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-quote" id="bored-06" style="--bg:#EFE6FA;--ac:#8A5CC7">
+  <div class="band"></div>
+  <header><p class="kick">“I’m bored” cards · Talk about it</p></header>
+  <div class="art quote"><div class="bubble"><p class="q">“Loud or quiet? Your turn!”</p><p class="qby">Pot-and-Spoon Band</p></div><img class="shot peek" src="../../../products/bored-play-cards/preview/ages-1-5/p09.png" alt=""></div>
+  <p class="sub">Drum loud, then soft, then fast, then slow. Take turns copying.</p>
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="free-07" style="--bg:#FDE9E3;--ac:#EE5A36">
+  <div class="band"></div>
+  <header><p class="kick">Free printable · Ages 0–5</p><h1 class="">Cup Tower Crash</h1><p class="sub">The wait before the crash is the best part.</p></header>
+  <div class="art one"><img class="shot" src="../../../products/lead-magnet/preview/p05.png" alt=""></div>
+  
+  <p class="freeline">Free with email sign-up · grown-ups only</p>
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="busy-07" style="--bg:#DFF3E9;--ac:#2FA36B">
+  <div class="band"></div>
+  <header><p class="kick">Toddler busy book · Big pieces</p><h1 class="long">Every piece is 2 in or bigger</h1><p class="sub">Straight cuts, 12 pieces or fewer per sheet. Grown-up keeps the pieces.</p></header>
+  <div class="art fan n2"><img class="shot s0" src="../../../products/toddler-busy-book/preview/p28.png" alt=""><img class="shot s1" src="../../../products/toddler-busy-book/preview/p29.png" alt=""></div>
+  
+  
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="free-08" style="--bg:#DFF3E9;--ac:#2FA36B">
+  <div class="band"></div>
+  <header><p class="kick">Free printable · Ages 0–5</p><h1 class="">Window Walk</h1><p class="sub">Name what your child is already looking at.</p></header>
+  <div class="art one"><img class="shot" src="../../../products/lead-magnet/preview/p06.png" alt=""></div>
+  
+  <p class="freeline">Free with email sign-up · grown-ups only</p>
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-quote" id="free-09" style="--bg:#FDE9E3;--ac:#EE5A36">
+  <div class="band"></div>
+  <header><p class="kick">Free printable · Talk while you play</p></header>
+  <div class="art quote"><div class="bubble"><p class="q">“Up, up, up… (wait) CRASH!”</p><p class="qby">Cup Tower Crash</p></div><img class="shot peek" src="../../../products/lead-magnet/preview/p05.png" alt=""></div>
+  <p class="sub">That little pause gives your child a turn to join in.</p>
+  <p class="freeline">Free with email sign-up · grown-ups only</p>
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-list" id="free-10" style="--bg:#F3F6FB;--ac:#1D2940">
+  <div class="band"></div>
+  <header><p class="kick">Free printable · For tired days</p><h1 class="long">Tired? Try the 1-minute version</h1></header>
+  <div class="art list"><ol class="n5"><li><span class="num">1</span><span class="li-t"><b>Peekaboo Blanket</b><em>hide your face behind your hands three times</em></span></li><li><span class="num">2</span><span class="li-t"><b>Pots-and-Spoons Band</b><em>three loud taps, three soft taps, done</em></span></li><li><span class="num">3</span><span class="li-t"><b>Cup Tower Crash</b><em>one tower, one crash</em></span></li><li><span class="num">4</span><span class="li-t"><b>Window Walk</b><em>name three things, then wave goodbye</em></span></li><li><span class="num">5</span><span class="li-t"><b>Sock Friend Says Hello</b><em>one sock, one “Hello!”, one tickle</em></span></li></ol>
+    <div class="thumbrow"><img class="thumb" src="../../../products/lead-magnet/preview/p01.png" alt=""><span>From the free printable</span></div></div>
+  
+  <p class="freeline">Free with email sign-up · grown-ups only</p>
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-grid" id="free-11" style="--bg:#FEF4D8;--ac:#F5B820">
+  <div class="band"></div>
+  <header><p class="kick">Free printable · Ages 0–5</p><h1 class="">5 plays, 0 minutes of prep</h1><p class="sub">About five minutes each, with a safety line on every play.</p></header>
+  <div class="art grid"><div class="cell"><img src="../../../products/lead-magnet/preview/p03.png" alt=""></div><div class="cell"><img src="../../../products/lead-magnet/preview/p04.png" alt=""></div><div class="cell"><img src="../../../products/lead-magnet/preview/p05.png" alt=""></div><div class="cell"><img src="../../../products/lead-magnet/preview/p06.png" alt=""></div></div>
+  
+  <p class="freeline">Free with email sign-up · grown-ups only</p>
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+<section class="pin t-pages" id="free-12" style="--bg:#DFF3E9;--ac:#2FA36B">
+  <div class="band"></div>
+  <header><p class="kick">Free printable · Color + low-ink</p><h1 class="long">Print it in color or low-ink</h1><p class="sub">US Letter and A4. Only an email to sign up.</p></header>
+  <div class="art fan n2"><img class="shot s0" src="../../../products/lead-magnet/preview/p01.png" alt=""><img class="shot s1" src="../../../products/lead-magnet/preview/p08.png" alt=""></div>
+  
+  <p class="freeline">Free with email sign-up · grown-ups only</p>
+  <footer><img class="lockup" src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span class="url">playbeforepixels.com</span></footer>
+</section>
+</body></html>

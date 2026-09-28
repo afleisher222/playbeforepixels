@@ -1,0 +1,30 @@
+// The 12 Pinterest boards (business/GROWTH-ENGINE.md Loop 3: 10–15 keyword boards, the brand's own boards only).
+// Names and descriptions pass the GROWTH-ENGINE §7 banned-word list (checked by build.js): no autism, therapy,
+// delay, special-needs, classroom, teacher, preschool, daycare, PTA or library words, no brand or show names.
+// Board descriptions are about 250–450 characters (Pinterest limit 500, UNVERIFIED).
+module.exports = [
+  { key: 'busy', name: 'Toddler Busy Book Ideas',
+    desc: 'Printable busy book pages for toddlers and little kids, sorted by age: first words, matching, colors, shapes, pretend play and mazes. Each page has a “talk while you play” line, big pieces for little hands and a grown-up nearby. From Play Before Pixels.' },
+  { key: 'screenfree', name: 'Screen-Free Play Ideas for Toddlers',
+    desc: 'Easy screen-free play ideas for ages 1–5 that use what you already have at home: cups, socks, pots, boxes and cushions. Low prep, a little mess at most, and a talk line for every play. Printable play ideas from Play Before Pixels.' },
+  { key: 'baby', name: 'Baby Play Ideas (0–12 Months)',
+    desc: 'Simple play ideas for babies from birth to 12 months: faces, voices, peekaboo, songs and floor time. Short, gentle plays for you and your baby, with a safety note on every one. From Play Before Pixels.' },
+  { key: 'routine', name: 'Toddler Routine & Picture Schedule',
+    desc: 'Picture routine cards and charts for toddlers and little kids: a simple daily plan you can point to, with morning, meal, play and bedtime cards. Printable in color and low-ink, US Letter and A4. From Play Before Pixels.' },
+  { key: 'morning', name: 'Morning & Bedtime Routines for Little Kids',
+    desc: 'Calmer mornings and bedtimes for ages 0–5: picture cards for wake up, get dressed, brush teeth, bath, books and lights off, plus charts to put them in order. Printable ideas from Play Before Pixels.' },
+  { key: 'rainy', name: 'Rainy Day & Indoor Activities for Kids',
+    desc: 'Indoor activities for rainy days and long afternoons, for ages 1–5: forts, dance games, pretend cafés, kitchen bands and cushion mountains. Low prep and nothing special to buy. From Play Before Pixels.' },
+  { key: 'bored', name: 'I’m Bored Ideas for Kids 1–5',
+    desc: 'What to do when a little one says “I’m bored”: quick play ideas for ages 1–3 and 3–5 that you can pull from a jar and start in a minute. Printable play cards with a talk line on each. From Play Before Pixels.' },
+  { key: 'talk', name: 'Talk While You Play',
+    desc: 'Everyday talk ideas to use while you play with babies and toddlers: pause and wait, say what you see, repeat and add one word, offer a choice, follow their lead, sing and gesture. Talk in the language you know best. From Play Before Pixels.' },
+  { key: 'family', name: 'Family Screen Time Plan & Play-First Ideas',
+    desc: 'A calm, no-guilt family plan for ages 2–5: play and time together first, and screens at their own steady spot in the day. Picture checklists, helping jobs and family play rules to print. From Play Before Pixels.' },
+  { key: 'gifts', name: 'Toddler Gift Ideas: Printable & Instant',
+    desc: 'Instant-download gift ideas for toddlers and little kids ages 1–5: printable play sets, a fold card and play coupons. Nothing to ship, nothing to wrap, ready to print at home. From Play Before Pixels.' },
+  { key: 'winter', name: 'Winter Activities for Toddlers',
+    desc: 'Cozy winter play ideas for ages 2–5, indoors and out: paper snowballs, penguin waddles, pretend cocoa cafés and flashlight shadow shows. Secular winter fun with a talk line on every play. From Play Before Pixels.' },
+  { key: 'free', name: 'Free Printables for Parents of Little Kids',
+    desc: 'Free printable play ideas for parents of babies, toddlers and little kids ages 0–5. Download with an email sign-up (grown-ups only; we never ask for a child’s name). Color and low-ink, US Letter and A4. From Play Before Pixels.' },
+];

@@ -53,21 +53,22 @@
    "folder": "Play-First-Family-Kit",
    "zip_name": "Play-First-Family-Kit",
    "wanted_edition": "ages 2-5 pages (G0 edition, GROWTH-ENGINE §8)",
-   "edition_now": "full kit, ages 2-12 (contains the ages 2-5 pages); swap in the 2-5 edition when it is built",
+   "edition_now": "ages 2-5 pages (G0 edition)",
    "store": {
-    "start": "products/play-first-family-kit/START-HERE.pdf",
-    "color_letter": "products/play-first-family-kit/play-first-family-kit.pdf",
-    "color_a4": "products/play-first-family-kit/play-first-family-kit-a4.pdf",
-    "lowink_letter": "products/play-first-family-kit/play-first-family-kit-low-ink.pdf",
-    "lowink_a4": "products/play-first-family-kit/play-first-family-kit-low-ink-a4.pdf"
+    "start": "products/play-first-family-kit/START-HERE-ages-2-5.pdf",
+    "color_letter": "products/play-first-family-kit/play-first-family-kit-ages-2-5.pdf",
+    "color_a4": "products/play-first-family-kit/play-first-family-kit-ages-2-5-a4.pdf",
+    "lowink_letter": "products/play-first-family-kit/play-first-family-kit-ages-2-5-low-ink.pdf",
+    "lowink_a4": "products/play-first-family-kit/play-first-family-kit-ages-2-5-low-ink-a4.pdf"
    },
    "etsy": {
-    "start": "products/play-first-family-kit/etsy-upload/1-START-HERE.pdf",
-    "color_letter": "products/play-first-family-kit/etsy-upload/2-Color-US-Letter.pdf",
-    "color_a4": "products/play-first-family-kit/etsy-upload/3-Color-A4.pdf",
-    "lowink_letter": "products/play-first-family-kit/etsy-upload/4-Low-Ink-US-Letter.pdf",
-    "lowink_a4": "products/play-first-family-kit/etsy-upload/5-Low-Ink-A4.pdf"
-   }
+    "start": "products/play-first-family-kit/etsy-upload-ages-2-5/1-START-HERE.pdf",
+    "color_letter": "products/play-first-family-kit/etsy-upload-ages-2-5/2-Color-US-Letter.pdf",
+    "color_a4": "products/play-first-family-kit/etsy-upload-ages-2-5/3-Color-A4.pdf",
+    "lowink_letter": "products/play-first-family-kit/etsy-upload-ages-2-5/4-Low-Ink-US-Letter.pdf",
+    "lowink_a4": "products/play-first-family-kit/etsy-upload-ages-2-5/5-Low-Ink-A4.pdf"
+   },
+   "listing_file": "listing-g0.json"
   },
   {
    "slug": "bored-play-cards",
@@ -76,21 +77,22 @@
    "folder": "Bored-Play-Cards",
    "zip_name": "Bored-Play-Cards",
    "wanted_edition": "ages 1-3 and 3-5 bands (G0 edition, GROWTH-ENGINE §8)",
-   "edition_now": "full deck, ages 1-12 (contains the 1-3 and 3-5 bands); swap in the 1-5 edition when it is built",
+   "edition_now": "ages 1-3 and 3-5 bands (G0 edition, 76 cards)",
    "store": {
-    "start": "products/bored-play-cards/START-HERE.pdf",
-    "color_letter": "products/bored-play-cards/bored-play-cards.pdf",
-    "color_a4": "products/bored-play-cards/bored-play-cards-A4.pdf",
-    "lowink_letter": "products/bored-play-cards/bored-play-cards-low-ink.pdf",
-    "lowink_a4": "products/bored-play-cards/bored-play-cards-low-ink-A4.pdf"
+    "start": "products/bored-play-cards/START-HERE-ages-1-5.pdf",
+    "color_letter": "products/bored-play-cards/bored-play-cards-ages-1-5.pdf",
+    "color_a4": "products/bored-play-cards/bored-play-cards-ages-1-5-A4.pdf",
+    "lowink_letter": "products/bored-play-cards/bored-play-cards-ages-1-5-low-ink.pdf",
+    "lowink_a4": "products/bored-play-cards/bored-play-cards-ages-1-5-low-ink-A4.pdf"
    },
    "etsy": {
-    "start": "products/bored-play-cards/etsy-upload/1-START-HERE.pdf",
-    "color_letter": "products/bored-play-cards/etsy-upload/2-Color-US-Letter.pdf",
-    "color_a4": "products/bored-play-cards/etsy-upload/3-Color-A4.pdf",
-    "lowink_letter": "products/bored-play-cards/etsy-upload/4-Low-Ink-US-Letter.pdf",
-    "lowink_a4": "products/bored-play-cards/etsy-upload/5-Low-Ink-A4.pdf"
-   }
+    "start": "products/bored-play-cards/etsy-upload-ages-1-5/1-START-HERE.pdf",
+    "color_letter": "products/bored-play-cards/etsy-upload-ages-1-5/2-Color-US-Letter.pdf",
+    "color_a4": "products/bored-play-cards/etsy-upload-ages-1-5/3-Color-A4.pdf",
+    "lowink_letter": "products/bored-play-cards/etsy-upload-ages-1-5/4-Low-Ink-US-Letter.pdf",
+    "lowink_a4": "products/bored-play-cards/etsy-upload-ages-1-5/5-Low-Ink-A4.pdf"
+   },
+   "listing_file": "listing-g0.json"
   },
   {
    "slug": "play-talk-cards",
@@ -122,21 +124,22 @@
    "folder": "Visual-Routine-Cards",
    "zip_name": "Visual-Routine-Cards",
    "wanted_edition": "0-5 edition (G0 edition, GROWTH-ENGINE §8; founder decision D1)",
-   "edition_now": "complete set, ages 0-12 (contains the 0-5 cards); swap in the 0-5 edition when it is built",
+   "edition_now": "0-5 edition (G0 edition, 177 cards)",
    "store": {
-    "start": "products/visual-routine-cards/START-HERE.pdf",
-    "color_letter": "products/visual-routine-cards/visual-routine-cards.pdf",
-    "color_a4": "products/visual-routine-cards/visual-routine-cards-a4.pdf",
-    "lowink_letter": "products/visual-routine-cards/visual-routine-cards-low-ink.pdf",
-    "lowink_a4": "products/visual-routine-cards/visual-routine-cards-low-ink-a4.pdf"
+    "start": "products/visual-routine-cards/START-HERE-0-5.pdf",
+    "color_letter": "products/visual-routine-cards/visual-routine-cards-0-5.pdf",
+    "color_a4": "products/visual-routine-cards/visual-routine-cards-0-5-a4.pdf",
+    "lowink_letter": "products/visual-routine-cards/visual-routine-cards-0-5-low-ink.pdf",
+    "lowink_a4": "products/visual-routine-cards/visual-routine-cards-0-5-low-ink-a4.pdf"
    },
    "etsy": {
-    "start": "products/visual-routine-cards/etsy-upload/complete/1-START-HERE.pdf",
-    "color_letter": "products/visual-routine-cards/etsy-upload/complete/2-Color-US-Letter.pdf",
-    "color_a4": "products/visual-routine-cards/etsy-upload/complete/3-Color-A4.pdf",
-    "lowink_letter": "products/visual-routine-cards/etsy-upload/complete/4-Low-Ink-US-Letter.pdf",
-    "lowink_a4": "products/visual-routine-cards/etsy-upload/complete/5-Low-Ink-A4.pdf"
-   }
+    "start": "products/visual-routine-cards/etsy-upload/ages-0-5/1-START-HERE.pdf",
+    "color_letter": "products/visual-routine-cards/etsy-upload/ages-0-5/2-Color-US-Letter.pdf",
+    "color_a4": "products/visual-routine-cards/etsy-upload/ages-0-5/3-Color-A4.pdf",
+    "lowink_letter": "products/visual-routine-cards/etsy-upload/ages-0-5/4-Low-Ink-US-Letter.pdf",
+    "lowink_a4": "products/visual-routine-cards/etsy-upload/ages-0-5/5-Low-Ink-A4.pdf"
+   },
+   "listing_file": "listing-g0.json"
   },
   {
    "slug": "guide-100-plays",

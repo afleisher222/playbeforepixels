@@ -1,0 +1,128 @@
+[
+ {
+  "f": "avatar-1080.png",
+  "w": 1080,
+  "h": 1080,
+  "kind": "avatar",
+  "note": "Profile picture for Instagram, Facebook Page, TikTok, YouTube, Pinterest, X and LinkedIn (all crop to a circle or rounded square; upload this one file everywhere)"
+ },
+ {
+  "f": "avatar-seal-1080.png",
+  "w": 1080,
+  "h": 1080,
+  "kind": "seal",
+  "note": "Alternative profile picture: the full seal with the name around the edge. Use only where the picture shows at 80 px or larger (logo rule); otherwise use avatar-1080.png"
+ },
+ {
+  "f": "facebook-cover-1640x624.png",
+  "w": 1640,
+  "h": 624,
+  "kind": "banner",
+  "safe": [
+   1200,
+   460
+  ],
+  "url": true,
+  "note": "Facebook Page cover photo (phones crop the sides; words stay in the centre)"
+ },
+ {
+  "f": "x-header-1500x500.png",
+  "w": 1500,
+  "h": 500,
+  "kind": "banner",
+  "safe": [
+   1100,
+   330
+  ],
+  "url": true,
+  "pad": "bl",
+  "note": "X header (the profile picture covers the lower left, which is kept empty)"
+ },
+ {
+  "f": "youtube-banner-2560x1440.png",
+  "w": 2560,
+  "h": 1440,
+  "kind": "banner",
+  "safe": [
+   1546,
+   423
+  ],
+  "url": true,
+  "note": "YouTube channel banner (only the centre 1546 x 423 shows on every device)"
+ },
+ {
+  "f": "linkedin-cover-1128x191.png",
+  "w": 1128,
+  "h": 191,
+  "kind": "strip",
+  "safe": [
+   1000,
+   150
+  ],
+  "url": false,
+  "pad": "l",
+  "note": "LinkedIn company page cover (the logo tile covers the lower left)"
+ },
+ {
+  "f": "linkedin-logo-400.png",
+  "w": 400,
+  "h": 400,
+  "kind": "avatar",
+  "note": "LinkedIn company logo"
+ },
+ {
+  "f": "pinterest-cover-1920x1080.png",
+  "w": 1920,
+  "h": 1080,
+  "kind": "banner",
+  "safe": [
+   1500,
+   700
+  ],
+  "url": true,
+  "note": "Pinterest profile cover (16:9)"
+ },
+ {
+  "f": "etsy-banner-3360x840.png",
+  "w": 3360,
+  "h": 840,
+  "kind": "banner",
+  "safe": [
+   2400,
+   560
+  ],
+  "url": false,
+  "note": "Etsy big banner (no web address: marketplace rule)"
+ },
+ {
+  "f": "etsy-mini-banner-1200x160.png",
+  "w": 1200,
+  "h": 160,
+  "kind": "strip",
+  "safe": [
+   1100,
+   130
+  ],
+  "url": false,
+  "note": "Etsy mini banner (use either this or the big banner)"
+ },
+ {
+  "f": "etsy-shop-icon-500.png",
+  "w": 500,
+  "h": 500,
+  "kind": "seal",
+  "note": "Etsy shop icon (square; shows at about 70–100 px, so the full seal is allowed at the larger size; if it looks busy, use avatar-1080.png)"
+ },
+ {
+  "f": "etsy-receipt-banner-760x100.png",
+  "w": 760,
+  "h": 100,
+  "kind": "strip",
+  "safe": [
+   720,
+   90
+  ],
+  "url": false,
+  "note": "Etsy order receipt banner (optional)"
+ }
+]

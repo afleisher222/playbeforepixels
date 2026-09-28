@@ -131,9 +131,9 @@
  ],
  "channels": [
   "Play Before Pixels website shop (own checkout, Gumroad at launch): START-HERE.pdf + the 6 store ZIPs in zip-manifest.json; each counted part must also be live there at its everyday price before any 'separately' figure shows",
-  "Etsy digital download: later (held): BLOCKED on Etsy: 4-Low-Ink-US-Letter.zip zips to 22.26 MB (limit 20 MB); 5-Low-Ink-A4.zip zips to 22.19 MB (limit 20 MB). Fix, in order: (1) build the G0 age editions of the Family Kit (2-5 pages) and the bored cards (1-3 + 3-5 bands) and point this config at them; the Color Letter ZIP then drops to about 12-15 MB (estimate, A). (2) If still over, the upload-packet step moves each part's START HERE into slot 1 as one merged PDF. Until then, sell this bundle on the own checkout only; the Etsy listing waits."
+  "Etsy digital download: ready: 1-START-HERE.pdf + 4 ZIPs from zip-manifest.json"
  ],
- "etsy_status": "BLOCKED on Etsy: 4-Low-Ink-US-Letter.zip zips to 22.26 MB (limit 20 MB); 5-Low-Ink-A4.zip zips to 22.19 MB (limit 20 MB). Fix, in order: (1) build the G0 age editions of the Family Kit (2-5 pages) and the bored cards (1-3 + 3-5 bands) and point this config at them; the Color Letter ZIP then drops to about 12-15 MB (estimate, A). (2) If still over, the upload-packet step moves each part's START HERE into slot 1 as one merged PDF. Until then, sell this bundle on the own checkout only; the Etsy listing waits.",
+ "etsy_status": "READY: all 5 Etsy slots fit.",
  "amazon_route": "none-with-reason: a bundle of separate printables is not one book. Its parts each have their own Amazon route (the busy book, the cards and the family kit list KDP activity editions in their own listing.json).",
  "ai_disclosure": {
   "as_of": "2026-09-28",
