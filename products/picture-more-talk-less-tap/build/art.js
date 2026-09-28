@@ -150,14 +150,14 @@ function fish(ex = '') {
     Ci(-16, -5, 5.5, C.ink) + Ci(-14.5, -6.5, 1.9, C.paper) + L('M-24 7 Q-19 11 -14 8', C.ink, 3) + P('M2 4 Q10 0 12 10Z', '#F5B820');
 }
 function bowl() {
-  // base centre at (0,0); bowl ~160 wide, 150 tall
-  return P('M-50 -146 A82 82 0 1 0 50 -146 Z', C.tSky) +
-    P('M-72 -110 A82 82 0 0 0 72 -110 Z', '#BFD7F2') +
+  // base centre at (0,0); bowl ~164 wide, 150 tall. White glass, sky-tint water.
+  return P('M-50 -146 A82 82 0 1 0 50 -146 Z', C.paper) +
+    P('M-74 -104 A82 82 0 0 0 74 -104 Z', C.tSky) +
+    L('M-74 -104 Q-37 -112 0 -104 Q37 -96 74 -104', C.sky, 4) +
     P('M-60 -18 Q0 -34 60 -18 A82 82 0 0 1 -60 -18Z', C.sun) +
     L('M-30 -24 Q-36 -50 -26 -70', C.grass, 7) + L('M-20 -24 Q-10 -46 -18 -62', C.grass, 7) +
-    E(0, -146, 52, 9, C.sky) + E(0, -146, 44, 5, C.tSky) +
-    L('M46 -96 A56 56 0 0 1 30 -48', C.paper, 6) +
-    G('translate(10 -70) scale(0.9)', fish()) + Ci(-30, -118, 5, C.paper) + Ci(-22, -134, 3.5, C.paper);
+    E(0, -146, 52, 9, C.sky) + E(0, -146, 45, 5, C.paper) +
+    G('translate(10 -62) scale(0.9)', fish()) + Ci(-30, -104, 5, C.paper) + Ci(-22, -124, 4, C.sky) + Ci(-16, -138, 3, C.sky);
 }
 function talkStar() {
   return `<path d="${starPath(58, 30)}" fill="${C.sun}" stroke="${C.sun}" stroke-width="16" stroke-linejoin="round"/>` +
@@ -207,8 +207,9 @@ function paperFish(col, rot = 0) {
 function banana() {
   return P('M-40 -10 Q-10 30 40 -14 Q44 -8 38 0 Q0 38 -42 0 Z', C.sun) + R(38, -20, 8, 10, '#8D5A3B', 3);
 }
-function table(w) {
-  return R(0, 0, w, 26, C.sky, 12) + R(24, 24, 20, 90, C.sky, 6) + R(w - 44, 24, 20, 90, C.sky, 6);
+function table(w, h = 200) {
+  // solid counter-style table: hides legs of children standing behind it
+  return R(14, 16, w - 28, h, C.sky, 10) + R(0, 0, w, 30, C.sky, 14) + R(40, 56, w - 80, 12, C.tSky, 6);
 }
 
 function SYMBOLS() {

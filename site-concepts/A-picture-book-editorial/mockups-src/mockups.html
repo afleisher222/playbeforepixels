@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../../brand/fonts/fonts.css">
+<title>Product photo mockups</title>
+<style>
+  :root{--ink:#1D2940;--tomato:#EE5A36;--sun:#F5B820;--sky:#3D86D8;--grass:#2FA36B;--plum:#8A5CC7;
+    --t-tomato:#FDE9E3;--t-sun:#FEF4D8;--t-sky:#E3EEFA;--t-grass:#DFF3E9;--t-plum:#EFE6FA;--wash:#F3F6FB}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#888;font-family:"Nunito Sans",sans-serif;color:var(--ink)}
+  .page{width:1000px;height:1250px;position:relative;overflow:hidden;margin:0 0 20px}
+  /* studio sweep: wall + floor, horizon at 66% */
+  .page::before{content:"";position:absolute;inset:0 0 34% 0;background:var(--wall)}
+  .page::after{content:"";position:absolute;inset:66% 0 0 0;background:var(--floor)}
+  .s-sun{--wall:#FEF4D8;--floor:#F8E6B3}
+  .s-sky{--wall:#E3EEFA;--floor:#CFDFF2}
+  .s-grass{--wall:#DFF3E9;--floor:#C7E8D6}
+  .s-tomato{--wall:#FDE9E3;--floor:#F8D3C6}
+  .s-plum{--wall:#EFE6FA;--floor:#DFD0F2}
+  .s-wash{--wall:#F3F6FB;--floor:#E2E8F2}
+  .obj{position:absolute;z-index:2}
+  .shadow{position:absolute;z-index:1;border-radius:50%;background:radial-gradient(closest-side,rgba(29,41,64,.34),rgba(29,41,64,0));}
+  /* books standing on floor */
+  .book{position:absolute;z-index:2}
+  .book .face{position:relative;width:100%;height:100%;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+  .book .face img{width:100%;height:100%;object-fit:cover;display:block}
+  .book .face::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.18) 0,rgba(0,0,0,0) 3%,rgba(255,255,255,.08) 4%,rgba(255,255,255,0) 9%)}
+  .book .edge{position:absolute;top:6px;bottom:6px;right:-14px;width:14px;border-radius:0 3px 3px 0;
+    background:repeating-linear-gradient(90deg,#fff 0 2px,#e9e5dc 2px 3px)}
+  .board .face{border-radius:22px}
+  .board .edge{right:-26px;width:26px;top:14px;bottom:14px;border-radius:0 18px 18px 0;background:repeating-linear-gradient(180deg,#fff 0 7px,#dcd6ca 7px 8px)}
+  .lying{position:absolute;z-index:2;box-shadow:0 18px 26px -14px rgba(29,41,64,.45)}
+  .lying img{display:block;width:100%;height:100%;object-fit:cover}
+  .sheet{position:absolute;background:#fff;box-shadow:0 1px 2px rgba(29,41,64,.12),0 20px 30px -18px rgba(29,41,64,.45);z-index:2;overflow:hidden}
+  .lbl{font:800 11px/1 "Nunito Sans";letter-spacing:.16em;text-transform:uppercase}
+  .disp{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;letter-spacing:-.035em;line-height:.9}
+  .word{font-family:"Fredoka",sans-serif;font-weight:600}
+  .crop{position:absolute;overflow:hidden}
+  .crop img{position:absolute;display:block}
+</style></head><body>
+
+<!-- 1 Up! Go! More! board book -->
+<div class="page s-sun" id="m-ugm">
+  <div class="shadow" style="left:150px;top:760px;width:720px;height:90px"></div>
+  <div class="book board obj" style="left:190px;top:196px;width:580px;height:580px"><div class="face"><img src="../assets/ugm-cover.png" alt=""></div><div class="edge"></div></div>
+  <div class="lying" style="left:560px;top:900px;width:380px;height:190px;transform:rotate(-4deg);border-radius:14px;overflow:hidden;display:flex">
+    <img src="../assets/ugm-p06.png" style="width:50%" alt=""><img src="../assets/ugm-p07.png" style="width:50%" alt="">
+  </div>
+</div>
+
+<!-- 2 The Day the Tablet Slept -->
+<div class="page s-sky" id="m-tts">
+  <div class="shadow" style="left:130px;top:785px;width:760px;height:90px"></div>
+  <div class="book obj" style="left:170px;top:190px;width:620px;height:620px"><div class="face" style="border-radius:3px 6px 6px 3px"><img src="../assets/tts-cover.png" alt=""></div><div class="edge"></div></div>
+</div>
+
+<!-- 3 More Talk, Less Tap (forthcoming) -->
+<div class="page s-grass" id="m-mtlt">
+  <div class="shadow" style="left:130px;top:785px;width:760px;height:90px"></div>
+  <div class="book obj" style="left:170px;top:190px;width:620px;height:620px"><div class="face" style="border-radius:3px 6px 6px 3px;background:#2FA36B">
+    <div style="position:absolute;left:44px;top:44px;right:44px;color:#fff" class="disp"><div style="font-size:92px">More Talk,</div><div style="font-size:92px;color:#F5B820">Less Tap</div></div>
+    <div class="crop" style="left:0;right:0;bottom:0;height:300px;background:#F3F6FB">
+      <img src="../assets/mtlt-art.png" style="width:1300px;left:-40px;top:-290px" alt="">
+    </div>
+    <div class="lbl" style="position:absolute;left:44px;bottom:318px;color:#fff;opacity:.9">A Play Before Pixels classroom read-aloud</div>
+  </div><div class="edge"></div></div>
+</div>
+
+<!-- 4 100 Plays Before Pixels (8x10 guide) -->
+<div class="page s-tomato" id="m-100">
+  <div class="shadow" style="left:170px;top:830px;width:680px;height:80px"></div>
+  <div class="book obj" style="left:230px;top:150px;width:540px;height:675px"><div class="face" style="border-radius:2px 5px 5px 2px;background:#EE5A36">
+    <div class="disp" style="position:absolute;left:40px;top:30px;font-size:250px;color:#fff;letter-spacing:-.06em">100</div>
+    <div class="disp" style="position:absolute;left:44px;top:260px;font-size:52px;color:#1D2940;line-height:.95">Plays Before<br>Pixels</div>
+    <div style="position:absolute;left:46px;top:380px;width:270px;font:700 17px/1.35 'Nunito Sans';color:#fff">Everyday play ideas for ages 0–5. One play a page, nothing to buy.</div>
+    <div class="crop" style="right:0;bottom:0;width:330px;height:330px;border-top-left-radius:330px;background:#FEF4D8">
+      <img src="../assets/ugm-p08.png" style="width:640px;left:-190px;top:-250px" alt="">
+    </div>
+    <div class="lbl" style="position:absolute;left:46px;bottom:40px;color:#fff">Play Before Pixels</div>
+  </div><div class="edge"></div></div>
+</div>
+
+<!-- 5 Printables 0-5 -->
+<div class="page s-grass" id="m-print05">
+  <div class="sheet" style="left:170px;top:250px;width:470px;height:608px;transform:rotate(-7deg)"><img src="../assets/ugm-p02.png" style="width:100%;display:block" alt=""></div>
+  <div class="sheet" style="left:330px;top:300px;width:470px;height:608px;transform:rotate(4deg);padding:36px 34px">
+    <div class="lbl" style="color:#2FA36B">Printable · ages 0–5</div>
+    <div class="disp" style="font-size:44px;margin:10px 0 18px">Words for<br>every day</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div style="background:#FEF4D8;border-radius:12px;padding:12px 14px"><div class="lbl" style="font-size:9px">Mealtime</div><div class="word" style="font-size:30px">more</div></div>
+      <div style="background:#E3EEFA;border-radius:12px;padding:12px 14px"><div class="lbl" style="font-size:9px">Playtime</div><div class="word" style="font-size:30px">ball</div></div>
+      <div style="background:#DFF3E9;border-radius:12px;padding:12px 14px"><div class="lbl" style="font-size:9px">Getting dressed</div><div class="word" style="font-size:30px">shoe</div></div>
+      <div style="background:#FDE9E3;border-radius:12px;padding:12px 14px"><div class="lbl" style="font-size:9px">Outside</div><div class="word" style="font-size:30px">go</div></div>
+      <div style="background:#EFE6FA;border-radius:12px;padding:12px 14px"><div class="lbl" style="font-size:9px">Bath</div><div class="word" style="font-size:30px">splash</div></div>
+      <div style="background:#F3F6FB;border-radius:12px;padding:12px 14px"><div class="lbl" style="font-size:9px">Bedtime</div><div class="word" style="font-size:30px">night-night</div></div>
+    </div>
+    <div style="font:600 12px/1.4 'Nunito Sans';margin-top:16px;color:#4a5570">Stick it on the fridge. Say the word, wait, and let your child have a turn.</div>
+  </div>
+</div>
+
+<!-- 6 Printables 5-12 -->
+<div class="page s-plum" id="m-print512">
+  <div class="sheet" style="left:140px;top:260px;width:460px;height:595px;transform:rotate(-5deg);padding:36px">
+    <div class="lbl" style="color:#8A5CC7">Printable · ages 5–12</div>
+    <div class="disp" style="font-size:42px;margin:10px 0 20px">The after-school<br>menu</div>
+    <div style="font:700 15px/1.3 'Nunito Sans'">
+      <div style="border-top:2px solid #1D2940;padding:10px 0;display:flex;justify-content:space-between"><span>Starters</span><span style="font-weight:600">snack &amp; one story</span></div>
+      <div style="border-top:1px solid #cfd5e1;padding:10px 0;display:flex;justify-content:space-between"><span>Make</span><span style="font-weight:600">a box city</span></div>
+      <div style="border-top:1px solid #cfd5e1;padding:10px 0;display:flex;justify-content:space-between"><span>Move</span><span style="font-weight:600">chalk obstacle run</span></div>
+      <div style="border-top:1px solid #cfd5e1;padding:10px 0;display:flex;justify-content:space-between"><span>Think</span><span style="font-weight:600">the 20-questions jar</span></div>
+      <div style="border-top:1px solid #cfd5e1;padding:10px 0;display:flex;justify-content:space-between"><span>Wind down</span><span style="font-weight:600">draw your day</span></div>
+    </div>
+  </div>
+  <div class="sheet" style="left:420px;top:330px;width:460px;height:595px;transform:rotate(6deg);padding:36px;background:#fff">
+    <div class="lbl" style="color:#EE5A36">Reading log</div>
+    <div class="disp" style="font-size:40px;margin:10px 0 18px">Pages I read<br>on paper</div>
+    <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px">
+      <script>for(let i=0;i<35;i++)document.write('<div style="aspect-ratio:1;border:2px solid '+(i<17?'#F5B820':'#d9dee8')+';border-radius:50%;background:'+(i<17?'#FEF4D8':'#fff')+'"></div>')</script>
+    </div>
+    <div style="font:600 13px/1.4 'Nunito Sans';margin-top:18px;color:#4a5570">Colour a circle for every ten pages. Five rows makes a summer.</div>
+  </div>
+</div>
+
+<!-- 7 Classroom pack -->
+<div class="page s-sky" id="m-class">
+  <div class="sheet" style="left:420px;top:200px;width:430px;height:556px;transform:rotate(5deg);padding:34px;border:14px solid #fff;outline:2px solid #3D86D8;outline-offset:-22px">
+    <div class="lbl" style="color:#3D86D8;text-align:center;margin-top:18px">Site licence</div>
+    <div class="disp" style="font-size:34px;text-align:center;margin:14px 0">PreK–5<br>Classroom Pack</div>
+    <div style="font:600 13px/1.5 'Nunito Sans';text-align:center;color:#4a5570">Licensed to every teacher at one school site for one year. Copy freely for classroom use.</div>
+    <div style="margin:36px auto 0;width:120px;height:120px;border-radius:50%;border:3px solid #EE5A36;color:#EE5A36;display:grid;place-items:center;text-align:center;transform:rotate(-12deg)"><div class="lbl" style="font-size:10px;line-height:1.5">Licensed<br>copy<br>2026–27</div></div>
+  </div>
+  <div class="obj" style="left:120px;top:330px;width:500px;height:640px;background:#1D2940;border-radius:6px 22px 22px 6px;box-shadow:0 30px 40px -24px rgba(29,41,64,.6);transform:rotate(-4deg)">
+    <div style="position:absolute;top:-26px;left:0;width:200px;height:40px;background:#1D2940;border-radius:10px 10px 0 0"></div>
+    <div style="position:absolute;left:40px;top:50px;right:40px;color:#fff">
+      <div class="lbl" style="color:#F5B820">For teachers</div>
+      <div class="disp" style="font-size:64px;margin-top:12px">Classroom<br>Pack</div>
+      <div style="font:600 18px/1.45 'Nunito Sans';margin-top:18px;opacity:.85">PreK–5 · 60 printable pages · discussion cards · family letters in plain words</div>
+    </div>
+    <div class="crop" style="left:40px;right:40px;bottom:40px;height:230px;border-radius:14px;background:#F3F6FB">
+      <img src="../assets/mtlt-art.png" style="width:900px;left:-20px;top:-190px" alt="">
+    </div>
+  </div>
+</div>
+
+<!-- 8 Card deck -->
+<div class="page s-tomato" id="m-cards">
+  <div class="shadow" style="left:190px;top:830px;width:620px;height:70px"></div>
+  <div class="obj" style="left:300px;top:250px;width:250px;height:350px;background:#FDE9E3;border-radius:16px;transform:rotate(-16deg);box-shadow:0 20px 30px -18px rgba(29,41,64,.5);padding:26px"><div class="lbl" style="color:#EE5A36">Wait</div><div class="word" style="font-size:44px;line-height:1;margin-top:10px">pause and count to five</div></div>
+  <div class="obj" style="left:390px;top:220px;width:250px;height:350px;background:#E3EEFA;border-radius:16px;transform:rotate(-2deg);box-shadow:0 20px 30px -18px rgba(29,41,64,.5);padding:26px"><div class="lbl" style="color:#3D86D8">Notice</div><div class="word" style="font-size:44px;line-height:1;margin-top:10px">say what you see</div></div>
+  <div class="obj" style="left:480px;top:250px;width:250px;height:350px;background:#FEF4D8;border-radius:16px;transform:rotate(13deg);box-shadow:0 20px 30px -18px rgba(29,41,64,.5);padding:26px"><div class="lbl" style="color:#b88400">Build</div><div class="word" style="font-size:44px;line-height:1;margin-top:10px">add one more word</div></div>
+  <div class="obj" style="left:250px;top:560px;width:300px;height:300px;background:#1D2940;border-radius:10px;box-shadow:0 26px 30px -18px rgba(29,41,64,.6);padding:30px;color:#fff">
+    <div class="lbl" style="color:#F5B820">52 cards</div>
+    <div class="disp" style="font-size:48px;margin-top:12px">Back-and-<br>Forth</div>
+    <div style="font:700 15px/1.35 'Nunito Sans';margin-top:12px;opacity:.85">Talk &amp; play prompts for ages 1–8</div>
+  </div>
+  <div class="obj" style="left:560px;top:690px;width:250px;height:175px;background:#fff;border-radius:16px;box-shadow:0 20px 26px -16px rgba(29,41,64,.45);padding:22px;transform:rotate(-8deg)"><div class="lbl" style="color:#2FA36B">Choose</div><div class="word" style="font-size:34px;line-height:1;margin-top:8px">this one or that one?</div></div>
+</div>
+
+<!-- 9 Group kit -->
+<div class="page s-plum" id="m-kit">
+  <div class="obj" style="left:120px;top:210px;width:760px;height:430px;background:#1D2940;border-radius:10px;box-shadow:0 30px 40px -26px rgba(29,41,64,.6);padding:14px">
+    <div style="background:#FEF4D8;height:100%;border-radius:4px;position:relative;overflow:hidden">
+      <div class="lbl" style="position:absolute;left:44px;top:40px;color:#EE5A36">Slide 4 of 22</div>
+      <div class="disp" style="position:absolute;left:44px;top:70px;font-size:62px;width:420px">What one conversation looks like</div>
+      <div class="crop" style="right:0;top:0;bottom:0;width:300px"><img src="../assets/ugm-p15.png" style="width:520px;left:-150px;top:-40px" alt=""></div>
+    </div>
+  </div>
+  <div class="sheet" style="left:150px;top:600px;width:340px;height:440px;transform:rotate(-6deg);padding:30px">
+    <div class="lbl" style="color:#8A5CC7">Speaker script</div>
+    <div class="disp" style="font-size:30px;margin:10px 0 14px">Read this aloud.<br>No expertise needed.</div>
+    <div style="font:500 13px/1.6 'Nunito Sans';color:#4a5570">Slide 4. “Here is a page from a board book. Watch what the grown-up does: she says the word, then she waits. That wait is the whole idea…”</div>
+  </div>
+  <div class="sheet" style="left:520px;top:620px;width:330px;height:420px;transform:rotate(5deg);padding:30px">
+    <div class="lbl" style="color:#2FA36B">Take-home handout</div>
+    <div class="disp" style="font-size:30px;margin:10px 0 14px">Six ways to keep the talk going</div>
+    <div style="font:700 14px/2 'Nunito Sans'">Pause and wait<br>Say what you see<br>Add one word<br>Offer a choice<br>Follow their lead<br>Sing and gesture</div>
+  </div>
+</div>
+
+<!-- 10 Course -->
+<div class="page s-wash" id="m-course">
+  <div class="sheet" style="left:150px;top:200px;width:700px;height:520px;border-radius:8px;padding:0">
+    <div style="height:44px;background:#1D2940;display:flex;align-items:center;gap:8px;padding:0 18px"><span style="width:12px;height:12px;border-radius:50%;background:#EE5A36"></span><span style="width:12px;height:12px;border-radius:50%;background:#F5B820"></span><span style="width:12px;height:12px;border-radius:50%;background:#2FA36B"></span><span class="lbl" style="color:#fff;margin-left:14px;opacity:.7">Day 1 of 30 · a 6-minute read</span></div>
+    <div style="padding:40px 50px">
+      <div class="lbl" style="color:#EE5A36">The 30-Day Screen Reset</div>
+      <div class="disp" style="font-size:52px;margin:14px 0 18px">Day 1: Notice,<br>don’t change</div>
+      <div style="font:500 17px/1.6 'Nunito Sans';color:#4a5570;max-width:520px">Today there is nothing to give up. Just jot down when the screens come on, and what was happening right before. Tomorrow we’ll look at your notes together.</div>
+    </div>
+  </div>
+  <div class="sheet" style="left:470px;top:620px;width:380px;height:470px;transform:rotate(5deg);padding:32px">
+    <div class="lbl" style="color:#3D86D8">Workbook page</div>
+    <div class="disp" style="font-size:30px;margin:10px 0 16px">When do screens come on?</div>
+    <div style="font:600 13px/1 'Nunito Sans'">
+      <script>['Wake-up','Breakfast','After school','Dinner prep','Bath','Bedtime'].forEach(t=>document.write('<div style="display:flex;justify-content:space-between;border-bottom:1px solid #d9dee8;padding:12px 0"><span>'+t+'</span><span style="width:130px;border-bottom:1px dashed #b7c0d1"></span></div>'))</script>
+    </div>
+  </div>
+</div>
+
+<!-- 11 Tee -->
+<div class="page s-sun" id="m-tee">
+  <svg class="obj" style="left:130px;top:170px" width="740" height="860" viewBox="0 0 740 860">
+    <path d="M250 40 C290 70 450 70 490 40 L690 130 L640 330 L560 300 L560 820 L180 820 L180 300 L100 330 L50 130 Z" fill="#1D2940"/>
+    <path d="M250 40 C290 90 450 90 490 40" fill="none" stroke="#2b3a57" stroke-width="12"/>
+    <text x="370" y="360" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="74" fill="#fff" letter-spacing="-2">play</text>
+    <text x="370" y="430" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="74" fill="#F5B820" letter-spacing="-2">before</text>
+    <text x="370" y="500" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="74" fill="#fff" letter-spacing="-2">pixels</text>
+    <circle cx="300" cy="570" r="14" fill="#EE5A36"/><circle cx="345" cy="570" r="14" fill="#3D86D8"/><circle cx="390" cy="570" r="14" fill="#2FA36B"/><circle cx="435" cy="570" r="14" fill="#8A5CC7"/>
+  </svg>
+</div>
+
+<!-- 12 Tote -->
+<div class="page s-grass" id="m-tote">
+  <svg class="obj" style="left:170px;top:120px" width="660" height="940" viewBox="0 0 660 940">
+    <path d="M200 330 C200 120 460 120 460 330" fill="none" stroke="#E9E1CF" stroke-width="34"/>
+    <rect x="60" y="300" width="540" height="620" rx="6" fill="#F6F0E2"/>
+    <rect x="60" y="300" width="540" height="18" fill="#E9E1CF"/>
+    <text x="330" y="560" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="96" fill="#1D2940" letter-spacing="-3">Talk,</text>
+    <text x="330" y="660" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="96" fill="#EE5A36" letter-spacing="-3">touch,</text>
+    <text x="330" y="760" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="96" fill="#2FA36B" letter-spacing="-3">play.</text>
+  </svg>
+</div>
+
+<!-- 13 Research brief -->
+<div class="page s-wash" id="m-brief">
+  <div class="sheet" style="left:200px;top:170px;width:600px;height:776px;padding:56px 60px;transform:rotate(-2deg)">
+    <div class="lbl" style="color:#3D86D8">The Virtual Autism Project · Research brief</div>
+    <div class="disp" style="font-size:54px;margin:18px 0 24px;line-height:.95">Screens, talk and the first three years</div>
+    <div style="font:500 15px/1.65 'Nunito Sans';color:#4a5570;columns:2;column-gap:28px">“Virtual autism” is a term some clinicians use. It is not a medical diagnosis. This four-page brief summarises what large studies have found about early screen time and language, what they have not found, and what the WHO and AAP recommend. Associations are described as associations. Every source is listed in full on page four.</div>
+    <div style="margin-top:34px;display:flex;gap:28px;border-top:2px solid #1D2940;padding-top:18px">
+      <div><div class="disp" style="font-size:44px">1,139</div><div style="font:700 12px/1.3 'Nunito Sans'">fewer adult words a day</div></div>
+      <div><div class="disp" style="font-size:44px">843</div><div style="font:700 12px/1.3 'Nunito Sans'">fewer child vocalizations</div></div>
+      <div><div class="disp" style="font-size:44px">194</div><div style="font:700 12px/1.3 'Nunito Sans'">fewer conversational turns</div></div>
+    </div>
+    <div style="font:600 11px/1.4 'Nunito Sans';color:#6b7690;margin-top:12px">At 36 months, with more screen time. Brushe ME et al., JAMA Pediatrics 2024;178(4):369–375.</div>
+  </div>
+</div>
+</body></html>
