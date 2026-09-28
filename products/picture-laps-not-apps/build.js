@@ -330,12 +330,12 @@ SPREADS.push(() => rect(0, 0, 1750, 875, C.kT) + rect(0, 630, 1750, 245, C.gT) +
 SPREADS.push(() => rect(0, 0, 875, 875, C.pT) + rect(0, 755, 875, 120, C.plum) + rect(875, 0, 875, 875, C.sT) + rect(875, 755, 875, 120, C.sun) +
   lap({ a: 'gma', cx: 300, fy: 812, s: 1.35, seat: 'wheelchair', front: U('cat', 66, 148, 0.78) }) +
   standKid('kid-stand-point', 690, 812, 1.85) + text(790, 470, '!', 90, C.tomato) +
-  lap({ a: 'gma', kid: 'kid-sit', cx: 1300, fy: 812, s: 1.5, seat: 'wheelchair', front: U('cat', 74, 184, 0.64) }) +
+  lap({ a: 'gma', kid: 'kid-sit', cx: 1300, fy: 812, s: 1.5, seat: 'wheelchair', front: U('cat', 34, 168, 0.58) }) +
   (() => {
     const L = (x1, y1, x2, y2) => `<path d="M${x1} ${y1} Q${(x1 + x2) / 2} ${Math.min(y1, y2) - 30} ${x2} ${y2}" stroke="${C.ink}" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="${x2}" cy="${y2}" r="7" fill="${C.ink}"/>`;
     return text(1020, 470, 'one kid', 50, C.tomato, 'Caveat', 700) + L(1060, 486, 1238, 522) +
-      text(1610, 560, 'one cat', 50, C.tomato, 'Caveat', 700) + L(1570, 574, 1345, 638) +
-      text(1000, 650, 'one lap', 50, C.tomato, 'Caveat', 700) + L(1040, 664, 1170, 660) +
+      text(990, 560, 'one cat', 50, C.tomato, 'Caveat', 700) + L(1030, 576, 1205, 598) +
+      text(1610, 560, 'one lap', 50, C.tomato, 'Caveat', 700) + L(1570, 574, 1395, 640) +
       text(1612, 690, 'one chair', 46, C.tomato, 'Caveat', 700) + L(1590, 704, 1500, 736);
   })());
 
@@ -546,7 +546,7 @@ pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.kT) + col(
 // Back cover
 pages.push(`<div class="page back">${svgPage(rect(0, 0, 875, 875, C.sun) + `<circle cx="300" cy="640" r="200" fill="${C.sky}"/>` + rect(0, 770, 875, 105, C.tomato) +
   lap({ a: 'dad', kid: 'kid-sit-content', cx: 300, fy: 790, s: 0.9, seat: 'armchair' }) +
-  rect(560, 700, 150, 30, C.plum, 6) + rect(572, 670, 128, 30, C.paper, 6) + rect(556, 640, 140, 30, C.sky, 6) + U('mug', 604, 592, 0.95) + col('heart', 640, 470, 1.1, C.tomato))}
+  col('heart', 520, 450, 1.3, C.tomato) + col('star', 90, 470, 0.9, C.paper) + col('star', 560, 560, 0.7, C.paper))}
   <div class="bk">
     <h2>A lap is the best seat in town.</h2>
     <p>A lap for a story. A lap on the bus. A lap for a song, a lap at the park, and a sleepy lap when the moon comes up. <i>Laps Not Apps</i> is a warm, rhyming read-aloud that celebrates the grown-ups, big kids and cozy places that hold our littlest listeners close.</p>
