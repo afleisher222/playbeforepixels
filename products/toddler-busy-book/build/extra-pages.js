@@ -104,7 +104,7 @@ const startHerePage = {
         <div class="step"><span class="num">1</span><div><h3>Find your child’s age band</h3><p>Pages are sorted by age. Ages are starting points, not deadlines: move up or down whenever you like.</p>
           <div class="pillrow" style="margin-top:8px">${['b1', 'b2', 'b3'].map(b => { const [a, z] = bandRange(ctx, b); return `<span class="chip" style="background:${BANDS[b].t}"><i style="background:${BANDS[b].c}"></i>${BANDS[b].label} · pages ${a}–${z}</span>`; }).join('')}</div></div></div>
         <div class="step"><span class="num">2</span><div><h3>Print one no-cut page and play</h3><p>Good first pages: ${['b1', 'b2', 'b3'].map(b => `<b>${BANDS[b].short}:</b> ${pick[b].map(id => { const a = ctx.acts.find(x => x.id === id); return `${a.title.replace(/^First words: /, '')} (p.${ctx.actPage[id]})`; }).join(', ')}`).join(' · ')}.</p></div></div>
-        <div class="step"><span class="num">3</span><div><h3>Cut pieces when you have ten minutes</h3><p>Each piece sheet sits right after its activity page. Cut on the straight dashed lines, count the pieces into a pouch, and the grown-up keeps the pouch. Laminating and velcro are optional (tips on page ${ctx.actPage['x-lam']}).</p></div></div>
+        <div class="step"><span class="num">3</span><div><h3>Cut pieces when you have ten minutes</h3><p>Each piece sheet sits right after its activity page. Cut on the straight dashed lines, count the pieces into a pouch, and the grown-up keeps the pouch. Laminating and hook-and-loop dots are optional (tips on page ${ctx.actPage['x-lam']}).</p></div></div>
         <div class="step"><span class="num">4</span><div><h3>Talk while you play</h3><p>Every page has one line to say out loud. That line is the heart of the book. Read the 2-page grown-up guide next (pages ${ctx.actPage['x-guide1']}–${ctx.actPage['x-guide2']}).</p></div></div>
       </div>
       <div class="cols3" style="margin-top:22px;grid-template-columns:repeat(4,1fr)">
@@ -116,7 +116,7 @@ const startHerePage = {
       <div class="card t-sky" style="margin-top:14px"><p><b>Inside too:</b> binder covers in 4 colors, spine and pouch labels, a weekly busy-book planner (Monday and Sunday starts, pre-filled and blank), make-your-own pages you can type into, a Busy Book Star certificate, an answer key and quick answers. <b>Color and Low-ink files</b> are included: Low-ink prints on white with colorable line art.</p></div>
       <div class="cols2" style="margin-top:14px">
         <div class="card"><h3>What you need today</h3><ul><li>A printer and plain paper or cardstock</li><li>A grown-up and a child, side by side</li><li>That’s it for the ${nc} no-cut pages</li></ul></div>
-        <div class="card"><h3>Nice to have later</h3><ul><li>Scissors or a paper trimmer (straight cuts only)</li><li>Sheet protectors or a laminator, a binder and zip pouches</li><li>Velcro dots, for the 3–5 pages only</li></ul></div>
+        <div class="card"><h3>Nice to have later</h3><ul><li>Scissors or a paper trimmer (straight cuts only)</li><li>Sheet protectors or a laminator, a binder and zip pouches</li><li>Hook-and-loop dots, for the 3–5 pages only</li></ul></div>
       </div>`, ctx, pn);
   },
 };
@@ -134,9 +134,9 @@ const guide1 = {
         <div><div class="lab" style="color:${C.tomato}">Pause and wait</div><p class="disp" style="font-size:17px;margin:3px 0">“Ready, set… (wait)”</p><p>Count to five in your head. Give your child room to take a turn.</p></div>
         <div><div class="lab" style="color:${C.tomato}">Add one word</div><p class="disp" style="font-size:17px;margin:3px 0">“Duck.” Then: “Yellow duck!”</p><p>Repeat what your child says and add one word.</p></div>
       </div></div>
-    <div class="card t-plum" style="margin-top:14px"><h3>Every turn counts</h3><p>Talk, sing and read in the language you know best. A sign, a point, a look, a sound or a device tap all count as a turn. There’s no right answer on any page: if your child calls the frog a “duck,” say “A green frog! Ribbit!” and keep playing.</p></div>
+    <div class="card t-plum" style="margin-top:14px"><h3>Every turn counts</h3><p>Talk, sign, sing and read in the language you know best. A sign, a point, a look, a sound or a device tap all count as a turn. There’s no right answer on any page: if your child calls the frog a “duck,” say “A green frog! Ribbit!” and keep playing. And you don’t need to be chatty: reading the talk line word for word, or playing quietly side by side, counts too.</p></div>
     <div class="cols2" style="margin-top:14px">
-      <div class="card t-sky"><h3>Every way of playing counts</h3><p>Lining pieces up, playing the same page again and again, moving around, humming, or playing side by side instead of face to face: it’s all play. Eye contact is never needed. If your child says no or walks away, stop and try another day.</p></div>
+      <div class="card t-sky"><h3>Every way of playing counts</h3><p>Lining pieces up, playing the same page again and again, moving around, humming, or playing side by side instead of face to face: it’s all play. Eye contact is never needed. If your child says no or walks away, stop and try another day. Every play works from a chair, a bed or a wheelchair too, and any sound play can be a see-it or feel-it play: a light flick for “stop,” a hand on the pot for the beat.</p></div>
       <div class="card t-sun"><h3>Big kids can help</h3><p>Brothers, sisters and cousins about 6 and up make great helpers: they can read the talk line out loud, run the café or deliver the mail. A grown-up stays right there and keeps the pieces.</p></div>
     </div>`, ctx, pn),
 };
@@ -176,7 +176,7 @@ const safety = {
     </div>
     <div class="cols3" style="margin-top:14px">
       <div class="card"><h3>Always together</h3><p>Every activity is played with a grown-up right there. Read together and keep paper and pieces away from mouths.</p></div>
-      <div class="card"><h3>Velcro rules</h3><p><b>No loose velcro dots for under-3s:</b> for 1–2 and 2–3 pages, lay pieces on top. For 3–5 pages velcro is optional: <b>check dots before each play</b> and keep pieces away from younger children.</p></div>
+      <div class="card"><h3>Hook-and-loop dot rules</h3><p><b>No loose hook-and-loop dots for under-3s:</b> for 1–2 and 2–3 pages, lay pieces on top. For 3–5 pages hook-and-loop dots are optional: <b>check dots before each play</b> and keep pieces away from younger children.</p></div>
       <div class="card"><h3>Laminated edges</h3><p>Leave a small border when you cut laminated pieces and round the corners so edges stay soft.</p></div>
       <div class="card"><h3>Crayons and pens</h3><p>Dry-erase crayons are for the 3–5 pages, with a grown-up. The grown-up keeps caps, which are small.</p></div>
       <div class="card"><h3>Pretend food only</h3><p>The food pages are pictures. No real food is part of any activity, and none of the pictured foods are small, hard or round snacks.</p></div>
@@ -194,18 +194,18 @@ const buildIt = {
     <div class="cols3" style="margin-top:18px">${[
       ['Quick: no laminator', 'b-binder', C.tSky, ['Print pages on cardstock (or plain paper).', 'Slide each page into a clear sheet protector.', 'Keep pages in a 1–1.5 in 3-ring binder.', 'Pieces go in a zip pouch clipped to the binder.'], 'About 15 minutes for 10 pages.'],
       ['Classic: laminated', 'b-laminator', C.tSun, ['Print on cardstock and laminate (3–5 mil pouches).', 'Cut pieces with a small clear border; round corners.', 'Punch holes and use binder rings or a binder.', 'One labeled pouch per piece sheet.'], 'Pieces last for months of play.'],
-      ['Velcro: ages 3–5 only', 'b-velcro', C.tTomato, ['Laminate first, then add dots.', 'Soft (loop) dot on the page, scratchy (hook) dot on the piece.', 'Press firmly; let dots set overnight.', 'Check dots before each play. No velcro for under-3s.'], 'Use only for the 3–5 pages.'],
+      ['Hook-and-loop: ages 3–5 only', 'b-velcro', C.tTomato, ['Laminate first, then add dots.', 'Soft (loop) dot on the page, scratchy (hook) dot on the piece.', 'Press firmly; let dots set overnight.', 'Check dots before each play. No hook-and-loop dots for under-3s.'], 'Use only for the 3–5 pages.'],
     ].map(([h, id, t, steps, note]) => `<div class="card" style="background:${t}"><svg width="100%" height="110" viewBox="-100 -55 200 110"><use href="#${id}" transform="scale(1.05)"/></svg><h3>${h}</h3><ol>${steps.map(s => `<li>${s}</li>`).join('')}</ol><p class="small" style="margin-top:6px">${note}</p></div>`).join('')}</div>
     <div class="cols2" style="margin-top:14px">
-      <div class="card"><h3>Handy supplies</h3><ul><li>Cardstock, 65–110 lb (176–300 gsm)</li><li>Scissors or a paper trimmer (straight cuts only)</li><li>Sheet protectors or a laminator (optional)</li><li>Binder or binder rings, and zip pouches</li><li>Velcro dots for the 3–5 pages (optional)</li></ul></div>
+      <div class="card"><h3>Handy supplies</h3><ul><li>Cardstock, 65–110 lb (176–300 gsm)</li><li>Scissors or a paper trimmer (straight cuts only)</li><li>Sheet protectors or a laminator (optional)</li><li>Binder or binder rings, and zip pouches</li><li>Hook-and-loop dots for the 3–5 pages (optional)</li></ul></div>
       <div class="card t-grass"><h3>Organize by age</h3><p>Use one binder cover per child or per age band (4 colors on pages ${ctx.actPage['x-cov1']}–${ctx.actPage['x-cov4']}). Tape a pouch label to each pouch (page ${ctx.actPage['x-pouch']}). Keep 5–8 pages in the binder and rotate the rest each week with the planner on page ${ctx.actPage['x-plan1']}.</p></div>
     </div>`, ctx, pn),
 };
 const laminate = {
-  id: 'lam', html: (ctx, pn) => pageWrap('', `${textHead('Laminating & velcro tips', 'Make it last')}
+  id: 'lam', html: (ctx, pn) => pageWrap('', `${textHead('Laminating & hook-and-loop tips', 'Make it last')}
     <div class="cols2" style="margin-top:16px">
       <div class="card t-sky"><h3>Laminating</h3><ul><li>Use 3–5 mil pouches. Thicker pouches make stiffer pieces that little hands grip easily.</li><li>Laminate the whole sheet first, then cut. Leave about 1/8 in (3 mm) of clear border so the seal holds.</li><li>Round every corner with scissors or a corner rounder.</li><li>No laminator? Clear sheet protectors work for pages; packing tape over both sides works for a few pieces.</li><li>Wipe pages with a damp cloth. Let them dry flat.</li></ul></div>
-      <div class="card t-tomato"><h3>Velcro (3–5 pages only)</h3><ul><li>Soft “loop” dots go on the page; scratchy “hook” dots go on the back of pieces.</li><li>Put the dot in the middle of the slot so pieces sit straight.</li><li>Press for 30 seconds and let dots set overnight before play.</li><li><b>Check dots before each play.</b> Throw away any piece whose dot lifts at the edge.</li><li><b>Never</b> on 1–2 or 2–3 pages: lay those pieces on top instead.</li></ul></div>
+      <div class="card t-tomato"><h3>Hook-and-loop dots (3–5 pages only)</h3><ul><li>Soft “loop” dots go on the page; scratchy “hook” dots go on the back of pieces.</li><li>Put the dot in the middle of the slot so pieces sit straight.</li><li>Press for 30 seconds and let dots set overnight before play.</li><li><b>Check dots before each play.</b> Throw away any piece whose dot lifts at the edge.</li><li><b>Never</b> on 1–2 or 2–3 pages: lay those pieces on top instead.</li></ul></div>
     </div>
     <div class="cols3" style="margin-top:14px">
       <div class="card"><h3>Dry-erase</h3><p>Mazes and road pages work with a dry-erase crayon on laminated pages. Wipe with a dry cloth. The grown-up keeps caps.</p></div>
@@ -300,7 +300,7 @@ const GRANDPA = { skin: '#F4CFAE', hair: '#F3F6FB', hs: 'short' };
 const people = [['Mama', 'G5'], ['Dada', 'G1'], ['Grandma', 'G4'], ['Grandpa', GRANDPA], ['me!', 'C'], ['our dog', 'dog']];
 const peoplePage = (filled) => ({
   id: filled ? 'own1' : 'own2', html: (ctx, pn) => pageWrap('', `${header('b1', 'Make your own · first words', `<span class="tag">${ui('u-nocut')}${filled ? 'Example' : 'Fillable'}</span>`)}
-    <div class="tt"><h1>My people</h1><p class="how"><b>${filled ? 'Tape a photo in each frame.' : 'Type the names, print, then tape in photos.'}</b> ${filled ? 'Photos of the people your child loves make great first words. Every family is different: type your own names on the next page.' : 'Use any names your family uses: Mom, Ima, Abuela, Nonno, Auntie, our cat…'}</p></div>
+    <div class="tt"><h1>My people</h1><p class="how"><b>${filled ? 'Tape a photo in each frame.' : 'Type the names, print, then tape in photos.'}</b> ${filled ? 'Photos of the people your child loves make great first words. Every family is different: type your own names on the next page.' : 'Use any names your family uses: Mama, Daddy, Mommy, Papa, Abuela, Nonno, Auntie, Grandpa, our cat…'}</p></div>
     <div class="play" style="height:640px"><div style="position:absolute;left:24px;top:24px;display:grid;grid-template-columns:repeat(3,200px);gap:24px 24px">${people.map(([n, k]) => `<div style="height:280px;background:#fff;border-radius:18px;padding:12px;display:flex;flex-direction:column;gap:10px"><div style="flex:1;border:2px dashed #C9D1DE;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;color:#9AA6BC;font-size:11px;font-weight:800">${filled ? `<svg width="120" height="120" viewBox="-60 -60 120 120">${k === 'dog' ? U('w-dog', 0, 6, 0.95) : `<g transform="translate(0,6)">${head(k, 0, 0, 1.7, 'smile')}</g>`}</svg>` : ''}photo here</div><div data-field="person" class="kid" style="height:36px;font-size:26px;text-align:center;line-height:36px">${filled ? n : ''}</div></div>`).join('')}</div></div>
     <div class="gu" style="top:772px"><div class="talk">${ui('u-talk')}<div><span class="lab">Talk while you play <i>· Say what you see</i></span><q>“Who’s that? It’s Grandma! Hi, Grandma! (wave)”</q></div></div>
     <div class="safe">${ui('u-shield')}<span><b>Play together.</b> Photos stay taped flat under the lamination or sheet protector. No pins, clips or loose photo corners for under-3s.</span></div></div>`, ctx, pn, 'b1'),
@@ -318,7 +318,7 @@ const blankBoard = {
     <div class="play" style="height:560px"><div style="position:absolute;left:12px;top:40px;display:grid;grid-template-columns:repeat(3,${CELL.w}px);gap:36px 12px">${Array.from({ length: 6 }, () => `<div style="width:${CELL.w}px;height:${CELL.h}px;background:#fff;border:2px dashed #9AA6BC;border-radius:14px;position:relative"><div data-field="board_label" class="kid" style="position:absolute;left:14px;right:14px;bottom:10px;height:28px;text-align:center;font-size:18px;line-height:28px"></div></div>`).join('')}</div></div>
     <div class="gu" style="top:692px"><div class="talk">${ui('u-talk')}<div><span class="lab">Talk while you play <i>· Follow their lead</i></span><q>“You drew a cat! Where’s the other cat?”</q></div></div>
     <div class="row3"><div class="box"><span class="lab">Make it easier</span>Draw just two or three pairs.</div><div class="box"><span class="lab">Make it harder</span>Your child draws; you guess, then match.</div><div class="box tired"><span class="lab">Tired? 2-minute version</span>Draw one picture together. Done.</div></div>
-    <div class="safe">${ui('u-shield')}<span><b>Play together.</b> Grown-up keeps the pieces. Pieces are 2 in (5.1 cm) or bigger. No velcro dots for under-3s.</span></div></div>`, ctx, pn, 'b2'),
+    <div class="safe">${ui('u-shield')}<span><b>Play together.</b> Grown-up keeps the pieces. Pieces are 2 in (5.1 cm) or bigger. No hook-and-loop dots for under-3s.</span></div></div>`, ctx, pn, 'b2'),
 };
 const blankPieces = {
   id: 'own5', html: (ctx, pn) => {
@@ -327,7 +327,7 @@ const blankPieces = {
     <div class="tt"><h1 style="font-size:23px">Blank cards for your own games</h1></div>
     <div class="cutnote">${ui('u-scissors')}<span>Draw, stick or type, then cut on the dashed lines. Every card is 2.25 × 2 in (5.7 × 5.1 cm).</span></div>
     <div class="grid" style="top:104px;position:absolute">${g.svg}${Array.from({ length: 12 }, (_, i) => `<div data-field="card_label" class="kid" style="position:absolute;left:${(i % 3) * CELL.w + 20}px;top:${Math.floor(i / 3) * CELL.h + CELL.h - 44}px;width:${CELL.w - 40}px;height:26px;text-align:center;font-size:17px"></div>`).join('')}</div>
-    <div class="keep">${ui('u-shield')}<div class="big">Grown-up keeps<br>the pieces</div><p>Count pieces out and back in; store them in a labeled pouch. No velcro dots for under-3s.</p></div>`, ctx, pn, 'b2');
+    <div class="keep">${ui('u-shield')}<div class="big">Grown-up keeps<br>the pieces</div><p>Count pieces out and back in; store them in a labeled pouch. No hook-and-loop dots for under-3s.</p></div>`, ctx, pn, 'b2');
   },
 };
 const DAYS_M = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
@@ -376,7 +376,7 @@ const faq = {
     <div class="qa" style="margin-top:14px">${[
       ['What ages is it for?', `About 12 months to 5 years, in three bands (1–2, 2–3, 3–5). Every page shows its starting age in months. Move up or down freely.`],
       ['Do I have to cut everything?', `No. ${count(ctx, a => !a.cut && !a.usesPiecesOf)} activities need no cutting at all. Cut piece sheets when you have ten minutes; each has straight cuts only and 12 pieces or fewer.`],
-      ['Are the pieces safe for my toddler?', 'Every piece is 2 in (5.1 cm) or bigger, bigger than a toilet-paper tube. A grown-up plays along, keeps the pieces and checks them each time. No velcro dots for under-3s.'],
+      ['Are the pieces safe for my toddler?', 'Every piece is 2 in (5.1 cm) or bigger, bigger than a toilet-paper tube. A grown-up plays along, keeps the pieces and checks them each time. No hook-and-loop dots for under-3s.'],
       ['Which file should I print?', 'US Letter or A4 to match your paper. Color for bright pages; Low-ink for white pages with colorable line art. Print at 100% / actual size.'],
       ['Can I type into the pages?', 'Yes: the make-your-own pages, binder covers, labels, planner and certificate have type-in boxes that work in free PDF readers. Type, save, then print.'],
       ['Do I need a laminator?', 'No. Sheet protectors or plain cardstock work well. Laminating just makes pieces last longer (tips on page ' + ctx.actPage['x-lam'] + ').'],

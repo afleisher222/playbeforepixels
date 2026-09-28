@@ -493,14 +493,14 @@ function guidePage(guide) {
   <div class="gt3">${talk.map(([h, t], i) => `<div class="gt"><span class="gtn" style="background:${[C.sun, C.grass, C.sky][i]};color:${i ? '#fff' : C.ink}">${i + 1}</span><h4>${h}</h4><p>${t}</p></div>`).join('')}</div>
   <div class="gd2" style="margin-top:14px">
     <div class="gbox" style="background:${C.tPlum}"><span class="kick">When interest fades</span><p>Stop while it’s still fun and put the card back for another day. Try the easier version in the card index, or let your child change the rules. Many children lose interest after a few minutes, and that’s fine.</p><p class="gbig">Most children love 2–3 of these; that’s normal. Playing a favorite again and again is the point.</p></div>
-    <div class="gbox" style="background:${C.tSun}"><span class="kick">Every language counts</span><p class="gbig">Talk, sing and read in the language you know best. Every language counts.</p><p>A sign, a point or a device tap counts as communicating too. Answer it the same way you would answer words.</p></div>
+    <div class="gbox" style="background:${C.tSun}"><span class="kick">Every language counts</span><p class="gbig">Talk, sign, sing and read in the language you know best. Every language counts.</p><p>A sign, a point or a device tap counts as communicating too; answer it as you would words. You don’t need to be chatty: reading the talk line word for word, or playing quietly side by side, counts too.</p></div>
   </div>
   <div class="gd2" style="margin-top:14px">
     <div class="gbox" style="background:${C.tTomato}"><span class="kick">When you hear “I’m bored!”</span><p>Try: “I hear you. Want to pick one of two cards, or think for a minute first?” Boredom isn’t an emergency. A few quiet minutes often turn into your child’s own idea, and that counts as a win.</p></div>
     <div class="gbox" style="background:${C.wash}"><span class="kick">Siblings of different ages</span><p>Pick a card from the younger child’s band and give the older one a job: reader, rule-keeper or helper. Small parts from older cards stay out of reach of children under 3.</p></div>
   </div>
   <div class="gd3">
-    <div><h4>Tired grown-up?</h4><p>Every card has a 2-minute version in the card index (page ${guide.index}): no setup, played from the couch or the floor.</p></div>
+    <div><h4>Tired grown-up?</h4><p>Every card has a 2-minute version in the card index (page ${guide.index}): no setup, played from the couch or the floor. Every play works from a chair, a bed or a wheelchair, and any sound play can be a see-it or feel-it play: flick the light for “stop.”</p></div>
     <div><h4>Easier or harder</h4><p>The card index also gives a “make it easier” and a “make it harder” line for every card, plus the age it usually starts from.</p></div>
     <div><h4>Helping cards are fun</h4><p>Kitchen & Helping cards are for fun together, never a consequence for saying “I’m bored.”</p></div>
   </div>`;
@@ -688,7 +688,7 @@ function safetyPage() {
   const body = `<p class="lead">Every play follows these safety rules, and every card has its own safety line at the bottom. They apply to every card, including the ones you write yourself.</p>
   <div class="srules">${R.map(([ic, h, t], i) => `<div class="sr"><span class="sri" style="background:${[C.tTomato, C.tSun, C.tSky, C.tPlum, C.tGrass][i % 5]}">${icon(ic)}</span><div><h4>${h}</h4><p>${t}</p></div></div>`).join('')}</div>
   <div class="tube"><div class="tubeart">${tubeArt()}</div><div><span class="kick">The toilet-paper tube test</span><h4>If it fits through the tube, it’s too small for under-3s.</h4><p>Keep a cardboard tube in the play basket and test anything new before a toddler plays with it. A tube is about 1.25 in (3.2 cm) across.</p></div></div>
-  <div class="sbox"><div><h4>The cards and pieces</h4><p>Grown-up keeps the cut pieces and the jar. Every cut piece in this pack is 1.5 in or larger. Printed cards are paper, not toys for children who still mouth things: round laminated corners. Velcro: check dots before each play; remove any that lift. No loose dots for under-3s.</p></div>
+  <div class="sbox"><div><h4>The cards and pieces</h4><p>Grown-up keeps the cut pieces and the jar. Every cut piece in this pack is 1.5 in or larger. Printed cards are paper, not toys for children who still mouth things: round laminated corners. Hook-and-loop dots: check them before each play; remove any that lift. No loose dots for under-3s.</p></div>
   <div><h4>You know your child best</h4><p>Skip or change any card that doesn’t suit your child, your space or your day. These cards are ideas for play at home. They are not medical or developmental advice.</p></div></div>`;
   return contentPage('safety', 'Safe play, every time', 'Safety first,<br>then fun.', body);
 }
@@ -713,7 +713,7 @@ function tipsPage(G) {
     ['Double-sided (optional)', `Print the backs page for your age band once for each card sheet. Put the printed stack back in the tray (test one sheet first to see which way it goes) and print the fronts on the other side.`],
     ['Cut', 'Straight lines only: 4 cuts each way per sheet with a paper trimmer or scissors. The white border inside each card hides small wobbles. Grown-up keeps the pieces.'],
     ['Laminate', 'Pouches (3–5 mil) make cards last for years and wipe clean. Leave a thin sealed edge, then round the corners so there are no sharp points.'],
-    ['Velcro', 'For the Play Menu (ages 3+): a hook dot on each card back, loop dots on the board. Check dots before each play; remove any that lift. Store spare dots out of reach: they’re small parts.'],
+    ['Hook-and-loop dots', 'For the Play Menu (ages 3+): a hook dot on each card back, loop dots on the board. Check dots before each play; remove any that lift. Store spare dots out of reach: they’re small parts.'],
     ['Store', 'A big jar with one of the labels, a 3 × 5 in recipe box with the dividers, or a binder ring through a punched corner. Keep rings away from little ones.'],
   ];
   const W = [
@@ -855,7 +855,7 @@ function menuPage() {
   const slots = [['Calm pick', C.sky, C.tSky], ['Wiggly pick', C.tomato, C.tTomato], ['Together pick', C.grass, C.tGrass], ['Free choice', C.plum, C.tPlum]];
   return contentPage('menu', 'Choice board · laminate me', 'Today’s Play Menu', `<p class="lead ml">Put one card in each space, then let your child choose. Done? Move it to the “Done & loved” jar.</p>
   <div class="mgrid">${slots.map(([h, m, t]) => `<div class="ms" style="--m:${m};--t:${t}"><span class="mh">${h}</span><div class="mslot"><i class="vd"></i><span>Card goes here</span></div></div>`).join('')}</div>
-  <div class="mv"><b>${icon('safe', 'i')}Velcro (ages 3+):</b> Check dots before each play; remove any that lift. <b>For under-3s:</b> no loose dots. Lay each card on top of its space, or slide the board and cards into a page protector.</div>`);
+  <div class="mv"><b>${icon('safe', 'i')}Hook-and-loop dots (ages 3+):</b> Check dots before each play; remove any that lift. <b>For under-3s:</b> no loose dots. Lay each card on top of its space, or slide the board and cards into a page protector.</div>`);
 }
 const menuCss = `<style>
 .menu .ph{margin-bottom:6px}.ml{font-size:13.5px;margin-bottom:8px}

@@ -83,7 +83,7 @@ const RULES = [
   ['playFirst', 'We play first.'],
   ['screensLater', 'Screens have a spot in our day.'],
   ['familyMeal', 'Meals are for being together.'],
-  ['devicesSleep', 'Screens sleep outside bedrooms at night.'],
+  ['devicesSleep', 'Screens sleep in their spot at night.'],
   ['alarm', 'We give a 5-minute heads-up.'],
   ['familyGame', 'Grown-ups play too.'],
   ['goOutside', 'We go outside every day we can.'],
@@ -97,7 +97,7 @@ const DAYS30 = [
   ['teddy', 'Hide a toy, give clues'], ['birds', 'Watch for birds'], ['helpCook', 'Cook dinner together'], ['music', 'Freeze dance'], ['blocks', 'Build a tall tower'],
   ['tellStory', 'Make up a story'], ['natureWalk', 'Nature walk'], ['ball', 'Roll-the-ball game'], ['sing', 'Sing 3 favorite songs'], ['boardGame', 'Game night'],
   ['stretch', 'Move like animals'], ['toyCars', 'Tape roads for cars'], ['picnic', 'Picnic on the floor'], ['dressUp', 'Dress-up parade'], ['garden', 'Garden helper'],
-  ['library', 'Library visit'], ['teaParty', 'Tea party'], ['peekaboo', 'Hide and seek'], ['talkPictures', 'Look at family photos'], ['familyGame', 'Pick a favorite, again!'],
+  ['library', 'Library visit'], ['teaParty', 'Tea party'], ['peekaboo', 'Hide and seek'], ['talkPictures', 'Look at photos of people we love'], ['familyGame', 'Pick a favorite, again!'],
 ];
 
 // ---------- 30-play grown-up guide (CUSTOMER-VOICE rules 4, 6, 7, 15): same order as DAYS30 ----------
@@ -131,7 +131,7 @@ const PLAYS30 = [
   { from: 6, needs: 'A free library card', prep: 5, mess: 'none', play: 45, easy: 'Pick one book together.', hard: 'They choose and check out their own books.', two: 'At home, “visit” your shelf and pick one.', say: '“This one or that one?”' },
   { from: 18, needs: 'Cups, a toy or two', prep: 1, mess: 'low', play: 15, easy: 'Pretend to pour: “Mmm!”', hard: 'Invite the toys, set places, serve courses.', two: 'One pretend cup each.', say: '“More tea?”', safe: 'Pretend or cool water only.' },
   { from: 18, needs: 'Nothing', prep: 0, mess: 'none', play: 15, easy: 'Peekaboo behind a door or blanket.', hard: 'They count to 20 and do the seeking.', two: 'One hide, one seek.', say: '“Where are you?”', safe: 'Agree on no-hide places: no dryers, chests or cars.' },
-  { from: 12, needs: 'Printed photos or an album', prep: 1, mess: 'none', play: 10, easy: 'Find the faces: “Who’s that?”', hard: 'Tell the story behind one photo.', two: 'One photo, one story.', say: '“What were they doing?”' },
+  { from: 12, needs: 'Printed photos or an album', prep: 1, mess: 'none', play: 10, easy: 'Find the faces: “Who’s that?” Photos from now are just as good.', hard: 'Tell the story behind one photo.', two: 'One photo, one story.', say: '“What were they doing?”' },
   { from: 12, needs: 'Whatever the play needs', prep: 0, mess: 'low', play: 15, easy: 'Pick the shortest favorite.', hard: 'Make it bigger than last time.', two: 'Any 2-minute version on these pages.', say: '“Which one? Why that one?”' },
 ];
 

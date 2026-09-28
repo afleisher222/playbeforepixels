@@ -128,7 +128,7 @@ page('before', 'Before you start', () => `
   <section class="tip"><h3 class="h3" style="color:${C.tomato}">Safety</h3><ul>
     <li>An adult leads and supervises every round.</li>
     <li>Paper blocks and cards are large. If you use real blocks or objects with children under 3 nearby, choose pieces too big to fit through a toilet-paper tube (about 1.25 in / 3.2 cm).</li>
-    <li>Use painter’s tape or large Velcro dots on the wall. Check dots before each play. Keep pushpins, staples and small magnets out of reach.</li>
+    <li>Use painter’s tape or large hook-and-loop dots on the wall. Check dots before each play. Keep pushpins, staples and small magnets out of reach.</li>
     <li>For the Talking Star, use the paper star in this kit or a soft toy. For ball games, roll a soft, large ball along the floor.</li>
     <li>No balloons for children under 8.</li>
   </ul>
@@ -221,7 +221,7 @@ for (const t of ['q', 'j', 'i', 'l']) {
   page('mat', 'Whose-turn tracker mat', `
 <div class="cardhead"><h2 class="h2">Whose turn?</h2><p class="lead">Stick every name block in <b>Ready for a turn</b>. After a child’s turn, they move their own name across. When every name has moved, the round is done: move them all back and start again.</p></div>
 <div class="mat">${col('Ready for a turn', BLOCK.q.tint, C.sky, 'Everyone starts here.', 'q')}<div class="matarrow">${svg('0 0 60 60', P('M6 22 H34 V8 L56 30 L34 52 V38 H6Z', C.ink))}</div>${col('Had a turn', BLOCK.i.tint, C.grass, 'Move your name here after your turn.', 'i')}</div>
-<p class="tinynote">Tip: laminate this page and use Velcro dots or painter’s tape on the backs of the name blocks. Check dots before each play. A child who passes still moves across: listening is a turn too. The mat holds 8 names, so use one per small group, or overlap the name blocks for a whole class.</p>`);
+<p class="tinynote">Tip: laminate this page and use hook-and-loop dots or painter’s tape on the backs of the name blocks. Check dots before each play. A child who passes still moves across: listening is a turn too. The mat holds 8 names, so use one per small group, or overlap the name blocks for a whole class.</p>`);
 }
 
 // ------------------------------------------------------------------ 12 WEEKLY TRACKER

@@ -131,7 +131,7 @@ module.exports = [
     h1: 'Every piece is 2 in or bigger', sub: 'Straight cuts, 12 pieces or fewer per sheet. Grown-up keeps the pieces.',
     img: [P.busy + 'p28.png', P.busy + 'p29.png'],
     title: 'Busy book pieces sized for little hands (2 in or bigger)',
-    desc: 'Every cut piece in this printable toddler busy book is 2 in (5.1 cm) or bigger, and 2.5 in for ages 1–2, larger than a toilet-paper tube. Straight cuts, 12 pieces or fewer per sheet, no velcro under 3. Every play follows our published safety rules.',
+    desc: 'Every cut piece in this printable toddler busy book is 2 in (5.1 cm) or bigger, and 2.5 in for ages 1–2, larger than a toilet-paper tube. Straight cuts, 12 pieces or fewer per sheet, no hook-and-loop dots under 3. Every play follows our published safety rules.',
     alt: 'A matching page with toys beside its piece sheet of large square picture cards.' },
 
   // ---------- AGES 1–5 INSTANT GIFT BUNDLE (Etsy, G-day) ----------

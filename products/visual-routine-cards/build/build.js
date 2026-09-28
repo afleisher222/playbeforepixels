@@ -369,7 +369,7 @@ function extrasPage() {
     <div><span class="kicker">Extras</span><h2 style="font-size:24px;margin-top:2px">Today markers and an All done pocket</h2></div>
     <div style="display:flex;gap:.25in;align-items:flex-start">
       <div class="cardwrap">${marker(C.tomato)}</div><div class="cardwrap">${marker(C.grass)}</div>
-      <div style="flex:1" class="note"><b style="color:${C.ink}">Today markers.</b> Cut out and laminate. Ages 3+: stick a velcro dot on the back and move it along the day chips on the Today board. Under 3: lay it on the chip.<br><br><b style="color:${C.ink}">All done pocket.</b> Cut on the dashed line. Fold the three glue flaps back along the gray lines and glue them to the chart or the wall, leaving the top open. Finished cards drop inside. No dots needed, so it suits under-3s.</div>
+      <div style="flex:1" class="note"><b style="color:${C.ink}">Today markers.</b> Cut out and laminate. Ages 3+: stick a hook-and-loop dot on the back and move it along the day chips on the Today board. Under 3: lay it on the chip.<br><br><b style="color:${C.ink}">All done pocket.</b> Cut on the dashed line. Fold the three glue flaps back along the gray lines and glue them to the chart or the wall, leaving the top open. Finished cards drop inside. No dots needed, so it suits under-3s.</div>
     </div>
     <div class="pocket" style="height:3.1in;display:flex;align-items:stretch;border-bottom:none;border-radius:6px 6px 0 0">
       <div style="width:.5in;border-right:1.5px solid #C9D2E0;writing-mode:vertical-rl;${flap}">GLUE FLAP</div>
@@ -379,7 +379,7 @@ function extrasPage() {
       <div style="width:.5in;border-left:1.5px solid #C9D2E0;writing-mode:vertical-rl;${flap}">GLUE FLAP</div>
     </div>
     <div style="margin:-.16in .5in 0;height:.45in;border:2px dashed #9AA6BA;border-top:1.5px solid #C9D2E0;border-radius:0 0 6px 6px;${flap}">GLUE FLAP</div>
-  </div>`, { note: 'Extras · Grown-up keeps the pieces · Keep loose laminated scraps and velcro dots away from children who still mouth things' });
+  </div>`, { note: 'Extras · Grown-up keeps the pieces · Keep loose laminated scraps and hook-and-loop dots away from children who still mouth things' });
 }
 const LABEL_ART = { morning: 'wakeUp', meals: 'breakfast', play: 'blocks', outside: 'park', reading: 'readTogether', bath: 'bathTime', bedtime: 'sleep', helping: 'tidyToys', feelings: 'fHappy', about: 'shopping', words: 'wFirst', screens: 'playFirst', 'bk-morning': 'alarm', 'bk-after': 'homework', 'bk-evening': 'readInBed', 'bk-jobs': 'tidyRoom' };
 function labelsPage() {
@@ -516,7 +516,7 @@ function laminatePage() {
     <div class="safety"><h3>Safety for little hands</h3><ul class="tight">
       <li><b>A grown-up stays close and keeps the pieces.</b> Routine cards are a together activity, not a toy to leave in the crib or bed.</li>
       <li>Every card is 2.2 in (5.6 cm) square, bigger than a toilet-paper tube opening, a common rule of thumb for small parts with children under 3. Don't shrink the cards when printing, and don't cut them into smaller pieces.</li>
-      <li>Velcro dots, laminating scraps and loose plastic are small parts. <b>Check dots before each play; remove any that lift.</b> Keep spares out of reach, and skip magnets for any child who still puts things in their mouth.</li>
+      <li>Hook-and-loop dots, laminating scraps and loose plastic are small parts. <b>Check dots before each play; remove any that lift.</b> Keep spares out of reach, and skip magnets for any child who still puts things in their mouth.</li>
       <li>Hang charts low enough to reach without climbing, and away from blind cords. Every card follows our published safety rules.</li></ul></div>
     <div style="display:flex;gap:.3in;align-items:center">
       <div style="width:2.2in;height:2.2in;border:2px dashed ${C.ink};border-radius:.17in;display:flex;align-items:center;justify-content:center;flex:0 0 auto;position:relative"><div style="width:1.25in;height:1.25in;border-radius:50%;background:${X.low ? '#fff' : C.tTomato};border:2px solid ${X.low ? C.ink : C.tomato};display:flex;align-items:center;justify-content:center;text-align:center;font-size:8.5px;font-weight:800;line-height:1.2;color:${X.low ? C.ink : '#C8431F'}">toilet-paper<br>tube opening<br>about 1.25 in</div></div>
@@ -610,7 +610,7 @@ function startHerePage() {
       <div class="tile" style="--t:${C.tSky}"><h3>Downloading</h3><p>Open the download link in your order email in a web browser. On a phone, save each PDF to Files, then open it in Adobe Acrobat Reader.</p></div>
       <div class="tile" style="--t:${C.wash};display:flex;align-items:center;gap:.18in"><div style="width:1in;height:1in;background:#fff;padding:.06in;border-radius:10px;flex:0 0 auto">${QR}</div><div><h3>Free bonus</h3><p>Scan for free seasonal routine cards${X.tier === 'full' ? ' and the Canva-ready PNG set' : ''}: <b>${BONUS}</b>. Lost a file? Help is at <b>${SITE}/help</b>.</p></div></div>
     </div>` : `<div class="tile" style="--t:${C.tSky}"><h3>Downloading: use a browser, not the app</h3><p>The Etsy app can't download files. Open Etsy in a web browser, go to You › Purchases and reviews, and choose Download files. On a phone, save each PDF to Files, then open it in Adobe Acrobat Reader. Your files stay on your Purchases page to download again any time.</p></div>`}
-    <div class="safety"><h3>Safety in one line</h3><p>A grown-up stays close and keeps the pieces. Print at full size, use no velcro dots with children under 3, and check dots before each play for older children. Every card follows our published safety rules.</p></div>
+    <div class="safety"><h3>Safety in one line</h3><p>A grown-up stays close and keeps the pieces. Print at full size, use no hook-and-loop dots with children under 3, and check dots before each play for older children. Every card follows our published safety rules.</p></div>
     <p class="note" style="margin-top:auto">License: one family's personal use, including grandparents and sitters. Print shops may print copies for this customer’s family. Giving it as a gift? Pass the files on, or print one set for that family. Please don't share or resell the files.</p>
   </div>`, { note: 'Start here' });
 }

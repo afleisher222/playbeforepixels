@@ -115,7 +115,7 @@ L.push(`<div class="L" style="background:${C.tGrass}">
   <div style="position:absolute;left:56px;right:56px;top:230px;display:grid;grid-template-columns:1fr 1fr;gap:18px">
     <div class="tile" style="display:flex;gap:18px;align-items:center"><svg width="120" height="170" viewBox="-40 -60 80 120" style="flex:none"><use href="#b-tube" transform="scale(1.2)"/></svg><div><h3>Bigger than a toilet-paper tube</h3><p>Every piece is 2 in (5.1 cm) or bigger. Pieces for 1–2 years: 2.5 in (6.4 cm) or bigger.</p></div></div>
     <div class="tile"><h3>Grown-up keeps the pieces</h3><p>Printed on every piece sheet. Count them out and back in, and store them in a labeled pouch.</p></div>
-    <div class="tile"><h3>No velcro dots for under-3s</h3><p>1–2 and 2–3 pieces lie flat on top. Velcro is optional for 3–5, with “check dots before each play.”</p></div>
+    <div class="tile"><h3>No hook-and-loop dots for under-3s</h3><p>1–2 and 2–3 pieces lie flat on top. Hook-and-loop dots are optional for 3–5, with “check dots before each play.”</p></div>
     <div class="tile"><h3>Play together</h3><p>A supervision note on every activity page. No balloons, beads, buttons, coins or strings anywhere.</p></div>
   </div>
   ${page(A['x-safety'], 150, 640, 300, -4)}${page(SH['colorsort'], 560, 630, 300, 4)}

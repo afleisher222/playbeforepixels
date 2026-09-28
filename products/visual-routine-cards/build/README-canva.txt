@@ -16,6 +16,6 @@ HOW TO USE WITH CANVA (free account)
 2. Upload a frame or chart background and stretch it to fill the page.
 3. Drag in art from folder 2 and add a text box for your word.
 4. Download as "PDF Print" and print at 100% / Actual size.
-Keep cards at 2.2 in (5.6 cm). A grown-up keeps the pieces; no velcro dots for children under 3.
+Keep cards at 2.2 in (5.6 cm). A grown-up keeps the pieces; no hook-and-loop dots for children under 3.
 
 TERMS: For personal use in your own home and family. Please don't share, sell or upload these files.

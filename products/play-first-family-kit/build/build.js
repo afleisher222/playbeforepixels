@@ -328,7 +328,7 @@ function checklist(ctx, kind, cw, start) {
 // ---------------------------------------------------------------- tokens + cards + board
 const TINTS = ['var(--tT)', 'var(--tK)', 'var(--tG)', 'var(--tS)', 'var(--tP)'];
 function cutNote(lead) {
-  return `<div class="cutnote"><span class="safe">${lead ? lead + ' ' : ''}<b>Grown-up keeps the pieces.</b> Every piece is at least ${TOK}, bigger than the toilet-paper-tube test. Print at 100%. Velcro is for ages 3+ only: check dots before each play; remove any that lift.</span></div>`;
+  return `<div class="cutnote"><span class="safe">${lead ? lead + ' ' : ''}<b>Grown-up keeps the pieces.</b> Every piece is at least ${TOK}, bigger than the toilet-paper-tube test. Print at 100%. Hook-and-loop dots are for ages 3+ only: check dots before each play; remove any that lift.</span></div>`;
 }
 function tokens(ctx, blank, pgBoard) {
   const items = blank ? Array.from({ length: 12 }, () => null) : T.TOKENS;
@@ -348,7 +348,7 @@ function board(ctx, pgTokens) {
     + `<div class="board">
     ${step(1, 'First: jobs', 'Draw or write today’s job, or point to it on your checklist.', `<div class="slot" style="--bn:var(--tomato)">${drawSpot()}<span class="fl" ${fld('board_job', { size: 12, align: 1 })}></span></div>`, 'var(--tT)', 'var(--tomato)')}
     ${arrow}
-    ${step(2, 'Then: together time', `Lay a together token here (page ${pgTokens}). Under 3? Just lay it on top, with no velcro dots.`, `<div class="slot" style="--bn:var(--grass)">${art('boardGame', 'ghost', false)}Put a together token here</div>`, 'var(--tG)', 'var(--grass)')}
+    ${step(2, 'Then: together time', `Lay a together token here (page ${pgTokens}). Under 3? Just lay it on top, with no hook-and-loop dots.`, `<div class="slot" style="--bn:var(--grass)">${art('boardGame', 'ghost', false)}Put a together token here</div>`, 'var(--tG)', 'var(--grass)')}
     ${arrow}
     ${step(3, 'Later: screens', 'Screens come last, at the same spot every day.', `<div class="slot" style="--bn:var(--sky);border-style:solid">${art('screenSpot')}<div style="display:flex;width:100%;align-items:flex-end;gap:.05in;color:var(--ink);font-size:10pt">after <span class="fl" ${fld('board_after', { size: 11 })}></span></div></div>`, 'var(--tK)', 'var(--sky)')}
   </div>`;
@@ -397,7 +397,7 @@ function plan2() {
   const cbs = ['At meals', 'In bedrooms at night', 'The hour before bed', 'Short car rides', 'When friends come to play', 'While we talk to each other'];
   return hd({ eyebrow: 'Section E · Whole family · page 2 of 3 · fillable', title: 'Where and when screens rest', lede: 'Pick a few screen-free times and places. Fewer rules, kept kindly, work better than many.', age: 'all' })
     + `<div class="card"><div class="h2">Screens rest…</div><div class="cbl">${cbs.map(c => `<label><span class="cb" ${fld('rest', { check: 1 })}></span>${c}</label>`).join('')}<label><span class="cb" ${fld('rest', { check: 1 })}></span>Other: <span class="fl" ${fld('rest_other', { size: 10 })}></span></label></div><p class="small" style="color:var(--ink)">A talker (a device a child uses to talk) never rests: it’s their voice, so it stays with them.</p></div>
-  <div class="card" style="--cbg:var(--tP)"><div class="qrow">At night, our screens sleep in <span class="fl" ${fld('sleep_where', { size: 12 })}></span></div><p class="small" style="color:var(--ink)">A charging spot outside bedrooms makes bedtime easier for everyone, grown-ups included.</p></div>
+  <div class="card" style="--cbg:var(--tP)"><div class="qrow">At night, our screens sleep in <span class="fl" ${fld('sleep_where', { size: 12 })}></span></div><p class="small" style="color:var(--ink)">One set charging spot makes bedtime easier for everyone, grown-ups included.</p></div>
   <div class="card" style="--cbg:var(--tG);flex:1"><div class="h2">Watching and playing together</div><p class="body">When you can, choose together, watch together, and talk about it after: “Who was your favorite? What would you do?”</p><div class="q">Shows, games or videos we enjoy together:</div><div class="lines" style="flex:1;min-height:.9in" ${fld('together_media', { size: 11, multi: 1 })}></div></div>
   <div class="card" style="--cbg:var(--tS)"><div class="h2">What the guidelines say</div>
     <ul class="b"><li><span class="ball"></span><span><b>Ages 1–4:</b> at least 180 minutes a day of active play, in any mix. No screen time under age 1; no more than 1 hour a day at ages 2–4 (WHO, 2019).</span></li>
@@ -505,7 +505,7 @@ function guide1(ctx) {
       ['var(--tK)', 'Say what you see.', '“You put out the spoons. One, two, three spoons!”'],
       ['var(--tG)', 'Repeat and add one word.', '“Ball.” “Big ball!” “Big red ball!”'],
     ].map(([c, a, b]) => `<div style="--tt:${c}"><div class="kid" style="font-size:13pt">${a}</div><div class="body">${b}</div></div>`).join('')}</div></div>
-  <div class="card"><p class="body"><b>Talk, sing and read in the language you know best. Every language counts.</b> A sign, a point or a tap counts as communicating, too. Write your own words, in any language, on the blank pages.</p></div>`;
+  <div class="card"><p class="body"><b>Talk, sign, sing and read in the language you know best. Every language counts.</b> A sign, a point or a tap counts as communicating, too. Write your own words, in any language, on the blank pages. You don’t need to be chatty: reading a talk line word for word, or playing quietly side by side, counts too.</p></div>`;
 }
 function guide2(ctx) {
   return hd({ eyebrow: 'Section A · Grown-up guide · 2 of 2', title: 'How it works at each age', lede: 'Use what fits: ages are a starting point, and pictures work at any age. Most children love 2 or 3 of these tools; that’s normal.', age: 'grown' })
@@ -519,14 +519,16 @@ function guide2(ctx) {
     <li><span class="ball"></span><span>The spot <b>never grows or shrinks</b> with jobs or behavior. That keeps screens from becoming the prize, so jobs and play can simply be part of the day.</span></li>
     <li><span class="ball"></span><span><b>Tokens are for play and time together</b> (a story, a game, a walk), never screen minutes. Time together is never taken away as a punishment.</span></li>
     <li><span class="ball"></span><span>A <b>talker</b> (a device a child uses to talk) is their voice, not screen time. It stays with them at meals, in the car and at night.</span></li>
+    <li><span class="ball"></span><span><b>Video calls</b> with people you love are talk time, not screen time. Wave, show and tell.</span></li>
     <li><span class="ball"></span><span>End gently with the screen-spot cards: <b>5 more minutes</b>, then <b>Screens go to sleep</b>, then <b>What we do next</b>.</span></li></ul></div>
   <div class="rhythm">${[['alarm', '5 more minutes', 'var(--tS)'], ['devicesSleep', 'Screens go to sleep', 'var(--tP)'], ['kickBall', 'What we do next', 'var(--tG)']].map(([a, t, c], i) => `${i ? '<div class="ar"><svg viewBox="0 0 20 30" width=".2in" height=".3in"><path d="M4 3L16 15 4 27" stroke="var(--ink)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>' : ''}<div class="rs" style="background:${c}">${art(a)}<div class="kid">${t}</div></div>`).join('')}</div>
   <div class="steps"><div class="card"><div class="h2">When stopping is hard</div><p class="body">Stay close and name it: “It’s hard to stop. You wish it was longer.” Then show <b>What we do next</b>. Big feelings at the end are normal, and the spot comes back tomorrow.</p></div>
   <div class="card"><div class="h2">If interest fades</div><p class="body">Move the chart, swap in a fresh token, or fill in a blank checklist for a grown-up; kids love ticking yours. Tired day? Just say the rhythm out loud: “Jobs, play, then screens.” That counts.</p></div></div>
+  <div class="card" style="--cbg:var(--tG)"><p class="body"><b>Every play works from a chair, a bed or a wheelchair.</b> Bring it to a table or tray and let your child do the fetching. Any sound play can be a see-it or feel-it play: a light flick for “stop,” a hand on the pot for the beat.</p></div>
   ${T.FOUNDER_NOTE ? `<div class="card"><div class="h2">A note from us</div><p class="body">${T.FOUNDER_NOTE}</p></div>` : ''}`;
 }
 function tips(ctx) {
-  return hd({ eyebrow: 'Section A · Printing, laminating, velcro and safety', title: 'Print it, make it last', lede: 'About 20 minutes to print and cut, then reusable. The checklists need no cutting: start today.', age: 'grown', prepT: 'Prep 20 min total' })
+  return hd({ eyebrow: 'Section A · Printing, laminating, hook-and-loop and safety', title: 'Print it, make it last', lede: 'About 20 minutes to print and cut, then reusable. The checklists need no cutting: start today.', age: 'grown', prepT: 'Prep 20 min total' })
     + `<div class="steps">
   <div class="card" style="--cbg:var(--tK)"><div class="h2">Printing</div><ul class="b">
     <li><span class="ball"></span><span>Print at <b>100% / Actual size</b>. Don’t use “fit to page” for tokens and cards.</span></li>
@@ -537,8 +539,8 @@ function tips(ctx) {
     <li><span class="ball"></span><span>Laminate the charts and use a dry-erase marker, week after week.</span></li>
     <li><span class="ball"></span><span><b>No laminator?</b> Slide charts into clear page protectors. Dry-erase works on those too.</span></li>
     <li><span class="ball"></span><span>Laminate tokens before cutting, then cut on the dashed lines, leaving a thin sealed edge.</span></li></ul></div>
-  <div class="card" style="--cbg:var(--tP)"><div class="h2">Velcro: ages 3 and up only</div><ul class="b">
-    <li><span class="ball"></span><span>Velcro dots are small enough to be a choking risk for under-3s.</span></li>
+  <div class="card" style="--cbg:var(--tP)"><div class="h2">Hook-and-loop dots: ages 3 and up</div><ul class="b">
+    <li><span class="ball"></span><span>Hook-and-loop dots are small enough to be a choking risk for under-3s.</span></li>
     <li><span class="ball"></span><span><b>Under 3:</b> no dots. Lay tokens on top of the board, or slip the board into a page protector and tuck the token inside.</span></li>
     <li><span class="ball"></span><span><b>Check dots before each play; remove any that lift.</b></span></li></ul></div>
   <div class="card" style="--cbg:var(--tS)"><div class="h2">Shopping list (whole kit, printed once)</div><ul class="b">
@@ -546,7 +548,7 @@ function tips(ctx) {
     <li><span class="ball"></span><span>Cardstock: 4 sheets (2 token sheets, cards, board)</span></li>
     <li><span class="ball"></span><span>6 laminating pouches, or 6 page protectors</span></li>
     <li><span class="ball"></span><span>1 dry-erase marker · 1 envelope for tokens</span></li>
-    <li><span class="ball"></span><span>Optional, ages 3+: 12 pairs of velcro dots</span></li></ul></div></div>
+    <li><span class="ball"></span><span>Optional, ages 3+: 12 pairs of hook-and-loop dots</span></li></ul></div></div>
   <div class="card" style="--cbg:var(--tT)"><div class="h2">Safety notes</div><ul class="b">
     <li><span class="ball"></span><span><b>Grown-up keeps the pieces.</b> Every cut piece is ${TOK} or larger, bigger than the toilet-paper-tube test for under-3s. Print at 100% so they stay that size, and store them out of reach.</span></li>
     <li><span class="ball"></span><span>A grown-up stays close for every play. Water, bubbles and cooking: always within arm’s reach. Grown-ups handle knives, heat and glass.</span></li>
@@ -586,7 +588,7 @@ function buildDoc(ctx, qr) {
   add('inside', '', (c, P) => inside(c, P), 'What’s inside');
   add('guide1', 'A', c => guide1(c), 'Grown-up guide');
   add('guide2', 'A', c => guide2(c));
-  add('tips', 'A', c => tips(c), 'Printing, laminating, velcro and safety');
+  add('tips', 'A', c => tips(c), 'Printing, laminating, hook-and-loop and safety');
   const cws = ctx.low ? [null] : COLORWAYS.map(c => c.id);
   [['little', 'cl25', 'Checklist, ages 2–5 (pre-filled)'], ['big', 'cl512', 'Checklist, ages 5–12 (pre-filled)'], ['blank', 'clBlank', 'Checklist, make-it-yours (fillable)']].filter(([k]) => !(ctx.g0 && k === 'big')).forEach(([kind, key, label]) => {
     let first = true;

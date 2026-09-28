@@ -7,8 +7,8 @@ const monthsLabel = m => m >= 36 && m % 12 === 0 ? `from ${m / 12} years` : `fro
 function safetyLine(a) {
   const parts = ['<b>Play together</b>, with a grown-up right there.'];
   if (a.cut || a.usesPiecesOf) {
-    if (a.band === 'b3') parts.push('<b>Grown-up keeps the pieces</b> and counts them back in. Velcro is optional: <b>check dots before each play</b>, and keep pieces away from under-3s.');
-    else parts.push('<b>Grown-up keeps the pieces</b> and counts them back in. No velcro dots for under-3s: lay pieces on top.');
+    if (a.band === 'b3') parts.push('<b>Grown-up keeps the pieces</b> and counts them back in. Hook-and-loop dots are optional: <b>check dots before each play</b>, and keep pieces away from under-3s.');
+    else parts.push('<b>Grown-up keeps the pieces</b> and counts them back in. No hook-and-loop dots for under-3s: lay pieces on top.');
   }
   if (a.safety) parts.push(a.safety);
   return parts.join(' ');
@@ -59,7 +59,7 @@ function sheetPage(a, ctx, pn) {
   const minIn = String(+(Math.min(cell.w, cell.h) / 96).toFixed(2));
   const cm = (Math.round(Math.min(cell.w, cell.h) / 96 * 25.4) / 10).toFixed(1);
   const forWhat = a.piecesFor ? `${a.piecesFor} (pages ${ctx.usedBy[a.id].join(' and ')})` : `page ${ctx.actPage[a.id]}: ${a.title}`;
-  const velcro = a.band === 'b3' ? 'Velcro is optional: <b>check dots before each play</b>; throw away any piece whose dot lifts.' : '<b>No velcro dots for under-3s:</b> lay pieces on top. Throw away torn or peeling pieces.';
+  const velcro = a.band === 'b3' ? 'Hook-and-loop dots are optional: <b>check dots before each play</b>; throw away any piece whose dot lifts.' : '<b>No hook-and-loop dots for under-3s:</b> lay pieces on top. Throw away torn or peeling pieces.';
   return `<section class="page band-${a.band} sheet" data-sheet="${a.id}"><div class="live">
   ${header(a.band, 'Cut-out pieces', `<span class="tag">${ui('u-scissors')}${a.pieces.length} pieces · for ${a.piecesFor ? 'pages ' + ctx.usedBy[a.id].join(' and ') : 'page ' + ctx.actPage[a.id]}</span>`)}
   <div class="tt"><h1 style="font-size:23px">Pieces for ${forWhat}</h1></div>
