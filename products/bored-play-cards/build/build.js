@@ -335,7 +335,7 @@ function welcomePage() {
     </div>
     <div class="inside"><span class="kick">What’s inside</span>
       ${inside.map(([n, t]) => `<div class="in"><b>${n}</b><span>${t}</span></div>`).join('')}
-      <div class="in fmt"><span>US Letter + A4 · editable blanks · Canva PNG set · index & checklist</span></div>
+      <div class="in fmt"><span>US Letter + A4 · fillable blanks · PNG template set · index & checklist</span></div>
     </div>
   </div>
   <div class="steps">${steps.map(([h, t], i) => `<div class="st"><span class="sn" style="background:${[C.sun, C.grass, C.sky, C.plum][i]};color:${i ? '#fff' : C.ink}">${i + 1}</span><h4>${h}</h4><p>${t}</p></div>`).join('')}</div>
@@ -758,7 +758,7 @@ function faqPage() {
     ['Can I print at a print shop?', 'Yes, for your own family’s use. Choose cardstock and ask them to print at 100% (actual size).'],
     ['Can I share it with my class, group or friends?', 'This file is licensed for one household. For groups or classrooms, ask about a license through the contact form at playbeforepixels.com.'],
     ['Is there a screen version?', 'No, and that’s on purpose. The cards are paper so the play happens off-screen.'],
-    ['How do I type on the blank cards?', 'Open the editable file in free Adobe Acrobat Reader, click a box and type. Or use the Canva PNG set.'],
+    ['How do I type on the blank cards?', 'Open the editable file in a free PDF reader app that supports fill-in forms, click a box and type. Or use the PNG template set in a design app.'],
     ['Where is my free bonus?', 'On the last page: scan the QR code or type the short link.'],
   ];
   return contentPage('faq', 'Quick answers', 'Questions,<br>answered.', `<div class="fq">${Q.map(([q, a]) => `<div class="fqi"><h4>${q}</h4><p>${a}</p></div>`).join('')}</div>
@@ -856,10 +856,10 @@ function duplexPages() {
 }
 function editablePages() {
   // one sheet of fillable blank cards per colour + fillable menu, planners and a name label
-  const intro = contentPage('edintro', 'Editable file', 'Make your own cards', `<p class="lead">This file has fill-in boxes. Open it in free Adobe Acrobat Reader (or another PDF app that supports forms), click a box and type. Save, then print at 100% on cardstock.</p>
+  const intro = contentPage('edintro', 'Editable file', 'Make your own cards', `<p class="lead">This file has fill-in boxes. Open it in a free PDF reader app that supports fill-in forms, click a box and type. Save, then print at 100% on cardstock.</p>
   <div class="edl">
     <div><h4>What you can edit</h4><p>Blank cards in all six colors (title, what you need, try it, talk, energy), both weekly planners (Monday and Sunday start) and the Play Jar Star certificate.</p></div>
-    <div><h4>Prefer Canva?</h4><p>Use the Canva PNG set in your download: upload a blank card, jar label or divider as a background image, then add your own text boxes. Keep the text inside the white panel.</p></div>
+    <div><h4>Prefer a design app?</h4><p>Use the PNG template set in your download: place a blank card, jar label or divider as a background image, then add your own text boxes. Keep the text inside the white panel.</p></div>
     <div><h4>Handwriting works too</h4><p>Every blank also prints as a lined card, so you can write ideas with your child instead of typing them.</p></div>
     <div><h4>Keep it safe</h4><p>Cards you write follow the same safety rules: see the safety page in the main file.</p></div>
   </div>
@@ -931,6 +931,7 @@ const mkCss = `<style>
 .L .lg1{position:absolute;right:64px;bottom:48px;height:34px}
 .L .chip{display:inline-flex;align-items:center;gap:8px;border-radius:40px;padding:10px 20px;font-weight:800;font-size:19px;background:#fff}
 .blob{position:absolute;border-radius:50%}
+.L .chip .i{width:22px;height:22px}
 </style>`;
 function mockupPage() {
   return `<section class="page mock" style="width:1600px;height:1200px;background:${C.wash};position:relative;overflow:hidden">
@@ -979,8 +980,10 @@ function listingPages() {
     ${place(CD('b812', 15), 110, 570, -3, 0.95)}${place(CD('b812', 22), 370, 560, 1, 0.95)}${place(CD('b812', 26), 620, 570, 4, 0.95)}`, C.tPlum));
   // 6 seasonal sets
   P.push(L(`<div class="lh"><div class="lk">Bonus sets</div><h2>Summer & rainy-day<br>mini-sets</h2><p class="ls">36 extra cards for sunny afternoons and stuck-inside days.</p></div>
-    ${place(BK('summer'), 70, 400, -8, 1.02)}${place(CD('summer', 1), 250, 380, -2, 1.1)}${place(CD('summer', 16), 360, 640, 6, 1.0)}
-    ${place(CD('rainy', 3), 540, 380, 2, 1.1)}${place(BK('rainy'), 720, 400, 9, 1.0)}${place(CD('rainy', 10), 600, 650, -5, 1.0)}`, C.tTomato));
+    ${place(BK('summer'), 64, 330, -7, 1.0)}${place(CD('summer', 1), 250, 350, 3, 1.08)}
+    ${place(BK('rainy'), 530, 330, -5, 1.0)}${place(CD('rainy', 10), 705, 350, 5, 1.08)}
+    <div style="position:absolute;left:64px;top:770px;display:flex;gap:12px"><span class="chip" style="background:${C.tomato};color:#fff">${icon('sun', 'i')} 18 summer cards</span><span class="chip" style="background:${C.ink};color:#fff">${icon('rain', 'i')} 18 rainy-day cards</span></div>
+    <p style="position:absolute;left:64px;top:840px;width:640px;font-size:19px;font-weight:600;line-height:1.4">Sprinklers, ice rescues and cloud stories. Puddle jumping, reading nests and living-room camp-outs.</p>`, C.tTomato));
   // 7 labels, dividers, colorways
   P.push(L(`<div class="lh"><div class="lk">Jar labels · dividers · card backs</div><h2>Four colorways.<br>One calm system.</h2></div>
     <div class="paper" style="${at(64, 300, -3)};width:300px;height:388px"><img src="${PV(40)}"></div>
@@ -988,7 +991,7 @@ function listingPages() {
     <div class="paper" style="${at(640, 300, 5)};width:300px;height:388px"><img src="${PV(37)}"></div>
     ${['b13', 'b35', 'b58', 'b812', 'summer', 'rainy'].map((k, i) => place(BK(k), 70 + i * 128, 715, (i - 2.5) * 3, 0.56)).join('')}`, '#FFFFFF'));
   // 8 sizes & formats
-  const F = [['US Letter + A4', 'Every page in both sizes, at 100% scale'], ['Fillable editable PDF', 'Type your own cards in free Adobe Acrobat Reader'], ['Canva PNG set', '30 blank cards, backs, labels and dividers at 300 dpi'], ['Double-sided cards file', 'Fronts and backs, ready for duplex printing'], ['Instant download', 'Digital file only. Nothing is shipped.']];
+  const F = [['US Letter + A4', 'Every page in both sizes, at 100% scale'], ['Fillable editable PDF', 'Type your own cards in any free PDF reader with fill-in forms'], ['PNG template set', '30 templates at 300 dpi: blank cards, backs, labels, dividers'], ['Double-sided cards file', 'Fronts and backs, ready for duplex printing'], ['Instant download', 'Digital file only. Nothing is shipped.']];
   P.push(L(`<div class="lh"><div class="lk">Sizes & formats</div><h2>Print it your way.</h2></div>
     <div style="position:absolute;left:64px;top:250px;width:470px">${F.map(([h, t], i) => `<div style="background:#fff;border-radius:20px;padding:18px 22px;margin-bottom:14px;border-left:10px solid ${[C.sun, C.grass, C.sky, C.plum, C.tomato][i]}"><div style="font-family:Bricolage Grotesque;font-weight:800;font-size:27px">${h}</div><div style="font-size:18px;font-weight:600">${t}</div></div>`).join('')}</div>
     <div class="paper" style="${at(620, 240, 4)};width:290px;height:375px"><img src="${PV(27)}"></div>

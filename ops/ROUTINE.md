@@ -29,6 +29,14 @@ Every scheduled run follows this file. It is the operating procedure; CLAUDE.md 
 - Every product ships with separate PDFs of about 20 MB or less with plain file names, a 1-page "Start here" PDF and a print-permission page. Every color printable also gets a low-ink version, and every text-heavy product an 18 pt+ large-print edition. (G2-17, G2-18)
 - Fill listing.json `ai_disclosure` (every channel the product goes to), `price_floor` and `net_per_unit_by_channel`. (G2-08, G2-11)
 
+## Search quality over quantity (binding — protects the whole site's Google ranking)
+Google's spam policies penalize "scaled content abuse": many pages made mainly to rank, with little original value, however they were written. So:
+- **At most 2 new articles per week** across all runs. Every other day, improve an existing page instead (update facts, add a printable, a table, a clearer answer, better internal links).
+- Every new page must add something original a parent or teacher can use (an age table, a checklist, a free printable, a worked example) and answer one real question fully. No near-duplicate pages targeting keyword variations.
+- Translations are reviewed for natural language before publishing; never publish raw machine translation.
+- Research-hub pages are updated only from verified primary sources (ops/RESEARCH-LOG.md).
+- Product pages are written once, well, and improved from customer questions and reviews — never spun into variants.
+
 ## Daily stay-current scan (daily check, ~5 minutes)
 Check the official seller news/announcement and policy pages for every platform we use (Amazon KDP and Merch, IngramSpark, Etsy, Teachers Pay Teachers, Shopify, the merchant of record, Pinterest, Meta, TikTok, YouTube, Google Merchant Center/Search Central, the email platform, the print-on-demand partners): fee changes, new rules (especially AI-generated content disclosure, children's products, digital downloads, outside links), new features worth using, seasonal search trends. Update the affected docs (commerce/storefront-setup-guide.md, finance/money-and-tax-setup.md, ops/COMPLIANCE-GATE.md) the same day; log changes in ops/PLATFORM-NEWS.md; anything that requires the founder goes to ops/APPROVALS.md; a rule change that makes a live listing non-compliant is fixed immediately under ops/AUTOFIX.md.
 

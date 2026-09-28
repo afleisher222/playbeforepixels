@@ -94,6 +94,7 @@ h2 { font-size: 15pt; margin-bottom: .05in }
 .field.inl { display: inline-block; width: .9in; height: .2in; vertical-align: bottom; border-bottom-color: var(--ink); opacity: .6 }
 .field.multi { height: .9in; background: repeating-linear-gradient(to bottom, transparent 0, transparent calc(.3in - 1.2px), var(--line) calc(.3in - 1.2px), var(--line) .3in) }
 .own .need, .own .safe { align-items: flex-end }
+.own .meta { gap: .06in .09in } .own .meta .tick { width: 1em; height: 1em }
 .own .talk .field { border-bottom-color: rgba(29,41,64,.35) }
 .lineh { display: flex; margin: .02in 0 .08in }
 

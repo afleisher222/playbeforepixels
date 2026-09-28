@@ -207,3 +207,12 @@ h4 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 15px; marg
 .share { text-align: center; font-size: 12.5px; margin-top: 18px; opacity: .85 }
 `;
 };
+
+.famart { flex: 1; min-height: 0; margin: 12px 0 8px } .famart svg { display: block }
+.famkids { grid-column: 1 / -1; height: 2.4in; margin-top: 10px }
+.letter { font-size: 15px } .famhow ol, .famtips ul { font-size: 13.5px }
+.thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 0 0 18px } .thumbs img { width: 100%; border-radius: 6px; display: block; box-shadow: 0 0 0 1px rgba(29,41,64,.12) }
+.rtips ul { font-size: 13.5px } .storytxt p { font-size: 14.5px }
+.buybox { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0 4px } .buybox div { background: ${C.tSun}; border-radius: 12px; padding: 12px 14px; font-size: 12.5px; line-height: 1.45 }
+.lic { font-size: 13px } .small { font-size: 12px }
+.moreart { margin-top: auto; height: 2.5in }

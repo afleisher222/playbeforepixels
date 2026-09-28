@@ -7,7 +7,7 @@
 // edit NAME below and re-run build/build-all.js; nothing else hard-codes it.
 const fs = require('fs'); const path = require('path');
 const A = require('../story-bonus/build/art.js');
-const { C, R, Ci, E, P, L, U, G, TX, SYMBOLS, kidAt, tower, blk } = A;
+const { C, R, Ci, E, P, L, U, G, TX, SYMBOLS, kidAt, teacherAt, tower, blk } = A;
 const W = require('./words.js');
 const K = require('./kitlib.js');
 const { NAME, BLOCK, glyph, topicIcon, qrSvg, LOGO, esc } = K;
@@ -299,6 +299,8 @@ page('fam1', 'Family letter', `
     <li><b>Every way counts.</b> Pointing, signing and gestures are turns too.</li></ul>
     <p class="safe"><b>Safety:</b> an adult plays along. If babies or toddlers are nearby, use objects too big to fit through a toilet-paper tube.</p></div>
 </div>
+<div class="famart">${svg('0 0 720 250', E(360, 236, 340, 16, C.wash) + teacherAt('sittalk', 150, 236, 0.74, 'talk') + kidAt('priya', 'sithand', 300, 236, 0.74, 'talk', true) + kidAt('milo', 'sitcheer', 560, 236, 0.74, 'laugh', true) + tower(430, 236, ['q', 'j', 'i', 'l'], 0.66) +
+    G('translate(180 18)', P('M0 0 h150 a18 18 0 0 1 18 18 v34 a18 18 0 0 1 -18 18 h-100 l-22 20 l2 -20 h-30 a18 18 0 0 1 -18 -18 v-34 a18 18 0 0 1 18 -18Z', C.tSky) + `<text x="84" y="44" font-family="Fredoka, sans-serif" font-weight="600" font-size="19" fill="${C.ink}" text-anchor="middle">What did you play?</text>`), 'width:100%;height:100%')}</div>
 <div class="famfoot">
   <div class="teacherline">From: <span class="line"></span><br><small>(teacher)</small></div>
   <div class="famqr">${qrSvg(92)}<p><b>Free family bonus</b><br>More 5-minute talk games to print at home:<br>playbeforepixels.com/bonus/picture-more-talk-less-tap</p></div>
@@ -315,6 +317,7 @@ page('fam1', 'Family letter', `
   <div class="famtower">${svg('0 0 220 720', R(10, 700, 200, 14, C.ink, 7) + tw, 'width:100%;height:100%')}</div>
   <div class="famcards">${fams.map(([t, l]) => `<div class="fc" style="border-color:${BLOCK[t].col}">${glyphChip(t, 26)}<span>${l}</span></div>`).join('')}
     <div class="famdone"><p>Our tower was <span class="blank">&nbsp;</span> blocks tall!</p><p>Date: <span class="blank">&nbsp;</span></p><p class="fsmall">Family photos of towers are always welcome. Please don’t share children’s names or faces online without permission.</p></div>
+    <div class="famkids">${svg('0 0 460 250', E(230, 240, 200, 12, C.wash) + kidAt('zara', 'cheer', 110, 240, 0.8, 'laugh') + kidAt('sam', 'handup', 230, 240, 0.8, 'talk') + kidAt('leo', 'cheer', 350, 240, 0.8, 'laugh', true), 'width:100%;height:100%')}</div>
   </div>
 </div>`);
 }
@@ -346,6 +349,7 @@ page('story', 'Bonus read-aloud story', () => `
     <p><b>File:</b> Talk-Tower-Story-Read-Aloud.pdf (8.5 in square pages). Project it, read it from a tablet or laptop held up for the group, or print it two pages per sheet.</p>
   </div>
 </div>
+<div class="thumbs">${['p07', 'p13', 'p19', 'p26'].map(n => `<img src="story-bonus/preview/${n}.png" alt="">`).join('')}</div>
 <div class="three rtips">
   <section><h3 class="h3" style="color:${C.sky}">Before</h3><ul><li>Show the cover. “What do you think a Talk Tower is?”</li><li>Point to the four blocks. Can anyone guess what each one means?</li></ul></section>
   <section><h3 class="h3" style="color:${C.grass}">During</h3><ul><li>Invite everyone to shout “CLACK!” and “Up it goes!” with you.</li><li>Pause at the crash. “Uh-oh. What should Room 5 do?”</li><li>Give Sam’s quiet idea a moment of wait time.</li></ul></section>
@@ -362,6 +366,7 @@ page('terms', 'License terms and copyright', `
 <tr><td>Projecting and digital</td><td>Project in class. Post only to a password-protected class page for your own children.</td><td>Project in any room at the site. Post only to the site’s password-protected internal system.</td></tr>
 <tr><td>Not included</td><td>Colleagues, the whole grade, other schools</td><td>Other sites, a whole district, public posting</td></tr>
 </tbody></table>
+<div class="buybox"><div><b>More than one classroom?</b> Each extra teacher needs their own single-classroom license, or one site license covers a whole school, center or library site.</div><div><b>Paying by purchase order?</b> Use the written quote form on our website. Site licenses arrive by email with a license certificate naming your site.</div></div>
 <div class="two tight">
   <div><h4>Under any license, please don’t</h4><ul class="small">
     <li>sell, share, give away or bundle the files or printed copies;</li><li>post or upload them to public or shared websites, drives or marketplaces;</li>
@@ -384,6 +389,7 @@ page('more', 'More from Play Before Pixels', `
   <div class="mo" style="background:${C.tSky}"><span class="motag" style="background:${C.sky}">For little siblings, 0–5</span><h3>52 Play &amp; Talk Cards</h3><p>One simple play and one talk tip on every card, for the youngest talkers at home.</p></div>
 </div>
 <div class="bonusbox">${qrSvg(128)}<div><h3>Your free bonus</h3><p>Scan for a free printable of extra ${NAME} topic cards and family talk games. We only ask for an email address: no child names, ever.</p><p class="url">playbeforepixels.com/bonus/picture-more-talk-less-tap</p></div></div>
+<div class="moreart">${svg('0 0 720 230', E(360, 222, 330, 14, C.wash) + kidAt('priya', 'cheer', 120, 222, 0.72, 'laugh') + kidAt('milo', 'handup', 240, 222, 0.72, 'talk') + tower(360, 222, ['q', 'j', 'i'], 0.72) + kidAt('zara', 'point', 480, 222, 0.72, 'smile', true) + kidAt('sam', 'cheer', 600, 222, 0.72, 'laugh', true), 'width:100%;height:100%')}</div>
 <p class="share">Loved it? A short review and a photo of your tower (no children’s faces or names, please) help other teachers find us.</p>`);
 
 // ------------------------------------------------------------------ assemble
