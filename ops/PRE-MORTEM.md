@@ -19,7 +19,8 @@ _Written September 28, 2026 from four review lenses: platforms and automation, d
 2. **The business cannot yet see itself.** Your report is money-only by design, so $0 on a quiet day looks the same as $0 from broken automation, a shop no one can find, a held payout or a storm of criticism. Several fixes add a few fixed, calm lines to the report for exactly those cases.
 3. **Platform keys will expire.** There is no token broker yet, so connected platforms would slowly slide back to manual "upload packets".
 4. **Nothing checks the files themselves** (PDFs, print files) before they reach buyers or printers.
-5. **Four pending decisions carry a lot of risk,** and together they take about 15 minutes of your time: how far the brand goes with "virtual autism" in year one, the routine-card search words, how research-hub sign-ups are emailed, and the reviewer budget.
+5. **Four pending decisions carry a lot of risk,** and together they take about 20 minutes of your time: how far the brand goes with "virtual autism" in year one, the routine-card search words, how research-hub sign-ups are emailed, and the reviewer budget. (`ops/APPROVALS.md` estimates three of them at 10, 5 and 3 minutes; the "virtual autism" line is new.) A fifth pending line, approving the SITE-SAFE CUT of the founder story (about 5 minutes), belongs in the same sitting.
+6. **Only 1 of the 5 Wave 1 launch products passes the listing check today.** `ops/TESTS/check_listings.py`, re-run at 04:20 UTC, FAILs 15 of 17 listing records; of the `ops/LAUNCH-NOW.md` Wave 1 five, only "I'm Bored" Play Cards passes (risks 10, 11, 30).
 
 Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. Everything else is Claude's work.
 
@@ -90,14 +91,15 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
   - The fix is one manual click, with no deadline and no alarm, and no run checks visibility.
   - Git history, any clones and search caches keep what was exposed.
   - `ops/LAUNCH-NOW.md` Wave 0 has no "repository private" step.
-  - Both test scripts (`check_listings.py`, `check_hub_firewall.py`) contain the outreach-exclusion names in plain text.
+  - The outreach-exclusion names are in plain text in 29 tracked text files, not only the two test scripts: `CLAUDE.md`, `ops/ROUTINE.md` "Never", `brand/BRAND.md` hard rule 2, `ops/QUEUE.md`, `ops/EXPERIMENTS.md`, the growth and revenue plans, `legal/protection/` agreements and 9 files in `marketing/templates/` (recounted 04:25 UTC). `check_listings.py` also lists nearby place names in its local-angle pattern.
+  - `legal/ENTITY.md` (the USPTO section) records the street address of the retired mailbox.
   - Internal files are written as though nobody outside will ever read them.
 - **Fix:**
   1. [founder once] Confirm the Claude GitHub App has access, then make the repository private (`ops/CLOUD-RUNBOOK.md` setup steps 1–2). About 5 minutes.
   2. [Claude now] Add `ops/TESTS/check_exposure.py` (X1–X4). It runs at a new `ops/ROUTINE.md` step 0.9 and in CI, and writes an `exposure` field to `ops/HEARTBEAT.json`. A red result creates `ops/PAUSE` and becomes the first line of your report. That is an explicit exception to "Founder updates = money".
   3. [Claude now] Add "repository is private" as `ops/LAUNCH-NOW.md` Wave 0 step 0 and as a row in `legal/LEGAL-LAUNCH-CHECKLIST.md`.
   4. [Claude now] Add a `CLAUDE.md` rule: no history rewrite, force-push or deletion of branches or files until employment counsel answers the records-preservation question. Counsel then decides on any history clean-up.
-  5. [Claude now] Move the exclusion names out of the two scripts into an environment secret that the scripts read.
+  5. [Claude now] Move the exclusion names out of the two scripts into an environment secret that the scripts read. That alone does not help much, because 27 other tracked files carry the same names (see Gap). Making the repository private (fix 1) is the real protection. After it, keep the names only in `CLAUDE.md`, the gate and the scripts' secret, and have the other files point to "the outreach exclusions in `CLAUDE.md`" without repeating them (owner-workflow request for `brand/`).
   6. [founder once] Decide whether `legal/FOR-EMPLOYMENT-COUNSEL.md` moves to counsel-only storage, leaving a one-line pointer.
   7. [Claude now] Write internal files as if they will be screenshotted (new `ops/LEAK-READINESS.md`):
      - give `marketing/AWARENESS-ENGINE.md` a mission-first title;
@@ -118,7 +120,8 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
   - Only the daily check reads the heartbeat, and the daily check is itself a routine that is currently off.
   - The outside check (G2-01) is not built: there is no `.github/` folder and no Worker.
   - A GitHub Actions watchdog would run only from the default branch, which is still `main`, while heartbeats land on `claude/live`.
-  - Uptime alerts go to an inbox that is read weekly.
+  - Uptime alerts go to the business inbox, which no run can read (no `SUPPORT_MAILBOX_*` key).
+  - *Added in verification:* the repository is growing fast enough to slow or break the nightly clone. GitHub's API reported a size of 2,486,102 KB (about 2.4 GB) at 04:26 UTC, against 1.09 GB measured in `ops/CLOUD-RUNBOOK.md` open risk #9 earlier the same night; the local pack is 2.14 GiB. Open risk #9's fixes (untrack ignored files, `unchanged_renders.py --restore`, partial clones) are not all in place yet. GitHub's size guidance is UNVERIFIED.
 - **Fix:**
   1. [Claude now] Add `ops/watchdog/worker.js` and `wrangler.toml`: an hourly Cloudflare Worker cron.
      - It reads the raw `ops/HEARTBEAT.json` from `claude/live` with a read-only, fine-grained token.
@@ -126,6 +129,7 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
   2. [founder once] Set the default branch to `claude/live`. `ops/CLOUD-RUNBOOK.md` setup step 3 becomes required.
   3. [Claude now] Add one fixed line to every report under `ops/ROUTINE.md` "Founder updates = money": "Automation: OK", or "Automation: NOT OK since <date> (<reason>)". Then a $0 day can never hide a breakage.
   4. [Claude now] `ops/ROUTINE.md` step 0: read the last heartbeat and report if it is older than 30 hours (proposed in CLOUD-RUNBOOK open risk #5, not yet in ROUTINE).
+  5. [Claude now] Finish CLOUD-RUNBOOK open risk #9 before the studio is switched back on, and add signal A12 (repository size).
 
 ### 3. The Etsy shop stays invisible, and nothing can see that it is invisible · 20 (4 × 5)
 - **Story:**
@@ -174,9 +178,9 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
 - **Gap:**
   - The wording on each page is well controlled, but the strategy is not settled. BRAND-RESPECT §4 (one explainer, then stop) contradicts AWARENESS-ENGINE, which builds a search and social engine on the term, and no decision line for this is in `ops/APPROVALS.md`.
   - The paid sensitivity reader is still pending.
-  - Audit items H1–H3 are still open.
-  - The chosen site design still titles the hub "The Virtual Autism Project" and builds it inside the shop menus (audit items W1–W6; three occurrences remain in `site-concepts/winner/_src/research.html`).
+  - The chosen site design still titles the hub "The Virtual Autism Project" and builds it inside the shop menus. This is wider than the research page: the retired name appears 21 times across 9 files of `site-concepts/winner/` (including the site-wide mega menu in `_tools/build.js`, which renders on every shop and product page, `_src/index.html`, and the built `index`, `shop`, `product`, `info` and `research` pages). `python3 ops/TESTS/check_hub_firewall.py --site site-concepts/winner --strict`, re-run at 04:22 UTC, returns an HF-15 FAIL. Audit items W1–W11 (not W1–W6) are open.
   - Nothing measures how the pages are received.
+  - (Corrected in verification: audit items H1–H3 are no longer open. The hub pillar has no printable link, and the FAQ points to `/research/play-printable/`; commit 787f594, 03:22 UTC. The fix-later table in `ops/TESTS/autism-content-audit.md` §4 is stale.)
 - **Fix:**
   1. [founder once] One decision line in `ops/APPROVALS.md`: adopt BRAND-RESPECT §4 for year one.
      - One public explainer.
@@ -188,7 +192,7 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
   4. [owner workflow] Hub, site and content changes:
      - fold standalone pages on fringe terms into noindex glossary entries;
      - add a "What this page does not support" box that rejects cure and recovery claims;
-     - apply W1–W6 in `site-concepts/`.
+     - apply W1–W11 in `site-concepts/`, then re-run the `--site --strict` check to 0 HF-15.
   5. [Claude now] Add a monthly backlink review against a denylist to `operations/SOPs/monthly.md` (R10).
 
 ### 5. Platform keys expire and each platform slides back to upload packets nobody uploads · 20 (5 × 4)
@@ -232,7 +236,7 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
 - **Gap:**
   - The DMCA template still names you as the signer and has a phone field.
   - There is no byline rule for KDP, IngramSpark, Lulu, awards or copyright filings.
-  - `legal/ENTITY.md` (home address as principal office) and PROTECTION-PLAN §1 (commercial agent) disagree.
+  - The principal-office choice is open. `legal/ENTITY.md` defaults it to your home address "unless a commercial resident agent's office is used instead", while PROTECTION-PLAN §1 recommends a commercial agent and asks whether the agent's office can also serve as the principal office. Neither records a decision.
   - The per-record list that G2-22 asks for was never made.
   - The trademark change of address has no date.
 - **Fix:**
@@ -253,7 +257,7 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
   - Buyers are stuck for a week, because complaints wait for the weekly batch.
 - **Early warning:** the pre-upload file check fails (G1); the file on the platform differs from the ledger (P1); a digital order is unfulfilled after 1 hour (O1); refund or review text mentions "blank", "can't open" or "placeholder" (O9–O10).
 - **Protection today:**
-  - `ops/TESTS/print-preflight.md` (a manual, one-off report that found 58 FAIL home-print files).
+  - `ops/TESTS/print-preflight.md` (a manual, one-off report: 58 FAIL home-print files at first, 50 FAIL, 53 WARN and 11 PASS of 114 files in its 03:40 re-check).
   - `ops/COMPLIANCE-GATE.md` lines 16 (channel edition) and 19 (delivery and printing).
   - `ops/AUTOFIX.md` ("A product file a customer reports as broken").
   - `ops/PUBLISHED.json` (content hash).
@@ -326,7 +330,7 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
   - `marketing/BRAND-RESPECT-PLAN.md` §12.
   - `ops/GAPS-ROUND-2.md` G2-20.
 - **Gap:**
-  - `ai_disclosure` is still empty in 7 of the 13 `listing.json` files (rechecked today: toddler-busy-book, guide-100-plays, board-up-go-more, picture-tablet-slept, picture-laps-not-apps, picture-more-talk-less-tap, first-phone-plan) and in all 3 merch-core entries.
+  - `ai_disclosure` is still missing in 7 of the 13 non-merch `listing.json` files (14 files in all; rechecked today: toddler-busy-book, guide-100-plays, board-up-go-more, picture-tablet-slept, picture-laps-not-apps, picture-more-talk-less-tap, first-phone-plan) and in all 3 merch-core entries. `check_listings.py` FAILs all 10 of these records. Two of them, the busy book and the 100 Plays PDF, are Wave 1 launch products.
   - What buyers see is undecided: `operations/customer-service/FAQ.md` line 27 still has the placeholder "[State honestly how illustrations are made …]".
   - A human illustrator is planned only for the later board-book print run.
   - There is no "Is this AI?" macro.
@@ -353,12 +357,15 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
   - No tracker for Gate A is read by the routine.
   - Before launch, your money-only report cannot say "the holiday window closes in N days".
   - Maintenance mode (`ops/ROUTINE.md` step 0.8) has no carve-out for seasonal items you have already approved.
+  - *Added in verification:* Gate A item 6 needs every launch item to pass the gate, and 4 of the 5 Wave 1 products fail `check_listings.py` today: Visual Routine Cards 5 FAIL (plus 5 on the Starter), Play-First Family Kit 5, Toddler Busy Book 6, 100 Screen-Free Plays 6. Only "I'm Bored" Play Cards passes. The FAILs: Etsy title, floor or per-channel net, and the first 160 characters on all four; readability on all but the Starter; no AlphaPlay LLC owner line (COMPLIANCE-GATE line 8) on the Family Kit, busy book, routine cards and Starter; a missing AI disclosure on the busy book and 100 Plays; Etsy tags on 100 Plays; and the Starter's $4.50 price (risk 30).
+  - The two launch lists disagree: `ops/LAUNCH-NOW.md` Wave 1 includes the Play-First Family Kit, while `ops/QUEUE.md` "G-day week" lists the $29 Instant Gift Bundle and moves the Family Kit to week 2.
 - **Fix:**
   1. [Claude now] Copy the GROWTH-ENGINE §2d dates into `ops/DEADLINES.md`, each with its "prepared by Claude" steps.
   2. [Claude now] Add `ops/GATE-A.md`: the seven items with status, owner, target date and evidence file, read by the Monday deadline check.
   3. [Claude now] Allow one money-framed line: "Holiday sales at risk: about $X (model); N setup steps open; last day for Black Friday: Nov 13."
   4. [Claude now] Add a one-time "season pass" line to `ops/APPROVALS.md`, listing every Q4 product, price and date. Once APPROVED, it counts as verified approval for those items through January 31.
   5. [founder once] Do all Q4 proofs in one sitting by October 25.
+  6. [owner workflow] Clear the `check_listings.py` FAILs on the Wave 1 five first, before any new build, and settle one launch list in `ops/QUEUE.md` and `ops/LAUNCH-NOW.md`.
 
 ### 12. Too many products and no hero · 16 (4 × 4)
 - **Story:**
@@ -464,7 +471,7 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
   - `ops/COMPLIANCE-GATE.md` line 14.
 - **Gap:**
   - Counsel status is prose spread across about a dozen files, not one switch.
-  - The removal test written in `ops/PAUSE` (accounts, launch gate, your go) leaves counsel out and does not match Gate A.
+  - The removal test written in `ops/PAUSE` (accounts, "the launch gate passes", your go) does not name counsel or insurance and does not match Gate A. Counsel is covered only indirectly: the "Why" paragraph names it, and "the launch gate" (task #12, not yet built) presumably includes `legal/LEGAL-LAUNCH-CHECKLIST.md` row 1. The `ops/PAUSE` text is also stale: it says `ops/FULL-STOP.md` is still to be written, and that file now exists.
   - `check_listings.py` has no counsel-hold check.
   - Educator wording is present in:
     - the bored-play-cards license tiers ("single-classroom");
@@ -502,7 +509,7 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
 - **Gap:**
   - `ops/ROUTINE.md` "Every live product stays live" cannot tell an expired listing from one Etsy removed, and it conflicts with AUTOFIX.
   - The limit of one re-publish every 7 days is only proposed (CLOUD-RUNBOOK open risk #7).
-  - Nothing detects a reserve or hold.
+  - Nothing detects a reserve or hold when it happens. Only the monthly close considers them, when it rolls the 13-week cash forecast forward ("Etsy holds and reserves", `ops/ROUTINE.md` §5).
   - The cash model leaves suspension out (`business/STRESS-TEST.md` §7).
 - **Fix:**
   1. [Claude now] Rewrite "Every live product stays live":
@@ -581,7 +588,7 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
 
 ### 20. The personalized-book print job quietly stops · 12 (3 × 4)
 - **Story:**
-  - The GitHub Actions poller in `ORDER-TO-PRINT.md` runs every 15 minutes, about 2,900 times a month. It uses up the free Actions minutes around day 20 (allowance UNVERIFIED).
+  - The GitHub Actions poller in `ORDER-TO-PRINT.md` runs every 15 minutes, about 2,900 times a month. Once the repository is private (Top fix 1), it uses up the free Actions minutes around day 20. Public repositories are believed not to be billed for minutes; both the allowance and the per-run rounding are UNVERIFIED.
   - Or it never fires, because scheduled workflows run only from the default branch.
   - Either way, $25–$35 personalized orders sit unprinted for a week.
 - **Early warning:** the poller has not succeeded in 2 hours, or Actions minutes are running out (A10); a paid personalized order is unshipped after 24 hours (O2).
@@ -600,20 +607,20 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
 ### 21. The heroes lose the side-by-side comparison in Etsy search results · 12 (3 × 4)
 - **Story:**
   - Next to "129 activities" and "400+ pages" with 30–60% sale badges, our flat "$11.99, 74 activities, about $0.16 each" gets clicked, compared and left.
-  - Conversion near 0.8% instead of 2% turns year-1 profit negative (`business/STRESS-TEST.md` §2).
+  - Conversion near 0.8% instead of 2% turns year-1 profit negative (`business/STRESS-TEST.md` §2). The §2 grid already shows a loss of $1,530 at half the base conversion, with every other input at the base; profit crosses zero at roughly 0.7× conversion.
 - **Early warning:** conversion per 100 visits (D4); competitor snapshots (D13).
 - **Protection today:**
-  - `marketing/DEMAND-CHECK.md` §4 and the §2 busy-book spec (120–150 pages).
+  - `marketing/DEMAND-CHECK.md` §4 and the §3 busy-book spec (row 4: 120–150 pages).
   - `commerce/PRICING.md` §1.
   - `ops/EXPERIMENTS.md` EXP-04a and EXP-04b.
   - `brand/BRAND.md` "Honest pricing (binding)".
 - **Gap:**
   - PRICING §1 compares price ranges, not the price and count shown next to ours.
-  - The busy book was built with 74 activities, below the 120–150 spec, and nothing flagged it.
+  - The spec is in pages, and the busy book meets it (132 pages in its `listing.json`). But the title leads with its activity count, 74, next to competitors' "129 activities" and "400+ pages", and no rule says which count a title should lead with. (Corrected in verification: the earlier "74 activities, below the 120–150 spec" compared activities with pages.) The "30–60% sale badges" come from the demand lens, not from a file (UNVERIFIED).
   - EXP-04b only fires at 4 or more sales a week, so a hero that does not convert never gets a price test.
 - **Fix:**
   1. [Claude now] Add a "search-grid parity" rule to `commerce/PRICING.md` §1, enforced by a `grid_parity` check in `check_listings.py` against `ops/market/grid-<slug>.json` (the top 20 displayed prices, counts and cost per unit). If our count is below the median and our cost per unit above it, the listing does not lead with the count. It ships as a count-raising bundle, or leads with a differentiator.
-  2. [Claude now, via `ops/QUEUE.md`] Ask for the busy book to reach 120 activities before November.
+  2. [Claude now, via `ops/QUEUE.md`] Ask the product workflow to lead the busy-book title with its page count (132 pages) or a differentiator, not "74", and to consider a count-raising edition before November.
   3. [Claude now] Add a conversion trigger to EXP-04b: under 1% at 300 or more visits allows one lower everyday-price test, above `price_floor` and with no "was" price.
 
 ### 22. Visual Routine Cards sit on autism-adjacent search terms · 12 (3 × 4)
@@ -663,7 +670,7 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
   - The queue check covers hub posts only.
   - The talker exception lives in product FAQs, not in a brand-level definition that travels with the mascot, merch and posts, and it covers talkers only.
   - The cast rule (BRAND-RESPECT §5) is still a proposal.
-  - "Screen Reset" still appears in `marketing/CAMPAIGN-BIBLE.md`, `marketing/MARKETING-PLAYBOOK.md` and `marketing/templates/press-release-launch.md`.
+  - "Screen Reset", retired in `brand/ORIGINALITY.md` rows A4–A9 (originality and "consult" reasons, and the "reset/detox" framing), is still in use far beyond the three marketing files named earlier. It appears in 47 files. Buyer-facing ones include `operations/customer-service/FAQ.md` line 74 and macro 18, `seo/articles/01`, `10` and `11` (as a product to buy), `site-concepts/winner/shop.html` and `catalog.js`, and the root `index.html` ("Screen Reset Consult"). Marketing: `marketing/CAMPAIGN-BIBLE.md` (12 times), `marketing/MARKETING-PLAYBOOK.md`, `marketing/templates/press-release-launch.md`. Products mention it only as a retired name.
   - No real parent, AAC user or disabled parent has read anything.
 - **Fix:**
   1. [Claude now] Add EXP-18 "No-guilt check" to `ops/EXPERIMENTS.md`:
@@ -672,7 +679,7 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
   2. [owner workflow, founder approval] A brand-level definition in `brand/BRAND.md`, published at `/what-we-mean-by-screens`: "Talkers, captions, video calls with family, and any device a child needs to communicate, learn or take part are never 'screen time' here." A short form or a link goes on page 1 of screen-free products and in the caption template.
   3. [owner workflow] The mascot is always a screen playing a show, never a blank tablet.
   4. [founder once] Approve the cast rule. Pay one AAC-user or AAC-parent reader and one disabled-parent reader before the mascot goes on merch. Have five real parents read the slogans before merch goes live, including a single parent, a shift worker and a parent of a disabled child.
-  5. [Claude now] Remove "Screen Reset" from the marketing files.
+  5. [Claude now] Replace "Screen Reset" with the approved names (*30 Days of Back-and-Forth*, "New Year Back-and-Forth") in `marketing/`, `seo/articles/`, `operations/customer-service/`, `business/` and `commerce/`. [owner workflow] Do the same in `site-concepts/winner/`. Add the retired names to a `check_listings.py` and `check_queue.py` WARN list.
   6. [Claude now] `check_queue.py` runs the fear-and-shame list on every post (risk 19).
 
 ### 24. Moderation silences critics · 12 (3 × 4)
@@ -735,7 +742,8 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
   - `business/GROWTH-ENGINE.md` §2b, Gate A item 3 ("Insurance is bound").
   - `ops/DEADLINES.md` (insurance renewal).
 - **Gap:**
-  - `ops/LAUNCH-NOW.md` Wave 0 step 8 says "get a quote", and the removal test in `ops/PAUSE` leaves insurance out, so Gate A's "bound" is not enforced.
+  - `ops/LAUNCH-NOW.md` Wave 0 step 8 says "get a quote", and the removal test in `ops/PAUSE` leaves insurance out, so Gate A's "bound" is not enforced. The same file's "How Arielle is protected" section says "insurance is in place before the first sale", which contradicts its own step 8.
+  - `legal/LEGAL-LAUNCH-CHECKLIST.md` row 14 still asks for quotes that include "professional liability/E&O for coaching and workshops", an offering that has been retired.
   - The broker disclosures are out of date, and there is no record file.
   - The key question has not been asked: does products-completed operations coverage include an injury from following a download's instructions?
 - **Fix:**
@@ -762,6 +770,7 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
 - **Gap:**
   - The 2026 filing status is unknown, and nothing checks the LLC's standing automatically.
   - There is no corporate-records file.
+  - *Added in verification:* four launch listing records (Family Kit, busy book, routine cards and the Starter) carry no "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC." line, which COMPLIANCE-GATE line 8 requires (`check_listings.py` owner-line FAIL). Products sold without the LLC named as owner weaken both the shield and the copyright chain (risk 32).
   - GitHub, the Claude plan and the tools are personal accounts.
   - The IP assignment has no date.
 - **Fix:**
@@ -797,15 +806,15 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
 - **Gap:**
   - The proposed hub-firewall gate line was never added: the gate ends at line 22 and has two lines numbered 16.
   - The sign-up decision is still open.
-  - `check_hub_firewall.py` does not scan email sequences or the built site.
-  - "Backed by research" is not banned.
-  - Audit items H1–H3 are still open (`content/research-hub/index.md:327`, `faq.md:129`).
+  - `check_hub_firewall.py` does not scan email sequences, and scans the site only when run with `--site`. Run that way on the winner concept, it FAILs HF-15 today (risk 4).
+  - "Backed by research" (in the root `index.html`) and "research-based" are not banned. `check_listings.py` already FAILs "evidence-based", "proven", "science-backed" and "support… development" in listings, but it does not read site pages.
+  - (Corrected in verification: audit items H1–H3 were fixed at 03:22 UTC, commit 787f594. The pillar page carries no printable link, and the FAQ's single printable invitation points to `/research/play-printable/`.)
 - **Fix:**
   1. [founder once] Choose route A: a hub sign-up gets a product-free delivery email only.
   2. [Claude now] Renumber the second line 16 as 23, and add the hub-firewall line as 24, using the text in AWARENESS-ENGINE §10.
   3. [Claude now] Extend `check_hub_firewall.py` to the email and funnel folders and to the site build output.
-  4. [Claude now] Ban "backed by research", "research-based", "evidence-based" and "supports development" in product copy (`check_listings.py`).
-  5. [owner workflow] Fix H1–H3 before any hub page is published, retire the root `index.html`, and use only the SITE-SAFE CUT of the founder story.
+  4. [Claude now] Add "backed by research" and "research-based" to the `check_listings.py` proof-claim FAIL ("evidence-based" and "supports development" are already caught), and run the same pattern over the site build.
+  5. [owner workflow] Keep H1–H3 fixed (update the audit's §4 table to say so), retire the root `index.html`, and use only the SITE-SAFE CUT of the founder story.
 
 ### 29. PLAY BEFORE PIXELS is refused, opposed or squatted · 12 (3 × 4)
 - **Story:**
@@ -830,7 +839,7 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
   4. No Madrid (international) filing until the US application has been examined.
 
 ### 30. A wrong or non-compliant price goes live, and prices drift across channels · 12 (4 × 3)
-- **Story:** Routine Cards are $9.50 in `listing.json`, $6.50 in the workbook, and "$9.50 list / ~$6.50 sale" in QUEUE. Any of these can then happen, and nobody compares the live prices:
+- **Story:** Routine Cards are $9.50 in `listing.json` and $6.50 in the financial workbook (`business/STRESS-TEST.md` §1 note 1), and `business/REVENUE-PLAN.md` still says "$9.50 (sale $6.50)". The Routine Cards Starter is $4.50 in its `listing.json` and in REVENUE-PLAN but $5.00 in `ops/QUEUE.md`, and $4.50 breaks the $5 single-printable minimum (the second gate line 16; `check_listings.py` honest-pricing FAIL). Any of these can then happen, and nobody compares the live prices:
   - a run sets a permanent "compare-at" price;
   - AUTOFIX reverts a live price test;
   - a Printful cost rise drops merch under the margin floor.
@@ -843,11 +852,11 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
   - `ops/AUTOFIX.md` ("wrong prices vs listing.json").
 - **Gap:**
   - The checks stop at the repository; nothing reads prices back from the platforms.
-  - `ops/QUEUE.md` still carries list/sale pairs (community edition 1), and the G2-11 wording fixes are not done.
-  - `price_floor` is still empty on 4 of the 5 launch listings.
+  - `ops/QUEUE.md` still carries "$9.50 / ~$6.50" list/sale pairs on the community routine-card editions (items 1, 2, 20 and 21) and other queued items, and the G2-11 wording fixes are not done.
+  - The floor check FAILs on 4 of the 5 launch listings. The busy book and 100 Plays have no floor at all. Visual Routine Cards (and its Starter) and the Family Kit have a $3.00 floor stored as `price_floor_usd`, a key that COMPLIANCE-GATE line 18 and `ops/ROUTINE.md` §2 do not name. None of the four has `net_per_unit_by_channel`.
   - AUTOFIX's price rule does not know about running experiments.
 - **Fix:**
-  1. [owner workflow] Make `listing.json` the only price source, with `price_history` and a dated `promo`.
+  1. [owner workflow] Make `listing.json` the only price source, with `price_history` and a dated `promo`. Rename `price_floor_usd` to `price_floor`, and set the Starter at $5.00 (or bundle-only) to match QUEUE and the $5 minimum.
   2. [Claude now] Add `ops/TESTS/check_live_prices.py` to the daily check.
   3. [Claude now] Extend the `ops/ROUTINE.md` §5 read-back to compare price, currency, compare-at price, title and file hash.
   4. [Claude now] Apply the G2-11 wording fixes to `ops/QUEUE.md`. AUTOFIX leaves alone any price that matches an active `ops/EXPERIMENTS.md` arm.
@@ -931,15 +940,15 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
 ### 34. Every sale is rented: Etsy buyers never reach the email list · 12 (4 × 3)
 - **Story:**
   - Nearly half the orders come from Etsy, whose files carry no link. KDP gives no buyer data, and Shopify is deferred.
-  - The list reaches about 110 people by January 31, and the January course sells a handful.
+  - The list reaches about 110 people by January 31, and the January course sells a handful. (About 110 by January 31 is the model path itself, in the `ops/ROUTINE.md` §6 scorecard lines. So even the plan's list is small for a January course launch, and any shortfall makes it smaller.)
   - Every sale has to be won again from search.
 - **Early warning:** subscribers against the model path, sign-up rates and repeat buyers (D9).
 - **Protection today:**
   - `business/GROWTH-ENGINE.md` §3 Loop 4 and §5b (an Etsy thank-you coupon, marked unverified).
   - `brand/BRAND.md` "Every product leads to the next".
   - `ops/EXPERIMENTS.md` EXP-06 and EXP-07.
-  - `ops/COMPLIANCE-GATE.md` line 16 (the no-link rule itself is the constraint).
 - **Gap:**
+  - `ops/COMPLIANCE-GATE.md` line 16 (no links in Etsy files) is the constraint that causes this risk, not a protection (moved here in verification).
   - No routine job uses Etsy's own repeat-purchase tools.
   - The course has no Etsy edition.
   - Nothing fires when the list trails the model.
@@ -1015,7 +1024,7 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
 - **Story:**
   - $5–$6.50 items net $3.46–$4.73 on Gumroad, and a Gumroad Discover sale may cost about 30% (UNVERIFIED).
   - Etsy Offsite Ads may become mandatory at 12% (UNVERIFIED).
-  - Lean fixed costs ($567 a month) are above average monthly sales.
+  - Lean fixed costs ($567 a month) are above the Monte Carlo median's average monthly sales (P50 of about $6,300 a year, or about $525 a month), though below the Expected case (about $940 a month) (`business/STRESS-TEST.md` §3 and summary).
 - **Early warning:** actual fee rates, contribution per order, and fixed costs against contribution (O12).
 - **Protection today:**
   - `commerce/PRICING.md` §1–§2 (floors).
@@ -1026,11 +1035,11 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
   - The `ops/ROUTINE.md` §6 scorecard (net per unit below the floor).
 - **Gap:**
   - Actual fees are not checked against the floor after launch.
-  - Neither fee case is in the fee table in `check_listings.py`.
-  - `price_floor` is empty on 4 of the 5 launch listings.
+  - The fee table in `check_listings.py` already estimates an Etsy Offsite Ads sale (at 15%, stricter than the 12% case), but it has no Gumroad row at all, so the Discover case is missing.
+  - The floor check FAILs on 4 of the 5 launch listings (two have no floor; two store it as `price_floor_usd`; see risk 30).
 - **Fix:**
   1. [Claude routine] A "fee drift" step in the monthly close (`finance/TAX-AUTOPILOT.md` §3 → `finance/closes/YYYY-MM.md`). A product whose actual net stays under its floor for a month becomes bundle-only on that channel.
-  2. [Claude now] Add both fee cases to the fee table.
+  2. [Claude now] Add a Gumroad row with a Discover case to the fee table (the Offsite Ads case is already there).
   3. [Claude now] On Gumroad, sell $5 items only as add-ons or inside bundles, and opt out of Discover if that is allowed (UNVERIFIED).
   4. [owner workflow] Fill `price_floor` and `net_per_unit_by_channel`.
 
@@ -1041,10 +1050,9 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
   - A writer tests the promises and publishes "says X, does Y".
 - **Early warning:** undeclared data fields, hub-topic tags, logs holding personalization, or an old privacy request (V1–V4); the promise check (G5); reply times (R11).
 - **Protection today:**
-  - `legal/PRIVACY-POLICY.md` §1–§2.
   - `products/picture-laps-not-apps/listing.json` compliance notes.
-  - `marketing/CAMPAIGN-BIBLE.md` [COPPA] rules.
   - `legal/LEGAL-LAUNCH-CHECKLIST.md` privacy rows.
+  - (Moved to the gap in verification: `legal/PRIVACY-POLICY.md` §1–§2 and the `marketing/CAMPAIGN-BIBLE.md` [COPPA] rule are the promises under test here, not protections. Both say no child data is collected.)
   - `ops/ROUTINE.md` §5b privacy requests.
   - `ops/COMPLIANCE-GATE.md` lines 11 and 21.
   - `legal/protection/PROTECTION-PLAN.md` §5.
@@ -1083,7 +1091,7 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
   - The routing is advice, not configuration.
   - VAT on own-site orders printed in the EU or UK appears in no file.
   - Nobody knows whether a Maryland sales-and-use account exists.
-  - The September 15, 2026 estimated tax payment was missed (G2-14).
+  - `ops/GAPS-ROUND-2.md` G2-14 calls the September 15, 2026 estimated-tax quarter "missed". Whether anything was due, with no business revenue yet, is a question for the accountant.
   - The accountant questions are not yet in `finance/money-and-tax-setup.md` §13.
 - **Fix:**
   1. [Claude now] Add `commerce/MARKETS.md` as the binding configuration:
@@ -1164,8 +1172,9 @@ Your part of the Top 10 is about 25 minutes plus sending one packet to counsel. 
   - `commerce/storefront-setup-guide.md` Part C (adult sizes first).
   - `commerce/PRICING.md` §2 (the 30% print-on-demand floor).
   - `operations/AUTOMATION-MAP.md` 3F.
-  - The risk itself comes from `ops/ROUTINE.md` "Never run out of products".
-- **Gap:** The swap bypasses the gate, the price floor and the adult-sizes rule.
+- **Gap:**
+  - The risk itself comes from `ops/ROUTINE.md` "Never run out of products" (moved from "Protection today" in verification: it is the cause, not a protection).
+  - The swap bypasses the gate, the price floor and the adult-sizes rule.
 - **Fix:**
   1. [Claude now] Swap only within the same product type, in adult sizes and approved colors, and only if the net stays at or above the floor. Otherwise deactivate the variant and add one APPROVALS line.
   2. [Claude now] Add these checks to `check_live_prices.py`.
@@ -1269,12 +1278,13 @@ These ten close the most risk for the least effort. Your part is fixes 1 and 7 (
 6. **Gate A becomes the one switch that removes PAUSE.** · *Claude now*
    - Files: `ops/GATE-A.md` (the seven items, each with an evidence file: `legal/COUNSEL-STATUS.json`, `legal/INSURANCE.json` and so on); the removal test in `ops/PAUSE`; "bind" instead of "quote" in `ops/LAUNCH-NOW.md` step 8; the holiday dates in `ops/DEADLINES.md`; a "season pass" line in `ops/APPROVALS.md`.
    - Risks 11, 15 and 26.
-7. **Four decisions in one sitting.** · *founder once* (about 15 minutes)
+7. **Four decisions in one sitting.** · *founder once* (about 20 minutes)
    - File: `ops/APPROVALS.md`:
      - "virtual autism" in year one: BRAND-RESPECT §4 (explain once, then stop);
      - routine-card search words: REPLACE;
      - research-hub sign-ups: route A;
      - approve the reviewer briefs.
+   - The founder-story SITE-SAFE CUT line, also pending, fits in the same sitting (about 5 more minutes).
    - Claude then adds HF-19 and HF-20 to `ops/TESTS/check_hub_firewall.py`.
    - Risks 4, 22, 28 and 35.
 8. **Complete the counsel packet and send it.** · *counsel*
@@ -1294,6 +1304,7 @@ These ten close the most risk for the least effort. Your part is fixes 1 and 7 (
     - Risks 16, 13, 37 and 44.
 
 **Next in line** (not in the ten, but cheap):
+- Clear the `check_listings.py` FAILs on the Wave 1 five (floor key and net, AI disclosure, owner line, the Starter's $4.50 price) and settle one launch list (risks 11 and 30) · owner workflow.
 - `operations/SOPs/reviews.md`, and the FAQ reply-time fix (risk 8) · Claude now.
 - The CPSIA hold on the two under-3 books until counsel answers (risk 25) · counsel.
 - The accountant questions G2-14 to G2-16, plus VAT on own-site orders printed in the EU or UK, added to `finance/money-and-tax-setup.md` §13 (risk 40) · accountant.
@@ -1321,6 +1332,7 @@ _Every signal below can be checked by a routine or the outside watchdog without 
 | A9 | Normalized-text hash of each watched policy page (`ops/platform-watch.json`) | changed | The changed page goes to the model; a finding is logged | platform-watch script |
 | A10 | Order-to-print workflow | no successful run in 2 h; Actions minutes above 70% of the monthly allowance | RED | GitHub API with Actions read |
 | A11 | Connectors and skills loaded at session start | any personal connector or non-business skill | End the run, commit nothing, RED | — |
+| A12 | GitHub API `size` of the repository; clone time in the run log | above 3 GB, or up more than 0.5 GB in a week; clone over 5 minutes | Amber; the studio re-commits no unchanged renders until it is back under | — |
 
 ### X. Exposure and identity
 | ID | Signal | Threshold | Action | Needs |
@@ -1436,7 +1448,7 @@ _Every signal below can be checked by a routine or the outside watchdog without 
 | G1 | `ops/TESTS/check_files.py` | FOUNDER, PLACEHOLDER, [VERIFY], lorem, ____ or "to be supplied" appears; an Etsy or TpT file contains a URL, playbeforepixels.com or a QR image; the page size does not match the trim; a file is over 15 MB, or an Etsy edition has more than 5 files; START HERE is missing; the version footer is missing; footer ink is closer than 0.25 in to the page edge |
 | G2 | `ops/TESTS/check_print.py` | Type 3 fonts; footer or margin distance under the minimum for the trim; placeholder text; fewer than 24 pages, or an odd count; the cover width does not match page count and paper; text contrast under 4.5:1 in grayscale, or any gradient, on a black-and-white interior; the proof record is missing |
 | G3 | `ops/TESTS/check_queue.py` | health, autism, named-company or marketplace-link patterns in any language; a denylisted hashtag; a forbidden motif; text inside an image fails the same rules; the social AI label is missing; a link points to an item that is not live; a fear or shame word |
-| G4 | `ops/TESTS/check_listings.py` additions | authorship text is "ai" on a live product; a CPSIA or GPSR block is missing where required; a counsel-held scope; a grid-parity breach; "backed by research", "research-based", "evidence-based" or "supports development"; net under the floor with the Discover or Offsite fee cases |
+| G4 | `ops/TESTS/check_listings.py` additions | authorship text is "ai" on a live product; a CPSIA or GPSR block is missing where required; a counsel-held scope; a grid-parity breach; "backed by research" or "research-based" ("evidence-based" and "supports development" already FAIL); net under the floor with the Gumroad Discover fee case (the Etsy Offsite Ads case is already estimated); a floor stored under any key other than `price_floor` |
 | G5 | `ops/TESTS/check_promises.py` | a public promise ("within N business days", "we never ask", "checked by a person", "no child data") contradicts its source of truth |
 | G6 | Testimonials, panels, value claims, subscriptions | a quoted testimonial with no ID in `marketing/TESTIMONIALS.json`; public copy that closely matches any `products/*/panel.md`; a "value", "worth" or "save" figure not computed from current prices; a subscription without renewal-reminder and online-cancel settings |
 | G7 | `ops/TESTS/check_hub_firewall.py` with HF-19 and HF-20, extended to email funnels and the built site | more than 3 published pages use the term; the term in a queue post without a signed reviewer file; recovery-query impressions; a printable link on a page that reports an autism-score association |
@@ -1459,15 +1471,19 @@ _Every signal below can be checked by a routine or the outside watchdog without 
   - 27: bundle savings from current prices only.
 - The yearly password change in `operations/SOPs/account-security.md` §5 is for the email account. It affects Meta tokens only if it reaches the Meta admin login.
 - Rechecked today:
-  - `ai_disclosure` is empty in 7 of 13 product `listing.json` files, and in the 3 merch-core entries;
-  - `price_floor` is empty on 4 of the 5 launch listings (visual-routine-cards, play-first-family-kit, toddler-busy-book, guide-100-plays; bored-play-cards is filled);
+  - `ai_disclosure` is missing in 7 of the 13 non-merch `listing.json` files (14 in all), and in the 3 merch-core entries;
+  - the floor check FAILs on 4 of the 5 launch listings: toddler-busy-book and guide-100-plays have no floor; visual-routine-cards and play-first-family-kit have one under the wrong key, `price_floor_usd`; bored-play-cards passes (corrected in verification);
   - the repository is public, and the default branch is `main`.
 
 ---
 
 ## Needs a live check
 
-_Everything here is UNVERIFIED: it comes from the lens reports or general knowledge, not from a primary source read today. Each item should become a `ops/RESEARCH-BACKLOG.md` entry (risk 31, fix 5). Verified live in this session: the GitHub API reported the repository as public, with 0 forks and 0 stars and default branch `main`, on 2026-09-28 at 04:02 UTC._
+_Everything here is UNVERIFIED: it comes from the lens reports or general knowledge, not from a primary source read today. Each item should become a `ops/RESEARCH-BACKLOG.md` entry (risk 31, fix 5). Verified live in this session: the GitHub API reported the repository as public, with 0 forks and 0 stars and default branch `main`, on 2026-09-28 at 04:02 UTC, and again at 04:19 UTC (verification pass)._
+
+**Added in verification**
+- GitHub's current size guidance for repositories (recommended and hard limits) and how it applies to a 2.4 GB repository cloned every night.
+- Whether the competitor "30–60% sale badges" in risk 21 are still shown in Etsy search results.
 
 **Claude routines, GitHub and Cloudflare**
 - The daily routine-run cap, and what happens at the weekly usage limit.
@@ -1561,3 +1577,76 @@ _Everything here is UNVERIFIED: it comes from the lens reports or general knowle
 - The registration status of playbeforepixels.com and .org.
 - The 2025–26 US federal announcements on autism causes, and how autistic advocacy groups responded.
 - The AI rules of each target award.
+
+---
+
+## Verification
+
+_An adversarial re-check on September 28, 2026, 04:19–04:35 UTC. Every check below was recomputed from the source files, not from this report. Tools that were re-run: the GitHub API (unauthenticated), `python3 ops/TESTS/check_listings.py --json` (output to a scratch folder, not the repository), `python3 ops/TESTS/check_hub_firewall.py --site site-concepts/winner --strict`, and grep counts across tracked files. No file outside this report was edited._
+
+**Confirmed as written**
+1. The repository is public, with 0 forks, 0 stars and default branch `main` (API at 04:19 UTC; branches `claude/live` and `main`; `has_pages: false`). The "PENDING · URGENT" line is in `ops/APPROVALS.md`.
+2. The cited `ops/CLOUD-RUNBOOK.md` passages exist and say what the report says: setup steps 1–4; open risks #1, #5 (30-hour heartbeat check proposed, not in ROUTINE), #6, #7, #9, #10, #11, #13 and #14; and the "Max-plan facts" (72-hour rule, green is not success, connectors).
+3. The `ops/ROUTINE.md` citations hold: step 0.1 (limit path), 0.4 (stops publishing, not committing), 0.5 (lock), 0.7 (14-day token warning), 0.8 (no seasonal carve-out); §5 caps of 5 Etsy and 2 KDP a week; §5b reviews and refunds; "Every live product stays live"; the "binding once adopted" heading; the founder time cap, where key renewals are not in the rank-first class; and "Founder updates = money".
+4. The following do not exist: `.github/`, `ops/experiments/`, `ops/TESTS/experiment_stats.py`, `ops/moderation-words.md`, `operations/SOPs/reviews.md`, `operations/SOPs/refunds-and-disputes.md`, `operations/REVIEWS-AND-CRITICISM.md` and `site/`. Every file the report cites as an existing protection does exist.
+5. `ops/SECRETS.md` scopes are as stated: Etsy "list and update", Pinterest "publish pins", and Shopify with no analytics scope. `SHOPIFY_ADMIN_TOKEN` is still listed, and there is no `SUPPORT_MAILBOX_*` key.
+6. `ops/COMPLIANCE-GATE.md` runs 1–22 and then has a second line 16 (pricing).
+7. `operations/customer-service/FAQ.md` lines 13 and 30 promise "2 business days", line 27 is the illustration placeholder, and macro 37 says "2 días hábiles".
+8. `ops/DEADLINES.md` holds only legal, tax and renewal dates. `ops/MONITORING.md` covers uptime only. `ops/PLATFORM-NEWS.md` and `ops/COPYCAT-LOG.md` have no rows.
+9. Gate A has seven items. `ops/LAUNCH-NOW.md` Wave 0 step 8 says "Get an insurance quote", and Wave 0 has no "make the repository private" step.
+10. The G2-25 questions and the records-preservation question are not in `legal/FOR-EMPLOYMENT-COUNSEL.md`, which was last changed September 27. They were checked by keyword only.
+11. Counts:
+    - UNVERIFIED and [VERIFY] marks in `legal/`, `finance/` and `commerce/`: 537 case-insensitive (479 case-sensitive), which matches "about 540";
+    - HF-01 to HF-18 are in `check_hub_firewall.py`, and EXP-14 to EXP-16 are used, so EXP-17 and EXP-18 are the right next numbers;
+    - the creation log has one filled work (the logo);
+    - the order-to-print poller runs every 15 minutes, which is about 2,880 runs a month.
+12. Figures in `business/STRESS-TEST.md`:
+    - each month of slip costs $1,300–$1,600 (§2);
+    - Etsy is $2,493 of $5,831 in median year-1 sales, about 43% (§3);
+    - account risk is out of scope (§7);
+    - lean fixed costs are $567 a month.
+13. The CPSIA contradiction is real: the `legal/LEGAL-LAUNCH-CHECKLIST.md` notes say paperboard books are "generally treated as ordinary books", while `legal/protection/PROTECTION-PLAN.md` §4 excludes books for children 3 and under.
+14. The educator wording is where the report says: "Single-classroom" in bored-play-cards; `seo/articles/09` with an educator audience and `publish_gate: none`; "coaching", "Work with me" and "For teachers" in the root `index.html`; and `legal/COACHING-WORKSHOP-TERMS.md` still exists.
+15. The ranked table checks out: all 47 L × I products match their scores, the order never rises, and every detail header matches its table row.
+
+**Corrected in place (overstated, understated or wrong)**
+- **Risks 4 and 28:**
+  - Audit items H1–H3 were already fixed at 03:22 UTC (commit 787f594), so they were removed as open gaps.
+  - The site-concept problem was understated. The retired hub name appears 21 times across 9 winner files, including the site-wide mega menu, and the firewall check returns an HF-15 FAIL. The audit items are W1–W11, not W1–W6.
+- **Risk 1:** the exclusion names were understated. They are in 29 tracked text files, not two, and `legal/ENTITY.md` records a street address. Fix 5 was reframed to match.
+- **Risks 30 and 38, and the rechecked list:**
+  - "`price_floor` empty on 4 of 5" was overstated. Two launch listings have no floor, and two have one under the key `price_floor_usd`. All four lack a per-channel net.
+  - Missed: the Starter's $4.50 price breaks the $5 minimum and differs from the $5.00 in QUEUE.
+  - The routine-card "$9.50 / ~$6.50" pairs in QUEUE belong to the community editions. The base-card pair is in `business/REVENUE-PLAN.md`.
+- **Risk 38:**
+  - The fee table already has an Etsy Offsite Ads case. Only Gumroad's Discover case is missing.
+  - "$567 is above average monthly sales" holds for the Monte Carlo median (about $525 a month), not for the Expected case (about $940 a month).
+- **Risk 28 and G4:**
+  - `check_listings.py` already FAILs "evidence-based" and "supports development". Only "backed by research" and "research-based" are uncaught.
+  - The check does not read the site.
+- **Risk 21:** the busy book has 132 pages, which meets the DEMAND-CHECK §3 page spec (120–150). The "below spec" claim compared activities with pages. The spec's section reference was also corrected from §2 to §3.
+- **Risk 23:** "Screen Reset" is in 47 files, including buyer-facing FAQ and macro text, three SEO articles and the winner site. It had been reported in three marketing files.
+- **Risk 7:** the preflight's current count is 50 FAIL home-print files, not 58 (from its own 03:40 re-check).
+- **Risk 6:** ENTITY.md and PROTECTION-PLAN §1 do not strictly disagree, because ENTITY.md allows a commercial agent's office. The decision is simply not made.
+- **Risk 15:** the `ops/PAUSE` removal test covers counsel indirectly, through "the launch gate". It still does not name counsel or insurance, and its text about `ops/FULL-STOP.md` is stale.
+- **Risk 16:** the monthly close's 13-week forecast does consider Etsy holds and reserves. The gap is that nothing detects them when they happen.
+- **Risk 20:** the Actions-minutes problem starts once the repository is private.
+- **Risk 26:**
+  - Added: LAUNCH-NOW's own "insurance is in place before the first sale" contradicts its step 8.
+  - Added: checklist row 14 still quotes coaching E&O.
+- **Risk 34:** about 110 subscribers by January 31 is the model path itself, not a shortfall.
+- **Risk 40:** whether the September 15 estimate was owed is now framed as an accountant question.
+- **Protections downgraded to gaps, because they cause the risk or are the promise under test:**
+  - COMPLIANCE-GATE line 16 (risk 34);
+  - ROUTINE "Never run out of products" (risk 44);
+  - `legal/PRIVACY-POLICY.md` §1–§2 and the CAMPAIGN-BIBLE [COPPA] rule (risk 39).
+- **Time estimates:** the four decisions take about 20 minutes, not 15, by `ops/APPROVALS.md`'s own estimates (10 + 5 + 3, plus the new line). The pending founder-story SITE-SAFE CUT line is now named with them. Your part of the Top 10 is still about 25 minutes (fix 1 plus the four decisions); the SITE-SAFE CUT line adds about 5.
+
+**Missed by the synthesis (added)**
+- `check_listings.py` FAILs 15 of 17 listing records, and 4 of the 5 Wave 1 launch products. Gate A item 6 cannot pass until these are fixed (risk 11, short version item 6, and "Next in line").
+- The AlphaPlay LLC owner line is missing on four launch listing records (risk 27).
+- The launch lists disagree: `ops/LAUNCH-NOW.md` Wave 1 and `ops/QUEUE.md` "G-day week" name different products (risk 11).
+- The repository is growing fast: about 2.4 GB on GitHub at 04:26 UTC, against 1.09 GB earlier the same night. Added to risk 2, with signal A12.
+- Not added to the ranked list, but worth a line: "key person unavailable" (`business/sections/05-operations-risk-milestones.md` §5.9 risk 7; `marketing/BLIND-SPOTS.md` #20) has no entry here. Maintenance mode (step 0.8) covers only the approvals side. If it is ranked later, it fits near risk 27 (the LLC shield) as a continuity plan: who can reach the accounts and the LLC if you cannot.
+
+**Not re-checked:** the Signals tables' thresholds (they are proposals), and every item under "Needs a live check" (the web is not reachable from this session).
