@@ -1,7 +1,9 @@
 // Shared parts for "100 Screen-Free Plays for Ages 0–5" (Play Before Pixels · AlphaPlay LLC): QR, scenes, play cards.
 // Used by book.js (interiors) and extras.js (cover, wrap, mockup, listing images).
 const path = require('path');
-const QR = require(path.join(__dirname, '../../bored-play-cards/build/node_modules/qrcode'));
+const fs = require('fs');
+let QR = null; // qrcode lib is borrowed from bored-play-cards/build; qr.json caches the result so the build also works without it
+try { QR = require(path.join(__dirname, '../../bored-play-cards/build/node_modules/qrcode')); } catch (e) { /* use cache */ }
 const CH = require('./chars.js');
 const { ART, UI } = require('./icons.js');
 const { P, BANDS, MOVES, WHERE } = require('./plays.js');
@@ -27,11 +29,21 @@ const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 const pad2 = n => String(n).padStart(2, '0');
 
 // ---------------------------------------------------------------- QR (bonus link)
+function qrData() {
+  const cache = path.join(__dirname, 'qr.json');
+  if (QR) {
+    const q = QR.create('https://' + BONUS, { errorCorrectionLevel: 'M' });
+    const n = q.modules.size, d = q.modules.data; let p = '';
+    for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) if (d[y * n + x]) p += `M${x} ${y}h1v1h-1z`;
+    const out = { url: 'https://' + BONUS, n, d: p };
+    fs.writeFileSync(cache, JSON.stringify(out));
+    return out;
+  }
+  return JSON.parse(fs.readFileSync(cache, 'utf8'));
+}
 function qrSvg(size = 100, fg = C.ink) {
-  const q = QR.create('https://' + BONUS, { errorCorrectionLevel: 'M' });
-  const n = q.modules.size, d = q.modules.data; let p = '';
-  for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) if (d[y * n + x]) p += `M${x} ${y}h1v1h-1z`;
-  return `<svg viewBox="-2 -2 ${n + 4} ${n + 4}" width="${size}" height="${size}" shape-rendering="crispEdges" role="img" aria-label="QR code to ${BONUS}"><rect x="-2" y="-2" width="${n + 4}" height="${n + 4}" fill="${W}"/><path d="${p}" fill="${fg}"/></svg>`;
+  const { n, d } = qrData();
+  return `<svg viewBox="-2 -2 ${n + 4} ${n + 4}" width="${size}" height="${size}" shape-rendering="crispEdges" role="img" aria-label="QR code to ${BONUS}"><rect x="-2" y="-2" width="${n + 4}" height="${n + 4}" fill="${W}"/><path d="${d}" fill="${fg}"/></svg>`;
 }
 
 // ---------------------------------------------------------------- scenes (600 x 600 viewBox)
@@ -93,7 +105,7 @@ const MESS = ['No mess', 'A little mess', 'Messy'];
 function drops(level) {
   return `<span class="drops">${[0, 1].map(i => ico(i < level ? 'drop' : 'drop-o')).join('')}</span>`;
 }
-function artDisc(p, size = 1.3) {
+function artDisc(p, size = 1.45) {
   const b = BC[p.band];
   return `<div class="disc" style="width:${size}in;height:${size}in"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="60" fill="${b.t}"/><use href="#a-${p.art}" transform="scale(.82)"/></svg><span class="badge" style="background:${b.c};color:${b.fg}">${pad2(p.n)}</span></div>`;
 }
@@ -117,6 +129,7 @@ function playCard(p) {
       </div>
     </div>
     <p class="how">${esc(p.how)}</p>
+    <p class="grow"><b style="color:${p.band === 'b2' ? C.ink : b.c}">Grow it:</b> ${esc(p.grow)}</p>
     <div class="talk" style="background:${b.t}">${ico('talk', 'big')}<div><div class="tlab">Talk while you play <span>· ${m.name}</span></div><div class="tline">${esc(p.talk)}</div></div></div>
     <div class="safe">${ico('shield')}<span><b>Safety:</b> ${esc(p.safe)}</span></div>
   </article>`;
@@ -129,7 +142,7 @@ function ownCard(id, bandKey) {
   const b = BC[bandKey];
   return `<article class="play own">
     <div class="phead">
-      <div class="disc" style="width:1.3in;height:1.3in"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="58" fill="none" stroke="${b.c}" stroke-width="2.4" stroke-dasharray="6 6"/><text y="6" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="20" fill="${C.ink}">draw it!</text></svg></div>
+      <div class="disc" style="width:1.45in;height:1.45in"><svg viewBox="-60 -60 120 120" width="100%" height="100%"><circle r="58" fill="none" stroke="${b.c}" stroke-width="2.4" stroke-dasharray="6 6"/><text y="6" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="20" fill="${C.ink}">draw it!</text></svg></div>
       <div class="ptitle">
         <div class="kicker">Our own play <span class="agepill" style="background:${b.t}">age: ${fld(id + '-age', 'inl w1')}</span></div>
         <div class="lineh">${fld(id + '-title', 'big')}</div>
@@ -138,6 +151,7 @@ function ownCard(id, bandKey) {
       </div>
     </div>
     <div class="lines3">${fld(id + '-how', 'multi', 3)}</div>
+    <div class="need"><span><b>Grow it:</b></span>${fld(id + '-grow')}</div>
     <div class="talk" style="background:${b.t}">${ico('talk', 'big')}<div style="flex:1"><div class="tlab">Talk while you play</div>${fld(id + '-talk')}</div></div>
     <div class="safe">${ico('shield')}<span><b>Safety:</b></span>${fld(id + '-safe')}</div>
   </article>`;

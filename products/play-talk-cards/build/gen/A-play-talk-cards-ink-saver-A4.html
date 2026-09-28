@@ -86,6 +86,7 @@ symbol{overflow:visible}
 .cutmarks{position:absolute;left:0;top:0;pointer-events:none}
 .sidenote{position:absolute;top:0;height:23px;display:flex;align-items:center;justify-content:center;font-size:7.5px;font-weight:700;letter-spacing:.02em;color:#1D2940;opacity:.7;white-space:nowrap}
 .sidenote.l{left:0;transform-origin:0 0;transform:translate(9.5px,1123px) rotate(-90deg)}
+.sheetfoot{position:absolute;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;opacity:.7;white-space:nowrap}
 .sidenote.r{left:794px;transform-origin:0 0;transform:translate(-9.5px,0) rotate(90deg)}
 /* content pages */
 .pin{position:absolute;left:48px;right:48px;top:48px;bottom:56px;display:flex;flex-direction:column}
@@ -126,6 +127,10 @@ symbol{overflow:visible}
 .founder{border:2px dashed #8A5CC7;border-radius:14px;padding:12px 16px;margin:0 0 14px;background:#fff}
 .flabel{display:block;font-weight:800;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8A5CC7;margin-bottom:5px}
 .founder p{margin:0;font-size:12px;line-height:1.45;opacity:.75}
+.ways{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+.way{border-top:6px solid var(--c);background:#F3F6FB;border-radius:12px;padding:10px 12px}
+.way b{font-weight:800;font-size:13px}
+.way p{margin:3px 0 0;font-size:11.5px;line-height:1.38}
 .license{margin-top:auto;font-size:10px;line-height:1.5;background:#F3F6FB;border-radius:12px;padding:10px 14px}
 .pfoot{position:absolute;left:48px;right:48px;bottom:22px;display:flex;justify-content:space-between;font-size:8px;font-weight:700;opacity:.6}
 /* tracker */
@@ -133,7 +138,7 @@ symbol{overflow:visible}
 .tcol{background:var(--t);border-radius:14px;padding:10px 10px 8px}
 .thead{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:800;margin-bottom:6px}
 .thead b{font-family:"Fredoka",sans-serif;font-weight:600;font-size:19px}
-.trow{display:flex;align-items:center;gap:6px;background:#fff;border-radius:8px;padding:5px 7px;margin-bottom:4px;font-size:11.2px;font-weight:700;min-height:30px}
+.trow{display:flex;align-items:center;gap:6px;background:#fff;border-radius:8px;padding:5px 8px;margin-bottom:5px;font-size:12.2px;font-weight:700;min-height:43px}
 .trow .box{flex:none;width:14px;height:14px;border:1.6px solid var(--c);border-radius:3px}
 .trow em{font-style:normal;font-size:9px;font-weight:800;opacity:.55}
 .trow span{flex:1;line-height:1.15}
@@ -148,6 +153,11 @@ symbol{overflow:visible}
 .lab-top b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:34px;letter-spacing:-.02em;line-height:1}
 .lab-top span{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
 .lab p{margin:10px 6px 4px;font-size:13px;font-weight:700}
+.week{width:100%;border-collapse:separate;border-spacing:6px;margin:0 -6px}
+.week th{font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.65;text-align:center}
+.week td{background:var(--t);border-radius:10px;height:44px;text-align:center}
+.week td i{display:inline-block;width:18px;height:18px;border:2px solid var(--c);border-radius:4px;background:#fff;vertical-align:middle}
+.week td.wm{background:var(--c);color:#fff;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:15px;width:110px;text-align:left;padding-left:12px}
 /* next */
 .bonus{display:flex;gap:22px;align-items:center;background:var(--t);border-radius:18px;padding:18px 22px;margin-bottom:22px}
 .bonus .qr{flex:none;width:132px;height:132px;background:#fff;border-radius:12px;padding:10px}
@@ -160,6 +170,10 @@ symbol{overflow:visible}
 .nx-ic{flex:none;width:68px;height:68px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}
 .nx b{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:18px}
 .nx p{margin:2px 0 0;font-size:12.5px;line-height:1.4}
+.review{margin-top:18px;display:flex;align-items:center;gap:18px;border:2px solid #F3F6FB;border-radius:16px;padding:14px 18px}
+.review h3{margin:0 0 4px;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:18px}
+.review p{margin:0;font-size:12.5px;line-height:1.45}
+.review svg{flex:none}
 .colophon{margin-top:auto;border-top:1.5px solid #F3F6FB;padding-top:14px}
 .colophon p{margin:6px 0 0;font-size:10px;line-height:1.5}
 .lockup{height:34px;width:auto;display:block}
@@ -342,6 +356,8 @@ symbol{overflow:visible}
       <span class="flabel">Founder’s note · to be written by the founder in her own words before release</span>
       <p>Placeholder for human-authored text (60–90 words): why these cards exist, how your family uses them, and one favorite play. Replace this box; do not publish with it. See brand/BRAND.md, “Human authorship.”</p>
     </div>
+    <h3 class="h3">Ways to use your deck</h3>
+    <div class="ways"><div class="way" style="--c:#EE5A36"><b>Card of the day</b><p>Clip one card to the fridge each morning.</p></div><div class="way" style="--c:#F5B820"><b>Grab-and-go</b><p>Keep a few in the diaper bag for waiting rooms.</p></div><div class="way" style="--c:#3D86D8"><b>Share the job</b><p>Hand a card to grandparents or the sitter.</p></div><div class="way" style="--c:#2FA36B"><b>Rainy-day pile</b><p>Save the indoor plays for stuck-inside days.</p></div></div>
     <div class="license"><b>License: PERSONAL.</b> You may print and copy this for your own family only. No resale, redistribution, sharing, posting, uploading to shared or public drives or websites, or use to train AI. Full terms: playbeforepixels.com/license<br>© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. All rights reserved.</div>
   </div>
   <div class="pfoot"><span>Play &amp; Talk Cards · Ages 0–5 · page 3 of 13</span><span>© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. Personal/family license: no resale or sharing.</span></div>
@@ -494,7 +510,8 @@ symbol{overflow:visible}
 </div></div></div>
   <svg class="cutmarks" width="794" height="1123" viewBox="0 0 794 1123" aria-hidden="true"><g stroke="#1D2940" stroke-width=".8"><line x1="37" y1="35.5" x2="37" y2="52.5"/><line x1="37" y1="1070.5" x2="37" y2="1087.5"/><line x1="277" y1="35.5" x2="277" y2="52.5"/><line x1="277" y1="1070.5" x2="277" y2="1087.5"/><line x1="517" y1="35.5" x2="517" y2="52.5"/><line x1="517" y1="1070.5" x2="517" y2="1087.5"/><line x1="757" y1="35.5" x2="757" y2="52.5"/><line x1="757" y1="1070.5" x2="757" y2="1087.5"/><line x1="7" y1="57.5" x2="31" y2="57.5"/><line x1="763" y1="57.5" x2="787" y2="57.5"/><line x1="7" y1="393.5" x2="31" y2="393.5"/><line x1="763" y1="393.5" x2="787" y2="393.5"/><line x1="7" y1="729.5" x2="31" y2="729.5"/><line x1="763" y1="729.5" x2="787" y2="729.5"/><line x1="7" y1="1065.5" x2="31" y2="1065.5"/><line x1="763" y1="1065.5" x2="787" y2="1065.5"/></g><g stroke="#B9C1D0" stroke-width=".6" stroke-dasharray="4 3"><line x1="37" y1="57.5" x2="37" y2="1065.5"/><line x1="277" y1="57.5" x2="277" y2="1065.5"/><line x1="517" y1="57.5" x2="517" y2="1065.5"/><line x1="757" y1="57.5" x2="757" y2="1065.5"/><line x1="37" y1="57.5" x2="757" y2="57.5"/><line x1="37" y1="393.5" x2="757" y2="393.5"/><line x1="37" y1="729.5" x2="757" y2="729.5"/><line x1="37" y1="1065.5" x2="757" y2="1065.5"/></g></svg>
   <div class="sidenote l" style="width:1123px"><span>Play &amp; Talk Cards · Card sheet 1 of 6 · page 4 of 13</span></div>
-  <div class="sidenote r" style="width:1123px"><span>Print at Actual size (100%) · cut on the lines · © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. Personal/family license.</span></div>
+  <div class="sidenote r" style="width:1123px"><span>Print at Actual size (100%) · cut on the lines</span></div>
+  <div class="sheetfoot" style="left:277px;width:240px;top:1065.5px;height:57.5px"><span>© 2026 AlphaPlay LLC · personal/family license</span></div>
 </section>
 <section class="page sheet">
   <div class="grid" style="left:37px;top:57.5px"><div class="cell"><div class="card cA" style="--band:#3D86D8;--tint:#E3EEFA;--b:0px;width:240px;height:336px">
@@ -644,7 +661,8 @@ symbol{overflow:visible}
 </div></div></div>
   <svg class="cutmarks" width="794" height="1123" viewBox="0 0 794 1123" aria-hidden="true"><g stroke="#1D2940" stroke-width=".8"><line x1="37" y1="35.5" x2="37" y2="52.5"/><line x1="37" y1="1070.5" x2="37" y2="1087.5"/><line x1="277" y1="35.5" x2="277" y2="52.5"/><line x1="277" y1="1070.5" x2="277" y2="1087.5"/><line x1="517" y1="35.5" x2="517" y2="52.5"/><line x1="517" y1="1070.5" x2="517" y2="1087.5"/><line x1="757" y1="35.5" x2="757" y2="52.5"/><line x1="757" y1="1070.5" x2="757" y2="1087.5"/><line x1="7" y1="57.5" x2="31" y2="57.5"/><line x1="763" y1="57.5" x2="787" y2="57.5"/><line x1="7" y1="393.5" x2="31" y2="393.5"/><line x1="763" y1="393.5" x2="787" y2="393.5"/><line x1="7" y1="729.5" x2="31" y2="729.5"/><line x1="763" y1="729.5" x2="787" y2="729.5"/><line x1="7" y1="1065.5" x2="31" y2="1065.5"/><line x1="763" y1="1065.5" x2="787" y2="1065.5"/></g><g stroke="#B9C1D0" stroke-width=".6" stroke-dasharray="4 3"><line x1="37" y1="57.5" x2="37" y2="1065.5"/><line x1="277" y1="57.5" x2="277" y2="1065.5"/><line x1="517" y1="57.5" x2="517" y2="1065.5"/><line x1="757" y1="57.5" x2="757" y2="1065.5"/><line x1="37" y1="57.5" x2="757" y2="57.5"/><line x1="37" y1="393.5" x2="757" y2="393.5"/><line x1="37" y1="729.5" x2="757" y2="729.5"/><line x1="37" y1="1065.5" x2="757" y2="1065.5"/></g></svg>
   <div class="sidenote l" style="width:1123px"><span>Play &amp; Talk Cards · Card sheet 2 of 6 · page 5 of 13</span></div>
-  <div class="sidenote r" style="width:1123px"><span>Print at Actual size (100%) · cut on the lines · © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. Personal/family license.</span></div>
+  <div class="sidenote r" style="width:1123px"><span>Print at Actual size (100%) · cut on the lines</span></div>
+  <div class="sheetfoot" style="left:277px;width:240px;top:1065.5px;height:57.5px"><span>© 2026 AlphaPlay LLC · personal/family license</span></div>
 </section>
 <section class="page sheet">
   <div class="grid" style="left:37px;top:57.5px"><div class="cell"><div class="card cA" style="--band:#2FA36B;--tint:#DFF3E9;--b:0px;width:240px;height:336px">
@@ -794,7 +812,8 @@ symbol{overflow:visible}
 </div></div></div>
   <svg class="cutmarks" width="794" height="1123" viewBox="0 0 794 1123" aria-hidden="true"><g stroke="#1D2940" stroke-width=".8"><line x1="37" y1="35.5" x2="37" y2="52.5"/><line x1="37" y1="1070.5" x2="37" y2="1087.5"/><line x1="277" y1="35.5" x2="277" y2="52.5"/><line x1="277" y1="1070.5" x2="277" y2="1087.5"/><line x1="517" y1="35.5" x2="517" y2="52.5"/><line x1="517" y1="1070.5" x2="517" y2="1087.5"/><line x1="757" y1="35.5" x2="757" y2="52.5"/><line x1="757" y1="1070.5" x2="757" y2="1087.5"/><line x1="7" y1="57.5" x2="31" y2="57.5"/><line x1="763" y1="57.5" x2="787" y2="57.5"/><line x1="7" y1="393.5" x2="31" y2="393.5"/><line x1="763" y1="393.5" x2="787" y2="393.5"/><line x1="7" y1="729.5" x2="31" y2="729.5"/><line x1="763" y1="729.5" x2="787" y2="729.5"/><line x1="7" y1="1065.5" x2="31" y2="1065.5"/><line x1="763" y1="1065.5" x2="787" y2="1065.5"/></g><g stroke="#B9C1D0" stroke-width=".6" stroke-dasharray="4 3"><line x1="37" y1="57.5" x2="37" y2="1065.5"/><line x1="277" y1="57.5" x2="277" y2="1065.5"/><line x1="517" y1="57.5" x2="517" y2="1065.5"/><line x1="757" y1="57.5" x2="757" y2="1065.5"/><line x1="37" y1="57.5" x2="757" y2="57.5"/><line x1="37" y1="393.5" x2="757" y2="393.5"/><line x1="37" y1="729.5" x2="757" y2="729.5"/><line x1="37" y1="1065.5" x2="757" y2="1065.5"/></g></svg>
   <div class="sidenote l" style="width:1123px"><span>Play &amp; Talk Cards · Card sheet 3 of 6 · page 6 of 13</span></div>
-  <div class="sidenote r" style="width:1123px"><span>Print at Actual size (100%) · cut on the lines · © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. Personal/family license.</span></div>
+  <div class="sidenote r" style="width:1123px"><span>Print at Actual size (100%) · cut on the lines</span></div>
+  <div class="sheetfoot" style="left:277px;width:240px;top:1065.5px;height:57.5px"><span>© 2026 AlphaPlay LLC · personal/family license</span></div>
 </section>
 <section class="page sheet">
   <div class="grid" style="left:37px;top:57.5px"><div class="cell"><div class="card cA" style="--band:#F5B820;--tint:#FEF4D8;--b:0px;width:240px;height:336px">
@@ -944,7 +963,8 @@ symbol{overflow:visible}
 </div></div></div>
   <svg class="cutmarks" width="794" height="1123" viewBox="0 0 794 1123" aria-hidden="true"><g stroke="#1D2940" stroke-width=".8"><line x1="37" y1="35.5" x2="37" y2="52.5"/><line x1="37" y1="1070.5" x2="37" y2="1087.5"/><line x1="277" y1="35.5" x2="277" y2="52.5"/><line x1="277" y1="1070.5" x2="277" y2="1087.5"/><line x1="517" y1="35.5" x2="517" y2="52.5"/><line x1="517" y1="1070.5" x2="517" y2="1087.5"/><line x1="757" y1="35.5" x2="757" y2="52.5"/><line x1="757" y1="1070.5" x2="757" y2="1087.5"/><line x1="7" y1="57.5" x2="31" y2="57.5"/><line x1="763" y1="57.5" x2="787" y2="57.5"/><line x1="7" y1="393.5" x2="31" y2="393.5"/><line x1="763" y1="393.5" x2="787" y2="393.5"/><line x1="7" y1="729.5" x2="31" y2="729.5"/><line x1="763" y1="729.5" x2="787" y2="729.5"/><line x1="7" y1="1065.5" x2="31" y2="1065.5"/><line x1="763" y1="1065.5" x2="787" y2="1065.5"/></g><g stroke="#B9C1D0" stroke-width=".6" stroke-dasharray="4 3"><line x1="37" y1="57.5" x2="37" y2="1065.5"/><line x1="277" y1="57.5" x2="277" y2="1065.5"/><line x1="517" y1="57.5" x2="517" y2="1065.5"/><line x1="757" y1="57.5" x2="757" y2="1065.5"/><line x1="37" y1="57.5" x2="757" y2="57.5"/><line x1="37" y1="393.5" x2="757" y2="393.5"/><line x1="37" y1="729.5" x2="757" y2="729.5"/><line x1="37" y1="1065.5" x2="757" y2="1065.5"/></g></svg>
   <div class="sidenote l" style="width:1123px"><span>Play &amp; Talk Cards · Card sheet 4 of 6 · page 7 of 13</span></div>
-  <div class="sidenote r" style="width:1123px"><span>Print at Actual size (100%) · cut on the lines · © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. Personal/family license.</span></div>
+  <div class="sidenote r" style="width:1123px"><span>Print at Actual size (100%) · cut on the lines</span></div>
+  <div class="sheetfoot" style="left:277px;width:240px;top:1065.5px;height:57.5px"><span>© 2026 AlphaPlay LLC · personal/family license</span></div>
 </section>
 <section class="page sheet">
   <div class="grid" style="left:37px;top:57.5px"><div class="cell"><div class="card cA" style="--band:#F5B820;--tint:#FEF4D8;--b:0px;width:240px;height:336px">
@@ -1094,7 +1114,8 @@ symbol{overflow:visible}
 </div></div></div>
   <svg class="cutmarks" width="794" height="1123" viewBox="0 0 794 1123" aria-hidden="true"><g stroke="#1D2940" stroke-width=".8"><line x1="37" y1="35.5" x2="37" y2="52.5"/><line x1="37" y1="1070.5" x2="37" y2="1087.5"/><line x1="277" y1="35.5" x2="277" y2="52.5"/><line x1="277" y1="1070.5" x2="277" y2="1087.5"/><line x1="517" y1="35.5" x2="517" y2="52.5"/><line x1="517" y1="1070.5" x2="517" y2="1087.5"/><line x1="757" y1="35.5" x2="757" y2="52.5"/><line x1="757" y1="1070.5" x2="757" y2="1087.5"/><line x1="7" y1="57.5" x2="31" y2="57.5"/><line x1="763" y1="57.5" x2="787" y2="57.5"/><line x1="7" y1="393.5" x2="31" y2="393.5"/><line x1="763" y1="393.5" x2="787" y2="393.5"/><line x1="7" y1="729.5" x2="31" y2="729.5"/><line x1="763" y1="729.5" x2="787" y2="729.5"/><line x1="7" y1="1065.5" x2="31" y2="1065.5"/><line x1="763" y1="1065.5" x2="787" y2="1065.5"/></g><g stroke="#B9C1D0" stroke-width=".6" stroke-dasharray="4 3"><line x1="37" y1="57.5" x2="37" y2="1065.5"/><line x1="277" y1="57.5" x2="277" y2="1065.5"/><line x1="517" y1="57.5" x2="517" y2="1065.5"/><line x1="757" y1="57.5" x2="757" y2="1065.5"/><line x1="37" y1="57.5" x2="757" y2="57.5"/><line x1="37" y1="393.5" x2="757" y2="393.5"/><line x1="37" y1="729.5" x2="757" y2="729.5"/><line x1="37" y1="1065.5" x2="757" y2="1065.5"/></g></svg>
   <div class="sidenote l" style="width:1123px"><span>Play &amp; Talk Cards · Card sheet 5 of 6 · page 8 of 13</span></div>
-  <div class="sidenote r" style="width:1123px"><span>Print at Actual size (100%) · cut on the lines · © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. Personal/family license.</span></div>
+  <div class="sidenote r" style="width:1123px"><span>Print at Actual size (100%) · cut on the lines</span></div>
+  <div class="sheetfoot" style="left:277px;width:240px;top:1065.5px;height:57.5px"><span>© 2026 AlphaPlay LLC · personal/family license</span></div>
 </section>
 <section class="page sheet">
   <div class="grid" style="left:37px;top:57.5px"><div class="cell"><div class="card cA" style="--band:#EE5A36;--tint:#FDE9E3;--b:0px;width:240px;height:336px">
@@ -1241,7 +1262,8 @@ symbol{overflow:visible}
 </div></div></div>
   <svg class="cutmarks" width="794" height="1123" viewBox="0 0 794 1123" aria-hidden="true"><g stroke="#1D2940" stroke-width=".8"><line x1="37" y1="35.5" x2="37" y2="52.5"/><line x1="37" y1="1070.5" x2="37" y2="1087.5"/><line x1="277" y1="35.5" x2="277" y2="52.5"/><line x1="277" y1="1070.5" x2="277" y2="1087.5"/><line x1="517" y1="35.5" x2="517" y2="52.5"/><line x1="517" y1="1070.5" x2="517" y2="1087.5"/><line x1="757" y1="35.5" x2="757" y2="52.5"/><line x1="757" y1="1070.5" x2="757" y2="1087.5"/><line x1="7" y1="57.5" x2="31" y2="57.5"/><line x1="763" y1="57.5" x2="787" y2="57.5"/><line x1="7" y1="393.5" x2="31" y2="393.5"/><line x1="763" y1="393.5" x2="787" y2="393.5"/><line x1="7" y1="729.5" x2="31" y2="729.5"/><line x1="763" y1="729.5" x2="787" y2="729.5"/><line x1="7" y1="1065.5" x2="31" y2="1065.5"/><line x1="763" y1="1065.5" x2="787" y2="1065.5"/></g><g stroke="#B9C1D0" stroke-width=".6" stroke-dasharray="4 3"><line x1="37" y1="57.5" x2="37" y2="1065.5"/><line x1="277" y1="57.5" x2="277" y2="1065.5"/><line x1="517" y1="57.5" x2="517" y2="1065.5"/><line x1="757" y1="57.5" x2="757" y2="1065.5"/><line x1="37" y1="57.5" x2="757" y2="57.5"/><line x1="37" y1="393.5" x2="757" y2="393.5"/><line x1="37" y1="729.5" x2="757" y2="729.5"/><line x1="37" y1="1065.5" x2="757" y2="1065.5"/></g></svg>
   <div class="sidenote l" style="width:1123px"><span>Play &amp; Talk Cards · Card sheet 6 of 6 · page 9 of 13</span></div>
-  <div class="sidenote r" style="width:1123px"><span>Print at Actual size (100%) · cut on the lines · © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. Personal/family license.</span></div>
+  <div class="sidenote r" style="width:1123px"><span>Print at Actual size (100%) · cut on the lines</span></div>
+  <div class="sheetfoot" style="left:277px;width:240px;top:1065.5px;height:57.5px"><span>© 2026 AlphaPlay LLC · personal/family license</span></div>
 </section>
 <section class="page sheet">
   <div class="grid" style="left:37px;top:57.5px"><div class="cell"><div class="card back" style="--b:0px;width:240px;height:336px">
@@ -1336,8 +1358,9 @@ symbol{overflow:visible}
   </div>
 </div></div></div>
   <svg class="cutmarks" width="794" height="1123" viewBox="0 0 794 1123" aria-hidden="true"><g stroke="#1D2940" stroke-width=".8"><line x1="37" y1="35.5" x2="37" y2="52.5"/><line x1="37" y1="1070.5" x2="37" y2="1087.5"/><line x1="277" y1="35.5" x2="277" y2="52.5"/><line x1="277" y1="1070.5" x2="277" y2="1087.5"/><line x1="517" y1="35.5" x2="517" y2="52.5"/><line x1="517" y1="1070.5" x2="517" y2="1087.5"/><line x1="757" y1="35.5" x2="757" y2="52.5"/><line x1="757" y1="1070.5" x2="757" y2="1087.5"/><line x1="7" y1="57.5" x2="31" y2="57.5"/><line x1="763" y1="57.5" x2="787" y2="57.5"/><line x1="7" y1="393.5" x2="31" y2="393.5"/><line x1="763" y1="393.5" x2="787" y2="393.5"/><line x1="7" y1="729.5" x2="31" y2="729.5"/><line x1="763" y1="729.5" x2="787" y2="729.5"/><line x1="7" y1="1065.5" x2="31" y2="1065.5"/><line x1="763" y1="1065.5" x2="787" y2="1065.5"/></g><g stroke="#B9C1D0" stroke-width=".6" stroke-dasharray="4 3"><line x1="37" y1="57.5" x2="37" y2="1065.5"/><line x1="277" y1="57.5" x2="277" y2="1065.5"/><line x1="517" y1="57.5" x2="517" y2="1065.5"/><line x1="757" y1="57.5" x2="757" y2="1065.5"/><line x1="37" y1="57.5" x2="757" y2="57.5"/><line x1="37" y1="393.5" x2="757" y2="393.5"/><line x1="37" y1="729.5" x2="757" y2="729.5"/><line x1="37" y1="1065.5" x2="757" y2="1065.5"/></g></svg>
-  <div class="sidenote l" style="width:1123px"><span>Play &amp; Talk Cards · Card backs (optional: print on the reverse, flip on long edge) · page 10 of 13</span></div>
-  <div class="sidenote r" style="width:1123px"><span>Print at Actual size (100%) · cut on the lines · © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. Personal/family license.</span></div>
+  <div class="sidenote l" style="width:1123px"><span>Play &amp; Talk Cards · Card backs (optional) · page 10 of 13</span></div>
+  <div class="sidenote r" style="width:1123px"><span>Print at Actual size (100%) · cut on the lines</span></div>
+  <div class="sheetfoot" style="left:277px;width:240px;top:1065.5px;height:57.5px"><span>© 2026 AlphaPlay LLC · personal/family license</span></div>
 </section>
 <section class="page sheet">
   <div class="grid" style="left:37px;top:57.5px"><div class="cell"><div class="card cA special blank" style="--band:#8A5CC7;--tint:#EFE6FA;--b:0px;width:240px;height:336px">
@@ -1459,8 +1482,9 @@ symbol{overflow:visible}
   </div>
 </div></div></div>
   <svg class="cutmarks" width="794" height="1123" viewBox="0 0 794 1123" aria-hidden="true"><g stroke="#1D2940" stroke-width=".8"><line x1="37" y1="35.5" x2="37" y2="52.5"/><line x1="37" y1="1070.5" x2="37" y2="1087.5"/><line x1="277" y1="35.5" x2="277" y2="52.5"/><line x1="277" y1="1070.5" x2="277" y2="1087.5"/><line x1="517" y1="35.5" x2="517" y2="52.5"/><line x1="517" y1="1070.5" x2="517" y2="1087.5"/><line x1="757" y1="35.5" x2="757" y2="52.5"/><line x1="757" y1="1070.5" x2="757" y2="1087.5"/><line x1="7" y1="57.5" x2="31" y2="57.5"/><line x1="763" y1="57.5" x2="787" y2="57.5"/><line x1="7" y1="393.5" x2="31" y2="393.5"/><line x1="763" y1="393.5" x2="787" y2="393.5"/><line x1="7" y1="729.5" x2="31" y2="729.5"/><line x1="763" y1="729.5" x2="787" y2="729.5"/><line x1="7" y1="1065.5" x2="31" y2="1065.5"/><line x1="763" y1="1065.5" x2="787" y2="1065.5"/></g><g stroke="#B9C1D0" stroke-width=".6" stroke-dasharray="4 3"><line x1="37" y1="57.5" x2="37" y2="1065.5"/><line x1="277" y1="57.5" x2="277" y2="1065.5"/><line x1="517" y1="57.5" x2="517" y2="1065.5"/><line x1="757" y1="57.5" x2="757" y2="1065.5"/><line x1="37" y1="57.5" x2="757" y2="57.5"/><line x1="37" y1="393.5" x2="757" y2="393.5"/><line x1="37" y1="729.5" x2="757" y2="729.5"/><line x1="37" y1="1065.5" x2="757" y2="1065.5"/></g></svg>
-  <div class="sidenote l" style="width:1123px"><span>Play &amp; Talk Cards · Make your own: type in the boxes (free Adobe Acrobat Reader) or write by hand · page 11 of 13</span></div>
-  <div class="sidenote r" style="width:1123px"><span>Print at Actual size (100%) · cut on the lines · © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. Personal/family license.</span></div>
+  <div class="sidenote l" style="width:1123px"><span>Play &amp; Talk Cards · Make your own: type or write · page 11 of 13</span></div>
+  <div class="sidenote r" style="width:1123px"><span>Print at Actual size (100%) · cut on the lines</span></div>
+  <div class="sheetfoot" style="left:277px;width:240px;top:1065.5px;height:57.5px"><span>© 2026 AlphaPlay LLC · personal/family license</span></div>
 </section>
 <section class="page content">
   <div class="pin">
@@ -1482,8 +1506,9 @@ symbol{overflow:visible}
       <div><h3>Your free companion bonus</h3><p>Scan the code or visit <b>playbeforepixels.com/bonus/play-talk-cards</b> for extra printable cards and a short, friendly idea by email each month.</p><p class="small">We ask only for an email address and your child’s birth month and year, never names. Unsubscribe any time.</p></div>
     </div>
     <h3 class="h3">Next for your family</h3>
-    <div class="nexts"><div class="nx" style="--c:#3D86D8"><span class="nx-ic"><svg viewBox="-50 -50 100 100" width="56" height="56"><circle cx="0" cy="0" r="36" fill="#E3EEFA" /><circle cx="0" cy="0" r="24" fill="#FFFFFF" /><g transform="translate(-46,0)" ><rect x="-3" y="-10" width="6" height="44" rx="3" fill="#1D2940" /><rect x="-8" y="-34" width="4" height="20" rx="2" fill="#1D2940" /><rect x="-2" y="-34" width="4" height="20" rx="2" fill="#1D2940" /><rect x="4" y="-34" width="4" height="20" rx="2" fill="#1D2940" /><rect x="-8" y="-18" width="16" height="10" rx="5" fill="#1D2940" /></g><g transform="translate(46,0)" ><rect x="-3" y="-6" width="6" height="40" rx="3" fill="#1D2940" /><ellipse cx="0" cy="-20" rx="8" ry="13" fill="#1D2940"/></g><circle cx="-6" cy="-4" r="8" fill="#2FA36B" /><circle cx="8" cy="4" r="7" fill="#EE5A36" /><circle cx="4" cy="-10" r="5" fill="#F5B820" /></svg></span><div><b>Family Talk-Along Cards</b><p>Ages 5–12 · 52 questions for dinner, the car, bath time and bedtime</p></div></div><div class="nx" style="--c:#EE5A36"><span class="nx-ic"><svg viewBox="-50 -50 100 100" width="56" height="56"><g transform="translate(-24,-22) scale(.3)" ><use href="#moon" transform="" /></g><g transform="translate(24,-18) scale(.36)" ><use href="#duck" transform="" /></g><g transform="translate(0,-36) scale(1.3)" ><use href="#star" transform="" /></g><rect x="-40" y="-6" width="80" height="44" rx="6" fill="#EE5A36" /><path d="M-40-6L-52-20H-30L-22-6Z" fill="#FDE9E3" /><path d="M40-6L52-20H30L22-6Z" fill="#FDE9E3" /><rect x="-10" y="8" width="20" height="6" rx="3" fill="#FFFFFF" opacity=".6"/></svg></span><div><b>“I’m Bored” Play Cards</b><p>Ages 1–12 · 150 age-banded screen-free plays, each with a talk prompt</p></div></div><div class="nx" style="--c:#2FA36B"><span class="nx-ic"><svg viewBox="-50 -50 100 100" width="56" height="56"><g transform="scale(.46)" ><use href="#book-open" transform="" style="--bc:#2FA36B"/></g><g transform="translate(-20,2) scale(.28)" ><use href="#duck" transform="" /></g><g transform="translate(20,2) scale(.2)" ><use href="#sun" transform="" /></g></svg></span><div><b>100 Screen-Free Plays</b><p>Ages 0–5 · the activity book, sorted by age, with a talk line on every play</p></div></div></div>
+    <div class="nexts"><div class="nx" style="--c:#3D86D8"><span class="nx-ic"><svg viewBox="-60 -60 120 120" width="58" height="58"><circle cx="0" cy="0" r="36" fill="#E3EEFA" /><circle cx="0" cy="0" r="24" fill="#FFFFFF" /><g transform="translate(-46,0)" ><rect x="-3" y="-10" width="6" height="44" rx="3" fill="#1D2940" /><rect x="-8" y="-34" width="4" height="20" rx="2" fill="#1D2940" /><rect x="-2" y="-34" width="4" height="20" rx="2" fill="#1D2940" /><rect x="4" y="-34" width="4" height="20" rx="2" fill="#1D2940" /><rect x="-8" y="-18" width="16" height="10" rx="5" fill="#1D2940" /></g><g transform="translate(46,0)" ><rect x="-3" y="-6" width="6" height="40" rx="3" fill="#1D2940" /><ellipse cx="0" cy="-20" rx="8" ry="13" fill="#1D2940"/></g><circle cx="-6" cy="-4" r="8" fill="#2FA36B" /><circle cx="8" cy="4" r="7" fill="#EE5A36" /><circle cx="4" cy="-10" r="5" fill="#F5B820" /></svg></span><div><b>Family Talk-Along Cards</b><p>Ages 5–12 · 52 questions for dinner, the car, bath time and bedtime</p></div></div><div class="nx" style="--c:#EE5A36"><span class="nx-ic"><svg viewBox="-60 -60 120 120" width="58" height="58"><g transform="translate(-24,-22) scale(.3)" ><use href="#moon" transform="" /></g><g transform="translate(24,-18) scale(.36)" ><use href="#duck" transform="" /></g><g transform="translate(0,-36) scale(1.3)" ><use href="#star" transform="" /></g><rect x="-40" y="-6" width="80" height="44" rx="6" fill="#EE5A36" /><path d="M-40-6L-52-20H-30L-22-6Z" fill="#FDE9E3" /><path d="M40-6L52-20H30L22-6Z" fill="#FDE9E3" /><rect x="-10" y="8" width="20" height="6" rx="3" fill="#FFFFFF" opacity=".6"/></svg></span><div><b>“I’m Bored” Play Cards</b><p>Ages 1–12 · 150 age-banded screen-free plays, each with a talk prompt</p></div></div><div class="nx" style="--c:#2FA36B"><span class="nx-ic"><svg viewBox="-60 -60 120 120" width="58" height="58"><g transform="scale(.46)" ><use href="#book-open" transform="" style="--bc:#2FA36B"/></g><g transform="translate(-20,2) scale(.28)" ><use href="#duck" transform="" /></g><g transform="translate(20,2) scale(.2)" ><use href="#sun" transform="" /></g></svg></span><div><b>100 Screen-Free Plays</b><p>Ages 0–5 · the activity book, sorted by age, with a talk line on every play</p></div></div></div>
     <p class="small">Find them all at <b>playbeforepixels.com</b>. Bundles are offered at a fair discount.</p>
+    <div class="review"><div><h3>Which card did your family love?</h3><p>A short review on the shop where you bought this helps other families find it. Questions or ideas? Write to us through the contact form at <b>playbeforepixels.com/contact</b>.</p></div><svg viewBox="-50 -50 100 100" width="84" height="84" aria-hidden="true"><use href="#heart" transform="scale(1.05)"/></svg></div>
     <div class="colophon">
       <img src="../../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels" class="lockup sm">
       <p><b>52 Play &amp; Talk Cards, Ages 0–5.</b> First edition, 2026. Printable PDF for personal and family use.</p>

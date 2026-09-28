@@ -86,6 +86,7 @@ symbol{overflow:visible}
 .cutmarks{position:absolute;left:0;top:0;pointer-events:none}
 .sidenote{position:absolute;top:0;height:34px;display:flex;align-items:center;justify-content:center;font-size:7.5px;font-weight:700;letter-spacing:.02em;color:#1D2940;opacity:.7;white-space:nowrap}
 .sidenote.l{left:0;transform-origin:0 0;transform:translate(15px,1056px) rotate(-90deg)}
+.sheetfoot{position:absolute;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;opacity:.7;white-space:nowrap}
 .sidenote.r{left:816px;transform-origin:0 0;transform:translate(-15px,0) rotate(90deg)}
 /* content pages */
 .pin{position:absolute;left:48px;right:48px;top:48px;bottom:56px;display:flex;flex-direction:column}
@@ -126,6 +127,10 @@ symbol{overflow:visible}
 .founder{border:2px dashed #8A5CC7;border-radius:14px;padding:12px 16px;margin:0 0 14px;background:#fff}
 .flabel{display:block;font-weight:800;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8A5CC7;margin-bottom:5px}
 .founder p{margin:0;font-size:12px;line-height:1.45;opacity:.75}
+.ways{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+.way{border-top:6px solid var(--c);background:#F3F6FB;border-radius:12px;padding:10px 12px}
+.way b{font-weight:800;font-size:13px}
+.way p{margin:3px 0 0;font-size:11.5px;line-height:1.38}
 .license{margin-top:auto;font-size:10px;line-height:1.5;background:#F3F6FB;border-radius:12px;padding:10px 14px}
 .pfoot{position:absolute;left:48px;right:48px;bottom:22px;display:flex;justify-content:space-between;font-size:8px;font-weight:700;opacity:.6}
 /* tracker */
@@ -133,7 +138,7 @@ symbol{overflow:visible}
 .tcol{background:var(--t);border-radius:14px;padding:10px 10px 8px}
 .thead{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:800;margin-bottom:6px}
 .thead b{font-family:"Fredoka",sans-serif;font-weight:600;font-size:19px}
-.trow{display:flex;align-items:center;gap:6px;background:#fff;border-radius:8px;padding:5px 7px;margin-bottom:4px;font-size:11.2px;font-weight:700;min-height:30px}
+.trow{display:flex;align-items:center;gap:6px;background:#fff;border-radius:8px;padding:5px 8px;margin-bottom:5px;font-size:12.2px;font-weight:700;min-height:43px}
 .trow .box{flex:none;width:14px;height:14px;border:1.6px solid var(--c);border-radius:3px}
 .trow em{font-style:normal;font-size:9px;font-weight:800;opacity:.55}
 .trow span{flex:1;line-height:1.15}
@@ -148,6 +153,11 @@ symbol{overflow:visible}
 .lab-top b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:34px;letter-spacing:-.02em;line-height:1}
 .lab-top span{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
 .lab p{margin:10px 6px 4px;font-size:13px;font-weight:700}
+.week{width:100%;border-collapse:separate;border-spacing:6px;margin:0 -6px}
+.week th{font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.65;text-align:center}
+.week td{background:var(--t);border-radius:10px;height:44px;text-align:center}
+.week td i{display:inline-block;width:18px;height:18px;border:2px solid var(--c);border-radius:4px;background:#fff;vertical-align:middle}
+.week td.wm{background:var(--c);color:#fff;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:15px;width:110px;text-align:left;padding-left:12px}
 /* next */
 .bonus{display:flex;gap:22px;align-items:center;background:var(--t);border-radius:18px;padding:18px 22px;margin-bottom:22px}
 .bonus .qr{flex:none;width:132px;height:132px;background:#fff;border-radius:12px;padding:10px}
@@ -160,6 +170,10 @@ symbol{overflow:visible}
 .nx-ic{flex:none;width:68px;height:68px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}
 .nx b{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:18px}
 .nx p{margin:2px 0 0;font-size:12.5px;line-height:1.4}
+.review{margin-top:18px;display:flex;align-items:center;gap:18px;border:2px solid #F3F6FB;border-radius:16px;padding:14px 18px}
+.review h3{margin:0 0 4px;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:18px}
+.review p{margin:0;font-size:12.5px;line-height:1.45}
+.review svg{flex:none}
 .colophon{margin-top:auto;border-top:1.5px solid #F3F6FB;padding-top:14px}
 .colophon p{margin:6px 0 0;font-size:10px;line-height:1.5}
 .lockup{height:34px;width:auto;display:block}
@@ -250,9 +264,9 @@ symbol{overflow:visible}
   <div class="cv-head">
     <p class="kick">Printable conversation cards · Ages 5–12</p>
     <h1><span class="n52">52</span> Family<br>Talk-Along Cards</h1>
-    <p class="csub">Questions for dinner, the car, bath time and bedtime, with a one-line grown-up tip on every card.</p>
+    <p class="csub">Good questions for dinner, the car, bath time and bedtime.</p>
   </div>
-  <svg class="cv-people" viewBox="0 -300 300 300" width="300" height="300" style="top:286px" aria-hidden="true"><g style="--sk:#3E271B;--hr:#2B1D16;--sh:#2FA36B;--pa:#1D2940;--so:#EE5A36;--hw:#F5B820" transform="translate(110,-97.2) scale(1.2,1.2)"><g transform="translate(-12,-4) rotate(0)"><use href="#g-thigh" transform="" /><g transform="translate(0,40) rotate(0)"><use href="#g-shin" transform="" /></g></g><g transform="translate(12,-4) rotate(0)"><use href="#g-thigh" transform="" /><g transform="translate(0,40) rotate(0)"><use href="#g-shin" transform="" /></g></g><use href="#g-neck" transform="" /><use href="#g-body" transform="" /><use href="#g-arm" transform="translate(-22,-80) rotate(12)" /><use href="#g-arm" transform="translate(22,-80) rotate(-30)" /><g transform="translate(0,-126) scale(.92) rotate(0)"><use href="#t-head" transform="" /><use href="#face-smile" transform="" /><use href="#h-short" transform="" /></g></g><g style="--sk:#C08457;--hr:#5A3825;--sh:#3D86D8;--pa:#1D2940;--so:#2FA36B;--hw:#F5B820" transform="translate(208,-47.25) scale(1.75,1.75)"><use href="#t-leg" transform="translate(-8,-4) rotate(3)" /><use href="#t-leg" transform="translate(8,-4) rotate(-3)" /><use href="#t-body" transform="" /><use href="#t-arm" transform="translate(-14,-38) rotate(14)" /><use href="#t-arm" transform="translate(14,-38) rotate(-130)" /><g transform="translate(0,-69) rotate(0)"><use href="#t-head" transform="" /><use href="#face-laugh" transform="" /><use href="#h-curly" transform="" /></g></g></svg>
+  <svg class="cv-people" viewBox="0 -300 300 300" width="300" height="300" style="top:286px" aria-hidden="true"><g style="--sk:#F4CFAE;--hr:#E3B04B;--sh:#3D86D8;--pa:#1D2940;--so:#F5B820;--hw:#F5B820" transform="translate(104,-87.48) scale(1.08,1.08)"><g transform="translate(-12,-4) rotate(0)"><use href="#g-thigh" transform="" /><g transform="translate(0,40) rotate(0)"><use href="#g-shin" transform="" /></g></g><g transform="translate(12,-4) rotate(0)"><use href="#g-thigh" transform="" /><g transform="translate(0,40) rotate(0)"><use href="#g-shin" transform="" /></g></g><use href="#g-neck" transform="" /><use href="#g-body" transform="" /><use href="#g-arm" transform="translate(-22,-80) rotate(12)" /><use href="#g-arm" transform="translate(22,-80) rotate(-34)" /><g transform="translate(0,-126) scale(.92) rotate(0)"><use href="#hb-long" transform="" /><use href="#t-head" transform="" /><use href="#face-laugh" transform="" /><use href="#h-long" transform="" /></g></g><g style="--sk:#5C3A26;--hr:#1D2940;--sh:#F5B820;--pa:#2FA36B;--so:#3D86D8;--hw:#F5B820" transform="translate(206,-43.2) scale(1.6,1.6)"><use href="#t-leg" transform="translate(-8,-4) rotate(3)" /><use href="#t-leg" transform="translate(8,-4) rotate(-3)" /><use href="#t-body" transform="" /><use href="#t-arm" transform="translate(-14,-38) rotate(14)" /><use href="#t-arm" transform="translate(14,-38) rotate(-140)" /><g transform="translate(0,-69) rotate(0)"><use href="#t-head" transform="" /><use href="#face-laugh" transform="" /><use href="#h-short" transform="" /></g></g></svg>
   <div class="fan" style="top:556px;left:544px"><div class="fan-card" style="transform:translate(-122px,21.999999999999996px) rotate(-10deg) scale(0.86)"><div class="card cB" style="--band:#EE5A36;--tint:#FDE9E3;--on:#fff;--b:0px;width:240px;height:336px">
   <div class="bandbg" style="height:84px"></div>
   <div class="trim">
@@ -273,10 +287,10 @@ symbol{overflow:visible}
     <circle cx="232" cy="84" r="46" style="fill:var(--deco)"/><circle cx="196" cy="8" r="16" style="fill:var(--deco)"/>
     <circle cx="46" cy="44" r="29" fill="#fff"/><g transform="translate(46,44)"><g transform="scale(0.46)"><g transform="scale(.42)" ><use href="#car-front" transform="" /></g></g></g></svg>
     <div class="mo"><b>Car</b><span>A passenger reads</span></div>
-    <span class="num">22</span>
+    <span class="num">14</span>
     <div class="body">
-      <div class="qwrap"><p class="q" style="font-size:23.5px">What’s the hardest part of being a kid right now?</p></div>
-      <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#F5B820"/><use href="#speech"/></svg>Grown-up tip</span><p>Just listen. “That sounds hard” is enough.</p></div>
+      <div class="qwrap"><p class="q" style="font-size:23.5px">Would you rather drive a bus, fly a plane or sail a boat? Why?</p></div>
+      <div class="talk"><span class="tl"><svg viewBox="-16 -16 32 32" width="13" height="13" aria-hidden="true"><circle r="16" fill="#F5B820"/><use href="#speech"/></svg>Grown-up tip</span><p>Side-by-side talk feels easy. Eyes on the road is fine.</p></div>
     </div>
   </div>
 </div></div><div class="fan-card" style="transform:translate(122px,21.999999999999996px) rotate(10deg) scale(0.86)"><div class="card cB" style="--band:#8A5CC7;--tint:#EFE6FA;--on:#fff;--b:0px;width:240px;height:336px">

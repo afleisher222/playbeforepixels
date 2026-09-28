@@ -61,7 +61,7 @@ Pretend play takes off. Preschoolers can follow two- and three-step games and lo
 |---|---|---|
 | Pretend café | A table, a notepad, toy food or real (safe) snacks. | Let your child take your order and ask questions: "What do you recommend?" |
 | Tape road | An adult sticks painter's tape roads on the floor for toy cars. | "Where is your car driving? What's at the end of the road?" |
-| Story stones, or story cards | Draw simple pictures on cards (sun, dog, house) and turn one over at a time. | Take turns adding one sentence to a silly story. |
+| Story cards | Draw simple pictures on cards (sun, dog, house) and turn one over at a time. | Take turns adding one sentence to a silly story. |
 | Nature hunt | Find something rough, smooth, green, tiny, bigger than your hand. | "How does it feel? What else feels like that?" |
 | Freeze dance | You sing or play music; everyone freezes when it stops. | Name the freeze pose: "You're a statue of a… flamingo!" |
 

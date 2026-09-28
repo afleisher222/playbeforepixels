@@ -550,7 +550,7 @@
     live = $('[data-live]');
     // fill any page containers asking for tiles / mocks
     $$('[data-tiles]').forEach(function (el) { el.innerHTML = el.getAttribute('data-tiles').split(',').map(function (id) { return PBP.tile(PBP.byId(id.trim())); }).join(''); });
-    $$('[data-mock]').forEach(function (el) { var p = PBP.byId(el.getAttribute('data-mock')); if (p) el.innerHTML = PBP.stage(p); });
+    $$('[data-mock]').forEach(function (el) { var p = PBP.byId(el.getAttribute('data-mock')); if (p) { el.classList.add('stage'); el.innerHTML = PBP.mock(p); } });
     wireMega(); wireCart(); wireSearch(); wireForms(); renderCart(); paintPrices(document);
 
     document.addEventListener('click', function (e) {

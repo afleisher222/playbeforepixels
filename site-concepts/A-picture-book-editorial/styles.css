@@ -207,6 +207,12 @@ kbd { font: 700 11px/1 var(--f-text); border: 1px solid var(--rule-2); border-bo
 .m-list small { font-weight: 600; font-size: 13px; color: var(--ink-3); }
 .m-all { display: inline-flex; gap: 8px; align-items: center; margin-top: 10px; font-weight: 800; }
 .m-top { display: flex; align-items: center; min-height: 64px; font: 800 26px/1 var(--f-display); letter-spacing: -.03em; text-decoration: none; border-bottom: 1px solid var(--rule); }
+.m-lab { margin: 18px 0 10px; }
+.m-feature { display: grid; grid-template-columns: 96px 1fr; gap: 16px; align-items: center; margin-top: 24px; padding: 12px; border-radius: 12px; background: var(--t-sun); text-decoration: none; }
+.m-feature-img { width: 96px; height: 96px; border-radius: 8px; overflow: hidden; }
+.m-feature-img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 38%; }
+.m-feature .label { display: block; margin: 0 0 4px; font-size: 10.5px; }
+.m-feature b { display: block; font: 800 22px/1.1 var(--f-display); letter-spacing: -.03em; }
 .m-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 28px; }
 .m-foot .cur select { border-color: var(--rule-2); color: var(--ink); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Cpath d='M1.5 3.5 5 7l3.5-3.5' fill='none' stroke='%231D2940' stroke-width='1.6'/%3E%3C/svg%3E"); padding: 10px 30px 10px 14px; font-size: 15px; }
 
@@ -524,17 +530,19 @@ button.sc-seg[aria-pressed="true"] .sc-label::after { content: " ✓"; font-size
 .assure a { font-weight: 700; }
 
 .inside { background: var(--wash); }
-.inside-head { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 24px 48px; align-items: end; margin-bottom: 36px; }
+.inside-head { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 24px 48px; align-items: end; margin-bottom: 36px; }
 .inside-head p { margin: 0; color: var(--ink-2); }
 .wordgrid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); border-top: 1px solid var(--ink); border-left: 1px solid var(--rule-2); }
 .wordgrid button { position: relative; background: #fff; border: 0; border-right: 1px solid var(--rule-2); border-bottom: 1px solid var(--rule-2); padding: 18px 16px 16px; text-align: left; min-height: 124px; display: flex; flex-direction: column; justify-content: space-between; transition: background-color .15s; }
 .wordgrid button:hover, .wordgrid button[aria-pressed="true"] { background: var(--t-sun); }
-.wordgrid .w { font: 600 clamp(24px, 2.3vw, 34px)/1 var(--f-word); }
+.wordgrid .w { font: 600 clamp(24px, 2.3vw, 34px)/1 var(--f-word); white-space: nowrap; }
+.wordgrid .w.is-long { font-size: clamp(20px, 1.75vw, 26px); }
 .wordgrid .pg { font: 800 11px/1 var(--f-text); letter-spacing: .14em; color: var(--ink-3); text-transform: uppercase; }
 .wordgrid .tipname { font-size: 13px; font-weight: 700; color: var(--ink-2); margin-top: 10px; }
 .wordtip { display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: center; margin-top: 24px; padding: 20px; background: #fff; border: 1px solid var(--rule-2); border-radius: 12px; }
 .wordtip img { border-radius: 12px; }
 .wordtip .label { margin-bottom: 8px; }
+.wordtip p.label { font-size: 11.5px; }
 .wordtip p { margin: 0; font-size: 18px; line-height: 1.5; max-width: 34em; }
 .wordtip b { font-weight: 800; }
 
@@ -555,6 +563,9 @@ button.sc-seg[aria-pressed="true"] .sc-label::after { content: " ✓"; font-size
 .about-book .ab-text p { font-size: 18.5px; line-height: 1.62; }
 .about-book .ab-text p:first-of-type::first-letter { font: 800 4.1em/.8 var(--f-display); float: left; margin: .06em .08em 0 0; color: var(--tomato); }
 .about-book .ab-details { grid-column: 8 / span 5; }
+.ab-fig { margin-top: 36px; max-width: 420px; }
+.ab-fig img { border-radius: 16px; box-shadow: 0 24px 34px -26px rgba(29,41,64,.5); }
+.ab-fig figcaption { margin-top: 12px; }
 .colophon-table { border-top: 1px solid var(--ink); }
 .colophon-table div { display: grid; grid-template-columns: 140px 1fr; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--rule); font-size: 15px; }
 .colophon-table dt { font: 800 11px/1.8 var(--f-text); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
@@ -719,6 +730,7 @@ details.faq > div { padding: 0 0 18px; color: var(--ink-2); }
   .colo-list div { grid-template-columns: 1fr; gap: 2px; }
   .filters-meta { flex-wrap: wrap; }
   .foot-news-row { flex-direction: column; }
+  .foot-news input { flex: none; }
   .buy .qty { flex: none; }
   .spreads figure { width: 88vw; }
   .assure div, .fmt-spec div, .colophon-table div { grid-template-columns: 96px 1fr; }

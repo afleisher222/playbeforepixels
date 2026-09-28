@@ -468,7 +468,8 @@ const P = [
     safe: 'Choose plays from your child’s age band and check each safety note.' },
 ];
 
-P.forEach((p, i) => { p.n = i + 1; p.band = BANDS.find(b => p.n >= b.from && p.n <= b.to).key; });
+const GROW = require('./grow.js');
+P.forEach((p, i) => { p.n = i + 1; p.grow = GROW[i]; p.band = BANDS.find(b => p.n >= b.from && p.n <= b.to).key; });
 if (P.length !== 100) throw new Error('Expected 100 plays, got ' + P.length);
 
 const WHERE = {

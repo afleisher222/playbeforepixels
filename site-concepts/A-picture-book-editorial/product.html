@@ -97,7 +97,7 @@
       inside.hidden = false;
       inside.innerHTML = '<div class="wrap"><div class="inside-head"><div><p class="label">What’s inside</p><h2 id="inside-h" class="d-l">Fourteen words, fourteen small moves.</h2></div><p>Each word gets a page of its own and a Grown-up corner underneath. Choose a word to read its tip and see the page.</p></div>' +
         '<div class="wordgrid" role="group" aria-label="Words in the book">' + p.words.map(function (w, i) {
-          return '<button type="button" aria-pressed="' + (i === 0) + '" data-w="' + i + '"><span class="pg">Page ' + (+w[1]) + '</span><span class="w">' + esc(w[0]) + '</span><span class="tipname">' + esc(w[2].replace(/\.$/, "")) + "</span></button>";
+          return '<button type="button" aria-pressed="' + (i === 0) + '" data-w="' + i + '"><span class="pg">Page ' + (+w[1]) + '</span><span class="w' + (w[0].length > 7 ? " is-long" : "") + '">' + esc(w[0]) + '</span><span class="tipname">' + esc(w[2].replace(/\.$/, "")) + "</span></button>";
         }).join("") + '</div><div class="wordtip" id="wordtip" aria-live="polite"></div></div>';
       showWord(0);
     } else { inside.hidden = true; inside.innerHTML = ""; }
@@ -119,7 +119,8 @@
     var specs = [];
     p.formats.forEach(function (f) { if (f.status !== "none") specs.push([f.label, f.spec.map(function (s) { return s[1]; }).join(" · ")]); });
     document.getElementById("about-book").innerHTML = '<div class="wrap"><div class="running"><p class="label">About this ' + esc(p.kind.toLowerCase()) + '</p><span class="folio">' + esc(p.title) + "</span></div>" +
-      '<div class="about-book"><div class="ab-text"><h2 id="ab-h" class="sr">About ' + esc(p.title) + "</h2>" + p.long.map(function (t) { return "<p>" + esc(t) + "</p>"; }).join("") + "</div>" +
+      '<div class="about-book"><div class="ab-text"><h2 id="ab-h" class="sr">About ' + esc(p.title) + "</h2>" + p.long.map(function (t) { return "<p>" + esc(t) + "</p>"; }).join("") +
+      (p.fig ? '<figure class="ab-fig"><img src="assets/' + p.fig[0] + '.png" alt="" width="1200" height="1200"><figcaption class="caption">' + esc(p.fig[1]) + "</figcaption></figure>" : "") + "</div>" +
       '<div class="ab-details"><p class="label">Details</p><dl class="colophon-table">' +
       p.details.map(function (d) { return "<div><dt>" + esc(d[0]) + "</dt><dd>" + (d[0] === "ISBN-13" ? '<span class="isbn-pending">' + esc(d[1]) + "</span>" : esc(d[1])) + "</dd></div>"; }).join("") +
       specs.map(function (s) { return "<div><dt>" + esc(s[0]) + "</dt><dd>" + esc(s[1]) + "</dd></div>"; }).join("") +

@@ -19,7 +19,7 @@ const ART = [
   sym('face', Ci(-40, 4, 9, C.s2) + Ci(40, 4, 9, C.s2) + Ci(0, 0, 40, C.s2) + Pa('M-40-2C-42-40 42-40 40-2C34-22 14-28 0-22C-14-28-34-22-40-2Z', C.h1) + eyes(2) + Ci(-22, 14, 6, C.tomato, 'fill-opacity=".35"') + Ci(22, 14, 6, C.tomato, 'fill-opacity=".35"') + L('M-10 16Q0 25 10 16', C.ink, 4)),
   sym('mirror', R(-7, 22, 14, 30, C.plum, 7) + E(0, -8, 34, 40, C.plum) + E(0, -8, 26, 32, C.tSky) + L('M-12-22L-2-32M-14-8L6-28', W, 5)),
   sym('heart', Pa('M0 40C-8 32-46 10-46-14C-46-32-34-42-21-42C-11-42-4-36 0-28C4-36 11-42 21-42C34-42 46-32 46-14C46 10 8 32 0 40Z', C.tomato)),
-  sym('puppet', Pa('M-30-44H22V20C22 36 34 38 34 48H-30Z', C.sky) + R(-34, 38, 72, 12, C.tSky, 6) + eyes(-22, 10, 5) + Pa('M-16-6Q-4 8 12-6Z', C.tomato)),
+  sym('puppet', R(-52, -26, 18, 60, C.tSky, 8) + Pa('M-40-22H10C34-22 48-6 48 8C48 22 36 32 20 32H-40Z', C.sky) + Ci(16, -6, 6, W) + Ci(17, -5, 3.4, C.ink) + Pa('M24 14Q38 12 48 10Q46 24 30 24Z', C.tomato) + R(-40, -4, 40, 6, W, 3, 'fill-opacity=".45"')),
   sym('note', E(-22, 30, 14, 10, C.plum, 'transform="rotate(-20 -22 30)"') + E(26, 20, 14, 10, C.plum, 'transform="rotate(-20 26 20)"') + R(-12, -36, 8, 66, C.plum) + R(36, -46, 8, 66, C.plum) + Pa('M-12-36L44-46V-30L-12-20Z', C.plum)),
   sym('rattle', R(-5, 4, 10, 40, C.grass, 5) + Ci(0, 44, 9, C.grass) + Ci(0, -18, 28, C.sun) + Ci(-10, -26, 6, W, 'fill-opacity=".7"') + Ci(10, -12, 4, W, 'fill-opacity=".7"')),
   sym('towel', R(-38, -34, 76, 70, C.sky, 8) + R(-38, 14, 76, 8, W, 0, 'fill-opacity=".6"') + R(-38, 24, 76, 4, W, 0, 'fill-opacity=".6"') + R(-38, -34, 76, 12, C.tSky, 8)),

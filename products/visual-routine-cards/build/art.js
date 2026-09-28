@@ -381,4 +381,10 @@ A.pjBig = () => Gp('translate(60,52)', Pa('M-14-30L-34-20-42 0-28 6-24-4V34H24V-
 A.lightsOutBig = () => R(16, 16, 40, 44, 5, I) + moon(36, 38, .26) + star(46, 26, .35, S) + R(16, 36, 40, 3, 0, '#2A3A57') + R(34, 16, 3, 44, 0, '#2A3A57') + R(62, 70, 44, 20, 4, '#C08457') + Gp('translate(84,48)', Pa('M-14-18H14L18 4H-18Z', GREY) + R(-2, 4, 4, 14, 2, I) + R(-10, 16, 20, 5, 2.5, I)) + zz(24, 84, I);
 A.backpackDoor = () => R(60, 10, 44, 82, 4, P) + R(66, 16, 32, 70, 3, '#A07AD6') + Ci(92, 52, 3, S) + R(34, 20, 22, 5, 2.5, I) + R(38, 24, 4, 8, 2, I) + U('backpack', 'translate(40,58) scale(.62)', `--bp:${T};--bp2:${S}`) + shoe(40, 88, .22, K, W);
 
+// weather chooser icons (Today board)
+A.fsun = () => sun(60, 50, .55);
+A.fcloud = () => U('cloud', 'translate(62,56) scale(1.1)', `--cl:${GREY}`);
+A.frain = () => U('cloud', 'translate(62,44) scale(.95)', `--cl:${GREY}`) + drop(44, 80, .5) + drop(62, 86, .5) + drop(80, 80, .5);
+A.fsnow = () => U('cloud', 'translate(62,44) scale(.95)', `--cl:${GREY}`) + [[42, 78], [60, 86], [78, 78], [51, 94], [69, 94]].map(([x, y]) => Ci(x, y, 4.5, K)).join('');
+
 module.exports = { A, NEW_SYMBOLS, CAST, R, Ci, Pa, St, Gp, U, Tx, star, moon, sun, tablet, heart, bigNum, stand, kid, adult, head, bust };

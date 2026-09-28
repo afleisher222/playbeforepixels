@@ -29,7 +29,7 @@ const PRODUCTS = {
   B: {
     key: 'B', slug: 'family-talk-along-cards', dir: path.join(ROOT, 'talk-along'), pdfBase: 'family-talk-along-cards',
     title: '52 Family Talk-Along Cards', short: 'Family Talk-Along Cards', ages: '5–12', agesLong: 'Ages 5–12',
-    kicker: 'Printable conversation cards · Ages 5–12', sub: 'Questions for dinner, the car, bath time and bedtime, with a one-line grown-up tip on every card.',
+    kicker: 'Printable conversation cards · Ages 5–12', sub: 'Good questions for dinner, the car, bath time and bedtime.',
     deck: K.DECK_B, card: K.cardB, back: K.backB, color: C.sky, tint: C.tSky, bonus: 'playbeforepixels.com/bonus/family-talk-along-cards',
   },
 };
@@ -50,8 +50,8 @@ function coverArt(P, S) {
     const k = Object.assign({}, KIDS.A, { x: 212, y: 0 - 27 * 1.45, s: 1.45, aL: 150, aR: -150, face: 'laugh' });
     return adult(g) + kid(k) + use('ball', 'translate(46,-32) scale(.32)');
   }
-  const g = Object.assign({}, ADULTS.G1, { x: 110, y: 0 - 81 * 1.2, s: 1.2, aL: 12, aR: -30, face: 'smile' });
-  const k = Object.assign({}, KIDS.C, { x: 208, y: 0 - 27 * 1.75, s: 1.75, aL: 14, aR: -130, face: 'laugh' });
+  const g = Object.assign({}, ADULTS.G3, { x: 104, y: 0 - 81 * 1.08, s: 1.08, aL: 12, aR: -34, face: 'laugh' });
+  const k = Object.assign({}, KIDS.D, { x: 206, y: 0 - 27 * 1.6, s: 1.6, aL: 14, aR: -140, face: 'laugh' });
   return adult(g) + kid(k);
 }
 function fan(P, picks, scale) {
@@ -60,7 +60,7 @@ function fan(P, picks, scale) {
 }
 function coverPage(P, S, n, total) {
   const panelH = Math.round(S.H * 0.555);
-  const picks = P.key === 'A' ? [2, 29, 44] : [1, 22, 44];
+  const picks = P.key === 'A' ? [2, 29, 44] : [1, 14, 44];
   const tiles = P.key === 'A'
     ? BANDS.map(b => `<div class="tile" style="--c:${C[b.color]};--t:${K.TINT[b.color]}">${shapeSvg(b.shape, C[b.color], 18)}<b>${b.ages}</b><span>${b.unit === 'yr' ? 'year' : 'years'}</span><em>13 plays</em></div>`).join('')
     : MOMENTS.map(m => `<div class="tile" style="--c:${C[m.color]};--t:${K.TINT[m.color]}"><svg viewBox="-50 -50 100 100" width="30" height="30">${ICONS[m.icon]()}</svg><b class="mw">${m.name}</b><em>13 cards</em></div>`).join('');
@@ -119,8 +119,8 @@ function startPage(P, S, n, total) {
     ['Use the grown-up tip.', 'Each card has one small idea for keeping the talk going.'],
     ['Keep it light.', 'Anyone can say “pass.” It’s a conversation, not a quiz.'],
   ];
-  const younger = 'Ages 5–7: read the card aloud, give an example answer, and accept short answers. Drawing an answer counts too.';
-  const older = 'Ages 8–12: let them read the card and choose who answers first. Try asking the question back to them later in the week.';
+  const younger = 'Read the card aloud, give an example answer, and welcome short answers. Drawing an answer counts too.';
+  const older = 'Let them read the card and choose who answers first. Ask the question back later in the week.';
   return `<section class="page content">
   <div class="pin">
     <p class="kick dark">Grown-up guide</p>
@@ -129,10 +129,11 @@ function startPage(P, S, n, total) {
     <div class="two">
       <div><h3 class="h3">How to use the cards</h3><ol class="bigsteps">${steps.map(([a, b], i) => `<li style="--c:${[C.tomato, C.sun, C.sky, C.plum, C.grass][i]}"><b>${a}</b> ${b}</li>`).join('')}</ol></div>
       <div><h3 class="h3">Four moments</h3><div class="agekey">${MOMENTS.map((m, i) => `<div class="ak" style="--c:${C[m.color]};--t:${K.TINT[m.color]}"><div class="ak-l"><svg viewBox="-50 -50 100 100" width="34" height="34">${ICONS[m.icon]()}</svg><b class="mw">${m.name}</b></div><div class="ak-r"><em>Cards ${['01–13', '14–26', '27–39', '40–52'][i]}</em><p>${m.where}</p></div></div>`).join('')}</div>
-      <div class="agesplit"><p><b>Younger kids.</b> ${younger.replace('Ages 5–7: ', '')}</p><p><b>Older kids.</b> ${older.replace('Ages 8–12: ', '')}</p></div></div>
+      <div class="agesplit"><p><b>Ages 5–7.</b> ${younger}</p><p><b>Ages 8–12.</b> ${older}</p></div></div>
     </div>
     <h3 class="h3">6 talk-along habits</h3>
-    <div class="moves m3">${HABITS.map((h, i) => `<div class="mv">${K.speech([C.tomato, C.sun, C.sky, C.plum, C.grass, C.tomato][i], 22)}<b>${h.name}</b><p>${h.how}</p></div>`).join('')}</div>
+    <div class="moves m3" style="margin-bottom:14px">${HABITS.map((h, i) => `<div class="mv">${K.speech([C.tomato, C.sun, C.sky, C.plum, C.grass, C.tomato][i], 22)}<b>${h.name}</b><p>${h.how}</p></div>`).join('')}</div>
+    <p class="small">Some questions (the hard parts, the worries) can bring up big feelings. Listening is enough. If something your child shares worries you, reach out to your child’s doctor or another trusted professional.</p>
   </div>
   ${foot(P, n, total)}
 </section>`;
@@ -180,6 +181,18 @@ function printPage(P, S, n, total) {
       <span class="flabel">Founder’s note · to be written by the founder in her own words before release</span>
       <p>Placeholder for human-authored text (60–90 words): why these cards exist, how your family uses them, and one favorite ${P.key === 'A' ? 'play' : 'question'}. Replace this box; do not publish with it. See brand/BRAND.md, “Human authorship.”</p>
     </div>
+    <h3 class="h3">Ways to use your deck</h3>
+    <div class="ways">${(P.key === 'A' ? [
+      ['Card of the day', 'Clip one card to the fridge each morning.', C.tomato],
+      ['Grab-and-go', 'Keep a few in the diaper bag for waiting rooms.', C.sun],
+      ['Share the job', 'Hand a card to grandparents or the sitter.', C.sky],
+      ['Rainy-day pile', 'Save the indoor plays for stuck-inside days.', C.grass],
+    ] : [
+      ['Question jar', 'One card a night at the dinner table.', C.tomato],
+      ['Road-trip stack', 'A passenger reads; everyone answers.', C.sun],
+      ['Kid picks', 'Let your child choose the card, or ask it.', C.sky],
+      ['Family favorites', 'Keep the best ones and ask them again next year.', C.plum],
+    ]).map(([a, b, c]) => `<div class="way" style="--c:${c}"><b>${a}</b><p>${b}</p></div>`).join('')}</div>
     <div class="license"><b>License: PERSONAL.</b> You may print and copy this for your own family only. No resale, redistribution, sharing, posting, uploading to shared or public drives or websites, or use to train AI. Full terms: ${LICENSE_URL}<br>${K.COPY} All rights reserved.</div>
   </div>
   ${foot(P, n, total)}
@@ -203,7 +216,8 @@ function sheetPage(P, S, cardsHtml, note, n, total) {
   <div class="grid" style="left:${S.gx}px;top:${S.gy}px">${cells}</div>
   ${gridLines(S)}
   <div class="sidenote l" style="width:${S.H}px"><span>${esc(P.short)} · ${esc(note)} · page ${n} of ${total}</span></div>
-  <div class="sidenote r" style="width:${S.H}px"><span>Print at Actual size (100%) · cut on the lines · ${K.COPY} Personal/family license.</span></div>
+  <div class="sidenote r" style="width:${S.H}px"><span>Print at Actual size (100%) · cut on the lines</span></div>
+  <div class="sheetfoot" style="left:${S.gx + K.CW}px;width:${K.CW}px;top:${S.gy + 3 * K.CH}px;height:${S.H - S.gy - 3 * K.CH}px"><span>© 2026 AlphaPlay LLC · personal/family license</span></div>
 </section>`;
 }
 
@@ -225,7 +239,7 @@ function trackerPage(P, S, n, total) {
 // ---------- extra page B: moment labels ----------
 function labelsPage(P, S, n, total) {
   const labels = MOMENTS.map((m, i) => `<div class="lab" style="--c:${C[m.color]};--t:${K.TINT[m.color]};--on:${m.color === 'sun' ? C.ink : '#fff'}">
-    <div class="lab-top"><span class="lab-ic"><svg viewBox="-50 -50 100 100" width="58" height="58">${ICONS[m.icon]()}</svg></span><div><b>${m.name}</b><span>Talk-along cards ${['01–13', '14–26', '27–39', '40–52'][i]}</span></div></div>
+    <div class="lab-top"><span class="lab-ic"><svg viewBox="-60 -60 120 120" width="60" height="60">${ICONS[m.icon]()}</svg></span><div><b>${m.name}</b><span>Talk-along cards ${['01–13', '14–26', '27–39', '40–52'][i]}</span></div></div>
     <p>${m.where}</p></div>`).join('');
   return `<section class="page content">
   <div class="pin">
@@ -233,6 +247,9 @@ function labelsPage(P, S, n, total) {
     <h2 class="ptitle">Where the cards live</h2>
     <p class="lede">Cards get used when they’re already in the room. Split the deck into four piles, cut out these labels, and tape each one to a jar, an envelope or a zip bag.</p>
     <div class="labels">${labels}</div>
+    <h3 class="h3">Our talk-along week</h3>
+    <p class="small" style="margin:-4px 0 10px">Check a box each time a card gets asked. Start on any day. Aim for a few checks, not a full grid.</p>
+    <table class="week"><tr><th></th>${[1, 2, 3, 4, 5, 6, 7].map(d => `<th>Day ${d}</th>`).join('')}</tr>${MOMENTS.map(m => `<tr style="--c:${C[m.color]};--t:${K.TINT[m.color]}"><td class="wm">${m.name}</td>${[1, 2, 3, 4, 5, 6, 7].map(() => '<td><i></i></td>').join('')}</tr>`).join('')}</table>
     <div class="trk-foot"><span>Our family’s favorite question so far:</span><i class="ln"></i><span>A question we want to add:</span><i class="ln"></i></div>
   </div>
   ${foot(P, n, total)}
@@ -259,8 +276,9 @@ function nextPage(P, S, n, total, qrSvg) {
       <div><h3>Your free companion bonus</h3><p>Scan the code or visit <b>${P.bonus}</b> for extra printable cards and a short, friendly idea by email each month.</p><p class="small">We ask only for an email address and your child’s birth month and year, never names. Unsubscribe any time.</p></div>
     </div>
     <h3 class="h3">Next for your family</h3>
-    <div class="nexts">${nexts.map(([t, d, c, ic]) => `<div class="nx" style="--c:${c}"><span class="nx-ic"><svg viewBox="-50 -50 100 100" width="56" height="56">${ICONS[ic]()}</svg></span><div><b>${t}</b><p>${d}</p></div></div>`).join('')}</div>
+    <div class="nexts">${nexts.map(([t, d, c, ic]) => `<div class="nx" style="--c:${c}"><span class="nx-ic"><svg viewBox="-60 -60 120 120" width="58" height="58">${ICONS[ic]()}</svg></span><div><b>${t}</b><p>${d}</p></div></div>`).join('')}</div>
     <p class="small">Find them all at <b>playbeforepixels.com</b>. Bundles are offered at a fair discount.</p>
+    <div class="review"><div><h3>Which card did your family love?</h3><p>A short review on the shop where you bought this helps other families find it. Questions or ideas? Write to us through the contact form at <b>playbeforepixels.com/contact</b>.</p></div><svg viewBox="-50 -50 100 100" width="84" height="84" aria-hidden="true"><use href="#heart" transform="scale(1.05)"/></svg></div>
     <div class="colophon">
       <img src="${K.LOGO.lockup}" alt="Play Before Pixels" class="lockup sm">
       <p><b>${esc(P.title)}, ${P.agesLong}.</b> First edition, 2026. Printable PDF for personal and family use.</p>
@@ -288,6 +306,7 @@ ${K.CARD_CSS}
 .cutmarks{position:absolute;left:0;top:0;pointer-events:none}
 .sidenote{position:absolute;top:0;height:${Math.max(18, S.gx - 14)}px;display:flex;align-items:center;justify-content:center;font-size:7.5px;font-weight:700;letter-spacing:.02em;color:${C.ink};opacity:.7;white-space:nowrap}
 .sidenote.l{left:0;transform-origin:0 0;transform:translate(${Math.max(4, S.gx / 2 - 9)}px,${S.H}px) rotate(-90deg)}
+.sheetfoot{position:absolute;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;opacity:.7;white-space:nowrap}
 .sidenote.r{left:${S.W}px;transform-origin:0 0;transform:translate(-${Math.max(4, S.gx / 2 - 9)}px,0) rotate(90deg)}
 /* content pages */
 .pin{position:absolute;left:48px;right:48px;top:48px;bottom:56px;display:flex;flex-direction:column}
@@ -328,6 +347,10 @@ ${K.CARD_CSS}
 .founder{border:2px dashed ${C.plum};border-radius:14px;padding:12px 16px;margin:0 0 14px;background:#fff}
 .flabel{display:block;font-weight:800;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:${C.plum};margin-bottom:5px}
 .founder p{margin:0;font-size:12px;line-height:1.45;opacity:.75}
+.ways{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+.way{border-top:6px solid var(--c);background:${C.wash};border-radius:12px;padding:10px 12px}
+.way b{font-weight:800;font-size:13px}
+.way p{margin:3px 0 0;font-size:11.5px;line-height:1.38}
 .license{margin-top:auto;font-size:10px;line-height:1.5;background:${C.wash};border-radius:12px;padding:10px 14px}
 .pfoot{position:absolute;left:48px;right:48px;bottom:22px;display:flex;justify-content:space-between;font-size:8px;font-weight:700;opacity:.6}
 /* tracker */
@@ -335,7 +358,7 @@ ${K.CARD_CSS}
 .tcol{background:var(--t);border-radius:14px;padding:10px 10px 8px}
 .thead{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:800;margin-bottom:6px}
 .thead b{font-family:"Fredoka",sans-serif;font-weight:600;font-size:19px}
-.trow{display:flex;align-items:center;gap:6px;background:#fff;border-radius:8px;padding:5px 7px;margin-bottom:4px;font-size:11.2px;font-weight:700;min-height:30px}
+.trow{display:flex;align-items:center;gap:6px;background:#fff;border-radius:8px;padding:5px 8px;margin-bottom:5px;font-size:12.2px;font-weight:700;min-height:43px}
 .trow .box{flex:none;width:14px;height:14px;border:1.6px solid var(--c);border-radius:3px}
 .trow em{font-style:normal;font-size:9px;font-weight:800;opacity:.55}
 .trow span{flex:1;line-height:1.15}
@@ -350,6 +373,11 @@ ${K.CARD_CSS}
 .lab-top b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:34px;letter-spacing:-.02em;line-height:1}
 .lab-top span{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
 .lab p{margin:10px 6px 4px;font-size:13px;font-weight:700}
+.week{width:100%;border-collapse:separate;border-spacing:6px;margin:0 -6px}
+.week th{font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.65;text-align:center}
+.week td{background:var(--t);border-radius:10px;height:44px;text-align:center}
+.week td i{display:inline-block;width:18px;height:18px;border:2px solid var(--c);border-radius:4px;background:#fff;vertical-align:middle}
+.week td.wm{background:var(--c);color:#fff;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:15px;width:110px;text-align:left;padding-left:12px}
 /* next */
 .bonus{display:flex;gap:22px;align-items:center;background:var(--t);border-radius:18px;padding:18px 22px;margin-bottom:22px}
 .bonus .qr{flex:none;width:132px;height:132px;background:#fff;border-radius:12px;padding:10px}
@@ -362,6 +390,10 @@ ${K.CARD_CSS}
 .nx-ic{flex:none;width:68px;height:68px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}
 .nx b{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:18px}
 .nx p{margin:2px 0 0;font-size:12.5px;line-height:1.4}
+.review{margin-top:18px;display:flex;align-items:center;gap:18px;border:2px solid ${C.wash};border-radius:16px;padding:14px 18px}
+.review h3{margin:0 0 4px;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:18px}
+.review p{margin:0;font-size:12.5px;line-height:1.45}
+.review svg{flex:none}
 .colophon{margin-top:auto;border-top:1.5px solid ${C.wash};padding-top:14px}
 .colophon p{margin:6px 0 0;font-size:10px;line-height:1.5}
 .lockup{height:34px;width:auto;display:block}
@@ -408,9 +440,9 @@ function buildPages(P, S, qrSvg, opts = {}) {
     const cards = P.deck.slice(s * 9, s * 9 + 9).map(cd => P.card(cd, 0));
     pages.push(sheetPage(P, S, cards, `Card sheet ${s + 1} of 6`, 4 + s, TOTAL));
   }
-  pages.push(sheetPage(P, S, Array(9).fill(P.back(0)), 'Card backs (optional: print on the reverse, flip on long edge)', 10, TOTAL));
+  pages.push(sheetPage(P, S, Array(9).fill(P.back(0)), 'Card backs (optional)', 10, TOTAL));
   const blank = P.key === 'A' ? K.blankA(0) : K.blankB(0);
-  pages.push(sheetPage(P, S, Array(9).fill(blank), 'Make your own: type in the boxes (free Adobe Acrobat Reader) or write by hand', 11, TOTAL));
+  pages.push(sheetPage(P, S, Array(9).fill(blank), 'Make your own: type or write', 11, TOTAL));
   pages.push(P.key === 'A' ? trackerPage(P, S, 12, TOTAL) : labelsPage(P, S, 12, TOTAL));
   pages.push(nextPage(P, S, 13, TOTAL, qrSvg));
   return pages;

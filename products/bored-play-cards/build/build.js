@@ -413,6 +413,7 @@ const anatomyCss = `<style>
 .ct .i{width:18px;height:18px;flex:0 0 18px;color:${C.ink}}
 </style>`;
 
+const FIRST = { b13: [3, 5, 16], b35: [0, 2, 16], b58: [1, 12, 18], b812: [0, 1, 22] };
 function agesPage() {
   const P = [
     ['b13', 'Do it again!', 'Filling and dumping, stacking and knocking down, copying you, again and again.', 'Be the partner on the floor. Keep turns short, and repeat whatever gets a smile.', 'Short words and long pauses. Say what they’re doing (“In! Out!”), then wait for any sound or gesture back.'],
@@ -423,24 +424,36 @@ function agesPage() {
   const body = `<p class="lead">Every child plays differently, and age bands are a starting point, not a rule. Here is what play often looks like in each band, and the easiest way for a grown-up to join in.</p>
   <div class="ages">${P.map(([k, h, play, role, talk]) => `<div class="agp" style="${tvars(TH[k])}">
     <div class="agh"><span>${TH[k].name}</span><h3>${h}</h3></div>
-    <div class="agb"><div><span class="kick">Play looks like</span><p>${play}</p></div><div><span class="kick">Your part</span><p>${role}</p></div><div class="agt">${icon('talk', 'ti2')}<div><span class="kick">Talk tip</span><p>${talk}</p></div></div></div>
+    <div class="agb"><div><span class="kick">Play looks like</span><p>${play}</p></div><div><span class="kick">Your part</span><p>${role}</p></div><div class="agt">${icon('talk', 'ti2')}<div><span class="kick">Talk tip</span><p>${talk}</p></div></div><div class="ag3"><span class="kick">Three to try first</span><div>${FIRST[k].map(i => `<span class="agc">${esc(CARDS[k][i].t)}</span>`).join('')}</div></div></div>
   </div>`).join('')}</div>`;
   return contentPage('agespg', 'Play at every age', 'What play looks<br>like at each age.', body);
 }
 const agesCss = `<style>
-.agespg .lead{margin-bottom:18px}
+.agespg .lead{margin-bottom:12px;font-size:14px}
 .ages{display:grid;grid-template-columns:1fr 1fr;gap:16px;flex:1}
 .agp{border-radius:18px;background:var(--t);overflow:hidden;display:flex;flex-direction:column}
-.agh{background:var(--m);color:var(--on);padding:12px 16px}
+.agh{background:var(--m);color:var(--on);padding:10px 16px}
 .agh span{font-weight:800;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.9}
 .agh h3{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:25px;letter-spacing:-.02em;line-height:1.05}
-.agb{padding:13px 16px 14px;display:flex;flex-direction:column;gap:10px}
-.agb p{font-size:12.3px;line-height:1.45;font-weight:600}
+.agb{padding:11px 16px 10px;display:flex;flex-direction:column;gap:8px}
+.agb p{font-size:12px;line-height:1.42;font-weight:600}
+.ag3 .agc{display:inline-block;background:#fff;border-radius:20px;padding:3px 10px;margin:0 5px 5px 0;font-size:11.5px;font-weight:800}
 .agt{display:flex;gap:8px;background:#fff;border-radius:12px;padding:9px 11px}
 .agt .ti2{flex:0 0 18px;width:18px;height:18px;color:var(--m)}
 .agp[style*="--m:${C.sun}"] .agt .ti2{color:#C98F00}
 </style>`;
 
+function tubeArt() {
+  return `<svg viewBox="0 0 330 120" width="100%" height="100%" aria-hidden="true">
+    <g transform="translate(20,20)"><rect x="0" y="0" width="54" height="86" rx="8" fill="${C.tSun}"/><ellipse cx="27" cy="4" rx="27" ry="8" fill="#E9C77A"/><ellipse cx="27" cy="4" rx="19" ry="4.5" fill="#FFFFFF"/><path d="M4 30 50 20M4 54 50 44M4 78 50 68" stroke="#E9C77A" stroke-width="3" stroke-linecap="round"/></g>
+    <g transform="translate(135,62)"><use href="#block-4" transform="scale(.95)"/></g>
+    <circle cx="135" cy="22" r="12" fill="${C.grass}"/><path d="M129 22l4 4 7-8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(250,70)"><circle r="9" fill="${C.sky}"/><circle cx="-3" cy="-2" r="1.6" fill="#fff"/><circle cx="3" cy="-2" r="1.6" fill="#fff"/><circle cx="-3" cy="3" r="1.6" fill="#fff"/><circle cx="3" cy="3" r="1.6" fill="#fff"/><rect x="18" y="-6" width="14" height="12" rx="3" fill="${C.plum}"/></g>
+    <circle cx="258" cy="22" r="12" fill="${C.tomato}"/><path d="M253 17l10 10M263 17l-10 10" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    <text x="135" y="118" text-anchor="middle" font-family="Nunito Sans, sans-serif" font-weight="800" font-size="12" fill="${C.ink}">Too big to fit: OK</text>
+    <text x="258" y="118" text-anchor="middle" font-family="Nunito Sans, sans-serif" font-weight="800" font-size="12" fill="${C.ink}">Fits: too small</text>
+  </svg>`;
+}
 function safetyPage() {
   const R = [
     ['safe', 'A grown-up is always in charge', 'Every card assumes an adult nearby. For ages 1–3, stay within reach the whole time.'],
@@ -454,6 +467,7 @@ function safetyPage() {
   ];
   const body = `<p class="lead">Every card has a safety line at the bottom. These are the rules behind them. They apply to every card, including the ones you write yourself.</p>
   <div class="srules">${R.map(([ic, h, t], i) => `<div class="sr"><span class="sri" style="background:${[C.tTomato, C.tSun, C.tSky, C.tPlum, C.tGrass][i % 5]}">${icon(ic)}</span><div><h4>${h}</h4><p>${t}</p></div></div>`).join('')}</div>
+  <div class="tube"><div class="tubeart">${tubeArt()}</div><div><span class="kick">The toilet-paper tube test</span><h4>If it fits through the tube, it’s too small for under-3s.</h4><p>Keep a cardboard tube in the play basket and test anything new before a toddler plays with it. A tube is about 1.25 in (3.2 cm) across.</p></div></div>
   <div class="sbox"><div><h4>The cards themselves</h4><p>Printed and laminated cards are paper, not toys for children who still mouth things. Round laminated corners, and keep velcro dots, rings and the jar lid out of reach of little ones.</p></div>
   <div><h4>You know your child best</h4><p>Skip or change any card that doesn’t suit your child, your space or your day. These cards are ideas for play at home. They are not medical or developmental advice.</p></div></div>`;
   return contentPage('safety', 'Safe play, every time', 'Safety first,<br>then fun.', body);
@@ -466,6 +480,10 @@ const safetyCss = `<style>
 .sri .i{width:19px;height:19px}
 .sr h4,.sbox h4{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:15px;margin:0 0 2px}
 .sr p,.sbox p{font-size:11.8px;line-height:1.45;font-weight:600}
+.tube{margin-top:18px;display:flex;gap:22px;align-items:center;background:${C.tSun};border-radius:18px;padding:14px 20px}
+.tubeart{flex:0 0 3.3in;height:1.2in}
+.tube h4{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:17px;line-height:1.15;margin:2px 0 4px}
+.tube p{font-size:11.8px;line-height:1.45;font-weight:600}
 .sbox{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:18px;background:${C.wash};border-radius:18px;padding:16px 20px}
 </style>`;
 
@@ -486,7 +504,11 @@ function tipsPage() {
     ['Big helper', 'An older child reads a 1–3 card aloud and plays it with a younger one.'],
     ['Season swap', 'Add the summer or rainy-day set when the weather turns.'],
   ];
+  const G = [['Start here, card guide, safety', '1–6'], ['Ages 1–3 cards', '7–11'], ['Ages 3–5 cards', '12–16'], ['Ages 5–8 cards', '17–21'], ['Ages 8–12 cards', '22–26'], ['Summer + rainy-day sets', '27–30'], ['Card backs (optional)', '31–36'], ['Box dividers', '37–39'], ['Jar labels', '40–41'], ['Play Menu + weekly planners', '42–44'], ['Card index & checklist', '45–47']];
+  const S = ['Cardstock, 65–110 lb / 176–300 gsm', 'A paper trimmer or scissors', 'Laminator and 3–5 mil pouches (optional)', 'Corner rounder (optional)', 'Hook-and-loop (velcro) dots (optional)', 'A big jar or a 3 × 5 in recipe box'];
   const body = `<div class="tp">${T.map(([h, t], i) => `<div class="tpi"><span class="tn">${i + 1}</span><div><h4>${h}</h4><p>${t}</p></div></div>`).join('')}</div>
+  <div class="tpg"><div class="tpb"><span class="kick">Page guide · print only what you need</span>${G.map(([h, n]) => `<div class="pgr"><span>${h}</span><b>${n}</b></div>`).join('')}</div>
+  <div class="tpb"><span class="kick">Handy supplies</span>${S.map(t => `<div class="sup">${icon('star', 'i')}<span>${t}</span></div>`).join('')}<p class="tpn">Save ink: the cards print beautifully without backs, and the planners and index work fine in black and white.</p></div></div>
   <div class="ways"><span class="kick">Six ways to play with the cards</span><div class="wg">${W.map(([h, t], i) => `<div class="wy" style="background:${[C.tSun, C.tGrass, C.tSky, C.tPlum, C.tTomato, C.wash][i]}"><h4>${h}</h4><p>${t}</p></div>`).join('')}</div></div>`;
   return contentPage('tips', 'Print, cut, laminate & store', 'Make them last.', body);
 }
@@ -496,6 +518,13 @@ const tipsCss = `<style>
 .tn{flex:0 0 28px;height:28px;border-radius:50%;background:${C.ink};color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:14px}
 .tpi h4,.wy h4{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:15px;margin:0 0 2px}
 .tpi p{font-size:12px;line-height:1.45;font-weight:600}
+.tpg{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;margin-top:18px}
+.tpb{background:${C.wash};border-radius:16px;padding:12px 16px}
+.pgr{display:flex;justify-content:space-between;font-size:11.5px;font-weight:700;padding:3px 0;border-bottom:1px solid #E1E7F1}
+.pgr b{font-weight:800}
+.sup{display:flex;gap:7px;align-items:center;font-size:11.5px;font-weight:700;padding:3px 0}
+.sup .i{width:12px;height:12px;color:${C.sun};flex:0 0 12px}
+.tpn{font-size:11px;font-weight:600;line-height:1.4;margin-top:8px;opacity:.8}
 .ways{margin-top:auto}
 .wg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .wy{border-radius:14px;padding:11px 13px}
@@ -666,7 +695,7 @@ function byeArt() {
   const k1 = Object.assign({}, KIDS.C, { x: 150, y: F - 27 * 1.05, s: 1.05, aL: 20, aR: -150, face: 'laugh' });
   const k2 = Object.assign({}, KIDS.E, { x: 370, y: F - 27 * 1.05, s: 1.05, aL: 150, aR: -150, face: 'joy' });
   const g = Object.assign({}, ADULTS.G4, { x: 260, y: F - 81 * 0.78, s: 0.78, aL: 20, aR: -140, face: 'smile' });
-  return `<svg class="byesvg" viewBox="0 0 520 160" aria-hidden="true"><rect x="40" y="${F}" width="440" height="6" rx="3" fill="${C.ink}" opacity=".07"/>${adult(g)}${kid(k1)}${kid(k2)}<g transform="translate(455,${F - 64}) scale(.36)">${jarSVG({ lab: C.grass })}</g></svg>`;
+  return `<svg class="byesvg" viewBox="0 -50 520 210" aria-hidden="true"><rect x="40" y="${F}" width="440" height="6" rx="3" fill="${C.ink}" opacity=".07"/>${adult(g)}${kid(k1)}${kid(k2)}<g transform="translate(455,${F - 64}) scale(.36)">${jarSVG({ lab: C.grass })}</g></svg>`;
 }
 function bonusPage() {
   const next = [
@@ -702,7 +731,7 @@ const bonusCss = `<style>
 .nxi h4{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:16px;margin:0 0 4px}
 .nxi p{font-size:11.5px;line-height:1.42;font-weight:600}
 .bye{margin-top:18px;display:flex;align-items:center;justify-content:center;gap:10px}
-.byesvg{width:4.6in;height:1.42in}
+.byesvg{width:4.6in;height:1.86in}
 .bye .hand{font-size:40px;color:${C.tomato};transform:rotate(-4deg)}
 .legal{margin-top:auto;border-top:2px solid ${C.wash};padding-top:12px;display:flex;flex-direction:column;gap:6px}
 .legal p{font-size:9.5px;line-height:1.45;font-weight:600;opacity:.85}

@@ -93,6 +93,7 @@ ul.tight li{margin:2px 0}
 .slot{width:2.3in;height:2.3in;border-radius:.2in;border:2px dashed var(--sl);background:var(--sb);position:relative;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
 .slot .dot{width:.62in;height:.62in;border-radius:50%;background:var(--pn);display:flex;align-items:center;justify-content:center;text-align:center;font-size:7px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#8C97AB;line-height:1.15}
 .cw-simple-page .slot .dot{border:1px solid #C9D2E0}
+.vstrip .slot{width:2.28in;height:2.28in}
 .slot .n{position:absolute;left:-.1in;top:-.1in;width:.36in;height:.36in;border-radius:50%;background:var(--num);color:var(--numt);font-family:"Fredoka",sans-serif;font-weight:600;font-size:15px;display:flex;align-items:center;justify-content:center}
 .cw-simple-page .slot .n{border:2px solid ${C.ink}}
 .tipbar{width:100%;display:flex;align-items:center;gap:10px;border-radius:14px;background:var(--pn);padding:8px 14px;font-size:10.5px;line-height:1.4}
@@ -105,17 +106,17 @@ ul.tight li{margin:2px 0}
 /* checklist */
 .cl{width:100%;border-collapse:separate;border-spacing:0 .06in}
 .cl th{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:0 0 2px;color:${C.ink}}
-.cl td{background:var(--pn);height:.74in;padding:0}
+.cl td{background:var(--pn);height:.9in;padding:0}
 .cl td:first-child{border-radius:14px 0 0 14px;padding-left:8px}
 .cl td:last-child{border-radius:0 14px 14px 0}
 .cw-simple-page .cl td{background:#fff;border-top:1.5px solid ${C.ink};border-bottom:1.5px solid ${C.ink}}
 .cw-simple-page .cl td:first-child{border-left:1.5px solid ${C.ink}}
 .cw-simple-page .cl td:last-child{border-right:1.5px solid ${C.ink}}
-.cl .task{display:flex;align-items:center;gap:8px;font-family:"Fredoka",sans-serif;font-weight:600;font-size:14.5px;width:2.75in}
+.cl .task{display:flex;align-items:center;gap:9px;font-family:"Fredoka",sans-serif;font-weight:600;font-size:15.5px;width:2.75in}
 .cl .task .ico{flex:0 0 auto;background:#fff;border-radius:10px}
 .cl .task .blankline{flex:1;border-bottom:1.5px solid #9AA6BA;height:22px;margin-right:10px}
 .cl .dayc{text-align:center;width:.55in}
-.cl .dayc .check{margin:0 auto}
+.cl .dayc .check{margin:0 auto;width:.36in;height:.36in}
 /* extras */
 .pocket{border:2px dashed #9AA6BA;border-radius:6px;position:relative}
 /* cover */
@@ -129,8 +130,8 @@ ul.tight li{margin:2px 0}
 .cv-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .cv-meta span{background:#fff;border-radius:99px;padding:5px 11px;font-size:10.5px;font-weight:800}
 /* index */
-.idx{column-count:3;column-gap:.3in;font-size:9.4px;line-height:1.38}
-.idx h4{font-family:"Nunito Sans",sans-serif;font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin:8px 0 3px;break-after:avoid;display:flex;align-items:center;gap:6px}
+.idx{column-count:4;column-gap:.22in;font-size:8.7px;line-height:1.34}
+.idx h4{font-family:"Nunito Sans",sans-serif;font-size:8.2px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin:8px 0 3px;break-after:avoid;display:flex;align-items:center;gap:6px}
 .idx h4 i{width:10px;height:10px;border-radius:3px;background:var(--c);display:inline-block}
 .idx div{display:flex;justify-content:space-between;gap:6px}
 .idx div span:last-child{color:#8C97AB;font-weight:700}
@@ -139,7 +140,7 @@ ul.tight li{margin:2px 0}
 .toc td{padding:5px 6px;border-bottom:1px solid #E3E8F0;vertical-align:top}
 .toc td:last-child{text-align:right;font-weight:800;white-space:nowrap}
 .toc tr.h td{font-weight:800;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#6B778C;border-bottom:2px solid ${C.ink}}
-.sw{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.sw{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px;box-shadow:inset 0 0 0 1px rgba(29,41,64,.25)}
 /* field boxes (editable pdf) */
 [data-field]{position:relative}
 .fieldbox{border-bottom:1.5px solid #9AA6BA}
@@ -186,8 +187,8 @@ const slot = (n, lbl = 'velcro<br>dot here') => `<div class="slot">${n ? `<span 
 const nameLine = (field) => `<span class="name">Name <i${field ? ` data-field="${field}" data-fsize="12"` : ''}></i></span>`;
 
 function chartStrip(cw, o = {}) { // Layout 1: vertical strips — To do / All done
-  const col = (title, sub, c, t, isDone) => `<div style="${theme(cw, c, t)};width:2.95in;display:flex;flex-direction:column;align-items:center;gap:.06in">
-    <div class="band" style="height:.62in;justify-content:center;padding:0 10px"><div style="text-align:center"><h2 style="font-size:22px"${o.fields ? ` data-field="strip_title_${isDone ? 2 : 1}" data-fsize="18"` : ''}>${o.fields ? '' : title}</h2></div></div>
+  const col = (title, sub, c, t, isDone) => `<div class="vstrip" style="${theme(cw, c, t)};width:2.95in;display:flex;flex-direction:column;align-items:center;gap:.06in">
+    <div class="band" style="height:.55in;justify-content:center;padding:0 10px"><div style="text-align:center"><h2 style="font-size:22px"${o.fields ? ` data-field="strip_title_${isDone ? 2 : 1}" data-fsize="18"` : ''}>${o.fields ? '' : title}</h2></div></div>
     ${[1, 2, 3, 4].map(n => slot(isDone ? null : n, isDone ? 'done<br>goes here' : 'velcro<br>dot here')).join('')}
   </div>`;
   return page(`<div class="in" style="flex-direction:row;justify-content:center;gap:.35in;align-items:flex-start">
@@ -228,10 +229,18 @@ function chartRoutine(cw, kind, o = {}) { // Layouts 4 + 5: morning and bedtime 
 function chartToday(cw, start, o = {}) { // Layout 6: today board, Monday or Sunday start
   const days = start === 'mon' ? ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const cols = [['Morning', C.sun, C.tSun], ['Afternoon', C.sky, C.tSky], ['Evening', C.plum, C.tPlum]];
-  return page(`<div class="in" style="${theme(cw, C.grass, C.tGrass)};gap:.14in">
-    <div class="band" style="height:.95in"><svg viewBox="0 0 120 100" style="width:.95in;height:.8in;flex:0 0 auto">${A.wToday()}</svg><div><h2${o.fields ? ` data-field="today_title_${start}" data-fsize="22"` : ''}>${o.fields ? '' : 'Today is…'}</h2><div class="sub">Clip or stick the marker on today</div></div>${nameLine(o.fields ? `today_name_${start}` : null)}</div>
-    <div style="display:flex;gap:.07in;width:100%">${days.map((d, i) => `<div style="flex:1;height:.62in;border-radius:12px;background:${cw === 'simple' ? '#fff' : (i === (start === 'mon' ? 5 : 0) || i === (start === 'mon' ? 6 : 6) ? 'var(--pn)' : C.wash)};border:${cw === 'simple' ? `1.5px solid ${C.ink}` : '0'};display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:Fredoka,sans-serif;font-weight:600;font-size:16px">${d}<span style="width:.16in;height:.16in;border-radius:50%;border:1.5px dashed #9AA6BA;margin-top:3px"></span></div>`).join('')}</div>
+  return page(`<div class="in" style="${theme(cw, C.grass, C.tGrass)};gap:.11in">
+    <div class="band" style="height:.8in"><svg viewBox="0 0 120 100" style="width:.8in;height:.67in;flex:0 0 auto">${A.wToday()}</svg><div><h2${o.fields ? ` data-field="today_title_${start}" data-fsize="22"` : ''}>${o.fields ? '' : 'Today is…'}</h2><div class="sub">Clip or stick the marker on today</div></div>${nameLine(o.fields ? `today_name_${start}` : null)}</div>
+    <div style="display:flex;gap:.07in;width:100%">${days.map((d, i) => `<div style="flex:1;height:.55in;border-radius:12px;background:${cw === 'simple' ? '#fff' : (i === (start === 'mon' ? 5 : 0) || i === (start === 'mon' ? 6 : 6) ? 'var(--pn)' : C.wash)};border:${cw === 'simple' ? `1.5px solid ${C.ink}` : '0'};display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:Fredoka,sans-serif;font-weight:600;font-size:16px">${d}<span style="width:.16in;height:.16in;border-radius:50%;border:1.5px dashed #9AA6BA;margin-top:3px"></span></div>`).join('')}</div>
     <div style="display:flex;gap:.15in">${cols.map(([l, c, t]) => `<div style="${theme(cw, c, t)};display:flex;flex-direction:column;align-items:center;gap:.08in"><div class="band" style="height:.4in;justify-content:center;padding:0;border-radius:10px"><b style="font-family:Fredoka,sans-serif;font-weight:600;font-size:16px">${l}</b></div>${slot(null)}${slot(null)}</div>`).join('')}</div>
+    <div style="${theme(cw, C.tomato, C.tTomato)};display:flex;gap:.15in;width:100%;align-items:stretch">
+      ${slot(null, 'something<br>special')}
+      <div style="flex:1;border-radius:18px;background:var(--pn);${cw === 'simple' ? `border:1.5px solid ${C.ink};` : ''}padding:.12in .18in;display:flex;flex-direction:column;gap:.08in">
+        <b style="font-size:10px;letter-spacing:.14em;text-transform:uppercase">Weather today · circle one</b>
+        <div style="display:flex;justify-content:space-between">${[['Sunny', A.fsun()], ['Cloudy', A.fcloud()], ['Rainy', A.frain()], ['Snowy', A.fsnow()]].map(([l, a]) => `<div style="text-align:center"><div style="width:.9in;height:.9in;border-radius:50%;background:#fff;${cw === 'simple' ? `border:1.5px solid ${C.ink};` : ''}display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 120 100" style="width:.76in;height:.64in">${a}</svg></div><div style="font-family:Fredoka,sans-serif;font-weight:600;font-size:13px;margin-top:2px">${l}</div></div>`).join('')}</div>
+        <div style="font-size:10.5px;display:flex;gap:6px;align-items:flex-end;margin-top:auto"><b>Who I'll see today:</b><span style="flex:1;border-bottom:1.5px solid #9AA6BA;height:16px"></span></div>
+      </div>
+    </div>
     ${tipbar('today')}
   </div>`, { cls: `chart cw-${cw}-page`, footNote: `Layout 6 · Today board, ${start === 'mon' ? 'Monday' : 'Sunday'} start · Use the "Today" marker from the extras page` });
 }
@@ -244,7 +253,7 @@ function checklist(cw, kind, start, o = {}) { // 5-12 weekly checklists (pre-fil
   const days = start === 'mon' ? ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const c = m ? C.sun : C.sky, t = m ? C.tSun : C.tSky;
   const rows = CL_TASKS[kind].map(([a, l], i) => {
-    const task = o.blank ? `<span class="ico" style="width:.5in;height:.42in;display:inline-block"></span><span class="blankline"${o.fields ? ` data-field="cl_${kind}_${start}_task${i + 1}" data-fsize="12"` : ''}></span>` : `${art(a, 46)}<span>${esc(l)}</span>`;
+    const task = o.blank ? `<span class="ico" style="width:.5in;height:.42in;display:inline-block"></span><span class="blankline"${o.fields ? ` data-field="cl_${kind}_${start}_task${i + 1}" data-fsize="12"` : ''}></span>` : `${art(a, 56)}<span>${esc(l)}</span>`;
     return `<tr><td><div class="task">${task}</div></td>${days.map((d, j) => `<td class="dayc"><div class="check"${o.fields ? ` data-field="cl_${kind}_${start}_r${i + 1}_d${j + 1}" data-ftype="check"` : ''}></div></td>`).join('')}</tr>`;
   }).join('');
   return page(`<div class="in" style="${theme(cw, c, t)};gap:.12in">
@@ -268,15 +277,16 @@ function extrasPage() {
     <div><span class="kicker">Extras</span><h2 style="font-size:24px;margin-top:2px">Markers, pocket and storage labels</h2></div>
     <div style="display:flex;gap:.25in;align-items:flex-start">
       <div class="cardwrap">${marker('Today', C.tomato)}</div><div class="cardwrap">${marker('Today', C.grass)}</div>
-      <div style="flex:1" class="note"><b style="color:${C.ink}">Today markers.</b> Cut out, laminate and stick a velcro dot on the back. Move it along the day chips on the Today board.<br><br><b style="color:${C.ink}">All done pocket.</b> Cut on the dashed line, fold the flaps back along the gray lines and glue them. Stick the pocket under any chart; finished cards go inside.</div>
+      <div style="flex:1" class="note"><b style="color:${C.ink}">Today markers.</b> Cut out, laminate and stick a velcro dot on the back. Move it along the day chips on the Today board.<br><br><b style="color:${C.ink}">All done pocket.</b> Cut on the dashed line. Fold the three glue flaps back along the gray lines and glue them to the chart or the wall, leaving the top open. Finished cards drop inside.</div>
     </div>
-    <div class="pocket" style="height:3.1in;display:flex;align-items:stretch">
+    <div class="pocket" style="height:3.1in;display:flex;align-items:stretch;border-bottom:none;border-radius:6px 6px 0 0">
       <div style="width:.5in;border-right:1.5px solid #D5DBE5;background:${C.wash};display:flex;align-items:center;justify-content:center;font-size:7.5px;font-weight:800;letter-spacing:.1em;writing-mode:vertical-rl;color:#8C97AB">GLUE FLAP</div>
       <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;background:${C.tGrass}">
         <svg viewBox="-30 -30 60 60" style="width:.9in;height:.9in">${`<circle r="26" fill="${C.grass}"/><path d="M-12 0L-3 9 13-9" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`}</svg>
         <div style="font-family:Fredoka,sans-serif;font-weight:600;font-size:34px;margin-top:6px">All done!</div></div>
       <div style="width:.5in;border-left:1.5px solid #D5DBE5;background:${C.wash};display:flex;align-items:center;justify-content:center;font-size:7.5px;font-weight:800;letter-spacing:.1em;writing-mode:vertical-rl;color:#8C97AB">GLUE FLAP</div>
     </div>
+    <div style="margin:-.16in .5in 0;height:.45in;border:2px dashed #9AA6BA;border-top:1.5px solid #D5DBE5;border-radius:0 0 6px 6px;background:${C.wash};display:flex;align-items:center;justify-content:center;font-size:7.5px;font-weight:800;letter-spacing:.1em;color:#8C97AB">GLUE FLAP</div>
     <div><div class="kicker" style="color:${C.ink};margin-bottom:6px">Storage labels · for pouches, envelopes or a card box</div>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.08in">${labels}</div></div>
   </div>`, { footNote: 'Extras · Keep loose laminated pieces and velcro dots away from children who still mouth things' });
@@ -288,7 +298,7 @@ function fan(list, positions) {
 }
 function coverPage(tier) {
   const starter = tier === 'starter';
-  const pos = [[0.1, .55, -9, .95], [2.05, .15, -2, 1.02], [4.05, .5, 7, .95], [1.05, 2.45, 5, .92], [3.1, 2.5, -6, .92]];
+  const pos = [[0.05, .45, -8, .95], [2.1, .1, -2, 1.02], [4.15, .45, 7, .95], [1.1, 3.0, 5, .95], [3.2, 3.05, -5, .95]];
   const ids = ['morning-brush-teeth', 'play-blocks', 'bedtime-sleep', 'screens-play-first', 'screens-screens-later'];
   return page(`<div class="in"><div class="cv-panel">
     <div style="display:flex;justify-content:space-between;align-items:center">${wordmark()}<span class="chip age" style="font-size:9.5px;padding:5px 11px">${starter ? 'Ages 0–5' : 'Ages 0–5 and 5–12'}</span></div>
@@ -369,6 +379,8 @@ function tocPage(sections) {
         <div class="tile" style="--t:${C.tPlum}"><h3>Also in your download</h3><p><b>Editable PDF</b>: type your own words on blank cards, chart titles and checklists in free Adobe Acrobat Reader.<br><b>Canva-ready PNGs</b>: every card, the art on its own, blank frames and chart backgrounds.</p></div>
       </div>
     </div>
+    <div class="tile" style="--t:${C.wash};margin-top:auto"><h3 style="margin-bottom:8px">One card, four colorways</h3>
+      <div style="display:flex;gap:.2in;justify-content:space-between">${COLORWAYS.map(cw => `<div style="text-align:center"><div style="width:1.54in;height:1.54in"><div style="transform:scale(.7);transform-origin:top left">${card(CARDS.find(c => c.id === 'play-blocks'), cw.id)}</div></div><div style="font-weight:800;font-size:10.5px;margin-top:4px">${cw.name}</div><div class="note">${cw.note}</div></div>`).join('')}</div></div>
   </div>`, { footNote: 'Print guide' });
 }
 function laminatePage() {
@@ -387,6 +399,10 @@ function laminatePage() {
       <li>Every card is 2.2 in (5.6 cm) square, bigger than a toilet-paper tube opening, which is a common rule of thumb for small parts with children under 3. Don't shrink the cards when printing, and don't cut them into smaller pieces for under-3s.</li>
       <li>Velcro dots, laminating scraps and loose plastic are small parts. Stick dots on firmly, check them each week, and keep spares out of reach. Skip magnets for any child who still puts things in their mouth.</li>
       <li>Hang charts low enough to reach without climbing, and away from blind cords.</li></ul></div>
+    <div style="display:flex;gap:.3in;align-items:center">
+      <div style="width:2.2in;height:2.2in;border:2px dashed ${C.ink};border-radius:.17in;display:flex;align-items:center;justify-content:center;flex:0 0 auto;position:relative"><div style="width:1.25in;height:1.25in;border-radius:50%;background:${C.tTomato};border:2px solid ${C.tomato};display:flex;align-items:center;justify-content:center;text-align:center;font-size:8.5px;font-weight:800;line-height:1.2;color:${C.tomato}">toilet-paper<br>tube opening<br>≈ 1.25 in</div></div>
+      <div><h3 style="font-size:16px;margin-bottom:4px">Size check</h3><p style="font-size:11.2px;line-height:1.45">Measure the dashed square with a ruler after printing. If it's <b>2.2 in (5.6 cm)</b> on each side, you printed at the right size and every card is bigger than a toilet-paper tube opening. If it's smaller, reprint at 100% / Actual size.</p></div>
+    </div>
   </div>`, { footNote: 'Laminate, stick and store' });
 }
 function indexPages(rainbowStart) {
@@ -409,11 +425,15 @@ function bonusPage(tier) {
     <div><span class="kicker">Thank you</span><h1 class="g-title">Your free bonus is waiting</h1>
     <p class="g-lede">Scan the code for free seasonal routine cards (holidays, back to school, travel days) and short, practical play ideas for your child's age. We only ask for your email and your child's birth month and year, never a name.</p></div>
     <div style="display:flex;gap:.3in;align-items:center" class="tile">
-      <div style="width:1.6in;height:1.6in;background:#fff;padding:.1in;border-radius:12px;flex:0 0 auto">${QR}</div>
+      <div style="width:1.75in;height:1.75in;background:#fff;padding:.19in;border-radius:12px;flex:0 0 auto">${QR}</div>
       <div><h3 style="font-size:18px">Scan, or type the short link</h3><p style="font-family:Fredoka,sans-serif;font-weight:600;font-size:17px;margin-top:6px;color:${C.tomato}">${BONUS}</p><p class="note" style="margin-top:6px">Free companion download. Unsubscribe any time.</p></div>
     </div>
     <div><div class="kicker" style="color:${C.ink};margin-bottom:8px">Next for your family</div>
     <div class="g-grid" style="grid-template-columns:repeat(3,1fr)">${next.map(([h, p, c]) => `<div class="tile" style="--t:${C.wash};border-top:6px solid ${c}"><h3>${h}</h3><p>${p}</p></div>`).join('')}</div></div>
+    <div class="tile" style="--t:${C.tSun};display:flex;gap:.2in;align-items:center">
+      <div style="display:flex;gap:.08in;flex:0 0 auto">${['feelings-happy', 'feelings-proud', 'feelings-loved'].map(id => `<div style="width:.99in;height:.99in"><div style="transform:scale(.45);transform-origin:top left">${card(CARDS.find(c => c.id === id), 'rainbow')}</div></div>`).join('')}</div>
+      <div><h3>Did the cards help your routine?</h3><p>A short review helps other families find a calmer morning. Tell us which card your child reaches for first.</p></div>
+    </div>
     <div style="margin-top:auto" class="note">
       <p><b style="color:${C.ink}">Terms of use.</b> For personal use in your own home and family. Please don't share, sell or upload the files, or print them for others. You may print as many copies as your family needs.</p>
       <p style="margin-top:6px">These cards are a parenting resource for everyday routines. Questions? Use the contact form at playbeforepixels.com.</p>

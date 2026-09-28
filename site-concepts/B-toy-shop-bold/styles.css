@@ -1085,3 +1085,10 @@ select.inp { appearance: none; background-image: linear-gradient(45deg, transpar
 .card.c1 p, .card.c3 p { visibility: hidden; }
 .t-board .type-cap { flex-direction: column; align-items: flex-start; gap: 6px; }
 .t-board .type-m { text-align: left; }
+/* type tiles: stage above the caption, sized explicitly so container units resolve */
+.types .type .stage { inset: auto; top: 0; left: 0; width: 100%; height: calc(100% - 72px); }
+.types .t-board .stage { top: 20px; height: calc(100% - 128px); }
+@media (max-width: 720px) {
+  .types .type .stage { height: calc(100% - 60px) !important; }
+  .types .t-board .stage { top: 8px; height: calc(100% - 96px) !important; }
+}

@@ -88,6 +88,7 @@
     var href = "product.html#" + p.id;
     var action;
     if (!ok.length) action = '<a class="tile-add" href="' + href + '">Get notified</a>';
+    else if (ok.length > 1) action = '<a class="tile-add" href="' + href + '">Choose format<span class="sr">: ' + esc(p.title) + "</span></a>";
     else if (ok[0].sizes) action = '<a class="tile-add" href="' + href + '">Choose size</a>';
     else action = '<button type="button" class="tile-add" data-add="' + p.id + '" data-fmt="' + ok[0].id + '">Add to bag<span class="sr">: ' + esc(p.title) + ", " + esc(ok[0].label) + "</span></button>";
     return '<article class="tile' + (opts.cls ? " " + opts.cls : "") + '">' +
@@ -131,8 +132,8 @@
       label: "Books",
       html:
         '<div class="mm-books">' +
-        [["up-go-more", "assets/ugm-cover.png", "Board book · 0–3", "Up! Go! More!"],
-         ["tablet-slept", "assets/tts-cover.png", "Picture book · 3–7", "The Day the Tablet Slept"],
+        [["up-go-more", "assets/photo-ugm.png", "Board book · 0–3", "Up! Go! More!"],
+         ["tablet-slept", "assets/photo-tts.png", "Picture book · 3–7", "The Day the Tablet Slept"],
          ["mtlt", "assets/photo-mtlt.png", "Picture book · 4–8 · Spring 2027", "More Talk, Less Tap"],
          ["hundred-plays", "assets/photo-100plays.png", "Guide for grown-ups · 0–5", "100 Plays Before Pixels"]].map(function (b) {
           return '<a class="mm-book" href="product.html#' + b[0] + '"><span class="mm-book-img"><img src="' + b[1] + '" alt=""></span><span class="label">' + b[2] + '</span><span class="mm-book-t">' + b[3] + "</span></a>";
@@ -192,11 +193,13 @@
       '<div class="m-head"><a class="wordmark" href="index.html"><span>Play</span> <span>Before</span> <span>Pixels</span></a><button type="button" class="m-close" data-close>' + I.close + '<span class="sr">Close menu</span></button></div>' +
       '<div class="m-body">' +
       '<button type="button" class="m-search" data-open-search>' + I.search + "<span>Search books, printables, research</span></button>" +
-      acc("shop", "Shop", ages + '<p class="label">By type</p><ul class="m-list">' + typeLinks + '</ul><a class="m-all" href="shop.html">Everything in the shop ' + I.arrow + "</a>") +
+      '<p class="label m-lab">Shop by age</p>' + ages.replace('<p class="label">By age</p>', "") +
+      acc("shop", "Shop", '<p class="label">By type</p><ul class="m-list">' + typeLinks + '</ul><a class="m-all" href="shop.html">Everything in the shop ' + I.arrow + "</a>") +
       acc("books", "Books", '<ul class="m-list"><li><a href="product.html#up-go-more">Up! Go! More! <small>Board book · 0–3</small></a></li><li><a href="product.html#tablet-slept">The Day the Tablet Slept <small>Picture book · 3–7</small></a></li><li><a href="product.html#mtlt">More Talk, Less Tap <small>Spring 2027</small></a></li><li><a href="product.html#hundred-plays">100 Plays Before Pixels <small>Guide · 0–5</small></a></li><li><a href="info.html#formats">Book formats explained</a></li></ul>') +
       acc("teachers", "For Teachers &amp; Groups", '<ul class="m-list"><li><a href="product.html#classroom">PreK–5 Classroom Pack</a></li><li><a href="product.html#group-kit">Host-it-yourself evening kits</a></li><li><a href="info.html#licenses">How site licenses work</a></li><li><a href="info.html#bulk">Bulk &amp; PTA orders</a></li></ul>') +
       acc("research", "Research", '<ul class="m-list"><li><a href="research.html">The Virtual Autism Project</a></li><li><a href="research.html#studies">What the studies found</a></li><li><a href="research.html#guidelines">Guidelines by age</a></li><li><a href="research.html#school">Screens and school</a></li><li><a href="research.html#briefs">Free research briefs</a></li></ul>') +
       '<a class="m-top" href="info.html#about">About</a>' +
+      '<a class="m-feature" href="product.html#up-go-more"><span class="m-feature-img"><img src="assets/photo-ugm.png" alt=""></span><span><span class="label">New board book · 0–3</span><b>Up! Go! More!</b><span data-usd="12.99"></span></span></a>' +
       '<div class="m-foot"><button type="button" class="btn btn--ink" data-open-bag>' + I.bag + ' Bag <span class="bag-count-inline">(0)</span></button>' + currencySelect("m") + "</div>" +
       "</div></div>";
   }
