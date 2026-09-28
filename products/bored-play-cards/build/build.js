@@ -93,7 +93,7 @@ function cardBack(key) {
   const th = TH[key];
   const shapes = key === 'summer' ? 'sun' : key === 'rainy' ? 'rain' : null;
   const op = key === 'b13' ? .38 : .2;
-  const dots = [[30, 40, 26], [205, 70, 16], [60, 250, 14], [200, 270, 30], [40, 150, 8], [215, 170, 10], [120, 30, 7], [130, 300, 9]]
+  const dots = [[30, 40, 26], [205, 70, 16], [26, 200, 12], [214, 200, 13], [40, 150, 8], [215, 150, 10], [120, 30, 7], [205, 296, 12]]
     .map(([x, y, r], i) => shapes && i % 2 === 0
       ? `<g transform="translate(${x - r},${y - r}) scale(${r / 12})" style="color:#FFFFFF" opacity="${op}"><use href="#ic-${shapes}" width="24" height="24"/></g>`
       : `<circle cx="${x}" cy="${y}" r="${r}" fill="#FFFFFF" opacity="${op}"/>`).join('');

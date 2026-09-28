@@ -13,6 +13,7 @@ const K = require('./kitlib.js');
 const { NAME, BLOCK, glyph, topicIcon, qrSvg, LOGO, esc } = K;
 
 const SIZE = (process.argv[2] || 'letter').toLowerCase();
+const SLIDES = (() => { try { return JSON.parse(fs.readFileSync(path.join(__dirname, 'slides-count.json'), 'utf8')).n; } catch (e) { return 20; } })();
 const DIM = SIZE === 'a4' ? { w: '210mm', h: '297mm', label: 'A4' } : { w: '8.5in', h: '11in', label: 'US Letter' };
 const OUT = path.resolve(__dirname, '..', SIZE === 'a4' ? 'source-a4.html' : 'source.html');
 
@@ -61,7 +62,7 @@ page('inside', 'Inside this kit', () => `
   <div>
     <ol class="toc">${CONTENTS.map(([id, t]) => `<li><span>${t}</span><i></i><b>${pageNo(id)}</b></li>`).join('')}</ol>
     <div class="files"><h4>Also in your download</h4>
-      <ul><li><b>US Letter</b> and <b>A4</b> versions of this kit</li><li><b>Slides</b> to project (16:9 PDF, 16 slides)</li><li><b>Bonus story:</b> <i>More Talk, Less Tap</i>, a 32-page read-aloud PDF</li></ul></div>
+      <ul><li><b>US Letter</b> and <b>A4</b> versions of this kit</li><li><b>Slides</b> to project (16:9 PDF, ${SLIDES} slides)</li><li><b>Bonus story:</b> <i>More Talk, Less Tap</i>, a 32-page read-aloud PDF</li></ul></div>
   </div>
   <div>
     <h3 class="h3">Start in 10 minutes</h3>

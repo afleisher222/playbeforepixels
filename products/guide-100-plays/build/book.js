@@ -467,7 +467,7 @@ function sourcesPage() {
     <div class="card" style="background:${C.wash}">
       <h2>About Play Before Pixels</h2>
       <p>Play Before Pixels makes calm, practical play-and-talk resources for families with young children: books, printables and card sets built around one simple idea. The first years are built on talk, touch and play, so let’s make room for plenty of back-and-forth.</p>
-      <p style="margin-top:.08in">Play ideas are general parent education and are not written by a medical, speech or therapy professional.</p>
+      <p style="margin-top:.08in">Play ideas are general parent education. They are not professional or clinical advice.</p>
     </div>
     <div style="margin-top:.2in;display:flex;justify-content:space-between;align-items:flex-end"><img src="../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels" style="height:.5in"><span class="small">${COPY}</span></div>
   </div>` });
