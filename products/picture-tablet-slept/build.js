@@ -638,17 +638,17 @@ if (pages.length !== 32) throw new Error('expected 32 interior pages, got ' + pa
 // ------------------------------------------------------------------ covers (art in trim coords 0..816; backgrounds oversized for bleed and hardcover wrap)
 function frontCover() {
   let s = R(-200, -200, 1216, 1216, C.sky) + R(-200, 700, 1216, 520, C.grass);
-  s += stars([[60, 330, .45, C.sun], [770, 300, .4], [520, 300, .3, C.sun], [40, 560, .3], [600, 420, .35, C.paper]], C.paper);
+  s += stars([[60, 330, .45, C.sun], [770, 300, .4], [520, 300, .3, C.sun], [36, 400, .3], [600, 420, .35, C.paper]], C.paper);
   // speed lines + smoke
   [[40, 470, 90], [20, 540, 120], [60, 610, 80]].forEach(([x, y, w]) => s += R(x, y, w, 16, C.paper, 8, 'fill-opacity=".55"'));
   // tablet, asleep on its shelf (small, the running joke)
   s += cabinet(598, 604, 180, 96, C.plum, C.sun) + tabletOnPillow(688, 604, 0.7, -5) + zzz(716, 398, 0.55, C.sun);
   // the box rocket, with Ada and Biscuit on board
   let r = flames(318, 668, 0.62, 0);
-  r += Ci(250, 780, 34, C.paper) + Ci(318, 792, 40, C.paper) + Ci(390, 780, 34, C.paper) + Ci(200, 792, 22, C.paper) + Ci(440, 794, 22, C.paper);
+  r += Ci(250, 764, 32, C.paper) + Ci(318, 774, 38, C.paper) + Ci(390, 764, 32, C.paper) + Ci(202, 776, 20, C.paper) + Ci(438, 778, 20, C.paper);
   r += P('M176 470 L118 392 L186 386 L222 470Z', C.s3) + P('M460 470 L518 392 L450 386 L414 470Z', C.s3) + R(176, 452, 284, 30, C.s3, 4);
-  r += dog(170, 520, 0.6, 'dog-happy');
-  r += ada({ x: 356, y: 668, s: 0.98, face: 'face-laugh', noLegs: true, armL: { a: 150, b: -14 }, armR: { a: 158, b: -20 } });
+  r += dog(352, 526, 0.6, 'dog-happy');
+  r += ada({ x: 282, y: 668, s: 0.98, face: 'face-laugh', noLegs: true, armL: { a: 150, b: -14 }, armR: { a: 158, b: -20 } });
   r += P('M180 560 L108 676 L180 660Z', C.tomato) + P('M456 560 L528 676 L456 660Z', C.tomato);
   r += R(168, 470, 300, 200, C.s2, 10) + R(168, 504, 300, 20, C.sun);
   r += Ci(240, 596, 38, C.paper) + Ci(240, 596, 29, C.tSky) + caveat(302, 620, 'ADA-1', 46, C.plum);

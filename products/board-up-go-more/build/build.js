@@ -1,6 +1,6 @@
-// Build script for "Up! Go! More!" board book.
-// node build/build.js  -> writes ../source.html (print source), build/debug.html (safe-zone guides),
-//                          build/cover-only.html, build/mockup.html
+// Build script for "Up! Go! More!" (Talk-Along Firsts, Book 1).
+// ONE source, TWO editions: 6x6 in board book (offset run) + 8.5x8.5 in talk-along paperback (print on demand).
+// All text comes from build/manuscript.json (the founder's manuscript). Run: node build/build.js
 const fs = require('fs');
 const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
@@ -96,6 +96,7 @@ const SYMBOLS = [
   sym('car-back', `<rect x="-98" y="-92" width="28" height="70" rx="14" fill="${C.sky}"/><rect x="30" y="-72" width="9" height="34" rx="4.5" fill="${I}" transform="rotate(28 34 -55)"/><circle cx="46" cy="-76" r="14" fill="${I}"/><circle cx="46" cy="-76" r="6" fill="${C.sky}"/>`),
   sym('car-front', `<path d="M-100-6C-100-40-84-46-58-46H4C22-46 34-30 54-28L82-26C98-24 104-12 104 4V12C104 24 98 30 88 30H-88C-96 30-100 24-100 16Z" fill="${C.sky}"/><circle cx="94" cy="-6" r="8" fill="${C.sun}"/><rect x="-72" y="-22" width="54" height="10" rx="5" fill="#FFFFFF" opacity=".5"/><use href="#wheel" x="-58" y="30"/><use href="#wheel" x="62" y="30"/>`),
   sym('bubble', `<circle r="20" fill="#FFFFFF"/><path d="M-11-4A12 12 0 0 1-4-11" stroke="var(--bh,${C.sky})" stroke-width="3.2" fill="none" stroke-linecap="round"/>`),
+  sym('spark', `<path d="M0-12C1.5-3 3-1.5 12 0C3 1.5 1.5 3 0 12C-1.5 3-3 1.5-12 0C-3-1.5-1.5-3 0-12Z" fill="#FFFFFF"/>`),
   sym('speech', `<path d="M-8-7H8A5 5 0 0 1 13-2V3A5 5 0 0 1 8 8H0L-6 12.5V8H-8A5 5 0 0 1-13 3V-2A5 5 0 0 1-8-7Z" fill="#FFFFFF"/>`),
 ];
 
@@ -189,7 +190,7 @@ scenes.down = () => {
   const px = x0 + (x1 - x0) * t, py = y0 + (y1 - y0) * t;
   const s = 1.3;
   const k = Object.assign({}, KIDS.C, { x: px + uy * 14, y: py - ux * 14 - 4 * s, s, lL: aim(ux, uy), lR: aim(ux, uy) + 4, aL: 134, aR: -134, face: 'laugh', tilt: 0 });
-  const hill = `<path d="M-20 ${F}C100 ${F - 40} 500 ${F - 40} 620 ${F}V620H-20Z" fill="${C.grass}"/>`;
+  const hill = `<path d="M-40 ${F}C100 ${F - 40} 500 ${F - 40} 640 ${F}V720H-40Z" fill="${C.grass}"/>`;
   const g = Object.assign({}, ADULTS.G3, { x: 500, y: F - 51 * 0.98, s: 0.98, flip: true, legs: 'kneel', aL: 20, aR: -75, face: 'laugh' });
   return bg(C.tGrass) + circle(300, 318, 138, '#FFFFFF') + slide + kid(k) + adult(g);
 };
@@ -244,19 +245,20 @@ scenes.more = () => {
   return bg(C.tGrass) + circle(300, 318, 150, C.grass) + adult(g) + wand + kid(k) + bubbles;
 };
 
+function highChair(cx, col) {
+  return `
+    <rect x="${cx - 64}" y="296" width="128" height="120" rx="32" fill="${col}"/>
+    <rect x="${cx - 74}" y="404" width="15" height="${F - 404 + 2}" rx="7.5" fill="${col}" transform="rotate(9 ${cx - 66} 404)"/>
+    <rect x="${cx + 59}" y="404" width="15" height="${F - 404 + 2}" rx="7.5" fill="${col}" transform="rotate(-9 ${cx + 66} 404)"/>
+    <rect x="${cx - 52}" y="440" width="104" height="12" rx="6" fill="${col}"/>`;
+}
 scenes['all done'] = () => {
   const cx = 300;
-  const chair = `
-    <rect x="${cx - 64}" y="296" width="128" height="120" rx="32" fill="${C.tomato}"/>
-    <rect x="${cx - 74}" y="404" width="15" height="${F - 404 + 2}" rx="7.5" fill="${C.tomato}" transform="rotate(9 ${cx - 66} 404)"/>
-    <rect x="${cx + 59}" y="404" width="15" height="${F - 404 + 2}" rx="7.5" fill="${C.tomato}" transform="rotate(-9 ${cx + 66} 404)"/>
-    <rect x="${cx - 52}" y="440" width="104" height="12" rx="6" fill="${C.tomato}"/>`;
   const k = Object.assign({}, KIDS.B, { x: cx, y: 398, s: 1.5, aL: 128, aR: -128, face: 'laugh', legs: false });
   const tray = `<rect x="${cx - 104}" y="388" width="208" height="22" rx="11" fill="#FFFFFF"/>`;
   const bowl = `<path d="M${cx - 92} 360H${cx - 32}C${cx - 32} 378 ${cx - 44} 388 ${cx - 62} 388C${cx - 80} 388 ${cx - 92} 378 ${cx - 92} 360Z" fill="${C.sky}"/>`;
-  const spoon = `<g transform="translate(${cx + 62},386) rotate(-78)"><rect x="-3.5" y="-34" width="7" height="34" rx="3.5" fill="${C.plum}"/><ellipse cx="0" cy="-38" rx="8" ry="10" fill="${C.plum}"/></g>`;
   const cup = `<g transform="translate(${cx + 70},362) scale(.62)">${use('cup')}</g>`;
-  return bg(C.tSun) + circle(300, 318, 150, C.sun) + chair + kid(k) + tray + bowl + cup;
+  return bg(C.tSun) + circle(300, 318, 150, C.sun) + highChair(cx, C.tomato) + kid(k) + tray + bowl + cup;
 };
 
 scenes.shoe = () => {
@@ -324,206 +326,506 @@ scenes['night-night'] = () => {
   return bg(C.ink) + stars + moon + bed + kidHead + blanket + duck + shelf + tab + zz;
 };
 
-// ---------- pages ----------
-const WORDS = [
-  { w: 'hi', fs: 150, tip: ['Take turns.', 'Wave, say “hi!”, then count to five in your head. A look, wave or sound back counts as a turn.'], acc: C.sun },
-  { w: 'up', fs: 150, tip: ['Wait for it.', 'Hold your arms out, then pause. When they reach up, say “up!” as you lift.'], acc: C.sky },
-  { w: 'down', fs: 132, tip: ['Say it big.', 'Crouch low and stretch it out: “dooown!” Slow, playful words are easier to copy.'], acc: C.grass },
-  { w: 'go', fs: 150, tip: ['Wait.', 'Say “Ready, set…” then pause. Let your child fill in “go!” Any sound counts.'], acc: C.grass },
-  { w: 'stop', fs: 140, tip: ['Gesture.', 'Hold up a flat hand as you say “stop!” A sign plus a word gives two ways to answer.'], acc: C.tomato },
-  { w: 'ball', fs: 140, tip: ['Add one word.', 'If your child says “ball,” you say “big ball” or “roll ball.” One step ahead.'], acc: C.plum },
-  { w: 'uh-oh', fs: 128, tip: ['Name the moment.', 'Little tumbles are talk moments. Say “uh-oh!” with a big face, then wait.'], acc: C.sun },
-  { w: 'more', fs: 136, tip: ['Gesture.', 'Pause the fun. Tap your fingertips together, say “more?” and wait before you carry on.'], acc: C.grass },
-  { w: 'all done', fs: 106, tip: ['Offer a choice.', '“More, or all done?” Hold up a hand for each. A point is a real answer.'], acc: C.sun },
-  { w: 'shoe', fs: 136, tip: ['Follow their lead.', 'Grabbed a shoe? Talk about the shoe: “Your shoe. Big shoe. Shoe on!”'], acc: C.sky },
-  { w: 'bye-bye', fs: 112, tip: ['Make it a routine.', 'Same wave, same words, every time. Words that repeat are the easiest to pick up.'], acc: C.plum },
-  { w: 'book', fs: 136, tip: ['Say what you see.', 'Point and name what your child looks at: “duck!” Let them turn the pages.'], acc: C.sun },
-  { w: 'hug', fs: 150, tip: ['Sing it.', 'Put “hug” in any tune you know (“hug, hug, hug!”) and squeeze on the last one.'], acc: C.tomato },
-  { w: 'night-night', fs: 84, tip: ['Say it.', 'Say “night-night” to everything: the duck, the moon, even the tablet. A calm goodnight game.'], acc: C.sky, dark: true },
-];
+// ---------- new scenes (revision 2: 22 words) ----------
+scenes.peekaboo = () => {
+  const s = 1.55;
+  const k = Object.assign({}, KIDS.E, { x: 214, y: F - 27 * s, s, face: 'laugh', armsFront: true,
+    front: `<circle class="sk" cx="-9.5" cy="-70" r="8.2"/><circle class="sk" cx="9.5" cy="-70" r="8.2"/>` });
+  k.aL = aim(4.5, -32); k.aR = aim(-4.5, -32);
+  const g = Object.assign({}, ADULTS.G5, { x: 418, y: F - 51 * 1.12, s: 1.12, flip: true, legs: 'kneel', aL: 118, aR: -118, face: 'laugh' });
+  const pops = [[330, 236, -20], [512, 250, 24], [300, 300, -60]].map(([x, y, r]) => `<rect x="${x}" y="${y}" width="8" height="20" rx="4" fill="${C.sky}" transform="rotate(${r} ${x + 4} ${y + 10})"/>`).join('');
+  return bg(C.tSky) + circle(300, 318, 150, '#FFFFFF') + adult(g) + kid(k) + pops;
+};
 
-function wordCount(s) { return s.replace(/[“”"…:!?,.()]/g, ' ').split(/\s+/).filter(Boolean).length; }
+scenes.wow = () => {
+  const sunX = 432, sunY = 262;
+  const k = Object.assign({}, KIDS.C, { x: 262, y: F - 27 * 1.55, s: 1.55, face: 'oh', aL: 14 });
+  k.aR = aimKid(k, 'R', sunX - 40, sunY + 30);
+  const g = Object.assign({}, ADULTS.G2, { x: 128, y: F - 81 * 1.02, s: 1.02, face: 'oh', aL: 10 });
+  g.aR = aimAdult(g, 'R', 206, 330);
+  return bg(C.tSun) + circle(300, 318, 150, '#FFFFFF') + use('sun', `translate(${sunX},${sunY}) scale(.92)`) + adult(g) + kid(k);
+};
+
+scenes.in = () => {
+  const bx = 392;
+  const bucket = `<path d="M${bx - 78} 344H${bx + 78}L${bx + 62} ${F}H${bx - 62}Z" fill="${C.sky}"/>
+    <rect x="${bx - 88}" y="330" width="176" height="24" rx="12" fill="${C.ink}"/>
+    <path d="M${bx - 74} 336Q${bx} 226 ${bx + 74} 336" stroke="${C.ink}" stroke-width="9" fill="none" stroke-linecap="round"/>`;
+  const inside = use('block-3', `translate(${bx - 34},326) scale(.7) rotate(-10)`) + use('block-4', `translate(${bx + 30},322) scale(.7) rotate(12)`);
+  const k = Object.assign({}, KIDS.D, { x: 176, y: F - 4 * 1.5, s: 1.5, lL: -80, lR: -76, aL: 24, face: 'laugh' });
+  k.aR = aimKid(k, 'R', bx - 40, 256);
+  const h = kidHand(k, 'R');
+  const held = use('block-1', `translate(${h[0] + 24},${h[1] - 4}) scale(.68) rotate(8)`);
+  const hand = `<circle cx="${h[0]}" cy="${h[1]}" r="${6.2 * 1.5}" fill="${k.skin}"/>`;
+  const plop = [[bx - 14, 236, -14], [bx + 20, 232, 14]].map(([x, y, r]) => `<rect x="${x}" y="${y}" width="7" height="18" rx="3.5" fill="${C.sky}" transform="rotate(${r} ${x} ${y})"/>`).join('');
+  const rug = `<ellipse cx="300" cy="${F}" rx="250" ry="24" fill="${C.sun}"/>`;
+  return bg(C.tSky) + circle(300, 318, 150, '#FFFFFF') + rug + inside + bucket + kid(k) + held + hand + plop;
+};
+
+scenes.open = () => {
+  const bx = 400, top = 356;
+  const duck = use('duck', `translate(${bx + 6},${top - 22}) scale(1.25)`);
+  const box = `<rect x="${bx - 80}" y="${top}" width="160" height="${F - top}" rx="12" fill="${C.tomato}"/>
+    <rect x="${bx - 14}" y="${top}" width="28" height="${F - top}" fill="${C.sun}"/>`;
+  const lid = `<g transform="rotate(-32 ${bx + 86} ${top - 2})"><rect x="${bx - 86}" y="${top - 26}" width="172" height="28" rx="10" fill="${C.tomato}"/><rect x="${bx - 14}" y="${top - 26}" width="28" height="28" fill="${C.sun}"/></g>`;
+  const k = Object.assign({}, KIDS.A, { x: 190, y: F - 27 * 1.5, s: 1.5, aL: 142, aR: -142, face: 'laugh', lL: 6, lR: -6 });
+  const sparks = [[bx - 70, 250, .9], [bx + 76, 232, .7], [bx - 18, 214, .55]].map(([x, y, s]) => `<g transform="translate(${x},${y}) scale(${s})"><use href="#star"/></g>`).join('');
+  const rug = `<ellipse cx="300" cy="${F}" rx="250" ry="24" fill="${C.plum}"/>`;
+  return bg(C.tTomato) + circle(300, 318, 150, '#FFFFFF') + rug + duck + box + lid + kid(k) + sparks;
+};
+
+scenes.help = () => {
+  const shelf = `<rect x="378" y="252" width="168" height="16" rx="8" fill="${C.plum}"/><rect x="516" y="252" width="16" height="${F - 252 + 2}" rx="8" fill="${C.plum}"/>`;
+  const duck = use('duck', 'translate(456,222) scale(.95)');
+  const k = Object.assign({}, KIDS.B, { x: 370, y: F - 27 * 1.5, s: 1.5, face: 'oh', aL: 14, lL: 4, lR: -4 });
+  k.aR = aimKid(k, 'R', 430, 270);
+  const g = Object.assign({}, ADULTS.G1, { x: 170, y: F - 51 * 1.12, s: 1.12, legs: 'kneel', face: 'smile', aL: 12 });
+  g.aR = aimAdult(g, 'R', 292, 360);
+  return bg(C.tGrass) + circle(300, 318, 150, '#FFFFFF') + shelf + duck + adult(g) + kid(k);
+};
+
+scenes.clap = () => {
+  const k = Object.assign({}, KIDS.A, { x: 206, y: F - 27 * 1.6, s: 1.6, face: 'laugh', aL: aim(11, 16), aR: aim(-11, 16) });
+  const g = Object.assign({}, ADULTS.G4, { x: 420, y: F - 14 * 1.2, s: 1.2, flip: true, legs: 'cross', face: 'laugh', aL: aim(18, 40), aR: aim(-18, 40) });
+  const mk = (cx, cy, sp) => [-40, 0, 40].map(a => `<rect x="${cx - 3.5}" y="${cy - sp - 16}" width="7" height="16" rx="3.5" fill="${C.plum}" transform="rotate(${a} ${cx} ${cy})"/>`).join('');
+  const kh = [206, F - 27 * 1.6 - 17 * 1.6];
+  const gh = [420, F - 14 * 1.2 - 34 * 1.2];
+  return bg(C.tPlum) + circle(300, 318, 150, '#FFFFFF') + adult(g) + kid(k) + mk(kh[0], kh[1], 34) + mk(gh[0], gh[1], 40);
+};
+
+scenes.eat = () => {
+  const cx = 300, s = 1.5;
+  const k = Object.assign({}, KIDS.D, { x: cx, y: 398, s, aL: 18, face: 'oh', legs: false });
+  k.aR = aim(-2, -18);
+  const h = kidHand(k, 'R');
+  const mouth = [cx + 5 * s, 398 - 58 * s];
+  const ang = Math.atan2(mouth[1] - h[1], mouth[0] - h[0]) * 180 / Math.PI;
+  const spoon = `<g transform="translate(${h[0]},${h[1]}) rotate(${ang.toFixed(1)})"><rect x="-4" y="-3.5" width="30" height="7" rx="3.5" fill="${C.plum}"/><ellipse cx="30" cy="0" rx="10" ry="7.5" fill="${C.plum}"/></g>`;
+  const hand = `<circle cx="${h[0]}" cy="${h[1]}" r="${6.2 * s}" fill="${k.skin}"/>`;
+  const tray = `<rect x="${cx - 104}" y="388" width="208" height="22" rx="11" fill="#FFFFFF"/>`;
+  const bowl = `<path d="M${cx - 92} 360H${cx - 32}C${cx - 32} 378 ${cx - 44} 388 ${cx - 62} 388C${cx - 80} 388 ${cx - 92} 378 ${cx - 92} 360Z" fill="${C.grass}"/>`;
+  return bg(C.tTomato) + circle(300, 318, 150, '#FFFFFF') + highChair(cx, C.sky) + kid(k) + tray + bowl + spoon + hand;
+};
+
+scenes.cup = () => {
+  const s = 1.7, x = 254, y = F - 27 * s;
+  const k = Object.assign({}, KIDS.C, { x, y, s, face: 'joy' });
+  const cupC = [x + 20, y - 52 * s];
+  k.aL = aimKid(k, 'L', cupC[0] - 24, cupC[1] + 14); k.aR = aimKid(k, 'R', cupC[0] + 26, cupC[1] + 6);
+  const cup = `<g style="--c1:${C.tomato};--c2:${C.sun}" transform="translate(${cupC[0]},${cupC[1]}) rotate(-38) scale(1.05)">${use('cup')}</g>`;
+  const hl = kidHand(k, 'L'), hr = kidHand(k, 'R');
+  const hands = `<circle cx="${hl[0]}" cy="${hl[1]}" r="${6.2 * s}" fill="${k.skin}"/><circle cx="${hr[0]}" cy="${hr[1]}" r="${6.2 * s}" fill="${k.skin}"/>`;
+  const drops = `<circle cx="${x + 96}" cy="${cupC[1] - 70}" r="7" fill="${C.sky}"/><circle cx="${x + 118}" cy="${cupC[1] - 46}" r="5" fill="${C.sky}"/>`;
+  const duck = use('duck', `translate(446,${F - 26}) scale(1.05)`);
+  const rug = `<ellipse cx="300" cy="${F}" rx="250" ry="24" fill="${C.grass}"/>`;
+  return bg(C.tSky) + circle(300, 318, 150, '#FFFFFF') + rug + duck + kid(k) + cup + hands + drops;
+};
+
+// ---------- manuscript (the founder's words live in manuscript.json) ----------
+const MS = JSON.parse(fs.readFileSync(path.join(__dirname, 'manuscript.json'), 'utf8'));
+const PRINT_READY = process.env.PRINT_READY === '1';
+if (PRINT_READY) {
+  const open = MS.words.filter(w => !w.founder_rewritten).map(w => w.w);
+  if (open.length || !MS.note_to_grownups.founder_rewritten || !MS.author_credit)
+    throw new Error('PRINT_READY refused: founder has not rewritten/approved: ' + [...open, !MS.note_to_grownups.founder_rewritten ? 'note_to_grownups' : '', !MS.author_credit ? 'author_credit' : ''].filter(Boolean).join(', '));
+}
+const WORDS = MS.words.map(p => Object.assign({}, p, { acc: C[p.acc] }));
+const N = WORDS.length;
 WORDS.forEach(p => {
-  const n = wordCount(p.tip[0] + ' ' + p.tip[1]);
-  if (n > 22) throw new Error(`Tip too long on "${p.w}": ${n} words`);
-  p.words = n;
+  if (!scenes[p.w]) throw new Error('No picture drawn for word: ' + p.w);
+  const n = (p.tip[0] + ' ' + p.tip[1]).replace(/[“”"…:!?,.()]/g, ' ').split(/\s+/).filter(Boolean).length;
+  if (n > 24) throw new Error(`Tip too long on "${p.w}": ${n} words`);
+  if (p.cue[1].split(/\s+/).length > 7) throw new Error(`Cue too long on "${p.w}"`);
 });
+const WORDNUM = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty', 'twenty-one', 'twenty-two', 'twenty-three', 'twenty-four'];
+const QR = JSON.parse(fs.readFileSync(path.join(__dirname, 'qr.json'), 'utf8'));
+const BONUS = 'playbeforepixels.com/bonus/board-up-go-more';
+const qrSvg = (px) => `<svg class="qr" viewBox="-2 -2 ${QR.n + 4} ${QR.n + 4}" width="${px}" height="${px}" shape-rendering="crispEdges" aria-label="QR code to ${BONUS}"><rect x="-2" y="-2" width="${QR.n + 4}" height="${QR.n + 4}" fill="#FFFFFF"/><path d="${QR.d}" fill="${C.ink}"/></svg>`;
 
+// ---------- shared bits ----------
 const defs = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${SYMBOLS.join('\n')}</defs></svg>`;
-const speechIco = `<svg viewBox="-16 -16 32 32" width="30" height="30" aria-hidden="true"><circle r="16" fill="currentColor"/><use href="#speech"/></svg>`;
+const ICON = {
+  say: `<svg viewBox="-16 -16 32 32" aria-hidden="true"><circle r="16" fill="currentColor"/><use href="#speech"/></svg>`,
+  sign: `<svg viewBox="-16 -16 32 32" aria-hidden="true"><circle r="16" fill="currentColor"/><g style="--sk:#FFFFFF" transform="translate(-1.5,2) scale(.62)"><use href="#palm"/></g></svg>`,
+  act: `<svg viewBox="-16 -16 32 32" aria-hidden="true"><circle r="16" fill="currentColor"/><g transform="scale(.82)"><use href="#spark"/></g></svg>`,
+};
+const CUE_LABEL = { say: 'Say it', sign: 'Sign it', act: 'Act it' };
+const slot = (label) => `<span class="slot">${label}</span>`;
+const seriesPill = (dark) => `<span class="spill${dark ? ' dk' : ''}"><b>${MS.series}</b><i>Book ${MS.series_number}</i></span>`;
+const logo = (rel, variant = 'reverse', h = 34) => `<img class="logo" style="height:${h}px" src="${rel}brand/logo/lockup-horizontal${variant ? '-' + variant : ''}.svg" alt="Play Before Pixels">`;
+const COPYRIGHT = '© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.';
+const authorLine = () => MS.author_credit ? `<span>${MS.author_credit}</span>` : slot(MS.author_credit_placeholder);
 
-function wordPage(p, i) {
+// ---------- word page ----------
+function wordArt(p) {
   const art = scenes[p.w]();
-  return `<section class="page word-page${p.dark ? ' dark' : ''}" data-word="${p.w}">
-  <svg class="art" viewBox="0 0 600 600" preserveAspectRatio="none" role="img" aria-label="${p.w}">${art}</svg>
+  const bgc = (art.match(/fill="(#[0-9A-Fa-f]{6})"/) || [])[1] || '#FFFFFF';
+  // shrink the drawing 8% toward the top-centre so the talk card fits under the floor line
+  return `<rect x="-20" y="-20" width="640" height="640" fill="${bgc}"/><g transform="translate(300,180) scale(.92) translate(-300,-180)">${art}</g>`;
+}
+function wordPage(p) {
+  const [type, cue] = p.cue;
+  return {
+    cls: `word-page${p.dark ? ' dark' : ''}`, html: `
+  <svg class="art" viewBox="0 0 600 600" preserveAspectRatio="none" role="img" aria-label="${p.w}">${wordArt(p)}</svg>
   <h2 class="word" style="font-size:${p.fs}px">${p.w}</h2>
-  <div class="tip" style="--acc:${p.acc}"><span class="ico">${speechIco}</span><div class="tx"><span class="lab">Grown-up corner</span><p><strong>${p.tip[0]}</strong> ${p.tip[1]}</p></div></div>
-</section>`;
+  <div class="card" style="--acc:${p.acc}">
+    <div class="cue"><span class="chip">${ICON[type]}${CUE_LABEL[type]}</span><span class="cue-tx">${cue}</span></div>
+    <p class="tip"><span class="lab">Grown-up tip</span> <strong>${p.tip[0]}</strong> ${p.tip[1]}</p>
+  </div>`
+  };
 }
 
 // ---------- cover ----------
 function coverArt() {
-  const k = Object.assign({}, KIDS.A, { x: 418, y: 470 - 27 * 1.62, s: 1.62, aL: 128, aR: -128, face: 'laugh' });
-  const ball = use('ball', 'translate(520,440) scale(.62) rotate(14)');
-  const shapes = circle(420, 372, 150, '#FFFFFF');
-  return bg(C.sun) + shapes + `<rect x="-10" y="470" width="620" height="140" fill="${C.ink}"/>` + kid(k) + ball;
+  const k = Object.assign({}, KIDS.A, { x: 420, y: 470 - 27 * 1.56, s: 1.56, aL: 128, aR: -128, face: 'laugh' });
+  const ball = use('ball', 'translate(522,440) scale(.6) rotate(14)');
+  return bg(C.sun) + circle(420, 380, 146, '#FFFFFF') + `<rect x="-10" y="470" width="620" height="140" fill="${C.ink}"/>` + kid(k) + ball;
 }
-const coverPage = `<section class="page cover">
+const cover = (rel) => ({
+  cls: 'cover', html: `
   <svg class="art" viewBox="0 0 600 600" preserveAspectRatio="none" role="img" aria-label="A toddler with arms up, laughing">${coverArt()}</svg>
+  ${seriesPill()}
   <h1 class="ctitle"><span>Up<i>!</i></span><span>Go<i>!</i></span><span>More<i>!</i></span></h1>
-  <p class="csub">14 first words to say, sign and play together</p>
-  <div class="cband"><span class="brand">Play Before Pixels</span><span class="age"><b>0–3</b> years</span></div>
-</section>`;
+  <div class="count"><b>${N}</b><span>first words to say, sign and act out</span></div>
+  <div class="badge"><span>A grown-up tip</span><b>on every page</b></div>
+  <div class="cband">${logo(rel)}<span class="age"><b>0–3</b> years</span></div>`
+});
 
-// ---------- inside front cover ----------
-const ifc = `<section class="page ifc">
-  <div class="ifc-in">
+// ---------- how to read (board inside front cover / paperback p4) ----------
+const howTo = (belongs) => ({
+  cls: 'inner howto', html: `
+  <div class="in">
     <h2 class="ptitle">How to read this book together</h2>
+    <div class="cues3">${['say', 'sign', 'act'].map((t, i) => `<div class="c3" style="--acc:${[C.tomato, C.grass, C.plum][i]}">${ICON[t]}<b>${CUE_LABEL[t]}</b><span>${MS.cue_types[t]}</span></div>`).join('')}</div>
     <ol class="steps">
       <li style="--c:${C.tomato}"><b>Go slow.</b> One word per page. Say it, point to the picture, then pause.</li>
       <li style="--c:${C.sun}"><b>Wait for a turn.</b> Count to five in your head. A look, a point or a sound is your child’s turn.</li>
-      <li style="--c:${C.sky}"><b>Add one word.</b> If your child says “ball,” you say “big ball.”</li>
-      <li style="--c:${C.grass}"><b>Try the Grown-up corner.</b> Each page has one small idea. Pick any, skip any.</li>
-      <li style="--c:${C.plum}"><b>Follow their lead.</b> Skip ahead, go back, stay on one page. It’s their book.</li>
+      <li style="--c:${C.sky}"><b>Copy each other.</b> Try the say it, sign it or act it idea. Then copy whatever your child does back.</li>
+      <li style="--c:${C.grass}"><b>Pick any tip, skip any tip.</b> It’s their book: skip ahead, go back, or stay on one page.</li>
     </ol>
-    <svg class="strip" viewBox="0 0 504 96" aria-hidden="true">
-      <circle cx="46" cy="48" r="44" fill="${C.tTomato}"/><g transform="translate(46,50) scale(.62)">${use('ball')}</g>
-      <circle cx="148" cy="48" r="44" fill="${C.tSun}"/><g transform="translate(152,54) scale(.8)">${use('duck')}</g>
-      <circle cx="252" cy="48" r="44" fill="${C.tSky}"/><g style="--up:${C.sky};--st:${C.ink}" transform="translate(252,50) scale(.62)">${use('shoe')}</g>
-      <circle cx="356" cy="48" r="44" fill="${C.tGrass}"/><g style="--bc:${C.grass}" transform="translate(356,48) scale(.9)">${use('book-closed')}</g>
-      <circle cx="458" cy="48" r="44" fill="${C.tPlum}"/><g transform="translate(458,54) scale(.7)">${use('cup')}</g>
-    </svg>
     <p class="note">Every child talks on their own timeline. If you have questions about your child’s speech or development, your child’s doctor is a good place to start.</p>
-    <p class="belongs"><span>This book belongs to</span><i></i></p>
-  </div>
-</section>`;
+    ${belongs ? '<p class="belongs"><span>This book belongs to</span><i></i></p>' : ''}
+  </div>`
+});
 
-// ---------- inside back cover ----------
-const routines = [
-  ['Hellos & goodbyes', ['hi', 'bye-bye', 'hug'], C.tomato, C.tTomato],
-  ['Mealtime', ['more', 'all done', 'uh-oh'], C.sun, C.tSun],
-  ['Playtime', ['ball', 'go', 'stop', 'up', 'down'], C.sky, C.tSky],
-  ['Getting dressed', ['shoe', 'up', 'down'], C.grass, C.tGrass],
-  ['Bedtime', ['book', 'hug', 'night-night'], C.plum, C.tPlum],
-];
-const ibc = `<section class="page ibc">
-  <div class="ifc-in">
+// ---------- routines (board inside back cover / paperback p27) ----------
+const routinesPage = (withLegal) => ({
+  cls: 'inner routines-pg', html: `
+  <div class="in">
     <h2 class="ptitle">Keep the words going</h2>
     <p class="lede">These words live all through your day. Use them again and again, in the same moments.</p>
-    <div class="routines">${routines.map(([t, ws, c, tint]) => `<div class="rt" style="--c:${c};--t:${tint}"><span class="rtl">${t}</span><span class="chips">${ws.map(w => `<em>${w}</em>`).join('')}</span></div>`).join('')}</div>
-    <p class="note">No screen needed. Just you, your voice, and a little time to wait.</p>
-    <p class="legal">© 2026 Play Before Pixels. All rights reserved. First edition.</p>
-  </div>
-</section>`;
+    <div class="routines">${MS.routines.map(([t, ws, c]) => `<div class="rt" style="--c:${C[c]};--t:${C['t' + c[0].toUpperCase() + c.slice(1)]}"><span class="rtl">${t}</span><span class="chips">${ws.map(w => `<em>${w}</em>`).join('')}</span></div>`).join('')}</div>
+    ${withLegal ? `<div class="legal">
+      <p><b>Up! Go! More!</b> · ${MS.series}, Book ${MS.series_number} · Board book edition · ${authorLine()}</p>
+      <p>${COPYRIGHT} All rights reserved. First edition.</p>
+      <p>ISBN ${slot('board-book ISBN')} · Printed in ${slot('country')} · Batch ${slot('tracking no.')} · playbeforepixels.com</p>
+    </div>` : '<p class="note">No screen needed. Just you, your voice, and a little time to wait.</p>'}
+  </div>`
+});
+
+// ---------- mini covers + series ----------
+function miniCover(b) {
+  const bgc = [C.sun, C.grass, C.sky][b.n - 1];
+  const art = b.n === 1 ? use('ball', 'translate(74,74) scale(.34)') : b.n === 2 ? `<g style="--dg:${C.sun};--ear:${C.tomato}" transform="translate(84,82) scale(.46)">${use('dog')}</g>` : use('duck', 'translate(76,76) scale(.62)');
+  return `<div class="mini" style="--bg:${bgc}"><svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="${bgc}"/><circle cx="76" cy="72" r="26" fill="#FFFFFF"/>${art}<rect y="88" width="100" height="12" fill="${C.ink}"/></svg>
+    <span class="mt">${b.title.map(t => `<span>${t}</span>`).join('')}</span><span class="mn">${b.n}</span></div>`;
+}
+const seriesStrip = () => `<div class="series"><p class="slab">Collect the ${MS.series} series</p><div class="books">${MS.series_books.map(b => `<div class="sb">${miniCover(b)}<b>Book ${b.n} · ${b.theme}</b><small>${b.status === 'this book' ? 'You are holding it' : 'Coming soon'}</small></div>`).join('')}</div></div>`;
 
 // ---------- back cover ----------
 function backArt() {
-  return bg(C.tSky) + `<rect x="-10" y="470" width="620" height="140" fill="${C.ink}"/>` +
-    circle(470, 262, 104, C.sun) +
-    kid(Object.assign({}, KIDS.A, { x: 470, y: 352, s: 1.12, aL: 16, aR: -122, face: 'laugh' })) +
-    `<g style="--dg:${C.sun};--ear:${C.tomato}" transform="translate(300,${470 - 32}) scale(.8) scale(-1,1)">${use('dog')}</g>` +
-    use('ball', 'translate(96,446) scale(.46)') + use('duck', 'translate(172,452) scale(.6)');
+  return bg(C.tSky) + `<rect x="-10" y="432" width="620" height="200" fill="${C.ink}"/>` + circle(470, 150, 84, C.sun) +
+    kid(Object.assign({}, KIDS.A, { x: 470, y: 226 - 27 * .95, s: .95, aL: 16, aR: -122, face: 'laugh' }));
 }
-const allWords = WORDS.map(p => p.w);
-const chipColors = [C.tomato, C.sun, C.sky, C.grass, C.plum];
-const backPage = `<section class="page back">
+const back = (rel) => ({
+  cls: 'back', html: `
   <svg class="art" viewBox="0 0 600 600" preserveAspectRatio="none" aria-hidden="true">${backArt()}</svg>
   <div class="back-in">
     <h2 class="btitle">Up! Go! More!</h2>
-    <p class="blurb">Fourteen first words, one per page, from <b>hi</b> to <b>night-night</b>. Big, bold pictures for little eyes, and a <b>Grown-up corner</b> on every page with one simple way to turn reading into a back-and-forth chat.</p>
+    <p class="blurb">${WORDNUM[N][0].toUpperCase() + WORDNUM[N].slice(1)} first words, one per page, from <b>hi</b> to <b>night-night</b>. Every page has one big picture, one thing to <b>say, sign or act out</b> together, and a <b>grown-up tip</b> that turns reading into a back-and-forth chat.</p>
     <p class="blurb2">Made for laps, not screens.</p>
-    <div class="wordchips">${allWords.map((w, i) => `<em style="--c:${chipColors[i % 5]}">${w}</em>`).join('')}</div>
   </div>
-  <div class="bband"><div><span class="brand">Play Before Pixels</span><span class="tag">Talk, touch and play first.</span></div><span class="age"><b>0–3</b> years</span></div>
-  <div class="isbn"><span>ISBN / barcode</span><small>Printer or ISBN agency supplies this</small></div>
-</section>`;
+  ${seriesStrip()}
+  <div class="bband">
+    ${logo(rel, 'reverse', 26)}
+    <div class="bonus">${qrSvg(62)}<span><b>Free grown-up bonus</b>playbeforepixels.com/<br>bonus/board-up-go-more<small>Ages 0–3 · Read together</small></span></div>
+  </div>
+  <div class="isbn"><span>ISBN / barcode</span><small>Leave white. Printer or ISBN agency supplies this.</small></div>`
+});
 
-// ---------- CSS ----------
-const css = (fontHref) => `
-<link rel="stylesheet" href="${fontHref}">
+// ---------- paperback-only pages ----------
+const titlePage = (rel) => ({
+  cls: 'inner title-pg', html: `
+  <div class="in center">
+    ${seriesPill()}
+    <h1 class="ttl">Up! Go! More!</h1>
+    <p class="tsub">${N} first words to say, sign and act out</p>
+    <svg class="tart" viewBox="0 0 200 150" aria-hidden="true"><circle cx="100" cy="80" r="66" fill="${C.tSun}"/>${kid(Object.assign({}, KIDS.A, { x: 100, y: 146 - 27 * .9, s: .9, aL: 128, aR: -128, face: 'laugh' }))}</svg>
+    <p class="by">${authorLine()}</p>
+    <div class="tlogo">${logo(rel, '', 30)}</div>
+  </div>`
+});
+const copyrightPage = () => ({
+  cls: 'inner copy-pg', html: `
+  <div class="in bottom">
+    <p><b>Up! Go! More!</b><br>${N} first words to say, sign and act out<br>${MS.series}, Book ${MS.series_number} · Talk-along paperback edition</p>
+    <p>${authorLine()}</p>
+    <p>${COPYRIGHT}<br>All rights reserved. No part of this book may be copied or shared in any form without written permission, except short quotes in reviews.</p>
+    <p>This book is for reading together. It shares everyday play and talk ideas for families. It is not medical or developmental advice; for questions about your child, talk with your child’s doctor.</p>
+    <p>ISBN ${slot('paperback ISBN')}<br>First edition, 2026</p>
+    <p>playbeforepixels.com</p>
+  </div>`
+});
+const noteDraft = MS.note_to_grownups;
+const notePage = () => ({
+  cls: 'inner note-pg', html: `
+  <div class="in">
+    <h2 class="ptitle">${noteDraft.heading}</h2>
+    <div class="${noteDraft.founder_rewritten ? 'notebody' : 'notebody draft'}">
+      ${noteDraft.founder_rewritten ? '' : '<span class="draftlab">Founder: rewrite this page in your own words before publishing</span>'}
+      ${noteDraft.draft.map(t => `<p>${t}</p>`).join('')}
+      <p class="sig">${authorLine()}</p>
+    </div>
+    <svg class="noteart" viewBox="0 0 504 110" aria-hidden="true">
+      <circle cx="60" cy="56" r="50" fill="${C.tTomato}"/><g transform="translate(60,58) scale(.72)">${use('ball')}</g>
+      <circle cx="188" cy="56" r="50" fill="${C.tSun}"/><g transform="translate(192,62) scale(.9)">${use('duck')}</g>
+      <circle cx="316" cy="56" r="50" fill="${C.tGrass}"/><g style="--bc:${C.grass}" transform="translate(316,56)">${use('book-closed')}</g>
+      <circle cx="444" cy="56" r="50" fill="${C.tPlum}"/><g style="--hc:${C.plum}" transform="translate(444,60) scale(.8)">${use('heart')}</g>
+    </svg>
+  </div>`
+});
+const keepsakePage = () => ({
+  cls: 'inner keep-pg', html: `
+  <div class="in">
+    <h2 class="ptitle">Our word list</h2>
+    <p class="lede">Just for fun. Tick a word the first time you hear it (or see it signed) and jot the date. Every child has their own timeline, so there is no right time for any box.</p>
+    <div class="klist">${WORDS.map(p => `<div class="kw"><i></i><b>${p.w}</b><span></span></div>`).join('')}</div>
+  </div>`
+});
+const ownWordsPage = () => ({
+  cls: 'inner own-pg', html: `
+  <div class="in">
+    <h2 class="ptitle">Add your own words</h2>
+    <p class="lede">Your child’s first words may be different from the ones in this book. Add the words that matter in your home: names, pets, a favorite food.</p>
+    <div class="frames">${[C.tomato, C.sun, C.sky, C.grass].map(c => `<div class="fr" style="--c:${c}"><span class="fi">Draw it or add a photo</span><span class="fl">Word:</span></div>`).join('')}</div>
+  </div>`
+});
+const bonusPage = () => ({
+  cls: 'inner bonus-pg', html: `
+  <div class="in center">
+    <p class="kicker">Free for grown-ups</p>
+    <h2 class="ptitle">Keep the talk going after the book closes</h2>
+    <div class="qrbox">${qrSvg(170)}</div>
+    <p class="link">${BONUS}</p>
+    <p class="lede">Scan for printable word cards and a one-page “say it, sign it, act it” sheet for the fridge. We only ask for your child’s birth month and year, never their name.</p>
+  </div>`
+});
+const seriesPage = () => ({
+  cls: 'inner series-pg', html: `
+  <div class="in">
+    <p class="kicker">The ${MS.series} series</p>
+    <h2 class="ptitle">One word, one picture, one tip. Three books.</h2>
+    <div class="bigbooks">${MS.series_books.map(b => `<div class="bb">${miniCover(b)}<div><b>Book ${b.n}: ${b.title.join(' ')}</b><span>${b.theme}</span><small>${b.status === 'this book' ? 'You are holding it' : 'Coming soon'}</small></div></div>`).join('')}</div>
+    <p class="note">Same size, same style, same grown-up tips, made to sit together on the shelf.</p>
+  </div>`
+});
+const endPage = () => ({
+  cls: 'end-pg', html: `
+  <svg class="art" viewBox="0 0 600 600" preserveAspectRatio="none" aria-hidden="true">${bg(C.ink)}${[[110, 150, 1], [180, 110, .7], [500, 170, .8], [430, 96, .6], [96, 300, .6], [520, 330, .7]].map(([x, y, s]) => use('star', `translate(${x},${y}) scale(${s})`)).join('')}${use('moon', 'translate(300,220) scale(1.3)')}</svg>
+  <div class="endtx"><h2>The end.</h2><p>Night-night, book. Read it again tomorrow?</p></div>`
+});
+
+// ---------- CSS (all sizes in the 600 px page grid; the paperback scales it x1.4) ----------
+const css = (rel) => `
+<link rel="stylesheet" href="${rel}brand/fonts/fonts.css">
 <style>
-@page { size: 6.25in 6.25in; margin: 0 }
 :root{--ink:${C.ink};--wash:${C.wash}}
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 symbol{overflow:visible}
 .sk{fill:var(--sk)} .hr{fill:var(--hr)} .sh{fill:var(--sh)} .pa{fill:var(--pa)} .so{fill:var(--so)} .hw{fill:var(--hw)} .ck{fill:${C.tomato};opacity:.28}
-.page{width:6.25in;height:6.25in;position:relative;overflow:hidden;page-break-after:always;break-after:page;background:#fff;font-family:"Nunito Sans","Helvetica Neue",Arial,sans-serif;color:var(--ink)}
+.page{position:relative;overflow:hidden;page-break-after:always;break-after:page;background:#fff}
 .page:last-child{page-break-after:auto;break-after:auto}
+.pg{width:600px;height:600px;position:relative;overflow:hidden;background:#fff;font-family:"Nunito Sans","Helvetica Neue",Arial,sans-serif;color:var(--ink)}
 .art{position:absolute;left:0;top:0;width:100%;height:100%;display:block}
-.word{position:absolute;left:44px;right:44px;top:26px;margin:0;text-align:center;font-family:"Fredoka","Nunito Sans",sans-serif;font-weight:600;line-height:1.08;letter-spacing:-.01em;color:var(--ink);white-space:nowrap}
+.slot{display:inline-block;border:1.2px dashed ${C.tomato};color:${C.tomato};border-radius:4px;padding:0 5px;font-weight:800;font-size:.92em;line-height:1.35}
+.logo{display:block;width:auto}
+/* word pages */
+.word{position:absolute;left:44px;right:44px;top:24px;margin:0;text-align:center;font-family:"Fredoka","Nunito Sans",sans-serif;font-weight:600;line-height:1.08;letter-spacing:-.01em;color:var(--ink);white-space:nowrap}
 .dark .word{color:#fff}
-.tip{position:absolute;left:48px;right:48px;bottom:48px;background:#fff;border-radius:18px;padding:9px 16px 10px 11px;display:flex;align-items:center;gap:11px;color:var(--acc)}
-.tip .ico{flex:0 0 30px;height:30px;display:block}
-.tip .ico svg{display:block}
-.tip .tx{color:var(--ink)}
-.tip .lab{display:block;font-family:"Nunito Sans",sans-serif;font-weight:800;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1px;opacity:.72}
-.tip p{margin:0;font-family:"Nunito Sans",sans-serif;font-weight:600;font-size:13px;line-height:1.3}
+.card{position:absolute;left:48px;right:48px;bottom:48px;background:#fff;border-radius:18px;padding:9px 16px 10px 12px}
+.cue{display:flex;align-items:center;gap:10px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--acc);color:#fff;border-radius:99px;padding:3px 10px 3px 3px;font-weight:800;font-size:10px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.chip svg{width:20px;height:20px;display:block;color:rgba(255,255,255,.28)}
+.cue-tx{font-family:"Fredoka","Nunito Sans",sans-serif;font-weight:600;font-size:17px;line-height:1.1;color:var(--ink)}
+.tip{margin:7px 0 0;padding-top:7px;border-top:1.5px solid ${C.wash};font-size:12.5px;line-height:1.32;font-weight:600;color:var(--ink)}
+.tip .lab{font-weight:800;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin-right:3px}
 .tip strong{font-weight:800}
 /* cover */
-.cover .ctitle{position:absolute;left:46px;top:40px;margin:0;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:96px;line-height:.9;letter-spacing:-.035em;color:var(--ink)}
+.spill{position:absolute;left:48px;top:48px;display:inline-flex;align-items:center;gap:0;border-radius:99px;background:${C.ink};color:#fff;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;overflow:hidden}
+.spill b{padding:5px 9px 5px 12px}
+.spill i{font-style:normal;background:${C.tomato};padding:5px 12px 5px 9px}
+.cover .ctitle{position:absolute;left:44px;top:80px;margin:0;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:88px;line-height:.9;letter-spacing:-.035em;color:var(--ink)}
 .cover .ctitle span{display:block}
 .cover .ctitle i{font-style:normal;color:#fff}
-.cover .csub{position:absolute;left:50px;top:340px;width:190px;margin:0;font-weight:800;font-size:17px;line-height:1.25;color:var(--ink)}
-.cband,.bband{position:absolute;left:48px;right:48px;top:488px;height:64px;display:flex;align-items:center;justify-content:space-between;color:#fff}
-.brand{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:20px;letter-spacing:-.01em;display:block}
-.tag{display:block;font-size:11.5px;font-weight:600;opacity:.85;margin-top:1px}
+.count{position:absolute;left:48px;top:340px;width:200px;display:flex;align-items:center;gap:10px}
+.count b{font-family:"Fredoka",sans-serif;font-weight:600;font-size:66px;line-height:.9;color:#fff;background:${C.ink};border-radius:18px;padding:6px 10px 8px}
+.count span{font-weight:800;font-size:15px;line-height:1.22;color:var(--ink)}
+.badge{position:absolute;right:48px;top:52px;width:124px;height:124px;border-radius:50%;background:${C.tomato};color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(8deg)}
+.badge span{font-weight:700;font-size:13px;line-height:1.1}
+.badge b{font-family:"Fredoka",sans-serif;font-weight:600;font-size:19px;line-height:1.02;margin-top:2px;width:96px}
+.cband{position:absolute;left:48px;right:48px;top:486px;height:66px;display:flex;align-items:center;justify-content:space-between;color:#fff}
 .age{display:flex;flex-direction:column;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;background:${C.tomato};color:#fff;font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;line-height:1}
 .age b{font-family:"Fredoka",sans-serif;font-weight:600;font-size:21px;letter-spacing:0;margin-bottom:2px;text-transform:none}
-/* inside covers */
-.ifc,.ibc{background:${C.wash}}
-.ifc-in{position:absolute;left:48px;right:48px;top:48px;bottom:48px;display:flex;flex-direction:column}
-.ptitle{margin:0 0 16px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:30px;line-height:1.02;letter-spacing:-.02em}
+/* inner pages */
+.inner{background:${C.wash}}
+.inner .in{position:absolute;left:48px;right:48px;top:48px;bottom:48px;display:flex;flex-direction:column}
+.inner .in.center{align-items:center;text-align:center}
+.inner .in.bottom{justify-content:flex-end}
+.ptitle{margin:0 0 14px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:29px;line-height:1.04;letter-spacing:-.02em}
+.kicker{margin:0 0 6px;font-weight:800;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:${C.tomato}}
+.lede{margin:0 0 14px;font-size:13.5px;line-height:1.42}
+.note{margin:auto 0 0;font-size:11.5px;line-height:1.42;opacity:.82}
+.cues3{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:0 0 16px}
+.c3{background:#fff;border-radius:14px;padding:9px 10px 10px;display:flex;flex-direction:column;align-items:flex-start;color:var(--acc)}
+.c3 svg{width:28px;height:28px;margin-bottom:5px}
+.c3 b{font-family:"Fredoka",sans-serif;font-weight:600;font-size:17px;line-height:1;color:var(--ink)}
+.c3 span{font-size:11.5px;line-height:1.25;color:var(--ink);margin-top:3px}
 .steps{list-style:none;margin:0;padding:0;counter-reset:s}
-.steps li{position:relative;padding-left:42px;margin:0 0 12px;font-size:14.5px;line-height:1.36;counter-increment:s;min-height:28px}
-.strip{display:block;width:100%;height:auto;margin:6px 0 0}
-.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--c);color:#fff;font-family:"Fredoka",sans-serif;font-weight:600;font-size:15px;display:flex;align-items:center;justify-content:center}
+.steps li{position:relative;padding-left:40px;margin:0 0 10px;font-size:13.5px;line-height:1.36;counter-increment:s;min-height:28px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:27px;height:27px;border-radius:50%;background:var(--c);color:#fff;font-family:"Fredoka",sans-serif;font-weight:600;font-size:15px;display:flex;align-items:center;justify-content:center}
 .steps b{font-weight:800}
-.note{margin:auto 0 0;font-size:11.5px;line-height:1.4;color:var(--ink);opacity:.8}
 .belongs{margin:12px 0 0;display:flex;align-items:flex-end;gap:10px;font-family:"Caveat",cursive;font-weight:700;font-size:21px}
 .belongs i{flex:1;border-bottom:2px solid ${C.ink};opacity:.35;height:1px;margin-bottom:6px}
-.legal{margin:6px 0 0;font-size:9px;line-height:1.35;opacity:.6}
-.lede{margin:0 0 14px;font-size:13.5px;line-height:1.4}
 .routines{display:flex;flex-direction:column;gap:7px}
-.ibc .note{margin-top:12px}
-.rt{background:#fff;border-radius:16px;padding:8px 12px 9px 14px;border-left:8px solid var(--c)}
-.rtl{display:block;font-weight:800;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.72;margin-bottom:4px}
-.chips{display:flex;flex-wrap:wrap;gap:6px}
-.chips em{font-style:normal;font-family:"Fredoka",sans-serif;font-weight:600;font-size:17px;line-height:1;padding:5px 11px 6px;border-radius:99px;background:var(--t)}
+.rt{background:#fff;border-radius:14px;padding:7px 12px 8px 14px;border-left:8px solid var(--c)}
+.rtl{display:block;font-weight:800;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.72;margin-bottom:4px}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chips em{font-style:normal;font-family:"Fredoka",sans-serif;font-weight:600;font-size:15px;line-height:1;padding:4px 10px 5px;border-radius:99px;background:var(--t)}
+.legal{margin:auto 0 0;font-size:8.6px;line-height:1.45;opacity:.9}
+.legal p{margin:0 0 2px}
 /* back */
-.back-in{position:absolute;left:48px;right:48px;top:48px}
-.btitle{margin:0 0 10px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:40px;letter-spacing:-.03em;line-height:1}
-.blurb{margin:0;font-size:14px;line-height:1.42;max-width:330px}
+.back-in{position:absolute;left:48px;top:48px;width:310px}
+.btitle{margin:0 0 8px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:34px;letter-spacing:-.03em;line-height:1}
+.blurb{margin:0;font-size:12.5px;line-height:1.42}
 .blurb b{font-weight:800}
-.blurb2{margin:8px 0 12px;font-family:"Caveat",cursive;font-weight:700;font-size:23px;color:${C.tomato}}
-.wordchips{display:flex;flex-wrap:wrap;gap:6px;max-width:330px}
-.wordchips em{font-style:normal;font-family:"Fredoka",sans-serif;font-weight:600;font-size:13px;line-height:1;padding:5px 9px 6px;border-radius:99px;background:var(--c);color:#fff}
-.back .bband{right:auto;width:250px;gap:16px;justify-content:flex-start}
-.isbn{position:absolute;right:48px;bottom:48px;width:2in;height:1.2in;background:#fff;border:1.5px dashed #9AA3B5;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:${C.ink}}
+.blurb2{margin:6px 0 0;font-family:"Caveat",cursive;font-weight:700;font-size:21px;color:${C.tomato}}
+.series{position:absolute;left:48px;right:48px;top:262px}
+.slab{margin:0 0 7px;font-weight:800;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase}
+.books{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sb b{display:block;font-size:10.5px;font-weight:800;margin-top:5px;line-height:1.2}
+.sb small{display:block;font-size:9.5px;opacity:.72}
+.mini{position:relative;width:96px;height:96px;border-radius:5px;overflow:hidden;box-shadow:0 0 0 1px rgba(29,41,64,.08)}
+.mini svg{position:absolute;inset:0;width:100%;height:100%}
+.mt{position:absolute;left:8px;top:8px;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:15px;line-height:.92;letter-spacing:-.03em;color:${C.ink}}
+.mt span{display:block}
+.mn{position:absolute;right:6px;top:6px;width:18px;height:18px;border-radius:50%;background:${C.ink};color:#fff;font-family:"Fredoka",sans-serif;font-weight:600;font-size:11px;display:flex;align-items:center;justify-content:center}
+.bband{position:absolute;left:48px;top:450px;width:300px;color:#fff}
+.bonus{display:flex;align-items:center;gap:10px;margin-top:12px}
+.bonus .qr{display:block;border-radius:4px}
+.bonus span{font-size:10px;line-height:1.3;opacity:.95}
+.bonus b{display:block;font-size:11.5px;font-weight:800;margin-bottom:1px}
+.bonus small{display:block;margin-top:3px;font-size:9px;opacity:.75}
+.isbn{position:absolute;right:48px;bottom:48px;width:192px;height:115px;background:#fff;border:1.5px dashed #9AA3B5;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:${C.ink};padding:0 12px}
 .isbn span{font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
-.isbn small{font-size:9.5px;opacity:.7;margin-top:4px}
+.isbn small{font-size:9px;opacity:.7;margin-top:4px;line-height:1.3}
+/* paperback extras */
+.title-pg .spill{position:static;margin:26px 0 22px}
+.ttl{margin:0;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:58px;letter-spacing:-.035em;line-height:1}
+.tsub{margin:8px 0 0;font-weight:700;font-size:16px}
+.tart{width:250px;height:auto;margin:18px 0 6px}
+.by{margin:4px 0 0;font-family:"Caveat",cursive;font-weight:700;font-size:22px}
+.by .slot{font-family:"Nunito Sans",sans-serif;font-size:12px}
+.tlogo{margin-top:auto}
+.copy-pg .in p{margin:0 0 9px;font-size:10.5px;line-height:1.5;max-width:380px}
+.notebody{position:relative;background:#fff;border-radius:16px;padding:18px 22px 14px}
+.notebody.draft{border:1.5px dashed ${C.tomato};padding-top:30px}
+.draftlab{position:absolute;left:16px;top:9px;font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:${C.tomato}}
+.notebody p{margin:0 0 11px;font-size:14.5px;line-height:1.5}
+.notebody .sig{font-family:"Caveat",cursive;font-weight:700;font-size:22px;margin:4px 0 0}
+.notebody .sig .slot{font-family:"Nunito Sans",sans-serif;font-size:11.5px}
+.noteart{display:block;width:100%;height:auto;margin-top:auto}
+.klist{display:grid;grid-template-columns:1fr 1fr;gap:5px 16px}
+.kw{display:flex;align-items:center;gap:8px;background:#fff;border-radius:9px;padding:3.5px 10px;min-height:27px}
+.kw i{flex:0 0 14px;height:14px;border:2px solid ${C.ink};border-radius:4px;opacity:.55}
+.kw b{font-family:"Fredoka",sans-serif;font-weight:600;font-size:14px;width:92px}
+.kw span{flex:1;border-bottom:1.5px solid rgba(29,41,64,.25);height:12px}
+.frames{display:grid;grid-template-columns:1fr 1fr;gap:12px;flex:1}
+.fr{position:relative;background:#fff;border-radius:16px;border:2px dashed var(--c);display:flex;flex-direction:column;justify-content:flex-end;padding:10px 12px}
+.fi{position:absolute;left:0;right:0;top:42%;text-align:center;font-family:"Caveat",cursive;font-weight:700;font-size:18px;color:var(--c)}
+.fl{font-weight:800;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-bottom:1.5px solid rgba(29,41,64,.25);padding-bottom:4px}
+.bonus-pg .ptitle{max-width:400px}
+.qrbox{background:#fff;border-radius:20px;padding:16px;margin:6px 0 10px}
+.qrbox .qr{display:block}
+.link{margin:0 0 14px;font-weight:800;font-size:14px;color:${C.tomato}}
+.bonus-pg .lede{max-width:400px}
+.bigbooks{display:flex;flex-direction:column;gap:12px}
+.bb{display:flex;align-items:center;gap:16px;background:#fff;border-radius:16px;padding:10px}
+.bb .mini{width:112px;height:112px;flex:0 0 112px}
+.bb .mt{font-size:18px}
+.bb b{display:block;font-family:"Fredoka",sans-serif;font-weight:600;font-size:20px;line-height:1.1}
+.bb span{display:block;font-size:13px;margin-top:2px}
+.bb small{display:block;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:${C.tomato};margin-top:5px}
+.end-pg .endtx{position:absolute;left:48px;right:48px;top:350px;text-align:center;color:#fff}
+.endtx h2{margin:0;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:52px;letter-spacing:-.03em}
+.endtx p{margin:6px 0 0;font-family:"Caveat",cursive;font-weight:700;font-size:26px;color:${C.sun}}
 </style>`;
 
-function doc(fontHref, bodyPages, extraCss = '') {
+// ---------- assemble ----------
+const IN = 96, BLEED = 12; // px per inch, bleed in px (0.125 in)
+function htmlDoc(title, rel, pageCss, body, extra = '') {
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Up! Go! More! — board book</title>
-${css(fontHref)}${extraCss}
+<title>${title}</title>
+${css(rel)}<style>${pageCss}</style>${extra}
 </head><body>
 ${defs}
-${bodyPages}
+${body}
 </body></html>`;
 }
+const boardPage = p => `<section class="page pg ${p.cls}">${p.html}</section>`;
+// Paperback page: 8.5x8.5 trim, bleed on top/bottom/outside only (8.625 x 8.75 in). Page 1 is a right-hand page.
+const PB_SCALE = 1.4; // 600 px grid -> 840 px = 8.75 in
+function pbPage(p, i) {
+  const recto = (i % 2 === 0); // i=0 -> page 1 (right-hand); gutter on the left
+  return `<section class="page pbp"><div class="pg ${p.cls}" style="position:absolute;top:0;left:${recto ? -BLEED : 0}px;transform:scale(${PB_SCALE});transform-origin:0 0">${p.html}</div></section>`;
+}
 
-const pages = [coverPage, ifc, ...WORDS.map(wordPage), ibc, backPage];
-fs.writeFileSync(path.join(ROOT, 'source.html'), doc('../../brand/fonts/fonts.css', pages.join('\n')));
+function build() {
+  const R0 = '../../', R1 = '../../../';
+  // ---- A. board book (6 x 6 in trim, 6.25 in with bleed) ----
+  const boardPages = [cover(R0), howTo(true), ...WORDS.map(wordPage), routinesPage(true), back(R0)];
+  const boardCss = `@page{size:6.25in 6.25in;margin:0}.page{width:600px;height:600px}`;
+  fs.writeFileSync(path.join(ROOT, 'source.html'), htmlDoc('Up! Go! More! — board book', R0, boardCss, boardPages.map(boardPage).join('\n')));
+  const guides = `<style>.pg::after{content:"";position:absolute;inset:12px;outline:1px dashed #f0f;z-index:9}.pg::before{content:"";position:absolute;inset:48px;outline:1px dashed #0bf;z-index:9}</style>`;
+  fs.writeFileSync(path.join(__dirname, 'debug-board.html'), htmlDoc('debug', R1, boardCss, [cover(R1), howTo(true), ...WORDS.map(wordPage), routinesPage(true), back(R1)].map(boardPage).join('\n'), guides));
+  fs.writeFileSync(path.join(__dirname, 'cover-only.html'), htmlDoc('cover', R1, `body{margin:-12px 0 0 -12px;overflow:hidden}.page{width:600px;height:600px}`, boardPage(cover(R1))));
 
-// debug: trim + safe-zone guides
-const guides = `<style>.page::after{content:"";position:absolute;inset:12px;outline:1px dashed #f0f;z-index:9;pointer-events:none}.page::before{content:"";position:absolute;inset:48px;outline:1px dashed #0bf;z-index:9;pointer-events:none}</style>`;
-fs.writeFileSync(path.join(__dirname, 'debug.html'), doc('../../../brand/fonts/fonts.css', pages.join('\n'), guides));
+  // ---- B. talk-along paperback (8.5 x 8.5 in trim), print on demand ----
+  const PB = path.join(ROOT, 'paperback');
+  fs.mkdirSync(PB, { recursive: true });
+  const pbPages = [titlePage(R1), copyrightPage(), notePage(), howTo(false), ...WORDS.map(wordPage), routinesPage(false), keepsakePage(), ownWordsPage(), bonusPage(), seriesPage(), endPage()];
+  if (pbPages.length % 2) throw new Error('paperback page count must be even: ' + pbPages.length);
+  const pbCss = `@page{size:8.625in 8.75in;margin:0}.pbp{width:828px;height:840px}`;
+  fs.writeFileSync(path.join(PB, 'source.html'), htmlDoc('Up! Go! More! — talk-along paperback interior', R1, pbCss, pbPages.map(pbPage).join('\n')));
+  // trimmed preview (what the reader sees): crop the bleed
+  const pbTrimCss = `.pbp{width:816px;height:816px}`;
+  fs.writeFileSync(path.join(PB, 'preview-trim.html'), htmlDoc('preview', R1, pbTrimCss, pbPages.map((p, i) => `<section class="page pbp"><div class="pg ${p.cls}" style="position:absolute;top:-12px;left:-12px;transform:scale(${PB_SCALE});transform-origin:0 0">${p.html}</div></section>`).join('\n')));
 
-// cover-only (trimmed, no bleed) for cover.png
-fs.writeFileSync(path.join(__dirname, 'cover-only.html'), doc('../../../brand/fonts/fonts.css', coverPage,
-  `<style>body{margin:-12px 0 0 -12px;overflow:hidden}</style>`));
+  // cover wrap: back | spine | front. Spine width = pages x paper caliper [VERIFY with the KDP / IngramSpark cover calculator]
+  const CALIPER = 0.002252; // KDP white paper, standard colour, in per page [VERIFY]
+  const spineIn = +(pbPages.length * CALIPER).toFixed(4);
+  const spinePx = spineIn * IN, trimPx = 8.5 * IN;
+  const wrapW = BLEED + trimPx + spinePx + trimPx + BLEED, wrapH = 8.75 * IN;
+  const wrapCss = `@page{size:${(wrapW / IN).toFixed(4)}in 8.75in;margin:0}.wrap{width:${wrapW}px;height:${wrapH}px;position:relative;overflow:hidden;background:${C.ink}}
+    .half{position:absolute;top:0;height:${wrapH}px;overflow:hidden}.half>.pg{position:absolute;top:0;transform:scale(${PB_SCALE});transform-origin:0 0}`;
+  const wrapBody = `<section class="page wrap">
+    <div class="half" style="left:0;width:${BLEED + trimPx}px"><div class="pg ${back(R1).cls}" style="left:0">${back(R1).html}</div></div>
+    <div class="half" style="left:${BLEED + trimPx + spinePx}px;width:${trimPx + BLEED}px"><div class="pg ${cover(R1).cls}" style="left:${-BLEED}px">${cover(R1).html}</div></div>
+  </section>`;
+  fs.writeFileSync(path.join(PB, 'cover-wrap.html'), htmlDoc('Up! Go! More! — paperback cover wrap', R1, wrapCss, wrapBody));
 
-console.log('pages:', pages.length, WORDS.map(p => `${p.w}:${p.words}w`).join(' '));
+  console.log(`board pages: ${boardPages.length} | paperback interior pages: ${pbPages.length} | spine ${spineIn} in | wrap ${(wrapW / IN).toFixed(4)} x 8.75 in | words: ${N}`);
+}
+build();
