@@ -159,7 +159,7 @@ const AFTERNOONS = [
   ['fort', 'Fort afternoon', 'Build a blanket fort and read inside it.', 'Drape one blanket over two chairs.', '', 'Draped, never tied.'],
   ['drawing', 'Comic strip', 'Draw a 6-panel comic about your family.', 'Draw one funny face.', '', ''],
   ['sports', 'Backyard games', 'Set up an obstacle course or a target game.', 'Toss a ball 20 times without dropping it.', '', 'Clear space; a grown-up nearby.'],
-  ['library', 'Library trip', 'Choose 3 books, one you’d never usually pick.', 'Swap books with someone at home.', '', 'Go with a grown-up or as you agreed.'],
+  ['chooseBook', 'Library trip', 'Choose 3 books, one you’d never usually pick.', 'Swap books with someone at home.', '', 'Go with a grown-up or as you agreed.'],
   ['garden', 'Plant something', 'Plant seeds or repot a plant.', 'Water every plant in the house.', 'Seeds or a small plant', 'Gloves on; wash hands after.'],
   ['puzzle', 'Puzzle race', 'Race a grown-up to finish a puzzle.', 'Do 20 pieces together.', '', 'Keep small pieces away from under-3s.'],
   ['dance', 'Dance-off', 'Make up a routine and teach it to the family.', 'One song, everyone dances.', '', ''],

@@ -16,8 +16,9 @@ async function measureFields(browser, html, W) {
   const page = await browser.newPage({ viewport: { width: W, height: 1000 } });
   await page.goto('file://' + html, { waitUntil: 'networkidle' });
   await page.evaluate(() => document.fonts.ready);
+  const pageIndex = await page.evaluate(() => [...document.querySelectorAll('.page')].findIndex(p => p.querySelectorAll('.bl-body').length === 9));
   const res = await page.evaluate(() => {
-    const pg = document.querySelectorAll('.page')[10];
+    const pg = [...document.querySelectorAll('.page')].find(p => p.querySelectorAll('.bl-body').length === 9);
     const pr = pg.getBoundingClientRect();
     const rel = r => ({ x: r.left - pr.left, y: r.top - pr.top, w: r.width, h: r.height });
     const union = els => { const rs = els.map(e => e.getBoundingClientRect()); const l = Math.min(...rs.map(r => r.left)), t = Math.min(...rs.map(r => r.top)), rr = Math.max(...rs.map(r => r.right)), b = Math.max(...rs.map(r => r.bottom)); return rel({ left: l, top: t, width: rr - l, height: b - t }); };
@@ -28,15 +29,21 @@ async function measureFields(browser, html, W) {
     });
   });
   await page.close();
-  return res;
+  return { pageIndex, cards: res };
 }
 
-async function postProcess(entry, fields) {
+async function postProcess(entry, measured) {
   const bytes = fs.readFileSync(entry.pdf);
   const doc = await PDFDocument.load(bytes);
   const font = await doc.embedFont(StandardFonts.Helvetica);
+  const P = entry.product === 'A'
+    ? { title: '52 Play & Talk Cards, Ages 0–5', subject: 'Printable play and talk cards for babies, toddlers and preschoolers' }
+    : { title: '52 Family Talk-Along Cards, Ages 5–12', subject: 'Printable family conversation cards for dinner, the car, bath time and bedtime' };
+  setMeta(doc, entry, P);
+  if (!measured) { fs.writeFileSync(entry.pdf, await doc.save()); return; }
+  const fields = measured.cards;
   const form = doc.getForm();
-  const page = doc.getPage(10);
+  const page = doc.getPage(measured.pageIndex);
   const Hpt = page.getHeight();
   const k = 0.75; // px -> pt
   const ink = rgb(0x1D / 255, 0x29 / 255, 0x40 / 255);
@@ -60,31 +67,45 @@ async function postProcess(entry, fields) {
     }
   });
   form.updateFieldAppearances(font);
-  const P = entry.product === 'A'
-    ? { title: '52 Play & Talk Cards, Ages 0–5', subject: 'Printable play and talk cards for babies, toddlers and preschoolers' }
-    : { title: '52 Family Talk-Along Cards, Ages 5–12', subject: 'Printable family conversation cards for dinner, the car, bath time and bedtime' };
-  doc.setTitle(P.title + (entry.ink ? ' (ink-saver)' : '') + (entry.size === 'a4' ? ' (A4)' : ' (US Letter)'));
+  fs.writeFileSync(entry.pdf, await doc.save());
+}
+
+function setMeta(doc, entry, P) {
+  const what = entry.startHere ? ' · START HERE' : (entry.ink ? ' (low-ink)' : ' (color)') + (entry.size === 'a4' ? ' (A4)' : ' (US Letter)');
+  doc.setTitle(P.title + what);
   doc.setAuthor('AlphaPlay LLC (Play Before Pixels)');
-  doc.setSubject(P.subject);
-  doc.setKeywords(['© 2026 AlphaPlay LLC. All rights reserved.', 'Play Before Pixels is a trade name of AlphaPlay LLC.', 'License: personal/family use only. Full terms: playbeforepixels.com/license']);
+  doc.setSubject(P.subject + ' · Version 1.0 · September 2026');
+  doc.setKeywords(['© 2026 AlphaPlay LLC. All rights reserved.', 'Play Before Pixels is a trade name of AlphaPlay LLC.', entry.ed === 'etsy' ? 'License: personal/family use only. Full terms in the shop listing and policies.' : 'License: personal/family use only. Full terms: playbeforepixels.com/license']);
   doc.setCreator('Play Before Pixels');
   doc.setProducer('Play Before Pixels');
   doc.setCreationDate(new Date('2026-09-28T12:00:00Z'));
   doc.setModificationDate(new Date());
-  fs.writeFileSync(entry.pdf, await doc.save());
 }
 
 (async () => {
   execFileSync('node', [path.join(HERE, 'build.js')], { stdio: 'inherit' });
   const manifest = JSON.parse(fs.readFileSync(path.join(HERE, 'gen/manifest.json'), 'utf8'));
   const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' }).catch(() => chromium.launch());
+  // remove files from the old naming (ink-saver) so nothing stale ships
+  for (const d of [ROOT, path.join(ROOT, 'talk-along')]) for (const f of fs.readdirSync(d)) if (/ink-saver.*\.pdf$/.test(f)) fs.unlinkSync(path.join(d, f));
   for (const e of manifest) {
     if (!process.argv.includes('--skip-pdf')) {
       run('pdf', e.html, e.pdf);
-      const fields = await measureFields(browser, e.html, e.W);
-      if (fields.length !== 9) throw new Error('expected 9 blank cards on page 11, got ' + fields.length);
-      await postProcess(e, fields);
-      console.log('pdf', path.relative(ROOT, e.pdf));
+      let measured = null;
+      if (!e.startHere) {
+        measured = await measureFields(browser, e.html, e.W);
+        if (measured.cards.length !== 9 || measured.pageIndex < 0) throw new Error('expected 9 blank cards, got ' + measured.cards.length);
+      }
+      await postProcess(e, measured);
+      const mb = fs.statSync(e.pdf).size / 1048576;
+      if (mb > 15) throw new Error(e.pdf + ' is over 15 MB');
+      console.log('pdf', path.relative(ROOT, e.pdf), mb.toFixed(1) + ' MB');
+    }
+    if (e.startHere && e.ed === 'store') run('pages', e.html, path.join(path.dirname(e.pdf), 'preview', 'start-here'), '.page', '1.5');
+    if (e.lowInkPreview) {
+      const lp = path.join(path.dirname(e.pdf), 'preview', 'low-ink');
+      fs.rmSync(lp, { recursive: true, force: true });
+      run('pages', e.html, lp, '.page', '1');
     }
     if (e.main) {
       const dir = path.dirname(e.pdf);

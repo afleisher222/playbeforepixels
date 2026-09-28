@@ -15,26 +15,36 @@
 
 ## 2.1 Where the line stands today
 
-Eight product folders exist in `products/`. Four have a `listing.json` (the store-ready record); four are source files only.
+As of this revision (September 28, 2026), `products/` holds twelve product folders. Eleven have a `listing.json`, the store-ready record, and the routine cards also have a starter-tier record. Only the toddler busy book has no record yet. Other sessions are still adding records, so the routine should regenerate this table from the files before acting on it.
 
-| Product | Folder | Built so far | Demand call (`DEMAND-CHECK.md`) | Price | Wave |
+| Product | Folder | Built so far | Demand call (`DEMAND-CHECK.md`) | Everyday price | Wave |
 |---|---|---|---|---|---|
-| 200+ Visual Routine Cards | `visual-routine-cards` | source.html only | Keep (strongest evidence: a 2,189-sale shop, several Bestseller badges) | $9.50 list, run at about $6.50; $4.50 starter tier | 1 |
-| "I'm Bored" Play Cards (150) | `bored-play-cards` | source, Letter/A4, editable and duplex builds | Keep (a 10.4k-sale shop) | $6.50 | 1 |
-| 100 Screen-Free Plays, ages 0–5 | `guide-100-plays` | paperback interior and digital edition sources | Keep (699-rating and 423-rating comparables) | $16.99 paperback; $9.99 PDF | 1 |
-| 52 Play & Talk Cards, ages 0–5 | `play-talk-cards` | print PDF built | Keep, printable first | $7 printable; $22 POD deck later | 1 (bundle part), deck in 3 |
-| *Up! Go! More!* talk-along first words | `board-up-go-more` | listing.json, PDF, cover, mockup | Keep; board book is Wave 3 | $11.99 paperback now; $12.99 board book; $29.99 3-pack | 1 (paperback), 3 (board) |
-| *The Day the Tablet Slept* | `picture-tablet-slept` | listing.json, KDP and IngramSpark covers | Reposition (sell as a bedtime and play-day story, mainly inside a bundle) | $11.99 paperback; $19.99 hardcover; $24.99 Play Day bundle | 1 |
-| *Laps Not Apps* | `picture-laps-not-apps` | listing.json, hardcover PDF | Reposition as a personalized keepsake | listing says $19.99; demand check says $34.99 personalized hardcover, $24.99 softcover | 3 (personalized) |
-| *More Talk, Less Tap* | `picture-more-talk-less-tap` | listing.json, PDF | **Cut** as a book; the content becomes the Talk Tower game kit | $6.99 kit; $12.99 site license | School-facing wave |
+| 200+ Visual Routine Cards | `visual-routine-cards` | source, listing.json, starter-tier listing | Keep (strongest evidence: a 2,189-sale shop, several Bestseller badges) | $6.50; $4.50 starter tier | 1 |
+| "I'm Bored" Play Cards (150) | `bored-play-cards` | source, Letter/A4, editable and duplex builds, listing.json | Keep (a 10.4k-sale shop) | $6.50 | 1 |
+| Play-First Family Kit | `play-first-family-kit` | source, listing.json | Keep | $11 | 1 |
+| Toddler busy book printable | `toddler-busy-book` | build folder only | Keep | $11.99 | 1 (or January if the schedule slips) |
+| 100 Screen-Free Plays, ages 0–5 | `guide-100-plays` | paperback interior, digital edition, listing.json | Keep (699-rating and 423-rating comparables) | $16.99 paperback; $9.99 PDF | 1 |
+| 52 Play & Talk Cards, ages 0–5 | `play-talk-cards` | print PDF, listing.json | Keep, printable first | $6.99 printable; $22 POD deck later | 1 (bundle part), deck when the printable sells |
+| *Up! Go! More!* talk-along first words | `board-up-go-more` | listing.json, PDF, cover, mockup | Keep; the offset board book is gated (section 3.10 rule 4) | $11.99 paperback now; $12.99 board book; $29.99 3-pack | 1 (paperback); board book gated |
+| *The Day the Tablet Slept* | `picture-tablet-slept` | listing.json, KDP and IngramSpark covers | Reposition (sell as a bedtime and play-day story, mainly inside a bundle) | $11.99 paperback; $19.99 hardcover only after the paperback sells | 1 |
+| *Laps Not Apps* | `picture-laps-not-apps` | listing.json, hardcover and softcover covers, order-to-print notes | Reposition as a personalized keepsake | $34.99 hardcover; $24.99 softcover (personalized, printed per order; no Amazon route) | 3 (personalized), only if the workflow runs with no manual step |
+| *More Talk, Less Tap* | `picture-more-talk-less-tap` | listing.json, PDF | **Cut** as a book; the content becomes the Talk Tower game kit | $6.99 kit; $12.99 site license | School-facing wave (G2) |
+| 30-Day Screen Reset | `course-screen-reset` | source, emails, funnel, paperback files, listing.json | Keep (written, faceless course) | $27; $49 bundle | 2 |
+| Adult tee and tote | `merch-core` | listing.json (2 items) | Tees: 2–3 cleared designs only | $27 tee; $22 tote | 3, after trademark clearance |
 
-Not yet started but scheduled: the Play-First Family Kit, the toddler busy book printable, the holiday gift bundle and gift-reveal card, the Car Ride & Waiting Pack, first-words flash cards, the 30-Day Screen Reset, and the ALPHAPLAY Spelling Games printable (`ops/QUEUE.md`).
+Not yet started but scheduled: the holiday gift bundle and gift-reveal card, the Car Ride & Waiting Pack, first-words flash cards and the ALPHAPLAY Spelling Games printable (`ops/QUEUE.md`).
 
-**Record gaps to fix before any upload** (these break binding rules in `BRAND.md`):
-1. None of the four `listing.json` files has the required `amazon_route` field.
-2. *Laps Not Apps* and *More Talk, Less Tap* have no `next_products`; only *Up! Go! More!* and *The Day the Tablet Slept* have a `bonus_url`.
-3. *Laps Not Apps* still carries the pre-demand-check $19.99 generic price. *More Talk, Less Tap* still lists channels for a book the demand check cut.
-4. `commerce/storefront-setup-guide.md` still includes a coaching booking tool (Part C §5), coaching in the Shopify catalog, and the Amazon Influencer storefront. The first two break the no-live-services rule and the third breaks the faceless rule. This channel plan leaves out all three, and the guide should be corrected to match.
+**Record gaps to fix before any upload.** Each of these breaks a binding rule in `BRAND.md` or `ops/COMPLIANCE-GATE.md`. The list is regenerated from the current files.
+1. **`amazon_route` missing** on three records: `guide-100-plays`, `play-talk-cards` and `visual-routine-cards` (and its starter-tier file).
+2. **`price_floor` missing on all eleven records, and `ai_disclosure` missing on ten.** Only `play-first-family-kit` has an `ai_disclosure`. Both fields are needed to pass gate lines 17 and 18.
+3. **Anchor-and-discount price notes that break "Honest pricing"** (16 CFR 233.1):
+   - `visual-routine-cards` ("List at $9.50 and run a standing 30–40% sale"; its `price_usd` is still 9.5);
+   - `play-talk-cards` ("List at $10.75 and run the usual 35% Etsy sale", and a bundle at "$11.99 (list $17.99)");
+   - `guide-100-plays` (PDF "list at $14.99 … about 33% off").
+
+   Each becomes one everyday price: $6.50, $6.99 and $9.99.
+4. **`play-first-family-kit`** still points to a "holiday gift bundle ($39 digital + deck)". The 2026 bundle is digital-only at about $29 (2.5).
+5. `commerce/storefront-setup-guide.md` still includes a coaching booking tool (Part C §5), coaching in the Shopify catalog and the Amazon Influencer storefront. The first two break the no-live-services rule and the third breaks the faceless rule. This channel plan leaves all three out, and the guide should be corrected to match.
 
 ---
 
@@ -59,7 +69,7 @@ Not yet started but scheduled: the Play-First Family Kit, the toddler busy book 
 
 ### Wave 1: October to December 2026, the launch-first five and the holidays
 
-**Goal:** real sales and email sign-ups before Black Friday (November 27, 2026), with no physical stock and no school-facing work.
+**Goal:** real sales and email sign-ups in the 2026 holiday season, with no physical stock and no school-facing work. The listings are built to the October–November dates below, but no listing takes money until **Gate A** is met: a business bank account, employment counsel's go-ahead, general-liability insurance, and the publish safeguards in section 5.6. The financial model assumes first sales in **December 2026**, and each month of slip moves everything back a month (section 3.9).
 
 **Blockers to clear first** (nothing can be paid out without them):
 - **Bank account.** AlphaPlay LLC's Chase business checking account is closed (`finance/BANKING.md`), so no platform can pay out until a new no-fee business account exists. This is the first step on the critical path.
@@ -69,20 +79,20 @@ Not yet started but scheduled: the Play-First Family Kit, the toddler busy book 
 
 | Product | Gate | Channel | Price | Target date (Assumption unless cited) |
 |---|---|---|---|---|
-| 1. Visual routine cards (0–5 first) | G0 | Etsy + own site | $9.50 list, about $6.50 on sale; $4.50 starter | Listed by Oct 18 |
-| 2. "I'm bored" play cards (0–5 bands first) | G0 | Etsy + own site | $6.50 | Listed by Oct 18 |
-| 3. Play-First Family Kit | G0 (2–5 pages); 5–12 pages G1 | Etsy + own site | $11 (list $15.99) | Listed by Oct 31 |
-| 4. Toddler busy book printable, 120–150 pages | G0 | Etsy + own site | $15.99 list, about $11–12 on sale | Listed by Nov 13 |
-| 5. *100 Screen-Free Plays*: paperback + PDF | G0 | KDP; PDF on Etsy + own site | $16.99 paperback; $9.99 PDF | PDF by Oct 31. Paperback live by Nov 13, since KDP metadata work is scheduled for Oct 12–18 (playbook week 3) and holiday print cutoffs apply [VERIFY KDP holiday timing] |
-| *Up! Go! More!* paperback and *The Day the Tablet Slept* paperback | G0 | KDP (+ own-site link) | $11.99 each | After the proofs pass; both files are built |
+| 1. Visual routine cards (0–5 first) | G0 | Etsy + own site | $6.50; $4.50 starter | Built by Oct 18; live at Gate A |
+| 2. "I'm bored" play cards (0–5 bands first) | G0 | Etsy + own site | $6.50 | Built by Oct 18; live at Gate A |
+| 3. Play-First Family Kit | G0 (2–5 pages); 5–12 pages G1 | Etsy + own site | $11 | Built by Oct 31; live at Gate A |
+| 4. Toddler busy book printable, 120–150 pages | G0 | Etsy + own site | $11.99 | Built by Nov 13; live at Gate A |
+| 5. *100 Screen-Free Plays*: paperback + PDF | G0 | KDP; PDF on Etsy + own site | $16.99 paperback ($7.89 net a copy); $9.99 PDF | PDF by Oct 31. Paperback ready by Nov 13 at the earliest, since KDP metadata work is scheduled for Oct 12–18 (playbook week 3) and holiday print cutoffs apply [VERIFY KDP holiday timing] |
+| *Up! Go! More!* paperback and *The Day the Tablet Slept* paperback | G0 | KDP (+ own-site link) | $11.99 each ($3.95 net a copy) | After the proofs pass; both files are built |
 | Holiday gift bundle + printable gift-reveal card | G0 | Own site + Etsy | See 2.5 (the 2026 version is digital only) | By Oct 31 (`ops/QUEUE.md` #2; BLIND-SPOTS #6) |
 | Talk-First Welcome printable gift set | G0 | Own site + Etsy | $14; $4.99 shower insert + bookplate | By Nov 15 (Assumption) |
 | Play Recipes for Grandparents | G0 | Own site + Etsy | $12 | November lead campaign (`CAMPAIGN-BIBLE.md` calendar) |
-| First alternates: Car Ride & Waiting Pack; first-words flash cards | G0 | Etsy + own site | $6 (list $9.99, run at about $6.49); $6.99 | Only if 1–5 are live by Nov 13; otherwise March |
+| First alternates: Car Ride & Waiting Pack; first-words flash cards | G0 | Etsy + own site | $6; $6.99 | Only if 1–5 are ready by Nov 13; otherwise March |
 | Free "3 plays for your child's age" monthly printable | G0 | Own site (email capture) | Free | Live with the first listing (`ops/QUEUE.md` #3) |
 
 **Also in Wave 1:**
-- The 30-Day Screen Reset founding beta: 15–30 families, by email only, at $27–$49, from Oct 26 to Nov 22 if the course is ready; otherwise in early January (BLIND-SPOTS #13).
+- The 30-Day Screen Reset founding beta moves to **January 2027**. In the autumn the email list will be far too small to fill 15–30 places: the model's Expected list holds about 50 subscribers at the end of December and about 110 at the end of January. Run the beta inside the January public launch as a genuine, dated founding-member offer (BLIND-SPOTS #13), or drop it.
 - Seasonal switch: once printer shipping cutoffs pass in December, the home page switches to instant digital gifts (playbook week 11).
 
 **Holiday cutoffs.** Physical gift items need live listings at least 8 weeks before the moment (`CAMPAIGN-BIBLE.md` seasonal rules). For Christmas, that means by about October 30. This is why the only physical items in Wave 1 are KDP paperbacks, which Amazon prints and ships.
@@ -95,9 +105,9 @@ Not yet started but scheduled: the Play-First Family Kit, the toddler busy book 
 
 | Product | Gate | Channel | Price | Date |
 |---|---|---|---|---|
-| **30-Day Screen Reset** (written daily plan by automated email; no video, no calls) | G0 framing for ages 0–5; 5–12 track when G1 clears | Own site checkout + email platform | $27; $49 bundle; money-back guarantee | Listed in December (DEMAND-CHECK rule 7); public launch Dec 26 (playbook weeks 12–13) |
+| **30-Day Screen Reset** (written daily plan by automated email; no video, no calls) | G0 framing for ages 0–5; 5–12 track when G1 clears | Own site checkout + email platform | $27; $49 bundle; money-back guarantee | Listed in December if Gate A is met (DEMAND-CHECK rule 7); public launch late December or January (playbook weeks 12–13) |
 | Screen Reset paperback edition | G0 | KDP | Price from the KDP calculator [VERIFY] | After the email version has buyers |
-| **ALPHAPLAY Spelling Games printable**, "from Play Before Pixels", ages 5–8 | G1, plus counsel question 7 | Own site, with the ALPHAPLAY name next to the buy button | Assumption: $6.50–$9.50, inside the entry band in 2.4 | **Genuinely on sale by mid-January 2027**; dated sales log and screenshots by the internal deadline of Feb 1 (BLIND-SPOTS #9) |
+| **ALPHAPLAY Spelling Games printable**, "from Play Before Pixels", ages 5–8 | G1, plus counsel question 7 | Own site, with the ALPHAPLAY name next to the buy button | Assumption: $6–$7, inside the entry band in 2.4 (the model counts no revenue from it) | **Genuinely on sale by mid-January 2027**; dated sales log and screenshots by the internal deadline of Feb 1 (BLIND-SPOTS #9) |
 | Talk-First Welcome Bundle (lead campaign) | G0 | Own site + Etsy | $14 printable set | February lead campaign |
 | Undated "52 Weeks of Play" calendar | G0 | Etsy + own site | $9 | After the first five are live (DEMAND-CHECK) |
 | Car Ride & Waiting Pack (if not in Wave 1) | G0 | Etsy + own site | $6 | Listed by early March for spring travel |
@@ -111,16 +121,23 @@ Not yet started but scheduled: the Play-First Family Kit, the toddler busy book 
 - **Fallback if the product is not on sale in time:** file an extension instead, at $125 per class. With all 5 classes still on the application that is $625, and up to five 6-month extensions are allowed (PROTECTION-PLAN §6b).
 - The demand check gathered no sales evidence for this product. Its job is to protect the mark, not to drive revenue.
 
-### Wave 3: February to June 2027, the board-book pre-order and Screen-Free Week
+### Wave 3: February to June 2027, spring products and Screen-Free Week (the board book is gated)
 
-**Goal:** the brand's first stocked product, paid for by customers before it is printed and held by a 3PL, never at the founder's home.
+**Goal:** spring and summer printables, the POD deck once its printable sells, and cleared tees. **The offset board book is no longer scheduled for spring 2027.** The financial model finds the pre-sale brings in 2–26 copies against a go line of about 920 in every scenario (section 3.9). A 1,000-copy run also lands at about $5.00 a copy, 38% of retail, which fails the own-site cost rule. The programme below runs only when the board-book gate in section 3.10 rule 4 is met:
+- (a) six months of positive trailing-12-month results;
+- (b) retained cash covers the run;
+- (c) the print-on-demand paperback sells at least 40 a month for 3 months;
+- (d) quotes meet the channel cost rule;
+- (e) product-safety counsel has said who certifies.
 
-**Board-book programme** (`BLIND-SPOTS.md` #11, #16, #17; `board-up-go-more/listing.json`):
-1. **Quotes (January).** Get 2–3 offset quotes for a 6×6 in board book at 500, 1,000 and 2,500 copies. Include shipping, duties and 3PL receiving and storage. Ask each printer to confirm, in writing, whether the book counts as a paper-only "ordinary book" under CPSIA. The planning figure is roughly $1.80–$4.00 a copy at 1,000–3,000 copies [VERIFY with quotes].
-2. **Price test.** Sell at $12.99 only if the landed unit cost is at or below 35–40% of retail, which means $4.55–$5.20 (DEMAND-CHECK rule 9).
+Until then, *Up! Go! More!* sells as the $11.99 print-on-demand paperback.
+
+**Board-book programme, when the gate is met** (`BLIND-SPOTS.md` #11, #16, #17; `board-up-go-more/listing.json`):
+1. **Quotes (January 2027, information only).** Get 2–3 offset quotes for a 6×6 in board book at 500, 1,000, 2,500 and 5,000 copies. Include shipping, duties and 3PL receiving and storage. Ask each printer to confirm, in writing, whether the book counts as a paper-only "ordinary book" under CPSIA. The planning figure is roughly $1.80–$4.00 a copy at 1,000–3,000 copies [VERIFY with quotes]. A 1,000-copy run sits near the $4.00 end.
+2. **Cost test by channel** (section 3.8): landed cost at or below 35% of retail for the own site and FBA ($4.55), 25% for Faire and wholesale ($3.25), and 20% for chain retail ($2.60). At the quote table's planning figures, a 1,000-copy run fails all three, a 2,500-copy run passes the first two, and only a 5,000-copy run passes the chain rule.
 3. **Illustration.** Hire a human illustrator for the print-run books, at about $1,500–$5,000 per board book, under the one freelancer contract.
-4. **Pre-sale (February to April, ideally around spring break).**
-   - **Funding goal:** printing + shipping + duties + about 8–10% fees + delivery to buyers + a 15% buffer.
+4. **Pre-sale (only after the gate; ideally around spring break).**
+   - **Funding goal (go line):** printing + shipping + duties + about 8–10% fees + delivery to buyers + a 15% buffer. Below the go line, refund in full and keep the paperback.
    - **Tiers:** 1 book; the 3-book set plus a printable; 10 copies donated to a library or child-care center; bulk 25/100/500. The donation and bulk tiers are group-facing, so they need G2.
    - **Where:** Shopify pre-orders. Kickstarter only if counsel accepts that it shows the creator's verified name [VERIFY].
    - **FTC mail-order rule:** ship by the promised date, or tell buyers and offer a refund.
@@ -128,7 +145,7 @@ Not yet started but scheduled: the Play-First Family Kit, the toddler busy book 
 6. **Series.**
    - Books 2 and 3: "Woof! Moo! Beep!" (sounds and animals) and "Yum! Splash! Yawn!" (routines). Both are working titles that need an originality and trademark check first.
    - The Talk-Along Firsts 3-pack at $29.99 exists only once all three books do.
-   - If only book 1 is ready in spring, the pre-sale covers book 1 and the 3-pack moves to Wave 4.
+   - Books 2 and 3 and their runs are priced as gated items ($17,350–$32,000, section 3.4). They are not in the base plan.
 
 **Other Wave 3 products:**
 
@@ -138,8 +155,8 @@ Not yet started but scheduled: the Play-First Family Kit, the toddler busy book 
 | First-words POD flash-card deck | G0 + CPSIA gate | Own site via POD, Etsy | $19.99 | After the $6.99 printable sells |
 | Personalized *Laps Not Apps* keepsake | G0 | Etsy order → name-stamped PDF → Gelato or Lulu | $34.99 hardcover; $24.99 softcover | Only if the variable-data workflow runs with no manual step [VERIFY] |
 | Tablet Tuck-In pouch (tablet and phone sizes) | G0 ritual; G1 Keeper insert | Own site via POD | $24 tablet; $16 phone; $32 Book + Pouch | May lead campaign. Zip only, no drawstring; sold as grown-up storage, not a toy |
-| 2–3 cleared adult tees | G0 | Amazon Merch on Demand, own site via POD | $27 | Only designs that pass a trademark and originality check. "Pencils before pixels" is held; "Childhood can't wait. Screens can." and "Paper first" must be cleared first (`legal/DECISION-MEMO.json`) |
-| Spanish starter set, La Charla Cuenta (Spanish Screen Reset Pack, study cards, 5-email course) | G0 parent pieces | Own site, Etsy | $12 PDF | March 2027 calendar slot. Every translation gets a reviewed second pass (`ops/ROUTINE.md` 3b) |
+| 2–3 cleared adult tees | G0 | Amazon Merch on Demand, own site via POD | $27 (not in the model's revenue until cleared) | Only designs that pass a trademark and originality check. "Pencils before pixels" is held; "Childhood can't wait. Screens can." and "Paper first" must be cleared first (`legal/DECISION-MEMO.json`) |
+| Spanish starter set, La Charla Cuenta (Spanish Screen Reset Pack, study cards, 5-email course) | G0 parent pieces | Own site, Etsy | $12 PDF | **Gated on the break-even line** (section 3.10 rule 3; about $4,700–$5,800). Not before two months at or above the line. Every translation gets a reviewed second pass (`ops/ROUTINE.md` 3b) |
 | 5–12 family products: Guild Passport, Daylight Deck, Operation Cake, Code Name Crayon, Back-and-Forth Lab, Turn-Taker Badge | G1 | KDP (low-content passport), Etsy, own site | $8.99 passport; $9 deck printable; $14 party kit; $24/$29 Crayon season; $7 lab; $7 badge kit | Only once G1 clears; the calendar names a G0 fallback for every slot |
 
 ### Wave 4: July to December 2027, subscription, community editions and languages
@@ -152,7 +169,7 @@ Not yet started but scheduled: the Play-First Family Kit, the toddler busy book 
      - (a) The monthly free "3 plays" email has run long enough to show open and click rates by age band. Assumption: at least 6 months of data.
      - (b) Subscription-law compliance: clear terms before purchase, easy online cancellation, and renewal reminders where state law requires them [VERIFY].
      - (c) The billing tool is the store or the merchant of record, not a new platform, unless the channel rule in 2.8 is met.
-   - **Price:** none of the source files sets one. Assumption for testing: $9–$12 a month, anchored against the $9–$15 single printables. Set it after the Wave 1–3 order data is in.
+   - **Price:** none of the source files sets one. Assumption for testing: $9–$12 a month, set with the $9–$14 single printables in mind. Set it after the Wave 1–3 order data is in.
    - The cut Real-World Quest Board idea (`CAMPAIGN-BIBLE.md` §6) shows the risk: subscriptions add support work. Keep the kit strictly digital and self-serve.
 2. **Community editions.** Versions of existing content for the adults around a child.
    - Grandparent's play kit, which extends Play Recipes for Grandparents.
@@ -163,15 +180,15 @@ Not yet started but scheduled: the Play-First Family Kit, the toddler busy book 
    - **Gates:** editions sold to parents are G0 or G1. Editions sold to organizations are G2: library, child-care, faith-group and moms'-group licenses, and the "Family Night in a Box" kit.
 3. **International languages** (`legal/international-plan.md`; `ops/INTERNATIONAL.md`).
    - **English markets.** The UK, Canada, Australia, New Zealand and Ireland need no translation, so they start in Wave 2: KDP marketplace pricing and merchant-of-record digital sales.
-   - **Spanish** starts in Wave 3 with La Charla Cuenta and runs months 4–9.
-   - **Wave 4 adds French** (with a Quebec review pass) **and German**, in months 9–18. Brazilian Portuguese follows, digital only.
-   - **Cost:** about $5,000 per language for AI drafting plus a professional post-edit (estimate).
+   - **Spanish** starts with La Charla Cuenta once the break-even line has held for two months, not on a fixed date.
+   - **French** (with a Quebec review pass) **and German** follow only if Spanish meets the targets set at the quarterly review. Brazilian Portuguese follows, digital only.
+   - **Cost:** about $5,000 per language for AI drafting plus a professional post-edit, and $500–$1,500 of legal review per market (estimates). All of this is priced as gated items in section 3.4.
    - **Rules:** physical goods abroad sell only through marketplaces that print locally. Board books and the card deck stay US-only until the toy-safety questions are answered.
-4. **Retail-readiness work toward Target and other chains.** See 2.9.
+4. **Retail-readiness work toward Target and other chains.** This is gated by units sold, not by the calendar. See 2.9 and section 4.9.
 
 ### School-facing wave: conditional on employment counsel (G2)
 
-**Status.** Everything here is built or buildable now and stays unpublished until counsel answers the listed questions: `legal/FOR-EMPLOYMENT-COUNSEL.md` Q1–Q3, Q4–Q6, Q10 and Q11 (`MARKETING-PLAYBOOK.md` gate 1).
+**Status.** Everything here is built or buildable now and stays unpublished until counsel answers the listed questions: `legal/FOR-EMPLOYMENT-COUNSEL.md` Q1–Q3, Q4–Q6, Q10 and Q11 (`MARKETING-PLAYBOOK.md` gate 1). No base figure in the financial model depends on it. It appears only as an overlay, which adds about $1,900 to the Expected year-3 operating result if counsel clears it in writing (section 3.9). Host kits are modelled at near-zero volume, because the demand check found no sales counts for kits and a free leader program competes with them.
 
 **Two limits apply even after counsel clears it:**
 - Nothing the founder made for or used in her own teaching may be sold.
@@ -184,7 +201,7 @@ Not yet started but scheduled: the Play-First Family Kit, the toddler busy book 
 | Talk brain breaks (60 cards + slide file) | $5; $4 seasonal packs; $18–$24 bundle |
 | SEL talk cards (100, with K–1 picture version) | $5 |
 | No-materials indoor recess kit | $6; $4 add-ons |
-| Classroom Talk & Play growth bundle | $22–$26 (list $28–$30) |
+| Classroom Talk & Play growth bundle | $22–$26 (one everyday price) |
 | Free TPT sampler (10 brain breaks + 1 stem strip) | Free |
 | Talk Tower classroom game kit (replaces the cut book) | $6.99; $12.99 site license |
 | Host-it-yourself parent-night kit ("What We Know, What We Don't") | $129 single site; $249 multi-site; $39 teacher edition |
@@ -212,20 +229,20 @@ The ladder takes a buyer from a free printable to a $10–$16 core product to a 
 | Rung | Price band | Products (sources as above) |
 |---|---|---|
 | Free (lead magnets) | $0 | "3 plays for your child's age" monthly printable; 30-day tracker; Back-and-Forth Tally home sheet; Waiting Room Wallet; research brief; "Five 5-Minute Screen-Free Plays"; bonus page for every product |
-| Entry | $4.50–$7 | Routine-cards starter $4.50; shower insert + bookplate $4.99; Car Ride & Waiting Pack $6; spring challenge pack $6; bored cards $6.50; flash cards $6.99; Play & Talk printable $7; Lab kit $7; Turn-Taker kit $7 |
-| Core printables | $9–$16 | 52 Weeks of Play $9; routine cards $9.50 (about $6.50 on sale); 100-plays PDF $9.99; Summer Play Kit $10; Family Kit $11; Play Recipes $12; Spanish Reset Pack $12; Talk-First gift set $14; party kit $14; busy book $15.99 (about $11–12 on sale) |
-| Books | $8.99–$19.99 | Guild Passport $8.99; *Up! Go! More!* and *Tablet Slept* paperbacks $11.99; board book $12.99; *100 Screen-Free Plays* paperback $16.99; hardcover $19.99 |
+| Entry | $4.50–$7 | Routine-cards starter $4.50; shower insert + bookplate $4.99; Car Ride & Waiting Pack $6; spring challenge pack $6; routine cards $6.50; bored cards $6.50; flash cards $6.99; Play & Talk printable $6.99; Lab kit $7; Turn-Taker kit $7 |
+| Core printables | $9–$14 | 52 Weeks of Play $9; 100-plays PDF $9.99; Summer Play Kit $10; Family Kit $11; busy book $11.99; Play Recipes $12; Spanish Reset Pack $12; Talk-First gift set $14; party kit $14 |
+| Books | $8.99–$19.99 | Guild Passport $8.99; *Up! Go! More!* and *Tablet Slept* paperbacks $11.99; *100 Screen-Free Plays* paperback $16.99; board book $12.99 and hardcover $19.99 (both gated) |
 | Programs and bundles | $24–$59 | Play Day bundle $24.99; 100-plays bundle $24.99; Reset $27; 3-pack $29.99; Book + Pouch $32; personalized keepsake $34.99; holiday bundle $39 or $59 with a tee (2027); Reset bundle $49 |
 | POD physical | $16–$27 | Phone pouch $16; first-words deck $19.99; Play & Talk deck $22; tablet pouch $24; adult tee $27 |
 | Recurring (Wave 4) | Assumption: $9–$12 a month | Stage-based printable kit subscription |
 | Group licenses (G2) | $5–$249 | See the school-facing table |
 
-**Pricing rules** (DEMAND-CHECK §4, binding for the routine):
+**Pricing rules** (DEMAND-CHECK §4 as amended by `BRAND.md`; binding for the routine):
 - Put the count in the title ("150 Screen-Free Play Cards").
-- Set an anchor list price and sell at 30–40% off on Etsy.
+- **One everyday price per product.** No anchor "list" price, no "was" or compare-at price, and no standing sale. `BRAND.md` "Honest pricing" overrides DEMAND-CHECK rule 2 (16 CFR 233.1). Only genuine, dated promotions that truly end are allowed, such as a launch week or Black Friday.
 - Never list a single page under $5.
 - Bundles are priced 10–25% below the sum of their parts.
-- Physical landed cost stays at or below 35–40% of retail.
+- Physical landed cost stays within the channel cost rule: 35% of retail for the own site and FBA, 25% for Faire and wholesale, and 20% for chain retail (section 3.8).
 - The TpT floor is $5.
 - No competitor keywords that break rule 1.
 
@@ -234,10 +251,10 @@ The ladder takes a buyer from a free printable to a $10–$16 core product to a 
 - The $4.50 routine-cards starter is allowed. It is a smaller tier of the strongest product, not a weak single page.
 
 **Price parity:**
-- **Same list price on the own site and Etsy.** Bundles and the monthly subscription may be site-only.
+- **Same everyday price on the own site and Etsy.** Bundles and the monthly subscription may be site-only.
 - **Local prices abroad.** On each KDP marketplace, set round local prices by hand; never leave them auto-converted (`international-plan.md` §4.2).
 
-**What a sale is worth, by channel.** This is arithmetic on the unverified fee figures in `storefront-setup-guide.md`; recheck them on sign-up day.
+**What a sale is worth, by channel.** This is arithmetic on the unverified fee figures in `storefront-setup-guide.md`; recheck them on sign-up day. The workbook's Unit Economics tab is the single margin sheet, and the figures below match it (section 3.3).
 
 | Example | Channel | Fees per sale | Net to AlphaPlay |
 |---|---|---|---|
@@ -246,13 +263,16 @@ The ladder takes a buyer from a free printable to a $10–$16 core product to a 
 | $11 Family Kit | Gumroad as merchant of record (10% + $0.50) | $1.60 | $9.40 |
 | $6.50 bored cards | Etsy | $1.07 | $5.43 |
 | $5 TpT single (G2) | TpT Basic (55% − $0.30) vs Premium (80%) | — | $2.45 vs $4.00 |
-| $11.99 paperback | KDP (60% royalty − about $3.24 print) | — | about $3.95 [VERIFY in KDP calculator] |
-| $12.99 board book, landed at $4.55–$5.20 | Own site, shipped by the 3PL | $0.68 card fee + 3PL pick, pack and ship [VERIFY quote] | $7.11–$7.76 before 3PL fees |
-| $12.99 board book, landed at $4.55–$5.20 | Faire wholesale at about 50% ($6.50), 15% commission on orders Faire finds | $0.98 | $0.32–$0.97; 0% commission on Faire Direct gives $1.30–$1.95 |
+| $16.99 *100 Screen-Free Plays* paperback | KDP (60% royalty − KDP's flat $2.30 B/W print) | — | $7.89 [VERIFY in KDP calculator] |
+| $11.99 colour paperback | KDP (60% royalty − about $3.24 print) | — | about $3.95 [VERIFY in KDP calculator] |
+| $12.99 board book (gated), 1,000-copy run landed at $5.00 | Own site, shipped by the 3PL ($3.50 pick and pack + about $2 postage absorbed) | $0.68 card fees and refunds | $1.55 |
+| $12.99 board book (gated), 1,000-copy run | Amazon FBA (15% referral, $1.80 closing fee, $3.50 FBA, $0.40 storage allowance) [VERIFY] | — | $0.34 |
+| $12.99 board book (gated), 1,000-copy run | Faire wholesale at 50% ($6.50): 15% commission, 3% processing, 5% deductions, $1.00 3PL handling | — | **−$1.00** (Faire Direct at 0% commission: about −$0.03) |
+| $12.99 board book (gated), 2,500-copy run landed at $2.75 | Own site / FBA / Faire | — | $3.80 / $2.59 / $1.25 |
 
 **Two points follow from the table.**
 - On a $10 digital product, the difference between the own site and a marketplace is about $1. That is small, so the own site's real advantage is the customer email, not the fee.
-- The Faire row shows that wholesale does not work for a single $12.99 board book at the 35–40% landed-cost cap. **Assumption:** go to Faire only when landed cost is at or below 25% of retail (about $3.25). The lower half of the $1.80–$4.00 planning range would reach that.
+- **Wholesale loses money on a single $12.99 book at current costs.** The first draft of this table left out Faire's 3% processing fee, the deductions reserve and the $1.00 3PL handling charge, and so showed a small profit. With them included, Faire loses about $1.00 a unit at a 1,000-copy landed cost. Faire opens only when landed cost is at or below 25% of retail (about $3.25), which in practice means a 2,500-copy run or larger. Even then it is budgeted as a capped proof expense, not a profit centre (section 4.2).
 
 ---
 
@@ -265,16 +285,16 @@ The ladder takes a buyer from a free printable to a $10–$16 core product to a 
 
 | Bundle | Contents | Price | Wave | Note |
 |---|---|---|---|---|
-| **Holiday gift bundle, 2026 (digital)** | Family Kit ($11) + bored cards ($6.50) + Play & Talk printable ($7) + busy book (about $11–12 on sale) + free gift-reveal card | Assumption: $29 (parts about $36; 20% off) | 1 | See the note below this table |
-| Holiday gift bundle, 2027 (physical) | Gift-reveal card + Family Kit + POD play deck; + adult tee for the upper tier | $39; $59 with tee (DEMAND-CHECK #8) | 4 | Add the busy book so $39 is 20% below parts ($11 + $22 + $15.99 = $48.99) |
+| **Holiday gift bundle, 2026 (digital)** | Family Kit ($11) + bored cards ($6.50) + Play & Talk printable ($6.99) + busy book ($11.99) + free gift-reveal card | Assumption: $29 (parts $36.48; about 20% off) | 1 | See the note below this table |
+| Holiday gift bundle, 2027 (physical) | Gift-reveal card + Family Kit + POD play deck + busy book; + adult tee for the upper tier | $39; $59 with tee (DEMAND-CHECK #8) | 4 | With the busy book, $39 is 13% below parts ($11 + $22 + $11.99 = $44.99), inside the 10–25% rule |
 | Play Day bundle | *The Day the Tablet Slept* + *100 Screen-Free Plays* | $24.99 | 1, once both paperbacks are live | The POD partner must be able to ship both titles in one order [VERIFY] |
 | 100-plays bundle | Paperback + PDF | $24.99 | 1 | — |
-| Talk-along starter (registry) | Built from existing items | $25–$50 (BLIND-SPOTS #6) | 1 digital; 3 with board book | Add a physical starter set only after the 3PL and CPSIA work is done |
-| Talk-First gift set | Talk Map, certificate, insert and bookplate | $14; $24 with board book | 1; 3 | — |
-| 30-Day Screen Reset bundle | Reset + Family Kit (Assumption on contents) | $49 | 2 | — |
-| Talk-Along Firsts 3-pack | Board books 1–3 | $29.99, marked "save" | 3–4 | Only when all three exist |
+| Talk-along starter (registry) | Built from existing items | $25–$50 (BLIND-SPOTS #6) | 1 digital; physical only after the board-book gate | Add a physical starter set only after the 3PL and CPSIA work is done |
+| Talk-First gift set | Talk Map, certificate, insert and bookplate | $14; $24 with board book | 1; board-book version gated | — |
+| 30-Day Screen Reset bundle | Reset + Family Kit + 100-plays PDF + bored cards (`course-screen-reset/listing.json`) | $49 ($54.49 separately; 10% off) | 2 | — |
+| Talk-Along Firsts 3-pack | Board books 1–3 | $29.99; show the saving as the real difference from the three single prices | Gated | Only when all three exist. A target.com, Amazon and Q4 gift item, not a chain-shelf item (section 4.6) |
 | Book + Pouch | *Tablet Slept* + tablet pouch | $32 | 3 | — |
-| Big Sib bundle | Turn-Taker kit + board book | $26 | 3 | G1 |
+| Big Sib bundle | Turn-Taker kit + board book | $26 | Gated | G1, and the board-book gate |
 | Lab + Family Plan | Back-and-Forth Lab + 5–12 plan | $14 | 3 | G1 |
 | Classroom Talk & Play growth bundle | Brain breaks, stems, SEL cards, recess, family letters | $22–$26 | School wave | G2 |
 
@@ -286,8 +306,10 @@ The ladder takes a buyer from a free printable to a $10–$16 core product to a 
 
 Marketplaces (Etsy, KDP, IngramSpark) do not let the business contact buyers. So the product itself has to carry the buyer back to the email list. These parts are binding under `BRAND.md` ("Every product leads to the next").
 
-**In every product:**
-- **QR code and short link.** Each product carries a QR code and short link to `playbeforepixels.com/bonus/<slug>`. The bonus page delivers a free companion printable and asks for an email, with the child's birth month and year only (no child names; `CAMPAIGN-BIBLE.md` [COPPA]).
+**In every own-site and book edition** (not in Etsy or TpT editions):
+- **QR code and short link.** Own-site files and KDP/IngramSpark books carry a QR code and short link to `playbeforepixels.com/bonus/<slug>`. The bonus page delivers a free companion printable and asks for an email, with the child's birth month and year only (no child names; `CAMPAIGN-BIBLE.md` [COPPA]). **Etsy and TpT editions carry no URL or QR code** (`BRAND.md` customer-voice rule 2; `MARKETING-PLAYBOOK` "Don't send buyers off Etsy"; section 5.3, G2-09). Any Etsy-to-list route is limited to what Etsy's own rules allow [VERIFY]. The financial model therefore counts no list sign-ups from Etsy buyers.
+
+**In every product, on every channel:**
 - **Closing page.** A "More from Play Before Pixels" last page shows the next products for the child's age.
 - **Something to share.** A certificate, badge or fridge sheet, designed to be photographed and posted.
 
@@ -296,7 +318,7 @@ Marketplaces (Etsy, KDP, IngramSpark) do not let the business contact buyers. So
 - `bonus_url`.
 - `amazon_route`.
 
-Today two of four records are missing `next_products` and all four are missing `amazon_route` (see 2.1).
+Today every record has `next_products` and `bonus_url`. Three still lack `amazon_route` (see 2.1).
 
 **Stage map** (BLIND-SPOTS #12): these are the moments the email list is timed to.
 
@@ -334,7 +356,7 @@ Today two of four records are missing `next_products` and all four are missing `
 
 **What to measure** (from the weekly scorecard in `ops/ROUTINE.md`):
 - repeat-order rate by first product;
-- email sign-ups per sale by channel (the Etsy and KDP QR scan rate);
+- email sign-ups per sale by channel (the own-site, KDP and IngramSpark QR scan rate; Etsy editions carry no QR code);
 - average order value;
 - share of revenue from bundles.
 
@@ -349,15 +371,15 @@ The source files set no targets for these. **Assumption:** set targets after 8 w
 | **Own site** (Cloudflare Pages site + Shopify at a shop subdomain) | All printables, bundles, the Reset, links to book retailers; POD items later | Wave 1 | New bank account; Maryland sales-tax registration updated for digital goods (6%); privacy policy; PO Box; Shopify Markets limited to the US until a merchant of record is live | Basic $39/mo; 2.9% + $0.30 per sale (`storefront-setup-guide.md` §1) | AlphaPlay (Maryland return; filing can be automated, `TAX-AUTOPILOT.md`) |
 | **Etsy** | Printables; POD items with the production partner listed; personalized keepsake (Wave 3) | Wave 1 | AI-assisted art disclosed; production partner listed for POD | $0.20 listing, 6.5% + 3% + $0.25; Offsite Ads 15% (optional under $10k), 12% mandatory above | Etsy |
 | **Amazon KDP** | Paperbacks; Kindle optional; later a KDP activity-book edition of each printable that sells (`amazon_route`) | Wave 1 (US); Wave 2 (UK, CA, AU and other KDP marketplaces) | Own ISBNs; Expanded Distribution off; honest AI disclosure; proofs | 60% royalty at $9.99+ minus print cost; 50% below $9.99 | Amazon (you receive royalties) |
-| **IngramSpark** | Same-ISBN paperbacks to bookstores and libraries (55% trade discount reaches Follett Titlewave and Mackin); 32-page hardcovers KDP cannot print | Wave 2 (Assumption, following BLIND-SPOTS: Wave 1 is own site, KDP and Etsy only) | Own ISBNs; GPSR contact fields for EU distribution [VERIFY] | Setup fees removed in 2023; wholesale discount set per title | Retailers |
+| **IngramSpark** | Same-ISBN paperbacks to bookstores and libraries, at a 40% base discount (section 3.3). The *Tablet Slept* hardcover only after the paperback sells. Passive catalog availability (bookstores, libraries, and any target.com or walmart.com listing fed by wholesalers [VERIFY]) is in the base plan. Active library or school marketing, and a 55% discount aimed at school and library jobbers, are G2 and wait for counsel | Wave 2 (Assumption, following BLIND-SPOTS: Wave 1 is own site, KDP and Etsy only) | Own ISBNs; GPSR contact fields for EU distribution [VERIFY] | Setup fees removed in 2023; wholesale discount set per title | Retailers |
 | **Merchant of record for digital sales abroad** (Gumroad, per `storefront-setup-guide.md` §13 and `international-plan.md` §5.2) | Printables, the Reset, digital kits to buyers outside the US | Wave 2, with the English-market step in `ops/INTERNATIONAL.md` | Accountant confirms the setup; one digital checkout only (not Gumroad and Payhip) | 10% + $0.50 | Gumroad (US sales tax and EU/UK VAT) |
 | Bookshop.org affiliate; Amazon Associates | Affiliate links to our own books | Wave 2 (once titles are in the Ingram catalog; once the site has traffic) | Affiliate disclosure; Associates needs 3 sales in 180 days | About 10% and about 4.5% commission | n/a |
 | Google Merchant Center free listings; Pinterest catalog | Physical books (ISBN as GTIN); catalog pins | Wave 2 | Checkout stays on Shopify, so no new payouts | $0 | Through the own site |
 | **Amazon Merch on Demand** | 2–3 cleared adult tees | Apply in Wave 2 (approval takes weeks to months); sell in Wave 3 | Cleared designs; separate upload | Royalty about 13–37% of list | Amazon |
-| **Amazon Seller Central / FBA via 3PL** | Board book, 3-pack, POD-proof decks as stock | Wave 3 | Offset stock at a 3PL or FBA; CPSIA documents; GS1 barcodes; Brand Registry after the PLAY BEFORE PIXELS filing [VERIFY pending-application acceptance] | Professional $39.99/mo; referral about 15%; FBA fees [VERIFY] | Amazon |
+| **Amazon Seller Central / FBA via 3PL** | Board book, 3-pack, POD-proof decks as stock | Only when the board-book gate is met (section 3.10 rule 4); not in the 36-month base plan | Offset stock at a 3PL or FBA; CPSIA documents; GS1 barcodes; Brand Registry after the PLAY BEFORE PIXELS filing [VERIFY pending-application acceptance] | Professional $39.99/mo; referral about 15%; FBA fees [VERIFY] | Amazon |
 | **Social shops** (Meta shop sync; TikTok Shop US) | Physical items only: pouch, tees, decks. TikTok likely bars digital goods [VERIFY] and restricts children's categories | Wave 3 at the earliest (BLIND-SPOTS lists both as "not now" for Wave 1) | Physical catalog exists; kids' category approval where needed | Meta: no selling fee with checkout on our site; TikTok referral 6% or 8% [VERIFY] | Shopify (Meta); TikTok |
-| **Faire** | Board books, 3-pack, decks | Late Wave 3 or Wave 4, when offset stock sits at a 3PL | Stock at a 3PL; retailers' resale certificates; CPC on request | 15% commission (0% on Faire Direct); processing 1.9–3.5% or about 3% (conflicting) | Exempt with resale certificate |
-| **Walmart Marketplace** | Books and stocked items | Wave 4 application | EIN (held); US bank; an e-commerce track record; approval not guaranteed | No monthly fee; referral 6–15%, books about 15% | Walmart |
+| **Faire** | Board books, 3-pack, decks | Only after the retail gate (section 3.10 rule 5): three physical SKUs and landed cost at or below 25% of retail. US only for anything aimed at ages 0–3. Run as a capped proof expense (section 4.2) | Stock at a 3PL; retailers' resale certificates; CPC on request | 15% commission (0% on Faire Direct); processing 1.9–3.5% or about 3% (conflicting) | Exempt with resale certificate |
+| **Walmart Marketplace** | Books and stocked items | After the retail gate; not in the 36-month base plan | EIN (held); US bank; an e-commerce track record; approval not guaranteed | No monthly fee; referral 6–15%, books about 15% | Walmart |
 | **Teachers Pay Teachers** | Classroom resources | School-facing wave only, after counsel clears it | Counsel answers; suppression list | Premium $59.95/yr, 80% payout | TpT |
 | Ebook stores (Apple, Kobo, Google Play; B&N Press for NOOK ebooks only) | Fixed-layout picture-book ebooks | Wave 4, optional | — | About 70% royalty (Kobo about 45% below $2.99) | Store |
 
@@ -405,30 +427,27 @@ Each channel adds a 1099, a monthly export to reconcile and a set of rules to fo
 
 `marketing/AMAZON-AND-RETAIL-ROADMAP.md` treats big-box retail as a set of milestones, not a promise. For the product line and channels, that means:
 
-**1. Proof comes from Waves 1–3.** A retail buyer is shown:
-- 12 months of sales history;
+**1. Proof comes from units sold, not months elapsed.** A retail buyer or distributor is shown:
+- 12 months of *stocked* sales history (printables and POD are not shelf proof);
+- velocity and sell-through, reported as units per store per week where stores stock the line, with point-of-sale data where the channel reports it [VERIFY];
 - review counts (all FTC-compliant);
-- a strong Amazon presence;
-- sell-through data on a line a buyer can place on a shelf.
+- a line a buyer can place on a shelf.
 
-**2. The shelf line is physical and stocked.** Candidates:
-- the three-book Talk-Along Firsts series and its boxed 3-pack;
-- the Play & Talk card deck;
-- possibly a gift set.
+Section 4.9 sets each retail gate as a unit volume.
 
-Printables and POD items cannot go on a store shelf.
+**2. The shelf line is physical and stocked.** The only in-store candidate is the three-book **Talk-Along Firsts** board-book series, sold through a distributor. The 3-pack is a target.com, Amazon and Q4 gift item. The 0–5 Play & Talk card deck is a conditional candidate once its POD version sells. The first-words flash cards and *100 Screen-Free Plays* stay online and in independent stores (section 4.6). Printables and POD items cannot go on a store shelf.
 
-**3. Readiness list before any pitch:**
-- GS1 barcodes owned by AlphaPlay LLC;
-- retail-ready packaging;
+**3. Readiness list before any pitch** (costed in section 3.8, scheduled by gate in section 4.9):
+- GS1 barcodes owned by AlphaPlay LLC for non-book items;
+- retail-ready packaging and a separate retail edition;
 - product liability insurance at the retailer's limits;
-- CPSIA testing and certificates;
+- CPSIA testing and certificates, and state chemical rules for children's products;
 - EDI through a 3PL;
-- a distributor or sales rep.
+- a distributor (books) or a rep or vendor of record (non-book items). AlphaPlay LLC is never the direct vendor of record to a chain.
 
-**4. Books reach big-box stores through distributors and wholesalers,** usually not by direct vendor setup [VERIFY]. Target Plus (online) is invitation-only [VERIFY]. Walmart Marketplace (Wave 4) is the realistic online big-box step.
+**4. The near-term Target touchpoint is passive.** Once the IngramSpark paperbacks are live, they may appear on target.com and walmart.com through wholesaler feeds without any pitch [VERIFY]. From then on, the monthly routine checks both sites, and the Target baby registry, for our ISBNs. Target Plus (online) is invitation-only [VERIFY].
 
-**Assumption on timing:** the earliest proof-backed approach to Target is after Wave 4, meaning 2028. That is 12 months after the first stocked product sells, not 12 months after launch, since printables alone are not shelf proof. The plan's retail section should take this as its starting constraint.
+**Timing.** Gates, not dates. On the financial model's Expected numbers, the board book, the first shelf-ready product, does not meet its gate within the 36-month horizon (section 3.10 rule 4). So a chain pitch is conditional on one title selling well above Expected, and realistically comes no earlier than 2030 (section 4.9).
 
 ---
 
@@ -440,9 +459,10 @@ Printables and POD items cannot go on a store shelf.
 4. **Referral program:** give $5 / get $5 (recommended) or the playbook's bonus-and-15% version.
 5. **Merchant of record:** Gumroad (the current recommendation), or Payhip if it confirms in writing that it is the legal seller for EU/UK VAT. The accountant confirms.
 6. **Approve the record fixes in 2.1:**
-   - `amazon_route` on every listing;
-   - `next_products` on *Laps Not Apps* and *More Talk, Less Tap*;
-   - reprice or withdraw the generic *Laps Not Apps*;
+   - `amazon_route` on the three records that lack it;
+   - `price_floor` and `ai_disclosure` on every record;
+   - one everyday price in the routine-cards, play-talk-cards and 100-plays PDF price notes, with no list or sale pairs;
+   - the Family Kit's holiday-bundle note;
    - retire the *More Talk, Less Tap* book channels;
    - remove coaching and the Influencer storefront from the storefront guide.
-7. **Board book:** approve the quote request in January, and the pre-sale funding formula before February.
+7. **Board book:** adopt the board-book gate (section 3.10 rule 4) in place of the spring 2027 pre-sale. Approve information-only printer quotes at 500, 1,000, 2,500 and 5,000 copies in January 2027.

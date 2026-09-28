@@ -86,7 +86,7 @@ const cover = {
       <div style="position:absolute;left:0;top:338px">${coverArt()}</div>
       <div style="position:absolute;left:36px;right:36px;bottom:26px;align-items:center" class="pillrow">
         ${['b1', 'b2', 'b3'].map(b => `<span class="chip"><i style="background:${BANDS[b].c}"></i>${BANDS[b].label}</span>`).join('')}
-        <span class="chip">${count(ctx, a => !a.cut && !a.usesPiecesOf)} no-cut pages: play today</span><span class="url" style="margin-left:auto;font-weight:800;font-size:12px">playbeforepixels.com</span>
+        <span class="chip">${count(ctx, a => !a.cut && !a.usesPiecesOf)} no-cut pages · 0-minute prep</span><span class="url" style="margin-left:auto;font-weight:800;font-size:12px">playbeforepixels.com</span>
       </div>
     </div></section>`;
   },

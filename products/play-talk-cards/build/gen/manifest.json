@@ -1,6 +1,7 @@
 [
  {
   "product": "A",
+  "ed": "store",
   "size": "letter",
   "ink": false,
   "html": "/home/user/playbeforepixels/products/play-talk-cards/source.html",
@@ -9,46 +10,124 @@
   "H": 1056,
   "gx": 48,
   "gy": 24,
-  "main": true
+  "main": true,
+  "lowInkPreview": false
  },
  {
   "product": "A",
+  "ed": "store",
   "size": "letter",
   "ink": true,
-  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/A-play-talk-cards-ink-saver.html",
-  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/play-talk-cards-ink-saver.pdf",
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/A-store-play-talk-cards-low-ink.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/play-talk-cards-low-ink.pdf",
   "W": 816,
   "H": 1056,
   "gx": 48,
   "gy": 24,
-  "main": false
+  "main": false,
+  "lowInkPreview": true
  },
  {
   "product": "A",
+  "ed": "store",
   "size": "a4",
   "ink": false,
-  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/A-play-talk-cards-A4.html",
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/A-store-play-talk-cards-A4.html",
   "pdf": "/home/user/playbeforepixels/products/play-talk-cards/play-talk-cards-A4.pdf",
   "W": 794,
   "H": 1123,
   "gx": 37,
   "gy": 57.5,
-  "main": false
+  "main": false,
+  "lowInkPreview": false
  },
  {
   "product": "A",
+  "ed": "store",
   "size": "a4",
   "ink": true,
-  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/A-play-talk-cards-ink-saver-A4.html",
-  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/play-talk-cards-ink-saver-A4.pdf",
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/A-store-play-talk-cards-low-ink-A4.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/play-talk-cards-low-ink-A4.pdf",
   "W": 794,
   "H": 1123,
   "gx": 37,
   "gy": 57.5,
-  "main": false
+  "main": false,
+  "lowInkPreview": false
+ },
+ {
+  "product": "A",
+  "ed": "store",
+  "startHere": true,
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/A-store-start-here.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/START-HERE.pdf"
+ },
+ {
+  "product": "A",
+  "ed": "etsy",
+  "size": "letter",
+  "ink": false,
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/A-etsy-play-talk-cards.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/etsy-upload/2-Color-US-Letter.pdf",
+  "W": 816,
+  "H": 1056,
+  "gx": 48,
+  "gy": 24,
+  "main": false,
+  "lowInkPreview": false
+ },
+ {
+  "product": "A",
+  "ed": "etsy",
+  "size": "letter",
+  "ink": true,
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/A-etsy-play-talk-cards-low-ink.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/etsy-upload/4-Low-Ink-US-Letter.pdf",
+  "W": 816,
+  "H": 1056,
+  "gx": 48,
+  "gy": 24,
+  "main": false,
+  "lowInkPreview": false
+ },
+ {
+  "product": "A",
+  "ed": "etsy",
+  "size": "a4",
+  "ink": false,
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/A-etsy-play-talk-cards-A4.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/etsy-upload/3-Color-A4.pdf",
+  "W": 794,
+  "H": 1123,
+  "gx": 37,
+  "gy": 57.5,
+  "main": false,
+  "lowInkPreview": false
+ },
+ {
+  "product": "A",
+  "ed": "etsy",
+  "size": "a4",
+  "ink": true,
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/A-etsy-play-talk-cards-low-ink-A4.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/etsy-upload/5-Low-Ink-A4.pdf",
+  "W": 794,
+  "H": 1123,
+  "gx": 37,
+  "gy": 57.5,
+  "main": false,
+  "lowInkPreview": false
+ },
+ {
+  "product": "A",
+  "ed": "etsy",
+  "startHere": true,
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/A-etsy-start-here.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/etsy-upload/1-START-HERE.pdf"
  },
  {
   "product": "B",
+  "ed": "store",
   "size": "letter",
   "ink": false,
   "html": "/home/user/playbeforepixels/products/play-talk-cards/talk-along/source.html",
@@ -57,42 +136,119 @@
   "H": 1056,
   "gx": 48,
   "gy": 24,
-  "main": true
+  "main": true,
+  "lowInkPreview": false
  },
  {
   "product": "B",
+  "ed": "store",
   "size": "letter",
   "ink": true,
-  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/B-family-talk-along-cards-ink-saver.html",
-  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/talk-along/family-talk-along-cards-ink-saver.pdf",
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/B-store-family-talk-along-cards-low-ink.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/talk-along/family-talk-along-cards-low-ink.pdf",
   "W": 816,
   "H": 1056,
   "gx": 48,
   "gy": 24,
-  "main": false
+  "main": false,
+  "lowInkPreview": true
  },
  {
   "product": "B",
+  "ed": "store",
   "size": "a4",
   "ink": false,
-  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/B-family-talk-along-cards-A4.html",
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/B-store-family-talk-along-cards-A4.html",
   "pdf": "/home/user/playbeforepixels/products/play-talk-cards/talk-along/family-talk-along-cards-A4.pdf",
   "W": 794,
   "H": 1123,
   "gx": 37,
   "gy": 57.5,
-  "main": false
+  "main": false,
+  "lowInkPreview": false
  },
  {
   "product": "B",
+  "ed": "store",
   "size": "a4",
   "ink": true,
-  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/B-family-talk-along-cards-ink-saver-A4.html",
-  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/talk-along/family-talk-along-cards-ink-saver-A4.pdf",
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/B-store-family-talk-along-cards-low-ink-A4.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/talk-along/family-talk-along-cards-low-ink-A4.pdf",
   "W": 794,
   "H": 1123,
   "gx": 37,
   "gy": 57.5,
-  "main": false
+  "main": false,
+  "lowInkPreview": false
+ },
+ {
+  "product": "B",
+  "ed": "store",
+  "startHere": true,
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/B-store-start-here.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/talk-along/START-HERE.pdf"
+ },
+ {
+  "product": "B",
+  "ed": "etsy",
+  "size": "letter",
+  "ink": false,
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/B-etsy-family-talk-along-cards.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/talk-along/etsy-upload/2-Color-US-Letter.pdf",
+  "W": 816,
+  "H": 1056,
+  "gx": 48,
+  "gy": 24,
+  "main": false,
+  "lowInkPreview": false
+ },
+ {
+  "product": "B",
+  "ed": "etsy",
+  "size": "letter",
+  "ink": true,
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/B-etsy-family-talk-along-cards-low-ink.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/talk-along/etsy-upload/4-Low-Ink-US-Letter.pdf",
+  "W": 816,
+  "H": 1056,
+  "gx": 48,
+  "gy": 24,
+  "main": false,
+  "lowInkPreview": false
+ },
+ {
+  "product": "B",
+  "ed": "etsy",
+  "size": "a4",
+  "ink": false,
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/B-etsy-family-talk-along-cards-A4.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/talk-along/etsy-upload/3-Color-A4.pdf",
+  "W": 794,
+  "H": 1123,
+  "gx": 37,
+  "gy": 57.5,
+  "main": false,
+  "lowInkPreview": false
+ },
+ {
+  "product": "B",
+  "ed": "etsy",
+  "size": "a4",
+  "ink": true,
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/B-etsy-family-talk-along-cards-low-ink-A4.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/talk-along/etsy-upload/5-Low-Ink-A4.pdf",
+  "W": 794,
+  "H": 1123,
+  "gx": 37,
+  "gy": 57.5,
+  "main": false,
+  "lowInkPreview": false
+ },
+ {
+  "product": "B",
+  "ed": "etsy",
+  "startHere": true,
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/B-etsy-start-here.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/talk-along/etsy-upload/1-START-HERE.pdf"
  }
 ]

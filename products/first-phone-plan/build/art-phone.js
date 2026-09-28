@@ -65,7 +65,9 @@ A.lookAfter = () => phone(46, 54, .6, -6) + Gp('translate(88,54)', R(-16, -30, 3
 A.secretNo = () => bust('C', 44, 52, .8, 'think') + Gp('translate(94,30)', R(-15, -12, 30, 24, 9, W) + Pa('M-8 10L-13 19-1 11Z', W) + Tx(0, 6, 0, T, '!', 16));
 A.playLove = () => U('ball', 'translate(40,62) scale(.36)') + A.instrument().replace(/^/, '<g transform="translate(34,4) scale(.62)">') + '</g>' + star(24, 22, .6, S);
 A.paperPlane = () => Pa('M16 58L104 22 70 84 58 64Z', '#E6ECF5') + Pa('M58 64L104 22 50 70Z', '#DCE4F0') + Pa('M58 64L62 82 70 84Z', GREY) + St('M16 88Q30 74 44 80', K, 3, 'stroke-dasharray="4 5"') + star(24, 26, .6, S);
-A.cardTricks = () => [[-24, T, '♥', -14], [0, K, '★', 0], [24, G, '♣', 14]].map(([r, f, g, dx]) => Gp(`translate(${60 + dx},90) rotate(${r})`, R(-17, -64, 34, 48, 5, W, `stroke="${GREY}" stroke-width="1.5"`) + Tx(0, -34, 0, f, g, 20, 'Nunito Sans', 800))).join('') + star(98, 22, .6, S) + star(22, 30, .5, T);
+const club = (f) => `<circle cx="0" cy="-7" r="6" fill="${f}"/><circle cx="-6.5" cy="2" r="6" fill="${f}"/><circle cx="6.5" cy="2" r="6" fill="${f}"/><path d="M-2 2H2L4 12H-4Z" fill="${f}"/>`;
+const pip = (k, f) => k === 'h' ? heart(0, 0, .2, f) : k === 's' ? star(0, 0, 1.1, f) : Gp('scale(.8)', club(f));
+A.cardTricks = () => [[-24, T, 'h', -14], [0, K, 's', 0], [24, G, 'c', 14]].map(([r, f, g, dx]) => Gp(`translate(${60 + dx},90) rotate(${r})`, R(-17, -64, 34, 48, 5, W, `stroke="${GREY}" stroke-width="1.5"`) + Gp('translate(0,-40)', pip(g, f)))).join('') + star(98, 22, .6, S) + star(22, 30, .5, T);
 A.cloudWatch = () => U('cloud', 'translate(42,34) scale(.8)', `--cl:#B9D3F2`) + U('cloud', 'translate(88,24) scale(.6)', `--cl:#B9D3F2`) + `<ellipse cx="60" cy="92" rx="52" ry="9" fill="${G}"/>` + L.head('D', 60, 74, .62, 'joy') + sun(104, 60, .16);
 A.checkIn = () => bust('E', 32, 50, .66, 'smile') + bust('G1', 88, 44, .72, 'smile') + U('clock', 'translate(60,22) scale(.4)', `--ck1:${P}`) + R(14, 74, 92, 8, 4, WOOD);
 A.freeChoice = () => Ci(60, 52, 28, S) + Tx(60, 62, 0, W, '?', 34) + star(26, 26, .8, T) + star(96, 30, .6, K) + star(92, 80, .5, G);

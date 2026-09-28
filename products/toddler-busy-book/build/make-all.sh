@@ -28,8 +28,13 @@ pdf etsy-lowink-a4     "etsy-upload/5-Toddler-Busy-Book-Low-ink-A4.pdf"
 rm -rf preview && mkdir -p preview
 node $R pages build/html/site-color-letter.html preview .page 1.25
 node $R pages build/html/site-lowink-letter.html preview/low-ink .page 1
+# Etsy-edition renders for the listing images (kept in build/, not shipped)
+rm -rf build/etsy-preview
+node $R pages build/html/etsy-color-letter.html build/etsy-preview/color .page 1
+node $R pages build/html/etsy-lowink-letter.html build/etsy-preview/low-ink .page 1
 # cover, mockup, listing images, PNG templates
 node build/marketing.js
+node build/listing.js
 node $R png build/cover.html cover.png 816 1056 1.51515
 node $R pages build/mockup.html "$TMP/mock" .mock 1 && cp "$TMP/mock/p01.png" mockup.png
 node $R pages build/listing.html "$TMP/L" .L 2 && mkdir -p preview/listing-images

@@ -34,7 +34,7 @@ SYMBOL = dict(
     EYE_Y=0.10,         # ...and share of the head radius downward (looking down at the ball)
     SOFT=18,            # rounding of the top-front corner of each body
 )
-# Small cut for 16-32 px, stickers under 12 mm and embroidery under 25 mm: fewer, bigger parts, wider gaps.
+# Small cut for 20-48 px on screen, print under 12 mm and embroidery under 25 mm: bigger heads, wider gaps, no eyes.
 SMALL = dict(SYMBOL, CHANNEL=250, A_HEAD=140, C_HEAD=110, A_BACK=40, C_BACK=34, A_NECK=40, C_NECK=38,
              BALL=84, EYE_A=0, EYE_C=0, SOFT=24, C_BODY=236)
 
@@ -55,7 +55,7 @@ WORD = dict(TRACK=-6, SPACE=-40,         # letter spacing and word-space adjustm
             FLOOR_SQUARE=True)           # ...except corners standing on the baseline: everything sits flat on the floor
 LOCKUP = dict(SYM_H=1.85,               # symbol height as a multiple of the cap height
               GAP=0.50,                  # clear air between symbol and name, as a multiple of the cap height
-              DROP=0.0)                  # how far the symbol's floor sits below the text baseline (x cap height)
+              DROP=0.0)                  # how far the symbol's floor sits below the text baseline (in cap heights)
 
 # ======================================================================================================== palette
 INK, PAPER, WASH, TOMATO, SUN, SKY = '#1D2940', '#FFFFFF', '#F3F6FB', '#EE5A36', '#F5B820', '#3D86D8'

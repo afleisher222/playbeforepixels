@@ -67,10 +67,10 @@ imgs.push(`<section class="L" style="--bg:var(--wash)"><div class="ey">What’s 
 // 3 · grown-up guide
 imgs.push(`<section class="L" style="--bg:var(--tK)"><div class="ey">A 2-page grown-up guide</div><div class="h" style="font-size:56px">Set up in 2 minutes.<br>Talk it through together.</div>
   <div class="stage">
-    ${sheet(3, '--w:390px;left:10px;top:20px;transform:rotate(-3deg)')}
-    ${sheet(4, '--w:390px;left:430px;top:40px;transform:rotate(3deg)')}
-    <div class="call" style="left:560px;top:420px"><b>Never a prize, never a punishment</b>Phone time doesn’t grow or shrink with chores or behavior.</div>
-    <div class="call" style="left:-4px;top:440px"><b>3 talk lines</b>Ask, then wait. Say what you see. Build on their idea.</div>
+    ${sheet(3, '--w:430px;left:0px;top:10px;transform:rotate(-3deg)')}
+    ${sheet(4, '--w:430px;left:440px;top:30px;transform:rotate(3deg)')}
+    <div class="call" style="left:470px;top:470px;max-width:400px"><b>Never a prize, never a punishment</b>Phone time doesn’t grow or shrink with chores or behavior.</div>
+    <div class="call" style="left:-4px;top:500px;max-width:380px"><b>3 talk lines</b>Ask, then wait. Say what you see. Build on their idea.</div>
   </div></section>`);
 // 4 · agreement
 imgs.push(`<section class="L" style="--bg:var(--tT)"><div class="ey">Our First Phone Agreement</div><div class="h" style="font-size:58px">A warm agreement,<br><span class="n">not a contract</span> of punishments</div>
@@ -90,19 +90,20 @@ imgs.push(`<section class="L" style="--bg:var(--tG)"><div class="ey">Before the 
 // 6 · zones, times, signs
 imgs.push(`<section class="L" style="--bg:var(--tP)"><div class="ey">Where and when</div><div class="h" style="font-size:58px">Phone-free zones, times<br>and <span class="n">8 signs</span> to post</div>
   <div class="stage">
-    ${sheet(M.zones, '--w:320px;left:0px;top:40px;transform:rotate(-4deg)')}
-    ${sheet(M.times, '--w:320px;left:300px;top:10px;transform:rotate(1deg)')}
-    ${sheet(M.signs, '--w:320px;left:580px;top:50px;transform:rotate(5deg)')}
+    ${sheet(M.zones, '--w:360px;left:-20px;top:50px;transform:rotate(-4deg)')}
+    ${sheet(M.times, '--w:360px;left:260px;top:10px;transform:rotate(1deg)')}
+    ${sheet(M.signs, '--w:360px;left:530px;top:60px;transform:rotate(5deg)')}
   </div>
   <div class="foot" style="color:var(--ink)">Zones and times are for everyone, grown-ups too.</div></section>`);
 // 7 · 30 afternoons
 imgs.push(`<section class="L" style="--bg:var(--tS)"><div class="ey">The 30-day challenge</div><div class="h" style="font-size:60px"><span class="n">30</span> Phone-Free Afternoons</div>
   <div class="sub">Build, ride, cook, invent, explore. 26 of 30 ideas need nothing to buy, and every one has a 2-minute version.</div>
   <div class="stage">
-    ${sheet(M.ideas, '--w:300px;left:600px;top:40px;transform:rotate(5deg)')}
-    ${sheet(M.cert, '--w:290px;left:10px;top:50px;transform:rotate(-5deg)')}
-    ${sheet(M.tracker, '--w:340px;left:280px;top:10px;transform:rotate(0deg)')}
-  </div></section>`);
+    ${sheet(M.ideas, '--w:340px;left:540px;top:40px;transform:rotate(5deg)')}
+    ${sheet(M.cert, '--w:330px;left:-10px;top:50px;transform:rotate(-5deg)')}
+    ${sheet(M.tracker, '--w:390px;left:240px;top:0px;transform:rotate(0deg)')}
+  </div>
+  <div class="pills"><span class="pill"><i></i>Tracker + blank tracker</span><span class="pill"><i style="--c:var(--grass)"></i>30 ideas with safety lines</span><span class="pill"><i style="--c:var(--plum)"></i>Certificate</span></div></section>`);
 // 8 · fridge-door plan + fillable
 imgs.push(`<section class="L" style="--bg:var(--tK)"><div class="ey">One page for the whole house</div><div class="h" style="font-size:58px">Our Fridge-Door<br>Tech Plan</div>
   <div class="stage">
@@ -113,16 +114,16 @@ imgs.push(`<section class="L" style="--bg:var(--tK)"><div class="ey">One page fo
 // 9 · colorways + low-ink
 imgs.push(`<section class="L" style="--bg:#fff"><div class="ey">Pick your colors</div><div class="h" style="font-size:58px">3 colorways + a low-ink file</div>
   <div class="stage">
-    ${sheet(M.agree, '--w:250px;left:0px;top:40px;transform:rotate(-4deg)')}
-    ${sheet(M.agree_sky, '--w:250px;left:220px;top:20px;transform:rotate(-1deg)')}
-    ${sheet(M.agree_plum, '--w:250px;left:440px;top:30px;transform:rotate(2deg)')}
-    ${sheet(ML.agree, '--w:250px;left:640px;top:50px;transform:rotate(5deg)', true)}
+    ${sheet(M.agree, '--w:300px;left:-10px;top:60px;transform:rotate(-4deg)')}
+    ${sheet(M.agree_sky, '--w:300px;left:200px;top:30px;transform:rotate(-1deg)')}
+    ${sheet(M.agree_plum, '--w:300px;left:410px;top:45px;transform:rotate(2deg)')}
+    ${sheet(ML.agree, '--w:300px;left:590px;top:70px;transform:rotate(5deg)', true)}
   </div>
   <div class="pills"><span class="pill" style="background:var(--tT)"><i></i>Tomato</span><span class="pill" style="background:var(--tK)"><i style="--c:var(--sky)"></i>Sky</span><span class="pill" style="background:var(--tP)"><i style="--c:var(--plum)"></i>Plum</span><span class="pill" style="background:var(--wash)"><i style="--c:#fff;border:2px solid var(--ink)"></i>Low-ink line art</span></div></section>`);
 // 10 · formats + how it works
-const steps = [['1', 'Download', '5 PDF files, instantly. Open them in a web browser, not the app.'], ['2', 'Print or type', 'US Letter or A4. Fill in on screen or by hand.'], ['3', 'Sit down together', 'About 30 minutes, snacks recommended.'], ['4', 'Post it', 'Fridge-door plan up, phones to the charging spot, afternoons on.']];
+const steps = [['1', 'Download', '5 PDF files, instantly. Open them in a web browser, not the app.', 'askDownload'], ['2', 'Print or type', 'US Letter or A4. Fill in on screen or by hand.', 'planner'], ['3', 'Sit down together', 'About 30 minutes, snacks recommended.', 'checkIn'], ['4', 'Post it', 'Fridge-door plan up, phones to the charging spot, afternoons on.', 'phonePark']];
 imgs.push(`<section class="L" style="--bg:var(--wash)"><div class="ey">How it works</div><div class="h" style="font-size:58px">Ready in 5 minutes.<br><span class="n">No cutting needed.</span></div>
-  <div class="grid" style="grid-template-columns:1fr 1fr;flex:1">${steps.map(([n, t, s]) => `<div class="tile" style="align-items:flex-start;padding:24px"><div style="width:56px;height:56px;border-radius:50%;background:var(--tomato);color:#fff;font-family:Fredoka,sans-serif;font-weight:600;font-size:30px;display:flex;align-items:center;justify-content:center;flex:0 0 auto">${n}</div><div><b style="font-size:26px">${t}</b><span style="font-size:19px;color:var(--ink);font-weight:600">${s}</span></div></div>`).join('')}</div>
+  <div class="grid" style="grid-template-columns:repeat(4,1fr);flex:1">${steps.map(([n, t, s, a]) => `<div class="tile" style="flex-direction:column;align-items:flex-start;justify-content:flex-start;padding:22px 18px;gap:12px"><div style="width:100%;height:150px">${art(a, 'var(--wash)').replace('class="art"', 'class="art" style="width:100%;height:100%"')}</div><div style="width:56px;height:56px;border-radius:50%;background:var(--tomato);color:#fff;font-family:Fredoka,sans-serif;font-weight:600;font-size:30px;display:flex;align-items:center;justify-content:center;flex:0 0 auto">${n}</div><div><b style="font-size:25px;margin-bottom:6px">${t}</b><span style="font-size:18px;color:var(--ink);font-weight:600;line-height:1.35;display:block">${s}</span></div></div>`).join('')}</div>
   <div class="grid" style="grid-template-columns:repeat(3,1fr)">${[['START HERE', '+ Color and Low-ink'], ['US Letter + A4', `${NP} pages in color`], ['Fillable PDF', 'Pre-filled and blank']].map(([a, b]) => `<div class="tile" style="flex-direction:column;align-items:flex-start;gap:4px"><b>${a}</b><span>${b}</span></div>`).join('')}</div>
   <div class="foot">Digital download: nothing is shipped. Parent education, not medical or professional advice. Never names an app, phone brand or company.</div></section>`);
 

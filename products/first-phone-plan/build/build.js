@@ -482,7 +482,7 @@ function signs(ctx, part) {
   const mk = (ctx.low ? LOGO.wordK : LOGO.word).replace('<svg', '<svg class="mk"');
   const cells = list.map(([a, n, s, c]) => `<div><div class="in" style="--st:${tint[c]}">${a ? art(a) : drawSpot()}${a ? `<div class="nm">${n}</div><div class="s">${s}</div>` : `<span class="fl" style="width:100%;flex:0 0 .45in" ${fld('sign_title', { size: 16, align: 1 })}></span><span class="fl d" style="width:100%;flex:0 0 .34in" ${fld('sign_sub', { size: 10, align: 1 })}></span>`}${mk}</div></div>`).join('');
   return hd({ eyebrow: `Section D · Zone signs · ${part + 1} of 2`, title: part ? 'Zone signs, part 2' : 'Zone signs to post', lede: part ? 'The last one is yours to write or draw.' : 'Cut on the dashed lines and tape them up where they’re needed.', age: 'all', prepT: 'Cut 3 min' })
-    + `<div class="cutnote"><span class="safe">✂ 4 signs per sheet, straight cuts only. Grown-up keeps the scissors and the pieces away from children under 3. Cardstock and lamination make them last.</span></div>
+    + `<div class="cutnote"><span class="safe">Cut: 4 signs per sheet, straight cuts only. Grown-up keeps the scissors and the pieces away from children under 3. Cardstock and lamination make them last.</span></div>
   <div class="sg" style="--sw:calc((${SIZES[ctx.size].w} - 1in) / 2 - .02in);--sh2:4.05in">${cells}</div>`;
 }
 

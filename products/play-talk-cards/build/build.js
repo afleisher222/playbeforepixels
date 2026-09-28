@@ -42,7 +42,7 @@ const esc = K.esc;
 const check = col => `<svg viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="${col}"/><path d="M5.5 10.5l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 const shapeSvg = K.shapeSvg;
 function foot(P, n, total) {
-  return `<div class="pfoot"><span>${esc(P.short)} · ${P.agesLong} · page ${n} of ${total} · ${K.VERSION}</span><span>${store() ? '<b>playbeforepixels.com</b> · ' : ''}${K.COPY} Personal/family license.</span></div>`;
+  return `<div class="pfoot"><span>${esc(P.short)} · ${P.agesLong} · page ${n} of ${total} · ${K.VERSION}${store() ? ' · <b>playbeforepixels.com</b>' : ''}</span><span>${K.COPY} Personal/family license: no resale or sharing.</span></div>`;
 }
 
 // ---------- page 1: cover ----------
@@ -68,11 +68,11 @@ function coverPage(P, S, n, total) {
     ? BANDS.map(b => `<div class="tile" style="--c:${C[b.color]};--t:${K.TINT[b.color]}">${shapeSvg(b.shape, C[b.color], 18)}<b>${b.ages}</b><span>${b.unit === 'yr' ? 'year' : 'years'}</span><em>13 plays</em></div>`).join('')
     : MOMENTS.map(m => `<div class="tile" style="--c:${C[m.color]};--t:${K.TINT[m.color]}"><svg viewBox="-50 -50 100 100" width="30" height="30">${ICONS[m.icon]()}</svg><b class="mw">${m.name}</b><em>13 cards</em></div>`).join('');
   const inside = P.key === 'A'
-    ? ['54 poker-size cards: 52 plays, a how-to card and a blank', 'No-cut play pages: start today, cut later', 'Every play: start age, prep, mess, a 2-minute version', 'Make-your-own cards you can type into', 'Grown-up guide with 8 simple talk moves', 'A 52-week play checklist for the fridge']
-    : ['54 poker-size cards: 52 questions, a how-to card and a blank', 'No-cut question pages: start tonight, cut later', '9 cards per page, with cut lines and card backs', 'Make-your-own cards you can type into', 'Grown-up guide with 6 easy talk-along habits', 'Cut-out labels for jars, bags and the glove box'];
+    ? ['54 poker-size cards: 52 plays + how-to + blank', 'No-cut play pages: start today, cut later', 'Every play: start age, prep, mess, 2-min version', 'Make-your-own cards you can type into', 'Grown-up guide with 8 simple talk moves', 'A 52-week play checklist for the fridge']
+    : ['54 poker-size cards: 52 questions + how-to + blank', 'No-cut question pages: start tonight', '9 cards per page, with cut lines and card backs', 'Make-your-own cards you can type into', 'Grown-up guide with 6 easy talk-along habits', 'Cut-out labels for jars, bags and the glove box'];
   const prep = P.key === 'A'
-    ? '<b>Prep:</b> about 20 minutes to print and cut, once. Most plays then take 0–2 minutes to set up. Or start today with the no-cut pages.'
-    : '<b>Prep:</b> about 20 minutes to print and cut, once. Or start tonight with the no-cut question pages.';
+    ? '<b>Prep:</b> about 20 min to print and cut, once. Most plays: 0–2 min to set up.'
+    : '<b>Prep:</b> about 20 min to print and cut, once. No prep to ask a question.';
   return `<section class="page cover" style="--panel:${P.color}">
   <div class="panel" style="height:${panelH}px"></div>
   <div class="cv-head">
@@ -82,7 +82,7 @@ function coverPage(P, S, n, total) {
   </div>
   <svg class="cv-people" viewBox="0 -300 300 300" width="300" height="300" style="top:${panelH - 300}px" aria-hidden="true">${coverArt(P, S)}</svg>
   <div class="fan" style="top:${panelH - 30}px;left:${S.W - 272}px">${fan(P, picks, .86)}</div>
-  <div class="cv-low" style="top:${panelH + 172}px">
+  <div class="cv-low" style="top:${panelH + 150}px">
     <div class="tiles">${tiles}</div>
     <p class="prepline">${prep}</p>
     <div class="inside"><h2>Inside this download</h2><ul>${inside.map(t => `<li>${check(P.key === 'A' ? C.grass : C.sky)}<span>${t}</span></li>`).join('')}</ul></div>
@@ -240,16 +240,17 @@ function sheetPage(P, S, cardsHtml, note, n, total) {
 }
 
 // ---------- no-cut pages (customer-voice rules 5, 6, 7): play today without cutting ----------
-function noCutA(P, S, b, n, total) {
+function noCutA(P, S, b, half, n, total) {
   const bi = BANDS.indexOf(b), col = C[b.color], tint = K.TINT[b.color];
-  const rows = PLAYS[b.key].map((pl, i) => `<div class="nc-row">
-    <div class="nc-a"><em>${K.pad2(bi * 13 + i + 1)}</em><b>${esc(pl.t)}</b><span class="nc-m">${moLabel(pl.mo)} · Prep ${pl.prep} min · ${MESS[pl.mess]} · ~${pl.min} min${pl.buy ? '' : ' · <i>nothing to buy</i>'}</span><span class="nc-n"><i>Needs</i> ${esc(pl.n)}</span></div>
+  const from = half === 0 ? 0 : 7, list = PLAYS[b.key].slice(from, half === 0 ? 7 : 13);
+  const rows = list.map((pl, j) => { const i = from + j; return `<div class="nc-row">
+    <div class="nc-a"><em>${K.pad2(bi * 13 + i + 1)}</em><b>${esc(pl.t)}</b><span class="nc-m">${[moLabel(pl.mo), `Prep ${pl.prep} min`, MESS[pl.mess], `~${pl.min} min`].map(t => `<u>${t}</u>`).join(' · ')}${pl.buy ? '' : ' · <i>nothing to buy</i>'}</span><span class="nc-n"><i>Needs</i> ${esc(pl.n)}</span></div>
     <div class="nc-b">${esc(pl.p)} <span class="nc-k">Talk: ${esc(pl.k)}</span></div>
     <div class="nc-c"><p><i>2-minute version</i> ${esc(pl.tired)}</p><p><i>Easier</i> ${esc(pl.easy)}</p><p><i>Harder</i> ${esc(pl.hard)}</p></div>
-  </div>`).join('');
+  </div>`; }).join('');
   return `<section class="page content nocut" style="--c:${col};--t:${tint}">
   <div class="pin">
-    <div class="nc-head"><div><p class="kick dark">No-cut play pages · ${bi + 1} of 4</p><h2 class="ptitle sm">${shapeSvg(b.shape, col, 30)} ${b.ages} ${b.unit === 'yr' ? 'year' : 'years'}: cards ${K.pad2(bi * 13 + 1)}–${K.pad2(bi * 13 + 13)}</h2></div>
+    <div class="nc-head"><div><p class="kick dark">No-cut play pages · ${bi * 2 + half + 1} of 8</p><h2 class="ptitle sm">${shapeSvg(b.shape, col, 30)} ${b.ages} ${b.unit === 'yr' ? 'year' : 'years'}: cards ${K.pad2(bi * 13 + from + 1)}–${K.pad2(bi * 13 + from + list.length)}</h2></div>
     <p class="nc-safe">${K.shield(C.grass, 14)}<span><b>With a grown-up, every time.</b> ${esc(b.safe)} Card-specific safety notes are on each card.</span></p></div>
     <div class="nc-cols"><span>Play</span><span>How to play</span><span>Tired day · easier · harder</span></div>
     <div class="nc-list">${rows}</div>
@@ -357,10 +358,10 @@ function fileList(P) {
 function startHerePage(P, S, qrSvg) {
   const N = pageCount(P);
   const map = P.key === 'A'
-    ? [['1', 'Cover'], ['2', 'Grown-up guide'], ['3', 'Printing and safety'], ['4–7', 'No-cut play pages'], ['8–13', 'Card sheets'], ['14', 'Card backs (optional)'], ['15', 'Type-in blank cards'], ['16', '52-week fridge checklist'], ['17', 'What’s next']]
+    ? [['1', 'Cover'], ['2', 'Grown-up guide'], ['3', 'Printing and safety'], ['4–11', 'No-cut play pages (2 per age)'], ['12–17', 'Card sheets'], ['18', 'Card backs (optional)'], ['19', 'Type-in blank cards'], ['20', '52-week fridge checklist'], ['21', 'What’s next']]
     : [['1', 'Cover'], ['2', 'Grown-up guide'], ['3', 'Printing and safety'], ['4–5', 'No-cut question pages'], ['6–11', 'Card sheets'], ['12', 'Card backs (optional)'], ['13', 'Type-in blank cards'], ['14', 'Moment labels + week check'], ['15', 'What’s next']];
   const qs = P.key === 'A'
-    ? [['Short on time?', 'Print pages 4–7 only and play today. Cut the cards later.'], ['Which pages to print?', 'Pages 8–13 are the 54 cards. Page 14 (backs) and page 15 (blank cards) are optional.'], ['Paper', 'Cardstock (65–110 lb / 176–300 gsm) feels like a real deck. Plain paper works too.']]
+    ? [['Short on time?', 'Print your child’s two no-cut pages (4–11) and play today. Cut the cards later.'], ['Which pages to print?', 'Pages 12–17 are the 54 cards. Page 18 (backs) and page 19 (blank cards) are optional.'], ['Paper', 'Cardstock (65–110 lb / 176–300 gsm) feels like a real deck. Plain paper works too.']]
     : [['Short on time?', 'Print pages 4–5 only and ask a question tonight. Cut the cards later.'], ['Which pages to print?', 'Pages 6–11 are the 54 cards. Page 12 (backs) and page 13 (blank cards) are optional.'], ['Paper', 'Cardstock (65–110 lb / 176–300 gsm) feels like a real deck. Plain paper works too.']];
   return `<section class="page content starthere">
   <div class="pin">
@@ -377,7 +378,7 @@ function startHerePage(P, S, qrSvg) {
     ${store() ? `<div class="bonus sh" style="--c:${P.color};--t:${P.tint}"><div class="qr">${qrSvg}</div><div><h3>Free bonus and re-downloads</h3><p>Scan for your free companion printables: <b>${P.bonus}</b>. Lost a file? Your link stays in your order email; help is at <b>playbeforepixels.com/help</b>.</p></div></div>` : ''}
     <div class="license"><b>License: PERSONAL.</b> Print and copy for your own family only. No resale, sharing, posting or uploading. ${store() ? 'Full terms: ' + LICENSE_URL : 'Full terms are in the shop’s listing and policies.'}<br>${K.COPY} All rights reserved. ${K.VERSION}.</div>
   </div>
-  <div class="pfoot"><span>${esc(P.short)} · START HERE · ${K.VERSION}</span><span>${store() ? '<b>playbeforepixels.com</b> · ' : ''}${K.COPY}</span></div>
+  <div class="pfoot"><span>${esc(P.short)} · START HERE · ${K.VERSION}${store() ? ' · <b>playbeforepixels.com</b>' : ''}</span><span>${K.COPY}</span></div>
 </section>`;
 }
 
@@ -443,7 +444,7 @@ ${K.CARD_CSS}
 .way b{font-weight:800;font-size:13px}
 .way p{margin:3px 0 0;font-size:11.5px;line-height:1.38}
 .license{margin-top:auto;font-size:10px;line-height:1.5;background:${C.wash};border-radius:12px;padding:10px 14px}
-.pfoot{position:absolute;left:48px;right:48px;bottom:22px;display:flex;justify-content:space-between;gap:16px;font-size:7.6px;font-weight:700;opacity:.65;white-space:nowrap}
+.pfoot{position:absolute;left:48px;right:48px;bottom:16px;display:flex;flex-direction:column;gap:2px;font-size:7.6px;line-height:1.25;font-weight:700;opacity:.65;white-space:nowrap}
 /* tracker */
 .tracker{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .tcol{background:var(--t);border-radius:14px;padding:10px 10px 8px}
@@ -490,7 +491,7 @@ ${K.CARD_CSS}
 .lockup{height:34px;width:auto;display:block}
 .lockup.sm{height:26px}
 /* additions: prep line, why band, no-cut pages, share mark, start here */
-.prepline{margin:-8px 0 14px;font-size:12.5px;line-height:1.4;background:#fff;border-radius:12px;padding:8px 12px}
+.prepline{margin:0 0 12px;font-size:12.5px;line-height:1.4;background:#fff;border-radius:12px;padding:7px 12px}
 .whyband{margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .whyband>div{background:${C.tSun};border-radius:14px;padding:11px 13px;font-size:11px;line-height:1.42}
 .whyband.b>div{background:${C.tSky}}
@@ -501,16 +502,17 @@ ${K.CARD_CSS}
 .nc-safe{margin:0;max-width:330px;display:flex;gap:6px;align-items:flex-start;font-size:10px;line-height:1.35;background:${C.tGrass};border-radius:10px;padding:7px 10px}
 .nc-safe svg{flex:none;margin-top:1px}
 .nc-cols{display:grid;grid-template-columns:168px 1fr 250px;gap:12px;padding:0 10px 3px;font-size:8.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.6}
-.nc-list{display:flex;flex-direction:column;gap:4px;flex:1;justify-content:space-between}
-.nc-row{display:grid;grid-template-columns:168px 1fr 250px;gap:12px;background:var(--t);border-left:5px solid var(--c);border-radius:9px;padding:5px 10px 5px 8px;font-size:9.4px;line-height:1.3}
+.nc-list{display:flex;flex-direction:column;gap:9px}
+.nc-row{display:grid;grid-template-columns:168px 1fr 250px;gap:12px;background:var(--t);border-left:5px solid var(--c);border-radius:10px;padding:9px 12px 9px 10px;font-size:10.6px;line-height:1.36}
 .nc-a em{font-style:normal;font-weight:800;font-size:8.5px;opacity:.6;margin-right:4px}
-.nc-a b{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:12px}
-.nc-m{display:block;font-size:8px;font-weight:800;opacity:.75;margin-top:1px}
-.nc-m i{font-style:normal;color:${C.grass}}
-.nc-n{display:block;font-size:8.6px;font-weight:700;margin-top:1px}
+.nc-a b{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:14px}
+.nc-m{display:block;font-size:8.8px;font-weight:800;opacity:.75;margin-top:3px}
+.nc-m i{font-style:normal;color:${C.grass};white-space:nowrap}
+.nc-m u{text-decoration:none;white-space:nowrap}
+.nc-n{display:block;font-size:9.6px;font-weight:700;margin-top:3px}
 .nc-n i,.nc-c i{font-style:normal;font-weight:800;font-size:7.4px;letter-spacing:.1em;text-transform:uppercase;opacity:.65;margin-right:3px}
-.nc-k{display:block;font-weight:800;margin-top:1px}
-.nc-c p{margin:0}
+.nc-k{display:block;font-weight:800;margin-top:3px}
+.nc-c p{margin:0 0 2px}
 .ncq{margin-bottom:12px;border-radius:14px;background:var(--t);border-left:7px solid var(--c);padding:9px 14px 8px}
 .ncq-h{display:flex;align-items:center;gap:8px;margin-bottom:4px}
 .ncq-h b{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:19px}
@@ -556,7 +558,7 @@ ${K.CARD_CSS}
 .fan-card{position:absolute;left:-120px;top:-168px;transform-origin:50% 50%}
 .fan-card .card{border-radius:0}
 .cv-low{position:absolute;left:56px;right:56px}
-.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}
 .tile{background:#fff;border-radius:14px;padding:10px 12px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;border-bottom:6px solid var(--c)}
 .tile b{font-family:"Fredoka",sans-serif;font-weight:600;font-size:22px;line-height:1}
 .tile b.mw{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:17px}
@@ -576,9 +578,9 @@ ${K.CARD_CSS}
 function logoRel(fromDir) { return path.relative(fromDir, path.join(REPO, 'brand/logo')).split(path.sep).join('/') + '/'; }
 function fontRel(fromDir) { return path.relative(fromDir, path.join(REPO, 'brand/fonts/fonts.css')).split(path.sep).join('/'); }
 
-// Page plan. A: cover, guide, print+safety, 4 no-cut play pages, 6 card sheets, backs, blanks, tracker, next = 17.
+// Page plan. A: cover, guide, print+safety, 8 no-cut play pages, 6 card sheets, backs, blanks, tracker, next = 21.
 // B: cover, guide, print+safety, 2 no-cut question pages, 6 card sheets, backs, blanks, labels, next = 15.
-const pageCount = P => P.key === 'A' ? 17 : 15;
+const pageCount = P => P.key === 'A' ? 21 : 15;
 function buildPages(P, S, qrSvg, opts = {}) {
   const TOTAL = pageCount(P);
   const pages = [];
@@ -586,7 +588,7 @@ function buildPages(P, S, qrSvg, opts = {}) {
   pages.push(coverPage(P, S, ++n, TOTAL));
   pages.push(startPage(P, S, ++n, TOTAL));
   pages.push(printPage(P, S, ++n, TOTAL));
-  if (P.key === 'A') BANDS.forEach(b => pages.push(noCutA(P, S, b, ++n, TOTAL)));
+  if (P.key === 'A') BANDS.forEach(b => [0, 1].forEach(h => pages.push(noCutA(P, S, b, h, ++n, TOTAL))));
   else { pages.push(noCutB(P, S, MOMENTS.slice(0, 2), ++n, TOTAL, 1)); pages.push(noCutB(P, S, MOMENTS.slice(2), ++n, TOTAL, 2)); }
   for (let s = 0; s < 6; s++) {
     const cards = P.deck.slice(s * 9, s * 9 + 9).map(cd => P.card(cd, 0));
@@ -620,27 +622,39 @@ async function main() {
     fs.mkdirSync(P.dir, { recursive: true });
     const qrSvg = (await QR.toString('https://' + P.bonus, { type: 'svg', margin: 0, color: { dark: C.ink, light: '#FFFFFF' }, errorCorrectionLevel: 'M' })).replace(/<\?xml[^>]*>/, '');
     fs.writeFileSync(path.join(__dirname, `qr-${P.key}.svg`), qrSvg);
-    for (const [sk, S] of Object.entries(SIZES)) {
-      for (const ink of [false, true]) {
-        const name = `${P.pdfBase}${ink ? '-ink-saver' : ''}${sk === 'a4' ? '-A4' : ''}`;
-        // main source.html = Letter, full color, in the product folder; the rest live in build/gen
-        const isMain = sk === 'letter' && !ink;
-        const file = isMain ? path.join(P.dir, 'source.html') : path.join(GEN, `${P.key}-${name}.html`);
-        K.setLogoBase(logoRel(path.dirname(file)));
-        const pages = buildPages(P, S, qrSvg);
-        fs.writeFileSync(file, htmlDoc(P, S, pages.join('\n'), path.dirname(file), ink));
-        out.push({ product: P.key, size: sk, ink, html: file, pdf: path.join(P.dir, name + '.pdf'), W: S.W, H: S.H, gx: S.gx, gy: S.gy, main: isMain });
-        if (isMain) {
-          // cover-only page for cover.png
-          const cf = path.join(GEN, `${P.key}-cover.html`);
-          K.setLogoBase(logoRel(GEN));
-          fs.writeFileSync(cf, htmlDoc(P, S, coverPage(P, S, 1, 13), GEN, false));
+    const etsyDir = path.join(P.dir, 'etsy-upload');
+    fs.mkdirSync(etsyDir, { recursive: true });
+    for (const ed of ['store', 'etsy']) {
+      ED = ed;
+      for (const [sk, S] of Object.entries(SIZES)) {
+        for (const ink of [false, true]) {
+          const name = `${P.pdfBase}${ink ? '-low-ink' : ''}${sk === 'a4' ? '-A4' : ''}`;
+          const etsyName = { 'false-letter': '2-Color-US-Letter', 'false-a4': '3-Color-A4', 'true-letter': '4-Low-Ink-US-Letter', 'true-a4': '5-Low-Ink-A4' }[`${ink}-${sk}`];
+          // main source.html = store edition, Letter, full color, in the product folder; the rest live in build/gen
+          const isMain = ed === 'store' && sk === 'letter' && !ink;
+          const file = isMain ? path.join(P.dir, 'source.html') : path.join(GEN, `${P.key}-${ed}-${name}.html`);
+          K.setLogoBase(logoRel(path.dirname(file)));
+          const pages = buildPages(P, S, qrSvg);
+          fs.writeFileSync(file, htmlDoc(P, S, pages.join('\n'), path.dirname(file), ink));
+          const pdf = ed === 'store' ? path.join(P.dir, name + '.pdf') : path.join(etsyDir, etsyName + '.pdf');
+          out.push({ product: P.key, ed, size: sk, ink, html: file, pdf, W: S.W, H: S.H, gx: S.gx, gy: S.gy, main: isMain, lowInkPreview: ed === 'store' && sk === 'letter' && ink });
+          if (isMain) {
+            const cf = path.join(GEN, `${P.key}-cover.html`);
+            K.setLogoBase(logoRel(GEN));
+            fs.writeFileSync(cf, htmlDoc(P, S, coverPage(P, S, 1, pageCount(P)), GEN, false));
+          }
         }
       }
+      // START HERE (Letter; prints fine on A4 with "Fit")
+      const sf = path.join(GEN, `${P.key}-${ed}-start-here.html`);
+      K.setLogoBase(logoRel(GEN));
+      fs.writeFileSync(sf, htmlDoc(P, SIZES.letter, startHerePage(P, SIZES.letter, qrSvg), GEN, false));
+      out.push({ product: P.key, ed, startHere: true, html: sf, pdf: ed === 'store' ? path.join(P.dir, 'START-HERE.pdf') : path.join(etsyDir, '1-START-HERE.pdf') });
     }
+    ED = 'store';
   }
   fs.writeFileSync(path.join(GEN, 'manifest.json'), JSON.stringify(out, null, 1));
   console.log('wrote', out.length, 'documents');
 }
-module.exports = { PRODUCTS, SIZES, pageCss, htmlDoc, logoRel, fontRel, coverArt, fan };
+module.exports = { PRODUCTS, SIZES, pageCss, htmlDoc, logoRel, fontRel, coverArt, fan, pageCount };
 if (require.main === module) main().catch(e => { console.error(e); process.exit(1); });

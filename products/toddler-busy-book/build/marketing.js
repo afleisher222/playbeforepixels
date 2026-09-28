@@ -16,8 +16,10 @@ Object.assign(ctx, { rel: REL, size: 'letter', etsy: false });
 const { render } = require('./build.js'); render({ rel: REL, size: 'letter' });
 const DEFS = () => defs.all() + silDefs();
 const S = JSON.parse(fs.readFileSync(path.join(__dirname, 'stats.json'), 'utf8'));
-const pv = n => `../preview/p${String(n).padStart(2, '0')}.png`;
-const lv = n => `../preview/low-ink/p${String(n).padStart(2, '0')}.png`;
+// Etsy listing images use the Etsy-edition renders (no URL anywhere); the website mockup uses the site previews.
+const pv = n => `etsy-preview/color/p${String(n).padStart(2, '0')}.png`;
+const lv = n => `etsy-preview/low-ink/p${String(n).padStart(2, '0')}.png`;
+const sv = n => `../preview/p${String(n).padStart(2, '0')}.png`;
 const A = S.actPages, SH = S.sheetPages;
 const doc = (title, css, body) => htmlDoc({ title, rel: REL, size: 'letter', body, extraCss: extra.EXTRA_CSS + css, extraDefs: DEFS() }).replace('<body class="color site">', '<body class="color site mk">');
 
@@ -55,7 +57,7 @@ L.push(`<div class="L" style="background:${C.tSky}">
   <p style="font-size:27px;font-weight:700;margin-top:16px;line-height:1.3;max-width:640px">Toddler busy book sorted by age, with a “talk while you play” line on every page.</p></div>
   ${page(A['w-ball'], 470, 470, 300, 7)}${page(A['colorsort'], 250, 500, 300, -5)}
   ${pieceCard('w-duck', 'duck', 180, 160, -12, 70, 520)}${pieceCard('b-apple', 'apple', 170, 150, 8, 740, 400)}${pieceCard('b-s-star', 'star', 150, 136, 14, 790, 760, `style="--sf:${C.plum}"`)}
-  <div style="position:absolute;left:56px;bottom:44px;display:flex;gap:10px">${chips}</div>
+  <div style="position:absolute;left:56px;bottom:44px;display:flex;gap:10px">${chips}</div>${logo}
 </div>`);
 // 2 what's inside
 const inside = [['w-hi', 'First words'], ['moo', 'Animal sounds'], ['colorsort', 'Color sort'], ['shapes', 'Shape match'], ['pizza', 'Pizza shop'], ['maze4', 'Mazes'], ['seq1', 'First, next, last'], ['post', 'Post office']];
@@ -84,7 +86,8 @@ L.push(`<div class="L" style="background:${C.tGrass}">
 // 6 3-5 thinking
 L.push(`<div class="L" style="background:${C.tTomato}">
   <div style="position:absolute;left:56px;top:50px;right:56px"><div class="kick" style="color:${C.tomato}">For 3–5 years</div><h1 style="font-size:60px;margin-top:8px">Mazes, patterns and little stories</h1><p style="font-size:22px;font-weight:700;margin-top:10px">8 mazes from easy to tricky, plus counting, rhymes and sequencing.</p></div>
-  ${page(A['maze2'], 60, 320, 290, -6)}${page(A['patterns1'], 355, 290, 290, 0)}${page(A['seq1'], 650, 320, 290, 6)}
+  ${page(A['maze2'], 40, 270, 320, -6)}${page(A['patterns1'], 340, 250, 320, 0)}${page(A['seq1'], 640, 270, 320, 6)}
+  <div style="position:absolute;left:56px;right:56px;bottom:44px;display:flex;gap:10px;flex-wrap:wrap">${['8 mazes', 'Counting 1–6', 'Patterns', 'First, next, last', 'Rhymes', 'Café & post office'].map(t => `<span class="bchip" style="font-size:19px;padding:10px 16px">${t}</span>`).join('')}</div>
 </div>`);
 // 7 how a page works
 L.push(`<div class="L" style="background:#fff">
@@ -109,12 +112,13 @@ L.push(`<div class="L" style="background:#fff">
 // 10 safety
 L.push(`<div class="L" style="background:${C.tGrass}">
   <div style="position:absolute;left:56px;top:50px;right:56px"><div class="kick" style="color:${C.grass}">Safety, built in</div><h1 style="font-size:60px;margin-top:8px">Every play follows our published safety rules</h1></div>
-  <div style="position:absolute;left:56px;right:56px;top:300px;display:grid;grid-template-columns:1fr 1fr;gap:18px">
+  <div style="position:absolute;left:56px;right:56px;top:230px;display:grid;grid-template-columns:1fr 1fr;gap:18px">
     <div class="tile" style="display:flex;gap:18px;align-items:center"><svg width="120" height="170" viewBox="-40 -60 80 120" style="flex:none"><use href="#b-tube" transform="scale(1.2)"/></svg><div><h3>Bigger than a toilet-paper tube</h3><p>Every piece is 2 in (5.1 cm) or bigger. Pieces for 1–2 years: 2.5 in (6.3 cm) or bigger.</p></div></div>
     <div class="tile"><h3>Grown-up keeps the pieces</h3><p>Printed on every piece sheet. Count them out and back in, and store them in a labeled pouch.</p></div>
     <div class="tile"><h3>No velcro dots for under-3s</h3><p>1–2 and 2–3 pieces lay on top. Velcro is optional for 3–5, with “check dots before each play.”</p></div>
     <div class="tile"><h3>Play together</h3><p>A supervision note on every activity page. No balloons, beads, buttons, coins or strings anywhere.</p></div>
   </div>
+  ${page(A['x-safety'], 150, 640, 300, -4)}${page(SH['colorsort'], 560, 630, 300, 4)}
 </div>`);
 fs.writeFileSync(path.join(__dirname, 'listing.html'), doc('Toddler Busy Book listing images', MK, L.join('\n')));
 
@@ -124,9 +128,9 @@ const mock = `<div class="mock" style="width:1600px;height:1200px;position:relat
   <div style="position:absolute;left:140px;top:120px;width:640px;height:${640 * 11 / 8.5}px;transform:rotate(-5deg)">
     <div style="position:absolute;inset:-26px -26px -26px -70px;background:${C.plum};border-radius:18px;box-shadow:0 30px 60px rgba(29,41,64,.25)"></div>
     ${[160, 400, 640].map(y => `<div style="position:absolute;left:-44px;top:${y}px;width:60px;height:22px;border-radius:11px;background:#C9D1DE;z-index:3"></div>`).join('')}
-    <div class="pg" style="left:0;top:0;width:640px;height:${640 * 11 / 8.5}px"><img src="${pv(A['w-ball'])}"></div>
+    <div class="pg" style="left:0;top:0;width:640px;height:${640 * 11 / 8.5}px"><img src="${sv(A['w-ball'])}"></div>
   </div>
-  ${`<div class="pg" style="left:860px;top:150px;width:560px;height:${560 * 11 / 8.5}px;transform:rotate(4deg)"><img src="${pv(A['colorsort'])}"></div>`}
+  ${`<div class="pg" style="left:860px;top:150px;width:560px;height:${560 * 11 / 8.5}px;transform:rotate(4deg)"><img src="${sv(A['colorsort'])}"></div>`}
   ${pieceCard('w-duck', 'duck', 230, 200, -10, 820, 860)}${pieceCard('b-apple', 'apple', 220, 190, 6, 1080, 900)}${pieceCard('b-frog', 'frog', 210, 184, 14, 1320, 820)}
   <div style="position:absolute;left:1240px;top:40px" class="bchip"><i style="background:${C.grass}"></i>${S.activities} activities · ages 1–5</div>
 </div>`;

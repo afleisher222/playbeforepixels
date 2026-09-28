@@ -1,156 +1,857 @@
 {
-  "cards": 228,
-  "young": 170,
-  "big": 58,
-  "starter": 60,
-  "letter": {
-    "full": 137,
-    "starter": 16,
-    "editable": 68,
-    "bookmarks": [
-      [
-        "Cover",
-        1
-      ],
-      [
-        "Welcome",
-        2
-      ],
-      [
-        "Use them by age",
-        3
-      ],
-      [
-        "Talk while you use them",
-        4
-      ],
-      [
-        "Print guide",
-        5
-      ],
-      [
-        "Laminate, stick and store",
-        6
-      ],
-      [
-        "Card index",
-        7
-      ],
-      [
-        "Cards · Rainbow",
-        8
-      ],
-      [
-        "Cards · Soft",
-        29
-      ],
-      [
-        "Cards · Navy",
-        50
-      ],
-      [
-        "Cards · Simple",
-        71
-      ],
-      [
-        "Charts · Rainbow",
-        92
-      ],
-      [
-        "Charts · Soft",
-        103
-      ],
-      [
-        "Charts · Navy",
-        114
-      ],
-      [
-        "Charts · Simple",
-        125
-      ],
-      [
-        "Extras",
-        136
-      ],
-      [
-        "Free bonus",
-        137
-      ]
+ "cards": 230,
+ "young": 172,
+ "big": 58,
+ "starter": 60,
+ "second_copies": 12,
+ "docs": {
+  "full-store-color-letter": {
+   "pages": 160,
+   "bookmarks": [
+    [
+     "Cover",
+     1
+    ],
+    [
+     "Grown-up guide",
+     2
+    ],
+    [
+     "Use them by age",
+     4
+    ],
+    [
+     "Print guide",
+     5
+    ],
+    [
+     "Laminate, stick and store",
+     6
+    ],
+    [
+     "Card index",
+     7
+    ],
+    [
+     "Cards · Rainbow",
+     8
+    ],
+    [
+     "Cards · Soft",
+     30
+    ],
+    [
+     "Cards · Navy",
+     52
+    ],
+    [
+     "Word-free and photo cards",
+     74
+    ],
+    [
+     "Charts · Rainbow",
+     95
+    ],
+    [
+     "Blank charts · Rainbow",
+     106
+    ],
+    [
+     "Charts · Soft",
+     116
+    ],
+    [
+     "Blank charts · Soft",
+     127
+    ],
+    [
+     "Charts · Navy",
+     137
+    ],
+    [
+     "Blank charts · Navy",
+     148
+    ],
+    [
+     "Extras",
+     158
+    ],
+    [
+     "Free bonus",
+     160
     ]
+   ]
   },
-  "a4": {
-    "full": 137,
-    "starter": 16,
-    "editable": 68,
-    "bookmarks": [
-      [
-        "Cover",
-        1
-      ],
-      [
-        "Welcome",
-        2
-      ],
-      [
-        "Use them by age",
-        3
-      ],
-      [
-        "Talk while you use them",
-        4
-      ],
-      [
-        "Print guide",
-        5
-      ],
-      [
-        "Laminate, stick and store",
-        6
-      ],
-      [
-        "Card index",
-        7
-      ],
-      [
-        "Cards · Rainbow",
-        8
-      ],
-      [
-        "Cards · Soft",
-        29
-      ],
-      [
-        "Cards · Navy",
-        50
-      ],
-      [
-        "Cards · Simple",
-        71
-      ],
-      [
-        "Charts · Rainbow",
-        92
-      ],
-      [
-        "Charts · Soft",
-        103
-      ],
-      [
-        "Charts · Navy",
-        114
-      ],
-      [
-        "Charts · Simple",
-        125
-      ],
-      [
-        "Extras",
-        136
-      ],
-      [
-        "Free bonus",
-        137
-      ]
+  "full-store-color-a4": {
+   "pages": 160,
+   "bookmarks": [
+    [
+     "Cover",
+     1
+    ],
+    [
+     "Grown-up guide",
+     2
+    ],
+    [
+     "Use them by age",
+     4
+    ],
+    [
+     "Print guide",
+     5
+    ],
+    [
+     "Laminate, stick and store",
+     6
+    ],
+    [
+     "Card index",
+     7
+    ],
+    [
+     "Cards · Rainbow",
+     8
+    ],
+    [
+     "Cards · Soft",
+     30
+    ],
+    [
+     "Cards · Navy",
+     52
+    ],
+    [
+     "Word-free and photo cards",
+     74
+    ],
+    [
+     "Charts · Rainbow",
+     95
+    ],
+    [
+     "Blank charts · Rainbow",
+     106
+    ],
+    [
+     "Charts · Soft",
+     116
+    ],
+    [
+     "Blank charts · Soft",
+     127
+    ],
+    [
+     "Charts · Navy",
+     137
+    ],
+    [
+     "Blank charts · Navy",
+     148
+    ],
+    [
+     "Extras",
+     158
+    ],
+    [
+     "Free bonus",
+     160
     ]
+   ]
+  },
+  "full-store-low-letter": {
+   "pages": 74,
+   "bookmarks": [
+    [
+     "Cover",
+     1
+    ],
+    [
+     "Grown-up guide",
+     2
+    ],
+    [
+     "Use them by age",
+     4
+    ],
+    [
+     "Print guide",
+     5
+    ],
+    [
+     "Laminate, stick and store",
+     6
+    ],
+    [
+     "Card index",
+     7
+    ],
+    [
+     "Cards · Simple",
+     8
+    ],
+    [
+     "Word-free and photo cards",
+     30
+    ],
+    [
+     "Charts · Simple",
+     51
+    ],
+    [
+     "Blank charts · Simple",
+     62
+    ],
+    [
+     "Extras",
+     72
+    ],
+    [
+     "Free bonus",
+     74
+    ]
+   ]
+  },
+  "full-store-low-a4": {
+   "pages": 74,
+   "bookmarks": [
+    [
+     "Cover",
+     1
+    ],
+    [
+     "Grown-up guide",
+     2
+    ],
+    [
+     "Use them by age",
+     4
+    ],
+    [
+     "Print guide",
+     5
+    ],
+    [
+     "Laminate, stick and store",
+     6
+    ],
+    [
+     "Card index",
+     7
+    ],
+    [
+     "Cards · Simple",
+     8
+    ],
+    [
+     "Word-free and photo cards",
+     30
+    ],
+    [
+     "Charts · Simple",
+     51
+    ],
+    [
+     "Blank charts · Simple",
+     62
+    ],
+    [
+     "Extras",
+     72
+    ],
+    [
+     "Free bonus",
+     74
+    ]
+   ]
+  },
+  "full-etsy-color-letter": {
+   "pages": 160,
+   "bookmarks": [
+    [
+     "Cover",
+     1
+    ],
+    [
+     "Grown-up guide",
+     2
+    ],
+    [
+     "Use them by age",
+     4
+    ],
+    [
+     "Print guide",
+     5
+    ],
+    [
+     "Laminate, stick and store",
+     6
+    ],
+    [
+     "Card index",
+     7
+    ],
+    [
+     "Cards · Rainbow",
+     8
+    ],
+    [
+     "Cards · Soft",
+     30
+    ],
+    [
+     "Cards · Navy",
+     52
+    ],
+    [
+     "Word-free and photo cards",
+     74
+    ],
+    [
+     "Charts · Rainbow",
+     95
+    ],
+    [
+     "Blank charts · Rainbow",
+     106
+    ],
+    [
+     "Charts · Soft",
+     116
+    ],
+    [
+     "Blank charts · Soft",
+     127
+    ],
+    [
+     "Charts · Navy",
+     137
+    ],
+    [
+     "Blank charts · Navy",
+     148
+    ],
+    [
+     "Extras",
+     158
+    ],
+    [
+     "What's next",
+     160
+    ]
+   ]
+  },
+  "full-etsy-color-a4": {
+   "pages": 160,
+   "bookmarks": [
+    [
+     "Cover",
+     1
+    ],
+    [
+     "Grown-up guide",
+     2
+    ],
+    [
+     "Use them by age",
+     4
+    ],
+    [
+     "Print guide",
+     5
+    ],
+    [
+     "Laminate, stick and store",
+     6
+    ],
+    [
+     "Card index",
+     7
+    ],
+    [
+     "Cards · Rainbow",
+     8
+    ],
+    [
+     "Cards · Soft",
+     30
+    ],
+    [
+     "Cards · Navy",
+     52
+    ],
+    [
+     "Word-free and photo cards",
+     74
+    ],
+    [
+     "Charts · Rainbow",
+     95
+    ],
+    [
+     "Blank charts · Rainbow",
+     106
+    ],
+    [
+     "Charts · Soft",
+     116
+    ],
+    [
+     "Blank charts · Soft",
+     127
+    ],
+    [
+     "Charts · Navy",
+     137
+    ],
+    [
+     "Blank charts · Navy",
+     148
+    ],
+    [
+     "Extras",
+     158
+    ],
+    [
+     "What's next",
+     160
+    ]
+   ]
+  },
+  "full-etsy-low-letter": {
+   "pages": 74,
+   "bookmarks": [
+    [
+     "Cover",
+     1
+    ],
+    [
+     "Grown-up guide",
+     2
+    ],
+    [
+     "Use them by age",
+     4
+    ],
+    [
+     "Print guide",
+     5
+    ],
+    [
+     "Laminate, stick and store",
+     6
+    ],
+    [
+     "Card index",
+     7
+    ],
+    [
+     "Cards · Simple",
+     8
+    ],
+    [
+     "Word-free and photo cards",
+     30
+    ],
+    [
+     "Charts · Simple",
+     51
+    ],
+    [
+     "Blank charts · Simple",
+     62
+    ],
+    [
+     "Extras",
+     72
+    ],
+    [
+     "What's next",
+     74
+    ]
+   ]
+  },
+  "full-etsy-low-a4": {
+   "pages": 74,
+   "bookmarks": [
+    [
+     "Cover",
+     1
+    ],
+    [
+     "Grown-up guide",
+     2
+    ],
+    [
+     "Use them by age",
+     4
+    ],
+    [
+     "Print guide",
+     5
+    ],
+    [
+     "Laminate, stick and store",
+     6
+    ],
+    [
+     "Card index",
+     7
+    ],
+    [
+     "Cards · Simple",
+     8
+    ],
+    [
+     "Word-free and photo cards",
+     30
+    ],
+    [
+     "Charts · Simple",
+     51
+    ],
+    [
+     "Blank charts · Simple",
+     62
+    ],
+    [
+     "Extras",
+     72
+    ],
+    [
+     "What's next",
+     74
+    ]
+   ]
+  },
+  "starter-store-color-letter": {
+   "pages": 24,
+   "bookmarks": [
+    [
+     "Cover",
+     1
+    ],
+    [
+     "Grown-up guide",
+     2
+    ],
+    [
+     "Print guide",
+     4
+    ],
+    [
+     "Laminate, stick and store",
+     5
+    ],
+    [
+     "Cards · Rainbow",
+     6
+    ],
+    [
+     "Word-free and photo cards",
+     13
+    ],
+    [
+     "Charts · Rainbow",
+     19
+    ],
+    [
+     "Blank charts · Rainbow",
+     22
+    ],
+    [
+     "Free bonus",
+     24
+    ]
+   ]
+  },
+  "starter-store-color-a4": {
+   "pages": 24,
+   "bookmarks": [
+    [
+     "Cover",
+     1
+    ],
+    [
+     "Grown-up guide",
+     2
+    ],
+    [
+     "Print guide",
+     4
+    ],
+    [
+     "Laminate, stick and store",
+     5
+    ],
+    [
+     "Cards · Rainbow",
+     6
+    ],
+    [
+     "Word-free and photo cards",
+     13
+    ],
+    [
+     "Charts · Rainbow",
+     19
+    ],
+    [
+     "Blank charts · Rainbow",
+     22
+    ],
+    [
+     "Free bonus",
+     24
+    ]
+   ]
+  },
+  "starter-store-low-letter": {
+   "pages": 24,
+   "bookmarks": [
+    [
+     "Cover",
+     1
+    ],
+    [
+     "Grown-up guide",
+     2
+    ],
+    [
+     "Print guide",
+     4
+    ],
+    [
+     "Laminate, stick and store",
+     5
+    ],
+    [
+     "Cards · Simple",
+     6
+    ],
+    [
+     "Word-free and photo cards",
+     13
+    ],
+    [
+     "Charts · Simple",
+     19
+    ],
+    [
+     "Blank charts · Simple",
+     22
+    ],
+    [
+     "Free bonus",
+     24
+    ]
+   ]
+  },
+  "starter-store-low-a4": {
+   "pages": 24,
+   "bookmarks": [
+    [
+     "Cover",
+     1
+    ],
+    [
+     "Grown-up guide",
+     2
+    ],
+    [
+     "Print guide",
+     4
+    ],
+    [
+     "Laminate, stick and store",
+     5
+    ],
+    [
+     "Cards · Simple",
+     6
+    ],
+    [
+     "Word-free and photo cards",
+     13
+    ],
+    [
+     "Charts · Simple",
+     19
+    ],
+    [
+     "Blank charts · Simple",
+     22
+    ],
+    [
+     "Free bonus",
+     24
+    ]
+   ]
+  },
+  "starter-etsy-color-letter": {
+   "pages": 24,
+   "bookmarks": [
+    [
+     "Cover",
+     1
+    ],
+    [
+     "Grown-up guide",
+     2
+    ],
+    [
+     "Print guide",
+     4
+    ],
+    [
+     "Laminate, stick and store",
+     5
+    ],
+    [
+     "Cards · Rainbow",
+     6
+    ],
+    [
+     "Word-free and photo cards",
+     13
+    ],
+    [
+     "Charts · Rainbow",
+     19
+    ],
+    [
+     "Blank charts · Rainbow",
+     22
+    ],
+    [
+     "What's next",
+     24
+    ]
+   ]
+  },
+  "starter-etsy-color-a4": {
+   "pages": 24,
+   "bookmarks": [
+    [
+     "Cover",
+     1
+    ],
+    [
+     "Grown-up guide",
+     2
+    ],
+    [
+     "Print guide",
+     4
+    ],
+    [
+     "Laminate, stick and store",
+     5
+    ],
+    [
+     "Cards · Rainbow",
+     6
+    ],
+    [
+     "Word-free and photo cards",
+     13
+    ],
+    [
+     "Charts · Rainbow",
+     19
+    ],
+    [
+     "Blank charts · Rainbow",
+     22
+    ],
+    [
+     "What's next",
+     24
+    ]
+   ]
+  },
+  "starter-etsy-low-letter": {
+   "pages": 24,
+   "bookmarks": [
+    [
+     "Cover",
+     1
+    ],
+    [
+     "Grown-up guide",
+     2
+    ],
+    [
+     "Print guide",
+     4
+    ],
+    [
+     "Laminate, stick and store",
+     5
+    ],
+    [
+     "Cards · Simple",
+     6
+    ],
+    [
+     "Word-free and photo cards",
+     13
+    ],
+    [
+     "Charts · Simple",
+     19
+    ],
+    [
+     "Blank charts · Simple",
+     22
+    ],
+    [
+     "What's next",
+     24
+    ]
+   ]
+  },
+  "starter-etsy-low-a4": {
+   "pages": 24,
+   "bookmarks": [
+    [
+     "Cover",
+     1
+    ],
+    [
+     "Grown-up guide",
+     2
+    ],
+    [
+     "Print guide",
+     4
+    ],
+    [
+     "Laminate, stick and store",
+     5
+    ],
+    [
+     "Cards · Simple",
+     6
+    ],
+    [
+     "Word-free and photo cards",
+     13
+    ],
+    [
+     "Charts · Simple",
+     19
+    ],
+    [
+     "Blank charts · Simple",
+     22
+    ],
+    [
+     "What's next",
+     24
+    ]
+   ]
   }
+ }
 }

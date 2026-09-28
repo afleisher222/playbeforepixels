@@ -67,15 +67,17 @@ Five groups, in launch order. The first is live now. The later ones open as proo
 - **Who:** parents and caregivers of babies, toddlers and preschoolers, plus the gift-givers around them (see D).
 - **When they buy:** on impulse, when a specific moment creates the need ("what do I do instead of the tablet at 5 p.m.?"). They spend $5–15 on printables and $10–20 on paperbacks (`marketing/MARKETING-PLAYBOOK.md`, Segment 3).
 - **Where they look:** Pinterest, Google questions, Amazon, Etsy, Babylist and Amazon registries, gift guides and parenting newsletters.
-- **What they buy first:** the launch-first five, which must be live before Black Friday, **November 27, 2026** (`ops/QUEUE.md`):
+- **What they buy first:** the launch-first five. The listings are built to be ready before Black Friday, **November 27, 2026** (`ops/QUEUE.md`). They can take money only once Gate A is met: a business bank account, counsel's go-ahead, general-liability insurance and the publish safeguards (section 5.12). The financial model therefore assumes first sales in December 2026. Prices are everyday prices under `brand/BRAND.md` "Honest pricing", with no "list" or "sale" pairs:
 
 | # | Product | Channel | Price (source: `marketing/DEMAND-CHECK.md` §3) |
 |---|---|---|---|
-| 1 | Visual routine cards: 200+ editable cards, 0–5 and 5–12 | Etsy + our site | $9.50 list, about $6.50 on sale |
+| 1 | Visual routine cards: 200+ editable cards (0–5 set at launch; 5–12 set added free when counsel's G1 answer allows) | Etsy + our site | $6.50; 60-card starter set $4.50 |
 | 2 | "I'm bored" play cards: 150 cards, age-banded, with talk prompts | Etsy + our site | $6.50 |
 | 3 | Play-First Family Kit | Etsy + our site | $11 |
-| 4 | Toddler busy book printable, 120–150 pages | Etsy + our site | $15.99 list, about $11–12 on sale |
+| 4 | Toddler busy book printable, 120–150 pages | Etsy + our site | $11.99 |
 | 5 | *100 Screen-Free Plays* | KDP paperback + PDF | $16.99 paperback / $9.99 PDF |
+
+The prices come from `marketing/DEMAND-CHECK.md` §3. That file's anchor-and-discount rule (rule 2) is overridden by `BRAND.md`, so the lower, genuinely charged figure is the everyday price.
 
 - **Why they come back:** we collect the child's birth month and year (never a name). That lets "3 plays for your child's age, every month" and each next product arrive at the right stage: board book around 12 months, picture book around 3, the school-age plan at 5+ (`marketing/BLIND-SPOTS.md` items 5 and 12).
 
@@ -95,7 +97,7 @@ Five groups, in launch order. The first is live now. The later ones open as proo
 
 ### D. Every-age buyers: gift-givers and adjacent ages
 
-- **Gift-givers:** grandparents, baby-shower guests and holiday buyers. Products: Play Recipes for Grandparents, the Talk-First Welcome Bundle, "bring a book instead of a card" shower inserts ($4.99), the holiday gift bundle ($39 digital plus deck), and the personalized keepsake book ($34.99 hardcover) (`marketing/DEMAND-CHECK.md` §2; `marketing/CAMPAIGN-BIBLE.md`).
+- **Gift-givers:** grandparents, baby-shower guests and holiday buyers. Products: Play Recipes for Grandparents, the Talk-First Welcome Bundle, "bring a book instead of a card" shower inserts ($4.99), the holiday gift bundle ($29 digital in 2026; the $39 physical version with a POD deck in 2027, section 2.5), and the personalized keepsake book ($34.99 hardcover) (`marketing/DEMAND-CHECK.md` §2; `marketing/CAMPAIGN-BIBLE.md`).
 - **New age groups under research** (founder, September 28, 2026; `ops/QUEUE.md`): a babysitter play kit for teen sitters and the parents who hire them; a grandparent's kit for visits and play by mail; a first-phone agreement and phone-free challenges for ages 9–12 (fun and independence framing, no mental-health claims); an adult phone-free evenings planner and family unplugged weekend kit. The education-student and new-teacher starter set is held with the other school-facing items.
 - **Rule:** each is built only after the monthly research run finds demand evidence.
 
@@ -141,40 +143,43 @@ Two conclusions follow. First, even very small shares of the US 0–5 population
 
 ### Bottom-up (the planning basis)
 
-**Year-one digital core: the launch-first five on Etsy and our site.**
+**Year-one digital core: the launch-first five on Etsy and our site.** The rates below are the anchors the financial model uses (section 3.2).
 
 | Input | Value | Source or status |
 |---|---|---|
-| Average realized price across the five digital listings | $9.10, the mean of $6.50, $6.50, $11.00, $11.50 and $9.99 | `marketing/DEMAND-CHECK.md` §3 (busy book taken at the midpoint of its $11–12 sale price) |
-| Platform fees | about 13% blended | Etsy "about 13% effective fees" (`marketing/MARKETING-PLAYBOOK.md`), applied to all channels (assumption). A merchant of record runs about 10% + $0.50 a sale (`legal/DECISION-MEMO.json`) [VERIFY]. |
-| Sales per listing per month | Floor 2.5 · Low 10 · Base 30 · High 75 | The floor is the kill-rule line: fewer than 5 sales in 60 days means reprice, then fold into a bundle (`ops/QUEUE.md`). The other rates are assumptions. |
-| Selling months | 12 at steady state, with no ramp | assumption. It overstates year one because new listings take time to rank. |
+| Average price across the five digital listings | $9.20, the mean of $6.50, $6.50, $11.00, $11.99 and $9.99 | Everyday prices (§1.4); `marketing/DEMAND-CHECK.md` §3 |
+| Platform fees | about 13% blended | Etsy "about 13% effective fees" (`marketing/MARKETING-PLAYBOOK.md`), applied to all channels (assumption). The model uses each channel's own fee stack (section 3.3). |
+| Units per product per month, all channels together | Floor 2.5 · **Low 10 = model Conservative** · **15 = model Expected** · Base 30 = model Strong · Breakout 75 | The floor is the kill-rule line: fewer than 5 sales in 60 days means reprice, then fold into a bundle (`ops/QUEUE.md`). The other rates are assumptions. |
+| Selling months | 12 at steady state, with no ramp | Assumption. It overstates year one; the model adds a 6-month review ramp and a December 2026 start. |
 
-| Scenario | Units a year (5 listings) | Gross | Net of about 13% fees |
+| Case | Units a year (5 listings) | Gross | Net of about 13% fees |
 |---|---:|---:|---:|
-| Floor | 150 | $1,365 | $1,188 |
-| Low | 600 | $5,460 | $4,750 |
-| Base | 1,800 | $16,380 | $14,251 |
-| High | 4,500 | $40,950 | $35,627 |
+| Floor | 150 | $1,380 | $1,201 |
+| Low (Conservative) | 600 | $5,520 | $4,802 |
+| Expected | 900 | $8,280 | $7,204 |
+| Base (Strong) | 1,800 | $16,560 | $14,407 |
+| Breakout (not planned) | 4,500 | $41,400 | $36,018 |
 
-**Year-one book core: *100 Screen-Free Plays* paperback on KDP ($16.99).** The net per copy depends on the interior (black and white or color) and the page count. This plan uses **$5 a copy** (assumption; check it with KDP's royalty calculator [VERIFY]). At 2, 5, 25 or 75 copies a month, that adds $120, $300, $1,500 or $4,500 a year.
+**Year-one book core: *100 Screen-Free Plays* paperback on KDP ($16.99).** KDP charges a flat $2.30 to print 24–108 black-and-white pages (`products/guide-100-plays/listing.json`), so a 60% royalty leaves **$7.89 a copy** [VERIFY in KDP's calculator, including whether the 8 × 10 in trim counts as large trim]. The 32-page colour paperbacks (*Up! Go! More!*, *The Day the Tablet Slept*) leave **$3.95 a copy**. These are the figures used across sections 1–3. At 1, 2.5, 5, 10 or 25 copies a month of the 100-plays paperback, it adds about $95, $237, $473, $947 or $2,367 a year.
 
-**Year-one total, digital core plus paperback, net:** Floor about $1,300 · Low about $5,050 · Base about $15,750 · High about $40,100.
+**Year-one total, digital core plus that paperback, net, before ramp:** Floor about $1,300 · Low about $5,040 · Expected about $7,680 · Base about $15,350 · Breakout about $38,400.
 
-**Sanity check against the evidence.** The strongest category proofs in the demand check are **shop-level lifetime totals** over unknown periods: a routine-card shop with 2,189 sales and a bored-jar shop with 10.4k sales. The Base case, 1,800 digital units in year one across five listings from a zero-review shop, would be a large share of one proven incumbent's lifetime total. So **Low is the prudent planning case.** Base is a goal that has to be earned through SEO, bundles, pins and the email list, and High requires a breakout listing.
+**What the full model says.** Section 3 adds the review ramp, the December 2026 start, new products and KDP titles through the year, IngramSpark, international sales and the course. On that basis, year-one gross sales are **$5,849 (Conservative), $11,195 (Expected) and $27,228 (Strong)**, with net contribution of $4,470, $8,400 and $20,560.
+
+**Sanity check against the evidence.** The strongest category proofs in the demand check are **shop-level lifetime totals** over unknown periods: a routine-card shop with 2,189 sales and a bored-jar shop with 10.4k sales. The Base rate of 30 units a product a month, from a zero-review shop, would put our Etsy shop near 4,000 orders a year by year 3, which is almost twice that routine-card shop's lifetime total. So **the plan budgets cash on the Low case (the model's Conservative)** and **measures progress against Expected**, which sits halfway between Low and Base. Even Expected's year-3 Etsy volume (about 1,400 orders) would make the shop one of the stronger printable shops in its niche. Base is shown only as the Strong outlier, and Breakout needs a runaway listing.
 
 **What the bottom-up leaves out, on purpose.** These streams are sized in later sections, once their gates open and their inputs exist:
 
 - the 30-Day Screen Reset (January 2027);
 - the holiday gift bundle;
 - alternates such as the car-ride pack ($6) and flash cards ($6.99);
-- the board-book pre-sale (Wave 3, February–April 2027);
+- the offset board book (a gated option; its pre-sale fails its own funding line in every scenario, section 3.9);
 - international sales;
 - all group revenue.
 
 As an illustration of the group wave's scale **once counsel clears it**: if 0.1% of the 84,000+ K–8 groups PTO Today reaches bought one $129 host kit, that would be 84 kits and about $10,800. At 0.5% it would be 420 kits and about $54,200. Both rates are assumptions.
 
-**Retail sizing waits for data.** A Target or Walmart pitch needs sell-through, review counts and a 12-month record (`marketing/AMAZON-AND-RETAIL-ROADMAP.md` §B.5). Any retail volume estimate before then would be a guess. The retail section of this plan should be sized from actual year-one velocity by product.
+**Retail sizing waits for data.** A Target or Walmart pitch needs sell-through, review counts and a 12-month record of stocked sales (`marketing/AMAZON-AND-RETAIL-ROADMAP.md` §B.5). Any retail volume estimate before then would be a guess. Section 4.9 therefore sets the retail gates in units sold, not dates.
 
 ---
 
@@ -211,7 +216,7 @@ Competitors are described by type, as the brand rules require. The evidence and 
 - Age bands on everything: 0–1, 1–2, 2–3 and 3–5 for toddlers; 1–3, 3–5, 5–8 and 8–12 for the bored cards.
 - The files buyers expect: editable, US Letter and A4, Monday and Sunday starts, several colorways (DEMAND-CHECK pricing rule 6).
 - A number in every title ("200+ Routine Cards", "150 Screen-Free Play Cards").
-- "Every product leads to the next": a QR bonus, next-age recommendations and series strips (`brand/BRAND.md`).
+- "Every product leads to the next": a QR bonus on own-site and book editions, next-age recommendations and series strips (`brand/BRAND.md`). Etsy and TpT editions carry no URL or QR code (customer-voice rule 2).
 
 ---
 
@@ -224,10 +229,10 @@ To be plain about it: most of what we sell could be copied within months. The de
 | **Brand** (PLAY BEFORE PIXELS name, "The Return" logo, palette, voice) | Consistent look across every product, page and pin builds recognition. The exact phrase goes in every subtitle and site title. | Name kept by decision (`legal/DECISION-MEMO.json`); final logo kit in `brand/logo/` | The name is descriptive, so it is at risk of a failure-to-function refusal (TMEP 1202.04). It must always be used as a brand (imprint, header, labels), not only as a slogan. Puddlefort is the named fallback. |
 | **Trademarks** | A registered mark can be licensed or sold, and it supports Amazon Brand Registry and takedowns. | **ALPHAPLAY** (Serial 99650345, Notice of Allowance Sept 8, 2026): Statement of Use or extension due **March 8, 2027**. Its sole product, the ALPHAPLAY Spelling Games printable, must be genuinely on sale by mid-January (internal deadline Feb 1). **PLAY BEFORE PIXELS:** knockout search, then attorney clearance, then filing in classes 16 and 41 first (about $700) (`legal/protection/PROTECTION-PLAN.md` §6b). | Every filing waits for employment counsel's go-ahead. TM only, never ® until registration. |
 | **Series** | "A Play Before Pixels Book" on at least two different titles supports the series mark, and collectors buy the set. | Board book → 3-book series; stage kits; card-deck expansions; bundles that add seasonal packs automatically | Book 2 and book 3 of the board-book series are not yet written. |
-| **Email list** | We own it: Amazon, KDP and Etsy never give us buyers' contact details. The birth month and year let one list sell the right product at the right age for years. | Free "3 plays for your child's age" offer; QR bonus in every product; welcome and after-purchase sequences (`marketing/BLIND-SPOTS.md` items 5 and 12) | Zero subscribers today. Needs the PO Box and privacy policy before the first send. |
+| **Email list** | We own it: Amazon, KDP and Etsy never give us buyers' contact details. The birth month and year let one list sell the right product at the right age for years. | Free "3 plays for your child's age" offer; QR bonus in own-site and book editions (not Etsy or TpT editions); welcome and after-purchase sequences (`marketing/BLIND-SPOTS.md` items 5 and 12). The model's Expected case reaches about 690 subscribers by September 2027 and 3,500 by month 36. | Zero subscribers today. Needs the PO Box and privacy policy before the first send. |
 | **Speed** | Routines build, test and list the next product, bundle, paperback edition and translation after a winner shows up. The routines also keep content scheduled 8 weeks ahead (`ops/ROUTINE.md`, "Double down automatically"). | The routine is written. The compliance gate and weekly approval queue are in place. | Speed is capped by the founder's approval time (about 5 hours a week) and by platforms without APIs (KDP, IngramSpark and TPT need upload packets). |
 | **Faceless trust assets** | Buyers, groups and retail buyers can check them without meeting anyone: allowed citations only, "linked with" never "causes", a published editorial policy, a paid SLP accuracy review (credited only with written permission), paid autistic sensitivity reads, rule-4 safety notes on every activity, CPSIA tracking on copyright pages, a "What We Changed" log, and an honest testimonial log. | Rules binding in `brand/BRAND.md` and `ops/COMPLIANCE-GATE.md`; reviews budgeted in `marketing/BLIND-SPOTS.md` item 10 | Most of these are planned, not yet published. |
-| **Retail-readiness file** | The checklist a chain buyer asks for: GS1 barcodes owned by AlphaPlay LLC, retail-ready packaging, liability insurance at retailer limits, CPSIA testing and certificates, EDI through a 3PL, a distributor or rep, and a 12-month record. | Listed in `marketing/AMAZON-AND-RETAIL-ROADMAP.md` §B.5 | None of it exists yet. The retail section of this plan must schedule and cost each item. |
+| **Retail-readiness file** | The checklist a chain buyer asks for: GS1 barcodes owned by AlphaPlay LLC, retail-ready packaging, liability insurance at retailer limits, CPSIA testing and certificates, EDI through a 3PL, a distributor or rep, and a 12-month record. | Listed in `marketing/AMAZON-AND-RETAIL-ROADMAP.md` §B.5 | None of it exists yet. Section 4 schedules each item by gate, and section 3.8 costs it. |
 | **Owned IP, cleanly titled** | A founder-to-LLC assignment and freelancer assignments make the catalog an asset the LLC owns. | `legal/protection/PROTECTION-PLAN.md` §6a | The AI-drawn art is not copyrightable. Before any print-run book, human illustrators take over (`marketing/BLIND-SPOTS.md` item 17). Copyright registration covers only the human-written text. |
 
 **The honest summary.** In year one, the moat is **execution plus the list**: shipping a better-organized, safer, more honest product faster than a copycat can respond, and keeping each buyer through the email list. From year two, it is **the registered marks, the series and the trust record**. Together these make us the lowest-risk choice for a library, a group or a retail buyer.
@@ -263,5 +268,5 @@ To be plain about it: most of what we sell could be copied within months. The de
 2. **ALPHAPLAY.** Get the Spelling Games printable genuinely on sale by mid-January 2027. Book the trademark attorney for the March 8, 2027 filing.
 3. **PLAY BEFORE PIXELS clearance.** Run the knockout search, get the attorney's opinion, then file classes 16 and 41.
 4. **Hub name.** Approve "Research Library" (or another non-medical name) and update `marketing/CAMPAIGN-BIBLE.md` §4.
-5. **Planning case.** Adopt the bottom-up **Low** case as the budget basis for year one and **Base** as the target. Revisit both after 90 days of real sales data.
+5. **Planning case.** Adopt one rule for the whole plan: **budget cash on the Low case (the model's Conservative)** and **measure progress against Expected** (15 units per product a month). Base is the Strong outlier and is not planned for. Revisit both after 90 days of real sales data.
 6. **Outside figures.** Before any external version of this plan, verify every [VERIFY] figure in §1.5 and §1.6, especially the population figures and the spending-pool sizes.
