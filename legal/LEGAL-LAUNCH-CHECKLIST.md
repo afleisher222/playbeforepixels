@@ -1,0 +1,71 @@
+# DRAFT — for review by a licensed attorney before publication
+
+# Legal Launch Checklist — AlphaPlay LLC d/b/a Play Before Pixels
+
+**Prepared September 27, 2026. Every fee and rule below is UNVERIFIED.** Live web research was not available when this was written (search budget used up; government sites unreachable from this environment). Figures come from general knowledge current to mid-2026. Confirm each item at the linked official source before paying or relying on it. Items that only the founder can confirm at checkout (ISBNs, insurance quotes) or that need an attorney are marked.
+
+Entity decision already made (see `ENTITY.md`): no new LLC. AlphaPlay LLC is the seller; "Play Before Pixels" is its trade name.
+
+## 1. Must do before launch
+
+| # | Item | Est. cost | Confirm at |
+|---|---|---|---|
+| 1 | **Employment-counsel review first.** Send `FOR-EMPLOYMENT-COUNSEL.md` to the founder's own employment attorney before selling or marketing anything. | attorney's rate | — |
+| 2 | Confirm AlphaPlay LLC is in **good standing** with SDAT; file any overdue **Annual Report / Personal Property Return** (due April 15 each year; $300 for an LLC). | $0 to check; $300/yr | https://dat.maryland.gov and https://egov.maryland.gov/BusinessExpress |
+| 3 | Register the **trade name "Play Before Pixels"** to AlphaPlay LLC with SDAT (Maryland Business Express). | about $25; renew every 5 yrs | https://egov.maryland.gov/BusinessExpress |
+| 4 | Use the LLC's existing **EIN**; open or relabel the business bank account with the DBA. Never use a personal SSN on marketplaces. | $0 (IRS never charges) | https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online |
+| 5 | **Maryland sales & use tax license**: add retail sales and digital products to the LLC's registration. Maryland charges 6% on tangible goods and 6% on digital products (since 2021). A new 3% tax on certain data/IT and software-publishing services began July 1, 2025 — ask the accountant whether any course or platform product falls under it. | $0 license | https://www.marylandtaxes.gov and the Comptroller's 2025 tax alerts |
+| 6 | Collect Maryland tax on **direct** sales to Maryland buyers. Marketplaces (Amazon, Etsy, TpT, Faire, Bookshop.org) collect and remit on their own sales as marketplace facilitators; keep their reports. Watch other states' economic-nexus thresholds (usually $100,000 of sales, some also 200 transactions) for direct sales. | accountant | state revenue sites |
+| 7 | **Publish the policy pages** in this folder after attorney review: Terms, Privacy, Disclaimer, Affiliate Disclosure, Shipping/Returns/Refunds, Coaching & Workshop Terms, Accessibility. Link them in every page footer and at checkout. A privacy policy is required for any site that collects personal information from California residents (CalOPPA), whatever the business's size. | attorney review, about $500–$2,000 flat (estimate) | https://oag.ca.gov/privacy/privacy-laws |
+| 8 | **No health claims anywhere.** Remove or reword any line saying products prevent, treat or improve a medical, developmental or speech condition (including autism). The FTC requires "competent and reliable scientific evidence" for health claims. Keep the research hub strictly descriptive, with citations. | $0 | FTC Health Products Compliance Guidance (Dec. 2022), ftc.gov |
+| 9 | **CPSIA product-safety decisions** (see the notes after this table): launch with ordinary paper books and adult-sized merch; hold kids' apparel and any toy-like product until testing is arranged. | $0 now | https://www.cpsc.gov/Business--Manufacturing/Business-Education/Business-Guidance/Childrens-Books |
+| 10 | **Email marketing (CAN-SPAM):** business mailing address in every marketing email (use the Rockville mailbox, never a home address), accurate subject lines, working unsubscribe honored within 10 business days, no purchased lists. Use double opt-in so EU/UK/Canada subscribers are covered too. | $0 | ftc.gov CAN-SPAM guide |
+| 11 | **COPPA:** keep the site directed to adults; no child accounts, no child sign-ups, no photos of children collected. The amended COPPA Rule (2025) required compliance by April 22, 2026. | $0 | ftc.gov COPPA FAQs |
+| 12 | **Cookieless analytics** (Cloudflare Web Analytics) and no ad pixels. That avoids EU/UK cookie-consent banners and state "sale/sharing" duties. | $0 | Cloudflare docs |
+
+## 2. Before the first sale
+
+| # | Item | Est. cost | Confirm at |
+|---|---|---|---|
+| 13 | **ISBNs from Bowker** for each format (paperback, hardcover, library binding, and each ebook edition need separate ISBNs). Last known list prices: 1 for $125; 10 for $295; 100 for $575; 1,000 for $1,500; barcode about $25. Founder confirms at checkout. KDP/IngramSpark free ISBNs list the platform as publisher, so buy your own if "AlphaPlay LLC" should be the imprint. | about $295 for 10 | https://www.myidentifiers.com |
+| 14 | **Insurance quotes:** general liability plus products/completed-operations (children's books and merch); professional liability/E&O for coaching and workshops. Many PTAs, libraries and venues require a certificate of insurance. Estimate for a home-based seller: GL + products $400–$900/yr; E&O $400–$1,000/yr. Founder confirms by quote. | about $800–$1,900/yr (estimate) | broker quotes |
+| 15 | **Affiliate disclosures** next to every affiliate link, and the exact Amazon Associates sentence if enrolled (required by the program). FTC Endorsement Guides were revised in 2023 (16 CFR Part 255). | $0 | ftc.gov Endorsement Guides FAQs |
+| 16 | **Reviews and testimonials:** the FTC fake-reviews rule (16 CFR Part 465, effective Oct. 21, 2024) bans fake or AI-written reviews, buying reviews conditioned on sentiment, undisclosed insider reviews, suppressing negative reviews, and buying fake followers or views. Civil penalties run about $53,000 per violation (inflation-adjusted). Use real, dated, consented testimonials only, and follow each marketplace's review rules. | $0 | ftc.gov, 16 CFR 465 |
+| 17 | **Subscriptions/memberships:** the FTC's 2024 "Click-to-Cancel" amendments were vacated by the Eighth Circuit in July 2025. ROSCA (federal) and state auto-renewal laws (California's was strengthened July 1, 2025) still apply: clear terms before billing, express consent, easy online cancellation. Check whether the FTC has started new rulemaking in 2026. | $0 | ftc.gov; Cal. Bus. & Prof. Code §17600 |
+| 18 | **Digital license terms** (personal / single-classroom / organization) on every download page and inside every PDF. | $0 | — |
+| 19 | **International digital sales:** EU, UK, Norway, Switzerland, Canada, Australia and others tax digital products sold to consumers, in the EU and UK from the first sale for non-resident sellers. The simplest fix is to sell international digital downloads and courses through a **merchant-of-record** checkout (the platform becomes the seller of record and handles VAT/GST), or through marketplaces. Otherwise register for EU non-Union OSS and UK VAT. | platform fee, about 5% + fees (estimate) | EU: taxation-customs.ec.europa.eu (OSS); UK: gov.uk "VAT on digital services" |
+| 20 | **International physical sales:** books reach most markets through Amazon KDP expanded distribution and IngramSpark's global network, which handle local sales tax/VAT as retailer or marketplace. For direct international shipping, decide DDP vs. DAP (see Shipping policy). EU low-value goods (≤€150) VAT can use IOSS; UK low-value (≤£135) VAT is collected at sale. | carrier/platform fees | same as above |
+| 21 | **EU General Product Safety Regulation (GPSR, applicable Dec. 13, 2024):** products sold to EU consumers, books included, need an EU-based responsible person, manufacturer contact details on the product or listing, and safety information. Marketplaces and IngramSpark/KDP now ask for GPSR data. Either appoint an EU responsible-person service or ship physical goods to the EU only via distributors who take that role. The UK has similar marketplace requirements. | EU rep service about €100–€500/yr (estimate) | EU Reg. (EU) 2023/988, eur-lex.europa.eu |
+| 22 | **Accessibility:** build to WCAG 2.1 AA (alt text, captions, contrast, keyboard use, accessible PDFs). US courts often treat inaccessible retail sites as ADA Title III risks; the DOJ has issued guidance but no Title III web rule. The EU Accessibility Act (from June 28, 2025) covers e-commerce but exempts microenterprises providing services. | $0–$300 for an audit tool/test | ada.gov web guidance; w3.org/WAI/WCAG21 |
+
+## 3. Within 90 days
+
+| # | Item | Est. cost | Confirm at |
+|---|---|---|---|
+| 23 | **Copyright registration** for each book, the play guide, card deck art and slogan designs as artwork (short slogans themselves are not copyrightable; protect them with trademarks). Fees: Standard Application $65; Single Application $45 (only when author = claimant, one work, not work made for hire, which usually does not fit an LLC-owned work); group options for unpublished works $85. Register within 3 months of publication to keep statutory damages and fees. | $65 per work | https://www.copyright.gov/about/fees.html |
+| 24 | **Trademark:** file the ALPHAPLAY Statement of Use or Extension by **March 8, 2027** (see ENTITY.md). Consider applications for PLAY BEFORE PIXELS (classes 16, 25, 28, 41) after a clearance search by a trademark attorney. USPTO base fee is $350 per class (2025 fee rule) plus surcharges for free-text IDs. | $350+/class + attorney | uspto.gov fee schedule |
+| 25 | **Documentary/film screenings:** a screening for a PTA, library or community group is a public performance and needs a license from the rights holder or its distributor, even if free and even at a school outside classroom teaching. Budget per screening, often $150–$500+ (estimate). Never screen from a personal streaming account. | per title | 17 U.S.C. §106(4), §110(1) |
+| 26 | **Music in videos/podcast:** use only tracks licensed for commercial use and for each platform (sync license), or original music; keep license receipts. | $0–$20/mo library | license terms |
+| 27 | **Research citations and quotes (fair use):** quote short passages with author, title and link; summarize findings in your own words; do not reproduce whole charts, figures or long excerpts without permission; do not use an author's name or book cover in ads in a way that implies endorsement. | $0 | 17 U.S.C. §107 |
+| 28 | **Coaching contract** (these terms plus a signed intake form): scope ("not therapy"), recording consent (Maryland requires consent of all parties), cancellation, refund. | included in #7 | Md. Code, Cts. & Jud. Proc. §10-402 |
+
+## 4. Later, when the business grows
+
+| # | Item | Trigger |
+|---|---|---|
+| 29 | **Children's apparel** (sizes 12 and under): third-party lab testing for lead in paint and substrate, Children's Product Certificate, permanent tracking labels, textile flammability (16 CFR 1610), fiber, care and origin labels; never sell children's sleepwear. Confirm whether the POD partner supplies CPCs for the exact blank and ink. | before adding kids' sizes |
+| 30 | **Toys and games for children** (for example a card game designed for kids 12 and under, or books with plastic, cord, sound or other non-paper parts): ASTM F963 toy testing where it applies, small-parts rules and warnings, CPSC-accepted lab testing, CPC, tracking labels. Market the card deck as a parent/educator resource only if that is genuinely how it is designed and sold; the CPSC looks at design, packaging and marketing. | before any toy-like product |
+| 31 | **State privacy laws:** Maryland's Online Data Privacy Act (effective Oct. 1, 2025; enforced for processing from April 1, 2026) applies at 35,000 Maryland consumers, or 10,000 if more than 20% of revenue comes from selling personal data; it bans selling minors' data and targeted ads to anyone under 18. Other states: mostly 100,000 consumers; Delaware, New Hampshire and Rhode Island are lower (35,000); Montana 25,000. Texas and Nebraska have no count threshold but exempt SBA-defined small businesses (except for selling sensitive data without consent). | email list reaching about 25,000 in any state |
+| 32 | **GDPR/UK GDPR:** already covered by the Privacy Policy; ask the attorney whether an Art. 27 EU/UK representative is needed as EU/UK sales grow. | meaningful EU/UK customer base |
+| 33 | **Canada/Australia GST:** registration is required once sales to consumers there exceed CAD 30,000 or AUD 75,000 a year, unless a merchant of record or marketplace handles it. | thresholds |
+
+## Notes on CPSIA and books (UNVERIFIED — confirm with the CPSC page and a product-safety attorney)
+- **Ordinary books** (paper or paperboard pages, printing inks, glue, thread, staples; published after 1985) have been determined by the CPSC not to exceed lead limits, so third-party lead testing is not required, and with no other rule applying, no Children's Product Certificate is required. Board books made only of paperboard are generally treated as ordinary books.
+- Books lose that status if they include **non-paper parts**: plastic, foam, fabric, spiral wire, toys, audio chips, crayons. Keep talk-along books purely paper and paperboard.
+- **Tracking labels:** children's products need permanent distinguishing marks where practicable (manufacturer name, location and date of manufacture, batch/cohort). For books, the copyright page with publisher name, city and printing information usually serves; POD printers add printing marks. Confirm with the CPSC.
+- **Library binding** from a commercial binder is still an ordinary book if it uses ordinary book materials.
+- The **card deck** and **printables** are paper, but if designed for children 12 and under and used like a game, the toy standard may apply. Decide intended users before printing.
+
+## Running cost summary (estimates, UNVERIFIED)
+- Year 1 must-have: SDAT annual report $300 + trade name about $25 + ISBNs about $295 + insurance about $800–$1,900 + attorney policy review about $500–$2,000 + copyright about $65 per work → roughly **$2,000–$4,800** before trademark filings.
+- Trademark filings: $350+ per class per mark, plus attorney fees.

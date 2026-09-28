@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Face to Face — Concept 3</title>
+<link rel="stylesheet" href="../../fonts/fonts.css">
+<style>
+:root{--ink:#1D2940;--paper:#fff;--wash:#F3F6FB;--tomato:#EE5A36;--sun:#F5B820;--sky:#3D86D8;--grass:#2FA36B;
+--t-tomato:#FDE9E3;--t-sun:#FEF4D8;--t-sky:#E3EEFA;--t-grass:#DFF3E9}
+*{box-sizing:border-box;margin:0}
+body{width:1800px;height:1200px;background:var(--wash);font-family:"Nunito Sans",sans-serif;color:var(--ink);padding:28px 32px;overflow:hidden}
+header{display:flex;align-items:baseline;gap:28px;height:64px}
+.eyebrow{font:800 13px/1 "Nunito Sans",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato)}
+h1{font:800 44px/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em}
+header p{margin-left:auto;max-width:720px;font-size:17px;line-height:1.4;text-align:right}
+.grid{display:grid;gap:24px}
+.r1{grid-template-columns:580px 1fr 1fr;height:600px}
+.r2{grid-template-columns:486px 372px 470px 1fr;height:436px;margin-top:24px}
+.card{background:var(--paper);border-radius:22px;padding:24px;position:relative;overflow:hidden}
+.card.ink{background:var(--ink);color:#fff}
+.lbl{font:800 12px/1 "Nunito Sans",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#6B7486}
+.ink .lbl{color:#9AA6BD}
+.big{display:flex;align-items:center;justify-content:center;height:100%}
+.big img{width:512px;height:512px;margin-top:10px}
+.lock{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:52px;height:calc(100% - 20px)}
+.lock .h{width:470px}.lock .s{width:220px}
+.story{position:absolute;left:24px;right:24px;bottom:22px;font-size:14px;line-height:1.45;color:#4A5468;border-top:1px solid #E6EAF2;padding-top:14px;display:flex;gap:18px;align-items:center}
+.ink .story{color:#C9D1E0;border-color:#33405A}
+.chip{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:13px}
+.dot{width:22px;height:22px;border-radius:50%}
+.sizes{display:flex;align-items:flex-end;gap:26px;margin-top:22px}
+.sizes figure{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12px;color:#6B7486}
+.tab{margin-top:20px;background:#DFE4EE;border-radius:10px 10px 0 0;padding:8px 10px 0;width:100%}
+.tab div{background:#fff;border-radius:8px 8px 0 0;padding:8px 12px;display:flex;align-items:center;gap:8px;font-size:13px;width:230px}
+.one{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.one div{height:132px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+.one img{height:100px}
+.mock{display:flex;align-items:center;justify-content:center;height:calc(100% - 20px)}
+.foot{position:absolute;left:24px;bottom:18px;font-size:12px;color:#6B7486}
+</style></head>
+<body>
+<header>
+  <span class="eyebrow">Concept 3 · Direction C</span>
+  <h1>Face to Face</h1>
+  <p>Two speech marks, one grown-up and one child, turned to face each other. The talk happens in the space between them, and that gap is the pause that gives the child a turn.</p>
+</header>
+
+<section class="grid r1">
+  <div class="card"><span class="lbl">Mark · 512 px</span>
+    <div class="big"><img src="mark.svg" alt=""></div></div>
+
+  <div class="card"><span class="lbl">Lockups on paper</span>
+    <div class="lock" style="height:390px"><img class="h" src="lockup-horizontal.svg" alt=""><img class="s" src="lockup-stacked.svg" alt=""></div>
+    <div class="story"><span class="chip"><span class="dot" style="background:var(--tomato)"></span>Tomato · grown-up</span><span class="chip"><span class="dot" style="background:var(--sky)"></span>Sky · child</span><span class="chip"><span class="dot" style="background:var(--ink)"></span>Ink · wordmark</span></div></div>
+
+  <div class="card ink"><span class="lbl">Lockups on ink #1D2940</span>
+    <div class="lock" style="height:390px"><img class="h" src="lockup-horizontal-reversed.svg" alt=""><img class="s" src="lockup-stacked-reversed.svg" alt=""></div>
+    <div class="story">Wordmark: Bricolage Grotesque 800, drawn as paths from the brand's own font file. The mark keeps both colours on ink; only the words turn white.</div></div>
+</section>
+
+<section class="grid r2">
+  <div class="card"><span class="lbl">Actual size · 64 / 32 / 16 px</span>
+    <div class="sizes">
+      <figure><img src="mark.svg" width="64" height="64" alt="">64</figure>
+      <figure><img src="mark.svg" width="32" height="32" alt="">32</figure>
+      <figure><img src="mark.svg" width="16" height="16" alt="">16</figure>
+      <figure><div style="background:var(--ink);padding:8px;border-radius:8px"><img src="mark.svg" width="32" height="32" alt="" style="display:block"></div>on ink</figure>
+      <div class="tab" style="width:190px;margin:0 0 0 auto"><div style="width:auto"><img src="mark.svg" width="16" height="16" alt="">Play Before…</div></div>
+    </div>
+    <div class="lbl" style="margin-top:26px">One colour · stamp &amp; embroidery</div>
+    <div class="one"><div style="background:#fff;border:2px solid #E6EAF2"><img src="one-color-black.svg" alt=""></div><div style="background:#111"><img src="one-color-white.svg" alt=""></div></div>
+  </div>
+
+  <div class="card" style="background:var(--t-sky)"><span class="lbl">Tee · one-colour print</span>
+    <div class="mock">
+      <svg viewBox="0 0 320 340" width="320" height="340">
+        <path d="M112 18 C126 34 194 34 208 18 L270 42 C284 48 292 56 298 70 L316 124 L266 144 L252 110 L252 326 C252 332 248 336 242 336 L78 336 C72 336 68 332 68 326 L68 110 L54 144 L4 124 L22 70 C28 56 36 48 50 42 Z" fill="#F5B820"/>
+        <path d="M112 18 C126 34 194 34 208 18 L200 15 C186 28 134 28 120 15 Z" fill="#E0A612"/>
+        <image href="one-color-black.svg" x="110" y="96" width="100" height="100" preserveAspectRatio="xMidYMin meet" style="filter:none"/>
+      </svg></div>
+    <span class="foot">Ink on sun: a single screen, no colour matching.</span></div>
+
+  <div class="card" style="background:var(--t-grass)"><span class="lbl">Board book · spine &amp; cover corner</span>
+    <div class="mock">
+      <svg viewBox="0 0 400 340" width="400" height="340">
+        <rect x="40" y="18" width="36" height="310" rx="6" fill="#1D2940"/>
+        <rect x="72" y="18" width="300" height="310" rx="10" fill="#3D86D8"/>
+        <rect x="72" y="18" width="8" height="310" fill="#2F74C2"/>
+        <image href="mark-white.svg" x="46" y="28" width="24" height="24"/>
+        <text transform="translate(63 72) rotate(90)" font-family="Nunito Sans, sans-serif" font-weight="800" font-size="12.5" letter-spacing="1.2" fill="#fff">PLAY BEFORE PIXELS · HELLO, BALL!</text>
+        <rect x="302" y="30" width="58" height="58" rx="12" fill="#fff"/>
+        <image href="mark.svg" x="307" y="35" width="48" height="48"/>
+        <text x="104" y="96" font-family="Fredoka, Nunito Sans, sans-serif" font-weight="600" font-size="52" fill="#fff">Hello,</text>
+        <text x="104" y="152" font-family="Fredoka, Nunito Sans, sans-serif" font-weight="600" font-size="52" fill="#fff">ball!</text>
+        <circle cx="262" cy="244" r="66" fill="#F5B820"/>
+        <path d="M206 210 C236 232 288 232 318 210 L322 226 C290 250 234 250 202 226 Z" fill="#EE5A36"/>
+      </svg></div>
+    <span class="foot">Sample title for mock-up only.</span></div>
+
+  <div class="card"><span class="lbl">Social avatar · 1080 crop</span>
+    <div class="mock" style="flex-direction:column;gap:18px;height:auto;margin-top:18px">
+      <svg viewBox="0 0 260 260" width="260" height="260">
+        <defs><clipPath id="c"><circle cx="130" cy="130" r="130"/></clipPath></defs>
+        <circle cx="130" cy="130" r="130" fill="#FEF4D8"/>
+        <image href="mark.svg" x="46" y="46" width="168" height="168" clip-path="url(#c)"/>
+      </svg>
+      <div style="display:flex;align-items:center;gap:12px;align-self:flex-start">
+        <svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="24" fill="#FEF4D8"/><image href="mark.svg" x="8.5" y="8.5" width="31" height="31"/></svg>
+        <div><div style="font:800 16px 'Bricolage Grotesque',sans-serif">Play Before Pixels</div><div style="font-size:13px;color:#6B7486">Talk, touch and play</div></div>
+      </div>
+    </div></div>
+</section>
+</body></html>

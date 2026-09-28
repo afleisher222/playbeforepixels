@@ -1,0 +1,51 @@
+{
+  "slug": "board-up-go-more",
+  "title": "Up! Go! More!",
+  "subtitle": "14 first words to say, sign and play together",
+  "format": "Board book (full color, rounded corners recommended). Print file: 18 PDF pages = front cover, inside front cover (how-to note), 14 one-word interior pages, inside back cover (daily-routine word guide), back cover.",
+  "trim": "6 x 6 in trim; 6.25 x 6.25 in with 0.125 in bleed on every edge; text and faces kept inside a 0.375 in safe zone",
+  "pages": 18,
+  "ages": "0–3",
+  "price_usd": 14.99,
+  "price_notes": "Suggested retail $14.99 for the founder's own shop and Etsy (small-run board books cost more per unit than paperbacks). Test a $12.99 launch price or a $24.99 two-book gift bundle once a second board book exists. Set the final price only after getting a real per-unit quote from a board-book printer plus shipping; aim for a landed cost at or below 40% of retail [VERIFY with printer quotes]. Wholesale (Faire or indie shops) is typically 50% of retail, about $7.50.",
+  "short_description": "A bold first-words board book for ages 0–3: 14 everyday words, big friendly pictures, and a simple Grown-up corner tip on every page.",
+  "long_description": "Up! Go! More! is a sturdy first-words board book made for laps, not screens. Each page shows one everyday word a toddler actually uses (hi, up, down, go, stop, ball, uh-oh, more, all done, shoe, bye-bye, book, hug and night-night), set in huge, rounded letters beside one big, bright picture of a child and a grown-up acting it out.\n\nAt the bottom of every page, a short Grown-up corner gives you one easy way to turn reading into a back-and-forth chat: pause and wait, add one word, use a gesture, offer a choice, sing it, or follow your child's lead. There's no script to learn and nothing to get right. Pick any idea, skip any idea.\n\nThe inside front cover explains how to read the book together in five plain steps, and the inside back cover shows where these words live in your day, from mealtime to bedtime, so the talking keeps going after the book closes.\n\nThe diverse cast of toddlers, parents and grandparents appears throughout, drawn in a clean, flat, high-contrast style that little eyes can take in at a glance. A warm, practical gift for baby showers, first birthdays and anyone who loves a toddler.",
+  "bullets": [
+    "14 real first words, one per page: hi, up, down, go, stop, ball, uh-oh, more, all done, shoe, bye-bye, book, hug, night-night",
+    "Huge rounded lettering and one big, uncluttered picture per page, easy for babies and toddlers to take in",
+    "A Grown-up corner on every page with one simple talk idea: wait, add a word, gesture, offer a choice, sing it, follow their lead",
+    "Inclusive cast of toddlers, parents and grandparents, drawn in a bold, modern flat style",
+    "Inside covers include a 5-step how-to-read note and a guide to using the words at mealtime, playtime and bedtime"
+  ],
+  "keywords": [
+    "first words board book",
+    "toddler first words book",
+    "baby board book 0-3",
+    "learn to talk toddler book",
+    "baby sign and say words",
+    "screen-free toddler gift",
+    "interactive read aloud baby book"
+  ],
+  "seo_title": "Up! Go! More! First Words Board Book for Ages 0–3",
+  "seo_description": "A bold first-words board book: 14 everyday toddler words, big friendly pictures, and a simple Grown-up corner talk tip on every page. Ages 0–3.",
+  "alt_text": "Cover of the board book Up! Go! More! with big navy title letters on a sunny yellow background and a smiling toddler with arms raised beside a striped ball.",
+  "channels": [
+    "Play Before Pixels website shop (printed copies, direct shipping)",
+    "Etsy (printed copies; gift-bundle listings)",
+    "Amazon via a seller listing with your own ISBN, stocked from a board-book printer (KDP and IngramSpark print-on-demand do not currently offer board books [VERIFY current offerings])",
+    "Faire and direct wholesale to independent toy stores, bookstores and baby boutiques",
+    "Bulk orders for parent groups, PTAs, early-childhood programs and baby-shower gift bundles",
+    "Local markets, library friends' sales and pop-up events"
+  ],
+  "compliance_notes": "No health or medical claims: the book is parent education, not a clinical service, and does not claim to treat, prevent or diagnose anything. Not presented as written by a speech-language pathologist. No trademarked program names; talk strategies are described in plain words. No real brands, logos, schools or products; the tablet on the bedtime page is a generic, neutral object. No research citations are used. Safety: the book is intended for 0–3, so the printed product must have no detachable parts and should use rounded corners and non-toxic inks. As a US children's product, confirm CPSIA requirements with the printer before sale: permanent tracking information on the product, and a Children's Product Certificate based on the correct third-party testing, or documentation of the 'ordinary book' exemption if it applies [VERIFY with the printer and CPSC guidance]. For UK/EU sales, confirm whether toy-safety rules apply to board books for under-3s [VERIFY]. The print PDF is RGB; the final file must be checked against the chosen printer's current template (for example a specialty board-book printer, or KDP, IngramSpark or Lulu if they add board books) for trim, bleed, board thickness, spine, corner radius and CMYK conversion before upload.",
+  "human_todo": [
+    "Buy an ISBN (US: Bowker) and generate the barcode, then place it in the labelled ISBN / barcode box on the back cover",
+    "Choose a board-book printer, get quotes, and download their current template; adjust trim, bleed, spine and corner radius and convert to CMYK if they require it",
+    "Order and review a physical proof: color, board thickness, corner rounding and readability of the Grown-up corner text (13 px, about 9.75 pt)",
+    "Confirm CPSIA obligations with the printer: tracking label, Children's Product Certificate or ordinary-book exemption [VERIFY]",
+    "Add 'Printed in ___' and any printer-required legal or manufacturing lines to the back or inside back cover",
+    "Decide on an author or illustrator credit line, if any (currently credited to Play Before Pixels only)",
+    "Set the final retail price after the unit-cost quote, then photograph the printed proof for store listings alongside mockup.png",
+    "Register copyright (optional) and add the book to your website shop, Etsy and wholesale channels"
+  ]
+}

@@ -1,0 +1,473 @@
+<title>Play Before Pixels</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&display=swap">
+<style>
+:root{
+  --paper:#FFFFFF;
+  --wash:#F3F6FB;
+  --ink:#1D2940;
+  --ink-soft:#4A5770;
+  --line:#DCE2EC;
+  --tomato:#EE5A36;
+  --sun:#F5B820;
+  --sky:#3D86D8;
+  --grass:#2FA36B;
+  --plum:#8A5CC7;
+  --on-color:#FFFFFF;
+  --tint-tomato:#FDE9E3;
+  --tint-sun:#FEF4D8;
+  --tint-sky:#E3EEFA;
+  --tint-grass:#DFF3E9;
+  --display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --body:"Nunito Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#141A26; --wash:#1B2332; --ink:#EEF2F8; --ink-soft:#AEB9CB; --line:#2C3649;
+    --tomato:#F2714F; --sun:#F7C646; --sky:#6AA6EA; --grass:#4CBE86; --plum:#A882DC;
+    --on-color:#141A26;
+    --tint-tomato:#3A2320; --tint-sun:#3A3120; --tint-sky:#1E2E45; --tint-grass:#1D3529;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#141A26; --wash:#1B2332; --ink:#EEF2F8; --ink-soft:#AEB9CB; --line:#2C3649;
+  --tomato:#F2714F; --sun:#F7C646; --sky:#6AA6EA; --grass:#4CBE86; --plum:#A882DC;
+  --on-color:#141A26;
+  --tint-tomato:#3A2320; --tint-sun:#3A3120; --tint-sky:#1E2E45; --tint-grass:#1D3529;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;padding-inline:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin-inline:auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);line-height:1.08;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(2.5rem,6.4vw,4.6rem);font-weight:800}
+h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:800}
+h3{font-size:1.3rem;font-weight:700}
+p{margin:0}
+.eyebrow{font-family:var(--display);font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.lede{font-size:1.18rem;color:var(--ink-soft);max-width:36em}
+
+/* header */
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--paper);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:800;font-size:1.25rem}
+.logo-mark{display:grid;grid-template-columns:repeat(2,11px);gap:3px}
+.logo-mark i{width:11px;height:11px;border-radius:3px;display:block}
+nav.main{display:flex;gap:4px;flex-wrap:wrap}
+nav.main a{text-decoration:none;font-weight:700;font-size:.95rem;padding:6px 12px;border-radius:999px}
+nav.main a:hover{background:var(--wash)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1rem;text-decoration:none;border:0;cursor:pointer;padding:13px 22px;border-radius:999px;transition:transform .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+
+/* hero */
+.hero{padding-block:56px 64px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero h1 .swap{display:inline-block;position:relative}
+.hero h1 .strike{color:var(--ink-soft);text-decoration:line-through;text-decoration-color:var(--tomato);text-decoration-thickness:.12em}
+.hero .lede{margin-top:20px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.playmat{background:var(--tint-sun);border-radius:28px;padding:24px;aspect-ratio:1/0.9;max-width:100%;position:relative;overflow:hidden}
+.playmat svg{width:100%;height:100%;display:block}
+.float{animation:bob 5s ease-in-out infinite}
+.float.d2{animation-delay:-1.6s}.float.d3{animation-delay:-3.2s}
+@keyframes bob{50%{transform:translateY(-8px)}}
+
+/* ribbon */
+.ribbon{background:var(--ink);color:var(--paper);padding-block:18px;overflow:hidden}
+.ribbon .wrap{display:flex;gap:28px;flex-wrap:wrap;justify-content:center;font-family:var(--display);font-weight:700;font-size:1.05rem}
+.ribbon span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:10px;background:var(--sun);vertical-align:middle}
+.ribbon span:nth-child(2)::before{background:var(--tomato)}
+.ribbon span:nth-child(3)::before{background:var(--grass)}
+.ribbon span:nth-child(4)::before{background:var(--sky)}
+
+section.block{padding-block:80px}
+section.tinted{background:var(--wash)}
+.section-head{display:grid;gap:14px;max-width:720px;margin-bottom:40px}
+
+/* guideline table — signature */
+.guide{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.age{border-radius:22px;padding:22px;display:grid;gap:10px;align-content:start}
+.age .months{font-family:var(--display);font-weight:800;font-size:2rem;line-height:1}
+.age .unit{font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.age .rule{font-weight:700}
+.age .src{font-size:.85rem;color:var(--ink-soft)}
+.age:nth-child(1){background:var(--tint-tomato)}
+.age:nth-child(2){background:var(--tint-sun)}
+.age:nth-child(3){background:var(--tint-grass)}
+.age:nth-child(4){background:var(--tint-sky)}
+.bar{height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:99px}
+.fine{font-size:.9rem;color:var(--ink-soft);margin-top:20px;max-width:60em}
+
+/* project */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.prose{display:grid;gap:16px;max-width:36em}
+.callout{border-radius:22px;padding:24px;background:var(--paper);box-shadow:inset 0 0 0 2px var(--line);display:grid;gap:10px}
+.callout strong{font-family:var(--display)}
+.studies{display:grid;gap:14px;margin-top:8px}
+.study{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--line)}
+.study .yr{font-family:var(--display);font-weight:800;font-size:1.5rem;color:var(--sky)}
+.study h3{font-size:1.05rem;font-family:var(--body);font-weight:700;line-height:1.35}
+.study p{font-size:.98rem;color:var(--ink-soft);margin-top:4px}
+.study cite{display:block;font-style:normal;font-size:.85rem;color:var(--ink-soft);margin-top:6px}
+.bigstat{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.bigstat div{background:var(--tint-sky);border-radius:18px;padding:16px}
+.bigstat b{display:block;font-family:var(--display);font-size:1.7rem;font-variant-numeric:tabular-nums}
+.bigstat span{font-size:.85rem;color:var(--ink-soft)}
+
+/* services */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{border-radius:24px;padding:28px;display:grid;gap:12px;align-content:start;background:var(--paper);box-shadow:inset 0 0 0 2px var(--line)}
+.card .chip{justify-self:start;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px;color:var(--on-color)}
+.card ul{margin:0;padding-left:1.1em;color:var(--ink-soft);display:grid;gap:4px}
+.card .price{font-family:var(--display);font-weight:700;margin-top:6px}
+.note{margin-top:28px;border-radius:20px;padding:20px 24px;background:var(--tint-grass);max-width:820px}
+
+/* resources */
+.res{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+.feature{border-radius:28px;background:var(--ink);color:var(--paper);padding:36px;display:grid;gap:14px;align-content:start}
+.feature .eyebrow{color:var(--sun)}
+.feature p{opacity:.88}
+.feature a.btn{justify-self:start;background:var(--sun);color:#1D2940}
+.reslist{display:grid;gap:14px}
+.reslist a{display:grid;gap:4px;text-decoration:none;border-radius:20px;padding:20px;background:var(--wash)}
+.reslist a:hover{box-shadow:inset 0 0 0 2px var(--sky)}
+.reslist b{font-family:var(--display);font-size:1.1rem}
+.reslist span{font-size:.92rem;color:var(--ink-soft)}
+
+/* shop */
+.shop{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.item{display:grid;gap:10px}
+.swatch{aspect-ratio:1/1;max-width:100%;border-radius:22px;display:grid;place-items:center;padding:14px}
+.swatch svg{width:82%;height:auto}
+.item b{font-family:var(--display);font-size:1.05rem}
+.item span{font-size:.9rem;color:var(--ink-soft)}
+.wait{margin-top:36px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.wait input{font:inherit;padding:12px 18px;border-radius:999px;border:2px solid var(--line);background:var(--paper);color:var(--ink);min-width:0;flex:1 1 240px;max-width:360px}
+.wait-msg{font-weight:700;color:var(--grass)}
+
+/* books */
+.formats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.fchip{font:700 .92rem var(--body);padding:8px 16px;border-radius:999px;border:2px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.fchip.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.spread{display:grid;grid-template-columns:1fr 1fr;border-radius:22px;overflow:hidden;box-shadow:0 12px 30px rgba(29,41,64,.12);margin-bottom:36px;max-width:820px}
+.page-l{background:var(--tint-sun);display:grid;place-items:center;gap:6px;padding:28px 16px}
+.ball{width:84px;height:84px;border-radius:50%;background:var(--tomato);animation:bob 3s ease-in-out infinite}
+.word{font-family:var(--display);font-weight:800;font-size:3rem;line-height:1}
+.page-r{background:var(--paper);padding:26px;display:grid;gap:10px;align-content:center}
+.page-r ol{margin:0;padding-left:1.2em;display:grid;gap:8px;font-size:.98rem}
+@media (max-width:520px){.spread{grid-template-columns:1fr}}
+.shelf{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.book{display:grid;gap:6px;align-content:start}
+.book .cover{aspect-ratio:3/4;max-width:100%;border-radius:6px 16px 16px 6px;display:grid;place-items:center;padding:14px;text-align:center;box-shadow:inset 8px 0 0 rgba(0,0,0,.14)}
+.book .cover span{font-family:var(--display);font-weight:800;font-size:1.1rem;line-height:1.1;color:#FFFFFF}
+.book[data-f="board"] .cover{aspect-ratio:1/1;border-radius:18px}
+.book[data-f="picture"] .cover{aspect-ratio:4/3.4}
+.book b{font-family:var(--display);font-size:1rem;margin-top:6px}
+.book .fmt{font-size:.85rem;font-weight:700;color:var(--ink-soft)}
+.book .why{font-size:.88rem;color:var(--ink-soft)}
+@media (max-width:900px){.shelf{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:520px){.shelf{grid-template-columns:repeat(2,1fr)}}
+
+/* about */
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center}
+.portrait{aspect-ratio:4/5;max-width:100%;border-radius:28px;background:var(--tint-tomato);display:grid;place-items:center;color:var(--ink-soft);font-weight:700;text-align:center;padding:24px}
+
+footer{background:var(--wash);padding-block:48px;border-top:1px solid var(--line)}
+footer .wrap{display:grid;gap:18px}
+footer small{color:var(--ink-soft);font-size:.85rem;max-width:62em;display:block}
+
+@media (max-width:900px){
+  .hero .wrap,.two,.res,.about{grid-template-columns:1fr}
+  .guide,.shop{grid-template-columns:repeat(2,1fr)}
+  .cards{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .guide,.shop,.bigstat{grid-template-columns:1fr}
+  section.block{padding-block:56px}
+  nav.main a{padding:6px 9px;font-size:.9rem}
+  .study{grid-template-columns:1fr;gap:4px}
+}
+</style>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Play Before Pixels home">
+      <span class="logo-mark" aria-hidden="true"><i style="background:var(--tomato)"></i><i style="background:var(--sun)"></i><i style="background:var(--sky)"></i><i style="background:var(--grass)"></i></span>
+      Play Before Pixels
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="#project">The Project</a>
+      <a href="#classroom">Classrooms</a>
+      <a href="#coaching">Coaching</a>
+      <a href="#groups">Groups</a>
+      <a href="#resources">Resources</a>
+      <a href="#books">Books</a>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">For parents of babies and toddlers</p>
+        <h1>Blocks first.<br>Laps first.<br><span class="strike">Apps</span> later.</h1>
+        <p class="lede">The first three years are built on talk, touch and play. Play Before Pixels helps families cut back early screen time and fill the space with the back-and-forth that young brains grow on.</p>
+        <div class="ctas">
+          <a class="btn btn-ink" href="#coaching">Work with me</a>
+          <a class="btn btn-line" href="#project">Read the research</a>
+        </div>
+      </div>
+      <div class="playmat" aria-hidden="true">
+        <svg viewBox="0 0 400 360">
+          <g class="float"><rect x="40" y="200" width="90" height="90" rx="14" fill="#EE5A36"/><text x="85" y="262" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="52" fill="#FFFFFF">A</text></g>
+          <g class="float d2"><rect x="140" y="200" width="90" height="90" rx="14" fill="#3D86D8"/><text x="185" y="262" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="52" fill="#FFFFFF">B</text></g>
+          <g class="float d3"><rect x="90" y="104" width="90" height="90" rx="14" fill="#2FA36B"/><text x="135" y="166" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="52" fill="#FFFFFF">C</text></g>
+          <g class="float d2"><circle cx="310" cy="250" r="52" fill="#8A5CC7"/><path d="M262 238 Q310 214 358 238" stroke="#FFFFFF" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M262 264 Q310 288 358 264" stroke="#FFFFFF" stroke-width="7" fill="none" stroke-linecap="round"/></g>
+          <g transform="rotate(-24 300 95)"><rect x="236" y="80" width="140" height="30" rx="8" fill="#1D2940"/><rect x="236" y="80" width="30" height="30" rx="8" fill="#F5B820"/><path d="M376 80 L402 95 L376 110 Z" fill="#F5B820"/></g>
+          <g opacity=".55"><rect x="250" y="22" width="44" height="72" rx="8" fill="none" stroke="#1D2940" stroke-width="4" stroke-dasharray="6 6"/><text x="272" y="116" text-anchor="middle" font-family="Nunito Sans, sans-serif" font-weight="700" font-size="13" fill="#1D2940">later</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="ribbon" aria-label="Our sayings">
+    <div class="wrap"><span>Play Before Pixels</span><span>More talk, less tap</span><span>Laps not apps</span><span>Childhood can't wait. Screens can.</span></div>
+  </div>
+
+  <section class="block" aria-labelledby="guide-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What the pediatric guidelines say</p>
+        <h2 id="guide-h">How much screen time, by age</h2>
+        <p class="lede">Two major bodies have published guidance for the youngest children. They agree on the direction: less is better, and none is best for babies.</p>
+      </div>
+      <div class="guide">
+        <div class="age"><span class="unit">Under</span><span class="months">12 mo</span><span class="rule">No screen time</span><div class="bar"><i style="width:0"></i></div><span class="src">WHO, 2019. Video chat with family is the usual exception.</span></div>
+        <div class="age"><span class="unit">Under</span><span class="months">18–24 mo</span><span class="rule">Avoid digital media except video chat</span><div class="bar"><i style="width:4%;background:var(--sun)"></i></div><span class="src">American Academy of Pediatrics, 2016.</span></div>
+        <div class="age"><span class="unit">Ages</span><span class="months">2–4 yr</span><span class="rule">No more than 1 hour a day, less is better</span><div class="bar"><i style="width:25%;background:var(--grass)"></i></div><span class="src">WHO, 2019. AAP: high-quality programming, watched together.</span></div>
+        <div class="age"><span class="unit">Instead</span><span class="months">3+ hr</span><span class="rule">Of active play spread through the day</span><div class="bar"><i style="width:100%;background:var(--sky)"></i></div><span class="src">WHO, 2019, for 1- to 4-year-olds.</span></div>
+      </div>
+      <p class="fine">Sources: World Health Organization, <em>Guidelines on physical activity, sedentary behaviour and sleep for children under 5 years of age</em> (2019). AAP Council on Communications and Media, "Media and Young Minds," <em>Pediatrics</em> 138(5), 2016. Bars show daily screen allowance on a four-hour scale.</p>
+    </div>
+  </section>
+
+  <section class="block tinted" id="project" aria-labelledby="project-h">
+    <div class="wrap two">
+      <div class="prose">
+        <p class="eyebrow">The Virtual Autism Project · free education</p>
+        <h2 id="project-h">What is "virtual autism"?</h2>
+        <p>"Virtual autism" is a term some clinicians use for autism-like behaviors in young children who have had heavy screen exposure: little eye contact, delayed speech, less interest in people. Some of these clinicians report that the behaviors ease when screens are removed and replaced with face-to-face play.</p>
+        <p>It is <strong>not a medical diagnosis</strong>, and the research on it is young. What the larger studies do show is a consistent link between heavy screen time in the first years and weaker language and social development.</p>
+        <div class="callout">
+          <strong>What the research does not say</strong>
+          <p>These studies show associations. They do not prove that screens cause autism, and a child's autism is not a parent's fault. If you are worried about your child's development, talk to your pediatrician. Every U.S. state runs a free early intervention program for children under 3, and you can ask for an evaluation yourself.</p>
+        </div>
+      </div>
+      <div>
+        <div class="studies">
+          <article class="study"><span class="yr">2019</span><div><h3>A clinician names the pattern</h3><p>A French psychiatrist describes young children with heavy screen exposure and autism-like symptoms, and proposes the term "virtual autism." A hypothesis paper, not a trial.</p><cite>Harlé B. <em>Trends in Neuroscience and Education</em> 17:100119.</cite></div></article>
+          <article class="study"><span class="yr">2019</span><div><h3>More screen time, lower developmental scores</h3><p>In about 2,400 Canadian children, higher screen time at 24 and 36 months was linked to poorer developmental screening results a year later.</p><cite>Madigan S et al. <em>JAMA Pediatrics</em> 173(3):244–250.</cite></div></article>
+          <article class="study"><span class="yr">2020</span><div><h3>Screens and play at 12 months</h3><p>Screen viewing at 12 months was linked to more autism-like symptoms at age 2. Daily parent-child play was linked to fewer.</p><cite>Heffler KF et al. <em>JAMA Pediatrics</em> 174(7):690–696.</cite></div></article>
+          <article class="study"><span class="yr">2022</span><div><h3>A large Japanese cohort</h3><p>Longer screen time at age 1 was associated with an autism diagnosis at age 3 in boys. No association was found in girls.</p><cite>Kushima M et al. <em>JAMA Pediatrics</em> 176(4):384–391.</cite></div></article>
+          <article class="study"><span class="yr">2023</span><div><h3>Delays in communication</h3><p>In 7,097 Japanese children, screen time at age 1 showed a dose-response link to communication and problem-solving delays at ages 2 and 4.</p><cite>Takahashi I et al. <em>JAMA Pediatrics</em> 177(10):1039–1046.</cite></div></article>
+          <article class="study"><span class="yr">2024</span><div><h3>Screens crowd out talk</h3><p>Recorders worn by Australian toddlers found that more screen time meant fewer words from adults and fewer back-and-forth exchanges. At 36 months, the daily gap looked like this:</p>
+            <div class="bigstat"><div><b>1,139</b><span>fewer adult words</span></div><div><b>843</b><span>fewer child vocalizations</span></div><div><b>194</b><span>fewer conversational turns</span></div></div>
+            <cite>Brushe ME et al. <em>JAMA Pediatrics</em> 178(4):369–375.</cite></div></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="classroom" aria-labelledby="class-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Screens in the classroom</p>
+        <h2 id="class-h">The same question, at school</h2>
+        <p class="lede">Many children now spend part of the school day on devices. The research on learning asks the same thing parents ask at home: does the screen help, or does it get in the way?</p>
+      </div>
+      <div class="cards">
+        <article class="card"><span class="chip" style="background:var(--sky)">UNESCO · 2023</span><h3>Use tech only where it helps learning</h3><p>The UN's global education report found little strong evidence for most classroom technology. It recommends using it only when it improves learning, and notes that about one in four countries has banned smartphones in school.</p><p class="src" style="font-size:.85rem;color:var(--ink-soft)">UNESCO, <em>Global Education Monitoring Report 2023: Technology in education</em>.</p></article>
+        <article class="card"><span class="chip" style="background:var(--grass)">Meta-analysis · 2018</span><h3>Paper beats screens for reading</h3><p>A review of 54 studies with more than 171,000 readers found better comprehension when reading on paper than on screens, especially for informational text and timed reading.</p><p class="src" style="font-size:.85rem;color:var(--ink-soft)">Delgado P et al. <em>Educational Research Review</em> 25:23–38.</p></article>
+        <article class="card"><span class="chip" style="background:var(--tomato)">OECD PISA · 2022</span><h3>Distraction costs points</h3><p>In the OECD's international assessment of 15-year-olds, students who said they were distracted by digital devices in math class scored lower in math than students who were not.</p><p class="src" style="font-size:.85rem;color:var(--ink-soft)">OECD, <em>PISA 2022 Results, Volume II</em>.</p></article>
+      </div>
+      <p class="note" style="background:var(--tint-sky)"><strong>For teachers:</strong> our classroom materials offer screen-free activities and talking points backed by research. They do not name, rate or criticize any school, district or product.</p>
+    </div>
+  </section>
+
+  <section class="block tinted" id="coaching" aria-labelledby="coach-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Coaching &amp; workshops</p>
+        <h2 id="coach-h">A calmer plan for your home</h2>
+        <p class="lede">Practical, judgment-free help for cutting back screens without meltdowns (yours or theirs).</p>
+      </div>
+      <div class="cards">
+        <article class="card"><span class="chip" style="background:var(--tomato)">1 session</span><h3>Screen Reset Consult</h3><p>A 60-minute video call to map your child's day and build a step-down plan you can start tomorrow.</p><ul><li>Daily routine review</li><li>Written step-down plan</li><li>Play ideas for your child's age</li></ul><p class="price">Pricing coming soon</p></article>
+        <article class="card"><span class="chip" style="background:var(--sky)">4 weeks</span><h3>Family Reset Coaching</h3><p>Weekly check-ins while your family moves to little or no screen time, with support for the hard days.</p><ul><li>Four weekly calls</li><li>Message support between calls</li><li>Caregiver and grandparent handout</li></ul><p class="price">Pricing coming soon</p></article>
+        <article class="card"><span class="chip" style="background:var(--grass)">Groups</span><h3>Workshops</h3><p>A 90-minute talk for parent groups, teacher groups, libraries and child-care centers on screen time, play and learning.</p><ul><li>In person or online</li><li>Take-home activity cards</li><li>Q&amp;A with the audience</li></ul><p class="price">Ask about group rates</p></article>
+      </div>
+      <p class="note"><strong>Please note:</strong> coaching is parent education. It is not therapy, medical care or a diagnosis, and it does not replace an evaluation by a qualified professional.</p>
+    </div>
+  </section>
+
+  <section class="block tinted" id="groups" aria-labelledby="groups-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="feature" style="grid-template-columns:1fr;gap:18px">
+        <p class="eyebrow">For parent and teacher groups</p>
+        <h2 id="groups-h" style="color:inherit">Bring Play Before Pixels to your group</h2>
+        <p style="max-width:40em">PTAs, parent networks, teacher associations and early-childhood groups can book a speaker, order materials in bulk, or share our research briefs with members.</p>
+        <div class="cards" style="margin-top:6px">
+          <div class="card" style="background:var(--paper);color:var(--ink)"><h3>Speaker events</h3><p>Workshops and film-night talks for members, in person or online.</p></div>
+          <div class="card" style="background:var(--paper);color:var(--ink)"><h3>Bulk orders</h3><p>Group pricing on the play guide, tees and totes for events and fundraisers.</p></div>
+          <div class="card" style="background:var(--paper);color:var(--ink)"><h3>Research briefs</h3><p>Plain-language, cited summaries for newsletters and parent nights.</p></div>
+        </div>
+        <a class="btn" href="#shop" style="background:var(--sun);color:#1D2940;justify-self:start">Ask about group rates</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="resources" aria-labelledby="res-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Resources</p>
+        <h2 id="res-h">Watch, read, start today</h2>
+      </div>
+      <div class="res">
+        <div class="feature">
+          <p class="eyebrow">Featured documentary</p>
+          <h3 style="font-size:2rem">A Stone Unturned</h3>
+          <p>A documentary on screen time and early childhood that follows three families through a screen fast, with interviews from researchers and clinicians in Canada, France, Romania and the United States.</p>
+          <a class="btn" href="https://www.virtualautism.org/" target="_blank" rel="noopener">Visit the film's site</a>
+        </div>
+        <div class="reslist">
+          <a href="https://www.who.int/publications/i/item/9789241550536" target="_blank" rel="noopener"><b>WHO guidelines for under-5s</b><span>Activity, sitting and sleep guidance for young children (2019).</span></a>
+          <a href="https://www.healthychildren.org/English/family-life/Media/Pages/default.aspx" target="_blank" rel="noopener"><b>AAP family media resources</b><span>The American Academy of Pediatrics' parent site on media use.</span></a>
+          <a href="https://www.cdc.gov/ncbddd/actearly/" target="_blank" rel="noopener"><b>CDC "Learn the Signs. Act Early."</b><span>Free milestone checklists, and how to ask for an evaluation.</span></a>
+          <a href="https://www.penguinrandomhouse.com/books/838437/the-digital-delusion-by-jared-cooney-horvath-phd-med/" target="_blank" rel="noopener"><b><em>The Digital Delusion</em>, Jared Cooney Horvath</b><span>A neuroscientist's book on classroom technology and learning, with tools for families and educators.</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block tinted" id="books" aria-labelledby="books-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Books · launching soon</p>
+        <h2 id="books-h">Stories that put down the screen</h2>
+        <p class="lede">Talk-along books for babies and toddlers. Every page gives your child a simple word to try, and gives you a tip for turning reading into conversation. Titles shown are samples.</p>
+      </div>
+      <div class="spread" aria-label="Sample talk-along page">
+        <div class="page-l"><div class="ball" aria-hidden="true"></div><p class="word">Up!</p></div>
+        <div class="page-r">
+          <p class="eyebrow">Grown-up corner</p>
+          <ol>
+            <li><b>Say it.</b> Lift the book and say "Up!" with a big voice.</li>
+            <li><b>Wait.</b> Count to five in your head. Give your child a turn to try.</li>
+            <li><b>Add one word.</b> If they say "up," you say "Ball up!"</li>
+          </ol>
+        </div>
+      </div>
+      <div class="formats" role="group" aria-label="Filter by format">
+        <button type="button" class="fchip on" data-f="all" aria-pressed="true">All formats</button>
+        <button type="button" class="fchip" data-f="board" aria-pressed="false">Board book</button>
+        <button type="button" class="fchip" data-f="picture" aria-pressed="false">Picture book</button>
+        <button type="button" class="fchip" data-f="paperback" aria-pressed="false">Paperback</button>
+        <button type="button" class="fchip" data-f="hardcover" aria-pressed="false">Hardcover</button>
+        <button type="button" class="fchip" data-f="library" aria-pressed="false">Library binding</button>
+      </div>
+      <div class="shelf" id="shelf">
+        <article class="book" data-f="board"><div class="cover" style="background:var(--tomato)"><span>Up! Go!<br>More!</span></div><b>Up! Go! More!</b><span class="fmt">Board book · ages 0–3</span><span class="why">First words with a grown-up tip on every page. Thick pages for little hands.</span></article>
+        <article class="book" data-f="picture"><div class="cover" style="background:var(--sky)"><span>The Day the<br>Tablet Slept</span></div><b>The Day the Tablet Slept</b><span class="fmt">Picture book · ages 3–7</span><span class="why">A full-color read-aloud story for bedtime or the classroom rug.</span></article>
+        <article class="book" data-f="paperback"><div class="cover" style="background:var(--grass)"><span>100 Plays<br>Before Pixels</span></div><b>100 Plays Before Pixels</b><span class="fmt">Paperback · for parents</span><span class="why">A light, affordable activity book for the diaper bag.</span></article>
+        <article class="book" data-f="hardcover"><div class="cover" style="background:var(--plum)"><span>Laps<br>Not Apps</span></div><b>Laps Not Apps</b><span class="fmt">Hardcover · ages 2–6</span><span class="why">A keepsake edition for gifts and baby showers.</span></article>
+        <article class="book" data-f="library"><div class="cover" style="background:var(--ink)"><span style="color:var(--paper)">More Talk,<br>Less Tap</span></div><b>More Talk, Less Tap</b><span class="fmt">Library binding · ages 3–7</span><span class="why">A reinforced binding for schools, libraries and child-care centers.</span></article>
+      </div>
+      <p class="fine" id="shelf-empty" hidden>No sample titles in this format yet.</p>
+      <p class="fine">Schools, libraries and parent or teacher groups: ask about library-bound editions and classroom sets.</p>
+    </div>
+  </section>
+
+  <section class="block" id="shop" aria-labelledby="shop-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Shop · launching soon</p>
+        <h2 id="shop-h">Wear the message</h2>
+        <p class="lede">Tees, totes and a printable play guide. Join the list to hear when the first run opens. Groups can ask about bulk pricing.</p>
+      </div>
+      <div class="shop">
+        <div class="item"><div class="swatch" style="background:var(--tint-tomato)"><svg viewBox="0 0 120 110" aria-hidden="true"><path d="M30 10 L50 4 Q60 14 70 4 L90 10 L114 32 L98 48 L90 40 L90 106 L30 106 L30 40 L22 48 L6 32 Z" fill="#EE5A36"/><text x="60" y="66" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="11" fill="#FFFFFF">PLAY BEFORE</text><text x="60" y="80" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="11" fill="#FFFFFF">PIXELS</text></svg></div><b>Play Before Pixels tee</b><span>Adult and toddler sizes</span></div>
+        <div class="item"><div class="swatch" style="background:var(--tint-sky)"><svg viewBox="0 0 120 110" aria-hidden="true"><path d="M30 10 L50 4 Q60 14 70 4 L90 10 L114 32 L98 48 L90 40 L90 106 L30 106 L30 40 L22 48 L6 32 Z" fill="#3D86D8"/><text x="60" y="66" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="11" fill="#FFFFFF">MORE TALK</text><text x="60" y="80" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="11" fill="#FFFFFF">LESS TAP</text></svg></div><b>More talk, less tap tee</b><span>Adult sizes</span></div>
+        <div class="item"><div class="swatch" style="background:var(--tint-sun)"><svg viewBox="0 0 120 110" aria-hidden="true"><path d="M38 34 Q38 8 60 8 Q82 8 82 34" stroke="#1D2940" stroke-width="5" fill="none"/><rect x="22" y="32" width="76" height="74" rx="6" fill="#F5B820"/><text x="60" y="66" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="12" fill="#1D2940">LAPS</text><text x="60" y="82" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="12" fill="#1D2940">NOT APPS</text></svg></div><b>Laps not apps tote</b><span>Heavy canvas</span></div>
+        <div class="item"><div class="swatch" style="background:var(--tint-grass)"><svg viewBox="0 0 120 110" aria-hidden="true"><rect x="26" y="8" width="68" height="96" rx="6" fill="#2FA36B"/><rect x="36" y="22" width="48" height="6" rx="3" fill="#FFFFFF"/><rect x="36" y="36" width="36" height="5" rx="2.5" fill="#FFFFFF" opacity=".7"/><rect x="36" y="56" width="18" height="18" rx="4" fill="#F5B820"/><rect x="58" y="56" width="18" height="18" rx="4" fill="#EE5A36"/><rect x="36" y="78" width="18" height="18" rx="4" fill="#3D86D8"/><rect x="58" y="78" width="18" height="18" rx="4" fill="#FFFFFF"/></svg></div><b>The 100 Plays guide</b><span>Printable, by age</span></div>
+      </div>
+      <form class="wait" id="waitlist" novalidate>
+        <label for="wait-email" class="eyebrow" style="flex-basis:100%">Get launch news</label>
+        <input id="wait-email" type="email" placeholder="you@example.com" autocomplete="email" required>
+        <button class="btn btn-ink" type="submit">Join the list</button>
+        <span class="wait-msg" id="wait-msg" role="status"></span>
+      </form>
+    </div>
+  </section>
+
+  <section class="block tinted" id="about" aria-labelledby="about-h">
+    <div class="wrap about">
+      <div class="portrait">Your photo here</div>
+      <div class="prose">
+        <p class="eyebrow">About</p>
+        <h2 id="about-h">Hi, I'm the parent behind Play Before Pixels</h2>
+        <p>I'm a mom and an educator. Like a lot of parents, I learned about early screen exposure the hard way, and I went looking for what the research actually says.</p>
+        <p>Play Before Pixels shares that research in plain language and helps families make changes that fit real life, with no shame and no perfection required.</p>
+        <p><a class="btn btn-ink" href="#coaching">Book a consult</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#top"><span class="logo-mark" aria-hidden="true"><i style="background:var(--tomato)"></i><i style="background:var(--sun)"></i><i style="background:var(--sky)"></i><i style="background:var(--grass)"></i></span>Play Before Pixels</a>
+    <small>Play Before Pixels provides parent education only. Nothing on this site is medical advice, a diagnosis or a substitute for care from a qualified professional. Research summaries describe associations reported by the cited studies. Play Before Pixels is not affiliated with <em>A Stone Unturned</em>, <em>The Digital Delusion</em>, UNESCO, the OECD, the WHO, the AAP or the CDC.</small>
+    <small>© 2026 Play Before Pixels</small>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var chips = document.querySelectorAll('.fchip');
+  var books = document.querySelectorAll('.book');
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var f = chip.dataset.f, shown = 0;
+      chips.forEach(function (c) { var on = c === chip; c.classList.toggle('on', on); c.setAttribute('aria-pressed', on); });
+      books.forEach(function (b) { var show = f === 'all' || b.dataset.f === f; b.hidden = !show; if (show) shown++; });
+      document.getElementById('shelf-empty').hidden = shown > 0;
+    });
+  });
+})();
+document.getElementById('waitlist').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var input = document.getElementById('wait-email');
+  var msg = document.getElementById('wait-msg');
+  if (!input.value || !input.checkValidity()) {
+    msg.style.color = 'var(--tomato)';
+    msg.textContent = 'Enter an email address like name@example.com.';
+    return;
+  }
+  msg.style.color = 'var(--grass)';
+  msg.textContent = 'Thanks! (Preview only: sign-ups are not saved yet.)';
+  input.value = '';
+});
+</script>
