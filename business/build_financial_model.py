@@ -256,7 +256,7 @@ inp("seller_central", "Amazon Seller Central Professional plan", 39.99, CUR2, "$
 inp("buffer", "Print buffer over pre-sale units", 0.40, PCT1, "%", "BLIND-SPOTS #16: 'Order what sold plus 30-50%'.", "Repo range")
 inp("presale_len", "Pre-sale length before the print decision", 3, "0", "months", "BLIND-SPOTS #16: three-month pre-sale.", "Repo")
 inp("presale_buf", "Buffer in the pre-sale funding goal", 0.15, PCT1, "%", "BLIND-SPOTS #16: goal = printing + shipping + duties + fees + delivery + about 15% buffer.", "Repo")
-inp("presale_fail", "Cost of a pre-sale that misses the go line (terms review, pre-order app, card fees not returned on refunds)", 400, CUR0, "$",
+inp("presale_fail", "Cost of a pre-sale that misses the go line (card fees not returned on refunds)", 100, CUR0, "$",
     "Assumption. Below the go line the pre-sale is refunded in full and the talk-along paperback stays on print-on-demand (section 3.10 rule 4).", "Assumption")
 inp("reorder_lead", "Reorder lead time (print + freight)", 3, "0", "months", "Not in the repo; offset printing abroad plus ocean freight commonly takes 2-4 months.", "Assumption [VERIFY]")
 inp("school_setup", "School/group wave one-time setup (TPT Premium, purchasing kit, host-kit build, counsel review of terms, fraud-check SOP)", 739, CUR0, "$",
@@ -789,6 +789,12 @@ title(wr, "Retail readiness costs: Wave 3 board-book launch and big-box readines
 wr.merge_cells("A2:K3"); wr["A2"].alignment = WRAP; wr.row_dimensions[2].height = 28
 hdr(wr, 5, 1, 11, ["Item", "Section", "Low ($)", "High ($)", "Model ($ per unit of qty)", "Basis", "Qty", "Model total ($)",
                    "Timing", "Source", "Status"], 32)
+RR_A0 = [
+    ("Human illustrator for the board book", "A0", 1500, 5000, "per book", 1, "Month before the pre-sale", "BLIND-SPOTS #17.", "Repo"),
+    ("Product-safety attorney: CPSIA status, who certifies (PROTECTION-PLAN q.9)", "A0", 300, 1500, "one-time", 1, "Month before the pre-sale", "DECISION-MEMO: $300-$1,500 plus testing (unverified).", "Repo [VERIFY]"),
+    ("Attorney check of pre-sale terms (FTC mail-order rule)", "A0", 300, 700, "one-time", 1, "Month before the pre-sale", "BLIND-SPOTS #16-#17: lawyer check $300-$700.", "Repo [VERIFY]"),
+    ("Pre-order app for Shopify (3 months)", "A0", 0, 60, "one-time", 1, "Month before the pre-sale", "Not in the repo.", "Assumption [VERIFY]"),
+]
 RR_A = [
     ("CPSIA third-party lab testing, board book for ages 0-3", "A", 300, 1000, "per SKU", 1, "Print month", "PROTECTION-PLAN #9: 'a few hundred dollars per product'; books for 3 and under are not exempt.", "Repo [VERIFY]"),
     ("Children's Product Certificate (prepared in-house)", "A", 0, 0, "per SKU", 1, "Print month", "PROTECTION-PLAN: CPC $0 to prepare.", "Repo"),
@@ -796,7 +802,6 @@ RR_A = [
     ("Board-book printer hard proof and quote samples", "A", 100, 400, "one-time", 1, "Print month", "Not in the repo; BLIND-SPOTS #11 asks for 2-3 full quotes.", "[VERIFY]"),
     ("3PL onboarding / setup", "A", 0, 500, "one-time", 1, "Print month", "Not in the repo.", "[VERIFY]"),
     ("Amazon FBA inbound prep and labels", "A", 50, 200, "one-time", 1, "Print month", "Not in the repo.", "[VERIFY]"),
-    ("Attorney check of pre-sale terms (FTC mail-order rule)", "A", 300, 700, "one-time", 1, "Print month", "BLIND-SPOTS #16-#17: lawyer check $300-$700.", "Repo [VERIFY]"),
 ]
 RR_B = [
     ("GS1 US company prefix for non-book SKUs (card deck, boxed sets); books use ISBN barcodes", "B", 250, 750, "one-time", 1, "Retail launch - lead", "AMAZON-AND-RETAIL-ROADMAP B5 requires GS1 barcodes; fee not in the repo.", "[VERIFY]"),
@@ -805,6 +810,7 @@ RR_B = [
     ("Attorney review of retailer / distributor vendor agreement", "B", 500, 2500, "one-time", 1, "Retail launch - lead", "Repo attorney range $300-$2,500 per document (PROTECTION-PLAN).", "Repo [VERIFY]"),
     ("Buyer sell sheet, line list and sample kits", "B", 200, 600, "one-time", 1, "Retail launch - lead", "ROADMAP B7 (pitch only with proof); no figure in the repo.", "[VERIFY]"),
     ("Faire brand application and first-order sample stock allowance", "B", 0, 300, "one-time", 1, "Retail launch - lead", "storefront-setup-guide §19.", "[VERIFY]"),
+    ("Broker quote and binder at chain limits (additional-insured endorsement)", "B", 100, 500, "one-time", 1, "Retail launch - lead", "Section 4.5 item 4; premium itself is in section C.", "[VERIFY]"),
 ]
 RR_C = [
     ("3PL EDI connection and retailer compliance", "C", 100, 300, "per month", 1, "Monthly while retail is live", "ROADMAP B5: 'EDI capability through a 3PL'; no figure in the repo.", "[VERIFY]"),
@@ -833,24 +839,31 @@ def rr_block(items, label):
     tot = r
     r += 2
     return tot
-tA = rr_block(RR_A, "A. Wave 3 board-book launch (one-time, in the print month)")
+tA0 = rr_block(RR_A0, "A0. Before a board-book pre-sale (spent whether or not the pre-sale reaches the go line)")
+tA = rr_block(RR_A, "A. Board-book print month (spent only if the pre-sale reaches the go line)")
 tB = rr_block(RR_B, "B. Big-box and wholesale readiness (one-time, before retail launch)")
 tC = rr_block(RR_C, "C. Ongoing while retail is live (per month)")
-RR = dict(A=f"{q('Retail Readiness Costs')}!$H${tA}", B=f"{q('Retail Readiness Costs')}!$H${tB}", C=f"{q('Retail Readiness Costs')}!$H${tC}")
+RR = dict(A0=f"{q('Retail Readiness Costs')}!$H${tA0}", A=f"{q('Retail Readiness Costs')}!$H${tA}", B=f"{q('Retail Readiness Costs')}!$H${tB}", C=f"{q('Retail Readiness Costs')}!$H${tC}")
 sec(wr, r, 1, 11, "D. Inventory: first offset run (illustrative at the minimum run; the forecast sizes each scenario's run from pre-sale orders)"); r += 1
 put(wr, f"A{r}", "Offset print cost per copy (from Assumptions)"); put(wr, f"E{r}", f"={A['bb_print']}", fmt=CUR2); r += 1
 put(wr, f"A{r}", "Landed cost per copy incl. freight/duties"); put(wr, f"E{r}", f"={A['landed']}", fmt=CUR2); r += 1
 put(wr, f"A{r}", "Minimum run (copies)"); put(wr, f"G{r}", f"={A['min_run']}", fmt=NUM0); r += 1
 put(wr, f"A{r}", "Cash for a minimum first run", bold=True); put(wr, f"H{r}", f"=E{r-2}*G{r-1}", fmt=CUR0, bold=True)
 RR["run_illus"] = f"{q('Retail Readiness Costs')}!$H${r}"; r += 1
-put(wr, f"A{r}", "Landed cost as % of retail price (target at or below 35-40%, DEMAND-CHECK rule 9)")
-put(wr, f"H{r}", f"=E{r-3}/{A['bb_price']}", fmt=PCT1); r += 2
+put(wr, f"A{r}", "Landed cost as % of retail price (cost rules by channel: own site/FBA 35%, Faire/wholesale 25%, chain 20%)")
+put(wr, f"H{r}", f"=E{r-3}/{A['bb_price']}", fmt=PCT1); r += 1
+for lab_, pct_ in (("own site / FBA (35%)", 0.35), ("Faire and wholesale (25%)", 0.25), ("chain retail through a distributor or rep (20%)", 0.20)):
+    put(wr, f"A{r}", f"   Most landed cost allowed: {lab_}")
+    put(wr, f"H{r}", f"={A['bb_price']}*{pct_}", fmt=CUR2)
+    put(wr, f"I{r}", f"=IF({A['landed']}<=H{r},\"passes\",\"fails\")")
+    r += 1
+r += 1
 sec(wr, r, 1, 11, "E. Ongoing Wave 3 fixed costs (from Assumptions; charged monthly once the first run is printed)"); r += 1
 put(wr, f"A{r}", "3PL monthly minimum / storage"); put(wr, f"H{r}", f"={A['tpl_min']}", fmt=CUR0); r += 1
 put(wr, f"A{r}", "Amazon Seller Central Professional plan"); put(wr, f"H{r}", f"={A['seller_central']}", fmt=CUR2); r += 2
-put(wr, f"A{r}", "Readiness items the model does not price: a distributor or sales rep (commission), retailer co-op or placement fees, and in-store "
-                 "(brick-and-mortar) Target or Walmart vendor setup. Books usually reach big-box shelves through book distributors or a publishing deal "
-                 "(AMAZON-AND-RETAIL-ROADMAP B6) [VERIFY].", font=F_NOTE)
+put(wr, f"A{r}", "Not priced here: distributor fees (about 20-30% of net receipts) or rep commissions (15-20% of wholesale), retailer co-op or placement, "
+                 "and a retailer-directed ad budget. AlphaPlay LLC is never the direct vendor of record to a chain: books go through a distributor, "
+                 "non-book items through a rep or vendor of record (section 4.8) [VERIFY].", font=F_NOTE)
 wr.merge_cells(f"A{r}:K{r+1}"); wr[f"A{r}"].alignment = WRAP; wr.row_dimensions[r].height = 30
 for c, w in zip("ABCDEFGHIJK", [70, 8, 10, 10, 12, 10, 6, 12, 22, 70, 14]):
     wr.column_dimensions[c].width = w
@@ -875,8 +888,8 @@ for m in range(1, 37):
     put(wf, f"{c}4", m, fmt="0")
     put(wf, f"{c}5", f"=DATE(YEAR({A['start']}),MONTH({A['start']})+{c}4-1,1)", fmt=DATEF)
     put(wf, f"{c}6", f"=INT(({c}4-1)/12)+1", fmt="0")
-    put(wf, f"{c}7", f"=INDEX({A['season_c']},MONTH({c}5))", fmt=NUM2)
-    put(wf, f"{c}8", f"=INDEX({A['season_s']},MONTH({c}5))", fmt=NUM2)
+    put(wf, f"{c}7", f"=INDEX({A['season_c']},MONTH({c}5))/AVERAGE({A['season_c']})", fmt=NUM2)
+    put(wf, f"{c}8", f"=INDEX({A['season_s']},MONTH({c}5))/AVERAGE({A['season_s']})", fmt=NUM2)
 hdr(wf, 5, FC, FC + 39)
 for m in range(1, 37):
     wf[f"{mc(m)}5"].number_format = DATEF
@@ -909,35 +922,47 @@ def year_cols(ws, row, kind, fmt):
 
 def build_block(s, start):
     rows = {}
-    keys = ["hdr", "print", "presale", "run", "need", "blank0"]
+    keys = ["hdr", "print", "presale", "need", "go", "run", "blank0", "prod_hdr", "prod"]
     for code, *_ in CH:
         keys += [f"{code}_hdr", f"{code}_act", f"{code}_trend", f"{code}_traffic", f"{code}_cvr", f"{code}_orders",
                  f"{code}_units", f"{code}_aov", f"{code}_gross", f"{code}_contrib"]
-    keys += ["email_hdr", "email_new", "email_churn", "email_end",
+        if code == "BOARD":
+            keys += ["BOARD_demand"]
+    keys += ["email_hdr", "sessions", "email_new", "email_churn", "email_end",
              "tot_hdr", "orders", "units", "cum_orders", "cum_units", "gross", "contrib", "margin",
-             "ads", "opex", "wavefix", "netop", "startup", "waveone", "netafter", "cumnet",
+             "ads", "opex", "wavefix", "netop", "t12", "startup", "waveone", "netafter", "cumnet",
              "inv_hdr", "phys", "cumphys", "copies", "inv", "cumcopies", "onhand",
-             "flag_hdr", "flag_first", "flag_sust"]
+             "flag_hdr", "flag_first", "flag_sust", "flag_t12"]
     for i, k in enumerate(keys):
         rows[k] = start + i
     FR[s] = rows
     S = lambda key: A[key][s]
     rr = rows
-    # header
+    Lm = lambda code: f"MAX({S(code+'_launch')},{A['first_sale']})"
     hdr(wf, rr["hdr"], 1, FC + 39, [f"{SCN[s].upper()} SCENARIO"])
-    # scalars
-    put(wf, f"A{rr['print']}", "Board-book print month (pre-sale ends), model month #")
-    put(wf, f"B{rr['print']}", f"=IF({S('BOARD_inc')}=1,{S('BOARD_launch')}+{A['presale_len']},0)", fmt="0")
-    put(wf, f"A{rr['presale']}", "Pre-sale units ordered before the print month (copies)")
-    u = rr["BOARD_units"]
-    put(wf, f"B{rr['presale']}", f"=IF($B${rr['print']}=0,0,SUMPRODUCT(($C$4:${mc(36)}$4>={S('BOARD_launch')})*($C$4:${mc(36)}$4<$B${rr['print']})*($C${u}:${mc(36)}${u})))", fmt=NUM0)
-    put(wf, f"A{rr['run']}", "First offset run size = max(minimum run, pre-sale units x (1 + buffer)), rounded up to 100")
-    put(wf, f"B{rr['run']}", f"=IF($B${rr['print']}=0,0,MAX({A['min_run']},ROUNDUP($B${rr['presale']}*(1+{A['buffer']})/100,0)*100))", fmt=NUM0)
-    put(wf, f"A{rr['need']}", "Pre-sale copies needed to fund a minimum run + launch costs (go / no-go line; BLIND-SPOTS #16)")
-    put(wf, f"B{rr['need']}", f"=IF($B${rr['print']}=0,0,ROUNDUP(({A['min_run']}*{A['landed']}+{RR['A']})*(1+{A['presale_buf']})/({A['bb_price']}*(1-{A['shop_pct']})-{A['shop_fix']}-{A['pick']}),0))", fmt=NUM0)
-    for k in ("print", "presale", "run", "need"):
+    # ---- board-book go / no-go scalars
+    put(wf, f"A{rr['print']}", "Board-book print decision month (pre-sale ends), model month # (0 = board book off)")
+    put(wf, f"B{rr['print']}", f"=IF({S('BOARD_inc')}=1,{Lm('BOARD')}+{A['presale_len']},0)", fmt="0")
+    put(wf, f"A{rr['presale']}", "Pre-sale copies ordered before the print decision (demand)")
+    dmd = rr["BOARD_demand"]
+    put(wf, f"B{rr['presale']}", f"=IF($B${rr['print']}=0,0,SUMPRODUCT(($C$4:${mc(36)}$4>={Lm('BOARD')})*($C$4:${mc(36)}$4<$B${rr['print']})*($C${dmd}:${mc(36)}${dmd})))", fmt=NUM0)
+    put(wf, f"A{rr['need']}", "Go line: pre-sale copies needed to fund the planned run + print-month costs + 15% buffer (BLIND-SPOTS #16)")
+    put(wf, f"B{rr['need']}", f"=IF($B${rr['print']}=0,0,ROUNDUP(({A['min_run']}*{A['landed']}+{RR['A']})*(1+{A['presale_buf']})/({A['bb_price']}*(1-{A['shop_pct']})-{A['shop_fix']}-{A['pick']}-{A['ship_sub']}),0))", fmt=NUM0)
+    put(wf, f"A{rr['go']}", "Go (1) / no-go (0): print only if pre-sale copies reach the go line; otherwise refund the pre-sale")
+    put(wf, f"B{rr['go']}", f"=IF(AND($B${rr['print']}>0,$B${rr['presale']}>=$B${rr['need']}),1,0)", fmt="0")
+    put(wf, f"A{rr['run']}", "First offset run = max(planned run, pre-sale x (1 + buffer)), rounded up to 100; 0 if no-go")
+    put(wf, f"B{rr['run']}", f"=IF($B${rr['go']}=0,0,MAX({A['min_run']},ROUNDUP($B${rr['presale']}*(1+{A['buffer']})/100,0)*100))", fmt=NUM0)
+    for k in ("print", "presale", "need", "go", "run"):
         wf[f"B{rr[k]}"].fill = TOT_FILL
+    GO = f"$B${rr['go']}"; PM = f"$B${rr['print']}"
+    # ---- digital catalog
+    sec(wf, rr["prod_hdr"], 1, FC + 39, "Digital catalog (shared by the own site, Etsy and the merchant of record)")
+    put(wf, f"A{rr['prod']}", "   Digital products live"); put(wf, f"B{rr['prod']}", "products", font=F_NOTE)
+    for m in range(1, 37):
+        c = mc(m)
+        put(wf, f"{c}{rr['prod']}", f"=IF({c}$4<{A['first_sale']},0,MIN({S('prod_cap')},{S('prod_start')}+{S('prod_add')}*({c}$4-{A['first_sale']})))", fmt=NUM1)
     for code, name, tl, lag, seas, src in CH:
+        grp = GROUP[code]
         sec(wf, rr[f"{code}_hdr"], 1, FC + 39, name)
         labels = {
             "act": ("Active (1 = live)", "flag"), "trend": ("Traffic trend (before seasonality)", "visits"),
@@ -945,56 +970,83 @@ def build_block(s, start):
             "orders": ("Orders", "orders"), "units": ("Items sold", "items"), "aov": ("Average order value", "$"),
             "gross": ("Gross sales (price paid by customers)", "$"), "contrib": ("Net contribution to AlphaPlay", "$"),
         }
+        if grp == "P":
+            labels["trend"] = ("Sales-per-product index (1.00 in the launch month)", "index")
+            labels["traffic"] = (tl, "prod-mo")
+            labels["cvr"] = ("Orders per product per month (with review ramp)", "orders")
+        if grp == "T":
+            labels["trend"] = ("Titles live", "titles")
+            labels["traffic"] = (tl, "title-mo")
+            labels["cvr"] = ("Units per title per month (with review ramp)", "units")
         if code == "COURSE":
             labels["trend"] = ("Subscribers reached (list last month x reach)", "people")
-        if code == "SITE":
-            labels["orders"] = ("Orders (US sessions; international go to the MoR once it is live)", "orders")
+        if code == "BOARD":
+            labels["orders"] = ("Orders recognized (x go flag; a missed pre-sale is refunded)", "orders")
         for k, (lab, unit) in labels.items():
             put(wf, f"A{rr[code+'_'+k]}", "   " + lab)
             put(wf, f"B{rr[code+'_'+k]}", unit, font=F_NOTE)
+        if code == "BOARD":
+            put(wf, f"A{rr['BOARD_demand']}", "   Items ordered (demand before the go / no-go test)"); put(wf, f"B{rr['BOARD_demand']}", "items", font=F_NOTE)
         seas_row = 7 if seas == "c" else 8
+        L = Lm(code)
         for m in range(1, 37):
             c, p = mc(m), mc(m - 1) if m > 1 else None
             ra = rr[f"{code}_act"]
-            put(wf, f"{c}{ra}", f"=IF(AND({S(code+'_inc')}=1,{c}$4>={S(code+'_launch')}),1,0)", fmt="0")
+            put(wf, f"{c}{ra}", f"=IF(AND({S(code+'_inc')}=1,{c}$4>={L}),1,0)", fmt="0")
             rt_ = rr[f"{code}_trend"]
-            if code == "MOR":
-                f = f"=IF({c}{ra}=0,0,{c}{rr['SITE_trend']}*{S('intl')})"
+            if grp == "P":
+                g = f"CHOOSE({c}$6,{S(code+'_g1')},{S(code+'_g2')},{S(code+'_g3')})"
+                f = f"=IF({c}{ra}=0,0,1)" if m == 1 else f"=IF({c}{ra}=0,0,IF({c}$4={L},1,{p}{rt_}*(1+{g})))"
+                tf = f"={c}{rr['prod']}*{c}{rt_}*{c}${seas_row}"
+                fmt_t = NUM2
+            elif grp == "T":
+                f = f"=IF({c}{ra}=0,0,MIN({S(code+'_tcap')},{S(code+'_base')}+{S(code+'_tadd')}*({c}$4-{L})))"
+                tf = f"={c}{rt_}*{c}${seas_row}"
+                fmt_t = NUM1
             elif code == "COURSE":
                 f = f"=IF({c}{ra}=0,0,{('0' if m == 1 else p + str(rr['email_end']))}*{S('reach')})"
+                tf = f"={c}{rt_}*{c}${seas_row}"
+                fmt_t = NUM0
             else:
                 g = f"CHOOSE({c}$6,{S(code+'_g1')},{S(code+'_g2')},{S(code+'_g3')})"
-                if m == 1:
-                    f = f"=IF({c}{ra}=0,0,{S(code+'_base')})"
-                else:
-                    f = f"=IF({c}{ra}=0,0,IF({c}$4={S(code+'_launch')},{S(code+'_base')},{p}{rt_}*(1+{g})))"
-            put(wf, f"{c}{rt_}", f, fmt=NUM0)
-            put(wf, f"{c}{rr[code+'_traffic']}", f"={c}{rt_}*{c}${seas_row}", fmt=NUM0)
-            put(wf, f"{c}{rr[code+'_cvr']}", f"={S(code+'_cvr')}*MIN(1,({c}$4-{S(code+'_launch')}+1)/{A['ramp']})*{c}{ra}", fmt=PCT2)
-            if code == "SITE":
-                f = f"=({c}{rr['SITE_traffic']}-{c}{rr['MOR_traffic']})*{c}{rr['SITE_cvr']}"
+                f = f"=IF({c}{ra}=0,0,{S(code+'_base')})" if m == 1 else f"=IF({c}{ra}=0,0,IF({c}$4={L},{S(code+'_base')},{p}{rt_}*(1+{g})))"
+                tf = f"={c}{rt_}*{c}${seas_row}"
+                fmt_t = NUM0
+            put(wf, f"{c}{rt_}", f, fmt=fmt_t)
+            put(wf, f"{c}{rr[code+'_traffic']}", tf, fmt=NUM1 if grp in ("P", "T") else NUM0)
+            put(wf, f"{c}{rr[code+'_cvr']}", f"={S(code+'_cvr')}*MIN(1,({c}$4-{L}+1)/{A['ramp']})*{c}{ra}", fmt=NUM2 if grp in ("P", "T") else PCT2)
+            if code == "BOARD":
+                put(wf, f"{c}{rr['BOARD_orders']}", f"={c}{rr['BOARD_traffic']}*{c}{rr['BOARD_cvr']}*{GO}", fmt=NUM1)
+                put(wf, f"{c}{rr['BOARD_demand']}", f"={c}{rr['BOARD_traffic']}*{c}{rr['BOARD_cvr']}*{S('BOARD_items')}", fmt=NUM1)
             else:
-                f = f"={c}{rr[code+'_traffic']}*{c}{rr[code+'_cvr']}"
-            put(wf, f"{c}{rr[code+'_orders']}", f, fmt=NUM1)
+                put(wf, f"{c}{rr[code+'_orders']}", f"={c}{rr[code+'_traffic']}*{c}{rr[code+'_cvr']}", fmt=NUM1)
             put(wf, f"{c}{rr[code+'_units']}", f"={c}{rr[code+'_orders']}*{S(code+'_items')}", fmt=NUM1)
             put(wf, f"{c}{rr[code+'_aov']}", f"={UE[code]['price']}*{S(code+'_items')}*{c}{ra}", fmt=CUR2)
             put(wf, f"{c}{rr[code+'_gross']}", f"={c}{rr[code+'_units']}*{UE[code]['price']}", fmt=CUR0)
-            put(wf, f"{c}{rr[code+'_contrib']}", f"={c}{rr[code+'_units']}*{UE[code]['net']}", fmt=CUR0)
+            if code == "BOARD":
+                put(wf, f"{c}{rr['BOARD_contrib']}", f"={c}{rr['BOARD_units']}*IF({c}$4<{PM},{q('Unit Economics')}!$M${UE_ROW['BB_site']},{UE['BOARD']['net']})", fmt=CUR0)
+            else:
+                put(wf, f"{c}{rr[code+'_contrib']}", f"={c}{rr[code+'_units']}*{UE[code]['net']}", fmt=CUR0)
         for k, kind, fmt in (("traffic", "sum", NUM0), ("orders", "sum", NUM0), ("units", "sum", NUM0),
                              ("gross", "sum", CUR0), ("contrib", "sum", CUR0)):
             year_cols(wf, rr[f"{code}_{k}"], kind, fmt)
+        if code == "BOARD":
+            year_cols(wf, rr["BOARD_demand"], "sum", NUM0)
     # email
     sec(wf, rr["email_hdr"], 1, FC + 39, "Email list (owned audience)")
-    for k, lab in (("email_new", "   New subscribers (site visitors + buyers via bonus QR)"), ("email_churn", "   Unsubscribes"),
-                   ("email_end", "   Subscribers at month end")):
-        put(wf, f"A{rr[k]}", lab); put(wf, f"B{rr[k]}", "people", font=F_NOTE)
-    buyer_codes = ["SITE", "ETSY", "KDP", "INGRAM", "MOR", "BOARD"]
+    for k, lab, unit in (("sessions", "   Implied own-site sessions (site product-months x orders per product / site conversion)", "visits"),
+                         ("email_new", "   New subscribers (own-site visitors + non-Etsy buyers via bonus QR)", "people"),
+                         ("email_churn", "   Unsubscribes", "people"), ("email_end", "   Subscribers at month end", "people")):
+        put(wf, f"A{rr[k]}", lab); put(wf, f"B{rr[k]}", unit, font=F_NOTE)
+    buyer_codes = ["SITE", "KDP", "INGRAM", "MOR", "BOARD"]   # Etsy and TpT editions carry no URL or QR code (BRAND.md)
     for m in range(1, 37):
         c, p = mc(m), (mc(m - 1) if m > 1 else None)
+        put(wf, f"{c}{rr['sessions']}", f"={c}{rr['SITE_traffic']}*{S('SITE_cvr')}/{S('site_cvr')}", fmt=NUM0)
         orders_sum = "+".join(f"{c}{rr[x+'_orders']}" for x in buyer_codes)
-        put(wf, f"{c}{rr['email_new']}", f"={c}{rr['SITE_traffic']}*{S('signup')}+({orders_sum})*{S('optin')}", fmt=NUM0)
+        put(wf, f"{c}{rr['email_new']}", f"={c}{rr['sessions']}*{S('signup')}+({orders_sum})*{S('optin')}", fmt=NUM0)
         put(wf, f"{c}{rr['email_churn']}", "=0" if m == 1 else f"={p}{rr['email_end']}*{S('churn')}", fmt=NUM0)
         put(wf, f"{c}{rr['email_end']}", f"={c}{rr['email_new']}-{c}{rr['email_churn']}" + ("" if m == 1 else f"+{p}{rr['email_end']}"), fmt=NUM0)
+    year_cols(wf, rr["sessions"], "sum", NUM0)
     year_cols(wf, rr["email_new"], "sum", NUM0); year_cols(wf, rr["email_churn"], "sum", NUM0); year_cols(wf, rr["email_end"], "end", NUM0)
     # totals
     sec(wf, rr["tot_hdr"], 1, FC + 39, "Totals and operating result")
@@ -1004,23 +1056,25 @@ def build_block(s, start):
         "gross": ("Total gross sales (customer prices, excl. sales tax/VAT)", "$", CUR0, "sum"),
         "contrib": ("Total net contribution (after platform, payment, print/POD and fulfilment costs)", "$", CUR0, "sum"),
         "margin": ("Net contribution as % of gross sales", "%", PCT1, None),
-        "ads": ("Paid advertising", "$", CUR0, "sum"), "opex": ("Operating costs (Monthly Operating Costs tab)", "$", CUR0, "sum"),
+        "ads": ("Paid advertising (optional tests; no revenue credit)", "$", CUR0, "sum"), "opex": ("Operating costs (Monthly Operating Costs tab)", "$", CUR0, "sum"),
         "wavefix": ("Wave fixed costs (3PL minimum, Seller Central, retail EDI/insurance uplift)", "$", CUR0, "sum"),
         "netop": ("NET OPERATING RESULT (before one-time costs)", "$", CUR0, "sum"),
-        "startup": ("One-time startup costs (Startup Costs tab)", "$", CUR0, "sum"),
-        "waveone": ("One-time wave launch and retail readiness costs", "$", CUR0, "sum"),
+        "t12": ("   Trailing-12-month operating result (months available so far)", "$", CUR0, None),
+        "startup": ("One-time startup costs (Startup Costs tab, included items)", "$", CUR0, "sum"),
+        "waveone": ("One-time wave costs (board-book pre-sale/print, retail readiness, school setup)", "$", CUR0, "sum"),
         "netafter": ("Net result after one-time costs", "$", CUR0, "sum"),
         "cumnet": ("Cumulative net result", "$", CUR0, "end"),
         "phys": ("   Physical items sold from held stock (board book + retail)", "items", NUM0, "sum"),
         "cumphys": ("   Cumulative physical items", "items", NUM0, "end"),
-        "copies": ("   Copies ordered from the printer (first run + reorders)", "copies", NUM0, "sum"),
+        "copies": ("   Copies ordered from the printer (first run + reorders at the reorder point)", "copies", NUM0, "sum"),
         "inv": ("   Inventory purchases (cash; not in operating result)", "$", CUR0, "sum"),
         "cumcopies": ("   Cumulative copies ordered", "copies", NUM0, "end"),
         "onhand": ("   Copies at the 3PL (negative = pre-sale copies still owed)", "copies", NUM0, "end"),
-        "flag_first": ("   Month # if operating result >= 0", "month", "0", None),
-        "flag_sust": ("   Month # if operating result stays >= 0 through month 36", "month", "0", None),
+        "flag_first": ("   Month # if monthly operating result >= 0", "month", "0", None),
+        "flag_sust": ("   Month # if monthly operating result stays >= 0 through month 36", "month", "0", None),
+        "flag_t12": ("   Month # if trailing-12-month result stays >= 0 through month 36 (headline)", "month", "0", None),
     }
-    sec(wf, rr["inv_hdr"], 1, FC + 39, "Held inventory (Wave 3 board book and retail; stock sits at a 3PL or Amazon, never with the founder)")
+    sec(wf, rr["inv_hdr"], 1, FC + 39, "Held inventory (board book and retail; stock sits at a 3PL or Amazon, never with the founder)")
     sec(wf, rr["flag_hdr"], 1, FC + 39, "Break-even helper rows")
     for k, (lab, unit, fmt, kind) in TL.items():
         put(wf, f"A{rr[k]}", lab, bold=k in ("netop", "gross", "contrib"))
@@ -1038,26 +1092,30 @@ def build_block(s, start):
         put(wf, f"{c}{rr['ads']}", f"=IF({c}$4>={S('ads_start')},CHOOSE({c}$6,{S('ads1')},{S('ads2')},{S('ads3')}),0)", fmt=CUR0)
         put(wf, f"{c}{rr['opex']}", f"={OPTOT(m)}", fmt=CUR0)
         put(wf, f"{c}{rr['wavefix']}",
-            f"=IF(AND({S('BOARD_inc')}=1,$B${rr['print']}>0,{c}$4>=$B${rr['print']}),{A['tpl_min']}+{A['seller_central']},0)+IF({c}{rr['RETAIL_act']}=1,{RR['C']},0)", fmt=CUR0)
+            f"=IF(AND({GO}=1,{c}$4>={PM}),{A['tpl_min']}+{A['seller_central']},0)+IF({c}{rr['RETAIL_act']}=1,{RR['C']},0)", fmt=CUR0)
         put(wf, f"{c}{rr['netop']}", f"={c}{rr['contrib']}-{c}{rr['ads']}-{c}{rr['opex']}-{c}{rr['wavefix']}", fmt=CUR0)
+        put(wf, f"{c}{rr['t12']}", f"=SUM({mc(max(1, m - 11))}{rr['netop']}:{c}{rr['netop']})", fmt=CUR0)
         put(wf, f"{c}{rr['startup']}", f"=SUMPRODUCT(({SU_RANGE['F']}={c}$4)*{SU_RANGE['G']}*{SU_RANGE['E']})", fmt=CUR0)
         put(wf, f"{c}{rr['waveone']}",
-            f"=IF(AND({S('BOARD_inc')}=1,{c}$4=$B${rr['print']}),{RR['A']},0)"
-            f"+IF(AND({S('RETAIL_inc')}=1,{c}$4=MAX(1,{S('RETAIL_launch')}-{A['retail_lead']})),{RR['B']},0)"
-            f"+IF(AND({S('SCHOOL_inc')}=1,{c}$4={S('SCHOOL_launch')}),{A['school_setup']},0)", fmt=CUR0)
+            f"=IF(AND({S('BOARD_inc')}=1,{c}$4=MAX(1,{Lm('BOARD')}-1)),{RR['A0']},0)"
+            f"+IF(AND({GO}=1,{c}$4={PM}),{RR['A']},0)"
+            f"+IF(AND({S('BOARD_inc')}=1,{GO}=0,{c}$4={PM}),{A['presale_fail']},0)"
+            f"+IF(AND({S('RETAIL_inc')}=1,{c}$4=MAX(1,{Lm('RETAIL')}-{A['retail_lead']})),{RR['B']},0)"
+            f"+IF(AND({S('SCHOOL_inc')}=1,{c}$4={Lm('SCHOOL')}),{A['school_setup']},0)", fmt=CUR0)
         put(wf, f"{c}{rr['netafter']}", f"={c}{rr['netop']}-{c}{rr['startup']}-{c}{rr['waveone']}", fmt=CUR0)
         put(wf, f"{c}{rr['cumnet']}", f"={c}{rr['netafter']}" + ("" if m == 1 else f"+{p}{rr['cumnet']}"), fmt=CUR0)
         put(wf, f"{c}{rr['phys']}", f"={c}{rr['BOARD_units']}+{c}{rr['RETAIL_units']}", fmt=NUM0)
         put(wf, f"{c}{rr['cumphys']}", f"={c}{rr['phys']}" + ("" if m == 1 else f"+{p}{rr['cumphys']}"), fmt=NUM0)
-        run = f"$B${rr['run']}"; pm = f"$B${rr['print']}"
-        prevcum = "0" if m == 1 else f"{p}{rr['cumphys']}"
+        run = f"$B${rr['run']}"
+        prev_on = "0" if m == 1 else f"{p}{rr['onhand']}"
         put(wf, f"{c}{rr['copies']}",
-            f"=IF({run}=0,0,IF({c}$4={pm},{run},IF({c}$4>{pm},(INT({c}{rr['cumphys']}/{run})-INT({prevcum}/{run}))*{run},0)))", fmt=NUM0)
+            f"=IF({run}=0,0,IF({c}$4={PM},{run},IF({c}$4>{PM},IF({prev_on}-{c}{rr['phys']}<{A['reorder_lead']}*{c}{rr['phys']},{run},0),0)))", fmt=NUM0)
         put(wf, f"{c}{rr['inv']}", f"={c}{rr['copies']}*{A['landed']}", fmt=CUR0)
         put(wf, f"{c}{rr['cumcopies']}", f"={c}{rr['copies']}" + ("" if m == 1 else f"+{p}{rr['cumcopies']}"), fmt=NUM0)
         put(wf, f"{c}{rr['onhand']}", f"={c}{rr['cumcopies']}-{c}{rr['cumphys']}", fmt=NUM0)
         put(wf, f"{c}{rr['flag_first']}", f"=IF({c}{rr['netop']}>=0,{c}$4,\"\")", fmt="0")
         put(wf, f"{c}{rr['flag_sust']}", f"=IF(COUNTIF({c}{rr['netop']}:${mc(36)}{rr['netop']},\"<0\")=0,{c}$4,\"\")", fmt="0")
+        put(wf, f"{c}{rr['flag_t12']}", f"=IF(COUNTIF({c}{rr['t12']}:${mc(36)}{rr['t12']},\"<0\")=0,{c}$4,\"\")", fmt="0")
     for k, (lab, unit, fmt, kind) in TL.items():
         if kind:
             year_cols(wf, rr[k], kind, fmt)
@@ -1084,7 +1142,8 @@ wf.freeze_panes = "C9"
 wc = ws_["Cash Flow"]
 title(wc, "Cash flow: payout delays, inventory purchases, one-time costs and the tax reserve",
       "Marketplace payouts arrive after the sale month (KDP about 60 days, IngramSpark about 90 days; see Assumptions section 4). "
-      "Costs are negative. Sales tax and VAT are pass-through and excluded. The tax reserve is money set aside, not tax actually due; the accountant sets the real figure.")
+      "Costs are negative. Sales tax and VAT are pass-through and excluded. Founder capital goes in whenever the operating account would fall below zero, so the cumulative founder capital row is the funding need. "
+      "The tax reserve holds 25% of cumulative profit after one-time costs (none while cumulative results are negative); the accountant sets the real figure.")
 wc.merge_cells("A2:P3"); wc["A2"].alignment = WRAP; wc.row_dimensions[2].height = 28
 put(wc, "A4", "Model month #", bold=True); put(wc, "A5", "Month", bold=True); put(wc, "A6", "Model year", bold=True)
 for m in range(1, 37):
@@ -1101,24 +1160,27 @@ CFR = {}
 r = 8
 for s in range(3):
     rr = {}
-    keys = ["hdr"] + [f"pay_{c[0]}" for c in CH] + ["pay_tot", "owner", "inv", "ads", "opex", "wavefix", "startup", "waveone",
-                                                     "net", "resv", "opbal", "resbal", "total", "target", "gap", "flag_cash"]
+    keys = ["hdr"] + [f"pay_{c[0]}" for c in CH] + ["pay_tot", "card", "inv", "ads", "opex", "wavefix", "startup", "waveone",
+                                                     "net", "resv", "pre", "founder", "opbal", "resbal", "total", "cumfounder",
+                                                     "target", "gap", "flag_need", "flag_cap"]
     for i, k in enumerate(keys):
         rr[k] = r + i
     CFR[s] = rr
     fr = FR[s]
     hdr(wc, rr["hdr"], 1, FC + 39, [f"{SCN[s].upper()} SCENARIO"])
-    lab = {"pay_tot": "Total payouts received", "owner": "Owner capital contribution",
+    lab = {"pay_tot": "Total payouts received", "card": "Existing business-card balance paid off (month 1)",
            "inv": "Inventory purchases (offset print runs, landed)", "ads": "Paid advertising", "opex": "Operating costs",
-           "wavefix": "Wave fixed costs", "startup": "One-time startup costs", "waveone": "One-time wave launch / retail readiness",
-           "net": "NET CASH FLOW before tax reserve", "resv": "Transfer to tax reserve account",
-           "opbal": "OPERATING ACCOUNT BALANCE (month end)", "resbal": "Tax reserve account balance", "total": "Total cash (both accounts)",
+           "wavefix": "Wave fixed costs", "startup": "One-time startup costs", "waveone": "One-time wave costs",
+           "net": "NET CASH FLOW before tax reserve and founder capital", "resv": "Transfer to (-) or from (+) the tax reserve account",
+           "pre": "   Operating balance before founder capital", "founder": "FOUNDER CAPITAL IN (planned month-1 amount + any top-up that keeps the balance at zero or above)",
+           "opbal": "OPERATING ACCOUNT BALANCE (month end)", "resbal": "Tax reserve account balance (25% of cumulative profit after one-time costs, if positive)",
+           "total": "Total cash (both accounts)", "cumfounder": "CUMULATIVE FOUNDER CAPITAL (the funding need)",
            "target": "Reserve target (months x fixed costs incl. ads)", "gap": "Operating balance above / (below) reserve target",
-           "flag_cash": "   Helper: month # if operating balance stays >= 0 through month 36"}
+           "flag_need": "   Helper: month # if founder capital goes in", "flag_cap": "   Helper: month # if cumulative founder capital is above the household-money cap"}
     for code, name, *_ in CH:
         lab[f"pay_{code}"] = f"   Payout: {name}"
     for k, t in lab.items():
-        put(wc, f"A{rr[k]}", t, bold=k in ("net", "opbal", "pay_tot"))
+        put(wc, f"A{rr[k]}", t, bold=k in ("net", "opbal", "pay_tot", "founder", "cumfounder"))
     for m in range(1, 37):
         c, p = mc(m), (mc(m - 1) if m > 1 else None)
         for code, *_ in CH:
@@ -1128,23 +1190,29 @@ for s in range(3):
                 f"=IF({c}$4-{lag}>=1,INDEX({q(FS)}!$C${cr}:${mc(36)}${cr},1,{c}$4-{lag})+INDEX({q(FS)}!$C${ur}:${mc(36)}${ur},1,{c}$4-{lag})*{UE[code]['landed']},0)",
                 fmt=CUR0)
         put(wc, f"{c}{rr['pay_tot']}", f"=SUM({c}{rr['pay_SITE']}:{c}{rr['pay_RETAIL']})", fmt=CUR0)
-        put(wc, f"{c}{rr['owner']}", f"={A['owner']}" if m == 1 else "=0", fmt=CUR0)
+        put(wc, f"{c}{rr['card']}", f"=-{A['card']}" if m == 1 else "=0", fmt=CUR0)
         for k in ("inv", "ads", "opex", "wavefix", "startup", "waveone"):
             put(wc, f"{c}{rr[k]}", f"=-{q(FS)}!{c}{fr[k]}", fmt=CUR0)
         put(wc, f"{c}{rr['net']}", f"=SUM({c}{rr['pay_tot']}:{c}{rr['waveone']})", fmt=CUR0)
-        put(wc, f"{c}{rr['resv']}", f"=-{A['taxres']}*MAX(0,{c}{rr['net']})", fmt=CUR0)
+        prev_res = "0" if m == 1 else f"{p}{rr['resbal']}"
+        put(wc, f"{c}{rr['resbal']}", f"={A['taxres']}*MAX(0,{q(FS)}!{c}{fr['cumnet']})", fmt=CUR0)
+        put(wc, f"{c}{rr['resv']}", f"={prev_res}-{c}{rr['resbal']}", fmt=CUR0)
         prev_op = A["open"] if m == 1 else f"{p}{rr['opbal']}"
-        put(wc, f"{c}{rr['opbal']}", f"={prev_op}+{c}{rr['net']}+{c}{rr['resv']}", fmt=CUR0)
-        put(wc, f"{c}{rr['resbal']}", f"=-{c}{rr['resv']}" + ("" if m == 1 else f"+{p}{rr['resbal']}"), fmt=CUR0)
+        put(wc, f"{c}{rr['pre']}", f"={prev_op}+{c}{rr['net']}+{c}{rr['resv']}", fmt=CUR0)
+        planned = f"{A['owner']}" if m == 1 else "0"
+        put(wc, f"{c}{rr['founder']}", f"={planned}+MAX(0,-({c}{rr['pre']}+{planned}))", fmt=CUR0)
+        put(wc, f"{c}{rr['opbal']}", f"={c}{rr['pre']}+{c}{rr['founder']}", fmt=CUR0)
         put(wc, f"{c}{rr['total']}", f"={c}{rr['opbal']}+{c}{rr['resbal']}", fmt=CUR0)
+        put(wc, f"{c}{rr['cumfounder']}", f"={c}{rr['founder']}" + ("" if m == 1 else f"+{p}{rr['cumfounder']}"), fmt=CUR0)
         put(wc, f"{c}{rr['target']}", f"={A['resmo']}*({q(FS)}!{c}{fr['opex']}+{q(FS)}!{c}{fr['wavefix']}+{q(FS)}!{c}{fr['ads']})", fmt=CUR0)
         put(wc, f"{c}{rr['gap']}", f"={c}{rr['opbal']}-{c}{rr['target']}", fmt=CUR0)
-        put(wc, f"{c}{rr['flag_cash']}", f"=IF(COUNTIF({c}{rr['opbal']}:${mc(36)}{rr['opbal']},\"<0\")=0,{c}$4,\"\")", fmt="0")
-    for k in [f"pay_{c[0]}" for c in CH] + ["pay_tot", "owner", "inv", "ads", "opex", "wavefix", "startup", "waveone", "net", "resv"]:
+        put(wc, f"{c}{rr['flag_need']}", f"=IF({c}{rr['founder']}>0.5,{c}$4,\"\")", fmt="0")
+        put(wc, f"{c}{rr['flag_cap']}", f"=IF({c}{rr['cumfounder']}>{A['cap']},{c}$4,\"\")", fmt="0")
+    for k in [f"pay_{c[0]}" for c in CH] + ["pay_tot", "card", "inv", "ads", "opex", "wavefix", "startup", "waveone", "net", "resv", "founder"]:
         year_cols(wc, rr[k], "sum", CUR0)
-    for k in ("opbal", "resbal", "total", "target", "gap"):
+    for k in ("opbal", "resbal", "total", "cumfounder", "target", "gap"):
         year_cols(wc, rr[k], "end", CUR0)
-    for k in ("net", "opbal"):
+    for k in ("net", "opbal", "founder", "cumfounder"):
         for cc in range(1, FC + 40):
             cell = wc.cell(row=rr[k], column=cc)
             cell.font = Font(name=AR, bold=True, color=cell.font.color); cell.border = TOP
@@ -1162,8 +1230,8 @@ wc.freeze_panes = "C7"
 # =====================================================================
 wb_ = ws_["Break-even"]
 title(wb_, "Break-even: when, and how many orders or units",
-      "Operating break-even excludes one-time startup, wave-launch and inventory costs. Cash payback includes everything, including payout delays. "
-      "'Sustained' means the result stays at or above zero in every later month through month 36.")
+      "Headline measure: the month from which the trailing-12-month operating result stays at or above zero through month 36, so annual bills (October renewals, April filings) do not distort it. "
+      "Operating results exclude one-time startup, wave and inventory costs. The funding need is the cumulative founder capital on Cash Flow.")
 wb_.merge_cells("A2:E3"); wb_["A2"].alignment = WRAP; wb_.row_dimensions[2].height = 28
 hdr(wb_, 5, 1, 5, ["Measure", "Conservative", "Expected", "Strong", "Note"], 22)
 BE = {}
@@ -1182,24 +1250,32 @@ def be_row(key, label, fn, fmt, note=""):
 F36 = mc(36)
 def fref(s, key, col=None):
     return f"{q(FS)}!${mc(1)}${FR[s][key]}:${F36}${FR[s][key]}"
-sec(wb_, r, 1, 5, "When"); r += 1
-be_row("first_m", "First month with operating result >= 0 (month #)",
-       lambda s: f"=IF(COUNT({fref(s,'flag_first')})=0,\"Not reached\",MIN({fref(s,'flag_first')}))", "0")
-be_row("first_d", "   ...calendar month", lambda s: dt(f"{'BCD'[s]}{BE['first_m']}"), DATEF)
-be_row("sust_m", "Sustained operating break-even (month #)",
-       lambda s: f"=IF(COUNT({fref(s,'flag_sust')})=0,\"Not reached\",MIN({fref(s,'flag_sust')}))", "0",
-       "Headline break-even measure used on the Dashboard.")
-be_row("sust_d", "   ...calendar month", lambda s: dt(f"{'BCD'[s]}{BE['sust_m']}"), DATEF)
 def cfref(s, key):
     return f"{q('Cash Flow')}!${mc(1)}${CFR[s][key]}:${F36}${CFR[s][key]}"
-be_row("cash_m", "Cash payback: operating balance >= 0 from this month on (month #)",
-       lambda s: f"=IF(COUNT({cfref(s,'flag_cash')})=0,\"Not reached\",MIN({cfref(s,'flag_cash')}))", "0",
-       "Includes payout delays, startup costs, inventory and the tax-reserve transfers.")
+sec(wb_, r, 1, 5, "When"); r += 1
+be_row("t12_m", "Sustained break-even, trailing 12 months (month #) - HEADLINE",
+       lambda s: f"=IF(COUNT({fref(s,'flag_t12')})=0,\"Not reached\",MIN({fref(s,'flag_t12')}))", "0",
+       "Trailing-12-month operating result at or above zero from this month through month 36.")
+be_row("t12_d", "   ...calendar month", lambda s: dt(f"{'BCD'[s]}{BE['t12_m']}"), DATEF)
+be_row("first_m", "First month with a monthly operating result >= 0 (month #)",
+       lambda s: f"=IF(COUNT({fref(s,'flag_first')})=0,\"Not reached\",MIN({fref(s,'flag_first')}))", "0")
+be_row("first_d", "   ...calendar month", lambda s: dt(f"{'BCD'[s]}{BE['first_m']}"), DATEF)
+be_row("sust_m", "Every later month >= 0 (month #; strict test, sensitive to annual bills)",
+       lambda s: f"=IF(COUNT({fref(s,'flag_sust')})=0,\"Not reached\",MIN({fref(s,'flag_sust')}))", "0")
+be_row("sust_d", "   ...calendar month", lambda s: dt(f"{'BCD'[s]}{BE['sust_m']}"), DATEF)
+be_row("peak", "Founder capital needed through month 36 (funding need)",
+       lambda s: f"={q('Cash Flow')}!{F36}{CFR[s]['cumfounder']}", CUR0, "Cumulative founder capital on Cash Flow.")
+be_row("need12", "   ...of which by month 12 (Sep 2027)", lambda s: f"={q('Cash Flow')}!{mc(12)}{CFR[s]['cumfounder']}", CUR0)
+be_row("need24", "   ...of which by month 24 (Sep 2028)", lambda s: f"={q('Cash Flow')}!{mc(24)}{CFR[s]['cumfounder']}", CUR0)
+be_row("last_need", "Last month founder capital goes in (month #)",
+       lambda s: f"=IF(COUNT({cfref(s,'flag_need')})=0,\"None\",MAX({cfref(s,'flag_need')}))", "0")
+be_row("cash_m", "Self-funding from (month #): no founder capital needed after this month",
+       lambda s: f"=IF(ISNUMBER({'BCD'[s]}{BE['last_need']}),IF({'BCD'[s]}{BE['last_need']}<36,{'BCD'[s]}{BE['last_need']}+1,\"Not within 36 months\"),1)", "0")
 be_row("cash_d", "   ...calendar month", lambda s: dt(f"{'BCD'[s]}{BE['cash_m']}"), DATEF)
-be_row("peak", "Peak funding need (lowest operating balance, shown positive)",
-       lambda s: f"=MAX(0,-MIN({cfref(s,'opbal')}))", CUR0, "Cash the founder must put in (or not spend) to avoid a negative balance.")
-be_row("peak_m", "   ...month # of the lowest balance",
-       lambda s: f"=MATCH(MIN({cfref(s,'opbal')}),{cfref(s,'opbal')},0)", "0")
+be_row("cap_m", "Month the household-money cap would be passed (hard stop and re-forecast)",
+       lambda s: f"=IF(COUNT({cfref(s,'flag_cap')})=0,\"Not passed\",MIN({cfref(s,'flag_cap')}))", "0",
+       "Cap is a placeholder until the founder sets it (Assumptions).")
+be_row("cap_d", "   ...calendar month", lambda s: dt(f"{'BCD'[s]}{BE['cap_m']}"), DATEF)
 r += 1
 sec(wb_, r, 1, 5, "How many (volume at break-even)"); r += 1
 def at_month(s, key, mcell):

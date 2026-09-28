@@ -124,7 +124,7 @@ const ZONES = [
 
 // ---------- phone-free times (a day at a glance) ----------
 const TIMES = [
-  ['sun', 'Morning', 'Before school', 'phone-free until', 'wake'],
+  ['fsun', 'Morning', 'Before school', 'phone-free until', 'wake'],
   ['school', 'School hours', 'Phone stays in my bag or at home, per school rules', '', 'school'],
   ['outsideTime', 'After school', 'Phone-free afternoon (see the 30-day challenge)', 'from … to …', 'aft'],
   ['familyDinnerBig', 'Dinner', 'Phones park away from the table', 'from … to …', 'din'],

@@ -1,0 +1,60 @@
+[
+ {
+  "file": "tests/large.html",
+  "out": "test-large.png",
+  "w": 512,
+  "h": 512
+ },
+ {
+  "file": "tests/logo.html",
+  "out": "test-logo.png",
+  "w": 1600,
+  "h": 215
+ },
+ {
+  "file": "tests/fav-16-light.html",
+  "out": "tests/fav-16-light.png",
+  "w": 16,
+  "h": 16,
+  "dark": false
+ },
+ {
+  "file": "tests/fav-32-light.html",
+  "out": "tests/fav-32-light.png",
+  "w": 32,
+  "h": 32,
+  "dark": false
+ },
+ {
+  "file": "tests/fav-16-dark.html",
+  "out": "tests/fav-16-dark.png",
+  "w": 16,
+  "h": 16,
+  "dark": true
+ },
+ {
+  "file": "tests/fav-32-dark.html",
+  "out": "tests/fav-32-dark.png",
+  "w": 32,
+  "h": 32,
+  "dark": true
+ },
+ {
+  "file": "tests/small.html",
+  "out": "test-small.png",
+  "w": 640,
+  "h": 360
+ },
+ {
+  "file": "tests/avatar.html",
+  "out": "tests/avatar-1080.png",
+  "w": 1080,
+  "h": 1080
+ },
+ {
+  "file": "tests/preview.html",
+  "out": "preview-sheet.png",
+  "w": 1600,
+  "h": 1000
+ }
+]

@@ -410,7 +410,7 @@ single({
   const games = [
     { n: 1, col: C.sky, name: 'Build a Talk Tower', meta: 'Whole group · 10 minutes',
       need: 'A basket of large blocks (or paper strips and tape)',
-      steps: ['Sit in a circle with the basket in the middle.', 'Each time someone asks a question, tells a joke or shares an idea out loud, they add a block.', 'A good follow-up question counts too!', 'How tall can the tower grow before tidy-up time?'] },
+      steps: ['Sit in a circle with the basket in the middle.', 'Each time someone asks a question, tells a joke or shares an idea, they add a block. Words, signs and pointing all count.', 'A follow-up question counts too!', 'How tall can the tower grow before tidy-up time?'] },
     { n: 2, col: C.sun, name: 'Pass the Talking Star', meta: 'Whole group · 5–10 minutes',
       need: 'Any soft toy to be your Talking Star',
       steps: ['Give everyone the same starter, like “My favorite animal is…”', 'Whoever holds the star gets a turn. Everyone else listens.', 'Pass the star to the next friend.', 'Saying “pass” is always OK.'] },
@@ -447,7 +447,7 @@ single({
     R(564, 624, 192, 115, C.paper, 4) + R(404, 566, 150, 176, C.paper, 10),
   texts: [
     T(60, 60, 696, 'Room 5 is building a tower out of words.', 'backh'),
-    T(60, 190, 696, `<p>Every time someone asks a question, tells a joke or shares an idea out loud, a block goes on the Talk Tower. But what happens when everybody talks at once?</p><p>A warm, funny read-aloud about conversation, taking turns and really listening, with circle-time talk games and a note for educators and families at the back.</p>`, 'backtext'),
+    T(60, 190, 696, `<p>Every time someone asks a question, tells a joke or shares an idea, a block goes on the Talk Tower. But what happens when everybody talks at once?</p><p>A warm, funny read-aloud about conversation, taking turns and really listening, with circle-time talk games and a note for educators and families at the back.</p>`, 'backtext'),
     T(60, 500, 420, 'Ages 3–7 · Bonus read-aloud from the Talk Tower Classroom Game Kit', 'backmeta'),
     T(566, 648, 188, 'ISBN / barcode<br>(print edition only)', 'isbnlabel'),
     T(421, 576, 120, qrSvg(116), ''),

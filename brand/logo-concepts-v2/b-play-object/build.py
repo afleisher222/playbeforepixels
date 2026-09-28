@@ -30,7 +30,8 @@ SYMBOL = dict(
     BALL=68,            # ball radius
     EYE_A=19,           # grown-up eye radius (one eye: the figures are in profile)
     EYE_C=15,           # child eye radius
-    EYE_K=0.46,         # how far each eye sits from the head centre toward the ball (fraction of head radius)
+    EYE_X=0.42,         # eye position: share of the head radius toward the other figure (they face each other)...
+    EYE_Y=0.10,         # ...and share of the head radius downward (looking down at the ball)
     SOFT=18,            # rounding of the top-front corner of each body
 )
 # Small cut for 16-32 px, stickers under 12 mm and embroidery under 25 mm: fewer, bigger parts, wider gaps.
@@ -82,12 +83,9 @@ def symbol_geometry(k=SYMBOL):
         hy = -math.sqrt(dist * dist - back * back)
         parts[who] = dict(fx=fx, R=R, side=side, head=(hx, hy, Rh))
     parts['ball'] = (0.0, -k['BALL'], k['BALL'])
-    bx, by, _ = parts['ball']
     for who in ('A', 'C'):
         hx, hy, Rh = parts[who]['head']
-        L = math.hypot(bx - hx, by - hy)
-        kk = k['EYE_K'] * Rh
-        parts[who]['eye'] = (hx + kk * (bx - hx) / L, hy + kk * (by - hy) / L, k['EYE_' + who])
+        parts[who]['eye'] = (hx - parts[who]['side'] * k['EYE_X'] * Rh, hy + k['EYE_Y'] * Rh, k['EYE_' + who])
     parts['soft'] = k['SOFT']
     # bounds
     xs = [parts['A']['fx'] - parts['A']['R'], parts['C']['fx'] + parts['C']['R']]
@@ -317,11 +315,143 @@ def build():
     files['src/avatar-1080.svg'] = symbol_square(1080, 0.60, 'color', SYMBOL, bg=SUN_T, shape='rect', nudge=(0, 0.02))
     files['src/apple-touch-180.svg'] = symbol_square(180, 0.70, 'color', SMALL, bg=SUN_T)
 
+    # stacked logo (tote, stickers, square formats) ------------------------------------------------------------------
+    for sc, name in (('color', 'stacked-logo'), ('black', 'stacked-logo-black'), ('reverse', 'stacked-logo-reverse')):
+        body, lx, ly, lw, lh, X = stacked(sc)
+        p = X * 0.5
+        files[f'src/{name}.svg'] = svg_doc((lx - p, ly - p, lw + 2 * p, lh + 2 * p), body, bg=INK if sc == 'reverse' else None)
+
     for n, c in files.items():
         with open(os.path.join(HERE, n), 'w') as fh:
             fh.write(c)
     print('wrote', len(files), 'svg files')
+    write_tests(files)
     return files
+
+
+def stacked(scheme='color', k=SYMBOL):
+    """symbol above the name set in two lines, centred"""
+    g = symbol_geometry(k); x0, y0, x1, y1 = g['bbox']
+    _, w1 = words('Play Before', 0, 0); _, w2 = words('Pixels', 0, 0)
+    sym_w = 1.0 * w1                               # symbol as wide as the first line
+    s = sym_w / (x1 - x0); sym_h = (y1 - y0) * s
+    W = max(w1, w2, sym_w)
+    floor_y = sym_h
+    body = symbol_group((W - sym_w) / 2 - x0 * s, floor_y, s, scheme, k)
+    b1 = floor_y + 0.62 * CAP + CAP; b2 = b1 + 1.02 * 1000 * 0.86
+    d1, _ = words('Play Before', (W - w1) / 2, b1); d2, _ = words('Pixels', (W - w2) / 2, b2)
+    color = SCHEMES[scheme][3]
+    body += f'<path class="t" fill="{color}" d="{d1}{d2}"/>'
+    return body, 0.0, 0.0, W, b2 + 40, s * 2 * k['BALL']
+
+
+# ======================================================================================================== test + preview pages
+def vbox(svgtext):
+    return [float(v) for v in re.search(r'viewBox="([^"]+)"', svgtext).group(1).split()]
+
+
+def page(body, bg='#FFFFFF', w=None, h=None, extra=''):
+    fonts = os.path.relpath(os.path.join(FONTS, 'fonts.css'), HERE)
+    return (f'<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="{fonts}">'
+            f'<style>html,body{{margin:0;padding:0;background:{bg}}} img{{display:block}} {extra}</style></head>'
+            f'<body>{body}</body></html>\n')
+
+
+def write_tests(files):
+    T = os.path.join(HERE, 'tests'); os.makedirs(T, exist_ok=True)
+    jobs = []
+    def put(name, html): open(os.path.join(T, name), 'w').write(html)
+    # 1. test-large: the symbol alone, 512 x 512, on white, no words
+    put('large.html', page('<div style="width:512px;height:512px;display:flex;align-items:center;justify-content:center">'
+                           '<img src="../symbol.svg" style="width:420px;height:auto"></div>'))
+    jobs.append(dict(file='tests/large.html', out='test-large.png', w=512, h=512))
+    # 2. test-logo: the primary logo, 1600 px wide, on white
+    x, y, w, h = vbox(files['primary-logo.svg'])
+    H = round(1600 * h / w)
+    put('logo.html', page(f'<img src="../primary-logo.svg" style="width:1600px;height:{H}px">'))
+    jobs.append(dict(file='tests/logo.html', out='test-logo.png', w=1600, h=H))
+    # 3. favicon rasters at true size, light and dark tabs
+    for mode, bg in (('light', '#FFFFFF'), ('dark', '#202124')):
+        for px in (16, 32):
+            put(f'fav-{px}-{mode}.html', page(f'<img src="../favicon.svg" style="width:{px}px;height:{px}px">', bg=bg))
+            jobs.append(dict(file=f'tests/fav-{px}-{mode}.html', out=f'tests/fav-{px}-{mode}.png', w=px, h=px, dark=(mode == 'dark')))
+    # test-small sheet: 640 x 360, no words
+    def panel(mode, bg, fg_tab):
+        return (f'<div class="pn" style="background:{bg}">'
+                f'<img class="px" src="fav-32-{mode}.png" style="width:192px;height:192px">'
+                f'<div class="row"><img class="px" src="fav-16-{mode}.png" style="width:128px;height:128px">'
+                f'<div class="tabs"><div class="tab" style="background:{fg_tab}"><img src="fav-16-{mode}.png" style="width:16px;height:16px"></div>'
+                f'<div class="tab big" style="background:{fg_tab}"><img src="fav-32-{mode}.png" style="width:32px;height:32px"></div></div></div></div>')
+    css = ('.sheet{width:640px;height:360px;display:flex} .pn{width:320px;height:360px;display:flex;flex-direction:column;'
+           'align-items:center;justify-content:center;gap:14px} .px{image-rendering:pixelated} '
+           '.row{display:flex;gap:24px;align-items:center} .tabs{display:flex;flex-direction:column;gap:12px;align-items:center}'
+           '.tab{width:44px;height:30px;border-radius:8px 8px 0 0;display:flex;align-items:center;justify-content:center}'
+           '.tab.big{width:56px;height:46px}')
+    put('small.html', page('<div class="sheet">' + panel('light', '#DEE1E6', '#FFFFFF') + panel('dark', '#202124', '#35363A') + '</div>',
+                           extra=css))
+    jobs.append(dict(file='tests/small.html', out='test-small.png', w=640, h=360))
+    # 4. round social avatar raster (for the preview) + preview sheet
+    jobs.append(dict(file='tests/avatar.html', out='tests/avatar-1080.png', w=1080, h=1080))
+    put('avatar.html', page('<img src="../src/avatar-1080.svg" style="width:1080px;height:1080px">'))
+    put('preview.html', preview_html(files))
+    jobs.append(dict(file='tests/preview.html', out='preview-sheet.png', w=1600, h=1000))
+    json.dump(jobs, open(os.path.join(HERE, 'jobs.json'), 'w'), indent=1)
+    print('wrote tests/*.html and jobs.json (%d renders)' % len(jobs))
+
+
+def preview_html(files):
+    x, y, w, h = vbox(files['primary-logo.svg'])
+    ratio = w / h
+    css = f'''
+      body{{font-family:'Nunito Sans',sans-serif;color:{INK}}}
+      .board{{width:1600px;height:1000px;background:{WASH};position:relative;overflow:hidden}}
+      .card{{position:absolute;border-radius:18px;overflow:hidden;display:flex;align-items:center;justify-content:center}}
+      .lab{{position:absolute;left:24px;bottom:18px;font:700 13px/1 'Nunito Sans';letter-spacing:.08em;text-transform:uppercase}}
+      .lab span{{font-weight:600;letter-spacing:.02em;text-transform:none;opacity:.7;margin-left:8px}}
+      .head{{position:absolute;left:40px;top:28px;font:800 22px/1 'Bricolage Grotesque';letter-spacing:-.01em}}
+      .head span{{font:600 15px/1 'Nunito Sans';opacity:.65;margin-left:12px;letter-spacing:0}}
+    '''
+    spine_h = 48      # 0.5 in at 96 px/in
+    sx, sy, sw, sh = vbox(files['symbol.svg'])
+    sym_w_at = spine_h * sw / sh
+    spines = ''
+    for i, (col, title, fg) in enumerate(((SUN, 'Up! Go! More!', INK), (SKY, 'Woof! Moo! Beep!', PAPER), (TOMATO, 'Yum! Splash! Yawn!', PAPER))):
+        sym = 'symbol.svg' if fg == INK else 'symbol-white.svg'
+        spines += (f'<div style="width:84px;height:430px;background:{col};border-radius:4px;position:relative;box-shadow:inset -6px 0 0 rgba(0,0,0,.06)">'
+                   f'<div style="position:absolute;left:50%;top:26px;transform:translateX(-50%) rotate(90deg);transform-origin:center;'
+                   f'white-space:nowrap;font:800 24px/1 Bricolage Grotesque;color:{fg};width:0;display:flex;justify-content:center">'
+                   f'<span style="display:block;transform:translateY(120px)">{title}</span></div>'
+                   f'<img src="../{sym}" style="position:absolute;left:50%;bottom:16px;transform:translateX(-50%);height:{spine_h}px;width:{sym_w_at:.1f}px"></div>')
+    body = f'''
+    <div class="board">
+      <div class="head">Play Before Pixels<span>Logo concept v2-B, "Floor Time": a grown-up and a child on the floor, one ball between them</span></div>
+      <div class="card" style="left:40px;top:76px;width:1000px;height:360px;background:{PAPER}">
+        <img src="../primary-logo.svg" style="width:760px;height:{760/ratio:.1f}px">
+        <div class="lab">Primary logo<span>site header, full colour</span></div></div>
+      <div class="card" style="left:1070px;top:76px;width:490px;height:360px;background:{PAPER}">
+        <img src="avatar-1080.png" style="width:250px;height:250px;border-radius:50%;margin-top:-26px">
+        <div class="lab">Social avatar<span>1080 px, round crop</span></div></div>
+      <div class="card" style="left:40px;top:466px;width:600px;height:220px;background:{INK}">
+        <img src="../primary-logo-white.svg" style="display:none">
+        <img src="../primary-logo-reverse.svg" style="width:470px;height:{470/ratio:.1f}px;margin-top:-20px">
+        <div class="lab" style="color:{PAPER}">Reversed<span>on ink</span></div></div>
+      <div class="card" style="left:40px;top:716px;width:600px;height:244px;background:{PAPER}">
+        <img src="../primary-logo-black.svg" style="width:470px;height:{470/ratio:.1f}px;margin-top:-20px">
+        <div class="lab">One colour<span>black</span></div></div>
+      <div class="card" style="left:670px;top:466px;width:420px;height:494px;background:{PAPER};align-items:flex-end;padding-bottom:62px;box-sizing:border-box;gap:14px">
+        {spines}
+        <div class="lab">Board-book spines<span>symbol 0.5 in tall, actual size</span></div></div>
+      <div class="card" style="left:1120px;top:466px;width:440px;height:494px;background:{SKY_T}">
+        <svg width="300" height="400" viewBox="0 0 300 400" style="margin-top:-30px">
+          <path d="M92 118 C92 30 208 30 208 118" fill="none" stroke="{SUN_T}" stroke-width="20" stroke-linecap="round"/>
+          <path d="M92 118 C92 30 208 30 208 118" fill="none" stroke="#000" stroke-opacity=".06" stroke-width="20" stroke-linecap="round"/>
+          <rect x="20" y="104" width="260" height="290" rx="8" fill="{SUN_T}"/>
+          <rect x="20" y="104" width="260" height="14" fill="#000" fill-opacity=".05"/>
+        </svg>
+        <img src="../src/stacked-logo.svg" style="position:absolute;left:50%;top:232px;transform:translateX(-50%);width:150px">
+        <div class="lab">Tote<span>3-colour embroidery, symbol about 2.5 in wide</span></div></div>
+    </div>'''
+    return page(body, bg=WASH, extra=css)
 
 
 if __name__ == '__main__':

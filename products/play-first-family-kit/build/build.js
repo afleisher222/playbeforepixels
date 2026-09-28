@@ -418,7 +418,7 @@ function cover(ctx) {
   <p class="lede" style="font-size:14pt;max-width:6in"><b>Play First, Then Screens.</b> Jobs, then play and time together, then screens at their usual spot. A calm shape for the day, with nothing taken away.</p></div>
   <div style="flex:1;min-height:0;margin:.1in 0">${scene}</div>
   <div class="toc" style="grid-template-columns:repeat(5,1fr);gap:.08in">${[['playFirst', '10 printable tools'], ['boardGame', '24 together tokens'], ['setTable', 'Helping jobs + chore chart'], ['talkDay', '3-page family plan'], ['star30', '30-day tracker']].map(([a, t]) => `<div style="grid-template-columns:1fr;text-align:center;padding:.08in"><div style="display:flex;justify-content:center">${a === 'star30' ? `<svg class="art" viewBox="0 0 120 100" style="width:.78in;height:.65in"><circle class="disc" cx="60" cy="52" r="44"/><text x="60" y="66" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="600" font-size="40" fill="${C.tomato}">30</text></svg>` : art(a)}</div><div class="nm" style="font-size:8.6pt">${t}</div></div>`).join('')}</div>
-  <p class="small" style="text-align:center">Fillable PDF · pre-filled and blank · 4 colorways · Monday and Sunday starts · US Letter and A4 · ${ctx.low ? 'Low-ink edition' : 'Color edition'}</p>`;
+  <p class="small" style="text-align:center">Fillable PDF · pre-filled and blank · ${ctx.low ? 'ink-saving line art' : '4 colorways'} · Monday and Sunday starts · US Letter and A4 · ${ctx.low ? 'Low-ink edition (4 colorways in the color file)' : 'Color edition'}</p>`;
 }
 function inside(ctx, P) {
   const tiles = [
