@@ -58,7 +58,9 @@ h1,h2,h3,p{margin:0}
 .art .disc{fill:var(--t,var(--wash))}
 .art{display:block}
 /* footer */
-.ft{position:absolute;left:.5in;right:.5in;bottom:.19in;height:.2in;display:flex;align-items:center;justify-content:space-between;gap:.15in;font-size:6.2pt;color:var(--mute);white-space:nowrap}
+.ft{position:absolute;left:.5in;right:.5in;bottom:.25in;min-height:.2in;display:flex;align-items:center;justify-content:space-between;gap:.15in;font-size:6.2pt;color:var(--mute);white-space:nowrap}
+.ft>span:nth-child(2){white-space:normal;text-align:center;flex:1 1 auto;min-width:0;line-height:1.25}
+${sz.name === 'A4' ? '.page{padding-bottom:.87in}.ft{bottom:.5in}' : ''}
 .ft .fb{display:flex;align-items:center;gap:.08in;font-weight:800;color:var(--ink)}
 .ft .fb svg{height:.115in;width:auto;display:block}
 /* type */
@@ -311,7 +313,7 @@ ul.b li .ball{transform:translateY(-.005in)}
 // ---------------------------------------------------------------- page shell
 function footer(ctx, n) {
   const word = ctx.low ? LOGO.wordK : LOGO.word;
-  return `<footer class="ft"><span class="fb">${word}${ctx.store ? '<span>playbeforepixels.com</span>' : ''}</span><span>${T.COPY} Personal &amp; family use.</span><span>${T.VERSION} · ${n}</span></footer>`;
+  return `<footer class="ft"><span class="fb">${word}${ctx.store ? '<span>playbeforepixels.com</span>' : ''}</span><span>${T.COPY} <span style="white-space:nowrap">Personal &amp; family use.</span></span><span>${T.VERSION} · ${n}</span></footer>`;
 }
 function hd({ eyebrow, title, lede, age, prepT, extra = '', right = '' }) {
   return `<header class="hd"><div class="row"><span class="eyebrow">${eyebrow}</span><span class="chips">${age ? chip(age) : ''}${prepT ? prep(prepT) : ''}${extra}</span></div>
@@ -380,7 +382,7 @@ function guide2(ctx, P) {
       ['var(--tP)', 'Ages 11–12', 'Let them lead: they read the promises, suggest one of their own and help set the zones. Review the agreement on their birthday.'],
     ].map(([c, a, t]) => `<div style="background:${c}"><span class="eyebrow" style="color:var(--ink)">${a}</span><p class="body">${t}</p></div>`).join('')}</div>
   <div class="card"><div class="h2">If interest fades</div><p class="body">Skip a week. Swap the tracker for a new colorway. Let your child pick the next afternoon. Tired day? Just say “phones at the charging spot, let’s find something to do.” That counts.</p></div>
-  <div class="placeholder"><b>Founder’s note · placeholder</b><p class="body" style="color:var(--mute)">To be written by the founder in her own words (60–90 words) before release: why this kit exists and one real, everyday tip. This box is replaced, not printed as-is.</p></div>`;
+  ${T.FOUNDER_NOTE ? `<div class="card"><div class="h2">A note from us</div><p class="body">${T.FOUNDER_NOTE}</p></div>` : ''}`;
 }
 function tips(ctx, P) {
   return hd({ eyebrow: 'Section A · Printing, filling in and safety', title: 'Print it, fill it, post it', lede: 'About 5 minutes to print. Nothing has to be cut unless you want the signs.', age: 'grown', prepT: 'Prep 5 min' })

@@ -356,7 +356,9 @@ spreads.s6 = () => {
   s += P('M270 420 L204 330 L270 324 L316 420Z', C.s3) + P('M650 420 L716 330 L650 324 L604 420Z', C.s3) + P('M300 420 L320 360 L600 360 L620 420Z', C.s3);
   s += ada({ x: 460, y: 600, s: 1.1, face: 'face-laugh', noLegs: true, armL: { a: 158, b: -18 }, armR: { a: 158, b: -18 } });
   s += R(260, 418, 400, 310, C.s2, 8) ;
-  s += caveat(330, 600, '↑ this way up ↑', 34, C.s3);
+  // "this way up" with drawn arrows (Caveat has no U+2191; a glyph would fall back to a system font)
+  const upArrow = x => line(`M${x} 606 L${x} 578 M${x - 9} 588 L${x} 576 L${x + 9} 588`, C.s3, 4);
+  s += caveat(460, 600, 'this way up', 34, C.s3, 'text-anchor="middle"') + upArrow(372) + upArrow(548);
   s += rocketWithCrew(1230, 724, 0.92, 0, false);
   s += starU(1180, 560, C.sun, 0.7, 12) + starU(1290, 610, C.tomato, 0.55, -8) + caveat(1186, 700, 'ADA-1', 38, C.plum);
   s += ada({ x: 1470, y: 736, s: 1.05, face: 'face-smile', armL: { toW: [1330, 560], bend: 1, hold: R(-8, -44, 16, 52, C.tomato, 7) + R(-8, -52, 16, 12, C.ink, 5) }, armR: { a: 18, b: 10 } });
@@ -574,7 +576,7 @@ pages.push(page(1, PAGE_BG(C.paper) + Ci(408, 610, 220, C.tSun) + rocketWithCrew
    ...(authorLine ? [{ x: 60, y: 304, w: 696, cls: 'author center', html: esc(authorLine) }] : [])]));
 // p2 (L) copyright
 const ISBN_PB = need('isbn-paperback'), ISBN_HC = need('isbn-hardcover');
-const ISBN_BOX = (ISBN_PB || ISBN_HC) ? off => `<div class="t small" style="left:${60 + off}px;top:${566 + 12}px;width:400px"><p>${ISBN_PB ? `Paperback ISBN ${esc(ISBN_PB)}<br>` : ''}${ISBN_HC ? `Hardcover ISBN ${esc(ISBN_HC)}` : ''}</p></div>` : off => `<div class="isbn" style="left:${60 + off}px;top:${566 + 12}px"><b>ISBN / barcode</b><span>paperback and hardcover ISBNs<br>to be added by the publisher</span></div>`;
+const ISBN_BOX = (ISBN_PB || ISBN_HC) ? off => `<div class="t small" style="left:${60 + off}px;top:${566 + 12}px;width:400px"><p>${ISBN_PB ? `Paperback ISBN ${esc(ISBN_PB)}<br>` : ''}${ISBN_HC ? `Hardcover ISBN ${esc(ISBN_HC)}` : ''}</p></div>` : () => '';
 pages.push(page(2, PAGE_BG(C.wash) + G('translate(650 740) scale(0.66)', U('dog-lie')) + zzz(700, 630, 0.5, C.sky),
   [{ x: 60, y: 64, w: 640, cls: 'small', html: `<p><b>The Day the Tablet Slept</b></p>
 <p>© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. All rights reserved.</p>
@@ -589,7 +591,7 @@ pages.push(page(2, PAGE_BG(C.wash) + G('translate(650 740) scale(0.66)', U('dog-
 const ded = need('dedication');
 pages.push(page(3, PAGE_BG(C.tTomato) + rocketWithCrew(408, 730, 0.5, 0, false) + stars([[250, 590, .5, C.sun], [570, 550, .4, C.plum], [600, 670, .3, C.tomato]], C.sun),
   ded ? [{ x: 90, y: 130, w: 636, cls: 'ded center', html: md(ded) }] : [],
-  ded ? () => '' : slot(90, 110, 636, 300, 'Founder writes this page', 'Your dedication, in your own words.<br>Type it under <i>## dedication</i> in WORDS.md, then rebuild.<br>This box disappears once you do.')));
+  () => ''));
 // p4-p27 story spreads
 Object.keys(LAYOUT).forEach((k, i) => {
   const art = spreads[k](); const [L, Rt] = LAYOUT[k]; const no = 4 + i * 2;
@@ -616,7 +618,7 @@ pages.push(page(29, PAGE_BG(C.tGrass) + R(-12, -12, 840, 196, C.grass) + G('tran
   [{ x: 48, y: 44, w: 600, cls: 'talk-h', html: `Talk about it` },
    { x: 48, y: 118, w: 560, cls: 'talk-sub', html: `For grown-ups: after reading, try a few of these. Pause, wait, and let your child answer. There are no wrong answers.` }],
   off => `<ol class="qs" style="left:${48 + off}px;top:${214 + 12}px">${qs.map(([q, c], i) => `<li><span class="num" style="background:${c}">${i + 1}</span><span>${q}</span></li>`).join('')}</ol>
-<div class="tip" style="left:${48 + off}px;top:${556 + 12}px"><b>Read it again, and…</b> pause before “do?” and let your child fill it in. Say what you see (“Biscuit is jumping!”), repeat and add one word (“Splash!” → “Big splash!”), and follow your child’s lead. Shout, whisper, sign or point along to the “Shhh…” and the “WOOF!” A sign, a point or a tap on a talker (a device a child uses to talk) counts too, and a talker never takes a day off.<br><b>Talk, sing and read in the language you know best. Every language counts.</b></div>`));
+<div class="tip" style="left:${48 + off}px;top:${556 + 12}px"><b>Read it again, and…</b> pause before “do?” and let your child fill it in. Say what you see (“Biscuit is jumping!”), repeat and add one word (“Splash!” becomes “Big splash!”), and follow your child’s lead. Shout, whisper, sign or point along to the “Shhh…” and the “WOOF!” A sign, a point or a tap on a talker (a device a child uses to talk) counts too, and a talker never takes a day off.<br><b>Talk, sing and read in the language you know best. Every language counts.</b></div>`));
 // p30 (L) plan your own play day + bonus QR
 const qrSvg = (px, col = C.ink) => `<svg viewBox="-2 -2 ${QR.n + 4} ${QR.n + 4}" width="${px}" height="${px}" shape-rendering="crispEdges"><rect x="-2" y="-2" width="${QR.n + 4}" height="${QR.n + 4}" fill="#fff"/><path d="${QR.d}" fill="${col}"/></svg>`;
 const planRow = (y, label, icon, col) => G('', R(48, y, 720, 118, C.paper, 22) + R(48, y, 150, 118, col, 22) + R(150, y, 48, 118, col) + icon);
@@ -634,8 +636,9 @@ pages.push(page(30, PAGE_BG(C.tSky) + R(-12, -12, 840, 180, C.sky) +
 // p31 (R) a note from the author (founder writes it)
 const note = need('note');
 pages.push(page(31, PAGE_BG(C.tSun) + R(-12, 650, 840, 200, C.paper) + G('translate(640 600) scale(0.5)', U('dog-lie')),
-  [{ x: 60, y: 60, w: 696, cls: 'talk-h ink', html: `A note from the author` }, ...(note ? [{ x: 60, y: 150, w: 660, cls: 'note', html: md(note) }] : [])],
-  both(note ? () => '' : slot(60, 150, 696, 360, 'Founder writes this page', 'A short note in your own voice (60–120 words): why you wrote this story.<br>Type it under <i>## note</i> in WORDS.md, then rebuild.<br>Keep it about play, reading and family time. No health claims.'),
+  note ? [{ x: 60, y: 60, w: 696, cls: 'talk-h ink', html: `A note from the author` }, { x: 60, y: 150, w: 660, cls: 'note', html: md(note) }]
+    : [{ x: 60, y: 200, w: 696, cls: 'talk-h ink center', html: `This book belongs to` }],
+  both(note ? () => '' : off => `<div style="position:absolute;left:${138 + off}px;top:${360 + 12}px;width:540px;border-bottom:4px solid #1D2940"></div>`,
     off => `<div class="logo" style="left:${258 + off}px;top:${680 + 12}px;width:300px">${LOGO('lockup-horizontal.svg', 300)}</div><div class="t tag center" style="left:${60 + off}px;top:${764 + 12}px;width:696px">Books and printables for talking and playing together · playbeforepixels.com</div>`)));
 // p32 (L) endpaper
 // p32 (L) endpaper + "More from Play Before Pixels" (brand kit: last page shows the next products). Bottom third left clear for any printer mark.
@@ -683,7 +686,7 @@ const BACK_TEXT = [{ x: 56, y: 60, w: 690, cls: 'blurb', html: `<p class="blurb-
   { x: 56, y: 640, w: 300, cls: 'backmeta', html: `Picture book · Ages 3–7` }];
 const BACK_STRIP = `<div class="strip" style="left:56px;top:382px;width:690px"><b>Read it, then play it.</b> Pair it with <i>100 Screen-Free Plays</i> and get a free Play Day planner at <span class="nw">playbeforepixels.com</span></div>`;
 const BACK_EXTRA = BACK_STRIP + `<div class="logo" style="left:56px;top:722px;width:220px">${LOGO('lockup-horizontal-white.svg', 220)}</div>
-<div class="isbn back" style="left:588px;top:664px"><b>ISBN / barcode</b><span>2 × 1.2 in · keep clear</span></div>`;
+<div class="isbn back" style="left:588px;top:664px" aria-hidden="true"></div>`;
 // A canvas whose origin is trim (0,0); panel shows art from (ax, ay).
 function canvas(art, texts, extra, ax, ay) {
   return `<div class="canvas" style="left:${-ax - 200}px;top:${-ay - 200}px">
@@ -781,9 +784,7 @@ body { -webkit-print-color-adjust: exact; print-color-adjust: exact }
 .slot { position: absolute; border: 3px dashed #EE5A36; border-radius: 18px; background: rgba(255,255,255,.85); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; font-family: "Nunito Sans", sans-serif; color: #1D2940 }
 .slot b { font-size: 20px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #EE5A36; margin-bottom: 10px }
 .slot span { font-size: 17px; line-height: 1.5 }
-.isbn { position: absolute; width: 192px; height: 115px; background: #FFFFFF; border: 2px dashed #1D2940; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: "Nunito Sans", sans-serif; color: #1D2940; text-align: center }
-.isbn b { font-size: 15px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase }
-.isbn span { font-size: 11.5px; margin-top: 4px; line-height: 1.3 }
+.isbn { position: absolute; width: 192px; height: 115px; background: #FFFFFF } /* 2 x 1.2 in barcode area, left plain: the printer places its barcode here (move it to the spot the printer's cover template gives; UNVERIFIED) */
 .panel { position: absolute; overflow: hidden }
 .strip { position: absolute; font-family: "Nunito Sans", sans-serif; font-weight: 600; font-size: 17px; line-height: 1.4; color: #1D2940; background: #FEF4D8; border-radius: 16px; padding: 10px 18px }
 .strip b { font-weight: 800; color: #EE5A36 }

@@ -58,7 +58,7 @@ write('cover.html', base(768, 960, coverCss) + coverInner());
     <p class="note">For families with children aged 1 to 12. Black-and-white interior. Parent education, not medical advice.</p>
     <div class="series"><b>Free bonus inside:</b> color trackers, a certificate to print and a monthly play email at ${BONUS}</div>
     <div class="series"><b>Collect the Play Before Pixels shelf</b><span>100 Screen-Free Plays · The Day the Tablet Slept · Up! Go! More!</span></div>
-    <div class="bot"><div><img src="${LOGO}" alt="Play Before Pixels"><div class="site">${SITE}</div></div><div class="isbn">ISBN / barcode<br><small>KDP places the barcode here</small></div></div>
+    <div class="bot"><div><img src="${LOGO}" alt="Play Before Pixels"><div class="site">${SITE}</div></div><div class="isbn" aria-hidden="true"></div></div>
   </div>`;
   const css = `@page{size:${Wd}in ${Hd}in;margin:0}html,body{width:${Wd}in;height:${Hd}in}
   .wrap{position:relative;width:${Wd}in;height:${Hd}in;background:${C.tSun};display:flex}
@@ -75,7 +75,7 @@ write('cover.html', base(768, 960, coverCss) + coverInner());
   .note{font-size:10pt;color:#3A4660;margin-top:.12in}
   .series{margin-top:.2in;background:#fff;border-radius:14px;padding:.14in .18in;font-size:10.5pt}.series b{display:block}
   .bot{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end}.bot img{height:.5in}.site{font-weight:700;font-size:10pt;margin-top:.04in}
-  .isbn{width:2in;height:1.2in;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:10pt;border:1px dashed #9AA6BC}.isbn small{font-weight:400;font-size:7.5pt}
+  .isbn{width:2in;height:1.2in;background:#fff} /* plain barcode area, no label or outline: KDP prints its own barcode at the lower right of the back cover (UNVERIFIED; check KDP's template) */
   ${coverCss}`;
   write('cover-wrap.html', base(px(Wd), px(Hd), css) + `<div class="wrap"><div class="panel bp">${back}</div><div class="panel sp"></div><div class="panel fp"><div class="cvw" style="width:768px;height:960px">${coverInner()}</div></div></div><!-- ${pages} pages; spine ${spine} in; wrap ${Wd} x ${Hd} in -->`);
   fs.writeFileSync(path.join(B, 'cover-wrap.json'), JSON.stringify({ pages, spine_in: spine, wrap_in: [Wd, Hd], paper: 'white, black ink', note: 'No spine text: at this spine width KDP’s 0.0625 in spine margins leave no room [VERIFY in KDP cover calculator].' }, null, 2));
@@ -131,7 +131,11 @@ for (const [key, w, h] of [['letter', 8.5, 11], ['a4', 8.27, 11.69]]) {
   .hero{display:flex;gap:.2in;align-items:center;background:${C.tSun};border-radius:18px;padding:.2in}.hero .sc{width:3in;height:2.1in;flex:none}
   .box{background:${C.tSky};border-radius:12px;padding:.12in .16in;font-size:10pt;margin-top:.12in}
   .moves5{margin-top:.2in;background:${C.tGrass};border-radius:14px;padding:.16in .2in}.moves5 ol{padding-left:.22in;margin:.08in 0}.moves5 li{font-size:10.3pt;line-height:1.45;margin-bottom:.04in}
-  .cta{margin-top:auto;display:flex;gap:.2in;align-items:center;background:${C.tSun};border-radius:14px;padding:.16in}.cta p{font-size:10pt}`;
+  .cta{margin-top:auto;display:flex;gap:.2in;align-items:center;background:${C.tSun};border-radius:14px;padding:.16in}.cta p{font-size:10pt}
+  .copy3{font-size:7.5pt;color:#4A5570;margin-top:.1in}
+  .tk{display:inline-block;width:.8em;height:.8em;vertical-align:-.08em;margin-right:.15em}`;
+  const RING = `<svg class="tk" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.2" fill="none" stroke="${C.ink}" stroke-width="1.1"/></svg>`;
+  const STAR = `<svg class="tk" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 .6l1.3 2.9 3.1.3-2.4 2.1.7 3.1L5 7.4 2.3 9l.7-3.1L.6 3.8l3.1-.3z" fill="none" stroke="${C.ink}" stroke-width=".9" stroke-linejoin="round"/></svg>`;
   const foot = n => `<div class="foot"><span><img src="${MARK}" style="height:.14in;vertical-align:-.03in"> 7 Days of Play First · free starter from ${esc(K.TITLE)}</span><span>${SITE} · ${K.VERSION} · ${n}</span></div>`;
   write(`starter-${key}.html`, base(816, 1056, css) + `
   <section class="page">
@@ -141,7 +145,7 @@ for (const [key, w, h] of [['letter', 8.5, 11], ['a4', 8.27, 11.69]]) {
     <div class="spot"><div>When</div><div>Where</div><div>What</div><div>How it ends</div></div>
     <div class="box"><b>How it ends, every day:</b> a warning (“Two more minutes, then the tablet goes to sleep”), a clear ending (the episode ends or a timer rings) and a landing (“Now we go outside”).</div>
     <h3 style="font-size:15pt;margin:.2in 0 .04in">7-day tracker</h3>
-    <div class="grid">${picks.map((d, i) => `<div class="cell" style="border-top-color:${wc(d.d).c}"><b>${i + 1}</b>${esc(d.play.t)}<br><br>○ played<br>○ spot kept<br>☆ again!</div>`).join('')}</div>
+    <div class="grid">${picks.map((d, i) => `<div class="cell" style="border-top-color:${wc(d.d).c}"><b>${i + 1}</b>${esc(d.play.t)}<br><br>${RING} played<br>${RING} spot kept<br>${STAR} again!</div>`).join('')}</div>
     <p style="font-size:8.5pt;color:#4A5570">Every play follows our published safety rules: a grown-up is always there; nothing small enough to fit through a toilet-paper tube for under-3s; no balloons for under-8s; water play always supervised. Parent education, not medical advice.</p>
     ${foot(1)}
   </section>
@@ -156,6 +160,7 @@ for (const [key, w, h] of [['letter', 8.5, 11], ['a4', 8.27, 11.69]]) {
       <ol>${['pause and wait', 'say what you see', 'repeat and add one', 'offer a choice', 'follow their lead'].map(k => { const m = Object.values(K.MOVES).find(x => x.name.toLowerCase() === k); return `<li><b>${esc(m.name)}.</b> ${esc(m.tip)}</li>`; }).join('')}</ol>
       <p style="font-size:9.5pt;color:#4A5570">Talk, sing and read in the language you know best. A sign, a point or a tap on a device counts as communicating.</p></div>
     <div class="cta"><div><img src="${MARK}" style="height:.9in"></div><div><b class="bric" style="font-size:14pt">Want the whole month?</b><p>${esc(K.TITLE)}: 30 short lessons by email, 30 plays, plain words for 30 tricky moments and a full workbook. $27, with a 30-day money-back guarantee. Written program; no videos, calls or coaching.</p><p><b>${SITE}/30-days</b></p></div></div>
+    <p class="copy3">${COPY} Free to print for use in your own home. Parent education, not medical advice.</p>
     ${foot(3)}
   </section>`);
 }
@@ -312,7 +317,7 @@ L(8, 'guarantee-and-bundle', `<div class="k">Simple pricing</div><h1>$27, or $49
 <section class="guar"><div class="wrap"><div class="k">Our guarantee</div><h2>30 days, full refund, no questions</h2><p class="lead">If the program isn’t right for your family, email us within 30 days of purchase for a full refund. You don’t need to have finished anything, and you don’t need to explain.</p></div></section>
 
 <section><div class="wrap">
-  ${K.FOUNDER.salesNote === 'skip' ? '' : K.FOUNDER.salesNote ? `<div class="k">A note from us</div><p class="lead">${esc(K.FOUNDER.salesNote)}</p>` : `<div class="founder"><b style="color:${C.tomato}">FOUNDER WRITES THIS (optional):</b> a short note in your own words about why you made this program. Put it in FOUNDER.salesNote in build/content.js, or set it to 'skip' to leave this section out. No names, photos or credentials needed. Reviews go here only after the founding beta, with written permission, and never about speech, development or behavior results.</div>`}
+  ${K.FOUNDER.salesNote && K.FOUNDER.salesNote !== 'skip' ? `<div class="k">A note from us</div><p class="lead">${esc(K.FOUNDER.salesNote)}</p>` : ''}
 </div></section>
 
 <section class="faq" style="padding-top:20px"><div class="wrap"><div class="k">Questions</div><h2>Questions parents ask</h2>${faq}</div></section>

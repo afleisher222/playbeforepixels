@@ -17,7 +17,7 @@ h1,h2,h3,.bric{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-w
   .note{font-size:10pt;color:#3A4660;margin-top:.12in}
   .series{margin-top:.2in;background:#fff;border-radius:14px;padding:.14in .18in;font-size:10.5pt}.series b{display:block}
   .bot{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end}.bot img{height:.5in}.site{font-weight:700;font-size:10pt;margin-top:.04in}
-  .isbn{width:2in;height:1.2in;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:10pt;border:1px dashed #9AA6BC}.isbn small{font-weight:400;font-size:7.5pt}
+  .isbn{width:2in;height:1.2in;background:#fff} /* plain barcode area, no label or outline: KDP prints its own barcode at the lower right of the back cover (UNVERIFIED; check KDP's template) */
   .cv{width:100%;height:100%;background:#FEF4D8;display:flex;flex-direction:column;align-items:center;text-align:center}
 .top{display:flex;align-items:center;gap:22px}.n{font-family:"Bricolage Grotesque";font-weight:800;font-size:236px;line-height:.8;color:#EE5A36;letter-spacing:-.04em}
 .t{font-family:"Bricolage Grotesque";font-weight:800;font-size:74px;line-height:.92;text-align:left}
@@ -39,7 +39,7 @@ h1,h2,h3,.bric{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-w
     <p class="note">For families with children aged 1 to 12. Black-and-white interior. Parent education, not medical advice.</p>
     <div class="series"><b>Free bonus inside:</b> color trackers, a certificate to print and a monthly play email at playbeforepixels.com/bonus/course-screen-reset</div>
     <div class="series"><b>Collect the Play Before Pixels shelf</b><span>100 Screen-Free Plays · The Day the Tablet Slept · Up! Go! More!</span></div>
-    <div class="bot"><div><img src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><div class="site">playbeforepixels.com</div></div><div class="isbn">ISBN / barcode<br><small>KDP places the barcode here</small></div></div>
+    <div class="bot"><div><img src="../../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><div class="site">playbeforepixels.com</div></div><div class="isbn" aria-hidden="true"></div></div>
   </div></div><div class="panel sp"></div><div class="panel fp"><div class="cvw" style="width:768px;height:960px"><div class="cv" style="padding:60px 56px 48px">
   <div class="top"><div class="n">30</div><div class="t">Days<br>of</div></div>
   <div class="bf">Back-and-Forth</div>

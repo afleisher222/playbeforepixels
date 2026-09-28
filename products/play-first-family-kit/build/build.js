@@ -60,7 +60,9 @@ h1,h2,h3,p{margin:0}
 .art.a-bubbles .disc{fill:var(--tK)!important}
 .low .art.ghost{opacity:.35}
 /* footer */
-.ft{position:absolute;left:.5in;right:.5in;bottom:.19in;height:.2in;display:flex;align-items:center;justify-content:space-between;gap:.15in;font-size:6.2pt;color:var(--mute);white-space:nowrap}
+.ft{position:absolute;left:.5in;right:.5in;bottom:.25in;min-height:.2in;display:flex;align-items:center;justify-content:space-between;gap:.15in;font-size:6.2pt;color:var(--mute);white-space:nowrap}
+.ft>span:nth-child(2){white-space:normal;text-align:center;flex:1 1 auto;min-width:0;line-height:1.25}
+${sz.name === 'A4' ? '.page{padding-bottom:.87in}.ft{bottom:.5in}' : ''}
 .ft .fb{display:flex;align-items:center;gap:.08in;font-weight:800;color:var(--ink)}
 .ft .fb svg{height:.115in;width:auto;display:block}
 /* type */
@@ -287,7 +289,7 @@ ul.b li .ball{transform:translateY(-.01in)}
 // ---------------------------------------------------------------- page shell
 function footer(ctx, n) {
   const word = ctx.low ? LOGO.wordK : LOGO.word;
-  return `<footer class="ft"><span class="fb">${word}${ctx.store ? '<span>playbeforepixels.com</span>' : ''}</span><span>${T.COPY} Personal &amp; family use.</span><span>${T.VERSION} · ${n}</span></footer>`;
+  return `<footer class="ft"><span class="fb">${word}${ctx.store ? '<span>playbeforepixels.com</span>' : ''}</span><span>${T.COPY} <span style="white-space:nowrap">Personal &amp; family use.</span></span><span>${T.VERSION} · ${n}</span></footer>`;
 }
 function hd({ eyebrow, title, lede, age, prepT, right = '' }) {
   return `<header class="hd"><div class="row"><span class="eyebrow">${eyebrow}</span><span class="chips">${age ? chip(age) : ''}${prepT ? prep(prepT) : ''}</span></div>
@@ -519,7 +521,7 @@ function guide2(ctx) {
   <div class="rhythm">${[['alarm', '5 more minutes', 'var(--tS)'], ['devicesSleep', 'Screens go to sleep', 'var(--tP)'], ['kickBall', 'What we do next', 'var(--tG)']].map(([a, t, c], i) => `${i ? '<div class="ar"><svg viewBox="0 0 20 30" width=".2in" height=".3in"><path d="M4 3L16 15 4 27" stroke="var(--ink)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>' : ''}<div class="rs" style="background:${c}">${art(a)}<div class="kid">${t}</div></div>`).join('')}</div>
   <div class="steps"><div class="card"><div class="h2">When stopping is hard</div><p class="body">Stay close and name it: “It’s hard to stop. You wish it was longer.” Then show <b>What we do next</b>. Big feelings at the end are normal, and the spot comes back tomorrow.</p></div>
   <div class="card"><div class="h2">If interest fades</div><p class="body">Move the chart, swap in a fresh token, or fill in a blank checklist for a grown-up; kids love ticking yours. Tired day? Just say the rhythm out loud: “Jobs, play, then screens.” That counts.</p></div></div>
-  <div class="placeholder"><b>Founder’s note · placeholder</b><p class="body" style="color:var(--mute)">To be written by the founder in her own words (60–90 words) before release: why this kit exists and one real, everyday tip. This box is replaced, not printed as-is.</p></div>`;
+  ${T.FOUNDER_NOTE ? `<div class="card"><div class="h2">A note from us</div><p class="body">${T.FOUNDER_NOTE}</p></div>` : ''}`;
 }
 function tips(ctx) {
   return hd({ eyebrow: 'Section A · Printing, laminating, velcro and safety', title: 'Print it, make it last', lede: 'About 20 minutes to print and cut, then reusable. The checklists need no cutting: start today.', age: 'grown', prepT: 'Prep 20 min total' })

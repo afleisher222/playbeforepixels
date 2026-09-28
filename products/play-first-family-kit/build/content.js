@@ -135,4 +135,8 @@ const PLAYS30 = [
   { from: 12, needs: 'Whatever the play needs', prep: 0, mess: 'low', play: 15, easy: 'Pick the shortest favorite.', hard: 'Make it bigger than last time.', two: 'Any 2-minute version on these pages.', say: '“Which one? Why that one?”' },
 ];
 
-module.exports = { VERSION, COPY, BONUS, CHECK, SCREEN_NOTE, TOKENS, SPOT_CARDS, HELP, CHORES, RULES, DAYS30, PLAYS30 };
+// Optional founder's note for the grown-up guide (60–90 words, her own words; template in ../founder-notes.md).
+// Leave '' and nothing prints.
+const FOUNDER_NOTE = '';
+
+module.exports = { FOUNDER_NOTE, VERSION, COPY, BONUS, CHECK, SCREEN_NOTE, TOKENS, SPOT_CARDS, HELP, CHORES, RULES, DAYS30, PLAYS30 };

@@ -203,4 +203,8 @@ const FAQ = [
   ['Is this medical or professional advice?', 'No. It’s parent education and family planning. For questions about your child’s health or development, talk with your child’s doctor.'],
 ];
 
-module.exports = { VERSION, COPY, BONUS, TITLE, BIG_IDEA, READY, MISSIONS, KID_PROMISES, GROWN_PROMISES, WHEN_WRONG, ZONES, TIMES, SIGNS, AFTERNOONS, CHECKIN, FAQ };
+// Optional founder's note for the grown-up guide (60–90 words, her own words; template in ../founder-notes.md).
+// Leave '' and nothing prints.
+const FOUNDER_NOTE = '';
+
+module.exports = { FOUNDER_NOTE, VERSION, COPY, BONUS, TITLE, BIG_IDEA, READY, MISSIONS, KID_PROMISES, GROWN_PROMISES, WHEN_WRONG, ZONES, TIMES, SIGNS, AFTERNOONS, CHECKIN, FAQ };

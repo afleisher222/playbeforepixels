@@ -54,8 +54,8 @@ function tuck(d, guide) {
       <h2>${d.title} Cards</h2><p>${d.blurb}</p>
       <ul>${d.inside.map(t => `<li>${t}</li>`).join('')}</ul>
       <p class="warn">${d.warn}</p>
-      <p class="cr">${K.COPY} ${K.VERSION}. Printed on demand. playbeforepixels.com</p>
-      <div class="upc">Barcode / UPC<small>only if the seller channel requires one</small></div></div>`;
+      <p class="cr">${K.COPY} ${K.VERSION}. Printed on demand. playbeforepixels.com</p></div>`;
+  // No barcode box: add a UPC only if a seller channel requires one, in the spot the chosen printer's tuck-box template gives.
   const side = rot => `<div class="sd" style="transform:rotate(${rot}deg)"><b>${d.title} Cards</b> · ${d.sub}</div>`;
   let art = '';
   // bleed-filled background under the whole die, white where waste

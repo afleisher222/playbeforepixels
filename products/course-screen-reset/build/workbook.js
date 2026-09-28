@@ -578,7 +578,7 @@ ${V.book ? ".tcn{font-size:12pt!important}.tck{font-size:6.6pt!important}.field.
 .wkkeep{font-size:9.8pt!important;border-top:1.5px solid rgba(29,41,64,.15);padding-top:.06in}
 .wkk{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:10pt;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.05in}
 .wksc{width:2.9in;height:2.65in;flex:none}
-${V.book ? '.wksc{width:2.45in;height:2.22in}.wkhead{margin-bottom:.1in}.wkdays{margin-bottom:.1in}.bands{margin-bottom:.1in}' : ''}
+${V.book ? '.wksc{width:2.45in;height:2.22in}.wkhead{margin-bottom:.1in}.wkdays{margin-bottom:.1in}.bands{margin-bottom:.1in}.spot{margin-bottom:.1in}.never,.ending{margin-bottom:.08in}' : ''}
 .wkdays{display:grid;grid-template-columns:1fr 1fr;gap:.06in .2in;margin-bottom:.14in}
 .wkd{display:flex;gap:.1in;align-items:center}
 .wkd b{display:block;font-size:10pt;line-height:1.2}
@@ -661,7 +661,7 @@ ${V.book ? '.wksc{width:2.45in;height:2.22in}.wkhead{margin-bottom:.1in}.wkdays{
 .fpr b{font-family:"Bricolage Grotesque",sans-serif;font-size:11pt}
 .sign{margin-top:auto;display:grid;grid-template-columns:auto 1fr auto 1.4in;gap:.1in;align-items:end;font-weight:700}
 .sign .field{margin:0}
-${V.book ? `.certpage .inner{padding-top:${V.bleed + .42}in!important;padding-bottom:${V.bleed + .62}in!important}` : '.certpage .inner{padding:.5in .5in .7in!important}'}
+${V.book ? `.certpage .inner{padding-top:${V.bleed + .42}in!important;padding-bottom:${V.bleed + .8}in!important}` : '.certpage .inner{padding:.5in .5in .7in!important}'}
 .cert{flex:1;border:6px solid ${C.sun};border-radius:26px;display:flex;flex-direction:column;align-items:center;text-align:center;padding:.3in .4in .2in;outline:2px solid ${C.sun};outline-offset:-14px}
 .cstars{display:flex;gap:.12in;align-items:center;margin-bottom:.1in}
 .cstars svg{display:block}

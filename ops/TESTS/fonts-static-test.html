@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Brand fonts: static-instance test page</title>
+<!-- Test page for brand/fonts/static (ops/TESTS/fonts-static.md).
+     One PDF page per sample: every family / style / weight in brand/fonts/fonts.css, at sizes
+     at or above the opsz pin ([exact]: must match the variable-font render) and below it
+     ([opsz]: Chromium's auto optical sizing gave the variable font opsz = px size, the static
+     instance has one fixed opsz, so a difference is expected and measured), plus one row per
+     face with a glyph from every unicode-range subset file.
+     Static render:   node brand/render.js pdf ops/TESTS/fonts-static-test.html <out>/static.pdf
+     Variable render: node brand/fonts/render_variable.js ops/TESTS/fonts-static-test.html <out>/variable.pdf
+     Compare:         python3 brand/fonts/compare_pdfs.py <out>/variable.pdf <out>/static.pdf -->
+<link rel="stylesheet" href="../../brand/fonts/fonts.css">
+<style>
+@page { size: 12in 2.5in; margin: 0 }
+html, body { margin: 0; padding: 0; background: #FFFFFF; color: #1D2940 }
+.row { position: relative; width: 12in; height: 2.5in; overflow: hidden; page-break-after: always; break-after: page }
+.label { position: absolute; left: 24px; top: 10px; font: 400 12px/1 'Nunito Sans', sans-serif; color: #636363; white-space: nowrap }
+.sample { position: absolute; left: 24px; top: 40px; white-space: nowrap; line-height: 1.15 }
+</style></head>
+<body>
+<script>
+// family -> {style: [weights]}, opsz pin (null = no opsz axis), sizes, subset coverage text.
+const FACES = [
+  { fam: 'Bricolage Grotesque', faces: { normal: [700, 800] }, pin: 96, sizes: [14, 24, 48, 96, 128],
+    cover: 'Sofía Łódź Việt' },
+  { fam: 'Nunito Sans', faces: { normal: [400, 500, 600, 700, 800, 900], italic: [400, 500, 600, 700, 800] }, pin: 12,
+    sizes: [7, 9, 11, 12, 16, 32], cover: 'Sofía Ñúñez · Łódź · Tiếng Việt · Привет · Ѣѣ Ҍҍ · “quotes” — ‘ok’ … € £ ©' },
+  { fam: 'Fredoka', faces: { normal: [400, 500, 600, 700] }, pin: null, sizes: [12, 28, 64],
+    cover: 'Sofía Ñúñez · Łukasz Šárka Žofie · שלום' },   // Fredoka's latin-ext file has only 22 glyphs (no ź, ę, ő...)
+  { fam: 'Caveat', faces: { normal: [500, 700] }, pin: null, sizes: [16, 40, 96],
+    cover: 'Sofía Ñúñez · Łódź · Привет · Ѣѣ Ҍҍ' },
+];
+const text = px => px >= 64 ? 'Play first 0123' : px >= 20
+  ? 'Hamburgefonstiv · Play first, then talk 0123'
+  : 'Hamburgefonstiv · Play first, then talk about it together · 0123456789 ?!&@ “quotes” — ‘ok’';
+const out = [];
+const row = (label, style, t) => out.push(`<section class="row"><div class="label">${label}</div><div class="sample" style="${style}">${t}</div></section>`);
+for (const F of FACES) {
+  for (const [st, ws] of Object.entries(F.faces)) {
+    for (const w of ws) {
+      for (const px of F.sizes) {
+        const exact = F.pin === null || px >= F.pin;
+        const why = F.pin === null ? 'no opsz axis' : exact ? `opsz ${F.pin} both` : `variable opsz ${px}, static opsz ${F.pin}`;
+        row(`${exact ? '[exact]' : '[opsz]'} ${F.fam} ${w} ${st} · ${px}px · ${why}`,
+          `font-family:'${F.fam}';font-weight:${w};font-style:${st};font-size:${px}px`, text(px));
+      }
+      const cpx = F.pin && F.pin > 32 ? F.pin : 32;
+      row(`[exact] ${F.fam} ${w} ${st} · ${cpx}px · every subset file`,
+        `font-family:'${F.fam}';font-weight:${w};font-style:${st};font-size:${cpx}px`, F.cover);
+    }
+  }
+}
+// Synthetic cases that products use: Bricolage italic (no italic face: oblique is synthesised from
+// the upright 800) and Bricolage 900 (clamped to 800 before, nearest face 800 now).
+row('[exact] Bricolage Grotesque 800 italic (synthetic oblique) · 96px · opsz 96 both',
+  "font-family:'Bricolage Grotesque';font-weight:800;font-style:italic;font-size:96px", 'Play first 0123');
+row('[exact] Bricolage Grotesque 900 (renders as 800) · 96px · opsz 96 both',
+  "font-family:'Bricolage Grotesque';font-weight:900;font-size:96px", 'Play first 0123');
+row('[exact] Fredoka 800 (renders as 700) · 64px · no opsz axis',
+  "font-family:'Fredoka';font-weight:800;font-size:64px", 'Play first 0123');
+document.body.insertAdjacentHTML('beforeend', out.join('\n'));
+</script>
+</body></html>

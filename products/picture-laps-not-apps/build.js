@@ -431,6 +431,9 @@ const need = k => { if (!(k in W)) throw new Error(`WORDS.md is missing the sect
 const DRAFTS = Object.keys(W).filter(k => W[k].draft);
 const AUTHOR = (W.author && W.author.text) || '';
 const AUTHOR_NOTE = (W['author note'] && W['author note'].text) || '';
+// ISBN for the copyright page, from WORDS.md "## isbn" if that section is ever added. A personalized one-reader edition
+// normally carries none (UNVERIFIED for Lulu); nothing prints while it is empty. See founder-notes.md.
+const ISBN = (W.isbn && W.isbn.text) || '';
 const SHOW_SLOTS = MODE !== 'order' || !!ARGS['allow-drafts'];
 if (MODE === 'order' && !ARGS['allow-drafts']) {
   const left = [...DRAFTS.map(k => `"## ${k}" is still marked (draft)`), ...(AUTHOR_NOTE ? [] : ['"## author note" is empty'])];
@@ -487,7 +490,7 @@ pages.push(`<div class="page">${svgPage(rect(0, 0, 875, 875, C.paper) + `<ellips
   text(640, 440, 'saved for you', 44, C.tomato, 'Caveat', 700) + `<path d="M606 456 Q570 486 536 516" stroke="${C.tomato}" stroke-width="4" fill="none" stroke-linecap="round"/>`)}
   <div class="tp"><h1>Laps <span>Not</span> Apps</h1>
     <p data-fit="title-tagline" data-min="15">${TAGLINE}</p>
-    ${AUTHOR ? `<p class="byline">${fill(AUTHOR)}</p>` : `<p class="byline">A Play Before Pixels read-aloud</p>${slot('Founder: your byline (optional)', 'Type it under <i>## author</i> in WORDS.md, e.g. “Words by …”', 'small')}`}
+    <p class="byline">${AUTHOR ? fill(AUTHOR) : 'A Play Before Pixels read-aloud'}</p>
   </div>
   <div class="tp-foot logo">${LOGO('lockup-horizontal.svg')}</div>
 </div>`);
@@ -501,10 +504,9 @@ pages.push(`<div class="page">${svgPage(rect(0, 0, 875, 875, C.paper))}
     <p>All rights reserved. No part of this book may be reproduced, stored or shared in any form without written permission from the publisher, except for brief quotations in reviews.</p>
     <p>Published by AlphaPlay LLC, doing business as Play Before Pixels${ETSY ? '' : '<br>playbeforepixels.com'}</p>
     <p>First edition 2026 · ${VERSION}</p>
-    <div class="isbn-inline">ISBN: <span class="box">ISBN — to be supplied</span></div>
+    ${ISBN ? `<p>ISBN ${fill(ISBN)}</p>` : ''}
     <p>Read together, and keep books away from mouths. The lap games in this book are for play and connection, always with an adult close by. This book is general parent education. It is not medical or developmental advice.</p>
     <p>Illustrations are flat vector art. Text is set in Fredoka and Nunito Sans, with titles in Bricolage Grotesque.</p>
-    <div class="printbox">Printer / manufacturing lines — to be supplied</div>
   </div>
 </div>`);
 
@@ -612,8 +614,8 @@ const NEXT = [
 ];
 pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.paper))}
   <div class="mat last">
-    <div class="kicker">A note from the author</div>
-    ${AUTHOR_NOTE ? `<div class="an">${AUTHOR_NOTE.split('\n').filter(Boolean).map(p => `<p>${fill(p)}</p>`).join('')}</div>` : slot('Founder writes this', '40–80 words in your own voice: why you made this book. Type it under <i>## author note</i> in WORDS.md, then rebuild. Real orders will not build until you do.', 'an-slot')}
+    ${AUTHOR_NOTE ? `<div class="kicker">A note from the author</div>
+    <div class="an">${AUTHOR_NOTE.split('\n').filter(Boolean).map(p => `<p>${fill(p)}</p>`).join('')}</div>` : ''}
     <h2 class="mf">More from Play Before Pixels</h2>
     <p class="mf-sub">Next for your little one’s age</p>
     <div class="tiles">${NEXT.map(([t, d, c, bg]) => `<div class="tile" style="background:${bg}"><i style="background:${c}"></i><b>${t}</b><span>${d}</span></div>`).join('')}</div>
@@ -648,7 +650,7 @@ const BACK = `<div class="page back">${svgPage(rect(0, 0, 875, 875, C.sun) + `<c
     <div class="srow"><i style="background:${C.grass}"></i>Up! Go! More!</div>
   </div>
   <div class="bk-foot"><div class="logo">${LOGO('lockup-horizontal-white.svg')}</div><div class="bk-age">Ages 0–5 · Personalized keepsake${ETSY ? '' : ' · playbeforepixels.com'}</div></div>
-  <div class="isbn">ISBN / barcode</div>
+  <div class="isbn" aria-hidden="true"></div>
 </div>`;
 pages.push(BACK);
 
@@ -768,7 +770,7 @@ body { font-family: "Nunito Sans", sans-serif; color: ${C.ink} }
 .bk-foot { position: absolute; left: .6in; bottom: .56in; color: #fff } /* text stays inside the 0.5 in (bleed + safe) margin */
 .bk-foot .logo { width: 1.5in }
 .bk-age { margin-top: .06in; font-weight: 700; font-size: 9.5pt; color: #fff }
-.isbn { position: absolute; right: .55in; bottom: .55in; width: 2in; height: 1.2in; background: #fff; border: 1.5px dashed ${C.ink}; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 10pt; color: ${C.ink}; border-radius: 4px }
+.isbn { position: absolute; right: .55in; bottom: .55in; width: 2in; height: 1.2in; background: #fff } /* plain 2 x 1.2 in barcode area, no label or outline; match it to the printer's cover template (UNVERIFIED) */
 `;
 
 // Shrink-to-fit for every variable line (long names, long messages). Results land in window.__fit and <html data-fit>.

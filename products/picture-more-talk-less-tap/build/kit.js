@@ -95,8 +95,7 @@ page('inside', 'Inside this kit', () => `
   <div><b>Mon</b>Read the bonus story. Meet the four blocks.</div><div><b>Tue</b>Your first round with the teacher script.</div>
   <div><b>Wed</b>Pass the Talking Star (variation 1).</div><div><b>Thu</b>Add-One Story Tower (variation 2).</div>
   <div><b>Fri</b>Count the tower, sign the certificate, send the family page home.</div></div></div>
-<div class="fwrap">${W.one('founder-note') ? `<div class="fnote"><h4>A note from the maker</h4><p>${W.one('founder-note')}</p></div>` :
-    founderBox('FOUNDER: “A note from the maker”.', 'Write 2–3 sentences in your own words in WORDS.md, section “founder-note”. This dashed box disappears once filled.')}</div>`);
+${W.one('founder-note') ? `<div class="fwrap"><div class="fnote"><h4>A note from the maker</h4><p>${W.one('founder-note')}</p></div></div>` : ''}`);
 function glyphChip(t, s = 40) {
   return INK ? `<span class="chip" style="background:#fff;border:2.5px solid ${BLOCK[t].col};width:${s * 1.45}px;height:${s}px">${glyph(t, s * 0.9, true)}</span>`
     : `<span class="chip" style="background:${BLOCK[t].col};width:${s * 1.45}px;height:${s}px">${glyph(t, s * 0.9)}</span>`;
@@ -411,8 +410,7 @@ page('terms', 'License terms and copyright', `
     <p class="small">You <b>may</b> share a link to our shop, or a photo of the game in use showing no more than one page. Full terms and extra licenses: playbeforepixels.com/license</p></div>
   <div><h4>Copyright</h4><p class="small"><b>${NAME} Classroom Game Kit</b> and the bonus story <i>More Talk, Less Tap</i>. First edition 2026 · ${VERSION}.</p>
     <p class="small">© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. All rights reserved. Published by AlphaPlay LLC, doing business as Play Before Pixels · playbeforepixels.com</p>
-    <p class="small">General classroom play ideas; not a program, assessment, screening tool or professional advice. Adults supervise all activities. The characters in the story are imaginary.</p>
-    <div class="isbn"><b>ISBN / barcode</b><span>Not needed for this PDF. Only for a future print edition.</span></div></div>
+    <p class="small">General classroom play ideas; not a program, assessment, screening tool or professional advice. Adults supervise all activities. The characters in the story are imaginary.</p></div>
 </div>`);
 
 // ------------------------------------------------------------------ 25 MORE FROM PLAY BEFORE PIXELS

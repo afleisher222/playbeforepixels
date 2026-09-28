@@ -94,7 +94,7 @@ single({
   texts: [
     T(60, 90, 696, 'More Talk, Less Tap', 'title', ''),
     T(60, 196, 696, 'A Talk Tower story for circle time', 'titlesub'),
-    T(60, 238, 696, WORDS.one('story-author') ? `<div class="byline">${WORDS.one('story-author')}</div>` : founderBox('FOUNDER: your author line', 'Write it in WORDS.md, section “story-author”. This box disappears once filled.'), 'titleslot'),
+    T(60, 238, 696, `<div class="byline">${WORDS.one('story-author') || 'Play Before Pixels'}</div>`, 'titleslot'),
     T(318, 722, 180, LOGO('lockup-horizontal.svg', 48), ''),
   ],
 });
@@ -110,8 +110,7 @@ single({
 <p>This is a work of fiction. Room 5, Ms. Poppy and the children are imaginary and are not based on any real school, teacher or child. The games and notes at the back are general ideas for grown-ups to enjoy with children; they are not a program, assessment or professional advice. Adults supervise all activities. With children under 3 nearby, use only blocks and objects too big to fit through a toilet-paper tube (about 1.25 in / 3.2 cm).</p>
 <p>Published by AlphaPlay LLC, doing business as Play Before Pixels · playbeforepixels.com<br>Free bonus printable: playbeforepixels.com/bonus/picture-more-talk-less-tap</p>
 <p>First edition 2026 · Version 1.0 · September 2026</p>`, 'legal'),
-    T(60, 660, 330, 'ISBN / barcode<br><span>Not needed for this bonus PDF. Add one only if a print edition is ever published.</span>', 'isbnbox', 'height:auto'),
-    T(420, 660, 336, WORDS.one('story-dedication') ? `<div class="dedic">${WORDS.one('story-dedication')}</div>` : founderBox('FOUNDER: your dedication', 'Your own words, in WORDS.md section “story-dedication”.'), ''),
+    ...(WORDS.one('story-dedication') ? [T(420, 660, 336, `<div class="dedic">${WORDS.one('story-dedication')}</div>`, '')] : []),
   ],
 });
 
@@ -444,12 +443,11 @@ single({
   art: E(408, 830, 520, 120, C.tSky) +
     tower(160, 790, ['q', 'j', 'i', 'l'], 0.9) +
     kidAt('zara', 'cheer', 300, 790, 0.85, 'laugh') +
-    R(564, 624, 192, 115, C.paper, 4) + R(404, 566, 150, 176, C.paper, 10),
+    R(404, 566, 150, 176, C.paper, 10),
   texts: [
     T(60, 60, 696, 'Room 5 is building a tower out of words.', 'backh'),
     T(60, 190, 696, `<p>Every time someone asks a question, tells a joke or shares an idea, a block goes on the Talk Tower. But what happens when everybody talks at once?</p><p>A warm, funny read-aloud about conversation, taking turns and really listening, with circle-time talk games and a note for educators and families at the back.</p>`, 'backtext'),
     T(60, 500, 420, 'Ages 3–7 · Bonus read-aloud from the Talk Tower Classroom Game Kit', 'backmeta'),
-    T(566, 648, 188, 'ISBN / barcode<br>(print edition only)', 'isbnlabel'),
     T(421, 576, 120, qrSvg(116), ''),
     T(404, 700, 150, 'Scan for a free<br>bonus printable', 'qrcap'),
     T(60, 426, 0, LOGO('lockup-horizontal-white.svg', 46), ''),

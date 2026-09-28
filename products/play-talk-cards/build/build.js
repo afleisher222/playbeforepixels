@@ -157,6 +157,9 @@ function startPage(P, S, n, total) {
 }
 
 // ---------- page 3: print, safety, founder note, license ----------
+// Optional founder's note, in her own words (60–90 words; template in ../founder-notes.md). A = 52 Play & Talk Cards,
+// B = Family Talk-Along Cards. Leave '' and nothing prints.
+const FOUNDER_NOTE = { A: '', B: '' };
 function printPage(P, S, n, total) {
   const printTips = [
     ['Print at “Actual size” (100%).', 'Cards are standard poker size, 2.5 × 3.5 in (63.5 × 88.9 mm).'],
@@ -195,10 +198,7 @@ function printPage(P, S, n, total) {
       <h3 class="h3">${K.shield(C.grass, 18)} Safety basics${P.key === 'A' ? ' built into every card' : ''}</h3>
       <ul>${safety.map(t => `<li>${t}</li>`).join('')}</ul>
     </div>
-    <div class="founder">
-      <span class="flabel">Founder’s note · to be written by the founder in her own words before release</span>
-      <p>Placeholder for human-authored text (60–90 words): why these cards exist, how your family uses them, and one favorite ${P.key === 'A' ? 'play' : 'question'}. Replace this box; do not publish with it. See brand/BRAND.md, “Human authorship.”</p>
-    </div>
+    ${FOUNDER_NOTE[P.key] ? `<div class="founder"><span class="flabel">A note from us</span><p>${FOUNDER_NOTE[P.key]}</p></div>` : ''}
     <h3 class="h3">Ways to use your deck</h3>
     <div class="ways">${(P.key === 'A' ? [
       ['Card of the day', 'Clip one card to the fridge each morning.', C.tomato],
@@ -437,9 +437,9 @@ ${K.CARD_CSS}
 .safetybox{background:${C.tGrass};border-radius:16px;padding:14px 18px 10px;margin:4px 0 14px}
 .safetybox ul{margin:0;padding:0 0 0 18px}
 .safetybox li{font-size:12.5px;line-height:1.4;margin:0 0 5px}
-.founder{border:2px dashed ${C.plum};border-radius:14px;padding:12px 16px;margin:0 0 14px;background:#fff}
+.founder{border-radius:14px;padding:12px 16px;margin:0 0 14px;background:${C.wash}}
 .flabel{display:block;font-weight:800;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:${C.plum};margin-bottom:5px}
-.founder p{margin:0;font-size:12px;line-height:1.45;opacity:.75}
+.founder p{margin:0;font-size:12px;line-height:1.45}
 .ways{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
 .way{border-top:6px solid var(--c);background:${C.wash};border-radius:12px;padding:10px 12px}
 .way b{font-weight:800;font-size:13px}

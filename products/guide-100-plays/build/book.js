@@ -241,10 +241,10 @@ function howPage() {
   return pg({ kind: 'text', title: 'How to use this book', html: `
   <div class="live">
     <div class="eyebrow">The plan</div><h1>How to use this book</h1>
-    <p class="lede" style="margin-bottom:.14in">The 100 plays are sorted into four age bands. Start with your child’s band, then look one band either side: children don’t read the labels, and a favorite play can last for years.</p>
-    <div style="display:flex;gap:.12in;margin-bottom:.16in">${BANDS.map(b => `<div class="card" style="flex:1;background:${BC[b.key].t};padding:.12in .14in"><div class="display" style="font-size:20pt">${b.label}</div><div style="font-size:8.6pt;font-weight:700">${b.long}<br>Plays ${b.from}–${b.to}</div></div>`).join('')}</div>
+    <p class="lede" style="margin-bottom:${V.bw ? '.1in' : '.14in'}">The 100 plays are sorted into four age bands. Start with your child’s band, then look one band either side: children don’t read the labels, and a favorite play can last for years.</p>
+    <div style="display:flex;gap:.12in;margin-bottom:${V.bw ? '.1in' : '.16in'}">${BANDS.map(b => `<div class="card" style="flex:1;background:${BC[b.key].t};padding:.12in .14in"><div class="display" style="font-size:20pt">${b.label}</div><div style="font-size:8.6pt;font-weight:700">${b.long}<br>Plays ${b.from}–${b.to}</div></div>`).join('')}</div>
     <h2>Every play has the same parts</h2>
-    <ul class="list howgrid" style="margin-bottom:.12in;display:grid;grid-template-columns:1fr 1fr;column-gap:.3in">
+    <ul class="list howgrid" style="margin-bottom:${V.bw ? '.08in' : '.12in'};display:grid;grid-template-columns:1fr 1fr;column-gap:.3in">
       ${item(`<span class="num" style="background:${C.tGrass}">21</span>`, 'Number and starting age', '"From 12 mo" is the youngest age the play suits. "Best for" gives the usual range. You know your child best.')}
       ${item(ico('clock', '', '.3in'), 'Prep time', 'No prep, about 2 minutes, or about 10 minutes of setting up.')}
       ${item(`<span style="width:.3in;display:inline-flex">${drops(1)}</span>`, 'Mess level', 'No drops: no mess. One drop: a little mess. Two drops: messy (lay down a towel).')}
@@ -578,7 +578,7 @@ function sourcesPage() {
       <p>Play Before Pixels makes calm, practical play-and-talk resources for families with young children: books, printables and card sets built around one simple idea. The first years are built on talk, touch and play, so let’s make room for plenty of back-and-forth.</p>
       <p style="margin-top:.08in">Play ideas are general parent education. They are not professional or clinical advice.</p>
     </div>
-    <div style="margin-top:.2in;display:flex;justify-content:space-between;align-items:flex-end"><img src="../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels" style="height:.5in"><span class="small">${COPY}</span></div>
+    <div style="margin-top:.2in;display:flex;justify-content:space-between;align-items:flex-end;gap:.3in"><img src="../../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels" style="height:.5in"><span class="small" style="text-align:right">${COPY}</span></div>
   </div>` });
 }
 function bonusPage() {

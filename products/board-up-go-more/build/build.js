@@ -460,7 +460,13 @@ const seriesPill = (dark) => `<span class="spill${dark ? ' dk' : ''}"><b>${MS.se
 const logo = (rel, variant = 'reverse', h = 34) => `<img class="logo" style="height:${h}px" src="${rel}brand/logo/lockup-horizontal${variant ? '-' + variant : ''}.svg" alt="Play Before Pixels">`;
 const VERSION = 'Version 1.0 · September 2026';
 const COPYRIGHT = '© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.';
-const authorLine = () => MS.author_credit ? `<span>${MS.author_credit}</span>` : slot(MS.author_credit_placeholder);
+// Byline: the brand credit "Play Before Pixels" until the founder sets author_credit in manuscript.json
+// (brand byline until counsel answers REVENUE-PLAN Q9; see ../founder-notes.md). No placeholder prints.
+const authorLine = () => `<span>${MS.author_credit || 'Play Before Pixels'}</span>`;
+// Printer lines (ISBNs, country of printing, batch/tracking number) print only once they exist, from an optional
+// "print_lines" object in manuscript.json: { "isbn_board", "isbn_paperback", "printed_in", "batch" }.
+const PL = MS.print_lines || {};
+if (!PL.printed_in || !PL.batch) console.warn('NOTE: board book has no "Printed in" or batch/tracking line yet (manuscript.json print_lines). An offset print run of a children\'s book needs both (CPSIA tracking label, UNVERIFIED); see ../founder-notes.md.');
 
 // ---------- word page ----------
 function wordArt(p) {
@@ -533,7 +539,7 @@ const routinesPage = (withLegal) => ({
     ${withLegal ? `<div class="legal">
       <p><b>Up! Go! More!</b> · ${MS.series}, Book ${MS.series_number} · Board book edition · ${authorLine()}</p>
       <p>${COPYRIGHT} All rights reserved. First edition · ${VERSION}.</p>
-      <p>ISBN ${slot('board-book ISBN')} · Printed in ${slot('country')} · Batch ${slot('tracking no.')} · playbeforepixels.com</p>
+      <p>${[PL.isbn_board ? `ISBN ${PL.isbn_board}` : '', PL.printed_in ? `Printed in ${PL.printed_in}` : '', PL.batch ? `Batch ${PL.batch}` : '', 'playbeforepixels.com'].filter(Boolean).join(' · ')}</p>
     </div>` : ''}
   </div>`
 });
@@ -565,7 +571,7 @@ const back = (rel) => ({
     ${logo(rel, 'reverse', 26)}
     <div class="bonus">${qrSvg(62)}<span><b>Free grown-up bonus</b>playbeforepixels.com/<br>bonus/board-up-go-more<small>Ages 0–3 · Read together</small></span></div>
   </div>
-  <div class="isbn${PRINT_READY ? ' final' : ''}">${PRINT_READY ? '' : '<span>ISBN / barcode</span><small>Leave white. Printer or ISBN agency supplies this.</small>'}</div>`
+  <div class="isbn final" aria-hidden="true"></div>`
 });
 
 // ---------- paperback-only pages ----------
@@ -588,7 +594,7 @@ const copyrightPage = () => ({
     <p>${COPYRIGHT}<br>All rights reserved. No part of this book may be copied or shared in any form without written permission, except short quotes in reviews.</p>
     <p>This book is for reading together. It shares everyday play and talk ideas for families. It is not medical or developmental advice; for questions about your child, talk with your child’s doctor.</p>
     <p>Paper pages: read together and keep away from mouths.</p>
-    <p>ISBN ${slot('paperback ISBN')}<br>First edition · ${VERSION}</p>
+    <p>${PL.isbn_paperback ? `ISBN ${PL.isbn_paperback}<br>` : ''}First edition · ${VERSION}</p>
     <p>playbeforepixels.com</p>
   </div>`
 });
@@ -597,8 +603,7 @@ const notePage = () => ({
   cls: 'inner note-pg', html: `
   <div class="in">
     <h2 class="ptitle">${noteDraft.heading}</h2>
-    <div class="${noteDraft.founder_rewritten ? 'notebody' : 'notebody draft'}">
-      ${noteDraft.founder_rewritten ? '' : '<span class="draftlab">Founder: rewrite this page in your own words before publishing</span>'}
+    <div class="notebody">
       ${noteDraft.draft.map(t => `<p>${t}</p>`).join('')}
       <p class="sig">${authorLine()}</p>
     </div>
