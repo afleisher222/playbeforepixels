@@ -164,7 +164,7 @@ Each such change needs a draft, a "What changed" note and the full review (a new
 **Format:**
 - Instagram: 1080×1350, 5–8 frames. Pinterest: 1000×1500.
 - **Frame 1 states the fact.** Never open with a fear question such as "Are screens giving your child autism?"
-- **The last frame** carries the short safe sentence, "playbeforepixels.com/research" and "Not medical advice". Because comments are off, the caption also says how to send a correction ("Spotted a mistake? Tell us through the contact form at playbeforepixels.com/research"), so critics, including autistic readers, have a way to reply.
+- **The last frame** carries the short safe sentence, "playbeforepixels.com/research" and "Not medical advice". Because comments are off, the caption also says how to send a correction ("Spotted a mistake? Tell us: playbeforepixels.com/research/editorial-policy/#corrections"), so critics, including autistic readers, have a way to reply.
 
 **Rules (checked by HF-14):**
 - **Links go only to a hub page.**
@@ -319,6 +319,8 @@ Each such change needs a draft, a "What changed" note and the full review (a new
   - Article 08 uses "cure".
   - The glossary has no closing line.
   - The pillar is too long before its first section.
+
+**Re-run after the simulated reader panel (September 28, 2026):** 0 FAILs and 2 WARNs. The hub-page items above are fixed: the pillar's printable link is gone, the FAQ's points to the twin, the Dunckley page has the safe sentence, the Zhang meta description is 143 characters, the glossary has its closing line, and the pillar has 150 words before its first section. The two WARNs left are outside the hub pages: the Sadeghi 2023 title (set an `seo_title` at build) and the retired `seo/articles/08` (no closing line).
 
 ---
 
