@@ -88,9 +88,9 @@
     var action;
     if (!ok.length) action = '<a class="tile-add" href="' + href + '">Get notified</a>';
     else if (ok[0].sizes) action = '<a class="tile-add" href="' + href + '">Choose size</a>';
-    else action = '<button type="button" class="tile-add" data-add="' + p.id + '" data-fmt="' + ok[0].id + '">Add ' + esc(ok[0].label.toLowerCase()) + " to bag</button>";
+    else action = '<button type="button" class="tile-add" data-add="' + p.id + '" data-fmt="' + ok[0].id + '">Add to bag<span class="sr">: ' + esc(p.title) + ", " + esc(ok[0].label) + "</span></button>";
     return '<article class="tile' + (opts.cls ? " " + opts.cls : "") + '">' +
-      '<a class="tile-img" href="' + href + '" tabindex="-1" aria-hidden="true" style="--ground:' + p.ground + '"><img src="' + p.photo + '" alt="" loading="lazy" width="1000" height="1250"></a>' +
+      '<a class="tile-img" href="' + href + '" tabindex="-1" aria-hidden="true" style="--ground:' + p.ground + '"><img src="' + p.photo + '" alt="" width="1000" height="1250"></a>' +
       '<div class="tile-meta">' +
       '<p class="label">' + esc(p.kind) + " · " + esc(p.ageText.indexOf("For") === 0 || p.ageText.indexOf("Fam") === 0 || p.ageText.indexOf("One") === 0 || p.ageText.indexOf("Adult") === 0 || p.ageText.indexOf("PreK") === 0 ? p.ageText : "Ages " + p.ageText) + (p.badge ? ' <span class="badge">' + esc(p.badge) + "</span>" : "") + "</p>" +
       '<h3 class="tile-title"><a href="' + href + '">' + esc(p.title) + "</a></h3>" +
@@ -134,7 +134,7 @@
          ["tablet-slept", "assets/tts-cover.png", "Picture book · 3–7", "The Day the Tablet Slept"],
          ["mtlt", "assets/photo-mtlt.png", "Picture book · 4–8 · Spring 2027", "More Talk, Less Tap"],
          ["hundred-plays", "assets/photo-100plays.png", "Guide for grown-ups · 0–5", "100 Plays Before Pixels"]].map(function (b) {
-          return '<a class="mm-book" href="product.html#' + b[0] + '"><span class="mm-book-img' + (b[1].indexOf("photo") > -1 ? " is-photo" : "") + '"><img src="' + b[1] + '" alt="" loading="lazy"></span><span class="label">' + b[2] + '</span><span class="mm-book-t">' + b[3] + "</span></a>";
+          return '<a class="mm-book" href="product.html#' + b[0] + '"><span class="mm-book-img' + (b[1].indexOf("photo") > -1 ? " is-photo" : "") + '"><img src="' + b[1] + '" alt=""></span><span class="label">' + b[2] + '</span><span class="mm-book-t">' + b[3] + "</span></a>";
         }).join("") + "</div>" +
         '<div class="mm-col mm-col--aside"><p class="label">Browse</p><ul class="mm-list"><li><a href="shop.html#type=books">All books</a></li><li><a href="shop.html#type=board">Board books</a></li><li><a href="shop.html#type=picture">Picture books</a></li><li><a href="info.html#formats">Board, paperback, hardcover or library binding?</a></li></ul></div>'
     },

@@ -343,7 +343,7 @@ button.sc-seg[aria-pressed="true"] .sc-label::after { content: " ✓"; font-size
 .feature-img img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
 .feature-text { grid-column: 8 / span 5; }
 .feature-text .deck { margin: 16px 0 22px; }
-.words { font-family: var(--f-word); font-weight: 600; font-size: clamp(22px, 2vw, 28px); line-height: 1.45; margin: 26px 0 26px; }
+.words { display: flex; flex-wrap: wrap; row-gap: 2px; font-family: var(--f-word); font-weight: 600; font-size: clamp(22px, 2vw, 28px); line-height: 1.45; margin: 26px 0 26px; }
 .words span { white-space: nowrap; }
 .words span + span::before { content: "·"; margin: 0 .38em; color: var(--rule-2); }
 .words span:nth-child(5n+1) { color: var(--ink); } .words span:nth-child(5n+2) { color: var(--tomato); } .words span:nth-child(5n+3) { color: var(--sky); } .words span:nth-child(5n+4) { color: var(--grass); } .words span:nth-child(5n) { color: var(--plum); }
@@ -718,6 +718,12 @@ details.faq > div { padding: 0 0 18px; color: var(--ink-2); }
   .buy .qty { flex: none; }
   .spreads figure { width: 88vw; }
   .assure div, .fmt-spec div, .colophon-table div { grid-template-columns: 96px 1fr; }
+}
+@media (max-width: 480px) {
+  .tools { gap: 6px; }
+  .tool { padding: 0 12px; }
+  .tool-menu .tool-t { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .wordmark { font-size: 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
