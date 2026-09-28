@@ -371,7 +371,7 @@ page('terms', 'License terms and copyright', `
   <div><h4>Under any license, please don’t</h4><ul class="small">
     <li>sell, share, give away or bundle the files or printed copies;</li><li>post or upload them to public or shared websites, drives or marketplaces;</li>
     <li>remove the copyright notice or license stamp;</li><li>use the kit to make a competing product, or to train or prompt AI systems.</li></ul>
-    <p class="small">You <b>may</b> share a link to our shop, or a photo of the game in use showing no more than one page. Extra classroom licenses and site licenses: playbeforepixels.com/license. Full terms: playbeforepixels.com/license</p></div>
+    <p class="small">You <b>may</b> share a link to our shop, or a photo of the game in use showing no more than one page. Full terms and extra licenses: playbeforepixels.com/license</p></div>
   <div><h4>Copyright</h4><p class="small"><b>${NAME} Classroom Game Kit</b> and the bonus story <i>More Talk, Less Tap</i>. First edition 2026.</p>
     <p class="small">© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. All rights reserved. Published by AlphaPlay LLC, doing business as Play Before Pixels · playbeforepixels.com</p>
     <p class="small">General classroom play ideas; not a program, assessment, screening tool or professional advice. Adults supervise all activities. The characters in the story are imaginary.</p>

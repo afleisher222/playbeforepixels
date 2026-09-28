@@ -151,7 +151,7 @@ function ownCard(id, bandKey) {
         <div class="need">${ico('bag')}<span><b>You need:</b></span>${fld(id + '-need')}</div>
       </div>
     </div>
-    <div class="lines3">${fld(id + '-how', 'multi', 3)}</div>
+    <div class="lines3"><div class="tlab" style="color:#5A6478">How to play</div>${fld(id + '-how', 'multi', 3)}</div>
     <div class="need"><span><b>Grow it:</b></span>${fld(id + '-grow')}</div>
     <div class="talk" style="background:${b.t}">${ico('talk', 'big')}<div style="flex:1"><div class="tlab">Talk while you play</div>${fld(id + '-talk')}</div></div>
     <div class="safe">${ico('shield')}<span><b>Safety:</b></span>${fld(id + '-safe')}</div>

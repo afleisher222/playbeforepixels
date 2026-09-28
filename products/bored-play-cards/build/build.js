@@ -1,7 +1,7 @@
 // Build script for "I'm Bored" Play Cards (Play Before Pixels).
 //   node build/build.js
 // Writes: ../source.html (US Letter, all pages), source-a4.html, duplex-*.html, editable-*.html,
-//         canva.html, showcase.html, cover.html, mockup.html, listing.html (all in build/).
+//         png-templates.html, cover.html, mockup.html, listing.html (all in build/).
 const fs = require('fs');
 const path = require('path');
 const { C, KIDS, ADULTS, SYMBOLS, kid, adult, kidHand, aimKid } = require('./chars');
@@ -874,8 +874,8 @@ const edCss = `<style>
 .edc{margin-top:auto;font-size:10px;font-weight:700;opacity:.7}
 </style>`;
 
-// Canva / PNG assets: each asset is its own .page element at print size
-function canvaDoc() {
+// PNG template assets (for design apps): each asset is its own .page element at print size
+function pngTemplatesDoc() {
   const items = [];
   for (const k of ['b13', 'b35', 'b58', 'b812', 'summer', 'rainy']) {
     items.push({ name: `blank-card-${k}`, w: 2.5, h: 3.5, html: blankCard(k, { fields: true }) });
@@ -892,7 +892,7 @@ function canvaDoc() {
     items.push({ name: `divider-blank-${n}`, w: 2.4, h: 3.95, html: divider({ m, t, on, tab: '', ic: 'pen', h: '', p: '' }, 1).replace(/<div class="dbody">[\s\S]*?<\/div>\s*<\/div>$/, '</div>') });
   });
   const pages = items.map(it => `<section class="page asset" data-name="${it.name}" style="width:${it.w}in;height:${it.h}in">${it.html}</section>`);
-  fs.writeFileSync(path.join(__dirname, 'canva-manifest.json'), JSON.stringify(items.map(i => i.name)));
+  fs.writeFileSync(path.join(__dirname, 'png-templates-manifest.json'), JSON.stringify(items.map(i => i.name)));
   return pages;
 }
 
@@ -908,7 +908,7 @@ fs.writeFileSync(path.join(__dirname, 'source-a4.html'), doc('../../../brand/fon
 fs.writeFileSync(path.join(__dirname, 'duplex-a4.html'), doc('../../../brand/fonts/fonts.css', SZ, duplexPages()));
 fs.writeFileSync(path.join(__dirname, 'editable-a4.html'), doc('../../../brand/fonts/fonts.css', SZ, editablePages(), edCss));
 SZ = SIZES.letter;
-fs.writeFileSync(path.join(__dirname, 'canva.html'), doc('../../../brand/fonts/fonts.css', SZ, canvaDoc(), '<style>.asset{page-break-after:auto}</style>'));
+fs.writeFileSync(path.join(__dirname, 'png-templates.html'), doc('../../../brand/fonts/fonts.css', SZ, pngTemplatesDoc(), '<style>.asset{page-break-after:auto}</style>'));
 
 const counts = Object.fromEntries(Object.entries(CARDS).map(([k, v]) => [k, v.length]));
 console.log('cards', counts, 'summer', MINI.summer.cards.length, 'rainy', MINI.rainy.cards.length, 'pages', mainPages(false).length);

@@ -205,8 +205,7 @@ h4 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 15px; marg
 .bonusbox { display: flex; gap: 20px; align-items: center; background: ${C.tSun}; border-radius: 18px; padding: 18px 22px }
 .bonusbox h3 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 22px; margin: 0 0 6px } .bonusbox p { font-size: 13px; line-height: 1.45 } .bonusbox .url { font-weight: 800 }
 .share { text-align: center; font-size: 12.5px; margin-top: 18px; opacity: .85 }
-`;
-};
+
 
 .famart { flex: 1; min-height: 0; margin: 12px 0 8px } .famart svg { display: block }
 .famkids { grid-column: 1 / -1; height: 2.4in; margin-top: 10px }
@@ -216,3 +215,5 @@ h4 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 15px; marg
 .buybox { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0 4px } .buybox div { background: ${C.tSun}; border-radius: 12px; padding: 12px 14px; font-size: 12.5px; line-height: 1.45 }
 .lic { font-size: 13px } .small { font-size: 12px }
 .moreart { margin-top: auto; height: 2.5in }
+`;
+};
