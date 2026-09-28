@@ -1,50 +1,88 @@
 {
   "slug": "picture-tablet-slept",
   "title": "The Day the Tablet Slept",
-  "subtitle": "A funny read-aloud about a day full of play",
-  "format": "Full-color picture book, paperback (print-on-demand) with a hardcover option. Interior print file: 32 PDF pages = front cover, endpaper, title page, copyright page (with ISBN box), dedication, 24 story pages (12 full-bleed spreads), 'Talk about it' page for grown-ups, 'The End' page, back cover. A separate one-piece wrap cover (back | spine | front) is included as cover-wrap.pdf.",
-  "trim": "8.5 x 8.5 in trim; 8.75 x 8.75 in with 0.125 in bleed on every edge; text and faces kept inside a 0.375 in safe zone and away from the gutter",
+  "subtitle": "A funny bedtime read-aloud about a box rocket, a dog named Biscuit and one very sleepy tablet",
+  "series": "Play Before Pixels read-alouds",
+  "format": "Full-color 32-page picture book. Paperback (Amazon KDP, premium color) and case-laminate hardcover (IngramSpark). One interior file serves both: 32 single pages = title page, copyright page (ISBN box), dedication (founder writes it), 24 story pages (12 full-bleed spreads), morning/'The End' page, 'Talk about it' page for grown-ups, 'Plan your own Play Day' page with QR code to the free bonus, 'A note from the author' (founder writes it), endpaper pattern. Covers are separate files: cover-kdp-paperback.pdf and cover-ingramspark-hardcover.pdf.",
+  "files": {
+    "interior_pdf": "picture-tablet-slept.pdf (32 pages, 8.625 x 8.75 in each: 8.5 x 8.5 trim plus 0.125 in bleed on top, bottom and outside edge; even pages have bleed on the left, odd pages on the right). Upload the same file to KDP and IngramSpark.",
+    "kdp_paperback_cover_pdf": "cover-kdp-paperback.pdf (17.3251 x 8.75 in: 0.125 bleed + 8.5 back + 0.0751 spine + 8.5 front + 0.125 bleed; spine = 32 pages x 0.002347 in for premium color [VERIFY in KDP's cover calculator]). No spine text: KDP allows spine text only from 79 pages.",
+    "ingramspark_hardcover_cover_pdf": "cover-ingramspark-hardcover.pdf (19.13 x 10.0 in: 0.625 wrap + 8.315 board + 0.5 hinge + 0.25 spine + 0.5 hinge + 8.315 board + 0.625 wrap; 0.625 + 8.75 + 0.625 high). The 0.25 in spine is a placeholder: IngramSpark's case-laminate spine comes only from its Cover Template Generator [VERIFY]. Rebuild with HC_SPINE_IN=<value> node build.js.",
+    "words_file": "WORDS.md holds every word in the book. The founder edits it, runs node build.js, then re-renders (commands in build notes below).",
+    "source": "build.js writes source.html (interior), spreads.html (facing pages, review only), cover.html, back.html, cover-kdp-paperback.html, cover-ingramspark-hardcover.html, mockup.html. fix-pdf-size.py snaps the PDF page boxes to exact inches after Chromium renders.",
+    "build_notes": "node build.js; node ../../brand/render.js pages source.html preview .page 1; node ../../brand/render.js pdf source.html picture-tablet-slept.pdf; node ../../brand/render.js pdf cover-kdp-paperback.html cover-kdp-paperback.pdf; node ../../brand/render.js pdf cover-ingramspark-hardcover.html cover-ingramspark-hardcover.pdf; python3 fix-pdf-size.py; node ../../brand/render.js png cover.html cover.png 816 816 1.9608; node ../../brand/render.js png mockup.html mockup.png 1600 1200 1"
+  },
+  "trim": "8.5 x 8.5 in (square). Interior pages 8.625 x 8.75 in with bleed on top, bottom and outside edge; text and faces kept 0.375 in inside the trim and away from the gutter. Paperback cover 17.3251 x 8.75 in; hardcover case-laminate cover 19.13 x 10.0 in.",
   "pages": 32,
   "ages": "3–7",
   "price_usd": 11.99,
-  "price_notes": "Suggested retail $11.99 for the paperback and $17.99 for a hardcover edition. Typical 32-page 8.5 x 8.5 in picture-book paperbacks sell for $9.99–$12.99 [VERIFY against current comparable listings]. Before fixing the price, check the printer's current print cost for 32 full-color pages and the channel royalty rate (KDP, IngramSpark, Lulu) so that each sale clears at least $2–$3 [VERIFY with each printer's calculator]. Test a $24.99 bundle with a board book for gifting.",
-  "short_description": "The family tablet takes a nap, nightcap and all. So Ada builds, splashes, blasts off and bakes. A funny, warm read-aloud for ages 3–7.",
-  "long_description": "Shhh… the tablet is sleeping. So what shall we do today?\n\nOn Saturday morning, Ada zooms downstairs to find the family tablet, and finds it wearing a nightcap and snoring a tiny 'zzz-bip'. It worked hard all week, Papa explains, and today it gets to rest. So Ada and her dog Biscuit fill the day themselves. They build a block tower (CRASH!), splash through every puddle, turn a big empty box into a rocket, flip pancakes with Papa and find the perfect book at the library. At bedtime, everybody sleeps. In the morning, Ada can't wait to tell the tablet all about it.\n\nThe Day the Tablet Slept is a warm, funny picture book with a repeated refrain that children soon join in on, short read-aloud pages and bold, full-bleed illustrations on every spread. The tablet is never the bad guy. It just takes a day off, and the story shows how much fun a day of play can be.\n\nThe last page has 'Talk about it' questions for grown-ups: easy prompts that turn one reading into a real back-and-forth conversation, plus simple ideas for planning your own 'tablet sleeps' day.\n\nFor ages 3–7. A lovely pick for bedtime, family reading, classrooms, libraries and gifts.",
+  "price_notes": "Paperback $11.99 (KDP). Hardcover $19.99 (IngramSpark case laminate). Street prices for comparable picture books are $11.19–$13.63 (marketing/DEMAND-CHECK.md). Paperback math: KDP premium color print cost is about $1.00 + $0.07 per page = about $3.24 for 32 pages, and the 60% royalty on $11.99 is $7.19, which leaves about $3.95 a copy [VERIFY in KDP's calculator]. Hardcover: check IngramSpark's print cost and set the wholesale discount so each copy clears at least $2–$3; $17.99 is probably too low for a 32-page color case laminate [VERIFY in IngramSpark's calculator]. Main offer: the Play Day bundle at $24.99 (see bundle).",
+  "bundle": {
+    "name": "Play Day bundle",
+    "slug": "bundle-play-day",
+    "pairs_with": "guide-100-plays (100 Screen-Free Plays)",
+    "contents": [
+      "The Day the Tablet Slept, paperback (the story half)",
+      "100 Screen-Free Plays, paperback (the activity half)",
+      "Free Play Day planner and coloring pages (bonus page, same QR in both books)"
+    ],
+    "price_usd": 24.99,
+    "compare_at_usd": 28.98,
+    "discount_note": "About 14% off the two paperbacks bought separately ($11.99 + $16.99), inside the 10–25% bundle rule in DEMAND-CHECK.md section 4.",
+    "pitch": "Read it, then play it. Ada's Play Day on the page, and 100 ideas for yours.",
+    "age_fit": "The story is for 3–7 and the plays book is for 0–5, so the bundle is sold for ages 3–5 (and younger siblings).",
+    "how_it_sells_automatically": [
+      "playbeforepixels.com: one checkout for both books, printed and shipped by the print-on-demand integration the storefront uses. Confirm that the chosen printer supports orders with two titles [VERIFY]. Nothing is held in stock.",
+      "Amazon: KDP cannot sell two books as one item. Link each book in the other's description and A+ content ('Pairs with…'), and run both in the same Amazon ads campaign.",
+      "Etsy and the site (digital): a 'Play Day kit' with the 100 Plays PDF ($9.99) plus the Play Day planner, linking to the paperback story. The story itself is not sold as a PDF."
+    ],
+    "launch_rule": "List the bundle when 100 Screen-Free Plays goes live (launch item #5 in DEMAND-CHECK.md section 3)."
+  },
+  "short_description": "Shhh… the tablet is sleeping. So Ada and Biscuit the dog build, splash, blast off in a box rocket and bake. A funny bedtime read-aloud for ages 3–7.",
+  "long_description": "Shhh… the tablet is sleeping. So what shall we do?\n\nOn Saturday morning, Ada zooms downstairs to find the family tablet snoring a teeny-tiny zzz-bip under a purple nightcap. It's taking a day off. So Ada and her dog Biscuit make their own fun. They build a block tower (CRASH!), splash through every puddle (SPLOOOSH, all over Papa's shoes), turn a big empty box into the ADA-1 rocket and blast off past a planet made entirely of socks. Then it's pancakes with Papa, a quiet trip to the library and a growly bear story at bedtime.\n\nChildren love to join in on the refrain, shout Biscuit's WOOF!, and spot the sleepy tablet on every page. Short, rhythmic read-aloud pages and bold, full-bleed pictures make it a cozy bedtime book and a fun one to read again and again. The tablet is never the bad guy. It just needed a nap, and in the morning Ada can't wait to tell it about her day.\n\nAt the back, grown-ups get 'Talk about it' questions, a 'Plan your own Play Day' page and a QR code for a free printable planner and coloring pages.\n\nFor ages 3–7. Pairs with 100 Screen-Free Plays as the Play Day bundle.",
   "bullets": [
-    "A warm, funny story for ages 3–7 about a family tablet that takes a well-earned nap, with no shame, lectures or villains",
-    "A repeated read-aloud refrain ('Shhh… the tablet is sleeping. So what shall we do today?') that children soon join in on",
-    "Bold, full-bleed flat illustrations on every spread, with an inclusive cast and a lovable dog named Biscuit to spot",
-    "Everyday play ideas kids can copy: blocks, puddle jumping, a cardboard-box rocket, cooking with a grown-up, a library visit and a bedtime story",
-    "Ends with 'Talk about it' questions for grown-ups and simple ways to plan your own play day together"
+    "A funny bedtime story starring Ada, her dog Biscuit and a cardboard-box rocket, with a very sleepy tablet in a nightcap as the running joke",
+    "A read-aloud refrain ('Shhh… the tablet is sleeping. So what shall we do?') and a WOOF! for children to shout along to",
+    "Bold, full-bleed flat illustrations on every spread, with an inclusive cast and short, rhythmic pages that are easy to read aloud",
+    "Play ideas kids can copy right away: block towers, puddle jumping, a box rocket, cooking with a grown-up, a library visit and a bedtime story",
+    "Ends with 'Talk about it' questions, a 'Plan your own Play Day' page and a free printable bonus for grown-ups"
   ],
   "keywords": [
-    "screen free picture book",
-    "picture book ages 3-7",
-    "read aloud bedtime story book",
-    "kids book about screen time",
-    "funny picture book for preschool",
+    "funny bedtime story picture book",
+    "read aloud picture book ages 3-7",
+    "cardboard box rocket picture book",
+    "picture book with a dog",
     "imaginative play children's book",
-    "family reading gift book"
+    "repetitive refrain read aloud book",
+    "rainy day play day picture book"
   ],
-  "seo_title": "The Day the Tablet Slept: A Read-Aloud Picture Book (3–7)",
-  "seo_description": "The family tablet takes a nap, so Ada builds, splashes, blasts off in a box rocket and bakes pancakes. A funny, warm read-aloud for ages 3–7.",
-  "alt_text": "Cover of the picture book The Day the Tablet Slept: big white and yellow title letters on a bright blue background above a smiling tablet asleep in a purple nightcap on a pillow, with a girl making a 'shh' gesture and a yellow dog beside it.",
+  "seo_title": "The Day the Tablet Slept: Funny Bedtime Read-Aloud",
+  "seo_description": "Ada and Biscuit the dog build, splash, blast off in a box rocket and bake while the tablet naps. A funny bedtime read-aloud picture book for ages 3–7.",
+  "alt_text": "Cover of The Day the Tablet Slept: big white and yellow title letters on a bright blue sky. A laughing girl and a yellow dog ride a cardboard-box rocket labeled ADA-1, with red wings and flames, while a smiling tablet sleeps in a purple nightcap on a small shelf to the right.",
+  "next_products": [
+    "guide-100-plays",
+    "bundle-play-day",
+    "bored-play-cards"
+  ],
+  "bonus_url": "playbeforepixels.com/bonus/picture-tablet-slept",
+  "bonus_notes": "The QR code on page 30 and the link on the copyright page both go to https://playbeforepixels.com/bonus/picture-tablet-slept. The page must offer the free Play Day planner and coloring pages and the email sign-up (birth month and year only, never a child's name). It must be live before the first proof is ordered.",
   "channels": [
-    "Amazon KDP paperback (print-on-demand) with a free KDP ISBN or your own ISBN",
-    "IngramSpark paperback and hardcover (reaches bookstores, libraries and Bookshop.org) with your own ISBN",
-    "Play Before Pixels website shop (author copies or a print-on-demand integration)",
-    "Etsy (signed or gift-wrapped author copies; bundles with printables)",
-    "Bulk orders for parent groups, PTAs, libraries, preschools and early-childhood programs",
-    "Independent bookstores and gift shops via IngramSpark distribution or direct wholesale"
+    "Amazon KDP paperback (print-on-demand, premium color, 8.5 x 8.5 in)",
+    "IngramSpark case-laminate hardcover (print-on-demand; reaches bookstores, libraries and Bookshop.org). Use your own ISBN.",
+    "playbeforepixels.com shop through a print-on-demand integration, where the printer ships each order (the Play Day bundle lives here)",
+    "Bulk orders for parent groups, libraries and preschools: invoiced by email and printed and shipped straight to the buyer by the printer. Nothing is held in stock."
   ],
-  "compliance_notes": "No health or medical claims: the book is a story plus parent-education prompts and does not claim to treat, prevent or diagnose anything. Not presented as written by a speech-language pathologist. No medical-condition language and no research citations. No trademarked program names; the grown-up tips use plain words (pause and wait, say what you see, repeat and add one word, follow their lead). No real brands, logos, devices, apps, schools or products: the tablet is a generic, unbranded character, and the copyright page says it is not based on any real product. Zero-shame tone: the tablet is never a villain; it simply rests and is welcomed back in the morning. Child safety: puddle play, cooking (the grown-up handles the stove and pan) and box-building are shown with a grown-up nearby, and the copyright and Talk pages both say these are best with a grown-up close by; no choking-hazard foods or balloons appear. Copyright line follows legal/ENTITY.md: '© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.' Print notes: the PDFs are RGB. The interior is built to the brand kit's 8.75 x 8.75 in page (bleed on all four edges). Some printers want a different interior size (for example KDP's 8.5 x 8.5 in trim with bleed is 8.625 x 8.75 in, with no bleed on the gutter edge [VERIFY]), so the final file must be checked against the chosen printer's current template (KDP, IngramSpark, Lulu, etc.) before upload. The same goes for the cover-wrap spine width (currently 0.075 in, a placeholder) and CMYK conversion. Picture books for ages 3–7 are generally treated as 'ordinary books' under US CPSIA [VERIFY with the printer and CPSC guidance].",
+  "launch_notes": "Positioning: sell it as a funny bedtime and play-day story, not a screen-time book. Lead with Ada, Biscuit, the box rocket and the refrain in every listing, pin and ad. DEMAND-CHECK.md rates the category Weak and says not to count on this book alone, so its main job is to be the story half of the Play Day bundle. The hardcover file is ready, but per DEMAND-CHECK.md, turn on the IngramSpark hardcover only after the paperback shows sales. Printing costs nothing to hold, but the hardcover needs its own ISBN and a proof.",
+  "compliance_notes": "No health or medical claims. The book is a story plus parent-education prompts and claims to treat, prevent or diagnose nothing. It is not presented as written by a speech-language pathologist. No autism or diagnosis terms anywhere in the book, listing or keywords. No research citations. No trademarked program names: the grown-up tips use plain words (pause and wait, say what you see, repeat and add one word, follow their lead). No real brands, logos, devices, apps, schools or products: the tablet is a generic, unbranded character, and the copyright page says it is not based on any real product. Zero shame, zero preaching: every spread was checked. The tablet is never a villain or a warning. It takes a day off, the story never says screens are bad, and in the morning the tablet is welcomed back ('Wait till I tell you about my day…'). The 'Talk about it' questions are about rest, play, cooking and Biscuit, not about screen rules. Child safety: puddle play (with Papa), cooking (Papa handles the pan) and box-building are shown with a grown-up nearby, and the copyright page says they are best with a grown-up close by. No balloons, cords or choking-hazard foods appear. The copyright line follows legal/ENTITY.md: '© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.' The final logo from brand/logo/ is used on the copyright page, the author-note page and the back cover. Print notes: the PDFs are RGB. Chromium embeds the brand fonts as Type 3 fonts. KDP normally accepts both, but IngramSpark prefers PDF/X-1a in CMYK, so run its preflight and convert if it asks [VERIFY]. Check every file against the printer's current template before upload (KDP cover calculator, IngramSpark Cover Template Generator). KDP may print a manufacturing mark on the last page (page 32 is a pattern page, so nothing important is covered) [VERIFY]. Picture books for ages 3–7 are generally treated as ordinary books under US CPSIA [VERIFY with the printer and CPSC guidance].",
   "human_todo": [
-    "Get an ISBN for each edition (a free KDP ISBN, or buy your own from Bowker to use with IngramSpark and other stores), then place the barcode in the labelled 2 x 1.2 in box on the back cover and add the ISBN to the copyright page box",
-    "Choose the printer(s) and download their current templates. Re-export the interior at their exact page size (for example 8.625 x 8.75 in for KDP), and recalculate the spine width for cover-wrap.pdf with the printer's own cover calculator",
-    "Order and review a physical proof: color (RGB to CMYK shift, especially the blue cover and the dark space and night spreads), gutter, trim and readability of the text",
-    "Decide on an author or illustrator credit, if any (currently 'A Play Before Pixels read-aloud'), and personalize the dedication if you wish",
-    "Add any 'Printed in ___' or printer-required lines, and confirm the book's CPSIA status with the printer [VERIFY]",
-    "Set the final prices after checking print cost and royalty in each channel's calculator",
-    "Optionally register the copyright with the US Copyright Office, then list the book on the website, Amazon, IngramSpark and Etsy using cover.png and mockup.png"
+    "HUMAN AUTHORSHIP (do this first): open WORDS.md and write, in your own words, the dedication (## dedication), 'A note from the author' (## note) and, if you want a credit, your name (## author). Pages 3 and 31 print as dashed 'Founder writes this page' boxes until you do. Then reread every story page aloud and rewrite any line in your own voice: names, jokes, the refrain, the order of events. Run the build commands in files.build_notes, and commit to git after each round so your changes are provable.",
+    "AI DISCLOSURE (honest answer for KDP): KDP asks whether the book has AI-generated text, images or translations. As built, the story text was drafted with AI (Claude) and the illustrations were drawn by AI-written code. Answer YES for AI-generated images, and YES for AI-generated text unless you have rewritten the text yourself. KDP counts AI-drafted text you later edited as AI-generated; only your own writing that you polished with AI counts as 'AI-assisted', which needs no disclosure. Give the same honest answer if IngramSpark or any store asks [VERIFY each platform's current wording]. If you register the copyright, claim only your own words and your selection and arrangement, and exclude the AI-generated material (see legal/protection/PROTECTION-PLAN.md).",
+    "ISBNs: buy your own ISBNs from Bowker (a block of 10 covers this and future books) so AlphaPlay LLC is listed as the publisher. The paperback and hardcover each need their own ISBN. A free KDP ISBN cannot be used at IngramSpark. Paste them into WORDS.md (## isbn-paperback, ## isbn-hardcover) so they print on the copyright page. Let KDP and IngramSpark place the barcode in the labelled 2 x 1.2 in box on the back cover, or place your own there.",
+    "KDP paperback: choose premium color, 8.5 x 8.5 in, bleed ON, glossy or matte cover. Upload picture-tablet-slept.pdf and cover-kdp-paperback.pdf. Check the spine width in KDP's cover calculator. If it differs from 0.0751 in, run KDP_SPINE_IN=<value> node build.js and re-render the cover PDF. Use the online previewer and fix every warning.",
+    "IngramSpark hardcover (turn on after the paperback sells): set up a case-laminate hardcover, 8.5 x 8.5 in, premium color. Download the template from the Cover Template Generator and compare it with cover-ingramspark-hardcover.pdf (0.625 in wrap, 0.5 in hinges, board = trim - 0.185 in wide and trim + 0.25 in tall). Rebuild with HC_SPINE_IN=<template spine> node build.js and re-render. Run their preflight, and convert to PDF/X-1a CMYK if asked [VERIFY].",
+    "Order a printed proof of each edition. Check the color (RGB to CMYK shift, especially the blue cover and the dark space and night spreads), the gutter, the trim, and whether the text reads easily. Confirm the QR code on page 30 scans.",
+    "Build the bonus page at playbeforepixels.com/bonus/picture-tablet-slept (Play Day planner and coloring pages, email sign-up asking only for birth month and year) before ordering proofs.",
+    "Set the final prices after checking print cost and royalty in each channel's calculator. Then set up the Play Day bundle ($24.99) on the site once 100 Screen-Free Plays is live, and confirm that the site's print-on-demand partner can ship both titles in one order [VERIFY].",
+    "Add any 'Printed in ___' or printer-required lines, and confirm the book's CPSIA status with the printer [VERIFY]."
   ]
 }

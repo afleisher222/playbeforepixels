@@ -4,7 +4,7 @@ window.PBP = window.PBP || {};
 
 PBP.AGES = [
   { id: "0-1",  label: "0–1",  name: "Babies",       years: 1, tint: "var(--t-tomato)", ink: "var(--tomato)" },
-  { id: "1-3",  label: "1–3",  name: "Toddlers",     years: 2, tint: "var(--t-sun)",    ink: "#B98300" },
+  { id: "1-3",  label: "1–3",  name: "Toddlers",     years: 2, tint: "var(--t-sun)",    ink: "var(--sun)" },
   { id: "3-5",  label: "3–5",  name: "Preschool",    years: 2, tint: "var(--t-grass)",  ink: "var(--grass)" },
   { id: "5-8",  label: "5–8",  name: "Early school", years: 3, tint: "var(--t-sky)",    ink: "var(--sky)" },
   { id: "8-12", label: "8–12", name: "Big kids",     years: 4, tint: "var(--t-plum)",   ink: "var(--plum)" }
@@ -40,11 +40,11 @@ PBP.PRODUCTS = [
       { id: "board", label: "Board book", price: 12.99, status: "ok", note: "Ships in 2–4 business days",
         spec: [["Trim", "6 × 6 in (15.2 × 15.2 cm)"], ["Pages", "14 word pages, plus a how-to and a word guide inside the covers"], ["Binding", "Thick board, rounded corners"]] },
       { id: "paperback", label: "Paperback", price: 7.99, status: "ok", note: "Printed to order · ships in 4–7 business days",
-        spec: [["Trim", "6 × 6 in (15.2 × 15.2 cm)"], ["Pages", "18, full color"], ["Binding", "Saddle-stitched softcover, for ages 2 and up"]] },
+        spec: [["Trim", "6 × 6 in (15.2 × 15.2 cm)"], ["Pages", "18 pages, full color"], ["Binding", "Saddle-stitched softcover, for ages 2 and up"]] },
       { id: "hardcover", label: "Hardcover", price: 16.99, status: "soon", note: "Gift edition, spring 2027",
-        spec: [["Trim", "8.5 × 8.5 in (21.6 × 21.6 cm)"], ["Pages", "24"], ["Binding", "Case-bound, printed boards"]] },
+        spec: [["Trim", "8.5 × 8.5 in (21.6 × 21.6 cm)"], ["Pages", "24 pages"], ["Binding", "Case-bound, printed boards"]] },
       { id: "library", label: "Library binding", price: 21.99, status: "soon", note: "For libraries and classrooms, 2027",
-        spec: [["Trim", "8.5 × 8.5 in (21.6 × 21.6 cm)"], ["Pages", "24"], ["Binding", "Reinforced, sewn, laminated boards"]] }
+        spec: [["Trim", "8.5 × 8.5 in (21.6 × 21.6 cm)"], ["Pages", "24 pages"], ["Binding", "Reinforced, sewn, laminated boards"]] }
     ],
     words: [
       ["hi", "03", "Take turns.", "Wave, say “hi!”, then count to five in your head. A look, wave or sound back counts as a turn."],
@@ -64,7 +64,8 @@ PBP.PRODUCTS = [
     ],
     spreads: [["ugm-p02", "ugm-p03"], ["ugm-p04", "ugm-p05"], ["ugm-p06", "ugm-p07"], ["ugm-p08", "ugm-p09"], ["ugm-p10", "ugm-p11"], ["ugm-p12", "ugm-p13"], ["ugm-p14", "ugm-p15"], ["ugm-p16", "ugm-p17"]],
     details: [["Ages", "0–3"], ["Language", "English"], ["Illustration", "Flat, high-contrast, an inclusive cast of toddlers, parents and grandparents"], ["Publisher", "Play Before Pixels, a trade name of AlphaPlay LLC"], ["First published", "2026"], ["ISBN-13", "Assigned at publication"]],
-    related: ["tablet-slept", "print-0-5", "cards", "hundred-plays"]
+    related: ["tablet-slept", "print-0-5", "cards", "hundred-plays"],
+    fig: ["ugm-p17", "Inside back cover: where the fourteen words live in your day, from mealtime to bedtime."]
   },
   {
     id: "tablet-slept", title: "The Day the Tablet Slept", sub: "A funny read-aloud about a day full of play",
@@ -78,15 +79,16 @@ PBP.PRODUCTS = [
     formats: [
       { id: "board", label: "Board book", price: 0, status: "none", note: "Not made as a board book", spec: [] },
       { id: "paperback", label: "Paperback", price: 11.99, status: "ok", note: "Printed to order · ships in 4–7 business days",
-        spec: [["Trim", "8.5 × 8.5 in (21.6 × 21.6 cm)"], ["Pages", "32, full color"], ["Binding", "Perfect-bound softcover"]] },
+        spec: [["Trim", "8.5 × 8.5 in (21.6 × 21.6 cm)"], ["Pages", "32 pages, full color"], ["Binding", "Perfect-bound softcover"]] },
       { id: "hardcover", label: "Hardcover", price: 17.99, status: "ok", note: "Printed to order · ships in 5–9 business days",
-        spec: [["Trim", "8.5 × 8.5 in (21.6 × 21.6 cm)"], ["Pages", "32, full color"], ["Binding", "Case laminate, printed boards"]] },
+        spec: [["Trim", "8.5 × 8.5 in (21.6 × 21.6 cm)"], ["Pages", "32 pages, full color"], ["Binding", "Case laminate, printed boards"]] },
       { id: "library", label: "Library binding", price: 24.99, status: "ok", note: "For libraries and classrooms",
-        spec: [["Trim", "8.5 × 8.5 in (21.6 × 21.6 cm)"], ["Pages", "32, full color"], ["Binding", "Reinforced case binding"]] }
+        spec: [["Trim", "8.5 × 8.5 in (21.6 × 21.6 cm)"], ["Pages", "32 pages, full color"], ["Binding", "Reinforced case binding"]] }
     ],
     spreads: [["tts-p06", "tts-p07"], ["tts-p08", "tts-p09"], ["tts-p12", "tts-p13"], ["tts-p18", "tts-p19"], ["tts-p20", "tts-p21"], ["tts-p26", "tts-p27"]],
     details: [["Ages", "3–7"], ["Language", "English"], ["Extras", "“Talk about it” questions for grown-ups on the last page"], ["Publisher", "Play Before Pixels, a trade name of AlphaPlay LLC"], ["First published", "2026"], ["ISBN-13", "Assigned at publication"]],
-    related: ["up-go-more", "mtlt", "print-5-12", "cards"]
+    related: ["up-go-more", "mtlt", "print-5-12", "cards"],
+    fig: ["tts-p30", "The last page: “Talk about it” questions for grown-ups, and ideas for planning your own play day."]
   },
   {
     id: "mtlt", title: "More Talk, Less Tap", sub: "A classroom read-aloud about asking good questions",
@@ -95,9 +97,9 @@ PBP.PRODUCTS = [
     blurb: "A rainy-day classroom, a question box and a goldfish named Pip. A read-aloud for circle time, coming spring 2027.",
     long: ["A rainy morning, a class that can’t go outside, and a question box on the teacher’s desk. A read-aloud for circle time about wondering out loud, taking turns and listening to the answer."],
     formats: [
-      { id: "paperback", label: "Paperback", price: 11.99, status: "soon", note: "Spring 2027", spec: [["Trim", "8.5 × 8.5 in"], ["Pages", "32"]] },
-      { id: "hardcover", label: "Hardcover", price: 17.99, status: "soon", note: "Spring 2027", spec: [["Trim", "8.5 × 8.5 in"], ["Pages", "32"]] },
-      { id: "library", label: "Library binding", price: 24.99, status: "soon", note: "Spring 2027", spec: [["Trim", "8.5 × 8.5 in"], ["Pages", "32"]] }
+      { id: "paperback", label: "Paperback", price: 11.99, status: "soon", note: "Spring 2027", spec: [["Trim", "8.5 × 8.5 in"], ["Pages", "32 pages"]] },
+      { id: "hardcover", label: "Hardcover", price: 17.99, status: "soon", note: "Spring 2027", spec: [["Trim", "8.5 × 8.5 in"], ["Pages", "32 pages"]] },
+      { id: "library", label: "Library binding", price: 24.99, status: "soon", note: "Spring 2027", spec: [["Trim", "8.5 × 8.5 in"], ["Pages", "32 pages"]] }
     ],
     details: [["Ages", "4–8"], ["Status", "In production, spring 2027"], ["Publisher", "Play Before Pixels, a trade name of AlphaPlay LLC"]],
     related: ["tablet-slept", "classroom", "print-5-12", "cards"]
@@ -109,8 +111,8 @@ PBP.PRODUCTS = [
     blurb: "A hundred plays that need nothing you don’t already own, sorted by age, time of day and how much energy you have left.",
     long: ["A hundred plays that use what’s already in the house: a laundry basket, a wooden spoon, a cardboard box. Each page gives the play, the words to use while you play it, and a safety note where one is needed. Sorted by age band, time of day and how much energy you have left."],
     formats: [
-      { id: "paperback", label: "Paperback", price: 19.99, status: "ok", note: "Printed to order · ships in 4–7 business days", spec: [["Trim", "8 × 10 in (20.3 × 25.4 cm)"], ["Pages", "128"], ["Binding", "Perfect-bound softcover"]] },
-      { id: "pdf", label: "Printable PDF", price: 12.00, status: "ok", note: "Delivered by email in minutes", spec: [["Paper", "US Letter and A4"], ["Pages", "128"]] }
+      { id: "paperback", label: "Paperback", price: 19.99, status: "ok", note: "Printed to order · ships in 4–7 business days", spec: [["Trim", "8 × 10 in (20.3 × 25.4 cm)"], ["Pages", "128 pages"], ["Binding", "Perfect-bound softcover"]] },
+      { id: "pdf", label: "Printable PDF", price: 12.00, status: "ok", note: "Delivered by email in minutes", spec: [["Paper", "US Letter and A4"], ["Pages", "128 pages"]] }
     ],
     details: [["For", "Parents and carers of children 0–5"], ["Safety", "Every play checked against our small-parts and supervision rules"], ["Publisher", "Play Before Pixels, a trade name of AlphaPlay LLC"], ["ISBN-13", "Assigned at publication"]],
     related: ["up-go-more", "print-0-5", "cards", "course"]
