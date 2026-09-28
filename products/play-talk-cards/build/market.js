@@ -150,10 +150,10 @@ function nextImage(key) {
   const rt = key === 'A' ? ['Ages 5–12', 'Family Talk-Along Cards'] : ['Ages 0–5', 'Play & Talk Cards'];
   return ['08-grow-with-it', `<div class="sq" style="background:${C.tPlum}">
     <div class="h"><p class="k" style="color:${C.plum}">One brand, every age</p><h1>${key === 'A' ? 'Ready for the next stage' : 'Little ones at home too?'}</h1><p>${key === 'A' ? 'When the little ones grow, the talk keeps going with Family Talk-Along Cards for ages 5–12.' : 'Play & Talk Cards give babies, toddlers and preschoolers one play and one talk tip per card.'}</p></div>
-    ${fan(left, 270, 610, .92, 70, 7)}${fan(right, 730, 610, .92, 70, 7)}
-    <svg class="abs" style="left:460px;top:560px" width="80" height="60" viewBox="0 0 80 60"><path d="M8 30H64M48 12L68 30L48 48" stroke="${C.plum}" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    <div class="abs" style="left:90px;top:830px;width:360px;text-align:center"><b style="font-size:18px;letter-spacing:.12em;text-transform:uppercase;opacity:.7">${lt[0]}</b><div style="font:800 25px 'Bricolage Grotesque',sans-serif">${lt[1]}</div></div>
-    <div class="abs" style="left:550px;top:830px;width:360px;text-align:center"><b style="font-size:18px;letter-spacing:.12em;text-transform:uppercase;opacity:.7">${rt[0]}</b><div style="font:800 25px 'Bricolage Grotesque',sans-serif">${rt[1]}</div></div>
+    ${fan(left, 270, 540, .96, 70, 7)}${fan(right, 730, 540, .96, 70, 7)}
+    <svg class="abs" style="left:460px;top:500px" width="80" height="60" viewBox="0 0 80 60"><path d="M8 30H64M48 12L68 30L48 48" stroke="${C.plum}" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="abs" style="left:90px;top:778px;width:360px;text-align:center"><b style="font-size:18px;letter-spacing:.12em;text-transform:uppercase;opacity:.7">${lt[0]}</b><div style="font:800 25px 'Bricolage Grotesque',sans-serif">${lt[1]}</div></div>
+    <div class="abs" style="left:550px;top:778px;width:360px;text-align:center"><b style="font-size:18px;letter-spacing:.12em;text-transform:uppercase;opacity:.7">${rt[0]}</b><div style="font:800 25px 'Bricolage Grotesque',sans-serif">${rt[1]}</div></div>
     <div class="band" style="background:${C.plum}"><span>Each sold separately · bundle both and save</span><img src="${K.LOGO.lockupWhite}" alt=""></div></div>`];
 }
 
@@ -164,12 +164,12 @@ function mockup(key) {
   const back = key === 'A' ? K.backA(0) : K.backB(0);
   return `<div style="width:800px;height:600px;position:relative;overflow:hidden;background:${C.wash}">
     <div class="abs" style="left:-40px;top:470px;width:900px;height:200px;background:#E8EDF5"></div>
-    ${sheetImg(sheet, 60, 46, 330, -7)}
-    ${at(back, 600, 70, .78, 12, 2)}${at(back, 606, 64, .78, 10, 3)}
-    ${at(f(D[picks[0]], 0), 400, 92, .82, -8, 4)}
-    ${at(f(D[picks[1]], 0), 520, 150, .82, 6, 5)}
-    ${at(f(D[picks[2]], 0), 430, 300, .82, -3, 6)}
-    ${at(f(D[picks[3]], 0), 590, 320, .82, 9, 7)}
+    ${sheetImg(sheet, 56, 44, 396, -5)}
+    ${at(back, 600, 52, .6, 12, 2)}${at(back, 606, 47, .6, 9, 3)}
+    ${at(f(D[picks[0]], 0), 488, 96, .6, -9, 4)}
+    ${at(f(D[picks[1]], 0), 620, 196, .6, 7, 5)}
+    ${at(f(D[picks[2]], 0), 480, 318, .6, -4, 6)}
+    ${at(f(D[picks[3]], 0), 628, 380, .6, 10, 7)}
   </div>`;
 }
 

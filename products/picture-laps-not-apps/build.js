@@ -747,6 +747,7 @@ body { font-family: "Nunito Sans", sans-serif; color: ${C.ink} }
 .bk { position: absolute; top: .62in; left: .7in; right: .7in }
 .bk h2 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 34pt; line-height: 1; letter-spacing: -.01em }
 .bk p { margin-top: .16in; font-size: 12.5pt; line-height: 1.45 }
+.bk .nm { color: ${C.ink}; font-weight: 800 }
 .bk ul { margin: .12in 0 0 .22in; font-size: 11.5pt; line-height: 1.45; font-weight: 700 }
 .series { position: absolute; left: 5.35in; top: 4.55in; width: 2.7in; background: #fff; border-radius: .2in; padding: .16in .2in .18in }
 .series-h { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 12.5pt; margin-bottom: .04in }
@@ -789,13 +790,14 @@ function coverWrap(format, dims) {
   const spineText = S >= 0.25 ? `<div class="sp-text">Laps Not Apps <span>· made for ${NAME}</span></div>` : '';
   const css = `@page { size: ${Wt}in ${H}in; margin: 0 } html, body { width: ${Wt}in; height: ${H}in; overflow: hidden }
   .wrap { position: relative; width: ${Wt}in; height: ${H}in; overflow: hidden; background: ${C.sun} }
+  .panel { position: absolute; top: 0; width: ${PW}in; height: ${H}in; overflow: hidden }
   .wrap .page { position: absolute; top: ${py}in; break-after: auto; page-break-after: auto }
   .spine { position: absolute; left: ${PW}in; top: 0; width: ${S}in; height: ${H}in; background: ${C.tomato} }
   .sp-text { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(90deg); white-space: nowrap; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: ${Math.min(14, S * 50)}pt; color: #fff }
   .sp-text .nm { color: ${C.sun} } .sp-text span { font-family: "Fredoka", sans-serif; font-weight: 600 }`;
-  const body = `<div class="wrap">${ext(0, PW, 7.5)}${ext(PW + S, PW, 7.9)}
-    ${BACK.replace('class="page back"', `class="page back" style="left:${bx}in"`)}
-    ${COVER.replace('class="page cover"', `class="page cover" style="left:${fx}in"`)}
+  // each panel clips its own page, so a page's bleed never spills across the spine onto the other side
+  const panel = (x, band, pageHtml, cls, left) => `<div class="panel" style="left:${x}in">${ext(0, PW, band)}${pageHtml.replace(`class="page ${cls}"`, `class="page ${cls}" style="left:${left}in"`)}</div>`;
+  const body = `<div class="wrap">${panel(0, 7.5, BACK, 'back', bx)}${panel(PW + S, 7.9, COVER, 'cover', fx - PW - S)}
     <div class="spine">${spineText}</div></div>`;
   return doc(`Laps Not Apps cover wrap (${format})`, body, css);
 }
