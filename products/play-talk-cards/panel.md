@@ -63,3 +63,10 @@ Every change stays inside BRAND.md: no health or clinical words, no named produc
 - **Still open, as the QA noted:** the founder's note placeholder, human rewriting of the card text, and name clearance.
 
 **Rebuilt:** `node build/check-cards.js` (all 108 cards fit, color and low-ink), `render-all.js`, `pod.js`, `market.js` and `listings.js`. All PDFs, previews, covers, mockups, listing images, the Etsy editions and both `listing.json` files are regenerated. Nothing is committed.
+
+
+## Color-blind check (COMPLIANCE-GATE 20), September 28, 2026
+
+Method: Claude simulated protanopia, deuteranopia and tritanopia (Machado et al. 2009 matrices, full severity) on `preview/listing-images/03-age-coded.png` (the four age bands) and looked at each result. This is a simulation, not a test with color-blind readers.
+
+Result: Pass. Under deuteranopia 1–2 (grass) and 3–5 (tomato) turn a similar olive, but each band also has its own shape (triangle, square, star, circle) and its age in words ("0–12 months", "1–2 years"), printed on every card corner. This meets "sky vs. plum or tomato vs. grass is never the only difference".

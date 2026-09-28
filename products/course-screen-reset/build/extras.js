@@ -111,7 +111,7 @@ write('cover.html', base(768, 960, coverCss) + coverInner());
     <h3>What you can type into</h3>
     <p>In free Acrobat Reader: the planning pages, the blank tracker, the daily notes, the check-ins, your family plan, the certificate and the blank play pages. Lessons, plays and the pre-filled tracker are fixed text. Save a copy to keep your notes.</p>
     <div class="box"><b>Emails:</b> one lesson a day for 30 days. Missed one? Nothing breaks: every lesson is also in the workbook. <b>Guarantee:</b> not right for your family? ${K.REFUND.terms[0].toUpperCase() + K.REFUND.terms.slice(1)}. ${K.REFUND.after}.</div>
-    <div class="foot"><span>${COPY} For the purchasing household; please share the link, not the file.</span><span>${SITE} · ${K.VERSION}</span></div>
+    <div class="foot"><span>${COPY} For the purchasing household; please share the link, not the file. Print shops may print copies for this household.</span><span>${SITE} · ${K.VERSION}</span></div>
   </section>`);
 }
 

@@ -77,3 +77,10 @@ Spacing had to be tightened so the new How to use note fits the paperback page: 
 2. **Edition 2:** more plays for 0–3 months, a 3–4 / 4–5 split, and a classroom/child-care edition with group versions of the plays.
 3. **A Spanish edition** written by a native speaker, not translated, with Spanish songs.
 4. **For older siblings and the 9–12 audience:** the First Phone Agreement Kit (`products/first-phone-plan`) is the right product. This book stays 0–5.
+
+
+## Color-blind check (COMPLIANCE-GATE 20), September 28, 2026
+
+Method: Claude simulated protanopia, deuteranopia and tritanopia (Machado et al. 2009 matrices, full severity) on `preview/listing-images/03-four-age-bands.png` and the chapter openers and looked at each result. This is a simulation, not a test with color-blind readers.
+
+Result: Pass. The 1–2 and 3–5 chapter colors look alike under protanopia and deuteranopia, but each chapter opener, age pill and play header prints the band in words and numbers ("1–2", "1 to 2 years", "From 12 mo"). The KDP interior is black-and-white and uses the same words.

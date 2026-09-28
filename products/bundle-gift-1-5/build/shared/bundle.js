@@ -97,7 +97,7 @@ function make(B, buildDir) {
         <div class="shb li-white"><h4>${mi('gift', 16, D.tomato)} Giving it as a gift?</h4><p>Print the fold card or a reveal card from the gift pages, or forward the download. The license passes to the family who receives it.</p></div>
         <div class="shb li-white"><h4>${mi('safe', 16, D.tomato)} Safety first</h4><p>Every set has its own safety page, and every play has its own safety line. A grown-up is always there.</p></div>
       </div>
-      <p class="small tight">Personal license for one household. ${K.OWNER}</p>
+      <p class="small tight">Personal license for one household. Print shops may print copies for this customer’s family. ${K.OWNER}</p>
     </div>`;
   }
 

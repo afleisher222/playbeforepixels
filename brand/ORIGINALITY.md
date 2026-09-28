@@ -106,6 +106,19 @@
 - **Families of names we've abandoned:** "Screen-Smart" and "Family ___ Plan".
 - **Characters and names that belong to other books:** Biscuit, Pogo, Noodle, Sprocket, Bingo, Kipper, Spot, Clifford, Harry, and "Ada" in a title.
 
+### F. Launch printables: desk review, September 28, 2026
+
+These G-day and week-2 names were listed above as "not yet reviewed". This is a desk review for COMPLIANCE-GATE item 9 (ops/COMPLIANCE-RECORDS/). Evidence: the repo, two general web searches on 2026-09-28 (exact phrases "24 Days of Play" winter countdown; "Birth-to-5 Printable Library" / "Instant Gift Bundle"), and background knowledge. No USPTO, Etsy or Amazon search was run, so every rating stays provisional (UNVERIFIED) and the knockout searches in 4b still apply. None of these names will be filed as a trademark.
+
+| # | Name | Conflict | Why | Decision |
+|---|---|---|---|---|
+| F1 | **Toddler Busy Book** (74 activities, ages 1–5) | Low | A plain category description used by many sellers; nobody can own it, and we don't claim it. The brand name carries the listing. | **KEEP as a description**, always as "Play Before Pixels Toddler Busy Book" or "74 Toddler Busy Book Activities". Never add ™. |
+| F2 | **Ages 1–5 Instant Gift Bundle** | Low | Descriptive. The exact phrase did not appear in the search. | **KEEP as a description.** |
+| F3 | **Birth-to-5 Printable Library** | Low | Descriptive. The exact phrase did not appear in the search; library programs use "Birth to 5" for reading programs, and "Baby's First Library" is an unrelated book-bundle series. "Library" also sits on the GROWTH-ENGINE §7 watch list, which is why the Etsy listing is blocked. | **KEEP on Gumroad only**, pending the founder's naming decision (ops/LAUNCH-NOW.md, founder decision 4). |
+| F4 | **24 Days of Play: Winter Countdown** | Low | "24 Days of Christmas Printables" (Simple Fun for Kids) exists; ours is secular, uses a different lead phrase and its own trade dress. Countdown names are descriptive. | **KEEP.** Never "advent" or "Christmas" in the name, and never copy that seller's layout or activity list. |
+| F5 | **60 Visual Routine Cards Starter Set** | Low | Same line as "Visual Routine Cards" (section 2, unchanged); "starter set" is generic. | **KEEP.** |
+| F6 | **Play Coupons and gift-reveal cards** | Low | Generic ("play coupon" is a common phrase). | **KEEP as a description**, never as a mark. |
+
 ---
 
 ## 2. Final product-name list (after renames)

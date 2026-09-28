@@ -410,16 +410,23 @@ const back = [peoplePage(true), peoplePage(false), wordsPage, blankBoard, blankP
 
 // START HERE file: a short standalone guide (Etsy file 1)
 function startHere(ctx) {
-  const pages = [cover, startHerePage, guide1, safety, buildIt, printing, faq];
+  // One page (COMPLIANCE-GATE 19 / GAPS-ROUND-2 G2-17: a 1-page "Start here" PDF). The grown-up guide, safety rules,
+  // assembly, printing tips and quick answers live in every main file (pages 3–10 and 130), so nothing is lost.
   const rows = ctx.etsy
-    ? [['1', 'START HERE.pdf', 'This guide: quick start, grown-up guide, safety, assembly, printing and quick answers.'], ['2', 'Color · US Letter', `All ${ctx.pages} pages in color, 8.5 × 11 in.`], ['3', 'Color · A4', `All ${ctx.pages} pages in color, 210 × 297 mm.`], ['4', 'Low-ink · US Letter', 'White pages with colorable line art. Same pages, same piece sizes.'], ['5', 'Low-ink · A4', 'White pages with colorable line art, A4.']]
-    : [['1', 'START HERE (US Letter or A4)', 'This guide: quick start, grown-up guide, safety, assembly, printing and quick answers.'], ['2', 'toddler-busy-book.pdf', `All ${ctx.pages} pages in color, US Letter 8.5 × 11 in.`], ['3', 'toddler-busy-book-A4.pdf', `All ${ctx.pages} pages in color, A4 210 × 297 mm.`], ['4', 'toddler-busy-book-low-ink-Letter.pdf', 'White pages with colorable line art, US Letter. Same pages, same piece sizes.'], ['5', 'toddler-busy-book-low-ink-A4.pdf', 'White pages with colorable line art, A4.'], ['6', 'PNG templates (zip)', '18 blank covers, cards, boards, labels and a certificate at 300 dpi for design apps. Optional.']];
-  const files = `<section class="page band-n"><div class="live">${textHead('START HERE', 'What’s in your download', `${ctx.etsy ? 'Five files' : 'Your files'}. Open this one first, then print from the file that matches your paper. Page numbers in this guide point to the main book.`)}
-    <table class="tbl" style="margin-top:16px;font-size:12px">${rows.map(([n, f, d]) => `<tr><td class="pg">${n}</td><td><b>${f}</b></td><td>${d}</td></tr>`).join('')}</table>
-    <div class="card t-sun" style="margin-top:16px"><h3>Type-in pages</h3><p>In every main file, the binder covers, spine and pouch labels, make-your-own pages, weekly planners and certificate have type-in boxes. Open the file in a free PDF reader, type, save, then print.</p></div>
-    <div class="card t-sky" style="margin-top:12px"><h3>Prep time</h3><p><b>0 minutes</b> for ${count(ctx, a => !a.cut && !a.usesPiecesOf)} pages. <b>5–10 minutes</b> for pages with pieces (straight cuts only, 12 pieces or fewer per sheet).</p></div>
-    ${footer(ctx, 2)}</div></section>`;
-  return pages.map((p, i) => i === 1 ? files + p.html(ctx, i + 2) : p.html(ctx, i + 1 + (i > 1 ? 1 : 0))).join('\n');
+    ? [['1', 'START HERE.pdf', 'This page: what to open, where to start and print permission.'], ['2', 'Color · US Letter', `All ${ctx.pages} pages in color, 8.5 × 11 in.`], ['3', 'Color · A4', `All ${ctx.pages} pages in color, 210 × 297 mm.`], ['4', 'Low-ink · US Letter', 'White pages with colorable line art. Same pages, same piece sizes.'], ['5', 'Low-ink · A4', 'White pages with colorable line art, A4.']]
+    : [['1', 'START HERE (US Letter or A4)', 'This page: what to open, where to start and print permission.'], ['2', 'toddler-busy-book.pdf', `All ${ctx.pages} pages in color, US Letter 8.5 × 11 in.`], ['3', 'toddler-busy-book-A4.pdf', `All ${ctx.pages} pages in color, A4 210 × 297 mm.`], ['4', 'toddler-busy-book-low-ink-Letter.pdf', 'White pages with colorable line art, US Letter. Same pages, same piece sizes.'], ['5', 'toddler-busy-book-low-ink-A4.pdf', 'White pages with colorable line art, A4.'], ['6', 'PNG templates (zip)', '18 blank covers, cards, boards, labels and a certificate at 300 dpi for design apps. Optional.']];
+  return `<section class="page band-n"><div class="live">${textHead('START HERE', 'What’s in your download', `${ctx.etsy ? 'Five files' : 'Your files'}. Open this page first, then print from the file that matches your paper.`)}
+    <table class="tbl" style="margin-top:14px;font-size:12px">${rows.map(([n, f, d]) => `<tr><td class="pg">${n}</td><td><b>${f}</b></td><td>${d}</td></tr>`).join('')}</table>
+    <div class="card t-grass" style="margin-top:14px"><h3>Play today in four steps</h3><ol>
+      <li><b>Find your child’s age band:</b> 1–2 years (pages 19–45), 2–3 years (pages 46–78), 3–5 years (pages 79–118). Ages are starting points, not deadlines.</li>
+      <li><b>Print one no-cut page and play.</b> ${count(ctx, a => !a.cut && !a.usesPiecesOf)} pages need no cutting: 0 minutes of prep.</li>
+      <li><b>Cut pieces when you have ten minutes.</b> Straight cuts only, 12 pieces or fewer per sheet, 5–10 minutes. The grown-up keeps the pieces.</li>
+      <li><b>Talk while you play.</b> Every page has one line to say out loud. The 2-page grown-up guide is on pages 4–5.</li></ol></div>
+    <div class="card t-tomato" style="margin-top:12px"><h3>Safety first</h3><p>Read “Our play safety rules” (page 7 of the main file) once before you start. Every page follows them, and a grown-up is right there for every activity.</p></div>
+    <div class="card t-sky" style="margin-top:12px"><h3>Printing and type-in pages</h3><p>Print at 100% / actual size, single-sided. Cardstock for pieces; plain paper is fine for no-cut pages. Covers, labels, planners, make-your-own pages and the certificate have type-in boxes: open the file in a free PDF reader, type, save, then print. Full printing tips: page 10.</p></div>
+    <div class="card t-sun" style="margin-top:12px"><h3>Print permission</h3><p>These files are licensed to the buyer’s household (grandparents and sitters who care for the child count too). The buyer may print as many copies as the family needs, at home or at a print shop. <b>Print shops:</b> this customer may print these pages for their family. Please don’t share or resell the files.</p></div>
+    <p style="margin-top:12px;font-size:10.5px">© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.</p>
+    ${footer(ctx, 1)}</div></section>`;
 }
 
 module.exports = { front, coversSection, back, divider, startHere, EXTRA_CSS };

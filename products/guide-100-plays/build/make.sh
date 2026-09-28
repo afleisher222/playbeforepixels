@@ -22,6 +22,8 @@ node "$R" pdf build/cover-wrap.html guide-100-plays-cover-wrap.pdf
 node build/fixsize.js guide-100-plays.pdf 8.25 10.25
 node build/fixsize.js guide-100-plays-kdp-interior.pdf 8.125 10.25
 node build/fixsize.js guide-100-plays-cover-wrap.pdf $(node -e "const n=require('./build/pagemap-kdp.json').count;console.log((0.25+16+ +(n*0.002252).toFixed(4)).toFixed(4))") 10.25
+# channel tag for the KDP upload files (COMPLIANCE-GATE 16)
+python3 ../../ops/UPLOAD-PACKETS/channel_tag.py kdp guide-100-plays-kdp-interior.pdf guide-100-plays-cover-wrap.pdf
 # digital editions, with type-in fields
 fill() { node "$R" pdf "$1" build/_tmp.pdf && node build/fields.js "$1" build/_tmp.pdf "$2" && rm -f build/_tmp.pdf; }
 fill source-color-letter.html guide-100-plays-letter.pdf

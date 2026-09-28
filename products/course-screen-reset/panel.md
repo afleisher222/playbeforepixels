@@ -77,3 +77,10 @@ Everything below was edited in the build sources, rebuilt with `sh build/make.sh
 2. **Gift delivery:** confirm how the merchant of record sends the program to someone else's email, and adjust the FAQ if needed.
 3. **Spanish edition:** written by a native speaker, with Spanish songs and scripts.
 4. **Edition 2 idea:** a short big-kid track (ages 9–12) covering games, group chats and homework devices. It should link to the First Phone Agreement Kit, not repeat it.
+
+
+## Color-blind check (COMPLIANCE-GATE 20), September 28, 2026
+
+Method: Claude simulated protanopia, deuteranopia and tritanopia (Machado et al. 2009 matrices, full severity) on the pre-filled 30-day tracker (`preview/p09.png`) and looked at each result. This is a simulation, not a test with color-blind readers.
+
+Result: Pass. The week colors on the tracker merge in pairs, but they only group the days: every square has its day number and play name in words, and the "played / spot kept / again!" boxes are labelled. No lesson, script or chart depends on color alone.

@@ -81,3 +81,10 @@ Nothing is clipped or overlapping. The cover and the other listing images show n
 - **Talk lines on each token (SLP):** The tokens are 2.1 in cut pieces, and a talk line would crowd the big picture a 2-year-old needs. The tokens' plays and their talk lines are in the play guide instead.
 - **A printed or hardcover version (grandparent):** The KDP black-and-white journal is already planned in amazon_route_notes.
 - **A "screen-free week" family-night handout (PTA):** Group and event kits are on hold with the school-facing work.
+
+
+## Color-blind check (COMPLIANCE-GATE 20), September 28, 2026
+
+Method: Claude simulated protanopia, deuteranopia and tritanopia (Machado et al. 2009 matrices, full severity) on `preview/listing-images/ages-2-5/04-checklist-colorways.png` and looked at each result. This is a simulation, not a test with color-blind readers.
+
+Result: Pass. The four checklist colorways turn into two or three look-alike hues, but colorway is a style choice, not information: each checklist row has a picture and a word, and the tick circles are the same in every colorway.

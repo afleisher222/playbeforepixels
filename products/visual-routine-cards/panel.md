@@ -100,3 +100,10 @@ A separate session rebuilt the brand logo kit (`brand/logo/`, logo v2: a round t
 The new wordmark is wider, and it pushed the A4 blank-card footer over its width. I shortened that footer note, and the checker is clean again.
 
 The BRAND.md "Logo" section still describes the old mark ("The Return", a P with a ball). The logo session should update it. I didn't edit BRAND.md.
+
+
+## Color-blind check (COMPLIANCE-GATE 20), September 28, 2026
+
+Method: Claude simulated protanopia, deuteranopia and tritanopia (Machado et al. 2009 matrices, full severity) on `preview/listing-images/ages-0-5/04-ages-0-5-cards.png` (Rainbow colorway cards) and looked at each result. This is a simulation, not a test with color-blind readers.
+
+Result: Pass. Card frame colors merge in pairs (for example Snack and Grocery store under protanopia), but the colors only group routines for decoration: every card has a picture and a word label, and the charts are read by picture and word. The Simple (low-ink) colorway has no color at all.

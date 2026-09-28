@@ -103,3 +103,10 @@ Every change keeps to BRAND.md:
 - Everything in `human_todo`.
 - Set up the classroom and site licenses before the PDFs point people to them.
 - Rewrite the changed cards in your own words along with the rest.
+
+
+## Color-blind check (COMPLIANCE-GATE 20), September 28, 2026
+
+Method: Claude simulated protanopia, deuteranopia and tritanopia (Machado et al. 2009 matrices, full severity) on `preview/listing-images/ages-1-5/listing-02.png` and a card sheet and looked at each result. This is a simulation, not a test with color-blind readers.
+
+Result: Pass. Age bands differ by words ("Ages 1–3", "Ages 3–5", "from 15 mo") on every card, and energy levels are words ("Calm", "Medium", "Wiggly") with an icon. Color is a second cue only.

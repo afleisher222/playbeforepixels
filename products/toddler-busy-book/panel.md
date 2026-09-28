@@ -72,3 +72,10 @@ All changes were made in the source under `build/`, then everything was rebuilt 
 - **Same spoon mistake in another product:** the 100 Plays guide's own `a-spoon` icon (`products/guide-100-plays/build/icons.js`) is also a stacking-ring toy. This product no longer uses it; the guide should be fixed separately.
 - **Two new license lines need the founder's approval:** the gift answer and the library license. Both are added to `human_todo` in `listing.json`, along with the open question of saying "velcro" versus "hook-and-loop dots".
 - Nothing has been committed. The edited source is in `build/`, and the rebuilt PDFs, `etsy-upload/`, `preview/`, `listing.json`, `cover.png`, `mockup.png`, `png-templates/` and the PNG zip are in this folder.
+
+
+## Color-blind check (COMPLIANCE-GATE 20), September 28, 2026
+
+Method: Claude simulated protanopia, deuteranopia and tritanopia (Machado et al. 2009 matrices, full severity) on `preview/listing-images/listing-03.png` (the three age bands) and page 1 of the Color file and looked at each result. This is a simulation, not a test with color-blind readers.
+
+Result: Pass. Under protanopia and deuteranopia the 1–2 (grass) and 3–5 (tomato) bands turn a similar olive, but every band pill carries its words ("1–2 years", "2–3 years", "3–5 years") and every page repeats the band in words and a starting age in months. No page depends on color alone. The color-sort activities name each color in words on the page ("red", "blue"), so a color-blind grown-up can still run them.

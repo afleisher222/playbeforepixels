@@ -9,8 +9,13 @@ Staging root: $PBP_STAGING, else ~/pbp-upload-staging. Nothing is written inside
 never copied into git; bundle ZIPs are built fresh from zip-manifest.json so they always hold the current files).
 Checks on every run: files exist, Etsy ≤5 files of ≤20 MB, no web address / QR text / links inside any Etsy PDF
 (including inside ZIPs), SHA-256 of every staged file written to MANIFEST.txt. Ends with "OK" or exits 1.
+Every staged PDF, including each PDF inside a staged ZIP, is stamped with the channel it goes to (channel=etsy for
+Etsy, channel=site for our own checkout on Gumroad) by channel_tag.py, and the stamp is checked (COMPLIANCE-GATE 16).
 """
-import glob, hashlib, json, os, re, shutil, sys, zipfile
+import glob, hashlib, json, os, re, shutil, sys, tempfile, zipfile
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import channel_tag  # noqa: E402
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 PK = os.path.join(ROOT, "ops", "UPLOAD-PACKETS")
@@ -32,10 +37,36 @@ def etsy_clean(pdf_path):
             return False
     return True
 
-def build_zip(members, out, root_arc=None):
-    with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as z:
-        for src, arc in members:
-            z.write(os.path.join(ROOT, src), arc)
+def build_zip(members, out, channel):
+    """ZIP the members; every PDF inside is a stamped copy carrying `channel` (the sources are never changed)."""
+    with tempfile.TemporaryDirectory() as tmp, zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as z:
+        for i, (src, arc) in enumerate(members):
+            path = os.path.join(ROOT, src)
+            if path.lower().endswith(".pdf"):
+                cp = os.path.join(tmp, f"{i}.pdf")
+                shutil.copy2(path, cp)
+                channel_tag.stamp(cp, channel)
+                path = cp
+            z.write(path, arc)
+
+def copy_pdf(src, dst, channel):
+    """Copy one file into the staging folder; a PDF is stamped with its channel."""
+    shutil.copy2(src, dst)
+    if dst.lower().endswith(".pdf"):
+        channel_tag.stamp(dst, channel)
+
+def channel_ok(p, channel):
+    """True when the staged PDF, or every PDF inside the staged ZIP, carries `channel`."""
+    if p.lower().endswith(".pdf"):
+        return channel_tag.read(p) == channel
+    if p.lower().endswith(".zip"):
+        with tempfile.TemporaryDirectory() as tmp, zipfile.ZipFile(p) as z:
+            for n in z.namelist():
+                if n.lower().endswith(".pdf"):
+                    z.extract(n, tmp)
+                    if channel_tag.read(os.path.join(tmp, n)) != channel:
+                        return False
+    return True
 
 def stage(kind, num):
     folder = sorted(glob.glob(os.path.join(PK, kind, f"{num}-*")))
@@ -53,12 +84,12 @@ def stage(kind, num):
     if name.startswith("11-course"):
         c = "products/course-screen-reset/downloads"
         for f in sorted(os.listdir(os.path.join(ROOT, c))):
-            shutil.copy2(os.path.join(ROOT, c, f), os.path.join(out, "files", f)); staged.append(os.path.join(out, "files", f))
+            copy_pdf(os.path.join(ROOT, c, f), os.path.join(out, "files", f), "site"); staged.append(os.path.join(out, "files", f))
         b = os.path.join(out, "bundle-49-extra-files"); os.makedirs(b)
         for zname, sub in [("Play-First-Family-Kit.zip", "05-play-first-family-kit-ages-2-5"), ("100-Screen-Free-Plays.zip", "03-guide-100-plays"), ("Bored-Play-Cards.zip", "04-bored-play-cards-ages-1-5")]:
             pj = json.load(open(os.path.join(PK, "gumroad", sub, "packet.json"), encoding="utf-8"))
             mem = [(f["source"], zname[:-4] + "/" + f["name"]) for f in pj["files"]]
-            build_zip(mem, os.path.join(b, zname)); staged.append(os.path.join(b, zname))
+            build_zip(mem, os.path.join(b, zname), "site"); staged.append(os.path.join(b, zname))
         for f in ("DRIP-EMAILS-PAID.md", "DRIP-EMAILS-FREE-STARTER.md"):
             shutil.copy2(os.path.join(folder, f), os.path.join(out, f))
     else:
@@ -74,10 +105,10 @@ def stage(kind, num):
             for i, f in enumerate(files):
                 dst = os.path.join(out, "files", f["name"])
                 if f["kind"] == "pdf":
-                    shutil.copy2(os.path.join(ROOT, f["src"]), dst)
+                    copy_pdf(os.path.join(ROOT, f["src"]), dst, "etsy")
                 else:
                     slot = next(s for s in man["etsy_download"] if s.get("zip") == f["name"])
-                    build_zip([(m["src"], m["zip_path"]) for m in slot["members"]], dst)
+                    build_zip([(m["src"], m["zip_path"]) for m in slot["members"]], dst, "etsy")
                 staged.append(dst)
             os.makedirs(os.path.join(out, "images"))
             for im in pj["images"]:
@@ -107,9 +138,9 @@ def stage(kind, num):
                 dst = os.path.join(out, "files", f["name"])
                 if f["source"].startswith("built by stage.py"):
                     slot = next(s for s in man["store_download"] if s.get("zip") == f["name"])
-                    build_zip([(m["src"], m["zip_path"]) for m in slot["members"]], dst)
+                    build_zip([(m["src"], m["zip_path"]) for m in slot["members"]], dst, "site")
                 else:
-                    shutil.copy2(os.path.join(ROOT, f["source"]), dst)
+                    copy_pdf(os.path.join(ROOT, f["source"]), dst, "site")
                 staged.append(dst)
             os.makedirs(os.path.join(out, "images"))
             for k in ("thumbnail", "cover"):
@@ -117,6 +148,10 @@ def stage(kind, num):
         for f in ("PACKET.md", "description.txt"):
             if os.path.exists(os.path.join(folder, f)):
                 shutil.copy2(os.path.join(folder, f), os.path.join(out, f))
+    want = "etsy" if kind == "etsy" else "site"
+    for p in staged:
+        if not channel_ok(p, want):
+            problems.append(f"{os.path.basename(p)}: a PDF is missing its channel={want} tag")
     with open(os.path.join(out, "MANIFEST.txt"), "w") as m:
         for p in staged:
             m.write(f"{sha(p)}  {os.path.getsize(p) / 1e6:8.2f} MB  {os.path.relpath(p, out)}\n")

@@ -375,7 +375,7 @@ function startHere(ctx) {
       <div class="tile li-white"><b>2</b><span>countdown boards, one blank</span></div>
       <div class="tile li-white"><b>24</b><span>number tags + a certificate</span></div>
     </div>
-    <p class="small tight">Personal license for one household. ${K.OWNER}</p>
+    <p class="small tight">Personal license for one household. Print shops may print copies for this customer’s family. ${K.OWNER}</p>
   </div>`;
 }
 
