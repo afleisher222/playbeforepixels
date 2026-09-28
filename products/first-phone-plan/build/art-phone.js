@@ -41,7 +41,8 @@ const zz = (x, y, f = I) => `<text x="${x}" y="${y}" font-family="Fredoka, sans-
 // ---------- icons (120 x 100 box, like the routine cards) ----------
 A.phoneSleep = () => phone(58, 58, .66, -4, 'sleep') + moon(98, 24, .24) + zz(84, 86);
 A.phoneAwake = () => phone(60, 54, .7, 4) + star(24, 26, .8, S) + star(98, 74, .6, T);
-A.phoneBed = () => U('bed', 'translate(60,72) scale(.95)', `--bd:${K}`) + phone(50, 57, .36, -90, 'sleep') + Gp('translate(60,72) scale(.95)', `<path d="M-18-10H40A6 6 0 0 1 46-4V14H-12A6 6 0 0 1-18 8Z" fill="${P}"/><circle cx="4" cy="3" r="3" fill="#fff" opacity=".5"/><circle cx="22" cy="3" r="3" fill="#fff" opacity=".5"/>`) + moon(98, 22, .22) + zz(18, 40);
+A.phoneBed = () => U('bed', 'translate(60,72) scale(.95)', `--bd:${K}`) + phone(44, 46, .4, -6, 'sleep') + Gp('translate(60,72) scale(.95)', `<path d="M-34-10H40A6 6 0 0 1 46-4V14H-28A6 6 0 0 1-34 8Z" fill="${P}"/><circle cx="-8" cy="3" r="3" fill="#fff" opacity=".5"/><circle cx="10" cy="3" r="3" fill="#fff" opacity=".5"/><circle cx="28" cy="3" r="3" fill="#fff" opacity=".5"/>`) + moon(100, 22, .22) + zz(80, 44);
+A.swatches = () => Ci(44, 44, 22, T) + Ci(76, 44, 22, K) + Ci(60, 72, 22, P) + star(100, 82, .6, S);
 A.phonePark = () => phone(46, 46, .46, -10, 'sleep') + phone(76, 48, .46, 8, 'sleep') + U('basket', 'translate(60,74) scale(.82)') + moon(102, 20, .2);
 A.phoneGift = () => B.use('palm', 'translate(60,84) scale(1.7)', 'style="--sk:#C08457"') + phone(60, 44, .56, 0) + star(24, 24, .9, S) + star(98, 30, .7, T) + star(96, 70, .5, S);
 A.chargeSpot = () => R(14, 70, 92, 8, 4, WOOD) + R(22, 78, 6, 14, 3, WOOD) + R(92, 78, 6, 14, 3, WOOD) + phone(46, 48, .4, 0, 'sleep') + phone(78, 50, .36, 0, 'sleep') + St('M46 68V74Q46 82 58 82H70', GREY, 3) + moon(100, 18, .18);

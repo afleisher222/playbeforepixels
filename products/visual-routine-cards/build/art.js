@@ -387,4 +387,8 @@ A.fcloud = () => U('cloud', 'translate(62,56) scale(1.1)', `--cl:${GREY}`);
 A.frain = () => U('cloud', 'translate(62,44) scale(.95)', `--cl:${GREY}`) + drop(44, 80, .5) + drop(62, 86, .5) + drop(80, 80, .5);
 A.fsnow = () => U('cloud', 'translate(62,44) scale(.95)', `--cl:${GREY}`) + [[42, 78], [60, 86], [78, 78], [51, 94], [69, 94]].map(([x, y]) => Ci(x, y, 4.5, K)).join('');
 
+// RULE 26 (marketing/CUSTOMER-VOICE.md): a "What we do next" card and a 5-minute wrap-up card
+A.whatNext = () => U('arrow', 'translate(42,54) scale(.78)', `--ar:${K}`) + Ci(92, 54, 22, tS) + U('ball', 'translate(92,54) scale(.34)') + star(24, 22, .55, S) + star(104, 20, .4, T);
+A.fiveMore = () => Gp('translate(52,56)', U('clock', 'scale(1.05)', `--ck1:${G}`)) + Ci(94, 26, 17, T) + bigNum(94, 33.5, '5', W, 22) + St('M86 70q6 6 14 2', S, 3.5) + St('M90 82q6 4 12 0', S, 3.5);
+
 module.exports = { A, NEW_SYMBOLS, CAST, R, Ci, Pa, St, Gp, U, Tx, star, moon, sun, tablet, heart, bigNum, stand, kid, adult, head, bust };

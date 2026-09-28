@@ -38,10 +38,21 @@ SYMBOL = dict(
 SMALL = dict(SYMBOL, CHANNEL=250, A_HEAD=140, C_HEAD=110, A_BACK=40, C_BACK=34, A_NECK=40, C_NECK=38,
              BALL=84, EYE_A=0, EYE_C=0, SOFT=24, C_BODY=236)
 
+# Favicon: drawn straight on the 16 x 16 pixel grid so every straight edge and every circle lands on whole pixels
+# (crisp in a browser tab at 16 px, and at 32 px on retina screens). Units are pixels. No eyes at this size.
+FAVICON = dict(FLOOR=15,                     # floor line (y)
+               A_FRONT=7, A_BODY=7,          # grown-up: flat front at x=7, quarter-circle body radius 7 px
+               C_FRONT=12, C_BODY=4,         # child: flat front at x=12, body radius 4 px (the 5 px gap holds the ball)
+               A_HEAD=(6.5, 4.5, 2.5),       # grown-up head: centre x, centre y, radius
+               C_HEAD=(13, 8, 2),            # child head
+               BALL=(9.5, 13.5, 1.5))        # ball: 3 px, with 1 px of air on each side
+
 FONT = dict(wght=740, opsz=30)          # Bricolage Grotesque instance used for the wordmark
 WORD = dict(TRACK=-6, SPACE=-40,         # letter spacing and word-space adjustment (font units, cap height = 660)
             KERN={('P', 'l'): -6, ('a', 'y'): -8, ('B', 'e'): -4, ('P', 'i'): 4, ('l', 's'): 0},
-            Y_TAIL=0.80)                 # the y of "Play": keep this share of its descender (1 = the font's own tail)
+            Y_TAIL=0.80,                 # the y of "Play": keep this share of its descender (1 = the font's own tail)
+            SOFT=18,                     # radius that softens every letter corner, like the figures' shoulders (0 = off)
+            FLOOR_SQUARE=True)           # ...except corners standing on the baseline: everything sits flat on the floor
 LOCKUP = dict(SYM_H=1.85,               # symbol height as a multiple of the cap height
               GAP=0.50,                  # clear air between symbol and name, as a multiple of the cap height
               DROP=0.0)                  # how far the symbol's floor sits below the text baseline (x cap height)
@@ -218,6 +229,111 @@ def glyph_d(name, dx, base, s, ytail=None):
     return pen.getCommands()
 
 
+def _segments(name, ytail):
+    """glyph outline -> list of contours; each contour = list of ('L', p0, p1) / ('Q', p0, c, p1) in font units"""
+    from fontTools.pens.recordingPen import DecomposingRecordingPen
+    from fontTools.pens.basePen import decomposeQuadraticSegment
+    F = font(); rp = DecomposingRecordingPen(F['gs']); F['gs'][name].draw(rp)
+    sq = (lambda p: (p[0], p[1] * ytail if p[1] < 0 else p[1])) if ytail else (lambda p: p)
+    contours, cur, pos, start = [], None, None, None
+    for op, args in rp.value:
+        args = [sq(a) if a is not None else None for a in args]
+        if op == 'moveTo':
+            cur, pos, start = [], args[0], args[0]
+        elif op == 'lineTo':
+            cur.append(('L', pos, args[0])); pos = args[0]
+        elif op == 'qCurveTo' and args[-1] is None:          # closed contour made only of off-curve points
+            offs = args[:-1]; n = len(offs)
+            mid = lambda a, b: ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
+            contours.append([('Q', mid(offs[i - 1], offs[i]), offs[i], mid(offs[i], offs[(i + 1) % n])) for i in range(n)])
+            cur = None
+        elif op == 'qCurveTo':
+            for c, p in decomposeQuadraticSegment(args):
+                cur.append(('Q', pos, c, p)); pos = p
+        elif op in ('closePath', 'endPath') and cur is not None:
+            if pos != start:
+                cur.append(('L', pos, start))
+            contours.append(cur); cur = None
+    return contours
+
+
+def _soften(contour, r, floor_square):
+    """round every corner of a contour with a small quadratic fillet (radius ~ r font units)"""
+    from fontTools.misc.bezierTools import splitQuadraticAtT
+    n = len(contour)
+    if r <= 0 or n < 2:
+        return contour, [None] * n
+    def pt(seg, t):
+        if seg[0] == 'L':
+            (x0, y0), (x1, y1) = seg[1], seg[2]; return (x0 + (x1 - x0) * t, y0 + (y1 - y0) * t)
+        (x0, y0), (cx, cy), (x1, y1) = seg[1], seg[2], seg[3]; u = 1 - t
+        return (u * u * x0 + 2 * u * t * cx + t * t * x1, u * u * y0 + 2 * u * t * cy + t * t * y1)
+    def tan_end(seg):
+        a, b = (seg[1], seg[2]) if seg[0] == 'L' else ((seg[2], seg[3]) if seg[2] != seg[3] else (seg[1], seg[3]))
+        return (b[0] - a[0], b[1] - a[1])
+    def tan_start(seg):
+        a, b = (seg[1], seg[2]) if seg[0] == 'L' else ((seg[1], seg[2]) if seg[1] != seg[2] else (seg[1], seg[3]))
+        return (b[0] - a[0], b[1] - a[1])
+    def length(seg):
+        return sum(math.dist(pt(seg, i / 16), pt(seg, (i + 1) / 16)) for i in range(16))
+    def t_at(seg, d, from_end):
+        lo, hi = 0.0, 1.0; ref = pt(seg, 1.0 if from_end else 0.0)
+        for _ in range(40):
+            m = (lo + hi) / 2; dist = math.dist(pt(seg, m), ref)
+            if from_end:
+                lo, hi = (m, hi) if dist > d else (lo, m)
+            else:
+                lo, hi = (lo, m) if dist > d else (m, hi)
+        return (lo + hi) / 2
+    corner = [None] * n                      # corner[i]: fillet at the joint after segment i
+    for i in range(n):
+        a, b = contour[i], contour[(i + 1) % n]
+        v1, v2 = tan_end(a), tan_start(b)
+        l1, l2 = math.hypot(*v1), math.hypot(*v2)
+        if l1 == 0 or l2 == 0:
+            continue
+        cosang = max(-1, min(1, (v1[0] * v2[0] + v1[1] * v2[1]) / (l1 * l2)))
+        joint = a[-1]
+        if math.degrees(math.acos(cosang)) < 20 or (floor_square and abs(joint[1]) < 0.5):
+            continue
+        corner[i] = min(r, 0.45 * length(a), 0.45 * length(b))
+    out = []
+    for i, seg in enumerate(contour):
+        d_s = corner[i - 1]; d_e = corner[i]
+        t0 = t_at(seg, d_s, False) if d_s else 0.0
+        t1 = t_at(seg, d_e, True) if d_e else 1.0
+        if seg[0] == 'L':
+            out.append(('L', pt(seg, t0), pt(seg, t1)))
+        else:
+            p0, c, p1 = seg[1], seg[2], seg[3]
+            if t0 > 0 and t1 < 1:
+                part = splitQuadraticAtT(p0, c, p1, t0, t1)[1]
+            elif t0 > 0:
+                part = splitQuadraticAtT(p0, c, p1, t0)[1]
+            elif t1 < 1:
+                part = splitQuadraticAtT(p0, c, p1, t1)[0]
+            else:
+                part = (p0, c, p1)
+            out.append(('Q',) + tuple(part))
+    return out, [contour[i][-1] if corner[i] else None for i in range(n)]
+
+
+def glyph_d_soft(name, dx, base, s, ytail=None):
+    X = lambda p: f'{f(dx + s * p[0])} {f(base - s * p[1])}'
+    d = []
+    for contour in _segments(name, ytail):
+        segs, fil = _soften(contour, WORD['SOFT'], WORD['FLOOR_SQUARE'])
+        n = len(segs)
+        start = segs[0][1] if not fil[n - 1] else segs[0][1]
+        d.append('M' + X(start))
+        for i, seg in enumerate(segs):
+            d.append(('L' + X(seg[2])) if seg[0] == 'L' else ('Q' + X(seg[2]) + ' ' + X(seg[3])))
+            if fil[i]:
+                d.append('Q' + X(fil[i]) + ' ' + X(segs[(i + 1) % n][1]))
+        d.append('Z')
+    return ''.join(d)
+
+
 def words(text, ox, base, s=1.0):
     """wordmark outlines -> (path d, advance width in output units)"""
     F = font(); hb = F['hbmod']
@@ -230,7 +346,7 @@ def words(text, ox, base, s=1.0):
         gx = ox + s * (x + xoff)
         ytail = WORD['Y_TAIL'] if (name == 'y' and WORD['Y_TAIL'] != 1) else None
         if name != 'space':
-            d.append(glyph_d(name, gx, base, s, ytail))
+            d.append(glyph_d_soft(name, gx, base, s, ytail) if WORD['SOFT'] else glyph_d(name, gx, base, s, ytail))
         nxt = chars[n + 1] if n + 1 < len(chars) else None
         x += adv + WORD['TRACK'] + WORD['KERN'].get((chars[n], nxt), 0)
         if name == 'space':
@@ -285,6 +401,18 @@ def symbol_square(side=1000, fill=0.86, scheme='color', k=SYMBOL, bg=None, rx=0,
     return svg_doc((0, 0, side, side), out, style=style, px=(side, side))
 
 
+def favicon_svg(dark_style=True):
+    P = FAVICON; fl = P['FLOOR']
+    def q(fx, R, side):
+        return f'M{f(fx)} {f(fl)}V{f(fl-R)}A{f(R)} {f(R)} 0 0 {0 if side < 0 else 1} {f(fx+side*R)} {f(fl)}Z'
+    ah, ch, bl = P['A_HEAD'], P['C_HEAD'], P['BALL']
+    style = '@media (prefers-color-scheme: dark){.a{fill:#FFFFFF}}' if dark_style else None
+    body = (f'<path class="a" fill="{INK}" d="{q(P["A_FRONT"], P["A_BODY"], -1)}{circle_path(*ah)}"/>'
+            f'<path class="c" fill="{SKY}" d="{q(P["C_FRONT"], P["C_BODY"], 1)}{circle_path(*ch)}"/>'
+            f'<path class="b" fill="{TOMATO}" d="{circle_path(*bl)}"/>')
+    return svg_doc((0, 0, 16, 16), body, style=style, px=(16, 16))
+
+
 # ======================================================================================================== build
 def build():
     files = {}
@@ -309,10 +437,9 @@ def build():
         files[f'{name}.svg'] = svg_doc((lx - p, ly - p, lw + 2 * p, lh + 2 * p), body, bg=INK if sc == 'reverse' else None)
 
     # favicon: small cut, adaptive (the grown-up turns white in dark browser tabs) ---------------------------------------
-    files['favicon.svg'] = symbol_square(1000, 0.96, 'color', SMALL, nudge=(0, 0.0),
-                                         style='@media (prefers-color-scheme: dark){.a{fill:#FFFFFF}}')
+    files['favicon.svg'] = favicon_svg()
     # tiles for raster icons / avatar
-    files['src/avatar-1080.svg'] = symbol_square(1080, 0.60, 'color', SYMBOL, bg=SUN_T, shape='rect', nudge=(0, 0.02))
+    files['src/avatar-1080.svg'] = symbol_square(1080, 0.62, 'color', SYMBOL, bg=SUN_T, shape='rect', nudge=(0.01, 0.015))
     files['src/apple-touch-180.svg'] = symbol_square(180, 0.70, 'color', SMALL, bg=SUN_T)
 
     # stacked logo (tote, stickers, square formats) ------------------------------------------------------------------
@@ -333,7 +460,7 @@ def stacked(scheme='color', k=SYMBOL):
     """symbol above the name set in two lines, centred"""
     g = symbol_geometry(k); x0, y0, x1, y1 = g['bbox']
     _, w1 = words('Play Before', 0, 0); _, w2 = words('Pixels', 0, 0)
-    sym_w = 0.80 * w1                              # symbol a little narrower than the first line
+    sym_w = 0.74 * w1                              # symbol a little narrower than the first line
     s = sym_w / (x1 - x0); sym_h = (y1 - y0) * s
     W = max(w1, w2, sym_w)
     floor_y = sym_h
@@ -416,19 +543,19 @@ def preview_html(files):
     sx, sy, sw, sh = vbox(files['symbol.svg'])
     sym_w_at = spine_h * sw / sh
     spines = ''
-    for col, title, fg in ((SUN, 'Up! Go! More!', INK), (SKY, 'Woof! Moo! Beep!', PAPER), (TOMATO, 'Yum! Splash! Yawn!', PAPER)):
+    for col, title, fg in ((SUN, 'Up! Go! More!', INK), (SKY, 'Whose Lap Today?', PAPER), (TOMATO, 'The Day the Tablet Slept', PAPER)):
         sym = 'symbol.svg' if fg == INK else 'symbol-white.svg'
         spines += (f'<div style="width:84px;height:430px;background:{col};border-radius:3px;position:relative;'
                    f'box-shadow:inset -5px 0 0 rgba(0,0,0,.07)">'
                    f'<div style="position:absolute;left:0;right:0;top:22px;height:300px;writing-mode:vertical-rl;'
-                   f'display:flex;align-items:center;font:800 22px/1 Bricolage Grotesque;letter-spacing:-.01em;color:{fg}">{title}</div>'
+                   f'display:flex;align-items:center;font:800 21px/1 Bricolage Grotesque;letter-spacing:-.01em;color:{fg}">{title}</div>'
                    f'<img src="../{sym}" style="position:absolute;left:50%;bottom:18px;transform:translateX(-50%);'
                    f'height:{spine_h}px;width:{sym_w_at:.1f}px"></div>')
     body = f'''
     <div class="board">
       <div class="head">Play Before Pixels<span>Logo concept v2-B, "Floor Time": a grown-up and a child on the floor, one ball between them</span></div>
       <div class="card" style="left:40px;top:76px;width:1000px;height:360px;background:{PAPER}">
-        <img src="../primary-logo.svg" style="width:760px;height:{760/ratio:.1f}px">
+        <img src="../primary-logo.svg" style="width:820px;height:{820/ratio:.1f}px;margin-top:-20px">
         <div class="lab">Primary logo<span>site header, full colour</span></div></div>
       <div class="card" style="left:1070px;top:76px;width:490px;height:360px;background:{PAPER}">
         <img src="avatar-1080.png" style="width:250px;height:250px;border-radius:50%;margin-top:-26px">
@@ -450,7 +577,7 @@ def preview_html(files):
           <rect x="20" y="104" width="260" height="290" rx="8" fill="{SUN_T}"/>
           <rect x="20" y="104" width="260" height="14" fill="#000" fill-opacity=".05"/>
         </svg>
-        <img src="../src/stacked-logo.svg" style="position:absolute;left:50%;top:232px;transform:translateX(-50%);width:150px">
+        <img src="../src/stacked-logo.svg" style="position:absolute;left:50%;top:222px;transform:translateX(-50%);width:156px">
         <div class="lab">Tote<span>3-colour embroidery, symbol about 2.5 in wide</span></div></div>
     </div>'''
     return page(body, bg=WASH, extra=css)

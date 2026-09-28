@@ -194,6 +194,10 @@ const FAQ = [
   ['Is this a contract with punishments?', 'No. It’s a warm agreement you write together. The phone is never used as a prize or a punishment. When something goes wrong, you pause, talk and adjust.'],
   ['What can I edit?', 'Every blank line and tick box is fillable: names, dates, times, promises, zones, plan answers and the tracker. Printed wording, colors and pictures can’t be changed.'],
   ['Does it work with any phone?', 'Yes. Nothing here depends on a type of phone, an app or a company.'],
+  ['How long does it take?', 'About 30 minutes to fill in the agreement and plan together, then 5 minutes a month to check in.'],
+  ['What if a promise keeps getting broken?', 'Talk about what makes it hard, then change the setup, not the child: move the charging spot, try a practice mission, or rewrite the line together. The agreement is meant to change as they grow.'],
+  ['Does it work for tablets and game consoles too?', 'Yes. The zones, times and fridge-door plan work for any screen in the house.'],
+  ['Can a second home use it?', 'Yes. Print a second fridge-door plan for the other home. The license covers your own family’s homes.'],
   ['Is this medical or professional advice?', 'No. It’s parent education and family planning. For questions about your child’s health or development, talk with your child’s doctor.'],
 ];
 

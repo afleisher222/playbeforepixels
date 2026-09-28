@@ -50,6 +50,8 @@ symbol{overflow:visible}
 h1,h2,h3,p{margin:0}
 .page{--m:var(--tomato);--t:var(--tT);--m2:var(--sun);--t2:var(--tS);--tt:var(--wash);width:${sz.w};height:${sz.h};padding:.5in .5in .56in;position:relative;overflow:hidden;break-after:page;page-break-after:always;display:flex;flex-direction:column;gap:.13in;background:#fff}
 .page:last-child{break-after:auto;page-break-after:auto}
+.page.spread{justify-content:space-between}
+.dates .fl,.tmr .cell .fl{flex:0 0 .3in}
 .cw-tomato{--m:var(--tomato);--t:var(--tT);--m2:var(--sun);--t2:var(--tS)}
 .cw-sky{--m:var(--sky);--t:var(--tK);--m2:var(--sun);--t2:var(--tS)}
 .cw-plum{--m:var(--plum);--t:var(--tP);--m2:var(--tomato);--t2:var(--tT)}
@@ -205,7 +207,7 @@ ul.b li .ball{transform:translateY(-.005in)}
 .cutnote{display:flex;justify-content:space-between;align-items:center;gap:.1in;font-size:7.4pt;line-height:1.3;font-weight:700}
 .cutnote .safe{background:var(--tS);border-radius:.08in;padding:.05in .1in;flex:1}
 /* plan */
-.pn{flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto 1fr;gap:.12in;min-height:0}
+.pn{flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr 1fr auto auto;gap:.12in;min-height:0}
 .pc{border-radius:.16in;background:var(--tt);padding:.11in .14in;display:flex;flex-direction:column;gap:.05in;min-height:0}
 .pc .ph{display:flex;align-items:center;gap:.08in}
 .pc .ph b{width:.26in;height:.26in;border-radius:50%;background:var(--m);color:#fff;font-family:"Fredoka",sans-serif;font-weight:600;font-size:10pt;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
@@ -235,7 +237,7 @@ ul.b li .ball{transform:translateY(-.005in)}
 .tr .dn{position:absolute;left:.06in;top:.05in;font-family:"Fredoka",sans-serif;font-weight:600;font-size:9.5pt;width:.26in;height:.26in;border-radius:50%;background:var(--m);color:#fff;display:flex;align-items:center;justify-content:center}
 .tr>div.m .dn{background:var(--m2)}
 .tr .cc{position:absolute;right:.06in;top:.05in;width:.26in;height:.26in;border-radius:50%;border:1.6px solid var(--ink);background:#fff}
-.tr .art{flex:1;min-height:0;width:100%}
+.tr .art{flex:1;min-height:0;width:100%;margin-top:.2in}
 .tr .nm{font-weight:800;font-size:7.6pt;line-height:1.12;text-align:center;min-height:.23in;display:flex;align-items:center}
 .tr .fl{flex:0 0 .4in;width:100%;border-bottom:1.2px dashed var(--cut)}
 .hrs{display:flex;align-items:flex-end;gap:.08in;font-weight:800;font-size:8pt;letter-spacing:.06em;text-transform:uppercase}
@@ -291,7 +293,7 @@ ul.b li .ball{transform:translateY(-.005in)}
 .low .ci .mh{color:var(--ink)} .low .ci .mh .fl{border-bottom-color:var(--ink)}
 .low .cert{border-width:.06in}
 .low .bdg{background:#fff;color:var(--ink);border-color:#fff;box-shadow:0 0 0 1.5px var(--ink)}
-.low .tr .dn{background:#fff;color:var(--ink);border:1.4px solid var(--ink)}
+.low .tr .dn,.low .tr>div.m .dn{background:#fff;color:var(--ink);border:1.4px solid var(--ink)}
 .low .chip i{background:#fff;border:1.5px solid var(--ink)}
 .low .flag{background:#fff!important;color:var(--ink)!important;border:1px solid var(--ink)}
 .low .pc .ex{color:var(--ink)}
@@ -328,11 +330,11 @@ function inside(ctx, P) {
     ['kindWords', 'Our First Phone Agreement', '18 kid promises + 8 grown-up promises to choose from · plus a blank', P.agree],
     ['phonePark', 'Phone-free zones', '7 zones to choose, for grown-ups too', P.zones],
     ['phoneBed', 'Phone-free times', 'School days and weekends, and the phone’s bedtime', P.times],
-    ['tableZone', '8 zone signs', 'Cut apart, post around the house', P.signs],
+    ['chargeSpot', '8 zone signs', 'Cut apart, post around the house', P.signs],
     ['planner', 'Our Fridge-Door Tech Plan', 'One page for the whole house · example + fillable', P.plan],
     ['outsideTime', '30 Phone-Free Afternoons', 'Challenge rules, tracker, 30 ideas, certificate', P.challenge],
     ['checkIn', 'Monthly check-in', '5 questions, 3 months', P.checkin],
-    ['freeChoice', ctx.low ? 'Quick answers' : '3 colorways', ctx.low ? 'Printing, editing and age questions' : 'Tomato, Sky and Plum versions of the main pages', ctx.low ? P.faq : P.colors],
+    [ctx.low ? 'freeChoice' : 'swatches', ctx.low ? 'Quick answers' : '3 colorways', ctx.low ? 'Printing, editing and age questions' : 'Tomato, Sky and Plum versions of the main pages', ctx.low ? P.faq : P.colors],
   ];
   return hd({ eyebrow: 'What’s inside', title: 'Ten tools, one calm plan', lede: 'Use what fits your family. Most families use 3 or 4 of these; that’s normal. Start with the grown-up guide on the next page.', age: 'grown', prepT: 'Prep 5 min · no cutting needed' })
     + `<div class="toc" style="flex:1;grid-auto-rows:1fr">${tiles.map(([a, t, s, p]) => `<div>${art(a)}<div><div class="nm">${t}</div><div class="small" style="color:var(--ink)">${s}</div><div class="pg">Page ${p}</div></div></div>`).join('')}</div>
@@ -374,7 +376,7 @@ function guide2(ctx) {
   <div class="card"><div class="h2">If interest fades</div><p class="body">Skip a week. Swap the tracker for a new colorway. Let your child pick the next afternoon. Tired day? Just say “phones at the charging spot, let’s find something to do.” That counts.</p></div>
   <div class="placeholder"><b>Founder’s note · placeholder</b><p class="body" style="color:var(--mute)">To be written by the founder in her own words (60–90 words) before release: why this kit exists and one real, everyday tip. This box is replaced, not printed as-is.</p></div>`;
 }
-function tips(ctx) {
+function tips(ctx, P) {
   return hd({ eyebrow: 'Section A · Printing, filling in and safety', title: 'Print it, fill it, post it', lede: 'About 5 minutes to print. Nothing has to be cut unless you want the signs.', age: 'grown', prepT: 'Prep 5 min' })
     + `<div class="steps">
   <div class="card" style="--cbg:var(--tK)"><div class="h2">Printing</div>${li([
@@ -404,6 +406,7 @@ function tips(ctx) {
       'A grown-up always knows where a child is going, with whom, and when they’ll be back. Helmets on for bikes and scooters.',
       'Grown-ups handle knives, the stove, craft knives and tools. Keep small pieces like cards and puzzle pieces away from children under 3.',
     ])}</div>
+  <div class="card" style="--cbg:#fff;border:1.5px solid var(--line)"><div class="h2">Only printing a few pages?</div><p class="body">Most families start with these six: the agreement (pages ${P.agree}–${P.agree + 1}), the fridge-door plan (page ${P.planB}), the tracker (page ${P.tracker}) and the 30 ideas (pages ${P.ideas}–${P.ideas + 1}). Everything else is there when you want it.</p></div>
   <div class="card"><p class="body"><b>Good to know:</b> this kit is parent education and family planning. It isn’t medical or professional advice. For questions about your child’s health or development, talk with your child’s doctor.</p></div>`;
 }
 function faq(ctx) {
@@ -444,6 +447,7 @@ function agree2(ctx) {
   <div><div class="h2" style="margin-bottom:.07in">When something goes wrong, we</div><div class="ww">${T.WHEN_WRONG.map(([a, b], i) => `${i ? `<div class="ar">${ARROW}</div>` : ''}<div class="s"><div class="kid"><b>${i + 1}</b>${a}</div><div class="body">${b}</div></div>`).join('')}</div></div>
   <div class="card"><div class="h2">Our phone basics</div><div class="two" style="gap:.05in .25in">${[['Phone sleeps at', 'spot'], ['Phone’s bedtime', 'bedtime'], ['Our screen spot (same every day)', 'screen'], ['Phone-free zones and times', 'zones']].map(([q, n]) => `<div class="who" style="text-transform:none;letter-spacing:0;font-size:9pt">${q}: ${line(n, { size: 9 })}</div>`).join('')}</div><p class="small">Details go on the phone-free zones, times and fridge-door plan pages.</p></div>
   <div class="card" style="--cbg:var(--t2)"><div class="h2">We’ll read this again on</div><div class="dates">${[['After 1 month', 'rev1'], ['After 3 months', 'rev3'], ['My next birthday', 'revb']].map(([a, n]) => `<div><span class="small">${a}</span>${line(n, { size: 10 })}</div>`).join('')}</div></div>
+  <div class="card" style="--cbg:var(--tG)"><div class="h2">Next steps we’ll try together</div><p class="small" style="color:var(--ink)">New independence steps to try as you grow, like walking to a friend’s house or planning a Saturday on your own. Steps, not prizes.</p>${[1, 2].map(() => `<div class="who" style="text-transform:none;letter-spacing:0">${line('next_step', { size: 10 })}</div>`).join('')}</div>
   <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:.08in"><div class="h2">Signed with a smile</div><div class="sig">${['Me', 'Grown-up', 'Grown-up'].map(s => `<div><span class="fl" ${fld('sign', { size: 14 })}></span><span>${s}</span></div>`).join('')}</div></div>`;
 }
 function agreeBlank(ctx) {
@@ -479,7 +483,7 @@ function signs(ctx, part) {
   const cells = list.map(([a, n, s, c]) => `<div><div class="in" style="--st:${tint[c]}">${a ? art(a) : drawSpot()}${a ? `<div class="nm">${n}</div><div class="s">${s}</div>` : `<span class="fl" style="width:100%;flex:0 0 .45in" ${fld('sign_title', { size: 16, align: 1 })}></span><span class="fl d" style="width:100%;flex:0 0 .34in" ${fld('sign_sub', { size: 10, align: 1 })}></span>`}${mk}</div></div>`).join('');
   return hd({ eyebrow: `Section D · Zone signs · ${part + 1} of 2`, title: part ? 'Zone signs, part 2' : 'Zone signs to post', lede: part ? 'The last one is yours to write or draw.' : 'Cut on the dashed lines and tape them up where they’re needed.', age: 'all', prepT: 'Cut 3 min' })
     + `<div class="cutnote"><span class="safe">✂ 4 signs per sheet, straight cuts only. Grown-up keeps the scissors and the pieces away from children under 3. Cardstock and lamination make them last.</span></div>
-  <div class="sg" style="--sw:calc((${SIZES[ctx.size].w} - 1in) / 2 - .02in);--sh2:3.95in">${cells}</div>`;
+  <div class="sg" style="--sw:calc((${SIZES[ctx.size].w} - 1in) / 2 - .02in);--sh2:4.05in">${cells}</div>`;
 }
 
 // ---------------------------------------------------------------- section E: fridge-door plan
@@ -487,7 +491,7 @@ const PLAN_EX = {
   sleep: 'Kitchen counter basket', bed: '8:30 pm (grown-ups 10)', zones: [1, 1, 1, 1, 1, 0, 1], zoneOther: 'Library trips',
   school: 'Mornings, 3:30–5:30, dinner', weekend: 'Dinner + Saturday morning', from: '6:30 pm', to: '7:15 pm',
   ask: [1, 1, 1, 1, 1], fun: ['Bike loop to the park', 'Card games with Grandpa', 'Cardboard builds', 'Library + hot cocoa'],
-  check: 'First Sunday, after pancakes', next: 'March 1',
+  check: 'First Sunday, after pancakes', next: 'March 1', grown: 'Same basket, by 10 pm', counts: 'Shows, games, videos', days: 'Sunday afternoons',
 };
 function plan(ctx, example) {
   const ex = example ? PLAN_EX : null;
@@ -497,10 +501,10 @@ function plan(ctx, example) {
   const asks = ['Downloading anything', 'Buying anything', 'Joining groups or sign-ups', 'Sharing photos of people', 'Meeting anyone new'];
   return hd({ eyebrow: `Section E · Our Fridge-Door Tech Plan${example ? ' · example' : ' · fillable'}`, title: 'Our Fridge-Door Tech Plan', lede: example ? 'One page for the whole house. Here’s how one family filled it in; yours is on the next page.' : 'One page for the whole house. Fill it in together and post it where everyone can see.', age: 'all', extra: example ? '<span class="ex-tag">Example</span>' : tag('Fillable') })
     + `<div class="pn">
-  <div class="pc"><div class="ph"><b>1</b><span class="kid">Where phones sleep</span></div><div class="q">Charging spot ${val(ex && ex.sleep, 'sleep_spot', { size: 10 })}</div><div class="q">Phone bedtime ${val(ex && ex.bed, 'bedtime', { size: 10 })}</div></div>
-  <div class="pc"><div class="ph"><b>2</b><span class="kid">Our screen spot</span></div><div class="q">From ${val(ex && ex.from, 'spot_from', { size: 10 })} to ${val(ex && ex.to, 'spot_to', { size: 10 })}</div><p class="note">Same time every day. Never bigger or smaller because of chores or behavior.</p></div>
+  <div class="pc"><div class="ph"><b>1</b><span class="kid">Where phones sleep</span></div><div class="q">Charging spot ${val(ex && ex.sleep, 'sleep_spot', { size: 10 })}</div><div class="q">Phone bedtime ${val(ex && ex.bed, 'bedtime', { size: 10 })}</div><div class="q">Grown-ups’ phones ${val(ex && ex.grown, 'grown_phones', { size: 10 })}</div></div>
+  <div class="pc"><div class="ph"><b>2</b><span class="kid">Our screen spot</span></div><div class="q">From ${val(ex && ex.from, 'spot_from', { size: 10 })} to ${val(ex && ex.to, 'spot_to', { size: 10 })}</div><div class="q">Screen fun includes ${val(ex && ex.counts, 'counts', { size: 10 })}</div><p class="note">Same time every day. Never bigger or smaller because of chores or behavior.</p></div>
   <div class="pc"><div class="ph"><b>3</b><span class="kid">Phone-free zones</span></div><div class="tl">${zoneNames.map((z, i) => `<label>${tick(ex && ex.zones[i], 'zone')}${z}</label>`).join('')}</div><div class="q">Also ${val(ex && ex.zoneOther, 'zone_other', { size: 9 })}</div></div>
-  <div class="pc"><div class="ph"><b>4</b><span class="kid">Phone-free times</span></div><div class="q">School days ${val(ex && ex.school, 'times_school', { size: 9 })}</div><div class="q">Weekends ${val(ex && ex.weekend, 'times_weekend', { size: 9 })}</div></div>
+  <div class="pc"><div class="ph"><b>4</b><span class="kid">Phone-free times</span></div><div class="q">School days ${val(ex && ex.school, 'times_school', { size: 9 })}</div><div class="q">Weekends ${val(ex && ex.weekend, 'times_weekend', { size: 9 })}</div><div class="q">Phone-free days ${val(ex && ex.days, 'free_days', { size: 9 })}</div></div>
   <div class="pc"><div class="ph"><b>5</b><span class="kid">We ask first before</span></div><div class="tl" style="grid-template-columns:1fr">${asks.map((z, i) => `<label>${tick(ex && ex.ask[i], 'ask')}${z}</label>`).join('')}</div></div>
   <div class="pc"><div class="ph"><b>6</b><span class="kid">Our go-to phone-free fun</span></div>${[0, 1, 2, 3].map(i => `<div class="q">${val(ex && ex.fun[i], 'fun', { size: 10 })}</div>`).join('')}</div>
   <div class="pc" style="grid-column:1/3;flex-direction:row;gap:.2in;align-items:flex-end"><div style="flex:1;display:flex;flex-direction:column;gap:.04in"><div class="ph"><b>7</b><span class="kid">Our check-in</span></div><div class="q">Monthly, on ${val(ex && ex.check, 'checkin', { size: 10 })}</div></div><div style="flex:0 0 2.2in"><div class="q">Next review ${val(ex && ex.next, 'review', { size: 10 })}</div></div></div>
@@ -519,7 +523,7 @@ function challenge(ctx) {
     ['talkDay', 'Tell us at dinner', 'One question at dinner: “What was the best part of your afternoon?”'],
   ];
   return hd({ eyebrow: 'Section F · The 30-day challenge', title: '30 Phone-Free Afternoons', lede: 'A month of afternoons that belong to your big kid: build, ride, cook, invent, explore. No phone yet? Do it anyway; it’s great practice for planning your own time.', age: 'k', prepT: 'No prep' })
-    + `<div style="height:2.3in">${X.sceneAfternoon()}</div>
+    + `<div style="height:3.1in">${X.sceneAfternoon()}</div>
   <div class="rules">${rules.map(([a, t, s]) => `<div>${art(a)}<div><div class="kid">${t}</div><div class="body">${s}</div></div></div>`).join('')}</div>
   <div class="badges">${[[10, 'Explorer'], [20, 'Adventurer'], [30, 'Champion']].map(([n, t]) => `<div><span class="bdg">${n}<small>days</small></span><div><div class="kid" style="font-size:11pt">Afternoon ${t}</div><div class="small">Day ${n}: celebrate with a together treat, like a game or a walk.</div></div></div>`).join('')}</div>`;
 }
@@ -590,7 +594,7 @@ function buildDoc(ctx, qr) {
   add('inside', (c, P) => inside(c, P), 'What’s inside');
   add('guide1', c => guide1(c), 'Grown-up guide');
   add('guide2', c => guide2(c));
-  add('tips', c => tips(c), 'Printing, filling in and safety');
+  add('tips', (c, P) => tips(c, P), 'Printing, filling in and safety');
   add('faq', c => faq(c), 'Quick answers');
   add('ready', c => ready(c, false), 'Are we ready? checklist');
   add('missions', c => missions(c), '10 practice missions');
@@ -628,7 +632,7 @@ function buildDoc(ctx, qr) {
   const html = pages.map((p, i) => {
     if (p.toc) toc.push([p.toc, i + 1]);
     const body = p.fn(ctx, P);
-    return `<section class="page cw-${p.cw || 'tomato'}" data-key="${p.key}">${body}${p.key === 'cover' ? '' : footer(ctx, i + 1)}</section>`;
+    return `<section class="page cw-${p.cw || 'tomato'}${['guide1', 'guide2', 'tips'].includes(p.key) ? ' spread' : ''}" data-key="${p.key}">${body}${p.key === 'cover' ? '' : footer(ctx, i + 1)}</section>`;
   }).join('\n');
   return { html, toc, n: pages.length, P };
 }
@@ -642,7 +646,7 @@ function wrap(ctx, body, outFile, title) {
 }
 
 // ---------------------------------------------------------------- START HERE (1 page)
-function startHere(ctx, qr) {
+function startHere(ctx, qr, P) {
   const files = ctx.store
     ? [['first-phone-plan.pdf', 'Full color, US Letter'], ['first-phone-plan-a4.pdf', 'Full color, A4'], ['first-phone-plan-low-ink.pdf', 'White backgrounds, line art to color, US Letter'], ['first-phone-plan-low-ink-a4.pdf', 'Low-ink, A4']]
     : [['2-Color-US-Letter.pdf', 'Full color, US Letter'], ['3-Color-A4.pdf', 'Full color, A4'], ['4-Low-Ink-US-Letter.pdf', 'White backgrounds, line art to color, US Letter'], ['5-Low-Ink-A4.pdf', 'Low-ink, A4']];
@@ -651,7 +655,7 @@ function startHere(ctx, qr) {
   <div class="card" style="--cbg:var(--tS)"><div class="h2">Your files</div>${li(files.map(([f, d]) => `<b>${f}</b> · ${d}`))}<p class="small" style="color:var(--ink)">Pick one file for your paper size. Color and low-ink files hold the same pages; the color file adds Sky and Plum versions of the main pages.</p></div>
   <div class="steps"><div class="card" style="--cbg:var(--tK)"><div class="h2">Printing</div>${li(['Print at <b>100% / Actual size</b>.', 'Print only the pages you need. Page 2 of each file lists them.', 'Cardstock for the zone signs (optional).'])}</div>
   <div class="card" style="--cbg:var(--tG)"><div class="h2">Filling in</div>${li(['Open the PDF in a free PDF reader that supports forms (computer or phone) and tap a line to type.', 'You can type names, dates, times, promises, zones, plan answers and tracker ideas. Printed words, colors and pictures can’t be changed.', 'Save, then print. Or print blank and write by hand.'])}</div></div>
-  <div class="card" style="--cbg:var(--tT)"><div class="h2">Where to begin</div>${li(['<b>No phone yet?</b> Start with “Are we ready?” (page 7) and the 10 practice missions.', '<b>Phone on the way?</b> Start with Our First Phone Agreement (page 10).', '<b>Just want more afternoons without phones?</b> Jump to the 30-day challenge (page 19).'])}</div>
+  <div class="card" style="--cbg:var(--tT)"><div class="h2">Where to begin</div>${li([`<b>No phone yet?</b> Start with “Are we ready?” (page ${P.ready}) and the 10 practice missions.`, `<b>Phone on the way?</b> Start with Our First Phone Agreement (page ${P.agree}).`, `<b>Just want more afternoons without phones?</b> Jump to the 30-day challenge (page ${P.challenge}).`])}</div>
   <div class="card" style="--cbg:var(--tP)"><div class="h2">Downloading: use a browser, not the app</div><p class="body">${ctx.store ? 'Open your download link from the order email in a web browser. On a phone, save each PDF to your files first, then open it in a PDF reader.' : 'Open your Etsy Purchases page in a web browser (not the Etsy app) and download each file. On a phone, save each PDF to your files first, then open it in a PDF reader. Your files stay on your Purchases page to download again anytime.'}</p></div>
   ${ctx.store ? `<div class="card" style="flex-direction:row;align-items:center;gap:.2in"><div style="width:1.2in;flex:0 0 auto">${qr.replace('<svg', '<svg style="width:100%;height:auto;display:block"')}</div><div><div class="h2">Free bonus and re-downloads</div><p class="body">Scan for your free summer and holiday edition: <b>${T.BONUS}</b>. Lost a file? Your link stays in your order email; help is at <b>playbeforepixels.com/help</b>.</p></div></div>` : ''}
   <p class="small">License: personal and family use in your own home. Please don’t share or resell. Parent education, not medical or professional advice. Every afternoon idea follows our published safety rules.</p>
@@ -678,8 +682,10 @@ function startHere(ctx, qr) {
   for (const ed of ['store', 'etsy']) {
     fieldN = 0; const ctx = { size: 'letter', low: false, store: ed === 'store', ed };
     const out = path.join(OUT, `start-here-${ed}.html`);
-    fs.writeFileSync(out, wrap(ctx, startHere(ctx, qr), out, `START HERE · ${T.TITLE}`));
+    fs.writeFileSync(out, wrap(ctx, startHere(ctx, qr, manifest['kit-store-color-letter'].P), out, `START HERE · ${T.TITLE}`));
   }
+  { fieldN = 0; const ctx = { size: 'letter', low: false, store: true, ed: 'store' }; const out = path.join(OUT, 'cover.html');
+    fs.writeFileSync(out, wrap(ctx, `<section class="page cw-tomato" data-key="cover">${cover(ctx)}</section>`, out, T.TITLE)); }
   fs.writeFileSync(path.join(OUT, 'manifest.json'), JSON.stringify(manifest, null, 1));
   console.log(Object.entries(manifest).map(([k, v]) => `${k}: ${v.pages} pages`).join('\n'));
 })().catch(e => { console.error(e); process.exit(1); });

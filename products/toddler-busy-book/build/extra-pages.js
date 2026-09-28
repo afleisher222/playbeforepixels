@@ -370,7 +370,7 @@ const faq = {
       ['Do I need a laminator?', 'No. Sheet protectors or plain cardstock work well. Laminating just makes pieces last longer (tips on page ' + ctx.actPage['x-lam'] + ').'],
       ['Is anything shipped?', 'No, it’s a digital download. You print at home or at a print shop, as many copies as your own family needs.'],
       ['My child only wants one page. Is that OK?', 'Completely. Most children love two or three pages and repeat them. Try that page’s “harder” line when it feels easy.'],
-      ['Is this therapy or a school program?', 'No. It’s play for families: pages to talk about together. It isn’t medical or professional advice. Questions about development go to your pediatrician.'],
+      ['Is this a lesson plan or a program?', 'No. It’s play for families: pages to talk about together, with no tests or scores. It isn’t medical or professional advice. Questions about development go to your pediatrician.'],
       ['A file won’t open on my phone', '<span class="site-only">Download on a computer or tablet if you can. Help with downloads and printing: playbeforepixels.com/help.</span><span class="etsy-only">Etsy downloads work best in a web browser on a computer or tablet (the app can’t download files). Send us a message through the shop if you’re stuck.</span>'],
     ].map(([q, a]) => `<div><h4>${q}</h4><p>${a}</p></div>`).join('')}</div>`, ctx, pn),
 };
@@ -382,7 +382,7 @@ const moreFrom = {
 const bonus = {
   id: 'bonus', html: (ctx, pn) => pageWrap('', `<div class="site-only">${textHead('Your free bonus', 'One more thing: a free bonus', 'Get a free companion printable, <b>Busy Book Extras</b> (seasonal pages for the same age bands), plus a short monthly “play at this age” email.')}
     <div style="display:flex;gap:28px;align-items:center;margin-top:26px"><div style="background:#fff;border-radius:18px;padding:14px;box-shadow:0 0 0 2px #D5DCE8">${qrSvg(230)}</div>
-      <div><div class="lab">Scan, or type the short link</div><p class="disp" style="font-size:24px;margin-top:6px">${BONUS}</p><p style="font-size:12.5px;line-height:1.45;margin-top:10px">We only ask for an email and your child’s birth month and year, so the ideas fit their age. We never ask for your child’s name. Unsubscribe any time.</p></div></div></div>
+      <div style="flex:1;min-width:0"><div class="lab">Scan, or type the short link</div><p class="disp" style="font-size:19px;margin-top:6px;overflow-wrap:anywhere">${BONUS}</p><p style="font-size:12.5px;line-height:1.45;margin-top:10px">We only ask for an email and your child’s birth month and year, so the ideas fit their age. We never ask for your child’s name. Unsubscribe any time.</p></div></div></div>
     <div class="etsy-only">${textHead('Thank you', 'Thank you for playing with us', 'We hope a few of these pages become favorites. If they do, a review in the shop helps other families find us.')}</div>
     <div class="card t-sun" style="margin-top:26px"><h3>Share the fun</h3><p>Snap a photo of your busy book or the Busy Book Star certificate and share it with friends and family. Sharing is always optional; please don’t share the files themselves.</p></div>
     <div style="position:absolute;left:0;right:0;bottom:60px;display:flex;justify-content:center"><img src="${ctx.rel}brand/logo/lockup-stacked.svg" style="height:120px"></div>`, ctx, pn),

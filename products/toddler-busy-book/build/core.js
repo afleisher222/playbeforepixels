@@ -133,6 +133,7 @@ body.lowink svg.board .tint{fill:#FFFFFF!important;stroke:#B9C2D3!important}
 body.lowink svg.board .keepc,body.lowink svg.board .keepc *{stroke:none}
 body.lowink svg.board .sil,body.lowink svg.board .sil *{fill:#E6EAF1!important;stroke:#8A96AD!important;stroke-width:1.2px}
 body.lowink .cover-bg{background:#FFFFFF!important}
+body.lowink svg.scene svg > rect:first-child{stroke:none!important}
 /* ---------- ETSY edition: no URL, no QR (marketplace rule) ---------- */
 body.etsy .url,body.etsy .site-only{display:none!important}
 body:not(.etsy) .etsy-only{display:none!important}

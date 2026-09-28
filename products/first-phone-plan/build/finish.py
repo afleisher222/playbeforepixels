@@ -27,8 +27,8 @@ if a.fields:
 if a.toc:
     doc.set_toc([[1, t, p] for t, p in json.load(open(a.toc))])
 doc.set_metadata({'title': a.title, 'author': 'Play Before Pixels (AlphaPlay LLC)',
-                  'subject': 'Play First, Then Screens: printable family kit with checklists, together tokens, helping jobs, chore chart, family plan and 30-day tracker, ages 2-12',
-                  'keywords': 'play first then screens, family checklist, chore chart, together tokens, family screen plan, printable',
+                  'subject': 'First Phone Agreement Kit, ages 9-12: readiness checklist, practice missions, fillable first phone agreement, phone-free zones and times, zone signs, fridge-door tech plan, 30 phone-free afternoons challenge',
+                  'keywords': 'first phone agreement, kids phone agreement, phone-free afternoons, tech plan, printable, fillable, ages 9-12',
                   'creator': 'Play Before Pixels', 'producer': 'Play Before Pixels'})
 doc.save(a.out, garbage=3, deflate=True)
 print(f'{a.out.split("/")[-1]}: {doc.page_count} pages, {n} fields')

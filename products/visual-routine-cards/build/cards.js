@@ -83,7 +83,7 @@ const LIST = {
     ['wAllDone', 'All done', 1], ['wToday', 'Today'], ['wChange', 'Change of plan'], ['wHelp', 'Help, please'], ['wYes', 'Yes'], ['wNo', 'No'],
   ],
   screens: [
-    ['playFirst', 'Play first', 1], ['screensLater', 'Screens later', 1], ['screensOff', 'Screens rest'],
+    ['playFirst', 'Play first', 1], ['screensLater', 'Screens later', 1], ['screensOff', 'Screens rest'], ['whatNext', 'What we do next'], ['fiveMore', '5 more minutes'],
   ],
   'bk-morning': [
     ['alarm', 'Wake up on time'], ['makeBedBig', 'Make my bed'], ['dressedBig', 'Get dressed'], ['washFaceBig', 'Wash my face'],
@@ -95,7 +95,7 @@ const LIST = {
     ['unpackBag', 'Unpack my bag'], ['snackBig', 'Snack'], ['homework', 'Homework'], ['reading20', 'Read 20 minutes'],
     ['instrument', 'Practice music'], ['sports', 'Sports practice'], ['outsideTime', 'Outside time'], ['bike', 'Bike ride'],
     ['build', 'Build something'], ['artProject', 'Art project'], ['boardGame', 'Board game'], ['freePlay', 'Free play'],
-    ['jobsList', 'Check my list'], ['familyGame', 'Family game night'], ['playFirstBig', 'Jobs & play first'], ['screensLaterBig', 'Screens later'],
+    ['jobsList', 'Check my list'], ['familyGame', 'Family game night'], ['playFirstBig', 'Play first'], ['screensLaterBig', 'Screens later'],
   ],
   'bk-evening': [
     ['helpDinner', 'Help make dinner'], ['familyDinnerBig', 'Family dinner'], ['clearTable', 'Clear the table'], ['dishes', 'Wash dishes'],

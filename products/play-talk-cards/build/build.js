@@ -6,7 +6,10 @@ const path = require('path');
 const QR = require('qrcode');
 const K = require('./cards.js');
 const { C, KIDS, ADULTS, kid, adult, use, SHAPE, ICONS } = require('./art.js');
-const { BANDS, MOVES, PLAYS, MOMENTS, PROMPTS, HABITS } = require('./content.js');
+const { BANDS, MOVES, PLAYS, MOMENTS, PROMPTS, HABITS, MESS, moLabel } = require('./content.js');
+// Edition: 'store' (our site: URL + QR allowed) or 'etsy' (no URL, no QR: marketplace rule, BRAND customer-voice rule 2)
+let ED = 'store';
+const store = () => ED === 'store';
 
 const ROOT = path.resolve(__dirname, '..');
 const REPO = path.resolve(ROOT, '../..');
@@ -39,7 +42,7 @@ const esc = K.esc;
 const check = col => `<svg viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="${col}"/><path d="M5.5 10.5l3 3 6-6.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 const shapeSvg = K.shapeSvg;
 function foot(P, n, total) {
-  return `<div class="pfoot"><span>${esc(P.short)} · ${P.agesLong} · page ${n} of ${total}</span><span>${K.COPY} Personal/family license: no resale or sharing.</span></div>`;
+  return `<div class="pfoot"><span>${esc(P.short)} · ${P.agesLong} · page ${n} of ${total} · ${K.VERSION}</span><span>${store() ? '<b>playbeforepixels.com</b> · ' : ''}${K.COPY} Personal/family license.</span></div>`;
 }
 
 // ---------- page 1: cover ----------
@@ -65,8 +68,11 @@ function coverPage(P, S, n, total) {
     ? BANDS.map(b => `<div class="tile" style="--c:${C[b.color]};--t:${K.TINT[b.color]}">${shapeSvg(b.shape, C[b.color], 18)}<b>${b.ages}</b><span>${b.unit === 'yr' ? 'year' : 'years'}</span><em>13 plays</em></div>`).join('')
     : MOMENTS.map(m => `<div class="tile" style="--c:${C[m.color]};--t:${K.TINT[m.color]}"><svg viewBox="-50 -50 100 100" width="30" height="30">${ICONS[m.icon]()}</svg><b class="mw">${m.name}</b><em>13 cards</em></div>`).join('');
   const inside = P.key === 'A'
-    ? ['54 poker-size cards: 52 plays, a how-to card and a blank', '9 cards per page, with cut lines and card backs', 'Make-your-own cards you can type into', 'A 52-week play checklist for the fridge', 'Grown-up guide with 8 simple talk moves', 'US Letter and A4, full color and ink-saver']
-    : ['54 poker-size cards: 52 questions, a how-to card and a blank', '9 cards per page, with cut lines and card backs', 'Make-your-own cards you can type into', 'Cut-out labels for jars, bags and the glove box', 'Grown-up guide with 6 easy talk-along habits', 'US Letter and A4, full color and ink-saver'];
+    ? ['54 poker-size cards: 52 plays, a how-to card and a blank', 'No-cut play pages: start today, cut later', 'Every play: start age, prep, mess, a 2-minute version', 'Make-your-own cards you can type into', 'Grown-up guide with 8 simple talk moves', 'A 52-week play checklist for the fridge']
+    : ['54 poker-size cards: 52 questions, a how-to card and a blank', 'No-cut question pages: start tonight, cut later', '9 cards per page, with cut lines and card backs', 'Make-your-own cards you can type into', 'Grown-up guide with 6 easy talk-along habits', 'Cut-out labels for jars, bags and the glove box'];
+  const prep = P.key === 'A'
+    ? '<b>Prep:</b> about 20 minutes to print and cut, once. Most plays then take 0–2 minutes to set up. Or start today with the no-cut pages.'
+    : '<b>Prep:</b> about 20 minutes to print and cut, once. Or start tonight with the no-cut question pages.';
   return `<section class="page cover" style="--panel:${P.color}">
   <div class="panel" style="height:${panelH}px"></div>
   <div class="cv-head">
@@ -78,9 +84,10 @@ function coverPage(P, S, n, total) {
   <div class="fan" style="top:${panelH - 30}px;left:${S.W - 272}px">${fan(P, picks, .86)}</div>
   <div class="cv-low" style="top:${panelH + 172}px">
     <div class="tiles">${tiles}</div>
+    <p class="prepline">${prep}</p>
     <div class="inside"><h2>Inside this download</h2><ul>${inside.map(t => `<li>${check(P.key === 'A' ? C.grass : C.sky)}<span>${t}</span></li>`).join('')}</ul></div>
   </div>
-  <div class="cv-foot"><img src="${K.LOGO.lockup}" alt="Play Before Pixels" class="lockup"><span>${K.COPY}</span></div>
+  <div class="cv-foot"><img src="${K.LOGO.lockup}" alt="Play Before Pixels" class="lockup"><span>${store() ? '<b>playbeforepixels.com</b><br>' : ''}${K.COPY}<br>${K.VERSION}</span></div>
 </section>`;
 }
 
@@ -108,6 +115,11 @@ function startPage(P, S, n, total) {
     </div>
     <h3 class="h3">The 8 talk moves on the cards</h3>
     <div class="moves">${Object.values(MOVES).map((m, i) => `<div class="mv" style="--c:${[C.tomato, C.sun, C.sky, C.grass, C.plum, C.tomato, C.sun, C.sky][i]}">${K.speech([C.tomato, C.sun, C.sky, C.grass, C.plum, C.tomato, C.sun, C.sky][i], 22)}<b>${m.name}</b><p>${m.how}</p></div>`).join('')}</div>
+    <div class="whyband">
+      <div><b>Why play and talk?</b> Little ones learn to talk by talking with you: a look, a sound, your answer, their turn. Everyday play gives you lots of those back-and-forth moments, with nothing to buy and nothing to teach.</div>
+      <div><b>Three talk lines to try today:</b> “Your turn!” · “Tell me more.” · “What happens next?” <b>Talk, sing and read in the language you know best.</b> A sign, a point or a tap on a talking device counts as a turn.</div>
+      <div><b>Most children love 2–3 of these</b> and want them again and again. That’s perfect: repeat the favorites and skip the rest. Tired day? Every play has a 2-minute version on the no-cut pages.</div>
+    </div>
   </div>
   ${foot(P, n, total)}
 </section>`;
@@ -133,6 +145,11 @@ function startPage(P, S, n, total) {
     </div>
     <h3 class="h3">6 talk-along habits</h3>
     <div class="moves m3" style="margin-bottom:14px">${HABITS.map((h, i) => `<div class="mv">${K.speech([C.tomato, C.sun, C.sky, C.plum, C.grass, C.tomato][i], 22)}<b>${h.name}</b><p>${h.how}</p></div>`).join('')}</div>
+    <div class="whyband b">
+      <div><b>Why a question card?</b> Kids often say more side by side than face to face. A card takes the pressure off: nobody is being quizzed, everyone gets a turn.</div>
+      <div><b>Three talk lines:</b> “Tell me more.” · “What was that like?” · “I wonder…” <b>Talk in the language you know best.</b> Drawing, pointing or typing an answer counts too.</div>
+      <div><b>Most families love 2–3 of these</b> and ask them again and again. Keep the favorites on top of the pile.</div>
+    </div>
     <p class="small">Some questions (the hard parts, the worries) can bring up big feelings. Listening is enough. If something your child shares worries you, reach out to your child’s doctor or another trusted professional.</p>
   </div>
   ${foot(P, n, total)}
@@ -146,7 +163,7 @@ function printPage(P, S, n, total) {
     ['Use cardstock if you can.', 'Heavy paper or cardstock (65–110 lb / 176–300 gsm) feels like a real deck.'],
     ['Edges cut off?', 'Choose “Fit” instead. The cards print a little smaller and still work.'],
     ['Backs are optional.', 'Print the backs page on the reverse of a card sheet, flipping on the long edge. Test one sheet first.'],
-    ['Cut on the lines.', 'A paper trimmer is fastest. Round the corners with a corner punch if you like.'],
+    ['Cut on the lines.', 'A paper trimmer is fastest. Grown-up keeps the pieces and does the cutting. No time? Use the no-cut pages today.'],
     ['Make them last.', 'Laminate for sticky fingers. Keep them in a recipe box, a zip bag or on a ring.'],
   ];
   const safety = P.key === 'A' ? [
@@ -155,12 +172,13 @@ function printPage(P, S, n, total) {
     'Water play: a grown-up within arm’s reach the whole time. Tip the water out after.',
     'No balloons, no long cords or strings, and no choking-risk foods on any card.',
     'Check toys and boxes for loose parts, staples and tape before play.',
+    'Grown-up keeps the pieces: the paper cards are for grown-up hands, not for mouths.',
   ] : [
     'In the car, a passenger reads the card. The driver keeps eyes on the road.',
     'Bath time: stay with your child. Keep the cards dry in a zip bag by the sink.',
     'Any question can be skipped. Nobody has to answer something that feels too big.',
     'If a big worry comes up, listen first. Solutions can wait for a calm moment.',
-    'Laminated cards and card rings stay with grown-ups around babies and toddlers.',
+    'Grown-up keeps the pieces: cards, laminated cards and rings stay away from babies and toddlers.',
   ];
   return `<section class="page content">
   <div class="pin">
@@ -170,7 +188,7 @@ function printPage(P, S, n, total) {
       <div><ul class="tips">${printTips.map(([a, b], i) => `<li>${check([C.tomato, C.sun, C.sky, C.grass, C.plum, C.tomato][i])}<span><b>${a}</b> ${b}</span></li>`).join('')}</ul></div>
       <div>
         <svg class="sheetmini" viewBox="0 0 170 220" width="170" height="220" aria-hidden="true"><rect width="170" height="220" rx="6" fill="${C.wash}"/>${[0, 1, 2].map(r => [0, 1, 2].map(c => `<rect x="${13 + c * 48}" y="${14 + r * 64}" width="48" height="64" fill="#fff"/><rect x="${13 + c * 48}" y="${14 + r * 64}" width="48" height="22" fill="${[C.sky, C.grass, C.sun, C.tomato][(r * 3 + c) % 4]}"/><circle cx="${37 + c * 48}" cy="${25 + r * 64}" r="8" fill="#fff"/>`).join('')).join('')}<path d="M13 14V206M61 14V206M109 14V206M157 14V206M13 14H157M13 78H157M13 142H157M13 206H157" stroke="${C.ink}" stroke-width=".8" stroke-dasharray="3 2" opacity=".5"/></svg>
-        <p class="small center">9 cards per page · 6 pages · 54 cards</p>
+        <p class="small center">9 cards per page · 6 pages · 54 cards<br>Prep: about 20 minutes to print and cut</p>
       </div>
     </div>
     <div class="safetybox">
@@ -193,7 +211,7 @@ function printPage(P, S, n, total) {
       ['Kid picks', 'Let your child choose the card, or ask it.', C.sky],
       ['Family favorites', 'Keep the best ones and ask them again next year.', C.plum],
     ]).map(([a, b, c]) => `<div class="way" style="--c:${c}"><b>${a}</b><p>${b}</p></div>`).join('')}</div>
-    <div class="license"><b>License: PERSONAL.</b> You may print and copy this for your own family only. No resale, redistribution, sharing, posting, uploading to shared or public drives or websites, or use to train AI. Full terms: ${LICENSE_URL}<br>${K.COPY} All rights reserved.</div>
+    <div class="license"><b>License: PERSONAL.</b> You may print and copy this for your own family only. No resale, redistribution, sharing, posting, uploading to shared or public drives or websites, or use to train AI. ${store() ? 'Full terms: ' + LICENSE_URL : 'Full terms are in the shop’s listing and policies.'}<br>${K.COPY} All rights reserved. ${K.VERSION}.</div>
   </div>
   ${foot(P, n, total)}
 </section>`;
@@ -216,8 +234,43 @@ function sheetPage(P, S, cardsHtml, note, n, total) {
   <div class="grid" style="left:${S.gx}px;top:${S.gy}px">${cells}</div>
   ${gridLines(S)}
   <div class="sidenote l" style="width:${S.H}px"><span>${esc(P.short)} · ${esc(note)} · page ${n} of ${total}</span></div>
-  <div class="sidenote r" style="width:${S.H}px"><span>Print at Actual size (100%) · cut on the lines</span></div>
-  <div class="sheetfoot" style="left:${S.gx + K.CW}px;width:${K.CW}px;top:${S.gy + 3 * K.CH}px;height:${S.H - S.gy - 3 * K.CH}px"><span>© 2026 AlphaPlay LLC · personal/family license</span></div>
+  <div class="sidenote r" style="width:${S.H}px"><span>Print at Actual size (100%) · cut on the lines · Grown-up keeps the pieces</span></div>
+  <div class="sheetfoot" style="left:${S.gx}px;width:${3 * K.CW}px;top:${S.gy + 3 * K.CH}px;height:${S.H - S.gy - 3 * K.CH}px"><span>${store() ? 'playbeforepixels.com · ' : ''}${K.COPY} Personal/family license · ${K.VERSION}</span></div>
+</section>`;
+}
+
+// ---------- no-cut pages (customer-voice rules 5, 6, 7): play today without cutting ----------
+function noCutA(P, S, b, n, total) {
+  const bi = BANDS.indexOf(b), col = C[b.color], tint = K.TINT[b.color];
+  const rows = PLAYS[b.key].map((pl, i) => `<div class="nc-row">
+    <div class="nc-a"><em>${K.pad2(bi * 13 + i + 1)}</em><b>${esc(pl.t)}</b><span class="nc-m">${moLabel(pl.mo)} · Prep ${pl.prep} min · ${MESS[pl.mess]} · ~${pl.min} min${pl.buy ? '' : ' · <i>nothing to buy</i>'}</span><span class="nc-n"><i>Needs</i> ${esc(pl.n)}</span></div>
+    <div class="nc-b">${esc(pl.p)} <span class="nc-k">Talk: ${esc(pl.k)}</span></div>
+    <div class="nc-c"><p><i>2-minute version</i> ${esc(pl.tired)}</p><p><i>Easier</i> ${esc(pl.easy)}</p><p><i>Harder</i> ${esc(pl.hard)}</p></div>
+  </div>`).join('');
+  return `<section class="page content nocut" style="--c:${col};--t:${tint}">
+  <div class="pin">
+    <div class="nc-head"><div><p class="kick dark">No-cut play pages · ${bi + 1} of 4</p><h2 class="ptitle sm">${shapeSvg(b.shape, col, 30)} ${b.ages} ${b.unit === 'yr' ? 'year' : 'years'}: cards ${K.pad2(bi * 13 + 1)}–${K.pad2(bi * 13 + 13)}</h2></div>
+    <p class="nc-safe">${K.shield(C.grass, 14)}<span><b>With a grown-up, every time.</b> ${esc(b.safe)} Card-specific safety notes are on each card.</span></p></div>
+    <div class="nc-cols"><span>Play</span><span>How to play</span><span>Tired day · easier · harder</span></div>
+    <div class="nc-list">${rows}</div>
+  </div>
+  ${foot(P, n, total)}
+</section>`;
+}
+function noCutB(P, S, moments, n, total, part) {
+  const blocks = moments.map(m => {
+    const i0 = MOMENTS.indexOf(m) * 13;
+    return `<div class="ncq" style="--c:${C[m.color]};--t:${K.TINT[m.color]}"><div class="ncq-h"><svg viewBox="-50 -50 100 100" width="30" height="30">${ICONS[m.icon]()}</svg><b>${m.name}</b><span>${m.key === 'car' ? 'A passenger reads; the driver just talks.' : m.key === 'bath' ? 'Grown-up stays close. Keep this page dry.' : m.where}</span></div>
+    <ol>${PROMPTS[m.key].map((q, j) => `<li><em>${K.pad2(i0 + j + 1)}</em><span><b>${esc(q.q)}</b> <i>${esc(q.k)}</i></span></li>`).join('')}</ol></div>`;
+  }).join('');
+  return `<section class="page content nocutb">
+  <div class="pin">
+    <p class="kick dark">No-cut question pages · ${part} of 2</p>
+    <h2 class="ptitle sm">Start tonight, cut later</h2>
+    <p class="lede sm">Read a question straight from this page. The grown-up tip is in italics.</p>
+    ${blocks}
+  </div>
+  ${foot(P, n, total)}
 </section>`;
 }
 
@@ -231,6 +284,7 @@ function trackerPage(P, S, n, total) {
     <p class="lede">One card a week is plenty. Check it off when you’ve played it, and color in the heart if your child asks for it again.</p>
     <div class="tracker">${cols}</div>
     <div class="trk-foot"><span>Our favorite play so far:</span><i class="ln"></i><span>Our child’s newest word or phrase:</span><i class="ln"></i></div>
+    <div class="sharemark"><img src="${K.LOGO.lockup}" alt="Play Before Pixels"><span>${store() ? 'playbeforepixels.com' : 'Play Before Pixels'}</span></div>
   </div>
   ${foot(P, n, total)}
 </section>`;
@@ -251,6 +305,7 @@ function labelsPage(P, S, n, total) {
     <p class="small" style="margin:-4px 0 10px">Check a box each time a card gets asked. Start on any day. Aim for a few checks, not a full grid.</p>
     <table class="week"><tr><th></th>${[1, 2, 3, 4, 5, 6, 7].map(d => `<th>Day ${d}</th>`).join('')}</tr>${MOMENTS.map(m => `<tr style="--c:${C[m.color]};--t:${K.TINT[m.color]}"><td class="wm">${m.name}</td>${[1, 2, 3, 4, 5, 6, 7].map(() => '<td><i></i></td>').join('')}</tr>`).join('')}</table>
     <div class="trk-foot"><span>Our family’s favorite question so far:</span><i class="ln"></i><span>A question we want to add:</span><i class="ln"></i></div>
+    <div class="sharemark"><img src="${K.LOGO.lockup}" alt="Play Before Pixels"><span>${store() ? 'playbeforepixels.com' : 'Play Before Pixels'}</span></div>
   </div>
   ${foot(P, n, total)}
 </section>`;
@@ -271,19 +326,21 @@ function nextPage(P, S, n, total, qrSvg) {
   <div class="pin">
     <p class="kick dark">Keep playing</p>
     <h2 class="ptitle">What’s next</h2>
-    <div class="bonus" style="--c:${P.color};--t:${P.tint}">
+    ${store() ? `<div class="bonus" style="--c:${P.color};--t:${P.tint}">
       <div class="qr">${qrSvg}</div>
       <div><h3>Your free companion bonus</h3><p>Scan the code or visit <b>${P.bonus}</b> for extra printable cards and a short, friendly idea by email each month.</p><p class="small">We ask only for an email address and your child’s birth month and year, never names. Unsubscribe any time.</p></div>
-    </div>
+    </div>` : `<div class="bonus" style="--c:${P.color};--t:${P.tint}">
+      <div><h3>Thank you for playing first</h3><p>Your files stay on your Etsy Purchases page, ready to download again any time. Open them in a web browser, not the app, and save them to Files or your computer.</p><p class="small">Share a photo of your fridge checklist or your favorite card: sharing is always optional.</p></div>
+    </div>`}
     <h3 class="h3">Next for your family</h3>
     <div class="nexts">${nexts.map(([t, d, c, ic]) => `<div class="nx" style="--c:${c}"><span class="nx-ic"><svg viewBox="-60 -60 120 120" width="58" height="58">${ICONS[ic]()}</svg></span><div><b>${t}</b><p>${d}</p></div></div>`).join('')}</div>
-    <p class="small">Find them all at <b>playbeforepixels.com</b>. Bundles are offered at a fair discount.</p>
-    <div class="review"><div><h3>Which card did your family love?</h3><p>A short review on the shop where you bought this helps other families find it. Questions or ideas? Write to us through the contact form at <b>playbeforepixels.com/contact</b>.</p></div><svg viewBox="-50 -50 100 100" width="84" height="84" aria-hidden="true"><use href="#heart" transform="scale(1.05)"/></svg></div>
+    <p class="small">${store() ? 'Find them all at <b>playbeforepixels.com</b>.' : 'Find them all in our shop, <b>Play Before Pixels</b>.'} Bundles are offered at a fair discount.</p>
+    <div class="review"><div><h3>Which card did your family love?</h3><p>A short, honest review on the shop where you bought this helps other families decide. Questions or ideas? ${store() ? 'Write to us through the contact form at <b>playbeforepixels.com/contact</b>.' : 'Send us a message through Etsy.'}</p></div><svg viewBox="-50 -50 100 100" width="84" height="84" aria-hidden="true"><use href="#heart" transform="scale(1.05)"/></svg></div>
     <div class="colophon">
       <img src="${K.LOGO.lockup}" alt="Play Before Pixels" class="lockup sm">
-      <p><b>${esc(P.title)}, ${P.agesLong}.</b> First edition, 2026. Printable PDF for personal and family use.</p>
+      <p><b>${esc(P.title)}, ${P.agesLong}.</b> ${K.VERSION}. Printable PDF for personal and family use.</p>
       <p>Parent education only. These cards are ideas for everyday play and conversation; they are not medical, developmental or professional advice and are not a substitute for care from a qualified professional. ${P.key === 'A' ? 'Always supervise children during play.' : 'Supervise children as right for their age, especially near water and in the car.'}</p>
-      <p>${K.COPY} All rights reserved. License: personal/family use only; full terms at ${LICENSE_URL}.</p>
+      <p>${K.COPY} All rights reserved. License: personal/family use only; ${store() ? 'full terms at ' + LICENSE_URL : 'full terms in the shop’s listing and policies'}.</p>
     </div>
   </div>
   ${foot(P, n, total)}
@@ -430,21 +487,28 @@ ${K.CARD_CSS}
 function logoRel(fromDir) { return path.relative(fromDir, path.join(REPO, 'brand/logo')).split(path.sep).join('/') + '/'; }
 function fontRel(fromDir) { return path.relative(fromDir, path.join(REPO, 'brand/fonts/fonts.css')).split(path.sep).join('/'); }
 
+// Page plan. A: cover, guide, print+safety, 4 no-cut play pages, 6 card sheets, backs, blanks, tracker, next = 17.
+// B: cover, guide, print+safety, 2 no-cut question pages, 6 card sheets, backs, blanks, labels, next = 15.
+const pageCount = P => P.key === 'A' ? 17 : 15;
 function buildPages(P, S, qrSvg, opts = {}) {
-  const TOTAL = 13;
+  const TOTAL = pageCount(P);
   const pages = [];
-  pages.push(coverPage(P, S, 1, TOTAL));
-  pages.push(startPage(P, S, 2, TOTAL));
-  pages.push(printPage(P, S, 3, TOTAL));
+  let n = 0;
+  pages.push(coverPage(P, S, ++n, TOTAL));
+  pages.push(startPage(P, S, ++n, TOTAL));
+  pages.push(printPage(P, S, ++n, TOTAL));
+  if (P.key === 'A') BANDS.forEach(b => pages.push(noCutA(P, S, b, ++n, TOTAL)));
+  else { pages.push(noCutB(P, S, MOMENTS.slice(0, 2), ++n, TOTAL, 1)); pages.push(noCutB(P, S, MOMENTS.slice(2), ++n, TOTAL, 2)); }
   for (let s = 0; s < 6; s++) {
     const cards = P.deck.slice(s * 9, s * 9 + 9).map(cd => P.card(cd, 0));
-    pages.push(sheetPage(P, S, cards, `Card sheet ${s + 1} of 6`, 4 + s, TOTAL));
+    pages.push(sheetPage(P, S, cards, `Card sheet ${s + 1} of 6`, ++n, TOTAL));
   }
-  pages.push(sheetPage(P, S, Array(9).fill(P.back(0)), 'Card backs (optional)', 10, TOTAL));
+  pages.push(sheetPage(P, S, Array(9).fill(P.back(0)), 'Card backs (optional)', ++n, TOTAL));
   const blank = P.key === 'A' ? K.blankA(0) : K.blankB(0);
-  pages.push(sheetPage(P, S, Array(9).fill(blank), 'Make your own: type or write', 11, TOTAL));
-  pages.push(P.key === 'A' ? trackerPage(P, S, 12, TOTAL) : labelsPage(P, S, 12, TOTAL));
-  pages.push(nextPage(P, S, 13, TOTAL, qrSvg));
+  pages.push(sheetPage(P, S, Array(9).fill(blank), 'Make your own: type or write', ++n, TOTAL));
+  pages.push(P.key === 'A' ? trackerPage(P, S, ++n, TOTAL) : labelsPage(P, S, ++n, TOTAL));
+  pages.push(nextPage(P, S, ++n, TOTAL, qrSvg));
+  if (n !== TOTAL) throw new Error('page count mismatch ' + n + ' vs ' + TOTAL);
   return pages;
 }
 

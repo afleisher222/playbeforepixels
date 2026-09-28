@@ -1,7 +1,8 @@
 // Card components shared by the print sheets, the POD-later deck files and the listing images.
 // Poker size: 2.5 x 3.5 in trim = 240 x 336 CSS px at 96 dpi. `b` = bleed in px (12 px = 0.125 in).
 const { ICONS, SHAPE, ALL_SYMBOLS, head, C, KIDS, ADULTS, kid, adult, use } = require('./art.js');
-const { BANDS, MOVES, PLAYS, MOMENTS, PROMPTS } = require('./content.js');
+const { BANDS, MOVES, PLAYS, MOMENTS, PROMPTS, MESS, moLabel } = require('./content.js');
+const VERSION = 'Version 1.0 · September 2026';
 
 const CW = 240, CH = 336;
 const TINT = { sky: C.tSky, grass: C.tGrass, sun: C.tSun, tomato: C.tTomato, plum: C.tPlum };
@@ -43,13 +44,26 @@ function cardA(cd, b = 0) {
     <span class="num">${pad2(cd.no)}</span>
     <div class="body">
       <h3>${esc(cd.t)}</h3>
-      <p class="need"><i>You need</i> ${esc(cd.n)}</p>
+      <p class="need"><i>Needs</i> ${esc(cd.n)}</p>
+      ${metaRow(cd)}
       <p class="play">${esc(cd.p)}</p>
       <div class="talk"><span class="tl">${speech(col, 13)}Talk tip <em>· ${mv.name}</em></span><p>${esc(cd.k)}</p></div>
-      <p class="safe">${shield(col)}<span>${esc(cd.s || bd.safe)}</span></p>
+      <p class="safe">${shield(col)}<span><b>With a grown-up.</b> ${esc(cd.s || bd.safe)}</span></p>
     </div>
   </div>
 </div>`;
+}
+
+// tiny line icons for the meta row: start age, prep, mess, play time
+const MI = {
+  age: '<circle cx="6" cy="4" r="2.6"/><path d="M1.5 11.5c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4"/>',
+  prep: '<path d="M2 3.5h8M2 6.5h8M2 9.5h5"/>',
+  mess: '<path d="M6 1.5c2 2.6 3.4 4.4 3.4 6.1A3.4 3.4 0 0 1 2.6 7.6C2.6 5.9 4 4.1 6 1.5z"/>',
+  time: '<circle cx="6" cy="6.5" r="4.6"/><path d="M6 4v2.7l1.8 1.1"/>',
+};
+const mi = k => `<svg viewBox="0 0 12 13" width="9" height="9.75" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${MI[k]}</svg>`;
+function metaRow(cd) {
+  return `<p class="meta"><span>${mi('age')}${moLabel(cd.mo)}</span><span>${mi('prep')}Prep ${cd.prep} min</span><span>${mi('mess')}${MESS[cd.mess]}</span><span>${mi('time')}~${cd.min} min</span></p>`;
 }
 
 function howtoA(b = 0) {
@@ -63,12 +77,13 @@ function howtoA(b = 0) {
       <ol class="steps">
         <li>Find your child’s color.</li>
         <li>Pick a card, or let your child pick.</li>
-        <li>Play for five minutes or more.</li>
+        <li>Play while it’s fun. Stop before it isn’t.</li>
         <li>Try the talk tip. Then wait.</li>
       </ol>
       <ul class="key">${BANDS.map(bd => `<li>${shapeSvg(bd.shape, C[bd.color], 13)}<b>${bd.ages}</b> ${bd.unit === 'yr' ? 'year' : 'years'}</li>`).join('')}</ul>
       <svg class="strip" viewBox="0 0 210 50" width="210" height="50" aria-hidden="true">${[['ball', C.tSky], ['tower', C.tGrass], ['teapot', C.tSun], ['rocket', C.tTomato]].map(([id, t], i) => `<circle cx="${27 + i * 52}" cy="25" r="23" fill="${t}"/><g transform="translate(${27 + i * 52},25)">${icon(id, .36)}</g>`).join('')}</svg>
       <p class="safe big">${shield(C.plum, 12)}<span>Every card: a grown-up plays along and stays within reach.</span></p>
+      <p class="ver">${VERSION}</p>
     </div>
   </div>
 </div>`;
@@ -138,7 +153,7 @@ function cardB(cd, b = 0) {
   <div class="trim">
     ${art}
     <div class="mo"><b>${m.name}</b><span>${MOMENT_SUB[m.key]}</span></div>
-    <span class="num">${pad2(cd.no)}</span>
+    <span class="num"><small>5–12 ·</small>${pad2(cd.no)}</span>
     <div class="body">
       <div class="qwrap"><p class="q" style="font-size:${qSize(cd.q)}px">${esc(cd.q)}</p></div>
       <div class="talk"><span class="tl">${speech(col, 13)}Grown-up tip</span><p>${esc(cd.k)}</p></div>
@@ -163,6 +178,7 @@ function howtoB(b = 0) {
       <ul class="key">${MOMENTS.map(m => `<li><svg viewBox="-11 -11 22 22" width="13" height="13"><circle r="9" fill="${C[m.color]}"/></svg><b>${m.name}</b></li>`).join('')}</ul>
       <svg class="strip" viewBox="0 0 210 50" width="210" height="50" aria-hidden="true">${MOMENTS.map((m, i) => `<circle cx="${27 + i * 52}" cy="25" r="23" fill="${TINT[m.color]}"/><g transform="translate(${27 + i * 52},25)">${icon(m.icon, .34)}</g>`).join('')}</svg>
       <p class="safe big">${shield(C.ink, 12)}<span>In the car, a passenger reads. The driver just talks.</span></p>
+      <p class="ver">${VERSION}</p>
     </div>
   </div>
 </div>`;
@@ -226,7 +242,12 @@ symbol{overflow:visible}
 .num{right:12px;min-width:30px;justify-content:center;padding:0 7px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-size:12.5px}
 .cA .body{position:absolute;left:15px;right:15px;top:117px;bottom:12px;display:flex;flex-direction:column}
 .cA h3{margin:0 0 3px;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:18px;line-height:1.05;letter-spacing:-.015em}
-.need{margin:0 0 5px;font-size:9.5px;line-height:1.25;font-weight:700}
+.meta{margin:0 0 5px;display:flex;flex-wrap:nowrap;justify-content:space-between;gap:4px;font-size:7.3px;line-height:1;font-weight:800;color:${C.ink};opacity:.78;white-space:nowrap}
+.meta span{display:inline-flex;align-items:center;gap:2px}
+.meta svg{flex:none;color:var(--band)}
+.ver{margin:5px 0 0;font-size:6.8px;font-weight:700;opacity:.55;text-align:right}
+.num small{font-size:8px;font-weight:800;margin-right:3px;font-family:"Nunito Sans",sans-serif;opacity:.75}
+.need{margin:0 0 4px;font-size:9.5px;line-height:1.25;font-weight:700}
 .need i{font-style:normal;font-weight:800;font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin-right:3px}
 .play{margin:0;font-size:11.2px;line-height:1.36;font-weight:600}
 .talk{margin-top:auto;background:var(--tint);border-radius:10px;padding:6px 9px 7px}
@@ -235,6 +256,7 @@ symbol{overflow:visible}
 .talk p{margin:0;font-size:10.2px;line-height:1.3;font-weight:700}
 .safe{margin:6px 0 0;display:flex;align-items:flex-start;gap:5px;font-size:8.2px;line-height:1.25;font-weight:700;opacity:.82;min-height:20px}
 .safe svg{flex:none;margin-top:1px}
+.safe b{font-weight:900}
 /* special cards */
 .special .sp-head{position:absolute;left:15px;right:15px;top:14px;color:#fff}
 .sp-kick{display:block;font-weight:800;font-size:8px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-bottom:3px}
@@ -274,15 +296,19 @@ symbol{overflow:visible}
 .bk-t{margin:0;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:25px;letter-spacing:-.02em;line-height:1}
 .bk-s{margin:5px 0 0;font-size:10px;font-weight:800;letter-spacing:.06em}
 .bk-b{margin:10px 0 0;font-size:8px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:.6}
-/* ink-saver colorway */
+/* low-ink colorway: white grounds, outlined panels, line-art backs */
 .ink .card{--deco:transparent}
-.ink .cA:not(.special) .bandbg,.ink .cB:not(.special) .bandbg{background:var(--tint)}
+.ink .card .bandbg{background:#fff!important;border-bottom:2px solid var(--band)}
+.ink .cA .art > circle[fill="#fff"],.ink .cB .art > circle[fill="#fff"]{stroke:var(--band);stroke-width:1.5}
+.ink .chip,.ink .num{border:1.3px solid var(--band)}
 .ink .cB:not(.special){--on:${C.ink}}
-.ink .cA:not(.special) .talk,.ink .cB:not(.special) .talk{background:#fff;border:1.4px solid var(--band)}
-.ink .special .bandbg{background:var(--tint)}
+.ink .cA .talk,.ink .cB .talk{background:#fff;border:1.4px solid var(--band)}
 .ink .special .sp-head,.ink .special .sp-head h3{color:${C.ink}}
+.ink .key{background:#fff;border:1.2px solid var(--band)}
+.ink .strip > circle{fill:#fff;stroke:#B9C1D0;stroke-width:1}
 .ink .back .bgpat rect{fill:#fff}
+.ink .back .bgpat g *{fill:none!important;stroke:#9AA3B5;stroke-width:1.2}
 .ink .back .bk-label{border:2px solid ${C.ink}}
 `;
 
-module.exports = { CW, CH, DECK_A, DECK_B, cardA, cardB, backA, backB, blankA, blankB, defs, CARD_CSS, setLogoBase, LOGO, COPY, TINT, shapeSvg, speech, shield, icon, esc, pad2 };
+module.exports = { VERSION, CW, CH, DECK_A, DECK_B, cardA, cardB, backA, backB, blankA, blankB, defs, CARD_CSS, setLogoBase, LOGO, COPY, TINT, shapeSvg, speech, shield, icon, esc, pad2 };

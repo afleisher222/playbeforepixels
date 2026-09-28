@@ -649,7 +649,7 @@ SU = [
     ("GATED (card deck for retail): USPTO class 28 filing", "Legal/IP", 350, 350, 20, 0, "Section 4.5 item 1: $350 per class.", "Repo"),
     ("GATED (board book printed + series): books 2 and 3 human illustration", "Product (retail)", 3000, 10000, 24, 0, "BLIND-SPOTS #17: $1,500-$5,000 per board book.", "Repo [VERIFY]"),
     ("GATED (with books 2-3): CPSIA testing for books 2 and 3", "Product (retail)", 600, 2000, 26, 0, "PROTECTION-PLAN: a few hundred dollars per SKU (unverified).", "Repo [VERIFY]"),
-    ("GATED (with books 2-3): offset runs for books 2 and 3 (1,000 each, landed)", "Inventory (retail)", 7250, 10000, 27, 0, "Section 3.8: about $3,625-$5,000 per 1,000-copy run.", "Assumption [VERIFY]"),
+    ("GATED (with books 2-3): offset runs for books 2 and 3 (2,500 each, landed)", "Inventory (retail)", 13750, 20000, 27, 0, "Quote table: $2.20 a copy at 2,500 plus 25% freight = $2.75 landed; high end at the repo's $4.00 [VERIFY quotes].", "Assumption [VERIFY]"),
     ("GATED (POD deck sells + retail case): offset card-deck run (5,000 decks)", "Inventory (retail)", 10000, 17500, 30, 0, "Section 4.5 example: 5,000 x $2.00-$3.50 landed.", "Assumption [VERIFY]"),
     ("GATED (seasonal calendars): tradition reviewers (4 traditions)", "Product", 400, 1200, 14, 0, "Section 5.4: quote needed; $100-$300 each assumed.", "Assumption"),
 ]
@@ -1338,8 +1338,9 @@ wb_.freeze_panes = "B6"
 # =====================================================================
 wd = ws_["Dashboard"]
 put(wd, "A1", "Play Before Pixels: financial model dashboard", font=Font(name=AR, bold=True, size=16, color="1D2940"))
-put(wd, "A2", "AlphaPlay LLC (Maryland) d/b/a Play Before Pixels. Draft for the founder, September 28, 2026. Planning estimates only: "
-              "these are not forecasts of income or promises of results. Change any blue cell on Assumptions and every tab updates.", font=F_NOTE)
+put(wd, "A2", "AlphaPlay LLC (Maryland) d/b/a Play Before Pixels. Revised draft for the founder, September 28, 2026. Planning estimates only: "
+              "these are not forecasts of income or promises of results. Base plan: lean-path costs, first sales Dec 2026, and the school wave, board book and retail all off. "
+              "Budget on Conservative; measure progress against Expected. Change any blue cell on Assumptions and every tab updates.", font=F_NOTE)
 wd.merge_cells("A2:E3"); wd["A2"].alignment = WRAP; wd.row_dimensions[2].height = 30
 hdr(wd, 5, 1, 5, ["Measure", "Conservative", "Expected", "Strong", "Where it comes from"], 22)
 DR = {}
@@ -1437,7 +1438,7 @@ def line_chart(title_, rows_fn, sheet, ytitle, anchor):
     ch.legend.position = "b"
     wd.add_chart(ch, anchor)
 line_chart("Monthly gross sales by scenario", lambda s: FR[s]["gross"], FS, "$ per month", "G5")
-line_chart("Operating account balance by scenario (month end)", lambda s: CFR[s]["opbal"], "Cash Flow", "$", "G22")
+line_chart("Cumulative founder capital by scenario (the funding need)", lambda s: CFR[s]["cumfounder"], "Cash Flow", "$", "G22")
 r += 1
 put(wd, f"A{r}", "Chart data: net operating result by model year", bold=True); r += 1
 cd0 = r
