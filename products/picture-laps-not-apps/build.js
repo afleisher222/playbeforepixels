@@ -636,6 +636,9 @@ ${pages.join('\n')}
 </body></html>`;
 fs.writeFileSync(path.join(DIR, 'source.html'), html);
 
+// interior-only.html — pages 2–31 (title through keepsake page) for printers that take the interior and the case cover as separate files
+fs.writeFileSync(path.join(DIR, 'interior-only.html'), html.replace(pages.join('\n'), pages.slice(1, -1).join('\n')));
+
 // cover.html — trimmed front cover (8.5 in = 816 px) for cover.png
 const coverPage = pages[0];
 fs.writeFileSync(path.join(DIR, 'cover.html'), `<!doctype html><html><head><meta charset="utf-8"><title>Laps Not Apps cover</title>
