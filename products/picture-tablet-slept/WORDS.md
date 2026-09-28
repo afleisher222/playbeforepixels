@@ -63,12 +63,12 @@ Today, it gets a day off.”
 ## s3 left
 Ada found the blocks.
 One, two, three… a tower!
-Four, five, six… taller than Biscuit!
-Biscuit held very, very still.
+Four, five, six… taller than Tater!
+Tater held very, very still.
 
 ## s3 right
 Seven… eight… **CRASH!**
-Biscuit said, **WOOF!**
+Tater said, **WOOF!**
 Ada said, “AGAIN!”
 So they built it again. And again. And AGAIN.
 
@@ -107,18 +107,18 @@ She gave it windows.
 She gave it wings.
 She gave it a purple top,
 just like the tablet's nightcap.
-**WOOF!** said Biscuit. (That means “Me too!”)
+**WOOF!** said Tater. (That means “Me too!”)
 
 ## s7 left
 “Ten, nine, eight…” counted Ada.
-Biscuit held on tight.
+Tater held on tight.
 [[“…three, two, ONE!”]]
 ==WHOOOOSH!==
 
 ## s7 right
 Past the moon. Past the stars.
 Past a planet made entirely of socks.
-Biscuit was the [[co-pilot]].
+Tater was the [[co-pilot]].
 He was very good at barking at comets.
 
 ## s8 left
@@ -174,7 +174,7 @@ dreaming a quiet, happy dream.
 
 ## s12 right
 And snug in her bed,
-with Biscuit at her feet,
+with Tater at her feet,
 Ada slept too.
 > Shhh… everybody is sleeping.
 > What a day. What a PLAY day.
@@ -183,7 +183,7 @@ Ada slept too.
 In the morning, the tablet woke up and stretched.
 “Good morning!” said Ada.
 “Wait till I tell you about my day…”
-Biscuit said, **WOOF!**
+Tater said, **WOOF!**
 
 ## isbn-paperback
 <!-- Not creative words, just a convenience: paste the paperback ISBN here (e.g. 978-...) and it prints on the copyright page. -->

@@ -176,7 +176,7 @@
   },
   "picture-tablet-slept": {
    "name": "The Day the Tablet Slept",
-   "line": "A funny bedtime read-aloud with a box rocket and a dog named Biscuit",
+   "line": "A funny bedtime read-aloud with a box rocket and a dog named Tater",
    "series": "Play Before Pixels read-alouds",
    "types": [
     "books"
@@ -211,7 +211,7 @@
    "gallery": [
     {
      "src": "mockup.png",
-     "alt": "The Day the Tablet Slept paperback on a soft blue surface, open to a spread of Ada and Biscuit in a box rocket."
+     "alt": "The Day the Tablet Slept paperback on a soft blue surface, open to a spread of Ada and Tater in a box rocket."
     },
     {
      "src": "cover.png",
@@ -222,7 +222,7 @@
       "preview/p16.png",
       "preview/p17.png"
      ],
-     "alt": "A night-sky spread: “Ten, nine, eight…” counted Ada, and a cardboard rocket blasts past the moon with Biscuit the dog as co-pilot."
+     "alt": "A night-sky spread: “Ten, nine, eight…” counted Ada, and a cardboard rocket blasts past the moon with Tater the dog as co-pilot."
     },
     {
      "spread": [

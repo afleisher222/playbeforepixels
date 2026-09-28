@@ -56,12 +56,12 @@ function bundleDetails(ctx) {
     ${ctx.bundles.map(b => `<article class="bd" id="${b.id}" aria-labelledby="${b.id}-h">
       <div class="surface g-${b.ground} bd-vis">${stack(ctx, b.parts, { label: 'The printables in ' + b.name })}</div>
       <div class="bd-copy">
-        <p class="eyebrow">${b.parts.length} sets${(b.freeParts || []).length ? ' + free coupons' : ''} · ages ${esc(b.ageText)}</p>
+        <p class="eyebrow">${b.parts.length} sets${(b.freeParts || []).length ? ' + play coupons, included' : ''} · ages ${esc(b.ageText)}</p>
         <h3 class="h2 bd-h" id="${b.id}-h">${esc(b.name)}</h3>
         <p class="lede">${esc(b.line)}</p>
         <table class="price-table"><caption class="visually-hidden">What is in ${esc(b.name)}</caption>
           <thead><tr><th scope="col">Part</th><th scope="col">Format</th><th scope="col" class="r">On its own</th></tr></thead>
-          <tbody>${b.parts.map(x => `<tr><th scope="row"><a href="${x.p.url}">${esc(x.p.name)}</a></th><td>${esc(x.f.label)}</td><td class="r num">${money(x.f.price)}</td></tr>`).join('')}${(b.freeParts || []).map(x => `<tr><th scope="row"><a href="${x.p.url}">${esc(x.p.name)}</a></th><td>Included free</td><td class="r">Free</td></tr>`).join('')}</tbody>
+          <tbody>${b.parts.map(x => `<tr><th scope="row"><a href="${x.p.url}">${esc(x.p.name)}</a></th><td>${esc(x.f.label)}</td><td class="r num">${money(x.f.price)}</td></tr>`).join('')}${(b.freeParts || []).map(x => `<tr><th scope="row"><a href="${x.p.url}">${esc(x.p.name)}</a></th><td>Included in the set</td><td class="r">Not counted</td></tr>`).join('')}</tbody>
           <tfoot><tr><th scope="row">The set</th><td>One price for everything above</td><td class="r num">${money(b.price)}</td></tr></tfoot>
         </table>
         ${b.buyUrl ? `<a class="btn" href="${esc(b.buyUrl)}" rel="noopener">Buy the set · ${money(b.price)}</a>` : '<div class="soon"><p class="soon-pill">Available soon</p><p class="soon-note">The set goes on sale together with its parts. Nothing can be bought or charged yet.</p></div>'}

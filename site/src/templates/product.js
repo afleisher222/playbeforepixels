@@ -1,6 +1,6 @@
 // Product page (DESIGN-SYSTEM §3 "Product page blocks"): breadcrumb, gallery, title, mini ruler,
 // format radio cards with prices, one filled buy button (or an honest "Available soon"), ship line,
-// "Also sold at", the book's inside, the Grown-up corner band, details, FAQ and "Next for your child's age".
+// "Also sold at", the book's inside, the Grown-up tip band, details, FAQ and "Next for your child's age".
 'use strict';
 const { esc, money, typo } = require('../lib/util');
 const { I, card, crumbs, miniRuler, faq, buy, storeName } = require('../partials/bits');
@@ -97,7 +97,7 @@ function grownUpBand(ctx, p) {
   const pick = [0, 2, 6, 11, 16, 21].map(i => W[i]).filter(Boolean);
   return `<section class="gu-band on-ink" aria-labelledby="gu-h">
   <div class="wrap">
-    <div class="gu-head"><p class="eyebrow">Grown-up corner</p><h2 class="h2" id="gu-h">A tip on every page, word for word.</h2></div>
+    <div class="gu-head"><p class="eyebrow">Grown-up tip</p><h2 class="h2" id="gu-h">A tip on every page, word for word.</h2></div>
     <ol class="gu-tips">${pick.map(w => `<li><p class="gu-w word">${esc(w.w)}</p><p class="gu-t"><b>${esc(w.tip[0])}</b> ${esc(w.tip[1])}</p></li>`).join('')}</ol>
   </div>
 </section>`;

@@ -609,7 +609,7 @@ const qs = [
   ['If you had a whole day off, what would you do first?', C.tomato],
   ['Crash, splash, rocket, pancakes, library… which part would you do again?', C.sun],
   ['What could a big box turn into at our house?', C.sky],
-  ['Let’s say the sleepy part together: “Shhh…” Now you be Biscuit!', C.grass],
+  ['Let’s say the sleepy part together: “Shhh…” Now you be Tater!', C.grass],
   ['If we cooked together, what would you like to make?', C.plum],
   ['Blast off slowly: crouch for “Ten, nine…”, then stretch up tall on “ONE!”', C.tomato],
 ];
@@ -618,7 +618,7 @@ pages.push(page(29, PAGE_BG(C.tGrass) + R(-12, -12, 840, 196, C.grass) + G('tran
   [{ x: 48, y: 44, w: 600, cls: 'talk-h', html: `Talk about it` },
    { x: 48, y: 118, w: 560, cls: 'talk-sub', html: `For grown-ups: after reading, try a few of these. Pause, wait, and let your child answer. There are no wrong answers.` }],
   off => `<ol class="qs" style="left:${48 + off}px;top:${214 + 12}px">${qs.map(([q, c], i) => `<li><span class="num" style="background:${c}">${i + 1}</span><span>${q}</span></li>`).join('')}</ol>
-<div class="tip" style="left:${48 + off}px;top:${556 + 12}px"><b>Read it again, and…</b> pause before “do?” and let your child fill it in. Say what you see (“Biscuit is jumping!”), repeat and add one word (“Splash!” becomes “Big splash!”), and follow your child’s lead. Shout, whisper, sign or point along to the “Shhh…” and the “WOOF!” A sign, a point or a tap on a talker (a device a child uses to talk) counts too, and a talker never takes a day off.<br><b>Talk, sing and read in the language you know best. Every language counts.</b></div>`));
+<div class="tip" style="left:${48 + off}px;top:${556 + 12}px"><b>Read it again, and…</b> pause before “do?” and let your child fill it in. Say what you see (“Tater is jumping!”), repeat and add one word (“Splash!” becomes “Big splash!”), and follow your child’s lead. Shout, whisper, sign or point along to the “Shhh…” and the “WOOF!” A sign, a point or a tap on a talker (a device a child uses to talk) counts too, and a talker never takes a day off.<br><b>Talk, sing and read in the language you know best. Every language counts.</b></div>`));
 // p30 (L) plan your own play day + bonus QR
 const qrSvg = (px, col = C.ink) => `<svg viewBox="-2 -2 ${QR.n + 4} ${QR.n + 4}" width="${px}" height="${px}" shape-rendering="crispEdges"><rect x="-2" y="-2" width="${QR.n + 4}" height="${QR.n + 4}" fill="#fff"/><path d="${QR.d}" fill="${col}"/></svg>`;
 const planRow = (y, label, icon, col) => G('', R(48, y, 720, 118, C.paper, 22) + R(48, y, 150, 118, col, 22) + R(150, y, 48, 118, col) + icon);
@@ -656,7 +656,7 @@ function frontCover() {
   [[40, 470, 90], [20, 540, 120], [60, 610, 80]].forEach(([x, y, w]) => s += R(x, y, w, 16, C.paper, 8, 'fill-opacity=".55"'));
   // tablet, asleep on its shelf (small, the running joke)
   s += cabinet(598, 604, 180, 96, C.plum, C.sun) + tabletOnPillow(688, 604, 0.7, -5) + zzz(716, 398, 0.55, C.sun);
-  // the box rocket, with Ada and Biscuit on board
+  // the box rocket, with Ada and Tater on board
   let r = flames(318, 668, 0.62, 0);
   r += Ci(250, 764, 32, C.paper) + Ci(318, 774, 38, C.paper) + Ci(390, 764, 32, C.paper) + Ci(202, 776, 20, C.paper) + Ci(438, 778, 20, C.paper);
   r += P('M176 470 L118 392 L186 386 L222 470Z', C.s3) + P('M460 470 L518 392 L450 386 L414 470Z', C.s3) + R(176, 452, 284, 30, C.s3, 4);
@@ -681,7 +681,7 @@ function backCover() {
   return s;
 }
 const BACK_TEXT = [{ x: 56, y: 60, w: 690, cls: 'blurb', html: `<p class="blurb-h">Shhh… the tablet is sleeping.<br>So what shall we do?</p>
-<p>Build a tower (CRASH!). Splash every puddle. Blast off in a cardboard-box rocket with Biscuit the dog as co-pilot. Flip pancakes with Papa, then find the perfect bedtime book.</p>
+<p>Build a tower (CRASH!). Splash every puddle. Blast off in a cardboard-box rocket with Tater the dog as co-pilot. Flip pancakes with Papa, then find the perfect bedtime book.</p>
 <p>A funny, cozy read-aloud with a refrain kids love to join in on, and one very sleepy tablet in a nightcap. With “Talk about it” questions and a Play Day planner for grown-ups.</p>` },
   { x: 56, y: 640, w: 300, cls: 'backmeta', html: `Picture book · Ages 3–7` }];
 const BACK_STRIP = `<div class="strip" style="left:56px;top:382px;width:690px"><b>Read it, then play it.</b> Pair it with <i>100 Screen-Free Plays</i> and get a free Play Day planner at <span class="nw">playbeforepixels.com</span></div>`;
