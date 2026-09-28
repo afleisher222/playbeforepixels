@@ -22,7 +22,7 @@ Play-first books, printables and classroom resources for PreK–5 classrooms, ea
 | **Mailing and remit-to address** | AlphaPlay LLC, [BUSINESS MAILING ADDRESS — USPS PO Box, FOUNDER FILLS] |
 | **Orders, quotes and accounts payable** | orders@[BUSINESS DOMAIN] |
 | **General questions** | hello@[BUSINESS DOMAIN] |
-| **Phone** | Email only: we answer every inquiry in writing within 2 business days. [PHONE — only if the founder chooses to list one] |
+| **Phone** | Email only: every inquiry gets a written answer. [PHONE — only if the founder chooses to list one] |
 | **Website** | [DOMAIN] · School ordering page: [DOMAIN]/schools |
 | **Business classification** | Small business. Certifications: [none at this time — FOUNDER FILLS if any are granted] |
 | **NAICS (suggested; confirm with accountant)** | [Book publishers / other publishers / educational support — FOUNDER + ACCOUNTANT FILL] |
@@ -30,7 +30,7 @@ Play-first books, printables and classroom resources for PreK–5 classrooms, ea
 
 ## Ordering and payment
 - **Quotes:** request one at [DOMAIN]/schools or by email. Written quotes are valid for 60 days.
-- **Purchase orders:** made out to **AlphaPlay LLC** and emailed to orders@[BUSINESS DOMAIN]. Acknowledged within 2 business days.
+- **Purchase orders:** made out to **AlphaPlay LLC** and emailed to orders@[BUSINESS DOMAIN]. Acknowledged in writing.
 - **Payment terms:** net 30 on approved purchase orders, or prepayment.
 - **Payment methods:** purchasing card or credit card (secure online invoice link), ACH (bank details supplied through your vendor portal or form), or check payable to **AlphaPlay LLC**, mailed to the remit-to address above, with the invoice number in the memo.
 - **Returns and refunds:** as stated on your quote or invoice. Printed items that arrive damaged, defective or wrong are replaced or refunded at no cost. Full policy: [DOMAIN]/[shipping-returns page — confirm path].
@@ -38,7 +38,7 @@ Play-first books, printables and classroom resources for PreK–5 classrooms, ea
 - **Documents available on request:** W-9 (sent securely), completed vendor registration forms, certificate of insurance [once in force — FOUNDER CONFIRMS], sole-source letter (direct-only licenses and kits only), accessible (tagged) PDF versions of any digital file.
 
 ## Delivery
-- **Digital licenses:** emailed within 2 business days of PO or payment, as download links plus a license certificate naming your site(s).
+- **Digital licenses:** emailed once the PO or payment is processed, as download links plus a license certificate naming your site(s).
 - **Printed books and materials:** printed on demand and shipped directly from our printing partner to your ship-to address. Allow [X–Y] business days plus transit. Nothing ships before a PO or payment is received.
 
 ## License terms (summary)

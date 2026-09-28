@@ -399,7 +399,7 @@ function doc(V) {
       <div class="qr">${qrSvg(132)}</div>
       <div><div class="tlab">Free bonus</div><h3>${V.book ? 'Free color tracker pages and a monthly play email' : 'Keep going: a free monthly play email'}</h3>
       <p>${V.book ? 'Scan the code or visit' : 'Visit'} <b>${BONUS}</b> for ${V.book ? 'free printable color trackers and certificate, plus' : ''} three new plays for your child’s age each month. We ask only for your email and your child’s birth month and year, never a name.</p>
-      <p class="small">Share with a friend: when a friend buys with your link, you each get $5 off. Your link is in every email.</p></div>
+      <p class="small">Know a family who would enjoy this? Share the free starter plays at ${BONUS}.</p></div>
     </div>` : `<div class="bonus nourl"><p>Find more from Play Before Pixels in our shop.</p></div>`}
     ${V.book ? '' : copyrightMini()}`, { run: 'What’s next' });
 

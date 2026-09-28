@@ -35,7 +35,7 @@
    - items, license type and **the site(s) and grades covered**, quantity, unit price and total;
    - shipping (for printed items) and sales tax (or "tax-exempt on receipt of certificate");
    - payment terms: **net 30 on an approved PO**, or prepay by card or ACH;
-   - delivery: digital licenses by email within 2 business days of PO or payment; printed books shipped direct from the printer, [X–Y] business days;
+   - delivery: digital licenses by email after the PO or payment is processed; printed books shipped direct from the printer, [X–Y] business days;
    - the license summary line and a link to the full license;
    - "Educational materials; not medical, therapy or speech-language services. No student data collected."
 3. **R renders the quote PDF** (`node brand/render.js pdf`) and sends it with macro 20. The vendor packet PDF is attached.
@@ -50,7 +50,7 @@
    - it comes from the organization's **real domain**. Verify the domain independently (the organization's public website), not from links in the email;
    - the ship-to address is the organization's own address, not a freight forwarder or a residence.
 2. **Any red flag goes to `ops/APPROVALS.md` as SECURITY, and nothing ships.** Red flags: a free-mail address for a "district", a lookalike domain, a rush to ship large quantities of physical goods before payment, a request to buy from a third-party supplier, a ship-to that is a forwarder.
-3. **Acknowledge the PO** within 2 business days (macro 21), with the invoice attached.
+3. **Acknowledge the PO** at the next weekly batch (macro 21), with the invoice attached.
 4. **Digital licenses** are delivered on a PO from a verified organization. **Printed goods** go to print on a verified PO for orders up to $[1,000] `[founder sets]`. Larger print orders are prepaid, or deposit-funded as F decides.
 
 ## 4. W-9 and vendor registration
