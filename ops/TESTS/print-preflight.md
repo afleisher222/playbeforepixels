@@ -10,6 +10,8 @@
 
 Platform numbers marked **UNVERIFIED** come from memory, because web access was not available in this session. They are all listed under "Needs a live check" at the end.
 
+**Verified 03:40–04:10 by a second agent (see "Verification" at the end).** The main findings hold. Corrections are made in place: the board-book margin count was overstated (5 pages, not 16), the *Laps Not Apps* margin note and the Talk Tower "p12" placeholder were false, and the course interior has text running into its footer, which the first run missed. Since this run, other workflows have rebuilt the course, guide, card, hang-tag and most printable files. The course interior is now 92 pages. "Current state" notes mark what changed.
+
 ---
 
 ## Verdict
@@ -17,7 +19,8 @@ Platform numbers marked **UNVERIFIED** come from memory, because web access was 
 **None of the book files is ready to upload yet.** The geometry is right: every page size matches its listing, every KDP cover-wrap width matches its interior's page count to 0.0001 in, every page count is even and at least 24, and every raster image is 300 dpi. Five kinds of problem remain, listed in the order a printer would hit them:
 
 1. **Every PDF uses Type 3 fonts, because the brand fonts are variable fonts.** Chromium (Skia) turns variable fonts into Type 3 glyphs. IngramSpark and offset printers commonly reject Type 3 fonts (UNVERIFIED). The glyphs are sharp vector outlines, so this affects acceptance, not how the print looks. A fix is tested and proven below (G1).
-2. **Running footers and page numbers sit inside KDP's margin zone** in both black-and-white KDP interiors: 0.29 in and 0.31 in from the bottom trim, against KDP's 0.375 in minimum outside margin for books with bleed (UNVERIFIED). This affects 80 of 86 pages in *100 Screen-Free Plays* and 87 of 90 pages in *30-Day Screen Reset*.
+2. **Running footers and page numbers sit inside KDP's margin zone** in both black-and-white KDP interiors: 0.29 in and 0.31 in from the bottom trim, against KDP's 0.375 in minimum outside margin for books with bleed (UNVERIFIED). This affects 80 of 86 pages in *100 Screen-Free Plays* and 87 of 90 pages in *30-Day Screen Reset*. *Current state:* the course was rebuilt at 03:11 as *30 Days of Back-and-Forth* with 92 pages, and its footer is still inside the zone on 87 of 92 pages.
+   - **Missed by the first run:** in the course KDP interior, body content runs into the footer. On p60 the last table row ("On a sick or travel day") is struck through by the footer rule, and "to our usual plan." collides with "playbeforepixels.com". This is still true in the 92-page rebuild. In the 90-page snapshot, the second "Our own play" card on p87 also ran off the page through the footer; the rebuild (now p88) fixed that.
 3. **Cover files that are placeholders by design**: both hardcovers and the Lulu softcover. They will be rejected unless they are rebuilt from the printer's own template numbers.
 4. **Placeholder text that would print**:
    - "ISBN / barcode · KDP places the barcode here" labels with dashed outlines on every back cover.
@@ -25,7 +28,7 @@ Platform numbers marked **UNVERIFIED** come from memory, because web access was 
    - "ISBN: ____ / to be supplied" lines on copyright pages.
 5. **No CMYK or PDF/X, and live transparency.** KDP accepts this. IngramSpark prefers otherwise, and an offset board-book printer will not accept it (UNVERIFIED).
 
-**Home-print printables:** 58 FAIL, 43 WARN, 11 PASS. Nearly every FAIL is one of these:
+**Home-print printables:** 58 FAIL, 43 WARN, 11 PASS. *Current state (files as of 03:40):* 50 FAIL, 53 WARN, 11 PASS across 114 files. The 8 guide editions dropped from FAIL to WARN once their ISBN placeholder was removed, and the `bored-play-cards` file set changed. Nearly every FAIL is one of these:
 - a founder placeholder ("FOUNDER'S NOTE · PLACEHOLDER", "FOUNDER: A note from the maker…") visible in files that are already in `etsy-upload/` or `downloads/`;
 - the A4 store editions of *First Phone Plan* and *Play-First Family Kit*, whose footer runs to 0.013 in from the page edge, so home printers will cut it off;
 - the free "7 Days of Play First" starter, which has no © line.
@@ -41,20 +44,20 @@ The problems every printer file shares are named once and referred to as G1–G3
 | `picture-tablet-slept/cover-ingramspark-hardcover.pdf` | IngramSpark case-laminate hardcover | **FAIL** | 19.13 × 10.0 in and a 0.25 in spine are placeholders; the size must come from IngramSpark's cover template generator. The ISBN box has a "keep clear" label and a dashed outline, and its position must match the template's barcode spot. G1–G3. |
 | `picture-laps-not-apps/cover-wrap-hardcover-sample.pdf` | Lulu casewrap | **FAIL** (sample by design) | 19 × 10.25 in is a placeholder; real sizes come from the Lulu API per order. The spine text "Laps Not Apps · made for Maya" sits on a placeholder spine. G1–G3. |
 | `picture-laps-not-apps/cover-wrap-softcover-sample.pdf` | Lulu perfect-bound | **FAIL** (sample by design) | Spine 0.0833 in is a placeholder, giving 17.3333 in overall; Lulu's API gives the real value. The ISBN box has a label. G1–G3. |
-| `board-up-go-more/board-up-go-more.pdf` | Offset board-book printer (Wave 3, not chosen) | **FAIL** | RGB only; offset printing needs CMYK or PDF/X (UNVERIFIED). Text is 0.26–0.35 in from trim on 16 of 26 pages (brand minimum 0.375), e.g. "night-night" p24 at 0.26 in and "peekaboo" p4 at 0.27 in. Placeholders on p25: "[FOUNDER: your name or pen name]", "ISBN [board-book ISBN]", "Printed in [country]", "Batch [tracking no.]". Type goes down to 5.9 pt. The ISBN box on p26 is labelled. G1, G3. |
-| `course-screen-reset/paperback/course-screen-reset-kdp-interior.pdf` | KDP paperback, black and white, white paper | **FAIL** | Page numbers 0.308 in from the bottom trim on 87 of 90 pages (below 0.375). p4 prints a "FOUNDER WRITES THIS" box. The p2 copyright page has an "ISBN / barcode · Founder adds the ISBN here (Bowker)" box. Write-on lines are drawn as 128 gradient shadings that render unreliably. One fallback font (LiberationSans-Bold) supplies a glyph. G1–G3 (64 soft masks). |
+| `board-up-go-more/board-up-go-more.pdf` | Offset board-book printer (Wave 3, not chosen) | **FAIL** | RGB only; offset printing needs CMYK or PDF/X (UNVERIFIED). Glyph ink is 0.29–0.36 in from trim on 5 of 26 pages (brand minimum 0.375): "night-night" p24 0.29 in, "peekaboo" p4 0.30 in, "all done" p20 0.33 in, "bye-bye" p21 0.34 in and "Go" p1 0.36 in. "uh-oh" p13 is exactly 0.375 in. (Corrected: the first run reported 16 pages at 0.26–0.35 in, measuring font boxes rather than ink.) Placeholders on p25: "[FOUNDER: your name or pen name]", "ISBN [board-book ISBN]", "Printed in [country]", "Batch [tracking no.]". Type goes down to 5.9 pt. The ISBN box on p26 is labelled. G1, G3. |
+| `course-screen-reset/paperback/course-screen-reset-kdp-interior.pdf` | KDP paperback, black and white, white paper | **FAIL** | The running footer is 0.31–0.34 in (ink) from the bottom trim on 87 of 90 pages, below 0.375 in: URL/version line 0.314 in, title 0.324 in, page number 0.33 in. *Current state:* 87 of 92 pages. On p60, body text runs into the footer (see Verdict item 2). p4 prints a "FOUNDER WRITES THIS" box. The p2 copyright page has an "ISBN / barcode · Founder adds the ISBN here (Bowker)" box. Write-on lines are drawn as 128 gradient shadings that render unreliably. One fallback font (LiberationSans-Bold) supplies a glyph. G1–G3 (64 soft masks). |
 | `guide-100-plays/guide-100-plays-kdp-interior.pdf` | KDP paperback, black and white, white paper | **FAIL** | Running footer "100 Screen-Free Plays · Version…" 0.29 in from the bottom trim on 80 of 86 pages. p2 prints "ISBN (paperback): ____" and "founder adds the ISBN here before upload". Write-on lines are 26 gradient shadings. G1–G3. Fixed during the run: page width was 8.1267 in and is now exactly 8.125 in. |
 | `guide-100-plays/guide-100-plays.pdf` | None named: brand-kit size 8.25 × 10.25 in with bleed on all four edges (Lulu style) | **FAIL** | Same footer and placeholder problems as the KDP file. **Do not upload it to KDP**: its width fits a bleed-on-all-four-edges printer, not KDP's convention. G1–G3. |
 | `board-up-go-more/paperback/up-go-more-talk-along-interior.pdf` | KDP premium colour + IngramSpark paperback | **FAIL** | Geometry passes: 8.625 × 8.75 in, 32 pages, all text at least 0.375 in inside trim. Placeholders print: "[FOUNDER: your name or pen name]" on p1–2, "ISBN [paperback ISBN]" on p2, and "FOUNDER: REWRITE THIS PAGE IN YOUR OWN WORDS BEFORE PUBLISHING" on p3. G1–G3. |
 | `picture-tablet-slept/picture-tablet-slept.pdf` | KDP premium colour + IngramSpark hardcover | **FAIL** | Geometry passes: 8.625 × 8.75 in, 32 pages, safe zone clean, 7 images at 300 dpi. Placeholders print: "FOUNDER WRITES THIS PAGE" on p3 and p31, and an "ISBN / BARCODE" box on the p2 copyright page. The ↑ on p14 and → on p29 come from the fallback font Liberation Sans. G1–G3. |
-| `picture-laps-not-apps/picture-laps-not-apps-interior.pdf` | Lulu Print API | **FAIL** | Geometry passes: 8.75 × 8.75 in, 32 pages. Placeholders print: "Founder: your byline (optional)" on p1; "ISBN — to be supplied" and "Printer / manufacturing lines — to be supplied" on p2; "Founder writes this" on p32. "one" on p21 is 0.348 in from trim. G1, G3. |
+| `picture-laps-not-apps/picture-laps-not-apps-interior.pdf` | Lulu Print API | **FAIL** | Geometry passes: 8.75 × 8.75 in, 32 pages. Placeholders print: "Founder: your byline (optional)" on p1; "ISBN — to be supplied" and "Printer / manufacturing lines — to be supplied" on p2; "Founder writes this" on p32. All text ink is at least 0.375 in inside trim. (Corrected: the first run's "'one' on p21 at 0.348 in" measured the font box; the ink is 0.39 in.) G1, G3. |
 | `picture-tablet-slept/cover-kdp-paperback.pdf` | KDP paperback cover | **FAIL** (small fix) | Width 17.3251 in = 32 pages × 0.002347 (premium colour) + 17.25, which matches. The ISBN box prints "ISBN / BARCODE · 2 × 1.2 in · keep clear" inside a dashed black outline. G1, G3. |
-| `board-up-go-more/paperback/up-go-more-talk-along-cover.pdf` | KDP paperback cover | **FAIL** (small fix) | Width 17.3251 in matches 32 pages of premium colour. The ISBN box prints "ISBN / BARCODE · Leave white. Printer or ISBN agency supplies this." inside a grey frame. The back panel (light blue) and front (yellow) change colour at a 0.075 in spine. IngramSpark would need its own cover file with a different spine. G1–G3. |
+| `board-up-go-more/paperback/up-go-more-talk-along-cover.pdf` | KDP paperback cover | **FAIL** (small fix) | Width 17.3251 in matches 32 pages of premium colour. The ISBN box prints "ISBN / BARCODE · Leave white. Printer or ISBN agency supplies this." inside a grey frame. A navy spine band about 0.07 in wide sits between the light-blue back panel and the yellow front, so there are two hard colour edges at the folds. IngramSpark would need its own cover file with a different spine. G1–G3. |
 | `course-screen-reset/paperback/course-screen-reset-kdp-cover.pdf` | KDP paperback cover | **FAIL** (small fix) | Width 16.4527 in = 90 pages × 0.002252 (white) + 16.25, which matches. The ISBN box prints "ISBN / barcode · KDP places the barcode here" inside a dashed outline. The 0.2027 in spine is a solid orange band with hard edges. G1–G3. |
 | `guide-100-plays/guide-100-plays-cover-wrap.pdf` | KDP paperback cover | **FAIL** (small fix) | Width 16.4437 in = 86 pages × 0.002252 + 16.25, which matches after the 02:20 rebuild (it was 16.43 in when the interior had 82 pages). The ISBN box has a label and dashed outline. Front text "a talk line · a safety note" is 0.338 in from trim. The spine is a solid orange band with hard edges. G1–G3. |
-| `play-talk-cards/pod-later/POD-LATER_play-talk-deck_tuck-box.pdf` | Card printer's tuck box (not chosen) | **FAIL** (not uploadable yet) | Page 1 is a guide only: magenta die lines and "GUIDE ONLY" text. Page 2 (the art) still prints a "Barcode / UPC — only if the seller channel requires one" box with a dashed outline. 7.3767 × 6.5267 in is not any printer's template. Type goes down to 4.9 pt, and a Liberation Sans fallback appears. G1–G3. |
+| `play-talk-cards/pod-later/POD-LATER_play-talk-deck_tuck-box.pdf` | Card printer's tuck box (not chosen) | **FAIL** (not uploadable yet) | Page 1 is a guide only: magenta die lines and "GUIDE ONLY" text. Page 2 (the art) still prints a "Barcode / UPC — only if the seller channel requires one" box with a dashed outline. 7.3767 × 6.5267 in is not any printer's template. Type goes down to 4.9 pt. The Liberation Sans fallback appears only in the page 1 guide text, not on the art page. G1–G3. |
 | `play-talk-cards/pod-later/POD-LATER_talk-along-deck_tuck-box.pdf` | Same | **FAIL** (not uploadable yet) | Same as above. |
-| `play-talk-cards/pod-later/POD-LATER_play-talk-deck_54-fronts.pdf` | Card printer (not chosen) | WARN | 2.75 × 3.75 in (2.5 × 3.5 in trim plus 0.125 in bleed), 54 pages. Text is 0.156 in from trim at its closest, which meets the file's own 0.16 in spec. The brand's 0.375 in cannot work on a 2.5 in card, so BRAND.md needs a card exception. Meta text ("From 4 mo · Prep 0 min · No mess · ~5 min", "NEEDS", "TALK TIP") is 5.1–5.6 pt on every card. No © on the cards themselves; it is on the tuck box. G1–G3. |
+| `play-talk-cards/pod-later/POD-LATER_play-talk-deck_54-fronts.pdf` | Card printer (not chosen) | WARN | 2.75 × 3.75 in (2.5 × 3.5 in trim plus 0.125 in bleed), 54 pages. Text ink is 0.155–0.156 in from trim at its closest, right on the file's own safe line (15 CSS px = 0.156 in, labelled "0.16 in" in `build/pod.js`). The brand's 0.375 in cannot work on a 2.5 in card, so BRAND.md needs a card exception. Meta text ("From 4 mo · Prep 0 min · No mess · ~5 min", "NEEDS", "TALK TIP") is 5.1–5.6 pt on every card. No © on the cards themselves; it is on the tuck box. G1–G3. |
 | `play-talk-cards/pod-later/POD-LATER_talk-along-deck_54-fronts.pdf` | Same | WARN | Same as above; the small type is 5.1–5.6 pt. |
 | `play-talk-cards/pod-later/POD-LATER_play-talk-deck_back.pdf` | Same | WARN | Geometry passes. The back pattern is not symmetric when the card is turned upside down, so a player can tell a card's orientation from its back. G1–G3. |
 | `play-talk-cards/pod-later/POD-LATER_talk-along-deck_back.pdf` | Same | WARN | Same as above. |
@@ -73,10 +76,10 @@ The problems every printer file shares are named once and referred to as G1–G3
 ### Tier 1: would be rejected, or is very likely to be flagged, at upload
 
 **G1. Type 3 fonts in all 194 PDFs.**
-- **Cause:** every `brand/fonts/*.woff2` is a variable font (each has an `fvar` table; fonts.css declares `font-weight: 400 800`). Chromium's Skia PDF backend writes variable fonts as Type 3.
+- **Cause:** every `brand/fonts/*.woff2` is a variable font (each has an `fvar` table). fonts.css declares weight ranges: `300 900` for Nunito Sans, `400 700` for Fredoka and `400 800` for Bricolage Grotesque. Caveat is declared at fixed weights (500 and 700), but its files are variable too. Chromium's Skia PDF backend writes variable fonts as Type 3.
 - **Effect:** the glyphs are vector paths, so print sharpness is unaffected. But IngramSpark and most offset preflights reject or flag Type 3 fonts (UNVERIFIED), and some RIPs handle them badly.
 - **Fix, tested in this session:**
-  1. Make static instances with fontTools: `instancer.instantiateVariableFont(font, {"wght": 600})`. Nunito Sans also has an `opsz` axis; pin it to its default.
+  1. Make static instances with fontTools: `instancer.instantiateVariableFont(font, {"wght": 600})`. Nunito Sans (default 12) and Bricolage Grotesque (default 96) also have an `opsz` axis; pin it to its default. Set name IDs 1, 2, 4 and 6 of each instance explicitly (for example "Fredoka-SemiBold"). Without that, the PDF names a Fredoka 600 instance "FredokaLight-Regular", which confuses anyone reading a preflight report. `updateFontNames=True` does not solve this: in a test it gave "FredokaLight-SemiBold" and "NunitoSans12ptExtraLight-NormalItalic".
   2. Load those TTFs through a print-only stylesheet with a fixed `font-weight` for each file.
   3. Result: a test page rendered with `brand/render.js` embedded the static Fredoka 600 and Nunito Sans 400 as Type 0/TrueType subsets (`ttf`). The variable woff2 in the same page still came out as Type 3.
 
@@ -93,8 +96,9 @@ The problems every printer file shares are named once and referred to as G1–G3
 - The listing's own claim, "Text kept at least 0.5 in from the trim", is not true for the footer.
 - **Fix:** in `products/guide-100-plays/build/book.js` line 60, change `.folio { … bottom: calc(var(--bb) + .24in) …}` to `bottom: calc(var(--bb) + .40in)`. That puts the ink about 0.45 in above trim. Check that the page body's bottom padding still clears the footer, rebuild with `build/make.sh`, and re-run the preflight.
 
-**Margin breach 2: page numbers in `course-screen-reset-kdp-interior.pdf`.**
-- The ink of the page numbers is 0.308 in above the bottom trim on 87 of 90 pages.
+**Margin breach 2: running footer in `course-screen-reset-kdp-interior.pdf`.**
+- The footer's ink is 0.31–0.34 in above the bottom trim on 87 of 90 pages (87 of 92 in the current rebuild). The whole footer line is affected, not only the page number: URL/version 0.314 in, title 0.324 in, page number 0.33 in. The first run's 0.308 in is the page number's font box.
+- **Also fix the overflow on p60:** the last table row runs into the footer. Keep the table on its page, or let it break to the next page, before or together with raising the footer. Raising the footer without moving the body's bottom padding would make this collision worse.
 - **Fix:** in `products/course-screen-reset/build/workbook.js` line 48, the footer style is `bottom:${(V.book ? V.bleed : 0) + .28}in`. Change it to `bottom:${V.book ? V.bleed + .42 : .28}in` so the book gets about 0.45 in and the home-print workbook stays the same. Raise the book's bottom content padding by 0.14 in to match, then rebuild with `sh build/make.sh`.
 
 **Placeholder covers (hardcovers and the Lulu softcover).**
@@ -119,7 +123,7 @@ Box sizes are all 2.0 × 1.198 in, which matches BRAND.md's 2 × 1.2 in.
 | laps soft/hard (Lulu) | 0.427 / 0.427 in (navy frame) | "ISBN / barcode" |
 | board book p26 | lower right | "ISBN / BARCODE · Leave white…" |
 
-- **The problem:** KDP puts its own barcode in a fixed spot at the lower right of the back cover (UNVERIFIED position). The four KDP boxes sit at three different offsets, so KDP's barcode will not cover the label text or the dashed outline, and both will print. KDP also flags text in the barcode area (UNVERIFIED).
+- **The problem:** KDP puts its own barcode in a fixed spot at the lower right of the back cover (UNVERIFIED position). The four KDP boxes sit at four different offsets from the spine (0.254, 0.375, 0.50 and 0.604 in), so KDP's barcode will not cover the label text or the dashed outline, and both will print. KDP also flags text in the barcode area (UNVERIFIED).
 - **Fix, one of two ways:**
   - **(a) Let KDP place the barcode:** in each cover builder's final upload build, remove the label text, dashed outline and frame, and leave only a plain white 2 × 1.2 in rectangle at the offset KDP uses.
   - **(b) Own ISBN:** place the real barcode (EAN-13 with price add-on) in the box and remove the label.
@@ -145,13 +149,13 @@ Box sizes are all 2.0 × 1.198 in, which matches BRAND.md's 2 × 1.2 in.
 
 **Board book (offset, Wave 3).** Before quoting printers:
 - convert to CMYK PDF/X (see G2 and G3);
-- move "peekaboo", "night-night", "all done", "uh-oh" and the others at least 0.375 in inside the trim, and more if the printer's rounded-corner die needs it (UNVERIFIED);
+- move "night-night" (p24), "peekaboo" (p4), "all done" (p20), "bye-bye" (p21) and "Go" (p1) at least 0.375 in inside the trim; "uh-oh" (p13) is exactly on the line; and more if the printer's rounded-corner die needs it (UNVERIFIED);
 - replace the page 25 placeholders; "Batch [tracking no.]" is the tracking label a children's product needs, so it must hold a real value;
 - confirm the board count and page-count rules with the printer.
 
 **G2 and G3: RGB only, no output intent, live transparency.**
 - Every file uses DeviceRGB colour only: 0 CMYK operators and no ICC or output intent.
-- Chromium adds page transparency groups (for example 157 in the board-up interior), and some files carry soft masks (64 in the course interior, 14 in the tablet interior).
+- Chromium adds page transparency groups (for example 157 in the board-up interior), and some files carry soft masks: 64 in the course interior, 13 in the guide interior, and 14 in the tablet interior plus alpha masks on its 7 images.
 - **KDP:** accepts RGB and converts it (UNVERIFIED). No change needed for KDP.
 - **IngramSpark, and required for offset:** convert a copy to PDF/X-1a (flattened) or PDF/X-4 in the CMYK profile the printer names. Options: Acrobat Pro Preflight "Convert to PDF/X-4", or Ghostscript `pdfwrite` with `-dPDFX -sColorConversionStrategy=CMYK` and the printer's ICC profile. Ghostscript is not installed in this container. Keep the RGB master for KDP and Lulu.
 - Bright RGB brand colours (#3D86D8, #2FA36B, #EE5A36, #F5B820) fall outside the CMYK range and will print duller. Judge them on a physical proof.
@@ -167,7 +171,7 @@ Box sizes are all 2.0 × 1.198 in, which matches BRAND.md's 2 × 1.2 in.
 - **Solid colour spines with hard edges:** course (orange, 0.2027 in), guide (orange, 0.1937 in) and board-up (blue/yellow break at a 0.075 in spine). Printer spine placement varies by about ±0.0625 in (UNVERIFIED), so a colour edge at the fold shows on the front or back.
   - **Fix:** carry the front's background colour across the spine and about 0.0625 in onto the back panel, or use one continuous background as *The Day the Tablet Slept* does.
 - **Fallback fonts**, where a glyph is missing from the brand fonts:
-  - Liberation Sans: ↑ and → in the tablet interior; a bold glyph in the course interior; the tuck boxes; the toddler book; visual routine cards.
+  - Liberation Sans: ↑ (p14) and → (p29) in the tablet interior; → on p3 of the course interior; the tuck boxes (guide page only); the toddler book; visual routine cards.
   - DejaVu Sans: *Talk Tower* kit and the starter funnel PDF.
   - They print fine but off-brand. **Fix:** draw the arrows or ticks as inline SVG, or include them in the static font subsets.
 - **Grey body text in the black-and-white interiors** (#636363 and #555555 as RGB greys) prints as a halftone screen, which is slightly soft at 6.6–8 pt. This is acceptable. For the crispest 7–8 pt type, use a solid tint of black or 100% black.
@@ -188,9 +192,9 @@ Box sizes are all 2.0 × 1.198 in, which matches BRAND.md's 2 × 1.2 in.
   - `first-phone-plan` p4 "FOUNDER'S NOTE · PLACEHOLDER": all 9 main, downloads and Etsy PDFs.
   - `play-first-family-kit` p4, same wording: 8 PDFs.
   - `play-talk-cards` and `talk-along` p3 "FOUNDER'S NOTE · TO BE WRITTEN BY THE FOUNDER…": 16 PDFs.
-  - `picture-more-talk-less-tap` kit p2 and p12 "FOUNDER: 'A note from the maker'…": 8 PDFs. The read-aloud story p3–4 has "FOUNDER: your author line / your dedication": 2 PDFs.
+  - `picture-more-talk-less-tap` kit p2 "FOUNDER: 'A note from the maker'…": 8 PDFs. (Corrected: p12, the turn tracker, has no placeholder; its "Week of ____" is a deliberate write-in blank.) The read-aloud story p3–4 has "FOUNDER: your author line / your dedication": 2 PDFs.
   - `course-screen-reset` workbook p3 "FOUNDER WRITES THIS": 5 PDFs.
-  - `guide-100-plays` p2 ISBN placeholder lines: all 8 Letter/A4/low-ink/Etsy editions.
+  - `guide-100-plays` p2 ISBN placeholder lines: all 8 Letter/A4/low-ink/Etsy editions. *Current state:* the 02:57 rebuild removed them from these 8 editions. They remain, reworded as "ISBN: [founder adds the ISBN before upload]", in the KDP interior and the brand-kit file.
 
   **Fix:** the founder writes each note. Rebuild each product with a gate that fails the build while any `FOUNDER` or `PLACEHOLDER` string remains. Do not upload `etsy-upload/` files until this preflight shows 0 placeholders.
 - **Footer running off the A4 page:** `first-phone-plan-a4.pdf`, `first-phone-plan-low-ink-a4.pdf`, `play-first-family-kit-a4.pdf` and `play-first-family-kit-low-ink-a4.pdf` (the store/own-site editions).
@@ -208,13 +212,13 @@ Box sizes are all 2.0 × 1.198 in, which matches BRAND.md's 2 × 1.2 in.
 - **Tiny type under 5 pt:**
   - visual routine cards, down to 3.1 pt (chart chips);
   - first phone plan, down to 3.95 pt (a "z" glyph and "draw it" labels);
-  - toddler busy book, down to 3.9 pt ("TALK WHILE YOU PLAY", "MAKE IT EASIER");
+  - toddler busy book, down to 3.9 pt ("TALK WHILE YOU PLAY", "MAKE IT EASIER"). All of it is on p6, a reduced sample page labelled "How to read a page" whose real-size version appears elsewhere, so this is low priority;
   - family kit, down to 3.7 pt ("draw it");
   - talk cards, down to 4.7 pt.
 
   **Fix:** at least 6 pt for anything a parent needs to read.
 - **72 dpi rasters in the family kit:** 4–9 ruled "write here" strips per file are 72 dpi images, which Chromium rasterised from gradients. **Fix:** the same one as for ruled lines above.
-- **Double-sided card sheets** (`bored-play-cards-double-sided-*`): the card backs are coloured right up to each card edge. A duplex printer's front-to-back shift will show white slivers. Suggest a 0.09 in white border on the backs, as the fronts already have.
+- **Double-sided card sheets** (`bored-play-cards-double-sided-*`): the card backs are coloured right up to each card edge. A duplex printer's front-to-back shift will show white slivers. Suggest a 0.09 in white border on the backs, as the fronts already have. *Current state:* the 03:25 rebuild removed the double-sided and EDITABLE files. `bored-play-cards` now ships Letter, A4 and low-ink editions plus a START-HERE, with type down to 4.8 pt.
 
 ---
 
@@ -227,7 +231,7 @@ Box sizes are all 2.0 × 1.198 in, which matches BRAND.md's 2 × 1.2 in.
 | up-go-more paperback | 32 | yes | yes |
 | picture-tablet-slept | 32 | yes | yes |
 | guide KDP | 86 | yes | yes |
-| course KDP | 90 | yes | yes |
+| course KDP | 90 (92 in the 03:11 rebuild) | yes | yes |
 | laps (Lulu) | 32 | yes | yes |
 | board book (offset) | 26 | n/a | yes |
 
@@ -238,12 +242,13 @@ Box sizes are all 2.0 × 1.198 in, which matches BRAND.md's 2 × 1.2 in.
 | up-go-more KDP | 32 | 0.0751 | 0.0751 | 17.3251 | 17.3251 | 8.75 | ✓ |
 | tablet KDP | 32 | 0.0751 | 0.0751 | 17.3251 | 17.3251 | 8.75 | ✓ |
 | course KDP | 90 | 0.2027 | 0.2027 | 16.4527 | 16.4527 | 10.25 | ✓ |
+| course KDP (current, 03:11 rebuild) | 92 | 0.2072 | 0.2072 | 16.4572 | 16.4572 | 10.25 | ✓ |
 | guide KDP | 86 | 0.1937 | 0.1937 | 16.4437 | 16.4437 | 10.25 | ✓ (was 16.43 in for 82 pages until 02:20) |
 | laps softcover (Lulu) | 32 | from the Lulu API | 0.0833 (placeholder) | from the Lulu API | 17.3333 | 8.75 | cannot verify |
 | tablet hardcover (IngramSpark) | 32 | from the template generator | 0.25 (placeholder) | from the template | 19.13 × 10.0 | — | cannot verify |
 | laps hardcover (Lulu) | 32 | from the Lulu API | placeholder | from the Lulu API | 19.0 × 10.25 | — | cannot verify |
 
-No cover has spine text. That is correct for the 32-page books, because KDP allows spine text only above about 79 pages (UNVERIFIED). It is optional for the 86- and 90-page books, which have spines of about 0.19–0.20 in.
+No KDP or IngramSpark cover has spine text. (Corrected: the Lulu hardcover sample does have spine text, "Laps Not Apps · made for Maya", as its table row above says.) Having no spine text is correct for the 32-page books, because KDP allows spine text only above about 79 pages (UNVERIFIED). It is optional for the 86- and 90-page books, which have spines of about 0.19–0.20 in.
 
 **Fonts:**
 - No non-Type 3 font is missing from any file.
@@ -262,7 +267,7 @@ No cover has spine text. That is correct for the 32-page books, because KDP allo
   - card fronts p1, 2, 20/30, 53, 54; the backs; the tuck box p1–2; the hang tag p1–3;
   - every cover.
 - For every printable family, five pages each of the Letter, A4, low-ink and START-HERE editions were inspected as contact sheets.
-- Nothing is clipped or overlapping except the items already listed.
+- ~~Nothing is clipped or overlapping except the items already listed.~~ **Corrected:** the course KDP interior had overflow on p60 and p87 that the five sampled pages (1, 2, 4, 45, 90) missed; see Verdict item 2. The safe-zone numbers above measured font boxes. For large display type, such as the board-book words, those boxes sit well outside the ink, so the verification re-measured ink by rendering each page with and without its text.
 
 **Copyright line "© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.":**
 - Present on the copyright page of every book interior: up-go-more p2, course p2, guide p2 (and p84), tablet p2, laps p2, board book p25.
@@ -298,6 +303,8 @@ No cover has spine text. That is correct for the 32-page books, because KDP allo
 ---
 
 ## Appendix A: home-print printables (112 files; the internal `merch-core.pdf` production book is excluded)
+
+*Verification note:* this table reflects the files as of 02:20–02:31. Regrading the 02:23 git snapshot with the rules below reproduced it: 59/43/10, where the only difference is `guide-100-plays/START-HERE.pdf`, which lacked a © line at 02:23 and was fixed by the 02:31 re-check. The files on disk now (114) grade 50 FAIL, 53 WARN, 11 PASS. Rows for `bored-play-cards` name files that no longer exist, and page counts have grown by 1–4 in the rebuilt kits.
 
 Status rules:
 - **FAIL:** a founder placeholder prints, text touches the page edge (under 0.02 in), there is no © line, the page is not Letter or A4, or a file is over 20 MB.
@@ -343,15 +350,15 @@ Status rules:
 | `guide-100-plays/guide-100-plays-low-ink-letter.pdf` | Own store / Etsy digital, home print | FAIL | founder placeholder printed on p2; ruled lines drawn as 20 gradient shadings | 90 | Letter | 4.9 |
 | `guide-100-plays/START-HERE.pdf` | Own store / Etsy digital, home print | PASS | — | 1 | Letter | 0.2 |
 | `guide-100-plays/etsy-upload/1-START-HERE.pdf` | Etsy digital, home print | PASS | — | 1 | Letter | 0.2 |
-| `picture-more-talk-less-tap/downloads/Talk-Tower-Classroom-Game-Kit-A4-Ink-Saver.pdf` | Own store / Etsy digital, home print | FAIL | founder placeholder printed on p2,12; fallback glyphs (DejaVuSans) | 25 | A4 | 3.0 |
-| `picture-more-talk-less-tap/downloads/Talk-Tower-Classroom-Game-Kit-A4.pdf` | Own store / Etsy digital, home print | FAIL | founder placeholder printed on p2,12; fallback glyphs (DejaVuSans) | 25 | A4 | 3.0 |
-| `picture-more-talk-less-tap/downloads/Talk-Tower-Classroom-Game-Kit-US-Letter-Ink-Saver.pdf` | Own store / Etsy digital, home print | FAIL | founder placeholder printed on p2,12; fallback glyphs (DejaVuSans) | 25 | Letter | 3.0 |
-| `picture-more-talk-less-tap/downloads/Talk-Tower-Classroom-Game-Kit-US-Letter.pdf` | Own store / Etsy digital, home print | FAIL | founder placeholder printed on p2,12; fallback glyphs (DejaVuSans) | 25 | Letter | 3.0 |
+| `picture-more-talk-less-tap/downloads/Talk-Tower-Classroom-Game-Kit-A4-Ink-Saver.pdf` | Own store / Etsy digital, home print | FAIL | founder placeholder printed on p2; fallback glyphs (DejaVuSans) | 25 | A4 | 3.0 |
+| `picture-more-talk-less-tap/downloads/Talk-Tower-Classroom-Game-Kit-A4.pdf` | Own store / Etsy digital, home print | FAIL | founder placeholder printed on p2; fallback glyphs (DejaVuSans) | 25 | A4 | 3.0 |
+| `picture-more-talk-less-tap/downloads/Talk-Tower-Classroom-Game-Kit-US-Letter-Ink-Saver.pdf` | Own store / Etsy digital, home print | FAIL | founder placeholder printed on p2; fallback glyphs (DejaVuSans) | 25 | Letter | 3.0 |
+| `picture-more-talk-less-tap/downloads/Talk-Tower-Classroom-Game-Kit-US-Letter.pdf` | Own store / Etsy digital, home print | FAIL | founder placeholder printed on p2; fallback glyphs (DejaVuSans) | 25 | Letter | 3.0 |
 | `picture-more-talk-less-tap/downloads/Talk-Tower-Story-Read-Aloud.pdf` | Digital bonus, home print | FAIL | founder placeholder printed on p3,4 | 32 | 8.75 x 8.75 in | 1.8 |
-| `picture-more-talk-less-tap/picture-more-talk-less-tap-A4.pdf` | Own store / Etsy digital, home print | FAIL | founder placeholder printed on p2,12; fallback glyphs (DejaVuSans) | 25 | A4 | 3.0 |
-| `picture-more-talk-less-tap/picture-more-talk-less-tap-ink-saver-A4.pdf` | Own store / Etsy digital, home print | FAIL | founder placeholder printed on p2,12; fallback glyphs (DejaVuSans) | 25 | A4 | 3.0 |
-| `picture-more-talk-less-tap/picture-more-talk-less-tap-ink-saver.pdf` | Own store / Etsy digital, home print | FAIL | founder placeholder printed on p2,12; fallback glyphs (DejaVuSans) | 25 | Letter | 3.0 |
-| `picture-more-talk-less-tap/picture-more-talk-less-tap.pdf` | Own store / Etsy digital, home print | FAIL | founder placeholder printed on p2,12; fallback glyphs (DejaVuSans) | 25 | Letter | 3.0 |
+| `picture-more-talk-less-tap/picture-more-talk-less-tap-A4.pdf` | Own store / Etsy digital, home print | FAIL | founder placeholder printed on p2; fallback glyphs (DejaVuSans) | 25 | A4 | 3.0 |
+| `picture-more-talk-less-tap/picture-more-talk-less-tap-ink-saver-A4.pdf` | Own store / Etsy digital, home print | FAIL | founder placeholder printed on p2; fallback glyphs (DejaVuSans) | 25 | A4 | 3.0 |
+| `picture-more-talk-less-tap/picture-more-talk-less-tap-ink-saver.pdf` | Own store / Etsy digital, home print | FAIL | founder placeholder printed on p2; fallback glyphs (DejaVuSans) | 25 | Letter | 3.0 |
+| `picture-more-talk-less-tap/picture-more-talk-less-tap.pdf` | Own store / Etsy digital, home print | FAIL | founder placeholder printed on p2; fallback glyphs (DejaVuSans) | 25 | Letter | 3.0 |
 | `picture-more-talk-less-tap/story-bonus/more-talk-less-tap-read-aloud.pdf` | Digital bonus, home print | FAIL | founder placeholder printed on p3,4 | 32 | 8.75 x 8.75 in | 1.8 |
 | `picture-more-talk-less-tap/downloads/START HERE.pdf` | Own store / Etsy digital, home print | PASS | — | 1 | Letter | 0.2 |
 | `picture-more-talk-less-tap/downloads/Talk-Tower-Slides-16x9.pdf` | Projected (digital) | PASS | — | 20 | 13.3333 x 7.5 in | 0.7 |
@@ -430,6 +437,8 @@ None of these should go into an upload folder. Consider adding `build/tmp/` and 
 
 ## Appendix C: snapshot of printer files checked (modified time, first 12 characters of SHA-1)
 
+*Verification note (03:40):* 12 of these 21 hashes no longer match the files on disk: both course files, all three guide files, the hang tag and all six card files. Every snapshot version is still in git and can be re-checked: course files at `ec76206`, guide files at `ea13e66`, hang tag at `780993d` and card files at `c2c0d5c` (`git show <commit>:products/<path>`). The 9 board-up, laps and tablet files are unchanged.
+
 | File | Modified | SHA-1 | Pages | MB |
 |---|---|---|---|---|
 | `board-up-go-more/board-up-go-more.pdf` | 01:31 | 385a59abbb54 | 26 | 1.39 |
@@ -453,3 +462,49 @@ None of these should go into an upload folder. Consider adding `build/tmp/` and 
 | `play-talk-cards/pod-later/POD-LATER_talk-along-deck_54-fronts.pdf` | 02:16 | a1b079b99d54 | 54 | 0.83 |
 | `play-talk-cards/pod-later/POD-LATER_talk-along-deck_back.pdf` | 02:16 | 5a3163ed2a17 | 1 | 0.03 |
 | `play-talk-cards/pod-later/POD-LATER_talk-along-deck_tuck-box.pdf` | 02:16 | aca0f5a64b23 | 2 | 0.21 |
+
+---
+
+## Verification (second agent, 2026-09-28 03:40–04:10)
+
+**Method.** I worked from the PDFs themselves, not from this report. Files that changed after the run were checked twice: once at the exact snapshot the report hashed (pulled from git and matched by SHA-1) and once as they are on disk now. Margins were measured two ways: from PyMuPDF font boxes, and from real glyph ink, found by rendering each page with and without its text and comparing. There were 196 PDFs on disk at 03:40 (138 outside `build/`), against 194 at the time of the run.
+
+**Re-checked and confirmed (13):**
+1. **Type 3 fonts in every file:** 196 of 196 current PDFs. Every brand woff2 has an `fvar` table.
+2. **The G1 fix works:** I rendered a test page through `brand/render.js`. Static fontTools instances of Fredoka 600 and Nunito Sans 400 embedded as Type 0/TrueType, and the variable woff2 in the same page came out as Type 3.
+3. **Guide KDP footer:** 0.29 in by font box and 0.295 in by ink, on 80 of 86 pages. The same holds in the brand-kit file and in the 02:57 rebuild. The `book.js` line 60 reference is correct.
+4. **Course KDP footer:** 87 of 90 pages at the snapshot, 87 of 92 now. The `workbook.js` line 48 reference is correct.
+5. **Cover widths:** all four KDP wraps match 2 × 0.125 + 2 × trim + pages × paper thickness to within 0.00003 in. That covers 17.3251 ×2, 16.4527 (snapshot), 16.4437, and 16.4572 for the current 92-page course. The guide really was 8.1267 in wide, with a 16.43 in cover at 82 pages, before the fix.
+6. **Page sizes and counts:** every size and count in Summary table 1 matches, including 19.13 × 10.0, 19.0 × 10.25, 17.3333 and 7.3767 × 6.5267 in.
+7. **ISBN boxes:** 2.0 × 1.198 in, at 0.254/0.254, 0.375/0.385, 0.604/0.50, 0.50/0.50 and 0.427/0.427 in. Labels and dashed outlines are visible when rendered.
+8. **Placeholder text in every interior:** as listed, plus two small additions. The tablet p2 also reads "ISBNs to be added by the publisher". The guide snapshot p2 also has an "ISBN / barcode (founder to add)" box.
+9. **No © line** in either "7 Days of Play First" PDF, then and now.
+10. **A4 footer:** 0.013 in from the page edge on 28, 17, 41 and 23 pages in the snapshot. Now 29, 18, 44 and 26 pages, so still failing.
+11. **G2/G3:** 0 CMYK operators, no ICC profile or output intent. 157 transparency groups in the board-up interior; 64 soft masks in the course interior; 128 and 26 Type 1 shadings with Type 4 functions.
+12. **Tablet images:** 7 images, all at exactly 300 dpi. The fallback glyphs are ↑ on p14 and → on p29.
+13. **Appendix A tallies:** regrading the 02:23 snapshot with the report's rules reproduced them (see the note at Appendix A).
+
+**Refuted or corrected (changed in place above):**
+- **Board book margins:** the report said 16 of 26 pages at 0.26–0.35 in. The ink measurement finds 5 of 26 pages at 0.29–0.36 in. The first run measured font boxes, which sit well outside the ink for 60–100 pt display words.
+- ***Laps Not Apps* p21 "one" at 0.348 in:** false. The ink is 0.39 in, and no laps text is inside 0.375 in.
+- **Talk Tower placeholder on "p2, 12":** only p2 has one. p12 is the turn tracker, whose "Week of ____" blank is deliberate. Corrected in Tier 3 and in 8 Appendix A rows.
+- **Course footer "page numbers 0.308 in":** the whole footer line is inside the zone. Its ink is 0.314–0.34 in, and 0.308 in is the page number's font box.
+- **"Nothing is clipped or overlapping":** false for the course KDP interior. On p60 the table runs into the footer, now and in the snapshot. On snapshot p87, a card ran off the page. This is the most important thing the first run missed.
+- **"No cover has spine text":** the Lulu hardcover sample does have spine text.
+- **"Four KDP boxes at three offsets":** there are four different offsets.
+- **"fonts.css declares 400 800":** only Bricolage Grotesque does. Bricolage also has an `opsz` axis. Advice added on naming the static instances.
+- **Minor wording fixes:**
+  - The tuck-box fallback font is on the guide page only.
+  - The up-go-more cover has a navy spine band, not a single colour break.
+  - Card-front text sits on the file's 0.156 in safe line.
+  - The tablet's 7 images also carry alpha masks.
+  - The toddler book's sub-5 pt type is all on one reduced sample page (p6).
+
+**Stale since the run (other workflows are rebuilding files):**
+- 12 of the 21 printer-file hashes in Appendix C have changed. The current course interior is 92 pages, and its product name is now *30 Days of Back-and-Forth*.
+- The guide's Letter, A4 and Etsy editions no longer carry the ISBN placeholder.
+- The `bored-play-cards` double-sided and EDITABLE files no longer exist.
+
+Re-run the checks on any file whose hash has changed before uploading it.
+
+**Needs a live check:** nothing new. Every platform number above was already marked UNVERIFIED in the first run, and all of them still need the live check listed earlier.
