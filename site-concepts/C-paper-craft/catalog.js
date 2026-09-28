@@ -31,7 +31,7 @@ window.PBP_COLLECTIONS = {
 window.PBP_CATALOG = [
   {
     id: 'up-go-more', title: 'Up! Go! More!', line: '22 first words to say, sign and act out',
-    type: 'board', ages: ['0-1', '1-3'], ageText: '0–3', ground: 'sun-t', mock: 'board', img: 'assets/ugm-cover.webp',
+    type: 'board', ages: ['0-1', '1-3'], ageText: '0–3', ground: 'sky-t', mock: 'board', img: 'assets/ugm-cover.webp',
     url: 'product.html', stamp: 'Talk-Along Firsts · Book 1',
     formats: [
       { id: 'board', label: 'Board book', detail: '6 × 6 in · 26 board pages · rounded corners', price: 12.99, ship: 'Ships from our fulfilment warehouse in 1–2 business days' },
@@ -65,7 +65,7 @@ window.PBP_CATALOG = [
   },
   {
     id: 'play-talk-cards', title: '52 Play & Talk Cards', line: 'One play and one talk tip on every card',
-    type: 'printable', ages: ['0-1', '1-3', '3-5'], ageText: '0–5', ground: 'sun-t', mock: 'sheet', img: 'assets/ptc-cover.webp', stamp: 'Instant PDF',
+    type: 'printable', ages: ['0-1', '1-3', '3-5'], ageText: '0–5', ground: 'grass-t', mock: 'sheet', img: 'assets/ptc-cover.webp', stamp: 'Instant PDF',
     formats: [{ id: 'pdf', label: 'PDF', detail: '54 poker-size cards · Letter & A4 · ink-saver', price: 7.00, ship: 'Instant download' }],
     alt: '52 Play & Talk Cards printable cover with three fanned cards for ages 0–1, 2–3 and 3–5.'
   },
@@ -89,7 +89,7 @@ window.PBP_CATALOG = [
   },
   {
     id: 'bundle-little', title: 'Paper Play Bundle, Ages 0–5', line: 'Play & Talk Cards, Visual Routine Cards and I’m Bored! Play Cards',
-    type: 'bundle', ages: ['0-1', '1-3', '3-5'], ageText: '0–5', ground: 'grass-t', mock: 'stack', imgs: ['assets/ptc-cover.webp', 'assets/vrc-cover.webp', 'assets/bored-cover.webp'], img: 'assets/ptc-cover.webp', stamp: '3 PDFs', sum: 23.00,
+    type: 'bundle', ages: ['0-1', '1-3', '3-5'], ageText: '0–5', ground: 'sky', mock: 'stack', imgs: ['assets/ptc-cover.webp', 'assets/vrc-cover.webp', 'assets/bored-cover.webp'], img: 'assets/ptc-cover.webp', stamp: '3 PDFs', sum: 23.00,
     formats: [{ id: 'pdf', label: '3 PDFs', detail: 'Letter & A4 · one download link', price: 18.00, ship: 'Instant download' }],
     alt: 'Three printable covers stacked: Play & Talk Cards, Visual Routine Cards and I’m Bored! Play Cards.'
   },
@@ -125,7 +125,7 @@ window.PBP_CATALOG = [
   },
   {
     id: 'screen-reset', title: '30-Day Screen Reset', line: 'A written course: one short lesson and one play a day, by email',
-    type: 'course', ages: ['0-1', '1-3', '3-5', '5-8', '8-12'], ageText: 'For grown-ups', ground: 'sun-t', mock: 'workbook', img: 'assets/guide-p05.webp', stamp: 'Written · no video',
+    type: 'course', ages: ['0-1', '1-3', '3-5', '5-8', '8-12'], ageText: 'For grown-ups', ground: 'sun', mock: 'workbook', img: 'assets/guide-p05.webp', stamp: 'Written · no video',
     formats: [{ id: 'course', label: 'Written course', detail: '30 emails + printable workbook and trackers', price: 27.00, ship: 'Day 1 arrives by email right away' }],
     alt: 'A printed 30-Day Screen Reset workbook with a day-by-day grid.'
   },
@@ -137,7 +137,7 @@ window.PBP_CATALOG = [
   },
   {
     id: 'tote', title: 'Library Tote', line: 'Fits eight picture books and a snack',
-    type: 'merch', ages: [], ageText: 'For grown-ups', ground: 'sun-t', mock: 'tote', img: 'assets/wordmark-white.svg', stamp: 'Printed to order',
+    type: 'merch', ages: [], ageText: 'For grown-ups', ground: 'sun', mock: 'tote', img: 'assets/wordmark-white.svg', stamp: 'Printed to order',
     formats: [{ id: 'tote', label: 'Tote', detail: 'Heavy cotton · 15 × 16 in', price: 22.00, ship: 'Printed to order, ships in 3–5 business days' }],
     alt: 'A sky-blue cotton tote bag with the Play Before Pixels wordmark.'
   }
@@ -176,7 +176,7 @@ window.PBP_PAGES = [
   var bandColor = function (k) { var b = w.PBP_BANDS.filter(function (x) { return x.key === k; })[0]; return b ? b.color : 'sky'; };
   var TEE = '<svg viewBox="0 0 400 350" aria-hidden="true"><path d="M128 18c20 16 44 24 72 24s52-8 72-24l96 44-34 86-40-16v200H106V132l-40 16-34-86z" fill="#1D2940"/><path d="M128 18c20 16 44 24 72 24s52-8 72-24l-8-4c-18 13-38 19-64 19s-46-6-64-19z" fill="#2B3957"/><path d="M106 132l-4-40M294 132l4-40" stroke="#2B3957" stroke-width="3" fill="none"/></svg>';
   var TOTE = '<svg viewBox="0 0 360 420" aria-hidden="true"><path d="M118 168c0-112 124-112 124 0" fill="none" stroke="#2F74C2" stroke-width="16" stroke-linecap="round"/><path d="M40 150h280l-10 262H50z" fill="#3D86D8"/><path d="M40 150h280v14H40z" fill="#2F74C2"/></svg>';
-  function img(src, alt, cls) { return '<img src="' + src + '" alt="' + esc(alt || '') + '" loading="lazy" decoding="async"' + (cls ? ' class="' + cls + '"' : '') + '>'; }
+  function img(src, alt, cls) { return '<img src="' + src + '" alt="' + esc(alt || '') + '" decoding="async"' + (cls ? ' class="' + cls + '"' : '') + '>'; }
   w.PBP_mock = function (p, opt) {
     opt = opt || {}; var a = opt.decorative ? '' : p.alt;
     switch (p.mock) {

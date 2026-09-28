@@ -35,7 +35,7 @@ function megaPanels() {
       <div><h2>Shop by age</h2>${ageTabs()}</div>
       <div><h2>Shop by type</h2>${typeLinks()}<p class="mega-all"><a class="link" href="shop.html">Everything we make <span class="arr" aria-hidden="true">→</span></a></p></div>
       <a class="mega-feature" href="product.html">
-        <div class="surface g-sun-t">${W.PBP_mock(ugm, { decorative: true })}</div>
+        <div class="surface g-sky-t">${W.PBP_mock(ugm, { decorative: true })}</div>
         <span><span class="stamp">New · Book 1</span></span>
         <span><strong>Up! Go! More!</strong><span class="meta">22 first words to say, sign and act out · ages 0–3 · from <span data-usd="11.99">$11.99</span></span></span>
       </a>
@@ -116,7 +116,7 @@ function header(active) {
   return `<a class="skip-link" href="#main">Skip to content</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="ink" x="-5%" y="-20%" width="110%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.6"/></filter></defs></svg>
 <div class="utility"><div class="wrap">
-  <p>Printables download instantly. Books are printed to order and ship worldwide.</p>
+  <p><span class="u-long">Printables download instantly. Books are printed to order and ship worldwide.</span><span class="u-short">Instant downloads · Books ship worldwide</span></p>
   <nav aria-label="Help and currency">
     <a class="u-hide" href="info.html#help">Help centre</a>
     <a class="u-hide" href="info.html#downloads">Resend my download</a>
@@ -196,8 +196,8 @@ function cartDrawer() {
 function footer() {
   return `
 <footer class="footer on-ink" id="footer">
-  <div class="colour-bar" aria-hidden="true">${'<i></i>'.repeat(12)}</div>
   <div class="wrap">
+    <div class="f-strip" aria-hidden="true"><div class="colour-bar">${'<i></i>'.repeat(12)}</div>${I.reg}<small>Colour control · AlphaPlay LLC</small></div>
     <div class="f-top">
       <div class="f-sign">
         <h2>A free play plan, every other Sunday.</h2>
