@@ -257,7 +257,7 @@ h1,h2,h3,p{margin:0}
 .sl{position:absolute;white-space:nowrap;text-align:center;font-size:7px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8A94A8}
 /* content pages */
 .cp .cpin{position:absolute;left:.5in;right:.5in;top:.5in;bottom:.72in;display:flex;flex-direction:column}
-.phd{display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:2px solid var(--wash);margin-bottom:22px}
+.phd{display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:2px solid var(--wash);margin-bottom:16px}
 .brand{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:14px;letter-spacing:-.01em}
 .pe{font-weight:800;font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.6}
 .ph{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:38px;line-height:1.02;letter-spacing:-.025em;margin-bottom:14px}
@@ -528,9 +528,9 @@ const tipsCss = `<style>
 .tn{flex:0 0 28px;height:28px;border-radius:50%;background:${C.ink};color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:14px}
 .tpi h4,.wy h4{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:15px;margin:0 0 2px}
 .tpi p{font-size:12px;line-height:1.45;font-weight:600}
-.tpg{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;margin-top:18px}
+.tpg{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;margin-top:12px}
 .tpb{background:${C.wash};border-radius:16px;padding:12px 16px}
-.pgr{display:flex;justify-content:space-between;font-size:11.5px;font-weight:700;padding:3px 0;border-bottom:1px solid #E1E7F1}
+.pgr{display:flex;justify-content:space-between;font-size:11px;font-weight:700;padding:2px 0;border-bottom:1px solid #E1E7F1}
 .pgr b{font-weight:800}
 .sup{display:flex;gap:7px;align-items:center;font-size:11.5px;font-weight:700;padding:3px 0}
 .sup .i{width:12px;height:12px;color:${C.sun};flex:0 0 12px}
@@ -723,7 +723,9 @@ function certPage(fields) {
     <div class="ctn"${f('cert_name')}></div>
     <p class="ctp">for playing <span class="ctm">${[10, 25, 50, 100].map(n => `<i${f('cert_' + n)}></i>${n}`).join(' ')}</span> cards from the “I’m bored!” jar.</p>
     <div class="ctr"><div><span class="kick">Favorite card</span><div class="mline"${f('cert_fav')}></div></div><div><span class="kick">Date</span><div class="mline"${f('cert_date')}></div></div></div>
-    <div class="ctb"><span>Play before pixels</span>${logo('mark', 'lgm')}<span>playbeforepixels.com</span></div>
+    <div class="ctq"><div class="ctq1"><span class="kick">Our top three cards</span>${[1, 2, 3].map(i => `<div class="ctli"><b>${i}</b><div class="mline"${f('cert_top' + i)}></div></div>`).join('')}</div>
+    <div class="ctq2">${icon('talk', 'ctqi')}<span class="kick">Best thing we said while we played</span><div class="ctqb"${f('cert_said')}></div></div></div>
+    <div class="ctb"><span>Pull a card. Play together.</span>${logo('mark', 'lgm')}<span>playbeforepixels.com</span></div>
   </div>`);
 }
 const certCss = `<style>
@@ -738,6 +740,11 @@ const certCss = `<style>
 .ctm{display:inline-flex;gap:6px;align-items:center;font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-size:19px;margin:0 4px}
 .ctm i{width:17px;height:17px;border:2px solid ${C.ink};border-radius:50%;display:inline-block;margin-left:6px}
 .ctr{display:grid;grid-template-columns:1.6fr 1fr;gap:26px;width:5.6in;margin-top:22px;text-align:left}
+.ctq{display:grid;grid-template-columns:1fr 1fr;gap:22px;width:6.3in;margin-top:24px;text-align:left}
+.ctli{display:flex;align-items:flex-end;gap:8px}.ctli b{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-size:16px;color:${C.tomato};padding-bottom:4px}.ctli .mline{flex:1}
+.ctq2{background:${C.tSky};border-radius:16px;padding:12px 14px;position:relative}
+.ctqi{position:absolute;right:12px;top:10px;width:22px;height:22px;color:${C.sky}}
+.ctqb{height:1.05in}
 .ctb{margin-top:auto;display:flex;gap:14px;align-items:center;font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
 .lgm{height:.35in;display:block}
 </style>`;

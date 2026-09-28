@@ -1,8 +1,21 @@
-// Build script for "Laps Not Apps" (picture book, hardcover edition).
-// Generates source.html (32 pages, 8.75 x 8.75 in incl. bleed), cover.html and mockup.html.
+// Build script for "Laps Not Apps" — PERSONALIZED keepsake edition (8.5 x 8.5 in picture book, 32 interior pages).
+// Every word comes from WORDS.md (the founder's file); every order variable comes from personalize.js (map: personalization.json).
+// Modes:
+//   node build.js [--look 1-4]      sample book for the example order: source.html (cover + 32 interior + back), interior-only.html,
+//                                   cover.html, cover-wrap-hardcover.html, cover-wrap-softcover.html, picker.html, mockup.html
+//   node build.js --template        template.html: every variable shown as a highlighted {{TOKEN}} (for checking the variable map)
+//   node build.js --order o.json --out <dir> [--cover-w in --cover-h in --spine in] [--allow-drafts]
+//                                   one customer's interior.html + cover-wrap.html + check.json (then: node render-order.js <dir>)
 // Units inside the art: 1 unit = 0.01 in. Page = 875 x 875 units (8.5 in trim + 0.125 in bleed each side).
 const fs = require('fs'), path = require('path');
 const DIR = __dirname;
+const PZ = require('./personalize.js');
+const ARGS = (() => { const a = process.argv.slice(2), o = {}; for (let i = 0; i < a.length; i++) if (a[i].startsWith('--')) { const k = a[i].slice(2); o[k] = (a[i + 1] !== undefined && !a[i + 1].startsWith('--')) ? a[++i] : true; } return o; })();
+const MODE = ARGS.template ? 'template' : ARGS.order ? 'order' : 'sample';
+const ORDER = MODE === 'order' ? JSON.parse(fs.readFileSync(ARGS.order, 'utf8')) : { ...PZ.SAMPLE_ORDER, ...(ARGS.look ? { look: +ARGS.look } : {}) };
+const NZ = PZ.normalize(ORDER);
+if (!NZ.ok) { console.error('ORDER ERROR (cannot build): ' + NZ.errors.join('; ')); process.exit(2); }
+const LOOK = PZ.LOOKS[NZ.look];
 
 const C = { ink: '#1D2940', paper: '#FFFFFF', wash: '#F3F6FB', tomato: '#EE5A36', sun: '#F5B820', sky: '#3D86D8', grass: '#2FA36B', plum: '#8A5CC7',
   tT: '#FDE9E3', sT: '#FEF4D8', kT: '#E3EEFA', gT: '#DFF3E9', pT: '#EFE6FA' };
@@ -151,8 +164,9 @@ function kidBody(p) {
 }
 
 const P = {
-  kid: { skin: SK.s4, hc: H.black, hs: 'puffs', shirt: C.sun, pants: C.sky, shoes: C.tomato },
-  kidpj: { skin: SK.s4, hc: H.black, hs: 'puffs', shirt: C.plum, pants: C.plum, shoes: C.pT },
+  // the story's child: skin and hair come from the order's "look" (character picker)
+  kid: { skin: LOOK.skin, hc: LOOK.hair, hs: LOOK.hs, shirt: C.sun, pants: C.sky, shoes: C.tomato },
+  kidpj: { skin: LOOK.skin, hc: LOOK.hair, hs: LOOK.hs, shirt: C.plum, pants: C.plum, shoes: C.pT },
   ada: { skin: SK.s2, hc: H.auburn, hs: 'bob', shirt: C.tomato, pants: C.sun, shoes: C.ink, flower: true },
   baby: { skin: SK.s6, hc: H.black, hs: 'tuft', shirt: C.sky, pants: C.sky, shoes: C.kT },
   dad: { skin: SK.s5, hc: H.black, hs: 'short', shirt: C.grass, pants: C.ink, shoes: C.tomato, beard: true },
@@ -180,6 +194,8 @@ defK('kid-stand', 'kid', { pose: 'stand', arms: 'up', mood: 'open' }); defK('kid
 defK('kidpj-stand', 'kidpj', { pose: 'stand' }); defK('kidpj-yawn', 'kidpj', { pose: 'stand', mood: 'yawn', arms: 'up' });
 defK('kidpj-sleep', 'kidpj', { mood: 'sleep' });
 defK('ada-sit', 'ada', { arms: 'hold' }); defK('baby-up', 'baby', { arms: 'up' });
+// all four picker looks (standing, arms up) for the picker and mockup images
+for (const [n, L] of Object.entries(PZ.LOOKS)) defK(`look-${n}`, 'kid', { skin: L.skin, hc: L.hair, hs: L.hs, pose: 'stand', arms: 'up', mood: 'open' });
 
 // props in adult coordinates (240 x 300)
 sym('armchair', 240, 300, `<rect x="22" y="80" width="196" height="160" rx="46" fill="${C.tomato}"/><rect x="0" y="158" width="58" height="106" rx="26" fill="${C.tomato}"/><rect x="182" y="158" width="58" height="106" rx="26" fill="${C.tomato}"/><rect x="44" y="212" width="152" height="52" rx="14" fill="${C.tT}"/><rect x="30" y="262" width="14" height="36" rx="5" fill="${C.ink}"/><rect x="196" y="262" width="14" height="36" rx="5" fill="${C.ink}"/>`);
@@ -273,7 +289,7 @@ SPREADS.push(() => rect(0, 0, 1750, 875, C.sT) + `<circle cx="440" cy="590" r="2
   rect(1350, 450, 250, 22, C.kT, 11) + rect(1350, 492, 200, 22, C.kT, 11) + rect(1350, 534, 230, 22, C.kT, 11) +
   `<ellipse cx="1470" cy="690" rx="54" ry="34" fill="${C.plum}"/><circle cx="1420" cy="662" r="26" fill="${C.plum}"/><circle cx="1402" cy="640" r="14" fill="${C.pT}"/><circle cx="1414" cy="664" r="4" fill="${C.ink}"/><path d="M1524 700 Q1560 700 1556 668" stroke="${C.plum}" stroke-width="7" fill="none" stroke-linecap="round"/>` +
   `<path d="M1644 690 L1644 776 L1560 776Z" fill="${C.wash}"/></g>` +
-  `<path d="M1680 900 L1600 760" stroke="${C.sun}" stroke-width="78" stroke-linecap="round"/><circle cx="1592" cy="748" r="40" fill="${SK.s4}"/>` +
+  `<path d="M1680 900 L1600 760" stroke="${C.sun}" stroke-width="78" stroke-linecap="round"/><circle cx="1592" cy="748" r="40" fill="${P.kid.skin}"/>` +
   bubble(1400, 338, 240, 80, 1560, 430, 'Again!', 48, C.ink, C.paper));
 
 // 4 Bus
@@ -386,112 +402,125 @@ SPREADS.push(() => {
     col('heart', 1332, 430, 1.4, C.tomato);
 });
 
-/* ---------------------------------------------------------------- text */
-const VERSES = [
-  [['The sun peeks in early.', 'It’s morning! Hooray!', 'I pad down the hall', 'to find laps for the day.'],
-   ['There’s Dad in the armchair,', 'his phone facing down.', 'He pats on his lap—', '“It’s the best seat in town!”'],
-   'Pat your lap and wait. Let your little one choose to climb up—then say hello like they just arrived.'],
-  [['Then Grandma rolls in', 'with a book on her knee.', '“I saved you a seat!', 'Come and read it with me.”'],
-   ['Her lap is a lap', 'with the very best wheels.', 'We read about bears', 'and a boat full of seals.'],
-   'Before you turn the page, pause. Let them point, pat or name what they see first.'],
-  [['She reads with a ROAR,', 'and she reads with a squeak,', 'a mouse-sized small whisper,', 'a kiss on my cheek.'],
-   ['I turn all the pages.', 'I point and I name.', '“Again!” And she reads it', 'again, just the same.'],
-   'Read favorites again and again. Try a big voice, a tiny voice, a whisper—and let them pick.'],
-  [['We ride on the bus,', 'and the bus seat is high,', 'but Dad’s lap is higher—', 'I’m up in the sky!'],
-   ['“A dog!” I point out.', '“A BIG dog!” Dad agrees.', '“A big dog,” I tell him,', '“who’s sniffing the trees!”'],
-   'Say what you see, then add one word: “dog” … “big dog” … “big dog sniffing.”'],
-  [['My brother sits cross-legged—', 'a nest on the rug.', 'I plop in the middle.', 'He gives me a hug.'],
-   ['He sings me the song', 'about ducks in a row.', 'He stops before “QUACK!”', 'so it’s my turn to go.'],
-   'Sing a song they know and stop just before a fun word. Wait. Let them fill it in—any sound counts.'],
-  [['We clap and we tap', 'and we boop on the nose.', 'We sing it too slow,', 'then as fast as it goes!'],
-   ['I lean on his chest', 'and I feel his voice hum—', 'a rumble, a buzz,', 'like a soft, sleepy drum.'],
-   'Follow their lead: faster, slower, louder, softer. Copy their sounds back to them.'],
-  [['At the park, on a blanket,', 'my friend Ada’s there,', 'on Mama Jo’s lap', 'with a flower in her hair.'],
-   ['And Mama Bea’s lap', 'is a pony—trot, trot!', 'The baby goes “Whee!”', 'and she giggles a lot.'],
-   'Offer a choice: “Slow pony or fast pony?” Then do exactly what they pick.'],
-  [['We find a red bench', 'where the ducks paddle past.', 'We count them—one, two, three.', 'The last one is fast!'],
-   ['Big laps and small laps', 'all out in the sun—', 'a park full of laps,', 'and a lap for each one!'],
-   'Count out loud together—ducks, dogs, buses, buttons. Point to each one as you count.'],
-  [['Back home, something’s sitting', 'right smack in my place:', 'our cat, on Grandma’s lap,', 'with a smug little face!'],
-   ['“There’s room for you both!”', 'Grandma laughs. So we share:', 'one lap, and one cat,', 'and one kid, and one chair.'],
-   'Ask a “who” question and wait: “Who is on Grandma’s lap?” Pointing is a great answer too.'],
-  [['When rain taps the window—', 'tip-tap, drip-drop—', 'we build a big fort', 'with a sheet on the top.'],
-   ['We drape it from Grandma’s', 'wheelchair to the couch,', 'and squeeze in together—', 'no room for a grouch!'],
-   'Name the feelings: cozy, snug, squished, silly. Ask, “How does it feel in here?”'],
-  [['The moon’s in the window.', 'The sky’s navy blue.', 'My eyes are all heavy.', 'My yawns are big, too.'],
-   ['Dad rocks in the rocker,', 'so slow, to and fro.', 'He hums the same song', 'that he hummed long ago.'],
-   'The same quiet song every night can become your family’s goodnight signal.'],
-  [['There are laps on the bus.', 'There are laps on the ground.', 'There are laps that go rolling', 'and rocking around.'],
-   ['But the best lap of all,', 'as the stars start to shine,', 'is the one that’s right here—', 'with your cheek next to mine.'],
-   'Ask, “Whose lap is best for stories?” Then tell them yours.'],
-];
-const LIGHT = { 10: [true, true], 11: [false, true] };
+
+/* ---------------------------------------------------------------- words: WORDS.md is the founder's file (human authorship) */
+function readWords() {
+  const src = fs.readFileSync(path.join(DIR, 'WORDS.md'), 'utf8').replace(/<!--[\s\S]*?-->/g, '');
+  const out = {}; let key = null;
+  src.split('\n').forEach(l => {
+    const m = l.match(/^##\s+(.+?)\s*$/);
+    if (m) { const draft = /\(draft\)\s*$/i.test(m[1]); key = m[1].replace(/\s*\(draft\)\s*$/i, '').trim(); out[key] = { draft, lines: [] }; }
+    else if (key) out[key].lines.push(l);
+  });
+  for (const k in out) out[k].text = out[k].lines.join('\n').trim();
+  return out;
+}
+const W = readWords();
+const need = k => { if (!(k in W)) throw new Error(`WORDS.md is missing the section "## ${k}"`); return W[k].text; };
+const DRAFTS = Object.keys(W).filter(k => W[k].draft);
+const AUTHOR = (W.author && W.author.text) || '';
+const AUTHOR_NOTE = (W['author note'] && W['author note'].text) || '';
+const SHOW_SLOTS = MODE !== 'order' || !!ARGS['allow-drafts'];
+if (MODE === 'order' && !ARGS['allow-drafts']) {
+  const left = [...DRAFTS.map(k => `"## ${k}" is still marked (draft)`), ...(AUTHOR_NOTE ? [] : ['"## author note" is empty'])];
+  if (left.length) {
+    console.error('HUMAN-AUTHORSHIP GATE: real orders build only from the founder\'s own words. Still to do in WORDS.md:\n  - ' + left.join('\n  - '));
+    process.exit(3);
+  }
+}
+
+// every customer value is HTML-escaped; tokens are replaced only after the founder's text is escaped
+const escH = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const VARS = MODE === 'template' ? Object.fromEntries(Object.keys(NZ.vars).map(k => [k, `{{${k}}}`])) : NZ.vars;
+function fill(str) {
+  return escH(str).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\{\{(\w+)\}\}/g, (m, k) => {
+    if (!(k in VARS)) throw new Error(`Unknown variable {{${k}}} in WORDS.md`);
+    const v = escH(VARS[k]).replace(/\n/g, '<br>');
+    if (MODE === 'template') return `<span class="tok${k === 'CHILD_NAME' ? ' nm' : ''}">${v}</span>`;
+    return k === 'CHILD_NAME' ? `<span class="nm">${v}</span>` : v;
+  });
+}
+const NAME = fill('{{CHILD_NAME}}');
+const HAS = k => MODE === 'template' || !!NZ.vars[k];
+
+/* ---------------------------------------------------------------- brand assets */
+const QR = JSON.parse(fs.readFileSync(path.join(DIR, 'qr.json'), 'utf8'));
+const BONUS = 'playbeforepixels.com/bonus/picture-laps-not-apps';
+const LOGO = (file) => fs.readFileSync(path.join(DIR, '../../brand/logo', file), 'utf8').replace(/<title>[\s\S]*?<\/title>/, '').replace(/ width="[\d.]+" height="[\d.]+"/, '');
+const qrSvg = (px) => `<svg viewBox="-2 -2 ${QR.n + 4} ${QR.n + 4}" width="${px}" height="${px}" shape-rendering="crispEdges"><rect x="-2" y="-2" width="${QR.n + 4}" height="${QR.n + 4}" fill="#fff"/><path d="${QR.d}" fill="${C.ink}"/></svg>`;
+const slot = (title, hint, cls = '') => SHOW_SLOTS ? `<div class="slot ${cls}"><b>${title}</b><span>${hint}</span></div>` : '';
 
 /* ---------------------------------------------------------------- pages */
-const esc = s => s;
 const pages = [];
 const svgPage = (inner, off = 0, w = 875) => `<svg class="art" viewBox="${off} 0 ${w} 875" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">${inner}</svg>`;
 
-// Wordmark
-const wordmark = (c = C.ink, acc = C.tomato) => `<span class="wm" style="color:${c}"><span class="wm-dot" style="background:${acc}"></span>Play Before Pixels</span>`;
-
-// Cover art (single page)
+// Front cover
 function coverArt() {
-  return rect(0, 0, 875, 875, C.sun) + `<circle cx="437" cy="712" r="330" fill="${C.sky}"/>` + rect(0, 790, 875, 85, C.tomato) +
-    col('heart', 140, 520, 1.3, C.tomato) + col('star', 690, 480, 1.1, C.paper) + col('star', 120, 660, 0.8, C.paper) +
-    lap({ a: 'gma', kid: 'kid-sit-hold', cx: 437, fy: 838, s: 1.42, seat: 'wheelchair', arms: 'book', front: U('book', 70, 166, 0.62) }) +
-    U('cat', 640, 740, 1.0);
+  return rect(0, 0, 875, 875, C.sun) + `<circle cx="437" cy="730" r="318" fill="${C.sky}"/>` + rect(0, 790, 875, 85, C.tomato) +
+    col('heart', 130, 540, 1.3, C.tomato) + col('star', 700, 500, 1.1, C.paper) + col('star', 110, 680, 0.8, C.paper) +
+    lap({ a: 'gma', kid: 'kid-sit-hold', cx: 437, fy: 838, s: 1.34, seat: 'wheelchair', arms: 'book', front: U('book', 70, 166, 0.62) }) +
+    U('cat', 645, 740, 1.0);
 }
-pages.push(`<div class="page cover">${svgPage(coverArt())}
-  <div class="cv-top">${wordmark(C.ink, C.tomato)}</div>
+const TAGLINE = fill(need('title tagline'));
+const COVER = `<div class="page cover">${svgPage(coverArt())}
+  <div class="cv-top logo">${LOGO('lockup-horizontal.svg')}</div>
   <h1 class="cv-title">Laps<br><span>Not Apps</span></h1>
-  <p class="cv-sub">A cozy read-aloud about the best seats in town</p>
+  <div class="cv-sub" data-fit="cover-tagline" data-min="15"><span class="pill">${TAGLINE}</span></div>
+</div>`;
+pages.push(COVER);
+
+// I1 Title page
+pages.push(`<div class="page">${svgPage(rect(0, 0, 875, 875, C.paper) + `<ellipse cx="437" cy="740" rx="240" ry="30" fill="${C.kT}"/>` +
+  `<g transform="translate(${437 - 120 * 1.12} ${740 - 298 * 1.12}) scale(1.12)">${U('armchair')}</g>` + U('book', 437 - 60, 740 - 298 * 1.12 + 214 * 1.12 - 49, 0.75) +
+  text(640, 520, 'saved for you', 44, C.tomato, 'Caveat', 700) + `<path d="M606 536 Q566 566 530 600" stroke="${C.tomato}" stroke-width="4" fill="none" stroke-linecap="round"/>`)}
+  <div class="tp"><h1>Laps <span>Not</span> Apps</h1>
+    <p data-fit="title-tagline" data-min="15">${TAGLINE}</p>
+    ${AUTHOR ? `<p class="byline">${fill(AUTHOR)}</p>` : `<p class="byline">A Play Before Pixels read-aloud</p>${slot('Founder: your byline (optional)', 'Type it under <i>## author</i> in WORDS.md, e.g. “Words by …”', 'small')}`}
+  </div>
+  <div class="tp-foot logo">${LOGO('lockup-horizontal.svg')}</div>
 </div>`);
 
-// Title page
-pages.push(`<div class="page">${svgPage(rect(0, 0, 875, 875, C.paper) + `<ellipse cx="437" cy="720" rx="240" ry="30" fill="${C.kT}"/>` +
-  `<g transform="translate(${437 - 120 * 1.2} ${720 - 298 * 1.2}) scale(1.2)">${U('armchair')}</g>` + U('book', 437 - 64, 720 - 298 * 1.2 + 214 * 1.2 - 52, 0.8) +
-  text(640, 470, 'saved for you', 46, C.tomato, 'Caveat', 700) + `<path d="M606 486 Q560 520 520 560" stroke="${C.tomato}" stroke-width="4" fill="none" stroke-linecap="round"/>`)}
-  <div class="tp"><h1>Laps <span>Not</span> Apps</h1><p>A cozy read-aloud about the best seats in town</p></div>
-  <div class="tp-foot">${wordmark()}</div>
-</div>`);
-
-// Copyright page
+// I2 Copyright page
 pages.push(`<div class="page">${svgPage(rect(0, 0, 875, 875, C.paper))}
   <div class="copy">
     <p class="copy-title">Laps Not Apps</p>
-    <p>Text and illustrations © 2026 AlphaPlay LLC.<br>Play Before Pixels is a trade name of AlphaPlay LLC.</p>
+    <p>Personalized edition. Each copy is printed on demand for one reader.</p>
+    <p>© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.</p>
     <p>All rights reserved. No part of this book may be reproduced, stored or shared in any form without written permission from the publisher, except for brief quotations in reviews.</p>
     <p>Published by AlphaPlay LLC, doing business as Play Before Pixels<br>11140 Rockville Pike, Suite 100-559, Rockville, MD 20852-3149<br>playbeforepixels.com</p>
-    <p>Hardcover edition · First edition 2026</p>
-    <div class="isbn-inline">ISBN (hardcover): <span class="box">ISBN — to be supplied</span></div>
+    <p>First edition 2026</p>
+    <div class="isbn-inline">ISBN: <span class="box">ISBN — to be supplied</span></div>
     <p>The lap games in this book are for play and connection, always with an adult close by. This book is general parent education. It is not medical or developmental advice.</p>
     <p>Illustrations are flat vector art. Text is set in Fredoka and Nunito Sans, with titles in Bricolage Grotesque.</p>
     <div class="printbox">Printer / manufacturing lines — to be supplied</div>
   </div>
 </div>`);
 
-// Dedication + keepsake
-pages.push(`<div class="page">${svgPage(rect(0, 0, 875, 875, C.sT) + col('heart', 400, 130, 1.9, C.tomato))}
-  <div class="ded"><p>For every grown-up who ever said,<br>“Come sit with me”—</p><p>and every little one<br>who climbed right up.</p></div>
-  <div class="keep">
-    <div class="keep-h">This book belongs to</div><div class="line"></div>
-    <div class="keep-h small">A lap-story gift from</div><div class="line"></div>
-    <div class="keep-h small">On this day</div><div class="line short"></div>
+// I3 Dedication (personalized)
+const MSG = HAS('GIFT_MESSAGE') ? fill('{{GIFT_MESSAGE}}') : fill(need('default dedication')).replace(/\n/g, '<br>');
+pages.push(`<div class="page">${svgPage(rect(0, 0, 875, 875, C.sT) + rect(0, 812, 875, 63, C.sun) + `<ellipse cx="437" cy="808" rx="150" ry="22" fill="${C.tomato}"/>` +
+  standKid('kid-stand', 437, 804, 1.2) + col('heart', 250, 640, 1.1, C.tomato) + col('heart', 590, 600, 0.8, C.plum) + col('star', 640, 700, 0.7, C.sun) + col('star', 210, 560, 0.6, C.sky))}
+  <div class="ded2">
+    <div class="ded-for">For</div>
+    <div class="ded-name" data-fit="ded-name" data-min="30">${NAME}</div>
+    <div class="ded-msg" data-fit="ded-msg" data-min="15" data-maxh="1.62">${MSG}</div>
+    ${HAS('GIVER_NAME') ? `<div class="ded-from">With love from</div><div class="ded-giver" data-fit="ded-giver" data-min="15">${fill('{{GIVER_NAME}}')}</div>` : ''}
+    ${HAS('GIFT_DATE') ? `<div class="ded-date">${fill('{{GIFT_DATE}}')}</div>` : ''}
   </div>
 </div>`);
 
-// Story pages
+// I4–I27 Story (12 spreads)
+const LIGHT = { 10: [true, true], 11: [false, true] };
 SPREADS.forEach((fn, i) => {
   const art = fn();
-  const [lv, rv, tip] = VERSES[i];
+  const n = i + 1;
   const light = LIGHT[i] || [false, false];
-  const vv = (lines, lt) => `<div class="verse${lt ? ' light' : ''}">${lines.map(l => `<span class="l">${l}</span>`).join('')}`;
-  pages.push(`<div class="page story">${svgPage(art, 0, 875)}${vv(lv, light[0])}</div></div>`);
-  pages.push(`<div class="page story">${svgPage(art, 875, 875)}${vv(rv, light[1])}<div class="tip"><b>Lap talk</b> ${tip}</div></div></div>`);
+  const vv = (key, lt) => `<div class="verse${lt ? ' light' : ''}" data-fit="${key}" data-min="26">${need(key).split('\n').map(l => `<span class="l">${fill(l.trim())}</span>`).join('')}`;
+  pages.push(`<div class="page story">${svgPage(art, 0, 875)}${vv(`s${n} left`, light[0])}</div></div>`);
+  pages.push(`<div class="page story">${svgPage(art, 875, 875)}${vv(`s${n} right`, light[1])}<div class="tip"><b>Lap talk</b> ${fill(need(`s${n} tip`))}</div></div></div>`);
 });
 
-// Games pages
+// I28–I29 Lap games
 const GAMES = [
   ['Pony Ride', 'Once your baby holds their head steady', 'Sit your little one on your knees, facing you, with a firm hold under the arms. Chant “Trot, trot, trot…” with small bounces. On “Whoa!”, stop—and wait for a look, a wiggle or a word that says “more.”', 'Small, gentle bounces only. Never shake, toss or drop a baby.', C.sun, C.sT],
   ['Row the Boat', 'Babies who can sit, toddlers, big kids', 'Face to face, hold hands or forearms and rock slowly forward and back while you sing a rowing song. Stop the boat mid-song. Wait for them to rock you to start again.', 'Rock slowly. Never pull, swing or lift a child by the hands or arms.', C.sky, C.kT],
@@ -524,17 +553,36 @@ pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.paper) + r
   </div>
 </div>`);
 
-// Note + keepsake
+// I30 Family reading pledge (the shareable page)
+const PROMISES = need('pledge promises').split('\n').map(s => s.trim()).filter(Boolean);
+pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.gT) + rect(0, 822, 875, 53, C.grass) + U('book', 640, 92, 0.72) + col('heart', 772, 70, 0.8, C.tomato) + col('star', 600, 78, 0.55, C.sun))}
+  <div class="mat pledge">
+    <div class="kicker">Our family reading pledge</div>
+    <h2>Books before screens</h2>
+    <div class="pl-card">
+      <p class="pl-intro">${fill(need('pledge intro'))}</p>
+      <ul class="pl-list">${PROMISES.map(p => `<li><i></i><span>${fill(p)}</span></li>`).join('')}<li class="own"><i></i><span>our own promise:</span><em></em></li></ul>
+      <div class="pl-sign">
+        <div class="sg"><span>Signed, the grown-ups</span><em></em></div>
+        <div class="sg"><span>${NAME}’s mark <small>(a scribble counts!)</small></span><em></em></div>
+        <div class="sg"><span>Date</span><em></em></div>
+      </div>
+    </div>
+    <div class="pl-foot"><div class="logo">${LOGO('lockup-horizontal.svg')}</div><span>Snap your signed pledge and share it with <b>#PlayBeforePixels</b>, if you like.</span></div>
+  </div>
+</div>`);
+
+// I31 How to use + favorite laps
+const NOTE = need('grown-up note').split('\n').map(s => s.trim()).filter(Boolean);
 pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.kT) + col('heart', 760, 90, 1.2, C.tomato) + rect(0, 812, 875, 63, C.sun) +
   lap({ a: 'dad', kid: 'kid-sit', cx: 150, fy: 830, s: 0.6, seat: 'armchair' }) + lap({ a: 'jo', kid: 'ada-sit', cx: 345, fy: 826, s: 0.62, ks: 0.85, arms: 'book', front: U('book', 76, 168, 0.55) }) +
   lap({ a: 'bea', kid: 'baby-up', cx: 535, fy: 826, s: 0.62, ks: 0.66, kdy: -8, arms: 'lift' }) + lap({ a: 'gma', kid: 'kid-sit-hold', cx: 730, fy: 836, s: 0.56, seat: 'wheelchair', arms: 'book', front: U('book', 70, 166, 0.62) }))}
   <div class="mat note">
-    <div class="kicker">A note for grown-ups</div>
+    <div class="kicker">How to use this book</div>
     <h2>A lap is a small place with a big job.</h2>
-    <p>When your child is close enough to feel your voice, reading turns into a conversation. You say something, you pause, and you wait for their turn—a look, a point, a sound, a word. That back-and-forth is the heart of this book, and every spread has a <b>Lap talk</b> idea to help it along.</p>
-    <p>There is no right way to read it. Skip pages. Make up voices. Read the same page ten times. The goal isn’t finishing the book—it’s the talking along the way. And your phone can rest face-down for a few minutes. Your little one will notice.</p>
+    ${NOTE.map(p => `<p>${fill(p)}</p>`).join('')}
     <div class="fav">
-      <h3>Our favorite laps</h3>
+      <h3 data-fit="fav-h" data-min="14">${NAME}’s favorite laps</h3>
       <div class="frow"><span>Best lap for stories</span><i></i></div>
       <div class="frow"><span>Best lap for songs</span><i></i></div>
       <div class="frow"><span>Best lap for sleepy time</span><i></i></div>
@@ -543,23 +591,52 @@ pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.kT) + col(
   </div>
 </div>`);
 
+// I32 Author note + More from Play Before Pixels + bonus QR
+const NEXT = [
+  ['The Day the Tablet Slept', 'Picture book · ages 3–7', C.sky, C.kT],
+  ['100 Screen-Free Plays for Ages 0–5', 'Guide + printables · ages 0–5', C.grass, C.gT],
+  ['Bring a Book shower inserts', 'Printable set · for baby showers', C.tomato, C.tT],
+];
+pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.paper))}
+  <div class="mat last">
+    <div class="kicker">A note from the author</div>
+    ${AUTHOR_NOTE ? `<div class="an">${AUTHOR_NOTE.split('\n').filter(Boolean).map(p => `<p>${fill(p)}</p>`).join('')}</div>` : slot('Founder writes this', '40–80 words in your own voice: why you made this book. Type it under <i>## author note</i> in WORDS.md, then rebuild. Real orders will not build until you do.', 'an-slot')}
+    <h2 class="mf">More from Play Before Pixels</h2>
+    <p class="mf-sub">Next for your little one’s age</p>
+    <div class="tiles">${NEXT.map(([t, d, c, bg]) => `<div class="tile" style="background:${bg}"><i style="background:${c}"></i><b>${t}</b><span>${d}</span></div>`).join('')}</div>
+    <div class="bonus">
+      <div class="qr">${qrSvg(120)}</div>
+      <div><div class="bonus-k">Free for grown-ups</div>
+        <p>A printable lap-reading tracker and 5 more lap games.</p>
+        <p class="url">${BONUS}</p>
+        <p class="fine">We ask only for an email and your child’s birth month and year—never a name.</p></div>
+    </div>
+    <div class="last-logo logo">${LOGO('lockup-horizontal.svg')}</div>
+  </div>
+</div>`);
+
 // Back cover
-pages.push(`<div class="page back">${svgPage(rect(0, 0, 875, 875, C.sun) + `<circle cx="330" cy="610" r="200" fill="${C.sky}"/>` + rect(0, 770, 875, 105, C.tomato) +
-  lap({ a: 'dad', kid: 'kid-sit-content', cx: 330, fy: 772, s: 0.9, seat: 'armchair' }) +
-  col('heart', 520, 450, 1.3, C.tomato) + col('star', 90, 470, 0.9, C.paper) + col('star', 560, 560, 0.7, C.paper))}
+const BACK = `<div class="page back">${svgPage(rect(0, 0, 875, 875, C.sun) + `<circle cx="300" cy="620" r="200" fill="${C.sky}"/>` + rect(0, 770, 875, 105, C.tomato) +
+  lap({ a: 'dad', kid: 'kid-sit-content', cx: 300, fy: 772, s: 0.9, seat: 'armchair' }) +
+  col('heart', 470, 470, 1.1, C.tomato) + col('star', 70, 480, 0.9, C.paper))}
   <div class="bk">
     <h2>A lap is the best seat in town.</h2>
-    <p>A lap for a story. A lap on the bus. A lap for a song, a lap at the park, and a sleepy lap when the moon comes up. <i>Laps Not Apps</i> is a warm, rhyming read-aloud that celebrates the grown-ups, big kids and cozy places that hold our littlest listeners close.</p>
+    <p>${fill(need('back blurb'))}</p>
     <ul>
-      <li>Gentle rhyming couplets made for reading out loud, ages 2–6</li>
-      <li>A “Lap talk” idea on every spread to spark back-and-forth</li>
-      <li>5 lap games for tiny ones, with simple safety notes</li>
-      <li>Keepsake pages—a heartfelt baby-shower gift</li>
+      <li>Rhyming read-aloud with the child’s name in six rhymes</li>
+      <li>A “Lap talk” idea on every spread for grown-ups</li>
+      <li>Dedication, family reading pledge and keepsake pages</li>
     </ul>
   </div>
-  <div class="bk-foot">${wordmark(C.paper, C.sun)}<div class="bk-age">Ages 2–6 · Hardcover</div></div>
+  <div class="series"><div class="series-h">Collect the read-alouds</div>
+    <div class="srow"><i style="background:${C.tomato}"></i>Laps Not Apps</div>
+    <div class="srow"><i style="background:${C.sky}"></i>The Day the Tablet Slept</div>
+    <div class="srow"><i style="background:${C.grass}"></i>More Talk, Less Tap</div>
+  </div>
+  <div class="bk-foot"><div class="logo">${LOGO('lockup-horizontal-white.svg')}</div><div class="bk-age">Ages 2–6 · Personalized keepsake · playbeforepixels.com</div></div>
   <div class="isbn">ISBN / barcode</div>
-</div>`);
+</div>`;
+pages.push(BACK);
 
 /* ---------------------------------------------------------------- CSS & HTML */
 const CSS = `
@@ -570,35 +647,48 @@ body { font-family: "Nunito Sans", sans-serif; color: ${C.ink} }
 .page { width: 8.75in; height: 8.75in; position: relative; overflow: hidden; break-after: page; page-break-after: always; background: #fff }
 .page:last-child { break-after: auto; page-break-after: auto }
 .art { position: absolute; inset: 0; width: 100%; height: 100%; display: block }
-.verse { position: absolute; left: .7in; right: .7in; top: .64in; text-align: center; font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 600; font-size: 27pt; line-height: 1.2; color: ${C.ink} }
-.verse .l { display: block }
+.logo svg { display: block; width: 100%; height: auto }
+.nm { color: ${C.tomato} }
+.light .nm, .nm-light .nm { color: ${C.sun} }
+.tok { background: ${C.sun}; color: ${C.ink}; border-radius: .06in; padding: 0 .04in; font-size: .82em }
+.tok.nm { background: ${C.tomato}; color: #fff }
+.slot { border: 2px dashed ${C.tomato}; border-radius: .14in; padding: .12in .18in; background: #fff; color: ${C.tomato}; text-align: left }
+.slot b { display: block; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 13pt }
+.slot span { display: block; font-size: 10pt; line-height: 1.35; font-weight: 700 }
+.slot.small { display: inline-block; margin-top: .12in; padding: .06in .14in }
+.slot.small b { font-size: 10.5pt } .slot.small span { font-size: 9pt }
+.verse { position: absolute; left: .62in; right: .62in; top: .64in; text-align: center; font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 600; font-size: 27pt; line-height: 1.2; color: ${C.ink} }
+.verse .l { display: block; white-space: nowrap }
 .verse.light { color: #fff }
-.tip { display: inline-block; margin-top: .13in; max-width: 5.6in; background: #fff; border-radius: .16in; padding: .07in .2in .09in; font-family: "Nunito Sans", sans-serif; font-weight: 700; font-size: 11.5pt; line-height: 1.32; color: ${C.ink}; text-align: left }
+.tip { display: inline-block; margin-top: .13in; max-width: 5.6in; background: #fff; border-radius: .16in; padding: .07in .2in .09in; font-family: "Nunito Sans", sans-serif; font-weight: 700; font-size: 11.5pt; line-height: 1.32; color: ${C.ink}; text-align: left; white-space: normal }
 .tip b { font-family: "Caveat", "Nunito Sans", cursive; font-weight: 700; font-size: 18pt; color: ${C.tomato}; margin-right: .04in; line-height: 1 }
-.wm { display: inline-flex; align-items: center; gap: .08in; font-family: "Bricolage Grotesque", "Nunito Sans", sans-serif; font-weight: 800; font-size: 13pt; letter-spacing: .01em }
-.wm-dot { width: .16in; height: .16in; border-radius: 50% }
-.cover .cv-top { position: absolute; top: .62in; left: 0; right: 0; text-align: center }
-.cv-title { position: absolute; top: .98in; left: .5in; right: .5in; text-align: center; font-family: "Bricolage Grotesque", "Nunito Sans", sans-serif; font-weight: 800; font-size: 88pt; line-height: .9; letter-spacing: -.02em; color: ${C.ink} }
+.cover .cv-top { position: absolute; top: .56in; left: 50%; width: 2.2in; margin-left: -1.1in }
+.cv-title { position: absolute; top: 1.24in; left: .5in; right: .5in; text-align: center; font-family: "Bricolage Grotesque", "Nunito Sans", sans-serif; font-weight: 800; font-size: 80pt; line-height: .9; letter-spacing: -.02em; color: ${C.ink} }
 .cv-title span { color: ${C.paper} }
-.cv-sub { position: absolute; top: 3.28in; left: .6in; right: .6in; text-align: center; font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 600; font-size: 16pt; color: ${C.ink} }
-.tp { position: absolute; top: 1.2in; left: .6in; right: .6in; text-align: center }
+.cv-sub { position: absolute; top: 3.36in; left: .5in; right: .5in; text-align: center; white-space: nowrap; font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 600; font-size: 17pt; color: ${C.ink} }
+.cv-sub .pill { display: inline-block; background: #fff; border-radius: 999px; padding: .05in .26in .07in }
+.cv-sub .nm { font-size: 1.3em; line-height: 1 }
+.tp { position: absolute; top: 1.05in; left: .6in; right: .6in; text-align: center }
 .tp h1 { font-family: "Bricolage Grotesque", "Nunito Sans", sans-serif; font-weight: 800; font-size: 60pt; line-height: 1; letter-spacing: -.02em }
 .tp h1 span { color: ${C.tomato} }
-.tp p { margin-top: .16in; font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 500; font-size: 16pt }
-.tp-foot { position: absolute; bottom: .7in; left: 0; right: 0; text-align: center }
+.tp p { margin-top: .16in; font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 500; font-size: 17pt; white-space: nowrap }
+.tp p .nm { font-weight: 600 }
+.tp .byline { margin-top: .1in; font-family: "Nunito Sans", sans-serif; font-weight: 700; font-size: 11.5pt; opacity: .8 }
+.tp-foot { position: absolute; bottom: .68in; left: 50%; width: 2.1in; margin-left: -1.05in }
 .copy { position: absolute; left: .8in; right: 1.6in; bottom: .7in; font-size: 9.5pt; line-height: 1.45 }
 .copy p { margin-top: .1in }
 .copy-title { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 14pt }
 .isbn-inline { margin-top: .12in; font-weight: 700 }
 .box, .printbox { display: inline-block; border: 1.5px dashed ${C.tomato}; color: ${C.tomato}; padding: .03in .1in; border-radius: 4px; font-weight: 700 }
 .printbox { margin-top: .12in }
-.ded { position: absolute; top: 2.3in; left: .8in; right: .8in; text-align: center; font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 500; font-size: 20pt; line-height: 1.35 }
-.ded p + p { margin-top: .16in }
-.keep { position: absolute; left: 1.4in; right: 1.4in; bottom: .9in; background: #fff; border-radius: .24in; padding: .3in .4in .34in; text-align: center }
-.keep-h { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 15pt }
-.keep-h.small { font-size: 12pt; margin-top: .24in }
-.keep .line { height: .42in; border-bottom: 2px solid ${C.ink} }
-.keep .line.short { width: 60%; margin: 0 auto }
+.ded2 { position: absolute; top: .78in; left: .7in; right: .7in; text-align: center }
+.ded-for { font-family: "Caveat", cursive; font-weight: 700; font-size: 34pt; color: ${C.tomato}; line-height: 1 }
+.ded-name { font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 600; font-size: 62pt; line-height: 1.05; white-space: nowrap }
+.ded-msg { margin: .16in auto 0; max-width: 6.2in; font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 500; font-size: 19pt; line-height: 1.32; overflow-wrap: anywhere }
+.ded-msg .nm { font-weight: 600 }
+.ded-from { margin-top: .2in; font-family: "Caveat", cursive; font-weight: 700; font-size: 24pt; line-height: 1 }
+.ded-giver { font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 600; font-size: 22pt; color: ${C.tomato}; white-space: nowrap }
+.ded-date { margin-top: .06in; font-weight: 700; font-size: 11pt; opacity: .75 }
 .mat { position: absolute; left: .7in; right: .7in; top: .66in; bottom: .6in }
 .kicker { font-family: "Caveat", cursive; font-weight: 700; font-size: 22pt; color: ${C.tomato}; line-height: 1 }
 .mat h2 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 30pt; line-height: 1.02; letter-spacing: -.01em; margin-top: .04in }
@@ -613,56 +703,174 @@ body { font-family: "Nunito Sans", sans-serif; color: ${C.ink} }
 .safety h3 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 15pt }
 .safety ul { margin: .06in 0 0 .2in; font-size: 11pt; line-height: 1.4 }
 .safety li { margin-top: .03in }
+.pledge h2 { font-size: 40pt }
+.pl-card { margin-top: .22in; background: #fff; border-radius: .24in; padding: .28in .36in .3in }
+.pl-intro { font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 600; font-size: 18pt; line-height: 1.2 }
+.pl-list { list-style: none; margin-top: .1in }
+.pl-list li { display: flex; align-items: center; gap: .16in; margin-top: .12in; font-size: 13pt; font-weight: 700; line-height: 1.25 }
+.pl-list li i { flex: 0 0 .26in; height: .26in; border: 2.5px solid ${C.grass}; border-radius: .07in }
+.pl-list li.own span { white-space: nowrap }
+.pl-list li.own em, .sg em { flex: 1; border-bottom: 2px solid ${C.ink}; height: .22in; align-self: flex-end }
+.pl-sign { margin-top: .26in; display: grid; grid-template-columns: 1fr 1fr; column-gap: .3in; row-gap: .08in }
+.sg { display: flex; flex-direction: column-reverse; gap: .04in; font-size: 10.5pt; font-weight: 700 }
+.sg em { flex: 0 0 .44in; align-self: stretch }
+.sg small { font-weight: 600; opacity: .8 }
+.pl-foot { position: absolute; left: 0; right: 0; bottom: .42in; display: flex; align-items: center; gap: .22in; font-size: 10.5pt; font-weight: 700 }
+.pl-foot .logo { flex: 0 0 1.6in }
 .note p { font-size: 12pt; line-height: 1.5; margin-top: .14in }
+.note p b { color: ${C.tomato} }
 .note h2 { max-width: 6in }
 .fav { background: #fff; border-radius: .22in; padding: .22in .3in .28in; margin-top: .26in }
-.fav h3 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 16pt }
+.fav h3 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 16pt; white-space: nowrap }
+.fav h3 .nm { color: ${C.tomato} }
 .frow { display: flex; align-items: flex-end; gap: .14in; margin-top: .2in; font-weight: 700; font-size: 11.5pt }
 .frow span { white-space: nowrap }
 .frow i { flex: 1; border-bottom: 2px solid ${C.ink}; height: .2in }
-.bk { position: absolute; top: .66in; left: .7in; right: .7in }
+.last .an p { font-size: 12pt; line-height: 1.5; margin-top: .1in }
+.last .an-slot { margin-top: .12in; min-height: 1.3in }
+.mf { margin-top: .34in !important; font-size: 24pt !important }
+.mf-sub { font-size: 11.5pt; font-weight: 700; opacity: .75; margin-top: .02in }
+.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: .16in; margin-top: .14in }
+.tile { border-radius: .18in; padding: .16in .18in .18in; min-height: 1.3in }
+.tile i { display: block; width: .42in; height: .42in; border-radius: .08in; margin-bottom: .1in }
+.tile b { display: block; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 12.5pt; line-height: 1.1 }
+.tile span { display: block; margin-top: .05in; font-size: 9.5pt; font-weight: 700; opacity: .8 }
+.bonus { display: flex; gap: .24in; align-items: center; margin-top: .26in; background: ${C.sT}; border-radius: .2in; padding: .18in .22in }
+.bonus .qr svg { display: block; border-radius: .06in }
+.bonus-k { font-family: "Caveat", cursive; font-weight: 700; font-size: 20pt; color: ${C.tomato}; line-height: 1 }
+.bonus p { font-size: 11.5pt; font-weight: 700; line-height: 1.35; margin-top: .04in }
+.bonus .url { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 12pt }
+.bonus .fine { font-size: 9pt; font-weight: 600; opacity: .8 }
+.last-logo { position: absolute; left: 50%; bottom: 0; width: 1.9in; margin-left: -.95in }
+.bk { position: absolute; top: .62in; left: .7in; right: .7in }
 .bk h2 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 34pt; line-height: 1; letter-spacing: -.01em }
 .bk p { margin-top: .16in; font-size: 12.5pt; line-height: 1.45 }
 .bk ul { margin: .12in 0 0 .22in; font-size: 11.5pt; line-height: 1.45; font-weight: 700 }
-.bk-foot { position: absolute; left: .7in; bottom: .6in; color: #fff }
-.bk-age { margin-top: .05in; font-weight: 700; font-size: 10.5pt; color: #fff }
+.series { position: absolute; left: 5.35in; top: 4.55in; width: 2.7in; background: #fff; border-radius: .2in; padding: .16in .2in .18in }
+.series-h { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 12.5pt; margin-bottom: .04in }
+.srow { display: flex; align-items: center; gap: .1in; margin-top: .07in; font-size: 10.5pt; font-weight: 700 }
+.srow i { flex: 0 0 .2in; height: .26in; border-radius: .04in }
+.bk-foot { position: absolute; left: .6in; bottom: .5in; color: #fff }
+.bk-foot .logo { width: 2.1in }
+.bk-age { margin-top: .06in; font-weight: 700; font-size: 9.5pt; color: #fff }
 .isbn { position: absolute; right: .55in; bottom: .55in; width: 2in; height: 1.2in; background: #fff; border: 1.5px dashed ${C.ink}; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 10pt; color: ${C.ink}; border-radius: 4px }
 `;
 
+// Shrink-to-fit for every variable line (long names, long messages). Results land in window.__fit and <html data-fit>.
+const FIT = `<script>(function(){
+function over(el,maxh){ if (el.scrollWidth > el.clientWidth + 0.5) return true;
+  for (const c of el.querySelectorAll('.l')) if (c.scrollWidth > c.clientWidth + 0.5) return true;
+  return !!(maxh && el.scrollHeight > maxh + 0.5); }
+function fit(el){ const min = parseFloat(el.dataset.min || 14), maxh = el.dataset.maxh ? parseFloat(el.dataset.maxh) * 96 : 0;
+  let size = parseFloat(getComputedStyle(el).fontSize), n = 0;
+  while (over(el, maxh) && size > min) { size -= 0.5; el.style.fontSize = size + 'px'; n++; }
+  return { id: el.dataset.fit, px: size, shrunk: n, ok: !over(el, maxh) }; }
+function run(){ const r = Array.from(document.querySelectorAll('[data-fit]')).map(fit); window.__fit = r;
+  document.documentElement.setAttribute('data-fit', r.every(x => x.ok) ? 'ok' : 'fail'); }
+(document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(run);
+})();</script>`;
+
 const DEFS = `<svg width="0" height="0" style="position:absolute" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>${SYM.join('\n')}</defs></svg>`;
-const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Laps Not Apps</title>
-<link rel="stylesheet" href="../../brand/fonts/fonts.css"><style>${CSS}</style></head><body>${DEFS}
-${pages.join('\n')}
-</body></html>`;
-fs.writeFileSync(path.join(DIR, 'source.html'), html);
+const doc = (title, body, extraCss = '') => `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${title}</title>
+<link rel="stylesheet" href="${ARGS.fonts || '../../brand/fonts/fonts.css'}"><style>${CSS}${extraCss}</style></head><body>${DEFS}
+${body}
+${FIT}</body></html>`;
 
-// interior-only.html — pages 2–31 (title through keepsake page) for printers that take the interior and the case cover as separate files
-fs.writeFileSync(path.join(DIR, 'interior-only.html'), html.replace(pages.join('\n'), pages.slice(1, -1).join('\n')));
+// Case-wrap / paperback cover: back + spine + front in one sheet (dimensions from the printer; see ORDER-TO-PRINT.md)
+function coverWrap(format, dims) {
+  const soft = format === 'softcover';
+  const S = +dims.spine, H = soft ? 8.75 : +dims.h;
+  const Wt = soft ? 0.125 + 8.5 + S + 8.5 + 0.125 : +dims.w;
+  const PW = (Wt - S) / 2, py = (H - 8.75) / 2;
+  const bx = soft ? 0 : (PW - 8.75) / 2, fx = soft ? 8.5 + S : PW + S + (PW - 8.75) / 2;
+  const ext = (x, w, band) => `<div style="position:absolute;left:${x}in;top:0;width:${w}in;height:${H}in;background:${C.sun}"></div><div style="position:absolute;left:${x}in;top:${py + band}in;width:${w}in;height:${H - py - band}in;background:${C.tomato}"></div>`;
+  const spineText = S >= 0.25 ? `<div class="sp-text">Laps Not Apps <span>· made for ${NAME}</span></div>` : '';
+  const css = `@page { size: ${Wt}in ${H}in; margin: 0 } html, body { width: ${Wt}in; height: ${H}in; overflow: hidden }
+  .wrap { position: relative; width: ${Wt}in; height: ${H}in; overflow: hidden; background: ${C.sun} }
+  .wrap .page { position: absolute; top: ${py}in; break-after: auto; page-break-after: auto }
+  .spine { position: absolute; left: ${PW}in; top: 0; width: ${S}in; height: ${H}in; background: ${C.tomato} }
+  .sp-text { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(90deg); white-space: nowrap; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: ${Math.min(14, S * 50)}pt; color: #fff }
+  .sp-text .nm { color: ${C.sun} } .sp-text span { font-family: "Fredoka", sans-serif; font-weight: 600 }`;
+  const body = `<div class="wrap">${ext(0, PW, 7.7)}${ext(PW + S, PW, 7.9)}
+    ${BACK.replace('class="page back"', `class="page back" style="left:${bx}in"`)}
+    ${COVER.replace('class="page cover"', `class="page cover" style="left:${fx}in"`)}
+    <div class="spine">${spineText}</div></div>`;
+  return doc(`Laps Not Apps cover wrap (${format})`, body, css);
+}
+// Placeholder dimensions until the printer's own calculator/API gives the real ones [VERIFY]
+const WRAP_DEFAULTS = { hardcover: { w: 19.0, h: 10.25, spine: 0.25 }, softcover: { spine: 0.08 } };
 
-// cover.html — trimmed front cover (8.5 in = 816 px) for cover.png
-const coverPage = pages[0];
-fs.writeFileSync(path.join(DIR, 'cover.html'), `<!doctype html><html><head><meta charset="utf-8"><title>Laps Not Apps cover</title>
-<link rel="stylesheet" href="../../brand/fonts/fonts.css"><style>${CSS} html,body{width:816px;height:816px;overflow:hidden} .trim{width:816px;height:816px;overflow:hidden;position:relative} .trim .page{position:absolute;left:-12px;top:-12px}</style></head><body>${DEFS}<div class="trim">${coverPage}</div></body></html>`);
+/* ---------------------------------------------------------------- write files */
+const interior = pages.slice(1, -1);
+if (MODE === 'order') {
+  const out = path.resolve(ARGS.out || path.join(DIR, 'orders', String(ORDER.order_id || 'order')));
+  fs.mkdirSync(out, { recursive: true });
+  const fontsRel = path.relative(out, path.join(DIR, '../../brand/fonts/fonts.css'));
+  ARGS.fonts = ARGS.fonts || fontsRel;
+  const dims = { ...WRAP_DEFAULTS[NZ.format], ...(ARGS['cover-w'] ? { w: +ARGS['cover-w'] } : {}), ...(ARGS['cover-h'] ? { h: +ARGS['cover-h'] } : {}), ...(ARGS.spine ? { spine: +ARGS.spine } : {}) };
+  fs.writeFileSync(path.join(out, 'interior.html'), doc('Laps Not Apps interior', interior.join('\n')));
+  fs.writeFileSync(path.join(out, 'cover-wrap.html'), coverWrap(NZ.format, dims));
+  fs.writeFileSync(path.join(out, 'check.json'), JSON.stringify({ order_id: ORDER.order_id || null, format: NZ.format, look: NZ.look, pronouns: NZ.pronouns, vars: NZ.vars, holds: NZ.holds, drafts_left: DRAFTS, cover_dims_in: dims, dims_are_placeholders: !(ARGS['cover-w'] || ARGS.spine), interior_pages: interior.length }, null, 2));
+  console.log(`order ${ORDER.order_id}: ${interior.length} interior pages → ${out}${NZ.holds.length ? '\nHOLD for review: ' + NZ.holds.join('; ') : ''}`);
+  process.exit(NZ.holds.length ? 4 : 0);
+}
+if (MODE === 'template') {
+  fs.writeFileSync(path.join(DIR, 'template.html'), doc('Laps Not Apps — variable template', pages.join('\n')));
+  console.log(`template: ${pages.length} pages; ${DRAFTS.length} WORDS.md sections still marked (draft)`);
+  process.exit(0);
+}
+// sample
+fs.writeFileSync(path.join(DIR, 'source.html'), doc('Laps Not Apps', pages.join('\n')));
+fs.writeFileSync(path.join(DIR, 'interior-only.html'), doc('Laps Not Apps interior', interior.join('\n')));
+for (const fmt of ['hardcover', 'softcover']) fs.writeFileSync(path.join(DIR, `cover-wrap-${fmt}.html`), coverWrap(fmt, WRAP_DEFAULTS[fmt]));
+fs.writeFileSync(path.join(DIR, 'cover.html'), doc('Laps Not Apps cover', `<div class="trim">${COVER}</div>`, `html,body{width:816px;height:816px;overflow:hidden} .trim{width:816px;height:816px;overflow:hidden;position:relative} .trim .page{position:absolute;left:-12px;top:-12px}`));
+
+// Character picker (store image + the reference for the "Look" option)
+const pick = Object.entries(PZ.LOOKS).map(([n, L]) => `<div class="card"><svg viewBox="-20 -10 160 210" class="kid"><use href="#look-${n}" width="120" height="200"/></svg><div class="lk">${L.label}</div><div class="ld">${L.desc}</div></div>`).join('');
+fs.writeFileSync(path.join(DIR, 'picker.html'), `<!doctype html><html><head><meta charset="utf-8"><title>Laps Not Apps character picker</title>
+<link rel="stylesheet" href="../../brand/fonts/fonts.css"><style>
+*{margin:0;padding:0;box-sizing:border-box} html,body{width:1600px;height:1200px;overflow:hidden;background:${C.wash};font-family:'Nunito Sans',sans-serif;color:${C.ink}}
+.logo{position:absolute;left:80px;top:64px;width:300px} .logo svg{display:block;width:100%;height:auto}
+h1{position:absolute;left:80px;right:80px;top:170px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:78px;letter-spacing:-.01em;line-height:1}
+.sub{position:absolute;left:80px;right:80px;top:268px;font-size:30px;font-weight:700;opacity:.85}
+.grid{position:absolute;left:80px;right:80px;top:350px;display:grid;grid-template-columns:repeat(4,1fr);gap:36px}
+.card{background:#fff;border-radius:36px;padding:34px 24px 34px;text-align:center}
+.card:nth-child(1){background:${C.sT}} .card:nth-child(2){background:${C.kT}} .card:nth-child(3){background:${C.gT}} .card:nth-child(4){background:${C.pT}}
+.kid{display:block;width:230px;height:302px;margin:0 auto}
+.lk{margin-top:18px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:44px}
+.ld{margin-top:6px;font-size:22px;font-weight:700;line-height:1.3;opacity:.85;min-height:58px}
+.steps{position:absolute;left:80px;right:80px;bottom:70px;display:flex;gap:28px}
+.step{flex:1;display:flex;align-items:center;gap:18px;font-size:26px;font-weight:800}
+.step i{flex:0 0 58px;height:58px;border-radius:50%;background:${C.tomato};color:#fff;font-style:normal;font-family:'Bricolage Grotesque',sans-serif;font-size:30px;display:flex;align-items:center;justify-content:center}
+</style></head><body>${DEFS}<div class="logo">${LOGO('lockup-horizontal.svg')}</div>
+<h1>Choose your child’s look</h1><div class="sub">Laps Not Apps · the story’s child changes; the family in the story stays the same.</div>
+<div class="grid">${pick}</div>
+<div class="steps"><div class="step"><i>1</i>Pick a look</div><div class="step"><i>2</i>Type the child’s name</div><div class="step"><i>3</i>Add who it’s from</div><div class="step"><i>4</i>We print and ship it</div></div>
+</body></html>`);
+
+// Mockup (website/store hero)
 fs.writeFileSync(path.join(DIR, 'mockup.html'), `<!doctype html><html><head><meta charset="utf-8"><title>Laps Not Apps mockup</title>
 <link rel="stylesheet" href="../../brand/fonts/fonts.css"><style>
 *{margin:0;padding:0;box-sizing:border-box} html,body{width:1600px;height:1200px;overflow:hidden;background:${C.wash}}
 .floor{position:absolute;left:0;right:0;top:960px;bottom:0;background:${C.kT}}
 .blob{position:absolute;left:-120px;top:-160px;width:760px;height:760px;border-radius:50%;background:${C.sT}}
 .blob2{position:absolute;right:-140px;top:120px;width:420px;height:420px;border-radius:50%;background:${C.pT}}
-.book{position:absolute;left:170px;top:290px;width:700px;height:700px;perspective:2200px}
+.book{position:absolute;left:150px;top:290px;width:680px;height:680px;perspective:2200px}
 .book .inner{position:absolute;inset:0;transform:rotateY(16deg);transform-origin:left center;transform-style:preserve-3d}
-.book img{position:absolute;inset:0;width:700px;height:700px;border-radius:4px 10px 10px 4px}
-.book .spine{position:absolute;left:-34px;top:0;width:34px;height:700px;background:${C.tomato};transform:rotateY(-90deg);transform-origin:right center}
-.book .hinge{position:absolute;left:16px;top:0;width:6px;height:700px;background:rgba(29,41,64,.12)}
-.shadow{position:absolute;left:190px;top:972px;width:700px;height:40px;border-radius:50%;background:rgba(29,41,64,.22);filter:blur(18px)}
-.spread{position:absolute;left:880px;top:660px;width:620px;height:310px;display:flex;transform:rotate(-4deg);box-shadow:0 26px 40px rgba(29,41,64,.22);border-radius:6px;overflow:hidden}
-.spread img{width:310px;height:310px;object-fit:cover}
-.tag{position:absolute;left:960px;top:380px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:54px;line-height:1;color:${C.ink};letter-spacing:-.01em}
-.tag small{display:block;margin-top:16px;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:24px;color:${C.ink}}
-.pill{display:inline-block;margin-top:18px;background:${C.tomato};color:#fff;font-family:'Nunito Sans',sans-serif;font-weight:800;font-size:20px;padding:8px 18px;border-radius:999px}
-</style></head><body><div class="blob"></div><div class="blob2"></div><div class="floor"></div><div class="shadow"></div>
+.book img{position:absolute;inset:0;width:680px;height:680px;border-radius:4px 10px 10px 4px}
+.book .spine{position:absolute;left:-34px;top:0;width:34px;height:680px;background:${C.tomato};transform:rotateY(-90deg);transform-origin:right center}
+.book .hinge{position:absolute;left:16px;top:0;width:6px;height:680px;background:rgba(29,41,64,.12)}
+.shadow{position:absolute;left:170px;top:962px;width:680px;height:40px;border-radius:50%;background:rgba(29,41,64,.22);filter:blur(18px)}
+.spread{position:absolute;left:870px;top:640px;width:640px;height:320px;display:flex;transform:rotate(-4deg);box-shadow:0 26px 40px rgba(29,41,64,.22);border-radius:6px;overflow:hidden}
+.spread img{width:320px;height:320px;object-fit:cover}
+.tag{position:absolute;left:900px;top:250px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:58px;line-height:1;color:${C.ink};letter-spacing:-.01em}
+.tag small{display:block;margin-top:16px;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:25px;color:${C.ink};line-height:1.35}
+.pill{display:inline-block;margin-top:18px;background:${C.tomato};color:#fff;font-family:'Nunito Sans',sans-serif;font-weight:800;font-size:21px;padding:8px 20px;border-radius:999px}
+.looks{display:flex;gap:10px;margin-top:22px}.looks svg{width:62px;height:62px;background:#fff;border-radius:50%}
+</style></head><body><div class="blob"></div><div class="blob2"></div><div class="floor"></div><div class="shadow"></div>${DEFS}
 <div class="book"><div class="inner"><div class="spine"></div><img src="cover.png" alt=""><div class="hinge"></div></div></div>
-<div class="tag">Laps Not Apps<small>A cozy rhyming read-aloud · ages 2–6</small><span class="pill">Hardcover keepsake</span></div>
-<div class="spread"><img src="preview/p17.png" alt=""><img src="preview/p18.png" alt=""></div>
+<div class="tag">Laps Not Apps<small>A rhyming read-aloud with your child’s<br>name in six rhymes · ages 2–6</small><span class="pill">Personalized keepsake</span>
+<div class="looks">${Object.keys(PZ.LOOKS).map(n => `<svg viewBox="12 -8 96 96"><use href="#look-${n}" width="120" height="200"/></svg>`).join('')}</div></div>
+<div class="spread"><img src="preview/p25.png" alt=""><img src="preview/p26.png" alt=""></div>
 </body></html>`);
-console.log(pages.length + ' pages');
+console.log(`sample: ${pages.length} pages (${interior.length} interior); ${DRAFTS.length} WORDS.md sections still marked (draft); author note ${AUTHOR_NOTE ? 'written' : 'EMPTY'}`);

@@ -52,17 +52,17 @@ function imagesA() {
   const out = [];
   out.push(['01-hero', `<div class="sq" style="background:${C.sun}">
     <div class="h"><p class="k">Printable card deck · Ages 0–5</p><h1><span class="n52">52</span> Play &amp; Talk Cards</h1><p>One play and one talk tip on every card, for babies, toddlers and preschoolers.</p></div>
-    ${fan([cA(3), cA(16), cA(29), cA(44), cA(50)], 500, 610, 1.08, 150, 9)}
+    ${fan([cA(3), cA(16), cA(29), cA(44), cA(50)], 500, 545, 1.22, 160, 9)}
     <div class="band"><span>Printable PDF · US Letter + A4 · Instant download, nothing ships</span><img src="${K.LOGO.lockupWhite}" alt=""></div></div>`]);
   // anatomy
-  const s = 2.0, cx = 84, cy = 212;
-  const marks = [[8, 12, 1], [240 - 22, 12, 2], [4, 142, 3], [4, 175, 4], [4, 272, 5], [4, 318, 6]];
+  const s = 2.0, cx = 84, cy = 248;
+  const marks = [[8, 12, 1], [240 - 62, 12, 2], [4, 142, 3], [4, 175, 4], [4, 268, 5], [4, 306, 6]];
   const notes = [['Age color and shape', 'Find your child’s color at a glance.'], ['Card number', 'All 52 plays are numbered for the tracker.'], ['What you need', 'Things you already have at home.'], ['The play', 'Short, clear steps. Five minutes or more.'], ['Talk tip', 'One plain-words idea for back-and-forth talk.'], ['Safety note', 'Built in, on every single card.']];
   out.push(['02-every-card', `<div class="sq" style="background:${C.wash}">
     <div class="h"><p class="k" style="color:${C.tomato}">On every card</p><h1>A play. A talk tip.<br>A safety note.</h1></div>
     ${at(K.cardA(D[33], 0), cx, cy, s)}
     ${marks.map(([x, y, n]) => `<span class="abs" style="left:${cx + x * s - 18}px;top:${cy + y * s - 4}px;width:36px;height:36px;border-radius:50%;background:${C.ink};color:#fff;font:600 19px Fredoka,sans-serif;display:flex;align-items:center;justify-content:center;z-index:5;box-shadow:0 0 0 4px #fff">${n}</span>`).join('')}
-    <ol class="list abs" style="left:620px;right:56px;top:250px">${notes.map(([a, b], i) => `<li style="display:flex;gap:14px;margin-bottom:24px"><span style="flex:none;width:36px;height:36px;border-radius:50%;background:${C.ink};color:#fff;font:600 19px Fredoka,sans-serif;display:flex;align-items:center;justify-content:center">${i + 1}</span><span><b style="display:block;font-size:22px;font-weight:800">${a}</b><span style="font-size:18px;line-height:1.35">${b}</span></span></li>`).join('')}</ol></div>`]);
+    <ol class="list abs" style="left:620px;right:56px;top:300px">${notes.map(([a, b], i) => `<li style="display:flex;gap:14px;margin-bottom:24px"><span style="flex:none;width:36px;height:36px;border-radius:50%;background:${C.ink};color:#fff;font:600 19px Fredoka,sans-serif;display:flex;align-items:center;justify-content:center">${i + 1}</span><span><b style="display:block;font-size:22px;font-weight:800">${a}</b><span style="font-size:18px;line-height:1.35">${b}</span></span></li>`).join('')}</ol></div>`]);
   // age-coded
   const picks = [5, 21, 31, 46];
   out.push(['03-age-coded', `<div class="sq" style="background:#fff">
@@ -92,10 +92,10 @@ function imagesB() {
   const out = [];
   out.push(['01-hero', `<div class="sq" style="background:${C.sky}">
     <div class="h" style="color:#fff"><p class="k" style="color:${C.ink}">Printable conversation cards · Ages 5–12</p><h1 style="color:${C.ink}"><span class="n52">52</span> Family<br>Talk-Along Cards</h1><p style="color:${C.ink}">Good questions for dinner, the car, bath time and bedtime.</p></div>
-    ${fan([cB(2), cB(15), cB(27), cB(40), cB(49)], 500, 640, 1.08, 150, 9)}
+    ${fan([cB(2), cB(15), cB(27), cB(40), cB(49)], 500, 575, 1.2, 160, 9)}
     <div class="band"><span>Printable PDF · US Letter + A4 · Instant download, nothing ships</span><img src="${K.LOGO.lockupWhite}" alt=""></div></div>`]);
-  const s = 2.0, cx = 84, cy = 212;
-  const marks = [[18, 16, 1], [240 - 22, 12, 2], [4, 160, 3], [4, 300, 4]];
+  const s = 2.0, cx = 84, cy = 248;
+  const marks = [[18, 16, 1], [240 - 62, 12, 2], [4, 160, 3], [4, 296, 4]];
   const notes = [['The moment', 'Dinner, car, bath or bedtime, color-coded.'], ['Card number', '52 questions, 13 for each moment.'], ['The question', 'Big, easy-to-read type. Kids can read it too.'], ['Grown-up tip', 'One line on how to keep the talk going.']];
   out.push(['02-every-card', `<div class="sq" style="background:${C.wash}">
     <div class="h"><p class="k" style="color:${C.tomato}">On every card</p><h1>A good question and<br>a grown-up tip</h1></div>

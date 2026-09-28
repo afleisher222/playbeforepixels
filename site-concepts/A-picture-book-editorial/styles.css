@@ -486,7 +486,7 @@ button.sc-seg[aria-pressed="true"] .sc-label::after { content: " ✓"; font-size
 
 /* ---------- product ---------- */
 .title-page { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 0 24px; padding: 24px 0 72px; align-items: start; }
-.gallery { grid-column: 1 / span 7; position: sticky; top: 100px; }
+.gallery { min-width: 0; grid-column: 1 / span 7; position: sticky; top: 100px; }
 .g-main { background: var(--ground, var(--t-sun)); aspect-ratio: 4 / 5; overflow: hidden; border-radius: 3px; max-height: calc(100vh - 140px); width: 100%; }
 .g-main img { width: 100%; height: 100%; object-fit: cover; }
 .g-main.is-page { display: grid; place-items: center; padding: 8%; }
