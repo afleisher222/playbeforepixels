@@ -21,7 +21,7 @@ FONT = os.path.join(HERE, '..', '..', '..', 'fonts', 'bricolage-a24454f0.woff2')
 INK, PAPER, WASH = '#1D2940', '#FFFFFF', '#F3F6FB'
 TOMATO, SUN, SKY, GRASS, PLUM = '#EE5A36', '#F5B820', '#3D86D8', '#2FA36B', '#8A5CC7'
 
-COL = dict(body=SKY, toe=TOMATO, cuff=SUN, eye=INK)   # chosen palette (see board for rationale)
+COL = dict(body=TOMATO, mouth=INK, cuff=SUN, eye=INK)   # chosen palette (see board for rationale)
 
 def f(v):
     s = ('%.2f' % v).rstrip('0').rstrip('.')
@@ -96,62 +96,52 @@ def poly_d(poly, ox=0, oy=0, s=1.0):
 # ---------------------------------------------------------------- the puppet (200 x 200 design box)
 # Sock seen side-on, worn on a raised forearm: vertical leg of sock (arm) on the left,
 # hand bent forward at the wrist into a long head; thumb = lower jaw, fingers = upper jaw.
+# One even-width tube of sock (that's what makes it a sock, not a head), rising from the cuff,
+# bent over at the knuckles, ending in a rounded two-lipped mouth. Felt mouth insert inside.
 BODY_KEYS = [
-    (52, 186), (47, 150), (41, 112), (40, 86), (48, 58), (68, 38), (98, 27), (132, 28),
-    (160, 39), (181, 57), (192, 78),                 # crown to snout
-    (193, 90), (186, 97),                            # rounded tip of upper jaw (fingers)
-    (160, 99), (134, 104), (121, 110),               # upper jaw underside -> hinge
-    (133, 116), (156, 121), (174, 126),              # lower jaw top (thumb)
-    (180, 133), (175, 141),                          # rounded thumb tip
-    (152, 146), (128, 151), (114, 160),              # under the chin / throat
-    (110, 174), (111, 186),                          # front of the wrist
+    (50, 184), (49, 150), (48, 112), (50, 78), (60, 50), (80, 30), (108, 20), (138, 22),
+    (163, 34), (181, 52), (190, 68),                       # knuckles over to the upper lip
+    (192, 78), (185, 84),                                  # round upper lip tip
+    (166, 85), (147, 88), (130, 96),                       # upper jaw underside -> hinge
+    (142, 110), (160, 119), (176, 125),                    # lower jaw top (thumb), dropped open
+    (181, 133), (172, 139),                                # round lower lip tip
+    (150, 139), (128, 136), (114, 143), (109, 158),        # chin -> front of wrist (no deep undercut)
+    (108, 172), (109, 184),
 ]
-HINGE = (121, 110)
+HINGE = (130, 96)
+MOUTH_KEYS = [(130, 96), (148, 90.5), (168, 87.5), (186, 86), (188, 100), (183, 123), (170, 122), (152, 114)]
+TILT = -9          # the whole puppet leans in, mid-sentence
 
 def puppet(simple=False, speck=True):
-    """Return dict of shapely geometries in the 200 box: body, toe, cuff, eye, eye_holes."""
+    """Return dict of shapely geometries in the 200 box: body, mouth, cuff, eye, holes, specks."""
     ring = catmull(BODY_KEYS, closed=True, n=12)
     if not simple:
-        ring = scissor(ring, seed=7, amp=1.1, step=8.5, keep=[HINGE])
-    body_full = Polygon(ring).buffer(0)
-    # clip the wrist flat where the cuff starts (a single straight scissor snip, slightly tilted)
-    snip = Polygon([(0, 0), (220, 0), (220, 177.5), (0, 179.5)])
-    body_full = body_full.intersection(snip)
-    # toe patch: everything beyond a hand-cut line across the snout (the fold of the sock toe)
-    toe_line = [(158, 20), (161, 60), (157, 100), (152, 130), (150, 160)]
-    toe_line = catmull(toe_line, closed=False, n=8)
+        ring = scissor(ring, seed=7, amp=1.0, step=8.5, keep=[HINGE])
+    body = Polygon(ring).buffer(0)
+    body = body.intersection(Polygon([(0, 0), (220, 0), (220, 183), (0, 184)]))   # one straight snip at the wrist
+    # felt mouth insert: a separate cut piece filling the gap between the lips, tucked under them
+    mouth = Polygon(catmull(MOUTH_KEYS, closed=True, n=10)).buffer(0)
     if not simple:
-        rnd = random.Random(3)
-        toe_line = [(x + rnd.uniform(-0.5, 0.5), y) for x, y in toe_line]
-    toe_region = Polygon(toe_line + [(230, 160), (230, 20)])
-    gap = 3.2 if not simple else 5.5
-    toe = body_full.intersection(toe_region)
-    body = body_full.difference(Polygon(toe_line + [(230, 160), (230, 20)]).buffer(gap / 2))
-    # cuff: ribbed band, a touch wider than the wrist, cut separately (wobbly), sun
-    cuff_keys = [(43, 183.5), (80, 181.5), (119, 183), (120, 199), (80, 200.5), (42, 198.5)]
-    cuff_ring = catmull(cuff_keys, closed=True, n=10)
-    # square-ish corners: blend a box with the catmull
-    cuff = Polygon(cuff_ring).buffer(0)
-    cuff = cuff.union(Polygon([(44, 184), (118, 183.5), (119, 198), (43, 198)])).buffer(1.2).buffer(-1.2)
+        mouth = Polygon(scissor(list(mouth.exterior.coords)[:-1], seed=9, amp=0.5, step=6)).buffer(0)
+    mouth = mouth.difference(body.buffer(2.2 if not simple else 3.5))
+    # keep only the biggest piece (the insert), drop slivers
+    if hasattr(mouth, 'geoms'): mouth = max(mouth.geoms, key=lambda g: g.area)
+    # ribbed cuff, a touch wider than the wrist
+    cuff = Polygon([(49, 188), (80, 186.5), (110, 187.5), (111, 204), (80, 205.5), (48, 204)]).buffer(2.5).buffer(-2.5)
     if not simple:
         cuff = Polygon(scissor(list(cuff.exterior.coords)[:-1], seed=11, amp=0.6, step=7)).buffer(0)
-        ribs = unary_union([box(x - 1.25, 187.5, x + 1.25, 195.5) for x in (58, 72, 86, 100)])
-        cuff = cuff.difference(ribs)
-    # button eye with two thread holes
-    ex, ey, er = 118, 62, 13.5 if not simple else 17
+        cuff = cuff.difference(unary_union([box(x - 1.3, 191.5, x + 1.3, 200.5) for x in (58, 69, 80, 91, 102)]))
+    # sewn button eye, two small thread holes on a diagonal
+    ex, ey, er = (116, 50, 13) if not simple else (117, 51, 16.5)
     eye = Point(ex, ey).buffer(er, 48)
     if not simple:
         eye = Polygon(scissor(list(eye.exterior.coords)[:-1], seed=5, amp=0.35, step=6)).buffer(0)
-    holes = unary_union([Point(ex - 4.2, ey + 0.6).buffer(2.3, 24), Point(ex + 4.2, ey - 0.6).buffer(2.3, 24)])
+    holes = unary_union([Point(ex - 3.2, ey + 3.2).buffer(1.9, 20), Point(ex + 3.2, ey - 3.2).buffer(1.9, 20)])
     specks = None
     if speck and not simple:
-        # a few places where the ink didn't take (potato-print feel) — tiny, only on big renders
-        rnd = random.Random(21); sp = []
-        for (x, y, r) in [(62, 132, 1.3), (70, 150, 0.9), (86, 44, 1.0), (150, 50, 0.8), (57, 96, 0.8),
-                          (100, 138, 1.1), (170, 70, 0.7), (92, 166, 0.8)]:
-            sp.append(Point(x, y).buffer(r, 10))
-        specks = unary_union(sp)
-    return dict(body=body, toe=toe, cuff=cuff, eye=eye, holes=holes, specks=specks)
+        specks = unary_union([Point(x, y).buffer(r, 10) for x, y, r in [(56, 150, 1.1), (61, 120, 0.8), (97, 160, 0.9)]])
+    g = dict(body=body, mouth=mouth, cuff=cuff, eye=eye, holes=holes, specks=specks)
+    return {k: (affinity.rotate(v, TILT, origin=(106, 108)) if v is not None else None) for k, v in g.items()}
 
 def mark_group(ox=0, oy=0, s=1.0, mode='color', simple=False, speck=True, cols=None):
     """SVG <g> content for the puppet. mode: 'color' | 'mono' (single fill; knockouts are real holes)."""
@@ -161,19 +151,22 @@ def mark_group(ox=0, oy=0, s=1.0, mode='color', simple=False, speck=True, cols=N
         eye = P['eye'].difference(P['holes'])
         # eye sits on the body: body keeps a hole where the eye is, so each shape is clean on its own
         return (f'<path fill="{C["body"]}" d="{poly_d(body.difference(P["eye"].buffer(0)), ox, oy, s)}"/>'
-                f'<path fill="{C["toe"]}" d="{poly_d(P["toe"], ox, oy, s)}"/>'
+                f'<path fill="{C["mouth"]}" d="{poly_d(P["mouth"], ox, oy, s)}"/>'
                 f'<path fill="{C["cuff"]}" d="{poly_d(P["cuff"], ox, oy, s)}"/>'
                 f'<path fill="{C["eye"]}" d="{poly_d(eye, ox, oy, s)}"/>')
     # one colour: everything one ink; the eye is cut free by a ring of paper so it still reads
     ring_w = 3.4 if not simple else 4.2
-    shape = unary_union([P['body'], P['toe'], P['cuff']]).difference(P['eye'].buffer(ring_w))
+    shape = unary_union([P['body'], P['cuff']]).difference(P['eye'].buffer(ring_w))
     eye = P['eye'].difference(P['holes']) if not simple else P['eye']
     shape = unary_union([shape, eye])
     return f'<path d="{poly_d(shape, ox, oy, s)}"/>'
 
 # ---------------------------------------------------------------- wordmark
-tt = TTFont(FONT); gs = tt.getGlyphSet(); order = tt.getGlyphOrder()
-hbfont = hb.Font(hb.Face(hb.Blob.from_file_path(FONT)))
+TTF = os.path.join(HERE, 'bric800.ttf')
+if not os.path.exists(TTF):
+    _t = TTFont(FONT); _t.flavor = None; _t.save(TTF)
+tt = TTFont(TTF); gs = tt.getGlyphSet(); order = tt.getGlyphOrder()
+hbfont = hb.Font(hb.Face(hb.Blob.from_file_path(TTF)))
 CAP = 660
 JIT = random.Random(42)
 STAMP = {}  # per-letter (rotation deg, dy) — fixed per character position so lockups match
@@ -201,7 +194,8 @@ def words_d(text, ox, base, s, track=-10, stamp=True, key=''):
         # font units (y up) -> letter-local rotation -> page
         # p' = R (p - C) + C ; then page = (ox + s*px, base - s*py) + dy
         a11, a12, a21, a22 = c, -sn, sn, c
-        tx = cx - (a11 * cx + a12 * cy); ty = cy - (a21 * cx + a22 * cy)
+        vx, vy = x - cx, -cy                   # glyph origin relative to the letter's centre
+        tx = a11 * vx + a12 * vy + cx; ty = a21 * vx + a22 * vy + cy
         # compose with flip/scale: X = ox + s*(a11 x + a12 y + tx) ; Y = base - s*(a21 x + a22 y + ty) + s*dy
         M = (s * a11, -s * a21, s * a12, -s * a22, ox + s * tx, base - s * ty + s * dy)
         pen = SVGPathPen(gs, ntos=f)

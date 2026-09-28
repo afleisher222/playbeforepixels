@@ -1,0 +1,37 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../../fonts/fonts.css">
+<style>
+body{margin:0;background:#F3F6FB;font-family:"Nunito Sans",sans-serif;color:#1D2940}
+.row{display:flex;gap:24px;padding:20px;align-items:center}
+.cell{background:#fff;border-radius:12px;padding:12px;text-align:center;font-size:12px}
+.dark{background:#1D2940;color:#fff}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute">
+ <defs>
+  <!-- v1: talker with ear bump -->
+  <path id="h1" d="M22 100 C22 86 19 74 17 62 C13 44 20 26 36 20 C35 13 36 7 41 6 C46 5 48 11 47 17 C60 15 77 20 89 29 C94 33 93 39 87 40 L57 45 L78 57 C82 60 80 66 75 66 C63 69 53 67 49 72 C47 80 48 90 48 100 Z"/>
+  <!-- v2: no ear, rounder -->
+  <path id="h2" d="M24 100 C24 86 20 74 18 62 C14 40 26 20 48 18 C66 17 80 22 90 30 C95 34 93 40 87 40 L57 45 L78 57 C82 60 80 66 75 66 C63 69 53 67 50 72 C48 80 49 90 49 100 Z"/>
+ </defs>
+</svg>
+<div class="row" id="r"></div>
+<script>
+const variants=[
+ {id:'h1',fill:'#EE5A36',eye:'hole',cuff:'#3D86D8'},
+ {id:'h1',fill:'#1D2940',eye:'hole',cuff:'#F5B820'},
+ {id:'h2',fill:'#EE5A36',eye:'hole',cuff:null,ball:'#F5B820'},
+ {id:'h1',fill:'#1D2940',eye:'hole',cuff:null,disc:'#F5B820'},
+];
+function svg(v,size){
+ let s=`<svg width="${size}" height="${size}" viewBox="0 0 100 100">`;
+ if(v.disc) s+=`<circle cx="60" cy="42" r="40" fill="${v.disc}"/>`;
+ s+=`<mask id="m${v.id}${size}${v.fill}"><rect width="100" height="100" fill="#fff"/><circle cx="44" cy="29" r="4.6" fill="#000"/></mask>`;
+ s+=`<use href="#${v.id}" fill="${v.fill}" mask="url(#m${v.id}${size}${v.fill})"/>`;
+ if(v.cuff) s+=`<path d="M21 84 H49 V100 H21Z" fill="${v.cuff}"/>`;
+ if(v.ball) s+=`<circle cx="93" cy="58" r="6" fill="${v.ball}"/>`;
+ return s+`</svg>`;
+}
+let h='';
+for(const v of variants){h+=`<div class="cell">${svg(v,240)}<br>${svg(v,64)} ${svg(v,32)} ${svg(v,16)}</div>`}
+document.getElementById('r').innerHTML=h;
+</script></body></html>
