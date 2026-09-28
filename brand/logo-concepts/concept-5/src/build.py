@@ -28,27 +28,29 @@ def f(v):
 
 
 # ------------------------------------------------------------------ mark geometry (units: 100 box)
-HAND = ("M33 100C33 90 32 80 30 72C27.5 62 24.5 52 25 42"
-        "C25.3 36 27 22 29 14C30 10 33 7.5 36 7.5C39 7.5 41.5 10 42 13"
-        "C42.5 16 43 19 45 20.5C47 22 50 20.5 54 20"
-        "C66 18.5 78 20 86 23.5C93 26.56 95 33 90 36"
-        "C88 37.2 85 37.8 81 38.3C73 39.3 66 41 61 42.8"
-        "C57.5 44.06 57.5 47 61 48.2C68 50.6 75 52 80 52.5"
-        "C86 53.1 87.5 58.5 83 61.5C78 64.83 70 66 63 66.5"
-        "C56 67 51.5 71 51.2 78C51 86 52 93 52 100Z")
-EYE = (51.0, 29.6, 3.9)
-CUFF_TOP = 84.0
-CUFF = f"M28 100L28.5 {CUFF_TOP+3.5}Q28.7 {CUFF_TOP} 32.2 {CUFF_TOP}H52.8Q56.3 {CUFF_TOP} 56.5 {CUFF_TOP+3.5}L57 100Z"
+HAND_UPRIGHT = ("M29 86C29 78 27.5 72 25.5 66C22 56 20.5 46 22 37C22.8 32 24 26 25.5 20"
+        "C26.75 15 27.5 5 33.5 4.5C39.5 4 42.5 9 42.5 14C42.5 18.5 44 21 47.5 20.5"
+        "C60 18.87 76 20 85 24C94 28 95 38 86 40.5C78 42.72 69 43.5 62 45"
+        "C58.5 45.75 58.5 48.6 62 49.3C70 50.9 77 50.5 81 49.5"
+        "C88 47.75 91 54 86 58.5C79 64.8 68 68 59 68.5C55 68.72 53.5 72 53.5 76"
+        "C53.5 80 54 83 54 86Z")
+TILT = (-8.0, 40.0, 78.0)   # the head looks up a little, towards the words it is talking to
+EYE = (51.0, 30.0, 4.2)
+EYE_SMALL = (51.4, 30.4, 5.6)  # favicon cut: bigger gap of light so it survives 16 px
+CUFF_TOP = 78.0
+CUFF = f"M22.5 100L23 {CUFF_TOP+4}Q23.2 {CUFF_TOP} 27.2 {CUFF_TOP}H54.8Q58.8 {CUFF_TOP} 59 {CUFF_TOP+4}L59.5 100Z"
 GAP = 2.2  # knockout between hand and cuff in one-colour versions
 
-# favicon cut: same drawing, bigger eye and a slightly shorter ear so it survives 16 px
-EYE_SMALL = (51.6, 30.4, 5.4)
 
 
-def sk(d):
+from fontTools.misc.transform import Identity
+_T = Identity.translate(TILT[1], TILT[2]).rotate(math.radians(TILT[0])).translate(-TILT[1], -TILT[2])
+
+
+def sk(d, t=None):
     p = pathops.Path()
     pen = p.getPen()
-    parse_path(d, pen)
+    parse_path(d, TransformPen(pen, t) if t is not None else pen)
     return p
 
 
@@ -96,7 +98,8 @@ def op(a, b, kind):
 def mark_paths(one_colour=False, small=False):
     """returns (hand_path, cuff_path) as pathops paths in 100-unit space."""
     ex, ey, er = EYE_SMALL if small else EYE
-    hand = op(sk(HAND), circle_path(ex, ey, er), pathops.PathOp.DIFFERENCE)
+    ex, ey = _T.transformPoint((ex, ey))
+    hand = op(sk(HAND_UPRIGHT, _T), circle_path(ex, ey, er), pathops.PathOp.DIFFERENCE)
     cuff = sk(CUFF)
     if one_colour:
         hand = op(hand, rect_path(0, CUFF_TOP - GAP, 100, 101), pathops.PathOp.DIFFERENCE)
@@ -181,7 +184,7 @@ def build():
     # --- horizontal lockup
     s_txt = 0.1                     # cap height 66
     cap = CAP * s_txt
-    ms = (cap * 1.62) / mh          # mark height = 1.62 x cap height, sleeve sits on the baseline
+    ms = (cap * 1.9) / mh          # mark height = 1.62 x cap height, sleeve sits on the baseline
     base = mh * ms                  # baseline y (mark top at 0)
     gap = cap * 0.42
     text_x = mw * ms + gap - ink_left_bearing('Play Before Pixels', s_txt)

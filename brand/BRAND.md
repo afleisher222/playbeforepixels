@@ -37,6 +37,7 @@ The founder will NOT be an influencer and will NOT appear on camera. Nothing in 
 ## Quality bar
 - **learntotalkwithme.com / speech-therapist "learn to talk" board books:** one clear word per page for the child, huge readable type, uncluttered high-contrast image, and a short grown-up tip on every page that makes reading interactive. Sturdy, purposeful, instantly useful.
 - **primary.com:** bold solid color blocking, clean geometric shapes, lots of white space, confident simple typography, playful but never cluttered, premium feel.
+- **lovevery.com (founder's benchmark, September 28, 2026):** everything organized by developmental stage (age in months/years), every product explains the "why" in plain language with a short guide inside, calm premium look with warm real-life product imagery, consistent system across the whole line. Match that level of care and organization; never copy Lovevery's names, stage names, product designs, photography or trade dress, and never imply affiliation.
 - Every product must look finished and sellable — no lorem ipsum, no placeholders except where a human must supply something (ISBN, barcode, author photo), and those are clearly boxed and labelled.
 
 ## Color (hex)
