@@ -11,7 +11,7 @@ _No personal data here: no account numbers, policy numbers, addresses, names or 
 | 1 | Counsel has said yes, in writing, to the Gate A question (may AlphaPlay LLC sell 0–5 parent printables and adult-directed paperbacks on Etsy, KDP and Gumroad?) | Owner + counsel | Fri Oct 16, 2026 | OPEN | | |
 | 2 | The business bank account (with tax sub-account, under the EIN) is open | Owner | Sep 29, 2026 | OPEN | | |
 | 3 | Insurance is **bound** (not only quoted): general liability with products-completed operations | Owner | Day counsel says yes | OPEN | | `legal/INSURANCE.json` |
-| 4 | The household-money cap and its review date are written down | Owner | Oct 4, 2026 | OPEN | | |
+| 4 | The household-money cap and its review date are written down (launch spending is already capped at $500: business/DECISIONS.md, Sep 28, 2026) | Owner | Oct 4, 2026 | OPEN | | |
 | 5 | Publishing safeguards are live: approval channel (G2-03), platform caps (G2-06), notice filter (G2-07) | Owner + Claude | Oct 9, 2026 | OPEN | | |
 | 6 | Wave 0 accounts and keys exist, and every launch item has passed `ops/COMPLIANCE-GATE.md` | Owner + Claude | Oct 9, 2026 | OPEN | | |
 | 7 | Privacy policy, terms, refund policy and disclaimer are published after attorney review and linked from every email form and checkout (`legal/LEGAL-LAUNCH-CHECKLIST.md` row 7; COMPLIANCE-GATE 11) | Counsel + Claude | Before G-day | OPEN | | |
