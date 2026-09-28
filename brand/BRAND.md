@@ -104,3 +104,11 @@ AI-generated material is not copyrightable in the U.S. For every product, leave 
 - Never target people searching for "autism" (or any diagnosis) with product ads, product listings, keywords, hashtags or emails. No autism keywords on any product, listing or ad — anywhere, in any language.
 - "Virtual autism" and "screen time and autism" questions are answered only by the research hub's honest educational pages (associations, not causation; not a diagnosis; talk to your pediatrician; free early intervention). Those pages may invite readers to the free play printable and email list, framed as play and family time — never as help for autism.
 - Never imply any product helps, prevents, treats or relates to autism or any developmental condition.
+
+## Logo (binding) — final kit in `brand/logo/`
+- Use only the supplied files; rules are in `brand/logo/logo-guidelines.pdf`, the idea and similarity risks in `brand/logo/logo-notes.md`. The old four-square placeholder mark is retired everywhere.
+- Mark = "The Return": an open P (ink) with a ball (tomato) closing the bowl; the same ball dots the i of Pixels. On tomato or sky grounds the P is paper and the ball is sun. One-colour = black or white only.
+- Horizontal lockup is the default; one-line wordmark for spines and footers; small cut (`mark-small*.svg`) below 32 px / 12 mm; `favicon.svg` + PNG fallbacks for the web; sticker version on photos and busy grounds.
+- Never: stretch, rotate, recolour, add effects, retype the name, enlarge the ball or move it outside the letter, put a white P in a tomato circle, nest a small p in the P, swap the ball for a pixel/heart/icon, or place the mark in front of the one-line wordmark.
+- **Motifs that belong to others or read badly — never use in logos, product marks or series marks:** four-square grids, toy-block/brick marks, puzzle pieces, infinity symbols, rainbow arcs, crossed-out phones or screens, pixel hearts, tin-can phones (Tin Can), seesaws (Seesaw), pinwheels (Pinwheel), boomerangs (Boomerang), kites (stock), hand-shadow bunnies (Playboy's rabbit head), sock puppets ("sock puppet" = fake account), two-P or parent-and-child P monograms (Planned Parenthood), a coral circle beside a navy bar (Patreon), a chat bubble holding a pixel (Google Play/Pixel vocabulary).
+- Copy: keep clear of Osmo's "Play Beyond The Screen".

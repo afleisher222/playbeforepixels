@@ -4,7 +4,7 @@ Every scheduled run follows this file. It is the operating procedure; CLAUDE.md 
 
 ## 0. Start
 1. Attach and clone the repo (`afleisher222/playbeforepixels`, push access) if the session does not have it; `git pull`.
-2. Read CLAUDE.md, brand/BRAND.md, legal/ENTITY.md, ops/COMPLIANCE-GATE.md, ops/QUEUE.md, and the last 3 entries of ops/RUNLOG.md.
+2. Read CLAUDE.md, brand/BRAND.md, legal/ENTITY.md, ops/AUTOFIX.md, ops/COMPLIANCE-GATE.md, ops/QUEUE.md, and the last 3 entries of ops/RUNLOG.md.
 3. **If the file `ops/PAUSE` exists: do research and building only. Publish, post, list, send and upload NOTHING.** Record "paused" in the run log.
 
 ## 1. Research (every run)

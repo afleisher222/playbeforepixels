@@ -68,6 +68,8 @@
     if (next !== p) { p = next; qty = 1; fmtIdx = p.formats.findIndex(function (f) { return f.status === "ok"; }); if (fmtIdx < 0) fmtIdx = p.formats.findIndex(function (f) { return f.status !== "none"; }); }
     var g = GROUP[p.type];
     document.body.setAttribute("data-section", SECTION[p.type] || "shop");
+    var sec = SECTION[p.type] || "shop";
+    document.querySelectorAll(".p-trigger").forEach(function (t) { if (t.id === "t-" + sec) t.setAttribute("data-current", "true"); else t.removeAttribute("data-current"); });
     document.title = p.title + " — " + p.kind + (p.ages.length ? ", ages " + p.ageText : "") + " — Play Before Pixels";
     document.getElementById("crumbs").innerHTML = '<li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="shop.html#type=' + g[0] + '">' + g[1] + '</a></li><li><a href="product.html#' + p.id + '" aria-current="page">' + esc(p.title) + "</a></li>";
 
