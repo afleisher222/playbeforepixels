@@ -1,0 +1,98 @@
+[
+ {
+  "product": "A",
+  "size": "letter",
+  "ink": false,
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/source.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/play-talk-cards.pdf",
+  "W": 816,
+  "H": 1056,
+  "gx": 48,
+  "gy": 24,
+  "main": true
+ },
+ {
+  "product": "A",
+  "size": "letter",
+  "ink": true,
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/A-play-talk-cards-ink-saver.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/play-talk-cards-ink-saver.pdf",
+  "W": 816,
+  "H": 1056,
+  "gx": 48,
+  "gy": 24,
+  "main": false
+ },
+ {
+  "product": "A",
+  "size": "a4",
+  "ink": false,
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/A-play-talk-cards-A4.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/play-talk-cards-A4.pdf",
+  "W": 794,
+  "H": 1123,
+  "gx": 37,
+  "gy": 57.5,
+  "main": false
+ },
+ {
+  "product": "A",
+  "size": "a4",
+  "ink": true,
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/A-play-talk-cards-ink-saver-A4.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/play-talk-cards-ink-saver-A4.pdf",
+  "W": 794,
+  "H": 1123,
+  "gx": 37,
+  "gy": 57.5,
+  "main": false
+ },
+ {
+  "product": "B",
+  "size": "letter",
+  "ink": false,
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/talk-along/source.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/talk-along/family-talk-along-cards.pdf",
+  "W": 816,
+  "H": 1056,
+  "gx": 48,
+  "gy": 24,
+  "main": true
+ },
+ {
+  "product": "B",
+  "size": "letter",
+  "ink": true,
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/B-family-talk-along-cards-ink-saver.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/talk-along/family-talk-along-cards-ink-saver.pdf",
+  "W": 816,
+  "H": 1056,
+  "gx": 48,
+  "gy": 24,
+  "main": false
+ },
+ {
+  "product": "B",
+  "size": "a4",
+  "ink": false,
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/B-family-talk-along-cards-A4.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/talk-along/family-talk-along-cards-A4.pdf",
+  "W": 794,
+  "H": 1123,
+  "gx": 37,
+  "gy": 57.5,
+  "main": false
+ },
+ {
+  "product": "B",
+  "size": "a4",
+  "ink": true,
+  "html": "/home/user/playbeforepixels/products/play-talk-cards/build/gen/B-family-talk-along-cards-ink-saver-A4.html",
+  "pdf": "/home/user/playbeforepixels/products/play-talk-cards/talk-along/family-talk-along-cards-ink-saver-A4.pdf",
+  "W": 794,
+  "H": 1123,
+  "gx": 37,
+  "gy": 57.5,
+  "main": false
+ }
+]

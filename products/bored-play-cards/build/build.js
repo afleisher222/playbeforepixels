@@ -554,7 +554,7 @@ function labelPages() {
   const ways = [[C.tomato, '#FFFFFF', C.tTomato], [C.sun, C.ink, C.tSun], [C.sky, '#FFFFFF', C.tSky], [C.grass, '#FFFFFF', C.tGrass]];
   const round = ([m, on, t], i) => `<div class="rl" style="--m:${m};--on:${on};--t:${t}"><div class="rli">
     <span class="rlk">Play Before Pixels</span><span class="rl1">I’m</span><span class="rl2">bored!</span><span class="rl3">Pull a card. Play together.</span>
-    <span class="rld">${[0, 1, 2, 3, 4].map(j => `<i style="background:${[C.sun, C.grass, C.sky, C.plum, C.tomato][j]}"></i>`).join('')}</span></div></div>`;
+    <span class="rld">${[C.sun, C.grass, C.sky, C.plum, C.tomato].filter(c => c !== m).map(c => `<i style="background:${c}"></i>`).join('')}</span></div></div>`;
   const p1 = contentPage('labels', 'Jar labels · 1 of 2', 'Round jar labels', `<p class="lead">Four colorways. Cut on the dashed circle and stick to the jar with clear tape or glue dots. Label size: 3.4 in / 8.6 cm.</p>
     <div class="rgrid">${ways.map(round).join('')}</div>`);
   const mini = [[C.sun, -14, 0], [C.grass, -5, 1], [C.sky, 5, 2], [C.tomato, 14, 3]].map(([c, r, i]) => `<g transform="translate(${60 + i * 58},${92 + Math.abs(i - 1.5) * 10}) rotate(${r})"><rect x="-34" y="-50" width="68" height="96" rx="9" fill="#fff"/><rect x="-34" y="-50" width="68" height="20" rx="9" fill="${c}"/><rect x="-34" y="-38" width="68" height="8" fill="${c}"/><rect x="-25" y="-20" width="40" height="7" rx="3.5" fill="${C.ink}" opacity=".5"/><rect x="-25" y="-7" width="50" height="4.5" rx="2.25" fill="${C.ink}" opacity=".2"/><rect x="-25" y="2" width="44" height="4.5" rx="2.25" fill="${C.ink}" opacity=".2"/><rect x="-25" y="18" width="50" height="16" rx="6" fill="${c}" opacity=".25"/></g>`).join('');
@@ -593,19 +593,17 @@ const labelCss = `<style>
 function menuPage(fields) {
   const slots = [['Calm pick', C.sky, C.tSky], ['Wiggly pick', C.tomato, C.tTomato], ['Together pick', C.grass, C.tGrass], ['Free choice', C.plum, C.tPlum]];
   const f = n => fields ? ` data-field="${n}"` : '';
-  return contentPage('menu', 'Choice board', 'Today’s Play Menu', `<p class="lead">Laminate this page. Each morning (or each “I’m bored!”), velcro one card into each space and let your child choose. When a card is done, move it to the “Done & loved” jar.</p>
-  <div class="mgrid">${slots.map(([h, m, t]) => `<div class="ms" style="--m:${m};--t:${t}"><span class="mh">${h}</span><div class="mslot"><i class="vd"></i><span>Card goes here</span></div></div>`).join('')}</div>
-  <div class="mfoot"><div><span class="kick">Today is</span><div class="mline"${f('menu_day')}></div></div><div><span class="kick">After play we’ll talk about</span><div class="mline"${f('menu_talk')}></div></div></div>`);
+  return contentPage('menu', 'Choice board · laminate me', 'Today’s Play Menu', `<p class="lead ml">Velcro one card into each space, then let your child choose. Done? Move it to the “Done & loved” jar.</p>
+  <div class="mgrid">${slots.map(([h, m, t]) => `<div class="ms" style="--m:${m};--t:${t}"><span class="mh">${h}</span><div class="mslot"><i class="vd"></i><span>Card goes here</span></div></div>`).join('')}</div>`);
 }
 const menuCss = `<style>
-.mgrid{display:grid;grid-template-columns:repeat(2,2.95in);gap:.18in .35in;justify-content:center;margin-top:6px}
-.ms{background:var(--t);border-radius:18px;padding:9px 12px 12px;display:flex;flex-direction:column;align-items:center}
-.mh{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:17px;color:var(--ink);margin-bottom:6px}
-.mslot{width:2.6in;height:3.1in;border-radius:14px;border:2.5px dashed var(--m);background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.menu .ph{margin-bottom:6px}.ml{font-size:13.5px;margin-bottom:10px}
+.mgrid{display:grid;grid-template-columns:repeat(2,2.85in);gap:.12in .3in;justify-content:center}
+.ms{background:var(--t);border-radius:16px;padding:5px 0 .12in;display:flex;flex-direction:column;align-items:center}
+.mh{font-family:"Bricolage Grotesque","Nunito Sans",sans-serif;font-weight:800;font-size:15px;color:var(--ink);margin-bottom:4px}
+.mslot{width:2.6in;height:3.6in;border-radius:14px;border:2.5px dashed var(--m);background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
 .mslot span{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.45}
 .vd{width:.55in;height:.55in;border-radius:50%;background:var(--t);display:block}
-.mfoot{margin-top:auto;display:grid;grid-template-columns:1fr 2fr;gap:20px}
-.mline{height:28px;border-bottom:1.5px solid var(--line)}
 </style>`;
 
 function weekPage(start, fields) {
