@@ -171,7 +171,7 @@ function doc(V) {
           <li>“Ready, set… (wait) go!” <span>(pause and wait)</span></li>
           <li>“Ball!” “Big ball!” <span>(repeat and add one)</span></li>
         </ul>
-        <p class="small">Talk, sing and read in the language you know best. A sign, a point, a look or a tap on a device counts as communicating.</p>
+        <p class="small">Talk, sign, sing and read in the language you know best. A sign, a point, a look or a tap on a device counts as communicating. You don’t need to be chatty: reading a talk line word for word, or playing quietly side by side, counts too.</p>
       </div>
       <div>
         <h3>Six easy talk moves</h3>
@@ -188,7 +188,7 @@ function doc(V) {
       <div>
         <h3>${ico('shield')} Every play follows our published safety rules</h3>
         <ul class="safelist">${K.SAFETY.map(s => `<li>${esc(s)}</li>`).join('')}</ul>
-        <p class="small">You know your child best. Skip or change any play that doesn’t suit your child, your home or your day.</p>
+        <p class="small">You know your child best. Skip or change any play that doesn’t suit your child, your home or your day. Every play works from a chair, a bed or a wheelchair too, and any sound play can be a see-it or feel-it play: a light flick for “stop,” a hand on the pot for the beat.</p>
         <h3>Ages</h3>
         <p>Every play shows a starting age (“From 18 months”), a way to make it easier and a way to make it harder for preschoolers. Every week has boxes for toddlers, preschoolers, and siblings and twins.</p>
         ${V.book ? '' : PEDI}

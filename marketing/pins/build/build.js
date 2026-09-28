@@ -23,7 +23,7 @@ const DEST = {
   free: { url: 'https://playbeforepixels.com/free/?src=pin', live: GDAY, what: 'Free printable landing page (email sign-up; Five 5-Minute Plays)' },
   'toddler-busy-book': { etsy: true, live: GDAY, what: 'Etsy: 74 Toddler Busy Book Activities' },
   'bundle-gift-1-5': { etsy: true, live: GDAY, what: 'Etsy: Ages 1–5 Instant Gift Bundle' },
-  'visual-routine-cards-0-5': { etsy: true, live: GDAY, what: 'Etsy: 177 Visual Routine Cards, ages 0–5' },
+  'visual-routine-cards-0-5': { etsy: true, live: GDAY, what: 'Etsy: 181 Visual Routine Cards, ages 0–5' },
   'guide-100-plays': { etsy: true, live: GDAY, what: 'Etsy: 100 Screen-Free Plays PDF' },
   'bored-play-cards-ages-1-5': { etsy: true, live: GDAY, what: 'Etsy: 76 “I’m Bored” Play Cards, ages 1–5' },
   'play-first-family-kit-ages-2-5': { etsy: true, live: '2026-10-22', what: 'Etsy: Play-First Family Kit, ages 2–5 (week 2)' },
@@ -99,7 +99,7 @@ for (const pin of PINS) {
 // counts quoted on pins must match the records
 const giftAct = giftListing.activities;
 for (const c of ['74 busy-book', '76 bored', '52 Play & Talk', '16 play coupons']) if (!giftAct.includes(c)) errors.push(`gift listing no longer says "${c}"`);
-if (!/^177 /.test(routineG0.title)) errors.push('routine G0 title no longer starts with 177');
+if (!/^181 /.test(routineG0.title)) errors.push('routine G0 title no longer starts with 181');
 if (bored.CARDS.b13.length + bored.CARDS.b35.length !== 76) errors.push('bored G0 card count is not 76');
 if (bored.CARDS.b13.length !== 38 || bored.CARDS.b35.length !== 38) errors.push('bored bands are not 38 + 38');
 if (guide.P.length !== 100 || guide.TIRED.length !== 12) errors.push('guide is not 100 plays + 12 tired plays');

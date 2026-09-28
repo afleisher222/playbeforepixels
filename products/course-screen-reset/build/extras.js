@@ -158,7 +158,7 @@ for (const [key, w, h] of [['letter', 8.5, 11], ['a4', 8.27, 11.69]]) {
     ${picks.slice(4).map(mini).join('')}
     <div class="moves5"><b class="bric" style="font-size:14pt">Five small talk moves to try this week</b>
       <ol>${['pause and wait', 'say what you see', 'repeat and add one', 'offer a choice', 'follow their lead'].map(k => { const m = Object.values(K.MOVES).find(x => x.name.toLowerCase() === k); return `<li><b>${esc(m.name)}.</b> ${esc(m.tip)}</li>`; }).join('')}</ol>
-      <p style="font-size:9.5pt;color:#4A5570">Talk, sing and read in the language you know best. A sign, a point or a tap on a device counts as communicating.</p></div>
+      <p style="font-size:9.5pt;color:#4A5570">Talk, sign, sing and read in the language you know best. A sign, a point or a tap on a device counts as communicating. Reading a talk line word for word counts too.</p></div>
     <div class="cta"><div><img src="${MARK}" style="height:.9in"></div><div><b class="bric" style="font-size:14pt">Want the whole month?</b><p>${esc(K.TITLE)}: 30 short lessons by email, 30 plays, plain words for 30 tricky moments and a full workbook. $27, with a ${K.REFUND.short}. Written program; no videos, calls or coaching.</p><p><b>${SITE}/30-days</b></p></div></div>
     <p class="copy3">${COPY} Free to print for use in your own home. Parent education, not medical advice.</p>
     ${foot(3)}

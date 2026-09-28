@@ -63,7 +63,7 @@ Paste the whole of `description.txt` (in this folder). It carries no web address
 | 7 | `products/toddler-busy-book/preview/listing-images/listing-07.png` | Made for tired grown-ups: a “Lunch for Teddy” page beside six notes: talk while you play, easier and harder, a 2-minute version, prep, mess and needs, a safety note on every activity page, and a two-page grown-up guide. |
 | 8 | `products/toddler-busy-book/preview/listing-images/listing-08.png` | Color or Low-ink, Letter or A4: the same animal-sounds page in color and in black line art, four binder covers in four colors, and notes: 5 PDF files, type-in pages, Monday and Sunday planners, 4 colorways, instant download. |
 | 9 | `products/toddler-busy-book/preview/listing-images/listing-09.png` | Play today, build it over time, in four steps: print (49 no-cut pages ready today), protect (sheet protectors or a laminator, both optional), cut (straight lines, 12 pieces or fewer), play and talk. Below: the assembly and laminating pages. |
-| 10 | `products/toddler-busy-book/preview/listing-images/listing-10.png` | Every play follows our published safety rules: every piece is bigger than a toilet-paper tube (2 in; 2.5 in for 1–2 years); the grown-up keeps the pieces; no velcro dots for under-3s; play together, with no balloons, beads, buttons, coins or strings. Below: the safety page and a piece sheet. |
+| 10 | `products/toddler-busy-book/preview/listing-images/listing-10.png` | Every play follows our published safety rules: every piece is bigger than a toilet-paper tube (2 in; 2.5 in for 1–2 years); the grown-up keeps the pieces; no hook-and-loop dots for under-3s; play together, with no balloons, beads, buttons, coins or strings. Below: the safety page and a piece sheet. |
 
 ## Digital files to upload (in this order)
 | Slot | Upload as | Size | Source |
@@ -71,7 +71,7 @@ Paste the whole of `description.txt` (in this folder). It carries no web address
 | 1 | `1-START-HERE.pdf` | 0.04 MB | `products/toddler-busy-book/etsy-upload/1-START-HERE.pdf` |
 | 2 | `2-Toddler-Busy-Book-Color-US-Letter.pdf` | 4.89 MB | `products/toddler-busy-book/etsy-upload/2-Toddler-Busy-Book-Color-US-Letter.pdf` |
 | 3 | `3-Toddler-Busy-Book-Color-A4.pdf` | 4.88 MB | `products/toddler-busy-book/etsy-upload/3-Toddler-Busy-Book-Color-A4.pdf` |
-| 4 | `4-Toddler-Busy-Book-Low-ink-US-Letter.pdf` | 7.06 MB | `products/toddler-busy-book/etsy-upload/4-Toddler-Busy-Book-Low-ink-US-Letter.pdf` |
+| 4 | `4-Toddler-Busy-Book-Low-ink-US-Letter.pdf` | 7.07 MB | `products/toddler-busy-book/etsy-upload/4-Toddler-Busy-Book-Low-ink-US-Letter.pdf` |
 | 5 | `5-Toddler-Busy-Book-Low-ink-A4.pdf` | 7.04 MB | `products/toddler-busy-book/etsy-upload/5-Toddler-Busy-Book-Low-ink-A4.pdf` |
 
 Stage everything for this listing (files + images, renamed in order) with `python3 ops/UPLOAD-PACKETS/stage.py etsy 01`.

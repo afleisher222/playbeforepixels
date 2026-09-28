@@ -26,7 +26,7 @@ There are first words with big pictures, animal sounds, matching, and color and 
 
 Every page has a “talk while you play” line and a safety note. It also has an easier and a harder idea and a 2-minute version. Prep is 0 minutes for the 49 no-cut activities and 5–10 minutes for pages with pieces. Piece sheets use straight cuts, 12 pieces or fewer per sheet. Every piece is 2 in (5.1 cm) or bigger, larger than a toilet-paper tube. Every play follows our published safety rules.
 
-Also inside: binder covers in four colors, spine and pouch labels, and a guide to put it together. Use a binder, laminated pages or velcro (ages 3–5 only). Add laminating tips, a weekly planner, make-your-own pages, a certificate and an answer key.
+Also inside: binder covers in four colors, spine and pouch labels, and a guide to put it together. Use a binder, laminated pages or hook-and-loop dots (ages 3–5 only). Add laminating tips, a weekly planner, make-your-own pages, a certificate and an answer key.
 
 You can type into the covers, labels, planners, blank pages and certificate in a free PDF reader. That's about 16 cents a play. Printed words are in English. Digital download for your own home; nothing ships.
 
@@ -42,7 +42,7 @@ How this was made: the text, illustrations and page layout were created with AI 
 | 2 | `toddler-busy-book.pdf` | 4.92 MB | `products/toddler-busy-book/toddler-busy-book.pdf` |
 | 3 | `toddler-busy-book-A4.pdf` | 4.91 MB | `products/toddler-busy-book/toddler-busy-book-A4.pdf` |
 | 4 | `toddler-busy-book-low-ink-Letter.pdf` | 7.09 MB | `products/toddler-busy-book/toddler-busy-book-low-ink-Letter.pdf` |
-| 5 | `toddler-busy-book-low-ink-A4.pdf` | 7.06 MB | `products/toddler-busy-book/toddler-busy-book-low-ink-A4.pdf` |
+| 5 | `toddler-busy-book-low-ink-A4.pdf` | 7.07 MB | `products/toddler-busy-book/toddler-busy-book-low-ink-A4.pdf` |
 | 6 | `toddler-busy-book-PNG-templates.zip` | 0.45 MB | `products/toddler-busy-book/toddler-busy-book-PNG-templates.zip` |
 
 Stage them with `python3 ops/UPLOAD-PACKETS/stage.py gumroad 01`.

@@ -119,7 +119,7 @@ const DAYS = [
       'The World Health Organization’s 2019 guidelines suggest no screen time for babies under 1, no more than one hour a day for children aged 2 to 4, and plenty of active play every day.',
       'A 2024 study in JAMA Pediatrics recorded the sounds of family life at home. It found that toddlers with more screen time heard fewer words from adults and had fewer back-and-forth exchanges (Brushe and colleagues, 2024). That is a link, not proof that screens cause anything. Families are busy, and life is complicated.',
       'But it points to something hopeful and simple: talk and play happen when we are together, face to face, with time to answer. That’s what these 30 days add.',
-      'You don’t need special toys or a script. You need a few minutes, your voice and some patience while your child takes a turn. Talk, sing and read in the language you know best. A sign, a point or a tap on a device counts as communicating too.',
+      'You don’t need special toys or a script. You need a few minutes, your voice and some patience while your child takes a turn. Talk, sign, sing and read in the language you know best. A sign, a point or a tap on a device counts as communicating too.',
       'If you ever have questions about your child’s development, talk with your pediatrician. Every child talks on their own timeline.',
     ],
     step: 'Have breakfast or a snack together today and try the play below.',

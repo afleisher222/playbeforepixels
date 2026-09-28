@@ -26,7 +26,7 @@ The Play First, Then Screens checklist comes with big pictures for ages 2–5 an
 
 The whole family gets 24 together tokens (12 ready-made, 12 blank) and six screen-spot cards, such as "5 more minutes" and "what we do next." There is a rules poster and a three-page Family Play & Screen Plan. A 30-day tracker holds 30 plays that need nothing to buy. Each has a starting age, easier and harder ways and a 2-minute version. A certificate marks the end.
 
-Tokens are for play and time together, never screen minutes. The screen spot stays the same every day. A two-page grown-up guide covers a 2-minute setup, three talk lines and how it works from 2 to 5, plus printing, laminating and velcro tips. Every play follows our published safety rules.
+Tokens are for play and time together, never screen minutes. The screen spot stays the same every day. A two-page grown-up guide covers a 2-minute setup, three talk lines and how it works from 2 to 5, plus printing, laminating and hook-and-loop tips. Every play follows our published safety rules.
 
 You get color and low-ink files in US Letter and A4, with type-in fields for free Adobe Acrobat Reader. Instant download; nothing ships.
 

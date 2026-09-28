@@ -41,8 +41,8 @@ How this was made: the text, illustrations and page layout were created with AI 
 | # | File | Size | Source |
 |---|---|---|---|
 | 1 | `START-HERE-0-5.pdf` | 0.06 MB | `products/visual-routine-cards/START-HERE-0-5.pdf` |
-| 2 | `visual-routine-cards-0-5.pdf` | 10.41 MB | `products/visual-routine-cards/visual-routine-cards-0-5.pdf` |
-| 3 | `visual-routine-cards-0-5-a4.pdf` | 10.39 MB | `products/visual-routine-cards/visual-routine-cards-0-5-a4.pdf` |
+| 2 | `visual-routine-cards-0-5.pdf` | 10.72 MB | `products/visual-routine-cards/visual-routine-cards-0-5.pdf` |
+| 3 | `visual-routine-cards-0-5-a4.pdf` | 10.69 MB | `products/visual-routine-cards/visual-routine-cards-0-5-a4.pdf` |
 | 4 | `visual-routine-cards-0-5-low-ink.pdf` | 7.11 MB | `products/visual-routine-cards/visual-routine-cards-0-5-low-ink.pdf` |
 | 5 | `visual-routine-cards-0-5-low-ink-a4.pdf` | 7.12 MB | `products/visual-routine-cards/visual-routine-cards-0-5-low-ink-a4.pdf` |
 

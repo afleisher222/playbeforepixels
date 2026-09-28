@@ -1,15 +1,15 @@
 {
   "slug": "visual-routine-cards",
-  "title": "235 Visual Routine Cards for Ages 0–12: Morning, Meals, Play and Bedtime Charts",
-  "etsy_title": "235 Visual Routine Cards, Editable Toddler Daily Schedule, Morning & Bedtime Chart, Picture Board, Kids Checklist PDF",
-  "subtitle": "235 picture cards for ages 0–5 and 5–12, 6 chart layouts, 4 colorways, fillable PDF. Helps little ones see what comes next.",
-  "format": "Digital download, 5 plain PDFs (no zip): START HERE + Color US Letter (160 pages) + Color A4 (160 pages) + Low-ink US Letter (74 pages) + Low-ink A4 (74 pages). Fillable fields for free Adobe Acrobat Reader merged into every Color and Low-ink file; bookmarked; tagged. Own-store bonus: Canva-ready PNGs (canva-png/).",
+  "title": "239 Visual Routine Cards for Ages 0–12: Morning, Meals, Play and Bedtime Charts",
+  "etsy_title": "239 Visual Routine Cards, Editable Toddler Daily Schedule, Morning & Bedtime Chart, Picture Board, Kids Checklist PDF",
+  "subtitle": "239 picture cards for ages 0–5 and 5–12, 6 chart layouts, 4 colorways, fillable PDF. Helps little ones see what comes next.",
+  "format": "Digital download, 5 plain PDFs (no zip): START HERE + Color US Letter (163 pages) + Color A4 (163 pages) + Low-ink US Letter (75 pages) + Low-ink A4 (75 pages). Fillable fields for free Adobe Acrobat Reader merged into every Color and Low-ink file; bookmarked; tagged. Own-store bonus: Canva-ready PNGs (canva-png/).",
   "trim": "US Letter 8.5 × 11 in and A4 210 × 297 mm, 0.5 in margins, no bleed (home printing). Two chart layouts are landscape pages. Every card is 2.2 × 2.2 in (5.6 cm) on both paper sizes.",
-  "pages": 160,
-  "pages_breakdown": "Color file, 160 pages = 66 card pages (Rainbow, Soft and Navy: 20 picture-card pages + 1 second-copies page + 1 blank-card page each) + 21 word-free and photo-frame card pages + 63 chart pages (per colorway: 11 ready-made layouts and checklists + 10 blank fillable) + 7 guide pages (cover, 2-page grown-up guide, use by age, print guide, laminating and safety, card index) + 2 extras pages (Today markers and All done pocket, storage labels) + 1 thank-you page. Low-ink file, 74 pages: the same in the Simple colorway only. Letter and A4 counts are never added together.",
+  "pages": 163,
+  "pages_breakdown": "Color file, 163 pages = 66 card pages (Rainbow, Soft and Navy: 20 picture-card pages + 1 second-copies page + 1 blank-card page each) + 21 word-free and photo-frame card pages + 63 chart pages (per colorway: 11 ready-made layouts and checklists + 10 blank fillable) + 7 guide pages (cover, 2-page grown-up guide, use by age, print guide, laminating and safety, card index) + 2 extras pages (Today markers and All done pocket, storage labels) + 1 thank-you page. Low-ink file, 75 pages: the same in the Simple colorway only. Letter and A4 counts are never added together.",
   "ages": "0–5 and 5–12 (feelings, plan words and the screens cards for all ages)",
   "price_usd": 9.5,
-  "price_notes": "Everyday price $9.50 (decision D1 as recommended in business/GROWTH-ENGINE.md), the same on Etsy and on our own checkout (Gumroad at launch), per ops/QUEUE.md LAUNCH FIRST (business/GROWTH-ENGINE.md §8a). Honest value line: 235 cards, about 4¢ each. One price, shown plainly: no list, 'was', compare-at or crossed-out price and no standing sale (BRAND.md 'Honest pricing'; 16 CFR 233.1). A promotion is allowed only if it is real and time-limited, with its start and end dates recorded in price_history before it runs. This overrides DEMAND-CHECK rule 2; the item has never been offered at a higher price. The 60-card Starter Set is a second listing at $5.00 (listing-starter.json), the entry rung of the ladder. Bundles: a part of the $45 Birth-to-5 Printable Library (ops/QUEUE.md). Search words: the recommended D9 REPLACE wording is applied (no \"first then board\" or \"visual schedule\" in titles, tags or keywords); if the founder answers KEEP, restore them in build/listing.js. Nets: net_per_unit_by_channel (UNVERIFIED fees). Kill rule (ops/QUEUE.md): fewer than 5 sales in 60 days after the EXP-03 search-copy decision → reprice once (never below price_floor, no 'was' price) → add to a bundle as a part and deactivate the listing. Re-check competitor prices on the live Etsy pages before launch [VERIFY].",
+  "price_notes": "Everyday price $9.50 (decision D1 as recommended in business/GROWTH-ENGINE.md), the same on Etsy and on our own checkout (Gumroad at launch), per ops/QUEUE.md LAUNCH FIRST (business/GROWTH-ENGINE.md §8a). Honest value line: 239 cards, about 4¢ each. One price, shown plainly: no list, 'was', compare-at or crossed-out price and no standing sale (BRAND.md 'Honest pricing'; 16 CFR 233.1). A promotion is allowed only if it is real and time-limited, with its start and end dates recorded in price_history before it runs. This overrides DEMAND-CHECK rule 2; the item has never been offered at a higher price. The 60-card Starter Set is a second listing at $5.00 (listing-starter.json), the entry rung of the ladder. Bundles: a part of the $45 Birth-to-5 Printable Library (ops/QUEUE.md). Search words: the recommended D9 REPLACE wording is applied (no \"first then board\" or \"visual schedule\" in titles, tags or keywords); if the founder answers KEEP, restore them in build/listing.js. Nets: net_per_unit_by_channel (UNVERIFIED fees). Kill rule (ops/QUEUE.md): fewer than 5 sales in 60 days after the EXP-03 search-copy decision → reprice once (never below price_floor, no 'was' price) → add to a bundle as a part and deactivate the listing. Re-check competitor prices on the live Etsy pages before launch [VERIFY].",
   "price_floor": 3,
   "price_floor_basis": "$3.00 net per digital sale (commerce/PRICING.md §2; COMPLIANCE-GATE 18). Every channel's net must stay at or above it, and no repricing or promotion may go below it.",
   "net_per_unit_by_channel": {
@@ -25,11 +25,11 @@
     "site_gumroad_discover_sale": 59
   },
   "net_notes": "Estimated net per unit in USD, after fees and a 5% refund allowance (GAPS-ROUND-2 G2-11), rounded to the cent. Every fee is UNVERIFIED: no live check was possible on 2026-09-28 (web search unavailable). Fee model: commerce/PRICING.md §2, which points to commerce/storefront-setup-guide.md; where sources disagree, the more cautious figure is used (business/STRESS-TEST.md 'Needs a live check'). Etsy digital: $0.20 listing + 6.5% transaction + 3% + $0.25 payment processing; an Offsite Ads sale adds 15% (12% once the shop passes $10,000 in 12 months). Own checkout at launch (ops/QUEUE.md): Gumroad as merchant of record, 10% + $0.50, plus 2.9% + $0.30 card processing counted to be safe (the storefront guide says processing is included); a sale that comes through Gumroad Discover costs about 30% instead of 10% + $0.50. Shopify (deferred until about 25 own-site orders a month) would net more: 2.9% + $0.30. Before listing, check each fee on the platform's own fee page or calculator and replace these numbers.",
-  "short_description": "235 printable routine picture cards and 6 charts for ages 0–12. Fillable PDF, Color and Low-ink, US Letter + A4. Helps little ones see what comes next.",
-  "long_description": "235 printable routine picture cards for ages 0–12, with 6 charts, in US Letter and A4 PDFs. Big, friendly pictures show little ones what comes next at mornings, meals, bath and bedtime. Your child can point to them, carry them and move them to \"All done.\"\n\nOf the 235 cards, 177 are for ages 0–5 and all ages. They cover morning, meals, play, outside, reading together, bath, bedtime, helping jobs, and out and about. There are plan words like More, Stop, My turn and Break, and a feelings check-in. 58 big-kid cards are for ages 5–12. A \"Play first / Screens later\" pair uses a plain, generic tablet. \"What we do next\" and \"5 more minutes\" cards help with the switch.\n\nChoose from 6 chart layouts: vertical and horizontal strips, a first–then board, morning and bedtime charts and a Today board. Big kids get weekly checklists too. Every chart comes ready-made and blank, with a Monday or Sunday start.\n\nMake it yours: type labels, titles and jobs in free Adobe Acrobat Reader, in any language with accents. Or use the word-free, blank and photo-frame cards. Busy cards come twice. Rainbow, Soft and Navy looks are in the Color file; Simple line art is in the Low-ink file.\n\nA 2-page grown-up guide covers setup in 2 minutes (start with just 2 pages tonight), easy talk tips and use by age. Every card follows our published safety rules.\n\nInstant digital download. No physical item ships.",
+  "short_description": "239 printable routine picture cards and 6 charts for ages 0–12. Fillable PDF, Color and Low-ink, US Letter + A4. Helps little ones see what comes next.",
+  "long_description": "239 printable routine picture cards for ages 0–12, with 6 charts, in US Letter and A4 PDFs. Big, friendly pictures show little ones what comes next at mornings, meals, bath and bedtime. Your child can point to them, carry them and move them to \"All done.\"\n\nOf the 239 cards, 181 are for ages 0–5 and all ages. They cover morning, meals, play, outside, reading together, bath, bedtime, helping jobs, and out and about. There are plan words like More, Stop, My turn and Break, and a feelings check-in. 58 big-kid cards are for ages 5–12. A \"Play first / Screens later\" pair uses a plain, generic tablet. \"What we do next\" and \"5 more minutes\" cards help with the switch.\n\nChoose from 6 chart layouts: vertical and horizontal strips, a first–then board, morning and bedtime charts and a Today board. Big kids get weekly checklists too. Every chart comes ready-made and blank, with a Monday or Sunday start.\n\nMake it yours: type labels, titles and jobs in free Adobe Acrobat Reader, in any language with accents. Or use the word-free, blank and photo-frame cards. Busy cards come twice. Rainbow, Soft and Navy looks are in the Color file; Simple line art is in the Low-ink file.\n\nA 2-page grown-up guide covers setup in 2 minutes (start with just 2 pages tonight), easy talk tips and use by age. Every card follows our published safety rules.\n\nInstant digital download. No physical item ships.",
   "bullets": [
-    "235 cards on 160 pages (Color file) = 66 card pages + 21 word-free and photo pages + 63 chart pages + 10 guide and extras pages; about 4¢ a card; about 20 minutes to prep one routine, then reusable",
-    "177 cards for ages 0–5 and all ages (including More, Stop, My turn, Break and Quiet ears), 58 big-kid cards for 5–12, second copies of busy cards, plus \"Play first / Screens later\", \"What we do next\" and \"5 more minutes\"",
+    "239 cards on 163 pages (Color file) = 66 card pages + 21 word-free and photo pages + 63 chart pages + 10 guide and extras pages; about 4¢ a card; about 20 minutes to prep one routine, then reusable",
+    "181 cards for ages 0–5 and all ages (including More, Stop, My turn, Break and Quiet ears), 58 big-kid cards for 5–12, second copies of busy cards, plus \"Play first / Screens later\", \"What we do next\" and \"5 more minutes\"",
     "6 chart layouts (vertical and horizontal strips, first–then, morning, bedtime, Today board) and big-kid checklists, each ready-made and blank, Monday or Sunday start",
     "Fillable in free Adobe Acrobat Reader: card labels, chart titles, names and jobs (colors and pictures are not editable); word-free, blank and photo-frame cards too",
     "4 colorways in a Color file and a Low-ink file, US Letter and A4; cards stay 2.2 in (5.6 cm); grown-up guide, laminating tips and safety notes included"
@@ -58,12 +58,12 @@
     "kids checklist",
     "editable chart"
   ],
-  "seo_title": "235 Visual Routine Cards for Kids 0–12 | Play Before Pixels",
-  "seo_description": "235 printable routine cards and 6 charts for toddlers and big kids. Fillable PDF, color and low-ink, Letter and A4. Helps little ones see what comes next.",
-  "alt_text": "Cover of 235 Visual Routine Cards: a warm yellow panel with the Play Before Pixels logo, the title in navy and tomato, and five picture cards fanned below: Brush teeth, Blocks, Sleep, Play first and Screens later.",
+  "seo_title": "239 Visual Routine Cards for Kids 0–12 | Play Before Pixels",
+  "seo_description": "239 printable routine cards and 6 charts for toddlers and big kids. Fillable PDF, color and low-ink, Letter and A4. Helps little ones see what comes next.",
+  "alt_text": "Cover of 239 Visual Routine Cards: a warm yellow panel with the Play Before Pixels logo, the title in navy and tomato, and five picture cards fanned below: Brush teeth, Blocks, Sleep, Play first and Screens later.",
   "listing_images_alt": [
-    "235 Visual Routine Cards, ages 0–5 and 5–12: a yellow panel with the Play Before Pixels logo, the title, a morning chart filled with picture cards, and big Play first and Screens later cards.",
-    "What's inside: 235 cards, 160 pages, 5 files. Six tiles list 235 picture cards, 6 chart layouts, 4 colorways, fillable fields, extras and 2 guide pages, above a row of sample cards.",
+    "239 Visual Routine Cards, ages 0–5 and 5–12: a yellow panel with the Play Before Pixels logo, the title, a morning chart filled with picture cards, and big Play first and Screens later cards.",
+    "What's inside: 239 cards, 163 pages, 5 files. Six tiles list 239 picture cards, 6 chart layouts, 4 colorways, fillable fields, extras and 2 guide pages, above a row of sample cards.",
     "Two grown-up guide pages, slightly tilted: \"Pictures make the plan easy to see\" and \"The cards are the start of a conversation\" with six talk tips beside small cards.",
     "A grid of 12 cards for ages 0–5, including Wake up, Get dressed, Snack, Blocks, Bath time, Lullaby, Worried and Grocery store, in a varied cast of children.",
     "Nine big-kid cards for ages 5–12, such as Homework, Read 20 minutes and Walk the dog, beside a weekly morning checklist with a tick circle for each day.",
@@ -94,9 +94,9 @@
   "files": {
     "own_store": [
       "START-HERE.pdf",
-      "visual-routine-cards.pdf (Color, US Letter, 160 pages)",
+      "visual-routine-cards.pdf (Color, US Letter, 163 pages)",
       "visual-routine-cards-a4.pdf (Color, A4)",
-      "visual-routine-cards-low-ink.pdf (Low-ink, US Letter, 74 pages)",
+      "visual-routine-cards-low-ink.pdf (Low-ink, US Letter, 75 pages)",
       "visual-routine-cards-low-ink-a4.pdf (Low-ink, A4)",
       "canva-png/ (bonus page only)"
     ],
@@ -214,6 +214,6 @@
     "Customer panel: when employment counsel answers, decide on classroom, child-care center, library and PTA licenses for this set (teachers, a director, a PTA leader and a librarian all asked). Until then the FAQ says \"not yet\".",
     "Customer panel: a Spanish edition was the most-asked-for extra. Only after this set sells, and only with a human translator (BLIND-SPOTS \"Not now: translations\").",
     "Fillable-field test: also type \"Sueño, baño\" in a word-free card label in Acrobat Reader to confirm accents display and print.",
-    "Update site-concepts/C-paper-craft/catalog.js, which still says 228 cards (now 235)."
+    "Update site-concepts/C-paper-craft/catalog.js, which still says 228 cards (now 239)."
   ]
 }

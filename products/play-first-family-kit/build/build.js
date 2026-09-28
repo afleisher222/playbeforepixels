@@ -557,7 +557,7 @@ function tips(ctx) {
 }
 function more(ctx, qr) {
   const items = ctx.g0 ? [
-    ['wakeUp', '177 Visual Routine Cards', 'Ages 0–5', 'Picture cards for mornings, meals, bath and bedtime.'],
+    ['wakeUp', '181 Visual Routine Cards', 'Ages 0–5', 'Picture cards for mornings, meals, bath and bedtime.'],
     ['fort', '76 “I’m Bored” Play Cards', 'Ages 1–5', 'Pick-a-card play ideas, each with a talk line.'],
     ['blocks', 'Toddler Busy Book', 'Ages 1–5', '74 paper-and-play activities, sorted by age, with a talk line on every page.'],
     ['readTogether', '52 Play & Talk Cards', 'Ages 0–5', 'One simple play and one talk tip on every card.'],

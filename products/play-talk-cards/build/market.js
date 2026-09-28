@@ -121,7 +121,7 @@ function imagesB() {
     <div class="h"><p class="k" style="color:${C.tomato}">Made for real life</p><h1>Keep them where<br>the talking happens</h1></div>
     <div class="abs" style="left:64px;right:64px;top:330px;display:grid;grid-template-columns:1fr 1fr;gap:22px">${[
       ['dinner', 'A jar on the table', 'One card per meal. Everyone answers, grown-ups first.'],
-      ['car', 'The glove box', 'A passenger reads; the driver just talks. Great for traffic.'],
+      ['car', 'A bag or pocket', 'On the bus, on a walk, or in the car: a passenger reads; the driver just talks.'],
       ['bath', 'A zip bag by the sink', 'Stay with your child. Warm water, calm voices, gentle questions.'],
       ['bedtime', 'The nightstand', 'Three good things, a brave moment, a dream to pick.'],
     ].map(([k, a, b]) => { const m = MOMENTS.find(x => x.key === k); return `<div style="background:#fff;border-radius:22px;padding:22px;border-top:10px solid ${C[m.color]}"><div style="display:flex;align-items:center;gap:14px"><span style="width:84px;height:84px;border-radius:50%;background:${K.TINT[m.color]};display:flex;align-items:center;justify-content:center"><svg viewBox="-58 -58 116 116" width="66" height="66">${ICONS[m.icon]()}</svg></span><b style="font:800 26px 'Bricolage Grotesque',sans-serif">${a}</b></div><p style="margin:12px 0 0;font-size:19px;line-height:1.4;font-weight:600">${b}</p></div>`; }).join('')}</div>

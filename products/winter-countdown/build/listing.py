@@ -80,6 +80,7 @@ d = {
     "faq": [
         {"q": "What’s inside?", "a": "24 play cards (2 per page), a 2-page grown-up guide, safety rules, a what-you-need list, a countdown board, a blank board, a list of all 24 plays, 24 number tags, a certificate and a quick-answers page."},
         {"q": "Is it tied to a holiday?", "a": "No. It is a winter countdown for any family: snow, cold, cozy days and long nights. Count down to a break, a trip, a birthday or nothing at all."},
+        {"q": "What if we have no snow?", "a": "No snow where you live? Every play works indoors, and the hunt card has a warm-weather list: a leaf, a bird, a cloud, a shadow and something white."},
         {"q": "When should we start?", "a": "Any day. The plays aren’t tied to dates. Many families start on the first of the month; others start the first snowy week or the first day of a break."},
         {"q": "How long does prep take?", "a": "About 15 minutes once to print and cut. Most days take 0–5 minutes. One play (Ice Rescue) needs 2 minutes the night before. No time to cut? Use the board and the list page."},
         {"q": "How does delivery work?", "a": "Instant download: nothing ships. On Etsy your files stay on your Purchases page; on our site the link is in your order email. On a phone, use a web browser, not the shopping app."},
@@ -140,7 +141,7 @@ d = {
         "Customer-voice rules: 22 of 24 plays need nothing to buy (92%, over 70%); every play has a starting age, easier/harder pair "
         "and a 2-minute version; no prep is longer than the play; cut pages say 'Grown-up keeps the pieces'; tags are on a "
         "straight-line grid with 12 pieces per page; the guide has the 2-minute setup, the why, three talk moves and 'Most "
-        "children love 2–3 of these'; the talk page says 'Talk, sing and read in the language you know best' and counts a sign, "
+        "children love 2–3 of these'; the talk page says 'Talk, sign, sing and read in the language you know best' and counts a sign, "
         "point or device tap. Screens keep their usual spot; nothing rewards or removes screen time. Accessibility: age labels "
         "use color + shape + words; small colored text uses darkened accents (4.5:1 or better); PDFs are tagged. Etsy files "
         "checked for no URL, 'www', 'http' or '.com' (build/finish check). No Type 3 fonts; no placeholder text. Owner line on "

@@ -117,15 +117,15 @@ function startPage(P, S, n, total) {
     <div class="moves">${Object.values(MOVES).map((m, i) => `<div class="mv" style="--c:${[C.tomato, C.sun, C.sky, C.grass, C.plum, C.tomato, C.sun, C.sky][i]}">${K.speech([C.tomato, C.sun, C.sky, C.grass, C.plum, C.tomato, C.sun, C.sky][i], 22)}<b>${m.name}</b><p>${m.how}</p></div>`).join('')}</div>
     <div class="whyband">
       <div><b>Why play and talk?</b> Little ones learn to talk by talking with you: a look, a sound, your answer, their turn. Play is full of those moments.</div>
-      <div><b>Try:</b> “Your turn!” · “Tell me more.” · “What next?” <b>Talk, sing and read in the language you know best.</b> A sign, a point or a device tap counts.</div>
-      <div><b>Most children love 2–3 of these.</b> Repeat the favorites and skip any your child doesn’t enjoy. Tired day? Use the 2-minute versions.</div>
+      <div><b>Try:</b> “Your turn!” · “Tell me more.” <b>Talk, sign, sing and read in the language you know best.</b> A sign, a point, a tap, or the talk line read word for word: all count.</div>
+      <div><b>Most children love 2–3 of these.</b> Repeat the favorites. Tired day? Use the 2-minute versions. Every play works from a chair, a bed or a wheelchair.</div>
     </div>
   </div>
   ${foot(P, n, total)}
 </section>`;
   }
   const steps = [
-    ['Match the card to the moment.', 'Dinner cards at the table, car cards on the road, bath cards at the tub, bedtime cards at lights-out.'],
+    ['Match the card to the moment.', 'Dinner cards at the table, on-the-way cards on the go, bath cards at the tub, bedtime cards at lights-out.'],
     ['One card is plenty.', 'A single good question can fill a whole meal. Put the rest back for tomorrow.'],
     ['Everyone answers.', 'Grown-ups too. Kids open up when they hear your answer first.'],
     ['Use the grown-up tip.', 'Each card has one small idea for keeping the talk going.'],
@@ -147,7 +147,7 @@ function startPage(P, S, n, total) {
     <div class="moves m3">${HABITS.map((h, i) => `<div class="mv">${K.speech([C.tomato, C.sun, C.sky, C.plum, C.grass, C.tomato][i], 22)}<b>${h.name}</b><p>${h.how}</p></div>`).join('')}</div>
     <div class="whyband b">
       <div><b>Why a question card?</b> Kids often say more side by side than face to face. A card takes the pressure off: nobody is being quizzed, everyone gets a turn.</div>
-      <div><b>Three talk lines:</b> “Tell me more.” · “What was that like?” · “I wonder…” <b>Talk in the language you know best.</b> Drawing, pointing or typing an answer counts too.</div>
+      <div><b>Three talk lines:</b> “Tell me more.” · “What was that like?” · “I wonder…” <b>Talk or sign in the language you know best.</b> Drawing, pointing or typing an answer counts too.</div>
       <div><b>Most families love 2–3 of these</b> and ask them again and again. Keep the favorites on top of the pile.</div>
     </div>
     <p class="small">Some questions (the hard parts, the worries) can bring up big feelings. Listening is enough. If something your child shares worries you, reach out to your child’s doctor or another trusted professional.</p>

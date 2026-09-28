@@ -1,13 +1,13 @@
 {
- "cards": 235,
- "g0": 177,
- "young": 177,
+ "cards": 239,
+ "g0": 181,
+ "young": 181,
  "big": 58,
  "starter": 60,
  "second_copies": 12,
  "docs": {
   "full-store-color-letter": {
-   "pages": 160,
+   "pages": 163,
    "bookmarks": [
     [
      "Cover",
@@ -39,52 +39,52 @@
     ],
     [
      "Cards · Soft",
-     30
+     31
     ],
     [
      "Cards · Navy",
-     52
+     54
     ],
     [
      "Word-free and photo cards",
-     74
+     77
     ],
     [
      "Charts · Rainbow",
-     95
+     98
     ],
     [
      "Blank charts · Rainbow",
-     106
+     109
     ],
     [
      "Charts · Soft",
-     116
+     119
     ],
     [
      "Blank charts · Soft",
-     127
+     130
     ],
     [
      "Charts · Navy",
-     137
+     140
     ],
     [
      "Blank charts · Navy",
-     148
+     151
     ],
     [
      "Extras",
-     158
+     161
     ],
     [
      "Free bonus",
-     160
+     163
     ]
    ]
   },
   "full-store-color-a4": {
-   "pages": 160,
+   "pages": 163,
    "bookmarks": [
     [
      "Cover",
@@ -116,52 +116,52 @@
     ],
     [
      "Cards · Soft",
-     30
+     31
     ],
     [
      "Cards · Navy",
-     52
+     54
     ],
     [
      "Word-free and photo cards",
-     74
+     77
     ],
     [
      "Charts · Rainbow",
-     95
+     98
     ],
     [
      "Blank charts · Rainbow",
-     106
+     109
     ],
     [
      "Charts · Soft",
-     116
+     119
     ],
     [
      "Blank charts · Soft",
-     127
+     130
     ],
     [
      "Charts · Navy",
-     137
+     140
     ],
     [
      "Blank charts · Navy",
-     148
+     151
     ],
     [
      "Extras",
-     158
+     161
     ],
     [
      "Free bonus",
-     160
+     163
     ]
    ]
   },
   "full-store-low-letter": {
-   "pages": 74,
+   "pages": 75,
    "bookmarks": [
     [
      "Cover",
@@ -193,28 +193,28 @@
     ],
     [
      "Word-free and photo cards",
-     30
+     31
     ],
     [
      "Charts · Simple",
-     51
+     52
     ],
     [
      "Blank charts · Simple",
-     62
+     63
     ],
     [
      "Extras",
-     72
+     73
     ],
     [
      "Free bonus",
-     74
+     75
     ]
    ]
   },
   "full-store-low-a4": {
-   "pages": 74,
+   "pages": 75,
    "bookmarks": [
     [
      "Cover",
@@ -246,28 +246,28 @@
     ],
     [
      "Word-free and photo cards",
-     30
+     31
     ],
     [
      "Charts · Simple",
-     51
+     52
     ],
     [
      "Blank charts · Simple",
-     62
+     63
     ],
     [
      "Extras",
-     72
+     73
     ],
     [
      "Free bonus",
-     74
+     75
     ]
    ]
   },
   "full-etsy-color-letter": {
-   "pages": 160,
+   "pages": 163,
    "bookmarks": [
     [
      "Cover",
@@ -299,52 +299,52 @@
     ],
     [
      "Cards · Soft",
-     30
+     31
     ],
     [
      "Cards · Navy",
-     52
+     54
     ],
     [
      "Word-free and photo cards",
-     74
+     77
     ],
     [
      "Charts · Rainbow",
-     95
+     98
     ],
     [
      "Blank charts · Rainbow",
-     106
+     109
     ],
     [
      "Charts · Soft",
-     116
+     119
     ],
     [
      "Blank charts · Soft",
-     127
+     130
     ],
     [
      "Charts · Navy",
-     137
+     140
     ],
     [
      "Blank charts · Navy",
-     148
+     151
     ],
     [
      "Extras",
-     158
+     161
     ],
     [
      "What's next",
-     160
+     163
     ]
    ]
   },
   "full-etsy-color-a4": {
-   "pages": 160,
+   "pages": 163,
    "bookmarks": [
     [
      "Cover",
@@ -376,52 +376,52 @@
     ],
     [
      "Cards · Soft",
-     30
+     31
     ],
     [
      "Cards · Navy",
-     52
+     54
     ],
     [
      "Word-free and photo cards",
-     74
+     77
     ],
     [
      "Charts · Rainbow",
-     95
+     98
     ],
     [
      "Blank charts · Rainbow",
-     106
+     109
     ],
     [
      "Charts · Soft",
-     116
+     119
     ],
     [
      "Blank charts · Soft",
-     127
+     130
     ],
     [
      "Charts · Navy",
-     137
+     140
     ],
     [
      "Blank charts · Navy",
-     148
+     151
     ],
     [
      "Extras",
-     158
+     161
     ],
     [
      "What's next",
-     160
+     163
     ]
    ]
   },
   "full-etsy-low-letter": {
-   "pages": 74,
+   "pages": 75,
    "bookmarks": [
     [
      "Cover",
@@ -453,28 +453,28 @@
     ],
     [
      "Word-free and photo cards",
-     30
+     31
     ],
     [
      "Charts · Simple",
-     51
+     52
     ],
     [
      "Blank charts · Simple",
-     62
+     63
     ],
     [
      "Extras",
-     72
+     73
     ],
     [
      "What's next",
-     74
+     75
     ]
    ]
   },
   "full-etsy-low-a4": {
-   "pages": 74,
+   "pages": 75,
    "bookmarks": [
     [
      "Cover",
@@ -506,28 +506,28 @@
     ],
     [
      "Word-free and photo cards",
-     30
+     31
     ],
     [
      "Charts · Simple",
-     51
+     52
     ],
     [
      "Blank charts · Simple",
-     62
+     63
     ],
     [
      "Extras",
-     72
+     73
     ],
     [
      "What's next",
-     74
+     75
     ]
    ]
   },
   "g0-store-color-letter": {
-   "pages": 116,
+   "pages": 120,
    "bookmarks": [
     [
      "Cover",
@@ -559,52 +559,52 @@
     ],
     [
      "Cards · Soft",
-     25
+     26
     ],
     [
      "Cards · Navy",
-     42
+     44
     ],
     [
      "Word-free and photo cards",
-     59
+     62
     ],
     [
      "Charts · Rainbow",
-     75
+     79
     ],
     [
      "Blank charts · Rainbow",
-     82
+     86
     ],
     [
      "Charts · Soft",
-     88
+     92
     ],
     [
      "Blank charts · Soft",
-     95
+     99
     ],
     [
      "Charts · Navy",
-     101
+     105
     ],
     [
      "Blank charts · Navy",
-     108
+     112
     ],
     [
      "Extras",
-     114
+     118
     ],
     [
      "Free bonus",
-     116
+     120
     ]
    ]
   },
   "g0-store-color-a4": {
-   "pages": 116,
+   "pages": 120,
    "bookmarks": [
     [
      "Cover",
@@ -636,52 +636,52 @@
     ],
     [
      "Cards · Soft",
-     25
+     26
     ],
     [
      "Cards · Navy",
-     42
+     44
     ],
     [
      "Word-free and photo cards",
-     59
+     62
     ],
     [
      "Charts · Rainbow",
-     75
+     79
     ],
     [
      "Blank charts · Rainbow",
-     82
+     86
     ],
     [
      "Charts · Soft",
-     88
+     92
     ],
     [
      "Blank charts · Soft",
-     95
+     99
     ],
     [
      "Charts · Navy",
-     101
+     105
     ],
     [
      "Blank charts · Navy",
-     108
+     112
     ],
     [
      "Extras",
-     114
+     118
     ],
     [
      "Free bonus",
-     116
+     120
     ]
    ]
   },
   "g0-store-low-letter": {
-   "pages": 56,
+   "pages": 58,
    "bookmarks": [
     [
      "Cover",
@@ -713,28 +713,28 @@
     ],
     [
      "Word-free and photo cards",
-     25
+     26
     ],
     [
      "Charts · Simple",
-     41
+     43
     ],
     [
      "Blank charts · Simple",
-     48
+     50
     ],
     [
      "Extras",
-     54
+     56
     ],
     [
      "Free bonus",
-     56
+     58
     ]
    ]
   },
   "g0-store-low-a4": {
-   "pages": 56,
+   "pages": 58,
    "bookmarks": [
     [
      "Cover",
@@ -766,28 +766,28 @@
     ],
     [
      "Word-free and photo cards",
-     25
+     26
     ],
     [
      "Charts · Simple",
-     41
+     43
     ],
     [
      "Blank charts · Simple",
-     48
+     50
     ],
     [
      "Extras",
-     54
+     56
     ],
     [
      "Free bonus",
-     56
+     58
     ]
    ]
   },
   "g0-etsy-color-letter": {
-   "pages": 116,
+   "pages": 120,
    "bookmarks": [
     [
      "Cover",
@@ -819,52 +819,52 @@
     ],
     [
      "Cards · Soft",
-     25
+     26
     ],
     [
      "Cards · Navy",
-     42
+     44
     ],
     [
      "Word-free and photo cards",
-     59
+     62
     ],
     [
      "Charts · Rainbow",
-     75
+     79
     ],
     [
      "Blank charts · Rainbow",
-     82
+     86
     ],
     [
      "Charts · Soft",
-     88
+     92
     ],
     [
      "Blank charts · Soft",
-     95
+     99
     ],
     [
      "Charts · Navy",
-     101
+     105
     ],
     [
      "Blank charts · Navy",
-     108
+     112
     ],
     [
      "Extras",
-     114
+     118
     ],
     [
      "What's next",
-     116
+     120
     ]
    ]
   },
   "g0-etsy-color-a4": {
-   "pages": 116,
+   "pages": 120,
    "bookmarks": [
     [
      "Cover",
@@ -896,52 +896,52 @@
     ],
     [
      "Cards · Soft",
-     25
+     26
     ],
     [
      "Cards · Navy",
-     42
+     44
     ],
     [
      "Word-free and photo cards",
-     59
+     62
     ],
     [
      "Charts · Rainbow",
-     75
+     79
     ],
     [
      "Blank charts · Rainbow",
-     82
+     86
     ],
     [
      "Charts · Soft",
-     88
+     92
     ],
     [
      "Blank charts · Soft",
-     95
+     99
     ],
     [
      "Charts · Navy",
-     101
+     105
     ],
     [
      "Blank charts · Navy",
-     108
+     112
     ],
     [
      "Extras",
-     114
+     118
     ],
     [
      "What's next",
-     116
+     120
     ]
    ]
   },
   "g0-etsy-low-letter": {
-   "pages": 56,
+   "pages": 58,
    "bookmarks": [
     [
      "Cover",
@@ -973,28 +973,28 @@
     ],
     [
      "Word-free and photo cards",
-     25
+     26
     ],
     [
      "Charts · Simple",
-     41
+     43
     ],
     [
      "Blank charts · Simple",
-     48
+     50
     ],
     [
      "Extras",
-     54
+     56
     ],
     [
      "What's next",
-     56
+     58
     ]
    ]
   },
   "g0-etsy-low-a4": {
-   "pages": 56,
+   "pages": 58,
    "bookmarks": [
     [
      "Cover",
@@ -1026,23 +1026,23 @@
     ],
     [
      "Word-free and photo cards",
-     25
+     26
     ],
     [
      "Charts · Simple",
-     41
+     43
     ],
     [
      "Blank charts · Simple",
-     48
+     50
     ],
     [
      "Extras",
-     54
+     56
     ],
     [
      "What's next",
-     56
+     58
     ]
    ]
   },

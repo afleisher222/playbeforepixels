@@ -123,9 +123,5 @@
   "social_ai_label": "Turn on each platform's AI-generated-content label for posts that use these images or this text (label names UNVERIFIED).",
   "notes": "Answers describe what really happened as of the date above. Platform categories and form wording are from memory (UNVERIFIED): check each form on upload day. Never call any part hand-drawn, handmade or human-written."
  },
- "differs_from_record": [
-  "etsy_title: 'Baby and Preschool Ideas by Stage' → 'Baby and Toddler Ideas by Stage' (GROWTH-ENGINE §7 bans 'preschool' words in titles, tags and KDP keywords while school buyers are HELD.)",
-  "etsy_tags: 'preschool at home' → 'play ideas toddler' (GROWTH-ENGINE §7 bans 'preschool' words in titles, tags and KDP keywords while school buyers are HELD.)",
-  "description and first bullet: the paperback wording is removed (this Etsy listing sells the PDF only)"
- ]
+ "differs_from_record": []
 }

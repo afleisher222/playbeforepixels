@@ -143,6 +143,11 @@ A.stroller = () => Pa('M30 30C30 20 40 14 50 14V50H30Z', P) + Pa('M30 46H82C82 6
 A.preschool = () => U('house', 'translate(60,52) scale(.95)', `--rf:${K};--dr:${T};--wn:${S}`) + R(78, 12, 3, 26, 1.5, I) + Pa('M81 12L96 17 81 22Z', T);
 A.walkToSchool = () => stand('C', 46, 88, .62, { back: U('backpack', 'translate(0,-32) scale(.42)', `--bp:${S};--bp2:${T}`), aL: 20, aR: -20, lL: 12, lR: -12, face: 'smile' }) + U('house', 'translate(92,58) scale(.45)', `--rf:${T}`) + ground(GREY);
 A.grandparents = () => U('house', 'translate(86,60) scale(.5)', `--rf:${P}`) + adult('G4', { x: 42, y: 90 - 81 * .35, s: .35, aR: -140, aL: 10, face: 'laugh' }) + heart(86, 18, .2);
+// People who aren't in the room (DEMOGRAPHIC-AUDIT VRC2): generic device, two homes, a grown-up at work, sleeps to count.
+A.videoCall = () => R(10, 18, 88, 64, 9, I) + R(16, 24, 76, 52, 5, tK) + Ci(54, 21, 1.6, GREY) + `<clipPath id="vc-scr"><rect x="16" y="24" width="76" height="52" rx="5"/></clipPath>` + Gp('', bust('G5', 54, 52, .56, 'joy'), '') .replace('<g transform=""', '<g clip-path="url(#vc-scr)"') + heart(106, 22, .2) + Gp('translate(106,58)', St('M-6-8Q0 0-6 8', T, 3) + St('M0-12Q9 0 0 12', T, 3));
+A.otherHome = () => U('house', 'translate(28,58) scale(.46)', `--rf:${K};--dr:${S}`) + U('house', 'translate(92,58) scale(.46)', `--rf:${P};--dr:${T}`) + St('M40 80Q60 92 80 80', I, 3.5, 'stroke-dasharray="0.1 8"') + heart(60, 30, .26);
+A.grownUpWork = () => ground(GREY, 90) + R(70, 16, 36, 74, 4, K) + [26, 42, 58].map(y => R(76, y, 9, 9, 2, W) + R(91, y, 9, 9, 2, W)).join('') + R(83, 74, 10, 16, 2, S) + adult('G1', { x: 40, y: 90 - 81 * .36, s: .36, aR: -10, aL: 10, face: 'smile' }) + R(44, 66, 15, 12, 3, T) + St('M48 66V62H55V66', T, 2.5) + U('clock', 'translate(22,20) scale(.3)', `--ck1:${S}`);
+A.countSleeps = () => R(12, 22, 96, 64, 8, tP) + R(12, 22, 96, 16, 8, P) + R(12, 32, 96, 6, 0, P) + R(32, 14, 6, 16, 3, I) + R(82, 14, 6, 16, 3, I) + [32, 60, 88].map((x, i) => moon(x, 64, .19) + (i < 2 ? Ci(x + 9, 52, 7, G) + St(`M${x + 5.5} 52L${x + 8} 55 ${x + 13} 49`, W, 2.6) : '')).join('');
 
 // MEALS
 A.washHands = () => Pa('M52 16H80V26H66V32H52Z', GREY) + drop(59, 44, .5) + drop(63, 56, .45) + hand(44, 74, 1.4, SK[2], -20) + hand(78, 74, 1.4, SK[2], 20, true) + bubble(30, 50, .35) + bubble(92, 46, .3) + bubble(96, 62, .22);

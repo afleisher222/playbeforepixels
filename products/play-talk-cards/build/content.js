@@ -105,7 +105,7 @@ const PLAYS = {
 // q = prompt, k = one-line grown-up tip
 const MOMENTS = [
   { key: 'dinner', name: 'Dinner', long: 'Dinner table', color: 'tomato', icon: 'plate', where: 'Keep them in a jar on the table.' },
-  { key: 'car', name: 'Car', long: 'In the car', color: 'sun', icon: 'carside', where: 'Keep them in the glove box or a door pocket.' },
+  { key: 'car', name: 'On the way', long: 'On the way: car, bus, train or walk', color: 'sun', icon: 'carside', where: 'Keep them in a bag, a pocket or the glove box.' },
   { key: 'bath', name: 'Bath', long: 'Bath and wash-up', color: 'sky', icon: 'tub', where: 'Keep them by the sink in a zip bag.' },
   { key: 'bedtime', name: 'Bedtime', long: 'Bedtime', color: 'plum', icon: 'moonstars', where: 'Keep them on the nightstand or by the books.' },
 ];
@@ -129,7 +129,7 @@ const PROMPTS = {
   car: [
     { q: 'Would you rather drive a bus, fly a plane or sail a boat? Why?', k: 'Side-by-side talk feels easy. Eyes on the road is fine.' },
     { q: 'Pick someone you can see outside. Make up a story about where they’re going.', k: 'Take turns adding one sentence each.' },
-    { q: 'If this car could take us anywhere in one second, where would we go?', k: 'Ask what they would pack.' },
+    { q: 'If we could go anywhere in one second, where would we go?', k: 'Ask what they would pack.' },
     { q: 'What song should be our family’s theme song?', k: 'Let them pick the next song and ask why they like it.' },
     { q: 'What’s something you’re looking forward to?', k: 'Share something you’re looking forward to as well.' },
     { q: 'If you designed a playground, what would it have?', k: 'Ask them to describe it so clearly you could draw it.' },
@@ -143,7 +143,7 @@ const PROMPTS = {
   ],
   bath: [
     { q: 'If you could swim with any sea creature, which one would you choose?', k: 'Ask what it would feel like to touch it.' },
-    { q: 'What would a fish say about our bathtub?', k: 'Answer back in your best fish voice.' },
+    { q: 'What would a fish say about our bath?', k: 'Answer back in your best fish voice.' },
     { q: 'What felt hard today? What helped?', k: 'Warm water and a calm voice make this a gentle time to ask.' },
     { q: 'If a bubble could carry a message anywhere, what would yours say?', k: 'Blow the message away together.' },
     { q: 'What’s your favorite smell in the whole world? Why?', k: 'Share yours. Smells often bring back stories.' },
@@ -153,7 +153,7 @@ const PROMPTS = {
     { q: 'Would you rather live under the sea or up in the clouds?', k: 'Ask about the trickiest part of living there.' },
     { q: 'You just found a new planet. What’s its name, and who lives there?', k: 'Build the world together, one detail each.' },
     { q: 'What’s something you like about yourself?', k: 'Leave a pause. Then share something you like about them.' },
-    { q: 'Close your eyes. How many sounds can you hear right now?', k: 'Listen quietly first, then compare lists.' },
+    { q: 'Close your eyes. How many sounds can you hear right now?', k: 'Listen quietly first, then compare lists. Or count things you can see moving.' },
     { q: 'If you shrank to the size of a rubber duck, what would you explore?', k: 'Follow their lead and keep asking, “Then what?”' },
   ],
   bedtime: [
@@ -239,7 +239,7 @@ const EXTRAS = {
   'Sock Match': { mo: 36, prep: 1, mess: 1, min: 10, tired: 'Find one matching pair in the laundry basket.', easy: 'Start with 3 pairs that look very different.', hard: 'Race: who finds the most pairs?' },
   'Water Painting': { mo: 36, prep: 2, mess: 1, min: 15, buy: true, tired: 'Dip your fingers in a cup and paint one line on a step.', easy: 'Paint with fingers instead of a brush.', hard: 'Paint a shape and guess each other’s.' },
   'Feelings Faces': { mo: 36, prep: 0, mess: 0, min: 5, tired: 'Make one face and let them guess it.', easy: 'Try only happy and sad.', hard: 'Act out what made you feel that way.' },
-  'Sound Walk': { mo: 36, prep: 0, mess: 0, min: 15, tired: 'Open a window and count three sounds together.', easy: 'Count just two sounds.', hard: 'Stand still, close your eyes and guess each sound.' },
+  'Sound Walk': { mo: 36, prep: 0, mess: 0, min: 15, tired: 'Open a window and count three sounds together.', easy: 'Count just two sounds, or two things that move.', hard: 'Stand still, close your eyes and guess each sound.' },
 };
 for (const b of Object.keys(PLAYS)) for (const pl of PLAYS[b]) {
   const x = EXTRAS[pl.t];

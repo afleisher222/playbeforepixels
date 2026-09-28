@@ -99,20 +99,9 @@ ETSY = [
 
 # Packet-level fixes where a listing record breaks the §7 banned-word list. Reported in every run.
 OVERRIDES = {
-    "guide-100-plays": {
-        "etsy_title": ("Baby and Preschool Ideas by Stage", "Baby and Toddler Ideas by Stage"),
-        "etsy_tags": ("preschool at home", "play ideas toddler"),
-        "kdp_keywords": ("preschool activities at home", "activities for toddlers at home"),
-        "why": "GROWTH-ENGINE §7 bans 'preschool' words in titles, tags and KDP keywords while school buyers are HELD.",
-        # the Etsy edition is the PDF only: drop the paperback sentences from the shared description
-        "etsy_bullets": [("Paperback: black-and-white interior (free full-color play pages through the link inside); PDF: Color and Low-ink, US Letter and A4",
-                          "Printable PDF: Color and Low-ink files, US Letter and A4")],
-        "etsy_description": [
-            ("100 Screen-Free Plays is a play book for ages 0–5, in paperback or as a printable PDF.",
-             "100 Screen-Free Plays is a printable PDF play book for ages 0–5."),
-            (" The paperback has a black-and-white interior, with free full-color play pages through the link inside.", ""),
-        ],
-    },
+    # Empty since September 28, 2026: the 100 Plays title, tag and KDP keyword ("preschool" -> "toddler") and its
+    # PDF-only Etsy description and bullets now live in products/guide-100-plays/listing.json
+    # (etsy_title, etsy_tags, keywords, etsy_long_description, etsy_bullets).
 }
 
 NAMES = {  # for "next for your child's age" lines (live products only)
@@ -166,15 +155,15 @@ def apply_overrides(slug, field, value):
     return value
 
 def etsy_description(slug, rec, price):
-    ld = rec["long_description"]
+    ld = rec.get("etsy_long_description") or rec["long_description"]
     for a, b in OVERRIDES.get(slug, {}).get("etsy_description", []):
         assert a in ld, f"{slug}: override text not found: {a[:50]}"
         ld = ld.replace(a, b)
     parts = [ld.strip()]
     if rec.get("prep_time"):
         parts.append("PREP: " + rec["prep_time"])
-    if rec.get("bullets"):
-        bl = list(rec["bullets"])
+    if rec.get("etsy_bullets") or rec.get("bullets"):
+        bl = list(rec.get("etsy_bullets") or rec["bullets"])
         for a, b in OVERRIDES.get(slug, {}).get("etsy_bullets", []):
             assert any(a in x for x in bl), f"{slug}: bullet override not found"
             bl = [x.replace(a, b) for x in bl]
@@ -221,6 +210,8 @@ def write_etsy():
 
         # checks
         check(where, len(title) <= 140, f"title {len(title)} chars (≤140)")
+        if slug == "guide-100-plays":
+            check(where, "paperback" not in desc.lower(), "Etsy description sells the PDF only (no paperback wording; record field etsy_long_description)")
         check(where, len(tags) == 13, f"{len(tags)} tags (13)")
         check(where, all(len(t) <= 20 for t in tags), "every tag ≤20 chars " + str([t for t in tags if len(t) > 20]))
         hits = banned_hits(" | ".join([title] + tags))
@@ -679,7 +670,7 @@ def write_kdp():
          "| Marketplace | Amazon.com (primary) |", ""]
     L += ["## 7 keyword boxes (one per box)", "```"] + kw + ["```",
           "Rules followed: no other authors, titles, brands, shows or creators; no 'free', 'bestseller' or 'new'; nothing from the §7 banned list (UNVERIFIED KDP wording)."]
-    if "kdp_keywords" in OVERRIDES["guide-100-plays"]:
+    if "kdp_keywords" in OVERRIDES.get("guide-100-plays", {}):
         a, b = OVERRIDES["guide-100-plays"]["kdp_keywords"]
         L.append(f"_Differs from the record:_ '{a}' → '{b}' ({OVERRIDES['guide-100-plays']['why']})")
     L += ["", "## 3 categories (parenting only; never special needs, health, education or teaching)",

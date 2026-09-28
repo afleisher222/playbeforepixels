@@ -117,10 +117,10 @@
     {
      "src": "products/toddler-busy-book/toddler-busy-book-low-ink-A4.pdf",
      "zip_path": "Toddler-Busy-Book/toddler-busy-book-low-ink-A4.pdf",
-     "mb": 7.06
+     "mb": 7.07
     }
    ],
-   "mb_estimate": 24.02
+   "mb_estimate": 24.03
   },
   {
    "slot": 4,
@@ -316,7 +316,7 @@
     }
    ],
    "mb_members": 15.34,
-   "mb_zipped": 12.9,
+   "mb_zipped": 12.91,
    "fits_etsy_20mb": true
   },
   {
@@ -392,7 +392,7 @@
     {
      "src": "products/toddler-busy-book/etsy-upload/4-Toddler-Busy-Book-Low-ink-US-Letter.pdf",
      "zip_path": "Toddler Busy Book - Low-ink, US Letter.pdf",
-     "mb": 7.06
+     "mb": 7.07
     },
     {
      "src": "products/toddler-busy-book/etsy-upload/1-START-HERE.pdf",
@@ -435,7 +435,7 @@
      "mb": 1.06
     }
    ],
-   "mb_members": 17.51,
+   "mb_members": 17.52,
    "mb_zipped": 16.0,
    "fits_etsy_20mb": true
   },
@@ -496,7 +496,7 @@
     }
    ],
    "mb_members": 17.48,
-   "mb_zipped": 15.92,
+   "mb_zipped": 15.93,
    "fits_etsy_20mb": true
   }
  ],

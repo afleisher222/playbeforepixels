@@ -257,7 +257,7 @@ function howPage() {
       ${item(`<span class="num" style="background:${C.tPlum}">2</span>`, 'Too tired today?', 'Turn to <b>Tired-grown-up plays</b>: 2 minutes, no setup, played from the couch or the floor.')}
     </ul>
     <div class="boxnote" style="display:flex;gap:.16in;align-items:center"><div class="display" style="font-size:26pt;color:${C.tomato}">3</div><div><b>Three plays a day is a great day.</b> One in the morning, one outside and one to wind down. Most children love 2 or 3 of these plays and ask for them again and again; that’s normal. If interest fades, stop, and try another day.</div></div>
-    <div class="boxnote" style="margin-top:.09in;border:0;background:${C.wash}"><b>Every child is different.</b> If a texture, sound or touch bothers your child, change the play or skip it: a spoon instead of hands, watching first or sitting beside you all count. Big brothers and sisters can lead plays too, with a grown-up right there.</div>
+    <div class="boxnote" style="margin-top:.09in;border:0;background:${C.wash}"><b>Every child is different.</b> If a texture, sound or touch bothers your child, change the play or skip it: a spoon instead of hands, watching first or sitting beside you all count. Big brothers and sisters can lead plays too, with a grown-up right there. <b>Every play works from a chair, a bed or a wheelchair too:</b> bring it to a table or tray and let your child do the fetching. Any sound play can be a see-it or feel-it play: a light flick for “stop,” a hand on the pot for the beat.</div>
   </div>` });
   function drops(l) { return X.drops(l); }
 }
@@ -275,8 +275,8 @@ function movesPage() {
         <div class="tline" style="font-size:12pt;margin-top:auto">${ex[k]}</div></div>`).join('')}
     </div>
     <p class="small" style="margin-top:.14in">Any answer counts: a look, a smile, a point, a sound, a sign, a tap on a talking device or a word. If your child doesn’t answer, that’s fine too. Say the word yourself, smile and keep playing.</p>
-    <p style="margin-top:.08in;font-weight:800;font-size:10pt">Talk, sing and read in the language you know best. Every language counts.</p>
-    <p style="font-size:9.4pt">Say the talk lines in your own words and your own language, and swap any song for one your family knows.</p>
+    <p style="margin-top:.08in;font-weight:800;font-size:10pt">Talk, sign, sing and read in the language you know best. Every language counts.</p>
+    <p style="font-size:9.4pt">Say the talk lines in your own words and your own language, and swap any song for one your family knows. You don’t need to be chatty: reading the talk line word for word, or playing quietly side by side, counts too.</p>
   </div>` });
 }
 function safetyPage() {

@@ -82,11 +82,6 @@ Stage everything for this listing (files + images, renamed in order) with `pytho
 - Description line (already at the end of description.txt): "How this was made: the text, illustrations and page layout were created with AI tools for Play Before Pixels."
 - Never tick or write 'handmade', 'hand-drawn' or 'human-written'. Form wording is UNVERIFIED: answer truthfully in whatever words the form uses.
 
-## Differs from the listing record (fold back into the record)
-- etsy_title: 'Baby and Preschool Ideas by Stage' → 'Baby and Toddler Ideas by Stage' (GROWTH-ENGINE §7 bans 'preschool' words in titles, tags and KDP keywords while school buyers are HELD.)
-- etsy_tags: 'preschool at home' → 'play ideas toddler' (GROWTH-ENGINE §7 bans 'preschool' words in titles, tags and KDP keywords while school buyers are HELD.)
-- description and first bullet: the paperback wording is removed (this Etsy listing sells the PDF only)
-
 ## 5-minute upload checklist
 1. Confirm `ops/PAUSE` is gone and an APPROVED line exists for this listing (ops/APPROVALS.md). If not, stop.
 2. Run `python3 ops/UPLOAD-PACKETS/stage.py etsy 04`; it prints the staging folder and must end with 'OK'.

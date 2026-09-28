@@ -95,7 +95,7 @@ function make(B, buildDir) {
         <div class="shb li-white"><h4>${mi('check', 16, D.grass)} Opening a ZIP</h4><p>${ctx.edition === 'etsy' ? 'Download each file in a web browser, not the shopping app.' : 'Open the download link in a web browser.'} On a computer, double-click the ZIP to open its folder. On a phone, tap it in your files app to unzip.</p></div>
         <div class="shb li-white"><h4>${mi('print', 16)} Printing</h4><p>${ctx.edition === 'etsy' ? 'Pick one ZIP: Letter or A4, color or low-ink.' : 'Each set comes in color and low-ink, Letter and A4: pick one of each.'} Print at <b>Actual size</b> or <b>100%</b>. Each set’s START HERE says which pages to print first.</p></div>
         <div class="shb li-white"><h4>${mi('gift', 16, D.tomato)} Giving it as a gift?</h4><p>Print the fold card or a reveal card from the gift pages, or forward the download. The license passes to the family who receives it.</p></div>
-        <div class="shb li-white"><h4>${mi('safe', 16, D.tomato)} Safety first</h4><p>Every set has its own safety page, and every play has its own safety line. A grown-up is always there.</p></div>
+        <div class="shb li-white"><h4>${mi('safe', 16, D.tomato)} Safety first</h4><p>Every set has its own safety page, and every play has its own safety line. Every play works from a chair, a bed or a wheelchair. A grown-up is always there.</p></div>
       </div>
       <p class="small tight">Personal license for one household. Print shops may print copies for this customer’s family. ${K.OWNER}</p>
     </div>`;

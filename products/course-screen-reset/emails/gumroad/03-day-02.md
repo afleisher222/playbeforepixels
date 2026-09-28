@@ -20,7 +20,7 @@ A 2024 study in JAMA Pediatrics recorded the sounds of family life at home. It f
 
 But it points to something hopeful and simple: talk and play happen when we are together, face to face, with time to answer. That’s what these 30 days add.
 
-You don’t need special toys or a script. You need a few minutes, your voice and some patience while your child takes a turn. Talk, sing and read in the language you know best. A sign, a point or a tap on a device counts as communicating too.
+You don’t need special toys or a script. You need a few minutes, your voice and some patience while your child takes a turn. Talk, sign, sing and read in the language you know best. A sign, a point or a tap on a device counts as communicating too.
 
 If you ever have questions about your child’s development, talk with your pediatrician. Every child talks on their own timeline.
 

@@ -153,9 +153,9 @@ function guide2(ctx) {
   return `<div class="pad">
     <p class="kicker d-sky">Grown-up guide · 2 of 2</p>
     <h2 class="ptitle">Talk while you play</h2>
-    <p class="lede2">Every card has one talk line. You don’t need to say it word for word. These three moves do most of the work:</p>
+    <p class="lede2">Every card has one talk line. Say it your way, or read it straight off the card. These three moves do most of the work:</p>
     <div class="moves">${moves.map(([k, n, tip, ex]) => `<div class="mv li-white"><h4>${n}</h4><p>${tip}</p><p class="ex">${ex}</p></div>`).join('')}</div>
-    <div class="lang li-white">${mi('talk', 18, D.sky)}<p><b>Talk, sing and read in the language you know best.</b> Every talk line works in any language. A sign, a point or a tap on a talking device counts as communicating, just like a word.</p></div>
+    <div class="lang li-white">${mi('talk', 18, D.sky)}<p><b>Talk, sign, sing and read in the language you know best.</b> Every talk line works in any language. A sign, a point or a tap on a talking device counts as communicating, just like a word. Reading the talk line word for word, or playing quietly side by side, counts too.</p></div>
     <h3 class="sub">How to read a play card</h3>
     <div class="anat">
       <div class="anat-card">${card(ctx, PLAYS[2])}</div>
@@ -170,8 +170,8 @@ function guide2(ctx) {
     </div>
     <h3 class="sub">If today isn’t the day</h3>
     <div class="ways">
-      <div class="way li-white" style="--c:${C.sun}"><h4>Not interested?</h4><p>Try the 2-minute version, or let your child pick a different day. Watching you play counts too.</p></div>
-      <div class="way li-white" style="--c:${C.grass}"><h4>Busy week?</h4><p>Play two short days at the weekend. There’s no streak to keep and nothing to make up.</p></div>
+      <div class="way li-white" style="--c:${C.sun}"><h4>Not interested? Busy week?</h4><p>Try the 2-minute version, let your child pick another day, or play two short days at the weekend. Watching you play counts too. There’s no streak to keep.</p></div>
+      <div class="way li-white" style="--c:${C.sky}"><h4>Sitting down? No snow?</h4><p>Every play works from a chair, a bed or a wheelchair, and indoors. Sound plays can be see-it or feel-it plays: a light flick for “stop.” The hunt card has a no-snow list.</p></div>
       <div class="way li-white" style="--c:${C.tomato}"><h4>Two children?</h4><p>Give each a job: one holds, one pours; one hides, one seeks. Take turns being the leader.</p></div>
     </div>
   </div>`;

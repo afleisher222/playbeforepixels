@@ -35,7 +35,6 @@ activities for 1 year old
 parent child play book
 ```
 Rules followed: no other authors, titles, brands, shows or creators; no 'free', 'bestseller' or 'new'; nothing from the §7 banned list (UNVERIFIED KDP wording).
-_Differs from the record:_ 'preschool activities at home' → 'activities for toddlers at home' (GROWTH-ENGINE §7 bans 'preschool' words in titles, tags and KDP keywords while school buyers are HELD.)
 
 ## 3 categories (parenting only; never special needs, health, education or teaching)
 1. Parenting & Relationships › Family Activities

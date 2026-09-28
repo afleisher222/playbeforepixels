@@ -145,14 +145,14 @@ _Added September 28, 2026, from buyer reviews. Full wording, sources and the per
 5. Cutting uses a straight-line grid with 12 pieces or fewer per page, and no-cut pages are included for same-day play.
 6. At least 70% of plays in a play collection need nothing to buy. Every activity has a 2-minute, no-setup "tired grown-up" version.
 7. Every play has a starting age in months and a "Make it easier / Make it harder" pair.
-8. Cut-piece pages print "Grown-up keeps the pieces". Under-3 versions have pieces 1.5 in or larger and no loose velcro dots. Velcro pages say "Check dots before each play".
+8. Cut-piece pages print "Grown-up keeps the pieces". Under-3 versions have pieces 1.5 in or larger and no loose hook-and-loop dots. Hook-and-loop pages say "Check dots before each play". Customer-facing text says "hook-and-loop dots", never the brand name Velcro.
 9. Listings say "Every play follows our published safety rules". Never "safety-checked", "certified" or "safe for all ages".
 10. Charts ship pre-filled, blank, and as fillable PDFs that work in free Acrobat Reader. The listing says exactly what can be edited.
 11. Routine sets are complete on the first download: two copies of high-use cards, blank and photo-frame cards, and a word-free version.
 12. No-guilt test: add talk and play, never take away. No fear words (rewiring, damage, addiction, toxic, zombie). Panel "judged" and "preachy" scores must be 2 or lower (out of 5).
 13. Screens have a fixed spot in the day. They never grow or shrink with chores or behavior, and tokens never convert into screen minutes.
 14. Every printable and deck includes a 1–2 page Grown-up guide: 2-minute setup, plain-words "why", three talk lines, and "most children love 2–3 of these".
-15. Talk tips say "Talk, sing and read in the language you know best". A sign, a point or a device tap counts as communicating.
+15. Talk tips say "Talk, sign, sing and read in the language you know best". Reading a talk line word for word, or playing quietly side by side, counts too. A sign, a point or a device tap counts as communicating.
 16. Story text never lectures. Teaching lives in a separate grown-up band. A device may be funny or sleepy, never evil.
 17. Cards have a big picture icon, an age color plus a word label (never color alone), "With a grown-up" and "Needs" flags, and a talk line. Decks have no trivia or quiz cards.
 18. Stage charts never set age deadlines. Never use "late talker", "speech delay" or "catch up". Every stage page carries the pediatrician line.

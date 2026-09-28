@@ -77,6 +77,7 @@ const LIST = {
   about: [
     ['shopping', 'Grocery store'], ['checkUp', 'Check-up'], ['dentist', 'Dentist'], ['haircut', 'Haircut'], ['friendsHouse', "Friend's house"],
     ['birthday', 'Birthday party'], ['swimLesson', 'Swim lesson'], ['bus', 'Bus ride'], ['airplane', 'Airplane'], ['waiting', 'Waiting'],
+    ['videoCall', 'Video call'], ['otherHome', 'Other home'], ['grownUpWork', 'Grown-up at work'], ['countSleeps', 'Count the sleeps'],
   ],
   words: [
     ['wFirst', 'First', 1], ['wThen', 'Then', 1], ['wNow', 'Now'], ['wNext', 'Next'], ['wLater', 'Later'], ['wWait', 'Wait', 1],

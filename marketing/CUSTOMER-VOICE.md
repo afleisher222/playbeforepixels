@@ -221,7 +221,7 @@ Source: `marketing/DEMOGRAPHIC-AUDIT.md` (main finding and §3 "Process change")
 
 **Also rotate in** (named in the same audit, one per panel where the product touches them): a person of faith (holiday and bedtime content that assumes one tradition or none), and a foster or kinship carer (family pages, "baby photo" or "family history" prompts).
 
-Panel seats are simulated people. Their lines are design input only and are **never** quoted as testimonials or reviews (`ops/TESTIMONIAL-LOG.md` rule 1). When the panel template in `ops/ROUTINE.md` is next edited, add the same six seats there.
+Panel seats are simulated people. Their lines are design input only and are **never** quoted as testimonials or reviews (`ops/TESTIMONIAL-LOG.md` rule 1). The six seats are in the panel template in `ops/ROUTINE.md` (added September 28, 2026).
 
 ## PRODUCT RULES (numbered; every new product and every revision)
 
@@ -256,9 +256,9 @@ Rules marked (gate) are already in ops/COMPLIANCE-GATE.md and are restated here 
 
 ### Safety
 18. **Every cut-piece page prints: "Grown-up keeps the pieces. For under-3s, use the big-piece version."** Big-piece grid cells are at least 1.5 in, larger than the toilet-paper-tube test.
-19. **Velcro:**
-    - Under-3 versions use no loose velcro dots. Use lay-on-top matching, pockets in a page protector, or long strips fixed to both the base and a big piece.
-    - Every velcro page prints: "Check dots before each play; remove any that lift."
+19. **Hook-and-loop dots** (customer-facing text never says "Velcro", a brand name; changed September 28, 2026):
+    - Under-3 versions use no loose hook-and-loop dots. Use lay-on-top matching, pockets in a page protector, or long strips fixed to both the base and a big piece.
+    - Every hook-and-loop page prints: "Check dots before each play; remove any that lift."
     - Pieces sized for 3/4 in dots are for ages 3+ versions only.
 20. **Safety wording in listings: "Every play follows our published safety rules."** Never "safety-checked", "certified", "CPSC-tested" or "safe for all ages". The rules are published on an "Our safety rules" site page.
 21. **Pages written for sitters or grandparents repeat the full rule-4 safety notes.**
@@ -292,7 +292,7 @@ Rules marked (gate) are already in ops/COMPLIANCE-GATE.md and are restated here 
     - what to do if interest fades;
     - "Most children love 2–3 of these; that's normal."
     Show a guide page as listing image 3.
-28. **Every talk-tip product says: "Talk, sing and read in the language you know best. Every language counts."** A sign, a point or a device tap counts as communicating.
+28. **Every talk-tip product says: "Talk, sign, sing and read in the language you know best. Every language counts."** (Sign added September 28, 2026, DEMOGRAPHIC-AUDIT T2; each grown-up guide also says reading the talk line word for word, or playing quietly side by side, counts too, T5.) A sign, a point or a device tap counts as communicating.
 29. **The story text never lectures.**
     - Teaching lives in a visually separate grown-up band or on the back-matter pages.
     - The child is the hero.

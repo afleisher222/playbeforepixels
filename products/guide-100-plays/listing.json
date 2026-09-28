@@ -2,7 +2,7 @@
   "slug": "guide-100-plays",
   "title": "100 Screen-Free Plays for Ages 0–5",
   "subtitle": "Easy, Low-Prep Play and Talk Ideas for Babies, Toddlers and Preschoolers, Sorted by Age",
-  "etsy_title": "100 Screen-Free Plays for Ages 0-5, Printable Toddler Activity Book PDF, Baby and Preschool Ideas by Stage, Color and Low-Ink, Letter + A4",
+  "etsy_title": "100 Screen-Free Plays for Ages 0-5, Printable Toddler Activity Book PDF, Baby and Toddler Ideas by Stage, Color and Low-Ink, Letter + A4",
   "amazon_title": "100 Screen-Free Plays for Ages 0–5: Easy, Low-Prep Play and Talk Ideas for Babies, Toddlers and Preschoolers, Sorted by Age",
   "format": "Two editions from one source. (1) Paperback, print-on-demand (Amazon KDP): 86-page black-and-white interior (guide-100-plays-kdp-interior.pdf, KDP size with bleed; guide-100-plays.pdf is the same interior at the brand-kit bleed size) plus a full-color one-piece cover wrap (guide-100-plays-cover-wrap.pdf). The copyright page carries a QR code to free full-color play pages. (2) Instant-download PDF, 90 pages: START HERE plus a Color and a Low-ink file (white pages, line art to color), each in US Letter and A4, with 195 type-in fields (blank 'our own play' pages and play-week planners) and 4 extra planner pages (Monday and Sunday starts, 4 colorways). Own-shop files carry the QR code and web address; the Etsy edition (etsy-upload/, exactly 5 files) carries no URL or QR code. Contents: title with prep budget, copyright, contents, a note before you start, how to use this book (grown-up guide), six easy talk moves, Safety first, Why play? Why talk?, Quick finder, Set up for easy play, the pantry list, four age-band chapters (opener, 'at a glance' page, plays, blank pages for your own plays), 12 tired-grown-up plays, a sample screen-free day, day swaps by age and energy, When screens are on anyway, the 100-play tracker, a play-week planner, sources, and the free bonus / what's next page. Every play: number, starting age in months and best-for range, prep, mess and play-time icons, 'Nothing to buy' badge (89 plays), what you need, steps, Make it easier / Make it harder, a talk line and a safety note.",
   "trim": "Paperback: 8 x 10 in trim. KDP interior file 8.125 x 10.25 in (0.125 in bleed on top, bottom and outside edge); brand-kit file 8.25 x 10.25 in (bleed on all edges); both snapped to exact size after rendering. Text kept at least 0.5 in from the trim and 0.7 in from the gutter; the running footer sits 0.40 in above the bottom trim (checked on the built PDF: nearest text 0.42 in from any trim edge, KDP minimum 0.375 in). Cover wrap 16.4437 x 10.25 in (0.125 in bleed; spine 0.1937 in for 86 pages on white paper). PDF: US Letter 8.5 x 11 in and A4 210 x 297 mm, no bleed, 0.55–0.65 in margins.",
@@ -43,11 +43,19 @@
     "A 'talk while you play' line on every play, built on six easy everyday talk moves like pause and wait, and offer a choice",
     "Every play follows our published safety rules: a safety note on every play and a Safety first page covering supervision, the toilet-paper tube test for under-3s, water, cords and food"
   ],
+  "etsy_long_description": "100 Screen-Free Plays is a printable PDF play book for ages 0–5. A cup, a box, a sock, or nothing at all: each play uses what you have, from first smiles to \"and then what happened?\"\n\nThe plays are sorted into four color-coded age bands: 0–1, 1–2, 2–3 and 3–5. Each chapter opens with an \"at a glance\" page and a play-basket list. Every play shows the age it starts from, in months.\n\nEvery play has the same easy parts: what you need, prep, mess and play-time icons, and simple steps. Each has a way to make it easier, a way to make it harder, a \"talk while you play\" line and a safety note. 89 of the 100 plays need nothing to buy, and the pantry list shows what to gather.\n\nYou'll also find a Safety first page and a Quick finder for bath time, rainy days, kitchen time, car rides and wind-down. There are 12 tired-grown-up plays you can do from the couch and a sample screen-free day. And there are guilt-free ideas for when screens are on anyway. Every play follows our published safety rules.\n\nThe PDF comes in Color and Low-ink files, US Letter and A4, with planners you can type into in free Adobe Acrobat Reader: about 10¢ a play.\n\nParent education, not medical advice.",
+  "etsy_bullets": [
+    "100 screen-free plays for ages 0–5, sorted into four age bands. Printable PDF: Color and Low-ink files, US Letter and A4",
+    "Every play shows its starting age in months, prep time, mess level, play time and what you need; 89 plays need nothing to buy",
+    "A make-it-easier and a make-it-harder idea on every play, plus 12 two-minute plays for tired grown-ups",
+    "A 'talk while you play' line on every play, built on six easy everyday talk moves like pause and wait, and offer a choice",
+    "Every play follows our published safety rules: a safety note on every play and a Safety first page covering supervision, the toilet-paper tube test for under-3s, water, cords and food"
+  ],
   "keywords": [
     "screen free activities for toddlers",
     "toddler activity book",
     "baby play ideas book",
-    "preschool activities at home",
+    "activities for toddlers at home",
     "screen free play ideas",
     "activities for 1 year old",
     "parent child play book"
@@ -56,7 +64,7 @@
     "screen free play",
     "toddler activities",
     "baby play ideas",
-    "preschool at home",
+    "play ideas toddler",
     "toddler activity pdf",
     "one year old play",
     "play ideas by age",
@@ -191,7 +199,7 @@
     },
     {
       "q": "Is there a Spanish edition?",
-      "a": "Not yet. The book is in English. The talk lines work in any language: the book says to talk, sing and read in the language you know best, and to swap any song for one your family knows."
+      "a": "Not yet. The book is in English. The talk lines work in any language: the book says to talk, sign, sing and read in the language you know best, and to swap any song for one your family knows."
     },
     {
       "q": "Can I send the paperback as a gift?",
