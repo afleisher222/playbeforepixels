@@ -12,7 +12,8 @@ For every note: no children's names, no employer, no legal matters, no health cl
 
 ## 2. Dedication (`## dedication`)
 
-- **Prints:** p3, centered above the rocket art. While it is empty, p3 is art only.
+- **Prints:** p3, centered above the rocket art. While it is empty, p3 prints a short brand dedication (“For every grown-up who has ever said, ‘Okay. One more story.’”, set in `build.js`), so the page is never blank. Anything you write replaces it.
+- **Grown-up tips:** each spread now has a one-line tip in a white band (`## s1 tip` … `## s12 tip` in `WORDS.md`, added by the quality pass). They are drafts; rewrite or delete any of them.
 - **Length:** 1–3 short lines.
 - Prompt: Who is this book for? (A group or a feeling works as well as a person: "For every grown-up who…".)
 

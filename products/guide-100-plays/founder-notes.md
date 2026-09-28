@@ -28,3 +28,7 @@ _______________________________________________
 _______________________________________________
 Play Before Pixels
 ```
+
+## Quality pass drafts (September 28, 2026)
+
+Three new lines are drafts for you to rewrite in your own words (they carry `data-founder="rewrite"` in `build/book.js`): the dedication at the top of the copyright page (p2), the closing page text ("That's a play day.", last page) and the notes-page prompts. See `QUALITY-PASS.md`.

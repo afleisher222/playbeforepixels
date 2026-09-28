@@ -125,9 +125,9 @@ html, body { width: ${Wd}in; height: ${Ht}in; overflow: hidden }
 .spine { position: absolute; left: ${8 + BLEED}in; top: 0; width: ${SPINE}in; height: ${Ht}in; background: ${C.tomato} }
 .front { left: ${8 + BLEED + SPINE - BLEED}in; top: 0 }
 /* Spine text: KDP allows it from 79 pages up, with 0.0625 in clear on each side of the spine [VERIFY in KDP's cover template].
-   ${SPINE} in spine - 2 x 0.0625 = ${(SPINE - .125).toFixed(4)} in for the letters, so 6 pt caps (about 0.06 in tall). */
+   ${SPINE} in spine - 2 x 0.0625 = ${(SPINE - .125).toFixed(4)} in for the letters, so 5.5 pt caps (about 0.053 in tall, leaving about 0.07 in clear each side). */
 .spine { z-index: 2; display: flex; align-items: center; justify-content: center; overflow: hidden }
-.spt { transform: rotate(90deg); white-space: nowrap; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 6pt; line-height: 1; letter-spacing: .08em; color: ${W} }
+.spt { transform: rotate(90deg); white-space: nowrap; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 5.5pt; line-height: 1; letter-spacing: .08em; color: ${W} }
 .spt i { font-style: normal; margin: 0 .08in }
 .front .fbg { left: ${BLEED}in }`, `<div class="wrap">${back()}${front()}<div class="spine">${PAGES >= 80 ? `<div class="spt">100 SCREEN-FREE PLAYS <i>·</i> AGES 0–5 <i>·</i> PLAY BEFORE PIXELS</div>` : ''}</div></div>`);
 }

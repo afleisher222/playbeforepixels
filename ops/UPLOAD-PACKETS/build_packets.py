@@ -660,7 +660,7 @@ def write_kdp():
          f"**Upload:** draft + proof order in the founder's account sitting (Oct 5–11); publish only after the printed proof passes (BRAND customer-voice rule 21). KDP ≤2 titles a week. · **Record:** `products/guide-100-plays/listing.json`", "",
          "## Files", "| What | File | Check |", "|---|---|---|",
          f"| Interior (black-and-white, bleed) | `products/guide-100-plays/guide-100-plays-kdp-interior.pdf` | 86 pages, 8.125 x 10.25 in, no Type 3 fonts |",
-         f"| Cover (full wrap, one PDF) | `products/guide-100-plays/guide-100-plays-cover-wrap.pdf` | {k['cover_wrap_in']} in; spine {k['spine_in']} in; no spine text; blank barcode block lower right of the back |", "",
+         f"| Cover (full wrap, one PDF) | `products/guide-100-plays/guide-100-plays-cover-wrap.pdf` | {k['cover_wrap_in']} in; spine {k['spine_in']} in; spine text in 5.5 pt caps (title, ages, brand), about 0.07 in clear each side [VERIFY in the KDP previewer]; blank barcode block lower right of the back |", "",
          "## Page 1: Paperback details", "| Field | Enter |", "|---|---|",
          "| Language | English |",
          f"| Book title | {title} |",

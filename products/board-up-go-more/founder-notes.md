@@ -37,3 +37,7 @@ Add this object to `manuscript.json` when the values exist. Each key prints only
 
 - The board book's back cover (p26) and the paperback cover wrap keep a plain white 2 × 1.2 in area, with no label or outline.
 - KDP prints its own barcode on the paperback (UNVERIFIED: the builder places the area 0.25 in from the spine and bottom trim; check KDP's cover template). The offset board-book printer or your own ISBN supplies the board book's barcode.
+
+## Quality pass drafts (September 28, 2026)
+
+The paperback copyright page (p2) now opens with a draft dedication ("For every little voice, and the grown-ups who wait for it.", `build/build.js` copyrightPage). Rewrite it in your own words or delete it. See `QUALITY-PASS.md`.

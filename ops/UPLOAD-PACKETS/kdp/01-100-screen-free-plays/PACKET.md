@@ -6,7 +6,7 @@
 | What | File | Check |
 |---|---|---|
 | Interior (black-and-white, bleed) | `products/guide-100-plays/guide-100-plays-kdp-interior.pdf` | 86 pages, 8.125 x 10.25 in, no Type 3 fonts |
-| Cover (full wrap, one PDF) | `products/guide-100-plays/guide-100-plays-cover-wrap.pdf` | 16.4437 x 10.25 in; spine 0.1937 in; no spine text; blank barcode block lower right of the back |
+| Cover (full wrap, one PDF) | `products/guide-100-plays/guide-100-plays-cover-wrap.pdf` | 16.4437 x 10.25 in; spine 0.1937 in; spine text in 5.5 pt caps (title, ages, brand), about 0.07 in clear each side [VERIFY in the KDP previewer]; blank barcode block lower right of the back |
 
 ## Page 1: Paperback details
 | Field | Enter |
