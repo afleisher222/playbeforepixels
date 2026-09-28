@@ -22,6 +22,12 @@ This replaces the 06:50 UTC version. It was written after the upload packets wer
 | Profiles and Pinterest | social kit images and bios; 12 boards and 60 pins | `marketing/social-kit/`, `marketing/pins/` |
 
 **(a) What Claude still has to do before G-day**
+
+> **Update, September 28, 2026 (evening):** items 1, 2 and 4 are done.
+> - 100 Plays hero now shows the printable PDF pages (no paperback), with new alt text.
+> - Gift Bundle: all 5 images have alt text; the headline now reads "+ play coupons included" and no copy calls the coupons "free" (bundle, Library and site). Five more Etsy packets (01, 05, 06, 07, 09) also had empty alt text; all now filled.
+> - Gate records for all 12 launch items are in `ops/COMPLIANCE-RECORDS/` (0 FAIL; the NEEDS FOUNDER lines are listed at the end of each record).
+> - Fixed along the way: tagged PDFs with a language (brand/render.js) for busy book, 100 Plays (incl. KDP), Play & Talk Cards and the course; channel tags (`channel_tag.py`, stamped by `stage.py` and the KDP build); one-page START HERE for the busy book; print-shop permission on every START HERE; color-blind checks in each panel.md; Biscuit renamed Tater in *The Day the Tablet Slept*; "Grown-up corner" retired on the site; the old four-square preview `index.html` replaced by a pointer to `site/dist/`; launch-name desk review (brand/ORIGINALITY.md §F).
 1. **Fix the 100 Plays Etsy hero image** (`products/guide-100-plays/preview/listing-images/01-hero.png`, a G-day listing). It shows "Paperback 8 × 10 in, black-and-white interior" as a format, but the Etsy listing sells only the PDF, and the paperback will not be live on G-day. Make an Etsy-only hero, then rewrite its alt text.
 2. **Fill in the Gift Bundle's image alt text.** All 5 images in `etsy/02` have empty alt text. Also check the "+ free play coupons" headline on image 1 against 16 CFR 251 ("free" inside a paid bundle; UNVERIFIED). "+ play coupons included" is the safe wording.
 3. **Fold the packet-only changes back into the product records**: the 100 Plays Etsy title, one Etsy tag and one KDP keyword ("preschool" became "toddler"), and the PDF-only description (`guide-100-plays/listing.json`). Then re-run `build_packets.py` until it shows no "differs from record" lines.
