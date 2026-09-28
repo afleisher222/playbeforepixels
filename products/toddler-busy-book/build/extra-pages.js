@@ -30,6 +30,12 @@ const EXTRA_CSS = `
 .tbl .box12{display:inline-block;width:11px;height:11px;border:1.5px solid #9AA6BC;border-radius:3px;vertical-align:middle}
 .tbl tr.bh td{background:var(--bt);font-weight:800;font-size:11px;padding:5px 6px;border-radius:0}
 .tbl .cutc{color:var(--soft);font-weight:700}
+.finder{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+.fh{background:var(--bt);font-weight:800;font-size:11px;padding:5px 8px;border-radius:8px;margin:4px 0 2px}
+.fr{display:flex;gap:7px;align-items:center;padding:2.5px 2px;border-bottom:1px solid #E6EAF1;font-size:10.4px;line-height:1.22}
+.fr .fp{font-family:"Bricolage Grotesque",sans-serif;font-size:12px;width:26px;flex:none}
+.fr i{font-style:normal;color:var(--soft);font-weight:700;font-size:9.4px}
+.box12{display:inline-block;width:11px;height:11px;border:1.5px solid #9AA6BC;border-radius:3px;flex:none}
 .field{display:block;border-bottom:2px solid #C9D1DE;min-height:24px}
 .qa{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px}
 .qa div{background:var(--wash);border-radius:14px;padding:10px 13px}
@@ -77,10 +83,10 @@ const cover = {
         <h1 style="font-size:78px;margin-top:4px;letter-spacing:-.025em">Toddler<br>Busy Book</h1>
         <p style="font-size:16px;font-weight:700;margin-top:10px;max-width:520px;line-height:1.35">Matching, sorting, colors, shapes, pretend play, first words and mazes, sorted by age, with a “talk while you play” line on every page.</p>
       </div>
-      <div style="position:absolute;left:0;top:360px">${coverArt()}</div>
-      <div style="position:absolute;left:36px;right:36px;bottom:62px" class="pillrow">
+      <div style="position:absolute;left:0;top:338px">${coverArt()}</div>
+      <div style="position:absolute;left:36px;right:36px;bottom:26px;align-items:center" class="pillrow">
         ${['b1', 'b2', 'b3'].map(b => `<span class="chip"><i style="background:${BANDS[b].c}"></i>${BANDS[b].label}</span>`).join('')}
-        <span class="chip">${count(ctx, a => !a.cut && !a.usesPiecesOf)} no-cut pages: play today</span>
+        <span class="chip">${count(ctx, a => !a.cut && !a.usesPiecesOf)} no-cut pages: play today</span><span class="url" style="margin-left:auto;font-weight:800;font-size:12px">playbeforepixels.com</span>
       </div>
     </div></section>`;
   },
@@ -157,7 +163,7 @@ const howToRead = {
 const safety = {
   id: 'safety', html: (ctx, pn) => pageWrap('', `${textHead('Safety first', 'Our play safety rules', 'Every page in this book follows these rules. Please read them once before you start.')}
     <div style="display:grid;grid-template-columns:1.05fr 1fr;gap:16px;margin-top:18px">
-      <div class="card t-grass" style="display:flex;gap:14px;align-items:center"><svg width="130" height="170" viewBox="-65 -85 130 170"><use href="#b-tube" transform="scale(1.3)"/></svg><div><h3>The toilet-paper-tube test</h3><p>For children under 3, nothing small enough to fit through a toilet-paper tube (about 1.25 in / 3.2 cm across). <b>Every cut piece in this book is 2 in (5.1 cm) or bigger</b> on its shortest side, and the pieces for 1–2 years are 2.5 in (6.3 cm) or bigger.</p></div></div>
+      <div class="card t-grass" style="display:flex;gap:14px;align-items:center"><svg width="110" height="160" viewBox="-40 -60 80 120" style="flex:none"><use href="#b-tube" transform="scale(1.2)"/></svg><div><h3>The toilet-paper-tube test</h3><p>For children under 3, nothing small enough to fit through a toilet-paper tube (about 1.25 in / 3.2 cm across). <b>Every cut piece in this book is 2 in (5.1 cm) or bigger</b> on its shortest side, and the pieces for 1–2 years are 2.5 in (6.3 cm) or bigger.</p></div></div>
       <div class="card t-sun"><h3>Grown-up keeps the pieces</h3><p>Count pieces out and back in. Store them in a pouch or envelope that the grown-up keeps. Throw away any piece that tears, bends, gets wet or peels.</p></div>
     </div>
     <div class="cols3" style="margin-top:14px">
@@ -209,12 +215,15 @@ const printing = {
 };
 
 // ---------------- page finder ----------------
-function finderRows(ctx, bands) {
-  return bands.map(b => `<tr class="bh band-${b}"><td colspan="5">${BANDS[b].label} · ${BANDS[b].name}</td></tr>` + ctx.acts.filter(a => a.band === b).map(a => `<tr><td class="ck"><span class="box12"></span></td><td class="pg">${ctx.actPage[a.id]}</td><td><b>${a.title}</b></td><td class="cutc">${a.cat}</td><td class="cutc">${a.cut ? `cut · p.${ctx.sheetPage[a.id]}` : a.usesPiecesOf ? `cards p.${ctx.sheetPage[a.id]}` : 'no cut'} · ${monthsLabel(a.from)}</td></tr>`).join('')).join('');
+function finderCols(ctx, bands) {
+  const bandRows = b => { const rows = []; rows.push(`<div class="fh band-${b}">${BANDS[b].label} · ${BANDS[b].name}</div>`); ctx.acts.filter(a => a.band === b).forEach(a => rows.push(`<div class="fr"><span class="box12"></span><b class="fp">${ctx.actPage[a.id]}</b><span><b>${a.title}</b><br><i>${a.cat} · ${a.cut ? `cut p.${ctx.sheetPage[a.id]}` : a.usesPiecesOf ? `cards p.${ctx.sheetPage[a.id]}` : 'no cut'} · ${monthsLabel(a.from)}</i></span></div>`)); return rows; };
+  if (bands.length === 2) return `<div class="finder">${bands.map(b => `<div>${bandRows(b).join('')}</div>`).join('')}</div>`;
+  const rows = bandRows(bands[0]); const half = Math.ceil(rows.length / 2);
+  return `<div class="finder"><div>${rows.slice(0, half).join('')}</div><div style="padding-top:26px">${rows.slice(half).join('')}</div></div>`;
 }
-const finder1 = { id: 'find1', html: (ctx, pn) => pageWrap('', `${textHead('Page finder · 1 of 2', 'Every activity, by age')}<p class="small" style="margin:4px 0 8px">Tick the pages you’ve played. Stars go on the favorites.</p><table class="tbl">${finderRows(ctx, ['b1', 'b2'])}</table>`, ctx, pn) };
-const finder2 = { id: 'find2', html: (ctx, pn) => pageWrap('', `${textHead('Page finder · 2 of 2', 'Every activity, by age')}<table class="tbl" style="margin-top:10px">${finderRows(ctx, ['b3'])}</table>
-  <table class="tbl" style="margin-top:14px"><tr class="bh"><td colspan="3">Also inside</td></tr>${[['Binder covers (4 colors), spine and pouch labels', ctx.actPage['x-cov1'] + '–' + ctx.actPage['x-pouch']], ['Make your own pages (fillable)', ctx.actPage['x-own1'] + '–' + ctx.actPage['x-own5']], ['Weekly busy-book planner (Monday and Sunday starts)', ctx.actPage['x-plan1'] + '–' + ctx.actPage['x-plan4']], ['Busy Book Star certificate', ctx.actPage['x-cert']], ['Answer key', ctx.actPage['x-answers']], ['Quick answers', ctx.actPage['x-faq']]].map(([t, p]) => `<tr><td class="pg" style="width:60px">${p}</td><td colspan="2"><b>${t}</b></td></tr>`).join('')}</table>`, ctx, pn) };
+const finder1 = { id: 'find1', html: (ctx, pn) => pageWrap('', `${textHead('Page finder · 1 of 2', 'Every activity, by age')}<p class="small" style="margin:4px 0 10px">Tick the pages you’ve played. Stars go on the favorites.</p>${finderCols(ctx, ['b1', 'b2'])}`, ctx, pn) };
+const finder2 = { id: 'find2', html: (ctx, pn) => pageWrap('', `${textHead('Page finder · 2 of 2', 'Every activity, by age')}<div style="margin-top:12px">${finderCols(ctx, ['b3'])}</div>
+  <table class="tbl" style="margin-top:16px"><tr class="bh"><td colspan="3">Also inside</td></tr>${[['Binder covers (4 colors), spine and pouch labels', ctx.actPage['x-cov1'] + '–' + ctx.actPage['x-pouch']], ['Make your own pages (fillable)', ctx.actPage['x-own1'] + '–' + ctx.actPage['x-own5']], ['Weekly busy-book planner (Monday and Sunday starts)', ctx.actPage['x-plan1'] + '–' + ctx.actPage['x-plan4']], ['Busy Book Star certificate', ctx.actPage['x-cert']], ['Answer key', ctx.actPage['x-answers']], ['Quick answers', ctx.actPage['x-faq']]].map(([t, p]) => `<tr><td class="pg" style="width:60px">${p}</td><td colspan="2"><b>${t}</b></td></tr>`).join('')}</table>`, ctx, pn) };
 
 const copyright = {
   id: 'copy', html: (ctx, pn) => pageWrap('', `${textHead('The small print', 'License, copyright and version')}

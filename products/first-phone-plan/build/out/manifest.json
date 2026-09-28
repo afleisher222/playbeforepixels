@@ -1,0 +1,1030 @@
+{
+ "kit-store-color-letter": {
+  "pages": 37,
+  "toc": [
+   [
+    "Cover",
+    1
+   ],
+   [
+    "What’s inside",
+    2
+   ],
+   [
+    "Grown-up guide",
+    3
+   ],
+   [
+    "Printing, filling in and safety",
+    5
+   ],
+   [
+    "Quick answers",
+    6
+   ],
+   [
+    "Are we ready? checklist",
+    7
+   ],
+   [
+    "10 practice missions",
+    8
+   ],
+   [
+    "Are we ready? (fillable blank)",
+    9
+   ],
+   [
+    "Our First Phone Agreement",
+    10
+   ],
+   [
+    "Make-it-yours agreement (fillable)",
+    12
+   ],
+   [
+    "Phone-free zones",
+    13
+   ],
+   [
+    "Phone-free times",
+    14
+   ],
+   [
+    "Zone signs",
+    15
+   ],
+   [
+    "Fridge-Door Tech Plan (example)",
+    17
+   ],
+   [
+    "Fridge-Door Tech Plan (fillable)",
+    18
+   ],
+   [
+    "30 Phone-Free Afternoons",
+    19
+   ],
+   [
+    "Tracker",
+    20
+   ],
+   [
+    "Tracker (fillable blank)",
+    21
+   ],
+   [
+    "30 afternoon ideas",
+    22
+   ],
+   [
+    "Monthly check-in",
+    24
+   ],
+   [
+    "Certificate",
+    25
+   ],
+   [
+    "Colorways: Sky and Plum",
+    26
+   ],
+   [
+    "More from Play Before Pixels + free bonus",
+    37
+   ]
+  ],
+  "P": {
+   "cover": 1,
+   "inside": 2,
+   "guide1": 3,
+   "guide2": 4,
+   "tips": 5,
+   "faq": 6,
+   "ready": 7,
+   "missions": 8,
+   "readyB": 9,
+   "agree": 10,
+   "agree2": 11,
+   "agreeB": 12,
+   "zones": 13,
+   "times": 14,
+   "signs": 15,
+   "signs2": 16,
+   "plan": 17,
+   "planB": 18,
+   "challenge": 19,
+   "tracker": 20,
+   "trackerB": 21,
+   "ideas": 22,
+   "ideas2": 23,
+   "checkin": 24,
+   "cert": 25,
+   "colors": 26,
+   "agree_sky": 27,
+   "agree2_sky": 28,
+   "planB_sky": 29,
+   "tracker_sky": 30,
+   "cert_sky": 31,
+   "agree_plum": 32,
+   "agree2_plum": 33,
+   "planB_plum": 34,
+   "tracker_plum": 35,
+   "cert_plum": 36,
+   "more": 37
+  }
+ },
+ "kit-store-color-a4": {
+  "pages": 37,
+  "toc": [
+   [
+    "Cover",
+    1
+   ],
+   [
+    "What’s inside",
+    2
+   ],
+   [
+    "Grown-up guide",
+    3
+   ],
+   [
+    "Printing, filling in and safety",
+    5
+   ],
+   [
+    "Quick answers",
+    6
+   ],
+   [
+    "Are we ready? checklist",
+    7
+   ],
+   [
+    "10 practice missions",
+    8
+   ],
+   [
+    "Are we ready? (fillable blank)",
+    9
+   ],
+   [
+    "Our First Phone Agreement",
+    10
+   ],
+   [
+    "Make-it-yours agreement (fillable)",
+    12
+   ],
+   [
+    "Phone-free zones",
+    13
+   ],
+   [
+    "Phone-free times",
+    14
+   ],
+   [
+    "Zone signs",
+    15
+   ],
+   [
+    "Fridge-Door Tech Plan (example)",
+    17
+   ],
+   [
+    "Fridge-Door Tech Plan (fillable)",
+    18
+   ],
+   [
+    "30 Phone-Free Afternoons",
+    19
+   ],
+   [
+    "Tracker",
+    20
+   ],
+   [
+    "Tracker (fillable blank)",
+    21
+   ],
+   [
+    "30 afternoon ideas",
+    22
+   ],
+   [
+    "Monthly check-in",
+    24
+   ],
+   [
+    "Certificate",
+    25
+   ],
+   [
+    "Colorways: Sky and Plum",
+    26
+   ],
+   [
+    "More from Play Before Pixels + free bonus",
+    37
+   ]
+  ],
+  "P": {
+   "cover": 1,
+   "inside": 2,
+   "guide1": 3,
+   "guide2": 4,
+   "tips": 5,
+   "faq": 6,
+   "ready": 7,
+   "missions": 8,
+   "readyB": 9,
+   "agree": 10,
+   "agree2": 11,
+   "agreeB": 12,
+   "zones": 13,
+   "times": 14,
+   "signs": 15,
+   "signs2": 16,
+   "plan": 17,
+   "planB": 18,
+   "challenge": 19,
+   "tracker": 20,
+   "trackerB": 21,
+   "ideas": 22,
+   "ideas2": 23,
+   "checkin": 24,
+   "cert": 25,
+   "colors": 26,
+   "agree_sky": 27,
+   "agree2_sky": 28,
+   "planB_sky": 29,
+   "tracker_sky": 30,
+   "cert_sky": 31,
+   "agree_plum": 32,
+   "agree2_plum": 33,
+   "planB_plum": 34,
+   "tracker_plum": 35,
+   "cert_plum": 36,
+   "more": 37
+  }
+ },
+ "kit-store-low-letter": {
+  "pages": 26,
+  "toc": [
+   [
+    "Cover",
+    1
+   ],
+   [
+    "What’s inside",
+    2
+   ],
+   [
+    "Grown-up guide",
+    3
+   ],
+   [
+    "Printing, filling in and safety",
+    5
+   ],
+   [
+    "Quick answers",
+    6
+   ],
+   [
+    "Are we ready? checklist",
+    7
+   ],
+   [
+    "10 practice missions",
+    8
+   ],
+   [
+    "Are we ready? (fillable blank)",
+    9
+   ],
+   [
+    "Our First Phone Agreement",
+    10
+   ],
+   [
+    "Make-it-yours agreement (fillable)",
+    12
+   ],
+   [
+    "Phone-free zones",
+    13
+   ],
+   [
+    "Phone-free times",
+    14
+   ],
+   [
+    "Zone signs",
+    15
+   ],
+   [
+    "Fridge-Door Tech Plan (example)",
+    17
+   ],
+   [
+    "Fridge-Door Tech Plan (fillable)",
+    18
+   ],
+   [
+    "30 Phone-Free Afternoons",
+    19
+   ],
+   [
+    "Tracker",
+    20
+   ],
+   [
+    "Tracker (fillable blank)",
+    21
+   ],
+   [
+    "30 afternoon ideas",
+    22
+   ],
+   [
+    "Monthly check-in",
+    24
+   ],
+   [
+    "Certificate",
+    25
+   ],
+   [
+    "More from Play Before Pixels + free bonus",
+    26
+   ]
+  ],
+  "P": {
+   "cover": 1,
+   "inside": 2,
+   "guide1": 3,
+   "guide2": 4,
+   "tips": 5,
+   "faq": 6,
+   "ready": 7,
+   "missions": 8,
+   "readyB": 9,
+   "agree": 10,
+   "agree2": 11,
+   "agreeB": 12,
+   "zones": 13,
+   "times": 14,
+   "signs": 15,
+   "signs2": 16,
+   "plan": 17,
+   "planB": 18,
+   "challenge": 19,
+   "tracker": 20,
+   "trackerB": 21,
+   "ideas": 22,
+   "ideas2": 23,
+   "checkin": 24,
+   "cert": 25,
+   "more": 26
+  }
+ },
+ "kit-store-low-a4": {
+  "pages": 26,
+  "toc": [
+   [
+    "Cover",
+    1
+   ],
+   [
+    "What’s inside",
+    2
+   ],
+   [
+    "Grown-up guide",
+    3
+   ],
+   [
+    "Printing, filling in and safety",
+    5
+   ],
+   [
+    "Quick answers",
+    6
+   ],
+   [
+    "Are we ready? checklist",
+    7
+   ],
+   [
+    "10 practice missions",
+    8
+   ],
+   [
+    "Are we ready? (fillable blank)",
+    9
+   ],
+   [
+    "Our First Phone Agreement",
+    10
+   ],
+   [
+    "Make-it-yours agreement (fillable)",
+    12
+   ],
+   [
+    "Phone-free zones",
+    13
+   ],
+   [
+    "Phone-free times",
+    14
+   ],
+   [
+    "Zone signs",
+    15
+   ],
+   [
+    "Fridge-Door Tech Plan (example)",
+    17
+   ],
+   [
+    "Fridge-Door Tech Plan (fillable)",
+    18
+   ],
+   [
+    "30 Phone-Free Afternoons",
+    19
+   ],
+   [
+    "Tracker",
+    20
+   ],
+   [
+    "Tracker (fillable blank)",
+    21
+   ],
+   [
+    "30 afternoon ideas",
+    22
+   ],
+   [
+    "Monthly check-in",
+    24
+   ],
+   [
+    "Certificate",
+    25
+   ],
+   [
+    "More from Play Before Pixels + free bonus",
+    26
+   ]
+  ],
+  "P": {
+   "cover": 1,
+   "inside": 2,
+   "guide1": 3,
+   "guide2": 4,
+   "tips": 5,
+   "faq": 6,
+   "ready": 7,
+   "missions": 8,
+   "readyB": 9,
+   "agree": 10,
+   "agree2": 11,
+   "agreeB": 12,
+   "zones": 13,
+   "times": 14,
+   "signs": 15,
+   "signs2": 16,
+   "plan": 17,
+   "planB": 18,
+   "challenge": 19,
+   "tracker": 20,
+   "trackerB": 21,
+   "ideas": 22,
+   "ideas2": 23,
+   "checkin": 24,
+   "cert": 25,
+   "more": 26
+  }
+ },
+ "kit-etsy-color-letter": {
+  "pages": 37,
+  "toc": [
+   [
+    "Cover",
+    1
+   ],
+   [
+    "What’s inside",
+    2
+   ],
+   [
+    "Grown-up guide",
+    3
+   ],
+   [
+    "Printing, filling in and safety",
+    5
+   ],
+   [
+    "Quick answers",
+    6
+   ],
+   [
+    "Are we ready? checklist",
+    7
+   ],
+   [
+    "10 practice missions",
+    8
+   ],
+   [
+    "Are we ready? (fillable blank)",
+    9
+   ],
+   [
+    "Our First Phone Agreement",
+    10
+   ],
+   [
+    "Make-it-yours agreement (fillable)",
+    12
+   ],
+   [
+    "Phone-free zones",
+    13
+   ],
+   [
+    "Phone-free times",
+    14
+   ],
+   [
+    "Zone signs",
+    15
+   ],
+   [
+    "Fridge-Door Tech Plan (example)",
+    17
+   ],
+   [
+    "Fridge-Door Tech Plan (fillable)",
+    18
+   ],
+   [
+    "30 Phone-Free Afternoons",
+    19
+   ],
+   [
+    "Tracker",
+    20
+   ],
+   [
+    "Tracker (fillable blank)",
+    21
+   ],
+   [
+    "30 afternoon ideas",
+    22
+   ],
+   [
+    "Monthly check-in",
+    24
+   ],
+   [
+    "Certificate",
+    25
+   ],
+   [
+    "Colorways: Sky and Plum",
+    26
+   ],
+   [
+    "More from Play Before Pixels",
+    37
+   ]
+  ],
+  "P": {
+   "cover": 1,
+   "inside": 2,
+   "guide1": 3,
+   "guide2": 4,
+   "tips": 5,
+   "faq": 6,
+   "ready": 7,
+   "missions": 8,
+   "readyB": 9,
+   "agree": 10,
+   "agree2": 11,
+   "agreeB": 12,
+   "zones": 13,
+   "times": 14,
+   "signs": 15,
+   "signs2": 16,
+   "plan": 17,
+   "planB": 18,
+   "challenge": 19,
+   "tracker": 20,
+   "trackerB": 21,
+   "ideas": 22,
+   "ideas2": 23,
+   "checkin": 24,
+   "cert": 25,
+   "colors": 26,
+   "agree_sky": 27,
+   "agree2_sky": 28,
+   "planB_sky": 29,
+   "tracker_sky": 30,
+   "cert_sky": 31,
+   "agree_plum": 32,
+   "agree2_plum": 33,
+   "planB_plum": 34,
+   "tracker_plum": 35,
+   "cert_plum": 36,
+   "more": 37
+  }
+ },
+ "kit-etsy-color-a4": {
+  "pages": 37,
+  "toc": [
+   [
+    "Cover",
+    1
+   ],
+   [
+    "What’s inside",
+    2
+   ],
+   [
+    "Grown-up guide",
+    3
+   ],
+   [
+    "Printing, filling in and safety",
+    5
+   ],
+   [
+    "Quick answers",
+    6
+   ],
+   [
+    "Are we ready? checklist",
+    7
+   ],
+   [
+    "10 practice missions",
+    8
+   ],
+   [
+    "Are we ready? (fillable blank)",
+    9
+   ],
+   [
+    "Our First Phone Agreement",
+    10
+   ],
+   [
+    "Make-it-yours agreement (fillable)",
+    12
+   ],
+   [
+    "Phone-free zones",
+    13
+   ],
+   [
+    "Phone-free times",
+    14
+   ],
+   [
+    "Zone signs",
+    15
+   ],
+   [
+    "Fridge-Door Tech Plan (example)",
+    17
+   ],
+   [
+    "Fridge-Door Tech Plan (fillable)",
+    18
+   ],
+   [
+    "30 Phone-Free Afternoons",
+    19
+   ],
+   [
+    "Tracker",
+    20
+   ],
+   [
+    "Tracker (fillable blank)",
+    21
+   ],
+   [
+    "30 afternoon ideas",
+    22
+   ],
+   [
+    "Monthly check-in",
+    24
+   ],
+   [
+    "Certificate",
+    25
+   ],
+   [
+    "Colorways: Sky and Plum",
+    26
+   ],
+   [
+    "More from Play Before Pixels",
+    37
+   ]
+  ],
+  "P": {
+   "cover": 1,
+   "inside": 2,
+   "guide1": 3,
+   "guide2": 4,
+   "tips": 5,
+   "faq": 6,
+   "ready": 7,
+   "missions": 8,
+   "readyB": 9,
+   "agree": 10,
+   "agree2": 11,
+   "agreeB": 12,
+   "zones": 13,
+   "times": 14,
+   "signs": 15,
+   "signs2": 16,
+   "plan": 17,
+   "planB": 18,
+   "challenge": 19,
+   "tracker": 20,
+   "trackerB": 21,
+   "ideas": 22,
+   "ideas2": 23,
+   "checkin": 24,
+   "cert": 25,
+   "colors": 26,
+   "agree_sky": 27,
+   "agree2_sky": 28,
+   "planB_sky": 29,
+   "tracker_sky": 30,
+   "cert_sky": 31,
+   "agree_plum": 32,
+   "agree2_plum": 33,
+   "planB_plum": 34,
+   "tracker_plum": 35,
+   "cert_plum": 36,
+   "more": 37
+  }
+ },
+ "kit-etsy-low-letter": {
+  "pages": 26,
+  "toc": [
+   [
+    "Cover",
+    1
+   ],
+   [
+    "What’s inside",
+    2
+   ],
+   [
+    "Grown-up guide",
+    3
+   ],
+   [
+    "Printing, filling in and safety",
+    5
+   ],
+   [
+    "Quick answers",
+    6
+   ],
+   [
+    "Are we ready? checklist",
+    7
+   ],
+   [
+    "10 practice missions",
+    8
+   ],
+   [
+    "Are we ready? (fillable blank)",
+    9
+   ],
+   [
+    "Our First Phone Agreement",
+    10
+   ],
+   [
+    "Make-it-yours agreement (fillable)",
+    12
+   ],
+   [
+    "Phone-free zones",
+    13
+   ],
+   [
+    "Phone-free times",
+    14
+   ],
+   [
+    "Zone signs",
+    15
+   ],
+   [
+    "Fridge-Door Tech Plan (example)",
+    17
+   ],
+   [
+    "Fridge-Door Tech Plan (fillable)",
+    18
+   ],
+   [
+    "30 Phone-Free Afternoons",
+    19
+   ],
+   [
+    "Tracker",
+    20
+   ],
+   [
+    "Tracker (fillable blank)",
+    21
+   ],
+   [
+    "30 afternoon ideas",
+    22
+   ],
+   [
+    "Monthly check-in",
+    24
+   ],
+   [
+    "Certificate",
+    25
+   ],
+   [
+    "More from Play Before Pixels",
+    26
+   ]
+  ],
+  "P": {
+   "cover": 1,
+   "inside": 2,
+   "guide1": 3,
+   "guide2": 4,
+   "tips": 5,
+   "faq": 6,
+   "ready": 7,
+   "missions": 8,
+   "readyB": 9,
+   "agree": 10,
+   "agree2": 11,
+   "agreeB": 12,
+   "zones": 13,
+   "times": 14,
+   "signs": 15,
+   "signs2": 16,
+   "plan": 17,
+   "planB": 18,
+   "challenge": 19,
+   "tracker": 20,
+   "trackerB": 21,
+   "ideas": 22,
+   "ideas2": 23,
+   "checkin": 24,
+   "cert": 25,
+   "more": 26
+  }
+ },
+ "kit-etsy-low-a4": {
+  "pages": 26,
+  "toc": [
+   [
+    "Cover",
+    1
+   ],
+   [
+    "What’s inside",
+    2
+   ],
+   [
+    "Grown-up guide",
+    3
+   ],
+   [
+    "Printing, filling in and safety",
+    5
+   ],
+   [
+    "Quick answers",
+    6
+   ],
+   [
+    "Are we ready? checklist",
+    7
+   ],
+   [
+    "10 practice missions",
+    8
+   ],
+   [
+    "Are we ready? (fillable blank)",
+    9
+   ],
+   [
+    "Our First Phone Agreement",
+    10
+   ],
+   [
+    "Make-it-yours agreement (fillable)",
+    12
+   ],
+   [
+    "Phone-free zones",
+    13
+   ],
+   [
+    "Phone-free times",
+    14
+   ],
+   [
+    "Zone signs",
+    15
+   ],
+   [
+    "Fridge-Door Tech Plan (example)",
+    17
+   ],
+   [
+    "Fridge-Door Tech Plan (fillable)",
+    18
+   ],
+   [
+    "30 Phone-Free Afternoons",
+    19
+   ],
+   [
+    "Tracker",
+    20
+   ],
+   [
+    "Tracker (fillable blank)",
+    21
+   ],
+   [
+    "30 afternoon ideas",
+    22
+   ],
+   [
+    "Monthly check-in",
+    24
+   ],
+   [
+    "Certificate",
+    25
+   ],
+   [
+    "More from Play Before Pixels",
+    26
+   ]
+  ],
+  "P": {
+   "cover": 1,
+   "inside": 2,
+   "guide1": 3,
+   "guide2": 4,
+   "tips": 5,
+   "faq": 6,
+   "ready": 7,
+   "missions": 8,
+   "readyB": 9,
+   "agree": 10,
+   "agree2": 11,
+   "agreeB": 12,
+   "zones": 13,
+   "times": 14,
+   "signs": 15,
+   "signs2": 16,
+   "plan": 17,
+   "planB": 18,
+   "challenge": 19,
+   "tracker": 20,
+   "trackerB": 21,
+   "ideas": 22,
+   "ideas2": 23,
+   "checkin": 24,
+   "cert": 25,
+   "more": 26
+  }
+ }
+}

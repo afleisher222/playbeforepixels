@@ -18,16 +18,16 @@ EDIT_LOG = [
 
 # The symbol. Units: the floor is y = 0, the middle of the gap between the two figures is x = 0.
 SYMBOL = dict(
-    CHANNEL=208,        # width of the gap between the two flat fronts; the ball sits in it
-    A_BODY=336,         # grown-up: radius of the quarter-circle body (rounded back, flat front)
-    C_BODY=224,         # child: radius of the quarter-circle body (2/3 of the grown-up's)
-    A_HEAD=128,         # grown-up head radius
-    C_HEAD=96,          # child head radius, 3/4 of the grown-up's (a toddler's head is big for its body)
-    A_BACK=46,          # how far the grown-up's head centre sits behind its front edge (smaller = leaning further in)
+    CHANNEL=212,        # width of the gap between the two flat fronts; the ball sits in it
+    A_BODY=344,         # grown-up: radius of the quarter-circle body (rounded back, flat front)
+    C_BODY=216,         # child: radius of the quarter-circle body (5/8 of the grown-up's)
+    A_HEAD=122,         # grown-up head radius
+    C_HEAD=100,         # child head radius: nearly the grown-up's, because a toddler's head is big for its body
+    A_BACK=42,          # how far the grown-up's head centre sits behind its front edge (smaller = leaning further in)
     C_BACK=36,          # same for the child
     A_NECK=24,          # clear gap between grown-up head and body
     C_NECK=22,          # clear gap between child head and body
-    BALL=72,            # ball radius, 3/4 of the child's head
+    BALL=74,            # ball radius, 3/4 of the child's head
     EYE_A=20,           # grown-up eye radius (one eye: the figures are in profile)
     EYE_C=15,           # child eye radius
     EYE_X=0.42,         # eye position: share of the head radius toward the other figure (they face each other)...
@@ -38,11 +38,11 @@ SYMBOL = dict(
 SMALL = dict(SYMBOL, CHANNEL=250, A_HEAD=140, C_HEAD=110, A_BACK=40, C_BACK=34, A_NECK=40, C_NECK=38,
              BALL=84, EYE_A=0, EYE_C=0, SOFT=24, C_BODY=236)
 
-FONT = dict(wght=800, opsz=30)          # Bricolage Grotesque instance used for the wordmark
+FONT = dict(wght=740, opsz=30)          # Bricolage Grotesque instance used for the wordmark
 WORD = dict(TRACK=-6, SPACE=-40,         # letter spacing and word-space adjustment (font units, cap height = 660)
             KERN={('P', 'l'): -6, ('a', 'y'): -8, ('B', 'e'): -4, ('P', 'i'): 4, ('l', 's'): 0},
             Y_TAIL=0.80)                 # the y of "Play": keep this share of its descender (1 = the font's own tail)
-LOCKUP = dict(SYM_H=1.70,               # symbol height as a multiple of the cap height
+LOCKUP = dict(SYM_H=1.85,               # symbol height as a multiple of the cap height
               GAP=0.50,                  # clear air between symbol and name, as a multiple of the cap height
               DROP=0.0)                  # how far the symbol's floor sits below the text baseline (x cap height)
 
