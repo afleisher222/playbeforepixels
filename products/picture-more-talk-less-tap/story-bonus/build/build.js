@@ -62,9 +62,9 @@ single({
     G('translate(196 356)', P('M0 0 h96 a20 20 0 0 1 20 20 v48 a20 20 0 0 1 -20 20 h-54 l-22 22 l2 -22 h-22 a20 20 0 0 1 -20 -20 v-48 a20 20 0 0 1 20 -20Z', C.paper) + A.TX(48, 66, '?', 58, C.sky)) +
     G('translate(360 460)', P('M0 0 h96 a20 20 0 0 1 20 20 v48 a20 20 0 0 1 -20 20 h-22 l2 22 l-22 -22 h-54 a20 20 0 0 1 -20 -20 v-48 a20 20 0 0 1 20 -20Z', C.paper) + A.TX(48, 62, 'ha!', 40, C.ink)),
   texts: [
-    T(52, 44, 400, LOGO('lockup-horizontal-white.svg', 52), ''),
-    T(48, 86, 560, 'More Talk,<br>Less Tap', 'covertitle'),
-    T(52, 312, 560, 'A Talk Tower story for circle time', 'coversub'),
+    T(52, 40, 400, LOGO('lockup-horizontal-white.svg', 44), ''),
+    T(48, 104, 560, 'More Talk,<br>Less Tap', 'covertitle'),
+    T(52, 322, 560, 'A Talk Tower story for circle time', 'coversub'),
     T(612, 60, 150, 'Circle-time<br>talk games<br>inside!', 'badge'),
   ],
 });
@@ -108,7 +108,7 @@ single({
 <p>Text and illustrations © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. All rights reserved.</p>
 <p>This PDF is licensed with the kit: one classroom (single-classroom license) or one school site (site license). You may print it and project it for the children you teach. Please do not share, post or upload the file. Reading it aloud to your class or family is always welcome. Full terms: playbeforepixels.com/license</p>
 <p>This is a work of fiction. Room 5, Ms. Poppy and the children are imaginary and are not based on any real school, teacher or child. The games and notes at the back are general ideas for grown-ups to enjoy with children; they are not a program, assessment or professional advice. Please supervise children during all activities and use large blocks that are too big to swallow.</p>
-<p>Published by AlphaPlay LLC, doing business as Play Before Pixels · playbeforepixels.com</p>
+<p>Published by AlphaPlay LLC, doing business as Play Before Pixels · playbeforepixels.com<br>Free bonus printable: playbeforepixels.com/bonus/picture-more-talk-less-tap</p>
 <p>First edition 2026</p>`, 'legal'),
     T(60, 660, 330, 'ISBN / barcode<br><span>Not needed for this bonus PDF. Add one only if a print edition is ever published.</span>', 'isbnbox', 'height:auto'),
     T(420, 660, 336, WORDS.one('story-dedication') ? `<div class="dedic">${WORDS.one('story-dedication')}</div>` : founderBox('FOUNDER: your dedication', 'Your own words, in WORDS.md section “story-dedication”.'), ''),
@@ -444,14 +444,14 @@ single({
   art: E(408, 830, 520, 120, C.tSky) +
     tower(160, 790, ['q', 'j', 'i', 'l'], 0.9) +
     kidAt('zara', 'cheer', 300, 790, 0.85, 'laugh') +
-    R(564, 624, 192, 115, C.paper, 4) + R(410, 574, 140, 140, C.paper, 10),
+    R(564, 624, 192, 115, C.paper, 4) + R(404, 566, 150, 176, C.paper, 10),
   texts: [
     T(60, 60, 696, 'Room 5 is building a tower out of words.', 'backh'),
     T(60, 190, 696, `<p>Every time someone asks a question, tells a joke or shares an idea out loud, a block goes on the Talk Tower. But what happens when everybody talks at once?</p><p>A warm, funny read-aloud about conversation, taking turns and really listening, with circle-time talk games and a note for educators and families at the back.</p>`, 'backtext'),
     T(60, 500, 420, 'Ages 3–7 · Bonus read-aloud from the Talk Tower Classroom Game Kit', 'backmeta'),
     T(566, 648, 188, 'ISBN / barcode<br>(print edition only)', 'isbnlabel'),
-    T(420, 584, 120, qrSvg(116), ''),
-    T(376, 708, 200, 'Free bonus:<br>playbeforepixels.com/<br>bonus/picture-more-talk-less-tap', 'qrcap'),
+    T(421, 576, 120, qrSvg(116), ''),
+    T(404, 700, 150, 'Scan for a free<br>bonus printable', 'qrcap'),
     T(60, 426, 0, LOGO('lockup-horizontal-white.svg', 46), ''),
   ],
 });
@@ -524,7 +524,7 @@ body { -webkit-print-color-adjust: exact; print-color-adjust: exact }
 .titleslot { text-align: center } .titleslot .fbox { display: inline-block; max-width: 560px; text-align: left; font-size: 12.5px; padding: 6px 12px }
 .byline { font-family: "Nunito Sans", sans-serif; font-weight: 700; font-size: 24px; color: ${C.ink}; text-align: center }
 .dedic { font-family: "Nunito Sans", sans-serif; font-style: italic; font-size: 17px; line-height: 1.45; color: ${C.ink} }
-.qrcap { font-family: "Nunito Sans", sans-serif; font-weight: 700; font-size: 11.5px; line-height: 1.25; color: #fff; text-align: center }
+.qrcap { font-family: "Nunito Sans", sans-serif; font-weight: 800; font-size: 13px; line-height: 1.2; color: ${C.ink}; text-align: center }
 .theend { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 64px; color: ${C.tomato}; letter-spacing: -1px }
 `;
 

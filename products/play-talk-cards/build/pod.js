@@ -48,7 +48,7 @@ function tuck(d, guide) {
       <p class="fr-k">${d.sub}</p>
       <h1 style="color:${d.on}">${d.title}</h1>
       <p class="fr-s" style="color:${d.on}">Cards</p>
-      <div class="fr-ic">${icons.map((ic, i) => `<span style="background:${tints[i]}"><svg viewBox="-55 -55 110 110" width="40" height="40">${ICONS[ic]()}</svg></span>`).join('')}</div>
+      <div class="fr-ic">${icons.map((ic, i) => `<span style="background:${tints[i]}"><svg viewBox="-58 -58 116 116" width="34" height="34">${ICONS[ic]()}</svg></span>`).join('')}</div>
       <p class="fr-b">Play Before Pixels</p></div>`;
   const back = `<div class="bk">
       <h2>${d.title} Cards</h2><p>${d.blurb}</p>
@@ -65,8 +65,8 @@ function tuck(d, guide) {
   art += panel(X.sideL - B, y0 - T.dust - B, T.D + B, T.dust + B, d.color); art += panel(X.sideR, y0 - T.dust - B, T.D + B, T.dust + B, d.color);
   art += panel(X.sideL - B, y0 + T.H, T.D + B, T.dust + B, d.color); art += panel(X.sideR, y0 + T.H, T.D + B, T.dust + B, d.color);
   art += panel(X.front, y0, T.W, T.H, 'transparent', front);
-  art += panel(X.back, y0, T.W, T.H, '#fff', back);
-  art += panel(X.glue, y0, T.glue + B, T.H, '#fff');
+  art += panel(X.back, y0 - B, T.W + T.glue + B, T.H + 2 * B, '#fff');
+  art += panel(X.back, y0, T.W, T.H, 'transparent', back);
   art += panel(X.sideL, y0, T.D, T.H, 'transparent', side(-90), 'side');
   art += panel(X.sideR, y0, T.D, T.H, 'transparent', side(90), 'side');
   art += panel(X.front, B + T.flap, T.W, T.D, 'transparent', `<img src="${K.LOGO.markWhite}" class="top-mark" alt="">`);
@@ -105,8 +105,8 @@ symbol{overflow:visible}.sk{fill:var(--sk)} .hr{fill:var(--hr)} .sh{fill:var(--s
 .fr-k{margin:0;font-weight:800;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:${C.ink};background:#fff;border-radius:10px;padding:4px 9px}
 .fr h1{margin:14px 0 0;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:44px;line-height:.95;letter-spacing:-.03em}
 .fr-s{margin:2px 0 0;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:28px;letter-spacing:-.02em}
-.fr-ic{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
-.fr-ic span{width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:5px solid #fff}
+.fr-ic{display:flex;gap:6px;margin-top:16px}
+.fr-ic span{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:4px solid #fff}
 .fr-b{margin:auto 0 0;font-weight:800;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:${C.ink};background:#fff;border-radius:10px;padding:4px 9px}
 .bk{position:absolute;inset:0;padding:22px 20px 16px}
 .bk h2{margin:0 0 6px;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:19px}

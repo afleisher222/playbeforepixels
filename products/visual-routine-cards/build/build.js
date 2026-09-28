@@ -559,7 +559,7 @@ function buildEditable(paper) {
     out.push(page(`<div class="in"><div class="ph"><span class="sec"><span class="chip age">Type your label</span>${esc(cats)}</span><span class="sec"><span class="chip">Rainbow</span>${wordmark()}</span></div><div class="grid">${cells.join('')}</div></div>`, { cls: 'cards' }));
   });
   for (const cw of COLORWAYS) out.push(blankCardPage(cw.id, 'words', `blank_${cw.id}`));
-  for (const cw of COLORWAYS) out.push(...chartsFor(cw.id, { fields: true }).filter((_, i) => i !== 1 && i !== 2)); // rotated layouts: no typed fields (see Canva PNGs)
+  for (const cw of COLORWAYS) out.push(chartStrip(cw.id, { fields: true }), chartRoutine(cw.id, 'morning', { fields: true }), chartRoutine(cw.id, 'bedtime', { fields: true }), chartToday(cw.id, 'mon', { fields: true }), chartToday(cw.id, 'sun', { fields: true })); // rotated layouts get no typed fields (see Canva PNGs)
   for (const cw of COLORWAYS) out.push(chartHoriz(cw.id), chartFirstThen(cw.id));
   for (const cw of COLORWAYS) out.push(...checklistsFor(cw.id, { fields: true, blank: true }));
   return { html: doc(paper, out, `Visual Routine Cards — Editable — ${PAPER[paper].name}`), pages: out.length };

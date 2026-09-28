@@ -132,3 +132,6 @@ Every listing.json includes `amazon_route` (kdp-paperback · kdp-activity-editio
 - **Automatic emails answer before they're asked:** order confirmation with the download link and printing tips; a resend-my-download page; print-on-demand shipping notices with tracking; license certificate for schools.
 - **Contact form shows matching answers as the person types**, before they can send; an auto-reply with the top answers goes out for anything sent anyway.
 - **Anything that still arrives** is answered by a saved reply the routine sends, or drafted for the founder only if it needs her decision (refund exceptions, legal notices, press).
+
+## Honest pricing (binding — overrides DEMAND-CHECK rule 2)
+Never show a "was" or crossed-out price unless the product was genuinely and openly offered at that price for a substantial period first (FTC 16 CFR 233.1). No permanent "sales", no fake countdowns, no fake scarcity. Real, time-limited promotions (e.g., a launch week, Black Friday) are fine when they truly end. Set everyday prices at the level buyers expect instead. See ops/GAPS-ROUND-2.md.

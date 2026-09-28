@@ -118,7 +118,7 @@ The "365 screen-free play ideas" KDP format (*Toddler's Busy Book*: about 811 ra
 ## 4. Pricing and bundle rules learned from the top sellers
 
 1. **Put a big number in the title.** Winners lead with a count (129, 135+, 150+, 200+, 365, 740+). Our titles should too: "150 Screen-Free Play Cards", "200+ Routine Cards".
-2. **List at an anchor price, then sell at 30-40% off.** This is the Etsy norm (for example $17.75 listed and sold at $8.87, or $8.57 minus 35%). Set list prices so the sale price lands where the buyer expects it.
+2. ~~**List at an anchor price, then sell at 30-40% off.**~~ **SUPERSEDED BY BRAND.md "Honest pricing": a permanent discount off an anchor price is a deceptive former-price claim (16 CFR 233.1). Set everyday prices where buyers expect them; run only genuine, time-limited promotions.** This is the Etsy norm (for example $17.75 listed and sold at $8.87, or $8.57 minus 35%). Set list prices so the sale price lands where the buyer expects it.
 3. **Never list a single page under $5.** Single printables race toward $1-3 ($1.48 was seen). Weak single pages (media plan, 30-day tracker, bucket list, chore chart) only appear inside bundles.
 4. **Build a ladder: single, then seasonal add-on, then complete bundle** at 10-25% off the sum of its parts (the 3rd Grade Thoughts ladder of $6, $13.50 and $35.55). New seasonal packs are added to the bundle automatically.
 5. **One listing, many searches.** Merge related formats (road trip + restaurant + waiting room) so one listing ranks for all of them instead of three weak listings.

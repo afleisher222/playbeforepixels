@@ -77,7 +77,7 @@ function blankCard(key, opts = {}) {
   const f = opts.fields ? (n) => ` data-field="${n}"` : () => '';
   const lines = n => Array.from({ length: n }, () => '<span class="ln"></span>').join('');
   const seasonIc = !band ? `<span class="ss">${icon(key === 'summer' ? 'sun' : 'rain', 'ssi')}</span>` : '';
-  return `<div class="card blank" style="${tvars(th)}"><div class="panel">
+  return `<div class="card blank${opts.fields ? ' ed' : ''}" style="${tvars(th)}"><div class="panel">
   <div class="hd"><span class="age">${seasonIc}${ageTxt}</span><span class="en en3"><i${f('calm')}></i>Calm<i${f('medium')}></i>Med<i${f('wiggly')}></i>Wiggly</span></div>
   <div class="ti"><div class="tt"><div class="cat">Your idea</div><div class="wl big"${f('title')}></div></div><span class="ci">${icon('pen')}</span></div>
   <div class="bd">
@@ -232,6 +232,9 @@ h1,h2,h3,p{margin:0}
 .wlines .ln{display:block;height:17px;border-bottom:1.3px solid var(--line)}
 .blank .talk .wlines .ln{border-color:rgba(29,41,64,.22)}
 .blank .ci{color:var(--ink);opacity:.8}
+.ed .wlines{background:${C.wash};border-radius:6px}.ed .wlines .ln{border-color:transparent}
+.ed .talk .wlines{background:rgba(255,255,255,.7)}
+.ed .wl.big{background:${C.wash};border-radius:6px;border-bottom:0;height:24px;margin-top:2px}
 /* card back */
 .back .panel{background:var(--m);border-color:var(--m);align-items:center;justify-content:center}
 .bgdots{position:absolute;inset:0;width:100%;height:100%}
@@ -646,6 +649,7 @@ function weekPage(start, fields) {
   <div class="wnote"><span class="hand">Why write it down?</span><p>The funny things children say while they play are easy to forget. A line a day becomes a little record of your year, and a reminder of which cards to play again.</p></div>`);
 }
 const weekCss = `<style>
+.mline{height:28px;border-bottom:1.5px solid var(--line)}
 .wtop{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:14px}
 .wtab{display:flex;flex-direction:column;gap:6px}
 .wr{display:grid;grid-template-columns:1.05in 2.1in .78in 1fr .72in;gap:8px;align-items:stretch;min-height:.9in}

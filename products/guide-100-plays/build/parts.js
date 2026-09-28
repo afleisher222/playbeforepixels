@@ -85,7 +85,7 @@ function sceneRocket() { // 3–5: box rocket countdown
     <path d="M-78 ${F - 44}L-112 ${F}H-78Z" fill="${C.tomato}"/><path d="M78 ${F - 44}L112 ${F}H78Z" fill="${C.tomato}"/>
     <path d="M-34 ${F}L0 ${F + 30}L34 ${F}Z" fill="${C.sun}"/></g>`;
   const g = Object.assign({}, ADULTS.G5, { x: 450, y: F - 51 * 1.08, s: 1.08, flip: true, legs: 'kneel', aL: 16, aR: -150, face: 'laugh' });
-  const stars = [[120, 190, 1], [360, 150, .7], [520, 210, .8], [330, 250, .5]].map(([x, y, s]) => `<path d="M0-12L3.5-3.5 12 0 3.5 3.5 0 12-3.5 3.5-12 0-3.5-3.5Z" fill="${C.sun}" transform="translate(${x} ${y}) scale(${s * 1.6})"/>`).join('');
+  const stars = [[120, 190, 1], [300, 140, .7], [540, 260, .8], [340, 250, .5]].map(([x, y, s]) => `<path d="M0-12L3.5-3.5 12 0 3.5 3.5 0 12-3.5 3.5-12 0-3.5-3.5Z" fill="${C.sun}" transform="translate(${x} ${y}) scale(${s * 1.6})"/>`).join('');
   const nums = `<text x="440" y="176" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="40" fill="${C.ink}">3, 2, 1…</text>`;
   return `<circle cx="300" cy="318" r="160" fill="${C.tomato}"/>` + stars + kid(k) + box + adult(g) + nums;
 }

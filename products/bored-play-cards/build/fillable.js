@@ -3,7 +3,7 @@
 // The PDF is first rendered with brand/render.js; this script measures every [data-field]
 // element in the same HTML (96 px = 1 in) and places an AcroForm field on top of it (pdf-lib).
 const { chromium } = require('/opt/node22/lib/node_modules/playwright');
-const { PDFDocument, rgb, StandardFonts } = require('pdf-lib');
+const { PDFDocument, rgb, StandardFonts, drawEllipse } = require('pdf-lib');
 const fs = require('fs'); const path = require('path');
 (async () => {
   const [html, pdfIn, pdfOut] = process.argv.slice(2);
@@ -33,6 +33,10 @@ const fs = require('fs'); const path = require('path');
       const box = { x: f.x * k, y: H - (f.y + f.h) * k, width: f.w * k, height: f.h * k, borderWidth: 0 };
       if (f.tag === 'I') {
         const cb = form.createCheckBox(id); cb.addToPage(pg, { ...box, textColor: ink, borderColor: undefined, backgroundColor: undefined });
+        // custom look: nothing when off (the printed circle shows through), a filled ink dot when on
+        const w = box.width, h = box.height;
+        const dot = drawEllipse({ x: w / 2, y: h / 2, xScale: w * 0.32, yScale: h * 0.32, color: ink, borderWidth: 0 });
+        cb.updateAppearances(() => ({ normal: { on: dot, off: [] }, down: { on: dot, off: [] } }));
       } else {
         const tf = form.createTextField(id);
         const multi = !['title', 'menu_day'].includes(f.name) && !/_week$|_players$/.test(f.name);

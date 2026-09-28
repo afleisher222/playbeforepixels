@@ -29,7 +29,7 @@ function card(cd, cw, opts = {}) {
   const style = `--c:${cat.c};--t:${cat.t};--on:${cat.on}`;
   const art = opts.blankArt ? `<circle cx="60" cy="52" r="42" fill="none" stroke="#B8C2D3" stroke-width="1.4" stroke-dasharray="4 4"/><text x="60" y="50" text-anchor="middle" font-family="Nunito Sans, sans-serif" font-size="7.5" font-weight="700" fill="#8C97AB">draw it, or</text><text x="60" y="60" text-anchor="middle" font-family="Nunito Sans, sans-serif" font-size="7.5" font-weight="700" fill="#8C97AB">glue a photo</text>`
     : `<circle class="disc" cx="60" cy="52" r="44"/>${A[cd.art]()}`;
-  const lab = opts.blankLabel ? `<div class="lab blank"${opts.field ? ` data-field="${opts.field}"` : ''}></div>`
+  const lab = opts.blankLabel ? `<div class="lab blank"${opts.field ? ` data-field="${opts.field}" data-fsize="15"` : ''}></div>`
     : `<div class="lab" style="font-size:${labelSize(cd.label)}px">${esc(cd.label)}</div>`;
   return `<div class="card cw-${cw}" data-card="${cd.id}" style="${style}"><svg class="art" viewBox="0 0 120 100" aria-hidden="true">${art}</svg>${lab}</div>`;
 }

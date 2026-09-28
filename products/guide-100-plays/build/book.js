@@ -414,6 +414,9 @@ function screensPage() {
     <div class="card" style="background:${C.tSky}"><div class="eyebrow" style="color:var(--ink)">What the guidelines say</div>
       <p><b>World Health Organization (2019):</b> sedentary screen time is not recommended for babies under 1 or 1-year-olds; for 2- to 4-year-olds, no more than 1 hour a day, and less is better.</p>
       <p style="margin-top:.06in"><b>American Academy of Pediatrics (2016):</b> for children younger than 18 months, avoid screen media other than video-chatting; for ages 2 to 5, limit screen use to 1 hour a day of high-quality programming, ideally watched together.</p></div>
+    <div class="spacer"></div>
+    <svg viewBox="0 0 600 170" style="width:5in;align-self:center"><rect x="40" y="150" width="520" height="14" rx="7" fill="${C.tPlum}"/><rect x="90" y="118" width="170" height="34" rx="17" fill="${C.plum}"/><g transform="translate(175 70) scale(.9) rotate(-8)"><use href="#tablet-sleeping"/></g><text x="228" y="40" font-family="Caveat" font-weight="700" font-size="34" fill="${C.ink}">z z z</text><g transform="translate(420 96) scale(.9)"><use href="#book-open"/></g><g transform="translate(330 118) scale(.55)"><use href="#a-blocks"/></g></svg>
+    <p class="small" style="text-align:center;margin-top:.04in">Even the tablet likes a rest. Sometimes.</p>
   </div>` });
 }
 function trackerPage() {
@@ -438,7 +441,7 @@ function plannerPage(colorKey = 'tomato', start = 'Monday', extra = false) {
     <div style="flex:1;display:flex;flex-direction:column;gap:.08in">
       ${days.map((d, i) => `<div style="flex:1;display:grid;grid-template-columns:1.15in .7in 1fr 1.7in;align-items:stretch;background:${i % 2 ? W : t};border-radius:.12in;padding:.04in .1in;border:${i % 2 ? `1.5px solid ${t}` : '0'}">
         <span class="display" style="font-size:13pt;align-self:center;color:${colorKey === 'sun' ? C.ink : c}">${d}</span>
-        <span style="display:flex;padding-right:.1in">${fld(`${id}-${i}-n`)}</span><span style="display:flex;padding-right:.14in">${fld(`${id}-${i}-play`)}</span><span style="display:flex">${fld(`${id}-${i}-best`)}</span></div>`).join('')}
+        <span style="display:flex;align-items:flex-end;padding-bottom:.06in;padding-right:.1in">${fld(`${id}-${i}-n`)}</span><span style="display:flex;align-items:flex-end;padding-bottom:.06in;padding-right:.14in">${fld(`${id}-${i}-play`)}</span><span style="display:flex">${fld(`${id}-${i}-best`)}</span></div>`).join('')}
     </div>
     <p class="small" style="margin-top:.1in">Tip: plan three plays a day at most. Leave room for boredom, naps and the unexpected.${extra ? ' Type into the lines in any free PDF reader, or print and write.' : ' A Sunday-start version comes with your free bonus.'}</p>
   </div>` });
@@ -453,6 +456,12 @@ function sourcesPage() {
       <li><div>Brushe ME, et al. Screen time and parent-child talk when children are aged 12 to 36 months. <i>JAMA Pediatrics.</i> 2024;178(4):369–375.</div></li>
     </ul>
     <p class="small" style="margin-top:.1in">These sources describe links (associations) found in research and public-health guidance. They are not claims about any single child, and nothing in this book is a treatment or a promise of any result.</p>
+    <div class="card" style="background:${C.tGrass};margin-top:.2in">
+      <h2>How these plays were chosen</h2>
+      <p>Every play uses everyday things, takes ten minutes or less to set up, and was checked against the rules on the "Safety first" page: a grown-up right there, the toilet-paper tube test for under-3s, no balloons, no long cords or strings, water always supervised and no choking-risk foods. Each one comes with something to say, because the talk is the point.</p>
+    </div>
+    <div class="spacer"></div>
+    <svg viewBox="40 250 520 240" style="width:4.2in;align-self:center">${X.sceneCover()}</svg>
     <div class="spacer"></div>
     <div class="card" style="background:${C.wash}">
       <h2>About Play Before Pixels</h2>
