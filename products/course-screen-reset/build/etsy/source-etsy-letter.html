@@ -131,7 +131,9 @@ b{font-weight:800}
 .swap{margin-top:.2in}
 .safeline{margin-top:auto}
 /* tracker */
-.tracker{display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(6,1fr);gap:.08in;flex:1;min-height:0}
+.tracker{display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(6,minmax(0,1fr));gap:.07in;flex:1;min-height:0}
+.tc{overflow:hidden}
+
 .tc{border:1.3px solid #C9D2E1;border-top-width:5px;border-radius:8px;padding:.05in .07in;display:flex;flex-direction:column}
 .tcn{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:15pt;line-height:1}
 .tcp{font-weight:700;font-size:8.5pt;line-height:1.2;flex:1;margin:.03in 0}

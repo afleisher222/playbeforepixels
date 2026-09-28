@@ -347,17 +347,20 @@ SPREADS.push(() => rect(0, 0, 1750, 875, C.kT) + rect(0, 630, 1750, 245, C.gT) +
   // exactly three ducks: the rhyme counts "one, two, three", and the last one (speed lines) is fast
   U('duck-w', 1016, 680, 1.0) + U('duck-w', 1136, 684, 1.0) + U('duck-w', 1256, 680, 1.0) +
   rect(1450, 662, 250, 40, C.sun, 10) +
-  lap({ a: 'jo', kid: 'ada-sit', cx: 1575, fy: 686, s: 0.72, ks: 0.85, front: U('book', 76, 168, 0.55), arms: 'book' }));
+  lap({ a: 'jo', kid: 'ada-sit', cx: 1575, fy: 686, s: 0.72, ks: 0.85, front: U('book', 76, 168, 0.55), arms: 'book' }) +
+  // "a park full of laps": Mama Bea and the baby further back on the striped blanket, so the right page shows more than one lap
+  rect(1180, 606, 170, 30, C.tomato, 8) + [0, 1, 2].map(i => rect(1200 + i * 52, 606, 16, 30, C.tT)).join('') +
+  lap({ a: 'bea', kid: 'baby-up', cx: 1265, fy: 624, s: 0.5, ks: 0.66, kdy: -8, arms: 'lift' }));
 
 // 9 Cat on Grandma's lap — then we share
 SPREADS.push(() => rect(0, 0, 875, 875, C.pT) + rect(0, 755, 875, 120, C.plum) + rect(875, 0, 875, 875, C.sT) + rect(875, 755, 875, 120, C.sun) +
   lap({ a: 'gma', cx: 300, fy: 812, s: 1.35, seat: 'wheelchair', front: U('cat', 66, 148, 0.78) }) +
   standKid('kid-stand-point', 690, 812, 1.85) + text(790, 470, '!', 90, C.tomato) +
-  lap({ a: 'gma', kid: 'kid-sit', cx: 1300, fy: 812, s: 1.5, seat: 'wheelchair', front: U('cat', 34, 168, 0.58) }) +
+  lap({ a: 'gma', kid: 'kid-sit', cx: 1300, fy: 812, s: 1.5, seat: 'wheelchair', arms: 'rest', front: U('cat', 62, 196, 0.66) }) +
   (() => {
     const L = (x1, y1, x2, y2) => `<path d="M${x1} ${y1} Q${(x1 + x2) / 2} ${Math.min(y1, y2) - 30} ${x2} ${y2}" stroke="${C.ink}" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="${x2}" cy="${y2}" r="7" fill="${C.ink}"/>`;
     return text(1020, 470, 'one kid', 50, C.tomato, 'Caveat', 700) + L(1060, 486, 1238, 522) +
-      text(990, 560, 'one cat', 50, C.tomato, 'Caveat', 700) + L(1030, 576, 1205, 598) +
+      text(985, 640, 'one cat', 50, C.tomato, 'Caveat', 700) + L(1030, 656, 1240, 670) +
       text(1610, 560, 'one lap', 50, C.tomato, 'Caveat', 700) + L(1570, 574, 1368, 656) +
       text(1612, 690, 'one chair', 46, C.tomato, 'Caveat', 700) + L(1590, 704, 1500, 736);
   })());
@@ -375,7 +378,8 @@ SPREADS.push(() => {
     lap({ a: 'dad', kid: 'kid-sit-hold', cx: 440, fy: 800, s: 1.3, seat: 'couch', arms: 'book', front: U('book', 70, 166, 0.62) }) +
     `<path d="M${f(tx)} ${f(ty - 30)} L${f(tx - 110)} 420 L${f(tx + 60)} 420Z" fill="${C.paper}"/>` +
     lap({ a: 'theo', cx: 1080, fy: 790, s: 1.3, arms: 'torch' }) +
-    `<rect x="${f(tx - 13)}" y="${f(ty - 40)}" width="26" height="40" rx="7" fill="${C.sky}"/>` +
+    // a plain flashlight (handle + wide head), so it can never be read as a phone
+    `<rect x="${f(tx - 9)}" y="${f(ty - 30)}" width="18" height="44" rx="6" fill="${C.ink}"/><path d="M${f(tx - 19)} ${f(ty - 50)} L${f(tx + 19)} ${f(ty - 50)} L${f(tx + 10)} ${f(ty - 28)} L${f(tx - 10)} ${f(ty - 28)}Z" fill="${C.sky}"/><rect x="${f(tx - 19)}" y="${f(ty - 54)}" width="38" height="8" rx="4" fill="${C.sT}"/>` +
     lap({ a: 'gma', cx: gx, fy: 810, s: gs, seat: 'wheelchair', arms: 'rest' }) +
     `<path d="M40 330 L1540 330 L1556 420 L60 420Z" fill="${C.sun}"/>` + scal +
     Array.from({ length: 13 }, (_, i) => rect(90 + i * 118, 330, 40, 88, C.tomato)).join('') +
@@ -601,9 +605,10 @@ pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.kT) + col(
 
 // I32 Author note + More from Play Before Pixels + bonus QR
 const NEXT = [
-  ['The Day the Tablet Slept', 'Picture book · ages 3–7', C.sky, C.kT],
+  // only products that are on sale today, youngest first (the Bring a Book inserts go back here once they are live)
+  ['Up! Go! More!', 'Talk-along book · ages 0–3', C.tomato, C.tT],
   ['100 Screen-Free Plays for Ages 0–5', 'Guide + printables · ages 0–5', C.grass, C.gT],
-  ['Bring a Book shower inserts', 'Printable set · for baby showers', C.tomato, C.tT],
+  ['The Day the Tablet Slept', 'Picture book · ages 3–7', C.sky, C.kT],
 ];
 pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.paper))}
   <div class="mat last">
@@ -642,7 +647,7 @@ const BACK = `<div class="page back">${svgPage(rect(0, 0, 875, 875, C.sun) + `<c
     <div class="srow"><i style="background:${C.sky}"></i>The Day the Tablet Slept</div>
     <div class="srow"><i style="background:${C.grass}"></i>Up! Go! More!</div>
   </div>
-  <div class="bk-foot"><div class="logo">${LOGO('lockup-horizontal-white.svg')}</div><div class="bk-age">Ages 2–6 · Personalized keepsake${ETSY ? '' : ' · playbeforepixels.com'}</div></div>
+  <div class="bk-foot"><div class="logo">${LOGO('lockup-horizontal-white.svg')}</div><div class="bk-age">Ages 0–5 · Personalized keepsake${ETSY ? '' : ' · playbeforepixels.com'}</div></div>
   <div class="isbn">ISBN / barcode</div>
 </div>`;
 pages.push(BACK);
@@ -880,7 +885,7 @@ fs.writeFileSync(path.join(DIR, 'mockup.html'), `<!doctype html><html><head><met
 .looks{display:flex;gap:10px;margin-top:22px}.looks svg{width:62px;height:62px;background:#fff;border-radius:50%}
 </style></head><body><div class="blob"></div><div class="blob2"></div><div class="floor"></div><div class="shadow"></div>${DEFS}
 <div class="book"><div class="inner"><div class="spine"></div><img src="cover.png" alt=""><div class="hinge"></div></div></div>
-<div class="tag">Laps Not Apps<small>A rhyming read-aloud with your child’s<br>name in six rhymes · ages 2–6</small><span class="pill">Personalized keepsake</span>
+<div class="tag">Laps Not Apps<small>A rhyming read-aloud with your child’s<br>name in six rhymes · ages 0–5</small><span class="pill">Personalized keepsake</span>
 <div class="looks">${Object.keys(PZ.LOOKS).map(n => `<svg viewBox="12 -8 96 96"><use href="#look-${n}" width="120" height="200"/></svg>`).join('')}</div></div>
 <div class="spread"><img src="preview/p25.png" alt=""><img src="preview/p26.png" alt=""></div>
 </body></html>`);

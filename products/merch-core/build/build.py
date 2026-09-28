@@ -43,8 +43,8 @@ SIZES = ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL']
 # words (human authorship). Example entry:
 #   {'id': 'slogan-1', 'lines': ['First line', 'second line']}
 SLOGANS = []
-BANNED = ['pencils before pixels', "childhood can't wait", 'paper first', 'screen-free week',
-          'screen free week', 'autism', 'therapy', 'play beyond the screen']
+BANNED = ['pencils before pixels', "childhood can't wait", 'paper first', 'screen-free week', 'autism', 'therapy',
+          'screen free week', 'play beyond the screen']
 # ---------------------------------------------------------------------------
 
 

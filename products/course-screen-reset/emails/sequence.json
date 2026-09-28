@@ -1,0 +1,234 @@
+{
+  "sequence": "The 30-Day Screen Reset (paid program)",
+  "trigger": "purchase of the program or the bundle (tag: reset-buyer)",
+  "rules": [
+    "Send daily lessons at 7:00 in the subscriber’s time zone; the subscriber can pause or change the time.",
+    "Stop the free funnel (funnel/) for anyone who buys.",
+    "Never collect or merge a child’s name. Birth month and year only, and only on the free sign-up.",
+    "The welcome email must not send while it still shows a FOUNDER WRITES THIS box (make.sh --final checks this)."
+  ],
+  "merge_tags": {
+    "{{logo_url}}": "hosted PNG of brand/logo/png/lockup-horizontal-2400.png (upload once to the email platform)",
+    "{{referral_link}}": "give $5 / get $5 share link from the store platform",
+    "{{unsubscribe_link}}": "platform unsubscribe",
+    "{{pause_or_change_time_link}}": "subscriber preferences page",
+    "{{workbook_download_link}}": "expiring download link for the workbook files",
+    "{{feedback_form_link}}": "one-question form (which play did your child go back to?)",
+    "{{program_checkout_link}}": "checkout for the $27 program",
+    "{{bundle_checkout_link}}": "checkout for the $49 bundle",
+    "{{starter_download_link}}": "the free starter PDF",
+    "[BUSINESS MAILING ADDRESS]": "the USPS PO Box from legal/ENTITY.md (CAN-SPAM); founder enters it once in the platform footer"
+  },
+  "emails": [
+    {
+      "file": "day-00-welcome",
+      "send": "immediately after purchase",
+      "subject": "Welcome! Your workbook is inside",
+      "preheader": "One small thing to do before Day 1 arrives tomorrow."
+    },
+    {
+      "file": "day-01",
+      "send": "day 1, 7:00 local time",
+      "subject": "Day 1: Start with one ordinary day",
+      "preheader": "Before you change anything, notice when screens show up in your day and when play already "
+    },
+    {
+      "file": "day-02",
+      "send": "day 2, 7:00 local time",
+      "subject": "Day 2: Why talk and play come first",
+      "preheader": "The everyday back-and-forth of talk and play is how young children practice communicating."
+    },
+    {
+      "file": "day-03",
+      "send": "day 3, 7:00 local time",
+      "subject": "Day 3: Give screens a steady spot",
+      "preheader": "A screen spot that happens at the same time, in the same place, with the same ending, cuts"
+    },
+    {
+      "file": "day-04",
+      "send": "day 4, 7:00 local time",
+      "subject": "Day 4: Build a play basket",
+      "preheader": "Play starts more easily when a few good things are within reach. Fewer choices usually mea"
+    },
+    {
+      "file": "day-05",
+      "send": "day 5, 7:00 local time",
+      "subject": "Day 5: The first ten minutes",
+      "preheader": "Ten minutes of full attention when you first see each other often makes the rest of the da"
+    },
+    {
+      "file": "day-06",
+      "send": "day 6, 7:00 local time",
+      "subject": "Day 6: A kind ending for screen time",
+      "preheader": "Most screen trouble happens at the end. A warning, a clear ending and a landing activity m"
+    },
+    {
+      "file": "day-07",
+      "send": "day 7, 7:00 local time",
+      "subject": "Day 7: Week 1: keep what worked",
+      "preheader": "Look back at your first week, keep the one thing that helped most and let go of the rest."
+    },
+    {
+      "file": "day-08",
+      "send": "day 8, 7:00 local time",
+      "subject": "Day 8: Play first, screens in their spot",
+      "preheader": "Put a short play before the screen spot so play gets the fresh energy of the day."
+    },
+    {
+      "file": "day-09",
+      "send": "day 9, 7:00 local time",
+      "subject": "Day 9: Boredom is where play starts",
+      "preheader": "A little boredom is normal and often turns into play if grown-ups don’t rush to fill it."
+    },
+    {
+      "file": "day-10",
+      "send": "day 10, 7:00 local time",
+      "subject": "Day 10: Kitchen time is play time",
+      "preheader": "The hour before dinner is hard for everyone. Letting children help often works better than"
+    },
+    {
+      "file": "day-11",
+      "send": "day 11, 7:00 local time",
+      "subject": "Day 11: Mornings without the scramble",
+      "preheader": "A short, repeatable morning order, with play in the gaps, often needs less screen help to "
+    },
+    {
+      "file": "day-12",
+      "send": "day 12, 7:00 local time",
+      "subject": "Day 12: Outside counts",
+      "preheader": "Even five minutes outdoors can change the mood of a day, for children and for grown-ups."
+    },
+    {
+      "file": "day-13",
+      "send": "day 13, 7:00 local time",
+      "subject": "Day 13: Big feelings when screens end",
+      "preheader": "When a child melts down as screen time ends, stay close, name the feeling and keep the end"
+    },
+    {
+      "file": "day-14",
+      "send": "day 14, 7:00 local time",
+      "subject": "Day 14: Tired days count too",
+      "preheader": "Low-energy play is still play. Every play in this program has a two-minute version for day"
+    },
+    {
+      "file": "day-15",
+      "send": "day 15, 7:00 local time",
+      "subject": "Day 15: Pause and wait",
+      "preheader": "Leaving a real pause after you speak gives children time to take their turn."
+    },
+    {
+      "file": "day-16",
+      "send": "day 16, 7:00 local time",
+      "subject": "Day 16: Say what you see",
+      "preheader": "Describing what your child is doing gives them words without asking them to perform."
+    },
+    {
+      "file": "day-17",
+      "send": "day 17, 7:00 local time",
+      "subject": "Day 17: Repeat and add one",
+      "preheader": "When your child says or shows something, say it back and add one more word or idea."
+    },
+    {
+      "file": "day-18",
+      "send": "day 18, 7:00 local time",
+      "subject": "Day 18: Offer a choice",
+      "preheader": "Holding up two options and waiting gives even very young children a clear way to take a tu"
+    },
+    {
+      "file": "day-19",
+      "send": "day 19, 7:00 local time",
+      "subject": "Day 19: Follow their lead",
+      "preheader": "When the child chooses the play and the grown-up joins in, children often talk and play mo"
+    },
+    {
+      "file": "day-20",
+      "send": "day 20, 7:00 local time",
+      "subject": "Day 20: Sing, gesture and your own language",
+      "preheader": "Songs, rhymes and gestures make words easy to join in with, in any language."
+    },
+    {
+      "file": "day-21",
+      "send": "day 21, 7:00 local time",
+      "subject": "Day 21: Books, paper and pages",
+      "preheader": "Sharing books and paper together is one of the easiest ways to add talk to the day."
+    },
+    {
+      "file": "day-22",
+      "send": "day 22, 7:00 local time",
+      "subject": "Day 22: Waiting without a screen",
+      "preheader": "A few pocket plays that need nothing at all turn waiting rooms, lines and restaurants into"
+    },
+    {
+      "file": "day-23",
+      "send": "day 23, 7:00 local time",
+      "subject": "Day 23: Car rides and travel",
+      "preheader": "Cars, buses and trains are some of the best places to talk, because nobody has to look at "
+    },
+    {
+      "file": "day-24",
+      "send": "day 24, 7:00 local time",
+      "subject": "Day 24: Grown-up phones",
+      "preheader": "Children notice our screens too. A phone parking spot and a few spoken habits help the who"
+    },
+    {
+      "file": "day-25",
+      "send": "day 25, 7:00 local time",
+      "subject": "Day 25: Big kids and fairness",
+      "preheader": "School-age children care about fairness and friends. Listening first makes the family plan"
+    },
+    {
+      "file": "day-26",
+      "send": "day 26, 7:00 local time",
+      "subject": "Day 26: Siblings, twins and mixed ages",
+      "preheader": "One family rhythm, with roles for each child, works better than separate plans for everyon"
+    },
+    {
+      "file": "day-27",
+      "send": "day 27, 7:00 local time",
+      "subject": "Day 27: Grandparents, sitters and other homes",
+      "preheader": "Share your plan with other caregivers warmly, then let other homes be different."
+    },
+    {
+      "file": "day-28",
+      "send": "day 28, 7:00 local time",
+      "subject": "Day 28: Tough days, sick days, travel days",
+      "preheader": "A planned change for a hard day is fine. Say it out loud, and go back to your usual rhythm"
+    },
+    {
+      "file": "day-29",
+      "send": "day 29, 7:00 local time",
+      "subject": "Day 29: Look back: what did they ask for again?",
+      "preheader": "The plays your child asked for again are your family’s real plan. Write them down."
+    },
+    {
+      "file": "day-30",
+      "send": "day 30, 7:00 local time",
+      "subject": "Day 30: Your family’s plan",
+      "preheader": "Write a short, kind plan you can keep: your screen spot, your favorite plays and your word"
+    },
+    {
+      "file": "checkin-day-03",
+      "send": "day 3, 16:00 local time",
+      "subject": "How are the first three days going?",
+      "preheader": "A quick check-in, and one tip if it feels bumpy."
+    },
+    {
+      "file": "checkin-day-10",
+      "send": "day 10, 16:00 local time",
+      "subject": "Day 10: what’s working?",
+      "preheader": "Tell us in one click which play your child liked."
+    },
+    {
+      "file": "checkin-day-30",
+      "send": "day 30, 16:00 local time",
+      "subject": "You finished! One question for you",
+      "preheader": "Which page did your child go back to?"
+    },
+    {
+      "file": "day-31-whats-next",
+      "send": "day 31, 7:00 local time",
+      "subject": "What’s next after the Reset",
+      "preheader": "Two easy ways to keep the rhythm going."
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+---
+subject: "Day 18: Offer a choice"
+preheader: "Holding up two options and waiting gives even very young children a clear way to take a tu"
+send: "day 18, 7:00 local time"
+---
+
+*Day 18 of 30 · More back-and-forth*
+
+# Offer a choice
+
+**Holding up two options and waiting gives even very young children a clear way to take a turn.**
+
+Today: offer a choice.
+
+Hold up two things (two snacks, two books, two cups) and name them: “Apple or banana?” Then wait. Even a baby can answer by looking or reaching. A toddler might point or try the word. A preschooler might tell you why.
+
+Choices give children a real, easy turn in the conversation, and a little control over their day. Children who feel some control often push back less on the things they don’t get to choose.
+
+Keep choices small and real. Both options should be fine with you. “Do you want to get dressed?” isn’t a real choice; “Red shirt or blue shirt?” is.
+
+Hold things up where your child can see both. Say the last option with a little lift in your voice. Then wait, patiently.
+
+For big kids, choices sound like: “Do you want to do homework before snack or after?” or “Should Saturday be park day or pancake day?”
+
+**Today’s one small step:** Offer at least five real two-way choices today, and wait for each answer.
+
+## Today’s play: This or that
+
+*From 12 months · No prep · No mess · Quick play · You need: two cups, a small toy that’s too big to swallow*
+
+Hide a toy under one of two upside-down cups while your child watches. Ask “This one or that one?” and wait for a point or a word. Lift it together. Swap roles.
+
+**Talk while you play (Offer a choice):** “Where’s the duck? This one… or that one? (wait)”
+
+- **Make it easier:** Use one cup: “Where did it go?” and lift together.
+- **Make it harder:** Big kids use three cups and shuffle them for you to guess.
+- **Tired-grown-up version (2 minutes):** Hold out two closed hands with something in one: “This one or that one?”
+- **Safety:** The hidden toy must be too big to fit through a toilet-paper tube for under-3s.
+
+## Plain words for: When your child wants both
+
+> “You want both! Pick one now. The other one is for after lunch.”
+>
+> “You choose, or I’ll choose. Which?”
+
+A calm limit with a choice inside it. The second choice goes to you only if they don’t pick.
+
+Today’s pages in your workbook: Day 18. {{workbook_download_link}}
+
+---
+**Next for your family:** 100 Screen-Free Plays. The paperback and printable guide for ages 0–5, sorted by age, with a talk line on every play. https://playbeforepixels.com/shop/guide-100-plays
+
+**Share with a friend:** give $5, get $5. {{referral_link}}
+
+The Play Before Pixels team
+
+_This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
+
+[Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
+Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

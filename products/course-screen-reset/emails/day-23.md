@@ -1,0 +1,58 @@
+---
+subject: "Day 23: Car rides and travel"
+preheader: "Cars, buses and trains are some of the best places to talk, because nobody has to look at "
+send: "day 23, 7:00 local time"
+---
+
+*Day 23 of 30 · Make it stick*
+
+# Car rides and travel
+
+**Cars, buses and trains are some of the best places to talk, because nobody has to look at anybody.**
+
+The car (or bus, or train) is one of the best talking places in family life. Everyone is side by side, nobody has to make eye contact, and there’s always something going past the window. Big kids especially tend to open up in the car.
+
+Try a few quiet minutes with no screens and see what happens. Start with a game: count cows, spot yellow cars, sing a song with a silly ending, tell a story one sentence each.
+
+For longer trips, pack a small bag of things to do: a notebook, a favorite small toy (big enough for little ones), a book, a snack. Plan stops to move bodies.
+
+If you use screens on long trips, give them a steady spot there too: “Shows after the first stop, until lunch.” Same idea as at home, and it cuts the asking.
+
+Some of the best conversations of childhood happen staring out of a window. Leave room for them.
+
+**Today’s one small step:** Try the first ten minutes of your next ride without a screen, with a game or a song.
+
+## Today’s play: Window stories
+
+*From 2½ years · No prep · No mess · Short play · You need: Nothing but you*
+
+Pick someone or something you pass: a dog, a truck, a person with an umbrella. Make up where they are going, one sentence each. Keep adding until you’ve passed them.
+
+**Talk while you play (Repeat and add one):** “That truck is going to… the moon! With a cargo of… cheese!”
+
+- **Make it easier:** Name what goes by: “Bus! Big bus. Bye, bus!”
+- **Make it harder:** Big kids keep a travel tally of things they spot and turn it into a chart at home.
+- **Tired-grown-up version (2 minutes):** Sing one song together and look out the window.
+- **Safety:** Everyone stays buckled in their car seat or seat belt. Grown-up drivers keep their eyes on the road; play is for passengers.
+
+## Plain words for: “Are we there yet?”
+
+> “Not yet. Let’s count ten red cars, then I’ll tell you how far.”
+>
+> “About two songs long. Which song first?”
+
+Turn time into something a child can picture: songs, cars, stops.
+
+Today’s pages in your workbook: Day 23. {{workbook_download_link}}
+
+---
+**Next for your family:** The Day the Tablet Slept. A funny bedtime read-aloud for ages 3–7 about a box rocket, a dog named Biscuit and one very sleepy tablet. https://playbeforepixels.com/shop/picture-tablet-slept
+
+**Share with a friend:** give $5, get $5. {{referral_link}}
+
+The Play Before Pixels team
+
+_This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
+
+[Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
+Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

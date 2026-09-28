@@ -32,7 +32,7 @@ window.PBP_CATALOG = [
   {
     id: 'up-go-more', title: 'Up! Go! More!', line: '22 first words to say, sign and act out',
     type: 'board', ages: ['0-1', '1-3'], ageText: '0–3', ground: 'sky-t', mock: 'board', img: 'assets/ugm-cover.webp',
-    url: 'product.html', stamp: 'Talk-Along Firsts · Book 1',
+    url: 'product.html', stamp: 'Board book · No. 1',
     formats: [
       { id: 'board', label: 'Board book', detail: '6 × 6 in · 26 board pages · rounded corners', price: 12.99, ship: 'Ships from our fulfilment warehouse in 1–2 business days' },
       { id: 'paperback', label: 'Talk-along paperback', detail: '8.5 × 8.5 in · 32 paper pages · read together', price: 11.99, ship: 'Printed to order, ships in 3–5 business days' }

@@ -86,7 +86,7 @@
     var top = stack[stack.length - 1];
     if (e.key === 'Escape') {
       if (top) { e.preventDefault(); closeDialog(top); return; }
-      if (openMega) { e.preventDefault(); closeMega(true); return; }
+      if (openMega) { e.preventDefault(); openMega.parentElement._hoverLock = true; closeMega(true); return; }
     }
     if (e.key === 'Tab' && top) {
       var f = focusables(top); if (!f.length) return;
@@ -128,6 +128,7 @@
     openMega = btn; openedAt = Date.now();
   }
   function closeMega(focusBtn) {
+    clearTimeout(hoverT);
     if (!openMega) return;
     var b = openMega; openMega = null;
     panelOf(b).classList.remove('is-open'); b.setAttribute('aria-expanded', 'false');
@@ -273,7 +274,7 @@
     }).join('') + '</ul>';
     var ship = [];
     if (digital) ship.push('Downloads arrive by email the moment you pay.');
-    if (printed) ship.push('Printed items are made to order and ship with tracking.');
+    if (printed) ship.push('Books and merch ship with tracking by email.');
     var hasShop = window.PBP_LINKS && window.PBP_LINKS.shopify;
     foot.innerHTML = '<div class="subtotal"><span>Subtotal</span><span class="price" data-usd="' + sub.toFixed(2) + '"></span></div>' +
       '<p class="cart-note">Tax and shipping are worked out at checkout.' + (cur !== 'USD' ? ' Prices in ' + cur + ' are estimates.' : '') + '</p>' +

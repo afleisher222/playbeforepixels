@@ -26,6 +26,11 @@ const LIMITS = { CHILD_NAME: 14, GIVER_NAME: 32, GIFT_MESSAGE: 180, GIFT_DATE: 3
 const CAST = ['ada', 'jo', 'bea', 'theo', 'nell'];
 const FRIEND = (child) => (child.toLowerCase() === 'ada' ? 'Nell' : 'Ada');
 
+// What the child calls Grandma. A fixed list (a store drop-down), not free text, so every rhyme still scans
+// (all two-syllable names stressed on the first beat, plus Abuela, which fits the same lines) and nothing needs moderating.
+// The art does not change: Grandma is the same grandmother on every page.
+const GRANDMAS = ['Grandma', 'Granny', 'Grammy', 'Nana', 'Nanna', 'Gigi', 'Mimi', 'Mamaw', 'Oma', 'Nonna', 'Abuela', 'Bubbe', 'Lola', 'Yaya'];
+
 // Letters the book fonts (Fredoka, Nunito Sans: Latin + Latin Extended) can print.
 const LETTER = 'A-Za-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u024F';
 const NAME_RE = new RegExp(`^[${LETTER}](?:[${LETTER}'’.\\- ]*[${LETTER}.])?$`);
@@ -58,6 +63,8 @@ function normalize(order = {}) {
   const format = clean(order.format || 'hardcover').toLowerCase();
   let msg = clean(order.gift_message).replace(/\r/g, '');
   const date = oneLine(order.gift_date);
+  const gmaIn = oneLine(order.grandma_name);
+  const gma = GRANDMAS.find((g) => g.toLowerCase() === gmaIn.toLowerCase()) || 'Grandma';
 
   if (!child) errors.push('child_name is empty');
   else {
@@ -76,6 +83,8 @@ function normalize(order = {}) {
     if (msg.split('\n').length > LIMITS.MESSAGE_LINES) holds.push(`gift_message has more than ${LIMITS.MESSAGE_LINES} lines`);
     if (!TEXT_RE.test(msg)) holds.push('gift_message has characters the book fonts cannot print (emoji and non-Latin scripts)');
   }
+  if (gmaIn && gma.toLowerCase() !== gmaIn.toLowerCase()) holds.push(`grandma_name "${gmaIn}" is not on the list (${GRANDMAS.join(', ')}); ask the buyer to pick one`);
+  if (child && gma.toLowerCase() === child.toLowerCase()) holds.push(`grandma_name and child_name are both "${child}"; ask the buyer to pick another name for Grandma`);
   const all = `${child} ${giver} ${msg} ${date}`.toLowerCase();
   const hit = [...new Set(all.match(REVIEW_WORDS) || [])];
   if (hit.length) holds.push(`review wording: ${hit.join(', ')}`);
@@ -83,7 +92,7 @@ function normalize(order = {}) {
   const p = PRONOUNS[pron] || PRONOUNS.they;
   const vars = {
     CHILD_NAME: smart(child), GIVER_NAME: smart(giver), GIFT_MESSAGE: smart(msg), GIFT_DATE: smart(date),
-    THEY: p.THEY, THEM: p.THEM, THEIR: p.THEIR, FRIEND: FRIEND(child || 'x'),
+    THEY: p.THEY, THEM: p.THEM, THEIR: p.THEIR, FRIEND: FRIEND(child || 'x'), GRANDMA: gma,
   };
   return { ok: errors.length === 0, errors, holds, vars, look: LOOKS[look] ? look : 1, format: FORMATS.includes(format) ? format : 'hardcover', pronouns: pron };
 }
@@ -96,4 +105,4 @@ const SAMPLE_ORDER = {
   gift_date: 'Baby shower · October 2026',
 };
 
-module.exports = { LOOKS, PRONOUNS, FORMATS, LIMITS, CAST, normalize, SAMPLE_ORDER };
+module.exports = { LOOKS, PRONOUNS, FORMATS, LIMITS, CAST, GRANDMAS, normalize, SAMPLE_ORDER };

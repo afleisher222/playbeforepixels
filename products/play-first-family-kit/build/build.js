@@ -20,7 +20,7 @@ const SIZES = { letter: { w: '8.5in', h: '11in', name: 'US Letter' }, a4: { w: '
 const COLORWAYS = [
   { id: 'tomato', name: 'Tomato' }, { id: 'sky', name: 'Sky' }, { id: 'grass', name: 'Grass' }, { id: 'plum', name: 'Plum' },
 ];
-const AGES = { '25': ['a25', 'Ages 2–5'], '512': ['a512', 'Ages 5–12'], all: ['aall', 'All ages'], grown: ['agrown', 'For grown-ups'] };
+const AGES = { '25': ['a25', 'Ages 2–5'], '512': ['a512', 'Ages 5–12'], '58': ['a512', 'Ages 5–8'], '812': ['a812', 'Ages 8–12'], all: ['aall', 'All ages'], grown: ['agrown', 'For grown-ups'] };
 
 const svgFile = f => fs.readFileSync(path.join(BRAND, 'logo', f), 'utf8').replace(/<\?xml[^>]*>/, '').replace(/<title>.*?<\/title>/, '').replace(/ width="\d+" height="\d+"/, '');
 const LOGO = { lock: svgFile('lockup-horizontal.svg'), lockK: svgFile('lockup-horizontal-black.svg'), word: svgFile('wordmark.svg'), wordK: svgFile('wordmark-black.svg'), mark: svgFile('mark.svg') };
@@ -46,6 +46,7 @@ symbol{overflow:visible}
 .sk{fill:var(--sk)} .hr{fill:var(--hr)} .sh{fill:var(--sh)} .pa{fill:var(--pa)} .so{fill:var(--so)} .hw{fill:var(--hw)} .ck{fill:${C.tomato};opacity:.28}
 h1,h2,h3,p{margin:0}
 .page{--m:var(--tomato);--t:var(--tT);--m2:var(--sun);--t2:var(--tS);--tt:var(--wash);width:${sz.w};height:${sz.h};padding:.5in .5in .56in;position:relative;overflow:hidden;break-after:page;page-break-after:always;display:flex;flex-direction:column;gap:.13in;background:#fff}
+.page.tight{gap:.09in}
 .page:last-child{break-after:auto;page-break-after:auto}
 .cw-tomato{--m:var(--tomato);--t:var(--tT);--m2:var(--sun);--t2:var(--tS)}
 .cw-sky{--m:var(--sky);--t:var(--tK);--m2:var(--grass);--t2:var(--tG)}
@@ -72,7 +73,7 @@ h1,h2,h3,p{margin:0}
 .chips{display:flex;align-items:center;gap:.07in;flex-wrap:wrap}
 .chip,.prep{display:inline-flex;align-items:center;gap:.05in;font-weight:800;font-size:7pt;letter-spacing:.07em;text-transform:uppercase;padding:.035in .1in;border-radius:1in;background:#fff;border:1px solid var(--line);color:var(--ink);white-space:nowrap}
 .chip i{width:.1in;height:.1in;border-radius:50%;background:var(--c);display:block}
-.a25{--c:var(--grass)} .a512{--c:var(--sky)} .aall{--c:var(--tomato)} .agrown{--c:var(--plum)}
+.a25{--c:var(--grass)} .a512{--c:var(--sky)} .a812{--c:var(--plum)} .aall{--c:var(--tomato)} .agrown{--c:var(--plum)}
 .prep svg{width:.11in;height:.11in}
 /* standard header */
 .hd{display:flex;flex-direction:column;gap:.07in}
@@ -118,8 +119,8 @@ h1,h2,h3,p{margin:0}
 .tipbar .t1{background:var(--t2)} .tipbar .t2{background:var(--wash)}
 .tipbar b.k{display:block;font-size:6.8pt;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.02in}
 /* ---------- token grids ---------- */
-.cutnote{display:flex;justify-content:space-between;align-items:center;gap:.1in;font-size:7.6pt;font-weight:700;color:var(--ink)}
-.cutnote .safe{background:var(--tS);border-radius:.08in;padding:.05in .1in;flex:1}
+.cutnote{display:flex;justify-content:space-between;align-items:center;gap:.1in;font-size:7.3pt;line-height:1.3;font-weight:700;color:var(--ink)}
+.cutnote .safe{background:var(--tS);border-radius:.08in;padding:.04in .1in;flex:1}
 .tg{display:grid;grid-template-columns:repeat(3,2.1in);grid-auto-rows:2.1in;border-top:1.6px dashed var(--cut);border-left:1.6px dashed var(--cut);align-self:center}
 .tg>.tk{border-right:1.6px dashed var(--cut);border-bottom:1.6px dashed var(--cut);padding:.14in;position:relative}
 .tk .in{height:100%;border-radius:.16in;background:var(--tt);display:flex;flex-direction:column;align-items:center;padding:.06in .08in .1in}
@@ -146,9 +147,10 @@ h1,h2,h3,p{margin:0}
 .slot .art{width:100%;flex:1;min-height:0}
 .slot>.fl{width:100%;flex:0 0 .3in}
 .arrow{height:.14in;display:flex;justify-content:center}
-.rhythm{display:grid;grid-template-columns:1fr .3in 1fr .3in 1fr;align-items:center}
+.rhythm{display:grid;grid-template-columns:1fr .3in 1fr .3in 1fr;align-items:stretch}
+.rhythm .ar{align-self:center}
 .rhythm>.rs{border-radius:.16in;padding:.08in .1in .12in;text-align:center;display:flex;flex-direction:column;align-items:center}
-.rhythm .art{width:1.3in;height:1.08in}
+.rhythm .art{width:1.45in;height:1.2in}
 .rhythm .art .disc{fill:#fff}
 .rhythm .kid{font-size:12.5pt;line-height:1.1}
 .rhythm .ar{display:flex;justify-content:center}
@@ -173,7 +175,7 @@ h1,h2,h3,p{margin:0}
 .chr.r:nth-child(odd){background:var(--wash)}
 .chr .ic{height:100%;display:flex;align-items:center;justify-content:center;padding:.03in 0}
 .chr .ic .art{height:88%;max-height:.56in;width:auto;aspect-ratio:1.2}
-.chr .lb{font-family:"Fredoka",sans-serif;font-weight:600;font-size:11.5pt;padding-left:.08in;line-height:1.05}
+.chr .lb{font-family:"Fredoka",sans-serif;font-weight:600;font-size:11.5pt;padding:0 .14in 0 .08in;line-height:1.05}
 .chr .who2{padding-right:.1in}
 .chr .who2 .fl,.chr .lb .fl{height:.3in;border-bottom:1.2px dashed var(--cut)}
 .chr .dc{display:flex;justify-content:center}
@@ -251,7 +253,7 @@ ul.b li .ball{transform:translateY(-.01in)}
 .low .chr .dc i{border-color:var(--ink)}
 .low .cert{border-color:var(--ink);border-width:.06in}
 .low .chip i{background:#fff;border:1.5px solid var(--ink)}
-.low .chip.a25 i{border-radius:.02in} .low .chip.a512 i{transform:rotate(45deg);border-radius:.01in}
+.low .chip.a25 i{border-radius:.02in} .low .chip.a812 i{border-radius:.02in;background:var(--ink)} .low .chip.a512 i{transform:rotate(45deg);border-radius:.01in}
 `;
 }
 
@@ -294,17 +296,17 @@ function checklist(ctx, kind, cw, start) {
 // ---------------------------------------------------------------- tokens + cards + board
 const TINTS = ['var(--tT)', 'var(--tK)', 'var(--tG)', 'var(--tS)', 'var(--tP)'];
 function cutNote(lead) {
-  return `<div class="cutnote"><span class="safe">${lead ? lead + ' ' : ''}<b>Grown-up keeps the pieces.</b> Every piece is big-piece size, ${TOK} or larger, bigger than the toilet-paper-tube test for under-3s. Print at 100%; never shrink. Ages 3+ may add velcro dots; check dots before each play and remove any that lift.</span></div>`;
+  return `<div class="cutnote"><span class="safe">${lead ? lead + ' ' : ''}<b>Grown-up keeps the pieces.</b> Big-piece size: ${TOK}, bigger than the toilet-paper-tube test. Print at 100%. Velcro is for ages 3+ only: check dots before each play; remove any that lift.</span></div>`;
 }
 function tokens(ctx, blank, pgBoard) {
   const items = blank ? Array.from({ length: 12 }, () => null) : T.TOKENS;
   const cells = items.map((t, i) => `<div class="tk" data-cut><div class="in" style="--tt:${TINTS[i % 5]}">${t ? art(t[0]) + `<div class="nm">${t[1]}</div><div class="tag">Together token</div>` : drawSpot() + `<span class="fl" ${fld('token', { size: 12, align: 1 })}></span><div class="tag">Together token</div>`}</div></div>`).join('');
-  return hd({ eyebrow: `Section E · Whole family · Cut sheet ${blank ? 'B' : 'A'} · goes with the board, page ${pgBoard}${blank ? ' · fillable' : ''}`, title: blank ? 'Make-your-own together tokens' : 'Together tokens', age: 'all', prepT: 'Prep 10 min · cut' })
+  return hd({ eyebrow: `Section E · Cut sheet ${blank ? 'B' : 'A'} · use with the board, p. ${pgBoard}${blank ? ' · fillable' : ''}`, title: blank ? 'Make-your-own together tokens' : 'Together tokens', age: 'all', prepT: 'Prep 10 min · cut' })
     + cutNote(blank ? '<b>Type or write your own ideas for time together, then draw a picture.</b>' : '<b>Tokens earn play and time together, never screen minutes. Jobs done? Your child picks one.</b>') + `<div class="tg">${cells}</div>`;
 }
 function spotCards(ctx) {
   const cells = T.SPOT_CARDS.map((c, i) => `<div data-cut><div class="in" style="--tt:${['var(--tT)', 'var(--tG)', 'var(--tK)', 'var(--tS)', 'var(--tP)', 'var(--tG)'][i]}">${art(c.art)}<div class="nm">${c.t}</div><div class="s">${c.s}</div>${c.field ? `<span class="fl" ${fld(c.field, { size: 12, align: 1 })}></span>` : ''}</div></div>`).join('');
-  return hd({ eyebrow: 'Section E · Whole family · Cut sheet C · six cards, 3.5 × 2.6 in', title: 'Screen-spot cards', lede: 'Show what comes next, so screen time starts and ends gently: 5 more minutes, then screens go to sleep, then what we do next.', age: 'all', prepT: 'Prep 5 min · cut' })
+  return hd({ eyebrow: 'Section E · Cut sheet C · six cards, 3.5 × 2.6 in', title: 'Screen-spot cards', lede: 'Show what comes next, so screen time starts and ends gently: 5 more minutes, then screens go to sleep, then what we do next.', age: 'all', prepT: 'Prep 5 min · cut' })
     + cutNote() + `<div class="sc">${cells}</div>`;
 }
 function board(ctx, pgTokens) {
@@ -458,8 +460,8 @@ function guide2(ctx) {
   return hd({ eyebrow: 'Section A · Grown-up guide · 2 of 2', title: 'How it works at each age', lede: 'Use what fits. Most children love 2 or 3 of these tools; that’s normal.', age: 'grown' })
     + `<div class="agecards">${[
       ['var(--tG)', '25', 'Point and say each picture on the checklist. Use the Play-First Board to show first, then, later. Two or three helping jobs a day is plenty.'],
-      ['var(--tK)', '512', 'Ages 5–8: they tick their own boxes and pick the together token. Add 3 or 4 jobs from the family jobs chart.'],
-      ['var(--tP)', 'all', 'Ages 8–12: fill in the blank checklist together and let them write their own jobs and play. Make the Family Plan together; let them lead one part.'],
+      ['var(--tK)', '58', 'They tick their own boxes on the ages 5–12 checklist and pick the together token. Add 3 or 4 jobs from the family jobs chart.'],
+      ['var(--tP)', '812', 'Fill in the blank checklist together and let them write their own jobs and play. Make the Family Plan together; let them lead one part.'],
     ].map(([c, a, t]) => `<div style="background:${c}">${chip(a)}<p class="body">${t}</p></div>`).join('')}</div>
   <div class="card" style="--cbg:var(--tT)"><div class="h2">How screens fit in this kit</div><ul class="b">
     <li><span class="ball"></span><span>Screens have a <b>fixed spot</b> in the day, the same time and about the same length each day.</span></li>
@@ -505,19 +507,20 @@ function more(ctx, qr) {
     ['readTogether', '100 Screen-Free Plays', 'Ages 0–5', 'Plays sorted by age, with a talk line on every page.'],
     ['puppets', '52 Play & Talk Cards', 'Ages 0–5', 'One play and one talk tip per card.'],
   ];
-  const tiles = `<div class="toc" style="grid-template-columns:1fr 1fr;gap:.12in">${items.map(([a, t, g, s]) => `<div style="grid-template-columns:1in 1fr;padding:.14in">${art(a).replace('class="art ', 'style="width:1in;height:.84in" class="art ')}<div><div class="nm" style="font-size:11pt">${t}</div><div class="eyebrow" style="margin:.03in 0">${g}</div><div class="small" style="color:var(--ink)">${s}</div></div></div>`).join('')}</div>`;
+  const tiles = `<div class="toc" style="grid-template-columns:1fr 1fr;gap:.12in;flex:1;grid-auto-rows:1fr">${items.map(([a, t, g, s]) => `<div style="grid-template-columns:1.5in 1fr;padding:.16in">${art(a).replace('class="art ', 'style="width:1.5in;height:1.25in" class="art ')}<div><div class="nm" style="font-size:12.5pt">${t}</div><div class="eyebrow" style="margin:.04in 0">${g}</div><div class="body">${s}</div></div></div>`).join('')}</div>`;
   const tail = ctx.store
-    ? `<div class="card" style="--cbg:var(--tS);flex:1;flex-direction:row;gap:.3in;align-items:center;padding:.3in"><div style="width:2.3in;flex:0 0 auto;background:#fff;border-radius:.16in;padding:.16in">${qr.replace('<svg', '<svg style="width:100%;height:auto;display:block"')}</div>
+    ? `<div class="card" style="--cbg:var(--tS);flex-direction:row;gap:.3in;align-items:center;padding:.3in"><div style="width:2.3in;flex:0 0 auto;background:#fff;border-radius:.16in;padding:.16in">${qr.replace('<svg', '<svg style="width:100%;height:auto;display:block"')}</div>
       <div style="display:flex;flex-direction:column;gap:.1in"><span class="eyebrow">Your free bonus</span><div class="h2" style="font-size:17pt">Scan for free companion printables</div>
       <ul class="b"><li><span class="ball"></span><span>A summer and holiday Play First, Then Screens checklist</span></li><li><span class="ball"></span><span>12 extra together tokens for rainy days</span></li><li><span class="ball"></span><span>One short play idea a month, matched to your child’s age</span></li></ul>
       <div style="font-weight:800;font-size:10.5pt">${T.BONUS}</div>
       <p class="small">We ask for an email and, if you like, your child’s birth month and year so ideas fit their age. Never names. Unsubscribe anytime. Need your files again? Your link stays in your order email; help is at playbeforepixels.com/help.</p></div></div>`
-    : `<div class="card" style="--cbg:var(--tS);flex:1;flex-direction:row;gap:.3in;align-items:center;padding:.3in">${art('familyGame', '', false).replace('class="art ', 'style="width:2.4in;height:2in;flex:0 0 auto" class="art ')}
+    : `<div class="card" style="--cbg:var(--tS);flex-direction:row;gap:.3in;align-items:center;padding:.3in">${art('familyGame', '', false).replace('class="art ', 'style="width:2.4in;height:2in;flex:0 0 auto" class="art ')}
       <div style="display:flex;flex-direction:column;gap:.1in"><div class="h2" style="font-size:17pt">Thank you for playing first</div><p class="body">Your files stay on your Etsy Purchases page, ready to download again anytime. Open them in a web browser, not the app.</p><p class="body">Tried the kit? Honest reviews help other parents decide.</p></div></div>`;
   return hd({ eyebrow: 'More from Play Before Pixels', title: 'Next for your family', lede: ctx.store ? 'Same calm design and the same “talk while you play” idea. Find them all at playbeforepixels.com.' : 'Same calm design and the same “talk while you play” idea. Find them all in our shop, Play Before Pixels.', age: 'all' })
     + tiles + tail;
 }
 // ---------------------------------------------------------------- assemble
+const CANVA = /^(clBlank.*|helpB|helpEnd|choresB|choresEnd|posterB|tokensB|trackerB|board|plan|plan2|plan3)$/;
 function buildDoc(ctx, qr) {
   const P = {}; const pages = [];
   const add = (key, sec, fn, toc) => { pages.push({ key, sec, fn, toc }); };
@@ -557,7 +560,7 @@ function buildDoc(ctx, qr) {
   const html = pages.map((p, i) => {
     if (p.toc) toc.push([p.toc, i + 1]);
     const body = p.fn(ctx, P);
-    return `<section class="page ${p.cw ? 'cw-' + p.cw : ''}" data-key="${p.key}">${body}${p.key === 'cover' ? '' : footer(ctx, i + 1)}</section>`;
+    return `<section class="page ${p.cw ? 'cw-' + p.cw : ''}${['tokens', 'tokensB', 'cards'].includes(p.key) ? ' tight' : ''}${CANVA.test(p.key) ? ' canva' : ''}" data-key="${p.key}">${body}${p.key === 'cover' ? '' : footer(ctx, i + 1)}</section>`;
   }).join('\n');
   return { html, toc, n: pages.length, P };
 }
@@ -573,7 +576,7 @@ function wrap(ctx, body, outFile, title) {
 // ---------------------------------------------------------------- START HERE (1 page)
 function startHere(ctx, qr) {
   const files = ctx.store
-    ? [['Play-First-Family-Kit-Color-US-Letter.pdf', 'Full color, US Letter'], ['Play-First-Family-Kit-Color-A4.pdf', 'Full color, A4'], ['Play-First-Family-Kit-Low-Ink-US-Letter.pdf', 'White backgrounds, line art to color, US Letter'], ['Play-First-Family-Kit-Low-Ink-A4.pdf', 'Low-ink, A4'], ['Canva-ready PNGs (bonus page)', 'Blank checklists and charts to decorate in Canva or any photo app']]
+    ? [['play-first-family-kit.pdf', 'Full color, US Letter'], ['play-first-family-kit-a4.pdf', 'Full color, A4'], ['play-first-family-kit-low-ink.pdf', 'White backgrounds, line art to color, US Letter'], ['play-first-family-kit-low-ink-a4.pdf', 'Low-ink, A4'], ['Canva-ready PNGs', 'Blank checklists, charts and plan pages (US Letter and A4 sizes) to decorate in Canva or any photo app']]
     : [['2-Color-US-Letter.pdf', 'Full color, US Letter'], ['3-Color-A4.pdf', 'Full color, A4'], ['4-Low-Ink-US-Letter.pdf', 'White backgrounds, line art to color, US Letter'], ['5-Low-Ink-A4.pdf', 'Low-ink, A4']];
   const body = `<section class="page"><div style="display:flex;justify-content:space-between;align-items:center">${LOGO.lock.replace('<svg', '<svg style="height:.5in;width:auto"')}<span class="chips">${chip('25')}${chip('512')}</span></div>
   ${hd({ eyebrow: 'File 1 · Start here', title: 'Play-First Family Kit', lede: 'Thank you! Here’s what each file holds and how to print and fill it in. About 20 minutes to prep, then reusable.', age: '', prepT: '' })}

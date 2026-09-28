@@ -86,7 +86,7 @@ pg('''<p class="kick">The line at a glance</p><h2>Three design slots. One is rea
 <li><b>The logo comes from <code>brand/logo/</code>, unaltered.</b> No retyping, recoloring, effects or new lockups.</li>
 <li><b>™, never ®.</b> PLAY BEFORE PIXELS is not registered or filed yet.</li>
 <li><b>No slogan without clearance</b> in brand/ORIGINALITY.md, and never an event name.</li>
-<li><b>No condition words</b> (autism, delay, therapy) on merch, listings, tags or ads.</li></ul></div>''', 2)
+<li><b>No condition words</b> (diagnosis or condition terms, see BRAND.md) on merch, listings, tags or ads.</li></ul></div>''', 2)
 
 # 3 logo tee print files
 pg('''<p class="kick">Design 1 · logo tee</p><h2>Front print files</h2>

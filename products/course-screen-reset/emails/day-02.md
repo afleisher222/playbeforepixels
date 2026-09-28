@@ -1,0 +1,62 @@
+---
+subject: "Day 2: Why talk and play come first"
+preheader: "The everyday back-and-forth of talk and play is how young children practice communicating."
+send: "day 2, 7:00 local time"
+---
+
+*Day 2 of 30 · Notice and make room*
+
+# Why talk and play come first
+
+**The everyday back-and-forth of talk and play is how young children practice communicating.**
+
+Here is the “why” in plain words, so you can come back to it on a hard day.
+
+Young children learn to communicate by doing it: babbling, pointing, asking, answering, all with a person who answers back. Those little exchanges are sometimes called conversational turns. They happen in ordinary moments: at breakfast, in the bath, on the floor with blocks.
+
+The World Health Organization’s 2019 guidelines suggest no screen time for babies under 1, no more than one hour a day for children aged 2 to 4, and plenty of active play every day.
+
+A 2024 study in JAMA Pediatrics recorded the sounds of family life at home. It found that toddlers with more screen time heard fewer words from adults and had fewer back-and-forth exchanges (Brushe and colleagues, 2024). That is a link, not proof that screens cause anything. Families are busy, and life is complicated.
+
+But it points to something hopeful and simple: talk and play happen when we are together, face to face, with time to answer. That’s what these 30 days add.
+
+You don’t need special toys or a script. You need a few minutes, your voice and some patience while your child takes a turn. Talk, sing and read in the language you know best. A sign, a point or a tap on a device counts as communicating too.
+
+If you ever have questions about your child’s development, talk with your pediatrician. Every child talks on their own timeline.
+
+**Today’s one small step:** Have breakfast or a snack together today and try the play below.
+
+## Today’s play: Narrate the snack
+
+*From 12 months · No prep · A little mess · Quick play · You need: whatever you’re eating*
+
+Sit down at the table together, no phones nearby. Say what’s happening in short, cheerful sentences: pour, stir, crunch, all gone. Stop often and wait. When your child makes a sound or a word, answer it.
+
+**Talk while you play (Say what you see):** “Pour the milk… pour… stop! Crunch, crunch.”
+
+- **Make it easier:** Use single words: “Pour.” “More?” “Yum.”
+- **Make it harder:** Big kids narrate you, like a cooking show host. Then swap.
+- **Tired-grown-up version (2 minutes):** Name three foods on the plate and let your child name one.
+- **Safety:** Seat children upright while eating. Cut food small for under-4s; no whole grapes, nuts, popcorn or hard candy.
+
+## Plain words for: When someone asks why things are changing
+
+> “We’re trying something new this month: more play together.”
+>
+> “Screens aren’t going away. They’re getting a regular spot in our day.”
+
+Keep it positive and matter-of-fact. Children and adults both relax when nothing is being taken away.
+
+Today’s pages in your workbook: Day 2. {{workbook_download_link}}
+
+---
+**Next for your family:** Play-First Family Kit. A screen-rhythm chart, a family play plan and helping-jobs pages to put this week on the fridge. https://playbeforepixels.com/shop/printables-family-kit
+
+**Share with a friend:** give $5, get $5. {{referral_link}}
+
+The Play Before Pixels team
+
+_This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
+
+[Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
+Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

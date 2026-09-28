@@ -21,6 +21,8 @@ PERSONALIZATION VARIABLES (filled in from each order; see personalization.json)
   {{GIVER_NAME}}  who the book is from                       e.g. Aunt Lily
   {{THEY}} {{THEM}} {{THEIR}}  the child's pronouns          she/her/her · he/him/his · they/them/their
   {{FRIEND}}      the park friend: "Ada", or "Nell" if the child is named Ada
+  {{GRANDMA}}     what the child calls Grandma, picked from a fixed list     e.g. Grandma, Nana, Abuela
+                  (default "Grandma"; the list is in personalize.js so the rhymes always scan)
 Rules that keep every order readable:
   - Keep {{CHILD_NAME}} in the SAME 6 rhymes (s1 right, s2 left, s5 right, s9 right,
     s11 right, s12 right) unless you also update personalization.json.
@@ -64,7 +66,7 @@ it’s the best seat in town!”
 Pat your lap and wait. Let your little one choose to climb up—then say hello like they just arrived.
 
 ## s2 left (draft)
-Then Grandma rolls in
+Then {{GRANDMA}} rolls in
 with a book on her knee.
 “A seat saved for {{CHILD_NAME}}!
 Come and read it with me.”
@@ -76,7 +78,7 @@ We read about bears
 and a boat full of seals.
 
 ## s2 tip (draft)
-Before you turn the page, pause. Let them point, pat or name what they see first.
+Before you turn the page, pause and count to five in your head. Let them point, pat or name what they see first.
 
 ## s3 left (draft)
 She reads with a ROAR,
@@ -171,17 +173,17 @@ Count out loud together—ducks, dogs, buses, buttons. Point to each one as you 
 ## s9 left (draft)
 Back home, something’s sitting
 right smack in my place:
-our cat, on Grandma’s lap,
+our cat, on {{GRANDMA}}’s lap,
 with a smug little face!
 
 ## s9 right (draft)
 “Make room for {{CHILD_NAME}}!”
-Grandma laughs. So we share:
+{{GRANDMA}} laughs. So we share:
 one lap, and one cat,
 and one kid, and one chair.
 
 ## s9 tip (draft)
-Ask a “who” question and wait: “Who is on Grandma’s lap?” Pointing is a great answer too.
+Ask a “who” question and wait: “Who is on {{GRANDMA}}’s lap?” Pointing is a great answer too.
 
 ## s10 left (draft)
 When rain taps the window—
@@ -190,7 +192,7 @@ we build a big fort
 with a sheet on the top.
 
 ## s10 right (draft)
-We drape it from Grandma’s
+We drape it from {{GRANDMA}}’s
 wheelchair to the couch,
 and squeeze in together—
 no room for a grouch!
@@ -236,14 +238,14 @@ For {{CHILD_NAME}}, we promise to:
 read together every day, even for five minutes
 let {{CHILD_NAME}} choose the book (again and again)
 rest our phones face-down at story time
-pause and wait, so {{THEY}} can take a turn to talk
+pause and wait, so {{THEY}} can take a turn—any way counts
 reach for a book, a song or a lap before a screen
 
 ## grown-up note (draft)
 <!-- Three short paragraphs for the grown-ups (the "How to use this book" page). Keep the language line (BRAND.md customer-voice rule 15). -->
 When {{CHILD_NAME}} is close enough to feel your voice, reading turns into a conversation. You say something, you pause, and you wait for {{THEIR}} turn—a look, a point, a sound, a word. Every spread has a **Lap talk** idea to help that back-and-forth along.
 There is no right way to read this book. Skip pages. Make up voices. Read the same page ten times. The goal isn’t finishing—it’s the talking along the way. Let your phone rest face-down for a few minutes. Your little one will notice.
-Talk, sing and read in the language you know best. A point, a sign or a sound counts too.
+Talk, sing and read in the language you know best. A point, a sign, a sound or a tap on a talking device counts too. Some children would rather sit beside you than on your lap; beside counts just as much.
 
 ## back blurb (draft)
 A lap for a story. A lap on the bus. A lap for a song, a lap at the park, and a sleepy lap when the moon comes up. In this rhyming read-aloud, the grown-ups who love {{CHILD_NAME}} call {{THEM}} by name to the best seats in town.

@@ -1,0 +1,182 @@
+[
+  {
+    "slug": "merch-core-logo-tee",
+    "status": "ready-to-set-up (design 1 of max 3; slogan slots 2 and 3 blocked until brand/ORIGINALITY.md clears a slogan)",
+    "title": "Play Before Pixels Logo Tee",
+    "subtitle": "Adult unisex tee with our serve-and-return logo, in 4 colors",
+    "etsy_title": "Play Before Pixels Logo Tee, Adult Unisex T-Shirt in 4 Colors, Minimalist Parent Shirt, Gift for Mom or Dad, Print on Demand",
+    "format": "Adult unisex short-sleeve tee, direct-to-garment (DTG) front print, printed inside-neck label. Print on demand: the print partner prints and ships each order.",
+    "trim": "Front print file 4500 x 5400 px (15 x 18 in at 300 dpi), transparent PNG + vector SVG; ink about 10.5 x 2.5 in. Inside-neck label 900 x 900 px (3 x 3 in).",
+    "pages": 0,
+    "ages": "Adults (grown-up sizes only; no children's apparel)",
+    "sizes": ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      {"name": "White", "hex_preview": "#FFFFFF", "print_file": "print/tee-logo_light.png"},
+      {"name": "Natural", "hex_preview": "#F2EBDD", "print_file": "print/tee-logo_light.png"},
+      {"name": "Mustard", "hex_preview": "#E6B23F", "print_file": "print/tee-logo_light.png"},
+      {"name": "Navy", "hex_preview": "#243150", "print_file": "print/tee-logo_dark.png"}
+    ],
+    "price_usd": 27,
+    "variant_prices_usd": {"XS-XL": 27, "2XL": 29, "3XL": 31},
+    "price_notes": "Everyday price $27 (DEMAND-CHECK.md: adult tees $19.99-$29.99 est., our price $27). 2XL $29 and 3XL $31 because the partner charges more for larger blanks. BRAND.md Honest pricing overrides DEMAND-CHECK rule 2: no 'was' or crossed-out price, no permanent sale, no countdowns, no 'only X left' (print on demand never runs out). Only genuine, time-limited promotions that really end. Margin rule: fill in the partner's cost with inside label and shipping; if a tee keeps less than about $8 after Etsy fees (roughly 6.5% transaction + payment processing + $0.20 listing [VERIFY current rates]), raise the everyday price before launch. Kill rule: fewer than 5 sales in 60 days with the listing fixed -> reprice once, then bundle-only. Main bundle: Holiday gift bundle $59 with a tee (DEMAND-CHECK section 2, #8).",
+    "short_description": "Our serve-and-return logo on a soft-colored adult unisex tee. 4 colors, XS-3XL, printed when you order. Grown-up sizes only.",
+    "long_description": "The Play Before Pixels logo tee is for the grown-ups who sit on the floor, build the tower and wait for the answer.\n\nOur mark is the P of Play. A ball comes back to close it, like the serve and return of talk and play: a grown-up says something, and a child answers. The small gap before the ball is the pause that gives the child a turn. It sits high on the chest, about 10.5 inches wide, in ink with a tomato-red ball, or in white with the same ball on navy.\n\nChoose White, Natural, Mustard or Navy in adult unisex sizes XS to 3XL. Your size and care details are printed inside the neck.\n\nEach tee is printed when you order it by our print partner and shipped to you with tracking, so allow a few extra days before it ships. Nothing sits in a warehouse.\n\nWe make grown-up sizes only. We don't make kids' clothing.\n\nCare: machine wash cold, inside out; tumble dry low; don't iron the print.\n\nLooking for a gift? It pairs well with our picture book The Day the Tablet Slept and our 150 \"I'm bored!\" Play Cards, sold separately.",
+    "bullets": [
+      "Our serve-and-return logo: the ball comes back to close the P, like a grown-up and a child taking turns",
+      "4 colors: White, Natural and Mustard with the ink logo; Navy with the white logo; a tomato-red ball on every one",
+      "Adult unisex sizes XS to 3XL, with size and care printed inside the neck",
+      "Printed when you order by our print partner, then shipped with tracking",
+      "Grown-up sizes only; pairs with our picture book and play cards as a gift"
+    ],
+    "keywords": [
+      "play before pixels shirt",
+      "minimalist logo t-shirt",
+      "parent gift t-shirt",
+      "gift for mom or dad",
+      "unplugged family tee",
+      "play based parenting shirt",
+      "unisex graphic tee adult"
+    ],
+    "etsy_tags": [
+      "play before pixels",
+      "minimalist tee",
+      "parent gift",
+      "mom shirt",
+      "dad shirt",
+      "unplugged family",
+      "play based parent",
+      "logo t-shirt",
+      "unisex tee",
+      "gift for new parent",
+      "family play",
+      "adult t-shirt",
+      "navy logo tee"
+    ],
+    "seo_title": "Play Before Pixels Logo Tee | Adult Unisex T-Shirt",
+    "seo_description": "Our serve-and-return logo on an adult unisex tee in White, Natural, Mustard or Navy, sizes XS-3XL. Printed when you order and shipped with tracking.",
+    "alt_text": "A white adult t-shirt laid flat on a pale cream background. High on the chest is the Play Before Pixels logo: a dark navy letter P whose open bowl is closed by a small tomato-red ball, beside the words Play Before Pixels, with the same red ball dotting the i. A striped toy ball and a red toy block sit beside the shirt.",
+    "listing_images": [
+      "preview/listing-images/listing-01.png - hero: white tee flat-lay, title, 4 colors, printed when you order (thumbnail)",
+      "preview/listing-images/listing-02.png - the 4 colors, with which logo prints on each",
+      "preview/listing-images/listing-03.png - the idea behind the logo: serve, pause, return",
+      "preview/listing-images/listing-04.png - details: printed neck label, sizes, print on demand, care, grown-up sizes only",
+      "preview/listing-images/listing-05.png - size guide: how to measure (the numeric chart comes from the chosen blank and goes in the listing's size chart)",
+      "preview/listing-images/listing-06.png - how your tee gets to you in 3 steps",
+      "preview/listing-images/listing-07.png - gift idea: pairs with The Day the Tablet Slept and 150 I'm bored! Play Cards",
+      "cover.png - 1600 x 1600 store and website hero",
+      "mockup.png - 1600 x 1200 website flat-lay (navy tee, white tee, natural tote)",
+      "preview/mockups/tee-white|natural|mustard|navy.png - 1600 x 1200 flat-lay per color for variant photos"
+    ],
+    "files": {
+      "print_light": "print/tee-logo_light.png + .svg (White, Natural, Mustard)",
+      "print_dark": "print/tee-logo_dark.png + .svg (Navy)",
+      "neck_labels": "labels/neck-label_<XS|S|M|L|XL|2XL|3XL>_<light|dark>.png + .svg",
+      "hang_tag": "hang-tag.pdf (p1 front, p2 site back with QR, p3 marketplace back without URL/QR); previews in preview/hang-tag/",
+      "slogan_template": "slogan-slot/slogan-tee-TEMPLATE.svg/.png (layout guide only, never upload)",
+      "production_book": "source.html -> merch-core.pdf (12 pages, US Letter); previews preview/p01-p12.png",
+      "build": "bash build/render.sh rebuilds everything: build.py (print SVGs, labels, slogan guard) -> brand/logo/src/raster.js (transparent PNGs) -> set_dpi.py (300 dpi) -> pages.py (mockups, listing images, hang tag) -> book.py (production book) -> brand/render.js. The logo is read from brand/logo/ at build time, so a new logo kit only needs a rebuild."
+    },
+    "channels": [
+      "playbeforepixels.com shop through the print partner's store integration (site-edition pack-in card, if the partner offers inserts)",
+      "Etsy, as a 'Designed by' print-on-demand item with the print partner listed as production partner; marketplace-edition pack-in only; no URL or QR on images",
+      "Amazon Merch on Demand (same 4500 x 5400 files; brand 'Play Before Pixels')",
+      "Inside the own-site Holiday gift bundle ($59 with a tee) from late October"
+    ],
+    "amazon_route": "merch-on-demand: upload print/tee-logo_light.png (light colors) and tee-logo_dark.png (navy) at 4500 x 5400; brand name 'Play Before Pixels'. Approval time and design-slot limits apply [VERIFY current Merch on Demand terms and whether a brand-name design needs extra proof of rights].",
+    "next_products": ["bundle-holiday-gift", "picture-tablet-slept", "bored-play-cards"],
+    "bonus_url": "playbeforepixels.com/bonus/merch-core",
+    "bonus_notes": "The site-edition pack-in card (hang-tag.pdf page 2) carries a QR and the short link https://playbeforepixels.com/bonus/merch-core. The page should offer the free play printable and the email sign-up (email only; child's birth month and year optional; never a child's name). Etsy and Amazon orders get no URL or QR.",
+    "shareable_piece": "The tee itself and the sun-yellow hang tag front (hang-tag.pdf page 1): made to be photographed flat-lay style, with the brand mark on both.",
+    "launch_notes": "DEMAND-CHECK rates adult slogan tees 'Unclear' and says: no merch line, at most 2-3 designs as identity merch. So this is one quiet logo design in four colors, not a collection. List it in late October with the Holiday gift bundle (check the partner's holiday order cut-off dates [VERIFY]), and promote it again in March for spring screen-free week, describing the week in plain words and never printing or claiming the event's name.",
+    "faq": [
+      {"q": "Do you make kids' sizes?", "a": "No. This tee comes in adult unisex sizes XS to 3XL only."},
+      {"q": "How does it fit?", "a": "It's a unisex fit. Lay a tee you love flat, measure across the chest and from shoulder to hem, and match the size chart. For a closer fit, many people pick one size down."},
+      {"q": "How long does it take?", "a": "Each tee is printed when you order it, then shipped with tracking. Allow a few extra days before it ships."},
+      {"q": "How do I wash it?", "a": "Machine wash cold, inside out. Tumble dry low. Don't iron the print."},
+      {"q": "What if it arrives damaged or misprinted?", "a": "Send a photo through the contact form and our print partner replaces it. Size exchanges follow the shop's returns policy."},
+      {"q": "Can I buy the tote?", "a": "The logo tote comes only inside gift bundles on playbeforepixels.com."},
+      {"q": "Is it on Amazon?", "a": "The same design may also be available through Amazon's print-on-demand program; prices and shipping there are set by Amazon."}
+    ],
+    "compliance_notes": "No health, medical or outcome claims anywhere; no diagnosis or condition terms in the design, listing, tags, keywords or images (BRAND.md hard rules 1 and 3 and its condition-search section). No slogans: brand/ORIGINALITY.md does not exist, so none is cleared; the held slogans in ops/QUEUE.md are not used; no event names. The design is the supplied brand/logo lockup, placed unaltered (no retyping, recoloring, effects); reverse version on navy follows the logo guidelines (paper P, tomato ball on ink/dark grounds). Trademark: PLAY BEFORE PIXELS is not filed or registered, so only TM is used (on the neck label and tag), never the registered symbol; the printed inside-neck label shows the brand name as a trademark on clothing. ALPHAPLAY (SN 99650345) class 25 covers sports pinnies only, so these tees do not support its Statement of Use; ALPHAPLAY is not on the tee. Adult apparel only: kids' tees and onesies are cut (DEMAND-CHECK; CAMPAIGN-BIBLE [CPSIA]); nothing is marketed to children. No inventory: print on demand only; the founder never stores or ships stock (one sample per color for QA is not inventory). Etsy: production partner must be listed, item marked 'Designed by', and use of AI-assisted tools for the logo art disclosed; listing images carry no URL or QR. Honest pricing per BRAND.md (no former-price claims, no fake scarcity). No claims about fabric, softness, sustainability or 'no waste' until the blank is chosen and verified (FTC Green Guides). Textile labeling: the neck label names AlphaPlay LLC and must show fiber content and country of origin from the chosen blank (labels print a FILL IN box until BLANK is set in build/build.py) [VERIFY with the partner and FTC Textile/Care Labeling Rules]. Copyright line on the production book and tag: '© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.' Version 1.0 · September 2026. Check every file against the chosen partner's current template and placement tool before upload.",
+    "human_todo": [
+      "HUMAN AUTHORSHIP: confirm or change the 4 garment colors (production book page 4), write your own slogan ideas (page 8), and make and date your own edits to the logo's build numbers (brand/logo/src/build.py) before filing anything. Commit each change to git.",
+      "SLOGAN TEES (slots 2 and 3): create brand/ORIGINALITY.md, clear a slogan you wrote (tone check + knockout search, ideally the attorney), mark it CLEARED there, add it to SLOGANS in build/build.py and run bash build/render.sh. The build refuses anything not marked cleared or on the banned list.",
+      "Pick ONE print partner (Printful, Printify or Gelato) that offers DTG on the 4 colors, inside-neck label printing and Etsy + site integration; pick one mid-weight unisex cotton blank and save its size chart.",
+      "Fill in BLANK['fiber'] and BLANK['origin'] in build/build.py from the blank's spec sheet (check heather colors separately), check the care wording, then run bash build/render.sh. Never upload labels that still show the FILL IN box.",
+      "Confirm on the partner's placement tool that the logo sits about 3-3.5 in below the collar seam, and that the inside-label template is 3 x 3 in [VERIFY]; adjust TEE_TOP or the label size in build/build.py if not.",
+      "If the partner cannot print inside-neck labels, remove the label panel from listing image 4 (build/pages.py) and keep the blank's own tag; the neck label is the best trademark evidence, so prefer a partner that offers it.",
+      "Order one physical sample per color (rule 21): check print, color, label, fit; wash one five times; take faceless flat-lay photos. Approve the cover image and sample photos yourself.",
+      "Fill in the partner cost per size in the production book's pricing table; keep about $8+ per tee after fees or raise the everyday price before launch.",
+      "Etsy: list the print partner as production partner, mark 'Designed by', disclose AI-assisted tools for the art, add the size chart, upload listing images 1-7 in order, use the marketplace-edition pack-in only.",
+      "Amazon Merch on Demand: apply, then upload the two print files [VERIFY current terms].",
+      "Before public use of the logo on merch: reverse-image search, USPTO design-code search (27.03, 26.01; include class 25) and an attorney knockout, per brand/logo/logo-guidelines page 9. Consider adding class 25 when PLAY BEFORE PIXELS is filed, using dated neck-label photos and order records as specimens.",
+      "Give the partner your resale certificate, set the shipping profile and returns line, and make sure general liability insurance is in place before the first sale (legal/protection/PROTECTION-PLAN.md).",
+      "Build the bonus page at playbeforepixels.com/bonus/merch-core before enabling the site-edition pack-in card.",
+      "If the logo kit is replaced (logo v2), just run bash build/render.sh: every file, mockup and listing image rebuilds from brand/logo/."
+    ]
+  },
+  {
+    "slug": "merch-core-tote",
+    "status": "bundle-add-on-only (never listed on its own, per DEMAND-CHECK.md)",
+    "title": "Play Before Pixels Logo Tote",
+    "subtitle": "Canvas tote with our stacked logo, available only inside gift bundles",
+    "format": "Canvas tote bag, one-side print, print on demand. Sold only as an add-on inside own-site bundles.",
+    "trim": "Print file 3600 x 3600 px (12 x 12 in at 300 dpi), transparent PNG + vector SVG; stacked lockup about 9 in wide, centered and raised 0.4 in.",
+    "pages": 0,
+    "ages": "Adults",
+    "colors": [
+      {"name": "Natural canvas", "hex_preview": "#EDE3CC", "print_file": "print/tote-logo_light.png"},
+      {"name": "Black", "hex_preview": "#232429", "print_file": "print/tote-logo_dark.png"}
+    ],
+    "price_usd": 22,
+    "price_notes": "+$22 as an add-on inside a bundle (DEMAND-CHECK: tote $22, bundle-only). Bundles are priced 10-25% under the sum of their parts and described in plain words ('$X, or $Y bought separately'), never with a crossed-out price (BRAND.md Honest pricing). Fill in the partner cost before setting bundle prices.",
+    "short_description": "Our stacked Play Before Pixels logo on a canvas tote. Available only as part of a gift bundle on playbeforepixels.com.",
+    "long_description": "Carry the books, the snacks and the crayons in a tote that says where your priorities are.\n\nThe Play Before Pixels logo tote carries our stacked logo: the P of Play, with a small tomato-red ball that comes back to close it, like the serve and return of talk and play between a grown-up and a child. The same ball dots the i in Pixels.\n\nChoose natural canvas with the ink logo or black with the white logo. The logo is about 9 inches wide on one side.\n\nThe tote isn't sold on its own. You'll find it inside our gift bundles on playbeforepixels.com, alongside our logo tee and a digital play kit. Each tote is printed when you order it by our print partner and shipped with tracking, so allow a few extra days.\n\nMade for grown-ups: it's a carry-all bag, not a toy.",
+    "bullets": [
+      "Our stacked logo about 9 in wide: the ball comes back to close the P",
+      "Natural canvas with the ink logo, or black with the white logo",
+      "Only available inside gift bundles on playbeforepixels.com",
+      "Printed when you order by our print partner, then shipped with tracking",
+      "A grown-up carry-all for books, snacks and crayons (not a toy)"
+    ],
+    "keywords": [
+      "play before pixels tote",
+      "canvas tote bag gift",
+      "parent gift bundle",
+      "library book tote",
+      "minimalist logo tote",
+      "gift for new parents",
+      "family play gift set"
+    ],
+    "seo_title": "Play Before Pixels Logo Tote | Gift Bundle Add-On",
+    "seo_description": "Our stacked logo on a natural or black canvas tote, only inside Play Before Pixels gift bundles. Printed when you order and shipped with tracking.",
+    "alt_text": "A natural canvas tote bag laid flat on a pale background, with the stacked Play Before Pixels logo in dark navy: a letter P closed by a small tomato-red ball above the words Play Before Pixels.",
+    "listing_images": [
+      "preview/listing-images/tote-01.png - hero: natural tote, 'bundle add-on, not sold on its own'",
+      "preview/listing-images/tote-02.png - natural and black",
+      "preview/mockups/tote-natural.png and tote-dark.png - 1600 x 1200 flat-lays for the bundle page"
+    ],
+    "files": {
+      "print_light": "print/tote-logo_light.png + .svg (natural canvas)",
+      "print_dark": "print/tote-logo_dark.png + .svg (black)"
+    },
+    "channels": [
+      "playbeforepixels.com gift bundles only (Holiday gift bundle and later gift bundles). Teacher bundles stay on hold with all school-facing work.",
+      "Not listed on Etsy or Amazon on its own"
+    ],
+    "amazon_route": "none-with-reason: DEMAND-CHECK makes the tote bundle-only, and bundles of a POD tote with other items cannot be sold as one Amazon listing without inventory.",
+    "next_products": ["merch-core-logo-tee", "bundle-holiday-gift", "picture-tablet-slept"],
+    "bonus_url": "playbeforepixels.com/bonus/merch-core",
+    "faq": [
+      {"q": "Can I buy the tote by itself?", "a": "No, it comes only inside our gift bundles on playbeforepixels.com."},
+      {"q": "How big is the logo?", "a": "About 9 inches wide, on one side."},
+      {"q": "How long does it take?", "a": "It's printed when you order and shipped with tracking. Allow a few extra days."}
+    ],
+    "compliance_notes": "Adult product, not a toy and not marketed to children; the listing says plainly that it is a grown-up carry-all, not a toy (BRAND.md rule 4 spirit; no cords long enough to wrap a neck are added by us, and the handles are the blank's standard handles [VERIFY handle length with the partner]). Logo placed unaltered from brand/logo (stacked lockup, the kit's lockup for totes). No health claims, no condition words, no slogans. Print on demand only; no inventory. Honest bundle pricing. Copyright: © 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC.",
+    "human_todo": [
+      "Confirm the partner's tote print area; if it is smaller than 12 x 12 in, change TOTE in build/build.py and rebuild.",
+      "Order one sample of each tote color and approve it before adding the tote to any bundle.",
+      "Set the Holiday gift bundle price on the site once partner costs are known (10-25% under the parts, no crossed-out price)."
+    ]
+  }
+]

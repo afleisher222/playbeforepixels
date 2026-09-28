@@ -1,0 +1,58 @@
+---
+subject: "Day 27: Grandparents, sitters and other homes"
+preheader: "Share your plan with other caregivers warmly, then let other homes be different."
+send: "day 27, 7:00 local time"
+---
+
+*Day 27 of 30 · Make it stick*
+
+# Grandparents, sitters and other homes
+
+**Share your plan with other caregivers warmly, then let other homes be different.**
+
+Children spend time with grandparents, sitters, co-parents and friends. Each home is a little different, and that’s fine. Children are good at understanding that different places have different rules.
+
+If you want other caregivers to join in, share the plan warmly and simply, without asking them to change everything. For example: “We’re trying more play at home. She loves these three games right now, if you want ideas.” A short list of favorite plays is usually more welcome than a list of rules.
+
+Make it easy: leave the play basket, a book, some paper and crayons. Share your screen-spot words so the ending sounds the same.
+
+Then let go a little. A grandparent who watches a movie with your child on a Saturday is still spending time with them, side by side. That’s connection too.
+
+Grandparents can be great play partners: stories from their childhood, old songs, cooking, card games and letters by mail.
+
+**Today’s one small step:** Share a short list of your child’s favorite plays with another caregiver.
+
+## Today’s play: Grandparent interview
+
+*From 3 years · No prep · No mess · Short play · You need: paper and a pencil, or a phone call on speaker*
+
+Help your child ask a grandparent or older friend three questions: What did you play when you were little? What was your favorite food? What made you laugh? Draw or write the answers together.
+
+**Talk while you play (Repeat and add one):** “Grandpa played with a box too! What did he make?”
+
+- **Make it easier:** Look at an old family photo and name the people and things in it.
+- **Make it harder:** Big kids write a letter back with their own answers and mail it.
+- **Tired-grown-up version (2 minutes):** Ask one question on a short call and draw the answer.
+- **Safety:** No cords or strings near young children. Grown-ups hold phones on speaker for little ones.
+
+## Plain words for: Talking to a grandparent or sitter
+
+> “We’re trying more play at home. Here are three things she loves right now.”
+>
+> “When shows finish, we say ‘Night-night, tablet’. It helps if it sounds the same.”
+
+Invite, don’t instruct. Ideas and shared words travel better than rules.
+
+Today’s pages in your workbook: Day 27. {{workbook_download_link}}
+
+---
+**Next for your family:** The Day the Tablet Slept. A funny bedtime read-aloud for ages 3–7 about a box rocket, a dog named Biscuit and one very sleepy tablet. https://playbeforepixels.com/shop/picture-tablet-slept
+
+**Share with a friend:** give $5, get $5. {{referral_link}}
+
+The Play Before Pixels team
+
+_This is parent education, not medical advice. For questions about your child’s development, talk with your pediatrician. Every play follows our published safety rules; a grown-up is always there. We don’t send personal replies about individual children; answers are at playbeforepixels.com/help._
+
+[Pause or change the send time]({{pause_or_change_time_link}}) · [Unsubscribe]({{unsubscribe_link}})
+Play Before Pixels, a trade name of AlphaPlay LLC · [BUSINESS MAILING ADDRESS] · © 2026 AlphaPlay LLC. Version 1.0 · September 2026

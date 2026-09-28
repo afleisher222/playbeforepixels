@@ -1,0 +1,66 @@
+{
+  "sequence": "7 Days of Play First (free lead magnet)",
+  "trigger": "sign-up at playbeforepixels.com/reset/start (email + child birth month/year only; double opt-in)",
+  "rules": [
+    "One email a day for 7 days, 7:00 local time.",
+    "Stop the sequence as soon as the subscriber buys; move them to the program sequence.",
+    "No countdown timers, no fake deadlines, no “price goes up” claims. Launch-week pricing only if it is genuine and truly ends.",
+    "After day 7, subscribers join the monthly play email (about 70% help, 30% product)."
+  ],
+  "merge_tags": {
+    "{{logo_url}}": "hosted PNG of brand/logo/png/lockup-horizontal-2400.png (upload once to the email platform)",
+    "{{referral_link}}": "give $5 / get $5 share link from the store platform",
+    "{{unsubscribe_link}}": "platform unsubscribe",
+    "{{pause_or_change_time_link}}": "subscriber preferences page",
+    "{{workbook_download_link}}": "expiring download link for the workbook files",
+    "{{feedback_form_link}}": "one-question form (which play did your child go back to?)",
+    "{{program_checkout_link}}": "checkout for the $27 program",
+    "{{bundle_checkout_link}}": "checkout for the $49 bundle",
+    "{{starter_download_link}}": "the free starter PDF",
+    "[BUSINESS MAILING ADDRESS]": "the USPS PO Box from legal/ENTITY.md (CAN-SPAM); founder enters it once in the platform footer"
+  },
+  "emails": [
+    {
+      "file": "f1-welcome",
+      "send": "immediately after sign-up",
+      "subject": "Your 7 Days of Play First starter is here",
+      "preheader": "Plus today’s play: a walk where you just say what you see."
+    },
+    {
+      "file": "f2-screen-spot",
+      "send": "day 2",
+      "subject": "The one change that makes the rest easier",
+      "preheader": "Same time, same place, same ending."
+    },
+    {
+      "file": "f3-ending",
+      "send": "day 3",
+      "subject": "What to say when the show ends",
+      "preheader": "A warning, a clear ending and a landing."
+    },
+    {
+      "file": "f4-bored",
+      "send": "day 4",
+      "subject": "“I’m bored” is a starting line",
+      "preheader": "Build a play basket from things you already have."
+    },
+    {
+      "file": "f5-talk",
+      "send": "day 5",
+      "subject": "Five small talk moves (and the research, in plain words)",
+      "preheader": "A link, not a cause, and a hopeful idea."
+    },
+    {
+      "file": "f6-peek",
+      "send": "day 6",
+      "subject": "What a whole month of this looks like",
+      "preheader": "A peek inside the 30-Day Screen Reset."
+    },
+    {
+      "file": "f7-invite",
+      "send": "day 7",
+      "subject": "Keep going: the 30-Day Screen Reset",
+      "preheader": "$27, with a 30-day money-back guarantee."
+    }
+  ]
+}
