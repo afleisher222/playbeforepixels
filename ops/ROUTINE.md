@@ -36,6 +36,8 @@ Run every new or changed public item through ops/COMPLIANCE-GATE.md. Anything th
 - Publish only through official APIs whose credentials exist as environment secrets (e.g., SHOPIFY_*, PRINTFUL_*, PINTEREST_*, ETSY_*, CLOUDFLARE_API_TOKEN). Never scrape, never automate a browser login, never store secrets in the repo.
 - Platforms without an automation API (Amazon KDP, IngramSpark, Teachers Pay Teachers, some marketplaces) get an upload packet in ops/UPLOAD-PACKETS/<platform>/<slug>/ with every file and field ready, listed in the report.
 - Site: rebuild and deploy through the connected Cloudflare Pages project.
+- **Social media, all platforms:** post the week's approved, gate-passed faceless posts and pins through the connected scheduler or each platform's official posting API (Pinterest, Instagram and Facebook via Meta, TikTok, YouTube Shorts, LinkedIn, Threads, X, and regional platforms as the international plan adds them), in each live language. Links use tracking tags so the report can show which platform sells. Never post in groups or communities, never DM, never comment as the brand without approval.
+
 
 ## 6. Commit and report
 - Commit in small logical commits and push.
