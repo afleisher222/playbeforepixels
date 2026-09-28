@@ -93,3 +93,9 @@ AI-generated material is not copyrightable in the U.S. For every product, leave 
 - No pop-ups on arrival, no auto-playing anything, no countdown timers, no badge overload, no walls of logos or icons.
 - Copy is short and specific; details live one click deeper (tabs, accordions, dedicated pages).
 - Every page passes a "squint test": with eyes half-closed, the one most important thing is still obvious.
+
+## Every product leads to the next (repeat purchase — binding)
+- Every listing.json includes "next_products" (2–3 slugs: the next age stage, the matching series item, the best bundle) and "bonus_url" (playbeforepixels.com/bonus/<slug>).
+- Every product includes a QR code and short link to a free companion bonus that joins the email list (no child names collected; birth month/year only).
+- Series and stages are designed as sets (matching spines, numbered stage kits, card-deck expansions) so customers want the whole collection.
+- The site shows "Next for your child's age" on every product page and in every order email; bundles are offered at a fair discount; a give-$5/get-$5 referral program runs through the store platform.
