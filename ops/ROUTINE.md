@@ -97,6 +97,11 @@ Run every new or changed public item through ops/COMPLIANCE-GATE.md. Anything th
 - The final message of the run is a short plain-language report for the founder: what's new, what sold (if sales data is connected), what needs her (approvals, uploads), and nothing else.
 
 
+## Never run out of products (binding)
+- **Pipeline floor:** ops/QUEUE.md must always hold at least **30 researched, demand-checked ideas** ranked and ready to build (enough for the daily studio for a month). The weekly research run tops it up first whenever it falls below 30; the daily studio reports a warning if it drops below 10.
+- **Stock can't run out** because everything is digital or printed on demand. The daily check watches print-on-demand partners for discontinued or out-of-stock blanks (a tee color, a paper stock) and swaps to the closest matching blank automatically, logging the change.
+- **Every live product stays live:** the daily check confirms each listing is active on every connected marketplace and re-publishes anything that dropped off (expired listing, failed sync), per ops/AUTOFIX.md.
+
 ## Be proactive (every run — act before anything becomes a problem or a missed chance)
 - **Stay 8 weeks ahead:** keep 8 weeks of approved content, pins, emails and seasonal campaigns scheduled at all times; start seasonal products and gift guides 6 weeks before each date in the events calendar.
 - **Deadlines, 30 days early:** maintain ops/DEADLINES.md (ALPHAPLAY Statement of Use/extension due March 8, 2027; Maryland annual report April 15; estimated taxes; domain, insurance, trade-name and platform renewals; access-key expirations). 30 days before each, prepare every document and put a one-line yes/no in ops/APPROVALS.md.

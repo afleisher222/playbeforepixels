@@ -635,7 +635,11 @@ pages.push(page(31, PAGE_BG(C.tSun) + R(-12, 650, 840, 200, C.paper) + G('transl
   both(note ? () => '' : slot(60, 150, 696, 360, 'Founder writes this page', 'A short note in your own voice (60–120 words): why you wrote this story.<br>Type it under <i>## note</i> in WORDS.md, then rebuild.<br>Keep it about play, reading and family time. No health claims.'),
     off => `<div class="logo" style="left:${258 + off}px;top:${680 + 12}px;width:300px">${LOGO('lockup-horizontal.svg', 300)}</div><div class="t tag center" style="left:${60 + off}px;top:${764 + 12}px;width:696px">Books and printables for talking and playing together · playbeforepixels.com</div>`)));
 // p32 (L) endpaper
-pages.push(page(32, endpaper(C.tSky, C.sky, C.sun)));
+// p32 (L) endpaper + "More from Play Before Pixels" (brand kit: last page shows the next products). Bottom third left clear for any printer mark.
+pages.push(page(32, endpaper(C.tSky, C.sky, C.sun) + R(84, 118, 648, 400, C.paper, 28),
+  [{ x: 124, y: 150, w: 580, cls: 'more-h', html: `More from Play Before Pixels` },
+   { x: 124, y: 214, w: 572, cls: 'more', html: `<p><b>100 Screen-Free Plays</b><br>The activity half of your Play Day: 100 easy plays for ages 0–5.</p><p><b>“I’m Bored” Play Cards</b><br>Pick a card, start playing.</p><p><b>Free Play Day planner</b><br><span class="url">${BONUS}</span></p>` }],
+  off => `<div class="logo" style="left:${124 + off}px;top:${452 + 12}px;width:170px">${LOGO('lockup-horizontal.svg', 170)}</div>`));
 if (pages.length !== 32) throw new Error('expected 32 interior pages, got ' + pages.length);
 
 // ------------------------------------------------------------------ covers (art in trim coords 0..816; backgrounds oversized for bleed and hardcover wrap)
@@ -674,7 +678,8 @@ const BACK_TEXT = [{ x: 56, y: 60, w: 690, cls: 'blurb', html: `<p class="blurb-
 <p>Build a tower (CRASH!). Splash every puddle. Blast off in a cardboard-box rocket with Biscuit the dog as co-pilot. Flip pancakes with Papa, then find the perfect bedtime book.</p>
 <p>A funny, cozy read-aloud with a refrain kids love to join in on, and one very sleepy tablet in a nightcap. With “Talk about it” questions and a Play Day planner for grown-ups.</p>` },
   { x: 56, y: 640, w: 300, cls: 'backmeta', html: `Picture book · Ages 3–7` }];
-const BACK_EXTRA = `<div class="logo" style="left:56px;top:722px;width:220px">${LOGO('lockup-horizontal-white.svg', 220)}</div>
+const BACK_STRIP = `<div class="strip" style="left:56px;top:382px;width:690px"><b>Read it, then play it.</b> Pair it with <i>100 Screen-Free Plays</i> and get a free Play Day planner at <span class="nw">playbeforepixels.com</span></div>`;
+const BACK_EXTRA = BACK_STRIP + `<div class="logo" style="left:56px;top:722px;width:220px">${LOGO('lockup-horizontal-white.svg', 220)}</div>
 <div class="isbn back" style="left:588px;top:664px"><b>ISBN / barcode</b><span>2 × 1.2 in · keep clear</span></div>`;
 // A canvas whose origin is trim (0,0); panel shows art from (ax, ay).
 function canvas(art, texts, extra, ax, ay) {
@@ -683,7 +688,8 @@ function canvas(art, texts, extra, ax, ay) {
 <div class="inner">${texts.map(t => `<div class="t ${t.cls || ''}" style="left:${t.x}px;top:${t.y}px;width:${t.w}px;">${t.html}</div>`).join('')}${extra}</div></div>`;
 }
 const panel = (x, y, w, h, inner, bg = '') => `<div class="panel" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;${bg ? `background:${bg}` : ''}">${inner}</div>`;
-const FRONT = (ax, ay) => canvas(frontCover(), FRONT_TEXT, '', ax, ay);
+const FRONT_EXTRA = `<div class="logo" style="left:48px;top:734px;width:150px">${LOGO('lockup-horizontal-white.svg', 150)}</div>`;
+const FRONT = (ax, ay) => canvas(frontCover(), FRONT_TEXT, FRONT_EXTRA, ax, ay);
 const BACK = (ax, ay) => canvas(backCover(), BACK_TEXT, BACK_EXTRA, ax, ay);
 const spine = (x, y, w, h, grassTop) => panel(x, y, w, h, `<div style="position:absolute;left:0;right:0;top:${grassTop}px;bottom:0;background:${C.grass}"></div>`, C.sky);
 
@@ -748,6 +754,10 @@ body { -webkit-print-color-adjust: exact; print-color-adjust: exact }
 .t.talk-sub { font-family: "Nunito Sans", sans-serif; font-weight: 600; font-size: 18px; line-height: 1.4; color: #FFFFFF }
 .t.plan { font-family: "Fredoka", "Nunito Sans", sans-serif; font-weight: 600; font-size: 30px; color: #1D2940 }
 .t.plan .opts { display: block; margin-top: 12px; font-family: "Nunito Sans", sans-serif; font-weight: 700; font-size: 20px; color: #3D86D8 }
+.t.more-h { font-family: "Bricolage Grotesque", "Nunito Sans", sans-serif; font-weight: 800; font-size: 38px; line-height: 1.05; color: #1D2940; letter-spacing: -.5px }
+.t.more { font-family: "Nunito Sans", sans-serif; font-weight: 500; font-size: 18px; line-height: 1.4; color: #1D2940 }
+.t.more p { margin: 0 0 12px }
+.t.more .url { font-weight: 800; color: #3D86D8 }
 .t.tag { font-family: "Nunito Sans", sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .5px; color: #1D2940 }
 .t.end { font-family: "Bricolage Grotesque", "Nunito Sans", sans-serif; font-weight: 800; font-size: 60px; color: #FFFFFF; letter-spacing: -1px }
 .t.blurb { font-family: "Nunito Sans", sans-serif; font-weight: 500; font-size: 21px; line-height: 1.45; color: #FFFFFF }
@@ -772,6 +782,8 @@ body { -webkit-print-color-adjust: exact; print-color-adjust: exact }
 .isbn b { font-size: 15px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase }
 .isbn span { font-size: 11.5px; margin-top: 4px; line-height: 1.3 }
 .panel { position: absolute; overflow: hidden }
+.strip { position: absolute; font-family: "Nunito Sans", sans-serif; font-weight: 600; font-size: 17px; line-height: 1.4; color: #1D2940; background: #FEF4D8; border-radius: 16px; padding: 10px 18px }
+.strip b { font-weight: 800; color: #EE5A36 }
 .canvas { position: absolute; width: 1216px; height: 1216px }
 .canvas .inner { position: absolute; left: 200px; top: 200px; width: 816px; height: 816px }
 .guide { position: absolute; pointer-events: none; z-index: 9 }
