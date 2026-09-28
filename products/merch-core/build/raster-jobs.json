@@ -112,5 +112,29 @@
   "png": "/home/user/playbeforepixels/products/merch-core/slogan-slot/slogan-tee-TEMPLATE.png",
   "w": 1500,
   "h": 1800
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/print/tee-more-talk-less-tap_light.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/print/tee-more-talk-less-tap_light.png",
+  "w": 4500,
+  "h": 5400
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/print/tee-more-talk-less-tap_dark.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/print/tee-more-talk-less-tap_dark.png",
+  "w": 4500,
+  "h": 5400
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/print/tote-laps-not-apps_light.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/print/tote-laps-not-apps_light.png",
+  "w": 3600,
+  "h": 3600
+ },
+ {
+  "svg": "/home/user/playbeforepixels/products/merch-core/print/tote-laps-not-apps_dark.svg",
+  "png": "/home/user/playbeforepixels/products/merch-core/print/tote-laps-not-apps_dark.png",
+  "w": 3600,
+  "h": 3600
  }
 ]

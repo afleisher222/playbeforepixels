@@ -163,7 +163,7 @@ function listings() {
     <div style="position:absolute;left:1310px;top:210px;right:100px">
       <div class="h" style="font-size:88px;line-height:1.02">Play and talk ideas, sorted by age</div>
       <div style="display:flex;flex-direction:column;gap:22px;margin-top:60px">
-        ${['Sorted by age, from birth', `${free} plays need nothing to buy`, 'Talk line on every play', 'Safety note on every play'].map((t, i) => `<div style="display:flex;gap:18px;align-items:center;font-size:40px;font-weight:800"><span style="width:26px;height:26px;border-radius:99px;background:${[C.sky, C.grass, C.sun, C.tomato][i]};flex:none"></span>${t}</div>`).join('')}
+        ${['Sorted by age, from birth', `${free} plays: nothing to buy`, 'Talk line on every play', 'Safety note on every play'].map((t, i) => `<div style="display:flex;gap:18px;align-items:center;font-size:40px;font-weight:800"><span style="width:26px;height:26px;border-radius:99px;background:${[C.sky, C.grass, C.sun, C.tomato][i]};flex:none"></span>${t}</div>`).join('')}
       </div>
       <div style="margin-top:60px;display:flex;flex-direction:column;gap:18px">
         <span class="tag" style="background:${C.ink};color:${W};text-align:center;font-size:36px">Paperback 8 × 10 in<br><span style="font-weight:700;font-size:30px">black-and-white interior</span></span>
@@ -228,9 +228,9 @@ function listings() {
       <div style="position:absolute;right:40px;bottom:30px;display:flex;gap:20px"><span class="tag" style="background:${W}">Color</span><span class="tag" style="background:${W};box-shadow:inset 0 0 0 4px ${C.ink}">Low-ink</span></div>
     </div>`);
   // 8 what's inside
-  const inside = ['100 plays in 4 age bands', 'Easier and harder ideas on every play', 'Six easy talk moves', 'Safety first page', `Pantry list: ${free} plays need nothing to buy`, '12 tired-grown-up plays', 'Quick finder for every moment', 'A sample screen-free day', 'When screens are on anyway', 'The 100-play tracker and planners', 'Blank pages for your own plays', 'Sources and a grown-up guide'];
+  const inside = ['100 plays in 4 age bands', 'Easier and harder ideas on every play', 'Six easy talk moves', 'Safety first page', `Pantry list: ${free} plays need nothing to buy`, '12 tired-grown-up plays', 'Quick finder for every moment', 'A sample screen-free day', 'When screens are on anyway', 'The 100-play tracker and planners', 'Blank pages for your own plays', 'How-to-use guide and sources'];
   L('08-whats-inside', C.ink, `
-    <div class="h" style="font-size:110px;color:${W}">What's inside</div>
+    <div class="h" style="font-size:110px;color:${W}">What’s inside</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px 60px;margin-top:100px">
       ${inside.map((t, i) => `<div style="display:flex;gap:24px;align-items:center;font-size:50px;font-weight:800;color:${W}"><svg width="60" height="60" viewBox="0 0 24 24" style="flex:none;color:${[C.sky, C.grass, C.sun, C.tomato][i % 4]}"><use href="#u-shield"/></svg>${t}</div>`).join('')}
     </div>
@@ -254,20 +254,20 @@ function startHere(etsy) {
   const files = etsy
     ? [['2-Color-US-Letter.pdf', 'Full color, US Letter'], ['3-Color-A4.pdf', 'Full color, A4'], ['4-Low-Ink-US-Letter.pdf', 'Low-ink: white pages, line art to color, US Letter'], ['5-Low-Ink-A4.pdf', 'Low-ink, A4']]
     : [['guide-100-plays-letter.pdf', 'Full color, US Letter'], ['guide-100-plays-a4.pdf', 'Full color, A4'], ['guide-100-plays-low-ink-letter.pdf', 'Low-ink: white pages, line art to color, US Letter'], ['guide-100-plays-low-ink-a4.pdf', 'Low-ink, A4']];
-  const card = (bg, h, body) => `<div class="card" style="background:${bg}"><div class="display" style="font-size:15pt;margin-bottom:.05in">${h}</div>${body}</div>`;
+  const card = (bg, h, body) => `<div class="card" style="background:${bg}"><div class="display" style="font-size:13.5pt;margin-bottom:.03in">${h}</div>${body}</div>`;
   const ul = a => `<ul>${a.map(t => `<li>${t}</li>`).join('')}</ul>`;
   const T = MAPL.titles;
   return htmlDoc('START HERE · 100 Screen-Free Plays', `
 @page { size: 8.5in 11in; margin: 0 }
 html, body { width: 8.5in }
-.page { width: 8.5in; height: 11in; padding: .55in .6in .5in; display: flex; flex-direction: column; gap: .14in; overflow: hidden; position: relative; font-size: 10pt; line-height: 1.42 }
-.card { border-radius: .16in; padding: .14in .2in }
+.page { width: 8.5in; height: 11in; padding: .5in .6in .45in; display: flex; flex-direction: column; gap: .1in; overflow: hidden; position: relative; font-size: 9.4pt; line-height: 1.36 }
+.card { border-radius: .16in; padding: .1in .18in }
 .card ul { padding-left: .2in } .card li { margin: .03in 0 }
-.two { display: grid; grid-template-columns: 1fr 1fr; gap: .14in }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: .1in }
 .foot { margin-top: auto; display: flex; justify-content: space-between; font-size: 8pt; color: #5A6478; border-top: 1px solid #C9D1DE; padding-top: .08in }`, `
 <section class="page">
   <div style="display:flex;justify-content:space-between;align-items:center"><img src="${LOGO('lockup-horizontal')}" alt="Play Before Pixels" style="height:.5in"><span class="display" style="background:${C.tomato};color:${W};border-radius:99px;padding:.05in .18in;font-size:12pt">File 1 · Start here</span></div>
-  <div><div class="display" style="font-size:30pt">100 Screen-Free Plays for Ages 0–5</div>
+  <div><div class="display" style="font-size:26pt">100 Screen-Free Plays for Ages 0–5</div>
   <p style="font-size:11pt;margin-top:.06in">Thank you! Here’s what each file holds and how to print and type into it. ${PREPLINE} No cutting, no laminating.</p></div>
   ${card(C.tSun, 'Your files', ul(files.map(([f, d]) => `<b>${f}</b> · ${d}`)) + '<p style="font-size:9pt;margin-top:.04in">Pick one file for your paper size. Color and Low-ink files hold the same pages. Every file has the four extra planner pages (Monday and Sunday starts) at the back.</p>')}
   <div class="two">
@@ -276,7 +276,7 @@ html, body { width: 8.5in }
   </div>
   ${card(C.tTomato, 'Where to begin', ul([`Read <b>Safety first</b> (page ${T['Safety first']}) and <b>How to use this book</b> (page ${T['How to use this book']}).`, `Turn to your child’s age band: ages 0–1 (page ${T['band-b0']}), 1–2 (page ${T['band-b1']}), 2–3 (page ${T['band-b2']}) or 3–5 (page ${T['band-b3']}).`, `Worn out? Start with <b>Tired-grown-up plays</b> (page ${T['Tired-grown-up plays']}).`]))}
   ${card(C.tPlum, 'Downloading: use a browser, not the app', `<p>${etsy ? 'Open your Etsy Purchases page in a web browser (not the Etsy app) and download each file. On a phone, save each PDF to your files first, then open it in Adobe Acrobat Reader. Your files stay on your Purchases page, so you can download them again at any time.' : 'Open the download link from your order email in a web browser. On a phone, save each PDF to your files first, then open it in Adobe Acrobat Reader. The link in your order email keeps working for at least a year.'}</p>`)}
-  ${etsy ? '' : `<div class="card" style="border:1.5px solid ${C.ink};display:flex;gap:.2in;align-items:center"><div style="flex:none">${qrSvg(100)}</div><div><div class="display" style="font-size:15pt;margin-bottom:.04in">Free bonus and re-downloads</div><p>Scan for your free bonus: <b>${BONUS}</b>. Lost a file? Use the resend-my-download page in the help center at <b>playbeforepixels.com</b>.</p></div></div>`}
+  ${etsy ? '' : `<div class="card" style="border:1.5px solid ${C.ink};display:flex;gap:.2in;align-items:center"><div style="flex:none">${qrSvg(84)}</div><div><div class="display" style="font-size:13.5pt;margin-bottom:.03in">Free bonus and re-downloads</div><p>Scan for your free bonus: <b>${BONUS}</b>. Lost a file? Use the resend-my-download page in the help center at <b>playbeforepixels.com</b>.</p></div></div>`}
   <p style="font-size:8.6pt;color:#5A6478">License: personal and family use in your own home. Please don’t share or resell the files. Parent education, not medical or professional advice. Every play follows our published safety rules.</p>
   <div class="foot"><span>${COPY}</span><span>${VERSION}</span></div>
 </section>`);

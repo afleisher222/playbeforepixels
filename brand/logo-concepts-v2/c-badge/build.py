@@ -1,16 +1,17 @@
 """Play Before Pixels - logo concept C, "The Maker's Seal" (slug: c-badge).
 
 A round maker's seal, like the stamp pressed into the bottom of a good wooden toy: the full name runs
-around the ring and a spinning top stands in the middle. Every SVG here is generated from compass
-geometry plus the outlines of Bricolage Grotesque (the brand's own SIL-OFL font, instanced from
-brand/fonts/*.woff2). No <text>, no raster images, no system fonts.
+around the ring and a spinning top stands in the middle. Every SVG here is generated from geometry plus
+the outlines of Bricolage Grotesque (the brand's own SIL-OFL font, instanced from brand/fonts/*.woff2).
+No <text>, no raster images, no system fonts, no transforms, masks or clip paths: every file is plain
+filled paths, so it opens cleanly in embroidery, vinyl-cutting and print software.
 
     python3 build.py              # writes every SVG next to this file (+ src/ helpers)
     python3 tests/make_tests.py   # writes the test pages and tests/jobs.json
     node tests/raster.js          # renders test-large / test-logo / test-small / preview-sheet PNGs
 
 FOUNDER EDITS: every number that shapes the logo is in the TUNABLE block just below. Change one
-(for example the top's lean TOP['tilt'], the ring lettering size SEAL['cap'], the ball size
+(for example the top's width TOP['w'], the ring lettering size SEAL['cap'], the ball size
 SEAL['dot_r'] or a colour in SCHEMES), run the three commands above, and commit the change with the
 date so your own authorship of the final drawing is on record (legal/protection/creation-records-log.md).
 """
@@ -27,25 +28,33 @@ SEAL = dict(
     R=500,          # seal radius (every unit below is relative to this)
     cap=96,         # cap height of the ring lettering
     edge=56,        # clear space between the seal's edge and the letters
-    inner=46,       # clear space between the letters and the top
+    inner=40,       # clear space between the letters and the top
     track=50,       # extra letter spacing on the ring, in font units (1000 = one em)
     space=250,      # width of the word space in "PLAY BEFORE", font units
-    dot_r=27,       # radius of the two tomato balls between the words
-    top_fill=0.90,  # how much of the free middle the top fills (1.0 = touches the clear space)
+    dot_r=27,       # radius of the two balls between the words
+    top_fill=0.92,  # how much of the free middle the top fills (1.0 = touches the clear space)
     top_dy=0,       # optical nudge of the top (units, + = down)
 )
-TOP = dict(         # the spinning top, drawn upright with compass and ellipse; widest line at y = 0
+TOP = dict(         # the spinning top, drawn upright in its own units (see class Top)
     tilt=12,        # lean in degrees (clockwise); 0 = upright
-    w=400,          # half-width at the widest line
-    dome=205,       # height of the shoulder (half-ellipse) above the widest line
-    drop=520,       # depth of the pointed body (two circle arcs) below the widest line
-    band=(-10, 118),  # painted band: from/to y, measured down from the widest line
-    handle_w=118,   # handle width
-    handle_h=190,   # handle height above the shoulder
-    tip=34,         # softening of the tip (units along the curve)
-    centre=0.45,    # 0 = centre by bounding box, 1 = centre by the body's weight
+    w=420,          # half-width at the rim
+    rim=112,        # height of the painted rim band
+    dome=150,       # height of the shoulder above the rim
+    neck=86,        # half-width where the shoulder meets the handle
+    k1=0.55,        # shoulder: how long it stays upright at the rim (0-1)
+    k2=0.45,        # shoulder: how flat it runs into the neck (0-1)
+    step=34,        # how far the painted rim sticks out past the shoulder and the body (its flange)
+    drop=470,       # depth of the body below the rim, to the tip
+    bulge=34,       # outward bulge of the body's sides (0 = straight cone)
+    tip=30,         # softening of the tip
+    handle_w=112,   # handle width
+    handle_h=210,   # handle height above the shoulder
+    centre=0.5,     # 0 = centre by bounding box, 1 = centre by the body's weight
 )
-SMALL_TOP = dict(TOP, handle_w=170, handle_h=175, band=(-20, 150), tip=46, dome=215, drop=500)   # 16-32 px cut
+# favicon cut, drawn on a 16-px grid (1 px = 62.5 units) so every horizontal edge lands on a pixel
+FAV_TOP = dict(TOP, w=437.5, rim=187.5, dome=125, neck=93.75, k1=0.5, k2=0.35, drop=437.5, bulge=28, tip=40,
+               handle_w=125, handle_h=187.5)
+FAV = dict(top_y=31.25)   # favicon: y of the handle's top in a 1000-unit square (tip lands 31.25 from the bottom)
 WORD = dict(
     track=-6,       # wordmark letter spacing (font units)
     ball_r=94,      # the round ball that replaces Bricolage's square dot on the i of "Pixels"
@@ -54,22 +63,21 @@ WORD = dict(
 LOCKUP = dict(
     disc=1.80,      # small seal diameter, as a multiple of the wordmark's cap height
     gap=0.48,       # space between small seal and wordmark, x cap height
-    top_fill=0.74,  # how much of the small seal the top fills
+    top_fill=0.76,  # how much of the small seal the top fills
     lift=0.0,       # raise the small seal against the cap height (x cap height)
 )
-FAV = dict(fill=0.96, disc=True)   # favicon: size of the small seal in the square; disc=False = top alone
 
 # ============================================================== palette (from brand/logo/src/build.py)
 INK, PAPER, WASH, TOMATO, SUN, SKY = '#1D2940', '#FFFFFF', '#F3F6FB', '#EE5A36', '#F5B820', '#3D86D8'
 SUN_T, TOMATO_T, SKY_T = '#FEF4D8', '#FDE9E3', '#E3EEFA'
 BLACK, WHITE = '#000000', '#FFFFFF'
 
-# what each part is painted with.  band=None draws the top as one plain silhouette (one-colour use)
+# what each part is painted with. mono=<colour> makes a one-colour file: one path, everything else knocked out.
 SCHEMES = {
-    'color':   dict(disc=INK,   letters=PAPER, ball=TOMATO, body=SUN,   band=TOMATO, handle=TOMATO, word=INK,   iball=TOMATO),
-    'reverse': dict(disc=SUN,   letters=INK,   ball=TOMATO, body=PAPER, band=TOMATO, handle=TOMATO, word=PAPER, iball=TOMATO),
-    'black':   dict(disc=BLACK, letters=WHITE, ball=WHITE,  body=WHITE, band=None,   handle=WHITE,  word=BLACK, iball=BLACK),
-    'white':   dict(disc=WHITE, letters=BLACK, ball=BLACK,  body=BLACK, band=None,   handle=BLACK,  word=WHITE, iball=WHITE),
+    'color':   dict(disc=INK,   letters=PAPER, ball=TOMATO, body=TOMATO, band=SUN, handle=PAPER, word=INK,   iball=TOMATO),
+    'reverse': dict(disc=PAPER, letters=INK,   ball=TOMATO, body=TOMATO, band=SUN, handle=INK,   word=PAPER, iball=TOMATO),
+    'black':   dict(mono=BLACK),
+    'white':   dict(mono=WHITE),
 }
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -84,12 +92,22 @@ def f(v):
     return '0' if s in ('-0', '') else s
 
 
+def aff(m, p):
+    a, b, c, d, e, g = m
+    return (a * p[0] + c * p[1] + e, b * p[0] + d * p[1] + g)
+
+
+def circle_d(cx, cy, r):
+    return f'M{f(cx - r)} {f(cy)}A{f(r)} {f(r)} 0 1 0 {f(cx + r)} {f(cy)}A{f(r)} {f(r)} 0 1 0 {f(cx - r)} {f(cy)}Z'
+
+
 # ============================================================== fonts: instance the brand woff2 once
 def font(name, wght, opsz):
     p = os.path.join(SRC, name)
     if not os.path.exists(p):
         vf = TTFont(os.path.join(FONTS, 'bricolage-a24454f0.woff2'))   # Bricolage Grotesque, latin subset
-        inst = instancer.instantiateVariableFont(vf, dict(wght=wght, opsz=opsz))
+        inst = instancer.instantiateVariableFont(vf, dict(wght=wght, opsz=opsz),
+                                                 overlap=instancer.OverlapMode.REMOVE)   # merge overlapping contours
         inst.flavor = None
         os.makedirs(SRC, exist_ok=True)
         inst.save(p)
@@ -118,116 +136,114 @@ def ink_box(F, name):
     bp = BoundsPen(F['gs']); F['gs'][name].draw(bp); return bp.bounds
 
 
-# ============================================================== the spinning top (compass construction)
+# ============================================================== the spinning top
 class Top:
-    """Upright, in its own units: widest line on y = 0, shoulder = half-ellipse (w x dome) above it,
-    body = two circle arcs meeting in a point `drop` below it (a pointed arch, turned over),
-    handle = a round-ended bar standing on the shoulder. y grows downward (SVG)."""
+    """The spinning top, upright in its own units (y grows downward, as in SVG):
+    rim    = the painted band, vertical sides, from y = -rim to y = 0, full width 2w
+    dome   = the shoulder, rising from the rim to the neck of the handle (a cubic curve each side)
+    body   = two gently bulging sides meeting in a softened point `drop` below the rim
+    handle = a round-ended peg standing on the shoulder"""
 
     def __init__(self, T):
         self.T = T
-        w, h = T['w'], T['drop']
-        self.c = (h * h - w * w) / (2 * w)          # arc centres sit on y = 0 at x = -c (right arc) and +c (left arc)
-        self.rho = w + self.c                        # arc radius
 
-    def xr(self, y):                                 # right edge of the silhouette at height y
-        T = self.T
-        if y <= 0:
-            return T['w'] * math.sqrt(max(0.0, 1 - (y / T['dome']) ** 2))
-        return -self.c + math.sqrt(max(0.0, self.rho ** 2 - y * y))
+    def segs(self, with_handle=False):
+        T = self.T; w, rim, dome, neck = T['w'], T['rim'], T['dome'], T['neck']
+        k1, k2, drop, bulge, tip = T['k1'], T['k2'], T['drop'], T['bulge'], T['tip']
+        st = T.get('step', 0); wd = w - st                           # shoulder and body start inside the rim
+        yt = -rim - dome
+        L = math.hypot(wd, drop); ux, uy = -wd / L, drop / L        # chord direction, body corner -> tip
+        nx, ny = drop / L, wd / L                                   # outward normal of the right side
+        tpx, tpy = -ux * tip, drop - uy * tip                       # where the right side hands over to the tip
+        mx, my = (wd + tpx) / 2 + nx * bulge, tpy / 2 + ny * bulge
+        s = [('M', (-w, 0)), ('L', (-w, -rim)), ('L', (-wd, -rim)),
+             ('C', (-wd, -rim - dome * k1), (-(neck + (wd - neck) * k2), yt), (-neck, yt))]
+        if with_handle:                                            # one outline: body and handle as one shape
+            hw = T['handle_w'] / 2; top = yt - T['handle_h']
+            s += [('L', (-hw, yt)), ('L', (-hw, top + hw)), ('A', hw, (hw, top + hw)), ('L', (hw, yt))]
+        s += [('L', (neck, yt)),
+              ('C', (neck + (wd - neck) * k2, yt), (wd, -rim - dome * k1), (wd, -rim)),
+              ('L', (w, -rim)), ('L', (w, 0)), ('L', (wd, 0)),
+              ('Q', (mx, my), (tpx, tpy)),
+              ('Q', (0, drop), (-tpx, tpy)),
+              ('Q', (-mx, my), (-wd, 0)),
+              ('Z',)]
+        return s
 
-    def tip_points(self):
-        """points where the softened tip leaves each arc (tip length measured along the arc)"""
-        a_tip = math.atan2(self.T['drop'], self.c)    # angle of the tip seen from the right arc's centre (-c, 0)
-        a = a_tip - self.T['tip'] / self.rho
-        return (-self.c + self.rho * math.cos(a), self.rho * math.sin(a))
+    def band_segs(self):
+        w, rim = self.T['w'], self.T['rim']
+        return [('M', (-w, -rim)), ('L', (w, -rim)), ('L', (w, 0)), ('L', (-w, 0)), ('Z',)]
 
-    def silhouette(self):
-        T = self.T; w, d, h, r = T['w'], T['dome'], T['drop'], self.rho
-        px, py = self.tip_points()
-        return (f'M{f(-w)} 0A{f(w)} {f(d)} 0 0 1 {f(w)} 0'
-                f'A{f(r)} {f(r)} 0 0 1 {f(px)} {f(py)}Q0 {f(h)} {f(-px)} {f(py)}'
-                f'A{f(r)} {f(r)} 0 0 1 {f(-w)} 0Z')
+    def handle_segs(self):
+        T = self.T; hw = T['handle_w'] / 2; yt = -T['rim'] - T['dome']
+        base = yt + T['dome'] * 0.5; top = yt - T['handle_h']        # starts inside the shoulder: no seam
+        return [('M', (-hw, base)), ('L', (-hw, top + hw)), ('A', hw, (hw, top + hw)), ('L', (hw, base)), ('Z',)]
 
-    def band(self):
-        T = self.T; w, d, r = T['w'], T['dome'], self.rho
-        y1, y2 = T['band']
-        a1, a2 = self.xr(y1), self.xr(y2)
-
-        def edge_down(x0, y0, y1_):              # right edge from y0 down to y1_, crossing y = 0 if needed
-            out = ''
-            if y0 < 0 < y1_:
-                out += f'A{f(w)} {f(d)} 0 0 1 {f(w)} 0'
-                out += f'A{f(r)} {f(r)} 0 0 1 {f(self.xr(y1_))} {f(y1_)}'
-            elif y1_ <= 0:
-                out += f'A{f(w)} {f(d)} 0 0 1 {f(self.xr(y1_))} {f(y1_)}'
+    @staticmethod
+    def d(segs, m):
+        """path data of segs under affine m (uniform scale + rotation + translation)"""
+        k = math.sqrt(abs(m[0] * m[3] - m[1] * m[2])); out = []
+        for sg in segs:
+            if sg[0] == 'Z':
+                out.append('Z')
+            elif sg[0] == 'A':
+                x, y = aff(m, sg[2]); out.append(f'A{f(k * sg[1])} {f(k * sg[1])} 0 0 1 {f(x)} {f(y)}')
             else:
-                out += f'A{f(r)} {f(r)} 0 0 1 {f(self.xr(y1_))} {f(y1_)}'
-            return out
+                out.append(sg[0] + ' '.join(f'{f(x)} {f(y)}' for x, y in (aff(m, p) for p in sg[1:])))
+        return ''.join(out)
 
-        def edge_up(y0, y1_):                    # left edge from y0 (below) up to y1_
-            out = ''
-            if y1_ < 0 < y0:
-                out += f'A{f(r)} {f(r)} 0 0 1 {f(-w)} 0'
-                out += f'A{f(w)} {f(d)} 0 0 1 {f(-self.xr(y1_))} {f(y1_)}'
-            elif y0 <= 0:
-                out += f'A{f(w)} {f(d)} 0 0 1 {f(-self.xr(y1_))} {f(y1_)}'
-            else:
-                out += f'A{f(r)} {f(r)} 0 0 1 {f(-self.xr(y1_))} {f(y1_)}'
-            return out
-        return (f'M{f(-a1)} {f(y1)}H{f(a1)}' + edge_down(a1, y1, y2) + f'H{f(-a2)}' + edge_up(y2, y1) + 'Z')
+    def outline_points(self, n=24):
+        pts, cur = [], None
+        for sg in self.segs(with_handle=True):
+            if sg[0] in 'ML':
+                cur = sg[1]; pts.append(cur)
+            elif sg[0] == 'A':
+                r = sg[1]; cx, cy = (cur[0] + sg[2][0]) / 2, cur[1]
+                pts += [(cx - r * math.cos(math.radians(a)), cy - r * math.sin(math.radians(a))) for a in range(0, 181, 6)]
+                cur = sg[2]
+            elif sg[0] == 'Q':
+                (cx, cy), (ex, ey) = sg[1], sg[2]
+                for i in range(1, n + 1):
+                    t = i / n
+                    pts.append(((1-t)**2*cur[0] + 2*(1-t)*t*cx + t*t*ex, (1-t)**2*cur[1] + 2*(1-t)*t*cy + t*t*ey))
+                cur = (ex, ey)
+            elif sg[0] == 'C':
+                (ax, ay), (bx, by), (ex, ey) = sg[1], sg[2], sg[3]
+                for i in range(1, n + 1):
+                    t = i / n; u = 1 - t
+                    pts.append((u**3*cur[0] + 3*u*u*t*ax + 3*u*t*t*bx + t**3*ex, u**3*cur[1] + 3*u*u*t*ay + 3*u*t*t*by + t**3*ey))
+                cur = (ex, ey)
+        return pts
 
-    def handle(self):
-        T = self.T; hw = T['handle_w'] / 2; top = -(T['dome'] + T['handle_h'])
-        return (f'M{f(-hw)} {f(-T["dome"] * 0.5)}V{f(top + hw)}A{f(hw)} {f(hw)} 0 0 1 {f(hw)} {f(top + hw)}'
-                f'V{f(-T["dome"] * 0.5)}Z')
-
-    def outline_points(self, n=240):
-        """dense outline (for fitting and centring), upright, un-rotated"""
-        T = self.T; pts = []
-        for i in range(n + 1):                       # silhouette, right side then left side
-            y = -T['dome'] + (T['dome'] + T['drop']) * i / n
-            x = self.xr(y); pts.append((x, y))
-        pts += [(-x, y) for x, y in reversed(pts)]
-        hw = T['handle_w'] / 2; top = -(T['dome'] + T['handle_h'])
-        hpts = [(hw * math.cos(math.radians(a)), top + hw - hw * math.sin(math.radians(a))) for a in range(0, 181, 6)]
-        return pts, hpts
-
-    def frame(self):
-        """rotation, bbox centre and body centroid of the tilted top (units of the upright drawing)"""
+    def place(self, cx, cy, radius, fill):
+        """affine that puts the (tilted) top in a circle: its farthest point at fill x radius from (cx, cy)"""
         th = math.radians(self.T['tilt']); c, s = math.cos(th), math.sin(th)
-        rot = lambda p: (p[0] * c - p[1] * s, p[0] * s + p[1] * c)
-        body, hpts = self.outline_points()
-        rb = [rot(p) for p in body]; rh = [rot(p) for p in hpts]
-        allp = rb + rh
-        xs = [p[0] for p in allp]; ys = [p[1] for p in allp]
+        rot = [(p[0] * c - p[1] * s, p[0] * s + p[1] * c) for p in self.outline_points()]
+        xs = [p[0] for p in rot]; ys = [p[1] for p in rot]
         bbc = ((min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2)
-        A = Cx = Cy = 0.0                            # polygon centroid of the body
-        for (x0, y0), (x1, y1) in zip(rb, rb[1:] + rb[:1]):
+        A = Cx = Cy = 0.0                                            # centroid of the whole silhouette
+        for (x0, y0), (x1, y1) in zip(rot, rot[1:] + rot[:1]):
             k = x0 * y1 - x1 * y0; A += k; Cx += (x0 + x1) * k; Cy += (y0 + y1) * k
         cen = (Cx / (3 * A), Cy / (3 * A))
         m = self.T['centre']
-        anchor = (bbc[0] * (1 - m) + cen[0] * m, bbc[1] * (1 - m) + cen[1] * m)
-        far = max(math.hypot(x - anchor[0], y - anchor[1]) for x, y in allp)
-        return anchor, far, (max(xs) - min(xs), max(ys) - min(ys))
+        ax, ay = bbc[0] * (1 - m) + cen[0] * m, bbc[1] * (1 - m) + cen[1] * m
+        far = max(math.hypot(x - ax, y - ay) for x, y in rot)
+        k = fill * radius / far
+        return (k * c, k * s, -k * s, k * c, cx - k * ax, cy - k * ay)
 
-    def svg(self, sc, cx, cy, radius, fill, handle_class=''):
-        """draw the top so that it fills `fill` of a circle of `radius` around (cx, cy)"""
-        anchor, far, _ = self.frame()
-        s = fill * radius / far
-        tr = f'translate({f(cx)} {f(cy)}) scale({f(s)}) translate({f(-anchor[0])} {f(-anchor[1])}) rotate({f(self.T["tilt"])})'
+    def paint(self, sc, m, handle_class=''):
         hc = f' class="{handle_class}"' if handle_class else ''
-        out = f'<g transform="{tr}"><path{hc} fill="{sc["handle"]}" d="{self.handle()}"/><path fill="{sc["body"]}" d="{self.silhouette()}"/>'
-        if sc['band']:
-            out += f'<path fill="{sc["band"]}" d="{self.band()}"/>'
-        return out + '</g>'
+        return (f'<path{hc} fill="{sc["handle"]}" d="{self.d(self.handle_segs(), m)}"/>'
+                f'<path fill="{sc["body"]}" d="{self.d(self.segs(), m)}"/>'
+                f'<path fill="{sc["band"]}" d="{self.d(self.band_segs(), m)}"/>')
 
 
 # ============================================================== lettering on a circle
-def arc_text(text, cap, r_base, where, track, space):
+def arc_text(text, cap, r_base, where, track, space, cx=0.0, cy=0.0, k=1.0):
     """top: letters stand on circle r_base, reading clockwise, tops outward.
        bottom: letters hang from circle r_base (their baseline), reading left to right, tops inward.
-       Spacing is measured at mid-cap radius, so letters look evenly spaced on the curve."""
+       Spacing is measured at mid-cap radius, so letters look evenly spaced on the curve.
+       Output is baked into final coordinates: centre (cx, cy), scale k."""
     s = cap / CAP
     g = [(n, (space if n == 'space' else a) + track) for n, a in shape(RING_FONT, text)]
     total = sum(w for _, w in g) - track
@@ -247,33 +263,38 @@ def arc_text(text, cap, r_base, where, track, space):
                 th = math.pi + T / 2 - mid
                 tx, ty, ux, uy = -math.cos(th), -math.sin(th), -math.sin(th), math.cos(th)
             P = (r_base * math.sin(th), -r_base * math.cos(th))
-            m = (s * tx, s * ty, s * ux, s * uy, P[0] - s * gx * tx, P[1] - s * gx * ty)
+            m = (k * s * tx, k * s * ty, k * s * ux, k * s * uy,
+                 cx + k * (P[0] - s * gx * tx), cy + k * (P[1] - s * gx * ty))
             out.append(glyph(RING_FONT, n, m))
         cum += w
     return ''.join(out), math.degrees(T)
 
 
-def seal(sc, cx=0.0, cy=0.0, scale=1.0, S=SEAL, T=TOP):
-    """the full seal (disc, ring lettering, two balls, top), centred on (cx, cy), radius S['R']*scale"""
+def seal(sc, cx=0.0, cy=0.0, k=1.0, S=SEAL, T=TOP):
+    """the full seal (disc, ring lettering, two balls, top), centred on (cx, cy), radius S['R']*k"""
     R, cap, edge = S['R'], S['cap'], S['edge']
     r_out = R - edge; r_in = r_out - cap; r_mid = (r_in + r_out) / 2
-    g = [f'<circle cx="{f(cx)}" cy="{f(cy)}" r="{f(R * scale)}" fill="{sc["disc"]}"/>']
-    d1, T1 = arc_text('PLAY BEFORE', cap, r_in, 'top', S['track'], S['space'])
-    d2, T2 = arc_text('PIXELS', cap, r_out, 'bottom', S['track'], S['space'])
-    g.append(f'<path fill="{sc["letters"]}" transform="translate({f(cx)} {f(cy)}) scale({f(scale)})" d="{d1}{d2}"/>')
+    d1, T1 = arc_text('PLAY BEFORE', cap, r_in, 'top', S['track'], S['space'], cx, cy, k)
+    d2, T2 = arc_text('PIXELS', cap, r_out, 'bottom', S['track'], S['space'], cx, cy, k)
     gap_c = math.radians((T1 / 2 + 180 - T2 / 2) / 2)          # each ball sits in the middle of its gap
-    for sx in (1, -1):
-        bx, by = sx * r_mid * math.sin(gap_c), -r_mid * math.cos(gap_c)
-        g.append(f'<circle cx="{f(cx + scale * bx)}" cy="{f(cy + scale * by)}" r="{f(scale * S["dot_r"])}" fill="{sc["ball"]}"/>')
-    g.append(Top(T).svg(sc, cx, cy + S['top_dy'] * scale, (r_in - S['inner']) * scale, S['top_fill']))
-    return ''.join(g)
+    balls = [(cx + k * sx * r_mid * math.sin(gap_c), cy - k * r_mid * math.cos(gap_c), k * S['dot_r']) for sx in (1, -1)]
+    top = Top(T); m = top.place(cx, cy + S['top_dy'] * k, (r_in - S['inner']) * k, S['top_fill'])
+    if 'mono' in sc:                                             # one path, even-odd: every part is a hole in the disc
+        d = circle_d(cx, cy, R * k) + d1 + d2 + ''.join(circle_d(*b) for b in balls) + top.d(top.segs(True), m)
+        return f'<path fill="{sc["mono"]}" fill-rule="evenodd" d="{d}"/>'
+    return (f'<circle cx="{f(cx)}" cy="{f(cy)}" r="{f(R * k)}" fill="{sc["disc"]}"/>'
+            f'<path fill="{sc["letters"]}" d="{d1}{d2}"/>'
+            + ''.join(f'<circle cx="{f(x)}" cy="{f(y)}" r="{f(r)}" fill="{sc["ball"]}"/>' for x, y, r in balls)
+            + top.paint(sc, m))
 
 
-def seal_small(sc, cx, cy, r, T=TOP, fill=None, handle_class=''):
-    """the small seal: disc + top, no lettering (header lockup, favicon, embroidery under 40 mm)"""
+def seal_small(sc, cx, cy, r, T=TOP, fill=None):
+    """the small seal: disc + top, no lettering (header lockup, small avatars, embroidery under 40 mm)"""
     fill = fill or LOCKUP['top_fill']
-    disc = f'<circle cx="{f(cx)}" cy="{f(cy)}" r="{f(r)}" fill="{sc["disc"]}"/>' if sc.get('disc') else ''
-    return disc + Top(T).svg(sc, cx, cy, r, fill, handle_class)
+    top = Top(T); m = top.place(cx, cy, r, fill)
+    if 'mono' in sc:
+        return f'<path fill="{sc["mono"]}" fill-rule="evenodd" d="{circle_d(cx, cy, r)}{top.d(top.segs(True), m)}"/>'
+    return f'<circle cx="{f(cx)}" cy="{f(cy)}" r="{f(r)}" fill="{sc["disc"]}"/>' + top.paint(sc, m)
 
 
 # ============================================================== wordmark
@@ -308,7 +329,7 @@ def symbol_svg(scheme):
     return doc((-R, -R, 2 * R, 2 * R), seal(SCHEMES[scheme]), 'Play Before Pixels')
 
 
-def lockup(scheme):
+def lockup_parts(scheme):
     """horizontal lockup for the site header: the small seal (no ring words) + one-line wordmark.
     Units: wordmark font units at scale 1 (cap height 660); baseline y = 0."""
     sc = SCHEMES[scheme]
@@ -317,21 +338,28 @@ def lockup(scheme):
     body = seal_small(sc, r, cy, r)
     tx = D + LOCKUP['gap'] * CAP
     d, balls, w = wordmark('Play Before Pixels', tx, 0, 1.0)
-    body += f'<path fill="{sc["word"]}" d="{d}"/>' + ''.join(
-        f'<circle cx="{f(x)}" cy="{f(y)}" r="{f(rr)}" fill="{sc["iball"]}"/>' for x, y, rr in balls)
+    word = sc.get('mono') or sc['word']; ib = sc.get('mono') or sc['iball']
+    body += f'<path fill="{word}" d="{d}"/>' + ''.join(
+        f'<circle cx="{f(x)}" cy="{f(y)}" r="{f(rr)}" fill="{ib}"/>' for x, y, rr in balls)
     top_y = min(cy - r, -744); bot_y = max(cy + r, 190)
+    return body, (0, top_y, tx + w, bot_y - top_y), D
+
+
+def lockup(scheme):
+    body, (x0, y0, W, H), D = lockup_parts(scheme)
     p = 0.25 * D                                  # clear space: a quarter of the small seal all round
-    return doc((-p, top_y - p, tx + w + 2 * p, bot_y - top_y + 2 * p), body, 'Play Before Pixels')
+    return doc((x0 - p, y0 - p, W + 2 * p, H + 2 * p), body, 'Play Before Pixels')
 
 
 def favicon_svg():
-    """16-32 px: the small seal with the heavy-cut top. The ink disc melts into dark tabs and the top
-    stays; in light tabs the disc gives a crisp round edge."""
-    sc = dict(SCHEMES['color'])
-    if not FAV['disc']:
-        sc['disc'] = None
-    body = seal_small(sc, 500, 500, 500 * FAV['fill'], T=SMALL_TOP, fill=0.80)
-    return doc((0, 0, 1000, 1000), body, 'Play Before Pixels', w=32, h=32)
+    """16-32 px: the top alone, heavy cut, on a 16-px grid. Ink handle in light tabs, paper in dark tabs."""
+    T = FAV_TOP; top = Top(T)
+    y_rim = FAV['top_y'] + T['handle_h'] + T['dome'] + T['rim']        # y of the rim's lower edge
+    m = (1, 0, 0, 1, 500, y_rim)
+    sc = dict(SCHEMES['color'], handle=INK)
+    body = top.paint(sc, m, handle_class='h')
+    return doc((0, 0, 1000, 1000), body, 'Play Before Pixels', w=32, h=32,
+               style='@media (prefers-color-scheme:dark){.h{fill:#FFFFFF}}')
 
 
 def build():
@@ -340,11 +368,10 @@ def build():
         suf = '' if scheme == 'color' else '-' + scheme
         files[f'symbol{suf}.svg'] = symbol_svg(scheme)
         files[f'primary-logo{suf}.svg'] = lockup(scheme)
+        files[f'symbol-small{suf}.svg'] = doc((-500, -500, 1000, 1000), seal_small(SCHEMES[scheme], 0, 0, 500), 'Play Before Pixels')
     files['favicon.svg'] = favicon_svg()
-    sc = SCHEMES['color']
-    files['symbol-small.svg'] = doc((-500, -500, 1000, 1000), seal_small(sc, 0, 0, 500), 'Play Before Pixels')
     files['src/avatar-1080.svg'] = doc((-540, -540, 1080, 1080),
-                                       f'<rect x="-540" y="-540" width="1080" height="1080" fill="{INK}"/>' + seal(sc, scale=1.0),
+                                       f'<rect x="-540" y="-540" width="1080" height="1080" fill="{INK}"/>' + seal(SCHEMES['color']),
                                        'Play Before Pixels')
     for n, c in files.items():
         with open(os.path.join(HERE, n), 'w') as fh:

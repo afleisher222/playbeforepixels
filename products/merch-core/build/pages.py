@@ -18,6 +18,7 @@ GARMENTS = [  # slug, name, hex, which print file
     ('navy', 'Navy', '#243150', 'dark'),
 ]
 TOTES = [('natural', 'Natural canvas', '#EDE3CC', 'light'), ('dark', 'Black', '#232429', 'dark')]
+SLOGAN = 'more-talk-less-tap'  # design 2 print-file id (build.py SLOGANS)
 
 
 def mix(a, b, t):
@@ -40,7 +41,7 @@ html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-famil
 """
 
 
-def tee(color, tone, base, extra=''):
+def tee(color, tone, base, extra='', design='logo'):
     shade = mix(color, '#1D2940', .09)
     deep = mix(color, '#1D2940', .22)
     fold = mix(color, '#1D2940', .05)
@@ -53,11 +54,11 @@ def tee(color, tone, base, extra=''):
 <path d="M350 76Q500 212 650 76L630 70Q500 175 370 70Z" fill="{shade}"/>
 <path d="M208 120Q226 250 238 372M792 120Q774 250 762 372" fill="none" stroke="{shade}" stroke-width="4"/>
 <path d="M70 311L176 391M930 311L824 391M234 842Q500 858 766 842" fill="none" stroke="{shade}" stroke-width="4"/>
-<image href="{base}print/tee-logo_{tone}.png" x="305" y="175" width="390" height="468"/>
+<image href="{base}print/tee-{design}_{tone}.png" x="305" y="175" width="390" height="468"/>
 </svg>'''
 
 
-def tote(color, tone, base, extra=''):
+def tote(color, tone, base, extra='', design='laps-not-apps'):
     shade = mix(color, '#1D2940', .10)
     deep = mix(color, '#1D2940', .25)
     return f'''<svg class="tote" viewBox="0 0 1000 1100" {extra}>
@@ -68,7 +69,7 @@ def tote(color, tone, base, extra=''):
 <rect x="304" y="282" width="52" height="64" fill="{color}" stroke="{shade}" stroke-width="3"/>
 <rect x="644" y="282" width="52" height="64" fill="{color}" stroke="{shade}" stroke-width="3"/>
 <path d="M150 318H850" stroke="{shade}" stroke-width="3" stroke-dasharray="12 9"/>
-<image href="{base}print/tote-logo_{tone}.png" x="220" y="390" width="560" height="560"/>
+<image href="{base}print/tote-{design}_{tone}.png" x="220" y="390" width="560" height="560"/>
 </svg>'''
 
 
@@ -116,6 +117,9 @@ for slug, name, hexc, tone in GARMENTS:
     body = f'''<svg class="props" width="1600" height="1200">{ball_sym(1330, 960, 62, 20)}{block(250, 1010, 1.25, 1, -12)}{block(335, 1050, 1.25, 2, 8)}</svg>
 <div class="lay shadow" style="left:380px;top:190px;width:840px">{tee(hexc, tone, B)}</div>'''
     write(f'build/html/mock-tee-{slug}.html', page(f'{name} logo tee flat-lay', body, B, MOCK_CSS))
+    body = f'''<svg class="props" width="1600" height="1200">{ball_sym(270, 980, 62, -20)}{block(1300, 1010, 1.25, 2, 12)}{block(1385, 1050, 1.25, 3, -8)}</svg>
+<div class="lay shadow" style="left:380px;top:190px;width:840px">{tee(hexc, tone, B, design=SLOGAN)}</div>'''
+    write(f'build/html/mock-tee-more-talk-{slug}.html', page(f'{name} More talk, less tap tee flat-lay', body, B, MOCK_CSS))
 for slug, name, hexc, tone in TOTES:
     body = f'''<svg class="props" width="1600" height="1200">{ball_sym(1320, 1000, 58, -15)}{block(270, 1030, 1.2, 3, 10)}</svg>
 <div class="lay shadow" style="left:420px;top:50px;width:760px">{tote(hexc, tone, B)}</div>'''
@@ -124,7 +128,7 @@ for slug, name, hexc, tone in TOTES:
 # main website mockup: two tees and the tote
 body = f'''<svg class="props" width="1600" height="1200">{ball_sym(1470, 1070, 58, 15)}{block(120, 1080, 1.3, 1, -10)}{block(205, 1120, 1.3, 2, 12)}</svg>
 <div class="lay shadow" style="left:30px;top:250px;width:720px;transform:rotate(-5deg)">{tee('#243150', 'dark', '')}</div>
-<div class="lay shadow" style="left:560px;top:150px;width:760px;transform:rotate(3deg)">{tee('#FFFFFF', 'light', '')}</div>
+<div class="lay shadow" style="left:560px;top:150px;width:760px;transform:rotate(3deg)">{tee('#FFFFFF', 'light', '', design=SLOGAN)}</div>
 <div class="lay shadow" style="left:1160px;top:420px;width:440px;transform:rotate(7deg)">{tote('#EDE3CC', 'light', '')}</div>'''
 write('mockup.html', page('Play Before Pixels merch flat-lay', body, '', MOCK_CSS))
 

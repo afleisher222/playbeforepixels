@@ -1,0 +1,15 @@
+{
+  "_format": "Publish ledger (ops/ROUTINE.md section 5, G2-08): one entry per product x platform. Look it up before every publish, update the existing item instead of creating a new one, and add the external ID right after creation. content_hash is the sha256 of the published files and listing text. status: live | draft | removed.",
+  "_example": {
+    "product": "<slug>",
+    "platform": "etsy",
+    "channel_edition": "etsy",
+    "external_id": "<platform id>",
+    "url": "<public url>",
+    "content_hash": "<sha256>",
+    "first_published": "YYYY-MM-DD",
+    "last_updated": "YYYY-MM-DD",
+    "status": "live"
+  },
+  "items": []
+}

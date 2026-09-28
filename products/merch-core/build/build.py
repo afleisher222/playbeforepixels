@@ -9,7 +9,7 @@ Writes
   print/tote-logo_light.svg|png  3600 x 3600, transparent (natural tote)
   print/tote-logo_dark.svg|png   3600 x 3600, transparent (black or navy tote)
   labels/neck-label_<SIZE>_<light|dark>.svg|png   900 x 900 (3 x 3 in at 300 dpi)
-  slogan-slot/slogan-tee-TEMPLATE.svg            layout guide only, never uploaded
+  slogan-slot/slogan-tee-TEMPLATE.svg            layout guide for slot 3 only, never uploaded
   build/raster-jobs.json  (then: node ../../brand/logo/src/raster.js build/raster-jobs.json)
 
 The logo is placed from the supplied brand/logo files, unaltered (BRAND.md: use only
@@ -38,13 +38,22 @@ BLANK = {
 }
 SIZES = ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL']
 
-# Slogan tees: EMPTY on purpose. A slogan may be added here only after it is cleared in
-# brand/ORIGINALITY.md (see build rule in slogan_files()). Write slogans in your own
-# words (human authorship). Example entry:
-#   {'id': 'slogan-1', 'lines': ['First line', 'second line']}
-SLOGANS = []
-BANNED = ['pencils before pixels', "childhood can't wait", 'paper first', 'screen-free week', 'autism', 'therapy',
-          'screen free week', 'play beyond the screen']
+# Slogan designs: only lines that brand/ORIGINALITY.md keeps FOR THIS ITEM (section 1C row
+# says KEEP and names the item, e.g. "(tee and copy)" or "(tote and body copy)"). The build
+# stops on anything else. Section 2 of ORIGINALITY.md (Merch, adult only) lists exactly:
+# the logo tee, the "More talk, less tap" tee and the "Laps not apps" tote. Slot 3 stays
+# empty until ORIGINALITY.md keeps another line for a tee.
+# Founder edits (human authorship): line breaks, case and the ball-as-period are layout
+# choices you may change here; the words themselves must stay as cleared.
+SLOGANS = [
+    {'id': 'more-talk-less-tap', 'phrase': 'more talk, less tap', 'item': 'tee',
+     'lines': ['More talk,', 'less tap']},
+]
+TOTE_SLOGAN = {'id': 'laps-not-apps', 'phrase': 'laps not apps', 'item': 'tote',
+               'lines': ['Laps', 'not apps']}
+BANNED = ['pencils before pixels', "childhood can't wait", 'screens can.', 'paper first', 'screen-free week',
+          'screen free week', 'autism', 'therapy', 'play beyond the screen', 'screen-free and proud',
+          'ask me what i built']
 # ---------------------------------------------------------------------------
 
 
@@ -160,9 +169,9 @@ def slogan_template():
 
     t('SLOGAN AREA · 11 x 5 in', 'nunito800', 90, 760, tr=0.1)
     t("Your own words, set in the brand's display face", 'nunito700', 80, 930, fill=INK)
-    t('Allowed only after the slogan is cleared', 'nunito700', 80, 1260, fill=INK)
+    t('Allowed only after ORIGINALITY.md keeps it for a tee', 'nunito700', 80, 1260, fill=INK)
     t('in brand/ORIGINALITY.md', 'nunito800', 80, 1370, fill=TOMATO)
-    t('Not cleared, never use: "Pencils before pixels" · "Childhood can\'t', 'nunito700', 64, 1620, fill='#6B7488')
+    t('Retired, never use: "Pencils before pixels" · "Childhood can\'t', 'nunito700', 64, 1620, fill='#6B7488')
     t('wait. Screens can." · "Paper first" · any event name', 'nunito700', 64, 1710, fill='#6B7488')
     g, h = place('lockup-horizontal.svg', (W - 1100) / 2, 2080, 1100)
     p.append(f'<rect x="{(W-1100)/2}" y="2080" width="1100" height="{h:.0f}" fill="none" stroke="{guide}" stroke-width="8" stroke-dasharray="30 20"/>')
@@ -174,36 +183,70 @@ def slogan_template():
     job('slogan-slot/slogan-tee-TEMPLATE.svg', 1500, 1800)
 
 
-def slogan_files():
-    if not SLOGANS:
-        return
+def cleared(phrase, item):
+    """True only when brand/ORIGINALITY.md section 1C keeps `phrase` for `item`."""
     orig = os.path.join(ROOT, 'brand/ORIGINALITY.md')
     if not os.path.exists(orig):
-        sys.exit('STOP: brand/ORIGINALITY.md does not exist, so no slogan is cleared. No slogan tee was built.')
-    cleared = open(orig).read().lower()
+        sys.exit('STOP: brand/ORIGINALITY.md does not exist, so no slogan is cleared.')
+    low = phrase.lower()
+    if any(b in low for b in BANNED):
+        sys.exit(f'STOP: "{phrase}" uses a banned or retired phrase.')
+    for ln in open(orig).read().splitlines():
+        l = ln.lower()
+        if not re.match(r'\|\s*c\d+\s*\|', l):
+            continue
+        cells = [c.strip() for c in l.strip('|').split('|')]
+        if len(cells) < 5 or low not in cells[1]:
+            continue
+        decision = cells[4]
+        return decision.startswith('**keep') and item in decision
+    return False
+
+
+def slogan_art(lines, fg, cx, top, max_w, max_size):
+    """Slogan lines in Bricolage Grotesque 800, outlined, with the tomato ball as the
+    final period (the brand device, BRAND.md logo notes). Returns (svg, bottom_y)."""
+    widest = max(text_path(l, 'bric800', 100, 0, 0)[1] for l in lines)
+    ball_w = 100 * 0.30
+    size = min(max_size, 100 * max_w / (widest + ball_w))
+    parts, y = [], top + size * 0.78
+    for i, l in enumerate(lines):
+        d, w = text_path(l, 'bric800', size, cx, y, anchor='middle')
+        parts.append(f'<path d="{d}" fill="{fg}"/>')
+        if i == len(lines) - 1:
+            r = size * 0.085
+            x0 = cx + w / 2
+            parts.append(f'<circle cx="{x0 + r * 1.55:.1f}" cy="{y - r:.1f}" r="{r:.1f}" fill="{TOMATO}"/>')
+        y += size * 0.98
+    return ''.join(parts), y - size * 0.98 + size * 0.22
+
+
+def slogan_files():
     for s in SLOGANS:
-        text = ' '.join(s['lines'])
-        low = text.lower()
-        if any(b in low for b in BANNED):
-            sys.exit(f'STOP: "{text}" uses a banned or uncleared phrase.')
-        line = next((ln for ln in cleared.splitlines() if low in ln), None)
-        if not line or 'cleared' not in line:
-            sys.exit(f'STOP: "{text}" is not marked cleared in brand/ORIGINALITY.md.')
+        if not cleared(s['phrase'], s['item']):
+            sys.exit(f'STOP: "{s["phrase"]}" is not kept for a {s["item"]} in brand/ORIGINALITY.md.')
         for tone in ('light', 'dark'):
             fg = INK if tone == 'light' else PAPER
-            parts, y, size = [], 700, 520
-            widest = max(text_path(l, 'bric800', size, 0, 0)[1] for l in s['lines'])
-            size = min(size, size * 3300 / widest)
-            for l in s['lines']:
-                d, _ = text_path(l, 'bric800', size, TEE_W / 2, y, anchor='middle')
-                parts.append(f'<path d="{d}" fill="{fg}"/>')
-                y += size * 1.02
+            art, bottom = slogan_art(s['lines'], fg, TEE_W / 2, 300, 3300, 900)
             g, _h = place('lockup-horizontal.svg' if tone == 'light' else 'lockup-horizontal-reverse.svg',
-                          (TEE_W - 1100) / 2, y + 120, 1100)
-            parts.append(g)
+                          (TEE_W - 1300) / 2, bottom + 150, 1300)
             rel = f"print/tee-{s['id']}_{tone}.svg"
-            write(rel, svg_doc(TEE_W, TEE_H, ''.join(parts), f'Play Before Pixels slogan tee: {text}', ''))
+            write(rel, svg_doc(TEE_W, TEE_H, art + g, f'Play Before Pixels slogan tee, {tone} garments',
+                               'Adult unisex tee. 4500 x 5400 px = 15 x 18 in at 300 dpi; slogan about 11 in wide, '
+                               'brand lockup 4.3 in wide below it.'))
             job(rel, TEE_W, TEE_H)
+    t = TOTE_SLOGAN
+    if not cleared(t['phrase'], t['item']):
+        sys.exit(f'STOP: "{t["phrase"]}" is not kept for a {t["item"]} in brand/ORIGINALITY.md.')
+    for tone in ('light', 'dark'):
+        fg = INK if tone == 'light' else PAPER
+        art, bottom = slogan_art(t['lines'], fg, TOTE / 2, 820, 2700, 1000)
+        g, _h = place('lockup-horizontal.svg' if tone == 'light' else 'lockup-horizontal-reverse.svg',
+                      (TOTE - 1300) / 2, bottom + 170, 1300)
+        rel = f"print/tote-{t['id']}_{tone}.svg"
+        write(rel, svg_doc(TOTE, TOTE, art + g, f'Play Before Pixels "Laps not apps" tote, {tone} bags',
+                           'Tote print, 3600 x 3600 px = 12 x 12 in at 300 dpi; slogan about 9 in wide, lockup 4.3 in wide.'))
+        job(rel, TOTE, TOTE)
 
 
 slogan_template()

@@ -1,0 +1,82 @@
+<!--
+title: Shop · Play Before Pixels
+desc: Talk-along books, printables, classroom packs and host-it-yourself kits for ages 0–12, sorted by age and type.
+page: shop
+nav: shop
+-->
+<main id="main">
+  <header class="shop-head">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html" data-crumb-shop>Shop</a></li>
+          <li><span aria-current="page" data-crumb-current>Everything</span></li>
+        </ol>
+      </nav>
+      <div class="shop-title">
+        <h1 class="h1" data-shop-title>Everything we make</h1>
+        <p class="lede" data-shop-lede>Talk-along books, printables, classroom packs and kits, from birth to twelve. Pick an age or a type to narrow it down.</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="shop-controls">
+    <div class="wrap">
+      <nav class="age-rail" aria-label="Filter by age">
+        <ol class="tabs">
+          <li><a href="shop.html" class="tab tab--all" data-age="" aria-current="true"><b>All ages</b><span>0–12</span></a></li>
+          <li><a href="shop.html#age=0-1" class="tab r-sky" data-age="0-1"><b>0–1</b><span>Babies</span></a></li>
+          <li><a href="shop.html#age=1-3" class="tab r-grass" data-age="1-3"><b>1–3</b><span>Toddlers</span></a></li>
+          <li><a href="shop.html#age=3-5" class="tab r-sun" data-age="3-5"><b>3–5</b><span>Preschool</span></a></li>
+          <li><a href="shop.html#age=5-8" class="tab r-tomato" data-age="5-8"><b>5–8</b><span>Early school</span></a></li>
+          <li><a href="shop.html#age=8-12" class="tab r-plum" data-age="8-12"><b>8–12</b><span>Big kids</span></a></li>
+        </ol>
+      </nav>
+      <div class="filter-row">
+        <div class="type-chips" role="group" aria-label="Filter by type">
+          <button type="button" class="chip" data-type-f="" aria-pressed="true">All types</button>
+          <button type="button" class="chip" data-col="books" aria-pressed="false">Books</button>
+          <button type="button" class="chip" data-col="printables" aria-pressed="false">Printables</button>
+          <button type="button" class="chip" data-col="teachers" aria-pressed="false">Teachers &amp; groups</button>
+          <button type="button" class="chip" data-type-f="deck" aria-pressed="false">Card deck</button>
+          <button type="button" class="chip" data-type-f="course" aria-pressed="false">Written course</button>
+          <button type="button" class="chip" data-col="gifts" aria-pressed="false">Gifts &amp; merch</button>
+        </div>
+        <div class="sort">
+          <p class="count num" data-shop-count aria-live="polite">16 products</p>
+          <label class="select-field select-inline"><span>Sort</span><select data-sort><option value="featured">Featured</option><option value="age">Youngest first</option><option value="low">Price, low to high</option><option value="high">Price, high to low</option></select></label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="wrap shop-grid-wrap" aria-label="Products">
+    <ul class="p-grid" data-shop-grid>
+{{ALLCARDS}}
+    </ul>
+    <div class="shop-empty" data-shop-empty hidden>
+      <p class="hand">Nothing here yet.</p>
+      <p>We don’t make that combination (yet). Try another age, or see everything.</p>
+      <button class="btn" type="button" data-reset>Show everything</button>
+    </div>
+    <p class="more-wrap"><button class="btn btn--light more-btn" type="button" data-show-more hidden>Show all <span>16</span> products</button></p>
+  </section>
+
+  <section class="section section--wash shop-help" aria-labelledby="sh-h">
+    <div class="wrap sh-grid">
+      <div><p class="eyebrow">Buying for a school or group?</p><h2 class="h2" id="sh-h">Licenses, quotes and purchase orders.</h2></div>
+      <div>
+        <p class="lede">Every classroom pack comes as a single-classroom or whole-school license. Ask for a written quote, pay by card or PO, and your stamped license PDF arrives by email with the files.</p>
+        <a class="link" href="info.html#licenses">How licenses work <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="scrim" data-scrim="qv"></div>
+<div class="drawer drawer--right qv" id="qv" role="dialog" aria-modal="true" aria-labelledby="qv-title" data-dialog>
+  <div class="drawer-head"><p class="eyebrow" style="margin:0">Quick look</p><button class="x-btn" type="button" data-close aria-label="Close quick look">{{I:x}}</button></div>
+  <div class="drawer-body" data-qv-body></div>
+  <div class="drawer-foot"><button class="btn btn--block" type="button" data-qv-add>Add to cart <span class="arr" aria-hidden="true">→</span></button></div>
+</div>

@@ -152,7 +152,7 @@ function ownCard(id, bandKey) {
       <div class="ptitle">
         <div class="kicker">Our own play <span class="agepill" style="background:${b.t}">age: ${fld(id + '-age', 'inl w1')}</span></div>
         <div class="lineh">${fld(id + '-title', 'big')}</div>
-        <div class="meta"><span>${ico('clock')}</span><span>${ico('check', 'tick')} No prep</span><span>${ico('check', 'tick')} 2 min</span><span>${ico('check', 'tick')} 10 min</span><span style="margin-left:.1in">${drops(0)}</span><span>${ico('check', 'tick')} None</span><span>${ico('check', 'tick')} A little</span><span>${ico('check', 'tick')} Messy</span><span style="margin-left:.1in">${ico('timer')}</span><span>${ico('check', 'tick')} 5</span><span>${ico('check', 'tick')} 10</span><span>${ico('check', 'tick')} 20+ min</span></div>
+        <div class="meta"><span>${ico('clock')}</span><span>${ico('check', 'tick')} No prep</span><span>${ico('check', 'tick')} 2 min</span><span>${ico('check', 'tick')} 10 min</span><span style="margin-left:.1in">${drops(0)}</span><span>${ico('check', 'tick')} None</span><span>${ico('check', 'tick')} A little</span><span>${ico('check', 'tick')} Messy</span><span style="margin-left:.1in">${ico('timer')}</span><span>${ico('check', 'tick')} 5</span><span>${ico('check', 'tick')} 10</span><span>${ico('check', 'tick')} 20+</span></div>
         <div class="need">${ico('bag')}<span><b>You need:</b></span>${fld(id + '-need')}</div>
       </div>
     </div>

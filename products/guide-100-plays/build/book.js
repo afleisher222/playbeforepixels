@@ -132,6 +132,10 @@ h2 { font-size: 15pt; margin-bottom: .05in }
 .chipn { display: inline-flex; align-items: center; justify-content: center; min-width: .3in; height: .24in; padding: 0 .05in; border-radius: 99px; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 8.6pt; margin: 0 .03in .05in 0 }
 .boxnote { border: 1.5px solid var(--ink); border-radius: .14in; padding: .14in .18in; font-size: 9.2pt }
 .spacer { flex: 1 }
+${v.bw ? `
+/* black-and-white interior: labels in ink so small type keeps 4.5:1 contrast */
+.eh b, .play .grow b { color: var(--ink) !important }
+` : ''}
 ${v.low ? `
 /* ---- low-ink edition: white grounds, no full-bleed tints, line art to color (CUSTOMER-VOICE rule 1) ---- */
 .bleedbg { display: none }
@@ -156,7 +160,7 @@ const playRef = n => `<b>${esc(P[n - 1].t)}</b> ${chipN(n)}`;
 
 // prep budget for page 1 and the listing (CUSTOMER-VOICE rule 8)
 const PREPN = [0, 1, 2].map(k => P.filter(p => p.prep === k).length);
-const PREPLINE = `Prep budget: ${PREPN[0]} plays need no prep, ${PREPN[1]} take about 2 minutes and ${PREPN[2]} take about 10. ${P.filter(p => !p.buy).length} of the 100 need nothing to buy.`;
+const PREPLINE = `Prep budget: no prep for ${PREPN[0]} plays, about 2 minutes for ${PREPN[1]} and about 10 minutes for ${PREPN[2]}. ${P.filter(p => !p.buy).length} plays need nothing to buy.`;
 
 // ---- front matter
 function titlePage() {
@@ -397,7 +401,7 @@ function glancePage(b) {
     </div>
     <h2>In this chapter</h2>
     <div style="columns:2;column-gap:.3in;font-size:9.6pt;margin-top:.06in">
-      ${list.map(p => `<div style="display:flex;gap:.08in;align-items:center;padding:.02in 0;break-inside:avoid;border-bottom:1px solid var(--line)"><span class="chipn" style="background:${col.t};margin:0;height:.22in">${p.n}</span><span style="flex:1">${esc(p.t)}</span><span class="small">${fromLabel(p.from).toLowerCase()}</span></div>`).join('')}
+      ${list.map(p => `<div style="display:flex;gap:.08in;align-items:center;padding:.02in 0;break-inside:avoid;border-bottom:1px solid var(--line)"><span class="chipn" style="background:${col.t};margin:0;height:.22in">${p.n}</span><span style="flex:1">${esc(p.t)}</span><span class="small">${esc(p.age)}</span></div>`).join('')}
     </div>
     <div class="spacer"></div>
     <p class="small" style="margin-top:.12in;border-top:1px solid var(--line);padding-top:.08in">Every child grows at their own pace, and ages here are a guide, not a deadline. If you have questions about how your child is growing, moving or talking, ask your child’s doctor.</p>
@@ -514,7 +518,7 @@ function screensPage() {
   </div>` });
 }
 function trackerPage() {
-  const col = (from, to) => `<div style="display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:repeat(${to - from + 1},1fr)">${P.slice(from - 1, to).map(p => `<div style="display:flex;align-items:center;gap:.06in;min-height:0;border-bottom:1px solid var(--line);font-size:8.4pt"><svg width=".17in" height=".17in" style="flex:none"><use href="#u-check" color="${C.ink}"/></svg><span class="chipn" style="background:${BC[p.band].t};margin:0;min-width:.28in;height:.2in;font-size:7.8pt">${p.n}</span><span style="flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(p.t)}</span></div>`).join('')}</div>`;
+  const col = (from, to) => `<div style="display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:repeat(${to - from + 1},1fr)">${P.slice(from - 1, to).map(p => `<div style="display:flex;align-items:center;gap:.06in;min-height:0;border-bottom:1px solid var(--line);font-size:8.4pt"><svg width=".17in" height=".17in" style="flex:none"><use href="#u-check" color="${C.ink}"/></svg><span class="chipn" style="background:${BC[p.band].t};margin:0;min-width:.28in;height:.2in;font-size:7.8pt">${p.n}</span><span style="flex:1;min-width:0;line-height:1.08;font-size:7.9pt">${esc(p.t)}</span></div>`).join('')}</div>`;
   return pg({ kind: 'text', title: 'The 100-play tracker', html: `
   <div class="live">
     <div class="eyebrow">Tick them off</div><h1 style="margin-bottom:.06in">The 100-play tracker</h1>

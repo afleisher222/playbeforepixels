@@ -54,7 +54,7 @@ const full = {
   keywords: ['visual routine cards', 'toddler routine chart', 'morning routine chart kids', 'bedtime routine cards', 'daily schedule printable', 'first then board', 'kids checklist printable'],
   etsy_tags: ['visual routine cards', 'toddler routine', 'morning routine', 'bedtime routine', 'daily schedule kids', 'first then board', 'visual schedule', 'kids chore chart', 'routine chart', 'preschool printable', 'toddler printable', 'kids checklist', 'editable chart'],
   seo_title: `${N} Visual Routine Cards for Kids 0–12 | Play Before Pixels`,
-  seo_description: `${N} printable routine cards and 6 charts for toddlers and big kids. Fillable PDF, Color and Low-ink, US Letter and A4. Helps little ones see what comes next.`,
+  seo_description: `${N} printable routine cards and 6 charts for toddlers and big kids. Fillable PDF, color and low-ink, Letter and A4. Helps little ones see what comes next.`,
   alt_text: 'Cover of 200+ Visual Routine Cards: a warm yellow panel with the Play Before Pixels logo, the title in navy and tomato, and five picture cards fanned below: Brush teeth, Blocks, Sleep, Play first and Screens later.',
   listing_images: ['preview/listing-images/01-cover.png', 'preview/listing-images/02-whats-inside.png', 'preview/listing-images/03-grown-up-guide.png', 'preview/listing-images/04-ages-0-5-cards.png', 'preview/listing-images/05-ages-5-12-cards.png', 'preview/listing-images/06-six-chart-layouts.png', 'preview/listing-images/07-play-first-screens-later.png', 'preview/listing-images/08-four-colorways.png', 'preview/listing-images/09-make-it-yours.png', 'preview/listing-images/10-how-to-download.png'],
   channels: [

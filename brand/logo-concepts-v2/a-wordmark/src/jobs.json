@@ -1,1 +1,58 @@
-[{"src":"src/_t/look2.html","out":"src/_t/look2.png","w":1200,"h":700,"scheme":"light"}]
+[
+ {
+  "src": "src/test-large.html",
+  "out": "test-large.png",
+  "w": 512,
+  "h": 512
+ },
+ {
+  "src": "src/test-logo.html",
+  "out": "test-logo.png",
+  "w": 1600,
+  "h": 239
+ },
+ {
+  "src": "src/fav16.html",
+  "out": "src/_render/fav-16-light.png",
+  "w": 16,
+  "h": 16,
+  "scheme": "light",
+  "transparent": true
+ },
+ {
+  "src": "src/fav16.html",
+  "out": "src/_render/fav-16-dark.png",
+  "w": 16,
+  "h": 16,
+  "scheme": "dark",
+  "transparent": true
+ },
+ {
+  "src": "src/fav32.html",
+  "out": "src/_render/fav-32-light.png",
+  "w": 32,
+  "h": 32,
+  "scheme": "light",
+  "transparent": true
+ },
+ {
+  "src": "src/fav32.html",
+  "out": "src/_render/fav-32-dark.png",
+  "w": 32,
+  "h": 32,
+  "scheme": "dark",
+  "transparent": true
+ },
+ {
+  "src": "src/test-small.html",
+  "out": "test-small.png",
+  "w": 640,
+  "h": 360
+ },
+ {
+  "src": "src/preview-sheet.html",
+  "out": "preview-sheet.png",
+  "w": 1600,
+  "h": 1000
+ }
+]

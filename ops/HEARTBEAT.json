@@ -1,0 +1,16 @@
+{
+  "_format": "Every scheduled run overwrites this file last, just before its final commit (ops/ROUTINE.md section 6). The daily check reads it. routine: studio | check | research. result: ok | partial | paused | limit | locked | failed. Dates are ISO 8601 in UTC. tokens_expiring lists any credential that needs re-authorizing within 14 days, as {platform, expires, last_ok}.",
+  "last_run": null,
+  "routine": null,
+  "session": null,
+  "result": "none-yet",
+  "pause_seen": null,
+  "steps": {},
+  "items_published": [],
+  "approvals_waiting": 0,
+  "search_console_manual_action": "not connected",
+  "credentials": [],
+  "tokens_expiring": [],
+  "queue_ready_to_build": null,
+  "notes": "Template created September 28, 2026 by the routine dry run (ops/TESTS/routine-dry-run.md). No routine has written a heartbeat yet."
+}

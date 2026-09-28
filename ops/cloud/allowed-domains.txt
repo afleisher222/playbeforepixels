@@ -58,3 +58,18 @@ egov.maryland.gov
 www.marylandtaxes.gov
 eur-lex.europa.eu
 www.gov.uk
+www.irs.gov
+dat.maryland.gov
+taxation-customs.ec.europa.eu
+# --- platform developer docs and help pages (ops/RESEARCH-BACKLOG.md; the runbook's quarterly re-check) ---
+code.claude.com
+docs.github.com
+help.etsy.com
+developers.etsy.com
+developers.pinterest.com
+developers.tiktok.com
+developers.google.com
+developers.facebook.com
+help.shopify.com
+www.mailerlite.com
+developers.kit.com
