@@ -22,7 +22,7 @@ function run(o) {
     { name: 'listing-02', out: path.join(LI, 'listing-02.png'), html: M.feature({ outDir: OUT, bg: C.wash, kicker: 'What’s inside', title: o.insideTitle,
       img: E(2), points: o.items.map(([n, c]) => `<b>${n}</b><br><span style="font-weight:600">${c}</span>`) }) },
     { name: 'listing-03', out: path.join(LI, 'listing-03.png'), html: M.feature({ outDir: OUT, kicker: 'Ready to give', title: 'A fold card and reveal cards inside',
-      img: E(3), img2: E(4), points: ['Print the fold card, write your message inside', '“Surprise! Inside is…” cards list every set', 'Or forward the download: the license passes to the family', 'Free inside: 16 play coupons'] }) },
+      img: E(3), img2: E(4), points: ['Print the fold card, write your message inside', '“Surprise! Inside is…” cards list every set', 'Or forward the download: the license passes to the family', 'Also inside: 16 play coupons'] }) },
     { name: 'listing-04', out: path.join(LI, 'listing-04.png'), html: M.formats({ outDir: OUT, title: 'One download, every format',
       color: E(1), lowink: L(1), files: o.files, note: o.note }) },
     { name: 'listing-05', out: path.join(LI, 'listing-05.png'), html: M.grid({ outDir: OUT, kicker: 'Gift pages', title: 'Start here, then open any set', cols: 3, items: [

@@ -23,9 +23,9 @@ Show only as "$29.00, or $36.49 bought separately" and only while every counted 
 
 ## Description (paste)
 ```
-Four printable play sets for ages 1–5, plus a free book of play coupons, in one instant download. Color and low-ink, US Letter and A4.
+Four printable play sets for ages 1–5, plus a book of play coupons, all included in one instant download. Color and low-ink, US Letter and A4.
 
-Inside: the Toddler Busy Book with 74 activities, the Play-First Family Kit with its ages 2–5 pages, 76 “I’m Bored” play cards for ages 1–5, and 52 Play & Talk Cards, one for every week of the year. The free Play Coupons set adds 16 coupons for plays to do together.
+Inside: the Toddler Busy Book with 74 activities, the Play-First Family Kit with its ages 2–5 pages, 76 “I’m Bored” play cards for ages 1–5, and 52 Play & Talk Cards, one for every week of the year. The Play Coupons set, also included, adds 16 coupons for plays to do together.
 
 It is ready to give. The gift pages include a fold card to write your message in and two “Surprise! Inside is…” reveal cards that list every set. Or forward the download: the license passes to the family who receives it.
 

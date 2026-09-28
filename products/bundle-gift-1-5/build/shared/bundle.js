@@ -30,7 +30,7 @@ function make(B, buildDir) {
         const [c, t, d] = HC[p.color];
         return `<div class="cvp li-white" style="--c:${c};--t:${t}"><div class="cvp-ic li-white">${icon(p.art, ctx, 58)}</div><div><h4>${esc(p.name)}</h4><p>${esc(p.count)}</p><p class="cvp-age">${esc(p.ages)}</p></div></div>`;
       }).join('')}</div>
-      <div class="cv-free li-white">${mi('gift', 18, D.tomato)}<p><b>Free inside:</b> ${esc(B.free.name)}, ${esc(B.free.what)}</p></div>
+      <div class="cv-free li-white">${mi('gift', 18, D.tomato)}<p><b>Also inside:</b> ${esc(B.free.name)}, ${esc(B.free.what)}</p></div>
     </div>`;
   }
 
@@ -43,7 +43,7 @@ function make(B, buildDir) {
         const [c, t] = HC[p.color];
         return `<div class="row li-white" style="--c:${c};--t:${t}">
           <div class="row-ic li-white">${icon(p.art, ctx, 50)}</div>
-          <div class="row-main"><h4>${p.free ? 'Free: ' : `${i + 1}. `}${esc(p.name)} <span class="row-meta">${esc(p.count)}${p.ages ? ' · ' + esc(p.ages) : ''}</span></h4>
+          <div class="row-main"><h4>${p.free ? 'Also inside: ' : `${i + 1}. `}${esc(p.name)} <span class="row-meta">${esc(p.count)}${p.ages ? ' · ' + esc(p.ages) : ''}</span></h4>
           <p>${esc(p.what)}</p></div>
           <div class="row-begin"><b>Start with</b><p>${esc(p.begin)}</p><span class="row-f">${mi('print', 11)} ${esc(ctx.edition === 'etsy' ? p.title || p.name : p.folder)}</span></div>
         </div>`;

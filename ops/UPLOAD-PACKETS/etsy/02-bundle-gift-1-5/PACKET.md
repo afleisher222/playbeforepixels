@@ -57,11 +57,11 @@ Do NOT show a 'separately' figure until every counted part is live on Etsy at it
 ## Listing images, in this order (first = thumbnail)
 | # | File | Alt text |
 |---|---|---|
-| 1 | `products/bundle-gift-1-5/preview/listing-images/listing-01.png` | (use the first line of the description) |
-| 2 | `products/bundle-gift-1-5/preview/listing-images/listing-02.png` | (use the first line of the description) |
-| 3 | `products/bundle-gift-1-5/preview/listing-images/listing-03.png` | (use the first line of the description) |
-| 4 | `products/bundle-gift-1-5/preview/listing-images/listing-04.png` | (use the first line of the description) |
-| 5 | `products/bundle-gift-1-5/preview/listing-images/listing-05.png` | (use the first line of the description) |
+| 1 | `products/bundle-gift-1-5/preview/listing-images/listing-01.png` | Headline “4 Play Sets + play coupons included” above three printable gift pages: the Ages 1–5 Instant Gift Bundle cover with tiles for the Toddler Busy Book, Play-First Family Kit, “I’m Bored” Play Cards and 52 Play & Talk Cards, the what’s-inside page and the fold card. Labels: Instant download, Ages 1–5. |
+| 2 | `products/bundle-gift-1-5/preview/listing-images/listing-02.png` | What’s inside: the page listing four play sets and a book of play coupons, beside five labels: Toddler Busy Book, 74 activities for ages 1–5; Play-First Family Kit, includes the ages 2–5 pages; “I’m Bored” Play Cards, 76 cards for ages 1–5; 52 Play & Talk Cards, a card a week for ages 0–5; also inside, Play Coupons, 16 coupons and gift-reveal cards. |
+| 3 | `products/bundle-gift-1-5/preview/listing-images/listing-03.png` | Ready to give: the printable “A gift of play” fold card with For and From lines, and “Surprise! Inside is…” reveal cards behind it. Notes: print the fold card and write your message inside; the reveal cards list every set; or forward the download, and the license passes to the family; also inside, 16 play coupons. |
+| 4 | `products/bundle-gift-1-5/preview/listing-images/listing-04.png` | What you download: the bundle cover in Color and in Low-ink side by side, and the five files: 1, START HERE; 2, Color US Letter ZIP; 3, Color A4 ZIP; 4, Low-ink US Letter ZIP; 5, Low-ink A4 ZIP. A digital download: nothing ships. |
+| 5 | `products/bundle-gift-1-5/preview/listing-images/listing-05.png` | Gift pages: six labelled page previews, START HERE, bundle cover, what’s inside, fold card, reveal cards and what’s next, under the heading “Start here, then open any set”. |
 
 ## Digital files to upload (in this order)
 | Slot | Upload as | Size | Source |

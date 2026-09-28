@@ -36,7 +36,7 @@ d = {
     "price_notes": (f"Everyday price ${PRICE:g} (ops/QUEUE.md G-day week; business/GROWTH-ENGINE.md §5b). The counted parts sell for "
                     f"${SEP['sum_usd']:.2f} at their listed everyday prices, so the bundle is {SEP['saving_pct']}% less (inside the 10–25% "
                     "band in commerce/PRICING.md section 3). The sum is computed by build/shared/manifest.py from each part's listing.json, "
-                    "never typed. The free coupon set is not counted. Display: only '$29, or $36.49 bought separately', and only on a channel "
+                    "never typed. The included coupon set is not counted. Display: only '$29, or $36.49 bought separately', and only on a channel "
                     "where every counted part is live at that price right now; otherwise list the contents with no savings figure. Never a "
                     "crossed-out, 'was' or compare-at price. Referral credits never stack with this bundle (COMPLIANCE-GATE 18)."),
     "bundle": {
@@ -54,10 +54,10 @@ d = {
     "net_notes": LC.NET_NOTES,
     "short_description": "Four printable play sets for ages 1–5 in one download: busy book, family kit pages, bored cards, Play & Talk cards, plus play coupons.",
     "long_description": (
-        "Four printable play sets for ages 1–5, plus a free book of play coupons, in one instant download. Color and low-ink, "
+        "Four printable play sets for ages 1–5, plus a book of play coupons, all included in one instant download. Color and low-ink, "
         "US Letter and A4.\n\n"
         "Inside: the Toddler Busy Book with 74 activities, the Play-First Family Kit with its ages 2–5 pages, 76 “I’m Bored” play "
-        "cards for ages 1–5, and 52 Play & Talk Cards, one for every week of the year. The free Play Coupons set adds 16 coupons "
+        "cards for ages 1–5, and 52 Play & Talk Cards, one for every week of the year. The Play Coupons set, also included, adds 16 coupons "
         "for plays to do together.\n\n"
         "It is ready to give. The gift pages include a fold card to write your message in and two “Surprise! Inside is…” reveal "
         "cards that list every set. Or forward the download: the license passes to the family who receives it.\n\n"
@@ -66,7 +66,7 @@ d = {
         "Every play follows our published safety rules. Digital files in English; nothing is shipped. Personal license for one household."),
     "bullets": [
         "Four printable play sets for ages 1–5 in one download: Toddler Busy Book, Play-First Family Kit pages, “I’m Bored” cards and 52 Play & Talk Cards.",
-        "Free inside: 16 play coupons, blank coupons and a coupon-book cover.",
+        "Also included: 16 play coupons, blank coupons and a coupon-book cover.",
         "Ready to give: a fold card and two “Surprise! Inside is…” reveal cards. The license passes to the family who receives it.",
         "Every set in color and low-ink, US Letter and A4, each with its own START HERE, grown-up guide and safety page.",
         "Instant download: nothing ships. Every play follows our published safety rules.",
@@ -83,7 +83,7 @@ d = {
     "license_tiers": [{"tier": "personal", "price_usd": PRICE,
                        "covers": "One household, including grandparents and sitters who care for your child. A gift passes the license to the family that receives it."}],
     "faq": [
-        {"q": "What’s inside?", "a": "The Toddler Busy Book (74 activities), the Play-First Family Kit (includes its ages 2–5 pages), “I’m Bored” Play Cards (76 for ages 1–5), 52 Play & Talk Cards, and a free Play Coupons set, plus gift pages with a fold card and reveal cards."},
+        {"q": "What’s inside?", "a": "The Toddler Busy Book (74 activities), the Play-First Family Kit (includes its ages 2–5 pages), “I’m Bored” Play Cards (76 for ages 1–5), 52 Play & Talk Cards, and a Play Coupons set, plus gift pages with a fold card and reveal cards."},
         {"q": "How does delivery work?", "a": "Instant download: nothing ships. You get a START HERE page and ZIP files. On a computer, double-click a ZIP to open it; on a phone, tap it in your files app. On a phone, download in a web browser, not the shopping app."},
         {"q": "Can I give it as a gift?", "a": "Yes. Print the fold card or a reveal card, or forward the download. The personal license passes to the family who receives it."},
         {"q": "Which files do I print?", "a": "Pick Letter or A4, color or low-ink. Each set’s START HERE says which pages to print first."},
@@ -96,10 +96,26 @@ d = {
                  "and child beside a wrapped gift, and four tiles for the busy book, family kit, bored cards and Play & Talk cards."),
     "listing_images": [
         "preview/listing-images/listing-01.png: hero with bundle cover and gift pages (thumbnail)",
-        "preview/listing-images/listing-02.png: what's inside, the four sets and the free coupons",
+        "preview/listing-images/listing-02.png: what's inside, the four sets and the included coupons",
         "preview/listing-images/listing-03.png: fold card and reveal cards",
         "preview/listing-images/listing-04.png: the 5 Etsy files (START HERE + 4 ZIPs by format)",
         "preview/listing-images/listing-05.png: the gift pages",
+    ],
+    # alt text for each listing image, in the same order (read by ops/UPLOAD-PACKETS/build_packets.py)
+    "listing_images_alt": [
+        ("Headline “4 Play Sets + play coupons included” above three printable gift pages: the Ages 1–5 Instant Gift Bundle cover "
+         "with tiles for the Toddler Busy Book, Play-First Family Kit, “I’m Bored” Play Cards and 52 Play & Talk Cards, the "
+         "what’s-inside page and the fold card. Labels: Instant download, Ages 1–5."),
+        ("What’s inside: the page listing four play sets and a book of play coupons, beside five labels: Toddler Busy Book, "
+         "74 activities for ages 1–5; Play-First Family Kit, includes the ages 2–5 pages; “I’m Bored” Play Cards, 76 cards for "
+         "ages 1–5; 52 Play & Talk Cards, a card a week for ages 0–5; also inside, Play Coupons, 16 coupons and gift-reveal cards."),
+        ("Ready to give: the printable “A gift of play” fold card with For and From lines, and “Surprise! Inside is…” reveal "
+         "cards behind it. Notes: print the fold card and write your message inside; the reveal cards list every set; or forward "
+         "the download, and the license passes to the family; also inside, 16 play coupons."),
+        ("What you download: the bundle cover in Color and in Low-ink side by side, and the five files: 1, START HERE; 2, Color "
+         "US Letter ZIP; 3, Color A4 ZIP; 4, Low-ink US Letter ZIP; 5, Low-ink A4 ZIP. A digital download: nothing ships."),
+        ("Gift pages: six labelled page previews, START HERE, bundle cover, what’s inside, fold card, reveal cards and what’s "
+         "next, under the heading “Start here, then open any set”."),
     ],
     "channels": [
         "Play Before Pixels website shop (own checkout, Gumroad at launch): START-HERE.pdf + the 6 store ZIPs in zip-manifest.json; each counted part must also be live there at its everyday price before any 'separately' figure shows",
@@ -128,7 +144,7 @@ d = {
     "compliance_notes": (
         "Honest pricing: the 'separately' sum is computed from the parts' own listing prices by build/shared/manifest.py and "
         "shown only as '$29, or $36.49 bought separately' on a channel where every counted part is live at that price (16 CFR "
-        "233.1 reading UNVERIFIED). The free coupon set is not counted. No prices appear inside any PDF. Rule 1: no health or "
+        "233.1 reading UNVERIFIED). The included coupon set is not counted. No prices appear inside any PDF. Rule 1: no health or "
         "outcome claims. Rule 2: nothing named. Rule 4: every set carries its own safety page and per-play safety lines; the "
         "gift pages add no new plays. Etsy files carry no URL (checked by build/shared/finish.py on every Etsy PDF; the ZIPs "
         "contain only the parts' etsy-upload files, checked by manifest.py). Product images use only this bundle's own Etsy-edition "

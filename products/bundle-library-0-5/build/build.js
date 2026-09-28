@@ -1,4 +1,4 @@
-// Birth-to-5 Printable Library: the bundle's own pages and START HERE. Six parts and the free coupon set are
+// Birth-to-5 Printable Library: the bundle's own pages and START HERE. Six parts and the included coupon set are
 // NOT copied: zip-config.json names their files and the shared manifest writes ../zip-manifest.json.
 //   bash make.sh
 'use strict';
@@ -32,7 +32,7 @@ const B = {
       what: 'A picture checklist, helping jobs and a play board that make play an expected part of the day.',
       begin: 'The ages 2–5 picture checklist.', folder: 'Play-First-Family-Kit folder', zip: 'Play-First-Family-Kit' },
   ],
-  free: { art: 'gift', name: 'Play Coupons and gift-reveal cards', title: 'Play Coupons', short: 'Free: 16 play coupons',
+  free: { art: 'gift', name: 'Play Coupons and gift-reveal cards', title: 'Play Coupons', short: 'Plus 16 play coupons',
     count: '16 coupons', ages: 'Ages 1–5', what: '16 play coupons, blank coupons and a coupon-book cover.',
     begin: 'Pages 3–7.', folder: 'Play-Coupons folder', zip: 'Play-Coupons' },
   ownZip: 'Library-Pages',
@@ -46,13 +46,13 @@ const B = {
   ],
   fold: { kicker: 'A gift for you', title: 'A gift<br>of play', sub: 'Six printable play sets for every stage from birth to 5.', icons: ['book100', 'talkcard', 'routine', 'binder'], backLine: 'Printable play from birth to 5' },
   revealTitle: 'Inside is…',
-  startLede: 'Six printable play sets for every stage from birth to 5, and a free book of play coupons. Open the library pages first, then each set’s own START HERE.',
+  startLede: 'Six printable play sets for every stage from birth to 5, and a book of play coupons, all included. Open the library pages first, then each set’s own START HERE.',
   next: [
     ['snowflake', 'sky', '24 Days of Play: Winter Countdown', 'One easy winter play a day for ages 2–5.'],
     ['gift', 'tomato', 'Play Coupons and gift-reveal cards', 'Already inside this library: give a coupon any day.'],
     ['heart', 'grass', 'Five 5-Minute Plays (free)', 'A free printable and a monthly email with 3 plays for your child’s age.'],
   ],
-  subject: 'Printable library for ages 0-5: 100 screen-free plays, play and talk cards, routine cards, busy book, bored cards, family kit and free play coupons',
+  subject: 'Printable library for ages 0-5: 100 screen-free plays, play and talk cards, routine cards, busy book, bored cards, family kit and play coupons',
   keywords: 'printable library, baby and toddler activities, play cards, routine cards, busy book',
 };
 make(B, __dirname);

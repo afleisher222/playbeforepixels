@@ -124,8 +124,8 @@
    "folder": "Play-Coupons",
    "zip_name": "Play-Coupons",
    "counts_in_separately": false,
-   "wanted_edition": "full (free add-on)",
-   "edition_now": "full (free add-on)",
+   "wanted_edition": "full (included add-on, not counted)",
+   "edition_now": "full (included add-on, not counted)",
    "store": {
     "start": "products/gift-reveal-coupons/START-HERE.pdf",
     "color_letter": "products/gift-reveal-coupons/gift-reveal-coupons.pdf",
@@ -142,7 +142,7 @@
   }
  ],
  "not_counted": [
-  "Play Coupons and gift-reveal cards: a free add-on inside the bundle, never counted in the 'separately' sum (its own $5.00 price is not added)."
+  "Play Coupons and gift-reveal cards: an add-on included in the bundle, never counted in the 'separately' sum (its own $5.00 price is not added)."
  ],
  "etsy_fix": "Fix, in order: (1) build the G0 age editions of the Family Kit (2-5 pages) and the bored cards (1-3 + 3-5 bands) and point this config at them; the Color Letter ZIP then drops to about 12-15 MB (estimate, A). (2) If still over, the upload-packet step moves each part's START HERE into slot 1 as one merged PDF. Until then, sell this bundle on the own checkout only; the Etsy listing waits."
 }

@@ -17,7 +17,7 @@
    "100 Screen-Free Plays: $9.99 (guide-100-plays)"
   ],
   "not_counted": [
-   "Play Coupons and gift-reveal cards: a free add-on, never counted in the 'separately' sum."
+   "Play Coupons and gift-reveal cards: an included add-on, never counted in the 'separately' sum."
   ],
   "display_rule": "Show only as '$45, or $55.98 bought separately' and only on a channel where every counted part is live at that price right now (16 CFR 233.1, UNVERIFIED reading; business/GROWTH-ENGINE.md §5b). Never a crossed-out, 'was' or compare-at price. Until every part is live on that channel, list the contents with no savings figure. Re-run this script whenever a part's price changes."
  },
@@ -67,8 +67,8 @@
   {
    "slug": "gift-reveal-coupons",
    "title": "Play Coupons",
-   "wanted_edition": "full (free add-on)",
-   "edition_now": "full (free add-on)",
+   "wanted_edition": "full (included add-on, not counted)",
+   "edition_now": "full (included add-on, not counted)",
    "listing_price_usd": 5.0
   }
  ],
@@ -91,7 +91,7 @@
     {
      "src": "products/bundle-library-0-5/bundle-library-0-5-A4.pdf",
      "zip_path": "Library-Pages/bundle-library-0-5-A4.pdf",
-     "mb": 0.38
+     "mb": 0.39
     },
     {
      "src": "products/bundle-library-0-5/bundle-library-0-5-low-ink.pdf",
@@ -104,7 +104,7 @@
      "mb": 0.56
     }
    ],
-   "mb_estimate": 1.94
+   "mb_estimate": 1.95
   },
   {
    "slot": 3,

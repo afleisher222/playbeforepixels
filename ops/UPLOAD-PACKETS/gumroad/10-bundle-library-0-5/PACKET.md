@@ -23,9 +23,9 @@ Show only as "$45.00, or $55.98 bought separately" and only while every counted 
 
 ## Description (paste)
 ```
-Six printable play sets for ages 0–5, every stage from birth to 5, plus a free book of play coupons, in one instant download from our own shop. Color and low-ink, US Letter and A4.
+Six printable play sets for ages 0–5, every stage from birth to 5, plus a book of play coupons, all included in one instant download from our own shop. Color and low-ink, US Letter and A4.
 
-Inside: 100 Screen-Free Plays sorted by stage, 52 Play & Talk Cards (one for every week of the year), Visual Routine Cards with the ages 0–5 cards, the Toddler Busy Book with 74 activities, 76 “I’m Bored” play cards for ages 1–5, and the Play-First Family Kit with its ages 2–5 pages. The free Play Coupons set adds 16 coupons for plays to do together.
+Inside: 100 Screen-Free Plays sorted by stage, 52 Play & Talk Cards (one for every week of the year), Visual Routine Cards with the ages 0–5 cards, the Toddler Busy Book with 74 activities, 76 “I’m Bored” play cards for ages 1–5, and the Play-First Family Kit with its ages 2–5 pages. The Play Coupons set, also included, adds 16 coupons for plays to do together.
 
 Start with the set for your child’s age today; the rest waits until you need it. Every set has its own START HERE page, grown-up guide and safety page. Most plays use things you already have.
 
@@ -42,7 +42,7 @@ How this was made: the text, illustrations and page layout were created with AI 
 | # | File | Size | Source |
 |---|---|---|---|
 | 1 | `START-HERE.pdf` | 0.06 MB | `products/bundle-library-0-5/START-HERE.pdf` |
-| 2 | `Library-Pages.zip` | 1.94 MB | `built by stage.py from zip-manifest.json (store_download slot 2)` |
+| 2 | `Library-Pages.zip` | 1.95 MB | `built by stage.py from zip-manifest.json (store_download slot 2)` |
 | 3 | `Toddler-Busy-Book.zip` | 23.49 MB | `built by stage.py from zip-manifest.json (store_download slot 3)` |
 | 4 | `Play-First-Family-Kit.zip` | 13.64 MB | `built by stage.py from zip-manifest.json (store_download slot 4)` |
 | 5 | `Bored-Play-Cards.zip` | 15.66 MB | `built by stage.py from zip-manifest.json (store_download slot 5)` |

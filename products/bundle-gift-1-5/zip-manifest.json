@@ -15,7 +15,7 @@
    "Play and Talk Cards: $7.00 (play-talk-cards)"
   ],
   "not_counted": [
-   "Play Coupons and gift-reveal cards: a free add-on inside the bundle, never counted in the 'separately' sum (its own $5.00 price is not added)."
+   "Play Coupons and gift-reveal cards: an add-on included in the bundle, never counted in the 'separately' sum (its own $5.00 price is not added)."
   ],
   "display_rule": "Show only as '$29, or $36.49 bought separately' and only on a channel where every counted part is live at that price right now (16 CFR 233.1, UNVERIFIED reading; business/GROWTH-ENGINE.md §5b). Never a crossed-out, 'was' or compare-at price. Until every part is live on that channel, list the contents with no savings figure. Re-run this script whenever a part's price changes."
  },
@@ -51,8 +51,8 @@
   {
    "slug": "gift-reveal-coupons",
    "title": "Play Coupons",
-   "wanted_edition": "full (free add-on)",
-   "edition_now": "full (free add-on)",
+   "wanted_edition": "full (included add-on, not counted)",
+   "edition_now": "full (included add-on, not counted)",
    "listing_price_usd": 5.0
   }
  ],

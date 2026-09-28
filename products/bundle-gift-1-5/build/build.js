@@ -1,5 +1,5 @@
 // Ages 1–5 Instant Gift Bundle: the bundle's own pages (cover, what's inside, gift-reveal fold card, reveal
-// cards, last page) and START HERE. The four parts and the free coupon set are NOT copied: zip-config.json
+// cards, last page) and START HERE. The four parts and the included coupon set are NOT copied: zip-config.json
 // names their files and shared/manifest.py writes ../zip-manifest.json for the upload-packet step.
 //   bash make.sh
 'use strict';
@@ -27,7 +27,7 @@ const B = {
       what: 'One play and one talk tip on every card: a card a week for a year, sorted into four age bands.',
       begin: 'This week’s card on the fridge. Swap it next week.', folder: 'Play-and-Talk-Cards folder', zip: 'Play-and-Talk-Cards' },
   ],
-  free: { art: 'gift', name: 'Play Coupons and gift-reveal cards', title: 'Play Coupons', short: 'Free: 16 play coupons',
+  free: { art: 'gift', name: 'Play Coupons and gift-reveal cards', title: 'Play Coupons', short: 'Plus 16 play coupons',
     count: '16 coupons', ages: 'Ages 1–5', what: '16 play coupons, blank coupons and a coupon-book cover: plays to give as a promise to play together.',
     begin: 'Pages 3–7: fold card, reveal cards and coupons.', folder: 'Play-Coupons folder', zip: 'Play-Coupons' },
   ownZip: 'Gift-Pages',
@@ -42,13 +42,13 @@ const B = {
   ],
   fold: { kicker: 'A gift for you', title: 'A gift<br>of play', sub: 'Four printable play sets for ages 1–5, plus play coupons.', icons: ['binder', 'checklist', 'cards', 'talkcard'], backLine: 'Printable play for ages 1–5' },
   revealTitle: 'Inside is…',
-  startLede: 'Four printable play sets for ages 1–5 and a free book of play coupons. Open the gift pages first, then each set’s own START HERE.',
+  startLede: 'Four printable play sets for ages 1–5 and a book of play coupons, all included. Open the gift pages first, then each set’s own START HERE.',
   next: [
     ['book100', 'plum', 'Birth-to-5 Printable Library', 'This bundle plus the visual routine cards and 100 Screen-Free Plays, for every stage from birth to 5.'],
     ['snowflake', 'sky', '24 Days of Play: Winter Countdown', 'One easy winter play a day for ages 2–5, from things you already have.'],
     ['routine', 'grass', 'Visual Routine Cards', 'Picture cards for mornings, meals, play and bedtime.'],
   ],
-  subject: 'Printable gift bundle for ages 1-5: toddler busy book, family kit pages, bored play cards, play and talk cards, and free play coupons',
+  subject: 'Printable gift bundle for ages 1-5: toddler busy book, family kit pages, bored play cards, play and talk cards, and play coupons',
   keywords: 'printable gift bundle, toddler activities, busy book, play cards, play coupons',
 };
 make(B, __dirname);

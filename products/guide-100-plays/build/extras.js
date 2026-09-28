@@ -158,19 +158,24 @@ const L = (name, bg, body, dark) => write(`listing-${name}.html`, htmlDoc('Listi
 
 function listings() {
   const free = P.filter(p => !p.buy).length;
-  // 1 hero
+  // 1 hero: Etsy and Gumroad sell the printable PDF only, so the hero shows PDF pages (Etsy edition: no URL or QR), never the paperback
+  const heroPg = (d, n, css) => `<img src="${d}/${pp(n)}.png" class="pg" style="position:absolute;width:820px;${css}">`;
   L('01-hero', C.wash, `
-    <img src="../cover.png" class="pg" style="position:absolute;left:120px;top:190px;width:1110px;border-radius:8px 14px 14px 8px">
-    <div style="position:absolute;left:1310px;top:210px;right:100px">
-      <div class="h" style="font-size:88px;line-height:1.02">Play and talk ideas, sorted by age</div>
+    ${heroPg(LO, A.page, 'left:80px;top:330px;transform:rotate(-7deg)')}
+    ${heroPg(HI, A.page, 'left:270px;top:300px;transform:rotate(5deg)')}
+    ${heroPg(HI, 1, 'left:170px;top:400px;width:860px')}
+    <div style="position:absolute;left:120px;width:980px;top:1560px;text-align:center;font-size:32px;font-weight:700">Real PDF pages: page 1, and play 21 in Color and Low-ink</div>
+    <span class="tag" style="position:absolute;left:130px;top:330px;background:${C.tomato};color:${W};font-size:44px;padding:18px 40px;box-shadow:0 10px 30px rgba(29,41,64,.2)">Printable PDF</span>
+    <div style="position:absolute;left:1200px;top:210px;right:100px">
+      <div class="h" style="font-size:84px;line-height:1.02">Play and talk ideas, sorted by age</div>
       <div style="display:flex;flex-direction:column;gap:22px;margin-top:60px">
         ${['Sorted by age, from birth', `${free} plays: nothing to buy`, 'Talk line on every play', 'Safety note on every play'].map((t, i) => `<div style="display:flex;gap:18px;align-items:center;font-size:40px;font-weight:800"><span style="width:26px;height:26px;border-radius:99px;background:${[C.sky, C.grass, C.sun, C.tomato][i]};flex:none"></span>${t}</div>`).join('')}
       </div>
       <div style="margin-top:60px;display:flex;flex-direction:column;gap:18px">
-        <span class="tag" style="background:${C.ink};color:${W};text-align:center;font-size:36px">Paperback 8 × 10 in<br><span style="font-weight:700;font-size:30px">black-and-white interior</span></span>
-        <span class="tag" style="background:${W};text-align:center;font-size:36px">PDF · Color + Low-ink<br><span style="font-weight:700;font-size:30px">US Letter + A4</span></span>
+        <span class="tag" style="background:${C.ink};color:${W};text-align:center;font-size:36px">Printable PDF<br><span style="font-weight:700;font-size:30px">instant download</span></span>
+        <span class="tag" style="background:${W};text-align:center;font-size:36px">Color + Low-ink<br><span style="font-weight:700;font-size:30px">US Letter + A4</span></span>
       </div>
-      <div style="margin-top:44px;font-size:36px;font-weight:700;line-height:1.3">PDF: 100 plays, about 10¢ each</div>
+      <div style="margin-top:44px;font-size:36px;font-weight:700;line-height:1.3">100 plays, about 10¢ each.<br>Digital file: nothing is shipped.</div>
     </div>`);
   // 2 anatomy of a play: close-up of play 21, callouts aligned to the measured rows (page px at 96 dpi, page width 816)
   const sc = 1.446, top = A.top - 12, Y = py => Math.round(300 + (py - top) * sc);

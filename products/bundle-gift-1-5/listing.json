@@ -12,7 +12,7 @@
  "activities": "74 busy-book activities + 76 bored cards for ages 1–5 + 52 Play & Talk cards + the family kit's ages 2–5 tools + 16 play coupons.",
  "prep_time": "About 2 minutes to open START HERE. Each set shows its own prep; most plays take 0–5 minutes to set up.",
  "price_usd": 29.0,
- "price_notes": "Everyday price $29 (ops/QUEUE.md G-day week; business/GROWTH-ENGINE.md §5b). The counted parts sell for $36.49 at their listed everyday prices, so the bundle is 20.5% less (inside the 10–25% band in commerce/PRICING.md section 3). The sum is computed by build/shared/manifest.py from each part's listing.json, never typed. The free coupon set is not counted. Display: only '$29, or $36.49 bought separately', and only on a channel where every counted part is live at that price right now; otherwise list the contents with no savings figure. Never a crossed-out, 'was' or compare-at price. Referral credits never stack with this bundle (COMPLIANCE-GATE 18).",
+ "price_notes": "Everyday price $29 (ops/QUEUE.md G-day week; business/GROWTH-ENGINE.md §5b). The counted parts sell for $36.49 at their listed everyday prices, so the bundle is 20.5% less (inside the 10–25% band in commerce/PRICING.md section 3). The sum is computed by build/shared/manifest.py from each part's listing.json, never typed. The included coupon set is not counted. Display: only '$29, or $36.49 bought separately', and only on a channel where every counted part is live at that price right now; otherwise list the contents with no savings figure. Never a crossed-out, 'was' or compare-at price. Referral credits never stack with this bundle (COMPLIANCE-GATE 18).",
  "bundle": {
   "separately_usd": 36.49,
   "saving_pct": 20.5,
@@ -23,7 +23,7 @@
    "Play and Talk Cards: $7.00 (play-talk-cards)"
   ],
   "not_counted": [
-   "Play Coupons and gift-reveal cards: a free add-on inside the bundle, never counted in the 'separately' sum (its own $5.00 price is not added)."
+   "Play Coupons and gift-reveal cards: an add-on included in the bundle, never counted in the 'separately' sum (its own $5.00 price is not added)."
   ],
   "price_display_rule": "Show only as '$29, or $36.49 bought separately' and only on a channel where every counted part is live at that price right now (16 CFR 233.1, UNVERIFIED reading; business/GROWTH-ENGINE.md §5b). Never a crossed-out, 'was' or compare-at price. Until every part is live on that channel, list the contents with no savings figure. Re-run this script whenever a part's price changes.",
   "manifest": "zip-manifest.json (built by build/shared/manifest.py from build/zip-config.json)"
@@ -44,10 +44,10 @@
  },
  "net_notes": "Estimated net per unit in USD, after fees and a 5% refund allowance (GAPS-ROUND-2 G2-11), rounded to the cent. Every fee is UNVERIFIED: no live check was possible on 2026-09-28 (web search unavailable). Same fee model as every other listing (commerce/PRICING.md section 2): Etsy digital $0.20 listing + 6.5% transaction + 3% + $0.25 payment processing, and an Offsite Ads sale adds 15%; Gumroad as merchant of record 10% + $0.50, plus 2.9% + $0.30 card processing counted to be safe; a Gumroad Discover sale costs about 30% instead of 10% + $0.50. Check each fee on the platform's own fee page before listing and replace these numbers.",
  "short_description": "Four printable play sets for ages 1–5 in one download: busy book, family kit pages, bored cards, Play & Talk cards, plus play coupons.",
- "long_description": "Four printable play sets for ages 1–5, plus a free book of play coupons, in one instant download. Color and low-ink, US Letter and A4.\n\nInside: the Toddler Busy Book with 74 activities, the Play-First Family Kit with its ages 2–5 pages, 76 “I’m Bored” play cards for ages 1–5, and 52 Play & Talk Cards, one for every week of the year. The free Play Coupons set adds 16 coupons for plays to do together.\n\nIt is ready to give. The gift pages include a fold card to write your message in and two “Surprise! Inside is…” reveal cards that list every set. Or forward the download: the license passes to the family who receives it.\n\nEvery set has its own START HERE page, grown-up guide and safety page, so no one needs to read everything at once. Most plays use things you already have.\n\nEvery play follows our published safety rules. Digital files in English; nothing is shipped. Personal license for one household.",
+ "long_description": "Four printable play sets for ages 1–5, plus a book of play coupons, all included in one instant download. Color and low-ink, US Letter and A4.\n\nInside: the Toddler Busy Book with 74 activities, the Play-First Family Kit with its ages 2–5 pages, 76 “I’m Bored” play cards for ages 1–5, and 52 Play & Talk Cards, one for every week of the year. The Play Coupons set, also included, adds 16 coupons for plays to do together.\n\nIt is ready to give. The gift pages include a fold card to write your message in and two “Surprise! Inside is…” reveal cards that list every set. Or forward the download: the license passes to the family who receives it.\n\nEvery set has its own START HERE page, grown-up guide and safety page, so no one needs to read everything at once. Most plays use things you already have.\n\nEvery play follows our published safety rules. Digital files in English; nothing is shipped. Personal license for one household.",
  "bullets": [
   "Four printable play sets for ages 1–5 in one download: Toddler Busy Book, Play-First Family Kit pages, “I’m Bored” cards and 52 Play & Talk Cards.",
-  "Free inside: 16 play coupons, blank coupons and a coupon-book cover.",
+  "Also included: 16 play coupons, blank coupons and a coupon-book cover.",
   "Ready to give: a fold card and two “Surprise! Inside is…” reveal cards. The license passes to the family who receives it.",
   "Every set in color and low-ink, US Letter and A4, each with its own START HERE, grown-up guide and safety page.",
   "Instant download: nothing ships. Every play follows our published safety rules."
@@ -90,7 +90,7 @@
  "faq": [
   {
    "q": "What’s inside?",
-   "a": "The Toddler Busy Book (74 activities), the Play-First Family Kit (includes its ages 2–5 pages), “I’m Bored” Play Cards (76 for ages 1–5), 52 Play & Talk Cards, and a free Play Coupons set, plus gift pages with a fold card and reveal cards."
+   "a": "The Toddler Busy Book (74 activities), the Play-First Family Kit (includes its ages 2–5 pages), “I’m Bored” Play Cards (76 for ages 1–5), 52 Play & Talk Cards, and a Play Coupons set, plus gift pages with a fold card and reveal cards."
   },
   {
    "q": "How does delivery work?",
@@ -124,10 +124,17 @@
  "alt_text": "Cover of the printable “Ages 1–5 Instant Gift Bundle”: a navy and tomato-red title on a pale blue panel, a grown-up and child beside a wrapped gift, and four tiles for the busy book, family kit, bored cards and Play & Talk cards.",
  "listing_images": [
   "preview/listing-images/listing-01.png: hero with bundle cover and gift pages (thumbnail)",
-  "preview/listing-images/listing-02.png: what's inside, the four sets and the free coupons",
+  "preview/listing-images/listing-02.png: what's inside, the four sets and the included coupons",
   "preview/listing-images/listing-03.png: fold card and reveal cards",
   "preview/listing-images/listing-04.png: the 5 Etsy files (START HERE + 4 ZIPs by format)",
   "preview/listing-images/listing-05.png: the gift pages"
+ ],
+ "listing_images_alt": [
+  "Headline “4 Play Sets + play coupons included” above three printable gift pages: the Ages 1–5 Instant Gift Bundle cover with tiles for the Toddler Busy Book, Play-First Family Kit, “I’m Bored” Play Cards and 52 Play & Talk Cards, the what’s-inside page and the fold card. Labels: Instant download, Ages 1–5.",
+  "What’s inside: the page listing four play sets and a book of play coupons, beside five labels: Toddler Busy Book, 74 activities for ages 1–5; Play-First Family Kit, includes the ages 2–5 pages; “I’m Bored” Play Cards, 76 cards for ages 1–5; 52 Play & Talk Cards, a card a week for ages 0–5; also inside, Play Coupons, 16 coupons and gift-reveal cards.",
+  "Ready to give: the printable “A gift of play” fold card with For and From lines, and “Surprise! Inside is…” reveal cards behind it. Notes: print the fold card and write your message inside; the reveal cards list every set; or forward the download, and the license passes to the family; also inside, 16 play coupons.",
+  "What you download: the bundle cover in Color and in Low-ink side by side, and the five files: 1, START HERE; 2, Color US Letter ZIP; 3, Color A4 ZIP; 4, Low-ink US Letter ZIP; 5, Low-ink A4 ZIP. A digital download: nothing ships.",
+  "Gift pages: six labelled page previews, START HERE, bundle cover, what’s inside, fold card, reveal cards and what’s next, under the heading “Start here, then open any set”."
  ],
  "channels": [
   "Play Before Pixels website shop (own checkout, Gumroad at launch): START-HERE.pdf + the 6 store ZIPs in zip-manifest.json; each counted part must also be live there at its everyday price before any 'separately' figure shows",
@@ -173,7 +180,7 @@
   "cover": "cover.png (1236 × 1600)",
   "mockup": "mockup.png (1600 × 1200)"
  },
- "compliance_notes": "Honest pricing: the 'separately' sum is computed from the parts' own listing prices by build/shared/manifest.py and shown only as '$29, or $36.49 bought separately' on a channel where every counted part is live at that price (16 CFR 233.1 reading UNVERIFIED). The free coupon set is not counted. No prices appear inside any PDF. Rule 1: no health or outcome claims. Rule 2: nothing named. Rule 4: every set carries its own safety page and per-play safety lines; the gift pages add no new plays. Etsy files carry no URL (checked by build/shared/finish.py on every Etsy PDF; the ZIPs contain only the parts' etsy-upload files, checked by manifest.py). Product images use only this bundle's own Etsy-edition pages because the parts' cover images carry the web address. Owner and version line on every page; no Type 3 fonts; no placeholder text. Editions: the Family Kit and bored cards ship in their full editions until the G0 age editions exist; copy says 'includes the ages 2–5 pages' and '76 cards for ages 1–5', which is true either way.",
+ "compliance_notes": "Honest pricing: the 'separately' sum is computed from the parts' own listing prices by build/shared/manifest.py and shown only as '$29, or $36.49 bought separately' on a channel where every counted part is live at that price (16 CFR 233.1 reading UNVERIFIED). The included coupon set is not counted. No prices appear inside any PDF. Rule 1: no health or outcome claims. Rule 2: nothing named. Rule 4: every set carries its own safety page and per-play safety lines; the gift pages add no new plays. Etsy files carry no URL (checked by build/shared/finish.py on every Etsy PDF; the ZIPs contain only the parts' etsy-upload files, checked by manifest.py). Product images use only this bundle's own Etsy-edition pages because the parts' cover images carry the web address. Owner and version line on every page; no Type 3 fonts; no placeholder text. Editions: the Family Kit and bored cards ship in their full editions until the G0 age editions exist; copy says 'includes the ages 2–5 pages' and '76 cards for ages 1–5', which is true either way.",
  "human_todo": [
   "Build the G0 age editions (Family Kit 2–5 pages; bored cards 1–3 + 3–5) or ask the product workflow to, then point build/zip-config.json at them and run build/make.sh; this is what lets the Etsy low-ink ZIPs fit under 20 MB",
   "Rewrite the gift-page text in your own words in build/build.js and commit each draft",

@@ -54,7 +54,7 @@ Paste the whole of `description.txt` (in this folder). It carries no web address
 ## Listing images, in this order (first = thumbnail)
 | # | File | Alt text |
 |---|---|---|
-| 1 | `products/guide-100-plays/preview/listing-images/01-hero.png` | The 100 Screen-Free Plays cover beside four points: sorted by age from birth, 89 plays need nothing to buy, a talk line and a safety note on every play; paperback with a black-and-white interior, and a Color plus Low-ink PDF in US Letter and A4 at about 10 cents a play. |
+| 1 | `products/guide-100-plays/preview/listing-images/01-hero.png` | Three pages of the printable PDF fanned out, labelled Printable PDF: page 1 of 100 Screen-Free Plays for Ages 0–5 in front, with play 21 behind it in Color and in Low-ink. Beside them: sorted by age from birth, 89 plays need nothing to buy, a talk line and a safety note on every play; printable PDF, instant download, Color plus Low-ink in US Letter and A4; about 10 cents a play; digital file, nothing is shipped. |
 | 2 | `products/guide-100-plays/preview/listing-images/02-every-play.png` | Close-up of play 21, Posting box, with six labels: starting age and number; prep, mess and play time; easy steps; easier and harder; talk while you play; safety note. Below: 100 plays, 4 age bands, 89 need nothing to buy, 12 tired-grown-up plays. |
 | 3 | `products/guide-100-plays/preview/listing-images/03-four-age-bands.png` | The four color-coded chapter openers for ages 0–1, 1–2, 2–3 and 3–5 with play counts and sample play names. |
 | 4 | `products/guide-100-plays/preview/listing-images/04-quick-finder.png` | The Quick finder page listing plays for rainy days, bath time, the kitchen, waiting rooms, wind-down and no-materials moments. |

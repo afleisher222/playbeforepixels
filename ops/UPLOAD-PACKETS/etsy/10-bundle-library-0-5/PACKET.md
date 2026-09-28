@@ -62,11 +62,11 @@ Do NOT show a 'separately' figure until every counted part is live on Etsy at it
 ## Listing images, in this order (first = thumbnail)
 | # | File | Alt text |
 |---|---|---|
-| 1 | `products/bundle-library-0-5/preview/listing-images/listing-01.png` | (use the first line of the description) |
-| 2 | `products/bundle-library-0-5/preview/listing-images/listing-02.png` | (use the first line of the description) |
-| 3 | `products/bundle-library-0-5/preview/listing-images/listing-03.png` | (use the first line of the description) |
-| 4 | `products/bundle-library-0-5/preview/listing-images/listing-04.png` | (use the first line of the description) |
-| 5 | `products/bundle-library-0-5/preview/listing-images/listing-05.png` | (use the first line of the description) |
+| 1 | `products/bundle-library-0-5/preview/listing-images/listing-01.png` | Headline “6 Play Sets from birth to 5” above three printable pages: the Birth-to-5 Printable Library cover with tiles for 100 Screen-Free Plays, 52 Play & Talk Cards, Visual Routine Cards, the Toddler Busy Book, “I’m Bored” Play Cards and the Play-First Family Kit, the what’s-inside page and the fold card. Labels: Instant download, Ages 0–5. |
+| 2 | `products/bundle-library-0-5/preview/listing-images/listing-02.png` | What’s inside: the page listing six play sets for birth to 5, beside labels: 100 Screen-Free Plays, 100 plays for ages 0–5; 52 Play & Talk Cards, a card a week for ages 0–5; Visual Routine Cards, including the ages 0–5 cards; Toddler Busy Book and “I’m Bored” cards, 74 activities and 76 cards for ages 1–5; Family Kit and Play Coupons, ages 2–5 pages and 16 coupons. |
+| 3 | `products/bundle-library-0-5/preview/listing-images/listing-03.png` | Ready to give: the printable “A gift of play” fold card with For and From lines, and “Surprise! Inside is…” reveal cards behind it. Notes: print the fold card and write your message inside; the reveal cards list every set; or forward the download, and the license passes to the family; also inside, 16 play coupons. |
+| 4 | `products/bundle-library-0-5/preview/listing-images/listing-04.png` | What you download: the library cover in Color and in Low-ink side by side, and the files: START-HERE.pdf, one page on what to open first; Library-Pages.zip with the guide, fold card and reveal cards; one ZIP per set, six sets plus the coupons; every set in color and low-ink, US Letter and A4. A digital download: nothing ships. |
+| 5 | `products/bundle-library-0-5/preview/listing-images/listing-05.png` | Gift pages: six labelled page previews, START HERE, bundle cover, what’s inside, fold card, reveal cards and what’s next, under the heading “Start here, then open any set”. |
 
 ## Digital files to upload (in this order)
 | Slot | Upload as | Size | Source |

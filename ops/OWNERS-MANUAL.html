@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Owner's Manual</title>
+<meta name="description" content="Play Before Pixels owner's manual: what the business is, how it runs itself, the founder's few steps, open decisions, the money picture, protections and emergency stops.">
+<link rel="stylesheet" href="../brand/fonts/fonts.css">
+<style>
+:root{--ink:#1D2940;--soft:#47526B;--mute:#6A7390;--wash:#F3F6FB;--tomato:#EE5A36;--sun:#F5B820;--sky:#3D86D8;--grass:#2FA36B;--plum:#8A5CC7;
+--t-tomato:#FDE9E3;--t-sun:#FEF4D8;--t-sky:#E3EEFA;--t-grass:#DFF3E9;--t-plum:#EFE6FA;--line:#D9DFEA}
+@page{size:8.5in 11in;margin:0.6in 0.7in 0.7in}
+@page{@bottom-left{content:"Play Before Pixels · Owner's Manual · September 28, 2026";font-family:'Nunito Sans',Arial,sans-serif;font-size:7.5pt;color:#6A7390}
+@bottom-right{content:counter(page) " / " counter(pages);font-family:'Nunito Sans',Arial,sans-serif;font-size:7.5pt;color:#6A7390}}
+@page :first{@bottom-left{content:none}@bottom-right{content:none}}
+*{box-sizing:border-box}
+html{background:#fff}
+body{font-family:'Nunito Sans',sans-serif;color:var(--ink);font-size:9.5pt;line-height:1.42;margin:0;background:#fff}
+h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;margin:0}
+p{margin:0 0 6pt}
+a{color:inherit}
+code,.f{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:8.3pt;background:var(--wash);padding:0 2.5pt;border-radius:2pt;white-space:nowrap}
+b{font-weight:800}
+
+/* cover */
+.cover{display:flex;gap:20pt;align-items:center;padding:4pt 0 14pt;border-bottom:2pt solid var(--ink);margin-bottom:14pt}
+.cover img{width:92pt;height:92pt;flex:none}
+.cover .eyebrow{font:800 8pt 'Nunito Sans';letter-spacing:.14em;text-transform:uppercase;color:var(--tomato);margin-bottom:3pt}
+.cover h1{font-size:30pt;line-height:1.02;letter-spacing:-.01em}
+.cover .sub{color:var(--soft);font-size:10.5pt;margin-top:5pt;max-width:390pt}
+.short{background:var(--t-sun);border-radius:8pt;padding:10pt 14pt 8pt;margin:0 0 14pt}
+.short h3{font-size:11pt;margin-bottom:5pt}
+.short ol{margin:0;padding-left:15pt}
+.short li{margin-bottom:3pt}
+
+/* sections */
+section{margin:0 0 12pt}
+h2{font-size:15pt;display:flex;align-items:baseline;gap:8pt;margin:0 0 6pt;padding-top:8pt;border-top:1pt solid var(--line);break-after:avoid}
+h2 .n{font:800 9pt 'Nunito Sans';color:#fff;background:var(--tomato);border-radius:50%;width:17pt;height:17pt;display:inline-flex;align-items:center;justify-content:center;flex:none;transform:translateY(-2pt)}
+h3{font-size:10.8pt;margin:8pt 0 3pt;break-after:avoid}
+.lead{color:var(--soft);margin-bottom:7pt}
+ul.tight{margin:0 0 6pt;padding-left:13pt}
+ul.tight li{margin-bottom:2pt}
+.pb{break-before:page}
+.keep{break-inside:avoid}
+
+/* tables */
+table{width:100%;border-collapse:collapse;margin:3pt 0 8pt;font-size:8.9pt;line-height:1.35}
+th{font:800 7.5pt 'Nunito Sans';letter-spacing:.08em;text-transform:uppercase;color:var(--mute);text-align:left;padding:3pt 6pt 4pt;border-bottom:1.2pt solid var(--ink)}
+td{padding:3pt 6pt;border-bottom:.6pt solid var(--line);vertical-align:top}
+tr{break-inside:avoid}
+td.num{white-space:nowrap;font-weight:800}
+td.w{white-space:nowrap}
+.rec{font-weight:800;color:#B23A1A}
+
+/* boxes */
+.box{border-radius:7pt;padding:8pt 12pt;margin:6pt 0 9pt;break-inside:avoid}
+.box.sky{background:var(--t-sky)} .box.grass{background:var(--t-grass)} .box.tomato{background:var(--t-tomato)} .box.plum{background:var(--t-plum)} .box.sun{background:var(--t-sun)}
+.box p:last-child,.box ul:last-child{margin-bottom:0}
+.quote{font-family:ui-monospace,Menlo,monospace;font-size:8.6pt;background:#fff;border-radius:4pt;padding:5pt 8pt;margin:4pt 0}
+
+/* stat tiles */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:7pt;margin:4pt 0 10pt;break-inside:avoid}
+.stat{background:var(--wash);border-radius:7pt;padding:8pt 9pt}
+.stat .v{font:800 17pt 'Bricolage Grotesque';line-height:1.05}
+.stat .l{font-size:8pt;color:var(--soft);line-height:1.3;margin-top:3pt}
+.stat.warn .v{color:#B23A1A}
+
+/* schedule */
+.sched{display:grid;grid-template-columns:repeat(3,1fr);gap:7pt;margin:4pt 0 8pt;break-inside:avoid}
+.sched>div{border:1pt solid var(--line);border-radius:7pt;padding:7pt 9pt;border-top:4pt solid var(--sky)}
+.sched>div:nth-child(2){border-top-color:var(--plum)}
+.sched>div:nth-child(3){border-top-color:var(--grass)}
+.sched .t{font:800 13pt 'Bricolage Grotesque'}
+.sched .k{font:800 7.5pt 'Nunito Sans';letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.sched p{font-size:8.6pt;margin:3pt 0 0;line-height:1.35}
+
+/* steps */
+ol.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+ol.steps li{counter-increment:s;position:relative;padding:3pt 0 4pt 26pt;border-bottom:.6pt solid var(--line);break-inside:avoid}
+ol.steps li:before{content:counter(s);position:absolute;left:0;top:4pt;width:17pt;height:17pt;border-radius:50%;background:var(--ink);color:#fff;font:800 8.5pt 'Nunito Sans';display:flex;align-items:center;justify-content:center}
+ol.steps .when{font:800 7.5pt 'Nunito Sans';letter-spacing:.06em;text-transform:uppercase;color:var(--tomato)}
+ol.steps .min{float:right;font:700 8pt 'Nunito Sans';color:var(--mute)}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12pt}
+.sign{margin-top:12pt;display:flex;align-items:center;gap:8pt;color:var(--mute);font-size:8.3pt}
+.sign img{height:16pt}
+</style></head>
+<body>
+
+<div class="cover">
+  <img src="../brand/logo/mark.svg" alt="Play Before Pixels seal">
+  <div>
+    <div class="eyebrow">Play Before Pixels · a trade name of AlphaPlay LLC</div>
+    <h1>Owner's Manual</h1>
+    <div class="sub">Everything you need to know about the business on a few calm pages: what it is, how it runs without you, the short list of things only you can do, and how to stop it. Written September 28, 2026.</div>
+  </div>
+</div>
+
+<div class="short">
+  <h3>The short version</h3>
+  <ol>
+    <li><b>Nothing is live yet.</b> The products, listings, website and marketing are built. A safety file, <code>ops/PAUSE</code>, keeps anything from being published until you say "go".</li>
+    <li><b>Your part is about 4½ hours of one-time setup</b> over the next two weeks, then roughly 10–15 minutes a week of yes/no approvals.</li>
+    <li><b>The most urgent step takes 5 minutes:</b> make the GitHub repository private (step 1 in section 4).</li>
+    <li><b>You will only hear about money.</b> One line a day, a short note each week and month, plus one line whenever something truly needs you.</li>
+    <li><b>Honest money:</b> year one most likely <i>loses</i> about $3,300 before one-time legal costs. Break-even is about two orders a day, most likely reached around mid-2027.</li>
+  </ol>
+</div>
+
+<section>
+<h2><span class="n">1</span>What the business is</h2>
+<p><b>Play Before Pixels</b> sells play-and-talk products for families of young children: printables, print-on-demand paperbacks and a written, email-delivered course. It is a trade name of <b>AlphaPlay LLC</b>, which is the legal seller on every account, receipt and contract.</p>
+<ul class="tight">
+  <li><b>Who buys:</b> parents of children aged 0–5 and gift-givers first. Ages 5–12, other countries' print editions and group buyers come later, each only when cleared.</li>
+  <li><b>Where it sells:</b> Etsy and Gumroad for downloads (worldwide), Amazon KDP for paperbacks. Free Pinterest pins and an opt-in email list bring people in. No paid ads at launch.</li>
+  <li><b>What it never does:</b> no coaching, calls or live events; no stock at home; no health or development claims; never names or criticizes anyone; faceless (logo and brand name only, never your face or name).</li>
+  <li><b>Who does the work:</b> Claude builds and runs it on a schedule. You approve, sign and own.</li>
+</ul>
+</section>
+
+<section>
+<h2><span class="n">2</span>What's built, and where it lives</h2>
+<p class="lead">Everything lives in one GitHub repository, <code>playbeforepixels</code>. The working branch is <code>claude/live</code>; <code>main</code> is a copy.</p>
+<table>
+<tr><th style="width:30%">What</th><th style="width:42%">Status</th><th>Folder</th></tr>
+<tr><td><b>18 products</b></td><td>Print files, previews, covers, mockups and listing text for each</td><td><code>products/</code></td></tr>
+<tr><td><b>Upload packets</b></td><td>10 Etsy, 11 Gumroad, 1 KDP paperback, ready to paste in. 503 automatic checks, none failing</td><td><code>ops/UPLOAD-PACKETS/</code></td></tr>
+<tr><td><b>Website</b></td><td>Multi-page site built, not yet online</td><td><code>site/</code></td></tr>
+<tr><td><b>Logo and brand</b></td><td>The Maker's Seal kit, fonts, colors, rules</td><td><code>brand/</code></td></tr>
+<tr><td><b>Marketing</b></td><td>60 Pinterest pins on 12 boards, profile images and bios, welcome emails</td><td><code>marketing/</code></td></tr>
+<tr><td><b>Policies</b></td><td>Terms, privacy, refunds, disclaimer, accessibility. Drafts, waiting for an attorney</td><td><code>legal/</code></td></tr>
+<tr><td><b>Money</b></td><td>Business plan, financial model, stress test, bookkeeping workbook, tax setup</td><td><code>business/</code>, <code>finance/</code></td></tr>
+<tr><td><b>Operations</b></td><td>The routine's instructions, approvals, deadlines, safety files</td><td><code>ops/</code></td></tr>
+</table>
+<p>Key papers for you: <code>ops/ACCOUNT-SETUP-CHECKLIST.pdf</code> (your setup steps), <code>ops/APPROVALS.md</code> (your yes/no list), <code>ops/LEGITIMACY-CHECK.md</code> (the legal gate, item by item).</p>
+</section>
+
+<section class="keep">
+<h2><span class="n">3</span>How it runs itself</h2>
+<p class="lead">Three scheduled "routines" start on their own in the cloud, even with your laptop closed. The heavy ones run overnight so they don't compete with your own daytime Claude use. All times Eastern.</p>
+<div class="sched">
+  <div><div class="k">Daily studio</div><div class="t">2:47 a.m.</div><p>Monday to Saturday. Builds or improves one product, improves one page, queues posts. <b>Paused</b> until your setup steps are done.</p></div>
+  <div><div class="k">Weekly research</div><div class="t">Sun 3:52 a.m.</div><p>Re-ranks what to build next and re-checks facts marked unverified. <b>Off:</b> you switch it on after the business environment exists.</p></div>
+  <div><div class="k">Daily check</div><div class="t">6:38 a.m.</div><p>Store and site health, approvals, and your money update. <b>Off</b> until the first store opens.</p></div>
+</div>
+<p>Each run starts fresh, reads the repository, does its work, saves it to <code>claude/live</code>, and ends with your money report.</p>
+<div class="box sky">
+<p><b>The PAUSE file.</b> While <code>ops/PAUSE</code> exists, the routines research and build but publish, post, list, send and upload <b>nothing</b>. Claude deletes it only when all seven Gate A items hold (your lawyer's written yes, bank, insurance bound, money cap set, safeguards live, accounts and keys ready, policies reviewed) and you type "go". Anyone can re-create it at any time to stop publishing at once.</p>
+</div>
+<h3>What you will see</h3>
+<div class="quote">Yesterday: $X in sales · This month so far: $Y · Profit this month (est.): $Z. Nothing needs you.</div>
+<p>Weekly: earnings, profit, top three products, tax set aside. Monthly: revenue, profit, change on last month, and the one change that would earn most next month. <b>Your only alarm:</b> if no money line arrives by breakfast, open claude.ai/code/routines. Keep usage credits <b>off</b> (claude.ai/settings/usage) so the routines can never add metered charges.</p>
+</section>
+
+<section>
+<h2><span class="n">4</span>Your one-time steps, in order</h2>
+<p class="lead">About 4½ hours in all. The details for each account are in <code>ops/ACCOUNT-SETUP-CHECKLIST.pdf</code>; the cloud settings are in <code>ops/CLOUD-RUNBOOK.md</code> ("one-time setup"). Everything goes in AlphaPlay LLC's name with its EIN, never your Social Security number.</p>
+<ol class="steps">
+<li><span class="min">5 min</span><span class="when">Today · urgent</span><br>Confirm the Claude GitHub App can see the repository, then <b>make the repository private</b> and set its default branch to <code>claude/live</code> (runbook steps 1–3).</li>
+<li><span class="min">20 min</span><span class="when">Today</span><br>Send your lawyer the question packet and ask for a <b>written yes or no by Fri Oct 16</b>. That answer sets launch day.</li>
+<li><span class="min">30 min</span><span class="when">Sep 29</span><br>Open a no-fee business checking account with a tax savings sub-account (checklist §1).</li>
+<li><span class="min">35 min</span><span class="when">Sep 30</span><br>Ask 2–3 brokers for written insurance quotes: general liability with products cover. Bind the lowest on the day your lawyer says yes.</li>
+<li><span class="min">75 min</span><span class="when">Oct 1–2</span><br>Buy the domain and set up business email, rent a USPS PO Box, file the $25 trade name, check the LLC's good standing, add retail and digital sales to its Maryland sales-tax registration (checklist §2–3).</li>
+<li><span class="min">10 min</span><span class="when">By Oct 4</span><br>Write down the most household money the business may use (placeholder: $12,000) and a review date.</li>
+<li><span class="min">75 min</span><span class="when">Oct 5–9</span><br>One account sitting: Etsy (shop on vacation), KDP (save the draft, order one proof to the PO Box), Gumroad, Pinterest, the email platform, one capped virtual card, and the keys into the cloud settings (checklist §4–8).</li>
+<li><span class="min">20 min</span><span class="when">Same week</span><br>Create the "Play Before Pixels" cloud environment and point the routines at it, with <b>no connectors</b> (runbook steps 4–7).</li>
+<li><span class="min">—</span><span class="when">Before launch</span><br>An attorney reviews the policy pages.</li>
+<li><span class="min">1 min</span><span class="when">Launch day (target Oct 16)</span><br>Type <b>"go"</b> in a Claude session.</li>
+<li><span class="min">15 min</span><span class="when">When the proof arrives</span><br>Check the cover and page 1, then click Publish on KDP (once the website is live).</li>
+</ol>
+<div class="box tomato" style="margin-top:9pt">
+<p><b>Deadlines off the sales path that cannot slip</b></p>
+<ul class="tight">
+<li><b>Before Nov 11, 2026:</b> copyright filings (fees likely rise after). They need your own human-written edits first.</li>
+<li><b>As soon as possible:</b> the free USPTO change-of-address form for ALPHAPLAY, so notices reach you.</li>
+<li><b>Mar 8, 2027:</b> ALPHAPLAY Statement of Use or extension, or the trademark is lost. Claude prepares the packet by Feb 1.</li>
+<li><b>Apr 15, 2027:</b> Maryland annual report ($300).</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2><span class="n">5</span>Every open decision</h2>
+<p class="lead">Each takes a few minutes. Reply in <code>ops/APPROVALS.md</code> or in a session. <span class="rec">Red</span> is the recommendation.</p>
+<table>
+<tr><th style="width:45%">Decision</th><th style="width:33%">Recommendation</th><th>Details</th></tr>
+<tr><td>Make the repository private</td><td class="rec">Do it today</td><td><code>ops/APPROVALS.md</code></td></tr>
+<tr><td>Routine-card search words "first then board", "visual schedule" (D9)</td><td class="rec">REPLACE</td><td><code>ops/APPROVALS.md</code></td></tr>
+<tr><td>How research-page sign-ups are emailed (D10)</td><td class="rec">A: no product email unless they tick a box</td><td><code>ops/APPROVALS.md</code></td></tr>
+<tr><td>Founder story, public version</td><td class="rec">Approve the SITE-SAFE CUT, after your lawyer reviews</td><td><code>content/founder-story.md</code></td></tr>
+<tr><td>Paid reviewers for the research pages ($4,900 cap)</td><td class="rec">Approve, paid only on delivery; counts toward your money cap</td><td><code>ops/APPROVALS.md</code></td></tr>
+<tr><td>How much the brand says about "virtual autism" in year one</td><td class="rec">Explain once, then stop</td><td><code>marketing/BRAND-RESPECT-PLAN.md</code> §4</td></tr>
+<tr><td>Course refund window</td><td class="rec">Keep 14 days (everything already matches)</td><td><code>legal/SHIPPING-RETURNS-REFUNDS.md</code></td></tr>
+<tr><td>KDP prices in the UK, Canada, Australia</td><td class="rec">£13.99 · CA$22.99 · AU$26.99</td><td><code>ops/UPLOAD-PACKETS/README.md</code></td></tr>
+<tr><td>"Preschoolers" on the paperback subtitle and cover</td><td class="rec">Keep (an age word)</td><td>same</td></tr>
+<tr><td>Name "Birth-to-5 Printable Library" (Gumroad only)</td><td class="rec">Keep</td><td>same</td></tr>
+<tr><td>Routine-card price (D1) · smallest price (D2) · Etsy Offsite Ads (D3)</td><td class="rec">$9.50 · $5.00 · Off</td><td><code>business/GROWTH-ENGINE.md</code></td></tr>
+<tr><td>Own checkout (D4) · Black Friday (D5) · Play Club (D6)</td><td class="rec">Gumroad for now · a dated free bonus · wait</td><td>same</td></tr>
+<tr><td>Only changed pages need a proof for a new edition (D7)</td><td class="rec">Yes, saves 2–4 hours</td><td>same</td></tr>
+<tr><td>Household money cap and review date</td><td class="rec">Set it; $12,000 is the placeholder</td><td>step 6</td></tr>
+<tr><td>Logo: your own dated edits, then adopt</td><td class="rec">Make small edits so the logo is yours</td><td><code>brand/logo/logo-notes.md</code></td></tr>
+<tr><td>If no ALPHAPLAY sales by Feb 1, 2027</td><td class="rec">Attorney files an extension</td><td><code>ops/DEADLINES.md</code></td></tr>
+<tr><td>Legal and tax items from the legitimacy check</td><td class="rec">See the PENDING lines</td><td><code>ops/LEGITIMACY-CHECK.md</code></td></tr>
+</table>
+</section>
+
+<section>
+<h2><span class="n">6</span>What Claude does from here</h2>
+<div class="two">
+<div>
+<h3>Before launch day</h3>
+<ul class="tight">
+<li>Fix the last listing details (one hero image, missing alt text, records that differ from their packets).</li>
+<li>Run every launch item through the 22-line compliance gate and keep the record.</li>
+<li>Build the Gate A file with its evidence list, and finish the lawyer's question packet.</li>
+<li>Get the website ready to go live before the paperback, which prints its address.</li>
+<li>Draft the files the legitimacy check found missing (corporate records, insurance record, testimonial log).</li>
+</ul>
+</div>
+<div>
+<h3>After you say "go"</h3>
+<ul class="tight">
+<li>List up to 5 Etsy products a week, and paperbacks as proofs pass.</li>
+<li>Pin 3–5 times a day; send approved emails to people who opted in.</li>
+<li>Check every live listing, answer routine buyer questions with saved replies.</li>
+<li>Monthly books close, tax reserve, and deadlines prepared 30 days early.</li>
+<li>Make more of what sells; fold what doesn't.</li>
+</ul>
+</div>
+</div>
+<div class="box plum">
+<p><b>What Claude never does without your written APPROVED line:</b> spend money, email or message a person, post in a group, add a platform, or change terms. It never contacts anyone by phone or in person, and never writes about you, your family or your work.</p>
+</div>
+</section>
+
+<section>
+<h2><span class="n">7</span>The money picture, honestly</h2>
+<p class="lead">From <code>business/STRESS-TEST.md</code>: 10,000 simulated futures for October 2026 to September 2027, with no ad budget. These are planning estimates, not a promise.</p>
+<div class="stats">
+  <div class="stat"><div class="v">$6,300</div><div class="l">Most likely year-one sales (the middle future)</div></div>
+  <div class="stat warn"><div class="v">−$3,300</div><div class="l">Most likely year-one operating result; about <span style="white-space:nowrap">−$10,000</span> after one-time legal and IP costs</div></div>
+  <div class="stat"><div class="v">65</div><div class="l">Orders a month to cover all costs, about 2 a day ($567/month lean costs)</div></div>
+  <div class="stat"><div class="v">Jun 2027</div><div class="l">When the middle future reaches that pace; first 100 orders around April</div></div>
+</div>
+<ul class="tight">
+<li><b>The range is wide.</b> One future in ten sells more than $19,800 and earns more than $6,300. One in ten sells under $2,000. The plan's "Expected" year ($11,195) happens in about one future in four.</li>
+<li><b>2026 is a setup year.</b> Most likely under $100 of sales. $1,000,000 by December is not realistic (it would take about 1,400 orders a day).</li>
+<li><b>Each sale keeps most of its price:</b> 80–93% of a printable on Etsy, about $3–$8 per paperback, about $24.57 of the $27 course.</li>
+<li><b>Money you may need to put in:</b> about $7,600 at the deepest point if costs stay at the lowest quotes, about $11,300 if they drift up. The $12,000 cap holds in almost every future only if costs stay lean.</li>
+<li><b>What helps most:</b> holding every cost to the lowest written quote (+$2,000), trimming about $100 a month of fixed costs (+$1,200), more traffic and better listings (+$900 each), and selling by November 1 (+$800).</li>
+<li><b>What hurts:</b> $150 a month of ads <i>lowers</i> median profit by about $684. The insurance quote is the one number most likely to move break-even (at a mid-range price, 84 orders a month instead of 65).</li>
+</ul>
+</section>
+
+<section>
+<h2><span class="n">8</span>How you are protected</h2>
+<div class="box tomato">
+<p><b>The one gap today:</b> the repository is public, so anyone can read the plans and notes. Step 1 fixes it. Then ask your lawyer whether anything already seen needs more than that.</p>
+</div>
+<table>
+<tr><th style="width:32%">Protection</th><th>How it works</th></tr>
+<tr><td><b>The LLC is the seller</b></td><td>Every account, contract and payout is AlphaPlay LLC's, under its EIN. Keep business money in the business account only; that keeps the LLC's shield strong.</td></tr>
+<tr><td><b>Your address stays private</b></td><td>Only the USPS PO Box ever appears in public. Your home address goes only on the few government filings that require a street address.</td></tr>
+<tr><td><b>Faceless brand</b></td><td>No photo, name or personal story on any profile. The founder story stays anonymous and needs your lawyer's review first.</td></tr>
+<tr><td><b>Nothing risky is said or sold</b></td><td>No health claims, no naming anyone, one honest price per product, AI use disclosed. Every public item passes a 22-line compliance gate first.</td></tr>
+<tr><td><b>Your lawyer goes first</b></td><td>Nothing is sold or marketed until your lawyer's written yes.</td></tr>
+<tr><td><b>Insurance before the first sale</b></td><td>General liability with products cover, bound before launch, naming both the LLC and you.</td></tr>
+<tr><td><b>Your personal accounts stay out</b></td><td>Personal Gmail, Drive and Calendar are never connected to the routines. Keys live only in the cloud settings, never in chat or the repository.</td></tr>
+<tr><td><b>Spending is capped</b></td><td>One virtual card with a monthly limit, a household money cap, and no purchase without your APPROVED line.</td></tr>
+<tr><td><b>Deadlines are watched</b></td><td>Trademark, copyright, tax and renewal dates are prepared 30 days ahead and reach you as one line.</td></tr>
+</table>
+</section>
+
+<section class="keep">
+<h2><span class="n">9</span>The emergency stops</h2>
+<table>
+<tr><th style="width:34%">If you want to…</th><th>Do this</th></tr>
+<tr><td><b>Stop all publishing now</b></td><td>Create a file named <code>ops/PAUSE</code> (on GitHub: <i>Add file → Create new file</i>, any text, on <code>claude/live</code>). Or tell any Claude session "pause". Every run checks it right before publishing.</td></tr>
+<tr><td><b>Stop the routines completely</b></td><td>claude.ai/code/routines → switch each routine off. A run already going finishes, so create <code>ops/PAUSE</code> too.</td></tr>
+<tr><td><b>Cut off one platform at once</b></td><td>Cloud environment settings → API credentials → delete that platform's key.</td></tr>
+<tr><td><b>Stop what PAUSE can't reach</b></td><td>Scheduled posts, email automations and ads keep running on the platforms themselves. Etsy: vacation mode. Email platform: pause automations. The full list is in <code>ops/FULL-STOP.md</code>.</td></tr>
+<tr><td><b>Stop any spending</b></td><td>Freeze the virtual card in your bank app.</td></tr>
+<tr><td><b>Something personal is public</b></td><td>Make the repository private, create <code>ops/PAUSE</code>, and tell your lawyer.</td></tr>
+</table>
+<p>Nothing restarts until you say so. To resume, delete <code>ops/PAUSE</code> (or say "go") and switch the routines back on.</p>
+<div class="sign"><img src="../brand/logo/lockup-horizontal.svg" alt="Play Before Pixels"><span>© 2026 AlphaPlay LLC. Play Before Pixels is a trade name of AlphaPlay LLC. Internal document, not for publication.</span></div>
+</section>
+
+</body></html>

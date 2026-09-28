@@ -172,8 +172,8 @@
    "folder": "Play-Coupons",
    "zip_name": "Play-Coupons",
    "counts_in_separately": false,
-   "wanted_edition": "full (free add-on)",
-   "edition_now": "full (free add-on)",
+   "wanted_edition": "full (included add-on, not counted)",
+   "edition_now": "full (included add-on, not counted)",
    "store": {
     "start": "products/gift-reveal-coupons/START-HERE.pdf",
     "color_letter": "products/gift-reveal-coupons/gift-reveal-coupons.pdf",
@@ -190,7 +190,7 @@
   }
  ],
  "not_counted": [
-  "Play Coupons and gift-reveal cards: a free add-on, never counted in the 'separately' sum."
+  "Play Coupons and gift-reveal cards: an included add-on, never counted in the 'separately' sum."
  ],
  "etsy_fix": "The Library is too large for Etsy's 5 files of 20 MB even as ZIPs, and the G0 age editions will not close the gap. Sell it on the own checkout only (no 5-file limit there, UNVERIFIED), and on Etsy offer the $29 Gift Bundle instead. Revisit only if the parts' PDFs are made much smaller."
 }
