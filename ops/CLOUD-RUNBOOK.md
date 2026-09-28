@@ -19,7 +19,7 @@ The routines store the New York time zone, so these times hold through daylight 
 
 | Routine | When | Size | Status on Sept 28, 2026 |
 |---|---|---|---|
-| Daily studio | 2:47 a.m. every day | One product built or improved, one page improved, posts queued. At most 6 agents | **On.** Build-only while `ops/PAUSE` exists |
+| Daily studio | 2:47 a.m. Monday–Saturday (no Sunday run, so it never collides with research) | One product built or improved, one page improved, posts queued. At most 6 agents | **Paused on Sept 28, 2026** until setup steps 1–5 are done; then switched on, with one watched **Run now** first. Build-only while `ops/PAUSE` exists |
 | Daily check | 6:38 a.m. every day | Short, no workflow: site and store health, approvals, the money update | Off until the first store exists (nothing to check yet) |
 | Weekly research | Sunday 3:52 a.m. | Research lanes, re-ranks the queue, works the top 10 of `ops/RESEARCH-BACKLOG.md`. At most 10 agents | **Off:** Arielle switches it on at claude.ai/code/routines |
 
@@ -170,7 +170,7 @@ This list comes from a completeness check of this runbook, `ops/ROUTINE.md`, `CL
    - *Founder:* decides whether the counsel question list belongs in the business repository at all.
    - *Later task, only with her OK:* remove those lines from the history too, if the repository is ever shared.
 
-2. **Tonight's first studio run (2:47 a.m. ET, 06:47 UTC) is likely to fail or waste its time.**
+2. **RESOLVED 03:10 UTC: the studio is switched off, bootstrap is fixed, the prompts are updated and the setup script installs pdf-lib and qrcode.** Original finding: tonight's first studio run (2:47 a.m. ET, 06:47 UTC) was likely to fail or waste its time.
    - It would run in the Default environment, where the research hosts are blocked and `pdf-lib` and `qrcode` are missing.
    - It would use the old prompt. Its "the top of ops/QUEUE.md" is Visual Routine Cards, which build sessions are editing right now. That product also cannot build from a fresh clone (`build/build.js:665`).
    - It is a Monday, and it is the routine's first run in September. So it may run the scorecard, the monthly close and the copycat watch, with no data and with those sites blocked.
@@ -270,7 +270,7 @@ This list comes from a completeness check of this runbook, `ops/ROUTINE.md`, `CL
 
     **Fix (founder once, when it happens):** reconnect GitHub or resume the plan. Then turn each routine back on at claude.ai/code/routines. Item 5 is how she finds out.
 
-12. **The Sunday runs collide on the lock.** Research at 3:52 a.m. stops whenever the 2:47 a.m. studio is still running.
+12. **RESOLVED: the studio now runs Monday–Saturday only (`47 2 * * 1-6`).** Original finding: the Sunday runs collide on the lock. Research at 3:52 a.m. stops whenever the 2:47 a.m. studio is still running.
 
     **Fix (Claude now, before research is switched on):**
     - Either move research to 12:52 a.m. Sunday, or skip the Sunday studio (`47 2 * * 1-6`).

@@ -544,15 +544,16 @@ def stacked_svg(scheme):
     return doc((x0 - p, y0 - p, W + 2 * p, H + 2 * p), body)
 
 
-def favicon_body():
+def favicon_body(k=1.0, ox=0.0, oy=0.0):
     """16-48 px: the top alone, upright, on a 16-px grid (crisp band, square peg on whole pixels). The colours are
     fixed (no light/dark switch): every one keeps at least 3.4:1 against a white tab and 4.3:1 against a
     #202124 dark tab, so the icon never disappears, and browsers that ignore colour-scheme rules see the same
-    drawing."""
+    drawing. k, ox, oy place a scaled copy (for the app icon); the favicon itself uses k = 1."""
     px = FAV['px']; sc = SCHEMES['color']
+    X = lambda x: f(ox + k * x); Y = lambda y: f(oy + k * y)
     x0 = 500 - FAV['peg_w'] * px / 2; x1 = 500 + FAV['peg_w'] * px / 2
-    peg = f'M{f(x0)} {f(FAV["peg_base"] * px)}V{f(FAV["peg_top"] * px)}H{f(x1)}V{f(FAV["peg_base"] * px)}Z'
-    top = Top(FAV_TOP); m = (1, 0, 0, 1, 500, FAV['y_rim'] * px)
+    peg = f'M{X(x0)} {Y(FAV["peg_base"] * px)}V{Y(FAV["peg_top"] * px)}H{X(x1)}V{Y(FAV["peg_base"] * px)}Z'
+    top = Top(FAV_TOP); m = (k, 0, 0, k, ox + k * 500, oy + k * FAV['y_rim'] * px)
     return (f'<path fill="{FAV["peg"] or TOMATO}" d="{peg}"/>'
             f'<path fill="{sc["body"]}" d="{top.d(top.segs(), m)}"/>'
             f'<path fill="{sc["band"]}" d="{top.d(top.band_segs(), m)}"/>')
@@ -639,7 +640,8 @@ def build():
     files['favicon.svg'] = favicon_svg()
     # PNG sources (not for direct use)
     R = SEAL['R']
-    files['src/tile-apple.svg'] = tile_svg(INK, favicon_body().replace('d="', 'd="', 1), 1000)
+    ka = 0.62                                         # app icon: the favicon drawing on ink, inside iOS's rounded mask
+    files['src/tile-apple.svg'] = tile_svg(INK, favicon_body(ka, 500 - ka * 500, 500 - ka * 515.625), 1000)
     files['src/tile-avatar.svg'] = tile_svg(INK, seal_small(SCHEMES['color'], 540, 540, 540, fill=0.66), 1080)
     for n, c in files.items():
         with open(os.path.join(OUT, n), 'w') as fh:

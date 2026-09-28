@@ -1,0 +1,196 @@
+[
+ {
+  "svg": "../mark.svg",
+  "png": "../png/mark-1024.png",
+  "w": 1024,
+  "h": 1024
+ },
+ {
+  "svg": "../mark.svg",
+  "png": "../png/mark-512.png",
+  "w": 512,
+  "h": 512
+ },
+ {
+  "svg": "../mark-reverse.svg",
+  "png": "../png/mark-reverse-1024.png",
+  "w": 1024,
+  "h": 1024
+ },
+ {
+  "svg": "../mark-black.svg",
+  "png": "../png/mark-black-1024.png",
+  "w": 1024,
+  "h": 1024
+ },
+ {
+  "svg": "../mark-white.svg",
+  "png": "../png/mark-white-1024.png",
+  "w": 1024,
+  "h": 1024
+ },
+ {
+  "svg": "../mark-sticker.svg",
+  "png": "../png/mark-sticker-1024.png",
+  "w": 1024,
+  "h": 1024
+ },
+ {
+  "svg": "../favicon.svg",
+  "png": "../png/favicon-16.png",
+  "w": 16,
+  "h": 16
+ },
+ {
+  "svg": "../favicon.svg",
+  "png": "../png/favicon-32.png",
+  "w": 32,
+  "h": 32
+ },
+ {
+  "svg": "../favicon.svg",
+  "png": "../png/favicon-48.png",
+  "w": 48,
+  "h": 48
+ },
+ {
+  "svg": "../src/tile-apple.svg",
+  "png": "../png/apple-touch-icon-180.png",
+  "w": 180,
+  "h": 180
+ },
+ {
+  "svg": "../src/tile-avatar.svg",
+  "png": "../social-avatar-1080.png",
+  "w": 1080,
+  "h": 1080
+ },
+ {
+  "svg": "../lockup-horizontal.svg",
+  "png": "../png/lockup-horizontal-2400.png",
+  "w": 2400,
+  "h": 293
+ },
+ {
+  "svg": "../lockup-horizontal-reverse.svg",
+  "png": "../png/lockup-horizontal-reverse-2400.png",
+  "w": 2400,
+  "h": 293
+ },
+ {
+  "svg": "../lockup-horizontal-black.svg",
+  "png": "../png/lockup-horizontal-black-2400.png",
+  "w": 2400,
+  "h": 293
+ },
+ {
+  "svg": "../lockup-horizontal-white.svg",
+  "png": "../png/lockup-horizontal-white-2400.png",
+  "w": 2400,
+  "h": 293
+ },
+ {
+  "svg": "../lockup-stacked.svg",
+  "png": "../png/lockup-stacked-2400.png",
+  "w": 2400,
+  "h": 3402
+ },
+ {
+  "svg": "../lockup-stacked-reverse.svg",
+  "png": "../png/lockup-stacked-reverse-2400.png",
+  "w": 2400,
+  "h": 3402
+ },
+ {
+  "svg": "../lockup-stacked-black.svg",
+  "png": "../png/lockup-stacked-black-2400.png",
+  "w": 2400,
+  "h": 3402
+ },
+ {
+  "svg": "../lockup-stacked-white.svg",
+  "png": "../png/lockup-stacked-white-2400.png",
+  "w": 2400,
+  "h": 3402
+ },
+ {
+  "svg": "../wordmark.svg",
+  "png": "../png/wordmark-2400.png",
+  "w": 2400,
+  "h": 267
+ },
+ {
+  "svg": "../wordmark-reverse.svg",
+  "png": "../png/wordmark-reverse-2400.png",
+  "w": 2400,
+  "h": 267
+ },
+ {
+  "svg": "../wordmark-black.svg",
+  "png": "../png/wordmark-black-2400.png",
+  "w": 2400,
+  "h": 267
+ },
+ {
+  "svg": "../wordmark-white.svg",
+  "png": "../png/wordmark-white-2400.png",
+  "w": 2400,
+  "h": 267
+ },
+ {
+  "svg": "../favicon.svg",
+  "png": "../blind-test/px/fav16-light.png",
+  "w": 16,
+  "h": 16,
+  "bg": "#FFFFFF",
+  "scheme": "light"
+ },
+ {
+  "svg": "../favicon.svg",
+  "png": "../blind-test/px/fav16-dark.png",
+  "w": 16,
+  "h": 16,
+  "bg": "#202124",
+  "scheme": "dark"
+ },
+ {
+  "svg": "../favicon.svg",
+  "png": "../blind-test/px/fav32-light.png",
+  "w": 32,
+  "h": 32,
+  "bg": "#FFFFFF",
+  "scheme": "light"
+ },
+ {
+  "svg": "../favicon.svg",
+  "png": "../blind-test/px/fav32-dark.png",
+  "w": 32,
+  "h": 32,
+  "bg": "#202124",
+  "scheme": "dark"
+ },
+ {
+  "html": "../src/og.html",
+  "png": "../og-image-1200x630.png",
+  "w": 1200,
+  "h": 630
+ },
+ {
+  "html": "../blind-test/test-small.html",
+  "png": "../blind-test/test-small.png",
+  "w": 640,
+  "h": 360
+ },
+ {
+  "html": "../blind-test/test-large.html",
+  "png": "../blind-test/test-large.png",
+  "w": 512,
+  "h": 512
+ },
+ {
+  "html": "../blind-test/test-logo.html",
+  "png": "../blind-test/test-logo.png",
+  "w": 1600,
+  "h": 400
+ }
+]
