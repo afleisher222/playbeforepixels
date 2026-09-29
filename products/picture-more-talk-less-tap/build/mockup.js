@@ -5,7 +5,7 @@ const W = require('./words.js');
 const { BLOCK, glyph } = require('./kitlib.js');
 const CSS = require('./kitcss.js')({ w: '8.5in', h: '11in' });
 const pcard = (t, label, txt, hint) => `<div class="pcard" style="border-color:${BLOCK[t].col}"><div class="pband" style="background:${BLOCK[t].col};color:${BLOCK[t].ink}">${glyph(t, 40)}<span>${label}</span></div><div class="ptxt">${txt}</div><div class="phint" style="color:${BLOCK[t].dark}">${hint}</div></div>`;
-const bcard = t => `<div class="bcard" style="background:${BLOCK[t].col};color:${BLOCK[t].ink}"><div class="bglyph">${glyph(t, 100)}</div><div class="btxt"><div class="blab" style="font-size:${BLOCK[t].fs}px">${BLOCK[t].label}</div><div class="bkid">${BLOCK[t].kid}</div></div></div>`;
+const bcard = t => `<div class="lstrip" style="background:${BLOCK[t].col};color:${BLOCK[t].ink};border-radius:12px"><div class="lglyph">${glyph(t, 58)}</div><div class="ltxt" style="width:auto"><div class="llab">${BLOCK[t].label}</div><div class="lkid">${BLOCK[t].kid}</div></div></div>`;
 const star = `<svg viewBox="-270 -270 540 520"><path d="${A.starPath(230, 118)}" fill="${C.sun}" stroke="${C.sun}" stroke-width="30" stroke-linejoin="round"/>${A.Ci(-40, -14, 14, C.ink)}${A.Ci(40, -14, 14, C.ink)}${A.L('M-30 26 Q0 50 30 26', C.ink, 11)}</svg>`;
 const html = `<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../brand/fonts/fonts.css">
 <style>${CSS}
@@ -14,8 +14,7 @@ html,body{margin:0;width:1600px;height:1200px;overflow:hidden;background:${C.tSu
 .sh{box-shadow:0 22px 40px rgba(29,41,64,.18),0 3px 8px rgba(29,41,64,.12)}
 .sheet{width:600px;height:776px;background:#fff center/cover}
 .pc{width:216px;height:288px;padding:0;background:#fff;border-radius:16px}
-.bc{width:309px;height:199px;border-radius:18px}
-.bc .bcard{border-radius:18px}
+.bc{width:470px;height:92px;border-radius:12px}
 .tag{font-family:"Caveat",cursive;font-weight:700;font-size:46px;color:${C.ink}}
 </style></head><body>
 <div class="o sh sheet" style="left:470px;top:150px;transform:rotate(7deg);background-image:url(../preview/p04.png)"></div>

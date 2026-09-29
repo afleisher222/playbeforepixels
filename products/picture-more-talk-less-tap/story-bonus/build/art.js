@@ -134,16 +134,31 @@ const FACES = {
   think: CHEEK() + EYES(3, -4) + L('M-6 22 Q4 24 10 20', C.ink, 4.5),
 };
 
-// blocks: 96 x 64, top-left origin
-function earIcon() {
-  return L('M40 46 C34 45 33 38 36 33 C39 28 37 22 40 18 C44 12 56 10 61 18 C65 24 63 30 58 35 C55 38 54 41 54 45 C54 51 47 54 43 50', C.paper, 6.5) + L('M47 30 C47 24 55 23 55 29', C.paper, 5);
+// paper-chain links: face-on loop in a 96 x 64 box (top-left origin), glyph in the loop's opening;
+// edge-on loop is an 18 x 60 capsule centred on x = 0, top at y = 0. (Was a stacked-block tower until
+// Sep 29, 2026: brand/ORIGINALITY.md A12 and D9 retire that name and art.)
+const LINK_COL = { q: C.sky, j: C.sun, i: C.grass, l: C.plum };
+const RING = 'M26 0 H70 A26 26 0 0 1 96 26 V38 A26 26 0 0 1 70 64 H26 A26 26 0 0 1 0 38 V26 A26 26 0 0 1 26 0Z M29 13 H67 A13 13 0 0 1 80 26 V38 A13 13 0 0 1 67 51 H29 A13 13 0 0 1 16 38 V26 A13 13 0 0 1 29 13Z';
+function earIcon(col = C.paper) {
+  return L('M40 46 C34 45 33 38 36 33 C39 28 37 22 40 18 C44 12 56 10 61 18 C65 24 63 30 58 35 C55 38 54 41 54 45 C54 51 47 54 43 50', col, 6.5) + L('M47 30 C47 24 55 23 55 29', col, 5);
 }
-const BLOCKS = {
-  q: R(0, 0, 96, 64, C.sky, 12) + R(6, 6, 84, 52, C.sky, 8) + TX(48, 49, '?', 46, C.paper),
-  j: R(0, 0, 96, 64, C.sun, 12) + Ci(37, 25, 5, C.ink) + Ci(59, 25, 5, C.ink) + P('M30 34 Q48 38 66 34 Q63 52 48 52 Q33 52 30 34Z', C.ink),
-  i: R(0, 0, 96, 64, C.grass, 12) + Ci(48, 26, 14, C.paper) + R(41, 36, 14, 12, C.paper, 3) + R(43, 49, 10, 4, C.paper, 2) + L('M26 18 L20 14', C.paper, 4) + L('M70 18 L76 14', C.paper, 4) + L('M48 6 L48 2', C.paper, 0),
-  l: R(0, 0, 96, 64, C.plum, 12) + earIcon(),
-};
+// glyph inside the loop's opening (the opening spans x 16..80, y 13..51)
+function linkGlyph(t, col) {
+  const c = col || (t === 'j' ? C.ink : LINK_COL[t]);
+  switch (t) {
+    case 'q': return TX(48, 45, '?', 34, c);
+    case 'j': return Ci(41, 26, 3.6, c) + Ci(55, 26, 3.6, c) + P('M37 31 Q48 34 59 31 Q57 44 48 44 Q39 44 37 31Z', c);
+    case 'i': return Ci(48, 27, 9, c) + R(43.5, 33.5, 9, 7, c, 2) + R(45, 42.5, 6, 3, c, 1.5) + L('M34 22 L30 19', c, 3) + L('M62 22 L66 19', c, 3);
+    case 'l': return G('translate(48 32) scale(.62) translate(-48 -32)', earIcon(c));
+  }
+  return '';
+}
+const linkFace = (t, ink = false) => ink
+  ? `<path d="${RING}" fill="#fff" fill-rule="evenodd" stroke="${LINK_COL[t]}" stroke-width="4"/>` + linkGlyph(t)
+  : `<path d="${RING}" fill="${LINK_COL[t]}" fill-rule="evenodd"/>` + linkGlyph(t);
+const linkEdge = (t, ink = false) => ink ? R(-9, 0, 18, 60, '#fff', 9, `stroke="${LINK_COL[t]}" stroke-width="4"`) : R(-9, 0, 18, 60, LINK_COL[t], 9);
+const LINKS = {};
+for (const t of ['q', 'j', 'i', 'l']) { LINKS[t] = linkFace(t); LINKS['e-' + t] = linkEdge(t); LINKS['w-' + t] = linkFace(t, true); LINKS['we-' + t] = linkEdge(t, true); }
 
 function fish(ex = '') {
   return P('M22 0 L46 -18 Q42 0 46 18Z', C.tomato) + E(0, 0, 32, 21, C.tomato) + P('M-4 -18 Q8 -34 18 -16Z', C.tomato) +
@@ -163,9 +178,9 @@ function talkStar() {
   return `<path d="${starPath(58, 30)}" fill="${C.sun}" stroke="${C.sun}" stroke-width="16" stroke-linejoin="round"/>` +
     Ci(-12, -2, 5, C.ink) + Ci(12, -2, 5, C.ink) + L('M-8 10 Q0 16 8 10', C.ink, 4) + Ci(-20, 8, 5, C.tomato, 'fill-opacity=".45"') + Ci(20, 8, 5, C.tomato, 'fill-opacity=".45"');
 }
-function bin(withBlocks = true) {
+function bin(withLinks = true) {
   let s = '';
-  if (withBlocks) s += G('translate(-78 -58) rotate(-12)', BLOCKS.q) + G('translate(-10 -72) rotate(8)', BLOCKS.i) + G('translate(20 -40) rotate(-4)', BLOCKS.j);
+  if (withLinks) s += G('translate(-78 -58) rotate(-12)', LINKS.q) + G('translate(-10 -72) rotate(8)', LINKS.i) + G('translate(20 -40) rotate(-4)', LINKS.j);
   return s + P('M-110 -20 L110 -20 L92 90 Q0 100 -92 90Z', C.tomato) + R(-118, -34, 236, 24, C.tomato, 12) + R(-70, 20, 140, 14, C.tTomato, 7);
 }
 function stool() {
@@ -220,7 +235,7 @@ function SYMBOLS() {
   const tOver = p => p === 'reach' ? L('M40 58 L96 -80', C.sun, 24) + Ci(98, -86, 13, TEACH.skin) : '';
   for (const p of T_POSES) s += `<symbol id="t-${p}" overflow="visible">${teacherBody(p)}${teacherHead()}${tOver(p)}</symbol>`;
   for (const [f, v] of Object.entries(FACES)) s += `<symbol id="f-${f}" overflow="visible">${v}</symbol>`;
-  for (const [b, v] of Object.entries(BLOCKS)) s += `<symbol id="blk-${b}" overflow="visible">${v}</symbol>`;
+  for (const [b, v] of Object.entries(LINKS)) s += `<symbol id="lnk-${b}" overflow="visible">${v}</symbol>`;
   s += `<symbol id="fish" overflow="visible">${fish()}</symbol>`;
   s += `<symbol id="bowl" overflow="visible">${bowl()}</symbol>`;
   s += `<symbol id="star" overflow="visible">${talkStar()}</symbol>`;
@@ -249,18 +264,32 @@ function teacherAt(pose, x, floorY, s = 1, face = 'smile', flip = false) {
   const off = pose.startsWith('sit') ? 169 : 291;
   return teacher(pose, x, floorY - off * s, s, face, flip);
 }
-const JIT = [0, 5, -4, 3, -6, 4, -2, 6, -5, 2, -3, 5, -1, 4, -4, 2];
-function tower(x, baseY, seq, s = 1, tilt = 0) {
-  let out = '';
-  seq.forEach((t, i) => { out += U('blk-' + t, x - 48 * s + JIT[i % JIT.length] * s, baseY - (i + 1) * 64 * s, s); });
+// A paper chain hanging on the wall: seq[0] is the bottom link, and the chain grows upward to a strip of tape.
+// The top (newest) link is always face-on with its glyph showing; links below alternate edge-on / face-on.
+// Links sit 48 units apart (x s); `ink` draws white loops with coloured outlines for the ink-saver edition.
+function chain(x, baseY, seq, s = 1, tilt = 0, opt = {}) {
+  const ink = !!opt.ink, pre = ink ? 'w' : '';
+  const cy = i => baseY - (32 + i * 48) * s;        // centre of link i
+  let edges = '', faces = '', fronts = '';
+  seq.forEach((t, i) => {
+    if ((seq.length - 1 - i) % 2) {
+      edges += U(`lnk-${pre ? 'we' : 'e'}-${t}`, x, cy(i) - 30 * s, s);
+      fronts += G(`translate(${n(x)} ${n(cy(i))}) scale(${s})`, ink ? R(-9, 0, 18, 30, '#fff', 9, `stroke="${LINK_COL[t]}" stroke-width="4"`) : R(-9, 0, 18, 30, LINK_COL[t], 9));
+    } else faces += U(`lnk-${pre ? 'w-' : ''}${t}`, x - 48 * s, cy(i) - 32 * s, s);
+  });
+  let out = edges + faces + fronts;
+  if (opt.tape && seq.length) {
+    const top = cy(seq.length - 1) - 32 * s;
+    out += R(x - 24 * s, top - 12 * s, 48 * s, 20 * s, ink ? '#fff' : C.paper, 3 * s, `fill-opacity="${ink ? 1 : 0.9}"${ink ? ` stroke="${C.ink}" stroke-opacity=".35" stroke-width="2"` : ''} transform="rotate(-5 ${n(x)} ${n(top - 2 * s)})"`);
+  }
   return tilt ? G(`rotate(${tilt} ${x} ${baseY})`, out) : out;
 }
-function blk(t, x, y, s = 1, rot = 0) { // centre-based, rotated
-  return G(`translate(${n(x)} ${n(y)}) rotate(${rot}) scale(${s})`, U('blk-' + t, -48, -32));
+function lnk(t, x, y, s = 1, rot = 0) { // one loose face-on loop, centre-based, rotated
+  return G(`translate(${n(x)} ${n(y)}) rotate(${rot}) scale(${s})`, U('lnk-' + t, -48, -32));
 }
 function motion(x, y, len, ang, col = C.ink, w = 6) {
   const r = ang * Math.PI / 180;
   return L(`M${n(x)} ${n(y)} l${n(len * Math.cos(r))} ${n(len * Math.sin(r))}`, col, w);
 }
 
-module.exports = { C, n, R, Ci, E, P, L, U, G, TX, starPath, SYMBOLS, kid, kidAt, teacher, teacherAt, tower, blk, motion, windowRain, shelf, paperFish, table, KIDS };
+module.exports = { C, n, R, Ci, E, P, L, U, G, TX, starPath, SYMBOLS, kid, kidAt, teacher, teacherAt, chain, lnk, linkGlyph, LINK_COL, motion, windowRain, shelf, paperFish, table, KIDS };

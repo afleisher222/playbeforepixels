@@ -1,26 +1,26 @@
-// Talk Tower projectable slides: 16:9 (13.333 x 7.5 in = 1280 x 720 CSS px), one idea per slide, huge type.
+// The Add-One Chain projectable slides: 16:9 (13.333 x 7.5 in = 1280 x 720 CSS px), one idea per slide, huge type.
 //   node build/slides.js -> ../source-slides.html (+ build/slides-count.json for the kit's contents page)
 const fs = require('fs'); const path = require('path');
 const A = require('../story-bonus/build/art.js');
-const { C, R, Ci, E, P, L, U, G, SYMBOLS, kidAt, tower } = A;
+const { C, R, Ci, E, P, L, U, G, SYMBOLS, kidAt, chain, lnk } = A;
 const W = require('./words.js');
-const { NAME, VERSION, BLOCK, glyph, topicIcon, LOGO, qrSvg } = require('./kitlib.js');
+const { NAME, SHORT, VERSION, BLOCK, glyph, topicIcon, LOGO, qrSvg } = require('./kitlib.js');
 const svg = (vb, inner, style = '') => `<svg viewBox="${vb}" style="${style}" xmlns="http://www.w3.org/2000/svg">${inner}</svg>`;
 const slides = [];
 const slide = (html, bg = '#fff', dark = false) => slides.push({ html, bg, dark });
 
 // 1 title
-slide(`<div class="title"><div class="tl">${LOGO('lockup-horizontal.svg', 44)}<h1>${NAME}</h1><p class="sub">Let’s build a tower, one turn at a time!</p>
+slide(`<div class="title"><div class="tl">${LOGO('lockup-horizontal.svg', 44)}<h1>${NAME.replace('Add-One', '<span style="white-space:nowrap">Add-One</span>')}</h1><p class="sub">Let’s make a chain, one turn at a time!</p>
   <div class="moves">${['q', 'j', 'i', 'l'].map(t => `<span style="background:${BLOCK[t].col};color:${BLOCK[t].ink}">${glyph(t, 36)}${BLOCK[t].word}</span>`).join('')}</div></div>
-  <div class="tr">${svg('0 0 520 600', E(260, 580, 250, 20, C.wash) + tower(260, 580, ['q', 'j', 'i', 'l', 'q', 'i'], 1.05) + G('translate(262 120) scale(.7)', U('star')) + kidAt('leo', 'cheer', 90, 580, 0.95, 'laugh') + kidAt('zara', 'handup', 430, 580, 0.95, 'talk', true), 'width:100%;height:100%')}</div></div>`, C.tSun);
-// 2 the blocks
-slide(`<h2>How we build our ${NAME}</h2><div class="legend">${['q', 'j', 'i', 'l'].map(t => `<div class="lg" style="background:${BLOCK[t].tint}"><span class="big" style="background:${BLOCK[t].col}">${glyph(t, 110)}</span><b style="color:${BLOCK[t].dark}">${BLOCK[t].label}</b><p>${BLOCK[t].kid}</p></div>`).join('')}</div>`);
+  <div class="tr">${svg('0 0 520 600', E(260, 580, 250, 20, C.wash) + chain(260, 580, ['q', 'l', 'j', 'q', 'i', 'j', 'l'], 1.05) + G('translate(262 120) scale(.7)', U('star')) + kidAt('leo', 'cheer', 90, 580, 0.95, 'laugh') + kidAt('zara', 'handup', 430, 580, 0.95, 'talk', true), 'width:100%;height:100%')}</div></div>`, C.tSun);
+// 2 the links
+slide(`<h2>How we make our ${SHORT}</h2><div class="legend">${['q', 'j', 'i', 'l'].map(t => `<div class="lg" style="background:${BLOCK[t].tint}"><span class="big" style="background:${BLOCK[t].col}">${glyph(t, 110)}</span><b style="color:${BLOCK[t].dark}">${BLOCK[t].label}</b><p>${BLOCK[t].kid}</p></div>`).join('')}</div>`);
 // 3 rules
-slide(`<h2>Our ${NAME} rules</h2><div class="rules">
+slide(`<h2>Our ${SHORT} rules</h2><div class="rules">
   <div><span style="background:${C.sun}">${svg('-60 -60 120 120', `<path d="${A.starPath(48, 25)}" fill="#fff" stroke="#fff" stroke-width="10" stroke-linejoin="round"/>`, 'width:70px;height:70px')}</span>One voice at a time.<small>Whoever holds the star takes a turn.</small></div>
   <div><span style="background:${C.sky}">${svg('0 0 100 100', `<text x="50" y="68" font-family="Fredoka, sans-serif" font-weight="700" font-size="44" fill="#fff" text-anchor="middle">pass</text>`, 'width:80px;height:80px')}</span>“Pass” is OK.<small>You can listen and try next time.</small></div>
   <div><span style="background:${C.plum}">${svg('0 0 100 100', `<path d="M14 22 a12 12 0 0 1 12 -12 h48 a12 12 0 0 1 12 12 v32 a12 12 0 0 1 -12 12 h-30 l-16 16 v-16 h-2 a12 12 0 0 1 -12 -12Z" fill="#fff"/><circle cx="34" cy="38" r="6" fill="${C.plum}"/><circle cx="50" cy="38" r="6" fill="${C.plum}"/><circle cx="66" cy="38" r="6" fill="${C.plum}"/>`, 'width:80px;height:80px')}</span>Every way of talking counts.<small>Words, signs, pointing, pictures and devices.</small></div>
-  <div><span style="background:${C.grass}">${svg('0 0 100 100', tower(50, 94, ['q', 'j', 'i'], 0.42), 'width:80px;height:80px')}</span>We build one tower together.<small>Every block helps our class.</small></div></div>`);
+  <div><span style="background:${C.grass}">${svg('0 0 100 100', chain(50, 96, ['q', 'l', 'j'], 0.42, 0, { ink: true }), 'width:80px;height:80px')}</span>We make one chain together.<small>Every link helps our class.</small></div></div>`);
 // 4-7 the four moves
 const moveSlide = (t, lines, head) => slide(`<div class="move"><div class="mleft" style="background:${BLOCK[t].col};color:${BLOCK[t].ink}">${glyph(t, 230)}<b>${BLOCK[t].label}</b></div>
   <div class="mright"><h2>${head}</h2><ul>${lines.map(l => `<li style="border-color:${BLOCK[t].col}">${l}</li>`).join('')}</ul></div></div>`);
@@ -37,19 +37,19 @@ for (const l of W.list('topics', 9)) {
 // 17 whose turn
 slide(`<div class="split"><div>${svg('-280 -280 560 540', `<path d="${A.starPath(230, 118)}" fill="${C.sun}" stroke="${C.sun}" stroke-width="30" stroke-linejoin="round"/>` + Ci(-40, -14, 14, C.ink) + Ci(40, -14, 14, C.ink) + L('M-30 26 Q0 50 30 26', C.ink, 11), 'width:100%;height:100%')}</div>
   <div><h1 class="xl">Whose turn?</h1><p class="say">Pass the Talking Star.<br>Whoever holds it takes a turn.<br>Everyone else listens.</p></div></div>`, C.tSky);
-// 18 wobble
-slide(`<div class="split"><div>${svg('0 0 300 330', G('rotate(-9 150 320)', tower(150, 320, ['q', 'j', 'i', 'l'], 1.0)) + A.motion(46, 70, 30, 200, C.tomato, 9) + A.motion(254, 70, 30, -20, C.tomato, 9) + A.motion(40, 130, 26, 180, C.tomato, 9) + A.motion(260, 130, 26, 0, C.tomato, 9), 'width:100%;height:100%')}</div>
-  <div><h1 class="xl" style="color:${C.tomato}">Tower wobble!</h1><p class="say">One voice at a time.<br>Who has the star?</p></div></div>`, C.tTomato);
+// 18 tangle
+slide(`<div class="split"><div>${svg('0 0 300 330', chain(140, 322, ['q', 'l', 'j', 'q', 'i'], 0.95, -9) + lnk('l', 250, 250, 0.85, 30) + A.motion(40, 110, 26, 200, C.tomato, 9) + A.motion(246, 150, 26, -20, C.tomato, 9) + A.motion(34, 170, 22, 180, C.tomato, 9) + A.motion(262, 200, 22, 0, C.tomato, 9), 'width:100%;height:100%')}</div>
+  <div><h1 class="xl" style="color:${C.tomato}">Chain tangle!</h1><p class="say">One voice at a time.<br>Who has the star?</p></div></div>`, C.tTomato);
 // 19 count
 {
   let cells = '';
   const seq = ['q', 'j', 'i', 'l'];
   for (let i = 0; i < 20; i++) { const t = seq[i % 4]; cells += `<div class="cnt" style="border-color:${BLOCK[t].col};color:${BLOCK[t].dark}">${i + 1}</div>`; }
-  slide(`<h2>Let’s count our tower!</h2><p class="lead">Point and count together. How many blocks did we build today?</p><div class="counts">${cells}</div>`);
+  slide(`<h2>Let’s count our chain!</h2><p class="lead">Point and count together. How many links did we add today?</p><div class="counts">${cells}</div>`);
 }
 // 20 closing
 slide(`<div class="close"><h1>Great talking today!</h1><p class="say">We asked, we commented, we added one,<br>and we listened to our friends.</p>
-  ${svg('0 0 900 260', E(450, 250, 420, 14, C.wash) + kidAt('priya', 'cheer', 150, 250, 0.9, 'laugh') + kidAt('milo', 'cheer', 330, 250, 0.9, 'laugh') + tower(450, 250, ['q', 'j', 'i'], 0.9) + kidAt('zara', 'cheer', 570, 250, 0.9, 'laugh', true) + kidAt('sam', 'cheer', 750, 250, 0.9, 'laugh', true), 'width:900px;height:260px')}
+  ${svg('0 0 900 260', E(450, 250, 420, 14, C.wash) + kidAt('priya', 'cheer', 150, 250, 0.9, 'laugh') + kidAt('milo', 'cheer', 330, 250, 0.9, 'laugh') + chain(450, 250, ['q', 'l', 'i'], 0.9) + kidAt('zara', 'cheer', 570, 250, 0.9, 'laugh', true) + kidAt('sam', 'cheer', 750, 250, 0.9, 'laugh', true), 'width:900px;height:260px')}
   <div class="closelogo">${LOGO('lockup-horizontal.svg', 40)}</div></div>`, C.tGrass);
 
 const CSS = `
@@ -66,7 +66,7 @@ h1, h2 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; margi
 h2 { font-size: 56px; margin-bottom: 26px }
 .lead { font-size: 24px; margin: -12px 0 22px }
 .title { flex: 1; display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 20px }
-.title h1 { font-size: 150px; letter-spacing: -5px; margin: 30px 0 10px }
+.title h1 { font-size: 118px; line-height: .98; letter-spacing: -4px; margin: 30px 0 14px }
 .title .sub { font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 34px; margin: 0 0 30px }
 .title .tr { height: 100% }
 .moves { display: flex; gap: 12px; flex-wrap: wrap }

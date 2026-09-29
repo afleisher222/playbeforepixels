@@ -92,10 +92,17 @@ h4 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 15px; marg
 .cardhead { flex: none; margin-bottom: 6px }
 .cutnote { font-size: 11.5px; margin: 0; opacity: .85 } .scissor { font-size: 14px; margin-right: 3px }
 .grid { display: grid; justify-content: center; align-content: start }
-.grid.blocks { grid-template-columns: repeat(2, 3.4in); grid-auto-rows: 2.25in }
+.grid.links { grid-template-columns: 7.2in; grid-auto-rows: 1.1in }
 .grid.prompts { grid-template-columns: repeat(3, 2.25in); grid-auto-rows: 3in }
 .grid.names { grid-template-columns: repeat(2, 3in); grid-auto-rows: .85in }
 .cell { outline: 1.2px dashed #9AA6BA; outline-offset: -.6px; padding: .085in; position: relative }
+.lstrip { height: 100%; border-radius: 10px; display: flex; align-items: center; gap: 12px; padding: 0 8px }
+.ltab { flex: none; width: .62in; align-self: stretch; margin: 7px 0; border: 1.5px dashed; border-radius: 7px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 8.5px; font-weight: 800; line-height: 1.15; letter-spacing: .4px; text-transform: uppercase; opacity: .75 }
+.lglyph { flex: none; width: 70px; display: flex; justify-content: center }
+.ltxt { flex: none; width: 2.05in }
+.llab { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 30px; line-height: 1; letter-spacing: .5px }
+.lkid { font-family: "Fredoka", sans-serif; font-weight: 500; font-size: 14px; line-height: 1.2; margin-top: 4px }
+.lname { flex: 1; align-self: flex-end; margin-bottom: 18px; border-bottom: 2px solid; font-size: 10px; font-weight: 700; opacity: .9; padding-bottom: 10px; letter-spacing: .5px }
 .bcard { height: 100%; border-radius: 18px; display: flex; align-items: center; gap: 10px; padding: 0 18px 0 14px }
 .bglyph { flex: none; width: 104px; display: flex; justify-content: center }
 .btxt { flex: 1; min-width: 0 }
@@ -167,7 +174,7 @@ h4 { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 15px; marg
 .teacherline { font-size: 14px } .teacherline .line { display: inline-block; width: 220px; border-bottom: 2px solid ${C.ink} } .teacherline small { margin-left: 46px; opacity: .6 }
 .famqr { display: flex; align-items: center; gap: 12px; background: ${C.wash}; border-radius: 14px; padding: 10px 14px; font-size: 11px; line-height: 1.4 } .famqr p { margin: 0 }
 .famsheet { flex: 1; min-height: 0; display: grid; grid-template-columns: 2.3in 1fr; gap: 20px }
-.famtower { min-height: 0 }
+.famchain { min-height: 0 }
 .famcards { display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: min-content; gap: 8px; align-content: start }
 .fc { display: flex; align-items: center; gap: 8px; border: 2.5px solid; border-radius: 12px; padding: 7px 9px; font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 13.5px; line-height: 1.2; min-height: 54px }
 .famdone { grid-column: 1 / -1; background: ${C.tSun}; border-radius: 14px; padding: 14px 16px; margin-top: 6px; font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 18px }

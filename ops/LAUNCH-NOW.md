@@ -1,5 +1,12 @@
 # Launch now: the fastest safe path to worldwide sales
 
+## Status note: September 29, 2026 (model prices, held kit rename)
+
+**Nothing is published, and `ops/PAUSE` stays.** The three items left open on September 28 are done:
+- **Financial model and stress test** now use the adopted prices (routine cards $9.50, Starter $5.00 and the other LAUNCH FIRST prices) and the fees the `listing.json` nets use (5% refunds, KDP 5% returns, $2.84 large-trim print, Gumroad card fee, course on Gumroad). Median first year: about $6,700 of sales and a $3,100 operating loss; break-even about 63 orders a month (`business/STRESS-TEST.md`).
+- **The held classroom kit** (`products/picture-more-talk-less-tap`) is now *The Add-One Chain* (ORIGINALITY A12, D9), with paper-chain links instead of block-tower art in the kit, slides, bonus story and records. Still `held-pending-counsel`; the new name is unsearched.
+- ***Whose Lap Today?*** back cover and last page now show only sellable products (100 Screen-Free Plays, 52 Play & Talk Cards, the Ages 1–5 Gift Bundle).
+
 ## Status note: September 28, 2026, 22:30 UTC (consistency audit)
 
 **Nothing is published, and `ops/PAUSE` stays.** An adversarial audit compared every launch fact across the records, packets, site, plans and PDFs, and fixed each mismatch at its source:

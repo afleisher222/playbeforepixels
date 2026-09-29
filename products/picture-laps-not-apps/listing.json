@@ -98,9 +98,9 @@
   ],
   "amazon_route": "none-with-reason: every copy is personalized and printed per order, which KDP and IngramSpark distribution cannot do. Revisit Amazon Custom (personalized products) only if the printer can fulfil Amazon orders automatically [VERIFY]. The personalized book stays on the own site and Etsy.",
   "next_products": [
-    "board-up-go-more",
+    "play-talk-cards",
     "guide-100-plays",
-    "picture-tablet-slept"
+    "bundle-gift-1-5"
   ],
   "bonus_url": "https://playbeforepixels.com/bonus/picture-laps-not-apps",
   "bonus_offer": "Free printable lap-reading tracker and 5 more lap games (email + child’s birth month/year only; never a name). The QR code and short link are on the last interior page of the own-site edition only (never in the Etsy edition).",
@@ -114,7 +114,7 @@
     "Order three physical proofs (sample, long name softcover, Look 4 hardcover) and check color, the name on dark pages, the gutter and the spine.",
     "ISBN: optional for a book sold only in your own shop and Etsy [VERIFY]. If you want one, buy one ISBN per format (Bowker) and place the barcode in the “ISBN / barcode” box on the back cover and the ISBN box on the copyright page; otherwise remove both boxes before launch (a Claude Code session can do this). Fill or remove the “Printer / manufacturing lines” box.",
     "Etsy: use marketplace_title and the 13 etsy_tags (each 20 characters or fewer; the 7 keywords are too long for Etsy tags).",
-    "Last page “More from Play Before Pixels” now shows three products that are on sale (Up! Go! More!, 100 Screen-Free Plays, The Day the Tablet Slept). When the Bring a Book shower inserts are live, a Claude Code session can put them back as a tile and in next_products.",
+    "Last page “More from Play Before Pixels” and the back cover (“More for ages 0–5”) show only sellable products (52 Play & Talk Cards, 100 Screen-Free Plays, the Ages 1–5 Instant Gift Bundle); the held Up! Go! More! and The Day the Tablet Slept were taken off on 2026-09-29. When the Bring a Book shower inserts are live, a Claude Code session can put them back as a tile and in next_products.",
     "Set up the store fields (Shopify line-item properties; Etsy variations and personalization box, exact format in ORDER-TO-PRINT.md), upload cover.png, picker.png, mockup.png and preview pages 4, 6, 26, 31.",
     "Add the API keys as GitHub Actions secrets and approve switching on the scheduled order job after the sandbox test passes (a Claude Code session builds the job from ORDER-TO-PRINT.md).",
     "Build the bonus page playbeforepixels.com/bonus/picture-laps-not-apps (lap-reading tracker + 5 more lap games; email and birth month/year only).",

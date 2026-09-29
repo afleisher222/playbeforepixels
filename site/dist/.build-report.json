@@ -1,5 +1,5 @@
 {
- "built": "2026-09-28T22:28:59.490Z",
+ "built": "2026-09-29T00:34:23.296Z",
  "preview": false,
  "pages": [
   "/",
@@ -7,16 +7,20 @@
   "/404.html",
   "/about/",
   "/accessibility/",
+  "/bonus/bath-book-splash-talk/",
   "/bonus/board-up-go-more/",
   "/bonus/bored-play-cards/",
   "/bonus/bundle-gift-1-5/",
   "/bonus/bundle-library-0-5/",
+  "/bonus/cloth-book-touch-talk/",
   "/bonus/course-screen-reset/",
   "/bonus/family-talk-along-cards/",
   "/bonus/first-phone-plan/",
   "/bonus/gift-reveal-coupons/",
   "/bonus/guide-100-plays/",
   "/bonus/merch-core/",
+  "/bonus/merch-mug/",
+  "/bonus/merch-stickers/",
   "/bonus/picture-laps-not-apps/",
   "/bonus/picture-more-talk-less-tap/",
   "/bonus/picture-tablet-slept/",
@@ -56,9 +60,13 @@
   "/thank-you/"
  ],
  "indexable": 30,
- "redirects": 35,
+ "redirects": 43,
  "printedChecked": 32,
  "hidden": [
+  {
+   "slug": "bath-book-splash-talk",
+   "why": "listing status: design-only-held"
+  },
   {
    "slug": "board-up-go-more",
    "why": "listing status: held"
@@ -76,6 +84,10 @@
    "why": "Shown as a set on /shop/bundles/ (config bundles: birth-to-5-library)."
   },
   {
+   "slug": "cloth-book-touch-talk",
+   "why": "listing status: design-only-held"
+  },
+  {
    "slug": "first-phone-plan",
    "why": "Ages 9–12 only: waits for counsel's G1 answer (business/GROWTH-ENGINE.md §7 item 5)."
   },
@@ -89,6 +101,14 @@
   },
   {
    "slug": "merch-core-tote",
+   "why": "not described in site/config.json yet (add it to show it)"
+  },
+  {
+   "slug": "merch-mug",
+   "why": "not described in site/config.json yet (add it to show it)"
+  },
+  {
+   "slug": "merch-stickers",
    "why": "not described in site/config.json yet (add it to show it)"
   },
   {
@@ -110,6 +130,8 @@
  ],
  "warnings": [
   "merch-core-more-talk-tee: new listing has no site/config.json entry, so it is not shown",
-  "merch-core-tote: new listing has no site/config.json entry, so it is not shown"
+  "merch-core-tote: new listing has no site/config.json entry, so it is not shown",
+  "merch-mug: new listing has no site/config.json entry, so it is not shown",
+  "merch-stickers: new listing has no site/config.json entry, so it is not shown"
  ]
 }

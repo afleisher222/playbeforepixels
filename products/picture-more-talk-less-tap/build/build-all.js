@@ -33,12 +33,12 @@ node('build/mockup.js'); node(RENDER, 'png', 'build/mockup.html', 'mockup.png', 
 rm('downloads'); fs.mkdirSync(path.join(ROOT, 'downloads'));
 const cp = (a, b) => fs.copyFileSync(path.join(ROOT, a), path.join(ROOT, 'downloads', b));
 cp('start-here.pdf', 'START HERE.pdf');
-cp('picture-more-talk-less-tap.pdf', 'Talk-Tower-Classroom-Game-Kit-US-Letter.pdf');
-cp('picture-more-talk-less-tap-A4.pdf', 'Talk-Tower-Classroom-Game-Kit-A4.pdf');
-cp('picture-more-talk-less-tap-ink-saver.pdf', 'Talk-Tower-Classroom-Game-Kit-US-Letter-Ink-Saver.pdf');
-cp('picture-more-talk-less-tap-ink-saver-A4.pdf', 'Talk-Tower-Classroom-Game-Kit-A4-Ink-Saver.pdf');
-cp('picture-more-talk-less-tap-slides.pdf', 'Talk-Tower-Slides-16x9.pdf');
-cp('story-bonus/more-talk-less-tap-read-aloud.pdf', 'Talk-Tower-Story-Read-Aloud.pdf');
+cp('picture-more-talk-less-tap.pdf', 'Add-One-Chain-Classroom-Game-Kit-US-Letter.pdf');
+cp('picture-more-talk-less-tap-A4.pdf', 'Add-One-Chain-Classroom-Game-Kit-A4.pdf');
+cp('picture-more-talk-less-tap-ink-saver.pdf', 'Add-One-Chain-Classroom-Game-Kit-US-Letter-Ink-Saver.pdf');
+cp('picture-more-talk-less-tap-ink-saver-A4.pdf', 'Add-One-Chain-Classroom-Game-Kit-A4-Ink-Saver.pdf');
+cp('picture-more-talk-less-tap-slides.pdf', 'Add-One-Chain-Slides-16x9.pdf');
+cp('story-bonus/more-talk-less-tap-read-aloud.pdf', 'Add-One-Chain-Story-Read-Aloud.pdf');
 // Customer-voice rule 1: plain PDFs of 15 MB or less, never a zip.
 for (const f of fs.readdirSync(path.join(ROOT, 'downloads'))) { const mb = fs.statSync(path.join(ROOT, 'downloads', f)).size / 1048576; if (mb > 15) throw new Error(`${f} is ${mb.toFixed(1)} MB (limit 15 MB)`); }
 console.log('done');

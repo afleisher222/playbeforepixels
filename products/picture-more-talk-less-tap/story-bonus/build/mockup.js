@@ -1,8 +1,7 @@
 // node build/mockup.js -> build/mockup.html (1600 x 1200 product photo-style mockup)
 const fs = require('fs'); const path = require('path');
 const A = require('./art.js'); const { C, U, G, R, E } = A;
-const blocks = ['q', 'j', 'i', 'l', 'q', 'i'];
-let tower = ''; blocks.forEach((b, i) => { tower += U('blk-' + b, 10 + [0, 6, -4, 5, -3, 4][i], 420 - (i + 1) * 66, 1); });
+const links = A.chain(58, 420, ['q', 'l', 'j', 'q', 'i', 'j', 'l'], 1);
 const html = `<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../../../brand/fonts/fonts.css">
 <style>
 html,body{margin:0;width:1600px;height:1200px;overflow:hidden;background:${C.wash}}
@@ -21,10 +20,10 @@ html,body{margin:0;width:1600px;height:1200px;overflow:hidden;background:${C.was
 <div class="wall"></div><div class="table"></div><div class="shadow"></div>
 <svg class="props" width="1600" height="1200" viewBox="0 0 1600 1200">
   <ellipse cx="258" cy="1016" rx="130" ry="20" fill="${C.ink}" fill-opacity=".12"/>
-  ${G('translate(200 596)', tower)}
+  ${G('translate(200 596)', links)}
   <ellipse cx="1390" cy="1040" rx="120" ry="18" fill="${C.ink}" fill-opacity=".12"/>
   ${G('translate(1390 960) rotate(-12) scale(1.35)', U('star'))}
-  ${G('translate(330 1060) rotate(18) scale(0.9)', U('blk-j'))}
+  ${G('translate(330 1060) rotate(18) scale(0.9)', U('lnk-j'))}
 </svg>
 <div class="book"><div class="inner"><div class="spine"></div><div class="front"></div><div class="gloss"></div></div></div>
 </body></html>`;

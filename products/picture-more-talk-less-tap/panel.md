@@ -1,4 +1,6 @@
-# Customer panel: Talk Tower Classroom Game Kit (with the bonus story *More Talk, Less Tap*)
+# Customer panel: The Add-One Chain Classroom Game Kit (with the bonus story *More Talk, Less Tap*)
+
+*Renamed September 29, 2026 (brand/ORIGINALITY.md A12, D9). This panel reviewed the first edition, which used the retired name and stacked paper "blocks"; the kit now uses paper-chain links, so "block" and "tower" in the quotes below mean today's links and chain.*
 
 September 28, 2026. This panel is simulated, so none of these people are real customers. Use the comments as a checklist, not as reviews, and never quote them in marketing. The product is still `held-pending-counsel`.
 
@@ -69,7 +71,7 @@ Every change stays inside BRAND.md. There are no health or clinical words, no na
 | Story games: "shares an idea out loud", "A good follow-up question" | Self-advocate, QA (judging word) | Now "…shares an idea, they add a block. Words, signs and pointing all count." and "A follow-up question counts too!" The back-cover blurb drops "out loud". | story p30, p32 |
 | "Why is it called Less *Tap*?", and "tap" could read as knocking device users | Child, self-advocate | The bonus page adds "the 'tap' in the title? It is the rain on the window and Bubbles the fish. A tap on a talking device is talk, and it always earns a block." | kit p23 |
 | "You need no screens", yet device taps count | Self-advocate | The family tip adds "A talking device is a child's voice, not screen time." The FAQ says the same. | kit p20; `listing.json` faq |
-| The certificate's "tower of words" and "said kind things back" | Self-advocate | Now "Our class built a Talk Tower!" and "…listened to our friends, every way we talk." (The title uses NAME, so a rename carries through.) | kit p22 |
+| The certificate's "tower of words" and "said kind things back" | Self-advocate | Now "Our class built a Add-One Chain!" and "…listened to our friends, every way we talk." (The title uses NAME, so a rename carries through.) | kit p22 |
 | Individual tracker on the wall | Worried parent, director | The tracker now says "Keep it in your folder, not on the wall." | kit p12 |
 | Family page footer said only teachers may copy it | Librarian, director, PTA | The footer now says "Licensed buyers may copy this page for the families they serve." The sign-off reads "(teacher or group leader)". | kit p20–21 |
 | Can a parent or homeschooler buy it? | New parent | The license table now says "One teacher (or one homeschooling family)", and START HERE matches. Flagged for counsel. | kit p24; `build/start.js` |

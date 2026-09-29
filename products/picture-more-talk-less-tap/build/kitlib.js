@@ -1,9 +1,12 @@
-// Shared pieces for the Talk Tower kit, slides, cover and mockup.
+// Shared pieces for The Add-One Chain kit, slides, cover and mockup.
 const fs = require('fs'); const path = require('path');
 const A = require('../story-bonus/build/art.js');
 const { C, R, Ci, E, P, L, G, TX } = A;
-// Product name in one place: "Talk Tower" awaits trademark counsel's clearance (listing.json human_todo).
-const NAME = 'Talk Tower';
+// Product name in one place (brand/ORIGINALITY.md A12, Sep 29, 2026; the earlier name is retired). The new name
+// is unsearched: it still needs trademark counsel's clearance (listing.json human_todo).
+// NAME is the full title; SHORT reads inside a sentence ("our Add-One Chain").
+const NAME = 'The Add-One Chain';
+const SHORT = 'Add-One Chain';
 // Printed in every PDF footer (BRAND.md customer-voice rule 3). Bump it for every re-issue and tell past buyers.
 const VERSION = 'Version 1.0 · September 2026';
 const BLOCK = {
@@ -15,7 +18,7 @@ const BLOCK = {
 function ear(col) {
   return L('M40 46 C34 45 33 38 36 33 C39 28 37 22 40 18 C44 12 56 10 61 18 C65 24 63 30 58 35 C55 38 54 41 54 45 C54 51 47 54 43 50', col, 6.5) + L('M47 30 C47 24 55 23 55 29', col, 5);
 }
-// Glyphs drawn in the story's 96 x 64 block space, without the block background.
+// Glyphs drawn in the story's 96 x 64 link space, without the link background.
 function glyphInner(t, onWhite = false) {
   const fg = onWhite ? BLOCK[t].col : (t === 'j' ? C.ink : C.paper);
   switch (t) {
@@ -49,4 +52,4 @@ const QR = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../qr.json'), 'ut
 const qrSvg = (px, col = C.ink) => `<svg class="qr" viewBox="-2 -2 ${QR.n + 4} ${QR.n + 4}" width="${px}" height="${px}" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg"><rect x="-2" y="-2" width="${QR.n + 4}" height="${QR.n + 4}" fill="#fff"/><path d="${QR.d}" fill="${col}"/></svg>`;
 const LOGO = (file, h) => `<img class="logo" src="%BR%logo/${file}" alt="Play Before Pixels" style="height:${h}px">`;
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
-module.exports = { NAME, VERSION, BLOCK, glyph, glyphInner, topicIcon, qrSvg, LOGO, esc, QR };
+module.exports = { NAME, SHORT, VERSION, BLOCK, glyph, glyphInner, topicIcon, qrSvg, LOGO, esc, QR };

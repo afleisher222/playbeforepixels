@@ -607,10 +607,11 @@ pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.kT) + col(
 
 // I32 Author note + More from Play Before Pixels + bonus QR
 const NEXT = [
-  // only products that are on sale today, youngest first (the Bring a Book inserts go back here once they are live)
-  ['Up! Go! More!', 'Talk-along book · ages 0–3', C.tomato, C.tT],
+  // only sellable products (never a held title: Up! Go! More! and The Day the Tablet Slept are held), youngest first
+  // (the Bring a Book inserts go back here once they are live)
+  ['52 Play & Talk Cards', 'Printable play cards · ages 0–5', C.tomato, C.tT],
   ['100 Screen-Free Plays for Ages 0–5', 'Guide + printables · ages 0–5', C.grass, C.gT],
-  ['The Day the Tablet Slept', 'Picture book · ages 3–7', C.sky, C.kT],
+  ['Ages 1–5 Instant Gift Bundle', 'Printable play sets · ages 1–5', C.sky, C.kT],
 ];
 pages.push(`<div class="page matter">${svgPage(rect(0, 0, 875, 875, C.paper))}
   <div class="mat last">
@@ -647,10 +648,10 @@ const BACK = `<div class="page back">${svgPage(rect(0, 0, 875, 875, C.sun) + `<c
       <li>Dedication, family reading pledge and keepsake pages</li>
     </ul>
   </div>
-  <div class="series"><div class="series-h">Collect the books</div>
-    <div class="srow"><i style="background:${C.tomato}"></i>Whose Lap Today?</div>
-    <div class="srow"><i style="background:${C.sky}"></i>The Day the Tablet Slept</div>
-    <div class="srow"><i style="background:${C.grass}"></i>Up! Go! More!</div>
+  <div class="series"><div class="series-h">More for ages 0–5</div>
+    <div class="srow"><i style="background:${C.grass}"></i>100 Screen-Free Plays</div>
+    <div class="srow"><i style="background:${C.tomato}"></i>52 Play &amp; Talk Cards</div>
+    <div class="srow"><i style="background:${C.sky}"></i>Ages 1–5 Gift Bundle</div>
   </div>
   <div class="bk-foot"><div class="logo">${LOGO('lockup-horizontal-white.svg')}</div><div class="bk-age">Published by Play Before Pixels / AlphaPlay LLC${ETSY ? '' : ' · playbeforepixels.com'}</div></div>
   <div class="isbn" aria-hidden="true"></div>

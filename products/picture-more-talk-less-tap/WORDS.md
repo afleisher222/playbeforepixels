@@ -1,4 +1,4 @@
-# Talk Tower Classroom Game Kit: the words
+# The Add-One Chain Classroom Game Kit: the words
 
 <!--
 FOUNDER: THIS FILE IS YOURS. The kit's cards, the slides and the bonus story's
@@ -68,7 +68,7 @@ Add one more idea: We could also…
 Add one more question.
 
 ## listen
-<!-- LISTEN block moves (purple, ear). Shown on the poster and slides. 4 lines. -->
+<!-- LISTEN link moves (purple, ear). Shown on the poster and slides. 4 lines. -->
 Wait for the Talking Star.
 Show you are listening, your way.
 Say back one thing you heard.
