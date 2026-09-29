@@ -3,7 +3,7 @@
 This private repository IS the business. Every Claude Code session and scheduled routine works from here.
 
 ## What it is
-"Play Before Pixels" is a trade name of **AlphaPlay LLC** (business mailing address: see `legal/ENTITY.md`). A faceless, self-running, product-only business for parents of 0–5s, parents and educators of 5–12s, and parent/teacher groups worldwide: talk-along board books and picture books (print-on-demand), printables, a classroom pack with site licenses, a card deck, host-it-yourself workshop kits, research briefs, POD merch, a written course. No coaching or live services. No inventory.
+"Play Before Pixels" is a trade name of **AlphaPlay LLC** (business mailing address: see `legal/ENTITY.md`). A faceless, self-running, product-only business for families with children 0–5 first (ages 5–12 and school, PTA, library and child-care products are designed but HELD until employment counsel clears them): printables and bundles, card decks, a talk-along paperback (KDP), an email-delivered written course, and POD merch (tees, tote, mugs, stickers). Picture, board, bath and cloth books are designed but held for children's-product safety rules. Launch budget $500; current plan: business/GROWTH-ENGINE.md, ops/LAUNCH-NOW.md, ops/OWNERS-MANUAL.pdf. No coaching or live services. No inventory.
 
 ## Binding rules — read before any work
 - `brand/BRAND.md` — hard rules (no health claims; never name/criticize a school, district, company or EdTech product; child safety; allowed citations; faceless; self-running; no inventory), palette, fonts, illustration style, print specs, deliverables.
@@ -13,7 +13,7 @@ This private repository IS the business. Every Claude Code session and scheduled
 - Never publish anything about the founder's legal matters, her children's details, or her employer. The founder story is anonymous (`content/founder-story.md`) and needs counsel review before publication.
 
 ## Map
-- `index.html` — current site preview (to be replaced by the multi-page site in `site/`).
+- `site/` — the website generator (`node site/build.js` → `site/dist/`, QA in `site/qa/`). `index.html` only points there.
 - `brand/` — BRAND.md, fonts/, render.js (HTML → PDF/PNG via Playwright Chromium), logo/ (final kit), logo-concepts/.
 - `products/<slug>/` — source.html, print PDF, preview PNGs, cover.png, mockup.png, listing.json.
 - `legal/`, `commerce/` (links.js + storefront setup), `finance/` (bookkeeping workbook + money/tax setup), `marketing/`, `seo/`, `operations/` (SOPs, customer-service macros), `content/`.

@@ -84,25 +84,25 @@
   {
    "name": "2-Color-US-Letter.pdf",
    "src": "products/guide-100-plays/etsy-upload/2-Color-US-Letter.pdf",
-   "mb": 2.54,
+   "mb": 2.61,
    "kind": "pdf"
   },
   {
    "name": "3-Color-A4.pdf",
    "src": "products/guide-100-plays/etsy-upload/3-Color-A4.pdf",
-   "mb": 2.5,
+   "mb": 2.56,
    "kind": "pdf"
   },
   {
    "name": "4-Low-Ink-US-Letter.pdf",
    "src": "products/guide-100-plays/etsy-upload/4-Low-Ink-US-Letter.pdf",
-   "mb": 3.92,
+   "mb": 4.04,
    "kind": "pdf"
   },
   {
    "name": "5-Low-Ink-A4.pdf",
    "src": "products/guide-100-plays/etsy-upload/5-Low-Ink-A4.pdf",
-   "mb": 3.88,
+   "mb": 4.0,
    "kind": "pdf"
   }
  ],

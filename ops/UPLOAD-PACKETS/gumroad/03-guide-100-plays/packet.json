@@ -15,22 +15,22 @@
   {
    "name": "guide-100-plays-letter.pdf",
    "source": "products/guide-100-plays/guide-100-plays-letter.pdf",
-   "mb": 2.56
+   "mb": 2.62
   },
   {
    "name": "guide-100-plays-a4.pdf",
    "source": "products/guide-100-plays/guide-100-plays-a4.pdf",
-   "mb": 2.52
+   "mb": 2.58
   },
   {
    "name": "guide-100-plays-low-ink-letter.pdf",
    "source": "products/guide-100-plays/guide-100-plays-low-ink-letter.pdf",
-   "mb": 3.93
+   "mb": 4.06
   },
   {
    "name": "guide-100-plays-low-ink-a4.pdf",
    "source": "products/guide-100-plays/guide-100-plays-low-ink-a4.pdf",
-   "mb": 3.89
+   "mb": 4.02
   }
  ],
  "thumbnail": "products/guide-100-plays/preview/listing-images/01-hero.png",

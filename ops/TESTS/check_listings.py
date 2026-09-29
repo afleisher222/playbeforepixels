@@ -210,7 +210,7 @@ MANUAL_PROPOSALS: dict[tuple[str, str, str, str], str] = {
     ('picture-more-talk-less-tap', 'readability', 'long_description', 'You get US Letter and A4 PDFs in full color and ink-saver, a 20-slide deck to project, a START HERE page, and a bonus 32-page read-aloud story, More Talk, Less Tap.'):
         'You get US Letter and A4 PDFs in full color and ink-saver. There is a 20-slide deck to project and a START HERE page. A bonus 32-page story, More Talk, Less Tap, is ready to read aloud.',
     ('picture-more-talk-less-tap', 'lead_160', 'long_description[:160]', 'Seven circle-time talk games, built around one class tower. In Talk Tower, each time a child asks a question, says something back, adds one more idea or shows t'):
-        'Talk Tower is a printable circle-time game kit for ages 3–7 (preschool to grade 2), with PDFs and slides. Every question, comment and idea adds a block to the class tower.',
+        'The Add-One Chain is a printable circle-time game kit for ages 3–7 (preschool to grade 2), with PDFs and slides. Every question, comment and idea adds a link to the class chain.',
     ('picture-more-talk-less-tap', 'price_floor', 'price_floor', '(missing)'):
         '"price_floor": 3.00',
     ('picture-more-talk-less-tap', 'price_floor', 'net_per_unit_by_channel', '(missing)'):

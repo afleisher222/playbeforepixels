@@ -217,7 +217,7 @@ The prices come from `marketing/DEMAND-CHECK.md` §3. That file's anchor-and-dis
 
 - **Parents of 5–12s want structure.** They buy the Family Kit and the written 30 Days of Back-and-Forth ($27; $49 bundle), and later the Daylight Guild quest line and the first-phone agreement for ages 9–12 (`marketing/CAMPAIGN-BIBLE.md`; `ops/QUEUE.md`). Some of this audience reads recent books that question screen-based learning (`brand/BRAND.md`). Those titles are internal research only and never appear as a keyword, ad term or line of copy (`marketing/MARKETING-PLAYBOOK.md`).
 - **Gate.** The campaign bible marks school-age-specific campaigns [G1] ("build now, publish when counsel's answer allows"), each with a 0–5 fallback. The launch-first five already include a 5–12 routine-card set and the Family Kit. **Open item for the founder:** confirm with counsel that parent-bought 5–12 products are outside the hold, so that the launch list and the [G1] gate agree.
-- **Educators of 5–12s** (PreK–5 teachers, homeschool parent-teachers, child-care staff) spend small amounts of their own money ($3–25) and buy on trust in other teachers, a free sample, print quality and the school calendar (`marketing/MARKETING-PLAYBOOK.md`, Segment 2). **Every teacher-facing product is held until counsel answers.** That includes TPT, classroom packs, talk brain breaks and the Talk Tower kit. Nothing the founder made for or used in her own teaching may be sold.
+- **Educators of 5–12s** (PreK–5 teachers, homeschool parent-teachers, child-care staff) spend small amounts of their own money ($3–25) and buy on trust in other teachers, a free sample, print quality and the school calendar (`marketing/MARKETING-PLAYBOOK.md`, Segment 2). **Every teacher-facing product is held until counsel answers.** That includes TPT, classroom packs, talk brain breaks and the Add-One Chain kit. Nothing the founder made for or used in her own teaching may be sold.
 
 ### C. Groups: a later wave, conditional on counsel
 
@@ -435,7 +435,7 @@ As of this revision (September 28, 2026), `products/` holds twelve product folde
 | *Up! Go! More!* talk-along first words | `board-up-go-more` | listing.json, PDF, cover, mockup | Keep; the offset board book is gated (section 3.10 rule 4) | $11.99 paperback now; $12.99 board book; $29.99 3-pack | 1 (paperback); board book gated |
 | *The Day the Tablet Slept* | `picture-tablet-slept` | listing.json, KDP and IngramSpark covers | Reposition (sell as a bedtime and play-day story, mainly inside a bundle) | $11.99 paperback; $19.99 hardcover only after the paperback sells | 1 |
 | *Whose Lap Today?* | `picture-laps-not-apps` | listing.json, hardcover and softcover covers, order-to-print notes | Reposition as a personalized keepsake | $34.99 hardcover; $24.99 softcover (personalized, printed per order; no Amazon route) | 3 (personalized), only if the workflow runs with no manual step |
-| *More Talk, Less Tap* | `picture-more-talk-less-tap` | listing.json, PDF | **Cut** as a book; the content becomes the Talk Tower game kit | $6.99 kit; $12.99 site license | School-facing wave (G2) |
+| *More Talk, Less Tap* | `picture-more-talk-less-tap` | listing.json, PDF | **Cut** as a book; the content becomes the Add-One Chain game kit | $6.99 kit; $12.99 site license | School-facing wave (G2) |
 | 30 Days of Back-and-Forth | `course-screen-reset` | source, emails, funnel, paperback files, listing.json | Keep (written, faceless course) | $27; $49 bundle | 2 |
 | Adult tee and tote | `merch-core` | listing.json (2 items) | Tees: 2–3 cleared designs only | $27 tee; $22 tote | 3, after trademark clearance |
 
@@ -610,7 +610,7 @@ Until then, *Up! Go! More!* sells as the $11.99 print-on-demand paperback.
 | No-materials indoor recess kit | $6; $4 add-ons |
 | Classroom Talk & Play growth bundle | $22–$26 (one everyday price) |
 | Free TPT sampler (10 brain breaks + 1 stem strip) | Free |
-| Talk Tower classroom game kit (replaces the cut book) | $6.99; $12.99 site license |
+| Add-One Chain classroom game kit (replaces the cut book) | $6.99; $12.99 site license |
 | Host-it-yourself parent-night kit ("What We Know, What We Don't") | $129 single site; $249 multi-site; $39 teacher edition |
 | Back-and-Forth Tally, child-care center edition | $39 single site; $129 multi-site |
 | Tablet Tuck-In Week kit | $19 classroom; $59 child-care; $129 school |

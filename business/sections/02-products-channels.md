@@ -30,7 +30,7 @@ As of this revision (September 28, 2026), `products/` holds twelve product folde
 | *Up! Go! More!* talk-along first words | `board-up-go-more` | listing.json, PDF, cover, mockup | Keep; the offset board book is gated (section 3.10 rule 4) | $11.99 paperback now; $12.99 board book; $29.99 3-pack | 1 (paperback); board book gated |
 | *The Day the Tablet Slept* | `picture-tablet-slept` | listing.json, KDP and IngramSpark covers | Reposition (sell as a bedtime and play-day story, mainly inside a bundle) | $11.99 paperback; $19.99 hardcover only after the paperback sells | 1 |
 | *Whose Lap Today?* | `picture-laps-not-apps` | listing.json, hardcover and softcover covers, order-to-print notes | Reposition as a personalized keepsake | $34.99 hardcover; $24.99 softcover (personalized, printed per order; no Amazon route) | 3 (personalized), only if the workflow runs with no manual step |
-| *More Talk, Less Tap* | `picture-more-talk-less-tap` | listing.json, PDF | **Cut** as a book; the content becomes the Talk Tower game kit | $6.99 kit; $12.99 site license | School-facing wave (G2) |
+| *More Talk, Less Tap* | `picture-more-talk-less-tap` | listing.json, PDF | **Cut** as a book; the content becomes the Add-One Chain game kit | $6.99 kit; $12.99 site license | School-facing wave (G2) |
 | 30 Days of Back-and-Forth | `course-screen-reset` | source, emails, funnel, paperback files, listing.json | Keep (written, faceless course) | $27; $49 bundle | 2 |
 | Adult tee and tote | `merch-core` | listing.json (2 items) | Tees: 2–3 cleared designs only | $27 tee; $22 tote | 3, after trademark clearance |
 
@@ -205,7 +205,7 @@ Until then, *Up! Go! More!* sells as the $11.99 print-on-demand paperback.
 | No-materials indoor recess kit | $6; $4 add-ons |
 | Classroom Talk & Play growth bundle | $22–$26 (one everyday price) |
 | Free TPT sampler (10 brain breaks + 1 stem strip) | Free |
-| Talk Tower classroom game kit (replaces the cut book) | $6.99; $12.99 site license |
+| Add-One Chain classroom game kit (replaces the cut book) | $6.99; $12.99 site license |
 | Host-it-yourself parent-night kit ("What We Know, What We Don't") | $129 single site; $249 multi-site; $39 teacher edition |
 | Back-and-Forth Tally, child-care center edition | $39 single site; $129 multi-site |
 | Tablet Tuck-In Week kit | $19 classroom; $59 child-care; $129 school |
