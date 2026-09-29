@@ -8,7 +8,7 @@
 
 **Why now.** Official guidance tells parents to limit screens but offers no ready alternative at 5 p.m., and research links more screen time with fewer back-and-forth conversations (links, not proof of cause). Demand for the category is proven: a 2,189-sale routine-card shop, a 10.4k-sale bored-jar shop and a talk-along book series with 1,448 ratings. The holiday season and the January reset are natural first windows, and the ALPHAPLAY trademark filing is due March 8, 2027.
 
-**How it makes money.** Digital printables keep 80–93% of a $6–$12 price. On KDP, the *100 Screen-Free Plays* paperback earns $7.89 a copy and the colour paperbacks $3.95. The $27 course keeps about $24.57. On the lean path, fixed operating costs are about $398 a month.
+**How it makes money.** Digital printables keep about 70–90% of a $6.50–$12 price (routine cards $9.50, the Starter $5.00; the $29 and $45 bundles). On KDP, the *100 Screen-Free Plays* paperback earns about $6.99 a copy and the colour paperbacks $3.76, after 5% returns. The $27 course keeps about $21.37 through Gumroad. On the lean path, fixed operating costs are about $398 a month.
 
 **The waves.** First sales come in December 2026, once Gate A is met (bank account, counsel's go-ahead, liability insurance, publishing safeguards).
 
@@ -31,15 +31,15 @@
 
 | | **Expected** | Conservative (budget case) |
 |---|---|---|
-| Gross sales, year 1 (Oct 2026 – Sep 2027) | **$11,195** | $5,849 |
-| Gross sales, year 3 | **$38,325** | $16,913 |
-| Net operating result, year 1 / year 3 | **$1,238 / $17,573** | ($1,342) / $4,164 |
+| Gross sales, year 1 (Oct 2026 – Sep 2027) | **$11,946** | $6,260 |
+| Gross sales, year 3 | **$40,661** | $18,028 |
+| Net operating result, year 1 / year 3 | **$1,473 / $18,006** | ($1,196) / $4,478 |
 | Break-even (trailing-12-month result stays ≥ 0) | **August 2027** | December 2027 |
-| Founder capital needed, all by April 2027 | **$7,715** | $7,787 |
-| At mid-point costs: founder capital; break-even | $16,819; Dec 2027 | $21,892; not within 36 months |
-| Downside (mid-point costs, sales 25% lower, February 2027 start) | $20,350; Jun 2028 | $30,356; not within 36 months |
+| Founder capital needed, all by April 2027 | **$7,357** | $7,452 |
+| At mid-point costs: founder capital; break-even | $16,462; Dec 2027 | $20,906; not within 36 months |
+| Downside (mid-point costs, sales 25% lower, February 2027 start) | $19,882; Jun 2028 | $29,479; not within 36 months |
 
-The Strong case ($27,228 year-1 sales) needs a breakout listing and is not planned for. The break-even line to watch is about **65 orders a month by September 2027**.
+The Strong case ($29,043 year-1 sales) needs a breakout listing and is not planned for. The break-even line to watch is about **63 orders a month by September 2027**. The stress test's 10,000 simulated futures put the median year 1 lower than Expected: about $6,700 of sales and a $3,100 operating loss (`business/STRESS-TEST.md`).
 
 **What the founder must do.**
 1. Open a no-fee business bank account with a tax-reserve sub-account.

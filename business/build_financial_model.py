@@ -165,10 +165,10 @@ inp("ramp", "Months for a new listing to reach full sales rate (review ramp)", 6
     "A new faceless shop starts with zero reviews against incumbents with 2,000-11,000 (marketing/DEMAND-CHECK.md, 'One honest warning').", "Assumption")
 inp("mdtax", "Maryland sales tax on direct (own-site) sales", 0.06, PCT1, "% of price",
     "commerce/storefront-setup-guide.md A3 (UNVERIFIED). Collected on top of price and remitted: pass-through, never counted as revenue.", "Repo [VERIFY]")
-inp("refund", "Refund and chargeback allowance, direct digital sales", 0.02, PCT1, "% of price",
-    "ops/GAPS-ROUND-2.md G2-12: first refund request under about $15 is refunded automatically.", "Assumption")
-inp("refund_course", "Refund allowance, 30-Day Screen Reset (money-back guarantee)", 0.05, PCT1, "% of price",
-    "DEMAND-CHECK course row: 'Add a money-back guarantee'.", "Assumption")
+inp("refund", "Refund and chargeback allowance, direct digital sales", 0.05, PCT1, "% of price",
+    "products/*/listing.json net_notes: nets are after a 5% refund allowance (ops/GAPS-ROUND-2.md G2-11 asks for 3-5%; G2-12: first refund request under about $15 is refunded automatically).", "Repo (assumption)")
+inp("refund_course", "Refund allowance, 30 Days of Back-and-Forth course (money-back guarantee)", 0.05, PCT1, "% of price",
+    "DEMAND-CHECK course row: 'Add a money-back guarantee'; products/course-screen-reset/listing.json nets use 5%.", "Assumption")
 inp("taxres", "Tax reserve (% of cumulative profit to date, after one-time costs)", 0.25, PCT1, "%",
     "finance/TAX-AUTOPILOT.md §2: accountant picks the rate; 25-30% is common. Reserved only against cumulative profit, because a single-member LLC's "
     "losses pass through to the founder's return; the accountant sets the §195 startup-cost treatment.", "Repo range")
@@ -198,14 +198,19 @@ inp("etsy_oashare", "Share of Etsy sales that come through Offsite Ads", 0.10, P
 inp("kdp_roy", "KDP paperback royalty rate (list price $9.99 or more)", 0.60, PCT1, "% of list", "storefront-setup-guide §6: 60% at $9.99+ since June 10, 2025 (UNVERIFIED).", "Repo [VERIFY]")
 inp("kdp_base", "KDP print cost: fixed part", 1.00, CUR2, "$ per copy", "products/*/listing.json price_notes: $1.00 + $0.07/page premium color.", "Repo [VERIFY]")
 inp("kdp_color", "KDP print cost: premium color, per page", 0.07, CUR2, "$ per page", "Same source. KDP may price short color books at a flat rate; confirm in the calculator.", "Repo [VERIFY]")
-inp("kdp_bw_flat", "KDP print cost: black-and-white paperback, 24-108 pages (flat)", 2.30, CUR2, "$ per copy",
-    "products/guide-100-plays/listing.json: KDP's flat $2.30 for 24-108 B/W pages (82-page, 8 x 10 in book). Check whether 8 x 10 counts as large trim, which may cost more.", "Repo [VERIFY]")
+inp("kdp_bw_flat", "KDP print cost: black-and-white paperback, 24-108 pages (flat, large trim)", 2.84, CUR2, "$ per copy",
+    "products/guide-100-plays/listing.json: 8 x 10 in is a KDP large trim; flat $2.30 (standard trim) to $2.84 (large trim) for 24-108 B/W pages. Its net_per_unit uses $2.84, so the model does too.", "Repo [VERIFY]")
+inp("kdp_returns", "KDP returns allowance (a return reverses the royalty)", 0.05, PCT1, "% of royalty",
+    "products/*/listing.json net_notes: KDP nets are the royalty minus print, less 5% for returns.", "Repo (assumption)")
 inp("pic_pages", "Picture-book and talk-along paperback page count", 32, "0", "pages", "products/*/listing.json ('pages': 32).", "Repo")
 inp("ing_disc", "IngramSpark wholesale discount given to retailers", 0.40, PCT1, "% of list", "Base 40% (storefront guide range 30-55%). 55% reaches library jobbers (MARKETING-PLAYBOOK) but leaves hardcovers about $0.50 a copy; tested as a sensitivity.", "Repo range", True)
 inp("ing_hc_print", "IngramSpark print cost, 32-page 8.5x8.5 color hardcover", 8.50, CUR2, "$ per copy", "Not in the repo; listing.json says run IngramSpark's calculator. Hardcover is gated (weight 0) until the paperback sells.", "[VERIFY]")
 inp("ing_pb_print", "IngramSpark print cost, 32-page color paperback", 3.24, CUR2, "$ per copy", "Proxy: KDP premium-color formula from listing.json.", "Assumption [VERIFY]")
 inp("mor_pct", "Merchant of record (Gumroad) fee", 0.10, PCT1, "% of price", "storefront-setup-guide §13; legal/international-plan.md (UNVERIFIED). Covers card processing, US sales tax and EU/UK VAT.", "Repo [VERIFY]")
 inp("mor_fix", "Merchant of record fixed fee", 0.50, CUR2, "$ per order", "Same source.", "Repo [VERIFY]")
+inp("mor_card_pct", "Merchant of record: card processing on top of the fee", 0.029, PCT1, "% of price",
+    "products/*/listing.json net_notes count 2.9% + $0.30 card processing on Gumroad 'to be safe' (the storefront guide says it is included); business/REVENUE-PLAN.md rank 1.", "Repo [VERIFY]")
+inp("mor_card_fix", "Merchant of record: card processing fixed fee", 0.30, CUR2, "$ per order", "Same source.", "Repo [VERIFY]")
 inp("tpt_payout", "Teachers Pay Teachers payout (Basic seller)", 0.55, PCT1, "% of price", "DEMAND-CHECK rule 10; money-and-tax fees table (UNVERIFIED).", "Repo [VERIFY]")
 inp("tpt_fix", "TPT per-resource transaction fee", 0.30, CUR2, "$ per sale", "Same source.", "Repo [VERIFY]")
 inp("amz_ref", "Amazon Seller Central / FBA referral fee", 0.15, PCT1, "% of price", "storefront-setup-guide §19 ('about 15%', UNVERIFIED).", "Repo [VERIFY]")
@@ -274,8 +279,8 @@ CH = [
      "IngramSpark pays about 90 days after month end (A6, UNVERIFIED)."),
     ("MOR", "International digital via merchant of record (Gumroad)", "Product-months live (products x sales index x season)", 0, "c",
      "Gumroad pays weekly (A6, UNVERIFIED)."),
-    ("COURSE", "30-Day Screen Reset written course (Wave 2)", "Subscribers reached by the offer", 0, "c",
-     "Sold on Shopify; same payout timing."),
+    ("COURSE", "30 Days of Back-and-Forth written course (Wave 2)", "Subscribers reached by the offer", 0, "c",
+     "Sold through Gumroad (merchant of record), which pays weekly (A6, UNVERIFIED)."),
     ("BOARD", "Board book: pre-sale, then 3PL and Amazon FBA (gated option; off in base)", "Product-page sessions (site + Amazon)", 0, "c",
      "Shopify within days; Seller Central about every 14 days (A6)."),
     ("SCHOOL", "School and group licenses + TPT (overlay only if counsel clears in writing; off in base)", "Schools/orgs page + TPT views", 1, "s",
@@ -460,8 +465,8 @@ TAX_FAIRE = "Wholesale: exempt with the retailer's resale certificate"
 TAX_BB = "Marketplace facilitator [VERIFY for Target Plus]"
 SHOP = dict(F=0, G=0, H=a["shop_pct"], I=a["shop_fix"], J=a["refund"], tax=TAX_SHOP)
 ETSY = dict(F=ETSY_F, G=a["etsy_list"], H=a["etsy_pay"], I=a["etsy_payfix"], J=a["refund"], tax=TAX_ETSY)
-MOR = dict(F=a["mor_pct"], G=a["mor_fix"], H=0, I=0, J=a["refund"], tax=TAX_MOR)
-KDPc = dict(F=f"=1-{a['kdp_roy']}", G=0, H=0, I=0, J=0, tax=TAX_KDP)
+MOR = dict(F=a["mor_pct"], G=a["mor_fix"], H=a["mor_card_pct"], I=a["mor_card_fix"], J=a["refund"], tax=TAX_MOR)
+KDPc = dict(F=f"=1-{a['kdp_roy']}", G=0, H=0, I=0, J="KDP_RET", tax=TAX_KDP)
 ING = dict(F=a["ing_disc"], G=0, H=0, I=0, J=0, tax=TAX_ING)
 TPT = dict(F=f"=1-{a['tpt_payout']}", G=a["tpt_fix"], H=0, I=0, J=0, tax=TAX_TPT)
 SCHD = dict(F=0, G=0, H=a["shop_pct"], I=a["shop_fix"], J=0, tax=TAX_SCH)
@@ -469,14 +474,21 @@ SCHD = dict(F=0, G=0, H=a["shop_pct"], I=a["shop_fix"], J=0, tax=TAX_SCH)
 KDP_COLOR = f"={a['kdp_base']}+{a['kdp_color']}*{a['pic_pages']}"
 KDP_BW = f"={a['kdp_bw_flat']}"
 DIGI = [  # id, product, price, weight, src
-    ("routine", "Visual routine cards (200+ editable; 0-5 set at launch, 5-12 set added free when G1 clears)", 6.50, 25, "Everyday price $6.50 under BRAND.md 'Honest pricing' (no anchor or permanent sale)."),
-    ("bored", "\"I'm bored\" play cards (150, age-banded)", 6.50, 15, "DEMAND-CHECK §3 #2."),
-    ("family", "Play-First Family Kit (2-5 pages at launch; 5-12 pages added free when G1 clears)", 11.00, 20, "DEMAND-CHECK §3 #3."),
-    ("busy", "Toddler busy book printable (120-150 pages)", 11.99, 18, "Everyday price $11.99 under BRAND.md 'Honest pricing' (DEMAND-CHECK §3 #4 street level)."),
-    ("playspdf", "100 Screen-Free Plays (PDF)", 9.99, 10, "DEMAND-CHECK §3 #5."),
+    ("routine", "Visual routine cards (0-5 edition at launch; 5-12 cards added free when G1 clears)", 9.50, 25, "visual-routine-cards/listing-g0.json: everyday price $9.50 (founder decision D1; ops/QUEUE.md LAUNCH FIRST). One price, no anchor or permanent sale (BRAND.md 'Honest pricing')."),
+    ("bored", "\"I'm bored\" play cards (1-3 and 3-5 bands at launch)", 6.50, 15, "bored-play-cards/listing-g0.json: $6.50 (ops/QUEUE.md LAUNCH FIRST)."),
+    ("family", "Play-First Family Kit (2-5 pages at launch; 5-12 pages added free when G1 clears)", 11.00, 20, "play-first-family-kit/listing-g0.json: $11 (ops/QUEUE.md LAUNCH FIRST)."),
+    ("busy", "Toddler busy book printable (74 activities, ages 1-5)", 11.99, 18, "toddler-busy-book/listing.json: everyday price $11.99 under BRAND.md 'Honest pricing'."),
+    ("playspdf", "100 Screen-Free Plays (PDF)", 9.99, 10, "guide-100-plays/listing.json price_pdf_usd: $9.99."),
     ("car", "Screen-Free Car Ride & Waiting Pack", 6.00, 5, "DEMAND-CHECK §3 first alternate."),
     ("flash", "First-words flash cards (printable)", 6.99, 3, "DEMAND-CHECK §2 #3."),
     ("alpha", "ALPHAPLAY Spelling Games printable (G1; trademark-use product)", 6.00, 0, "ops/QUEUE.md #1. Weight 0: its job is to protect the mark, it is G1 pending counsel, and the demand check found no sales evidence."),
+    # Launch-first listings priced here so nothing sold at launch is unpriced. Weight 0 until 60-90 days of real mix exist:
+    # bundle and add-on buying is carried by items per order, not by extra forecast units.
+    ("starter", "Visual Routine Cards Starter (60 cards)", 5.00, 0, "visual-routine-cards/listing-starter.json: $5.00 (decision D2; ops/QUEUE.md LAUNCH FIRST). Weight 0: entry rung and order add-on; no mix data yet."),
+    ("playtalk", "52 Play & Talk Cards (ages 0-5)", 7.00, 0, "play-talk-cards/listing.json: $7 (ops/QUEUE.md LAUNCH FIRST). Weight 0 until real mix data."),
+    ("winter", "24 Days of Play: Winter Countdown (2-5 edition)", 6.50, 0, "winter-countdown/listing.json: $6.50, sold Oct 25 - Dec 5 only. Weight 0: seasonal."),
+    ("giftbundle", "Ages 1-5 Instant Gift Bundle (4 sets + play coupons)", 29.00, 0, "bundle-gift-1-5/listing.json: $29 (parts $36.49). Weight 0: bundle buying is carried by items per order."),
+    ("library", "Birth-to-5 Printable Library (6 sets + play coupons)", 45.00, 0, "bundle-library-0-5/listing.json: $45 (parts $55.98). Weight 0: bundle buying is carried by items per order."),
 ]
 UROWS = []  # dicts
 for pid, pname, price, w, src in DIGI:
@@ -486,7 +498,7 @@ UROWS.append(dict(code="SITE", pid="SITE_tee", prod="Adult tee (POD, 2-3 cleared
 for pid, pname, price, w, src in DIGI:
     UROWS.append(dict(code="ETSY", pid=f"ETSY_{pid}", prod=pname, route="Etsy", wave="1", price=("ref", f"SITE_{pid}"), w=w, K=0, L=0, O=0,
                       src="Price linked to the own-site row.", **ETSY))
-for pid, pname, price, w, src in DIGI[:5]:
+for pid, pname, price, w, src in [x for x in DIGI if x[0] not in ("car", "flash", "alpha")]:
     UROWS.append(dict(code="MOR", pid=f"MOR_{pid}", prod=pname, route="Gumroad (merchant of record), buyers outside the US", wave="1-2",
                       price=("ref", f"SITE_{pid}"), w=w, K=0, L=0, O=0, src="International plan: one MoR for international digital sales.", **MOR))
 UROWS += [
@@ -503,10 +515,10 @@ UROWS += [
     dict(code="INGRAM", pid="ING_tablet", prod="The Day the Tablet Slept (hardcover; gated)", route="IngramSpark", wave="gated", price=19.99, w=0,
          K=a["ing_hc_print"], L=0, O=0, src="picture-tablet-slept/listing.json: turn on only after the paperback sells (demand 'Weak'). Weight 0. "
          "Laps Not Apps is not in this channel: it is now a personalized keepsake printed per order (amazon_route 'none-with-reason').", **ING),
-    dict(code="COURSE", pid="CRS_single", prod="30-Day Screen Reset (written program)", route="Own site (Shopify) + automated email", wave="2", price=27, w=70,
-         K=0, L=0, O=0, src="DEMAND-CHECK course row: $27.", **dict(SHOP, J=a["refund_course"])),
-    dict(code="COURSE", pid="CRS_bundle", prod="30-Day Screen Reset bundle", route="Own site (Shopify) + automated email", wave="2", price=49, w=30,
-         K=0, L=0, O=0, src="DEMAND-CHECK course row: $49 bundle.", **dict(SHOP, J=a["refund_course"])),
+    dict(code="COURSE", pid="CRS_single", prod="30 Days of Back-and-Forth (written, email-delivered)", route="Gumroad (merchant of record) + automated email", wave="2", price=27, w=70,
+         K=0, L=0, O=0, src="course-screen-reset/listing.json: $27, sold through Gumroad from Dec 15 (ops/QUEUE.md LAUNCH FIRST).", **dict(MOR, J=a["refund_course"], tax=TAX_MOR)),
+    dict(code="COURSE", pid="CRS_bundle", prod="30 Days of Back-and-Forth bundle", route="Gumroad (merchant of record) + automated email", wave="2", price=49, w=30,
+         K=0, L=0, O=0, src="course-screen-reset/listing.json: $49 bundle (parts $54.49).", **dict(MOR, J=a["refund_course"], tax=TAX_MOR)),
     dict(code="BOARD", pid="BB_site", prod="Up! Go! More! board book", route="Own site; offset stock at a 3PL", wave="gated", price=("a", a["bb_price"]), w=60,
          K=a["landed"], L=f"={a['pick']}+{a['ship_sub']}", O=a["landed"], src="Offset run held and shipped by a 3PL, never the founder (BRAND.md). Pick/pack plus about $2 of postage absorbed.", **SHOP),
     dict(code="BOARD", pid="BB_fba", prod="Up! Go! More! board book", route="Amazon FBA (from the print month; the pre-sale is own-site only)", wave="gated", price=("a", a["bb_price"]), w=40,
@@ -566,6 +578,8 @@ for d in UROWS:
             put(wu, f"{colk}{r}", v, fmt=fmt, font=F_IN if v != 0 else F_CALC)
         else:
             put(wu, f"{colk}{r}", v, fmt=fmt)
+    if d["J"] == "KDP_RET":  # a KDP return reverses the royalty (royalty less print), so the allowance is a share of that
+        put(wu, f"J{r}", f"=IF(E{r}=0,0,{a['kdp_returns']}*({a['kdp_roy']}-K{r}/E{r}))", fmt=PCT1)
     put(wu, f"M{r}", f"=E{r}*(1-F{r}-H{r}-J{r})-G{r}-I{r}-K{r}-L{r}", fmt=CUR2)
     put(wu, f"N{r}", f"=IF(E{r}=0,0,M{r}/E{r})", fmt=PCT1)
     put(wu, f"P{r}", OV.get("w_" + d["pid"], d["w"]), fmt="0", font=F_IN)

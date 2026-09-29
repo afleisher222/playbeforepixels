@@ -91,21 +91,21 @@ CY26 = slice(0, 3)    # Oct - Dec 2026 (calendar 2026)
 FALLBACK_A = {
     "shop_pct": 0.029, "shop_fix": 0.30, "etsy_tx": 0.065, "etsy_pay": 0.03,
     "etsy_payfix": 0.25, "etsy_list": 0.20, "etsy_oa": 0.15, "etsy_oashare": 0.10,
-    "kdp_roy": 0.60, "kdp_base": 1.00, "kdp_color": 0.07, "kdp_bw_flat": 2.30,
+    "kdp_roy": 0.60, "kdp_base": 1.00, "kdp_color": 0.07, "kdp_bw_flat": 2.84, "kdp_returns": 0.05,
     "pic_pages": 32, "ing_disc": 0.40, "ing_pb_print": 3.24, "mor_pct": 0.10,
-    "mor_fix": 0.50, "refund": 0.02, "refund_course": 0.05, "contin": 0.10,
+    "mor_fix": 0.50, "mor_card_pct": 0.029, "mor_card_fix": 0.30, "refund": 0.05, "refund_course": 0.05, "contin": 0.10,
     "pos": 0.0, "first_sale": 3, "ramp": 6,
     "season": [1.25, 0.9, 1.0, 1.05, 0.95, 1.0, 0.95, 0.85, 0.85, 0.95, 1.3, 1.35],
 }
 FALLBACK_UE = [  # (channel, product, price, mix weight)
-    ("SITE", "Visual routine cards", 6.5, 25), ("SITE", "\"I'm bored\" play cards", 6.5, 15),
+    ("SITE", "Visual routine cards", 9.5, 25), ("SITE", "\"I'm bored\" play cards", 6.5, 15),
     ("SITE", "Play-First Family Kit", 11.0, 20), ("SITE", "Toddler busy book printable", 11.99, 18),
     ("SITE", "100 Screen-Free Plays (PDF)", 9.99, 10), ("SITE", "Car Ride & Waiting Pack", 6.0, 5),
     ("SITE", "First-words flash cards", 6.99, 3),
     ("KDP", "100 Screen-Free Plays (paperback, B/W)", 16.99, 50),
     ("KDP", "The Day the Tablet Slept (paperback)", 11.99, 20),
     ("KDP", "Up! Go! More! (paperback)", 11.99, 30),
-    ("COURSE", "30-Day Screen Reset", 27.0, 70), ("COURSE", "30-Day Screen Reset bundle", 49.0, 30),
+    ("COURSE", "30 Days of Back-and-Forth", 27.0, 70), ("COURSE", "30 Days of Back-and-Forth bundle", 49.0, 30),
 ]
 FALLBACK_OPEX = [  # item, category, low, high, freq, start, end, include
     ("Shopify Basic plan", "Store", 39, 39, "Monthly", 1, 36, 1),
@@ -161,9 +161,20 @@ def _num(v):
 def read_workbook(path: Path) -> dict:
     """Read input cells from the workbook. Returns dict with A, UE, OPEX, STARTUP, source."""
     out = {"A": dict(FALLBACK_A), "UE": list(FALLBACK_UE), "OPEX": list(FALLBACK_OPEX),
-           "STARTUP": list(FALLBACK_STARTUP), "source": "fallback constants in stress_test.py"}
+           "STARTUP": list(FALLBACK_STARTUP), "source": "fallback constants in stress_test.py",
+           # workbook Dashboard year-1 gross sales, Expected and Strong (LibreOffice recalculation, Sep 29, 2026)
+           "PLAN": {"exp": 11945.6, "strong": 29042.8}}
     if openpyxl is None or not path.exists():
         return out
+    try:  # cached values exist only after a recalculation; otherwise keep the fallback
+        wsd = openpyxl.load_workbook(path, data_only=True)["Dashboard"]
+        for rr in range(1, wsd.max_row + 1):
+            if wsd.cell(rr, 1).value == "Gross sales, year 1":
+                e_, s_ = _num(wsd.cell(rr, 3).value), _num(wsd.cell(rr, 4).value)
+                if e_ and s_:
+                    out["PLAN"] = {"exp": e_, "strong": s_}
+    except Exception:
+        pass
     wb = openpyxl.load_workbook(path, data_only=False)
     A = dict(FALLBACK_A)
     ws = wb["Assumptions"]
@@ -237,7 +248,7 @@ BASE = {
     "repeat12": 0.10,       # share of own-site / MoR buyers who buy again within 12 months (ASSUMPTION)
     "etsy_repeat_factor": 0.5,  # Etsy buyers cannot be emailed (SOURCE sections/02 2.6), so half the rate
     # refunds and fees
-    "refund": 0.02, "refund_course": 0.05,   # SOURCE Assumptions refund, refund_course
+    "refund": 0.05, "refund_course": 0.05,   # SOURCE Assumptions refund, refund_course (listing.json nets use 5%)
     "fee_mult": 1.0,        # multiplies Etsy/Shopify/Gumroad fees and Amazon's share of KDP list price
     "fee_set": 0.0,         # 0 = workbook fees; 1 = corrected (large-trim KDP print, Gumroad card fee, Ingram access fee)
     "etsy_oashare": 0.10,   # SOURCE Assumptions etsy_oashare
@@ -263,7 +274,7 @@ MC = {
     "cvr_sigma": 0.30,         # lognormal sigma on each channel's conversion
     "aov_sigma": 0.12,
     "repeat12": (0.03, 0.10, 0.25),        # triangular
-    "refund": (0.01, 0.02, 0.06),
+    "refund": (0.02, 0.05, 0.08),          # centred on the listings' 5% allowance (ASSUMPTION)
     "fee_mult": (0.95, 1.00, 1.20),
     "ramp": (4, 6, 10),
     "prod_add": (0.40, 0.75, 1.00),
@@ -286,21 +297,24 @@ def fee_constants(A: dict, fee_set):
     #   - IngramSpark 1.875% market-access fee and colour print about $3.50-$4.50 (REVENUE-PLAN rank 6; UNVERIFIED)
     #   - the course sells through the merchant of record, not Shopify
     #     (products/course-screen-reset/listing.json channels; operations/AUTOMATION-MAP.md 3G)
+    # Since Sep 29, 2026 the workbook itself carries the large-trim B/W print ($2.84), the Gumroad card fee and the
+    # course on the merchant of record (all from listing.json), so the corrected set only adds what is still missing.
     fs = fee_set
-    kdp_bw = A["kdp_bw_flat"] + fs * (2.84 - A["kdp_bw_flat"])
+    kdp_bw = A["kdp_bw_flat"] + fs * max(0.0, 2.84 - A["kdp_bw_flat"])
     kdp_col = (A["kdp_base"] + A["kdp_color"] * A["pic_pages"]) * (1 - fs) + fs * (1.00 + 0.08 * A["pic_pages"])
-    mor_pct = A["mor_pct"] + fs * 0.029
-    mor_fix = A["mor_fix"] + fs * 0.30
+    card_pct, card_fix = A.get("mor_card_pct", 0.0), A.get("mor_card_fix", 0.0)
+    mor_pct = A["mor_pct"] + card_pct + fs * max(0.0, 0.029 - card_pct)
+    mor_fix = A["mor_fix"] + card_fix + fs * max(0.0, 0.30 - card_fix)
     return {
         "site_pct": A["shop_pct"], "site_fix": A["shop_fix"],
         "etsy_pct_base": A["etsy_tx"] + A["etsy_pay"], "etsy_oa": A["etsy_oa"],
         "etsy_fix": A["etsy_list"] + A["etsy_payfix"],
         "mor_pct": mor_pct, "mor_fix": mor_fix,
-        "kdp_roy": A["kdp_roy"], "kdp_bw": kdp_bw, "kdp_col": kdp_col,
+        "kdp_roy": A["kdp_roy"], "kdp_bw": kdp_bw, "kdp_col": kdp_col, "kdp_ret": A.get("kdp_returns", 0.0),
         "ing_disc": A["ing_disc"], "ing_fee": fs * 0.01875,
         "ing_bw": kdp_bw, "ing_col": A["ing_pb_print"] + fs * (4.00 - A["ing_pb_print"]),
-        "course_pct": A["shop_pct"] * (1 - fs) + fs * mor_pct,
-        "course_fix": A["shop_fix"] * (1 - fs) + fs * mor_fix,
+        "course_pct": mor_pct,   # the course sells through the merchant of record (course-screen-reset/listing.json)
+        "course_fix": mor_fix,
     }
 
 
@@ -341,7 +355,7 @@ def unit_economics_table(A, UE):
                 label = "6.5% + 3% + $0.25 + $0.20 listing + 15% Offsite Ads on 10% (UNVERIFIED)"
             else:
                 pct, fix, pct1, fix1 = f0["mor_pct"], f0["mor_fix"], f1["mor_pct"], f1["mor_fix"]
-                label = "10% + $0.50 (workbook); + 2.9% + $0.30 card (REVENUE-PLAN)"
+                label = "10% + $0.50 + 2.9% + $0.30 card (listing.json nets; UNVERIFIED)"
             n0 = net_per_item(p, pct, fix, A["refund"], 1.0)
             n1 = net_per_item(p, pct1, fix1, A["refund"], 1.0)
             rows.append((short(name), ch, p, p - n0 - p * A["refund"], p * A["refund"], 0.0, n0, n0 / p, n1, label))
@@ -350,10 +364,10 @@ def unit_economics_table(A, UE):
         title = name.split(" (")[0]
         pr0 = f0["kdp_bw"] if bw else f0["kdp_col"]
         pr1 = f1["kdp_bw"] if bw else f1["kdp_col"]
-        n0 = p * f0["kdp_roy"] - pr0
-        n1 = p * f1["kdp_roy"] - pr1
-        rows.append((title + " paperback", "Amazon KDP", p, p * (1 - f0["kdp_roy"]), 0.0, pr0, n0, n0 / p, n1,
-                     f"60% royalty at $9.99+ (UNVERIFIED); print ${pr0:.2f} workbook vs ${pr1:.2f} large trim (UNVERIFIED)"))
+        n0 = (p * f0["kdp_roy"] - pr0) * (1 - f0["kdp_ret"])
+        n1 = (p * f1["kdp_roy"] - pr1) * (1 - f1["kdp_ret"])
+        rows.append((title + " paperback", "Amazon KDP", p, p * (1 - f0["kdp_roy"]), (p * f0["kdp_roy"] - pr0) * f0["kdp_ret"], pr0, n0, n0 / p, n1,
+                     f"60% royalty at $9.99+ (UNVERIFIED), 5% returns; print ${pr0:.2f} workbook vs ${pr1:.2f} large trim (UNVERIFIED)"))
         if "Tablet" not in name:
             pi0 = f0["ing_bw"] if bw else f0["ing_col"]
             pi1 = f1["ing_bw"] if bw else f1["ing_col"]
@@ -365,17 +379,26 @@ def unit_economics_table(A, UE):
     for name, p in [(n, p) for c, n, p, w in UE if c == "COURSE"]:
         n0 = net_per_item(p, f0["course_pct"], f0["course_fix"], A["refund_course"], 1.0)
         n1 = net_per_item(p, f1["course_pct"], f1["course_fix"], A["refund_course"], 1.0)
-        rows.append((name, "Workbook: Shopify. listing.json: merchant of record", p, p * f0["site_pct"] + f0["site_fix"],
+        rows.append((name, "Gumroad (merchant of record)", p, p * f0["course_pct"] + f0["course_fix"],
                      p * A["refund_course"], 0.0, n0, n0 / p, n1,
-                     "Shopify 2.9% + $0.30 (workbook) vs Gumroad 12.9% + $0.80 (listing.json route); 5% refunds (ASSUMPTION)"))
-    # listing.json price for routine cards differs from the workbook
-    p = 9.50
-    for ch, pct, fix in (("Own site (Shopify)", f0["site_pct"], f0["site_fix"]),
-                         ("Etsy", f0["etsy_pct_base"] + f0["etsy_oa"] * A["etsy_oashare"], f0["etsy_fix"])):
-        n0 = net_per_item(p, pct, fix, A["refund"], 1.0)
-        rows.append(("Visual routine cards at listing.json price", ch, p, p - n0 - p * A["refund"], p * A["refund"], 0.0,
-                     n0, n0 / p, n0, "SOURCE products/visual-routine-cards/listing.json price_usd 9.5"))
+                     "Gumroad 10% + $0.50 + 2.9% + $0.30 card (listing.json route; UNVERIFIED); 5% refunds (ASSUMPTION)"))
     return rows
+
+
+def net_lookup(A, UE, code, needle, channel="site"):
+    """Net per unit at workbook fees for one product, used by the break-even and ads tables."""
+    f0 = fee_constants(A, 0.0)
+    for c, n, p, w in UE:
+        if c == code and needle in n:
+            if code == "KDP":
+                pr = f0["kdp_bw"] if "100 Screen" in n else f0["kdp_col"]
+                return p, (p * f0["kdp_roy"] - pr) * (1 - f0["kdp_ret"])
+            if code == "COURSE":
+                return p, net_per_item(p, f0["course_pct"], f0["course_fix"], A["refund_course"], 1.0)
+            if channel == "etsy":
+                return p, net_per_item(p, f0["etsy_pct_base"] + f0["etsy_oa"] * A["etsy_oashare"], f0["etsy_fix"], A["refund"], 1.0)
+            return p, net_per_item(p, f0["site_pct"], f0["site_fix"], A["refund"], 1.0)
+    raise KeyError(needle)
 
 
 # --------------------------------------------------------------------------
@@ -526,7 +549,7 @@ def simulate(P: dict, W: dict, keep_monthly=False):
     net_mor_i = net_per_item(price_mor, F["mor_pct"], F["mor_fix"], rf, fm)
     kdp_rows, Wk = B["KDP"]
     p_kdp = sum(pr * w for pr, w, _ in kdp_rows) / Wk
-    net_kdp = sum(w * (pr * (1 - fm * (1 - F["kdp_roy"])) - (F["kdp_bw"] if "100 Screen" in n else F["kdp_col"]))
+    net_kdp = sum(w * (pr * (1 - fm * (1 - F["kdp_roy"])) - (F["kdp_bw"] if "100 Screen" in n else F["kdp_col"])) * (1 - F["kdp_ret"])
                   for pr, w, n in kdp_rows) / Wk
     # IngramSpark carries 100 Plays + Up! Go! More! at equal weight (workbook INGRAM rows, 50/50)
     ing_rows = [(pr, 1.0, n) for pr, w, n in kdp_rows if "Tablet" not in n]
@@ -739,7 +762,7 @@ def main(argv=None):
         ("Conversion rate (all channels)", "cvr_mult", 0.7, 1.3, "-30% / +30%"),
         ("Average order value (digital)", "aov_mult", 0.85, 1.15, "-15% / +15%"),
         ("Repeat-purchase rate (12-month)", "repeat12", 0.03, 0.25, "3% / 25% (base 10%)"),
-        ("Refund rate", "refund", 0.06, 0.01, "6% / 1% (base 2%)"),
+        ("Refund rate", "refund", 0.08, 0.02, "8% / 2% (base 5%)"),
         ("Platform fees", "fee_mult", 1.2, 0.8, "+20% / -20%"),
         ("Paid ads (Amazon Ads, CPC $0.75, 7% click-to-sale)", "ads_monthly", 300.0, 0.0, "$300/mo / $0 (base $0)"),
         ("First-sale month", "launch", 5.0, 2.0, "Feb 2027 / Nov 2026 (base Dec 2026 unless overridden)"),
@@ -788,13 +811,17 @@ def main(argv=None):
     P("\nHighest cost per click that breaks even on the first sale (contribution per order x click-to-order rate):\n")
     u = b["unit"]
     ads_rows = []
+    _rp, _rn = net_lookup(A, W["UE"], "SITE", "routine", "etsy")
+    _bp, _bn = net_lookup(A, W["UE"], "SITE", "busy book", "etsy")
+    _pp, _pn = net_lookup(A, W["UE"], "KDP", "100 Screen")
+    _cp, _cn = net_lookup(A, W["UE"], "KDP", "Tablet")
     for name, contrib_order, cv in (
-            ("Visual routine cards on Etsy ($6.50)", 5.21, 0.02),
-            ("Busy book on Etsy ($11.99)", 9.98, 0.02),
+            (f"Visual routine cards on Etsy (${_rp:.2f})", _rn, 0.02),
+            (f"Busy book on Etsy (${_bp:.2f})", _bn, 0.02),
             ("Blended own-site order", float(u["net_site_i"][0, 0]) * base["items_site"], 0.015),
-            ("Starter Kit bundle on own site ($29)", 29 * (1 - 0.029 - 0.02) - 0.30, 0.015),
-            ("100 Screen-Free Plays paperback, Amazon Ads", 7.89, 0.07),
-            ("32-page colour paperback, Amazon Ads", 3.95, 0.07)):
+            ("Ages 1-5 Instant Gift Bundle on own site ($29)", 29 * (1 - A["shop_pct"] - A["refund"]) - A["shop_fix"], 0.015),
+            ("100 Screen-Free Plays paperback, Amazon Ads", _pn, 0.07),
+            ("32-page colour paperback, Amazon Ads", _cn, 0.07)):
         ads_rows.append((name, usd(contrib_order, 2), f"{cv*100:.1f}%", usd(contrib_order * cv, 2)))
     P(table(["Product", "Contribution per order", "Click-to-order (ASSUMPTION)", "Break-even CPC"], ads_rows))
 
@@ -852,8 +879,8 @@ def main(argv=None):
         (f"Sep 2027 orders at or above the break-even line ({be_orders:.0f} a month, lean)", (r["orders_m12"] >= be_orders).mean()),
         ("Sep 2027 operating profit above $0", (r["op_m12"] > 0).mean()),
         ("Deepest cumulative loss above the $12,000 household-money cap placeholder", (r["peak_loss"] > 12000).mean()),
-        ("12-month gross sales above the workbook's Expected ($11,195)", (r["rev_y1"] > 11195).mean()),
-        ("12-month gross sales above the workbook's Strong ($27,228)", (r["rev_y1"] > 27228).mean()),
+        (f"12-month gross sales above the workbook's Expected ({usd(W['PLAN']['exp'])})", (r["rev_y1"] > W["PLAN"]["exp"]).mean()),
+        (f"12-month gross sales above the workbook's Strong ({usd(W['PLAN']['strong'])})", (r["rev_y1"] > W["PLAN"]["strong"]).mean()),
         ("Digital units per product below the kill-rule floor (2.5 a month)", (r["units_pp"] < 2.5).mean()),
         ("Any sale in calendar 2026", (r["rev_cy26"] > 0).mean()),
         ("Calendar-2026 gross sales of $1,000,000 or more", (r["rev_cy26"] >= 1e6).mean()),
@@ -963,10 +990,18 @@ def main(argv=None):
                       ("Six named costs, mid-point", named_mid), ("All fixed costs, mid-point", full_mid)):
         be_rows.append((lab_, usd(amt, 0), num(amt / cpo), num(amt / cpo / 30.4, 1)))
     P(table(["Costs to cover", "Per month", "Orders per month", "Orders per day"], be_rows))
-    single = [("30-Day Screen Reset ($27, own site)", 24.57), ("Play-First Family Kit, own site ($11)", 10.16),
-              ("Toddler busy book, Etsy ($11.99)", 9.98), ("Play-First Family Kit, Etsy ($11)", 9.12),
-              ("100 Screen-Free Plays paperback, KDP ($16.99)", 7.89), ("Visual routine cards, Etsy ($6.50)", 5.21),
-              ("32-page colour paperback, KDP ($11.99)", 3.95)]
+    single = []
+    for lab_, code_, needle_, ch_ in (("30 Days of Back-and-Forth, Gumroad", "COURSE", "Back-and-Forth", "site"),
+                                      ("Play-First Family Kit, own site", "SITE", "Family Kit", "site"),
+                                      ("Toddler busy book, Etsy", "SITE", "busy book", "etsy"),
+                                      ("Visual routine cards, Etsy", "SITE", "routine", "etsy"),
+                                      ("Play-First Family Kit, Etsy", "SITE", "Family Kit", "etsy"),
+                                      ("100 Screen-Free Plays paperback, KDP", "KDP", "100 Screen", "site"),
+                                      ("\"I'm bored\" play cards, Etsy", "SITE", "bored", "etsy"),
+                                      ("32-page colour paperback, KDP", "KDP", "Tablet", "site")):
+        pr_, nt_ = net_lookup(A, W["UE"], code_, needle_, ch_)
+        single.append((f"{lab_} (${pr_:.2f})", nt_))
+    single.sort(key=lambda x: -x[1])
     P("\nIf only one product sold (all fixed costs, lean path):\n")
     P(table(["Product", "Net per unit (workbook)", "Units per month", "Per day"],
             [(n, usd(v, 2), num(full_lean / v), num(full_lean / v / 30.4, 1)) for n, v in single]))
@@ -990,7 +1025,7 @@ def main(argv=None):
         ("Cut $100/month of fixed cost by quote-shopping (insurance, Claude plan tier, bookkeeping stack)",
          lambda d: d.__setitem__("fixed_cut", np.full(a.runs, 100.0))),
         ("Be selling by Nov 1 (Gate A met in October)", lambda d: d.__setitem__("launch", np.minimum(d["launch"], 2.0))),
-        ("Raise digital order value 15% (bundles, one order bump, $9.50 routine cards)",
+        ("Raise digital order value 15% (the $29 and $45 bundles, one order bump)",
          lambda d: d.__setitem__("aov_mult", d["aov_mult"] * 1.15)),
         ("Raise conversion 20% (mockups, previews, Start Here page, first reviews)",
          lambda d: d.__setitem__("cvr_mult", np.full(a.runs, 1.2))),

@@ -4,7 +4,7 @@
 
 > **Decisions made after this plan (September 28, 2026; business/DECISIONS.md). Where this plan disagrees, these win:** the logo is the Maker's Seal only; KDP editions use Amazon's free ISBN; the *30 Days of Back-and-Forth* course is kept, fully self-running, with nothing needed from the founder; launch spending is capped at **$500 with no ads at launch** (business/LAUNCH-BUDGET-500.md). The launch order and prices live in ops/QUEUE.md "LAUNCH FIRST".
 
-**The workbook:** `business/PlayBeforePixels_Financial_Model.xlsx`: 9 tabs and about 18,600 live formulas. A full LibreOffice recalculation returns no errors. The generator script is `business/build_financial_model.py`, and it accepts input overrides for sensitivity runs.
+**The workbook:** `business/PlayBeforePixels_Financial_Model.xlsx`: 9 tabs and about 18,800 live formulas. A full LibreOffice recalculation returns no errors (re-run September 29, 2026, after the price update below). The generator script is `business/build_financial_model.py`, and it accepts input overrides for sensitivity runs.
 
 **How to read this section.** Every figure either comes from a repository file or is produced by the workbook, and the source is named. **[VERIFY]** marks an outside fact that is not in the repository. Web search was not available for this draft, so each of these must be checked on the live page or in a written quote before money is spent. **(assumption)** marks a planning input chosen for the model. Most platform fees in the repository are themselves marked UNVERIFIED (`commerce/storefront-setup-guide.md`). The model uses them as given, and its Status column flags them.
 
@@ -17,22 +17,24 @@
 - the base plan uses the **lean path** (low-end quotes, with optional one-time items gated);
 - a **sources-and-uses table** names the funding: founder capital, up to a cap, with a hard stop.
 
+**Price and fee update (September 29, 2026).** The workbook now uses the adopted everyday prices from each `listing.json` and `ops/QUEUE.md` LAUNCH FIRST: routine cards **$9.50** (was $6.50), with the $5.00 Starter, the $7 Play & Talk Cards, the $6.50 Winter Countdown and the $29 and $45 bundles priced on Unit Economics at a mix weight of 0 until real sales show the mix. The fees now match the listings' own net estimates: a 5% refund allowance (was 2%), KDP returns at 5% of the royalty, the large-trim $2.84 print cost for the 8 × 10 in *100 Screen-Free Plays*, Gumroad's 2.9% + $0.30 card processing on top of 10% + $0.50, and the course sold through Gumroad rather than Shopify. Every figure in this section was re-run from the rebuilt workbook. The own-site channel is still modelled as Shopify; `business/GROWTH-ENGINE.md` D4 covers the Gumroad-until-25-orders path.
+
 ---
 
 ## 3.0 Summary
 
 | Result (planning estimate, lean path) | Conservative | **Expected** | Strong (outlier) |
 |---|---|---|---|
-| Gross sales, year 1 (Oct 2026 – Sep 2027) | $5,849 | **$11,195** | $27,228 |
-| Gross sales, year 3 (Oct 2028 – Sep 2029) | $16,913 | **$38,325** | $118,153 |
-| Net operating result, year 1 | ($1,342) | **$1,238** | $12,048 |
-| Net operating result, year 3 | $4,164 | **$17,573** | $76,295 |
+| Gross sales, year 1 (Oct 2026 – Sep 2027) | $6,260 | **$11,946** | $29,043 |
+| Gross sales, year 3 (Oct 2028 – Sep 2029) | $18,028 | **$40,661** | $125,422 |
+| Net operating result, year 1 | ($1,196) | **$1,473** | $12,605 |
+| Net operating result, year 3 | $4,478 | **$18,006** | $77,313 |
 | Break-even: trailing-12-month operating result stays ≥ 0 from | Dec 2027 | **Aug 2027** | Apr 2027 |
-| First month with a positive operating result | May 2027 | **Mar 2027** | Mar 2027 |
-| Founder capital needed (all of it Oct 2026 – Apr 2027) | $7,787 | **$7,715** | $6,238 |
+| First month with a positive operating result | May 2027 | **Mar 2027** | Feb 2027 |
+| Founder capital needed (all of it Oct 2026 – Apr 2027) | $7,452 | **$7,357** | $5,858 |
 | Self-funding from (no founder capital after) | May 2027 | **May 2027** | Apr 2027 |
-| Cumulative result after one-time costs, month 36 | $1,733 | **$29,294** | $143,474 |
-| Total cash at month 36 (operating + tax reserve) | $8,903 | **$35,614** | $145,732 |
+| Cumulative result after one-time costs, month 36 | $2,835 | **$30,847** | $146,865 |
+| Total cash at month 36 (operating + tax reserve) | $9,667 | **$36,813** | $148,719 |
 
 "Net operating result" leaves out one-time costs. "Founder capital needed" is the cash the founder must put in so the operating account never goes below zero, including payout delays.
 
@@ -40,21 +42,21 @@
 
 | At mid-point costs | Conservative | Expected | Strong |
 |---|---|---|---|
-| Net operating result, year 1 | ($6,744) | ($4,164) | $6,646 |
-| Net operating result, year 3 | ($1,761) | $11,648 | $70,371 |
-| Break-even (trailing 12 months) | Not within 36 months | Dec 2027 | Jul 2027 |
-| Founder capital needed | $21,892 | $16,819 | $15,314 |
+| Net operating result, year 1 | ($6,598) | ($3,928) | $7,203 |
+| Net operating result, year 3 | ($1,446) | $12,081 | $71,388 |
+| Break-even (trailing 12 months) | Not within 36 months | Dec 2027 | Jun 2027 |
+| Founder capital needed | $20,906 | $16,462 | $14,876 |
 
 **How the plan uses the scenarios.** The plan **budgets cash on the Conservative case**, which matches section 1's Low case, and **measures progress against the Expected case**. Strong is shown as an outlier: it needs a breakout listing and is not a planning case.
 
 Six findings matter more than any single number:
 
-1. **Fixed costs decide the first year, and they are mostly choices.** Digital products keep 80–93% of the price. On the lean path the business carries about **$398 a month** in operating costs, including a 10% contingency; at mid-point that rises to **$736**. Insurance is about 43% of the lean base. Adding the Expected ad test budget ($150 a month), covering fixed costs at month 12 takes about **63 orders a month** on the lean path, or about 101 at mid-point.
-2. **The funding need is small, early and bounded, but only on the lean path.** On the lean path, every scenario needs about $6,200–$7,800 of founder capital, all of it between October 2026 and April 2027. At mid-point costs that rises to $15,300–$21,900, and any overrun passes the placeholder household-money cap ($12,000) by February 2027. That is why mid-point spending is a gated option in this plan, not the base.
+1. **Fixed costs decide the first year, and they are mostly choices.** Digital products keep about 70–90% of the price (Gumroad lowest, Shopify highest, Etsy about 77–80%). On the lean path the business carries about **$398 a month** in operating costs, including a 10% contingency; at mid-point that rises to **$736**. Insurance is about 43% of the lean base. Adding the Expected ad test budget ($150 a month), covering fixed costs at month 12 takes about **61 orders a month** on the lean path, or about 99 at mid-point.
+2. **The funding need is small, early and bounded, but only on the lean path.** On the lean path, every scenario needs about $5,900–$7,500 of founder capital, all of it between October 2026 and April 2027. At mid-point costs that rises to $14,900–$20,900, and any overrun passes the placeholder household-money cap ($12,000) by February 2027. That is why mid-point spending is a gated option in this plan, not the base.
 3. **The board book fails its own go / no-go test in every scenario.** A customer-funded offset run needs about **920 pre-sale copies** (1,000 copies at $5.00 landed, plus print-month costs and a 15% buffer). The pre-sale brings in 2–26 copies, whether it runs in spring 2027 or spring 2028. At a 1,000-copy run the landed cost is 38% of retail, which fails the own-site cost rule. So *Up! Go! More!* stays a print-on-demand paperback, and the offset board book waits for the gate in 3.10 rule 4.
 4. **Wholesale loses money on a single $12.99 book at current costs.** At a 1,000-copy landed cost, a Faire sale nets **−$1.00** a unit and a Walmart Marketplace sale about **−$0.11** [VERIFY fees]. Retail pays only with a larger run (2,500+ copies), more physical SKUs and a lower landed cost (3.8).
 5. **The school wave is small and stays out of the base.** If counsel clears it in writing, the overlay adds about $1,900 to Expected's year-3 operating result. The plan does not depend on it.
-6. **Sales rates and the cost position are the swing inputs.** A 25% miss on every sales rate moves Expected break-even from August to November 2027. Mid-point costs move it to December 2027. Both together, plus a two-month launch slip, move it to June 2028 and raise the funding need to about $20,350 (3.9).
+6. **Sales rates and the cost position are the swing inputs.** A 25% miss on every sales rate moves Expected break-even from August to November 2027. Mid-point costs move it to December 2027. Both together, plus a two-month launch slip, move it to June 2028 and raise the funding need to about $19,900 (3.9).
 
 ---
 
@@ -64,7 +66,7 @@ Six findings matter more than any single number:
 |---|---|
 | **Dashboard** | Three-scenario results, scenario anchors, three charts (monthly gross sales, cumulative founder capital, net operating result by year) and how-to-use notes. |
 | **Assumptions** | Every driver and fee, each with its source file and a status: Repo, Assumption, [VERIFY] or Founder to enter. Blue cells are inputs; yellow cells are the key levers. It also holds the offset quote table (run size → cost per copy), the first-sale month, the household-money cap and the business-card balance. |
-| **Unit Economics** | 40 product-and-channel rows showing price, fees, refunds, print or landed cost, fulfilment, net per unit, margin and sales-tax handling. Gated products carry a mix weight of 0. A channel blend feeds the forecast. **This tab is the plan's single margin sheet**; sections 2, 4 and 5 cite it. |
+| **Unit Economics** | 55 product-and-channel rows showing price, fees, refunds, print or landed cost, fulfilment, net per unit, margin and sales-tax handling. Gated products carry a mix weight of 0. A channel blend feeds the forecast. **This tab is the plan's single margin sheet**; sections 2, 4 and 5 cite it. |
 | **Startup Costs** | 21 included one-time items and 13 **GATED** items (Include = 0), each with its trigger and month, so nothing the plan mentions is left unpriced. |
 | **Monthly Operating Costs** | 29 recurring items with an Include switch (E&O and the upload assistant are off pending a decision), laid out over 36 months, plus a 10% contingency. |
 | **36-Month Forecast** | Three stacked scenario blocks. The digital catalog size drives the own site, Etsy and the merchant of record; titles live drive KDP and IngramSpark; the email list drives the course. The board book, school and retail blocks stay in the workbook but are switched off. Then come the totals, the trailing-12-month result, one-time costs and held inventory with a reorder point. |
@@ -134,17 +136,20 @@ Everyday prices follow `BRAND.md` "Honest pricing", which overrides the anchor-a
 
 | Product | Channel | Price | Net per unit | Margin | What drives it |
 |---|---|---|---|---|---|
-| Visual routine cards | Etsy | $6.50 | $5.21 | 80% | 6.5% transaction + 3% + $0.25 processing + $0.20 listing + Offsite Ads on 10% of sales + 2% refunds |
-| Visual routine cards | Own site | $6.50 | $5.88 | 90% | Shopify 2.9% + $0.30, 2% refunds |
-| Play-First Family Kit | Own site / Etsy / Gumroad | $11.00 | $10.16 / $9.12 / $9.18 | 92% / 83% / 83% | Fee stack by channel; Gumroad 10% + $0.50 covers VAT |
-| Toddler busy book printable | Etsy | $11.99 | $9.98 | 83% | Etsy fee stack |
-| *100 Screen-Free Plays* paperback (82 pp. B/W) | KDP | $16.99 | **$7.89** | 46% | 60% royalty minus KDP's flat $2.30 print cost for 24–108 B/W pages (`guide-100-plays/listing.json`) [VERIFY; check whether 8 × 10 in counts as large trim] |
-| *Up! Go! More!* / *The Day the Tablet Slept* paperbacks (32 pp. colour) | KDP | $11.99 | **$3.95** | 33% | 60% royalty minus $3.24 premium-colour print ($1.00 + $0.07 × 32) [VERIFY: KDP may price short colour books at a flat rate] |
-| Same paperbacks | IngramSpark at a 40% discount | $16.99 / $11.99 | $7.89 / $3.95 | 46% / 33% | 60% of list minus print (proxy: the KDP figures) [VERIFY in the IngramSpark calculator] |
+| Visual routine cards (0–5 edition) | Etsy | $9.50 | $7.53 | 79% | 6.5% transaction + 3% + $0.25 processing + $0.20 listing + Offsite Ads on 10% of sales + 5% refunds |
+| Visual routine cards (0–5 edition) | Own site / Gumroad | $9.50 | $8.45 / $7.00 | 89% / 74% | Shopify 2.9% + $0.30; Gumroad 10% + $0.50 + 2.9% + $0.30 card; 5% refunds |
+| Routine Cards Starter (60) | Etsy / Gumroad | $5.00 | $3.75 / $3.31 | 75% / 66% | Same fee stacks; mix weight 0 until real sales show the mix |
+| "I'm bored" play cards | Etsy | $6.50 | $5.01 | 77% | Etsy fee stack |
+| Play-First Family Kit | Own site / Etsy / Gumroad | $11.00 | $9.83 / $8.79 / $8.23 | 89% / 80% / 75% | Fee stack by channel; Gumroad covers VAT |
+| Toddler busy book printable | Etsy | $11.99 | $9.62 | 80% | Etsy fee stack |
+| Ages 1–5 Gift Bundle / Birth-to-5 Library | Etsy | $29 / $45 | $23.91 / $37.35 | 82% / 83% | Etsy fee stack; mix weight 0 (bundle buying is carried by items per order) |
+| *100 Screen-Free Plays* paperback (86 pp. B/W, 8 × 10 in) | KDP | $16.99 | **$6.99** | 41% | 60% royalty minus KDP's large-trim flat $2.84 print cost for 24–108 B/W pages, less 5% for returns (`guide-100-plays/listing.json`) [VERIFY in KDP's calculator] |
+| *Up! Go! More!* / *The Day the Tablet Slept* paperbacks (32 pp. colour) | KDP | $11.99 | **$3.76** | 31% | 60% royalty minus $3.24 premium-colour print ($1.00 + $0.07 × 32), less 5% for returns [VERIFY: KDP may price short colour books at a flat rate] |
+| Same paperbacks | IngramSpark at a 40% discount | $16.99 / $11.99 | $7.35 / $3.95 | 43% / 33% | 60% of list minus print (proxy: the KDP figures) [VERIFY in the IngramSpark calculator] |
 | *The Day the Tablet Slept* hardcover (gated) | IngramSpark | $19.99 | $3.49 at 40%; about $0.50 at 55% | 17% | $8.50 print [VERIFY]. Mix weight 0 until the paperback sells |
-| 30 Days of Back-and-Forth | Own site | $27.00 | $24.57 | 91% | Shopify fees, 5% money-back allowance |
+| 30 Days of Back-and-Forth | Gumroad (merchant of record) | $27.00 | $21.37 | 79% | Gumroad 10% + $0.50 + 2.9% + $0.30 card, 5% money-back allowance (`course-screen-reset/listing.json`) |
 
-**One figure for each book.** Sections 1, 2 and 3 now all use **$7.89** for *100 Screen-Free Plays* and **$3.95** for the 32-page colour paperbacks. Section 1's earlier $5 a copy and the first model's $8.21 are withdrawn.
+**One figure for each book.** This section and the workbook now use the `listing.json` nets: **$6.99** for *100 Screen-Free Plays* and **$3.76** for the 32-page colour paperbacks on KDP. The earlier $7.89 and $3.95 (no returns allowance, standard-trim print), section 1's $5 a copy and the first model's $8.21 are withdrawn; sections 1 and 2 still quote $7.89 and $3.95 until they are next revised, and this section wins.
 
 **IngramSpark.** The base discount is **40%**. At the 55% library-jobber discount, the hardcover nets about $0.50 a copy, and `ops/ROUTINE.md`'s 8-week upkeep rule would cut it. *Whose Lap Today?* is no longer in this channel: it is now a personalized keepsake printed per order (`amazon_route` "none-with-reason"). Passive catalog availability to bookstores and libraries is in the base plan. Active library or school marketing is G2 and stays held.
 
@@ -152,19 +157,19 @@ Everyday prices follow `BRAND.md` "Honest pricing", which overrides the anchor-a
 
 | Run size (quote table, all [VERIFY]) | Print / landed per copy | Landed % of $12.99 | Own site via 3PL | Amazon FBA | Faire wholesale | Walmart Marketplace |
 |---|---|---|---|---|---|---|
-| 1,000 (repo high end, `BLIND-SPOTS` #11) | $4.00 / $5.00 | 38% | $1.55 | $0.34 | **−$1.00** | **−$0.11** |
-| 2,500 (assumption) | $2.20 / $2.75 | 21% | $3.80 | $2.59 | $1.25 | $2.14 |
-| 5,000 (assumption) | $1.60 / $2.00 | 15% | $4.55 | $3.34 | $2.00 | $2.89 |
+| 1,000 (repo high end, `BLIND-SPOTS` #11) | $4.00 / $5.00 | 38% | $1.16 | $0.34 | **−$1.00** | **−$0.11** |
+| 2,500 (assumption) | $2.20 / $2.75 | 21% | $3.41 | $2.59 | $1.25 | $2.14 |
+| 5,000 (assumption) | $1.60 / $2.00 | 15% | $4.16 | $3.34 | $2.00 | $2.89 |
 
 The rows are built as follows:
-- **Own site:** 3PL pick and pack ($3.50) plus about $2 of postage the business absorbs, because free shipping is the norm (assumption).
+- **Own site:** 3PL pick and pack ($3.50) plus about $2 of postage the business absorbs, because free shipping is the norm (assumption), and the 5% refund allowance.
 - **FBA:** 15% referral, the books closing fee (about $1.80), the FBA fee ($3.50) and a $0.40 storage and placement allowance [VERIFY all].
 - **Faire:** half of retail, 15% commission, 3% processing, 5% deductions and $1.00 handling.
 - **Walmart:** 15% referral, 5% deductions, 3PL pick and pack plus postage [VERIFY].
 
 The first draft used the $2.90 mid-point of a range that runs from 1,000 to 3,000 copies. A 1,000-copy run sits at the high end of that range, and at that cost only direct sales make money.
 
-**Digital products carry the business.** Over 36 months of the Expected case, 87% of net contribution comes from printables and the course and 13% from print-on-demand books. Own-site sales keep 9–10 more points of the price than Etsy, but Etsy supplies the search traffic a new brand lacks.
+**Digital products carry the business.** Over 36 months of the Expected case, 88% of net contribution comes from printables and the course and 12% from print-on-demand books. Own-site sales keep 9–10 more points of the price than Etsy, but Etsy supplies the search traffic a new brand lacks.
 
 ---
 
@@ -172,7 +177,7 @@ The first draft used the $2.90 mid-point of a range that runs from 1,000 to 3,00
 
 ### Startup (one-time)
 
-**Base plan (lean path): $4,941** across 21 included items. The same items cost $10,336 at mid-point and $15,731 at the high end (Startup Costs tab). $3,691 falls in October–December 2026 and $1,250 in January–March 2027.
+**Base plan (lean path): $4,646** across 21 included items, now that KDP's free ISBN replaces the $295 Bowker block. The same items cost $10,041 at mid-point and $15,436 at the high end (Startup Costs tab). $3,396 falls in October–December 2026 and $1,250 in January–March 2027.
 
 | Largest included items (lean / high) | Source |
 |---|---|
@@ -210,7 +215,7 @@ The board-book pre-sale costs (illustrator, product-safety attorney, pre-sale te
 | Insurance: GL with products-completed operations, media liability, cyber, umbrella | about $155 | `PROTECTION-PLAN` averages and low ends; bound before the first sale (month 3) |
 | Claude plan for the routines (usage-credit cap $0 on the lean path) | $100 | assumption, $100–$200 [VERIFY]; cap from `ops/GAPS-ROUND-2.md` G2-06 |
 | QuickBooks Online + Link My Books | $59 | `finance/money-and-tax-setup.md` |
-| Shopify Basic | $39 | storefront guide §1 |
+| Shopify Basic | $39 | storefront guide §1 (deferred until about 25 own-site orders a month, `GROWTH-ENGINE.md` D4; still in the model) |
 | Business email, Etsy renewals; scheduler, review app, PDF stamping and filing service at $0 on the lean path | about $9 | `BLIND-SPOTS` #4; assumption |
 | GDPR Art. 27 representatives, EU and UK (annual, from January 2027) | $220 – $1,300 a year | section 5.8 (unverified) |
 
@@ -226,13 +231,13 @@ The board-book pre-sale costs (illustrator, product-safety attorney, pre-sale te
 
 The scenarios differ only in demand inputs (3.2) and the ad test budget. Costs, prices and gates are the same in all three.
 
-**Conservative (the budget case; matches section 1's Low case).** Year 1 sells about 550 orders for $5,849. That is close to section 1's Low estimate of 600 units and $5,520 from five listings. The business is operating-positive from May 2027, and the trailing-12-month result stays positive from December 2027. Year 3 reaches about $16,900 in sales and $4,164 of operating result. At mid-point costs, Conservative does not break even within 36 months and needs about $21,900 of founder capital. The plan's cash cap is therefore sized to Conservative on the lean path.
+**Conservative (the budget case; matches section 1's Low case).** Year 1 sells about 550 orders for $6,260. That is close to section 1's Low estimate of 600 units and $5,520 from five listings. The business is operating-positive from May 2027, and the trailing-12-month result stays positive from December 2027. Year 3 reaches about $18,000 in sales and $4,478 of operating result. At mid-point costs, Conservative does not break even within 36 months and needs about $20,900 of founder capital. The plan's cash cap is therefore sized to Conservative on the lean path.
 
-**Expected (the target the scorecard reports against).** Year 1 sells about 970 orders for $11,195, and year 3 about 3,170 orders for $38,325. Operating profit first appears in March 2027. The trailing-12-month result holds from August 2027, and the business needs no founder capital after April 2027. Two comparisons keep this in proportion:
+**Expected (the target the scorecard reports against).** Year 1 sells about 970 orders for $11,946, and year 3 about 3,170 orders for $40,661. Operating profit first appears in March 2027. The trailing-12-month result holds from August 2027, and the business needs no founder capital after April 2027. Two comparisons keep this in proportion:
 - **Etsy.** Expected's year-3 Etsy volume is about 1,400 orders. That is about 64% of the *lifetime* sales of the strongest routine-card shop in the demand check (2,189). Reaching it means the shop becomes one of the stronger printable shops in its niche within three years. That is a stretch, not a certainty.
 - **Month 36.** Monthly orders reach about 220, across roughly 15 digital products and 10 KDP titles.
 
-**Strong (outlier, not a planning case).** Strong uses section 1's Base rate of 30 units per product per month. Year 3 reaches about 9,000 orders ($118,000), including about 3,970 Etsy orders. That is almost twice the strongest routine-card shop's lifetime total in a single year, and it would need a breakout listing. The first draft compared Strong's *monthly* order count with incumbents' *lifetime* totals and concluded it was "below the category leaders". That comparison was wrong and has been withdrawn.
+**Strong (outlier, not a planning case).** Strong uses section 1's Base rate of 30 units per product per month. Year 3 reaches about 9,000 orders ($125,000), including about 3,970 Etsy orders. That is almost twice the strongest routine-card shop's lifetime total in a single year, and it would need a breakout listing. The first draft compared Strong's *monthly* order count with incumbents' *lifetime* totals and concluded it was "below the category leaders". That comparison was wrong and has been withdrawn.
 
 ---
 
@@ -242,20 +247,20 @@ The scenarios differ only in demand inputs (3.2) and the ad test budget. Costs, 
 
 | Month | One-time startup | Operating costs | Ad tests | Payouts received | **Founder capital in** | Cumulative |
 |---|---|---|---|---|---|---|
-| Oct 2026 | $1,651 | $434 | — | — | **$2,086** | $2,086 |
-| Nov 2026 | $1,090 | $202 | — | — | **$1,292** | $3,378 |
-| Dec 2026 | $950 | $370 | — | $44 | **$1,276** | $4,654 |
-| Jan 2027 | $300 | $612 | $150 | $173 | **$889** | $5,543 |
-| Feb 2027 | $450 | $528 | $150 | $299 | **$829** | $6,372 |
-| Mar 2027 | $500 | $398 | $150 | $449 | **$599** | $6,971 |
-| Apr 2027 | — | $1,278 (annual items) | $150 | $684 | **$744** | **$7,715** |
-| May 2027 on | — | — | — | — | $0 | $7,715 |
+| Oct 2026 | $1,356 | $434 | — | — | **$1,790** | $1,790 |
+| Nov 2026 | $1,090 | $202 | — | — | **$1,292** | $3,083 |
+| Dec 2026 | $950 | $370 | — | $47 | **$1,274** | $4,357 |
+| Jan 2027 | $300 | $612 | $150 | $182 | **$880** | $5,237 |
+| Feb 2027 | $450 | $528 | $150 | $311 | **$817** | $6,054 |
+| Mar 2027 | $500 | $398 | $150 | $464 | **$584** | $6,638 |
+| Apr 2027 | — | $1,278 (annual items) | $150 | $709 | **$719** | **$7,357** |
+| May 2027 on | — | — | — | — | $0 | $7,357 |
 
 **Sources:**
 
 | Source | Amount | Status |
 |---|---|---|
-| Founder capital, recorded as owner contributions to AlphaPlay LLC | Lean path: about $7,700 (Expected) to $7,800 (Conservative), paid in monthly as the table shows | Founder decides |
+| Founder capital, recorded as owner contributions to AlphaPlay LLC | Lean path: about $7,400 (Expected) to $7,500 (Conservative), paid in monthly as the table shows | Founder decides |
 | **Household-money cap** (the most founder capital the business may take) | **Placeholder $12,000.** Not yet set by the founder (`ops/GAPS-ROUND-2.md` G2-10; section 5.13 item 3) | Founder to set, with a review date |
 | Existing Chase business-card balance | Not in the repo; an LLC liability paid in month 1, added on top of the table above | Founder to enter on Assumptions |
 | Debt, investors, personal guarantees | None. `PROTECTION-PLAN` rules out personal guarantees | — |
@@ -263,8 +268,8 @@ The scenarios differ only in demand inputs (3.2) and the ad test budget. Costs, 
 **Hard stop.** When cumulative founder capital reaches the cap, all spending that is not deadline-driven stops: gated items, ad tests and new channels. The routine re-forecasts from real data, and the founder decides in writing whether to raise the cap or cut costs. On the lean path, no scenario reaches the $12,000 placeholder. At mid-point costs, every scenario passes it in February 2027, so spending above the lowest written quote needs its own approval under the cap.
 
 **Other cash points:**
-- **Payout delays** hold back about one month of Etsy revenue and two to three months of book royalties. In Expected, total payouts reach about $1,280 a month by September 2027.
-- **The tax reserve** starts filling in December 2027 in Expected, when cumulative results turn positive. It holds about $7,300 at month 36.
+- **Payout delays** hold back about one month of Etsy revenue and two to three months of book royalties. In Expected, total payouts reach about $1,290 a month by September 2027.
+- **The tax reserve** starts filling in December 2027 in Expected, when cumulative results turn positive. It holds about $7,400 at month 36.
 - **The 3-month reserve target** (`ops/ROUTINE.md`) is met from late 2027 in Expected and from early 2028 in Conservative, except in the months when annual bills fall due.
 - **No inventory is bought in the base plan.** If the board book is switched on and passes its go line, the first run is paid in the print month and reordered at a reorder point with a 3-month lead time (assumption). A pre-sale that misses the go line is refunded in full. The model then counts no revenue, and about $100 of card fees is lost.
 
@@ -277,28 +282,29 @@ The scenarios differ only in demand inputs (3.2) and the ad test budget. Costs, 
 | Measure | Conservative | **Expected** | Strong |
 |---|---|---|---|
 | Trailing-12-month result ≥ 0 from | Dec 2027 | **Aug 2027** | Apr 2027 |
-| First month with a positive operating result | May 2027 | **Mar 2027** | Mar 2027 |
-| Strict test: every later month ≥ 0 | May 2029 | May 2027 | Mar 2027 |
+| First month with a positive operating result | May 2027 | **Mar 2027** | Feb 2027 |
+| Strict test: every later month ≥ 0 | May 2029 | May 2027 | Feb 2027 |
 | Cumulative orders by the headline month | about 930 | **about 820** | about 560 |
 | Fixed costs at month 12 (operating costs + ad tests) | $398 | **$548** | $698 |
-| Net contribution per order at month 12 | $8.14 | **$8.75** | $9.47 |
-| **Orders a month needed at month 12** | **49** | **63** | **74** |
+| Net contribution per order at month 12 | $8.40 | **$8.98** | $9.71 |
+| **Orders a month needed at month 12** | **47** | **61** | **72** |
 | Orders the scenario forecasts at month 12 | 81 | 151 | 362 |
-| Orders needed at month 12, mid-point costs | 90 | 101 | 109 |
+| Orders needed at month 12, mid-point costs | 88 | 99 | 107 |
 
-**The break-even line for the scorecard: about 65 orders a month (2 a day) on the lean path, or about 100 (3–4 a day) at mid-point costs.** This is the figure section 5.10 uses.
+**The break-even line for the scorecard: about 63 orders a month (2 a day) on the lean path, or about 100 (3–4 a day) at mid-point costs.** This is the figure section 5.10 uses.
 
 **Single-product view.** Expected month-12 fixed costs ($548) equal any one of these each month:
 
 | If only this sold | Units a month | Per day |
 |---|---|---|
-| 30 Days of Back-and-Forth | 22 | 0.7 |
-| Play-First Family Kit on the own site | 54 | 1.8 |
-| Toddler busy book on Etsy | 55 | 1.8 |
-| Play-First Family Kit on Etsy | 60 | 2.0 |
-| *100 Screen-Free Plays* paperback on KDP | 69 | 2.3 |
-| Visual routine cards on Etsy | 105 | 3.5 |
-| Board book on the own site (1,000-copy run) | 353 | 11.8 |
+| 30 Days of Back-and-Forth (Gumroad) | 26 | 0.9 |
+| Play-First Family Kit on the own site | 56 | 1.9 |
+| Toddler busy book on Etsy | 57 | 1.9 |
+| Play-First Family Kit on Etsy | 62 | 2.1 |
+| Visual routine cards on Etsy ($9.50) | 73 | 2.4 |
+| *100 Screen-Free Plays* paperback on KDP | 78 | 2.6 |
+| "I'm bored" play cards on Etsy | 109 | 3.6 |
+| Board book on the own site (1,000-copy run) | 471 | 15.7 |
 
 ---
 
@@ -334,33 +340,33 @@ Section 4.4 tests the chain rule with 25% and 35% returns reserves. Gate C in se
 
 ## 3.9 Key sensitivities
 
-Each row changes one thing (or one stated set of things) and recalculates the whole workbook in LibreOffice. Unless marked, figures are for Expected on the lean path.
+Each row changes one thing (or one stated set of things) and recalculates the whole workbook in LibreOffice (all rows re-run September 29, 2026). Unless marked, figures are for Expected on the lean path.
 
 | Change | Year-3 operating result | Founder capital needed | Break-even (trailing 12 months) | Result after one-time costs, month 36 |
 |---|---|---|---|---|
-| **Base (lean path)** | $17,573 | $7,715 | Aug 2027 | $29,294 |
-| Mid-point costs (cost position 0.5) | $11,648 | $16,819 | Dec 2027 | $6,648 |
-| High-end costs (1.0) | $5,723 | $27,301 | Apr 2028 | ($15,998) |
-| Every sales rate 25% lower | $9,992 | $8,131 | Nov 2027 | $13,066 |
-| Every sales rate 25% higher | $25,444 | $7,297 | Jun 2027 | $45,973 |
-| First sale slips to January 2027 (Gate A late) | $17,367 | $8,396 | Oct 2027 | $26,854 |
-| First sale slips to February 2027 | $17,142 | $8,962 | Nov 2027 | $24,376 |
-| Mid-point costs + sales 25% lower | $4,067 | $18,111 | Apr 2028 | ($9,580) |
-| **Downside: mid-point costs + sales 25% lower + February start** | $3,783 | $20,350 | Jun 2028 | ($13,177) |
-| Spanish localization and library-credibility spend switched on | $17,573 | $9,905 | Aug 2027 | $23,794 |
-| E&O insurance bought | $16,754 | $8,056 | Sep 2027 | $26,975 |
-| No ad tests at all | $21,773 | $7,115 | Jul 2027 | $37,844 |
-| IngramSpark discount 55% instead of 40% | $17,442 | $7,715 | Aug 2027 | $29,031 |
-| **School overlay (only if counsel clears in writing)** | $19,485 | $7,715 | Aug 2027 | $31,431 |
-| Board book switched on, pre-sale Feb–Apr 2028 | $17,573 | $7,715 | Aug 2027 | $27,094 (pre-sale 9 copies vs a go line of 920: no-go, refund) |
-| Board book switched on, pre-sale Feb–Apr 2027 | $17,573 | $9,815 | Aug 2027 | $27,094 (pre-sale 10 copies vs 920: no-go, refund) |
+| **Base (lean path)** | $18,006 | $7,357 | Aug 2027 | $30,847 |
+| Mid-point costs (cost position 0.5) | $12,081 | $16,462 | Dec 2027 | $8,201 |
+| High-end costs (1.0) | $6,157 | $26,736 | Apr 2028 | ($14,445) |
+| Every sales rate 25% lower | $10,371 | $7,788 | Nov 2027 | $14,389 |
+| Every sales rate 25% higher | $25,894 | $6,924 | Jun 2027 | $47,698 |
+| First sale slips to January 2027 (Gate A late) | $17,808 | $8,065 | Oct 2027 | $28,367 |
+| First sale slips to February 2027 | $17,592 | $8,631 | Nov 2027 | $25,853 |
+| Mid-point costs + sales 25% lower | $4,447 | $17,608 | Mar 2028 | ($8,257) |
+| **Downside: mid-point costs + sales 25% lower + February start** | $4,170 | $19,882 | Jun 2028 | ($11,922) |
+| Spanish localization and library-credibility spend switched on | $18,006 | $9,339 | Aug 2027 | $25,347 |
+| E&O insurance bought | $17,187 | $7,698 | Aug 2027 | $28,528 |
+| No ad tests at all | $22,206 | $6,757 | Jun 2027 | $39,397 |
+| IngramSpark discount 55% instead of 40% | $17,875 | $7,357 | Aug 2027 | $30,584 |
+| **School overlay (only if counsel clears in writing)** | $19,918 | $7,357 | Aug 2027 | $32,984 |
+| Board book switched on, pre-sale Feb–Apr 2028 | $18,006 | $7,357 | Aug 2027 | $28,647 (pre-sale 9 copies vs a go line of 920: no-go, refund) |
+| Board book switched on, pre-sale Feb–Apr 2027 | $18,006 | $9,457 | Aug 2027 | $28,647 (pre-sale 10 copies vs 920: no-go, refund) |
 
-**Conservative under the same stresses.** Base: $4,164 year-3 result, $7,787 founder capital, break-even Dec 2027. Mid-point costs: ($1,761), $21,892, not within 36 months, and the $12,000 cap is passed in February 2027. Downside set: ($5,075), $30,356, not within 36 months.
+**Conservative under the same stresses.** Base: $4,478 year-3 result, $7,452 founder capital, break-even Dec 2027. Mid-point costs: ($1,446), $20,906, not within 36 months, and the $12,000 cap is passed in February 2027. Downside set: ($4,824), $29,479, not within 36 months.
 
 What this means in plain terms:
 - **The cost position is the lever the founder controls, and it matters most.** Moving from lean to mid-point costs roughly doubles the funding need and moves break-even back four months. Most of the gap is attorney fees, insurance and the Claude plan tier, and all of them can be quoted. That is why the base plan requires the lowest written quote for each item, with anything higher approved under the cap.
-- **Demand is the largest unknown.** A 25% miss moves break-even back three months on the lean path. It barely changes the funding need, because nearly all of that need falls before sales matter. It does cut the year-3 result by about 43%.
-- **A late Gate A costs little by itself.** Each month of slip moves break-even by about a month and adds about $600 of founder capital. Stacked with mid-point costs and weak demand, the Expected funding need reaches about $20,000 and Conservative's about $30,000. That downside is what the cap and the hard stop are for.
+- **Demand is the largest unknown.** A 25% miss moves break-even back three months on the lean path. It barely changes the funding need, because nearly all of that need falls before sales matter. It does cut the year-3 result by about 42%.
+- **A late Gate A costs little by itself.** Each month of slip moves break-even by about a month and adds about $600–$700 of founder capital. Stacked with mid-point costs and weak demand, the Expected funding need reaches about $19,900 and Conservative's about $29,500. That downside is what the cap and the hard stop are for.
 - **The school wave is worth about $1,900 a year by year 3.** It is useful but not needed, and it stays off until counsel answers in writing.
 - **The board book cannot be customer-funded inside 36 months.** Its pre-sale reaches about 1% of the go line in every scenario, and switching it on costs about $2,200 of preparation for nothing. The route to it is 3.10 rule 4.
 
@@ -370,7 +376,7 @@ What this means in plain terms:
 
 These turn the model into operating rules for the routines. Each applies a rule already in the repository to a number from the model.
 
-1. **Break-even line: about 65 orders a month by month 12 on the lean path** (about 100 at mid-point costs). Track it on the Friday scorecard (`ops/ROUTINE.md`). Section 5.10 uses the same number.
+1. **Break-even line: about 63 orders a month by month 12 on the lean path** (about 100 at mid-point costs). Track it on the Friday scorecard (`ops/ROUTINE.md`). Section 5.10 uses the same number.
 2. **Kill rule as written.** A listing with fewer than 5 sales in 60 days after SEO fixes is repriced once, then folded into a bundle (`DEMAND-CHECK` §3). Any product or channel that earns less than its upkeep for 8 weeks is cut or fixed (`ops/ROUTINE.md`).
 3. **Spend gate for one-time items.** Every GATED item on Startup Costs stays off until its trigger is met. The Spanish localization and the library-credibility spend need two consecutive months at or above the break-even line *and* room under the cap. Legal and IP items with deadlines are never deferred: copyright before November 11, 2026; ALPHAPLAY by March 8, 2027; the PLAY BEFORE PIXELS filing.
 4. **Board-book gate: all five conditions, in writing, before any pre-sale spending.**
@@ -424,7 +430,7 @@ These turn the model into operating rules for the routines. Each applies a rule 
 
 ## 3.12 Decisions this section needs from the founder
 
-1. **Set the household-money cap and its review date.** The lean path needs about $7,800 between October 2026 and April 2027. The $12,000 placeholder leaves about $4,200 for price surprises. Enter the real figure on Assumptions.
+1. **Set the household-money cap and its review date.** The lean path needs about $7,500 between October 2026 and April 2027. The $12,000 placeholder leaves about $4,500 for price surprises. Enter the real figure on Assumptions.
 2. **Enter the Chase business-card balance**, so the model and the accountant treat it as an LLC liability.
 3. **Approve the lean path as the base plan.** Take the lowest written quote for each cost. Any higher quote, and every GATED item, needs its own approval under the cap.
 4. **Get broker quotes** for GL, media liability, cyber and umbrella, and ask whether E&O is still needed now that no coaching is offered.
